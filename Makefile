@@ -44,6 +44,11 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 
+gettext:
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	@echo
+	@echo "Build finished. The  are in $(BUILDDIR)/html."
+
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
