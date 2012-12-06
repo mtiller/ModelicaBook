@@ -119,13 +119,13 @@ html_theme_path = ["."]
 # of the sidebar.
 #html_logo = None
 #html_logo = "../../Graphics/logo-large.png"
-html_logo = "../../Graphics/ModelicaLogoLarge.png"
+html_logo = "../images/ModelicaLogoLarge.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #html_favicon = None
-html_favicon = "../../Graphics/favicon.ico"
+html_favicon = "../images/favicon.ico"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -188,6 +188,7 @@ latex_elements = {
 
 # Additional stuff for the LaTeX preamble.
 #'preamble': '',
+'preamble': '\usepackage{amsfonts}'
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -298,7 +299,7 @@ epub_copyright = u'2012, Michael Tiller'
 todo_include_todos = True
 
 # For addclass extension
-addclass_dump_file = "doctree.txt"
+addclass_dump_file = "build/doctree.txt"
 addclass_tag_map = {
     "section": [".clearfix:after"]
 }
