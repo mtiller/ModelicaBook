@@ -1,0 +1,157 @@
+/* -*- mode: CSS; -*-
+ * default.css_t
+ * ~~~~~~~~~~~~~
+ *
+ * Sphinx stylesheet -- default theme.
+ *
+ * :copyright: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
+ * :license: BSD, see LICENSE for details.
+ *
+ */
+
+/*
+ * @import url("basic.css");
+ */
+@import url("bootstrap.css");
+
+/* This addressed the issue with the Bootstrap fixed nav bar */
+
+body {
+    padding-top: 80px;
+}
+
+/* Issues related to layout of the related divs */
+
+div.related ul {
+    margin: 0;
+    padding: 0 0 0 10px;
+    list-style: none;
+}
+
+div.related li {
+    display: inline;
+}
+
+div.related li.right {
+    float: right;
+    margin-right: 5px;
+}
+
+/* This gives the relation divs a solid grey background */
+
+div.related {
+    /* background: #DDDDDD; */
+    background: transparent;
+}
+
+/* Used to try and implement a fixed sidebar */
+
+.sidebar-nav-fixed {position:fixed;top:80;right:0;left:0;z-index:1030;}
+
+/* Math related stuff */
+span.eqno {
+    float: right;
+}
+
+div.body div.math p {
+    text-align: center;
+}
+
+img.math {
+    vertical-align: middle;
+}
+
+/* Stuff related to special call-out boxes, etc */
+
+/* Getting rid of this because bootstrap already has CSS
+   for stuff like this.
+
+div.admonition p.admonition-title + p {
+display: inline;
+}
+
+div.admonition p {
+margin-bottom: 5px;
+}
+
+div.admonition pre {
+margin-bottom: 5px;
+}
+
+div.admonition ul, div.admonition ol {
+margin-bottom: 5px;
+}
+
+div.note {
+background-color: #eee;
+border: 1px solid #ccc;
+}
+
+div.seealso {
+background-color: #ffc;
+border: 1px solid #ff6;
+}
+
+div.topic {
+background-color: #eee;
+}
+
+div.warning {
+background-color: #ffe4e4;
+border: 1px solid #f66;
+}
+
+div.admonition-todo {
+background-color: #ffe4e4;
+border: 1px solid red;
+}
+
+p.admonition-title {
+display: inline;
+}
+
+p.admonition-title:after {
+content: ":";
+}
+
+*/
+
+/* Get rid of header links, unless you hover */
+
+a.headerlink {
+    visibility: hidden;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+
+.padded {
+    margin: 10px;
+}
+
+.clearer {
+    clear: both;
+}
+
+.footer {
+    margin-left: 20px;
+}
+
+.section h1 {
+    margin-bottom: 10px;
+}
+
+.navbar-inner .container-fluid {
+    padding-top: 5px;
+}
+
+.highlight .hll {
+    background-color: #eee;
+}

@@ -1,0 +1,31 @@
+"Asides"
+
+I figured out a nice LaTeX style for asides, etc.  Use the notice class in LaTeX and make the
+enclosed sub-section unnumbered.  So something like this:
+
+\begin{notice}{caution}{}
+\subsection*{Aside on States}
+
+...
+
+\end{notice}
+
+I hacked this together by hand, so it would need to be added to the LaTeX handling.
+
+On the HTML side, it is simple enough to give the aside a reference by preceeding the
+section with a label and then adding the label to the "addclass_id_map" and give it
+a different appearence in the HTML (by assigning a new class to it).  For Bootstrap,
+this looks like:
+
+# equations.rst
+
+.. _aside-on-states:
+
+Aside on States
+===============
+
+# conf.py
+
+addclass_id_map = {
+    "aside-on-states": ["alert", "alert-info"]
+}

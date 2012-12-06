@@ -1,0 +1,169 @@
+*********
+Equations
+*********
+
+.. _eqs:
+
+Introduction
+============
+
+Ultimately, the purpose of the Modelica language is to create a
+language that is capable of describing mathematical behavior. So we
+will start with some very basic examples of describing mathematical
+behavior so you can become familiar with the basic syntax of Modelica.
+In subsequent chapters, we will investigate the many other compelling
+capabilities in the Modelica language.
+
+First Model
+===========
+
+Let's build a model corresponding to the extremely simple differential
+equation:
+
+.. math:: \dot{x} = -x
+   :label: first_order
+
+This simple first-order ordinary differential equation
+:eq:`first_order` can be described by the following Modelica code:
+
+.. tryit::
+   :name: FirstOrder
+
+.. _first-order:
+
+.. sourcecode:: modelica
+
+	model FirstOrder
+	equation
+	  der(x) = -x;
+	end FirstOrder;
+
+Example 1 (:ref:`first-order`): A simple first-order differential equation
+
+.. todo:: Need to create an extension to auto-number examples.
+	
+Hopefully it is quite obvious how we mapped the mathematical equation,
+:math:`\dot{x} = -x`, into it's Modelica equivalent ``der(x) = -x``.
+Obviously, the ``der`` operator in Modelica represents the time
+derivative of the variable it is applied to.
+
+.. todo:: Need to figure out if Modelica 3 allows expressions inside the `der` operator.
+
+An important thing to note about Modelica is the fact that equations
+are exactly that, equations.  They are not "assignment statements".
+Practically speaking, what does this mean?  It means that when you
+write Modelica code you don't need to worry about what is already
+known and what needs to be computed.  You only need to describe the
+mathematical relationship between the various terms.  For this reason,
+the following equations are all equivalent:
+
+.. sourcecode:: modelica
+
+  der(x) = -x;
+  der(x) + x = 0;
+  x + der(x) = 0;
+
+.. _aside-on-states:
+
+Aside on States
+===============
+
+Can I make an aside like this?  I'd like to make it a special sort of
+section (not broken across pages and distinct so users understand it
+is an aside).  I should mention :term:`state` here.  Or should it be a
+:dfn:`term`?
+
+Information about states can be find in :ref:`aside-on-states`.
+
+Initial Conditions
+==================
+
+There is one problem with our ``FirstOrder`` model, which is the fact
+that if you run the model as is, you will get a rather uninteresting
+result.  The reason for this is that we have not specified any initial
+conditions for :math:`x`.  In order to solve this model, we need to
+integrate 
+
+Parameters
+==========
+
+Physical Types
+==============
+
+Documentation
+=============
+
+Expressions
+===========
+
+.. todo:: Full explanation of basic expressions
+
+Glossary
+========
+
+Exercises
+=========
+
+.. index::
+   keyword: model
+   keyword: end
+   keyword: equation
+
+Variables and Types
+===================
+
+.. _eqs-vars:
+
+.. index::
+   keyword: constant
+   keyword: parameter
+   keyword: false
+   keyword: true
+   keyword: import
+
+Discussion of types and imports
+
+Differential Equations
+======================
+
+.. _eqs-eqs:
+
+ex: Lotka-Volterra
+
+ex: RLC?
+
+.. index::
+   keyword: der
+
+Vectors, arrays and matrices
+============================
+
+.. _eqs-vec:
+
+.. index::
+   keyword: in
+   keyword: for
+   keyword: loop
+
+Conditionals and Events
+=======================
+
+.. _eqs-cond:
+
+.. index::
+   keyword: if
+   keyword: then
+   keyword: else
+   keyword: elseif
+   keyword: and
+   keyword: not
+   keyword: or
+   
+Initialization
+==============
+
+.. _eqs-init:
+
+.. index::
+   keyword: initial
+

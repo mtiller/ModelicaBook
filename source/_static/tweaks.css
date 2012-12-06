@@ -1,0 +1,14 @@
+/*
+ * Some tweaks to CSS that I apply last (after Pygments in particular).
+ * I wasn't able to use the theming to capture these.
+*/
+
+.highlight .hll {
+    padding: 3px;
+    background-color: #ddd;
+}
+
+td.linenos pre {
+    background: none;
+    border: none;
+}
