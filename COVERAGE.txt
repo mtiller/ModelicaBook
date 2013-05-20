@@ -1,0 +1,41 @@
+The first step in the process of writing the book is to figure out
+what all the examples will be, make sure that they cover all the
+required topics and that they depend exclusively on material already
+covered.  Once that is done, these examples can all be written and
+then the text of the book can be written around those.
+
+My goal here is to make sure that the narrative is clean and avoids
+any potential confusion that might arise from referencing things not
+already covered.
+
+The tricky part about this is that I need to enumerate all the topics
+to be covered and then enumerate the examples I plan to present.  Each
+example should reference the topics that it explains and the topics
+that are pre-requisites.  This exercise serves two purposes.  First,
+it provides a method for performing coverage analysis on the material
+(making sure everything gets covered) and it helps us to sort the
+examples according to what they cover so that all "pre-requisites" are
+covered.
+
+TOPICS
+
+The topics are enumerated in the file topics.yaml.  The format of this file is:
+
+Category:
+  topic_id:
+    - sections
+
+The "Category" is completely ignored for coverage analysis, it is
+present mainly to help provide some structure to the topics.  The
+'topic_id' is a string that uniquely identifies a topic.  This should
+be used to refer to the topic.  Following the 'topic_id' is a list of
+sections in the specification that discuss that topic.
+
+Processing this file provides us with two pieces of information.
+First, the list of topic identifiers (which are checked for
+duplicates) and the list of specification sections that the topics
+cover.  So immediately, we have can do some checking to see if there
+are any sections of the specification that we will not be discussing
+if we restrict ourselves to this set of topics.
+
+EXAMPLES
