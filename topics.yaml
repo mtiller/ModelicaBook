@@ -21,6 +21,8 @@ Specialized Classes:
     - "13"
   function:
     - "12.2"
+  end:
+    - "4.6"
 Class Definitions:
   extends:
     - "4.8"
@@ -43,6 +45,30 @@ Class Definitions:
     - "4.4.5"
   expandable:
     - "9.1.3"
+Equations:
+  Equality equations:
+    - "8.3.1"
+  for:
+    - "8.3.2"
+  connect:
+    - "9.1"
+  if equation:
+    - "8.3.4"
+  when equation:
+    - "8.3.4"
+  reinit:
+    - "8.3.6"
+  initial equations:
+    - "8.6"
+Algorithms:
+  if statement:
+    - "11.2.6"
+  when statement:
+    - "11.2.7"
+  while statement:
+    - "11.2.3"
+  initial algorithms:
+    - "8.6"
 Connector Qualifiers:
   input:
     - "9.1"
@@ -120,8 +146,6 @@ Operators:
     - "10.5"
   Enumertion Indexing:
     - "10.5.1"
-  connect:
-    - "9.1"
   der:
     - "3.7.2"
   if expression:
@@ -164,8 +188,6 @@ Operators:
     - "3.7.3"
   terminal:
     - "3.7.3"
-  reinit:
-    - "8.3.6"
   sample:
     - "3.7.3"
   smooth:
@@ -211,12 +233,6 @@ Functions:
   Conversion Functions:
     - "3.7.1"
 Control Structures:
-  if statement:
-    - "11.2.6"
-  when:
-    - "11.2.7"
-  while:
-    - "11.2.3"
   for:
     - "11.2.2"
 Operator overloading:
@@ -265,3 +281,4 @@ Annotations:
     - "18.7"
   version:
     - "18.8.2"
+

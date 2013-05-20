@@ -1,0 +1,112 @@
+Part 1 - Language Elements:
+  Introduction:
+    What is Modelica?:
+    Why Modelica?:
+    What Modelica allows me to do:
+  Basic Equations:
+    Introduction:
+    Examples:
+      Simplest possible model:
+    Review:
+      Lexical Conventions:
+        - model
+        - end
+      Variables:
+        - constant
+        - parameter
+      Equations:
+        - der
+        - Equality equations
+      Initialization:
+        - initial equations
+    Conclusion:
+  Discrete Behavior:
+    Introduction:
+    Examples:
+      Hysteresis:
+    Review:
+      Events:
+      Equations:
+      Algorithms:
+      Control Structures:
+  Complex Equations:
+    Examples:
+      ABCD Form: # With analytical solution to demo trig functions?
+      One-dimensional Heat Conduction:
+    Review:
+      Vectors:
+      Matrices:
+      Trig Functions:
+  Connectors:
+    Introduction:
+      Through and Across Variables:
+    Examples:
+    Review:
+      Connector Definitions:
+        - connector
+      Variables:
+        - flow
+  Components:
+    Introduction:
+      Reuse:
+      Conservation equations:
+      Balancing:
+    Examples:
+    Review:
+      Blocks vs. Models:
+      Model Boundaries:
+        - assert
+    Annotations:
+  Subsystems:
+    Introduction:
+    Examples:
+    Review:
+  Inheritance:
+    Introduction:
+    Examples:
+    Review:
+      Protection:
+        - protected
+        - public
+      Reuse:
+        - partial
+  Architecture:
+    Introduction:
+    Examples:
+    Review:
+      Interfaces:
+      Architecture:
+      Implementation:
+      Buses:
+        - expandable
+  Functions:
+    Introduction:
+    Examples:
+    Review:
+      Control flow and return values:
+        - break
+        - return
+      Modelica Functions:
+      External Functions:
+        - external
+      Event Generation:
+      Pure vs. Impure:
+        - pure
+        - impure
+      Annotations:
+        - Derivative
+        - inverse
+Part 2 - Libraries:
+  Building Libraries:
+  Creating Template Models:
+  Handling Data:
+  Testing:
+Part 3 - Advanced Topics:
+  Dynamic Scoping:
+  Operator Overloading:
+  Discrete Systems:
+  Parametric Modeling:
+  Fluid Systems:
+  Variable Structure:
+  Backward Models:
+  Model-Based System Engineering:
