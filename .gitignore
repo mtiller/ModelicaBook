@@ -1,3 +1,15 @@
 build
 *~
 *.pyc
+source/ModelicaByExample/*.mat
+source/ModelicaByExample/*.txt
+source/ModelicaByExample/*.lib
+source/ModelicaByExample/*.exe
+source/ModelicaByExample/*.c
+source/ModelicaByExample/*.exp
+source/Examples/*.mat
+source/Examples/*.txt
+source/Examples/*.lib
+source/Examples/*.exe
+source/Examples/*.c
+source/Examples/*.exp
