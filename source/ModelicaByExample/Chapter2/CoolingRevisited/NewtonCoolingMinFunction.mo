@@ -3,7 +3,7 @@ model NewtonCoolingMinFunction "Cooling example with min function"
   type Temperature=Real(unit="K", min=0);
   type ConvectionCoefficient=Real(unit="W/K", min=0);
   type Mass=Real(unit="kg", min=0);
-  type SpecificHeat=Real(unit="W/kg", min=0);
+  type SpecificHeat=Real(unit="J/(K.kg)", min=0);
 
   parameter ConvectionCoefficient h=0.7 "Convective cooling coefficient";
   parameter Real m=0.1 "Mass of thermal capacitance";

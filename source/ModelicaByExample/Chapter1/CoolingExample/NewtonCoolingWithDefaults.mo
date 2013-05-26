@@ -9,5 +9,5 @@ model NewtonCoolingWithDefaults "Cooling example with default parameter values"
 initial equation
   T = T0 "Specify initial value for T";
 equation
-  der(T) = h*(T_inf-T) "Newton's Law of Cooling";
+  m*c_p*der(T) = h*(T_inf-T) "Newton's Law of Cooling";
 end NewtonCoolingWithDefaults;

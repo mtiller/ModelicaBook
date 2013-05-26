@@ -7,8 +7,8 @@ model QuiescientModelWithStartAttribute
   parameter Real delta=0.02;
   parameter Real x0=10;
   parameter Real y0=10;
-  Real x(start=10);
-  Real y(start=10);
+  Real x(start=x0);
+  Real y(start=y0);
 initial equation
   der(x) = 0;
   der(y) = 0;

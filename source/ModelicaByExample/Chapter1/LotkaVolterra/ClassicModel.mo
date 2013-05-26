@@ -6,11 +6,8 @@ model ClassicModel "This is the typical equation-oriented model"
   parameter Real delta=0.02;
   parameter Real x0=10;
   parameter Real y0=10;
-  Real x;
-  Real y;
-initial equation
-  x = x0;
-  y = y0;
+  Real x(start=x0);
+  Real y(start=y0);
 equation
   der(x) = x*(alpha-beta*y);
   der(y) = -y*(gamma-delta*x);

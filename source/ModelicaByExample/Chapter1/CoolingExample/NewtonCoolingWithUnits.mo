@@ -1,20 +1,12 @@
 within ModelicaByExample.Chapter1.CoolingExample;
 model NewtonCoolingWithUnits "Cooling example with physical units"
-  // Types
-  type Temperature=Real(unit="K", min=0);
-  type ConvectionCoefficient=Real(unit="W/K", min=0);
-  type Mass=Real(unit="kg", min=0);
-  type SpecificHeat=Real(unit="W/kg", min=0);
+  parameter Real T_inf(unit="K")=300.0 "Ambient temperature";
+  parameter Real T0(unit="K")=280.0 "Initial temperature";
+  parameter Real h(unit="W/K")=0.7 "Convective cooling coefficient";
+  parameter Real m(unit="kg")=0.1 "Mass of thermal capacitance";
+  parameter Real c_p(unit="J/(K.kg)")=1.2 "Specific heat";
 
-  // Parameters
-  parameter Temperature T_inf=300.0 "Ambient temperature";
-  parameter Temperature T0=280.0 "Initial temperature";
-  parameter ConvectionCoefficient h=0.7 "Convective cooling coefficient";
-  parameter Real m=0.1 "Mass of thermal capacitance";
-  parameter Real c_p=1.2 "Specific heat";
-
-  // Variables
-  Temperature T "Temperature";
+  Real T(unit="K") "Temperature";
 initial equation
   T = T0 "Specify initial value for T";
 equation
