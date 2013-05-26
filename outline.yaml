@@ -7,10 +7,31 @@ Part 1 - Language Elements:
     Introduction:
     Examples:
       Simplest possible model:
+        - der
+        - Real
+        - model
+        - Comment Strings
+        - initial equations
+      Newtons Law of Cooling:
+        - parameter
+        # Default values
+        - Numbers
+        # Equation, not assignment
+        - Comments
+        - Identifiers
+        - unit
+        - type
+      LotkaVolterra:
+        # Multiple variables
+        - start
+        # start for initial conditions
+        # start for non-linear iteration
     Review:
       Lexical Conventions:
         - model
+        - type
         - end
+        - Comment Strings
       Variables:
         - constant
         - parameter
@@ -19,12 +40,26 @@ Part 1 - Language Elements:
         - Equality equations
       Initialization:
         - initial equations
+        # Number of variables
+      Inheritance:
+        - extends
+        - modifications
     Conclusion:
   Discrete Behavior:
     Introduction:
     Examples:
+      Newton Cooling:
+        - if statement
+        - if expression
+      Bouncing Ball:
+        - when equation
+        - reinit
+      Speed Measurement:
+        # equations with same right hand side.
+        # second order ODEs
       Hysteresis:
     Review:
+      If vs. When:
       Events:
       Equations:
       Algorithms:
@@ -94,7 +129,7 @@ Part 1 - Language Elements:
         - pure
         - impure
       Annotations:
-        - Derivative
+        - derivative
         - inverse
 Part 2 - Libraries:
   Building Libraries:

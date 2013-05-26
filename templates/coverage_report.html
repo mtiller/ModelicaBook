@@ -1,0 +1,24 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <table>
+      {% for s in sectmap %}
+      <tr>
+	<th>
+	  {{ s }}
+	</th>
+	{% for t in topics %}
+	<td>
+	  {% if t in coverage[s] %}
+	  X
+	  {% else %}
+	  &nbsp;
+	  {% endif %}
+	</td>
+	{% endfor %}
+      <tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

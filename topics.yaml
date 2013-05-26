@@ -6,6 +6,8 @@ Lexical Rules:
     - "2.0"
   Numbers:
     - "3.2"
+  Comment Strings:
+    - "2.0"
 Specialized Classes:
   model:
     - "4.6"
@@ -48,7 +50,7 @@ Class Definitions:
 Equations:
   Equality equations:
     - "8.3.1"
-  for:
+  for equations:
     - "8.3.2"
   connect:
     - "9.1"
@@ -63,6 +65,8 @@ Equations:
 Algorithms:
   if statement:
     - "11.2.6"
+  for statement:
+    - "11.2.2"
   when statement:
     - "11.2.7"
   while statement:
@@ -232,9 +236,8 @@ Functions:
     - "3.7.1"
   Conversion Functions:
     - "3.7.1"
-Control Structures:
-  for:
-    - "11.2.2"
+  external:
+    - "???"
 Operator overloading:
   operator record:
     - "14"

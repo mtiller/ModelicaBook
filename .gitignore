@@ -1,6 +1,7 @@
 build
 *~
 *.pyc
+coverage_report.html
 source/ModelicaByExample/*.mat
 source/ModelicaByExample/*.txt
 source/ModelicaByExample/*.lib
