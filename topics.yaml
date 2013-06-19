@@ -156,7 +156,7 @@ Operators:
     -10.5.2
   Array indexing:
     - "10.5"
-  Enumertion Indexing:
+  Enumeration Indexing:
     - "10.5.1"
   der:
     - "3.7.2"
@@ -300,5 +300,7 @@ Annotations:
   unassignedMessage:
     - "18.7"
   version:
+    - "18.8.2"
+  uses:
     - "18.8.2"
 

@@ -1,4 +1,4 @@
-Part 1 - Language Elements:
+Part 1 - Mathematical Behavior:
   Introduction:
     What is Modelica?:
     Why Modelica?:
@@ -20,12 +20,17 @@ Part 1 - Language Elements:
         - Comments
         - Identifiers
         - unit
+        - displayUnit
         - type
       LotkaVolterra:
         # Multiple variables
         - start
+        - min_attr
         # start for initial conditions
         # start for non-linear iteration
+      DAE:
+        - stateSelect
+        - StateSelect
     Review:
       Lexical Conventions:
         - model
@@ -37,14 +42,26 @@ Part 1 - Language Elements:
         - Integer
         - Boolean
         - String
+        - min_attr
+        - max_attr
+        - nominal
+        - quantity
       Variables:
         - constant
         - parameter
       Equations:
         - der
         - Equality equations
+        - Arithmetic Operators
+      Builtin Functions:
+        - Mathematical Functions
+        - delay
+        - min
+        - max
+        - homotopy
       Initialization:
         - initial equations
+        - fixed # Explanation: Allows you to flip special initial equations on and off?
         # Number of variables
       Inheritance:
         - extends
@@ -55,7 +72,7 @@ Part 1 - Language Elements:
     Examples:
       Pulse Generator:
         - sample
-        - not
+        - Logical Operators
       Counter:
         - sample
         - pre
@@ -67,23 +84,86 @@ Part 1 - Language Elements:
         - reinit
         - pre
       Speed Measurement:
+        - when statement
+        - discrete
         # equations with same right hand side.
         # second order ODEs
       Hysteresis:
     Review:
+      Logical expression:
+        - Relational Operators
+        - Logical Operators
+        - edge
+        - change
       If vs. When:
       Events:
+      Functions and Events:
+        - Event Generating Functions
+        - abs
+        - sqrt
+        - sign
+        - initial
+        - terminal
+        - noEvent
+        - smooth
+        - smoothOrder
+        - terminate
+      Discrete Variables:
+        - discrete
       Equations:
       Algorithms:
+        - initial algorithms
       Control Structures:
+        - if statement
+        - if equation
+        - when statement
+        - when equation
+        - while statement
+        - for equations
+        - for statement
   Complex Equations:
     Examples:
       ABCD Form: # With analytical solution to demo trig functions?
+        - Array Construction
+        - Array Concatenation
       One-dimensional Heat Conduction:
+        - Array Comprehensions
+        - for equations
+        - end index
+      Chemical equations:
+        - enumeration
+        - Enumeration Indexing
     Review:
+      Enumerations:
+        - enumeration
+      Arrays:
+        - Array Constructor Functions
+        - fill
+        - zeros
+        - ones
+        - linspace
+        - Array Conversion Functions
+        - Array Algebraic Functions
+        - ndims
+        - size
+        - sum
+        - product
       Vectors:
+      Indexing:
+        - Array indexing
+        - Enumeration Indexing
+        - end index
       Matrices:
-      Trig Functions:
+        - Array Construction
+        - Array Concatenation
+Part 2 - Components:
+  Packages:
+    Introduction:
+    Examples:
+      # How to make examples when we haven't covered definitions? Types?
+    Review:
+      - package
+      - import
   Connectors:
     Introduction:
       Through and Across Variables:
@@ -100,10 +180,32 @@ Part 1 - Language Elements:
       Balancing:
     Examples:
     Review:
-      Blocks vs. Models:
+      Blocks vs. Models vs. Records:
+        - input
+        - output
+        - record
+        - model
+        - block
+      Systems:
+        - connect
+        - element_modifications
+        - final
       Model Boundaries:
         - assert
-    Annotations:
+        - AssertionLevel
+      Conditional ComponentS:
+        - conditional
+      Annotations:
+        - Dialog
+        - Documentation
+        - DynamicSelect
+        - defaultComponentName
+        - defaultComponentPrefixes
+        - Evaluate
+        - HideResult
+        - experiment
+        - preferredView
+        - unassignedMessage
   Subsystems:
     Introduction:
     Examples:
@@ -123,9 +225,14 @@ Part 1 - Language Elements:
     Review:
       Interfaces:
       Architecture:
+        - replaceable
+        - constrainedby
       Implementation:
+        - redeclare
       Buses:
         - expandable
+      Annotations:
+        - choices
   Functions:
     Introduction:
     Examples:
@@ -134,8 +241,10 @@ Part 1 - Language Elements:
         - break
         - return
       Modelica Functions:
+        - function
       External Functions:
         - external
+        - ExternalObject
       Event Generation:
       Pure vs. Impure:
         - pure
@@ -143,17 +252,55 @@ Part 1 - Language Elements:
       Annotations:
         - derivative
         - inverse
-Part 2 - Libraries:
+        - Inline
+        - LateInline
+        - GenerateEvents #?
+Part 3 - Libraries:
   Building Libraries:
+    Review:
+      Packages:
+        - package
+        - encapsulated
+      Annotation:
+        - version
+        - uses
   Creating Template Models:
   Handling Data:
   Testing:
-Part 3 - Advanced Topics:
+Part 4 - Advanced Topics:
+  I/O:
+    Introduction:
+      # I/O as a last result
+    Examples:
+    Review:
+      Printing:
+        - Conversion Functions
+        - getInstanceName
   Dynamic Scoping:
+    Introduction:
+    Examples:
+    Review:
+      Annotations:
+        - missingInnerMessage
   Operator Overloading:
+    Examples:
+    Review:
+      - operator
+      - operator function
+      - operator record
   Discrete Systems:
+    # State machines
   Parametric Modeling:
+    # semiLinear?
   Fluid Systems:
+    Review:
+      - actualStream
+      - inStream
+      - spatialDistribution
+      - semiLinear
+      - stream
+      # If I can find an example that used semi-linear, I could introduce it somewhere
+      # else
   Variable Structure:
   Backward Models:
   Model-Based System Engineering:

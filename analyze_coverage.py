@@ -89,11 +89,14 @@ for part in otree:
         for sect in sects:
             # Record information about topics covered
             # in this section
-            structure = sects[sect]
-            covered = topics_covered(structure)
-            name = "%s:%s" % (chapter, sect)
-            coverage[name] = covered
-            sectmap.append(name)
+            try:
+                structure = sects[sect]
+                covered = topics_covered(structure)
+                name = "%s:%s" % (chapter, sect)
+                coverage[name] = covered
+                sectmap.append(name)
+            except:
+                print "Error access section '"+str(sect)+"'"
 
 covered = set()
 for ts in coverage.values():
@@ -105,7 +108,12 @@ template = env.get_template("coverage_report.html")
 result = template.render(sects=sectmap, topics=topics, coverage=coverage,
                          covered=covered, uncovered=uncovered)
 
-print "Uncovered topics: "+str(uncovered)
+alpha = list(uncovered)
+alpha.sort(lambda x, y: cmp(x, y))
+
+print "Uncovered topics:"
+for t in alpha:
+    print str(t)
 
 fp = open("coverage_report.html", "w")
 fp.write(result)
