@@ -79,7 +79,7 @@ coverage = {} # chapter:sect -> topics
 # Traverse the parts of the book
 for part in otree:
     chapters = otree[part]
-    # Traverse chapeters of the book
+    # Traverse chapters of the book
     for chapter in chapters:
         sects = chapters[chapter]
         if sects==None:
@@ -95,8 +95,17 @@ for part in otree:
             coverage[name] = covered
             sectmap.append(name)
 
+covered = set()
+for ts in coverage.values():
+    covered.update(ts)
+
+uncovered = topics-covered
+
 template = env.get_template("coverage_report.html")
-result = template.render(sects=sectmap, topics=topics, coverage=coverage)
+result = template.render(sects=sectmap, topics=topics, coverage=coverage,
+                         covered=covered, uncovered=uncovered)
+
+print "Uncovered topics: "+str(uncovered)
 
 fp = open("coverage_report.html", "w")
 fp.write(result)
