@@ -32,6 +32,11 @@ Part 1 - Language Elements:
         - type
         - end
         - Comment Strings
+      Built-in Types:
+        - Real
+        - Integer
+        - Boolean
+        - String
       Variables:
         - constant
         - parameter
@@ -43,17 +48,24 @@ Part 1 - Language Elements:
         # Number of variables
       Inheritance:
         - extends
-        - modifications
+        - class_modifications
     Conclusion:
   Discrete Behavior:
     Introduction:
     Examples:
+      Pulse Generator:
+        - sample
+        - not
+      Counter:
+        - sample
+        - pre
       Newton Cooling:
-        - if statement
+        - if equation
         - if expression
       Bouncing Ball:
         - when equation
         - reinit
+        - pre
       Speed Measurement:
         # equations with same right hand side.
         # second order ODEs

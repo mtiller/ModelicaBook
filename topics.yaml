@@ -25,9 +25,17 @@ Specialized Classes:
     - "12.2"
   end:
     - "4.6"
+  protected:
+    - "???"
+  public:
+    - "???"
 Class Definitions:
   extends:
     - "4.8"
+  class_modifications:
+    - "???"
+  element_modifications:
+    - "???"
   replaceable:
     - "4.8"
   redeclare:
@@ -198,7 +206,7 @@ Operators:
     - "3.7.3.2"
   terminate:
     - "8.3.8"
-Functions:
+Builtin Functions:
   Mathematical Functions:
     - "3.7.1.2"
   ndims:
@@ -236,8 +244,17 @@ Functions:
     - "3.7.1"
   Conversion Functions:
     - "3.7.1"
+Functions:
   external:
     - "???"
+  return:
+    - "??? 12.2?"
+  break:
+    - "??? 12.2?"
+  pure:
+    - "??? 12.2?"
+  impure:
+    - "??? 12.2?"
 Operator overloading:
   operator record:
     - "14"
