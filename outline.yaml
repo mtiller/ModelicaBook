@@ -19,18 +19,18 @@ Part 1 - Mathematical Behavior:
         # Equation, not assignment
         - Comments
         - Identifiers
+        - type
         - unit
         - displayUnit
-        - type
       LotkaVolterra:
         # Multiple variables
         - start
         - min_attr
         # start for initial conditions
         # start for non-linear iteration
-      DAE:
-        - stateSelect
-        - StateSelect
+      RLC:
+      Rotational Spring-Mass-Damper:
+        # Allows us to use it later for speed measurement?
     Review:
       Lexical Conventions:
         - model
@@ -55,10 +55,8 @@ Part 1 - Mathematical Behavior:
         - Arithmetic Operators
       Builtin Functions:
         - Mathematical Functions
-        - delay
         - min
         - max
-        - homotopy
       Initialization:
         - initial equations
         - fixed # Explanation: Allows you to flip special initial equations on and off?
@@ -79,10 +77,15 @@ Part 1 - Mathematical Behavior:
       Newton Cooling:
         - if equation
         - if expression
+        # Variable convection?
+      RLC with Switch:
+        # Better than the Newton Cooling example?
       Bouncing Ball:
         - when equation
         - reinit
         - pre
+      Backlash:
+        # Fits the rotational example
       Speed Measurement:
         - when statement
         - discrete
@@ -122,8 +125,25 @@ Part 1 - Mathematical Behavior:
         - for equations
         - for statement
   Complex Equations:
+    # I'm thinking of this as a place to discuss complex topics
+    # that would only confuse people reading about the basic core
+    # language (but not specialized enough to to in Part 4)
+    Introduction:
+    Examples:
+      Coupled Rotational SMD System:
+        - stateSelect
+        - StateSelect
+    Review:
+      Builtin Functions:
+        - delay # Good example?!?
+        - homotopy # Good example?!?
+  Vector and Array Equations:
     Examples:
       ABCD Form: # With analytical solution to demo trig functions?
+        # Use ABCD form of Lotka-Volterra, RLC, SMD, etc.
+        # Time invariant, Time variant and Non-linear, etc
+        # ABCD as parameters OR variables
+        # Inheritance
         - Array Construction
         - Array Concatenation
       One-dimensional Heat Conduction:
@@ -159,8 +179,9 @@ Part 1 - Mathematical Behavior:
 Part 2 - Components:
   Packages:
     Introduction:
+      # Introduce Modelica Standard Library
     Examples:
-      # How to make examples when we haven't covered definitions? Types?
+      # All we have to work with is models and types at this point
     Review:
       - package
       - import
@@ -168,6 +189,12 @@ Part 2 - Components:
     Introduction:
       Through and Across Variables:
     Examples:
+      Electrical:
+      Thermal:
+      Rotational:
+      Translational:
+      Chemical:
+      Biological:
     Review:
       Connector Definitions:
         - connector
@@ -175,10 +202,25 @@ Part 2 - Components:
         - flow
   Components:
     Introduction:
+      # Erector set/Building blocks
       Reuse:
       Conservation equations:
       Balancing:
     Examples:
+      Newtons Law of Cooling:
+        # Fundamental components
+      RLC:
+        # Revisit switch
+      Rotational Spring-Mass-Damper:
+        # Revisit backlash
+      LotkaVolterra:
+        # Blog examples
+      Block Diagram Components:
+        # Basic blocks
+      Speed measurement:
+      Signal generator:
+        # Counter
+        # Pulse generator
     Review:
       Blocks vs. Models vs. Records:
         - input
@@ -206,10 +248,18 @@ Part 2 - Components:
         - experiment
         - preferredView
         - unassignedMessage
+# Subsystems, Inheritance and Architectures are all related at some level.
+# Need to think about how to "fuse" these topics nicely.
   Subsystems:
     Introduction:
     Examples:
+      Switched Power Suppply:
+      Transmission:
+      Lotka-Volterra:
+        # Migration
     Review:
+      Replaceable components:
+        - replaceable
   Inheritance:
     Introduction:
     Examples:
@@ -219,6 +269,7 @@ Part 2 - Components:
         - public
       Reuse:
         - partial
+        - redeclare
   Architecture:
     Introduction:
     Examples:
