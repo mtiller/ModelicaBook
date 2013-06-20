@@ -24,6 +24,7 @@ Part 1 - Mathematical Behavior:
         - displayUnit
       LotkaVolterra:
         # Multiple variables
+        - extends
         - start
         - min_attr
         # start for initial conditions
@@ -57,6 +58,8 @@ Part 1 - Mathematical Behavior:
         - Mathematical Functions
         - min
         - max
+      States:
+        # Discuss states and state selection?
       Initialization:
         - initial equations
         - fixed # Explanation: Allows you to flip special initial equations on and off?
@@ -68,16 +71,17 @@ Part 1 - Mathematical Behavior:
   Discrete Behavior:
     Introduction:
     Examples:
-      Pulse Generator:
-        - sample
-        - Logical Operators
-      Counter:
-        - sample
-        - pre
       Newton Cooling:
         - if equation
         - if expression
         # Variable convection?
+      Pulse Generator:
+        - sample
+        - Logical Operators
+        # Discuss discrete states
+      Counter:
+        - sample
+        - pre
       RLC with Switch:
         # Better than the Newton Cooling example?
       Bouncing Ball:
@@ -204,6 +208,8 @@ Part 2 - Components:
       # Introduce Modelica Standard Library
     Examples:
       # All we have to work with is models and types at this point
+      RLC:
+        # Show but with imports of MSL
     Review:
       - package
       - import
