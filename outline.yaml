@@ -176,6 +176,28 @@ Part 1 - Mathematical Behavior:
       Matrices:
         - Array Construction
         - Array Concatenation
+  Functions:
+    Introduction:
+    Examples:
+    Review:
+      Control flow and return values:
+        - break
+        - return
+      Modelica Functions:
+        - function
+      External Functions:
+        - external
+        - ExternalObject
+      Event Generation:
+      Pure vs. Impure:
+        - pure
+        - impure
+      Annotations:
+        - derivative
+        - inverse
+        - Inline
+        - LateInline
+        - GenerateEvents #?
 Part 2 - Components:
   Packages:
     Introduction:
@@ -250,6 +272,7 @@ Part 2 - Components:
         - unassignedMessage
 # Subsystems, Inheritance and Architectures are all related at some level.
 # Need to think about how to "fuse" these topics nicely.
+# Use MSL? (or maybe both, examples and MSL?)
   Subsystems:
     Introduction:
     Examples:
@@ -284,28 +307,6 @@ Part 2 - Components:
         - expandable
       Annotations:
         - choices
-  Functions:
-    Introduction:
-    Examples:
-    Review:
-      Control flow and return values:
-        - break
-        - return
-      Modelica Functions:
-        - function
-      External Functions:
-        - external
-        - ExternalObject
-      Event Generation:
-      Pure vs. Impure:
-        - pure
-        - impure
-      Annotations:
-        - derivative
-        - inverse
-        - Inline
-        - LateInline
-        - GenerateEvents #?
 Part 3 - Libraries:
   Building Libraries:
     Review:
