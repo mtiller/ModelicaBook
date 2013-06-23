@@ -75,15 +75,17 @@ Part 1 - Mathematical Behavior:
         - if equation
         - if expression
         # Variable convection?
+      RLC with Switch:
+        # Better than the Newton Cooling example?
       Pulse Generator:
         - sample
         - Logical Operators
         # Discuss discrete states
+        # Multiple pulses at different frequencies
+        # and then signals to or and and them?
       Counter:
         - sample
         - pre
-      RLC with Switch:
-        # Better than the Newton Cooling example?
       Bouncing Ball:
         - when equation
         - reinit
@@ -132,6 +134,7 @@ Part 1 - Mathematical Behavior:
     # I'm thinking of this as a place to discuss complex topics
     # that would only confuse people reading about the basic core
     # language (but not specialized enough to to in Part 4)
+    # A chance to talk about symbolic methods?
     Introduction:
     Examples:
       Coupled Rotational SMD System:
