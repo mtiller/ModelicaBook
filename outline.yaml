@@ -231,12 +231,20 @@ Part 2 - Components:
     Introduction:
       # Introduce Modelica Standard Library
     Examples:
-      # All we have to work with is models and types at this point
+      Nested packages:
+        # Introduce the idea of packages with a really simple example
       RLC:
-        # Show but with imports of MSL
+        # Show use of fully qualified type names in declarations
+      Newton Cooling:
+        # Show imports of names (including renaming)
+      SecondOrderSystem:
+        # Wildcard imports
     Review:
+      # Lookup rules!
       - package
       - import
+      - within
+      # Directory storage
   Connectors:
     Introduction:
       Through and Across Variables:
@@ -245,13 +253,27 @@ Part 2 - Components:
       Thermal:
       Rotational:
       Translational:
+      MSL:
+        # Show MSL connectors
+      Hydraulic:
+        # Mass
+      ThermoFluid:
+        # Mass and energy
       Chemical:
-      Biological:
+        # multiple species?
+        # TOO DIFFICULT (should use enum, which means medium model)
     Review:
       Connector Definitions:
         - connector
+      Physical compatibility:
+        # structural type system
       Variables:
+        - parameter
         - flow
+      Annotations:
+        - Icon
+        - Documentation
+        # modelica:// links
   Components:
     Introduction:
       # Erector set/Building blocks
@@ -266,6 +288,7 @@ Part 2 - Components:
       Rotational Spring-Mass-Damper:
         # Revisit backlash
       LotkaVolterra:
+        # Need to define connectors and types here
         # Blog examples
         - AssertionLevel
         - assert
