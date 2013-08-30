@@ -127,9 +127,94 @@ Part 1 - Mathematical Behavior:
         - if equation
         - when statement
         - when equation
-        - while statement
+  Vector and Array Equations:
+    Examples:
+      ABCD Form: # With analytical solution to demo trig functions?
+        # Use ABCD form of Lotka-Volterra, RLC, SMD, etc.
+        # Time invariant, Time variant and Non-linear, etc
+        # ABCD as parameters OR variables
+        # Perhaps a sidebar on default values for parameters?
+        # Inheritance
+        - Array Construction
+        - Array Concatenation
+      One-dimensional Heat Conduction:
+        - for equations
+        - Array Comprehensions
+        # vector notation
+        - end index
+      Chemical equations:
+        - enumeration
+        - Enumeration Indexing
+    Review:
+      Arrays:
+        - Array Constructor Functions
+        - fill
+        - zeros
+        - ones
+        - linspace
+        - Array Conversion Functions
+        - Array Algebraic Functions
+        - ndims
+        - size
+        - sum
+        - product
+      Vectors:
+      Enumerations:
+        - enumeration
+      Indexing:
+        - Array indexing
+        - Enumeration Indexing
+        - end index
+      Matrices:
+        - Array Construction
+        - Array Concatenation
+      Looping:
         - for equations
         - for statement
+        - while statement
+  Functions:
+    Introduction:
+    Examples:
+      Basic Function:
+        # Polynomial
+        - function
+        - derivative
+        - protected
+        # Harmonic series?
+      Interpolation:
+        # Interpolation
+        # Smoothness + derivative annotation
+        # Foreign function
+        - external
+        - derivative
+        - ExternalObject
+      Controller:
+        - pure
+        - impure
+      Chemical Reaction:
+        # Where reaction coefficient (array) is replaced by function
+        # call
+    Review:
+      Control flow and return values:
+        - break
+        - return
+      Modelica Functions:
+        - function
+        - algorithm
+        - protected
+      External Functions:
+        - external
+        - ExternalObject
+      Event Generation:
+      Pure vs. Impure:
+        - pure
+        - impure
+      Annotations:
+        - derivative
+        - inverse
+        - Inline
+        - LateInline
+        - GenerateEvents #?
   Complex Equations:
     # I'm thinking of this as a place to discuss complex topics
     # that would only confuse people reading about the basic core
@@ -144,67 +229,6 @@ Part 1 - Mathematical Behavior:
       Builtin Functions:
         - delay # Good example?!?
         - homotopy # Good example?!?
-  Vector and Array Equations:
-    Examples:
-      ABCD Form: # With analytical solution to demo trig functions?
-        # Use ABCD form of Lotka-Volterra, RLC, SMD, etc.
-        # Time invariant, Time variant and Non-linear, etc
-        # ABCD as parameters OR variables
-        # Inheritance
-        - Array Construction
-        - Array Concatenation
-      One-dimensional Heat Conduction:
-        - Array Comprehensions
-        - for equations
-        - end index
-      Chemical equations:
-        - enumeration
-        - Enumeration Indexing
-    Review:
-      Enumerations:
-        - enumeration
-      Arrays:
-        - Array Constructor Functions
-        - fill
-        - zeros
-        - ones
-        - linspace
-        - Array Conversion Functions
-        - Array Algebraic Functions
-        - ndims
-        - size
-        - sum
-        - product
-      Vectors:
-      Indexing:
-        - Array indexing
-        - Enumeration Indexing
-        - end index
-      Matrices:
-        - Array Construction
-        - Array Concatenation
-  Functions:
-    Introduction:
-    Examples:
-    Review:
-      Control flow and return values:
-        - break
-        - return
-      Modelica Functions:
-        - function
-      External Functions:
-        - external
-        - ExternalObject
-      Event Generation:
-      Pure vs. Impure:
-        - pure
-        - impure
-      Annotations:
-        - derivative
-        - inverse
-        - Inline
-        - LateInline
-        - GenerateEvents #?
 Part 2 - Components:
   Packages:
     Introduction:
@@ -246,12 +270,18 @@ Part 2 - Components:
         # Revisit backlash
       LotkaVolterra:
         # Blog examples
+        - AssertionLevel
+        - assert
       Block Diagram Components:
         # Basic blocks
       Speed measurement:
       Signal generator:
         # Counter
         # Pulse generator
+      Chemistry example:
+        # Revisit but show how we can ensure conservation
+        # Not expandable connectors yet, save that for
+        # architectures.
     Review:
       Blocks vs. Models vs. Records:
         - input
@@ -264,8 +294,8 @@ Part 2 - Components:
         - element_modifications
         - final
       Model Boundaries:
-        - assert
         - AssertionLevel
+        - assert
       Conditional ComponentS:
         - conditional
       Annotations:
@@ -287,6 +317,8 @@ Part 2 - Components:
     Examples:
       Switched Power Suppply:
       Transmission:
+      1D heat transfer:
+        # Use arrays (of components)
       Lotka-Volterra:
         # Migration
     Review:
