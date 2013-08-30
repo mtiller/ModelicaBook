@@ -116,6 +116,7 @@ Part 1 - Mathematical Behavior:
         - noEvent
         - smooth
         - smoothOrder
+        - delay # Good example?!?
         - terminate
       Discrete Variables:
         - discrete
@@ -225,20 +226,6 @@ Part 1 - Mathematical Behavior:
         - Inline
         - LateInline
         - GenerateEvents #?
-  Complex Equations:
-    # I'm thinking of this as a place to discuss complex topics
-    # that would only confuse people reading about the basic core
-    # language (but not specialized enough to to in Part 4)
-    # A chance to talk about symbolic methods?
-    Introduction:
-    Examples:
-      Coupled Rotational SMD System:
-        - stateSelect
-        - StateSelect
-    Review:
-      Builtin Functions:
-        - delay # Good example?!?
-        - homotopy # Good example?!?
 Part 2 - Components:
   Packages:
     Introduction:
@@ -371,6 +358,11 @@ Part 3 - Libraries:
   Handling Data:
   Testing:
 Part 4 - Advanced Topics:
+  Symbolic manipulation:
+    Examples:
+      Coupled Rotational SMD System:
+        - stateSelect
+        - StateSelect
   I/O:
     Introduction:
       # I/O as a last result
@@ -404,8 +396,9 @@ Part 4 - Advanced Topics:
       - spatialDistribution
       - semiLinear
       - stream
-      # If I can find an example that used semi-linear, I could introduce it somewhere
-      # else
+      - homotopy # Good example?!?
+      # If I can find an example that used semi-linear,
+      # I could introduce it somewhere else
   Variable Structure:
   Backward Models:
   Model-Based System Engineering:
