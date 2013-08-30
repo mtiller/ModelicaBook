@@ -1,6 +1,14 @@
 build
 *~
 *.pyc
+*.mat
+*.txt
+*.lib
+*.exe
+dsmodel.c
+*.exp
+request
+status
 coverage_report.html
 source/ModelicaByExample/*.mat
 source/ModelicaByExample/*.txt
