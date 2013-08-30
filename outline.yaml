@@ -171,7 +171,6 @@ Part 1 - Mathematical Behavior:
       Looping:
         - for equations
         - for statement
-        - while statement
   Functions:
     Introduction:
     Examples:
@@ -188,16 +187,23 @@ Part 1 - Mathematical Behavior:
         - external
         - derivative
         - ExternalObject
+        - Include
+        - IncludeDirectory
       Controller:
         - pure
         - impure
       Chemical Reaction:
         # Where reaction coefficient (array) is replaced by function
         # call
+      Non-Linear Electric Circuit:
+        # ?
+        - homotopy
+        - inverse
     Review:
       Control flow and return values:
         - break
         - return
+        - while statement
       Modelica Functions:
         - function
         - algorithm
@@ -211,6 +217,10 @@ Part 1 - Mathematical Behavior:
         - impure
       Annotations:
         - derivative
+        - Include
+        - IncludeDirectory
+        - Library
+        - LibraryDirectory
         - inverse
         - Inline
         - LateInline
@@ -377,6 +387,8 @@ Part 4 - Advanced Topics:
         - missingInnerMessage
   Operator Overloading:
     Examples:
+      # Revist external object interpolation but with
+      # multiple constructors?
     Review:
       - operator
       - operator function
