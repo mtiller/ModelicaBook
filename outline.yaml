@@ -262,6 +262,10 @@ Part 2 - Components:
       Chemical:
         # multiple species?
         # TOO DIFFICULT (should use enum, which means medium model)
+      Block Connectors:
+        # Integer
+        # Real
+        # Last because they are a last resort
     Review:
       Connector Definitions:
         - connector
@@ -270,6 +274,8 @@ Part 2 - Components:
       Variables:
         - parameter
         - flow
+        - input
+        - output
       Annotations:
         - Icon
         - Documentation
@@ -280,6 +286,8 @@ Part 2 - Components:
       Reuse:
       Conservation equations:
       Balancing:
+      Multi-Domain:
+      Multi-Paradigm:
     Examples:
       Newtons Law of Cooling:
         # Fundamental components
@@ -302,6 +310,7 @@ Part 2 - Components:
         # Revisit but show how we can ensure conservation
         # Not expandable connectors yet, save that for
         # architectures.
+        # Hodgkin-Huxley? (multi-domain!)
     Review:
       Blocks vs. Models vs. Records:
         - input
@@ -319,6 +328,8 @@ Part 2 - Components:
       Conditional ComponentS:
         - conditional
       Annotations:
+        - Icon
+        - Documentation
         - Dialog
         - Documentation
         - DynamicSelect
