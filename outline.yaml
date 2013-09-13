@@ -295,6 +295,8 @@ Part 2 - Components:
         # Revisit switch
       Rotational Spring-Mass-Damper:
         # Revisit backlash
+		# Cover supports/reaction torques
+		# Optional components!
       LotkaVolterra:
         # Need to define connectors and types here
         # Blog examples
