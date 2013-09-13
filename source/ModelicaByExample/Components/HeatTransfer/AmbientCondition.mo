@@ -5,6 +5,8 @@ model AmbientCondition
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a node annotation (
       Placement(transformation(extent={{-10,-10},{10,10}}), iconTransformation(
           extent={{-10,-10},{10,10}})));
+equation
+  node.T = T_amb;
   annotation (Icon(graphics={
         Rectangle(
           extent={{-30,100},{30,-100}},
@@ -23,6 +25,4 @@ model AmbientCondition
           fillColor={255,170,170},
           fillPattern=FillPattern.Solid,
           textString="T_amb=%T_amb")}), Diagram(graphics));
-equation
-  node.T = T_amb;
 end AmbientCondition;

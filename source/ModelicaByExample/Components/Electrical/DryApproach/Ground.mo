@@ -3,6 +3,8 @@ model Ground "Electrical ground"
 
   Modelica.Electrical.Analog.Interfaces.PositivePin ground "Ground pin"
     annotation (Placement(transformation(extent={{-10,70},{10,90}})));
+equation
+  ground.v = 0;
   annotation (Diagram(graphics), Icon(graphics={
         Rectangle(
           extent={{-62,42},{62,38}},
@@ -33,6 +35,4 @@ model Ground "Electrical ground"
           lineColor={0,0,255},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid)}));
-equation
-  ground.v = 0;
 end Ground;

@@ -5,6 +5,11 @@ model Resistor "A resistor model"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   Modelica.Electrical.Analog.Interfaces.NegativePin n
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
+protected
+  Modelica.SIunits.Voltage v = p.v-n.v;
+equation
+  p.i + n.i = 0 "Conservation of charge";
+  v = p.i*R "Ohm's law";
   annotation (Diagram(graphics), Icon(graphics={
           Rectangle(extent={{-70,30},{70,-30}}, lineColor={0,0,255},
           fillColor={255,255,255},
@@ -23,9 +28,4 @@ model Resistor "A resistor model"
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="R=%R")}));
-protected
-  Modelica.SIunits.Voltage v = p.v-n.v;
-equation
-  p.i + n.i = 0 "Conservation of charge";
-  v = p.i*R "Ohm's law";
 end Resistor;
