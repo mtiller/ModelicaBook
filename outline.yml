@@ -306,7 +306,12 @@ Part 2 - Components:
         - AssertionLevel
         - assert
       Block Diagram Components:
+        - block
+        # Warning: not the way to do physical modeling (lecturer blackboard problem)
         # Basic blocks
+        # Thermal model
+        # Sensors and actuators
+        # Vector connectors (sum)
       Speed measurement:
       Signal generator:
         # Counter
@@ -318,6 +323,7 @@ Part 2 - Components:
         # Hodgkin-Huxley? (multi-domain!)
     Review:
       Blocks vs. Models vs. Records:
+        # Review connection rules regarding inputs and outputs
         - input
         - output
         - record
@@ -349,18 +355,26 @@ Part 2 - Components:
 # Subsystems, Inheritance and Architectures are all related at some level.
 # Need to think about how to "fuse" these topics nicely.
 # Use MSL? (or maybe both, examples and MSL?)
+
+# Subsystems - Start with just systems of components (no redeclare or replaceable)
   Subsystems:
     Introduction:
     Examples:
+      Gear with inertias:
+        # Propagate
+        - final
+      Lotka-Volterra:
+        # Region subsystems
+        # Migration
       Switched Power Suppply:
       Transmission:
+        # ???
       1D heat transfer:
         # Use arrays (of components)
-      Lotka-Volterra:
-        # Migration
     Review:
-      Replaceable components:
-        - replaceable
+      # Paramaeter propagation
+      - final
+      # Arrays of components
   Inheritance:
     Introduction:
     Examples:
