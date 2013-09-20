@@ -30,5 +30,8 @@ equation
       points={{10,0},{60,0}},
       color={0,127,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
+  annotation (
+    Diagram(graphics),
+    experiment(StopTime=100, Tolerance=1e-006),
+    __Dymola_experimentSetupOutput);
 end ClassicLotkaVolterra;
