@@ -1,6 +1,6 @@
 within ModelicaByExample.Components.LotkaVolterra.Interfaces;
 connector Species "Used to represent the population of a specific species"
-  Real population "Animal population";
+  Real population(start=10) "Animal population";
   flow Real rate "Flows that affect animal population";
   annotation (Icon(graphics={
         Rectangle(

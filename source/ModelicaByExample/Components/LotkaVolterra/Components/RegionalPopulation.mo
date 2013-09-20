@@ -13,6 +13,8 @@ model RegionalPopulation "Population of animals in a specific region"
           lineColor={0,127,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid)}));
+protected
+  Real population(start=10) = species.population "Population in this region";
 initial equation
   if init==InitializationOptions.FixedPopulation then
     species.population = initial_population;
