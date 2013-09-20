@@ -309,9 +309,10 @@ Part 2 - Components:
         - block
         # Warning: not the way to do physical modeling (lecturer blackboard problem)
         # Basic blocks
+        # Vector connectors (sum)
+        # Add control
         # Thermal model
         # Sensors and actuators
-        # Vector connectors (sum)
       Speed measurement:
       Signal generator:
         # Counter
@@ -388,6 +389,10 @@ Part 2 - Components:
   Architecture:
     Introduction:
     Examples:
+      Thermal Control Example (MultiDomainControl):
+        # Implement sensor with time constant or sampling
+        # Create block for controller and plant
+        - replaceable
     Review:
       Interfaces:
       Architecture:

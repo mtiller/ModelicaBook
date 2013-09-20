@@ -1,10 +1,11 @@
 within ModelicaByExample.Components.BlockDiagrams.Examples;
 model NewtonCooling "Newton cooling system modeled with blocks"
-  parameter Real h = 0.7;
-  parameter Real m = 0.1;
-  parameter Real c_p = 1.2;
-  parameter Real T_inf = 27.5;
-  Components.Integrator T(y0=20)
+  import Modelica.SIunits.Conversions.from_degC;
+  parameter Real h = 0.7 "Convection coefficient";
+  parameter Real m = 0.1 "Thermal mass";
+  parameter Real c_p = 1.2 "Specific heat";
+  parameter Real T_inf = from_degC(27.5) "Ambient temperature";
+  Components.Integrator T(y0=from_degC(20))
     annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
   Components.Gain gain(k=-1)
     annotation (Placement(transformation(extent={{10,-10},{30,10}})));
@@ -20,7 +21,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(sum.y, gain1.u) annotation (Line(
-      points={{73,-10},{80,-10},{80,20},{-80,20},{-80,0},{-71,0}},
+      points={{73,-10},{80,-10},{80,60},{-80,60},{-80,0},{-71,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(gain.y, sum.u[2]) annotation (Line(

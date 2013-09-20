@@ -2,3 +2,7 @@ Gain
 Constant
 Sum
 Integrator
+Product
+Feedback
+IdealTemperatureSensor
+HeatSource
