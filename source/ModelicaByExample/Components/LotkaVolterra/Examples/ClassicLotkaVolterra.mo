@@ -2,32 +2,35 @@ within ModelicaByExample.Components.LotkaVolterra.Examples;
 model ClassicLotkaVolterra "Includes reproduction, starvation and predation"
   Components.RegionalPopulation rabbits(init=ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.InitializationOptions.FixedPopulation,
       initial_population=10)
-    annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
+    annotation (Placement(transformation(extent={{-50,-40},{-30,-20}})));
   Components.Reproduction reproduction(alpha=0.1) "Reproduction of rabbits"
-    annotation (Placement(transformation(extent={{-70,30},{-50,50}})));
+    annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=0,
+        origin={-80,-30})));
   Components.RegionalPopulation foxes(init=ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.InitializationOptions.FixedPopulation,
       initial_population=10)
-    annotation (Placement(transformation(extent={{50,-10},{70,10}})));
+    annotation (Placement(transformation(extent={{30,-40},{50,-20}})));
   Components.Starvation fox_starvation(gamma=0.4) "Starvation of foxes"
-    annotation (Placement(transformation(extent={{50,-50},{70,-30}})));
+    annotation (Placement(transformation(extent={{70,-40},{90,-20}})));
   Components.Predation fox_predation(beta=0.02, delta=0.02)
     "Foxes eating rabbits"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 equation
   connect(reproduction.species, rabbits.species) annotation (Line(
-      points={{-60,40},{-60,0}},
+      points={{-80,-20},{-80,0},{-40,0},{-40,-20}},
       color={0,127,0},
       smooth=Smooth.None));
-  connect(rabbits.species, fox_predation.a) annotation (Line(
-      points={{-60,0},{-10,0}},
+  connect(fox_predation.a, rabbits.species) annotation (Line(
+      points={{-10,0},{-40,0},{-40,-20}},
       color={0,127,0},
       smooth=Smooth.None));
   connect(fox_starvation.species, foxes.species) annotation (Line(
-      points={{60,-40},{60,0}},
+      points={{80,-20},{80,0},{40,0},{40,-20}},
       color={0,127,0},
       smooth=Smooth.None));
-  connect(fox_predation.b, foxes.species) annotation (Line(
-      points={{10,0},{60,0}},
+  connect(foxes.species, fox_predation.b) annotation (Line(
+      points={{40,-20},{40,0},{10,0}},
       color={0,127,0},
       smooth=Smooth.None));
   annotation (

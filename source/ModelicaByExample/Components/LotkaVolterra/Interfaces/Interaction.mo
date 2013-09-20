@@ -14,4 +14,10 @@ equation
   a.rate = a_decline;
   b_decline = -b_growth;
   b.rate = b_decline;
+  annotation (Icon(graphics={Text(
+          extent={{-100,-100},{100,-140}},
+          lineColor={0,0,0},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          textString="%name")}));
 end Interaction;
