@@ -314,6 +314,7 @@ Part 2 - Components:
         # Thermal model
         # Sensors and actuators
       Speed measurement:
+        # Sensor measurement
       Signal generator:
         # Counter
         # Pulse generator
