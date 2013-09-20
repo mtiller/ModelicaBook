@@ -12,35 +12,24 @@ model SMD_ConfigurableGear
     annotation (Placement(transformation(extent={{28,-70},{48,-50}})));
   Components.Inertia inertia2(
     J=1,
-    phi0(displayUnit="rad") = 0.2,
-    w0=0)
+    phi(fixed=true,start=0.2),
+    w(fixed=true,start=0))
     annotation (Placement(transformation(extent={{-10,-50},{10,-30}})));
-  Components.Inertia inertia1(
-    J=0.4,
-    w0(fixed=false) = 0,
-    phi0(
-      fixed=false,
-      displayUnit="rad") = 0.2)
+  Components.Inertia inertia1(J=0.4)
     annotation (Placement(transformation(extent={{-90,-50},{-70,-30}})));
   Components.Ground ground1 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={76,40})));
-  Components.Damper damper1(d=1)
+  Components.Damper damper3(d=1)
     annotation (Placement(transformation(extent={{30,50},{50,70}})));
-  Components.Spring spring1(c=5)
+  Components.Spring spring3(c=5)
     annotation (Placement(transformation(extent={{28,10},{48,30}})));
   Components.Inertia inertia3(
-    J=1,
-    phi0(displayUnit="rad") = 0.2,
-    w0=0)
+    J=1, phi(start=0.2, fixed=true),
+    w(fixed=true,start=0))
     annotation (Placement(transformation(extent={{-10,30},{10,50}})));
-  Components.Inertia inertia4(
-    J=0.4,
-    w0(fixed=false) = 0,
-    phi0(
-      fixed=false,
-      displayUnit="rad") = 0.2)
+  Components.Inertia inertia4(J=0.4)
     annotation (Placement(transformation(extent={{-90,30},{-70,50}})));
   Components.ConfigurableGear no_housing(ratio=2, grounded=true)
     annotation (Placement(transformation(extent={{-50,-50},{-30,-30}})));
@@ -65,19 +54,19 @@ equation
       points={{28,-60},{20,-60},{20,-40},{10,-40}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(ground1.flange_a, damper1.flange_b) annotation (Line(
+  connect(ground1.flange_a,damper3. flange_b) annotation (Line(
       points={{70,40},{60,40},{60,60},{50,60}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(ground1.flange_a, spring1.flange_b) annotation (Line(
+  connect(ground1.flange_a,spring3. flange_b) annotation (Line(
       points={{70,40},{60,40},{60,20},{48,20}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(damper1.flange_a, inertia3.flange_b) annotation (Line(
+  connect(damper3.flange_a, inertia3.flange_b) annotation (Line(
       points={{30,60},{20,60},{20,40},{10,40}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(spring1.flange_a, inertia3.flange_b) annotation (Line(
+  connect(spring3.flange_a, inertia3.flange_b) annotation (Line(
       points={{28,20},{20,20},{20,40},{10,40}},
       color={0,0,0},
       smooth=Smooth.None));

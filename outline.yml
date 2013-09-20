@@ -295,6 +295,7 @@ Part 2 - Components:
         # Revisit switch
       Rotational Spring-Mass-Damper:
         # Revisit backlash
+        # Dialog(group, showStartAttribute)
       Rotational Gear:
         # Cover supports/reaction torques
         # Optional components!
@@ -334,6 +335,7 @@ Part 2 - Components:
       Annotations:
         - Icon
         - Documentation
+        # Include "showStartAttribute" in Dialog discussion
         - Dialog
         - Documentation
         - DynamicSelect

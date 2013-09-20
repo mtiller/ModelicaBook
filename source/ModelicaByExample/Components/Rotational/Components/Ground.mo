@@ -3,6 +3,8 @@ model Ground "Mechanical ground"
 
   Modelica.Mechanics.Rotational.Interfaces.Flange_a flange_a
     annotation (Placement(transformation(extent={{-10,50},{10,70}})));
+equation
+  flange_a.phi = 0;
   annotation (Icon(graphics={
         Line(
           points={{-80,20},{80,20}},
@@ -56,6 +58,4 @@ model Ground "Mechanical ground"
           points={{0,60},{0,20}},
           color={0,0,0},
           smooth=Smooth.None)}));
-equation
-  flange_a.phi = 0;
 end Ground;

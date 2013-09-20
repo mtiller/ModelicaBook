@@ -1,6 +1,7 @@
 within ModelicaByExample.Components.Rotational.Examples;
 model SMD_WithGroundedGear
   "Spring mass damper system with coupled inertias and a grounded gear"
+
   Components.Ground ground annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -11,13 +12,13 @@ model SMD_WithGroundedGear
     annotation (Placement(transformation(extent={{28,10},{48,30}})));
   Components.Inertia inertia2(
     J=1,
-    w0=0,
-    phi0(displayUnit="rad") = 1)
+    w(fixed=true, start=0),
+    phi(displayUnit="rad", start=1, fixed=true))
     annotation (Placement(transformation(extent={{-10,30},{10,50}})));
   Components.Inertia inertia1(
     J=0.4,
-    phi0(fixed=false) = 0,
-    w0(fixed=false) = 0)
+    w(fixed=false, start=0),
+    phi(fixed=false, start=0))
     annotation (Placement(transformation(extent={{-90,30},{-70,50}})));
   Components.GroundedGear gear(ratio=2)
     annotation (Placement(transformation(extent={{-50,30},{-30,50}})));
@@ -30,8 +31,8 @@ model SMD_WithGroundedGear
   Components.Spring spring3(c=5)
     annotation (Placement(transformation(extent={{28,-70},{48,-50}})));
   Components.Inertia inertia3(
-    w0=0,
-    phi0(displayUnit="rad") = 1,
+    w(fixed=true, start=0),
+    phi(displayUnit="rad", fixed=true, start=1),
     J=1.8) annotation (Placement(transformation(extent={{-10,-50},{10,-30}})));
 equation
   connect(ground.flange_a, damper2.flange_b) annotation (Line(
