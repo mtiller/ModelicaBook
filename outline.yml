@@ -394,6 +394,9 @@ Part 2 - Components:
         # Implement sensor with time constant or sampling
         # Create block for controller and plant
         - replaceable
+      Speed Sensing System:
+        # Introduce feedback control
+        - replaceable
     Review:
       Interfaces:
       Architecture:
