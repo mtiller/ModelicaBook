@@ -315,9 +315,6 @@ Part 2 - Components:
         # Sensors and actuators
       Speed measurement:
         # Sensor measurement
-      Signal generator:
-        # Counter
-        # Pulse generator
       Chemistry example:
         # Revisit but show how we can ensure conservation
         # Not expandable connectors yet, save that for
