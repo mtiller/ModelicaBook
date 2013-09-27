@@ -1,8 +1,10 @@
 within ModelicaByExample.Subsystems.GearSubsystemModel.Components;
 model GearWithBacklash "A subsystem model for a gear with backlash"
   extends Modelica.Mechanics.Rotational.Icons.Gear;
-  extends
-    Modelica.Mechanics.Rotational.Interfaces.PartialElementaryTwoFlangesAndSupport2;
+  parameter Boolean useSupport(start=true);
+//  extends
+//    Modelica.Mechanics.Rotational.Interfaces.PartialElementaryTwoFlangesAndSupport2
+//    (                                                                               useSupport(start=false));
 
   parameter Modelica.SIunits.Inertia J_a
     "Moment of inertia for element connected to flange 'a'";
@@ -32,6 +34,13 @@ protected
   Modelica.Mechanics.Rotational.Components.IdealGear idealGear(final useSupport=
         useSupport, final ratio=ratio)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
+public
+  Modelica.Mechanics.Rotational.Interfaces.Flange_a flange_a
+    annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
+  Modelica.Mechanics.Rotational.Interfaces.Flange_b flange_b
+    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
+  Modelica.Mechanics.Rotational.Interfaces.Support support if useSupport
+    annotation (Placement(transformation(extent={{-10,-110},{10,-90}})));
 equation
   connect(inertia_a.flange_a, flange_a) annotation (Line(
       points={{-80,0},{-100,0}},
@@ -79,5 +88,11 @@ equation
           lineColor={0,0,0},
           smooth=Smooth.None,
           fillColor={175,175,175},
-          fillPattern=FillPattern.Solid)}));
+          fillPattern=FillPattern.Solid),
+        Text(
+          extent={{-100,140},{100,100}},
+          lineColor={0,0,0},
+          fillColor={205,230,255},
+          fillPattern=FillPattern.Solid,
+          textString="%name")}));
 end GearWithBacklash;
