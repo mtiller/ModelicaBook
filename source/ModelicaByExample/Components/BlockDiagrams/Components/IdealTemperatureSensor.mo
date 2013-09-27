@@ -4,6 +4,9 @@ model IdealTemperatureSensor "An ideal (no thermal time-constant) sensor"
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a node
     "Thermal node being measured"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
+equation
+  y = node.T;
+  node.Q_flow = 0 "Sensor shouldn't affect thermal system";
   annotation (Icon(graphics={
         Ellipse(
           extent={{-32,-30},{32,-94}},
@@ -54,7 +57,4 @@ model IdealTemperatureSensor "An ideal (no thermal time-constant) sensor"
           points={{22,0},{100,0}},
           color={0,0,255},
           smooth=Smooth.None)}), Diagram(graphics));
-equation
-  y = node.T;
-  node.Q_flow = 0 "Sensor shouldn't affect thermal system";
 end IdealTemperatureSensor;

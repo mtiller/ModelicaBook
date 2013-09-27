@@ -9,6 +9,8 @@ block Feedback "A block to compute feedback terms"
         origin={0,-110})));
   Interfaces.RealOutput y
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
+equation
+  y = u1-u2;
   annotation (Diagram(graphics), Icon(graphics={
         Ellipse(
           extent={{-20,20},{20,-20}},
@@ -42,6 +44,4 @@ block Feedback "A block to compute feedback terms"
           lineColor={0,0,0},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid)}));
-equation
-  y = u1-u2;
 end Feedback;

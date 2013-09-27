@@ -10,6 +10,18 @@ model RegionalPopulation "Population of animals in a specific region"
   Interfaces.Species species
     annotation (Placement(transformation(extent={{-10,90},{10,110}}),
         iconTransformation(extent={{-10,90},{10,110}})));
+protected
+  Real population(start=10) = species.population "Population in this region";
+initial equation
+  if init==InitializationOptions.FixedPopulation then
+    species.population = initial_population;
+  elseif init==InitializationOptions.SteadyState then
+    der(species.population) = 0;
+  else
+  end if;
+equation
+  der(species.population) = species.rate;
+  assert(species.population>0, "Population must be greater than zero");
   annotation (Diagram(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,127,0},
@@ -70,16 +82,4 @@ model RegionalPopulation "Population of animals in a specific region"
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="%name")}));
-protected
-  Real population(start=10) = species.population "Population in this region";
-initial equation
-  if init==InitializationOptions.FixedPopulation then
-    species.population = initial_population;
-  elseif init==InitializationOptions.SteadyState then
-    der(species.population) = 0;
-  else
-  end if;
-equation
-  der(species.population) = species.rate;
-  assert(species.population>0, "Population must be greater than zero");
 end RegionalPopulation;

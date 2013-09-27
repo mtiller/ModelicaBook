@@ -3,6 +3,10 @@ block Integrator
   "This block integrates the input signal to compute the output signal"
   parameter Real y0 "Initial condition";
   extends Interfaces.SISO;
+initial equation
+  y = y0;
+equation
+  der(y) = u;
   annotation (Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
@@ -26,8 +30,4 @@ block Integrator
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           textString="s")}));
-initial equation
-  y = y0;
-equation
-  der(y) = u;
 end Integrator;

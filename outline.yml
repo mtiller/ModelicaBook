@@ -319,7 +319,6 @@ Part 2 - Components:
         # Revisit but show how we can ensure conservation
         # Not expandable connectors yet, save that for
         # architectures.
-        # Hodgkin-Huxley? (multi-domain!)
     Review:
       Blocks vs. Models vs. Records:
         # Review connection rules regarding inputs and outputs
@@ -374,6 +373,7 @@ Part 2 - Components:
       # Paramaeter propagation
       - final
       # Arrays of components
+  # I think I should merge the inheritance chapter with the architecture chapter
   Inheritance:
     Introduction:
     Examples:
