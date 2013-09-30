@@ -12,6 +12,7 @@ protected
     produced[Species.X] = R;
   end 'A+B->X';
 
+
   model 'A+B<-X' "A+B <- X"
     extends Interfaces.Reaction;
 protected
@@ -21,6 +22,7 @@ protected
     produced[Species.B] = R;
     consumed[Species.X] = R;
   end 'A+B<-X';
+
 
   model 'X+B->R+S' "X+B->R+S"
     extends Interfaces.Reaction;
