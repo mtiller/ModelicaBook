@@ -107,8 +107,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(load.p, D2.n) annotation (Line(
-      points={{100,0},{100,12},{20,12},{20,12},{20,12},{20,12.9289},{19.0711,
-          12.9289}},
+      points={{100,0},{100,12},{20,12},{20,12.9289},{19.0711,12.9289}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(load.p, capacitor.p) annotation (Line(
