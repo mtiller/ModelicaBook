@@ -364,11 +364,14 @@ Part 2 - Components:
       Lotka-Volterra:
         # Region subsystems
         # Migration
-      Switched Power Suppply:
+      Switched Power Supply:
+        # Model diode failure using a switch/short?
       Transmission:
         # ???
       1D heat transfer:
         # Use arrays (of components)
+      Pendula:
+        # Arrays of subsystems, 3D and animation
     Review:
       # Paramaeter propagation
       - final
