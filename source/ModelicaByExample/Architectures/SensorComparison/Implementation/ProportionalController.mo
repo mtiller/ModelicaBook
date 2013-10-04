@@ -1,5 +1,6 @@
 within ModelicaByExample.Architectures.SensorComparison.Implementation;
 model ProportionalController "Implementation of a proportional controller"
+
   Modelica.Blocks.Math.Gain gain(k=k) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -43,5 +44,22 @@ equation
       points={{100,0},{60,0},{60,-40},{0,-40},{0,-8}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
+  annotation (Diagram(graphics), Icon(graphics={
+        Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,0,0},
+          fillColor={215,215,215},
+          fillPattern=FillPattern.Solid),
+        Text(
+          extent={{-88,-52},{92,-92}},
+          pattern=LinePattern.None,
+          textString="%name",
+          lineColor={0,0,0}),
+        Text(
+          extent={{-96,96},{96,-60}},
+          lineColor={0,0,0},
+          fillColor={215,215,215},
+          fillPattern=FillPattern.Solid,
+          textString="Prop
+Control")}));
 end ProportionalController;

@@ -59,5 +59,22 @@ equation
       points={{0,-70},{0,-60},{-100,-60}},
       color={0,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
+  annotation (Diagram(graphics), Icon(graphics={
+        Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,0,0},
+          fillColor={215,215,215},
+          fillPattern=FillPattern.Solid),
+        Text(
+          extent={{-88,-52},{92,-92}},
+          pattern=LinePattern.None,
+          textString="%name",
+          lineColor={0,0,0}),
+        Text(
+          extent={{-96,96},{96,-60}},
+          lineColor={0,0,0},
+          fillColor={215,215,215},
+          fillPattern=FillPattern.Solid,
+          textString="Basic
+Plant")}));
 end BasicPlant;
