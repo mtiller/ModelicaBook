@@ -7,3 +7,5 @@ BaseSystem
 SystemArchitecture_WithDefaults
 Variant1
 Variant1_unstable
+Variant2
+Variant2_tuned
