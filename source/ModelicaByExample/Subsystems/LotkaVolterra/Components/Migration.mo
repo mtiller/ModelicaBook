@@ -14,6 +14,11 @@ model Migration "Simple 'diffusion' based model of migration"
   ModelicaByExample.Components.LotkaVolterra.Interfaces.Species fox_b
     "Fox population in Region B"
     annotation (Placement(transformation(extent={{50,-110},{70,-90}})));
+equation
+  rabbit_a.rate = (rabbit_a.population-rabbit_b.population)*rabbit_migration;
+  rabbit_a.rate + rabbit_b.rate = 0 "Conservation of rabbits";
+  fox_a.rate = (fox_a.population-fox_b.population)*fox_migration;
+  fox_a.rate + fox_b.rate = 0 "Conservation of rabbits";
   annotation (Diagram(graphics), Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
@@ -40,9 +45,4 @@ model Migration "Simple 'diffusion' based model of migration"
           textString="%name",
           origin={-120,0},
           rotation=90)}));
-equation
-  rabbit_a.rate = (rabbit_a.population-rabbit_b.population)*rabbit_migration;
-  rabbit_a.rate + rabbit_b.rate = 0 "Conservation of rabbits";
-  fox_a.rate = (fox_a.population-fox_b.population)*fox_migration;
-  fox_a.rate + fox_b.rate = 0 "Conservation of rabbits";
 end Migration;

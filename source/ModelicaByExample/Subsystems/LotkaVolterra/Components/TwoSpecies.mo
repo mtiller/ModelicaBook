@@ -70,5 +70,4 @@ equation
           extent={{-100,120},{100,80}},
           lineColor={0,127,0},
           textString="%name")}));
-
 end TwoSpecies;
