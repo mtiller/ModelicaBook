@@ -363,9 +363,11 @@ Part 2 - Components:
         - final
       Lotka-Volterra:
         # Region subsystems
+        # Unconnected semantics (or perhaps earlier?)
         # Migration
       Switched Power Supply:
         # Model diode failure using a switch/short?
+        # Demonstrate parameter expressions (to short diode)
       Transmission:
         # ???
       1D heat transfer:
@@ -373,9 +375,11 @@ Part 2 - Components:
       Pendula:
         # Arrays of subsystems, 3D and animation
     Review:
-      # Paramaeter propagation
+      # Parameter propagation
       - final
+      - protected
       # Arrays of components
+      # Diagram annotations
   # I think I should merge the inheritance chapter with the architecture chapter
   Inheritance:
     Introduction:
@@ -390,13 +394,21 @@ Part 2 - Components:
   Architecture:
     Introduction:
     Examples:
-      Thermal Control Example (MultiDomainControl):
-        # Implement sensor with time constant or sampling
-        # Create block for controller and plant
-        - replaceable
       Speed Sensing System:
         # Introduce feedback control
         - replaceable
+      Thermal Control Example (MultiDomainControl):
+        # Implement sensor with time constant or sampling
+        # Create block for controller and plant
+        # Make sensor and controller replaceable
+        # Could be used for expandable bus mixing
+        # Heat demand and on/off actuators
+        - replaceable
+        - expandable
+      Series Hybrid:
+        # Start simple
+        # Add more detail
+        # Eventually use to demonstrate invertibility
     Review:
       Interfaces:
       Architecture:
@@ -464,4 +476,5 @@ Part 4 - Advanced Topics:
       # I could introduce it somewhere else
   Variable Structure:
   Backward Models:
+    # Build existing architecture model that's invertible?
   Model-Based System Engineering:
