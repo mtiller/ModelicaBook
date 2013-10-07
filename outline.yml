@@ -380,17 +380,6 @@ Part 2 - Components:
       - protected
       # Arrays of components
       # Diagram annotations
-  # I think I should merge the inheritance chapter with the architecture chapter
-  Inheritance:
-    Introduction:
-    Examples:
-    Review:
-      Protection:
-        - protected
-        - public
-      Reuse:
-        - partial
-        - redeclare
   Architecture:
     Introduction:
     Examples:
@@ -408,19 +397,26 @@ Part 2 - Components:
       Series Hybrid:
         # Start simple
         # Add more detail
-        # Eventually use to demonstrate invertibility
+        # Eventually use to demonstrate invertability
     Review:
+      Protection:
+        - protected
+        - public
+      Reuse:
+        - partial
+        - redeclare
       Interfaces:
       Architecture:
         - replaceable
         - constrainedby
+        # Mention vehicle interfaces
       Implementation:
         - redeclare
       Buses:
         - expandable
       Annotations:
         - choices
-Part 3 - Libraries:
+Part 3 - Advanced Topics:
   Building Libraries:
     Review:
       Packages:
@@ -432,7 +428,6 @@ Part 3 - Libraries:
   Creating Template Models:
   Handling Data:
   Testing:
-Part 4 - Advanced Topics:
   Symbolic manipulation:
     Examples:
       Coupled Rotational SMD System:
