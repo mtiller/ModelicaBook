@@ -9,5 +9,6 @@ partial model Plant "Interface for plant model"
   Modelica.Mechanics.Rotational.Interfaces.Support housing
     "Connection to mounting"
     annotation (Placement(transformation(extent={{-110,-70},{-90,-50}})));
-  annotation (Diagram(graphics));
+  annotation (Diagram(graphics), Icon(graphics={Rectangle(extent={{-100,100},{
+              100,-100}}, lineColor={128,0,255})}));
 end Plant;
