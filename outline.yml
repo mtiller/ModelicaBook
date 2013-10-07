@@ -390,14 +390,11 @@ Part 2 - Components:
         # Implement sensor with time constant or sampling
         # Create block for controller and plant
         # Make sensor and controller replaceable
-        # Could be used for expandable bus mixing
         # Heat demand and on/off actuators
+        # Could be used to demonstrate how to do inverse control later
         - replaceable
         - expandable
-      Series Hybrid:
-        # Start simple
-        # Add more detail
-        # Eventually use to demonstrate invertability
+      # Another example???
     Review:
       Protection:
         - protected
