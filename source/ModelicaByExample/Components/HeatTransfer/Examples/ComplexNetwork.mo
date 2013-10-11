@@ -1,18 +1,19 @@
 within ModelicaByExample.Components.HeatTransfer.Examples;
 model ComplexNetwork "A complex heat transfer network"
-  ThermalCapacitance cap1(C=0.12, T0(displayUnit="K") = 280)
+
+  ThermalCapacitance cap1(C=0.12, T0(displayUnit="degC") = 363.15)
     "Thermal capacitance component"
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   Convection conv3(h=0.7)
     annotation (Placement(transformation(extent={{52,-10},{72,10}})));
-  AmbientCondition amb2(T_amb(displayUnit="K") = 320)
+  AmbientCondition amb2(T_amb(displayUnit="degC") = 298.15)
     annotation (Placement(transformation(extent={{80,-10},{100,10}})));
   Convection conv2(h=0.2)
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
   Convection conv4(h=1.1)
     annotation (Placement(transformation(extent={{34,30},{54,50}})));
-  ThermalCapacitance cap2(T0(displayUnit="K") = 280, C=0.32)
-    "Thermal capacitance component"
+  ThermalCapacitance cap2(                              C=0.32, T0(displayUnit=
+          "degC") = 363.15) "Thermal capacitance component"
     annotation (Placement(transformation(extent={{-20,-80},{0,-60}})));
   Convection conv5(h=1.3) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},

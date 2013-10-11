@@ -1,11 +1,12 @@
 within ModelicaByExample.Components.HeatTransfer.Examples;
 model Cooling "A model using generic convection to ambient conditions"
-  ThermalCapacitance cap(C=0.12, T0(displayUnit="K") = 280)
+
+  ThermalCapacitance cap(C=0.12, T0(displayUnit="K") = 363.15)
     "Thermal capacitance component"
     annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
   Convection convection(h=0.7)
     annotation (Placement(transformation(extent={{10,-10},{30,10}})));
-  AmbientCondition amb(T_amb(displayUnit="K") = 300)
+  AmbientCondition amb(T_amb(displayUnit="K") = 298.15)
     annotation (Placement(transformation(extent={{50,-10},{70,10}})));
 equation
   connect(convection.port_a, cap.node) annotation (Line(

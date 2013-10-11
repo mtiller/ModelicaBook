@@ -7,8 +7,8 @@ model NewtonCoolingWithTypes "Cooling example with physical types"
   type SpecificHeat=Real(unit="J/(K.kg)", min=0);
 
   // Parameters
-  parameter Temperature T_inf=300.0 "Ambient temperature";
-  parameter Temperature T0=280.0 "Initial temperature";
+  parameter Temperature T_inf=298.15 "Ambient temperature";
+  parameter Temperature T0=363.15 "Initial temperature";
   parameter ConvectionCoefficient h=0.7 "Convective cooling coefficient";
   parameter Mass m=0.1 "Mass of thermal capacitance";
   parameter SpecificHeat c_p=1.2 "Specific heat";
