@@ -2,3 +2,5 @@ texlive-fonts-recommended
 texlive-latex-recommended
 texlive-latex-extra
 python-sphinx
+Paver
+sphinxcontrib-paverutils
