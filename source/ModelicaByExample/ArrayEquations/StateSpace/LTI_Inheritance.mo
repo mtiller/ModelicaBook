@@ -1,5 +1,5 @@
 within ModelicaByExample.ArrayEquations.StateSpace;
-model LTI_Inheritance "LTI model using inheritance"
+partial model LTI_Inheritance "LTI model using inheritance"
   parameter Real A[nx,nx]=fill(0,nx,nx);
   parameter Real B[nx,nu]=fill(0,nx,nu);
   parameter Real C[ny,nx]=fill(0,ny,nx);

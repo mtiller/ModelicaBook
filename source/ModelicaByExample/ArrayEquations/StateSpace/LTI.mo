@@ -1,5 +1,5 @@
 within ModelicaByExample.ArrayEquations.StateSpace;
-model LTI
+partial model LTI
   "Equations written in ABCD form where matrices are linear, time-invariant"
   parameter Integer nx;
   parameter Integer ny;

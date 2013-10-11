@@ -1,5 +1,5 @@
 within ModelicaByExample.ArrayEquations.StateSpace;
-model LTI_DRY "LTI model size parameters are implicit"
+partial model LTI_DRY "LTI model size parameters are implicit"
   parameter Real A[:,nx];
   parameter Real B[nx,:];
   parameter Real C[:,nx];
