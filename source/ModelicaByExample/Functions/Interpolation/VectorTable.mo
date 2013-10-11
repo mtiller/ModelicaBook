@@ -1,5 +1,5 @@
 within ModelicaByExample.Functions.Interpolation;
-class VectorTable "A vector table implemented as an ExternalObject"
+model VectorTable "A vector table implemented as an ExternalObject"
   extends ExternalObject;
   function constructor
     input Real ybar[:,2];
