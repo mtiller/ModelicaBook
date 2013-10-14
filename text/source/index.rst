@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Modelica By Example's documentation!
-===============================================
+Modelica By Example
+===================
 
 .. todo::
 
@@ -15,9 +15,15 @@ Welcome to Modelica By Example's documentation!
    (which is not reflected in the explicit structure) and allow me to
    include the sponsorship information.
 
+.. todo::
+
+   Add a dedication.  Not sure where it needs to go.
+
 .. toctree::
    :maxdepth: 3
 
+   foreward
+   preface
    intro
    behavior/equations
    behavior/discrete
