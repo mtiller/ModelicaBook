@@ -1,9 +1,6 @@
 Discrete Behavior
 =================
 
-Introduction
-------------
-
 Examples
 --------
 

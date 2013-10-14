@@ -1,9 +1,6 @@
 Functions
 =========
 
-Introduction
-------------
-
 Examples
 --------
 

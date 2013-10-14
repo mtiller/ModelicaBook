@@ -1,9 +1,6 @@
 Architectures
 =============
 
-Introduction
-------------
-
 Examples
 --------
 

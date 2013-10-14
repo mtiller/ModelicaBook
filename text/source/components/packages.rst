@@ -1,9 +1,6 @@
 Packages
 ========
 
-Introduction
-------------
-
 Examples
 --------
 

@@ -1,9 +1,6 @@
 Connectors
 ==========
 
-Introduction
-------------
-
 Examples
 --------
 

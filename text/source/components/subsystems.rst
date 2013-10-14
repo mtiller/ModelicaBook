@@ -1,9 +1,6 @@
 Subsystems
 ==========
 
-Introduction
-------------
-
 Examples
 --------
 

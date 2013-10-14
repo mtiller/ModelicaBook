@@ -288,3 +288,5 @@ epub_copyright = u'2013, Michael M. Tiller'
 
 # Allow duplicate toc entries.
 #epub_tocdup = True
+
+todo_include_todos = True

@@ -6,14 +6,34 @@
 Welcome to Modelica By Example's documentation!
 ===============================================
 
-Contents:
+.. todo::
+
+   I suspect for the "landing page", I'll need to do a hidden
+   `toctree` and then add a custom landing page with all the links.
+   But I need to wait until the structure is stable.  This will allow
+   me to identify the implicit partitioning of the chapters into parts
+   (which is not reflected in the explicit structure) and allow me to
+   include the sponsorship information.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   behavior
-   components
+   intro
+   behavior/equations
+   behavior/discrete
+   behavior/arrays
+   behavior/functions
+   components/packages
+   components/connectors
+   components/components
+   components/subsystems
+   components/architectures
    advanced
+
+TODO List
+=========
+
+.. todolist::
 
 Indices and tables
 ==================
