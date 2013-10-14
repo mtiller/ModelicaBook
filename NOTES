@@ -1,6 +1,16 @@
 Sphinx Cheatsheet
 =================
 
+Sections
+--------
+
+I plan to use the following order for characters for book structure:
+
+  * `*` - Chapters
+  * `=` - Sections
+  * `-` - Subsections
+  * `^' - Subsubsections
+
 Sidebars
 --------
 
@@ -9,8 +19,9 @@ Sidebars
    content
 
 
+Someone who write a book with Sphinx:
 
-
+http://blog.dehlia.in/2010/11/professional-book-like-structure-with-sphinx/
 
 
 
