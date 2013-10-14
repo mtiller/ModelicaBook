@@ -1,3 +1,19 @@
+Sphinx Cheatsheet
+=================
+
+Sidebars
+--------
+
+.. sidebar:: title
+
+   content
+
+
+
+
+
+
+
 "Asides"
 
 I figured out a nice LaTeX style for asides, etc.  Use the notice class in LaTeX and make the
