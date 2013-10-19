@@ -152,5 +152,13 @@ doctest:
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
+plots:
+	@echo "Building plots"
+	rm -f tmp/* results/*
+	./create_plot.py "BasicEquations.SimpleExample.FirstOrder" > simulateAll.mos
+	(cd tmp; omc ../simulateAll.mos)
+	mv tmp/*.mat results
+	rm -rf tmp/*
+
 server: dirhtml
 	(cd build/dirhtml; python -m SimpleHTTPServer)

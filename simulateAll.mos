@@ -1,5 +1,0 @@
-loadModel(ModelicaServices);
-loadModel(Modelica);
-setModelicaPath(getModelicaPath()+":"+".");
-loadModel(ModelicaByExample);
-simulate(ModelicaByExample.BasicEquations.SimpleExample.FirstOrder, stopTime=1.0, tolerance=1e-3, numberOfIntervals=500)
