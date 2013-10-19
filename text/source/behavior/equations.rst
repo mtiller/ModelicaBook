@@ -48,11 +48,7 @@ transform this model into something that we can simulate.  This
 simulation step essentially amounts to solving (usually numerically)
 the equation and providing a solution trajectory.
 
-.. simulate::
-   :model: BasicEquations.SimpleExample.FirstOrder
-   :start_time: 0.0
-
-.. plot:: plots/SimpleExample_FirstOrder.py
+.. plot:: ../results/BasicEquations_SimpleExample_FirstOrder.py
    :include-source: no
 
 

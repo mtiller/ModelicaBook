@@ -292,6 +292,6 @@ epub_copyright = u'2013, Michael M. Tiller'
 
 todo_include_todos = True
 
-plot_include_source = False
-plot_html_show_formats = False
-plot_formats = []
+#plot_include_source = False
+#plot_html_show_formats = False
+#plot_formats = []
