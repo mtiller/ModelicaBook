@@ -16,7 +16,7 @@ import sys, os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('_sphinxext'))
 
 # -- General configuration -----------------------------------------------------
 
@@ -27,6 +27,7 @@ import sys, os
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.doctest',
               'sphinx.ext.todo',
+              'xogeny.sim',
               'matplotlib.sphinxext.plot_directive',
               'sphinx.ext.pngmath',
               'sphinx.ext.mathjax',
@@ -290,3 +291,7 @@ epub_copyright = u'2013, Michael M. Tiller'
 #epub_tocdup = True
 
 todo_include_todos = True
+
+plot_include_source = False
+plot_html_show_formats = False
+plot_formats = []
