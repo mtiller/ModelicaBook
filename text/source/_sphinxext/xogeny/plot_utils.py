@@ -17,7 +17,7 @@ def render_simple_plot(name, var):
     x = res.data(var)
     plt.plot(t, x)
     dotname = name.replace("_", ".")
-    plt.title(dotname+": "+var+" vs. Time")
+    plt.title(dotname)
     plt.ylabel(var)
     plt.xlabel('Time [s]')
 
