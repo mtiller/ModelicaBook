@@ -26,10 +26,25 @@ loadModel(ModelicaByExample);
 cmd = preamble
 
 for model in args.models:
-    dashname = model.replace(".", "_")
-    cmd = cmd+"""
+    data = model.split(":")
+    if len(data)==1:
+        dotname = model
+        dashname = model.replace(".", "_")
+        stop_time = None
+    elif len(data)==2:
+        dotname = data[0]
+        stop_time = data[1]
+    dashname = dotname.replace(".", "_")
+
+    if stop_time==None:
+        cmd = cmd+"""
 simulate(ModelicaByExample.%s, tolerance=1e-3, numberOfIntervals=500, fileNamePrefix="%s");
-""" % (model,dashname)
+""" % (dotname,dashname)
+    else:
+        cmd = cmd+"""
+simulate(ModelicaByExample.%s, stopTime=%s, tolerance=1e-3, numberOfIntervals=500, fileNamePrefix="%s");
+""" % (dotname, stop_time, dashname)
+
     with open(os.path.join(args.results, dashname+".py"), "w") as fp:
         fp.write("""
 from xogeny.plot_utils import render_plot

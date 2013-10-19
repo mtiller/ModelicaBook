@@ -2,7 +2,7 @@ from pylab import *
 from dymat import DyMatFile
 import os
 
-def render_plot(name):
+def render_simple_plot(name, var):
     import matplotlib.pyplot as plt
     import math
 
@@ -13,11 +13,12 @@ def render_plot(name):
     fn = os.path.join(resdir, name+"_res.mat")
     res = DyMatFile(fn)
 
-    var = "x"
     t = res.abscissa(var, valuesOnly=True)
     x = res.data(var)
     plt.plot(t, x)
-    plt.ylabel('x')
-    plt.xlabel('t')
+    dotname = name.replace("_", ".")
+    plt.title(dotname+": "+var+" vs. Time")
+    plt.ylabel(var)
+    plt.xlabel('Time [s]')
 
     show()
