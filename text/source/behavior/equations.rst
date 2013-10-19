@@ -97,7 +97,7 @@ descriptive text can appear.  For example, it may be included after
 the declaration of a variable to document that variable.  It can also
 be included after an equation to document the equation.
 
-.. _first-order-doc:
+.. _first-order-init:
 
 Initialization
 ^^^^^^^^^^^^^^
@@ -119,7 +119,7 @@ model as follows:
    :lines: 2-
 
 Note that the only difference between this model and the previous one
-in :ref:`first-order-doc` is the addition of the
+in `Adding Some Documentation`_ is the addition of the
 ``initial equation`` section including the equation ``x = 2``.  If we
 add this equation, our system has a different initial starting
 condition and the solution trajectory is quite different as we can see
@@ -127,6 +127,41 @@ in the following figure:
 
 .. plot:: ../plots/BasicEquations_SimpleExample_FirstOrderInitial.py
    :include-source: no
+
+.. todo:: Steady state initialization
+
+Getting Physical
+----------------
+
+Default Values
+^^^^^^^^^^^^^^
+
+Physical Units
+^^^^^^^^^^^^^^
+
+Physical Types
+^^^^^^^^^^^^^^
+
+Lotka-Volterra Systems
+----------------------
+
+Steady State Initialization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Inheritance
+^^^^^^^^^^^
+
+Complex Initialization
+^^^^^^^^^^^^^^^^^^^^^^
+
+An Electrical Example
+---------------------
+
+A Mechanical Example
+--------------------
+
+Initial Conditions
+^^^^^^^^^^^^^^^^^^
 
 Review
 ======
@@ -143,6 +178,10 @@ Derivatives
 
 Initialization
 --------------
+
+Make sure problems are well specified.  Note default initial condition
+in :ref:`first-order`
+vs. :ref:`first-order-init`
 
 .. index:: ! initial equation
 
