@@ -32,17 +32,9 @@ simulate(ModelicaByExample.%s, tolerance=1e-3, numberOfIntervals=500, fileNamePr
 """ % (model,dashname)
     with open(os.path.join(args.results, dashname+".py"), "w") as fp:
         fp.write("""
-from xoutils import foo
-from pylab import *
-import matplotlib.pyplot as plt
-import math
-t = map(lambda v: v*0.1, range(0,101))
-x = map(lambda v: 1-math.exp(-v), t)
-plt.plot(t, x)
-plt.ylabel('x')
-plt.xlabel('t')
-
-show()
-""");
+from xogeny.plot_utils import render_plot
+render_plot("%s",
+            resdir="%s")
+""" % (dashname, args.results));
 
 print cmd

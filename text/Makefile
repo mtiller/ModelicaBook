@@ -14,7 +14,9 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext
+MODELS = "BasicEquations.SimpleExample.FirstOrder"
+
+.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext results
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -152,10 +154,10 @@ doctest:
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
-plots:
-	@echo "Building plots"
+results:
+	@echo "Generate results"
 	rm -f tmp/* results/*
-	./create_plot.py "BasicEquations.SimpleExample.FirstOrder" > simulateAll.mos
+	./generate_results.py $(MODELS) > simulateAll.mos
 	(cd tmp; omc ../simulateAll.mos)
 	mv tmp/*.mat results
 	rm -rf tmp/*

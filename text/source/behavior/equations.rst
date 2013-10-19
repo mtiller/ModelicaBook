@@ -48,7 +48,7 @@ transform this model into something that we can simulate.  This
 simulation step essentially amounts to solving (usually numerically)
 the equation and providing a solution trajectory.
 
-.. plot:: ../results/BasicEquations_SimpleExample_FirstOrder.py
+.. plot:: ../plots/BasicEquations_SimpleExample_FirstOrder.py
    :include-source: no
 
 
