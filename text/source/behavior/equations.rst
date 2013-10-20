@@ -29,15 +29,15 @@ Looking at this equation, we see there is only one variable,
 .. index:: model
 .. index:: der
 
-This code starts with the keyword :keyword:`model` which is used to
-indicate the start of the model definition.  The :keyword:`model` is
-followed by the model name, ``FirstOrder``.  This is, in turn, followed
-by a declaration of all the variables we are interested.  Since the
+This code starts with the keyword ``model`` which is used to indicate
+the start of the model definition.  The ``model`` is followed by the
+model name, ``FirstOrder``.  This is, in turn, followed by a
+declaration of all the variables we are interested.  Since the
 variable :math:`x` in our equation is clearly mean to be a continuous
 real valued variable, it's declaration in Modelica takes the form
 ``Real x;``.  After all the variables have been declared, we can begin
 including the equations that describe the behavior of our model.  In
-our case, we can use the :keyword:`der` operator to represent the time
+our case, we can use the ``der`` operator to represent the time
 derivative of ``x``.
 
 Unlike most programming languages, we don't approach code like this as
@@ -130,6 +130,9 @@ in the following figure:
 
 .. todo:: Steady state initialization
 
+Complete coverage of the initialization topic can be found in
+:ref:`initialization`.
+
 Getting Physical
 ----------------
 
@@ -175,6 +178,8 @@ Derivatives
 -----------
 
 .. index:: ! der
+
+.. _initialization:
 
 Initialization
 --------------
