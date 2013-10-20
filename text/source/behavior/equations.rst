@@ -214,12 +214,21 @@ behavior of ``T``.  Mathematically, we could express this equation as:
 What we see in our ``NewtonCooling`` example is how this equation
 would be expressed in Modelica.  Note that this is really no different
 than the equation we saw in our ``FirstOrder`` model from the
-:ref:`first-order` example.  The main difference here is that we can
-adjust the different parameter values individually.  Furthermore,
-these parameter values are tied to physical, measurable properties of
-the materials or environmental conditions.  In other words, this
-version is slightly more physical than the simple mathematical
-relationship used in the ``FirstOrder`` model.
+:ref:`first-order` example.  One thing worth noting is that the
+equation in our ``NewtonCooling`` example contains a complete
+expression on the left hand side.  In Modelica, it is **not**
+necessary for each equation to be an explicit equation for a single
+variable.  An equation can contain complete expressions on either
+side.  It is the compilers job to determine how to use these equations
+to solve for the different variables in the problem.
+
+What distinguishes our ``NewtonCooling`` example from the
+``FirstOrder`` model is that we can independently adjust the different
+parameter values.  Furthermore, these parameter values are tied to
+physical, measurable properties of the materials or environmental
+conditions.  In other words, this version is slightly more physical
+than the simple mathematical relationship used in the ``FirstOrder``
+model.
 
 Now, we can't really run the ``NewtonCooling`` model as is because it
 lacks values for the five parameters.  In order to create a model that
@@ -350,6 +359,59 @@ you will see in a later section where we discuss
 :ref:`importing_physical_types`.  For now, just realize that we are
 able to define physical types and then associate them with variables.
 
+An Electrical Example
+---------------------
+
+Let us return now to an engineering context.  For readers who are more
+familiar with electrical systems, here is a simple example of an
+electrical circuit.  Consider the following circuit:
+
+.. todo:: 
+
+   Need to add a figure here.
+
+For now, we will create a basic model with only equations and
+variables (including physical types).  But in a later section on
+:ref:`electrical-components` we will return to this same circuit and
+demonstrate how to create models that really look like the circuit in
+the previous figure.
+
+A model composed simply of variables and equations could be written as
+follows:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RLC/RLC1.mo
+   :language: modelica
+   :lines: 2-
+
+Here we see basically the same concepts introduced by previous
+examples in this chapter.  We've defined physical types that specify
+the ``unit`` attribute.  We have ``parameter`` variables to specify
+component characteristics.  Finally, we have variables that appear in
+differential equations.
+
+.. index:: state-space form
+
+One thing that distinguishes this example from the previous examples
+is the fact that it contains more equations.  As with the
+``NewtonCooling`` example, we have some equations with expressions on
+both the left and right hand sides.  We have some equations that
+involve derivatives while others do not.  This further emphasizes the
+point that in Modelica it is not necessary to put the system of
+equations into the so-called "explicit state-space form" required in
+some modeling environments.
+
+.. todo::
+
+Add some kind of "aside" here or something to indicate that this is an
+alternative path through the book
+
+To see this model extended to include more complex behavior, you may
+want to skip ahead to our :ref:`switched-rlc` example.
+
+
+A Mechanical Example
+--------------------
+
 Lotka-Volterra Systems
 ----------------------
 
@@ -362,11 +424,6 @@ Inheritance
 Complex Initialization
 ^^^^^^^^^^^^^^^^^^^^^^
 
-An Electrical Example
----------------------
-
-A Mechanical Example
---------------------
 
 Initial Conditions
 ^^^^^^^^^^^^^^^^^^
@@ -412,6 +469,7 @@ Equations
 ---------
 
 .. index:: ! der
+.. index:: ! state-space form
 
 .. _initialization:
 
