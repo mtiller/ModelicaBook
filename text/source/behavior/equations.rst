@@ -128,10 +128,33 @@ in the following figure:
 .. plot:: ../plots/BasicEquations_SimpleExample_FirstOrderInitial.py
    :include-source: no
 
-.. todo:: Steady state initialization
+Example :ref:`FirstOrderInitial <ex_SimpleExample_FirstOrderInitial>`
+shows a typical way of initializing a system by providing initial
+values for the states of the system.  In fact, initial value problems
+are frequently written as a combination of the differential equations
+and initial conditions, *e.g.*,
 
-Complete coverage of the initialization topic can be found in
-:ref:`initialization`.
+.. math:: \dot{x} = (1-x);\; x(0) = 2
+
+However, there are many cases where you want a more sophisticated type
+of initialization.  An ``initial equation`` section can contain more
+than just explicit equations for the values of the state variables.
+For example, if we wanted our first order system to be initialized to
+some steady-state condition but it was too complex to compute the
+explicit values for the state variables, we can simply express our
+initialization as:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/SimpleExample/FirstOrderSteady.mo
+   :language: modelica
+   :lines: 2-
+
+Simulating this system gives the following solution:
+
+.. plot:: ../plots/BasicEquations_SimpleExample_FirstOrderSteady.py
+   :include-source: no
+
+Complete coverage of the initialization topic can be found in the
+:ref:`initialization` section of this chapter.
 
 Getting Physical
 ----------------
@@ -174,8 +197,8 @@ Model Definition
 
 .. index:: ! model
 
-Derivatives
------------
+Equations
+---------
 
 .. index:: ! der
 
