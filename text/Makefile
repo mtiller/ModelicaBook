@@ -16,7 +16,8 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
 MODELS = "BasicEquations.SimpleExample.FirstOrder:10" \
 	"BasicEquations.SimpleExample.FirstOrderInitial:10" \
-	"BasicEquations.SimpleExample.FirstOrderSteady:10"
+	"BasicEquations.SimpleExample.FirstOrderSteady:10" \
+	"BasicEquations.CoolingExample.NewtonCoolingWithDefaults:10"
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext results
 

@@ -45,11 +45,4 @@ simulate(ModelicaByExample.%s, tolerance=1e-3, numberOfIntervals=500, fileNamePr
 simulate(ModelicaByExample.%s, stopTime=%s, tolerance=1e-3, numberOfIntervals=500, fileNamePrefix="%s");
 """ % (dotname, stop_time, dashname)
 
-    with open(os.path.join(args.results, dashname+".py"), "w") as fp:
-        fp.write("""
-from xogeny.plot_utils import render_plot
-render_plot("%s",
-            resdir="%s")
-""" % (dashname, args.results));
-
 print cmd
