@@ -1,4 +1,5 @@
 ClassicModel
+ClassicModelInitialEquations
 QuiescientModel
 QuiescientModelWithInheritance
 QuiescientModelWithModifications
