@@ -161,6 +161,8 @@ Simulating this system gives the following solution:
 Complete coverage of the initialization topic can be found in the
 :ref:`initialization` section of this chapter.
 
+.. _getting-physical:
+
 Getting Physical
 ----------------
 
@@ -613,6 +615,147 @@ point, this section will present a common ecological system dynamics
 model based on the relationship between predator and prey species.
 The equations we will be using are the Lotka-Volterra equations.
 
+Classic Lotka-Volterra
+^^^^^^^^^^^^^^^^^^^^^^
+
+The classic Lotka-Volterra model involves two species.  One species is
+the "prey" species.  In this section, the population of the prey
+species will be represented by :math:`x`.  The other species is the
+"predator" species whose population will be represented by :math:`y`.
+
+.. todo::
+
+  Need a citation for law of mass action.
+
+There are three important effects in a Lotka-Volterra system.  The
+first is reproduction of the "prey" species.  It is assumed that
+reproduction is proportional to the population.  If you are familiar
+with chemical reactions, this is conceptually the same as the "Law of
+Mass Action".  If you aren't familiar with the "Law of Mass Action",
+just consider that the more potential mates are present in the
+environment, the more likely reproduction is to occur.  We can
+represent this mathematically as:
+
+.. math:: \dot{x}_{r} = \alpha x
+
+where :math:`x` is the prey population, :math:`\dot{x}_r` is the
+change in prey population *due to reproduction* and :math:`\alpha` is
+the proportionality constant capturing the likelihood of successful
+reproduction.
+
+The next effect to consider is starvation of the predator species.  If
+there aren't enough "prey" around to eat, the predator species will
+die off.  When modeling starvation, it is important to consider the
+effect of competition.  We again have a proportionality relationship,
+but this time it works in reverse because, unlike with prey
+reproduction, the more predators around the more likely starvation
+is.  This is expressed mathematically in much the same way as
+reproduction:
+
+.. math:: \dot{y}_{s} = -\gamma y
+
+where :math:`y` is the predator population, :math:`\dot{y}_s` is the
+change in predator population *due to starvation* and :math:`\gamma`
+is the proportionality constant capturing the likelihood of
+starvation.
+
+Finally, the last effect we need to consider is "predation", *i.e.*,
+the consumption of the prey species by the predator species.  Without
+predators, the prey species would (at least mathematically) grow
+exponentially.  So predation is the effect that keeps the prey species
+population in check.  Similarly, without any prey, the predator
+species would simply die off.  So predation is what balances out this
+effect and keeps the predator population from going to zero.  Again,
+we have a proportionality relationship.  But this time, it is actually
+a bilinear relationship that is, again, conceptually the "Law of Mass
+Action" which is simply capturing mathematically the fact that the
+chance a predation will occur is proportional to both the population
+of the prey and the predators.  As a result, this mathematical
+relationship has a slightly different structure than the other two:
+
+.. math:: \dot{x}_p = -\beta x y
+.. math:: \dot{y}_p = \delta x y
+
+where :math:`\dot{x}_p` is the decline in the prey population *due to
+predation*, :math:`\dot{y}_p` is the increase in the predator
+population *due to predation*, :math:`\beta` is the proportionality constant
+representing the likelihood of prey consumption and :math:`\delta` is
+the proportionality constant representing the likelihood that the
+predator will have sufficient extra nutrition to support reproduction.
+
+Taking the various effects into account, the overall change in each
+population can be represented by the following two equations:
+
+.. math:: \dot{x} = \dot{x}_r + \dot{x}_p
+.. math:: \dot{y} = \dot{y}_p + \dot{x}_s
+
+Using the previous relationships, we can expand each of the right hand
+side terms in these two equations into:
+
+.. math:: \dot{x} = x (\alpha - \beta y)
+.. math:: \dot{y} = y (\delta x - \gamma)
+
+Using what we've learned in this chapter so far, translating these
+equations into Modelica should be pretty straightforward:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/ClassicModel.mo
+   :language: modelica
+   :lines: 2-
+
+.. index:: start attribute
+
+At this point, there is only one thing we haven't discussed yet and
+that is the presence of the ``start`` attribute on ``x`` and ``y``.
+As we saw in the ``NewtonCoolingWithUnits`` example in the previous
+section :ref:`getting-physical`, variables have various attributes
+that we can specify (for a detailed discussion of available
+attributes, see the upcoming section on :ref:`builtin-types`).  We
+previously discussed the ``unit`` attribute but this is the first time
+we are seeing the ``start`` attribute.
+
+The observant reader may have noticed the presence of the ``x0`` and
+``y0`` parameter variables and the fact that they represent the
+initial populations.  Based on previous examples, one might have
+expected these initial conditions to be captured in the model as
+follows:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/ClassicModelInitialEquations.mo
+   :language: modelica
+   :lines: 2-
+
+However, for the ``ClassicModel`` example we took a small shortcut.
+As will be discussed shortly in the section on :ref:`initialization`,
+we can specify initial conditions by specifying the value of the
+``start`` attribute directly on the variable.
+
+It is worth noting that this approach has both advantages and
+disadvantages.  The advantage is one of flexibility.  The ``start``
+attribute is actually more of a hint than a binding relationship.  If
+the Modelica compiler identifies a particular variable as a state
+(*i.e.*, a variable that requires an initial condition) **and** there
+are insufficient initial conditions already specified in the model
+then it can substitute the ``start`` attribute as an initial
+condition.  In other words, you can think of the ``start`` attribute
+as a "fallback initial condition" if an initial condition is needed.
+
+There are a couple of disadvantages to the ``start`` attribute that
+you need to watch you for.  First, it is only a hint and tools may
+completely ignore it.  Whether it will be ignored is also hard to
+predict.  Finally, the ``start`` attribute is also "overloaded".  This
+means that it is actually used for two different things.  If the
+variable in question is not a state but is instead an "iteration
+variable" (*i.e.*, a variable whose solution depends on a non-linear
+system of equations), then the ``start`` attribute may be used by a
+Modelica compiler as an initial guess (*i.e.*, the value used for the
+variable during the initial iteration of the non-linear solver).
+
+Whether to specify a ``start`` attribute or not depends on how
+strictly you want a given initial condition to be enforced.  That is
+something that takes experience working with the language and is
+beyond the scope of this chapter.  However, it is worth at least
+pointing out that there are different options along with a basic
+explanation of the trade-offs.
+
 Steady State Initialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -647,7 +790,7 @@ Built-In Types
 .. index:: ! Real
 .. index:: ! attributes
 .. index:: ! unit attribute
-.. index:: ! start attribute
+.. index:: start attribute
 .. index:: ! fixed attribute
 
 .. _variability:
@@ -678,7 +821,6 @@ Make sure problems are well specified.  Note default initial condition
 in :ref:`first-order`
 vs. :ref:`first-order-init`
 
+.. index:: ! start attribute
 .. index:: ! initial equation
-
-
 .. index:: ! descriptive strings
