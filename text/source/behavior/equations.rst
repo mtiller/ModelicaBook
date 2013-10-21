@@ -401,11 +401,54 @@ follows:
    :language: modelica
    :lines: 2-
 
-Here we see basically the same concepts introduced by previous
-examples in this chapter.  We've defined physical types that specify
-the ``unit`` attribute.  We have ``parameter`` variables to specify
-component characteristics.  Finally, we have variables that appear in
-differential equations.
+Let's go through this example bit by bit and reinforce the meaning of
+the various statements.  Let's start at the top:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RLC/RLC1.mo
+   :language: modelica
+   :lines: 2-2
+
+Here we see that the name of the model is ``RLC``.  Furthermore, a
+description of this model has been included, namely ``"A
+resistor-inductor-capacitor circuit model"``.  Next, we introduce a
+few physical types that we will need:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RLC/RLC1.mo
+   :language: modelica
+   :lines: 3-7
+
+Each of these lines introduces a physical type that specializes the
+built-in ``Real`` type by associating it with a particular physical
+unit.  Then, we declare all of the ``parameter`` variables in our
+problem:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RLC/RLC1.mo
+   :language: modelica
+   :lines: 8-11
+
+These ``parameter`` variables represent various physical
+characteristics (in this case, voltage, inductance, resistance and
+capacitance, respectively).  The last variables we need to define are
+the ones we wish to solve for, *i.e.*,
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RLC/RLC1.mo
+   :language: modelica
+   :lines: 12-15
+
+Now that all the variables have been declared, we add an ``equation``
+section to the model that specifies the equations to use when
+generating solutions for this model:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RLC/RLC1.mo
+   :language: modelica
+   :lines: 16-20
+
+Finally, we close the model by creating an ``end`` statement that
+includes the ``model`` name (*i.e.*, ``RLC`` in this case):
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RLC/RLC1.mo
+   :language: modelica
+   :lines: 21-21
 
 .. index:: state-space form
 
@@ -451,7 +494,8 @@ want to skip ahead to our :ref:`switched-rlc` example.
 A Mechanical Example
 --------------------
 
-
+If you are more familiar with mechanical systems, this example might
+be more elucidating than the one presented in the previous section.
 
 Lotka-Volterra Systems
 ----------------------

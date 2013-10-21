@@ -1,5 +1,5 @@
 within ModelicaByExample.BasicEquations.RLC;
-model RLC1
+model RLC1 "A resistor-inductor-capacitor circuit model"
   type Voltage=Real(unit="V");
   type Current=Real(unit="A");
   type Resistance=Real(unit="Ohm");
