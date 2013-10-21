@@ -960,12 +960,91 @@ exact solution so no other solution or iterating was required.
 Inheritance
 ^^^^^^^^^^^
 
-Complex Initialization
-^^^^^^^^^^^^^^^^^^^^^^
+We've already seen several different models (``ClassicModel``,
+``QuiescientModel`` and ``QuiescientModelUsingStart``) based on the
+Lotka-Volterra equations.  Have you noticed something they all have in
+common?  If you look closely, there are actually hardly any
+**differences** between them!
 
+In software engineering, there is a saying that "Redundancy is the
+root of all evil".  Well the situation is no different here (in no
+small part because Modelica code really is software).  The code we
+have written so far would be very annoying to maintain.  This is
+because any bugs we found would have to be fixed in each model.
+Furthermore, any improvements we made would also have to be applied to
+each model.  So far, we are only dealing with a relatively small
+number of models.  But this kind of "copy and paste" approach to model
+development will result in a significant proliferation of models with
+only slight differences between them.
 
-Initial Conditions
-^^^^^^^^^^^^^^^^^^
+.. index:: composition
+.. index:: inheritance
+
+So what can be done about this?  In object-oriented programming
+languages there are basically two mechanisms that exist to reduce the
+amount of redundant code.  They are *composition* (which we will address
+in the future chapter on :ref:`_components`) and *inheritance* which
+we will introduce here briefly.
+
+If we look closely at the ``QuiescientModelUsingStart`` example, we
+see that there are almost no differences between it and our original
+``ClassicModel`` version.  In fact, the only real differences are
+shown here:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/ClassicModel.mo
+   :language: modelica
+   :lines: 2-
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModelUsingStart.mo
+   :language: modelica
+   :emphasize-lines: 9-11
+   :lines: 2-
+
+.. index:: extends
+
+In other words, the only real difference is the addition of the
+``initial equation`` section (the original ``ClassicModel`` already
+contained non-zero ``start`` values for our two variables, ``x`` and
+``y``).  Ideally, we could avoid having any redundant code by
+simply defining a model in terms of the differences between it and
+another model.  As it turns out, this is exactly what the ``extends``
+keyword allows us to do.  Consider the following alternative to the
+``QuiescientModelUsingStart`` model:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModelWithInheritance.mo
+   :language: modelica
+   :emphasize-lines: 9-11
+   :lines: 2-
+
+Note the presence of the ``extends`` keyword.  Conceptually, this
+"extends clause" simply asks the compiler to insert the contents of
+another model (``ClassicModel`` in this case) into the model being
+defined.  In this way, we use everything (or "inherit") from
+``ClassicModel`` without having to repeat it's contents.  As a result,
+the ``QuiescientModelWithInheritance`` is the same as the
+``ClassicModel`` with a set of initial equations inserted.
+
+.. index:: modifications
+
+But what about a case where we don't want **exactly** what is in the
+model we are inheriting from?  For example, what if we wanted to
+change the values of the ``gamma`` and ``delta`` parameters?
+
+Modelica handles this by allow us to include a set of "modifications"
+when we use ``extends``.  These modifications follow the name of the
+model being inherited from as shown below:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModelWithModifications.mo
+   :language: modelica
+   :emphasize-lines: 3
+   :lines: 2-
+
+Also note that we could have inherited from ``ClassicModel`` but then
+we would have had to repeat the initial equations in order to have
+quiescient initial conditions.  But by instead inheriting from
+``QuiescientModelWithModifications``, we reuse the content from
+**two** different models and completely avoid repeating ourselves even
+once.
 
 Review
 ======
@@ -974,6 +1053,8 @@ Model Definition
 ----------------
 
 .. index:: ! model
+.. index:: ! inheritance
+.. index:: ! extends
 
 .. _variables:
 
