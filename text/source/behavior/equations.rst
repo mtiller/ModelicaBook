@@ -472,7 +472,7 @@ But the important point is that with Modelica, we do not need to
 perform such manipulations.  Instead, we are free to write the
 equations in whatever form we chose.  If such manipulations are
 necessary in order to solve these equations, it is the tools
-responsibility to perform these manipulations, no the model
+responsibility to perform these manipulations, not the model
 developer.
 
 This is important because, as we will show in later sections, we
@@ -483,6 +483,11 @@ equation will be used to solve for.  Making such manipulations the
 responsibility of the Modelica compiler not only makes the model
 development simpler, but it dramatically improves the **reusability**
 of the models.
+
+The following figure shows the dynamic response of the ``RLC1`` model:
+
+.. plot:: ../plots/BasicEquations_RLC_RLC1.py
+   :include-source: no
 
 .. todo::
 
@@ -499,8 +504,8 @@ A Mechanical Example
 --------------------
 
 If you are more familiar with mechanical systems, this example might
-be more enlightening than the one presented in the previous section.
-The system we wish to model is the one shown in the following figure:
+help reinforce some of the concepts we've covered so far.  The system
+we wish to model is the one shown in the following figure:
 
 .. todo::
 
@@ -582,7 +587,7 @@ to represent the initial conditions as follows:
    :language: modelica
    :lines: 2-
 
-In this way, the parameter values can be changed changed either in the
+In this way, the parameter values can be changed either in the
 simulation environment (where parameters are typically editable by the
 user) or, as we will see shortly, via so-called "modifications".
 
@@ -590,7 +595,18 @@ You will see in this latest version of the model that the values for
 the newly introduced parameters are the same as the hard-coded values
 used earlier.  As a result, the default initial conditions will be
 exactly the same as they were before.  But now, we have the freedom to
-explore other initial conditions as well.
+explore other initial conditions as well.  For example, if we simulate
+the ``SecondOrderSystemInitParams`` model as is, we get the following
+solution for the angular positions and velocities:
+
+.. plot:: ../plots/BasicEquations_RotationalSMD_SecondOrderSystemInitParams.py
+   :include-source: no
+
+However, if modify the ``phi1_init`` parameter to be *1* at the start
+of our simulation, we get this solution instead:
+
+.. plot:: ../plots/BasicEquations_RotationalSMD_SecondOrderSystemInitParams_phi1_init=1.py
+   :include-source: no
 
 .. todo:: 
 
@@ -805,6 +821,12 @@ Derived Types
 
 .. index:: ! derived types
 .. index:: ! type
+
+Modifications
+^^^^^^^^^^^^^
+
+.. index:: ! modifications
+.. index:: attribute modification
 
 Equations
 ---------
