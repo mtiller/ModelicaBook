@@ -14,8 +14,8 @@ model RLC1
   Current i_R;
   Current i_C;
 equation
+  der(V) = i_C/C;
+  der(i_L) = (Vb-V)/L;
+  i_R = i_L-i_C;
   V = i_R*R;
-  C*der(V) = i_C;
-  L*der(i_L) = (Vb-V);
-  i_L=i_R+i_C;
 end RLC1;
