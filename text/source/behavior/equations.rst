@@ -631,6 +631,8 @@ point, this section will present a common ecological system dynamics
 model based on the relationship between predator and prey species.
 The equations we will be using are the Lotka-Volterra equations.
 
+.. _classic-lotka-volterra:
+
 Classic Lotka-Volterra
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -772,8 +774,188 @@ beyond the scope of this chapter.  However, it is worth at least
 pointing out that there are different options along with a basic
 explanation of the trade-offs.
 
+Using either initialization method, the results for these models will
+be the same.  The typical behavior for the Lotka-Volterra system can
+be seen in this plot:
+
+.. plot:: ../plots/BasicEquations_LotkaVolterra_ClassicModel.py
+   :include-source: no
+
+Note the cyclical behavior of each population.  Initially, there are
+more predators than can be supported by the existing food supply.
+Those predators that are present consume whatever prey the can find.
+Nevertheless, some starvation occurs and the predator population
+declines.  The rate at which predators consume the prey species is so
+high during this period that the rate at which the prey species
+reproduces is not sufficient to make up for those lost to predation so
+the prey population declines as well.
+
+At some point, the predator population gets so low that the rate of
+reproduction in the prey species is larger than the rate of prey
+consumption by the predators and the prey species begins to rebound.
+Because the predator species population takes longer to rebound, the
+prey species experiences growth that is, for the moment, virtually
+unchecked by predation.  Eventually, the predator population begins to
+rebound due to the abundance of prey until the system returns to the
+original predator and prey populations **and the entire cycle then
+repeats itself** *ad infinitum*.
+
+The fact that the system returns again and again to the same initial
+conditions (ignoring numerical error, of course) is one of the most
+interesting things about the system.  This is even more remarkable
+given the fact that the LotkaVolterra system of equations is actually
+non-linear.
+
 Steady State Initialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's imagine that these extreme swings in species population had some
+undesirable ecological consequences.  In such a case, it would be
+useful to understand what might reduce or even eliminate these
+fluctuations.  A simple approach would be to keep the populations in a
+state of equilibrium.  But how can we use these models to help use
+determine such a "quiescient" state?
+
+The answer lies in the initial conditions.  Instead of specifying an
+initial population for both the predator and prey species, we might
+instead chose to initialize the system with some other equations that
+somehow capture the fact that the system is in equilibrium.
+Fortunately, Modelica's approach to initialization is rich enough to
+allow us to specify this (and many other) useful initial conditions.
+
+To ensure that our system starts in equilibrium, we simply need to
+define what equilibrium is.  Mathematically speaking, the system is in
+equilibrium if the following two conditions are met:
+
+.. math:: \dot{x} = 0
+.. math:: \dot{y} = 0
+
+To capture this in our Modelica model, all we need to do is use these
+equations in our ``initial equation`` section, like this:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModel.mo
+   :language: modelica
+   :emphasize-lines: 9-11
+   :lines: 2-
+
+The main difference between this and our previous model is the
+presence of the highlighted initial equations.  Looking at this model,
+you might wonder exactly what those initial equations mean.  After
+all, what we need to solve for are ``x`` and ``y``.  But those
+variables don't even appear in our initial equations.  So how are they
+solved for?
+
+The answer lies in understanding that the functions :math:`x(t)` and
+:math:`y(t)` are solved for by integrating the differential equations
+starting from some initial equations.  During the simulation, we see
+that :math:`x` and :math:`\dot{x} are "coupled" by the following
+equations:
+
+.. math:: x(t) = \int_{t_0}^{t_f} \dot{x} dx + x(t_0)
+
+(and, of course, a similar relationship exists between :math:`y` and
+:math:`\dot{y}`)
+
+**However**, during initialization of the system (*i.e.*, solving for
+the initial conditions) this relationship doesn't hold.  So there is
+no "coupling" between :math:`x` and :math:`\dot{x}` in that case (nor
+for :math:`y`: and :math:`\dot{y}`).  The net result is that for the
+initialization problem we can think of :math:`x`, :math:`y`,
+:math:`\dot{x}` and :math:`\dot{y}` as four independent variables.
+
+Said another way, while simulating we solve for :math:`x` by
+integrating :math:`\dot{x}`.  So that integral equation is the
+equation used to solve for :math:`x`.  But during initialization, we
+cannot use that equation so we need an additional equation (for each
+integration that perform during initialization).
+
+In any case, the bottom line is that during initialization we require
+four different equations to arrive at a unique solution.  In the case
+of our ``QuiescientModel``, those four equations are:
+
+.. math:: \dot{x} = 0
+.. math:: \dot{x} = x (\alpha - \beta y)
+.. math:: \dot{y} = 0
+.. math:: \dot{y} = y (\delta x - \gamma)
+
+It is very important to understand that these equations **do not
+contradict each other**.  Especially if you come from a programming
+background you might see look at the first two equations and think
+"Well what is :math:`\dot{x}`?  Is it zero or is it :math:`x (\alpha -
+\beta y)`?"  The answer is **both**.  There is no reason that both
+equations cannot be true!
+
+The essential thing to remember here is that these are **equations not
+assignment statements**.  The following system of equations is
+mathematically identical and demonstrates more clearly how :math:`x`
+and :math:`y` could be solved:
+
+.. math:: \dot{x} = 0
+.. math:: \dot{y} = 0
+.. math:: x (\alpha - \beta y) = \dot{x}
+.. math:: y (\delta x - \gamma) = \dot{y}
+
+In this form, it is a bit easier to recognize how we could arrive at
+values of :math:`x` and :math:`y`.  The first thing to note is that we
+cannot solve explicitly for :math:`x` and :math:`y`.  In other words,
+we cannot rearrange these equations into the form :math:`x=...`
+without have :math:`x` also appear on the right hand side.  So we have
+to deal with the fact that this is a simultaneous system of equations
+involving both :math:`x` and :math:`y`.  But the situation is further
+complicated by the fact that this system is non-linear (which is
+precisely why we cannot use linear algebra to arrive at a set of
+explicit equations).  In fact, if we study these equations carefully
+we can spot the fact that there exist two potential solutions.  One
+solution is trivial (:math:`x=0;y=0`) and the other is not.
+
+So what happens if we try to simulate our ``QuiescientModel``?  The
+answer is pretty obvious in the plot below:
+
+.. plot:: ../plots/BasicEquations_LotkaVolterra_QuiescentModel.py
+   :include-source: no
+
+We ended up with the trivial solution where the prey and predator
+populations are zero.  In this case, we have no reproduction,
+predation or starvation because all these effects are proportional to
+the populations (*i.e.*, zero) so nothing changes.  But this isn't a
+very interesting solution.
+
+There are two solutions to this system of equations because it is
+non-linear.  How can we steer the non-linear solver away from this
+trivial solution?  If you were paying attention during the discussion
+of the :ref:`classic-lotka-volterra` model, then you've already been
+given a hint about the answer.
+
+Recall that the ``start`` attribute is overloaded.  During our
+discussion of the :ref:`classic-lotka-volterra` model, it was pointed
+out that one of the purposes of the ``start`` attribute was to provide
+an initial guess if the variable with the ``start`` attribute was
+chosen as an iteration variable.  Well, our ``QuiesceintModel``
+happens to be a case where ``x`` and ``y`` are, in fact, iteration
+variables because they must be solved using a system of non-linear
+equations.  This means that if we want to avoid the trivial solution,
+we need to specify values for the ``start`` attribute on both ``x``
+and ``y`` that are "far away" from the trivial solution we are trying
+to avoid.  For example:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModelUsingStart.mo
+   :language: modelica
+   :emphasize-lines: 7-8
+   :lines: 2-
+
+This model leads us to a set of initial conditions that is more inline
+with what we were originally looking for (*i.e.*, a non-trivial solution):
+
+.. plot:: ../plots/BasicEquations_LotkaVolterra_QuiescentModel.py
+   :include-source: no
+
+
+It is worth pointing out (as we will do shortly in the section on
+:ref:`builtin-types`), that the default value of the ``start``
+attribute is zero.  This is why when we simulated our original
+``QuiescientModel`` we happened to land exactly on the trivial
+solution...because it was our initial guess and it happened to be an
+exact solution so no other solution or iterating was required.
 
 Inheritance
 ^^^^^^^^^^^
