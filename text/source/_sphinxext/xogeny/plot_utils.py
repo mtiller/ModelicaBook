@@ -5,9 +5,12 @@ import os
 def render_twoup_plot(name, spec1, spec2):
     pass
 
-def render_simple_plot(name, var):
+def render_simple_plot(name, vars):
     import matplotlib.pyplot as plt
     import math
+
+    if len(vars)!=1:
+        raise "Need to implement handling of multiple variables"
 
     # Location of results (relative to extention directory)
     resdir = os.path.abspath(os.path.join(os.path.dirname(__file__),
