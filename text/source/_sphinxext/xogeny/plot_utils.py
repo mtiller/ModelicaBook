@@ -2,6 +2,9 @@ from pylab import *
 from dymat import DyMatFile
 import os
 
+def render_twoup_plot(name, spec1, spec2):
+    pass
+
 def render_simple_plot(name, var):
     import matplotlib.pyplot as plt
     import math
