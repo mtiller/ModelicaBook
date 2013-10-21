@@ -370,11 +370,29 @@ electrical circuit.  Consider the following circuit:
 
    Need to add a figure here.
 
-For now, we will create a basic model with only equations and
-variables (including physical types).  But in a later section on
-:ref:`electrical-components` we will return to this same circuit and
-demonstrate how to create models that really look like the circuit in
-the previous figure.
+As we can see from this figure, we have four variables to solve for:
+:math:`V`, :math:`i_L`, :math:`i_R` and :math:`i_C`.  To solve for
+each of the currents :math:`i_L`, :math:`i_R` and :math:`i_C`, we can
+use the equations associated an inductor, resistor and capacitor,
+respectively:
+
+.. math:: V = i_R R
+.. math:: C*\dot{V} = i_C
+.. math:: L*\dot{i_L} = (V_b-V)
+
+where :math:`V_b` is the battery voltage.  Since we have only 3
+equations but 4 variables, we need one additional equation.  That
+additional equation is going to be Kirchoff's current law:
+
+.. math:: i_L = i_R+i_C
+
+Now that we have determined the equations and variables for this
+problem, we will create a basic model (including physical types) by
+translating the equations directly into Modelica.  But in a later
+section on :ref:`electrical-components` we will return to this same
+circuit and demonstrate how to create models by dragging, dropping and
+connecting models that really look like the circuit components in the
+previous figure.
 
 A model composed simply of variables and equations could be written as
 follows:
