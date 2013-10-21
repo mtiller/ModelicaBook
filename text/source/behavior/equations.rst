@@ -416,7 +416,28 @@ both the left and right hand sides.  We have some equations that
 involve derivatives while others do not.  This further emphasizes the
 point that in Modelica it is not necessary to put the system of
 equations into the so-called "explicit state-space form" required in
-some modeling environments.
+some modeling environments.  We could, of course, rearrange the
+equations into a more explicit form, *e.g.*,
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RLC/RLC2.mo
+   :language: modelica
+   :lines: 17-21
+
+But the important point is that with Modelica, we do not need to
+perform such manipulations.  Instead, we are free to write the
+equations in whatever form we chose.  If such manipulations are
+necessary in order to solve these equations, it is the tools
+responsibility to perform these manipulations, no the model
+developer.
+
+This is important because, as we will show in later sections, we
+eventually want to get to the point where these equations are
+"captured" in individual components models.  In those cases, we won't
+know (when we create the component model) exactly what variable each
+equation will be used to solve for.  Making such manipulations the
+responsibility of the Modelica compiler not only makes the model
+development simpler, but it dramatically improves the **reusability**
+of the models.
 
 .. todo::
 
@@ -429,6 +450,8 @@ want to skip ahead to our :ref:`switched-rlc` example.
 
 A Mechanical Example
 --------------------
+
+
 
 Lotka-Volterra Systems
 ----------------------
