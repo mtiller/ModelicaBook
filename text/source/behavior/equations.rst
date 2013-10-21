@@ -491,14 +491,127 @@ To see this model extended to include more complex behavior, you may
 want to skip ahead to our :ref:`switched-rlc` example.
 
 
+.. _mech-example:
+
 A Mechanical Example
 --------------------
 
 If you are more familiar with mechanical systems, this example might
-be more elucidating than the one presented in the previous section.
+be more enlightening than the one presented in the previous section.
+The system we wish to model is the one shown in the following figure:
+
+.. todo::
+
+   Add a figure here of the two inertia system
+
+It is worth pointing out how much easier it is to convey the intention
+of a model be presenting a schematic.  Assuming appropriate graphical
+representations are used in the schematic, experts can very quickly
+understand the composition of the system and develop an intuition
+about how it is likely to behave.  While we are currently focusing on
+equations and variables, we will eventually work our way up to an
+approach (see :ref:`components`) where models will be built in this
+schematic form from the beginning.
+
+For now, however, we will focus on how to express the equations
+associated with our simple mechanical system.  Each inertia has a
+rotational position, :math:`\phi`, and a rotational speed,
+:math:`\omega` where :math:`\omega = \dot{\phi}`.  For each inertia,
+the balance of angular momentum for the inertia can be expressed as:
+
+.. math:: J \dot{omega} = \sum_i \tau_i
+
+In other words, the sum of the torques, :math:`\tau`, applied to the
+inertia should be equal to the product of the moment of inertia,
+:math:`J`, and the angular acceleration, :math:`\dot{omega}`.
+
+.. index:: Hooke's law
+
+At this point, all we are missing are the torque values,
+:math:`\tau_i`.  From the previous figure, we can see that there are
+two springs and two dampers.  For the springs, we can use Hooke's law
+to express the torque as a function of angular displacement as
+follows:
+
+.. math:: \tau = k \Delta \phi
+
+For each damper, the torque can be expressed as:
+
+.. math:: \tau = d \dot{\Delta \phi}
+
+If we pull together all of these relations, we get the following
+system of equations:
+
+.. math:: \omega_1 = \dot{\phi_1}
+.. math:: J_1 \dot{omega_1} = k_1 (\phi_2-\phi_1) + d_1 \frac{d
+	  (phi_2-phi_1)}{dt}
+.. math:: \omega_2 = \dot{\phi_2}
+.. math:: J_2 \dot{omega_2} = k_1 (\phi_1-\phi_2) + d_1 \frac{d
+	  (phi_1-phi_2)}{dt} - k_2 \phi_2 - d_2 \dot{phi_2}
+
+Let's assume our system has the following initial conditions as well:
+
+.. math:: \phi_1 = 0
+.. math:: \omega_1 = 0
+.. math:: \phi_2 = 1
+.. math:: \omega_2 = 0
+
+These initial conditions essentially mean that the system starts in a
+state where neither inertia is actually moving (*i.e.*,
+:math:`\omega=0`) but there is a non-zero deflection across both
+springs.
+
+Pulling all of these variables and equations together, we can express
+this problem in Modelica as follows:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
+   :language: modelica
+   :lines: 2-
+
+.. index:: modifications
+
+The only drawback of this model is that all of our initial conditions
+have been "hard-coded" into the model.  This means that we will be
+unable to specify any alternative set of initial conditions for this
+model.  We can overcome this issue by defining ``parameter`` variables
+to represent the initial conditions as follows:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystemInitParams.mo
+   :language: modelica
+   :lines: 2-
+
+In this way, the parameter values can be changed changed either in the
+simulation environment (where parameters are typically editable by the
+user) or, as we will see shortly, via so-called "modifications".
+
+You will see in this latest version of the model that the values for
+the newly introduced parameters are the same as the hard-coded values
+used earlier.  As a result, the default initial conditions will be
+exactly the same as they were before.  But now, we have the freedom to
+explore other initial conditions as well.
+
+.. todo:: 
+
+  Mark this as an aside (as in previous todo)
+
+If you would like to see this example further developed, you may wish
+to jump to the next set of examples involving rotational systems found
+in the section on :ref:`speed-measurement`.
 
 Lotka-Volterra Systems
 ----------------------
+
+.. todo::
+
+  Figure out how to do citations and provide one for the
+  Lotka-Volterra equations.
+
+So far, we've seen thermal, electrical and mechanical examples.  In
+effect, these have all been engineering example.  However, Modelica is
+not limited strictly to engineering disciplines.  To reinforce this
+point, this section will present a common ecological system dynamics
+model based on the relationship between predator and prey species.
+The equations we will be using are the Lotka-Volterra equations.
 
 Steady State Initialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
