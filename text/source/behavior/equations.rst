@@ -256,6 +256,8 @@ following solution for ``T``.
    :include-source: no
 
 
+.. _physical-units:
+
 Physical Units
 ^^^^^^^^^^^^^^
 
@@ -312,6 +314,8 @@ everything that is necessary to **unit check** Modelica models for
 errors or physical inconsistencies.  This is a big win for model
 developers because adding units not only makes the models clearer, it
 provides better diagnostics in the case of errors.
+
+.. _physical-types:
 
 Physical Types
 ^^^^^^^^^^^^^^
@@ -615,6 +619,8 @@ of our simulation, we get this solution instead:
 If you would like to see this example further developed, you may wish
 to jump to the next set of examples involving rotational systems found
 in the section on :ref:`speed-measurement`.
+
+.. _lotka-volterra-systems:
 
 Lotka-Volterra Systems
 ----------------------
@@ -957,13 +963,16 @@ attribute is zero.  This is why when we simulated our original
 solution...because it was our initial guess and it happened to be an
 exact solution so no other solution or iterating was required.
 
-Inheritance
-^^^^^^^^^^^
+.. _avoiding-repetition:
+
+Avoiding Repetition
+^^^^^^^^^^^^^^^^^^^
 
 We've already seen several different models (``ClassicModel``,
 ``QuiescientModel`` and ``QuiescientModelUsingStart``) based on the
 Lotka-Volterra equations.  Have you noticed something they all have in
-common?  If you look closely, there are actually hardly any
+common?  If you look closely, you will see that they have almost
+**everything** in common and that there are actually hardly any
 **differences** between them!
 
 In software engineering, there is a saying that "Redundancy is the
@@ -1043,34 +1052,102 @@ Also note that we could have inherited from ``ClassicModel`` but then
 we would have had to repeat the initial equations in order to have
 quiescient initial conditions.  But by instead inheriting from
 ``QuiescientModelWithModifications``, we reuse the content from
-**two** different models and completely avoid repeating ourselves even
-once.
+**two** different models and avoid repeating ourselves even once.
+
 
 Review
 ======
 
+The first part of this chapter introduced languages features through
+examples.  This part will review the various features and concepts and
+provide a more complete discussion of each topic.
+
 Model Definition
 ----------------
 
+Syntax of a Model Definition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. index:: ! model
+
+As we saw throughout this chapter, a model definition starts with the
+``model`` keyword and is followed by a model name and model
+description.  The model name must start with a letter and can be
+followed by any collection of letters, numbers or underscores
+(``_``).
+
+.. index:: camel case
+
+.. note::
+
+Although not strictly required by the language.  It is a convention
+that model names start with an *upper case* letter.  Most model
+developers use the so-called "camel case" convention where the first
+letter of each word in the model name is upper case.
+
+The model definition can contain variable and equations (to be
+discussed shortly).  The end of the model is indicated by the presence
+of the ``end`` keyword followed by a repetition of the model name.
+Any text appearing after the sequence ``//`` or between the delimeters
+``/*`` and ``*/`` is considered a comment.
+
+In summary, a model definition has the following general form:
+
+.. source::
+   :language: modelica
+
+model SomeModelName "An optional description"
+  // By convention, variables are listed at the start
+equation
+  /* And equations are listed at the end */
+end SomeModelName;
+
+Inheritance
+^^^^^^^^^^^
+
 .. index:: ! inheritance
 .. index:: ! extends
+
+As we in the section on :ref:`avoiding-repetition`, we can reuse code
+from other models by adding and ``extends`` clause to the model.  It
+is worth noting that a model definition can include multiple
+``extends`` clauses.  Each ``extends`` clause must include the name of
+the model being extended from and can be optionally followed by
+modifications that are applied to the contents of the model being
+extended from.  In the case of a model definition that inherits from
+other model definitions, you can think of the general syntax as
+looking something like this:
+
+.. source::
+   :language: modelica
+
+model SpecializedModelName "An optional description"
+  extends Model1; // No modifications
+  extends Model2(n=5); // Including modification
+  // By convention, variables are listed at the start
+equation
+  /* And equations are listed at the end */
+end SpecializedModelName;
+
+By convention, ``extends`` clauses are normally listed at the very
+top of the model definition, before any variables.
+
+In later chapters, we will show how this same syntax can be used to
+define other entities besides models.  But for now, we will focus
+primarily on models
 
 .. _variables:
 
 Variables
 ---------
 
-.. _built-in-types:
-
-Built-In Types
-^^^^^^^^^^^^^^
-
-.. index:: ! Real
-.. index:: ! attributes
-.. index:: ! unit attribute
-.. index:: start attribute
-.. index:: ! fixed attribute
+As we saw in the previous section, a model definition typically
+contains variable declarations.  The basic syntax for a variable
+declaration is simply the "type" of the variable (which will be
+discussed shortly in the section on :ref:`built-in-types`) followed by
+the name of the variable, *e.g.*, ``Real x;``.  Variables sharing the
+same type can be grouped together using the following syntax: ``Real
+x, y;``
 
 .. _variability:
 
@@ -1079,16 +1156,197 @@ Variability
 
 .. index:: ! parameter
 
+By default, variable declared inside a model are assumed to be
+continuous variables.  That means that their value can change at any
+time (or be constantly changing).  However, as first saw in the
+section :ref:`getting-physical`, it is also possible to add the
+``parameter`` qualifier in front of a variable declaration and to
+indicate that the variable is known *a priori*.  You can think of a
+parameter as "input data" to the model that is constant with respect
+to time.
+
+.. index:: ! constant
+
+Closely related to the ``parameter`` qualifier is the ``constant``
+qualifier.  When placed in front of a variable declaration, the
+``constant`` qualifier indicates also implies that the value of the
+variable is known *a priori* and is constant with respect to time.
+The distinction between the two lies in the fact that a ``parameter``
+value can be changed from one simulation to the next whereas the value
+of a ``constant`` cannot be changed once the model is compiled.  The
+use of ``constant`` by a model developer ensures that end users are
+not given the option to make changes to the ``constant``.
+
+.. index:: discrete
+
+Another qualifier that can be placed in front of a variable
+declaration is the ``discrete`` qualifier.  We have not yet shown any
+example where the ``discrete`` qualifier would be relevant.  However,
+it is included now for completeness since it is the last remaining
+variability qualifier.
+
+.. _built-in-types:
+
+Built-In Types
+^^^^^^^^^^^^^^
+
+.. index:: ! Real
+
+Many of the examples so far referenced the ``Real`` type when
+declaring variables.  As the name suggests, ``Real`` is used to
+represented real values variables.  However, ``Real`` is just one of
+the four built-in types in Modelica.
+
+.. index:: ! Integer
+.. index:: ! Boolean
+.. index:: ! String
+
+Another of the built-in types is the ``Integer`` type.  This type is
+used to represent integer values and is often used in conjunction with
+array types which will be covered in future section titled
+:ref:`vectors-and-arrays`.  The remaining built-in types are
+``Boolean`` (used to represent values that can be either ``true`` or
+``false``) and ``String`` (used for representing character strings).
+
+Each of the built-in types restricts the possible values that a
+variable can have.  Obviously, an ``Integer`` variable cannot have the
+value ``2.5``, a ``Boolean`` or ``String`` cannot be ``7`` and a
+``Real`` can't be ``"Hello"``.
+.. _derived-types:
+
 Derived Types
 ^^^^^^^^^^^^^
 
 .. index:: ! derived types
+
+As we saw in the previous examples that introduced
+:ref:`physical-types`, it is possible to "specialize" the built-in
+types.  This feature is used mainly to modify the values associated
+with :ref:`attributes` like ``unit``.  The general syntax for creating
+derived types is:
+
 .. index:: ! type
+
+.. source::
+
+type NewTypeName = BaseTypeName(/* attributes to be modified */);
+
+Frequently, the ``BaseTypeName`` will be one of the built-in types
+(*e.g.*, ``Real``).  But it can also be another derived type.  This
+means that multiple levels of specialization can be supported, *e.g.*,
+
+.. source::
+
+type Temperature = Real(unit="K"); // Could be a temperature difference
+type AbsoluteTemperature = Temperature(min=0); // Must be positive
+
+.. _enumerations:
+
+Enumerations
+^^^^^^^^^^^^
+
+.. index:: ! enumeration
+
+.. todo:: We need an example that uses enumerations.  Explain
+	  enumerations here (once we have an example)
+
+There are two built-in enumeration types.  The first of these is
+``AssertionLevel`` and it is defined as follows:
+
+.. source::
+
+  type AssertionLevel = enumeration(warning, error);
+
+.. todo:: Need to add ``assert`` to the ``Lotka-Volterra`` examples somewhere!
+
+.. index:: ! assert
+.. index:: ! AssertionLevel
+.. index:: ! assertion levels
+
+The ``AssertionLevel`` attribute is used in conjunction with the
+``assert`` function which was presented in our discussion of
+:ref:`lotka-volterra-systems`.  In our previous discussion, only two
+arguments were passed to assert.  The first was a conditional
+expression that we wish to assert should always be true.  The second
+was a string that represents the error message to be used should the
+assertion be violated (*i.e.*, if the conditional expression becomes
+false).  However, there is a *third* **optional** argument to the
+``assert`` function of type ``AssertionLevel``.  If no value for the
+third argument is provided, the default value is
+``AssertionLevel.error``.
+
+During simulation, the simulation environment will generally attempt,
+by various means (*e.g.*, tightening tolerances, taking smaller time
+steps), to find a solution trajectory that does not violate the
+assertion.  However, if it cannot find a trajectory that avoids the
+assertion, the value of the third argument to ``assert`` determines
+how the simulation environment should respond to the assertion
+violation.  If the third argument is ``AssertionLevel.error``, then
+the simulation will terminate if it cannot avoid the assertion
+violation.  On the other hand, if the value of the third argument is
+``AssertionLevel.warning``, then the simulation will simply generate a
+diagnostic error message (*i.e.*, the second argument) and
+**continue** the simulation.
+
+The other built-in enumeration is ``StateSelect`` and it is defined as
+follows:
+
+.. source::
+
+  type StateSelect = enumeration(never, avoid, default, prefer, always);
+
+.. todo:: Add a reference to whatever future section will discuss
+	  state selection.
+
+.. _attributes:
+
+Attributes
+^^^^^^^^^^
+
+.. index:: ! attributes
+
+So far in this chapter we have mentioned attributes (*e.g.*, ``unit``)
+but we haven't discussed them in detail. For example, *which*
+attributes are present on a given variable?  This depends on the
+built-in type that it is derived from.  The following table introduces
+all the possible attributes indicating their types (*i.e.*, what type
+of value can be given for that attribute), which types they can be
+associated with and finally a brief description of the attribute:
+
+.. index:: ! quantity attribute
+.. index:: start attribute
+.. index:: ! fixed attribute
+.. index:: ! min attribute
+.. index:: ! max attribute
+.. index:: ! unit attribute
+.. index:: ! displayUnit attribute
+.. index:: ! nominal attribute
+.. index:: ! stateSelect attribute
+
+.. todo:: Get descriptions from the specification
+
+| Attribute name | Type | Supporting Types | Default | Description |
+| ``quantity`` | ``String`` | RIBS | ``""`` | |
+| ``start`` | T | RIBS | | |
+| ``fixed`` | ``Boolean`` | RIB | | |
+| ``min`` | T | RI | | |
+| ``max`` | T | RI | | |
+| ``unit`` | ``String`` | R | | |
+| ``displayUnit`` | ``String`` | R | | |
+| ``nominal`` | ``Real`` | R | | |
+| ``stateSelect`` | ``StateSelect`` | R | | |
+
+It is worth noting that :ref:`derived-types` retain the attributes of
+the built-in type that they are ultimately derived from.
 
 Modifications
 ^^^^^^^^^^^^^
 
 .. index:: ! modifications
+.. index:: modification, extends
+.. index:: modification, attribute
+.. index:: modification, components
+
 .. index:: attribute modification
 
 Equations
