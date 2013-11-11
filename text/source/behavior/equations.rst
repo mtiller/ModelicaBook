@@ -356,7 +356,7 @@ From this example, we can see that once we define a physical type like
 name ``Temperature`` instead of the SI unit, ``K``.  You might be
 wondering what other attributes are available when creating derived
 types.  For further discussion, see the section on
-:ref:`built-in-types`.
+:ref:`builtin-types`.
 
 At this point, you might find the idea of defining ``Temperature``,
 ``ConvectionCoefficient``, ``SpecificHeat`` and ``Mass`` in every
@@ -784,7 +784,7 @@ Using either initialization method, the results for these models will
 be the same.  The typical behavior for the Lotka-Volterra system can
 be seen in this plot:
 
-.. plot:: ../plots/BasicEquations_LotkaVolterra_ClassicModel.py
+.. plot:: ../plots/LVCM.py
    :include-source: no
 
 Note the cyclical behavior of each population.  Initially, there are
@@ -854,7 +854,7 @@ solved for?
 The answer lies in understanding that the functions :math:`x(t)` and
 :math:`y(t)` are solved for by integrating the differential equations
 starting from some initial equations.  During the simulation, we see
-that :math:`x` and :math:`\dot{x} are "coupled" by the following
+that :math:`x` and :math:`\dot{x}` are "coupled" by the following
 equations:
 
 .. math:: x(t) = \int_{t_0}^{t_f} \dot{x} dx + x(t_0)
@@ -917,7 +917,7 @@ solution is trivial (:math:`x=0;y=0`) and the other is not.
 So what happens if we try to simulate our ``QuiescientModel``?  The
 answer is pretty obvious in the plot below:
 
-.. plot:: ../plots/BasicEquations_LotkaVolterra_QuiescentModel.py
+.. plot:: ../plots/LVQM.py
    :include-source: no
 
 We ended up with the trivial solution where the prey and predator
@@ -952,7 +952,7 @@ to avoid.  For example:
 This model leads us to a set of initial conditions that is more inline
 with what we were originally looking for (*i.e.*, a non-trivial solution):
 
-.. plot:: ../plots/BasicEquations_LotkaVolterra_QuiescentModel.py
+.. plot:: ../plots/LVQMUS.py
    :include-source: no
 
 
@@ -992,7 +992,7 @@ only slight differences between them.
 So what can be done about this?  In object-oriented programming
 languages there are basically two mechanisms that exist to reduce the
 amount of redundant code.  They are *composition* (which we will address
-in the future chapter on :ref:`_components`) and *inheritance* which
+in the future chapter on :ref:`components`) and *inheritance* which
 we will introduce here briefly.
 
 If we look closely at the ``QuiescientModelUsingStart`` example, we
@@ -1080,10 +1080,10 @@ followed by any collection of letters, numbers or underscores
 
 .. note::
 
-Although not strictly required by the language.  It is a convention
-that model names start with an *upper case* letter.  Most model
-developers use the so-called "camel case" convention where the first
-letter of each word in the model name is upper case.
+   Although not strictly required by the language.  It is a convention
+   that model names start with an *upper case* letter.  Most model
+   developers use the so-called "camel case" convention where the first
+   letter of each word in the model name is upper case.
 
 The model definition can contain variable and equations (to be
 discussed shortly).  The end of the model is indicated by the presence
@@ -1093,14 +1093,13 @@ Any text appearing after the sequence ``//`` or between the delimeters
 
 In summary, a model definition has the following general form:
 
-.. source::
-   :language: modelica
+.. code-block:: modelica
 
-model SomeModelName "An optional description"
-  // By convention, variables are listed at the start
-equation
-  /* And equations are listed at the end */
-end SomeModelName;
+   model SomeModelName "An optional description"
+     // By convention, variables are listed at the start
+   equation
+     /* And equations are listed at the end */
+   end SomeModelName;
 
 Inheritance
 ^^^^^^^^^^^
@@ -1118,16 +1117,15 @@ extended from.  In the case of a model definition that inherits from
 other model definitions, you can think of the general syntax as
 looking something like this:
 
-.. source::
-   :language: modelica
+.. code-block:: modelica
 
-model SpecializedModelName "An optional description"
-  extends Model1; // No modifications
-  extends Model2(n=5); // Including modification
-  // By convention, variables are listed at the start
-equation
-  /* And equations are listed at the end */
-end SpecializedModelName;
+   model SpecializedModelName "An optional description"
+     extends Model1; // No modifications
+     extends Model2(n=5); // Including modification
+     // By convention, variables are listed at the start
+   equation
+     /* And equations are listed at the end */
+  end SpecializedModelName;
 
 By convention, ``extends`` clauses are normally listed at the very
 top of the model definition, before any variables.
@@ -1144,7 +1142,7 @@ Variables
 As we saw in the previous section, a model definition typically
 contains variable declarations.  The basic syntax for a variable
 declaration is simply the "type" of the variable (which will be
-discussed shortly in the section on :ref:`built-in-types`) followed by
+discussed shortly in the section on :ref:`builtin-types`) followed by
 the name of the variable, *e.g.*, ``Real x;``.  Variables sharing the
 same type can be grouped together using the following syntax: ``Real
 x, y;``
@@ -1185,7 +1183,7 @@ example where the ``discrete`` qualifier would be relevant.  However,
 it is included now for completeness since it is the last remaining
 variability qualifier.
 
-.. _built-in-types:
+.. _builtin-types:
 
 Built-In Types
 ^^^^^^^^^^^^^^
@@ -1212,6 +1210,7 @@ Each of the built-in types restricts the possible values that a
 variable can have.  Obviously, an ``Integer`` variable cannot have the
 value ``2.5``, a ``Boolean`` or ``String`` cannot be ``7`` and a
 ``Real`` can't be ``"Hello"``.
+
 .. _derived-types:
 
 Derived Types
@@ -1227,18 +1226,18 @@ derived types is:
 
 .. index:: ! type
 
-.. source::
+.. code-block:: modelica
 
-type NewTypeName = BaseTypeName(/* attributes to be modified */);
+   type NewTypeName = BaseTypeName(/* attributes to be modified */);
 
 Frequently, the ``BaseTypeName`` will be one of the built-in types
 (*e.g.*, ``Real``).  But it can also be another derived type.  This
 means that multiple levels of specialization can be supported, *e.g.*,
 
-.. source::
+.. code-block:: modelica
 
-type Temperature = Real(unit="K"); // Could be a temperature difference
-type AbsoluteTemperature = Temperature(min=0); // Must be positive
+   type Temperature = Real(unit="K"); // Could be a temperature difference
+   type AbsoluteTemperature = Temperature(min=0); // Must be positive
 
 .. _enumerations:
 
@@ -1253,9 +1252,9 @@ Enumerations
 There are two built-in enumeration types.  The first of these is
 ``AssertionLevel`` and it is defined as follows:
 
-.. source::
+.. code-block:: modelica
 
-  type AssertionLevel = enumeration(warning, error);
+   type AssertionLevel = enumeration(warning, error);
 
 .. todo:: Need to add ``assert`` to the ``Lotka-Volterra`` examples somewhere!
 
@@ -1291,9 +1290,9 @@ diagnostic error message (*i.e.*, the second argument) and
 The other built-in enumeration is ``StateSelect`` and it is defined as
 follows:
 
-.. source::
+.. code-block:: modelica
 
-  type StateSelect = enumeration(never, avoid, default, prefer, always);
+   type StateSelect = enumeration(never, avoid, default, prefer, always);
 
 .. todo:: Add a reference to whatever future section will discuss
 	  state selection.

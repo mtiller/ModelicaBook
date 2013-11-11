@@ -6,6 +6,9 @@
 Modelica By Example
 ===================
 
+.. highlight:: modelica
+   :linenothreshold: 5
+
 .. todo::
 
    I suspect for the "landing page", I'll need to do a hidden

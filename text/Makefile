@@ -154,12 +154,15 @@ doctest:
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
-results:
+simulateAll.mos: generate_results.py
+	./generate_results.py
+
+results: simulateAll.mos
 	@echo "Generate results"
 	-mkdir tmp
 	-mkdir results
+	-mkdir plots
 	rm -f tmp/* results/*
-	./generate_results.py > simulateAll.mos
 	(cd tmp; omc ../simulateAll.mos)
 	mv tmp/*.mat results
 	rm -rf tmp/*

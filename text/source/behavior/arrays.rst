@@ -1,4 +1,4 @@
-.. _vectors-and-array:
+.. _vectors-and-arrays:
 
 Vectors and Arrays
 ******************
