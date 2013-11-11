@@ -14,15 +14,6 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
-MODELS = "BasicEquations.SimpleExample.FirstOrder:10" \
-	"BasicEquations.SimpleExample.FirstOrderInitial:10" \
-	"BasicEquations.SimpleExample.FirstOrderSteady:10" \
-	"BasicEquations.CoolingExample.NewtonCoolingWithDefaults:10" \
-	"BasicEquations.RLC.RLC1:1" \
-	"BasicEquations.RotationalSMD.SecondOrderSystemInitParams:1" \
-	"BasicEquations.RotationalSMD.SecondOrderSystemInitParams:1:phi1=1" \
-	"BasicEquations.RLC.RLC1:1" \
-
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext results
 
 default: dirhtml
@@ -168,7 +159,7 @@ results:
 	-mkdir tmp
 	-mkdir results
 	rm -f tmp/* results/*
-	./generate_results.py $(MODELS) > simulateAll.mos
+	./generate_results.py > simulateAll.mos
 	(cd tmp; omc ../simulateAll.mos)
 	mv tmp/*.mat results
 	rm -rf tmp/*
