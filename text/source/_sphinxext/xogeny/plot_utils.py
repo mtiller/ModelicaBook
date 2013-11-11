@@ -12,6 +12,8 @@ def render_simple_plot(name, vars):
     if len(vars)!=1:
         raise "Need to implement handling of multiple variables"
 
+    var = vars[0]
+
     # Location of results (relative to extention directory)
     resdir = os.path.abspath(os.path.join(os.path.dirname(__file__),
                                           "..", "..", "..", "results"))

@@ -105,12 +105,12 @@ def genSimScript():
 
         if stop_time==None:
             cmd = cmd+"""
-    simulate(ModelicaByExample.%s(%s), tolerance=1e-3, numberOfIntervals=500, fileNamePrefix="%s");
-    """ % (dotname, modstr, dashname)
+    simulate(ModelicaByExample.%s, tolerance=1e-3, numberOfIntervals=500, fileNamePrefix="%s");
+    """ % (dotname, dashname)
         else:
             cmd = cmd+"""
-    simulate(ModelicaByExample.%s(%s), stopTime=%s, tolerance=1e-3, numberOfIntervals=500, fileNamePrefix="%s");
-    """ % (dotname, modstr, stop_time, dashname)
+    simulate(ModelicaByExample.%s, stopTime=%s, tolerance=1e-3, numberOfIntervals=500, fileNamePrefix="%s");
+    """ % (dotname, stop_time, dashname)
 
     print cmd
 

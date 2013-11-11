@@ -52,7 +52,7 @@ transform this model into something that we can simulate.  This
 simulation step essentially amounts to solving (usually numerically)
 the equation and providing a solution trajectory.
 
-.. plot:: ../plots/BasicEquations_SimpleExample_FirstOrder.py
+.. plot:: ../plots/FO.py
    :include-source: no
 
 This gives you the first initial hint at one of the compelling aspect
@@ -130,7 +130,7 @@ add this equation, our system has a different initial starting
 condition and the solution trajectory is quite different as we can see
 in the following figure:
 
-.. plot:: ../plots/BasicEquations_SimpleExample_FirstOrderInitial.py
+.. plot:: ../plots/FOI.py
    :include-source: no
 
 Example :ref:`FirstOrderInitial <ex_SimpleExample_FirstOrderInitial>`
@@ -155,7 +155,7 @@ initialization as:
 
 Simulating this system gives the following solution:
 
-.. plot:: ../plots/BasicEquations_SimpleExample_FirstOrderSteady.py
+.. plot:: ../plots/FOS.py
    :include-source: no
 
 Complete coverage of the initialization topic can be found in the
@@ -252,7 +252,7 @@ the initialization of the ``parameter`` variables) and 6 unknowns.
 If we simulate the ``NewtonCoolingWithDefaults`` model, we get the
 following solution for ``T``.
 
-.. plot:: ../plots/BasicEquations_CoolingExample_NewtonCoolingWithDefaults.py
+.. plot:: ../plots/NC1.py
    :include-source: no
 
 
@@ -490,7 +490,7 @@ of the models.
 
 The following figure shows the dynamic response of the ``RLC1`` model:
 
-.. plot:: ../plots/BasicEquations_RLC_RLC1.py
+.. plot:: ../plots/RLC1.py
    :include-source: no
 
 .. todo::
@@ -603,13 +603,13 @@ explore other initial conditions as well.  For example, if we simulate
 the ``SecondOrderSystemInitParams`` model as is, we get the following
 solution for the angular positions and velocities:
 
-.. plot:: ../plots/BasicEquations_RotationalSMD_SecondOrderSystemInitParams.py
+.. plot:: ../plots/SOSIP.py
    :include-source: no
 
 However, if modify the ``phi1_init`` parameter to be *1* at the start
 of our simulation, we get this solution instead:
 
-.. plot:: ../plots/BasicEquations_RotationalSMD_SecondOrderSystemInitParams_phi1_init=1.py
+.. plot:: ../plots/SOSIP1.py
    :include-source: no
 
 .. todo:: 
