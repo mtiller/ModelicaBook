@@ -1,5 +1,5 @@
 within ModelicaByExample.BasicEquations.RLC;
-model RLC1
+model RLC2
   type Voltage=Real(unit="V");
   type Current=Real(unit="A");
   type Resistance=Real(unit="Ohm");
@@ -18,4 +18,4 @@ equation
   der(i_L) = (Vb-V)/L;
   i_R = i_L-i_C;
   V = i_R*R;
-end RLC1;
+end RLC2;
