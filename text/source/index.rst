@@ -3,6 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+===================
 Modelica By Example
 ===================
 
@@ -23,20 +24,18 @@ Modelica By Example
    Add a dedication.  Not sure where it needs to go.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    foreward
    preface
    intro
-   behavior/equations
-   behavior/discrete
-   behavior/arrays
-   behavior/functions
-   components/packages
-   components/connectors
-   components/components
-   components/subsystems
-   components/architectures
+
+
+.. toctree::
+   :maxdepth: 2
+
+   behavior/index
+   components/index
    advanced
 
 TODO List
