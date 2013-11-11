@@ -20,7 +20,8 @@ MODELS = "BasicEquations.SimpleExample.FirstOrder:10" \
 	"BasicEquations.CoolingExample.NewtonCoolingWithDefaults:10" \
 	"BasicEquations.RLC.RLC1:1" \
 	"BasicEquations.RotationalSMD.SecondOrderSystemInitParams:1" \
-	"BasicEquations.RotationalSMD.SecondOrderSystemInitParams:1:phi1=1"
+	"BasicEquations.RotationalSMD.SecondOrderSystemInitParams:1:phi1=1" \
+	"BasicEquations.RLC.RLC1:1" \
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext results
 
@@ -164,6 +165,8 @@ doctest:
 
 results:
 	@echo "Generate results"
+	-mkdir tmp
+	-mkdir results
 	rm -f tmp/* results/*
 	./generate_results.py $(MODELS) > simulateAll.mos
 	(cd tmp; omc ../simulateAll.mos)
