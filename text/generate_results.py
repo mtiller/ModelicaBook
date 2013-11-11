@@ -59,7 +59,7 @@ add_case("SimpleExample", "FirstOrderSteady", stopTime=10,
          short="FOS", vars=["x"]);
 
 ## Cooling Example
-add_case("NewtonCoolingWithDefaults", stopTime=10,
+add_case("NewtonCoolingWithDefaults", stopTime=1,
          short="NC1", vars=["T"])
 
 ## RLC

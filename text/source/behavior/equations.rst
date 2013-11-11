@@ -383,8 +383,8 @@ use the equations associated an inductor, resistor and capacitor,
 respectively:
 
 .. math:: V = i_R R
-.. math:: C*\dot{V} = i_C
-.. math:: L*\dot{i_L} = (V_b-V)
+.. math:: C \frac{dV}{dt} = i_C
+.. math:: L \frac{di_L}{dt} = (V_b-V)
 
 where :math:`V_b` is the battery voltage.  Since we have only 3
 equations but 4 variables, we need one additional equation.  That
@@ -470,7 +470,7 @@ equations into a more explicit form, *e.g.*,
 
 .. literalinclude:: /ModelicaByExample/BasicEquations/RLC/RLC2.mo
    :language: modelica
-   :lines: 17-21
+   :lines: 17-20
 
 But the important point is that with Modelica, we do not need to
 perform such manipulations.  Instead, we are free to write the
