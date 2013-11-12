@@ -73,9 +73,9 @@ add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP1",
          mods={"phi1": 1.0})
 
 ## LotkaVolterra
-add_case("ClassicModel$", stopTime=1, short="LVCM")
-add_case("QuiescientModel$", stopTime=1, short="LVQM")
-add_case("QuiescientModelUsingStart", stopTime=1, short="LVQMUS")
+add_case("ClassicModel$", stopTime=1, short="LVCM", vars=["x", "y"])
+add_case("QuiescientModel$", stopTime=1, short="LVQM", vars=["x", "y"])
+add_case("QuiescientModelUsingStart", stopTime=1, short="LVQMUS", vars=["x", "y"])
 
 def genPlotScripts():
     simplePlot = """
