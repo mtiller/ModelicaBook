@@ -24,7 +24,7 @@ equation
   // Equations for inertia 1
   omega1 = der(phi1);
   J1*der(omega1) = k1*(phi2-phi1)+d1*der(phi2-phi1);
-  omega2 = der(phi2);
   // Equations for inertia 2
+  omega2 = der(phi2);
   J2*der(omega2) = k1*(phi1-phi2)+d1*der(phi1-phi2)-k2*phi2-d2*der(phi2);
 end SecondOrderSystem;
