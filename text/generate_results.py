@@ -66,8 +66,11 @@ add_case("NewtonCoolingWithDefaults", stopTime=1,
 add_case("RLC1", stopTime=10, short="RLC1")
 
 ## RotationalSMD
-add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP")
-add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP1", mods={"phi1": 1.0})
+add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP",
+         vars=["phi1", "phi2", "omega1", "omega2"])
+add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP1",
+         vars=["phi1", "phi2", "omega1", "omega2"],
+         mods={"phi1": 1.0})
 
 ## LotkaVolterra
 add_case("ClassicModel$", stopTime=1, short="LVCM")
