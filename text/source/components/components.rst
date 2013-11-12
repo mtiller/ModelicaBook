@@ -16,5 +16,10 @@ Heat Transfer Components
 Electrical Components
 ---------------------
 
+.. _population-components:
+
+Lotka-Volterra Equations Revisited
+----------------------------------
+
 Review
 ======
