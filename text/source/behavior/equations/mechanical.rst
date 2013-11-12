@@ -85,6 +85,52 @@ this problem in Modelica as follows:
    :language: modelica
    :lines: 2-
 
+As we did with the low-pass filter example, ``RLC1``, let's walk
+through this line by line.
+
+As usual, we start with the name of the model:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
+   :language: modelica
+   :lines: 2-2
+
+Next, we introduce physical types for a rotatioal mechanical system, namely:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
+   :language: modelica
+   :lines: 3-7
+
+Then we define the various parameters used to represent the different
+physical characterstics of our system:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
+   :language: modelica
+   :lines: 8-13
+
+For this system, there are four non-``parameter`` variables.  These are defined as follows:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
+   :language: modelica
+   :lines: 14-17
+
+The initial conditions (which we will revisit shortly) are then defined with:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
+   :language: modelica
+   :lines: 18-22
+
+Then come the equations describing the dynamic response of our system:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
+   :language: modelica
+   :lines: 23-29
+
+And finally, we have the closing of our model definition.
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
+   :language: modelica
+   :lines: 30-30
+
 .. index:: modifications
 
 The only drawback of this model is that all of our initial conditions
@@ -97,6 +143,7 @@ follows:
 
 .. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystemInitParams.mo
    :language: modelica
+   :emphasize-lines: 8-11,23-26
    :lines: 2-
 
 In this way, the parameter values can be changed either in the
