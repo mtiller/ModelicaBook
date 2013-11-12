@@ -37,45 +37,109 @@ def add_case(*frags, **kwargs):
         print "Error, not short hand name associated with pattern: "+str(frags)
         sys.exit(1)
     short = data["short"]
-    if short in shorts:
+    if short in refs:
         print "Error, multiple cases using the same short hand name "+short
         sys.exit(1)
-    shorts.add(short)
+    refs[short] = data
     models.append(data)
 
+class Var(object):
+    def __init__(self, name, legend=None):
+        self.name = name
+        if legend==None:
+            self.legend = name
+        else:
+            self.legend = legend
+
+class SimplePlot(object):
+    def __init__(self, model, vars):
+        self.model = model
+        self.vars = vars
+
+class ComparePlot(object):
+    def __init__(self, model1, vars1, model2, vars2):
+        self.model1 = model1
+        self.vars1 = vars1
+        self.model2 = model2
+        self.vars2 = vars2
+
+def add_simple_plot(short, *vars, **kwargs):
+    if short in refs:
+        model = refs[short]
+        if short in plots:
+            print "Error, plot by the name of "+short+" already defined"
+            sys.exit(1)
+        plots[short] = SimplePlot(model, vars)
+    else:
+        print "Couldn't find model with shorthand name of "+short
+        sys.exit(1)
+
+def add_compare_plot(short1, v1, short2, v2):
+    if not short1 in refs:
+        print "Couldn't find model with shorthand name of "+short1
+    if not short2 in refs:
+        print "Couldn't find model with shorthand name of "+short2
+
+    model1 = refs[short1]
+    model2 = refs[short2]
+    if short1 in plots:
+        print "Error, plot by the name of "+short1+" already defined"
+        sys.exit(1)
+    plots[short1] = ComparePlot(model1, v1, model2, v2)
+
 models = []
-shorts = set()
+plots = {}
+refs = {}
 path = os.path.abspath("..");
 results = default=os.path.abspath("./results")
 
 # This is the list of things I need to simulate
 
 ## Simple Examples
+fovars = [Var("x")]
 add_case("SimpleExample", "FirstOrder$", stopTime=10,
          short="FO", vars=["x"]);
-add_case("SimpleExample", "FirstOrderInitial", stopTime=10,
-         short="FOI", vars=["x"]);
-add_case("SimpleExample", "FirstOrderSteady", stopTime=10,
-         short="FOS", vars=["x"]);
+add_simple_plot("FO", *fovars)
+
+add_case("SimpleExample", "FirstOrderInitial", stopTime=10, short="FOI")
+add_compare_plot("FOI", fovars, "FO", fovars)
+
+add_case("SimpleExample", "FirstOrderSteady", stopTime=10, short="FOS")
+add_simple_plot("FOS", *fovars)
 
 ## Cooling Example
-add_case("NewtonCoolingWithDefaults", stopTime=1,
-         short="NCWD", vars=["T"])
+add_case("NewtonCoolingWithDefaults", stopTime=1, short="NCWD")
+add_simple_plot("NCWD", [Var("T")])
 
 ## RLC
 add_case("RLC1", stopTime=10, short="RLC1")
+add_simple_plot("RLC1", [Var("Vb", legend="Battery Voltage"),
+                         Var("V", legend="Output Voltage")])
 
 ## RotationalSMD
-add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP",
-         vars=["phi1", "phi2", "omega1", "omega2"])
+sosvars = [Var("phi1", legend="Position of inertia 1"),
+           Var("phi2", legend="Position of inertia 2"),
+           Var("omega1", legend="Velocity of inertia 1"),
+           Var("omega2", legend="Velocity of inertia 2")]
+add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP")
+add_simple_plot("SOSIP", *sosvars)
+
 add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP1",
-         vars=["phi1", "phi2", "omega1", "omega2"],
-         mods={"phi1": 1.0})
+         modes={"phi1": 1.0})
+add_simple_plot("SOSIP1", *sosvars)
 
 ## LotkaVolterra
-add_case("ClassicModel$", stopTime=1, short="LVCM", vars=["x", "y"])
-add_case("QuiescientModel$", stopTime=1, short="LVQM", vars=["x", "y"])
-add_case("QuiescientModelUsingStart", stopTime=1, short="LVQMUS", vars=["x", "y"])
+lvvars = [Var("x", legend="Prey population"),
+          Var("y", legend="Predator population")]
+
+add_case("ClassicModel$", stopTime=1, short="LVCM")
+add_simple_plot("LVCM", lvvars)
+
+add_case("QuiescientModel$", stopTime=1, short="LVQM")
+add_simple_plot("LVQM", lvvars)
+
+add_case("QuiescientModelUsingStart", stopTime=1, short="LVQMUS")
+add_simple_plot("LVQMUS", lvvars)
 
 def genPlotScripts():
     simplePlot = """
