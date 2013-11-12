@@ -10,9 +10,10 @@ def render_simple_plot(name, vars):
     import math
 
     if len(vars)!=1:
-        raise "Need to implement handling of multiple variables"
+        #raise BaseException("Need to implement handling of multiple variables")
+        return
 
-    var = vars[0]
+    var = vars[0]["name"]
 
     # Location of results (relative to extention directory)
     resdir = os.path.abspath(os.path.join(os.path.dirname(__file__),

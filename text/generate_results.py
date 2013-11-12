@@ -50,8 +50,10 @@ class Var(object):
             self.legend = name
         else:
             self.legend = legend
+    def dict(self):
+        return {"name": self.name, "legend": self.legend}
     def __repr__(self):
-        return repr({"name": self.name, "legend": self.legend})
+        return repr(self.dict())
 
 class SimplePlot(object):
     def __init__(self, short, model, vars):
@@ -68,9 +70,8 @@ render_simple_plot("%s", %s)
         dotname = self.model["name"]
         short = self.short
         dashname = dotname.replace(".", "_")
-        vars = map(lambda x: repr(x), self.vars)
+        vars = map(lambda x: x.dict(), self.vars)
         return simplePlot % (dotname, dashname, vars)
-
 
 class ComparePlot(object):
     def __init__(self, short, model1, vars1, model2, vars2):
@@ -128,12 +129,12 @@ add_simple_plot("FOS", *fovars)
 
 ## Cooling Example
 add_case("NewtonCoolingWithDefaults", stopTime=1, short="NCWD")
-add_simple_plot("NCWD", [Var("T")])
+add_simple_plot("NCWD", Var("T"))
 
 ## RLC
 add_case("RLC1", stopTime=10, short="RLC1")
-add_simple_plot("RLC1", [Var("Vb", legend="Battery Voltage"),
-                         Var("V", legend="Output Voltage")])
+add_simple_plot("RLC1", Var("Vb", legend="Battery Voltage"),
+                Var("V", legend="Output Voltage"))
 
 ## RotationalSMD
 sosvars = [Var("phi1", legend="Position of inertia 1"),
@@ -152,13 +153,13 @@ lvvars = [Var("x", legend="Prey population"),
           Var("y", legend="Predator population")]
 
 add_case("ClassicModel$", stopTime=1, short="LVCM")
-add_simple_plot("LVCM", lvvars)
+add_simple_plot("LVCM", *lvvars)
 
 add_case("QuiescientModel$", stopTime=1, short="LVQM")
-add_simple_plot("LVQM", lvvars)
+add_simple_plot("LVQM", *lvvars)
 
 add_case("QuiescientModelUsingStart", stopTime=1, short="LVQMUS")
-add_simple_plot("LVQMUS", lvvars)
+add_simple_plot("LVQMUS", *lvvars)
 
 def genPlotScripts():
     for model in models:
