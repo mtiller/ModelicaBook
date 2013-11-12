@@ -30,4 +30,5 @@ provide a more complete discussion of each topic.
 
    equations/model_def
    equations/variables
+   equations/equations
    equations/initialization

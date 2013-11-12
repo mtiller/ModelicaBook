@@ -7,25 +7,26 @@ Syntax of a Model Definition
 .. index:: ! model
 
 As we saw throughout this chapter, a model definition starts with the
-``model`` keyword and is followed by a model name and model
-description.  The model name must start with a letter and can be
-followed by any collection of letters, numbers or underscores
-(``_``).
+``model`` keyword and is followed by a model name (and optionally a
+model description).  The name of the model must start with a letter
+and can be followed by any collection of letters, numbers or
+underscores (``_``).
 
 .. index:: camel case
 
-.. note::
+.. topic:: Naming conventions
 
    Although not strictly required by the language.  It is a convention
-   that model names start with an *upper case* letter.  Most model
-   developers use the so-called "camel case" convention where the first
-   letter of each word in the model name is upper case.
+   that **model names start with an *upper case* letter**.  Most model
+   developers use the so-called "camel case" convention where the
+   first letter of each word in the model name is upper case.
 
-The model definition can contain variable and equations (to be
+The model definition can contain variables and equations (to be
 discussed shortly).  The end of the model is indicated by the presence
 of the ``end`` keyword followed by a repetition of the model name.
-Any text appearing after the sequence ``//`` or between the delimeters
-``/*`` and ``*/`` is considered a comment.
+Any text appearing after the sequence ``//`` and until the end of the
+line or between the delimeters ``/*`` and ``*/`` is considered a
+comment.
 
 In summary, a model definition has the following general form:
 
@@ -46,12 +47,13 @@ Inheritance
 As we in the section on :ref:`avoiding-repetition`, we can reuse code
 from other models by adding and ``extends`` clause to the model.  It
 is worth noting that a model definition can include multiple
-``extends`` clauses.  Each ``extends`` clause must include the name of
-the model being extended from and can be optionally followed by
-modifications that are applied to the contents of the model being
-extended from.  In the case of a model definition that inherits from
-other model definitions, you can think of the general syntax as
-looking something like this:
+``extends`` clauses.
+
+Each ``extends`` clause must include the name of the model being
+extended from and can be optionally followed by modifications that are
+applied to the contents of the model being extended from.  In the case
+of a model definition that inherits from other model definitions, you
+can think of the general syntax as looking something like this:
 
 .. code-block:: modelica
 
