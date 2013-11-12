@@ -161,6 +161,8 @@ trivial to determine the initial state values that would satisfy such
 a requirement.  In those cases, it is possible to express the
 constraint that :math:`\dot{x}(0)=0` directly in Modelica as follows:
 
+.. _ex_SimpleExample_FirstOrderSteady:
+
 .. literalinclude:: /ModelicaByExample/BasicEquations/SimpleExample/FirstOrderSteady.mo
    :language: modelica
    :lines: 2-
