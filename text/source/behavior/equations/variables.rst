@@ -26,6 +26,8 @@ following syntax:
 Variability
 ^^^^^^^^^^^
 
+.. _parameters:
+
 .. index:: ! parameter
 
 By default, variables declared inside a model are assumed to be

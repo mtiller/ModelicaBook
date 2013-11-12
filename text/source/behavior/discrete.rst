@@ -1,3 +1,5 @@
+.. _discrete-behavior:
+
 Discrete Behavior
 *****************
 
