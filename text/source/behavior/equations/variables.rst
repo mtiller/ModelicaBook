@@ -428,9 +428,59 @@ Modifications
 ^^^^^^^^^^^^^
 
 .. index:: ! modifications
-.. index:: modification, extends
-.. index:: modification, attribute
-.. index:: modification, components
 
+So far, we've seen two types of modifications.  The first is when we
+change the value of an attribute, *e.g.,*
+
+.. index:: modification, attribute
 .. index:: attribute modification
 
+.. code-block:: modelica
+
+   Real x(start=10);
+
+In this case, we are creating a variable ``x`` of type ``Real``.  But
+rather than leaving it "as is", we then apply a modification to
+``x``.  Specifically, we "reach inside" of ``x`` and change the
+``start`` attribute value.  In this example, we are only going one
+level into ``x`` to make our modification.  But as we will see in our
+next example, it is possible to make modifications at arbitrary
+depths.
+
+The other case where we have seen modifications was in the section on
+:ref:`avoiding-repetition`.  There we saw modification used in
+conjunction with ``extends`` clauses, *e.g.,*
+
+.. index:: modification, extends
+
+.. code-block:: modelica
+
+   extends QuiescientModelWithInheritance(gamma=0.3, delta=0.01);
+
+Here, the modification is applied to elements that were inherited from
+the ``QuiescientModelWithInheritance`` model.  As with modifications
+to attributes, the element being modified (a model in this case) is
+followed by parentheses and inside those parentheses we specify the
+modifications we wish to make.
+
+.. index:: modification, hierarchical
+
+It is worth noting that modifications can be nested arbitrarily deep.
+For example, imagine we wanted to modify the ``start`` attribute for
+the variable ``x`` inherited from the
+``QuiescientModelWithInheritance`` model.  In Modelica, such a
+modification would be made as follows:
+
+.. code-block:: modelica
+
+   extends QuiescientModelWithInheritance(x(start=5));
+
+Here we first "reach inside" the ``QuiescientModelWithInheritance``
+model to modify the contents that we "inherit" from it (``x`` in this
+case) and then we "reach inside" ``x`` to modify the value of the
+``start`` attribute.
+
+One of the central themes of Modelica is support for reuse and
+avoiding the need to "copy and paste" code around.  Modifications are
+one of the essential features in Modelica that support reuse.  We'll
+learn about others in future sections.
