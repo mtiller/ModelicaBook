@@ -60,7 +60,7 @@ add_case("SimpleExample", "FirstOrderSteady", stopTime=10,
 
 ## Cooling Example
 add_case("NewtonCoolingWithDefaults", stopTime=1,
-         short="NC1", vars=["T"])
+         short="NCWD", vars=["T"])
 
 ## RLC
 add_case("RLC1", stopTime=10, short="RLC1")
