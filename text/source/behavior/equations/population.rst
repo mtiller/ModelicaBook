@@ -238,7 +238,7 @@ equilibrium if the following two conditions are met:
    :nowrap:
 
    \begin{aligned}
-   \dot{x} &amp; = 0
+   \dot{x} &amp; = 0 \\
    \dot{y} &amp; = 0
    \end{aligned}
 
@@ -337,10 +337,6 @@ the other is not.
 So what happens if we try to simulate our ``QuiescientModel``?  The
 answer is pretty obvious in the plot below:
 
-.. todo::
-
-   Fix this plot.
-
 .. plot:: ../plots/LVQM.py
    :include-source: no
 
@@ -380,7 +376,7 @@ populations for both the predator and prey species).
 
 .. todo::
 
-   Fix this plot
+   Fix this plot. (can't see predator population)
 
 .. plot:: ../plots/LVQMUS.py
    :include-source: no

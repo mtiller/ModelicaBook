@@ -171,25 +171,26 @@ sosvars = [Var("phi1", legend="Position of inertia 1"),
            Var("phi2", legend="Position of inertia 2"),
            Var("omega1", legend="Velocity of inertia 1"),
            Var("omega2", legend="Velocity of inertia 2")]
-add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP")
-add_simple_plot("SOSIP", *sosvars)
+add_case("SecondOrderSystemInitParams", stopTime=5, short="SOSIP")
+add_simple_plot("SOSIP", *sosvars, title="Mechanical System Response")
 
-add_case("SecondOrderSystemInitParams", stopTime=1, short="SOSIP1",
+add_case("SecondOrderSystemInitParams", stopTime=5, short="SOSIP1",
          modes={"phi1": 1.0})
-add_simple_plot("SOSIP1", *sosvars)
+add_simple_plot("SOSIP1", *sosvars, title="Mechanical Response; phi1(0)=0")
 
 ## LotkaVolterra
 lvvars = [Var("x", legend="Prey population"),
           Var("y", legend="Predator population")]
 
-add_case("ClassicModel$", stopTime=1, short="LVCM")
-add_simple_plot("LVCM", *lvvars)
+add_case("ClassicModel$", stopTime=140, short="LVCM")
+add_simple_plot("LVCM", *lvvars, title="Classic Lotka-Volterra")
 
-add_case("QuiescientModel$", stopTime=1, short="LVQM")
-add_simple_plot("LVQM", *lvvars)
+add_case("QuiescientModel$", stopTime=140, short="LVQM")
+add_simple_plot("LVQM", *lvvars, title="Queiscient Model (trivial solution)")
 
-add_case("QuiescientModelUsingStart", stopTime=1, short="LVQMUS")
-add_simple_plot("LVQMUS", *lvvars)
+add_case("QuiescientModelUsingStart", stopTime=140, short="LVQMUS")
+add_simple_plot("LVQMUS", *lvvars,
+                title="Queiscient Model (using start values)")
 
 def genPlotScripts():
     for model in models:
