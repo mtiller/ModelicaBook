@@ -211,6 +211,8 @@ interesting things about the system.  This is even more remarkable
 given the fact that the Lotka-Volterra system of equations is actually
 non-linear.
 
+.. _steady-state:
+
 Steady State Initialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
