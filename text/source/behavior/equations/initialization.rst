@@ -4,6 +4,9 @@
 Initialization
 --------------
 
+Overview
+========
+
 .. index:: ! initial equation
 
 As we already touched on during our previous discussion on
@@ -121,8 +124,13 @@ handle this case.  But this approach won't work for the cases we
 showed in :ref:`steady-state`.  There we didn't provide explicit
 initial values for states.  Instead, we provided initial values for
 :math:`\dot{\vec{x}}(t_0)`.  So how can we capture both of these
-cases?  The answer is to assume that at the start of our simulation we
-need to solve a problem that looks like this:
+cases?
+
+Initial Equations
+=================
+
+The answer is to assume that at the start of our simulation we need to
+solve a problem that looks like this:
 
 .. math::
    :nowrap:
