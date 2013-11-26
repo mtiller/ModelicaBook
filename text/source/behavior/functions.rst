@@ -7,6 +7,11 @@ Examples
 Review
 ======
 
+Restrictions
+------------
+
+    * time can't be referenced in a function
+
 .. _assertions:
 
 Assertions

@@ -192,6 +192,19 @@ add_case("QuiescientModelUsingStart", stopTime=140, short="LVQMUS")
 add_simple_plot("LVQMUS", *lvvars,
                 title="Queiscient Model (using start values)")
 
+## Cooling Revisited
+ncdvars = [Var("T", legend="Temperature"),
+           Var("T_inf", legend="Ambient Temperature")]
+add_case("NewtonCoolingDynamic", stopTime=1, short="NCD")
+add_simple_plot("NCD", *ncdvars,
+                title="Cooling to Time-Varying Ambient",
+                legloc="upper right", ylabel="Temperature")
+
+add_case("NewtonCoolingSteadyThenDynamic", stopTime=1, short="NCSTD")
+add_simple_plot("NCSTD", *ncdvars,
+                title="Equilibrium Initialization",
+                legloc="lower left", ylabel="Temperature")
+
 def genPlotScripts():
     for model in models:
         short = model["short"]
