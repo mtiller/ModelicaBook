@@ -1,4 +1,4 @@
-.. _cooling_revisited:
+.. _cooling-revisited:
 
 Cooling Revisited
 -----------------
@@ -120,7 +120,59 @@ temperature, *e.g.,*
    :language: modelica
    :lines: 16-18
 
+Events
+^^^^^^
 
-.. todo::
+We've seen several ways to express the fact that there is an abrupt
+change in the behavior of our system.  But it's important to point out
+that we are not just describing a change in the ambient temperature,
+we are also specifying **when** it changes.  This a subtle by very
+important point.
 
-   Discuss events?
+Consider the last example where our system began in an equilibrium
+state.  At the start of the simulation, there are no significant
+dynamics.  Since nothing is really changing in the system, the
+integrator is unlikely to accumulate significant integration error.
+So, in order to minimize the amount of time required to complete the
+simulation, variable time step integrators will, in such
+circumstances, increase their step size.
+
+There is, however, a risk in doing this.  The risk is that the
+integrator may get "blind-sided" by a sudden disturbance in the
+system.  If such a disturbance were to occur, the integrator's
+assumptions that a large step will not lead to significant integration
+error would not be true.
+
+The question then becomes, how can the integrator *know* when it can
+take a large time step and when it cannot.  Typically, these
+integration schemes use a kind of "trial and error" approach.  They
+try to take large step and then they estimate the amount of error
+introduced by that step.  If it is less than some threshold, then they
+accept the state (or perhaps try a larger step).  If, on the other
+hand, the step introduces too much error then they try a smaller
+step.  But they cannot know how small a step will be required to get
+under the error threshold which means they will continue to blindly
+try smaller and smaller steps.
+
+But Modelica is about much more than integrating the underlying
+system.  Modelica compilers study the **structure** of the problem.
+In all of our examples, the compiler can see that there is a distinct
+change in behavior.  Note only that, it can see that this change in
+behavior is a time event, *i.e.,* an event whose time is known *a
+priori* without any knowledge of the solution trajectory.
+
+So, what a Modelica compiler will do is it will inform the underlying
+integrator that there will be an abrupt change in behavior at 0.5
+seconds and it will instruct the integrator to simply integrate
+exactly up to that point and no further.  As a result, the abrupt
+change never occurs **within a time step**.  Instead, the integrator
+will simply restart on the other side of the event.  This completely
+avoids the blind searching for the cutoff time that minimizes the
+error in the step.  Instead, the integrator will integrator right up
+to that point automatically and then restart after that point.
+
+This is one of many examples of features in Modelica that optimize the
+way a simulation is carried out.  A more detailed discussion of this
+kind of handling can be found in the upcoming section on
+:ref:`events`.  In the coming sections, we'll also see more complex
+examples of events that depend on the solution variables.
