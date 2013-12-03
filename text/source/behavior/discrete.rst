@@ -64,3 +64,8 @@ Events
    * noEvent
 
    * Events
+
+.. _if-vs-when:
+
+`if` vs. `when`
+^^^^^^^^^^^^^^^
