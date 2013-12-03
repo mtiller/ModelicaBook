@@ -65,7 +65,14 @@ Events
 
    * Events
 
+When
+----
+
 .. _if-vs-when:
 
-`if` vs. `when`
-^^^^^^^^^^^^^^^
+``if`` vs. ``when``
+^^^^^^^^^^^^^^^^^^^
+
+Multiple Conditions
+^^^^^^^^^^^^^^^^^^^
+   * Means **any**, not **or**.

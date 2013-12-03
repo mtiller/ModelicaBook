@@ -21,13 +21,15 @@ above the surface, it accelerates due to gravitational forces.  When
 the ball eventually comes in contact with the surface, it bounces off
 the surface according to the following relationship:
 
-$$v_{final} = \epsilon v_{initial}$$
+.. math:
 
-where $v_{final}$ is the (vertical) velocity of the ball immediately
-after contact with the surface, $v_{initial}$ is the velocity prior to
-contact and $\epsilon$ is the "coefficient of restitution" which is a
-measure of the fraction of momentum retained by the ball after the
-collision.
+$$v_{final} = -e v_{initial}$$
+
+where :math:`v_{final}` is the (vertical) velocity of the ball
+immediately after contact with the surface, :math:`v_{initial}` is the
+velocity prior to contact and :math:`e` is the "coefficient of
+restitution" which is a measure of the fraction of momentum retained
+by the ball after the collision.
 
 Bringing all this together in Modelica might look something like this:
 
@@ -45,7 +47,7 @@ the existence of a ``when`` clause:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/BouncingBall/BouncingBall.mo
    :language: modelica
-   :emphasize-lines: 14-16
+   :emphasize-lines: 4-6
    :lines: 11-16
 
 .. index: ! reinit
@@ -108,4 +110,139 @@ like this:
    :include-source: no
 
 It should be immediately obvious when looking at this trajectory that
-something has gone wrong.
+something has gone wrong.  But what?
+
+The answer, as we hinted at before, lies in the numerical handling of
+the when condition ``h<0``.  More specifically, what do we do if we
+start a state extremely close to an event?  Because of numerical
+imprecision, we do not know whether we are starting our step right
+after an event has just occurred or whether we are starting a step
+where an event is just about to occur.
+
+To address this problem, we must introduce a certain amount of
+"hysteresis".  What this means in this case is that once the condition
+``h<0`` has become true, we have to get "far enough" away from the
+condition before we allow the event to happen again.  In other words,
+the event happens whenever ``h`` is less than zero.  But before we can
+trigger the event again we require that ``h`` must first become
+greater than some :math:`\epsilon`.  In other words, it is not simply
+enough that `h` becomes greater than zero, `h` must become greater
+than :math:`\epsilon` (where :math:`\epsilon` is determined by the
+solver by examining various scaling factors).
+
+The problem in the previous simulations is that each time the ball
+bounces, the peak value of `h` goes down a little bit.  By peak value,
+we mean the value of `h` when the ball first begins to fall again.
+Eventually, the peak value of `h` isn't enough to exceed the critical
+value of :math:`\epsilon`.  This, in turn, means that the ``when``
+statement never fires and the ``reinit`` statement will never again
+reset ``v``.  As a result, the ball continues, indefinitely, in free fall.
+
+So this raises the obvious question of how to achieve the behavior we
+truly intended (which is that the ball never drops below the
+surface).  For that, we have to make a few minor changes to our model
+as follows:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/BouncingBall/StableBouncingBall.mo
+   :language: modelica
+   :emphasize-lines: 17-20
+   :lines: 2-
+
+It should be noted that there are many ways to solve this problem.
+The solution presented here is only one of them.  In this approach, we
+have effectively created two surfaces.  One at a height of ``0`` and the
+other at a height of ``-eps`` (just below ``0``).  When the ball is
+bouncing "normally" it will only trigger the first condition in our
+``when`` clause.  If, however, the ball does not rebound high enough
+after contact and "falls through" the first surface, we detect that
+(and the fact that it has fallen through) and set the ``done`` flag.
+The effect of the ``done`` flag is to effectively turn off gravity.
+
+Note the syntax of the ``when`` clause in this case:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/BouncingBall/StableBouncingBall.mo
+   :language: modelica
+   :lines: 18-21
+
+In particular, note that it doesn't have just one conditional
+expression, **but two**.  More specifically, it actually has a vector
+of conditional expressions.  We'll introduce :ref:`vectors-and-arrays`
+later in the book, but for now it is just important to point out that
+in this chapter we have shown that a `when` can include either a
+scalar conditional expression or a vector of conditional expressions.
+
+If a ``when`` clause includes a vector of conditionals, then the
+statements of the when clause will be triggered when **any**
+conditional expression in the vector **becomes true**.  Note the
+grammar of this explanation carefully.  It is very common for people
+to read Modelica code like this:
+
+.. code-block:: modelica
+
+    when {a>0, b>0} then
+      ...
+    end when;
+
+as "when a is greater than zero **or** b is greater than zero".  But
+it is **very important** not to make the very common mistake of
+misinterpreting this to mean that the following two ``when`` clauses
+are equivalent:
+
+.. code-block:: modelica
+
+    when {a>0, b>0} then
+      ...
+    end when;
+
+    when a>0 or b>0 then
+      ...
+    end when;
+
+**These are not equivalent**.  To understand the difference, let's
+change the conditional expressions as follows:
+
+.. code-block:: modelica
+
+    when {time>1, time>2} then
+      ...
+    end when;
+
+    when time>1 or time>2 then
+      ...
+    end when;
+
+Remember our original statement that the vector notation for ``when``
+clauses means that the statements in the when clause are triggered
+when **any** condition becomes true.  Assuming we run a simulation
+that starts at ``time=0`` and runs until ``time=3``, then the ``when``
+clause:
+
+.. code-block:: modelica
+
+    when {time>1, time>2} then
+      ...
+    end when;
+
+will be triggered **twice**.  Once when ``time>1`` becomes true and
+the other when ``time>2`` becomes true.  In contrast, in this case:
+
+.. code-block:: modelica
+
+    when time>1 or time>2 then
+      ...
+    end when;
+
+there is only a **single** conditional expression and it becomes true
+**only once** (when ``time>1`` becomes true...and stays true).  The
+``or`` operator essentially masks the second conditional, ``time>2``,
+such that it may as well not even be present in this particular case.
+In other words, this conditional only **becomes true** once.  As a
+result, the statements inside the ``when`` clause are only triggered
+once.
+
+The key thing to remember is that for ``when`` clauses, a vector of
+conditionals means **any, not or**.  Furthermore, the statements are
+only active at the instant when the conditional **becomes true**.  The
+implications of this last statement will be discussed in greater
+details later in this chapter when we talk about the important
+differences between :ref:`if-vs-when`.
