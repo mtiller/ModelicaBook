@@ -229,6 +229,14 @@ add_case("SwitchedRLC\.SwitchedRLC", stopTime=2, short="SRLC")
 add_simple_plot("SRLC", *srlc_vvars,
                 title="Switched RLC Voltage Response",
                 legloc="lower right")
+
+# TODO: Change this to use Jinjify!!!
+
+# TODO: Include currents (separate plot, 2 up, I don't know)
+
+# TODO: Always pad y scaling to make sure line is visible on the top
+# and bottom edge
+
 #add_simple_plot("SRLC", *srlc_ivars,
 #                title="Switched RLC Current Response",
 #                legloc="lower right")
