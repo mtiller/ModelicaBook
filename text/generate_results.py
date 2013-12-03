@@ -111,10 +111,11 @@ render_comp_plot("%s", %s, "%s", %s, title=%s, legloc=%s, ylabel=%s)
 def add_simple_plot(short, *vars, **kwargs):
     if short in refs:
         model = refs[short]
-        if short in plots:
+        key = kwargs.pop("key", short)
+        if key in plots:
             print "Error, plot by the name of "+short+" already defined"
             sys.exit(1)
-        plots[short] = SimplePlot(short, model, vars, **kwargs)
+        plots[key] = SimplePlot(short, model, vars, **kwargs)
     else:
         print "Couldn't find model with shorthand name of "+short
         sys.exit(1)
@@ -217,6 +218,20 @@ add_case("\.BouncingBall$", stopTime=5, short="BB2")
 add_simple_plot("BB2", *bbvars,
                 title="Consequences of Numerical Event Detection",
                 legloc="upper right", ylabel="Height [m]")
+
+## Switched RLC
+srlc_vvars = [Var("Vs", legend="Source Voltage [V]"),
+              Var("V", legend="Response Voltage [V]")]
+srlc_ivars = [Var("i_R", legend="Resistor Current [A]"),
+              Var("i_C", legend="Capacitor Current [A]"),
+              Var("i_L", legend="Inductor Current [A]")]
+add_case("SwitchedRLC\.SwitchedRLC", stopTime=2, short="SRLC")
+add_simple_plot("SRLC", *srlc_vvars,
+                title="Switched RLC Voltage Response",
+                legloc="lower right")
+#add_simple_plot("SRLC", *srlc_ivars,
+#                title="Switched RLC Current Response",
+#                legloc="lower right")
 
 def genPlotScripts():
     for model in models:

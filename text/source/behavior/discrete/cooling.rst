@@ -89,6 +89,9 @@ response to the disturbance:
 .. plot:: ../plots/NCSTD.py
    :include-source: no
 
+
+.. cooling-if-expr:
+
 Compactness
 ^^^^^^^^^^^
 
