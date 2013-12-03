@@ -75,7 +75,7 @@ render_simple_plot("%s", %s, title=%s, legloc=%s, ylabel=%s)
         short = self.short
         dashname = dotname.replace(".", "_")
         vars = map(lambda x: x.dict(), self.vars)
-        return simplePlot % (dotname, dashname, vars,
+        return simplePlot % (dotname, short, vars,
                              repr(self.title), repr(self.legloc), repr(self.ylabel))
 
 class ComparePlot(object):
@@ -99,11 +99,13 @@ render_comp_plot("%s", %s, "%s", %s, title=%s, legloc=%s, ylabel=%s)
         short = self.short
         dotname1 = self.model1["name"]
         dashname1 = dotname1.replace(".", "_")
+        shortname1 = self.model1["short"]
         dotname2 = self.model2["name"]
         dashname2 = dotname2.replace(".", "_")
+        shortname2 = self.model2["short"]
         vars1 = map(lambda x: x.dict(), self.vars1)
         vars2 = map(lambda x: x.dict(), self.vars2)
-        return compPlot % (dotname1, dashname1, vars1, dashname2, vars2,
+        return compPlot % (dotname1, shortname1, vars1, shortname2, vars2,
                            repr(self.title), repr(self.legloc), repr(self.ylabel))
 
 def add_simple_plot(short, *vars, **kwargs):
@@ -162,15 +164,15 @@ add_simple_plot("NCWD", Var("T"), title="Cooling to Ambient",
 ## RLC
 add_case("RLC1", stopTime=2, short="RLC1")
 add_simple_plot("RLC1",
-                Var("V", legend="Output Voltage", style="-"),
-                Var("Vb", legend="Battery Voltage", style="-."),
+                Var("V", legend="Output Voltage [V]", style="-"),
+                Var("Vb", legend="Battery Voltage [V]", style="-."),
                 title="Circuit Response")
 
 ## RotationalSMD
-sosvars = [Var("phi1", legend="Position of inertia 1"),
-           Var("phi2", legend="Position of inertia 2"),
-           Var("omega1", legend="Velocity of inertia 1"),
-           Var("omega2", legend="Velocity of inertia 2")]
+sosvars = [Var("phi1", legend="Position of inertia 1 [rad]"),
+           Var("phi2", legend="Position of inertia 2 [rad]"),
+           Var("omega1", legend="Velocity of inertia 1 [rad/s]"),
+           Var("omega2", legend="Velocity of inertia 2 [rad/s]")]
 add_case("SecondOrderSystemInitParams", stopTime=5, short="SOSIP")
 add_simple_plot("SOSIP", *sosvars, title="Mechanical System Response")
 
@@ -198,12 +200,23 @@ ncdvars = [Var("T", legend="Temperature"),
 add_case("NewtonCoolingDynamic", stopTime=1, short="NCD")
 add_simple_plot("NCD", *ncdvars,
                 title="Cooling to Time-Varying Ambient",
-                legloc="upper right", ylabel="Temperature")
+                legloc="upper right", ylabel="Temperature [K]")
 
 add_case("NewtonCoolingSteadyThenDynamic", stopTime=1, short="NCSTD")
 add_simple_plot("NCSTD", *ncdvars,
                 title="Equilibrium Initialization",
-                legloc="lower left", ylabel="Temperature")
+                legloc="lower left", ylabel="Temperature [K]")
+
+## Bouncing Ball
+bbvars = [Var("h", legend="Height")]
+add_case("\.BouncingBall$", stopTime=3, short="BB1")
+add_simple_plot("BB1", *bbvars,
+                title="Simple Bouncing Ball Model",
+                legloc="upper right", ylabel="Height [m]")
+add_case("\.BouncingBall$", stopTime=5, short="BB2")
+add_simple_plot("BB2", *bbvars,
+                title="Consequences of Numerical Event Detection",
+                legloc="upper right", ylabel="Height [m]")
 
 def genPlotScripts():
     for model in models:
@@ -226,6 +239,7 @@ def genSimScript():
     for model in models:
         dotname = model["name"]
         stop_time = model["stopTime"]
+        shortname = model["short"]
         dashname = dotname.replace(".", "_")
         mods = model.get("mods", {})
         modstr = ",".join(map(lambda x: x+"="+str(mods[x]), mods))
@@ -233,11 +247,11 @@ def genSimScript():
         if stop_time==None:
             cmd = cmd+"""
     simulate(ModelicaByExample.%s, tolerance=1e-3, numberOfIntervals=500, fileNamePrefix="%s");
-    """ % (dotname, dashname)
+    """ % (dotname, shortname)
         else:
             cmd = cmd+"""
     simulate(ModelicaByExample.%s, stopTime=%s, tolerance=1e-3, numberOfIntervals=500, fileNamePrefix="%s");
-    """ % (dotname, stop_time, dashname)
+    """ % (dotname, stop_time, shortname)
 
     with open("simulateAll.mos", "w+") as fp:
         fp.write(cmd)
