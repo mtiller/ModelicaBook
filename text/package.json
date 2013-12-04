@@ -1,0 +1,11 @@
+{
+  "name": "ModelicaByExample",
+  "version": "0.2.0",
+  "description": "Build tools for ModelicaByExample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael M. Tiller",
+  "license": "BSD-2-Clause"
+}
