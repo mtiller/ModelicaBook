@@ -28,5 +28,8 @@ equations.
 We can see the response of this model to the switched supply voltage
 in the following plot:
 
-.. plot:: ../plots/SRLC.py
+.. plot:: ../plots/SRLCv.py
+   :include-source: no
+
+.. plot:: ../plots/SRLCi.py
    :include-source: no

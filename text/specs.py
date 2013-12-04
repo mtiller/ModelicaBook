@@ -93,8 +93,11 @@ srlc_ivars = [Var("i_R", legend="Resistor Current [A]"),
               Var("i_C", legend="Capacitor Current [A]"),
               Var("i_L", legend="Inductor Current [A]")]
 add_case(["SwitchedRLC\.SwitchedRLC"], stopTime=2, res="SRLC")
-add_simple_plot(plot="SRLC", vars=srlc_vvars,
+add_simple_plot(plot="SRLCv", res="SRLC", vars=srlc_vvars,
                 title="Switched RLC Voltage Response",
+                legloc="lower right")
+add_simple_plot(plot="SRLCi", res="SRLC", vars=srlc_ivars,
+                title="Switched RLC Current Response",
                 legloc="lower right")
 
 generate()
