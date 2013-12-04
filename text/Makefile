@@ -16,7 +16,13 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext results
 
-default: results clean dirhtml server
+default: specs results dirhtml server
+
+specs: specs.py
+	-mkdir results
+	-mkdir plots
+	-rm -f plots/*
+	python specs.py
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -154,18 +160,9 @@ doctest:
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
-simulateAll.mos: generate_results.py
-	./generate_results.py
-
-results: simulateAll.mos
+results: 
 	@echo "Generate results"
-	-mkdir tmp
-	-mkdir results
-	-mkdir plots
-	rm -f tmp/* results/*
-	(cd tmp; omc ../simulateAll.mos)
-	mv tmp/*.mat results
-	rm -rf tmp/*
+	(cd results; make all tidy)
 
 server: dirhtml
 	(cd build/dirhtml; python -m SimpleHTTPServer)
