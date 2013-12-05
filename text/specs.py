@@ -85,6 +85,18 @@ add_case(["\.BouncingBall$"], stopTime=5, res="BB2")
 add_simple_plot(plot="BB2", vars=bbvars,
                 title="Consequences of Numerical Event Detection",
                 legloc="upper right", ylabel="Height [m]")
+add_case(["Decay1$"], stopTime=5, res="Decay1")
+add_simple_plot(plot="Decay1", vars=[Var("x")],
+                title="Decay with Numerical Noise",
+                legloc="upper right")
+add_case(["Decay2$"], stopTime=5, res="Decay2", tol=1e-1)
+add_simple_plot(plot="Decay2", vars=[Var("x")],
+                title="Decay with Guard Condition",
+                legloc="upper right")
+add_case(["Decay3$"], stopTime=5, res="Decay3", tol=1e-1)
+add_simple_plot(plot="Decay3", vars=[Var("x")],
+                title="Decay without Issue",
+                legloc="upper right")
 
 ## Switched RLC
 srlc_vvars = [Var("Vs", legend="Source Voltage [V]"),
