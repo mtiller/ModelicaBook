@@ -4,6 +4,9 @@
 Bouncing Ball
 -------------
 
+Modeling a Bouncing Ball
+^^^^^^^^^^^^^^^^^^^^^^^^
+
 In the :ref:`previous example <cooling-revisited>`, we saw how some
 events are related to time.  These so-called "time events" are just
 one type of event.  In this section, we'll examine the other type of
@@ -111,6 +114,9 @@ like this:
 
 It should be immediately obvious when looking at this trajectory that
 something has gone wrong.  But what?
+
+Numerical Precision
+^^^^^^^^^^^^^^^^^^^
 
 The answer, as we hinted at before, lies in the numerical handling of
 the when condition ``h<0``.  More specifically, what do we do if we

@@ -45,6 +45,7 @@ Examples
 
    discrete/cooling
    discrete/bouncing
+   discrete/decay
    discrete/switching
    discrete/measuring
    discrete/sampling

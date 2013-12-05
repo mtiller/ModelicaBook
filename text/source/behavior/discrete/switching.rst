@@ -25,11 +25,17 @@ that the underlying numerical solver will be able to determine *a
 priori* when the event will occur while integrating the underlying
 equations.
 
-We can see the response of this model to the switched supply voltage
-in the following plot:
+We can see the voltage response of this model to the switched supply
+voltage in the following plot:
 
 .. plot:: ../plots/SRLCv.py
    :include-source: no
 
+Furthermore, we can see the current response for inductor, resistor
+and capacitor components in this plot:
+
 .. plot:: ../plots/SRLCi.py
    :include-source: no
+
+Hopefully by this point, the basic mechanisms for generating events
+and disturbances seem intuitive and familiar.
