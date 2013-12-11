@@ -158,19 +158,11 @@ explore other initial conditions as well.  For example, if we simulate
 the ``SecondOrderSystemInitParams`` model as is, we get the following
 solution for the angular positions and velocities:
 
-.. todo::
-
-   There should be a plot here
-
 .. plot:: ../plots/SOSIP.py
    :include-source: no
 
 However, if modify the ``phi1_init`` parameter to be *1* at the start
 of our simulation, we get this solution instead:
-
-.. todo::
-
-   Here too
 
 .. plot:: ../plots/SOSIP1.py
    :include-source: no
