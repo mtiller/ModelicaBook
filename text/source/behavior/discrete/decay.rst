@@ -1,3 +1,5 @@
+.. _state-events:
+
 State Event Handling
 --------------------
 
