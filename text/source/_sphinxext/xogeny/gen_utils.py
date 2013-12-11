@@ -35,7 +35,7 @@ def findModel(*frags):
             print str(r)
         sys.exit(1)
 
-def add_case(frags, res, stopTime=1.0, tol=1e-3, ncp=500, mods=None):
+def add_case(frags, res, stopTime=1.0, tol=1e-3, ncp=500, mods={}):
     mod = findModel(*frags)
     if res in results:
         raise NameError("Result %s already exists!" % (res,))
@@ -135,7 +135,7 @@ loadModel(Modelica);
 setModelicaPath(getModelicaPath()+":"+"%s");
 loadModel(ModelicaByExample);
     
-simulate(%s, stopTime=%g, tolerance=%g, numberOfIntervals=%d, fileNamePrefix="%s");
+simulate(%s, stopTime=%g, tolerance=%g, numberOfIntervals=%d, fileNamePrefix="%s", simflags="%s");
 """
 
 def _generate_makefile():
@@ -146,8 +146,14 @@ def _generate_makefile():
         ofp.write("\n\n");
         for res in results:
             data = results[res]
+            mods = data["mods"]
+            if len(mods)==0:
+                simflags = ""
+            else:
+                simflags = "-override "+(",".join(map(lambda x: str(x)+"="+str(mods[x]), mods)))
             with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
-                args = (path, data["name"], data["stopTime"], data["tol"], data["ncp"], res)
+                args = (path, data["name"], data["stopTime"],
+                        data["tol"], data["ncp"], res, simflags)
                 sfp.write(script_tmpl % args);
             ofp.write("%s_res.mat:\n" % (res,));
             ofp.write("\tomc %s.mos\n" % (res,));
