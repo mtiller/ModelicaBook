@@ -75,6 +75,15 @@ Part 1 - Mathematical Behavior:
         - if equation
         - if expression
         # Variable convection?
+        # Time events
+      Bouncing Ball:
+        - when equation
+        - reinit
+        - pre
+        # State events
+      Decay:
+        # event semantics
+        # chattering
       RLC with Switch:
         # Better than the Newton Cooling example?
       Pulse Generator:
@@ -85,10 +94,6 @@ Part 1 - Mathematical Behavior:
         # and then signals to or and and them?
       Counter:
         - sample
-        - pre
-      Bouncing Ball:
-        - when equation
-        - reinit
         - pre
       Backlash:
         # Fits the rotational example
