@@ -5,7 +5,12 @@ Now that we have already introduced both :ref:`time events
 <cooling-revisited>` and :ref:`state events <bouncing-ball>`, let's
 examine some important complications associated with state events.
 Surprisingly, these complications can be introduced by even simple
-models.  Consider the following almost trivial model:
+models.
+
+Basic Decay Model
+^^^^^^^^^^^^^^^^^
+
+Consider the following almost trivial model:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/Decay/Decay1.mo
    :language: modelica
@@ -23,6 +28,9 @@ using numerical integration techniques it is possible for small
 amounts of error to creep in and drive ``x`` below zero.  When that
 happens, the ``sqrt(x)`` expression generates a floating point
 exception and the simulation terminates.
+
+Guard Expressions
+^^^^^^^^^^^^^^^^^
 
 To prevent this, we might introduce an ``if`` expression to guard
 against evaluating the square root of a negative number, like this:
@@ -44,11 +52,14 @@ Most people are quite puzzled when they see an error message about a
 floating point exception like this (or, for example division by zero)
 after they have introduced a guard expression as we have done.  They
 naturally assume that there is no way that ``sqrt(x)`` can be
-evaluated if ``x`` is less than zero...**and they are wrong**.
+evaluated if ``x`` is less than zero.  **But this assumption is incorrect.**
+
+Events and Conditional Expressions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Given the ``if`` expression:
 
-.. code-block: modelica
+.. code-block:: modelica
 
     der(x) = if x>=0 sqrt(x) else 0;
 
@@ -121,6 +132,9 @@ the interpolation functions from the triggering integration step.
 
 .. index: noEvent
 
+Event Suppression
+^^^^^^^^^^^^^^^^^
+
 But after all this, it still isn't clear how to avoid the problems we
 say in the ``Decay1`` and ``Decay2`` models.  The answer is a special
 operator called ``noEvent``.  The ``noEvent`` operator suppresses this
@@ -142,11 +156,108 @@ Now the simulation completes without any problem.  This is because the
 use of ``noEvent`` ensures that ``sqrt(x)`` is never called with a
 negative value of ``x``.
 
-To avoid the kinds of performance issues mentioned earlier, the
-``noEvent`` operator should only be used when there is a smooth
-transition in behavior.
+It might seems strange that we have to explicitly include the
+``noEvent`` operator in order to get what we consider the most
+intuitive behavior.  Why not make the default behavior the most
+intuitive one?  The answer is performance.  Using conditional
+expressions to generate events improves the performance of the
+simulations by giving the solver clues about when to expect abrupt
+changes in behavior.  Most of the time, this approach doesn't cause
+any problem.  The examples we have presented in this chapter were
+designed to highlight this issue but they are not representative of
+most cases.  For this reason, ``noEvent`` is not the default, but must
+be used explicitly.  It should be noted that the ``noEvent`` operator
+should only be used when there is a smooth transition in behavior,
+otherwise it can create performance issues.
 
-.. todo: Smooth operator
+Chattering
+^^^^^^^^^^
+
+There is a common effect known as "chattering" that you will run into
+sooner or later with Modelica.  Consider the following model:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/Decay/Decay4.mo
+   :language: modelica
+   :lines: 2-
+
+Simulating this model gives us the following results:
+
+.. plot:: ../plots/Decay4.py
+   :include-source: no
+
+This model is interesting because looking at it, one might assume the
+equation:
+
+.. code-block:: modelica
+
+    der(x) = if x>=0 then -x else -x;
+
+was equivalent to:
+
+.. code-block:: modelica
+
+    der(x) = -x;
+
+After all, each branch in the ``if`` expression evaluates to ``-x``
+and the simulated result appears to be consistent with this
+assumption.  **But these two equations are not equivalent**.  The
+difference, as we've already discussed in this section, is that the
+one with the conditional expression generates an event.  This means it
+will force the solver to truncate time steps and restart the
+simulation.
+
+Let's take a step back and consider the mathematical solution to this
+problem.  We would expect the solution trajectory for ``x`` to be a
+decaying exponential that asymptotically approaches zero.  The problem
+is that zero, is exactly where the event happens.  Keep in mind that
+the numerical solver will introduce small amounts of local error on
+each step when integrating these equations.  As a result, the answer
+will (at least in general) not be exactly zero.  Instead it will be
+slightly above or below zero.
+
+This kind of model can introduce an effect known as "chattering".
+Chattering is simply the degradation in simulation performance due to
+a large number of events occurring that artificially shorten the time
+steps taken by the solver.  What we see in the ``Decay4`` model is
+that the solution asymptotically approaches a point where an event
+occurs.  This is not uncommon so it is important to watch out for such
+cases because they can unnecessarily slow down simulations.  The
+important thing about the ``Decay4`` example is that it is physically
+realistic and has a smooth solution but still suffers from degraded
+simulation performance because of the high frequency of events.
+
+One obvious solution would be to remove the ``if`` expression entirely
+from this example.  It should be noted that while the ``Decay4`` model
+is a bit contrived, because it has the **same** expression regardless
+of how the conditional expression is evaluated, there are many
+physically realistic use cases where a solution variable will converge
+asymptotically to the location of a state event.  For example, we
+might have changed our differential equation to be:
+
+.. code-block:: modelica
+
+  der(x) = if x>=0 then -x else -2*x;
+
+Here we have a different "gain" depending on the sign of ``x``.  These
+kinds of cases do show up in realistic models.  So the question is,
+how do we avoid the chattering that can occur in these cases.
+
+This is another case where the ``noEvent`` operator can help us out.
+Because we know that this ``if`` expression doesn't introduce any
+abrupt changes in behavior, we can wrap the conditional expression
+with the ``noEvent`` operator as follows:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/Decay/Decay5.mo
+   :language: modelica
+   :lines: 2-
+
+In doing so, we will get the same solution, but with better simulation
+performance:
+
+.. plot:: ../plots/Decay5.py
+   :include-source: no
+
+.. todo: Smooth operator?
 
 .. [#tol] This model will not always fail.  The failure depends on how
 	  much integration error is introduced and this, in turn,
