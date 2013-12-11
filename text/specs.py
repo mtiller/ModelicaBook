@@ -45,7 +45,7 @@ add_case(["SecondOrderSystemInitParams"], stopTime=5, res="SOSIP")
 add_simple_plot(plot="SOSIP", vars=sosvars, title="Mechanical System Response")
 
 add_case(["SecondOrderSystemInitParams"], stopTime=5, res="SOSIP1",
-         mods={"phi1": 1.0})
+         mods={"phi1_init": 1.0})
 add_simple_plot(plot="SOSIP1", vars=sosvars, title="Mechanical Response; phi1(0)=0")
 
 ## LotkaVolterra
@@ -106,6 +106,7 @@ add_simple_plot(plot="Decay5", vars=[Var("x")],
                 title="No Chattering",
                 legloc="upper right")
 
+
 ## Switched RLC
 srlc_vvars = [Var("Vs", legend="Source Voltage [V]"),
               Var("V", legend="Response Voltage [V]")]
@@ -119,5 +120,12 @@ add_simple_plot(plot="SRLCv", res="SRLC", vars=srlc_vvars,
 add_simple_plot(plot="SRLCi", res="SRLC", vars=srlc_ivars,
                 title="Switched RLC Current Response",
                 legloc="lower right")
+
+# Speed Measurement
+add_case(["SampleAndHold"], stopTime=5, res="SampleAndHold", tol=1e-3)
+add_simple_plot(plot="SampleAndHold", vars=[Var("omega1"), Var("omega1_measured")],
+                title="Sample and Hold Speed Measurement",
+                legloc="upper right")
+
 
 generate()
