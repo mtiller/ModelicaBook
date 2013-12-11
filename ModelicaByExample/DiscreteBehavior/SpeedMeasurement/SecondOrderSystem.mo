@@ -1,0 +1,1 @@
+../../BasicEquations/RotationalSMD/SecondOrderSystem.mo
