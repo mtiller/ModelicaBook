@@ -134,6 +134,8 @@ the interpolation functions from the triggering integration step.
 
 .. index: noEvent
 
+.. _no-event:
+
 Event Suppression
 ^^^^^^^^^^^^^^^^^
 

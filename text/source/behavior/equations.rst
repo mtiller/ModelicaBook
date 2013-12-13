@@ -1,4 +1,4 @@
-.. basic-equations:
+.. _basic-equations:
 
 Basic Equations
 ***************
