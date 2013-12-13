@@ -157,6 +157,100 @@ approach to estimating speed is the count how many events occur within
 a given (fixed) time interval and use that as an estimate of speed.
 Using this method, only the summation of events occurs when the events
 occur and the calculations are deferred to a regularly scheduled
-update.  The following method can be used to estimate speed using this
-event counting approach:
+update.
 
+Building on the previous examples in this section, the following model
+seems like a natural way to create a model that implements this
+estimation technique:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/SpeedMeasurement/Counter.mo
+   :language: modelica
+   :emphasize-lines: 16,20
+   :lines: 2-
+
+However, there is a problem in this model.  Note that there are
+actually **two** equations for ``count``.  Trying to compile such a
+model will lead to a situation where there are more equations than
+variables (*i.e.,* the problem is singular).
+
+So what can we do about this.  We need two different equations because
+the updates to count occur in response to different events.  We could
+try to formulate everything under a single ``when`` clause, like this:
+
+.. code-block:: modelica
+
+  when {phi1>=pre(next_phi),phi1<=pre(prev_phi),sample(0,sample_time)} then
+    if sample(0,sample_time) then
+      omega1_measured := pre(count)*tooth_angle/sample_time;
+      count :=0;
+    else
+      next_phi := phi1 + tooth_angle;
+      prev_phi := phi1 - tooth_angle;
+      count :=pre(count) + 1;
+    end if;
+  end when;
+
+.. index:: algorithm section
+
+But this kind of code quickly becomes hard to read.  Fortunately, we
+can address this situation by placing all the ``when`` clauses in an
+``algorithm`` section.
+
+The nature of an ``algorithm`` section is that it is treated as one
+single equation for any variables that are assigned within it.  This
+allows multiple assignments to ``count``, for example.  When using an
+``algorithm`` section, it is very important to understand the
+**order** becomes important.  If a conflict should arise (*e.g.,* a
+variable is assigned two values within the same ``algorithm``
+section), the last one is the one that will be used.  Another thing to
+note about ``algorithm`` sections is that you cannot write general
+equations.  Instead, you must write *assignment statements*.
+
+In this way, an ``algorithm`` section is very much like the way most
+programming languages work.  The statements in the algorithm section
+are executed in order and each statement isn't interpreted as an
+equation, but rather as an assignment of an expression to a variable.
+The familiarity of this approach may make it attractive to people
+(*e.g.,* with a programming background) who find the otherwise
+equation oriented aspects of Modelica disorienting and unfamiliar.
+But be aware that is one big reason to avoid ``algorithm`` sections.
+That is because they interfere with the symbolic manipulation
+performed by the Modelica compiler.  This can result in both poor
+simulation performance and a loss of flexibility in how you compose
+your models.
+
+In our case, there are no significant consequences to using the
+``algorithm`` section.  Here is an example of how the previous
+estimation algorithm could be refactored using an ``algorithm``
+section:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/SpeedMeasurement/CounterWithAlgorithm.mo
+   :language: modelica
+   :lines: 2-
+
+The simulated results of this estimation technique can be seen in the
+following plot:
+
+.. plot:: ../plots/SpeedCounter.py
+   :include-source: no
+
+Again, we see that this approach cannot determine the direction of
+rotation.  With the following plot, we can get a sense of how many
+events occur within each sample interval:
+
+.. plot:: ../plots/SpeedCounter_count.py
+   :include-source: no
+
+In general, the higher the count gets in an interval, the more
+accurate the estimate.
+
+Conclusion
+^^^^^^^^^^
+
+This section demonstrates how we can use the ``when`` construct to
+respond to physical events that occur in our system.  These kinds of
+events and the impact they have on our system are just as important as
+the continuous dynamics we've covered previously.  The ability to
+capture and respond to these physical events is an important part of
+why Modelica is so well suited to model complete systems since those
+system frequently include both continuous and discrete behavior.

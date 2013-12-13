@@ -80,3 +80,6 @@ When
 Multiple Conditions
 ^^^^^^^^^^^^^^^^^^^
    * Means **any**, not **or**.
+
+* Algorithm section (discussed yet?)
+

@@ -136,11 +136,21 @@ add_simple_plot(plot="IntervalMeasure", vars=mvars,
 add_case(["DiscreteBehavior", "IntervalMeasure"], stopTime=5,
          res="IntervalMeasure_Coarse", tol=1e-3, mods={"teeth": 20})
 add_simple_plot(plot="IntervalMeasure_Coarse", vars=mvars,
-                title="Speed Estimation by Interval Measurement",
+                title="Speed Estimation Using Fewer Teeth",
                 legloc="upper right")
 add_simple_plot(plot="IntervalMeasure_Coarse_phi", res="IntervalMeasure_Coarse",
                 vars=[Var("phi1"), Var("next_phi"), Var("prev_phi")],
                 title="Angle vs. Teeth Angles",
                 legloc="upper right")
+
+add_case(["CounterWithAlgorithm"], stopTime=5,
+         res="SpeedCounter", tol=1e-3)
+add_simple_plot(plot="SpeedCounter", vars=mvars,
+                title="Speed Estimation by Counting",
+                legloc="upper right")
+add_simple_plot(plot="SpeedCounter_count", vars=[Var("count")], res="SpeedCounter",
+                title="Speed Estimation by Counting",
+                legloc="upper right")
+
 
 generate()
