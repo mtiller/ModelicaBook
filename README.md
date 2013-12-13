@@ -1,8 +1,6 @@
-Getting Started
-===============
+# Getting Started
 
-Background
-----------
+## Background
 
 This book is being written using [Sphinx](http://sphinx-doc.org/).  I
 chose this system after evaluating several others.  The main things I
@@ -14,8 +12,7 @@ liked about Sphinx were:
   * The fact that it supports internationalization.
   * The fact that it allows custom templates and CSS to be used.
 
-Compilation
------------
+## Compilation
 
 Sphinx is completely portable so in theory, it should be possible to
 compile the book (especially the HTML version) under nearly any
@@ -31,13 +28,11 @@ You'll also need a copy of [OpenModelica](https://www.openmodelica.org/)
 installed.  I'm using [the Linux version](https://www.openmodelica.org/index.php/download/download-linux)
 and I built the Mac version from source.
 
-Proofreading
-------------
+## Proofreading
 
 Here are some guidelines on proofreading.
 
-Forking
-~~~~~~~
+### Forking
 
 First, **please** fork the repository and make any changes in your own
 repository and then send me a pull request for any changes ([see here for
@@ -56,8 +51,7 @@ And when you are ready to merge them into your local version, just do:
 
     $ git merge upstream/master
 
-Typos
-~~~~~
+### Typos
 
 If you find typos, the simplest thing is to fix them in your copy and
 send me a "pull request".  This will mean creating a branch in your
@@ -73,8 +67,7 @@ to locate it and change it.  Much simpler is if you simply change it
 and send me the pull request and I can quickly scan the diffs and make
 sure I agree with all the changes.
 
-Suggestions
-~~~~~~~~~~~
+### Suggestions
 
 If you have a suggestion and you are willing to modify the text
 with alternative text, feel free.  The worst that will happen is
@@ -92,14 +85,12 @@ look like this:
 I can easily find these in the text and deal with them.  Furthermore,
 I can generate a list of these things and quickly process them.
 
-Comments and Questions
-~~~~~~~~~~~~~~~~~~~~~~
+### Comments and Questions
 
 If you have a comment or question (in general, not about a specific
 section of text), submit it as an issue in the issue tracker.
 
-Translations
-------------
+## Translations
 
 At this point, I'm not entirely sure how the translation workflow
 should go.  The Sphinx documentation specifically discusses [document
