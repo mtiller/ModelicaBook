@@ -148,6 +148,8 @@ In this plot, we can clearly see how relatively low speeds and speed
 reversals create irregular events that introduce significant
 estimation error.
 
+.. _counting:
+
 Counting
 ^^^^^^^^
 

@@ -5,7 +5,7 @@ model HysteresisControl "A control strategy that doesn't chatter"
   type Heat=Real(unit="W");
   type Mass=Real(unit="kg");
   type HeatTransferCoefficient=Real(unit="W/K");
-  Boolean heat "Indicates whether heater is on";
+  Boolean heat(start=false) "Indicates whether heater is on";
   parameter HeatCapacitance C=1.0;
   parameter HeatTransferCoefficient h=2.0;
   parameter Heat Qcapacity=25.0;

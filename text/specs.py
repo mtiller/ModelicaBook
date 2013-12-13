@@ -152,5 +152,31 @@ add_simple_plot(plot="SpeedCounter_count", vars=[Var("count")], res="SpeedCounte
                 title="Speed Estimation by Counting",
                 legloc="upper right")
 
+# Hysteresis
+add_case(["ChatteringControl"], stopTime=0.5,
+         res="CC1", tol=1e-1)
+add_simple_plot(plot="CC1", vars=[Var("T")],
+                title="Temperature Control with Chattering",
+                legloc="upper right")
+add_simple_plot(plot="CC1_Q", vars=[Var("Q")], res="CC1",
+                title="Heater Output",
+                legloc="upper right")
+add_case(["HysteresisControl$"], stopTime=5,
+         res="Hyst", tol=1e-3)
+add_simple_plot(plot="Hyst", vars=[Var("T")],
+                title="Temperature Control with Hysteresis",
+                legloc="upper right")
+add_simple_plot(plot="Hyst_Q", vars=[Var("Q")], res="Hyst",
+                title="Heater Output with Hysteresis",
+                legloc="upper right")
+add_case(["HysteresisControlWithAlgorithm"], stopTime=5,
+         res="HystA", tol=1e-3)
+add_simple_plot(plot="HystA", vars=[Var("T")],
+                title="Temperature Control with Hysteresis",
+                legloc="upper right")
+add_simple_plot(plot="HystA_Q", vars=[Var("Q")], res="HystA",
+                title="Heater Output with Hysteresis",
+                legloc="upper right")
+
 
 generate()
