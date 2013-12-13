@@ -41,6 +41,8 @@ def add_case(frags, res, stopTime=1.0, tol=1e-3, ncp=500, mods={}):
         raise NameError("Result %s already exists!" % (res,))
     data = {
         "name": mod[2],
+        "path": mod[0],
+        "directory": os.path.dirname(mod[0]),
         "stopTime": stopTime,
         "tol": tol,
         "ncp": ncp,
@@ -147,6 +149,7 @@ def _generate_makefile():
         for res in results:
             data = results[res]
             mods = data["mods"]
+            directory = data["directory"]
             if len(mods)==0:
                 simflags = ""
             else:
@@ -155,7 +158,7 @@ def _generate_makefile():
                 args = (path, data["name"], data["stopTime"],
                         data["tol"], data["ncp"], res, simflags)
                 sfp.write(script_tmpl % args);
-            ofp.write("%s_res.mat:\n" % (res,));
+            ofp.write("%s_res.mat: %s/*.mo\n" % (res, directory));
             ofp.write("\tomc %s.mos\n" % (res,));
 
         ofp.write("tidy:\n");
