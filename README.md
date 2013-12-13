@@ -25,7 +25,78 @@ Ubuntu.  So I will include instructions only for Ubuntu.
 In order to install the complete set of tools required to compile the
 book, just execute the following command in Ubuntu:
 
-     % sudo apt-get install texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra python-sphinx
+     % sudo apt-get install texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra python-sphinx python-scipy python-matplotlib
+     
+You'll also need a copy of [OpenModelica](https://www.openmodelica.org/)
+installed.  I'm using [the Linux version](https://www.openmodelica.org/index.php/download/download-linux)
+and I built the Mac version from source.
+
+Proofreading
+------------
+
+Here are some guidelines on proofreading.
+
+Forking
+~~~~~~~
+
+First, **please** fork the repository and make any changes in your own
+repository and then send me a pull request for any changes ([see here for
+more details](https://help.github.com/articles/fork-a-repo)).  I would
+then suggest that you use the following `git` command to track changes
+to the main repository:
+
+    $ git remote add upstream https://github.com/xogeny/ModelicaBook.git
+    
+With this remote branch, you can then `fetch` my latest changes (load them
+your local disk but not change any actual code) with:
+
+    $ git fetch upstream
+    
+And when you are ready to merge them into your local version, just do:
+
+    $ git merge upstream/master
+
+Typos
+~~~~~
+
+If you find typos, the simplest thing is to fix them in your copy and
+send me a "pull request".  This will mean creating a branch in your
+repository with your changes, pushing that branch to GitHub and the
+submitting a pull request through GitHub asking me to merge that
+branch with mine.  It's simpler than it sounds, just give it a try
+and if you get stuck ask.
+
+The point is that it is much more efficient to fix a typo directly and
+send me a pull request then to try and explain to me what the typo
+is, where I can find it and what I should change it to and then I have
+to locate it and change it.  Much simpler is if you simply change it
+and send me the pull request and I can quickly scan the diffs and make
+sure I agree with all the changes.
+
+Suggestions
+~~~~~~~~~~~
+
+If you have a suggestion and you are willing to modify the text
+with alternative text, feel free.  The worst that will happen is
+that I will not accept it or change it.
+
+If you don't want to formulate the alternative but still want to
+suggest something, you can add a "TODO" item in the text.  It should
+look like this:
+
+    .. todo:: 
+    
+        This is awkward and needs to be completely
+        rewritten (or whatever your comment is).
+        
+I can easily find these in the text and deal with them.  Furthermore,
+I can generate a list of these things and quickly process them.
+
+Comments and Questions
+~~~~~~~~~~~~~~~~~~~~~~
+
+If you have a comment or question (in general, not about a specific
+section of text), submit it as an issue in the issue tracker.
 
 Translations
 ------------
