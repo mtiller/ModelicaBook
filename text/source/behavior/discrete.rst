@@ -65,6 +65,9 @@ Events
    * noEvent
 
    * Events
+   * sample
+   * discrete
+
 
 When
 ----

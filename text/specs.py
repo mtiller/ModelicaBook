@@ -122,10 +122,25 @@ add_simple_plot(plot="SRLCi", res="SRLC", vars=srlc_ivars,
                 legloc="lower right")
 
 # Speed Measurement
+mvars = [Var("omega1"), Var("omega1_measured")]
 add_case(["SampleAndHold"], stopTime=5, res="SampleAndHold", tol=1e-3)
-add_simple_plot(plot="SampleAndHold", vars=[Var("omega1"), Var("omega1_measured")],
+add_simple_plot(plot="SampleAndHold", vars=mvars,
                 title="Sample and Hold Speed Measurement",
                 legloc="upper right")
 
+add_case(["DiscreteBehavior", "IntervalMeasure"], stopTime=5, res="IntervalMeasure", tol=1e-3)
+add_simple_plot(plot="IntervalMeasure", vars=mvars,
+                title="Speed Estimation by Interval Measurement",
+                legloc="upper right")
+
+add_case(["DiscreteBehavior", "IntervalMeasure"], stopTime=5,
+         res="IntervalMeasure_Coarse", tol=1e-3, mods={"teeth": 20})
+add_simple_plot(plot="IntervalMeasure_Coarse", vars=mvars,
+                title="Speed Estimation by Interval Measurement",
+                legloc="upper right")
+add_simple_plot(plot="IntervalMeasure_Coarse_phi", res="IntervalMeasure_Coarse",
+                vars=[Var("phi1"), Var("next_phi"), Var("prev_phi")],
+                title="Angle vs. Teeth Angles",
+                legloc="upper right")
 
 generate()

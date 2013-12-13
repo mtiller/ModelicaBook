@@ -150,6 +150,7 @@ def _generate_makefile():
             data = results[res]
             mods = data["mods"]
             directory = data["directory"]
+            srcpath = data["path"]
             if len(mods)==0:
                 simflags = ""
             else:
@@ -158,7 +159,7 @@ def _generate_makefile():
                 args = (path, data["name"], data["stopTime"],
                         data["tol"], data["ncp"], res, simflags)
                 sfp.write(script_tmpl % args);
-            ofp.write("%s_res.mat: %s/*.mo\n" % (res, directory));
+            ofp.write("%s_res.mat: %s\n" % (res, srcpath));
             ofp.write("\tomc %s.mos\n" % (res,));
 
         ofp.write("tidy:\n");

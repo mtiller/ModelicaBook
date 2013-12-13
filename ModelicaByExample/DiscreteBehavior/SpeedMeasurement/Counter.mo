@@ -1,6 +1,6 @@
 within ModelicaByExample.DiscreteBehavior.SpeedMeasurement;
 model Counter "Count teeth in a given interval"
-  extends SecondOrderSystem;
+  extends BasicEquations.RotationalSMD.SecondOrderSystem;
   parameter Real sample_time(unit="s")=0.125;
   parameter Real tooth_angle(unit="rad")=0.31415;
   Real next_phi;
