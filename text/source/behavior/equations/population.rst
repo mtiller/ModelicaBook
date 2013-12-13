@@ -75,7 +75,7 @@ different structure than reproduction and starvation, *i.e.,*
    :nowrap:
 
    \begin{align}
-   \dot{x}_p &amp; = -\beta x y \\
+   \dot{x}_p &= -\beta x y \\
    \dot{y}_p &= \delta x y
    \end{align}
 
@@ -93,8 +93,8 @@ population can be represented by the following two equations:
    :nowrap:
 
    \begin{align}
-   \dot{x} &amp; = \dot{x}_r + \dot{x}_p \\
-   \dot{y} &amp; = \dot{y}_p + \dot{x}_s
+   \dot{x} &= \dot{x}_r + \dot{x}_p \\
+   \dot{y} &= \dot{y}_p + \dot{x}_s
    \end{align}
 
 Using the previous relationships, we can expand each of the right hand
@@ -104,8 +104,8 @@ side terms in these two equations into:
    :nowrap:
 
    \begin{align}
-   \dot{x} &amp; = x (\alpha - \beta y) \\
-   \dot{y} &amp; = y (\delta x - \gamma)
+   \dot{x} &= x (\alpha - \beta y) \\
+   \dot{y} &= y (\delta x - \gamma)
    \end{align}
 
 Using what we've learned in this chapter so far, translating these
@@ -240,8 +240,8 @@ equilibrium if the following two conditions are met:
    :nowrap:
 
    \begin{align}
-   \dot{x} &amp; = 0 \\
-   \dot{y} &amp; = 0
+   \dot{x} &= 0 \\
+   \dot{y} &= 0
    \end{align}
 
 To capture this in our Modelica model, all we need to do is use these
