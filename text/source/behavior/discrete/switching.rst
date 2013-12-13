@@ -4,7 +4,7 @@ Switched RLC Circuit
 --------------------
 
 In this section, we'll present another model, like the heat transfer
-model presented :ref:`earlier in this chapter <cooling revisited>`,
+model presented :ref:`earlier in this chapter <cooling-revisited>`,
 that contains time events.  In this case, we'll show how we can
 simulate the behavior of a switch in the context of an RLC circuit
 like :ref:`the one presented in the first chapter <elec-example>`.

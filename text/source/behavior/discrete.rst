@@ -48,38 +48,16 @@ Examples
    discrete/decay
    discrete/switching
    discrete/measuring
-   discrete/sampling
    discrete/hysteresis
+   discrete/sampling
 
 Review
 ======
 
+.. toctree::
+   :maxdepth: 1
 
-   * time (need to define it more formally)
-
-.. _events:
-
-Events
-------
-
-   * noEvent
-
-   * Events
-   * sample
-   * discrete
-
-
-When
-----
-
-.. _if-vs-when:
-
-``if`` vs. ``when``
-^^^^^^^^^^^^^^^^^^^
-
-Multiple Conditions
-^^^^^^^^^^^^^^^^^^^
-   * Means **any**, not **or**.
-
-* Algorithm section (discussed yet?)
+   discrete/events
+   discrete/when
+   discrete/sample
 
