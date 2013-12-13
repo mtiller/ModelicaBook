@@ -55,10 +55,10 @@ system of equations:
    :nowrap:
 
     \begin{align}
-    \omega_1 &amp; = \dot{\phi_1} \\
-    J_1 \dot{\omega_1} &amp; = k_1 (\phi_2-\phi_1) + d_1 \frac{d (phi_2-phi_1)}{dt} \\
-    \omega_2 &amp; = \dot{\phi_2} \\
-    J_2 \dot{\omega_2} &amp; = k_1 (\phi_1-\phi_2) + d_1 \frac{d (phi_1-phi_2)}{dt} - k_2 \phi_2 - d_2 \dot{phi_2}
+    \omega_1 &= \dot{\phi_1} \\
+    J_1 \dot{\omega_1} &= k_1 (\phi_2-\phi_1) + d_1 \frac{d (phi_2-phi_1)}{dt} \\
+    \omega_2 &= \dot{\phi_2} \\
+    J_2 \dot{\omega_2} &= k_1 (\phi_1-\phi_2) + d_1 \frac{d (phi_1-phi_2)}{dt} - k_2 \phi_2 - d_2 \dot{phi_2}
     \end{align}
 
 Let's assume our system has the following initial conditions as well:
@@ -67,10 +67,10 @@ Let's assume our system has the following initial conditions as well:
    :nowrap:
 
     \begin{align}
-    \phi_1 &amp; = 0 \\
-    \omega_1 &amp; = 0 \\
-    \phi_2 &amp; = 1 \\
-    \omega_2 &amp; = 0
+    \phi_1 &= 0 \\
+    \omega_1 &= 0 \\
+    \phi_2 &= 1 \\
+    \omega_2 &= 0
     \end{align}
 
 These initial conditions essentially mean that the system starts in a
