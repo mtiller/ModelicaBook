@@ -20,8 +20,8 @@ section, we'll review the key ideas behind ``when`` statements.  A
 
 In our discussion on :ref:`hysteresis`, we briefly discussed the
 difference between an ``if`` statement and a ``when`` statement.  The
-statements in a ``when`` clause become active only for an instant when
-the triggering conditional expression becomes true.  At all other
+statements in a ``when`` statement become active only for an instant
+when the triggering conditional expression becomes true.  At all other
 times, the ``when`` statement has no effect.  An ``if`` statement or
 ``if`` expression remains active as long as the conditional expression
 is true.  If the ``if`` statement or ``if`` expression includes an
@@ -76,7 +76,7 @@ statement.
 The other way a variable can be given a value within a ``when``
 statement, as demonstrated in the :ref:`bouncing-ball` example, is by
 using the ``reinit`` operator.  In that case, the statement within the
-``when`` clause will take the form:
+``when`` statement will take the form:
 
 .. code-block:: modelica
 

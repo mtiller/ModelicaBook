@@ -78,11 +78,11 @@ Consider the following model:
    :language: modelica
    :lines: 2-
 
-Now, instead of relying on ``when`` clause, we use an enhanced version
-of the ``sample`` function where the first argument is an expression
-to evaluate to determine the sampled value and the second argument is
-used to tell us when to evaluate it.  Let's work through these lines
-one by one and discuss them.  First we have:
+Now, instead of relying on ``when`` statement, we use an enhanced
+version of the ``sample`` function where the first argument is an
+expression to evaluate to determine the sampled value and the second
+argument is used to tell us when to evaluate it.  Let's work through
+these lines one by one and discuss them.  First we have:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/SynchronousSystems/SamplingWithClocks.mo
    :language: modelica

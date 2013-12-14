@@ -57,13 +57,13 @@ the system, nothing else.  To implement hysteresis, we need to use
    :language: modelica
    :lines: 2-
 
-Examining the ``when`` clauses, we see that the system only responds
+Examining the ``when`` statements, we see that the system only responds
 when ``T>Tbar+1`` becomes true or ``T<Tbar-1`` becomes true.  **Note
 that nothing happens when these expressions become false**.  This is
 why an ``if`` statement won't work.  With an ``if`` statement or
 ``if`` expression, the behavior changes whenever the conditional
-expression changes.  But with a ``when`` clause, the statements in the
-``when`` clause become active **only** when the condition becomes
+expression changes.  But with a ``when`` statement, the statements in the
+``when`` statement become active **only** when the condition becomes
 true.  If we simulate this model and look at the temperature, we see
 that it stays without the hysteresis band of our desired temperature.
 
@@ -88,7 +88,7 @@ during our discussion on :ref:`speed estimation techniques
    :lines: 2-
 
 Note how the two conditional expressions have been broken into two
-separate ``when`` clauses.  This makes it explicitly clear what causes
-the heat to be turned on and off.  These ``when`` clauses were placed
-in an ``algorithm`` section because they both assign to the same
-variable, ``heat``.
+separate ``when`` statements.  This makes it explicitly clear what
+causes the heat to be turned on and off.  These ``when`` statements
+were placed in an ``algorithm`` section because they both assign to
+the same variable, ``heat``.

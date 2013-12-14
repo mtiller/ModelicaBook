@@ -46,7 +46,7 @@ the coefficient of restitution.  The variables ``h`` and ``v``
 represent the height and vertical velocity, respectively.
 
 What makes this example interesting is the equations.  Specifically,
-the existence of a ``when`` clause:
+the existence of a ``when`` statement:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/BouncingBall/BouncingBall.mo
    :language: modelica
@@ -55,12 +55,12 @@ the existence of a ``when`` clause:
 
 .. index: ! reinit
 
-A ``when`` clause is composed of two parts.  The first part is a
+A ``when`` statement is composed of two parts.  The first part is a
 conditional expression that indicates the moment the event takes
 place.  In this case, the event will take place "when" the height,
 ``h``, first drops below ``0``.  The second part of the ``when``
-clause is what happens when the event occurs.  In this case, the value
-of ``v`` is re-initialized via the ``reinit`` operator.  The
+statement is what happens when the event occurs.  In this case, the
+value of ``v`` is re-initialized via the ``reinit`` operator.  The
 ``reinit`` operator allows us to specify a new initial condition for a
 state.  Conceptually, you can think of ``reinit`` as being like an
 ``initial equation`` inserted in the middle of a simulation.  But it
@@ -91,12 +91,12 @@ conditional ``h<0`` changes during a time step.  When such a step
 occurs, the solver must determine the precise time when the value of
 the conditional expression becomes true.  Once that time has been
 identified, it computes the state of the system at that time,
-processes the statements within the ``when`` clause (*e.g.* any ``reinit``
-statements) that affect the state of the system and then **restarts**
-the integration starting from these computed states.  In the case of
-the bouncing ball, the ``reinit`` clause is used to compute a new
-post-collision value for ``v`` that sends the ball (initially) upward
-again.
+processes the statements within the ``when`` statement (*e.g.* any
+``reinit`` statements) that affect the state of the system and then
+**restarts** the integration starting from these computed states.  In
+the case of the bouncing ball, the ``reinit`` statement is used to
+compute a new post-collision value for ``v`` that sends the ball
+(initially) upward again.
 
 But it is important to keep in mind that, in general, the solutions
 for most Modelica models are derived using numerical methods.  As we
@@ -159,12 +159,12 @@ The solution presented here is only one of them.  In this approach, we
 have effectively created two surfaces.  One at a height of ``0`` and the
 other at a height of ``-eps`` (just below ``0``).  When the ball is
 bouncing "normally" it will only trigger the first condition in our
-``when`` clause.  If, however, the ball does not rebound high enough
+``when`` statement.  If, however, the ball does not rebound high enough
 after contact and "falls through" the first surface, we detect that
 (and the fact that it has fallen through) and set the ``done`` flag.
 The effect of the ``done`` flag is to effectively turn off gravity.
 
-Note the syntax of the ``when`` clause in this case:
+Note the syntax of the ``when`` statement in this case:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/BouncingBall/StableBouncingBall.mo
    :language: modelica
@@ -177,8 +177,8 @@ later in the book, but for now it is just important to point out that
 in this chapter we have shown that a `when` can include either a
 scalar conditional expression or a vector of conditional expressions.
 
-If a ``when`` clause includes a vector of conditionals, then the
-statements of the when clause will be triggered when **any**
+If a ``when`` statement includes a vector of conditionals, then the
+statements of the when statement will be triggered when **any**
 conditional expression in the vector **becomes true**.  Note the
 grammar of this explanation carefully.  It is very common for people
 to read Modelica code like this:
@@ -191,8 +191,8 @@ to read Modelica code like this:
 
 as "when a is greater than zero **or** b is greater than zero".  But
 it is **very important** not to make the very common mistake of
-misinterpreting this to mean that the following two ``when`` clauses
-are equivalent:
+misinterpreting this to mean that the following two ``when``
+statements are equivalent:
 
 .. code-block:: modelica
 
@@ -218,10 +218,10 @@ change the conditional expressions as follows:
     end when;
 
 Remember our original statement that the vector notation for ``when``
-clauses means that the statements in the when clause are triggered
-when **any** condition becomes true.  Assuming we run a simulation
-that starts at ``time=0`` and runs until ``time=3``, then the ``when``
-clause:
+statements means that the statements in the when statement are
+triggered when **any** condition becomes true.  Assuming we run a
+simulation that starts at ``time=0`` and runs until ``time=3``, then
+the ``when`` statement:
 
 .. code-block:: modelica
 
@@ -243,10 +243,10 @@ there is only a **single** conditional expression and it becomes true
 ``or`` operator essentially masks the second conditional, ``time>2``,
 such that it may as well not even be present in this particular case.
 In other words, this conditional only **becomes true** once.  As a
-result, the statements inside the ``when`` clause are only triggered
-once.
+result, the statements inside the ``when`` statement are only
+triggered once.
 
-The key thing to remember is that for ``when`` clauses, a vector of
+The key thing to remember is that for ``when`` statements, a vector of
 conditionals means **any, not or**.  Furthermore, the statements are
 only active at the instant when the conditional **becomes true**.  The
 implications of this last statement will be discussed in greater
