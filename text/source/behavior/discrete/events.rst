@@ -84,5 +84,8 @@ following is a list of functions and how they generate events:
    * ``sample(expr,clock)``
    * ``subSample(expr, sub)``
    * ``superSample(expr, sup)``
+   * ``previous``
+   * ``hold``
+   * ``pre``
 
 * discrete

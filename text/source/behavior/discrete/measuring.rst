@@ -18,17 +18,28 @@ example <mech-example>` we discussed previously in our discussion of
    :language: modelica
    :lines: 2-
 
-Recall the solution for this model looks like this:
+.. index:: extends
+
+We will reuse this model by adding an ``extends`` clause to our
+model.  This essentially imports everything from the model we are
+extending.  We'll talk more about the ``extends`` clause later when we
+discuss :ref:`packages`.  For now, just think of it as copying the
+contents of another model into the current model.
+
+Recall the solution for the ``SecondOrderSystem`` model looks like
+this:
 
 .. plot:: ../plots/SOSIP.py
    :include-source: no
 
 In this case, we are simply plotting the solution that we computed.
 But in a real system, we can't directly know the rotational velocity
-of a shaft.  Instead, we have to measure it.  But measurement
+of a shaft.  Instead, we have to **measure** it.  But measurement
 introduces error and each measurement techniques introduce different
 kinds of errors.  In this section, we'll look at how we can model
 different kinds of measurement techniques.
+
+.. _sample-and-hold:
 
 Sample and Hold
 ^^^^^^^^^^^^^^^
@@ -69,6 +80,8 @@ first becomes true at the time indicated by the first argument (``0``
 in this case) and then at regular intervals after that.  The duration
 of these regular interfaces is indicated by the second argument
 (``sample_time`` in this case).
+
+.. _interval_measurement:
 
 Interval Measurement
 ^^^^^^^^^^^^^^^^^^^^
@@ -117,6 +130,43 @@ the user species the number of teeth using the ``teeth`` parameter.
 The ``tooth_angle`` parameter is then computed using the value of
 ``teeth`` (note that while we have hand coded the value of :math:`pi`
 here, we'll learn how to avoid this later in the book).
+
+Let's take a close look at the ``when`` statement in this model:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/SpeedMeasurement/IntervalMeasure.mo
+   :language: modelica
+   :lines: 13-18
+
+Here, we use the vector expression syntax used previously in the
+:ref:`bouncing-ball` example.  Recall that the ``when`` statement
+becomes active if **any** of the conditions become true.  In this
+case, the ``when`` statement becomes active if the angle, ``phi1``,
+becomes greater than ``next_phi`` or less than ``prev_phi``.
+
+Another thing to note is the use of the ``pre`` operator throughout
+the ``when`` statement.  When an event occurs in a model, there is a
+chance that the value of some variables may change discontinuously.
+During an event, while we are trying to resolve what values all the
+variables should have as a result of the event, the ``pre`` operator
+allows us to reference the value of a variable **prior** to the event.
+The ``pre`` operator is used in this model to refer to the previous
+(pre-event) values of ``next_phi``, ``prev_phi`` and ``last_time``.
+The ``pre`` operator is necessary because all of these variables are
+affected by the statements inside the ``when`` statement.  So, for
+example, ``last_time`` (without the ``pre`` operator) refers to the
+value of ``last_time`` at the conclusion of the event while
+``pre(last_time)`` refers to the value of ``last_time`` prior to any
+event occurring.
+
+.. topic:: Use of the ``pre`` operator
+
+    In general, if a variable changes as a result of a ``when``
+    statement becoming active, you **almost always** want to use the
+    ``pre`` operator when referring to that variable in the
+    conditional expression associated with the ``when`` clause (as we
+    have done in the previous example).  This makes it clear that you
+    are responding to when was happening before the ``when`` clause
+    was triggered.
 
 Let's take a look at the speed estimates provided by this approach:
 
