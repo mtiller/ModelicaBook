@@ -58,6 +58,6 @@ Review
    :maxdepth: 1
 
    discrete/events
+   discrete/if
    discrete/when
    discrete/sample
-
