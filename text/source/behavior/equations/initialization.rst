@@ -101,7 +101,7 @@ words:
 
 .. math::
 
-  \vec{x}(T) = \int_{t_i}^{T} \dot{\vec{x}}(t) \  dt +  \vec{x}(t_i)
+  \vec{x}(T) = \int_{t_i}^{T} \dot{\vec{x}}(t) \  \mathrm{d}t +  \vec{x}(t_i)
 
 This all works as long as there **was** a previous time step.  When
 there wasn't a previous time step, then the value of :math:`\vec{x}`

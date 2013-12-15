@@ -17,7 +17,7 @@ underscores (``_``).
 .. topic:: Naming conventions
 
    Although not strictly required by the language.  It is a convention
-   that **model names start with an *upper case* letter**.  Most model
+   that **model names start with an UPPER CASE letter**.  Most model
    developers use the so-called "camel case" convention where the
    first letter of each word in the model name is upper case.
 

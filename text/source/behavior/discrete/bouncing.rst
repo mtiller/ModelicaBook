@@ -16,7 +16,7 @@ solution trajectory.
 State events are much more complicated to handle.  Unlike time events,
 where the time of the event is known *a priori*, a state event depends
 on the solution trajectory.  So we cannot entirely avoid the
-"searching" for the point at which the event occurs.  
+"searching" for the point at which the event occurs.
 
 To see a state even in action, let us consider the behavior of a
 bouncing ball bouncing on a flat horizontal surface.  When the ball is
@@ -24,12 +24,12 @@ above the surface, it accelerates due to gravitational forces.  When
 the ball eventually comes in contact with the surface, it bounces off
 the surface according to the following relationship:
 
-.. math:
+.. math::
 
-$$v_{final} = -e v_{initial}$$
+   v_\text{final} = -e v_\text{initial}
 
-where :math:`v_{final}` is the (vertical) velocity of the ball
-immediately after contact with the surface, :math:`v_{initial}` is the
+where :math:`v_\text{final}` is the (vertical) velocity of the ball
+immediately after contact with the surface, :math:`v_\text{initial}` is the
 velocity prior to contact and :math:`e` is the "coefficient of
 restitution" which is a measure of the fraction of momentum retained
 by the ball after the collision.
@@ -81,7 +81,7 @@ following behavior from this model:
 In this plot, we see that at around 0.48 seconds, the first impact with the
 surface occurs.  This occurs because the condition ``h<0`` first becomes
 true at that moment.  Note that what makes this a state event (unlike
-our example in `cooling-revisited <previous cooling examples>` is the
+our example in :ref:`previous cooling examples <cooling-revisited>`) is the
 fact that this conditional expression references continuous variables
 other than ``time``.
 

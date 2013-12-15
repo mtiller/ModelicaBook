@@ -25,7 +25,7 @@ variables and equations.
 
 However, this time we see the word ``parameter`` for the first time.
 Generally speaking, the ``parameter`` keyword is used to indicate
-variables whose value is known *a priori* (*i.e.* prior to the
+variables whose value is known *a priori* (*i.e.*, prior to the
 simulation).  More precisely, ``parameter`` is a keyword that
 specifies the *variability* of a variable.  This will be discussed
 more thoroughly in the section on :ref:`variability`.  But for now, we
@@ -127,8 +127,7 @@ temperatures.
 But what about the other variables like ``h``?  What do they
 represent.  Even more important, are the equations **physically
 consistent**?  By physically consistent, we mean that both side of the
-equations have the same physical units (*e.g.*, temperature, mass,
-*etc.*).
+equations have the same physical units (*e.g.*, temperature, mass).
 
 We could convey the physical units of the different variables more
 rigorously by actually including them in the variable declarations,

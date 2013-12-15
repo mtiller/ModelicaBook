@@ -148,7 +148,7 @@ attribute is actually more of a hint than a binding relationship.  If
 the Modelica compiler identifies a particular variable as a state
 (*i.e.*, a variable that requires an initial condition) **and** there
 are insufficient initial conditions already explicitly specified in
-the model via ``initial equation``s then it can substitute the
+the model via ``initial equation`` entries then it can substitute the
 ``start`` attribute as an initial condition for the variable it is
 associated with.  In other words, you can think of the ``start``
 attribute as a "fallback initial condition" if an initial condition is
@@ -265,7 +265,7 @@ starting from some initial equations.  During the simulation, we see
 that :math:`x` and :math:`\dot{x}` are "coupled" by the following
 equations:
 
-.. math:: x(t) = \int_{t_0}^{t_f} \dot{x}\  dx + x(t_0)
+.. math:: x(t) = \int_{t_0}^{t_f} \dot{x}\  \mathrm{d}x + x(t_0)
 
 (and, of course, a similar relationship exists between :math:`y` and
 :math:`\dot{y}`)
@@ -296,7 +296,7 @@ of our ``QuiescientModel``, those four equations are:
    \dot{x} & = 0 \\
    \dot{x} & = x \ (\alpha - \beta y) \\
    \dot{y} & = 0 \\
-   \dot{y} & = y \ (\delta x - \gamma)
+   \dot{y} & = y \ (\delta  x - \gamma)
    \end{align}
 
 It is very important to understand that these equations **do not

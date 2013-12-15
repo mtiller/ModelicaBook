@@ -26,7 +26,7 @@ model name, ``FirstOrder``.  This, in turn, is followed by a
 declaration of all the variables we are interested in.
 
 Since the variable :math:`x` in our equation is clearly mean to be a
-continuous real valued variable, it's declaration in Modelica takes
+continuous real valued variable, its declaration in Modelica takes
 the form ``Real x;``.  The ``Real`` type is just one of the types we
 can use (a more complete description of the various possibilities will
 be discussed in the upcoming section on :ref:`variables`).
@@ -43,7 +43,7 @@ can use the ``der`` operator to represent the time derivative of
 is equivalent to:
 
 .. math:: \dot{x} = (1-x)
-  
+
 Unlike most programming languages, we don't approach code like this as
 a "program" that can be interpreted as a set of instructions to be
 executed one after the other.  Instead, we use a Modelica compiler to
@@ -114,7 +114,7 @@ As we have seen already, Modelica allows us to describe model behavior
 in terms of differential equations.  But the initial conditions we
 choose are just as important as the equations.
 
-For this reason, Modelica also provide constructs for describing the
+For this reason, Modelica also provides constructs for describing the
 initialization of our system of equations.  For example, if we wanted
 the initial value of ``x`` in our model to be *2*, we could add an
 ``initial equation`` section to our model as follows:
