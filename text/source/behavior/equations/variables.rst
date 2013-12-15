@@ -51,7 +51,7 @@ of a ``constant`` cannot be changed once the model is compiled.  The
 use of ``constant`` by a model developer ensures that end users are
 not given the option to make changes to the ``constant``.  A
 ``constant`` is frequently used to represent physical quantities like
-:math:`pi` or the Earth's gravitational constants which never change.
+:math:`\pi` or the Earth's gravitational constants which never change.
 
 .. index:: discrete
 
@@ -193,7 +193,7 @@ Attributes of ``Real``
 
 ``quantity``
     A textual description of what the variable represents
-    
+
     **Default**: ``""``
 
     **Type**: ``String``
@@ -210,7 +210,7 @@ Attributes of ``Real``
     Finally, if a ``parameter`` doesn't have an explicit value
     specified, the value the ``start`` attribute will be used as the
     default value for the ``parameter``.
-    
+
     **Default**: ``0.0``
 
     **Type**: ``Real``
@@ -316,7 +316,7 @@ Attributes of ``Integer``
 
 ``quantity``
     A textual description of what the variable represents
-    
+
     **Default**: ``""``
 
     **Type**: ``String``
@@ -330,7 +330,7 @@ Attributes of ``Integer``
 
     In the case of a ``parameter``, the ``start`` attribute will (as
     usual) be used as the default value for the ``parameter``.
-    
+
     **Default**: ``0.0``
 
     **Type**: ``Integer``
@@ -369,7 +369,7 @@ Attributes of ``Boolean``
 
 ``quantity``
     A textual description of what the variable represents
-    
+
     **Default**: ``""``
 
     **Type**: ``String``
@@ -383,7 +383,7 @@ Attributes of ``Boolean``
 
     In the case of a ``parameter``, the ``start`` attribute will (as
     usual) be used as the default value for the ``parameter``.
-    
+
     **Default**: ``0.0``
 
     **Type**: ``Boolean``
@@ -401,7 +401,7 @@ Attributes of ``String``
 
 ``quantity``
     A textual description of what the variable represents
-    
+
     **Default**: ``""``
 
     **Type**: ``String``
@@ -413,7 +413,7 @@ Attributes of ``String``
     ``start`` attribute is to define the value of a ``parameter``
     (that happens to have the type of ``String``) if no explicit value
     for the parameter is given.
-    
+
     **Default**: ``""``
 
     **Type**: ``String``

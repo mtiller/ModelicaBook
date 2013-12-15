@@ -10,6 +10,7 @@ familiar with electrical systems, consider the following circuit:
 
 .. figure:: ../../_static/img/RLC_low-pass.png
     :align: center
+    :width: 50%
     :alt: Low-Pass RLC Filter
     :figclass: align-center
 
@@ -22,8 +23,8 @@ use the equations associated with inductors, resistors and capacitors,
 respectively:
 
 .. math:: V = i_R R
-.. math:: C \frac{dV}{dt} = i_C
-.. math:: L \frac{di_L}{dt} = (V_b-V)
+.. math:: C \frac{\mathrm{d}V}{\mathrm{d}t} = i_C
+.. math:: L \frac{\mathrm{d}i_L}{\mathrm{d}t} = (V_b-V)
 
 where :math:`V_b` is the battery voltage.
 
@@ -152,4 +153,3 @@ The following figure shows the dynamic response of the ``RLC1`` model:
    would prefer to see this electrical example extended to include
    more complex behavior, you may want to skip ahead to the
    :ref:`switched-rlc` example.
-

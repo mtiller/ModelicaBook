@@ -70,10 +70,10 @@ ODE form:
 .. math::
    :nowrap:
 
-   \begin{aligned}
+   \begin{align}
    \dot{\vec{x}}(t) & = \vec{f}(\vec{x}(t), \vec{u}(t), t) \\
    \vec{y}(t) & = \vec{g}(\vec{x}(t), \vec{u}(t), t)
-   \end{aligned}
+   \end{align}
 
 where :math:`t` is the current simulation time, :math:`\vec{x}(t)` are
 the values of the states in our system at time :math:`t`,
@@ -101,7 +101,7 @@ words:
 
 .. math::
 
-  \vec{x}(T) = \int_{t_i}^{T} \dot{\vec{x}}(t) \  dt +  \vec{x}(t_i)
+  \vec{x}(T) = \int_{t_i}^{T} \dot{\vec{x}}(t) \  \mathrm{d}t +  \vec{x}(t_i)
 
 This all works as long as there **was** a previous time step.  When
 there wasn't a previous time step, then the value of :math:`\vec{x}`
@@ -135,11 +135,11 @@ solve a problem that looks like this:
 .. math::
    :nowrap:
 
-   \begin{aligned}
+   \begin{align}
    \dot{\vec{x}}(t_0) & = \vec{f}(\vec{x}(t_0), \vec{u}(t), t_0) \\
    \vec{y}(t_0) & = \vec{g}(\vec{x}(t_0), \vec{u}(t_0), t_0) \\
    \vec{0} & = \vec{h}(\vec{x}(t_0), \dot{\vec{x}}(t_0), \vec{u}(t_0), t_0)
-   \end{aligned}
+   \end{align}
 
 Note the introduction of a new function, :math:`\vec{h}`.  This new
 function represents any equations we have placed in `initial equation`
