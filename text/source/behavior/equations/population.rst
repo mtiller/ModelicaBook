@@ -74,10 +74,10 @@ different structure than reproduction and starvation, *i.e.,*
 .. math::
    :nowrap:
 
-   \begin{aligned}
-   \dot{x}_p &amp; = -\beta x y \\
-   \dot{y}_p &amp;= \delta x y
-   \end{aligned}
+   \begin{align}
+   \dot{x}_p &= -\beta x y \\
+   \dot{y}_p &= \delta x y
+   \end{align}
 
 where :math:`\dot{x}_p` is the decline in the prey population *due to
 predation*, :math:`\dot{y}_p` is the increase in the predator
@@ -92,10 +92,10 @@ population can be represented by the following two equations:
 .. math::
    :nowrap:
 
-   \begin{aligned}
-   \dot{x} &amp; = \dot{x}_r + \dot{x}_p \\
-   \dot{y} &amp; = \dot{y}_p + \dot{x}_s
-   \end{aligned}
+   \begin{align}
+   \dot{x} &= \dot{x}_r + \dot{x}_p \\
+   \dot{y} &= \dot{y}_p + \dot{x}_s
+   \end{align}
 
 Using the previous relationships, we can expand each of the right hand
 side terms in these two equations into:
@@ -103,10 +103,10 @@ side terms in these two equations into:
 .. math::
    :nowrap:
 
-   \begin{aligned}
-   \dot{x} &amp; = x (\alpha - \beta y) \\
-   \dot{y} &amp; = y (\delta x - \gamma)
-   \end{aligned}
+   \begin{align}
+   \dot{x} &= x (\alpha - \beta y) \\
+   \dot{y} &= y (\delta x - \gamma)
+   \end{align}
 
 Using what we've learned in this chapter so far, translating these
 equations into Modelica should be pretty straightforward:
@@ -239,10 +239,10 @@ equilibrium if the following two conditions are met:
 .. math::
    :nowrap:
 
-   \begin{aligned}
-   \dot{x} &amp; = 0 \\
-   \dot{y} &amp; = 0
-   \end{aligned}
+   \begin{align}
+   \dot{x} &= 0 \\
+   \dot{y} &= 0
+   \end{align}
 
 To capture this in our Modelica model, all we need to do is use these
 equations in our ``initial equation`` section, like this:
@@ -292,12 +292,12 @@ of our ``QuiescientModel``, those four equations are:
 .. math::
    :nowrap:
 
-   \begin{aligned}
+   \begin{align}
    \dot{x} & = 0 \\
    \dot{x} & = x \ (\alpha - \beta y) \\
    \dot{y} & = 0 \\
    \dot{y} & = y \ (\delta x - \gamma)
-   \end{aligned}
+   \end{align}
 
 It is very important to understand that these equations **do not
 contradict each other**.  Especially if you come from a programming
@@ -314,12 +314,12 @@ and :math:`y` could be solved:
 .. math::
    :nowrap:
 
-   \begin{aligned}
+   \begin{align}
    \dot{x} & = 0 \\
    \dot{y} & = 0 \\
    x (\alpha - \beta y) & = \dot{x} \\
    y (\delta x - \gamma) & = \dot{y}
-   \end{aligned}
+   \end{align}
 
 In this form, it is a bit easier to recognize how we could arrive at
 values of :math:`x` and :math:`y`.  The first thing to note is that we
