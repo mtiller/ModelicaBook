@@ -27,7 +27,7 @@ description of the equation is included as well, *e.g.,*
 
 As was pointed out previously, the left hand and right hand sides of
 an equation in Modelica are expressions, not assignments.  In other
-words (and in contrast to most "programming languages"), the left hand
+words (and in contrast to most programming languages), the left hand
 side does **not** have to be a variable (as we can see in the case of
 Newton's law above).
 
@@ -54,7 +54,7 @@ In the next chapter, we'll discuss how to use ``if`` statements to
 represent conditional behavior.  It is worth getting ahead of
 ourselves a little bit to point out that equations can be
 conditional.  There are really two forms of conditional equations.
-The first is are form is the balanced form, *e.g.,*
+The first is the balanced form, *e.g.,*
 
 .. code-block:: modelica
 
@@ -95,7 +95,7 @@ parametric variability (*i.e.,* the value of the expression cannot
 change during a simulation).
 
 At this point, you might be asking yourself why this unbalanced case
-would be useful?  Again, we are getting ahead of ourselves here but
+would be useful?  Again, we are getting ahead of ourselves here, but
 one use case would be the conditional application of initial
 equations, *e.g.,*
 
@@ -115,5 +115,6 @@ false, they are not.  The conditional expression here clearly has
 parametric variability because the expression contains only a variable
 and that variable is a parameter.
 
-That's all we'll say on this topic for now since discrete and conditional
+.. todo:: change next chapter to Discrete Behavior
+That's all we'll say on this topic for now, since discrete and conditional
 behavior will be discussed in detail in :ref:`the next chapter <discrete-behavior>`.

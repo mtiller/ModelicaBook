@@ -8,7 +8,7 @@ mathematical behavior, it doesn't convey any connection to *physical*
 behavior.  In this section, we'll explore how to build models that
 represent the modeling of physical behavior.  Along the way, we will
 highlight some of the language features we can leverage that will not
-only tie these models to physical and engineering domains but, as we
+only tie these models to physical and engineering domains, but, as we
 shall see, they can even help us avoid mistakes.
 
 Let's start with the following example:
@@ -32,7 +32,7 @@ more thoroughly in the section on :ref:`variability`.  But for now, we
 can think of a ``parameter`` as a variable whose value we must
 provide.
 
-Looking at our the ``NewtonCooling`` example, we see there are five
+Looking at our ``NewtonCooling`` example, we see there are five
 parameters: ``T_inf``, ``T0``, ``h``, ``m`` and ``c_p``.  We don't
 need to bother explaining what these variables are because the model
 itself includes a descriptive string for each one.  At the moment,
@@ -125,7 +125,7 @@ previous model to determine that ``T0`` and ``T_inf`` must also be
 temperatures.
 
 But what about the other variables like ``h``?  What do they
-represent.  Even more important, are the equations **physically
+represent?  Even more important, are the equations **physically
 consistent**?  By physically consistent, we mean that both side of the
 equations have the same physical units (*e.g.*, temperature, mass,
 *etc.*).
@@ -142,7 +142,7 @@ like so:
 
 Note that each of the variable declarations now includes the text
 ``(unit="...")`` to associate a physical unit with the variable.  What
-this additional text is specify a value for the ``unit`` attribute
+this additional text does is specify a value for the ``unit`` attribute
 associated with the variable.  Attributes are special properties that
 each variable has.  The set of attributes a variable can have depends
 on the type of the variable (this is discussed in more detail in the

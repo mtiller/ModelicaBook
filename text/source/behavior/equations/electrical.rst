@@ -15,7 +15,7 @@ familiar with electrical systems, consider the following circuit:
 
     Low-Pass RLC Filter
 
-As we can see from this figure, we have four variables to solve for:
+Suppose we want to solve for:
 :math:`V`, :math:`i_L`, :math:`i_R` and :math:`i_C`.  To solve for
 each of the currents :math:`i_L`, :math:`i_R` and :math:`i_C`, we can
 use the equations associated with inductors, resistors and capacitors,
@@ -121,11 +121,11 @@ perform such manipulations.  Instead, we are free to write the
 equations in whatever form we chose.
 
 Ultimately, these equations will probably need to be manipulated into
-a form like explicit state-space form.  But if such matipulations are
+a form like explicit state-space form.  But if such manipulations are
 necessary, it will be the responsibility of the Modelica compiler, not
 the model developer, to perform these manipulations.  This eliminates
 the need for the model developer to deal with this tedious,
-time-consuming and error prone task.
+time consuming and error prone task.
 
 The ability to keep equations in their "textbook form" is important
 because, as we will show in later sections, we eventually want to get
@@ -136,6 +136,9 @@ solve for.  Making such manipulations the responsibility of the
 Modelica compiler not only makes the model development faster and
 easier, but it dramatically improves the **reusability** of the
 models.
+
+.. todo:: Diagram: Battery Voltage [V] -> V subscript b
+.. todo:: Does vertical access need units?
 
 The following figure shows the dynamic response of the ``RLC1`` model:
 
@@ -149,7 +152,7 @@ The following figure shows the dynamic response of the ``RLC1`` model:
    readers are encouraged to process the material that is most aligned
    with their goals and interests.  The next chapter will present a
    model whose equations are derived from a mechanical system.  If you
-   would prefer to see this electrical example extended to include
+   would prefer instead to see this electrical example extended to include
    more complex behavior, you may want to skip ahead to the
    :ref:`switched-rlc` example.
 

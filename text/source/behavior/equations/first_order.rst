@@ -21,12 +21,12 @@ Looking at this equation, we see there is only one variable,
 .. index:: Real
 
 This code starts with the keyword ``model`` which is used to indicate
-the start of the model definition.  The ``model`` is followed by the
+the start of the model definition.  The ``model`` keyword is followed by the
 model name, ``FirstOrder``.  This, in turn, is followed by a
 declaration of all the variables we are interested in.
 
-Since the variable :math:`x` in our equation is clearly mean to be a
-continuous real valued variable, it's declaration in Modelica takes
+Since the variable :math:`x` in our equation is clearly meant to be a
+continuous real valued variable, its declaration in Modelica takes
 the form ``Real x;``.  The ``Real`` type is just one of the types we
 can use (a more complete description of the various possibilities will
 be discussed in the upcoming section on :ref:`variables`).
@@ -94,16 +94,15 @@ documentation about the model, it must appear immediately after the
 model name as shown.
 
 As we will see later, this kind of documentation can be used by tools
-in many ways.  For example, when searching for models a tool may use
-these descriptive strings when identifying matches.  When displaying a
-list of models, this text may be associated with the graphical
-representation of the models somehow.  And, of course, this kind of
+in many ways.  For example, when searching for models, a tool may use
+these descriptive strings when identifying matches.  For tools displaying
+models, this text may be associated with the graphical
+representation of the models.  And, of course, this kind of
 documentation is very useful for anybody reading the model.
 
 As this example demonstrates, there are other places that the
 descriptive text can appear.  For example, it may be included after
-the declaration of a variable to document that variable.  It can also
-be included after an equation to document the equation.
+the declaration of a variable or equation to document them.
 
 .. _first-order-init:
 
@@ -132,7 +131,9 @@ presented in the section on :ref:`first-order-doc`, is the addition of
 the ``initial equation`` section which contains the equation ``x =
 2``.  By adding this equation to the ``initial equation`` section, we
 are specifying that this system has a different initial starting
-condition.  As a result, the solution trajectory is quite different as
+condition.
+.. todo:: different from what? - maybe explicityly mention default initial values, although it seems to be implied
+  As a result, the solution trajectory is quite different as
 we can see in the following figure:
 
 .. plot:: ../plots/FOI.py

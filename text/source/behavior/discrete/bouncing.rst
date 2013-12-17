@@ -15,8 +15,8 @@ solution trajectory.
 
 State events are much more complicated to handle.  Unlike time events,
 where the time of the event is known *a priori*, a state event depends
-on the solution trajectory.  So we cannot entirely avoid the
-"searching" for the point at which the event occurs.  
+on the solution trajectory.  So we cannot entirely avoid
+searching for the point at which the event occurs.  
 
 To see a state even in action, let us consider the behavior of a
 bouncing ball bouncing on a flat horizontal surface.  When the ball is
@@ -30,8 +30,8 @@ $$v_{final} = -e v_{initial}$$
 
 where :math:`v_{final}` is the (vertical) velocity of the ball
 immediately after contact with the surface, :math:`v_{initial}` is the
-velocity prior to contact and :math:`e` is the "coefficient of
-restitution" which is a measure of the fraction of momentum retained
+velocity prior to contact and :math:`e` is the coefficient of
+restitution, which is a measure of the fraction of momentum retained
 by the ball after the collision.
 
 Bringing all this together in Modelica might look something like this:
@@ -45,7 +45,7 @@ height of the ball off the surface and the parameter ``e`` to specify
 the coefficient of restitution.  The variables ``h`` and ``v``
 represent the height and vertical velocity, respectively.
 
-What makes this example interesting is the equations.  Specifically,
+What makes this example interesting are the equations.  Specifically,
 the existence of a ``when`` clause:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/BouncingBall/BouncingBall.mo
@@ -84,6 +84,8 @@ true at that moment.  Note that what makes this a state event (unlike
 our example in `cooling-revisited <previous cooling examples>` is the
 fact that this conditional expression references continuous variables
 other than ``time``.
+.. todo:: link to previous cooling examples not showing up correctly
+.. todo:: do the referenced variables have to be continuous to make a state event?
 
 As such, the simulation proceeds assuming the ball is in free fall
 until it identifies a solution trajectory where the value of the
@@ -126,7 +128,7 @@ after an event has just occurred or whether we are starting a step
 where an event is just about to occur.
 
 To address this problem, we must introduce a certain amount of
-"hysteresis".  What this means in this case is that once the condition
+hysteresis (dead-banding).  What this means in this case is that once the condition
 ``h<0`` has become true, we have to get "far enough" away from the
 condition before we allow the event to happen again.  In other words,
 the event happens whenever ``h`` is less than zero.  But before we can
