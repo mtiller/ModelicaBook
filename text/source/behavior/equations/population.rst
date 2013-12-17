@@ -383,7 +383,9 @@ populations for both the predator and prey species).
 .. plot:: ../plots/LVQMUS.py
    :include-source: no
 
-.. todo:: word start not being rendered correctly possibly due to nesting
+.. todo:: word start not being rendered correctly possibly due to
+	  nesting
+
 It is worth pointing out (as we will do shortly in the section on
 :ref:`builtin-types`), that **the default value of the ``start``
 attribute is zero**.  This is why when we simulated our original

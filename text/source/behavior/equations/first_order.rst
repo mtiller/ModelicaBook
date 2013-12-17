@@ -132,8 +132,13 @@ the ``initial equation`` section which contains the equation ``x =
 2``.  By adding this equation to the ``initial equation`` section, we
 are specifying that this system has a different initial starting
 condition.
-.. todo:: different from what? - maybe explicityly mention default initial values, although it seems to be implied
-  As a result, the solution trajectory is quite different as
+
+.. todo::
+
+   different from what? - maybe explicityly mention default initial
+   values, although it seems to be implied
+
+As a result, the solution trajectory is quite different as
 we can see in the following figure:
 
 .. plot:: ../plots/FOI.py
