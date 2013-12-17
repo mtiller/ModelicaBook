@@ -51,7 +51,7 @@ of a ``constant`` cannot be changed once the model is compiled.  The
 use of ``constant`` by a model developer ensures that end users are
 not given the option to make changes to the ``constant``.  A
 ``constant`` is frequently used to represent physical quantities like
-:math:`\pi` or the Earth's gravitational constants which never change.
+:math:`\pi` or the Earth's gravitational constant, which never change.
 
 .. index:: discrete
 
@@ -70,7 +70,7 @@ Built-In Types
 
 Many of the examples so far referenced the ``Real`` type when
 declaring variables.  As the name suggests, ``Real`` is used to
-represented real values variables (which will generally be translated
+represent real valued variables (which will generally be translated
 into floating point representations by a Modelica compiler).  However,
 ``Real`` is just one of the four built-in types in Modelica.
 
@@ -121,6 +121,7 @@ means that multiple levels of specialization can be supported, *e.g.*,
    type Temperature = Real(unit="K"); // Could be a temperature difference
    type AbsoluteTemperature = Temperature(min=0); // Must be positive
 
+.. todo:: would you really name a type representing temperature diff as Temperature?
 .. _enumerations:
 
 Enumerations
@@ -168,7 +169,7 @@ Attributes
 So far in this chapter we have mentioned attributes (*e.g.*, ``unit``)
 but we haven't discussed them in detail. For example, *which*
 attributes are present on a given variable?  This depends on the type
-of the variable (and which built-in type it is based on).  The
+of the variable (and which built-in and derived types it is based on).  The
 following table introduces all the possible attributes indicating
 their types (*i.e.*, what type of value can be given for that
 attribute), which types they can be associated with and finally a
@@ -208,7 +209,7 @@ Attributes of ``Real``
     the variable has been chosen as an iteration variable.
 
     Finally, if a ``parameter`` doesn't have an explicit value
-    specified, the value the ``start`` attribute will be used as the
+    specified, the value of the ``start`` attribute will be used as the
     default value for the ``parameter``.
 
     **Default**: ``0.0``
@@ -217,18 +218,18 @@ Attributes of ``Real``
 
 ``fixed``
     The ``fixed`` attribute changes the way the ``start`` attribute is
-    used when it the ``start`` attribute is used as an initial
+    used when the ``start`` attribute is used as an initial
     condition.  Normally, the ``start`` attribute is considered a
     "fallback" initial condition and only used if there are
-    insufficient initial conditions explicitly specified in ``initial
+    insufficient initial conditions explicitly specified in the ``initial
     equation`` sections.  However, if the ``fixed`` attribute is set
     to ``true``, then the ``start`` attribute is treated as if it was
     used as an explicit ``initial equation`` (*i.e.,* it is no longer
-    used as a fallback but instead treated as a strict initial
+    used as a fallback, but instead treated as a strict initial
     condition).
 
     Another, more obscure, use of the ``fixed`` attribute is for
-    "computed parameters".  In rare cases where a ``parameter`` cannot
+    "computed parameters."  In rare cases where a ``parameter`` cannot
     be initialized explicitly, it is possible to provide a general
     equation for the parameter in an ``initial equation`` section.
     But in cases where the ``parameter`` is initialized in this way,
@@ -263,7 +264,7 @@ Attributes of ``Real``
 ``unit``
     As discussed extensively in this chapter, variables can have
     physical units associated with them.  There are rules about how
-    these units are expressed but the net result is that by using the
+    these units are expressed, but the net result is that by using the
     ``unit`` attribute it is possible check models to make sure that
     equations are physically consistent.
 
@@ -280,8 +281,8 @@ Attributes of ``Real``
     101,325 *Pascals*.  When entering, displaying or plotting pressures
     it may be more convenient to use *bars*.
 
-    To be reiterate, the ``displayUnit`` attribute doesn't affect the
-    value of a variable or the equations used by simulate a model.  It
+    The ``displayUnit`` attribute doesn't affect the
+    value of a variable or the equations used to simulate a model.  It
     only affects the *rendering* of those values by potentially
     transforming them into more convenient units for display.
 
@@ -300,7 +301,7 @@ Attributes of ``Real``
     **Type**: ``Real``
 
 ``stateSelect``
-    The ``stateSelect`` attribute is used as a "hint" to Modelica
+    The ``stateSelect`` attribute is used as a hint to Modelica
     compilers about whether a given variable should be chosen as a
     state (in cases where there is a choice to be made).  As discussed
     previously in the section on :ref:`enumerations`, the possible
@@ -409,7 +410,7 @@ Attributes of ``String``
 ``start``
     Technically, a ``String`` could be chosen as a state variable (or
     even an iteration variable), but in practice this never happens.
-    So for a ``String`` variable the only practice use of the
+    So for a ``String`` variable the only practical use of the
     ``start`` attribute is to define the value of a ``parameter``
     (that happens to have the type of ``String``) if no explicit value
     for the parameter is given.
@@ -483,6 +484,6 @@ case) and then we "reach inside" ``x`` to modify the value of the
 ``start`` attribute.
 
 One of the central themes of Modelica is support for reuse and
-avoiding the need to "copy and paste" code around.  Modifications are
+avoiding the need to "copy and paste" code.  Modifications are
 one of the essential features in Modelica that support reuse.  We'll
 learn about others in future sections.

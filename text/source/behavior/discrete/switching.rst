@@ -3,6 +3,7 @@
 Switched RLC Circuit
 --------------------
 
+.. todo:: cooling revisted link is not showing up
 In this section, we'll present another model, like the heat transfer
 model presented :ref:`earlier in this chapter <cooling-revisited>`,
 that contains time events.  In this case, we'll show how we can
@@ -27,6 +28,7 @@ equations.
 
 We can see the voltage response of this model to the switched supply
 voltage in the following plot:
+.. todo:: Source Voltage V needs subscript s, other plots missing subscripts also
 
 .. plot:: ../plots/SRLCv.py
    :include-source: no

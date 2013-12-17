@@ -20,7 +20,7 @@ This revised model is written as follows:
 
 .. index:: if statement
 
-The highlight lines show a ``if`` statement.  This particular ``if``
+The highlight lines show an ``if`` statement.  This particular ``if``
 statement provides two different equations for computing ``T_inf``.
 
 .. topic:: Time
@@ -36,8 +36,8 @@ in our model that we can characterize the transition between these two
 equations as a "time event".  The key point is that when integrating
 these equations, we can tell the solver that integrates our system of
 equations to stop precisely at 0.5 seconds and then resume again using
-a different equation.  We'll see examples of "state events" (where
-this would not be possible) in the next section when we present the
+a different equation.  We'll see examples of other state events where
+this would not be possible, in the next section when we present the
 classic :ref:`bouncing-ball` example.
 
 But for now, let us continue with our cooling example.  If we simulate
@@ -106,7 +106,7 @@ The first approach is to use an ``if`` **expression**.  Whereas an
 ``if`` statement includes "branches" containing equations, an ``if``
 expression has branches that contain only expressions.  Furthermore,
 the syntax for an ``if`` expression is also less verbose.  If we had
-chosen to use an ``if`` expression our ``equation`` second could have
+chosen to use an ``if`` expression our ``equation`` could have
 been simplified to:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/CoolingRevisited/NewtonCoolingIfExpression.mo
@@ -129,10 +129,10 @@ Events
 We've seen several ways to express the fact that there is an abrupt
 change in the behavior of our system.  But it's important to point out
 that we are not just describing a change in the ambient temperature,
-we are also specifying **when** it changes.  This a subtle by very
+we are also specifying **when** it changes.  This a subtle but very
 important point.
 
-Consider the last example where our system began in an equilibrium
+Consider the last example, where our system began in an equilibrium
 state.  At the start of the simulation, there are no significant
 dynamics.  Since nothing is really changing in the system, the
 integrator is unlikely to accumulate significant integration error.
@@ -148,30 +148,30 @@ error would not be true.
 
 The question then becomes, how can the integrator *know* when it can
 take a large time step and when it cannot.  Typically, these
-integration schemes use a kind of "trial and error" approach.  They
-try to take large step and then they estimate the amount of error
+integration schemes use a kind of trial and error approach.  They
+try to take large step and then estimate the amount of error
 introduced by that step.  If it is less than some threshold, then they
 accept the state (or perhaps try a larger step).  If, on the other
-hand, the step introduces too much error then they try a smaller
+hand, the step introduces too much error, then they try a smaller
 step.  But they cannot know how small a step will be required to get
-under the error threshold which means they will continue to blindly
+under the error threshold, which means they will continue to blindly
 try smaller and smaller steps.
 
 But Modelica is about much more than integrating the underlying
 system.  Modelica compilers study the **structure** of the problem.
 In all of our examples, the compiler can see that there is a distinct
-change in behavior.  Note only that, it can see that this change in
+change in behavior.  Not only that, it can see that this change in
 behavior is a time event, *i.e.,* an event whose time is known *a
 priori* without any knowledge of the solution trajectory.
 
-So, what a Modelica compiler will do is it will inform the underlying
+So, what a Modelica compiler will do is inform the underlying
 integrator that there will be an abrupt change in behavior at 0.5
 seconds and it will instruct the integrator to simply integrate
 exactly up to that point and no further.  As a result, the abrupt
 change never occurs **within a time step**.  Instead, the integrator
 will simply restart on the other side of the event.  This completely
 avoids the blind searching for the cutoff time that minimizes the
-error in the step.  Instead, the integrator will integrator right up
+error in the step.  Instead, the integrator will integrate right up
 to that point automatically and then restart after that point.
 
 This is one of many examples of features in Modelica that optimize the

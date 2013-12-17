@@ -94,14 +94,14 @@ As usual, we start with the name of the model:
    :language: modelica
    :lines: 2-2
 
-Next, we introduce physical types for a rotatioal mechanical system, namely:
+Next, we introduce physical types for a rotational mechanical system, namely:
 
 .. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
    :language: modelica
    :lines: 3-7
 
 Then we define the various parameters used to represent the different
-physical characterstics of our system:
+physical characteristics of our system:
 
 .. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
    :language: modelica
@@ -158,6 +158,8 @@ explore other initial conditions as well.  For example, if we simulate
 the ``SecondOrderSystemInitParams`` model as is, we get the following
 solution for the angular positions and velocities:
 
+.. todo:: label vertical axis of both plots?
+
 .. plot:: ../plots/SOSIP.py
    :include-source: no
 
@@ -170,7 +172,7 @@ of our simulation, we get this solution instead:
 .. topic:: Expanding on this mechanical example
 
    If you would like to see this example further developed, you may
-   wish to jump to the next set of examples involving rotational
+   wish to jump to the set of examples involving rotational
    systems found in the section on :ref:`speed-measurement`.
 
    Otherwise, you can continue to the next set of examples which

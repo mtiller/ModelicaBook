@@ -25,7 +25,7 @@ The model definition can contain variables and equations (to be
 discussed shortly).  The end of the model is indicated by the presence
 of the ``end`` keyword followed by a repetition of the model name.
 Any text appearing after the sequence ``//`` and until the end of the
-line or between the delimeters ``/*`` and ``*/`` is considered a
+line or between the delimiters ``/*`` and ``*/`` is considered a
 comment.
 
 In summary, a model definition has the following general form:
@@ -44,8 +44,8 @@ Inheritance
 .. index:: ! inheritance
 .. index:: ! extends
 
-As we in the section on :ref:`avoiding-repetition`, we can reuse code
-from other models by adding and ``extends`` clause to the model.  It
+As we saw in the section on :ref:`avoiding-repetition`, we can reuse code
+from other models by adding an ``extends`` clause to the model.  It
 is worth noting that a model definition can include multiple
 ``extends`` clauses.
 

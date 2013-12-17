@@ -36,7 +36,7 @@ the number of states answers one question but quickly creates another,
 models we've seen in this chapter, the answer is quite simple.  The
 states in each of our examples so far are the variables that appear
 inside the ``der(...)`` operator.  In other words, every variable that
-we differentiate in these examples is a state.
+we differentiated in those examples is a state.
 
 Ordinary Differential Equations
 ===============================
@@ -45,7 +45,7 @@ It is important to note that **it will not always be the case** that
 every variable that we differentiate will be a state.  In this
 chapter, all the models we have seen so far are ordinary differential
 equations (ODEs).  When dealing with ODEs, every differentiated
-variable is a state.  Which, in turn, means that you need an initial
+variable is a state, which, in turn, means that you need an initial
 equation for each of these differentiated variables.  But in
 subsequent chapters we will eventually run across examples that are
 so-called algebraic-differential equations (DAEs).  In those cases,
@@ -53,7 +53,7 @@ only *some* of the differentiated variables can be considered states.
 
 As it turns out, understanding initialization doesn't really require
 us to get into a detailed discussion about DAEs.  In practice, all
-Modelica tools perform something called "index reduction".  While the
+Modelica tools perform something called "index reduction."  While the
 index reduction algorithms themselves are fairly complicated (so we
 won't get into those now), the effect is quite simple.  Index
 reduction transforms the DAEs into ODEs.  In other words, Modelica
@@ -175,5 +175,5 @@ the states in our system.  But we are given tremendous latitude in
 describing exactly how those values will be computed.
 
 This is an area where Modelica excels.  Initialization is given first
-class treatment in Modelica and these flexibility pays off in many
+class treatment in Modelica and this flexibility pays off in many
 real world applications.

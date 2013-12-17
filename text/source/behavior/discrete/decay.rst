@@ -110,7 +110,7 @@ called a zero crossing function because it is normally constructed to
 have a root at the point where the event will occur.  For example, if
 we had the following ``if`` expression:
 
-.. code-block: modelica
+.. code-block:: modelica
 
     y = if a>b then 1 else 0;
 
@@ -140,10 +140,10 @@ Event Suppression
 ^^^^^^^^^^^^^^^^^
 
 But after all this, it still isn't clear how to avoid the problems we
-say in the ``Decay1`` and ``Decay2`` models.  The answer is a special
+saw in the ``Decay1`` and ``Decay2`` models.  The answer is a special
 operator called ``noEvent``.  The ``noEvent`` operator suppresses this
 special event handling.  Instead, it does what most users expected
-would happen in the first place which is to evaluate the conditional
+would happen in the first place, which is to evaluate the conditional
 expression for every value of ``x``.  We can see the ``noEvent``
 operator in action in the following model:
 
@@ -168,7 +168,7 @@ expressions to generate events improves the performance of the
 simulations by giving the solver clues about when to expect abrupt
 changes in behavior.  Most of the time, this approach doesn't cause
 any problem.  The examples we have presented in this chapter were
-designed to highlight this issue but they are not representative of
+designed to highlight this issue, but they are not representative of
 most cases.  For this reason, ``noEvent`` is not the default, but must
 be used explicitly.  It should be noted that the ``noEvent`` operator
 should only be used when there is a smooth transition in behavior,
@@ -213,7 +213,7 @@ simulation.
 Let's take a step back and consider the mathematical solution to this
 problem.  We would expect the solution trajectory for ``x`` to be a
 decaying exponential that asymptotically approaches zero.  The problem
-is that zero, is exactly where the event happens.  Keep in mind that
+is that zero is exactly where the event happens.  Keep in mind that
 the numerical solver will introduce small amounts of local error on
 each step when integrating these equations.  As a result, the answer
 will (at least in general) not be exactly zero.  Instead it will be
@@ -224,10 +224,10 @@ Chattering is simply the degradation in simulation performance due to
 a large number of events occurring that artificially shorten the time
 steps taken by the solver.  What we see in the ``Decay4`` model is
 that the solution asymptotically approaches a point where an event
-occurs.  This is not uncommon so it is important to watch out for such
+occurs.  This is not uncommon, so it is important to watch out for such
 cases because they can unnecessarily slow down simulations.  The
 important thing about the ``Decay4`` example is that it is physically
-realistic and has a smooth solution but still suffers from degraded
+realistic and has a smooth solution, but still suffers from degraded
 simulation performance because of the high frequency of events.
 
 One obvious solution would be to remove the ``if`` expression entirely

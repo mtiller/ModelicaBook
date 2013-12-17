@@ -7,6 +7,7 @@ Speed Measurement
 Baseline System
 ^^^^^^^^^^^^^^^
 
+.. todo:: basic-equations link missing
 There are many applications where we need to model the interaction
 between continuous behavior and discrete behavior.  For this section,
 we'll look at techniques used to measure the speed of a rotating
@@ -34,8 +35,8 @@ this:
 
 In this case, we are simply plotting the solution that we computed.
 But in a real system, we can't directly know the rotational velocity
-of a shaft.  Instead, we have to **measure** it.  But measurement
-introduces error and each measurement techniques introduce different
+of a shaft.  Instead, we have to measure it.  But measurement
+introduces error and each measurement technique introduces different
 kinds of errors.  In this section, we'll look at how we can model
 different kinds of measurement techniques.
 
@@ -49,7 +50,7 @@ approach to measurement.  Some speed sensors have circuits for
 measuring the rotational speed of the system.  But instead of
 providing a continuous value for the speed, they sample it at a given
 point in time and then store it somewhere.  This is called "sample and
-hold".  The following model demonstrates how to implement and sample
+hold."  The following model demonstrates how to implement a sample
 and hold approach to measuring the angular velocity ``omega1``:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/SpeedMeasurement/SampleAndHold.mo

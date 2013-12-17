@@ -65,7 +65,7 @@ effect and keeps the predator population from going to zero.  Again,
 we have a proportionality relationship.  But this time, it is actually
 a bilinear relationship that is, again, conceptually similar to the
 Law of Mass Action.  This relationship is simply capturing
-mathematically the fact that the chance that a predator will find a
+mathematically the fact that the chance that a predator will find and
 consume some prey is proportional to both the population of the prey
 and the predators.  Since this particular effect requires both species
 to be involved, this mathematical relationship has a slightly
@@ -123,7 +123,7 @@ As we saw in the ``NewtonCoolingWithUnits`` example in the previous
 section titled :ref:`getting-physical`, variables have various
 attributes that we can specify (for a detailed discussion of available
 attributes, see the upcoming section on :ref:`builtin-types`).  We
-previously discussed the ``unit`` attribute but this is the first time
+previously discussed the ``unit`` attribute, but this is the first time
 we are seeing the ``start`` attribute.
 
 The observant reader may have noticed the presence of the ``x0`` and
@@ -148,7 +148,7 @@ attribute is actually more of a hint than a binding relationship.  If
 the Modelica compiler identifies a particular variable as a state
 (*i.e.*, a variable that requires an initial condition) **and** there
 are insufficient initial conditions already explicitly specified in
-the model via ``initial equation`` entries then it can substitute the
+the model via ``initial equation`` sections then it can substitute the
 ``start`` attribute as an initial condition for the variable it is
 associated with.  In other words, you can think of the ``start``
 attribute as a "fallback initial condition" if an initial condition is
@@ -279,7 +279,7 @@ is no "coupling" between :math:`x` and :math:`\dot{x}` in that case
 initialization problem we can think of :math:`x`, :math:`y`,
 :math:`\dot{x}` and :math:`\dot{y}` as four independent variables.
 
-Said another way, while simulating we solve for :math:`x` by
+Said another way, while simulating, we solve for :math:`x` by
 integrating :math:`\dot{x}`.  So that integral equation is the
 equation used to solve for :math:`x`.  But during initialization, we
 cannot use that equation so we need an additional equation (for each
@@ -383,7 +383,7 @@ populations for both the predator and prey species).
 .. plot:: ../plots/LVQMUS.py
    :include-source: no
 
-
+.. todo:: word start not being rendered correctly possibly due to nesting
 It is worth pointing out (as we will do shortly in the section on
 :ref:`builtin-types`), that **the default value of the ``start``
 attribute is zero**.  This is why when we simulated our original
@@ -404,7 +404,7 @@ common?  If you look closely, you will see that they have almost
 **differences** between them!
 
 In software engineering, there is a saying that "Redundancy is the
-root of all evil".  Well the situation is no different here (in no
+root of all evil."  Well the situation is no different here (in no
 small part because Modelica code really is software).  The code we
 have written so far would be very annoying to maintain.  This is
 because any bugs we found would have to be fixed in each model.
@@ -457,7 +457,7 @@ Note the presence of the ``extends`` keyword.  Conceptually, this
 "extends clause" simply asks the compiler to insert the contents of
 another model (``ClassicModel`` in this case) into the model being
 defined.  In this way, we copy (or "inherit") everything from
-``ClassicModel`` without having to repeat it's contents.  As a result,
+``ClassicModel`` without having to repeat its contents.  As a result,
 the ``QuiescientModelWithInheritance`` is the same as the
 ``ClassicModel`` with an additional set of initial equations inserted.
 
@@ -467,7 +467,7 @@ But what about a case where we don't want **exactly** what is in the
 model we are inheriting from?  For example, what if we wanted to
 change the values of the ``gamma`` and ``delta`` parameters?
 
-Modelica handles this by allow us to include a set of "modifications"
+Modelica handles this by allowing us to include a set of "modifications"
 when we use ``extends``.  These modifications come after the name of
 the model being inherited from as shown below:
 
