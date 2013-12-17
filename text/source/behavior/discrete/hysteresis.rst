@@ -31,6 +31,8 @@ simulation:
 .. plot:: ../plots/CC1_Q.py
    :include-source: no
 
+.. todo:: the plot isn't showing this - it is just a solid blue background
+
 What you see is that after around 0.2 seconds, the heater is
 constantly turning on and off.  This is actually a real problem in
 control systems.  If you look carefully at the way the furnace works
@@ -39,6 +41,8 @@ constantly as the temperature goes above and below the desired room
 temperature you have specified.  Instead, it waits until the
 temperature gets some specified amount above or below the desired
 temperature before acting.
+
+..todo: there seems to be a formatting problem around code{ChatteringControl}
 
 This "band" that is introduced around the desired temperature is
 called hysteresis.  The problem with the \code{ChatteringControl}
@@ -65,7 +69,7 @@ why an ``if`` statement won't work.  With an ``if`` statement or
 expression changes.  But with a ``when`` statement, the statements in the
 ``when`` statement become active **only** when the condition becomes
 true.  If we simulate this model and look at the temperature, we see
-that it stays without the hysteresis band of our desired temperature.
+that it stays within the hysteresis band of our desired temperature.
 
 .. plot:: ../plots/Hyst.py
    :include-source: no

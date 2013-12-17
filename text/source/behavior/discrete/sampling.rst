@@ -3,6 +3,8 @@
 Synchronous Systems
 -------------------
 
+.. todo:: I cannot get to the page containing this text - is there a link missing?
+
 In Modelica version 3.3, new features were introduced to address
 concerns about non-deterministic discrete behavior.  In this section,
 we'll present some examples of how these issues presented themselves
@@ -15,7 +17,7 @@ To start, consider the following model:
    :lines: 2-
 
 If you look carefully, you will see that ``x`` and ``y`` are both
-computed at discrete times.  Furthermore, they are both samples
+computed at discrete times.  Furthermore, they are both sampled
 initially at the start of the simulation and then again every 0.1
 seconds.  But the question is, are they really identical?  To help
 address this question, we include the variable ``e`` which measures
@@ -25,7 +27,7 @@ the difference between them.
    :include-source: no
 
 
-Simulating this model we get the following trajectories for ``x`` and
+Simulating this model, we get the following trajectories for ``x`` and
 ``y``.  Of course, they look identical.  But in order to really
 determine if there are any differences between them, let's plot the
 error value, ``e``:
@@ -39,7 +41,7 @@ Now, let's consider the following model:
    :language: modelica
    :lines: 2-
 
-Here, we setup a common signal that triggers the assignment to both
+Here, we set up a common signal that triggers the assignment to both
 variables.  In this way, we can be sure that when the ``tick`` signal
 becomes true, both ``x`` and ``y`` will be assigned a value.  Sure
 enough, if we run this model, we see that the error is always zero:
@@ -47,8 +49,8 @@ enough, if we run this model, we see that the error is always zero:
 .. plot:: ../plots/SSS.py
    :include-source: no
 
-This kind of approach where each signal is sampled based on a common
-"tick" (or clock) is a good way to avoid determinism issues.  However,
+This kind of approach, where each signal is sampled based on a common
+"tick" (or clock), is a good way to avoid determinism issues.  However,
 what about cases where you have one signal that samples at a higher
 rate than another but you know that at certain times they should be
 sampled together?  Consider the following example:
@@ -78,7 +80,7 @@ Consider the following model:
    :language: modelica
    :lines: 2-
 
-Now, instead of relying on ``when`` statement, we use an enhanced
+Now, instead of relying on a ``when`` statement, we use an enhanced
 version of the ``sample`` function where the first argument is an
 expression to evaluate to determine the sampled value and the second
 argument is used to tell us when to evaluate it.  Let's work through

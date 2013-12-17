@@ -5,7 +5,7 @@ When
 
 .. index:: ! when
 
-By using ``when`` we can express conditions we are interested in
+By using ``when``, we can express conditions we are interested in
 reacting to and what we wish to do in response to them.  In this
 section, we'll review the key ideas behind ``when`` statements.  A
 ``when`` statement has the following general form:
@@ -36,7 +36,7 @@ examples of expressions frequently used with a ``when`` statement
 would be ``time>=2.0``, ``x>=y+2``, ``phi<=prev_phi`` and so on.
 Recall from our discussion of the :ref:`interval-measurement` speed
 estimation algorithm that you should **almost always** put the ``pre``
-operator around any variables in ``expr`` that also appear in side the
+operator around any variables in ``expr`` that also appear inside the
 ``when`` statement.
 
 In the :ref:`bouncing-ball` example, we saw a case where ``expr`` was
@@ -89,7 +89,7 @@ the effect of stopping the integration process, changing the value of
 the state (and any other states that have the ``reinit`` operator
 applied to them within the same ``when`` statement) and then resuming
 integration using what are effectively a new set of initial
-conditions.  The value of all other states not re-initialized with the
+conditions.  The values of all other states not re-initialized with the
 ``reinit`` operator remain unchanged.
 
 ``algorithm`` Sections
@@ -102,8 +102,8 @@ determine the value of each variable.  As we saw in the sections on
 :ref:`speed-measurement` and :ref:`hysteresis`, it is sometimes
 necessary (or least clearer) to express behavior in terms of multiple
 assignments.  In those cases, if all the assignments are included
-within a single ``algorithm`` section they are effectively combined
-into a single equation.  However, doing so will limit the compilers
+within a single ``algorithm`` section, they are effectively combined
+into a single equation.  However, doing so will limit the compiler's
 ability to perform symbolic manipulation and, therefore, may impact
 simulation performance and/or reusability of the models.
 
@@ -116,3 +116,8 @@ initialization phase to determine initial conditions, just like an
 ``initial equation`` section, but the ``initial algorithm`` section
 will allow multiple assignments to the same variable.  The same
 caveats apply with respect to symbolic manipulation.
+.. todo:: what would be the purpose in having multiple assignments to the same variable?.. todo:: is the order important like in non-initial algorithm sections where
+.. todo:: the last assigment is the one used?
+.. todo:: for any algorithm section (initial or otherwise):
+.. todo:: are the statements executed sequentially so that
+.. todo:: x = 2; y = x; z = y is well defined?
