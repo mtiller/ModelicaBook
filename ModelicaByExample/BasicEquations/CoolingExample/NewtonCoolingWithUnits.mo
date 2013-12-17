@@ -5,6 +5,7 @@ model NewtonCoolingWithUnits "Cooling example with physical units"
   parameter Real h(unit="W/K")=0.7 "Convective cooling coefficient";
   parameter Real m(unit="kg")=0.1 "Mass of thermal capacitance";
   parameter Real c_p(unit="J/(K.kg)")=1.2 "Specific heat";
+
   Real T(unit="K") "Temperature";
 initial equation
   T = T0 "Specify initial value for T";
