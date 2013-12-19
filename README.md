@@ -49,7 +49,7 @@ your local disk but not change any actual code) with:
     
 And when you are ready to merge them into your local version, just do:
 
-    $ git merge upstream/master
+    $ git rebase upstream/master
 
 ### Typos
 
