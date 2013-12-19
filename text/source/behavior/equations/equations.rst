@@ -116,5 +116,6 @@ parametric variability because the expression contains only a variable
 and that variable is a parameter.
 
 .. todo:: change next chapter to Discrete Behavior
+
 That's all we'll say on this topic for now, since discrete and conditional
 behavior will be discussed in detail in :ref:`the next chapter <discrete-behavior>`.

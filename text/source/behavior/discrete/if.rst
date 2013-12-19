@@ -14,7 +14,7 @@ with ``if`` expressions because they are the simplest to explain.  An
 
     if cexpr then expr1 else expr2;
 
-where ``cexpr`` is a conditional expression (that must evaluate to a
+where ``cexpr`` is a conditional expression (that will evaluate to a
 ``Boolean`` value), ``expr1`` is the value the expression will have if
 ``cexpr`` evaluates to ``true`` and ``expr2`` is the value the
 expression will have if ``cexpr`` evaluates to ``false``.
@@ -30,6 +30,13 @@ An ``if`` statement has the general syntax:
     else
       // Statements used otherwise
     end if;
+
+.. todo:: clarify: can you have multiple elseif statements?
+
+.. todo:: clarify: instead of saying the number of equations must be the same
+regardless of the value of cond1, would it not be more accurate  to end with
+must be the same in each branch of the if statement since the number of
+statements must be the same regardless of the value of cond1 *and* cond2
 
 The use of ``elseif`` is always optional.  The use of ``else`` is
 generally required since the number of equations must be the same

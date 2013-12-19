@@ -134,7 +134,6 @@ are specifying that this system has a different initial starting
 condition.
 
 .. todo::
-
    different from what? - maybe explicityly mention default initial
    values, although it seems to be implied
 
