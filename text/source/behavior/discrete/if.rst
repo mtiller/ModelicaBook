@@ -32,10 +32,12 @@ An ``if`` statement has the general syntax:
     end if;
 
 .. todo:: clarify: can you have multiple elseif statements?
+
 .. todo:: clarify: instead of saying the number of equations must be the same
-.. todo:: regardless of the value of cond1, would it not be more accurate  to end with
-.. todo:: must be the same in each branch of the if statement since the number of
-.. todo:: statements must be the same regardless of the value of cond1 *and* cond2
+regardless of the value of cond1, would it not be more accurate  to end with
+must be the same in each branch of the if statement since the number of
+statements must be the same regardless of the value of cond1 *and* cond2
+
 The use of ``elseif`` is always optional.  The use of ``else`` is
 generally required since the number of equations must be the same
 regardless of the value of ``cond1``.  One exception is the use of

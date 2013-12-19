@@ -122,6 +122,7 @@ means that multiple levels of specialization can be supported, *e.g.*,
    type AbsoluteTemperature = Temperature(min=0); // Must be positive
 
 .. todo:: would you really name a type representing temperature diff as Temperature?
+
 .. _enumerations:
 
 Enumerations

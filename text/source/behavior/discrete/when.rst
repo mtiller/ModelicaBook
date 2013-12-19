@@ -116,8 +116,9 @@ initialization phase to determine initial conditions, just like an
 ``initial equation`` section, but the ``initial algorithm`` section
 will allow multiple assignments to the same variable.  The same
 caveats apply with respect to symbolic manipulation.
-.. todo:: what would be the purpose in having multiple assignments to the same variable?.. todo:: is the order important like in non-initial algorithm sections where
-.. todo:: the last assigment is the one used?
-.. todo:: for any algorithm section (initial or otherwise):
-.. todo:: are the statements executed sequentially so that
-.. todo:: x = 2; y = x; z = y is well defined?
+.. todo:: what would be the purpose in having multiple assignments to the same variable?is the order important like in non-initial algorithm sections where
+the last assigment is the one used?
+for any algorithm section (initial or otherwise):
+are the statements executed sequentially so that
+x = 2; y = x; z = y is well defined?
+

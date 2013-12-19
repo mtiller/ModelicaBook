@@ -139,6 +139,7 @@ easier, but it dramatically improves the **reusability** of the
 models.
 
 .. todo:: Diagram: Battery Voltage [V] -> V subscript b
+
 .. todo:: Does vertical access need units?
 
 The following figure shows the dynamic response of the ``RLC1`` model:

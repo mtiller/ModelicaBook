@@ -62,7 +62,7 @@ and hold approach to measuring the angular velocity ``omega1``:
 
 Note the presence of the ``discrete`` qualifier in the declaration of
 ``omega1_measured``.  This special qualifier indicates that the
-specified variable does not have a continuous value.  Instead, the
+specified variable does not have a continuous solution.  Instead, the
 value of this variable will make (only) discrete jumps during the
 simulation.  It is not required to include the ``discrete`` keyword
 but it is useful because it provides additional information about the
@@ -186,6 +186,7 @@ used in our encoder by setting ``teeth`` to 20, we'd get very
 different results.
 
 .. todo:: speed reversals?  I thought speed was always a positive value
+
 .. plot:: ../plots/IntervalMeasure_Coarse.py
    :include-source: no
 
@@ -265,15 +266,15 @@ In this way, an ``algorithm`` section is very much like the way most
 programming languages work.  The statements in the algorithm section
 are executed in order and each statement isn't interpreted as an
 equation, but rather as an assignment of an expression to a variable.
-The familiarity of assignment statements may using ``algorithm`` sections attractive to people with a programming background who find the otherwise
+The familiarity of assignment statements may make using ``algorithm`` sections attractive to people with a programming background who find the otherwise
 equation oriented aspects of Modelica disorienting and unfamiliar.
 But be aware that one big reason to avoid ``algorithm`` sections is because they interfere with the symbolic manipulation
 performed by the Modelica compiler.  This can result in both poor
 simulation performance and a loss of flexibility in how you compose
 your models.
-.. todo:: what would be the alternative
-.. todo:: note, reworded this because it sounded like it was saying familiarity with
-.. todo:: assignment statements is the reason to avoid them
+.. todo:: what would be the alternative?
+note, reworded this because it sounded like it was saying familiarity with
+assignment statements is the reason to avoid them
 
 In our case, there are no significant consequences to using the
 ``algorithm`` section.  Here is an example of how the previous
