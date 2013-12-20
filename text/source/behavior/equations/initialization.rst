@@ -38,6 +38,8 @@ states in each of our examples so far are the variables that appear
 inside the ``der(...)`` operator.  In other words, every variable that
 we differentiated in those examples is a state.
 
+.. _odes:
+
 Ordinary Differential Equations
 ===============================
 
@@ -71,8 +73,8 @@ ODE form:
    :nowrap:
 
    \begin{align}
-   \dot{\vec{x}}(t) & = \vec{f}(\vec{x}(t), \vec{u}(t), t) \\
-   \vec{y}(t) & = \vec{g}(\vec{x}(t), \vec{u}(t), t)
+   \dot{\vec{x}}(t) &= \vec{f}(\vec{x}(t), \vec{u}(t), t) \\
+   \vec{y}(t) &= \vec{g}(\vec{x}(t), \vec{u}(t), t)
    \end{align}
 
 where :math:`t` is the current simulation time, :math:`\vec{x}(t)` are
@@ -136,9 +138,9 @@ solve a problem that looks like this:
    :nowrap:
 
    \begin{align}
-   \dot{\vec{x}}(t_0) & = \vec{f}(\vec{x}(t_0), \vec{u}(t), t_0) \\
-   \vec{y}(t_0) & = \vec{g}(\vec{x}(t_0), \vec{u}(t_0), t_0) \\
-   \vec{0} & = \vec{h}(\vec{x}(t_0), \dot{\vec{x}}(t_0), \vec{u}(t_0), t_0)
+   \dot{\vec{x}}(t_0) &= \vec{f}(\vec{x}(t_0), \vec{u}(t), t_0) \\
+   \vec{y}(t_0) &= \vec{g}(\vec{x}(t_0), \vec{u}(t_0), t_0) \\
+   \vec{0} &= \vec{h}(\vec{x}(t_0), \dot{\vec{x}}(t_0), \vec{u}(t_0), t_0)
    \end{align}
 
 Note the introduction of a new function, :math:`\vec{h}`.  This new
