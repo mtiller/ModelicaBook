@@ -14,6 +14,10 @@ differential equations in the following form:
    \vec{y}(t) &= \vec{g}(\vec{x}(t), \vec{u}(t), t)
    \end{align}
 
+.. todo::
+
+   Need to explain/remind what x, y and u represent.
+
 There is a particularly interesting special case of these equation
 when the functions :math:`\vec{f}` and :math:`\vec{g}` depend linearly
 on :math:`\vec{x}` and :math:`\vec{u}`.  In this case, the equations

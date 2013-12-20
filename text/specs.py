@@ -195,14 +195,34 @@ add_simple_plot(plot="SSI", vars=[Var("x"), Var("y"), Var("z")],
                 legloc="upper right")
 
 # ABCD
-add_case(["StateSpace", "FirstOrder"], stopTime=1.0, res="FO_LTI", tol=1e-3)
-add_simple_plot(plot="FO_LTI", vars=[Var("x[1]")],
-                title="LTI Version of First Order Example",
+add_case(["StateSpace", "FirstOrder"], stopTime=1.0, res="FO_ABCD", tol=1e-3)
+add_simple_plot(plot="FO_ABCD", vars=[Var("x[1]")],
+                title="ABCD Version of First Order Example",
+                legloc="upper right")
+
+add_case(["StateSpace", "NewtonCooling"], stopTime=1.0, res="NC_ABCD", tol=1e-3)
+add_simple_plot(plot="NC_ABCD", vars=[Var("x[1]")],
+                title="ABCD Version of Cooling Example",
                 legloc="upper right")
 
 add_case(["StateSpace", "LotkaVolterra"], stopTime=1.0, res="LV_LTI", tol=1e-3)
 add_simple_plot(plot="LV_LTI", vars=[Var("x[1]", "x[2]")],
-                title="Lotka-Volterra Example in ABCD Form",
+                title="Lotka-Volterra Example in LTI Form",
+                legloc="upper right")
+
+add_case(["StateSpace", "RLC"], stopTime=1.0, res="RLC_LTI", tol=1e-3)
+add_simple_plot(plot="RLC_LTI", vars=[Var("x[1]", "x[2]")],
+                title="RLC Circuit Example in LTI Form",
+                legloc="upper right")
+
+add_case(["StateSpace", "RotationalSMD$"], stopTime=1.0, res="Ro_LTI", tol=1e-3)
+add_simple_plot(plot="Ro_LTI", vars=[Var("x[1]", "x[2]")],
+                title="Rotational Example in LTI Form",
+                legloc="upper right")
+
+add_case(["StateSpace", "RotationalSMD_Concat"], stopTime=1.0, res="RoC_LTI", tol=1e-3)
+add_simple_plot(plot="RoC_LTI", vars=[Var("x[1]", "x[2]")],
+                title="Rotational Example in LTI Form",
                 legloc="upper right")
 
 generate()
