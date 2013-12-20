@@ -180,9 +180,6 @@ add_simple_plot(plot="HystA_Q", vars=[Var("Q")], res="HystA",
 
 # Synchronous Systems
 add_case(["IndependentSampling"], stopTime=1.0, res="SIS", tol=1e-1)
-add_simple_plot(plot="SIS", vars=[Var("x"), Var("y")],
-                title="Independently Sampled Signals",
-                legloc="upper right")
 add_simple_plot(plot="SIS_e", vars=[Var("e")], res="SIS",
                 title="Error of Independently Sampled Signals",
                 legloc="upper right")
@@ -195,6 +192,17 @@ add_simple_plot(plot="SSS", vars=[Var("e")],
 add_case(["SubsamplingWithIntegers"], stopTime=1.0, res="SSI", tol=1e-3)
 add_simple_plot(plot="SSI", vars=[Var("x"), Var("y"), Var("z")],
                 title="Synchronized Sampling and Subsampling",
+                legloc="upper right")
+
+# ABCD
+add_case(["StateSpace", "FirstOrder"], stopTime=1.0, res="FO_LTI", tol=1e-3)
+add_simple_plot(plot="FO_LTI", vars=[Var("x[1]")],
+                title="LTI Version of First Order Example",
+                legloc="upper right")
+
+add_case(["StateSpace", "LotkaVolterra"], stopTime=1.0, res="LV_LTI", tol=1e-3)
+add_simple_plot(plot="LV_LTI", vars=[Var("x[1]", "x[2]")],
+                title="Lotka-Volterra Example in ABCD Form",
                 legloc="upper right")
 
 generate()
