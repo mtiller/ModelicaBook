@@ -145,3 +145,28 @@ common model is incomplete.  For that reason, we add the ``partial``
 keyword to make it clear to the Modelica compiler that we know that
 this model is incomplete and we will not attempt to use it directly
 but rather to use it only as a starting point for other models.
+
+So by creating the ``ABCD`` model, we were able to build upon it to
+create the ``LTI_Inheritance`` model.  But there is still one small
+issue with the ``LTI_Inheritance`` model which is that it requires us
+to specify a matrix like ``A`` as well as the parameter ``nx`` which
+happens to be the number of rows in ``A``.  So in some sense we are
+still repeating ourselves because by providing a value for ``A`` we
+are implicitly specifying ``nx`` (along with explicitly specifying
+``nx``).  We can simplify things a bit further with the following
+definition for a linear, time-invariant system:
+
+.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/LTI_DRY.mo
+   :language: modelica
+   :emphasize-lines: 7
+   :lines: 2-
+
+This model is almost identical to ``LTI_Inheritance``, but it goes a
+step further using the sizes of the matrices to specify the values for
+``nx``, ``ny`` and ``nu`` as can be seen on the highlighted line.
+
+Note that the ``LTI_DRY`` model is still partial.  But we can reuse
+all the work done so far in putting the model together when we extend
+from it to create other models.  The :ref:`first-order` example model
+from the very first section can now be represented directly in terms
+of the 
