@@ -15,3 +15,7 @@ Examples
 
 Review
 ======
+
+* Discuss arithmetic operators and how they are applied to vectors
+
+
