@@ -38,6 +38,8 @@ In summary, a model definition has the following general form:
      /* And equations are listed at the end */
    end SomeModelName;
 
+.. _inheritance:
+
 Inheritance
 ^^^^^^^^^^^
 

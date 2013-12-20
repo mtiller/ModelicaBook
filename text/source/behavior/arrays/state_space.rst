@@ -132,7 +132,7 @@ example:
 
 Of particular importance is the line:
 
-.. code-block::
+.. code-block:: modelica
 
     extends ABCD;
 
