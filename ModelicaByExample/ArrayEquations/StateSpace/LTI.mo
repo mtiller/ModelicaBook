@@ -1,9 +1,9 @@
 within ModelicaByExample.ArrayEquations.StateSpace;
-partial model LTI
+model LTI
   "Equations written in ABCD form where matrices are linear, time-invariant"
-  parameter Integer nx;
-  parameter Integer ny;
-  parameter Integer nu;
+  parameter Integer nx=0;
+  parameter Integer ny=0;
+  parameter Integer nu=0;
   parameter Real A[nx,nx]=fill(0,nx,nx);
   parameter Real B[nx,nu]=fill(0,nx,nu);
   parameter Real C[ny,nx]=fill(0,ny,nx);

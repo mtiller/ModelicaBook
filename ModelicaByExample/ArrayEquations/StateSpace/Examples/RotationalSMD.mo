@@ -7,7 +7,7 @@ model RotationalSMD
   parameter Real k2=5;
   parameter Real d1=0.2;
   parameter Real d2=1.0;
-  extends LTI_DRY(x0={0, 1, 0, 0},
+  extends LTI(nx=4, nu=0, ny=0, x0={0, 1, 0, 0},
                   A=[0, 0, 1, 0;
                      0, 0, 0, 1;
                      -k1/J1, k1/J1, -d1/J1, d1/J1;
