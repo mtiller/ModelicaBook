@@ -5,13 +5,7 @@ model NewtonCooling "NewtonCooling model in state space form"
   parameter Real h=0.7 "Convective cooling coefficient";
   parameter Real m=0.1 "Mass of thermal capacitance";
   parameter Real c_p=1.2 "Specific heat";
-  extends ABCD(nx=1,nu=1,ny=0);
-initial equation
-  x[1] = 20;
+  extends LTI(nx=1,nu=1,A=[-h/(m*c_p)],B=[h/(m*c_p)],x0={20});
 equation
-  Amat=[-h/(m*c_p)];
-  Bmat=[h/(m*c_p)];
-  Cmat = fill(0, 0, 1);
-  Dmat = fill(0, 0, 1);
   u = {T_inf};
 end NewtonCooling;

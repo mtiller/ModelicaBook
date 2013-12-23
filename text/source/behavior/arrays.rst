@@ -16,6 +16,17 @@ Examples
 Review
 ======
 
+* Declaration syntax
+
+* Array literals: [], {} and concatenation
+
+.. _vectorization:
+
+Vectorization
+-------------
+
+* Vectorization
+
 * Discuss arithmetic operators and how they are applied to vectors
 
 
