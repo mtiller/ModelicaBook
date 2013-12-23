@@ -3,6 +3,14 @@
 State Space
 -----------
 
+.. _abcd:
+
+ABCD Form
+^^^^^^^^^
+
+.. index:: ABCD
+
+
 Recall from our previous discussion on :ref:`odes` that we can express
 differential equations in the following form:
 
@@ -13,6 +21,12 @@ differential equations in the following form:
    \dot{\vec{x}}(t) &= \vec{f}(\vec{x}(t), \vec{u}(t), t) \\
    \vec{y}(t) &= \vec{g}(\vec{x}(t), \vec{u}(t), t)
    \end{align}
+
+In this form, :math:`x` represents the states in the system, :math:`u`
+represents any externally specified inputs to the system and :math:`y`
+represents the outputs of the system (*i.e.,* variables that are not
+states but can ultimately be computed from the values of the states
+and inputs).
 
 There is a particularly interesting special case of these equation
 when the functions :math:`\vec{f}` and :math:`\vec{g}` depend linearly
@@ -28,74 +42,17 @@ can be rewritten as:
    \end{align}
 
 The matrices in this problem are the so-called "ABCD" matrices.  This
-special linear version of the state space equations represents a
-canonical form that that can represent all linear differential
-equations.
+ABCD form is useful because there are several interesting
+calculations that can be performed once a system is in this form.  For
+example, using the :math:``A`` matrix, we can compute the natural
+frequencies of the system.  Using various combinations of these
+matrices, we can determine several very important properties related
+to control of the underlying system (*e.g.,* observability and
+controllability).
 
-Up until now, the models we have developed have involved only scalar
-variables.  But in order to create a Modelica representation of our
-canonical ABCD form, we are going to need to represent the matrices
-and vectors.  To indicate that a variable is a vector, matrix or
-higher dimension array, we just need to add subscripts that indicate
-the number of dimensions along with the size of each dimension.  For
-example, we can represent the canonical ABCD form in Modelica as:
-
-.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/ABCD.mo
-   :language: modelica
-   :lines: 2-
-
-The model starts be specifying the size of the :math:`\vec{x}`,
-:math:`\vec{y}` and :math:`\vec{u}` vectors as ``nx``, ``ny`` and
-``nu``, respectively.  Then we define the matrices ``A``, ``B``, ``C``
-and ``D`` to represent the :math:`A`, :math:`B`, :math:`C` and
-:math:`D` matrices in our canonical form.  Finally, we introduce the
-variables ``x``, ``y`` and ``u`` to represent the vectors in our
-canonical form.
-
-Note how the declarations for the matrices include subscripts of the
-form ``[_,_]``.  This syntax indicates that the variable being
-declared is a matrix (has two dimensions).  The two expressions
-included inside the subscripts indicate the size of each dimension.
-Similarly, declarations for vectors have similar syntax but with only
-one dimension (and dimension size).
-
-.. note:: The size of arrays cannot change at run time.  For this
-	  reason, the sizes of all dimensions must have "parameter"
-	  variability (see our previous discussion on
-	  :ref:`variability` for more details).
-
-The declarations are the complex part of the model.  But the equations
-are quite simple and intuitive.  There is a general rule that any
-operation that can be applied to a scalar can also be applied to an
-array by simply applying that function to each element in the array.
-That is what we see in the expression ``der(x)``.  In all of our
-previous examples, the operator to ``der`` was a scalar.  But if we
-apply ``der`` to a vector, it is simply applied element wise to ``x``
-to produce a vector of derivatives.
-
-For some operations, an element wise application wouldn't make sense.
-In particular, the use of the ``*`` operator in the expression
-``Amat*x``.  In this case, there is a special definition of ``*`` when
-it is applied to a matrix or a vector.  Modelica follows the usual
-conventions (which will be detailed later in this chapter) regarding
-``+``, ``-`` and ``*`` when applied to matrices and vectors.  This
-allows the Modelica form of these equations to closely approximate the
-normal mathematical notation used to express our canonical form.
-
-Note that our ``ABCD`` model cannot be simulated.  This is because we
-haven't specified any values for ``Amat``, ``Bmat``, ``Cmat`` or
-``Dmat``.  The observant reader will also not the first use of the
-``partial`` keyword.  We aren't going to discuss the detailed
-implications of the ``partial`` keyword's presence yet, but it
-basically implies that this model is lacking a sufficient number of
-equations to be regarded as complete (which is clearly true).
-
-So if we can't simulate this model, what is the point of even defining
-it?  Before we can address that question, let us first consider how we
-would model a closely related type of problem.  Imagine we assumed
-that the :math:`A`, :math:`B`, :math:`C` and :math:`D` matrices were
-time-invariant (*i.e.,* had no dependence on time).  In that case, we
-would have a slight more specialized form:
+Note that this ABCD form allows these matrices to vary with time.
+There is a slightly more specialized form that, in addition to being
+linear, is also time-invariant:
 
 .. math::
    :nowrap:
@@ -105,68 +62,261 @@ would have a slight more specialized form:
    \vec{y}(t) &= C \vec{x}(t) + D \vec{u}(t)
    \end{align}
 
-We could model this type of system using the following model:
+.. index:: FMI
+
+This form is often called the "LTI" form.  The LTI form important
+because, in addition to having the same special properties as the
+ABCD form, the LTI form can be used as a very simple form of
+"model exchange".  Historically, when someone derived the behavior
+equations for a given system (either by hand or using some modeling
+tool), one way they could import those equations into other tools was
+to put the in the LTI form.  This mean that the model could be
+exchanged, shared or published as a series of matrices with either
+numbers or expressions in them.  Today, technologies like Modelica and
+:ref:`FMI <http://fmi-standard.org>` provide much better options for
+model exchange.
+
+LTI Models
+^^^^^^^^^^
+
+If someone gave us a model in LTI form, how would we express that in
+Modelica?  Here is one way we might choose to do it:
 
 .. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/LTI.mo
    :language: modelica
    :lines: 2-
 
-Unlike our ``ABCD`` model, the ``LIT`` model qualifies all the
-matrices by the ``parameter`` keyword.  In doing so, it clearly
-indicates that these matrices do not vary with time.  But the
-troubling part here is how remarkably similar our ``ABCD`` and ``LTI``
-models are.  There are may variables and equations that are common
-between these two models.
+The first step in this model is to declare the parameters ``nx``,
+``nu`` and ``ny``.  These represent the number of states, inputs and
+outputs, respectively.  Next, we define the matrices ``A``, ``B``,
+``C`` and ``D``.  Because we are creating a model for a linear,
+time-invariant representation all of these matrices can be parameters.
+We know that ``A``, ``B``, ``C`` and ``D`` are arrays because their
+declarations followed by ``[`` and ``]``.  We know they are matrices
+because within the ``[]``s there are two dimensions given.  Finally,
+we see declarations for ``x0``, ``x``, ``u`` and ``y``.  These are
+also arrays.  But in this case, they are vectors since they each have
+only a single dimension.
 
-So the question is, is there a way for us to exploit this commonality?
-The answer is "yes".  Furthermore, this is related to the previous
-question of what value is the ``ABCD`` model if it doesn't have enough
-equations.
+Another thing to note about this model is that all parameters have
+been given default values.  For ``nx``, ``nu`` and ``ny``, the
+assumption is that the number of states, inputs and outputs is zero by
+default.  For the matrices, we assume that they are filled with zeros
+by default.  Similarly, for initial conditions we assume that all
+states start the simulation with a value of zero unless otherwise
+specified.  We shall see shortly how these assumptions make it
+possible for us to write very simple models by simply overriding the
+values for these parameters.
 
-The answers to both of these questions can be seen in the following
-example:
+Vector Equations
+^^^^^^^^^^^^^^^^
 
-.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/LTI_Inheritance.mo
+The rest of the model should look pretty familiar by now.  One thing
+that is important to point out is the fact that the equations in this
+model are all **vector** equations.  An equation in Modelica can
+involve scalars or arrays.  The only requirement is that both side of
+the equation have the same number of dimensions and the same size for
+each dimension.  So in the case of the ``LTI`` model, we have the
+following initial equation:
+
+.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/LTI.mo
+   :language: modelica
+   :lines: 14-15
+
+This equation is a vector equation that expresses the fact that each
+element in ``x`` has the corresponding value in ``x0`` at the start of a
+simulation.  In practice, what happens is that each element in these
+vectors is automatically expanded into a series of scalar equations.
+
+Another thing that helps keep these equations readable is that
+Modelica has some special rules regarding :ref:`vectorization` of
+functions.  In a nutshell, these rules say that if you have a function
+that works with scalars, you can automatically use it with vectors as
+well.  If you do, Modelica will automatically apply the function to
+each element in the vector.  So, for example, the expression
+``der(x)`` in the ``LTI`` model is a vector where each element in the
+vector represents the derivative of the respective element of ``x``.
+
+Finally, many of the typical algebraic operators like ``+``, ``-`` and
+``*`` have special meanings when applied to vectors and matrices.
+These definitions are designed so that they correspond with
+conventional mathematical notation.  So in the ``LTI`` model, the
+expression ``A*x`` corresponds to a matrix-vector product.
+
+With all this in mind, let's revisit several of our previous examples
+to see how they can be represented in LTI form using our ``LTI``
+model.  Note that we will again use inheritance (via the ``extends``
+keyword) to reuse the code in the ``LTI`` model.
+
+Let's start with the :ref:`first-order` we presented earlier.  Using
+the ``LTI`` model, we can write this model as:
+
+.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/Examples/FirstOrder.mo
    :language: modelica
    :lines: 2-
 
-Of particular importance is the line:
+When we extend from ``LTI``, we only need to specify the parameter
+values that are different from the default values.  In this case, we
+specify that there is one state and one input.  Then we specify `A`
+and `B` as 1x1 matrices.  Finally, since we have an input we need to
+provide an equation for it.  The input can, in general, be
+time-varying so we don't represent it as a parameter but rather with
+an equation.  Note that in the equation:
 
 .. code-block:: modelica
 
-    extends ABCD;
+    u = {1};
 
-This statement indicates that the ``LTI_Inheritance`` model inherits
-from the ``ABCD`` model.  Recall our previous discussion on
-:ref:`inheritance` from the first chapter.  There we learned that by
-using ``extends`` we can avoid repeating code across models.  Instead,
-we can put common code in one model and then reuse.  Often times, this
-common model is incomplete.  For that reason, we add the ``partial``
-keyword to make it clear to the Modelica compiler that we know that
-this model is incomplete and we will not attempt to use it directly
-but rather to use it only as a starting point for other models.
+the expression ``{1}`` is a vector literal.  This means that we are
+building a vector as a list of its components.  In this case, the
+vector has only one component, ``1``.  But we can build longer vectors
+using a comma separated list of expressions, *e.g.,*
 
-So by creating the ``ABCD`` model, we were able to build upon it to
-create the ``LTI_Inheritance`` model.  But there is still one small
-issue with the ``LTI_Inheritance`` model which is that it requires us
-to specify a matrix like ``A`` as well as the parameter ``nx`` which
-happens to be the number of rows in ``A``.  So in some sense we are
-still repeating ourselves because by providing a value for ``A`` we
-are implicitly specifying ``nx`` (along with explicitly specifying
-``nx``).  We can simplify things a bit further with the following
-definition for a linear, time-invariant system:
+.. code-block:: modelica
 
-.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/LTI_DRY.mo
+    v = {1, 2, 3*4, 5*sin(time)};
+
+.. index: modifications
+
+It is worth noting that, in addition to setting parameter values, we
+also can include equations in the ``extends`` statement.  So, we could
+have avoided the ``equation`` section altogether and written the model
+more compactly as:
+
+.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/Examples/FirstOrder_Compact.mo
    :language: modelica
-   :emphasize-lines: 7
    :lines: 2-
 
-This model is almost identical to ``LTI_Inheritance``, but it goes a
-step further using the sizes of the matrices to specify the values for
-``nx``, ``ny`` and ``nu`` as can be seen on the highlighted line.
+In general, including the ``equation`` section makes the code a bit
+more readable for others.  But there are some circumstances where it
+is more convenient to include the equation as a modification in the
+``extends`` statement.
 
-Note that the ``LTI_DRY`` model is still partial.  But we can reuse
-all the work done so far in putting the model together when we extend
-from it to create other models.  The :ref:`first-order` example model
-from the very first section can now be represented directly in terms
-of the 
+Now let's turn our attention to the :ref:`cooling <getting-physical>`
+we also discussed earlier.  In LTI form, we could have written the
+model as:
+
+.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/Examples/NewtonCooling.mo
+   :language: modelica
+   :lines: 2-
+
+This model is very similar to the previous one.  However, in this case
+instead of putting numbers into our matrices, we've put expressions
+involving other parameters like ``h``, ``m`` and so on.  In this way,
+if those physical parameters are changed, the values for ``A`` and
+``B`` will change accordingly.
+
+We can take a similar approach in reformulating the our previous
+:ref:`mechanical example <mech-example>` into LTI form:
+
+.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/Examples/RotationalSMD.mo
+   :language: modelica
+   :lines: 2-
+
+Again, we compute ``A`` from physical parameters.  One thing to note
+about this example is the construction of ``A``.  Mathematically, the
+:math:`A` matrix is defined as:
+
+.. math::
+   :nowrap:
+
+   \begin{align}
+   A &= \left|
+   \begin{array}{cccc} 
+   0 & 0 & 1 & 0 \\
+   0 & 0 & 0 & 1 \\
+   -\frac{k_1}{J_1} & \frac{k_1}{J_1} & -\frac{d_1}{J_1} &
+   \frac{d_1}{J_1} \\
+   \frac{k_1}{J_2} & -\frac{k_1}{J_2}-\frac{k_2}{J_2} &
+   \frac{d_1}{J_2} & -\frac{d_1}{J_2}-\frac{d_2}{J_2} \\
+   \end{array}
+   \right|
+   \end{align}
+
+One thing we can note about this construction of :math:`A` is that the
+first two rows might be easier to express as a matrix of zeros and an
+identify matrix.  In other words, it might be simpler to construct the
+matrix as a set of sub-matrices, *i.e.,*
+
+.. math::
+   :nowrap:
+
+   \begin{align}
+   A &= \left|
+   \begin{array}{cc} 
+     \left|
+     \begin{array}{cc}
+     0 & 0 \\
+     0 & 0
+     \end{array}
+     \right|
+
+     \left|
+     \begin{array}{cc}
+     1 & 0 \\
+     0 & 1
+     \end{array}
+     \right|
+
+     \left|
+     \begin{array}{cc}
+     -\frac{k_1}{J_1} & \frac{k_1}{J_1} \\
+     \frac{k_1}{J_2} & -\frac{k_1}{J_2}-\frac{k_2}{J_2}
+     \end{array}
+     \right|
+
+     \left|
+     \begin{array}{cc}
+     -\frac{d_1}{J_1} & \frac{d_1}{J_1} \\
+     \frac{d_1}{J_2} & -\frac{d_1}{J_2}-\frac{d_2}{J_2}
+     \end{array}
+     \right|
+
+   \end{array}
+   \right|
+   \end{align}
+
+In Modelica, we can construct our ``A`` matrix from sub-matrices in
+this way:
+
+.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/Examples/RotationalSMD_Concat.mo
+   :language: modelica
+   :lines: 2-
+
+In all of these examples so far, we've used inheritance (via
+``extends``) to reuse the equations from the ``LTI`` model.  In
+general, there is a **much better** way to reuse these equations which
+is to **treat them as sub-components**.  To see how this is done, we
+will recast our previous :ref:`electrical examples <elec-example>` in
+LTI form.  But this time, we'll create a named instance of the ``LTI``
+model:
+
+.. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/Examples/RLC.mo
+   :language: modelica
+   :lines: 2-
+
+Note that this time we do not use ``extends`` or inheritance of any
+kind.  Instead, we actually declare a variable called ``rlc_comp``
+that is of type ``LTI``.  Once we have finished covering all the
+basics of how to describe different kinds of behavior in Modelica,
+we'll turn our attention to how to organize all these equations into
+reusable :ref:`components`.  But for now, this is just a "sneak peak"
+of (big) things to come.
+
+What we see in this `RLC` example is that we now have a variable
+called ``rlc_comp`` and this component, in turn, has all the
+parameters and variables of the ``LTI`` model inside it.  So, for
+example, we see that our equation to specify the input, ``u``, is
+written as:
+
+.. code-block:: modelica
+
+    rlc_comp.u = {Vb};
+
+Note that this equation means that we are providing an equation for
+the variable ``u`` that is **inside** the variable ``rlc_comp``.  As
+we will see later, we can use hierarchy to manage a considerable
+amount of complexity that arises from complex system descriptions.
+The use of the ``.`` operation here is how we can reference variables
+that are organized in this hierarchical manner.  Again, this will be
+discussed thoroughly when we introduce :ref:`components`.
