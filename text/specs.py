@@ -180,13 +180,16 @@ add_simple_plot(plot="HystA_Q", vars=[Var("Q")], res="HystA",
 
 # Synchronous Systems
 add_case(["IndependentSampling"], stopTime=1.0, res="SIS", tol=1e-1)
+add_simple_plot(plot="SIS", vars=[Var("x"), Var("y")], res="SIS",
+                title="Independently Sampled Signals",
+                legloc="upper right")
 add_simple_plot(plot="SIS_e", vars=[Var("e")], res="SIS",
                 title="Error of Independently Sampled Signals",
                 legloc="upper right")
 
 add_case(["SynchronizedSampling"], stopTime=1.0, res="SSS", tol=1e-1)
 add_simple_plot(plot="SSS", vars=[Var("e")],
-                title="Independently Sampled Signals",
+                title="Synchronously Sampled Signals",
                 legloc="upper right")
 
 add_case(["SubsamplingWithIntegers"], stopTime=1.0, res="SSI", tol=1e-3)

@@ -143,6 +143,9 @@ These definitions are designed so that they correspond with
 conventional mathematical notation.  So in the ``LTI`` model, the
 expression ``A*x`` corresponds to a matrix-vector product.
 
+LTI Examples
+^^^^^^^^^^^^
+
 With all this in mind, let's revisit several of our previous examples
 to see how they can be represented in LTI form using our ``LTI``
 model.  Note that we will again use inheritance (via the ``extends``
@@ -256,7 +259,7 @@ matrix as a set of sub-matrices, *i.e.,*
      1 & 0 \\
      0 & 1
      \end{array}
-     \right|
+     \right| \\
 
      \left|
      \begin{array}{cc}
@@ -282,6 +285,9 @@ this way:
 .. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/Examples/RotationalSMD_Concat.mo
    :language: modelica
    :lines: 2-
+
+Using Components
+^^^^^^^^^^^^^^^^
 
 In all of these examples so far, we've used inheritance (via
 ``extends``) to reuse the equations from the ``LTI`` model.  In

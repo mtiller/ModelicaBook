@@ -34,6 +34,7 @@ An ``if`` statement has the general syntax:
 .. todo:: clarify: can you have multiple elseif statements?
 
 .. todo:: clarify: instead of saying the number of equations must be the same
+
 regardless of the value of cond1, would it not be more accurate  to end with
 must be the same in each branch of the if statement since the number of
 statements must be the same regardless of the value of cond1 *and* cond2
