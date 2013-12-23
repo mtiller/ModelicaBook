@@ -1,16 +1,19 @@
 within ModelicaByExample.ArrayEquations.StateSpace;
-partial model ABCD "Equations written in ABCD form"
-  parameter Integer nx=0;
-  parameter Integer ny=0;
-  parameter Integer nu=0;
-  Real Amat[nx,nx];
-  Real Bmat[nx,nu];
-  Real Cmat[ny,nx];
-  Real Dmat[ny,nu];
+partial model ABCD "Equations written in (potentially non-linear) ABCD form"
+  parameter Integer nx;
+  parameter Integer ny;
+  parameter Integer nu;
+  parameter Real x0[nx]=fill(0,nx);
+  Real A[nx,nx];
+  Real B[nx,nu];
+  Real C[ny,nx];
+  Real D[ny,nu];
   Real u[nu];
   Real x[nx];
   Real y[ny];
+initial equation
+  x = x0;
 equation
-  der(x) = Amat*x+Bmat*u;
-  y = Cmat*x+Dmat*u;
+  der(x) = A*x+B*u;
+  y = C*x+D*u;
 end ABCD;

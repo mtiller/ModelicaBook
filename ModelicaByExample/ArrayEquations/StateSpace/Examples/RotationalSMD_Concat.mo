@@ -8,7 +8,7 @@ model RotationalSMD_Concat
   parameter Real d1=0.2;
   parameter Real d2=1.0;
   parameter Real S[2,2] = [-1/J1, 1/J1; 1/J2, -1/J2];
-  extends LTI_DRY(x0={0, 1, 0, 0},
+  extends LTI(nx=4, nu=0, ny=0, x0={0, 1, 0, 0},
                   A=[zeros(2, 2), identity(2);
                      k1*S+[0,0;0,-k2/J2], d1*S+[0,0;0,-d2/J2]],
                   B=fill(0, 4, 0), C=fill(0, 0, 4),
