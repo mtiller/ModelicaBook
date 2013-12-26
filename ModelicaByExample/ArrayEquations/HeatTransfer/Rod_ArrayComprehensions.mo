@@ -12,7 +12,7 @@ model Rod_ArrayComprehensions
   type Length=Real(unit="m", min=0);
   type Radius=Real(unit="m", min=0);
 
-  constant Real pi = 2*Modelica.Math.asin(1.0);
+  constant Real pi = 3.14159;
 
   parameter Integer n=10;
   parameter Length L=1.0;
@@ -30,7 +30,7 @@ model Rod_ArrayComprehensions
 initial equation
   T = linspace(200,300,n);
 equation
-  rho*V*C*der(T[1]) = -h*(T[1]-Tamb)-k*(L/n)*(T[1]-T[2]);
-  rho*V*C*der(T[2:n-1]) = {-k*(L/n)*(T[i]-T[i-1])-k*(L/n)*(T[i]-T[i+1]) for i in 2:(n-1)};
-  rho*V*C*der(T[end]) = -h*(T[end]-Tamb)-k*(L/n)*(T[end]-T[end-1]);
+  rho*V*C*der(T[1]) = -h*(T[1]-Tamb)-k*A/(L/n)*(T[1]-T[2]);
+  rho*V*C*der(T[2:n-1]) = {-k*(L/n)*(T[i]-T[i-1])-k*A/(L/n)*(T[i]-T[i+1]) for i in 2:(n-1)};
+  rho*V*C*der(T[end]) = -h*(T[end]-Tamb)-k*A/(L/n)*(T[end]-T[end-1]);
 end Rod_ArrayComprehensions;

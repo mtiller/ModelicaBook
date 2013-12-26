@@ -1,4 +1,4 @@
-.. _state_space:
+.. _state-space:
 
 State Space
 -----------

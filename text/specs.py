@@ -228,4 +228,11 @@ add_simple_plot(plot="LV_ABCD", vars=[Var("x[1]", "x[2]")],
                 title="Lotka-Volterra Example in LTI Form",
                 legloc="upper right")
 
+# One Dimensional Heat Transfer
+rfl_vars = map(lambda x: Var("x["+str(x)+"]"), range(1,11))
+add_case(["Rod_ForLoop"], stopTime=1.0, res="RFL", tol=1e-3)
+add_simple_plot(plot="RFL", vars=rfl_vars,
+                title="One Dimensional Heat Transfer Response",
+                legloc="upper right")
+
 generate()

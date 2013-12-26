@@ -20,6 +20,15 @@ Review
 
 * Array literals: [], {} and concatenation
 
+* linspace
+
+* for loop
+
+* array comprehensions
+
+* vector subscripts
+
+
 .. _vectorization:
 
 Vectorization
