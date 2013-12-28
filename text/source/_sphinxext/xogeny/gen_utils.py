@@ -51,15 +51,17 @@ def add_case(frags, res, stopTime=1.0, tol=1e-3, ncp=500, mods={}):
     results[res] = data
 
 class Var(object):
-    def __init__(self, name, legend=None, style="-"):
+    def __init__(self, name, scale=1.0, legend=None, style="-"):
         self.name = name
         self.style = style
+        self.scale = scale
         if legend==None:
             self.legend = name
         else:
             self.legend = legend
     def dict(self):
-        return {"name": self.name, "legend": self.legend, "style": self.style}
+        return {"name": self.name, "scale": self.scale,
+                "legend": self.legend, "style": self.style}
     def __repr__(self):
         return repr(self.dict())
 

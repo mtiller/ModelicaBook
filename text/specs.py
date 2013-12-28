@@ -236,7 +236,7 @@ add_simple_plot(plot="LV_ABCD", vars=[Var("x[1]", "x[2]")],
 #                legloc="upper right")
 
 add_case(["Reactions_NoArrays"], stopTime=10.0, res="RNA")
-add_simple_plot(plot="RNA", vars=[Var("cA"), Var("cB"), Var("cX50")],
+add_simple_plot(plot="RNA", vars=[Var("cA"), Var("cB"), Var("cX", scale=50.0, legend="cX*50")],
                 title="Simulation of Chemical System without Arrays",
                 legloc="upper right")
 
@@ -251,7 +251,7 @@ add_simple_plot(plot="RE",
                 vars=[
                     Var(species_name("A"), legend="C[A]"),
                     Var(species_name("B"), legend="C[B]"),
-                    Var(species_name("X"), legend="C[X]")
+                    Var(species_name("X"), scale=50, legend="C[X]*50")
                 ],
                 title="Simulation of Chemical System using Enumerations",
                 legloc="upper right")

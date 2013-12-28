@@ -98,6 +98,7 @@ def render_simple_plot(name, vars, title, legloc, ylabel):
 
     for var in vars:
         varname = var["name"]
+        scale = var["scale"]
         legend = var["legend"]
         style = var["style"]
         try:
@@ -108,6 +109,8 @@ def render_simple_plot(name, vars, title, legloc, ylabel):
             xv = x[0]
             print "xv = "+str(xv)
             x = [xv]*len(t)
+
+        x = map(lambda y: y*scale, x)
         print "len("+varname+") = "+str(len(x))
         ax.plot(t, x, style, label=legend)
 
