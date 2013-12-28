@@ -90,14 +90,20 @@ def render_simple_plot(name, vars, title, legloc, ylabel):
 
     fig, ax = plt.subplots()
 
-    t = res.abscissa(var0name, valuesOnly=True)
-    print "len(t) = "+str(len(t))
+    try:
+        t = res.abscissa(var0name, valuesOnly=True)
+        print "len(t) = "+str(len(t))
+    except KeyError as e:
+        raise NameError("Unknown key: "+var0name+" among "+str(res.names()))
 
     for var in vars:
         varname = var["name"]
         legend = var["legend"]
         style = var["style"]
-        x = res.data(varname)
+        try:
+            x = res.data(varname)
+        except KeyError as e:
+            raise NameError("Unknown key: "+varname+" among "+str(res.names()))
         if len(x)==2:
             xv = x[0]
             print "xv = "+str(xv)

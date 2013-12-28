@@ -227,8 +227,8 @@ nodal temperatures:
    Figure out what is wrong with this plot.  The simulation fails and
    I don't know why.
 
-.. plot:: ../plots/RFL.py
-   :include-source: no
+#.. plot:: ../plots/RFL.py
+#   :include-source: no
 
 Note how the temperatures are initially distributed linearly (as we
 specified in our ``initial equation`` section).

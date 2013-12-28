@@ -229,10 +229,31 @@ add_simple_plot(plot="LV_ABCD", vars=[Var("x[1]", "x[2]")],
                 legloc="upper right")
 
 # One Dimensional Heat Transfer
-rfl_vars = map(lambda x: Var("x["+str(x)+"]"), range(1,11))
-add_case(["Rod_ForLoop"], stopTime=1.0, res="RFL", tol=1e-3)
-add_simple_plot(plot="RFL", vars=rfl_vars,
-                title="One Dimensional Heat Transfer Response",
+#rfl_vars = map(lambda x: Var("x["+str(x)+"]"), range(1,11))
+#add_case(["Rod_ForLoop"], stopTime=1.0, res="RFL", tol=1e-3)
+#add_simple_plot(plot="RFL", vars=rfl_vars,
+#                title="One Dimensional Heat Transfer Response",
+#                legloc="upper right")
+
+add_case(["Reactions_NoArrays"], stopTime=10.0, res="RNA")
+add_simple_plot(plot="RNA", vars=[Var("cA"), Var("cB"), Var("cX50")],
+                title="Simulation of Chemical System without Arrays",
+                legloc="upper right")
+
+add_case(["Reactions_Array"], stopTime=10.0, res="RA")
+add_simple_plot(plot="RA", vars=[Var("C[1]"), Var("C[2]"), Var("C[3]")],
+                title="Simulation of Chemical System with Arrays",
+                legloc="upper right")
+
+species_name = lambda x: "C[ModelicaByExample.ArrayEquations.ChemicalReactions.Reactions_Enum.Species."+str(x)+"]"
+add_case(["Reactions_Enum"], stopTime=10.0, res="RE")
+add_simple_plot(plot="RE",
+                vars=[
+                    Var(species_name("A"), legend="C[A]"),
+                    Var(species_name("B"), legend="C[B]"),
+                    Var(species_name("X"), legend="C[X]")
+                ],
+                title="Simulation of Chemical System using Enumerations",
                 legloc="upper right")
 
 generate()

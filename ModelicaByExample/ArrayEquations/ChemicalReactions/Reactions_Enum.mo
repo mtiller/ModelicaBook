@@ -4,11 +4,11 @@ model Reactions_Enum "Modeling a chemical reaction with enums"
       A,
       B,
       X);
-  Real C[Species];
+  Real C[Species] "Species concentrations";
   parameter Real k[3] = {0.1, 0.1, 10};
-  parameter Species A = Species.A;
-  parameter Species B = Species.B;
-  parameter Species X = Species.X;
+  constant Species A = Species.A;
+  constant Species B = Species.B;
+  constant Species X = Species.X;
 initial equation
   C[A] = 1.0;
   C[B] = 1.0;
