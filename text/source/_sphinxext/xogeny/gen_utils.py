@@ -35,7 +35,8 @@ def findModel(*frags):
             print str(r)
         sys.exit(1)
 
-def add_case(frags, res, stopTime=1.0, tol=1e-3, ncp=500, mods={}):
+def add_case(frags, res, stopTime=1.0, tol=1e-3, ncp=500, mods={},
+             msl=False, ms=False, compfails=False, simfails=False):
     mod = findModel(*frags)
     if res in results:
         raise NameError("Result %s already exists!" % (res,))
@@ -46,7 +47,11 @@ def add_case(frags, res, stopTime=1.0, tol=1e-3, ncp=500, mods={}):
         "stopTime": stopTime,
         "tol": tol,
         "ncp": ncp,
-        "mods": mods
+        "mods": mods,
+        "msl": msl,
+        "ms": ms,
+        "compfails": compfails,
+        "simfails": simfails
     };
     results[res] = data
 
@@ -134,12 +139,25 @@ def _generate_plots():
                 raise ValueError("Unknown plot type: "+str(pdata["type"]))
 
 script_tmpl = """
-loadModel(ModelicaServices);
-loadModel(Modelica);
 setModelicaPath(getModelicaPath()+":"+"%s");
-loadModel(ModelicaByExample);
+cf := loadModel(ModelicaByExample);
+compfails := %s;
+getErrorString();
+
+if not compfails and cf==false then
+  exit(1);
+end if;
     
-simulate(%s, stopTime=%g, tolerance=%g, numberOfIntervals=%d, fileNamePrefix="%s", simflags="%s");
+rec := simulate(%s, stopTime=%g, tolerance=%g, numberOfIntervals=%d, fileNamePrefix="%s", simflags="%s");
+getErrorString();
+rfile := rec.resultFile;
+simfails := %s;
+
+if not simfails and rfile == "" then
+  exit(1);
+else
+  exit(0);
+end if;
 """
 
 def _generate_makefile():
@@ -158,8 +176,14 @@ def _generate_makefile():
             else:
                 simflags = "-override "+(",".join(map(lambda x: str(x)+"="+str(mods[x]), mods)))
             with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
-                args = (path, data["name"], data["stopTime"],
-                        data["tol"], data["ncp"], res, simflags)
+                simfails = "true" if data["simfails"] else "false"
+                compfails = "true" if data["compfails"] else "false"
+                args = (path, compfails, data["name"], data["stopTime"],
+                        data["tol"], data["ncp"], res, simflags, simfails)
+                if data["ms"]:
+                    sfp.write("loadModel(ModelicaServices);\n");
+                if data["msl"]:
+                    sfp.write("loadModel(Modelica);");
                 sfp.write(script_tmpl % args);
             ofp.write("%s_res.mat: %s\n" % (res, srcpath));
             ofp.write("\tomc %s.mos\n" % (res,));
