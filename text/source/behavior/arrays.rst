@@ -16,26 +16,11 @@ Examples
 Review
 ======
 
-* Declaration syntax
-
-* Array literals: [], {} and concatenation
-
-* linspace
-
-* for loop
-
-* array comprehensions
-
-* vector subscripts
-
-
-.. _vectorization:
-
-Vectorization
--------------
-
-* Vectorization
-
-* Discuss arithmetic operators and how they are applied to vectors
+   arrays/declarations
+   arrays/construction
+   arrays/functions
+   arrays/enumerations
+   arrays/indexing
+   arrays/looping
 
 
