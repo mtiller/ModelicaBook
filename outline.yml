@@ -152,7 +152,15 @@ Part 1 - Mathematical Behavior:
         - enumeration
         - Enumeration Indexing
     Review:
-      Arrays:
+      Array Declarations:
+      Array Construction:
+        # Matrix literal notation
+        - Array Concatenation
+        # Vector literal notation
+        # Ways of building higher dimension arrays
+        - Array Construction
+        # Array comprehensions
+      Arrays Functions:
         - Array Constructor Functions
         - fill
         - zeros
@@ -164,16 +172,14 @@ Part 1 - Mathematical Behavior:
         - size
         - sum
         - product
-      Vectors:
+        # Vectorization of functions
       Enumerations:
         - enumeration
       Indexing:
         - Array indexing
         - Enumeration Indexing
+        - slicing
         - end index
-      Matrices:
-        - Array Construction
-        - Array Concatenation
       Looping:
         - for equations
         - for statement
