@@ -103,7 +103,7 @@ can be transformed into the following form:
    \end{array}
    \right\} =
    \left[
-   \begin{array}{ccc}
+   \begin{array}{rrr}
    -k_1 [B] & 0 & k_2 \\
    -k_1 [B] & -k_3 [X] & k_2 \\
    k_1 [B] & -k_3 [X] & -k_2
