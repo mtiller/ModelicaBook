@@ -170,8 +170,6 @@ our chemical system using enumerations as:
    :language: modelica
    :lines: 2-
 
-.. todo:: Find a simple way to scale C[X] without introducing a dummy variable
-
 .. plot:: ../plots/RE.py
    :include-source: no
 
