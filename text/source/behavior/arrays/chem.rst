@@ -99,7 +99,7 @@ can be transformed into the following form:
    \frac{\mathrm{d}}{\mathrm{d}t}
    \left\{
    \begin{array}{c}
-   [A] \\\relax [B] \\\relax [X]
+   [A] \\[0pt] [B] \\[0pt] [X]
    \end{array}
    \right\} =
    \left[
@@ -111,7 +111,7 @@ can be transformed into the following form:
    \right]
    \left\{
    \begin{array}{c}
-   [A] \\\relax [B] \\\relax [X]
+   [A] \\[0pt] [B] \\[0pt] [X]
    \end{array}
    \right\}
 
