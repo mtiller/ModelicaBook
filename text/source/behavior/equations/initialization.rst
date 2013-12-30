@@ -70,12 +70,10 @@ states in the model and that our model will have the following general
 ODE form:
 
 .. math::
-   :nowrap:
 
-   \begin{align}
    \dot{\vec{x}}(t) &= \vec{f}(\vec{x}(t), \vec{u}(t), t) \\
    \vec{y}(t) &= \vec{g}(\vec{x}(t), \vec{u}(t), t)
-   \end{align}
+
 
 where :math:`t` is the current simulation time, :math:`\vec{x}(t)` are
 the values of the states in our system at time :math:`t`,
@@ -135,13 +133,10 @@ The answer is to assume that at the start of our simulation we need to
 solve a problem that looks like this:
 
 .. math::
-   :nowrap:
 
-   \begin{align}
    \dot{\vec{x}}(t_0) &= \vec{f}(\vec{x}(t_0), \vec{u}(t), t_0) \\
    \vec{y}(t_0) &= \vec{g}(\vec{x}(t_0), \vec{u}(t_0), t_0) \\
    \vec{0} &= \vec{h}(\vec{x}(t_0), \dot{\vec{x}}(t_0), \vec{u}(t_0), t_0)
-   \end{align}
 
 Note the introduction of a new function, :math:`\vec{h}`.  This new
 function represents any equations we have placed in `initial equation`
