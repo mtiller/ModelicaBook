@@ -19,7 +19,6 @@ differential equations in the following form:
    \dot{\vec{x}}(t) &= \vec{f}(\vec{x}(t), \vec{u}(t), t) \\
    \vec{y}(t) &= \vec{g}(\vec{x}(t), \vec{u}(t), t)
 
-
 In this form, :math:`x` represents the states in the system, :math:`u`
 represents any externally specified inputs to the system and :math:`y`
 represents the outputs of the system (*i.e.,* variables that are not
@@ -240,28 +239,25 @@ matrix as a set of sub-matrices, *i.e.,*
      0 & 0
      \end{array}
      \right|
-
+     ~
      \left|
      \begin{array}{cc}
      1 & 0 \\
      0 & 1
      \end{array}
      \right| \\
-
      \left|
      \begin{array}{cc}
      -\frac{k_1}{J_1} & \frac{k_1}{J_1} \\
      \frac{k_1}{J_2} & -\frac{k_1}{J_2}-\frac{k_2}{J_2}
      \end{array}
      \right|
-
      \left|
      \begin{array}{cc}
      -\frac{d_1}{J_1} & \frac{d_1}{J_1} \\
      \frac{d_1}{J_2} & -\frac{d_1}{J_2}-\frac{d_2}{J_2}
      \end{array}
      \right|
-
    \end{array}
    \right|
 
