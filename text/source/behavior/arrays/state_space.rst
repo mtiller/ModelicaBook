@@ -15,12 +15,10 @@ Recall from our previous discussion on :ref:`odes` that we can express
 differential equations in the following form:
 
 .. math::
-   :nowrap:
 
-   \begin{align}
    \dot{\vec{x}}(t) &= \vec{f}(\vec{x}(t), \vec{u}(t), t) \\
    \vec{y}(t) &= \vec{g}(\vec{x}(t), \vec{u}(t), t)
-   \end{align}
+
 
 In this form, :math:`x` represents the states in the system, :math:`u`
 represents any externally specified inputs to the system and :math:`y`
@@ -34,12 +32,9 @@ on :math:`\vec{x}` and :math:`\vec{u}`.  In this case, the equations
 can be rewritten as:
 
 .. math::
-   :nowrap:
 
-   \begin{align}
    \dot{\vec{x}}(t) &= A(t) \vec{x}(t) + B(t) \vec{u}(t) \\
    \vec{y}(t) &= C(t) \vec{x}(t) + D(t) \vec{u}(t)
-   \end{align}
 
 The matrices in this problem are the so-called "ABCD" matrices.  This
 ABCD form is useful because there are several interesting
@@ -55,12 +50,9 @@ There is a slightly more specialized form that, in addition to being
 linear, is also time-invariant:
 
 .. math::
-   :nowrap:
 
-   \begin{align}
    \dot{\vec{x}}(t) &= A \vec{x}(t) + B \vec{u}(t) \\
    \vec{y}(t) &= C \vec{x}(t) + D \vec{u}(t)
-   \end{align}
 
 .. index:: FMI
 
@@ -221,11 +213,9 @@ about this example is the construction of ``A``.  Mathematically, the
 :math:`A` matrix is defined as:
 
 .. math::
-   :nowrap:
 
-   \begin{align}
    A &= \left|
-   \begin{array}{cccc} 
+   \begin{array}{cccc}
    0 & 0 & 1 & 0 \\
    0 & 0 & 0 & 1 \\
    -\frac{k_1}{J_1} & \frac{k_1}{J_1} & -\frac{d_1}{J_1} &
@@ -234,7 +224,6 @@ about this example is the construction of ``A``.  Mathematically, the
    \frac{d_1}{J_2} & -\frac{d_1}{J_2}-\frac{d_2}{J_2} \\
    \end{array}
    \right|
-   \end{align}
 
 One thing we can note about this construction of :math:`A` is that the
 first two rows might be easier to express as a matrix of zeros and an
@@ -242,11 +231,9 @@ identify matrix.  In other words, it might be simpler to construct the
 matrix as a set of sub-matrices, *i.e.,*
 
 .. math::
-   :nowrap:
 
-   \begin{align}
    A &= \left|
-   \begin{array}{cc} 
+   \begin{array}{cc}
      \left|
      \begin{array}{cc}
      0 & 0 \\
@@ -277,7 +264,6 @@ matrix as a set of sub-matrices, *i.e.,*
 
    \end{array}
    \right|
-   \end{align}
 
 In Modelica, we can construct our ``A`` matrix from sub-matrices in
 this way:

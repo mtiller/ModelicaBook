@@ -13,13 +13,10 @@ In all of our examples, we'll be building a model for `the following
 system of reactions <http://library.wolfram.com/examples/chemicalkinetics/>`:
 
 .. math::
-   :nowrap:
-    
-    \begin{align}
+
       A + B &\underset{1}{\rightarrow} X \\
       A + B &\underset{2}{\leftarrow} X \\
       X + B &\underset{3}{\rightarrow} R + S
-    \end{align}
 
 It should be noted that :math:`X` is simply an intermediate result of
 this reaction.  The overall reaction can be expressed as:
@@ -32,13 +29,10 @@ Using the law of mass action we can transform these chemical equations
 into the following mathematical ones:
 
 .. math::
-   :nowrap:
 
-    \begin{align}
     \frac{\mathrm{d}[A]}{\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] \\
     \frac{\mathrm{d}[B]}{\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] -k_3 [B] [X] \\
     \frac{\mathrm{d}[X]}{\mathrm{d}t} &= k_1 [A] [B] - k_2 [X] -k_3 [B] [X]
-    \end{align}
 
 where :math:`k_1` is the reaction coefficient for the first reaction,
 :math:`k_2` is the reaction coefficient for the second reaction and
@@ -93,13 +87,10 @@ into a completely linear form.  But we could simplify them further by
 using a matrix-vector product.  In other words, the equations:
 
 .. math::
-   :nowrap:
 
-    \begin{align}
     \frac{\mathrm{d}[A]}{\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] \\
     \frac{\mathrm{d}[B]}{\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] -k_3 [B] [X] \\
     \frac{\mathrm{d}[X]}{\mathrm{d}t} &= k_1 [A] [B] - k_2 [X] -k_3 [B] [X]
-    \end{align}
 
 can be transformed into the following form:
 
