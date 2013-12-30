@@ -3,16 +3,56 @@
 Array Functions
 ---------------
 
+There are a great many functions in Modelica that are related to
+arrays.  In this section, we'll go through different categories of
+functions and describe how they are used.
+
+.. _array-construction-functions:
+
 Construction
 ^^^^^^^^^^^^
 
-* fill
+We already talked about :ref:`array-construction`.  We saw the
+different syntactic constructs that can be used to build vectors and
+matrices.  Furthermore, we saw how matrices can be built from other
+matrices.  There are several functions in Modelica that can be used
+for constructing vectors, matrices and higher-dimension arrays as both
+an alternative or complement to those previous presented.
 
-* zeros
 
-* ones
+.. todo:: Document these functions
 
-* linspace
+.. _fill-function:
+
+``fill``
+~~~~~~~~
+
+.. index:: fill
+.. index:: functions; fill
+
+``zeros``
+~~~~~~~~~
+
+.. index:: zeros
+.. index:: functions; zeros
+
+``ones``
+~~~~~~~~
+
+.. index:: ones
+.. index:: functions; ones
+
+``diag``
+~~~~~~~~
+
+.. index:: diag
+.. index:: functions; diag
+
+``linspace``
+~~~~~~~~~~~~
+
+.. index:: linspace
+.. index:: functions; linspace
 
 Conversion
 ^^^^^^^^^^
@@ -25,23 +65,49 @@ Operators
 * +,*,-,/, element-wise
 
 
-Functions
-^^^^^^^^^
+Miscellaneous Functions
+^^^^^^^^^^^^^^^^^^^^^^^
 
-* ndims
+``ndims``
+~~~~~~~~~
 
-* size
+.. index:: ndims
+.. index:: functions; ndims
 
-* sum
 
-* product
+``size``
+~~~~~~~~
+
+.. index:: size
+.. index:: functions; size
+
+
+``sum``
+~~~~~~~
+
+.. index:: sum
+.. index:: functions; sum
+
+
+``product``
+~~~~~~~~~~~
+
+.. index:: product
+.. index:: functions; product
+
 
 .. _vectorization:
 
 Vectorization
 ^^^^^^^^^^^^^
 
+.. index:: vectorization
+.. index:: functions; vectorization
+.. index:: equations; of vectors
+
 * Vectorization
 
 * Discuss arithmetic operators and how they are applied to vectors
+
+* Equations?
 

@@ -1,4 +1,4 @@
-.. _chemical_system:
+.. _chemical-system:
 
 Chemical System
 ---------------

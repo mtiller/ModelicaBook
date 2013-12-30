@@ -16,11 +16,11 @@ Examples
 Review
 ======
 
+.. toctree::
+   :maxdepth: 1
+
    arrays/declarations
    arrays/construction
    arrays/functions
-   arrays/enumerations
    arrays/indexing
    arrays/looping
-
-
