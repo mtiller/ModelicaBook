@@ -9,8 +9,8 @@ functions and describe how they are used.
 
 .. _array-construction-functions:
 
-Construction
-^^^^^^^^^^^^
+Array Construction Functions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We already talked about :ref:`array-construction`.  We saw the
 different syntactic constructs that can be used to build vectors and

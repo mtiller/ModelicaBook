@@ -11,6 +11,9 @@ Modelica.
 Literals
 ^^^^^^^^
 
+Vectors
+~~~~~~~
+
 The simplest method for constructing an array is to enumerate each of
 the individual elements.  For example, given the following parameter
 declaration for a variable named ``x`` meant to represent a vector:
@@ -39,21 +42,20 @@ vectors of any size we wish, *e.g.,*
 
     parameter Real x[5] = {1.0, 0.0, -1.0, 2.0, 0.0};
 
-It is important to point out that this syntax is **only** good for
-vectors.  One might be tempted to think you could initialize a matrix as
-follows (*i.e.,* as a set of nested vectors):
+While it is possible to use the ``{}`` notation to construct arrays of
+any dimension, *e.g.,*
 
 .. code-block:: modelica
 
     parameter Real B[2,3] = {{1.0, 2.0, 3.0}, {5.0, 6.0, 7.0}};
 
-.. todo:: This may not be true actually, I need to confirm.
+Matrix Construction
+~~~~~~~~~~~~~~~~~~~
 
-**But this is not legal**.
-
-Fortunately, there is a very similar syntax that can be used
-to create matrices (arrays with two subscript dimensions).  Consider
-the following parameter declarations with initializer:
+But it is important to note that there is also a special syntax used
+for constructing matrices (arrays with exactly two subscript
+dimensions).  Consider the following parameter declarations with
+initializer:
 
 .. code-block:: modelica
 
@@ -81,8 +83,17 @@ delimiters.  The semicolons are used to separate rows and the commas
 are used to separate the columns.
 
 One nice feature about this matrix construction notation is that it is
-possible to embed submatrices.  For example, consider we wished
-construct the following matrix:
+possible to embed vectors or submatrices.
+
+.. topic:: Vectors
+
+    When embedding vectors, it is very important to note that
+    **vectors are treated as column vectors**.  In other words, in the
+    context of matrix construction, a vector of size :math:`n` is
+    treated as a matrix with :math:`n` rows and 1 column.
+
+To demonstrate how this embedding is done, consider the case where we
+wished to construct the following matrix:
 
 .. math::
 
@@ -160,19 +171,68 @@ follows:
 In other words, the ``,`` and ``;`` delimiters work with either
 scalars or submatrices.
 
+As we will see shortly, there are several different
+:ref:`array-construction-functions` that can be extremely useful when
+building matrices in this way.
+
+Arrays of Any Size
+~~~~~~~~~~~~~~~~~~
+
+So far, we've discussed vectors and matrices.  But you can construct
+arbitrary arrays with any number of dimensions (including vectors and
+matrices) using by constructing them as a series of nested vectors.
+For example, to construct an array with three dimensions, we could
+simply nested a collection of vectors as follows:
+
+.. code-block:: modelica
+
+    parameter Real A[2,3,4] = { { {1, 2, 3, 4},
+                                  {5, 6, 7, 8},
+                                  {9, 8, 7, 6} },
+				{ {4, 3, 2, 1},
+                                  {8, 7, 6, 5},
+                                  {4, 3, 2, 1} } };
+
+As can be seen in this example, the inner most elements in this nested
+construction correspond to the right most dimension in the
+declaration.  In other words, the array here is a vector containing
+two elements where each of those two elements is a vector containing
+three elements and each of those three elements is a vector of 4
+scalars.
+
+
 Array Comprehensions
 ^^^^^^^^^^^^^^^^^^^^
 
-The syntax we've talked about so far works well for vectors and
-matrices, *i.e.,* arrays with one or two subscript dimensions,
-respectively.  But how to construct an array with a higher number of
-subscripts.
+So far, we've shown how to construct vectors, matrices and higher
+dimensional arrays by enumerating the elements contained in the array.
+As we can see in the case of higher dimensional arrays, these
+constructions can get very complicated.  Fortunately, Modelica
+includes array comprehensions which provide a convenient syntax for
+programmatically constructing arrays.  This approach has two main
+benefits.  The first is that it is a much more compact notation.  The
+second is that it allows us to easily express how the values in the
+array are tied to the various indices.
 
-.. todo:: I still need to research a few things here
+To demonstrate array comprehensions, consider the following
+relationship between elements in an array and the indices of the
+array:
 
-* Building higher dimension arrays
+.. math::
 
-* Array comprehensions
+    a_{ijk} = i\ x_j\ y_k
 
-* Add a ref to future section on array-construction-functions
+where :math:`x` and :math:`y` are vectors.  We've already seen how we
+could recursively define such an array using a series of nested
+vectors.  But we have also seen how long such an expression could
+potentially be and how tedious it is to read and write.  Using array
+comprehensions, we can construct the :math:`a` array quite easily as:
 
+.. code-block:: modelica
+
+    parameter Real a[10,12,15] = {i*x[j]*y[k] for k in 1:15,
+                                              for j in 1:12,
+                                              for i in 1:10};
+
+This code builds an array with 1800 elements with only a few lines of
+Modelica code.
