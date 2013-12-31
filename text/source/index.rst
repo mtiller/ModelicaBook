@@ -32,10 +32,16 @@ Modelica By Example
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   behavior/index
-   components/index
+   behavior/equations
+   behavior/discrete
+   behavior/arrays
+   behavior/functions
+   components/packages
+   components/connectors
+   components/subsystems
+   components/architectures
    advanced
 
 TODO List
