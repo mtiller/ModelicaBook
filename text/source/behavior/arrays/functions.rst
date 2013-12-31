@@ -193,8 +193,8 @@ would yield the vector:
 
 .. todo:: Document these functions
 
-Conversion
-^^^^^^^^^^
+Conversion Functions
+^^^^^^^^^^^^^^^^^^^^
 
 The following functions provide a means to transform arrays into other
 arrays.
