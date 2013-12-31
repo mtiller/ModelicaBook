@@ -10,7 +10,7 @@ behavior using vectors.  Finally, we'll implement the same model
 again using enumerations.
 
 In all of our examples, we'll be building a model for `the following
-system of reactions <http://library.wolfram.com/examples/chemicalkinetics/>`:
+system of reactions <http://library.wolfram.com/examples/chemicalkinetics/>`_:
 
 .. math::
 
