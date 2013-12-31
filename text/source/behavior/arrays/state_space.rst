@@ -84,7 +84,7 @@ outputs, respectively.  Next, we define the matrices ``A``, ``B``,
 time-invariant representation all of these matrices can be parameters.
 We know that ``A``, ``B``, ``C`` and ``D`` are arrays because their
 declarations followed by ``[`` and ``]``.  We know they are matrices
-because within the ``[]``s there are two dimensions given.  Finally,
+because within the ``[]``\ s there are two dimensions given.  Finally,
 we see declarations for ``x0``, ``x``, ``u`` and ``y``.  These are
 also arrays.  But in this case, they are vectors since they each have
 only a single dimension.
@@ -112,7 +112,7 @@ following initial equation:
 
 .. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/LTI.mo
    :language: modelica
-   :lines: 14-15
+   :lines: 15-16
 
 This equation is a vector equation that expresses the fact that each
 element in ``x`` has the corresponding value in ``x0`` at the start of a

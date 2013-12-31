@@ -69,6 +69,8 @@ the thermal capacitance of each section would be:
 This, in turn, means that the net heat gained in that section at any
 time will be:
 
+.. math::
+
     \rho A \frac{L}{n} C \frac{\mathrm{d} T_i}{\mathrm{d}t}
 
 where we assume that :math:`A`, :math:`L`, :math:`n` and :math:`C`
@@ -191,7 +193,7 @@ already associated with a variable.
 Also note the use of a ``for`` loop in this model.  A ``for`` loop
 allows the loop index variable to loop over a range of values.  In our
 case, the loop index variable is ``i`` and the range of values is
-:math:`2` through :math:`n-1`.  The general syntax for a ``for` loop
+:math:`2` through :math:`n-1`.  The general syntax for a ``for`` loop
 is:
 
 .. code-block:: modelica
@@ -205,7 +207,7 @@ a sequence of values is to use the range operator, ``:``.  The value
 before the range operator is the initial value in the sequence and the
 value after the range operator is the final value in the sequence.
 So, for example, the expression ``5:10`` would generate a vector with
-the values ``5``, ``6``, ``7`, ``8``, ``9`` and ``10``.  Note that
+the values ``5``, ``6``, ``7``, ``8``, ``9`` and ``10``.  Note that
 this **includes** the values used to specify the range.
 
 When a ``for`` loop is used in an equation section, each iteration of
