@@ -196,13 +196,101 @@ would yield the vector:
 Conversion
 ^^^^^^^^^^
 
-* Converting matrices, vectors and arrays
+The following functions provide a means to transform arrays into other
+arrays.
 
-Operators
-^^^^^^^^^
+``scalar``
+~~~~~~~~~~
+
+.. index:: scalar
+.. index:: functions; scalar
+
+The ``scalar`` function is invoked as follows:
+
+.. code-block:: modelica
+
+    scalar(A)
+
+where ``A`` is an array with an arbitrary number of dimensions as long
+as each dimension is of size :math:`1`.  The ``scalar`` function
+returns the (only) scalar value contained in the array.
+
+``vector``
+~~~~~~~~~~
+
+.. index:: vector
+.. index:: functions; vector
+
+The ``vector`` function is invoked as follows:
+
+.. code-block:: modelica
+
+    vector(A)
+
+where ``A`` is an array with an arbitrary number of dimensions as long
+as only one dimension has a size greater than :math:`1`.  The
+``vector`` function returns the contents of the array as a vector
+(*i.e.,* an array with only a single dimension).
+
+``matrix``
+~~~~~~~~~~
+
+.. index:: matrix
+.. index:: functions; matrix
+
+The ``matrix`` function is invoked as follows:
+
+.. code-block:: modelica
+
+    matrix(A)
+
+where ``A`` is an array with an arbitrary number of dimensions as long
+as only two dimension have a size greater than :math:`1`.  The
+``matrix`` function returns the contents of the array as a matrix
+(*i.e.,* an array with only two dimensions).
+
+Mathematical Operations
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Matrix-Vector Operations
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* +,*,-,/
+
+Element-wise Operations
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * +,*,-,/, element-wise
 
+``transpose``
+~~~~~~~~~~~~~
+
+.. index:: transpose
+.. index:: functions; transpose
+
+``outerProduct``
+~~~~~~~~~~~~~~~~
+
+.. index:: outerProduct
+.. index:: functions; outerProduct
+
+``symmetric``
+~~~~~~~~~~~~~
+
+.. index:: symmetric
+.. index:: functions; symmetric
+
+``skew``
+~~~~~~~~
+
+.. index:: skew
+.. index:: functions; skew
+
+``cross``
+~~~~~~~~~
+
+.. index:: cross
+.. index:: functions; cross
 
 Miscellaneous Functions
 ^^^^^^^^^^^^^^^^^^^^^^^

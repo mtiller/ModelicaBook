@@ -14,6 +14,8 @@ Literals
 Vectors
 ~~~~~~~
 
+.. todo:: Need to cover range notation, i.e., 1:5, 1:5:3, etc.
+
 The simplest method for constructing an array is to enumerate each of
 the individual elements.  For example, given the following parameter
 declaration for a variable named ``x`` meant to represent a vector:
@@ -231,8 +233,8 @@ comprehensions, we can construct the :math:`a` array quite easily as:
 .. code-block:: modelica
 
     parameter Real a[10,12,15] = {i*x[j]*y[k] for k in 1:15,
-                                              for j in 1:12,
-                                              for i in 1:10};
+                                                  j in 1:12,
+                                                  i in 1:10};
 
 This code builds an array with 1800 elements with only a few lines of
 Modelica code.
