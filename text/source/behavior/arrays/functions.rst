@@ -252,15 +252,128 @@ as only two dimension have a size greater than :math:`1`.  The
 Mathematical Operations
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Matrix-Vector Operations
-~~~~~~~~~~~~~~~~~~~~~~~~
+In linear algebra, there are many different types of mathematical
+operations that are commonly performed on vectors and matrices.
+Modelica provides functions to perform most of these operations.  In
+this way, Modelica equations can be made to look very much like their
+mathematical counterparts in linear algebra.
 
-* +,*,-,/
+Let's start with operations like addition, subtraction,
+multiplication, division and exponentiation.  For the most part, these
+operations work just as they do in mathematics when applied to the
+various combinations of scalars, vectors and matrices.  However, for
+completeness and reference, the following tables summarize how these
+operations are defined.
 
-Element-wise Operations
-~~~~~~~~~~~~~~~~~~~~~~~
+.. topic:: Explanation of Notation
 
-* +,*,-,/, element-wise
+    Each of the operations described below involves two arguments,
+    :math:`a` and :math:`b`, and a result, :math:`c`.  If an argument
+    represents a scalar, it will have no subscripts.  If it is a
+    vector, it will have one subscript, :math:`i`.  If it is a matrix,
+    it will have two subscripts, :math:`i` and :math:`j`.  If the
+    operation is defined for arbitrary arrays, a case will be included
+    with three subscripts, :math:`i`, :math:`j` and :math:`k`.  If a
+    given combination is not shown, then it is not allowed.  In each
+    case,
+
+``+``
+~~~~~
+
+========================== ==========================================
+Expression                 Result
+-------------------------- ------------------------------------------
+:math:`a + b`              :math:`c = a + b`
+:math:`a_{i} + b_{i}`      :math:`c_{i} = a_{i} + b_{i}`
+:math:`a_{ij} + b_{ij}`    :math:`c_{ij} = a_{ij} + b_{ij}`
+:math:`a_{ijk} + b_{ijk}`  :math:`c_{ijk} = a_{ijk} + b_{ijk}`
+========================== ==========================================
+
+``-``
+~~~~~
+
+========================== ==========================================
+Expression                 Result
+-------------------------- ------------------------------------------
+:math:`a - b`              :math:`c = a - b`
+:math:`a_{i} - b_{i}`      :math:`c_{i} = a_{i} - b_{i}`
+:math:`a_{ij} - b_{ij}`    :math:`c_{ij} = a_{ij} - b_{ij}`
+:math:`a_{ijk} - b_{ijk}`  :math:`c_{ijk} = a_{ijk} - b_{ijk}`
+========================== ==========================================
+
+
+``*``
+~~~~~
+
+``.*`` (element-wise multiplication)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+============================ ==========================================
+Expression                   Result
+---------------------------- ------------------------------------------
+:math:`a .* b`                :math:`c = a * b`
+:math:`a_{i} .* b_{i}`        :math:`c_{i} = a_{i} * b_{i}`
+:math:`a_{ij} .* b_{ij}`      :math:`c_{ij} = a_{ij} * b_{ij}`
+:math:`a_{ijk} .* b_{ijk}`    :math:`c_{ijk} = a_{ijk} * b_{ijk}`
+============================ ==========================================
+
+
+``/``
+~~~~~
+
+``./`` (element-wise division)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+============================ ==========================================
+Expression                   Result
+---------------------------- ------------------------------------------
+:math:`a ./ b`                :math:`c = a / b`
+:math:`a_{i} ./ b_{i}`        :math:`c_{i} = a_{i} / b_{i}`
+:math:`a_{ij} ./ b_{ij}`      :math:`c_{ij} = a_{ij} / b_{ij}`
+:math:`a_{ijk} ./ b_{ijk}`    :math:`c_{ijk} = a_{ijk} / b_{ijk}`
+============================ ==========================================
+
+``^``
+~~~~~
+
+``.^`` (element-wise exponentiation)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+============================ ==========================================
+Expression                   Result
+---------------------------- ------------------------------------------
+:math:`a .^ b`                :math:`c = a ^ b`
+:math:`a_{i} .^ b_{i}`        :math:`c_{i} = a_{i} ^ b_{i}`
+:math:`a_{ij} .^ b_{ij}`      :math:`c_{ij} = a_{ij} ^ b_{ij}`
+:math:`a_{ijk} .^ b_{ijk}`    :math:`c_{ijk} = a_{ijk} ^ b_{ijk}`
+============================ ==========================================
+
+.. _array-equality:
+
+``=`` (equality)
+~~~~~~~~~~~~~~~~
+
+The equality operator, ``=`` used to construct equations can be used
+with scalars as well as arrays **as long as the left hand side and
+right hand side have the same number of dimensions and the sizes of
+each dimension are the same**.  Assuming this requirement is met, then
+the operator is simply applied element-wise.  This means that the
+operator is applied between each element on the left hand side and its
+counterpart on the right hand side.
+
+
+``:=`` (assignment)
+~~~~~~~~~~~~~~~~~~~
+
+The ``:=`` (assignment) operator is applied in the same element-wise
+way as the :ref:`array-equality` operator.
+
+Relational Operators
+~~~~~~~~~~~~~~~~~~~~
+
+All relational operators (``and``, ``or``, ``not``, ``>``, ``>=``,
+``<=``, ``<``) are applied in the same element-wise way as the
+:ref:`array-equality` operator.
 
 ``transpose``
 ~~~~~~~~~~~~~
@@ -292,20 +405,8 @@ Element-wise Operations
 .. index:: cross
 .. index:: functions; cross
 
-Miscellaneous Functions
-^^^^^^^^^^^^^^^^^^^^^^^
-
-``ndims``
-~~~~~~~~~
-
-.. index:: ndims
-.. index:: functions; ndims
-
-``size``
-~~~~~~~~
-
-.. index:: size
-.. index:: functions; size
+Reduction Operators
+^^^^^^^^^^^^^^^^^^^
 
 ``min``
 ~~~~~~~
@@ -331,6 +432,20 @@ Miscellaneous Functions
 .. index:: product
 .. index:: functions; product
 
+Miscellaneous Functions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+``ndims``
+~~~~~~~~~
+
+.. index:: ndims
+.. index:: functions; ndims
+
+``size``
+~~~~~~~~
+
+.. index:: size
+.. index:: functions; size
 
 .. _vectorization:
 
