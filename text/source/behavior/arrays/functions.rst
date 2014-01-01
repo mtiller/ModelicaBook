@@ -270,15 +270,13 @@ operations are defined.
     Each of the operations described below involves two arguments,
     :math:`a` and :math:`b`, and a result, :math:`c`.  If an argument
     represents a scalar, it will have no subscripts.  If it is a
-    vector, it will have one subscript, :math:`i`.  If it is a matrix,
-    it will have two subscripts, :math:`i` and :math:`j`.  If the
-    operation is defined for arbitrary arrays, a case will be included
-    with three subscripts, :math:`i`, :math:`j` and :math:`k`.  If a
-    given combination is not shown, then it is not allowed.  In each
-    case,
+    vector, it will have one subscript.  If it is a matrix, it will
+    have two subscripts.  If the operation is defined for arbitrary
+    arrays, a case will be included with three subscripts.  If a given
+    combination is not shown, then it is not allowed.
 
-``+``
-~~~~~
+Addition (``+``)
+~~~~~~~~~~~~~~~~
 
 ========================== ==========================================
 Expression                 Result
@@ -289,8 +287,8 @@ Expression                 Result
 :math:`a_{ijk} + b_{ijk}`  :math:`c_{ijk} = a_{ijk} + b_{ijk}`
 ========================== ==========================================
 
-``-``
-~~~~~
+Subtraction (``-``)
+~~~~~~~~~~~~~~~~~~~
 
 ========================== ==========================================
 Expression                 Result
@@ -301,56 +299,104 @@ Expression                 Result
 :math:`a_{ijk} - b_{ijk}`  :math:`c_{ijk} = a_{ijk} - b_{ijk}`
 ========================== ==========================================
 
+.. _array-multiplication:
 
-``*``
-~~~~~
+Multiplication (``*`` and ``.*``)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``.*`` (element-wise multiplication)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-============================ ==========================================
-Expression                   Result
----------------------------- ------------------------------------------
-:math:`a .* b`                :math:`c = a * b`
-:math:`a_{i} .* b_{i}`        :math:`c_{i} = a_{i} * b_{i}`
-:math:`a_{ij} .* b_{ij}`      :math:`c_{ij} = a_{ij} * b_{ij}`
-:math:`a_{ijk} .* b_{ijk}`    :math:`c_{ijk} = a_{ijk} * b_{ijk}`
-============================ ==========================================
-
-
-``/``
-~~~~~
-
-``./`` (element-wise division)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+There are two types of multiplication operators.  The first is the
+normal multiplication operator, ``*``, that follows the usual
+mathematical conventions of linear algebra that matrix-vector
+products, *etc.*.  The behavior of the ``*`` operator is summarized in
+the following table:
 
 ============================ ==========================================
 Expression                   Result
 ---------------------------- ------------------------------------------
-:math:`a ./ b`                :math:`c = a / b`
-:math:`a_{i} ./ b_{i}`        :math:`c_{i} = a_{i} / b_{i}`
-:math:`a_{ij} ./ b_{ij}`      :math:`c_{ij} = a_{ij} / b_{ij}`
-:math:`a_{ijk} ./ b_{ijk}`    :math:`c_{ijk} = a_{ijk} / b_{ijk}`
+:math:`a * b`                :math:`c = a * b`
+:math:`a * b_i`              :math:`c_i = a * b_i`
+:math:`a * b_{ij}`           :math:`c_{ij} = a * b_{ij}`
+:math:`a * b_{ijk}`          :math:`c_{ijk} = a * b_{ijk}`
+:math:`a_i * b`              :math:`c_i = a_i * b`
+:math:`a_{ij} * b`           :math:`c_{ij} = a_{ij} * b`
+:math:`a_{ijk} * b`          :math:`c_{ijk} = a_{ijk} * b`
+:math:`a_{i} * b_{i}`        :math:`c = \sum_i a_{i} * b_{i}`
+:math:`a_{i} * b_{ij}`       :math:`c_j = \sum_i a_{i} * b_{ij}`
+:math:`a_{ij} * b_{j}`       :math:`c_i = \sum_j a_{ij} * b_{j}`
+:math:`a_{ik} * b_{kj}`      :math:`c_{ij} = \sum_k a_{ik} * b_{kj}`
 ============================ ==========================================
 
-``^``
-~~~~~
+The second type of multiplication operator is a special element-wise
+version, ``.*``, which doesn't perform any summations and simply
+applies the operator element-wise to all array elements.
 
-``.^`` (element-wise exponentiation)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+======================================= ==========================================
+Expression                               Result
+--------------------------------------- ------------------------------------------
+:math:`a` ``.*`` :math:`b`               :math:`c = a * b`
+:math:`a_{i}` ``.*`` :math:`b_{i}`       :math:`c_{i} = a_{i} * b_{i}`
+:math:`a_{ij}` ``.*`` :math:`b_{ij}`     :math:`c_{ij} = a_{ij} * b_{ij}`
+:math:`a_{ijk}` ``.*`` :math:`b_{ijk}`   :math:`c_{ijk} = a_{ijk} * b_{ijk}`
+======================================= ==========================================
+
+.. _array-division:
+
+Division (``/`` and ``./``)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As with :ref:`array-multiplication`, there are two division
+operators.  The first is the normal division operator, ``/``, which
+can be used to divide arrays by a scalar value.  The following table
+summarizes its behavior:
 
 ============================ ==========================================
 Expression                   Result
 ---------------------------- ------------------------------------------
-:math:`a .^ b`                :math:`c = a ^ b`
-:math:`a_{i} .^ b_{i}`        :math:`c_{i} = a_{i} ^ b_{i}`
-:math:`a_{ij} .^ b_{ij}`      :math:`c_{ij} = a_{ij} ^ b_{ij}`
-:math:`a_{ijk} .^ b_{ijk}`    :math:`c_{ijk} = a_{ijk} ^ b_{ijk}`
+:math:`a / b`                :math:`c = a / b`
+:math:`a_i / b`              :math:`c_i = a_i / b`
+:math:`a_{ij} / b`           :math:`c_{ij} = a_{ij} / b`
+:math:`a_{ijk} / b`          :math:`c_{ijk} = a_{ijk} / b`
 ============================ ==========================================
+
+In addition, there is also an element-wise version of the division
+operator, ``./``, whose behavior is summarized in the following table:
+
+======================================= ==========================================
+Expression                               Result
+--------------------------------------- ------------------------------------------
+:math:`a` ``./`` :math:`b`               :math:`c = a / b`
+:math:`a_{i}` ``./`` :math:`b_{i}`       :math:`c_{i} = a_{i} / b_{i}`
+:math:`a_{ij}` ``./`` :math:`b_{ij}`     :math:`c_{ij} = a_{ij} / b_{ij}`
+:math:`a_{ijk}` ``./`` :math:`b_{ijk}`   :math:`c_{ijk} = a_{ijk} / b_{ijk}`
+======================================= ==========================================
+
+Exponentiation (``^`` and ``.^``)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As with :ref:`array-multiplication` and :ref:`array-division`, the
+exponentiation operator comes in two forms.  The first is the standard
+exponentiation operator, ``^``.  The standard version can be used in
+two different ways.  The first is to raise one scalar to the power of
+another (*i.e.,* :math:`a` ``^`` :math:`b`).  The other is to raise a
+square matrix to a scalar power (*i.e.,* :math:`a_{ij}` ``^``
+:math:`b`).
+
+The other form of exponentiation is the element-wise form indicated
+with the ``.^`` operator.  Its behavior is summarized in the following
+table:
+
+======================================= ==========================================
+Expression                               Result
+--------------------------------------- ------------------------------------------
+:math:`a` ``.^`` :math:`b`               :math:`c = a^b`
+:math:`a_{i}` ``.^`` :math:`b_{i}`       :math:`c_{i} = a_{i}^{b_{i}}`
+:math:`a_{ij}` ``.^`` :math:`b_{ij}`     :math:`c_{ij} = a_{ij}^{b_{ij}}`
+:math:`a_{ijk}` ``.^`` :math:`b_{ijk}`   :math:`c_{ijk} = a_{ijk}^{b_{ijk}}`
+======================================= ==========================================
 
 .. _array-equality:
 
-``=`` (equality)
+Equality (``=``)
 ~~~~~~~~~~~~~~~~
 
 The equality operator, ``=`` used to construct equations can be used
@@ -362,7 +408,7 @@ operator is applied between each element on the left hand side and its
 counterpart on the right hand side.
 
 
-``:=`` (assignment)
+Assignment (``:=``)
 ~~~~~~~~~~~~~~~~~~~
 
 The ``:=`` (assignment) operator is applied in the same element-wise
