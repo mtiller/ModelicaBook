@@ -176,7 +176,7 @@ evaluation of our polynomial for any arbitrary order.
 To verify that this function is working properly, let's use it in a
 model.  Consider the following Modelica model:
 
-.. literalinclude:: /ModelicaByExample/Functions/Polynomials/Differentiation1.mo
+.. literalinclude:: /ModelicaByExample/Functions/Polynomials/EvaluationTest1.mo
    :language: modelica
    :lines: 2-
 
@@ -184,10 +184,174 @@ Remember that the first element in ``c`` corresponds to the highest
 order term.  If we compare a direct evaluation of the polynomial,
 ``yp``, with one computed by our function, ``yf``, we see they are identical:
 
-.. plot:: ../plots/Diff1_P.py
+.. plot:: ../plots/Eval1.py
    :include-source: no
 
-.. todo:: What to do about OpenModelica's evaluation of ``d_yf``???
+Differentiation
+~~~~~~~~~~~~~~~
 
-.. todo:: Need more example models for evaluation and differentiation
-	  using version with derivative annotation.
+It is completely plausible that this polynomial evaluation might be
+used to represent a quantity that was ultimately differentiated by the
+Modelica compiler.  The following examples is admittedly contrived but
+it demonstrates how such a polynomial might come to be differentiated
+in a model:
+
+.. literalinclude:: /ModelicaByExample/Functions/Polynomials/Differentiation1.mo
+   :language: modelica
+   :lines: 2-
+
+Here we have the same equations for ``yf``, evaluated using
+``Polynomial``, and ``yp``, evaluated directly as a polynomial.  But
+we've added two additional variables, ``d_yf`` and ``d_yp``
+representing the derivative of ``yf`` and ``yp``, respectively.  If we
+attempt to compile this model the compiler is very likely to throw an
+error related to the equation for ``d_yf``.  The reason is that it has
+no way to compute the derivative of ``yf``.  This is because, unlike
+``yp`` which is computed with a simple expression, we've hidden the
+details of how ``yf`` is computed behind the function ``Polynomial``.
+In general, Modelica tools do not look at the implementations of
+functions to compute derivatives and, even if they did, determining
+the derivative of an arbitrary algorithm is not an easy thing to do.
+
+.. index:: annotation
+.. index:: annotation; derivative
+.. index:: functions; differentiating
+
+So the next question is how can we deal with this situation?  Won't
+this make it difficult to use our functions within models?
+Fortunately, Modelica gives us a way to specify how to evaluate the
+derivative of a function.  This is done by adding something called an
+``annotation`` to the function definition.
+
+.. topic:: Annotations
+
+    An annotation is a piece of metadata that doesn't describe the
+    behavior of the function directly (*i.e.,* it doesn't affect the
+    value the function returns).  Instead, annotations are used by
+    Modelica compilers to give them "hints" about how to deal with
+    certain situations.  Annotations are always "optional" information
+    which means tools are not required to use the information when
+    provided.  The Modelica specification defines a number of standard
+    annotations so that they are interpreted consistently across
+    Modelica tools.
+
+In this case, what we need is the ``derivative`` annotation because it
+will allow us to communicate information to the Modelica compiler on
+how to evaluate the derivative of our function.  To do this, we define
+a new evaluation function, ``PolynomialWithDerivative``, as follows:
+
+.. literalinclude:: /ModelicaByExample/Functions/Polynomials/PolynomialWithDerivative.mo
+   :language: modelica
+   :emphasize-lines: 13
+   :lines: 2-
+
+Note that this function is identical except for the highlighted line.
+In other words, all we needed to do was add the line:
+
+.. literalinclude:: /ModelicaByExample/Functions/Polynomials/PolynomialWithDerivative.mo
+   :language: modelica
+   :lines: 14
+
+to our function in order to explain to the Modelica compiler how to
+evaluate the derivative of this function.  What it indicates is that
+the function ``PolynomialFirstDerivative`` should be used to evaluate
+the derivative of ``PolynomialWithDerivative``.
+
+Before discussing the implementation of the
+``PolynomialFirstDerivative`` function, let's first understand,
+mathematically, what is required.  Recall our original definition of
+our polynomial interpolation function:
+
+.. math::
+
+    p(x, \vec{c}) = \sum_{i=1}^{N} c_i x^{N-i}
+
+Note that :math:`p` takes two arguments.  If we wish to differentiate
+:math:`p` by some arbitrary variable :math:`z`, we can use the
+chain rule to express the total derivative of :math:`p` with respect
+to :math:`z` as:
+
+.. math::
+
+   \frac{\mathrm{d}p(x, \vec{c})}{\mathrm{d}z} =
+   \frac{\partial p}{\partial x} \frac{\mathrm{d}x}{\mathrm{d}z} + 
+   \frac{\partial p}{\partial \vec{c}}
+   \frac{\mathrm{d}\vec{c}}{\mathrm{d}z}
+
+We can derive the following relations from our original definition of
+:math:`p`.  First, for the partial derivative of :math:`p` with
+respect to :math:`x` we get:
+
+.. math::
+
+    \frac{\partial p}{\partial x} = p(x, c')
+
+where :math:`c'` is defined as:
+
+.. math::
+
+    c'_i = (N-i)c_i
+
+Second, for the partial derivative of :math:`p` with respect to
+:math:`\vec{c}` we get:
+
+.. math::
+
+    \frac{\partial p}{\partial c_i} = p(x, \vec{d_i})
+
+where the **vector** :math:`\vec{d_i}` is the :math:`i^{th}` column of
+an :math:`NxN` identity matrix.
+
+It turns out that for efficiency reasons, it is better for the
+Modelica compiler to give us :math:`\frac{\mathrm{d}x}{\mathrm{d}z}`
+and :math:`\frac{\mathrm{d}\vec{c}}{\mathrm{d}z}` than for us to
+provide functions to evaluate :math:`\frac{\partial p}{\partial x}`
+and :math:`\frac{\partial p}{\partial c_i}`.  So, mathematically
+speaking, what the Modelica compiler needs is a new function that is
+invoked with the following arguments:
+
+.. math::
+
+    df(x, \vec{c}, \frac{\mathrm{d}x}{\mathrm{d}z}, \frac{\mathrm{d}\vec{c}}{\mathrm{d}z})
+
+such that:
+
+.. math::
+
+    df(x, \vec{c}, \frac{\mathrm{d}x}{\mathrm{d}z},
+    \frac{\mathrm{d}\vec{c}}{\mathrm{d}z}) =
+    \frac{\mathrm{d}f}{\mathrm{d}z}
+
+For this reason, the ``derivative`` annotation should point to a
+function that takes the same arguments as :math:`df`.  In our case,
+that function, ``PolynomialFirstDerivative`` would be defined as
+follows:
+
+.. literalinclude:: /ModelicaByExample/Functions/Polynomials/PolynomialFirstDerivative.mo
+   :language: modelica
+   :lines: 2-
+
+Note how the arguments of our original function are repeated to create
+twice as many arguments (as we would expect).  The second set of
+arguments represent the :math:`\frac{\mathrm{d}x}{\mathrm{d}z}` and
+:math:`\frac{\mathrm{d}\vec{c}}{\mathrm{d}z}` quantities,
+respectively.  Note that the assumption is that :math:`z` is a scalar
+so the types of the input arguments are the same.  Exploiting our
+knowledge about the partial derivatives of a polynomial, the
+calculation of the derivatives is done by leveraging our polynomial
+evaluation function.
+
+We can exercise all of these functions using the following model:
+
+.. literalinclude:: /ModelicaByExample/Functions/Polynomials/Differentiation2.mo
+   :language: modelica
+   :lines: 2-
+
+Simulating this model and comparing results, we see agreement between
+``yf`` and ``yp`` as well as ``d_yf`` and ``d_yp``:
+
+.. todo:: Yikes, OpenModelica computes the derivative incorrectly!
+
+.. plot:: ../plots/Diff2.py
+   :include-source: no
+

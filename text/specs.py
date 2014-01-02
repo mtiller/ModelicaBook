@@ -267,11 +267,13 @@ add_simple_plot(plot="REM",
                 legloc="upper right")
 
 # Polynomial interpolataion
-add_case(["Differentiation1"], stopTime=10.0, res="Diff1")
-add_simple_plot(plot="Diff1_P", res="Diff1",
+add_case(["EvaluationTest1"], stopTime=10.0, res="Eval1")
+add_case(["Differentiation2"], stopTime=10.0, res="Diff2")
+add_simple_plot(plot="Eval1",
                 vars=[Var("yf"), Var("yp")],
-                title="Polynomial and Derivative Evaluation")
-add_simple_plot(plot="Diff1_D", res="Diff1",
+                title="Polynomial Evaluation",
+                legloc="lower right")
+add_simple_plot(plot="Diff2", res="Diff2",
                 vars=[Var("yf"), Var("yp"), Var("d_yf"), Var("d_yp")],
                 title="Polynomial and Derivative Evaluation")
 
