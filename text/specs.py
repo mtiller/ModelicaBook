@@ -266,4 +266,13 @@ add_simple_plot(plot="REM",
                 title="Simulation of Chemical System using Enumerations",
                 legloc="upper right")
 
+# Polynomial interpolataion
+add_case(["Differentiation1"], stopTime=10.0, res="Diff1")
+add_simple_plot(plot="Diff1_P", res="Diff1",
+                vars=[Var("yf"), Var("yp")],
+                title="Polynomial and Derivative Evaluation")
+add_simple_plot(plot="Diff1_D", res="Diff1",
+                vars=[Var("yf"), Var("yp"), Var("d_yf"), Var("d_yp")],
+                title="Polynomial and Derivative Evaluation")
+
 generate()
