@@ -92,6 +92,8 @@ integration using what are effectively a new set of initial
 conditions.  The values of all other states not re-initialized with the
 ``reinit`` operator remain unchanged.
 
+.. _algorithm-sections:
+
 ``algorithm`` Sections
 ^^^^^^^^^^^^^^^^^^^^^^
 
