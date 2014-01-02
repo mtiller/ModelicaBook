@@ -1,8 +1,8 @@
 within ModelicaByExample.Functions.Polynomials;
 function Polynomial "Create a generic polynomial from coefficients"
-  input Real x;
-  input Real c[:];
-  output Real y;
+  input Real x     "Independent variable";
+  input Real c[:]  "Polynomial coefficients";
+  output Real y    "Computed polynomial value";
 protected
   Integer n = size(c,1);
 algorithm
