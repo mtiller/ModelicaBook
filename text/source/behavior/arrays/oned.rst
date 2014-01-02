@@ -191,7 +191,7 @@ already associated with a variable.
 Also note the use of a ``for`` loop in this model.  A ``for`` loop
 allows the loop index variable to loop over a range of values.  In our
 case, the loop index variable is ``i`` and the range of values is
-:math:`2` through :math:`n-1`.  The general syntax for a ``for` loop
+:math:`2` through :math:`n-1`.  The general syntax for a ``for`` loop
 is:
 
 .. code-block:: modelica
