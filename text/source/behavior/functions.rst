@@ -3,11 +3,30 @@
 Functions
 *********
 
+* Introduction
+
 Examples
 ========
 
+.. toctree::
+   :maxdepth: 1
+
+   functions/polynomial
+   functions/interpolation
+   functions/controller
+   functions/nonlinear
+
 Review
 ======
+
+.. toctree::
+   :maxdepth: 1
+
+   functions/func_def
+   functions/control_flow
+   functions/external
+   functions/side_effects
+   functions/func_annos
 
 Restrictions
 ------------
