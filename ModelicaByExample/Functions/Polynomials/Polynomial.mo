@@ -1,5 +1,5 @@
 within ModelicaByExample.Functions.Polynomials;
-function Polynomial "Create a generic polynomial from coefficiencts"
+function Polynomial "Create a generic polynomial from coefficients"
   input Real x;
   input Real c[:];
   output Real y;
