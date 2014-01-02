@@ -212,18 +212,17 @@ Part 1 - Mathematical Behavior:
         - homotopy
         - inverse
     Review:
-      Control flow and return values:
-        - break
-        - return
-        - while statement
       Modelica Functions:
         - function
         - algorithm
         - protected
+      Control flow and return values:
+        - break
+        - return
+        - while statement
       External Functions:
         - external
         - ExternalObject
-      Event Generation:
       Pure vs. Impure:
         - pure
         - impure
@@ -237,6 +236,7 @@ Part 1 - Mathematical Behavior:
         - Inline
         - LateInline
         - GenerateEvents #?
+        # Event Generation
 Part 2 - Components:
   Packages:
     Introduction:
