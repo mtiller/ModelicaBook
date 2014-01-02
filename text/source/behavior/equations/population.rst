@@ -279,10 +279,10 @@ of our ``QuiescientModel``, those four equations are:
 
 .. math::
 
-   \dot{x} & = 0 \\
-   \dot{x} & = x \ (\alpha - \beta y) \\
-   \dot{y} & = 0 \\
-   \dot{y} & = y \ (\delta  x - \gamma)
+   \dot{x} &= 0 \\
+   \dot{x} &= x \ (\alpha - \beta y) \\
+   \dot{y} &= 0 \\
+   \dot{y} &= y \ (\delta  x - \gamma)
 
 It is very important to understand that these equations **do not
 contradict each other**.  Especially if you come from a programming
@@ -298,10 +298,10 @@ and :math:`y` could be solved:
 
 .. math::
 
-   \dot{x} & = 0 \\
-   \dot{y} & = 0 \\
-   x (\alpha - \beta y) & = \dot{x} \\
-   y (\delta x - \gamma) & = \dot{y}
+   \dot{x} &= 0 \\
+   \dot{y} &= 0 \\
+   x (\alpha - \beta y) &= \dot{x} \\
+   y (\delta x - \gamma) &= \dot{y}
 
 In this form, it is a bit easier to recognize how we could arrive at
 values of :math:`x` and :math:`y`.  The first thing to note is that we
