@@ -1,3 +1,5 @@
+.. _model-definition:
+
 Model Definition
 ----------------
 
