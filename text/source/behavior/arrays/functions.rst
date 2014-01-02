@@ -491,7 +491,7 @@ transposed from above the diagonal.  In other words,
 
 .. math::
 
-   b_{ij} = transpose(a) = \left\{
+   b_{ij} = \mathtt{transpose(a)} = \left\{
    \begin{array}{c}
    a_{ij}\ \  \mathrm{if}\ i<=j \\
    a_{ji}\ \  \mathrm{otherwise}
@@ -504,14 +504,42 @@ transposed from above the diagonal.  In other words,
 .. index:: skew
 .. index:: functions; skew
 
+The ``skew`` function takes a vector with three components and returns
+the following matrix:
+
+.. math::
+
+    \mathtt{skew(x)} &= \left[
+    \begin{array}{ccc}
+    0 & -x_3 & x_2 \\
+    x_3 & 0 & -x_1 \\
+    -x_2 & x_1 & 0
+    \end{array}
+    \right]
+
 ``cross``
 ~~~~~~~~~
 
 .. index:: cross
 .. index:: functions; cross
 
+The ``cross`` function takes two vectors (each with 3 components) and
+returns the following scalar:
+
+.. math::
+
+    \mathtt{cross(x,y)} = \left\{
+    \begin{array}{c}
+    x_2 y_3 - x_3 y_2 \\
+    x_3 y_1 - x_1 y_3 \\
+    x_1 y_2 - x_2 y_1
+    \end{array}
+    \right\}
+
 Reduction Operators
 ^^^^^^^^^^^^^^^^^^^
+
+Reduction operators are ones that reduce arrays down to scalar values.
 
 ``min``
 ~~~~~~~
@@ -519,11 +547,27 @@ Reduction Operators
 .. index:: min (vector)
 .. index:: functions; min (vector)
 
+The ``min`` function takes an array and returns the smallest value in
+the array.  For example:
+
+.. code-block:: modelica
+
+    min({10, 7, 2, 11})  // 2
+    min([1, 2; 3, -4])   // -4
+
 ``max``
 ~~~~~~~
 
 .. index:: max (vector)
 .. index:: functions; max (vector)
+
+The ``max`` function takes an array and returns the largest value in
+the array.  For example:
+
+.. code-block:: modelica
+
+    max({10, 7, 2, 11})  // 11
+    max([1, 2; 3, -4])   // 3
 
 ``sum``
 ~~~~~~~
@@ -531,11 +575,28 @@ Reduction Operators
 .. index:: sum
 .. index:: functions; sum
 
+The ``sum`` function takes an array and returns the sum of all
+elements in the array.  For example:
+
+.. code-block:: modelica
+
+    sum({10, 7, 2, 11})  // 30
+    sum([1, 2; 3, -4])   // 2
+
+
 ``product``
 ~~~~~~~~~~~
 
 .. index:: product
 .. index:: functions; product
+
+The ``product`` function takes an array and returns the product of all
+elements in the array.  For example:
+
+.. code-block:: modelica
+
+    product({10, 7, 2, 11})  // 1540
+    product([1, 2; 3, -4])   // -24
 
 Miscellaneous Functions
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -546,11 +607,40 @@ Miscellaneous Functions
 .. index:: ndims
 .. index:: functions; ndims
 
+The ``ndims`` function takes an array as its argument and returns the
+number of dimensions in that array.  For example:
+
+.. code-block:: modelica
+
+    ndims({10, 7, 2, 11})  // 1
+    ndims([1, 2; 3, -4])   // 2
+
 ``size``
 ~~~~~~~~
 
 .. index:: size
 .. index:: functions; size
+
+The ``size`` function can be invoked two different ways.  The first
+way is with a single argument that is an array.  In this case,
+``size`` returns a vector where each component in the vector
+corresponds to the size of the corresponding dimension in the array.  For example:
+
+.. code-block:: modelica
+
+    size({10, 7, 2, 11})       // {4}
+    size([1, 2, 3; 3, -4, 5])  // {2, 3}
+
+It is also possible to call ``size`` with an optional additional
+argument indicating a specific dimension number.  In that case, it
+will return the size of that specific dimension as a scalar integer.
+For example,
+
+.. code-block:: modelica
+
+    size({10, 7, 2, 11}, 1)       // 4
+    size([1, 2, 3; 3, -4, 5], 1)  // 2
+    size([1, 2, 3; 3, -4, 5], 2)  // 3
 
 .. _vectorization:
 
@@ -559,11 +649,80 @@ Vectorization
 
 .. index:: vectorization
 .. index:: functions; vectorization
-.. index:: equations; of vectors
 
-* Vectorization
+In this section, we've discussed the numerous functions in Modelica
+that are designed to work with arguments that are arrays.  But a very
+common use case is to apply a function element-wise to every element
+in a vector.  Modelica supports this use case through a feature called
+"vectorization".  If a function is designed to take a scalar but is
+passed an array instead, the Modelica compiler will automatically
+apply that function to each element in the vector.
 
-* Discuss arithmetic operators and how they are applied to vectors
+To understand how this works, first consider a normal evaluation using
+the ``abs`` function:
 
-* Equations?
+.. code-block:: modelica
 
+    abs(-1.5)   // 1.5
+
+Obviously, ``abs`` is normally meant to accept a scalar argument and
+return a scalar.  But in Modelica, we can also do this:
+
+.. code-block:: modelica
+
+    abs({0, -1, 1, -2, 2})  // {0, 1, 1, 2, 2}
+
+Since this function is designed for scalar, the Modelica compiler will
+transform:
+
+.. code-block:: modelica
+
+    abs({0, -1, 1, -2, 2})
+
+into
+
+.. code-block:: modelica
+
+    {abs(0), abs(-1), abs(1), abs(-2), abs(2)}
+
+In other words, it transforms the function applies to a vector of
+scalars into a vector a functions applied to scalar.
+
+**This feature also works functions that take multiple arguments** as
+long as only **one** of the expected scalar arguments is a vector.  To
+understand this slightly more complex functionality, consider the
+modulo function, ``mod``.  If applied to scalar arguments we get the
+following behavior:
+
+.. code-block:: modelica
+
+    mod(5, 2)  // 1
+
+If we turn the first argument into a vector, we get:
+
+.. code-block:: modelica
+
+    mod({5, 6, 7, 8}, 2)  // {1, 0, 1, 0}
+
+In other words, it transforms:
+
+.. code-block:: modelica
+
+    mod({5, 6, 7, 8}, 2)
+
+into
+
+.. code-block:: modelica
+
+    {mod(5,2), mod(6,2), mod(7,2), mod(8,2)}
+
+However, this vectorization does **not** apply if more than one scalar
+arguments is presented as a vector.  For example, the following
+expression will be an error:
+
+.. code-block:: modelica
+
+    mod({5, 6, 7, 8}, {2, 3}) // Illegal
+
+because ``mod`` expects two scalar arguments but it was passed two
+vector arguments.
