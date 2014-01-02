@@ -68,7 +68,7 @@ To indicate that the size of a given array dimension is not (yet)
 known, we can use the `:` symbol as the dimension.  So in a
 declaration like this:
 
-.. code-block::
+.. code-block:: modelica
 
     Real A[:,2];
 
@@ -77,8 +77,13 @@ dimension is not specified.  However, the size of the second dimension
 is definitively specified as 2.  In effect, we have declared that
 ``A`` is a matrix with an unspecified number of rows and two columns.
 
+Non-Integer Dimensions
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. _array-enum-dim:
+
 Enumerations
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 As we saw in our :ref:`chemical-system` examples, another way to
 specify the dimension for an array is with an enumeration.  If an
@@ -87,3 +92,13 @@ dimension will be equal to the number of possible values for that
 enumeration.  In our forthcoming discussion on :ref:`array-indexing`,
 we'll see how to properly index an array that uses enumerations as
 dimensions.
+
+Booleans
+~~~~~~~~
+
+It is also possible to declare an array where a dimension is specified
+as ``Boolean``, *e.g.,*
+
+.. math::
+
+    Real x[Boolean];

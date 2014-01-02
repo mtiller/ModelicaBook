@@ -163,6 +163,8 @@ one could use the following Modelica code:
 
     diagonal({2.0, 3.0, 4.0, 5.0});
 
+.. _linspace:
+
 ``linspace``
 ~~~~~~~~~~~~
 

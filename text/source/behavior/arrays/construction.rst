@@ -14,8 +14,6 @@ Literals
 Vectors
 ~~~~~~~
 
-.. todo:: Need to cover range notation, i.e., 1:5, 1:5:3, etc.
-
 The simplest method for constructing an array is to enumerate each of
 the individual elements.  For example, given the following parameter
 declaration for a variable named ``x`` meant to represent a vector:
@@ -50,6 +48,51 @@ any dimension, *e.g.,*
 .. code-block:: modelica
 
     parameter Real B[2,3] = {{1.0, 2.0, 3.0}, {5.0, 6.0, 7.0}};
+
+.. _range-notation:
+
+Range Notation
+~~~~~~~~~~~~~~
+
+Modelica includes a shorthand notation for constructing vectors of
+sequential numbers or numbers that are evenly spaced.  For example, to
+construct a vector of integers with elements having values from 1 to
+5, the following syntax can be used:
+
+.. code-block:: modelica
+
+    1:5       // {1, 2, 3, 4, 5}
+
+The same syntax can be used to construct arrays of floating point
+numbers:
+
+.. code-block:: modelica
+
+    1.0:5.0   // {1.0, 2.0, 3.0, 4.0, 5.0}
+
+Note, care should be taken when vectors of reals in this way since
+issues with floating point representations may result in the vector no
+including the final value.  The following alternatives are also
+available (and probably more robust):
+
+.. code-block:: modelica
+
+    1.0*(1:5)             // {1.0, 2.0, 3.0, 4.0, 5.0}
+    {1.0*i for i in 1:5}  // {1.0, 2.0, 3.0, 4.0, 5.0}
+
+It is also possible to construct ranges where the interval between
+values is not 1 by adding the "stride" between the first and last
+values.  For example, all odd numbers between 3 and 9 can be
+represented as:
+
+.. code-block:: modelica
+
+    3:2:9   // {3, 5, 7, 9}
+
+It is also possible to insert a stride value when dealing with
+floating point numbers as well.  This range notation can also be used
+with an ``enumeration`` type (but a stride value is not permitted in
+that case).
 
 Matrix Construction
 ~~~~~~~~~~~~~~~~~~~
@@ -202,6 +245,7 @@ two elements where each of those two elements is a vector containing
 three elements and each of those three elements is a vector of 4
 scalars.
 
+.. _array-comprehensions:
 
 Array Comprehensions
 ^^^^^^^^^^^^^^^^^^^^
