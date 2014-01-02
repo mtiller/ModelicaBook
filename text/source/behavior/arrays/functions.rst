@@ -278,6 +278,10 @@ operations are defined.
 Addition (``+``)
 ~~~~~~~~~~~~~~~~
 
+.. index:: arrays; mathematical operations; addition
+.. index:: vector; addition
+.. index:: matrix; addition
+
 ========================== ==========================================
 Expression                 Result
 -------------------------- ------------------------------------------
@@ -289,6 +293,10 @@ Expression                 Result
 
 Subtraction (``-``)
 ~~~~~~~~~~~~~~~~~~~
+
+.. index:: arrays; mathematical operations; subtraction
+.. index:: vector; subtraction
+.. index:: matrix; subtraction
 
 ========================== ==========================================
 Expression                 Result
@@ -303,6 +311,11 @@ Expression                 Result
 
 Multiplication (``*`` and ``.*``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. index:: arrays; mathematical operations; multiplication
+.. index:: vector; multiplication
+.. index:: matrix; multiplication
+.. index:: matrix-vector products
 
 There are two types of multiplication operators.  The first is the
 normal multiplication operator, ``*``, that follows the usual
@@ -344,6 +357,10 @@ Expression                               Result
 Division (``/`` and ``./``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. index:: arrays; mathematical operations; division
+.. index:: vector; division
+.. index:: matrix; division
+
 As with :ref:`array-multiplication`, there are two division
 operators.  The first is the normal division operator, ``/``, which
 can be used to divide arrays by a scalar value.  The following table
@@ -373,6 +390,10 @@ Expression                               Result
 Exponentiation (``^`` and ``.^``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. index:: arrays; mathematical operations; exponentiation
+.. index:: vector; exponentiation
+.. index:: matrix; exponentiation
+
 As with :ref:`array-multiplication` and :ref:`array-division`, the
 exponentiation operator comes in two forms.  The first is the standard
 exponentiation operator, ``^``.  The standard version can be used in
@@ -399,6 +420,9 @@ Expression                               Result
 Equality (``=``)
 ~~~~~~~~~~~~~~~~
 
+.. index:: arrays; equations
+.. index:: vector; equations
+
 The equality operator, ``=`` used to construct equations can be used
 with scalars as well as arrays **as long as the left hand side and
 right hand side have the same number of dimensions and the sizes of
@@ -411,11 +435,17 @@ counterpart on the right hand side.
 Assignment (``:=``)
 ~~~~~~~~~~~~~~~~~~~
 
+.. index:: arrays; assignment
+.. index:: vector; assignment
+
 The ``:=`` (assignment) operator is applied in the same element-wise
 way as the :ref:`array-equality` operator.
 
 Relational Operators
 ~~~~~~~~~~~~~~~~~~~~
+
+.. index:: arrays; relational operators
+.. index:: vectors; relational operators
 
 All relational operators (``and``, ``or``, ``not``, ``>``, ``>=``,
 ``<=``, ``<``) are applied in the same element-wise way as the
@@ -426,18 +456,47 @@ All relational operators (``and``, ``or``, ``not``, ``>``, ``>=``,
 
 .. index:: transpose
 .. index:: functions; transpose
+.. index:: matrix; transpose
+
+The ``transpose`` function takes a matrix as an argument and returns a
+transposed version of that matrix.
 
 ``outerProduct``
 ~~~~~~~~~~~~~~~~
 
-.. index:: outerProduct
+.. index:: outer product
 .. index:: functions; outerProduct
+.. index:: vectors; outer product
+
+The ``outerProduct`` function takes two arguments.  Each argument must
+be a vector and they must have the same size.  The function returns a
+matrix which represents the outer product of the two vectors.
+Mathematically speaking, assume :math:`a` and :math:`b` are vectors of the
+same size.  Invoking ``outerProduct(a,b)`` will return a matrix,
+:math:`c`, whose elements are defined as:
+
+.. math::
+
+    c_{ij} = a_i * b_j
 
 ``symmetric``
 ~~~~~~~~~~~~~
 
-.. index:: symmetric
 .. index:: functions; symmetric
+
+The ``symmetric`` function takes a square matrix as an argument.  It
+returns a matrix of the same size where all the elements below the
+diagonal of the original matrix have been replaced by elements
+transposed from above the diagonal.  In other words,
+
+.. math::
+
+   b_{ij} = transpose(a) = \left\{
+   \begin{array}{c}
+   a_{ij}\ \  \mathrm{if}\ i<=j \\
+   a_{ji}\ \  \mathrm{otherwise}
+   \end{array}
+   \right.
 
 ``skew``
 ~~~~~~~~
