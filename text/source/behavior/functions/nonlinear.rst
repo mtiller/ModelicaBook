@@ -61,18 +61,36 @@ doesn't actually need to solve a non-linear system**.  Although we
 couldn't know this until we saw how the ``Quadratic`` function is
 implemented:
 
-.. literalinclude:: /ModelicaByExample/Functions/Nonlinearities/ExplicitEvaluation.mo
+.. literalinclude:: /ModelicaByExample/Functions/Nonlinearities/Quadratic.mo
    :language: modelica
    :emphasize-lines: 9
    :lines: 2-
 
 In particular, note the line specifying the ``inverse`` annotation.
-In this way, we not only tell the Modelica compiler how to evaluate
-the ``Quadratic`` function but, through the ``inverse`` annotation, we
-are also indicating what function to use if we need to compute ``x``
-in terms of ``y``.  In the case of our ``ImplicitEvaluation`` model,
-the Modelica compiler can then substitute this inverse function into
-the equations.  So, where we initially had, ignoring the coefficient
+With this function definition, we not only tell the Modelica compiler
+how to evaluate the ``Quadratic`` function but, through the
+``inverse`` annotation, we are also indicating that the
+``InverseQuadratic`` function should be used to compute ``x`` in terms
+of ``y``.
+
+The ``InverseQuadratic`` function is defined as follows:
+
+.. literalinclude:: /ModelicaByExample/Functions/Nonlinearities/InverseQuadratic.mo
+   :language: modelica
+   :lines: 2-
+
+.. note::
+
+    Note that the ``InverseQuadratic`` function computes only the
+    positive root in the quadratic equation.  This can be both a good
+    thing and a bad thing.  By computing only a single root, we avoid
+    the issue of having multiple solutions when we invert the
+    quadratic relationship.  However, if the negative root happens to
+    be the one you want, this can be a problem.
+
+In the case of our ``ImplicitEvaluation`` model, the
+Modelica compiler can then substitute this inverse function into the
+equations.  So, where we initially had, ignoring the coefficient
 arguments for the moment, the following equation to solve:
 
 .. math::
@@ -91,9 +109,10 @@ by using the ``InverseQuadratic`` function as the inverse function.
 Simulating the ``ImplicitEvaluation`` model we get the following
 solution for ``y``:
 
-.. todo:: Make this more consistent with the explicit so it is obvious
-	  from the plot that this is the inverse.
-
 .. plot:: ../plots/NLIE.py
    :include-source: no
 
+Looking at this figure, we can see that, in fact, we got the correct
+result but, in general, without the need to solve the non-linear
+system that would otherwise result from our ``ImplicitEvaluation``
+model.
