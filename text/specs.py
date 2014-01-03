@@ -266,7 +266,7 @@ add_simple_plot(plot="REM",
                 title="Simulation of Chemical System using Enumerations",
                 legloc="upper right")
 
-# Polynomial interpolataion
+# Polynomial evaluation
 add_case(["EvaluationTest1"], stopTime=10.0, res="Eval1")
 add_case(["Differentiation2"], stopTime=10.0, res="Diff2")
 add_simple_plot(plot="Eval1",
@@ -276,5 +276,12 @@ add_simple_plot(plot="Eval1",
 add_simple_plot(plot="Diff2", res="Diff2",
                 vars=[Var("yf"), Var("yp"), Var("d_yf"), Var("d_yp")],
                 title="Polynomial and Derivative Evaluation")
+
+# Interpolation
+add_case(["IntegrateInterpolatedVector"], stopTime=7.99, res="IIV")
+add_simple_plot(plot="IIV",
+                vars=[Var("y", legend="y - interpolated data"),
+                      Var("z", legend="z - integral of y")],
+                title="Integration of Interpolated Function")
 
 generate()
