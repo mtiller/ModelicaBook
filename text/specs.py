@@ -295,4 +295,13 @@ add_case(["HysteresisEmbeddedControl"], stopTime=10.0, res="SIL")
 add_simple_plot(plot="SIL", vars=[Var("T"), Var("Tbar")],
                 title="Embedded Hysteresis Control")
 
+# Nonlinear
+add_case(["ExplicitEvaluation"], stopTime=10.0, res="NLEE")
+add_simple_plot(plot="NLEE", vars=[Var("y")],
+                title="Evaluation of a Quadratic Polynomial")
+
+add_case(["ImplicitEvaluation"], stopTime=10.0, res="NLIE")
+add_simple_plot(plot="NLIE", vars=[Var("y")],
+                title="Inversion of a Quadratic Polynomial")
+
 generate()
