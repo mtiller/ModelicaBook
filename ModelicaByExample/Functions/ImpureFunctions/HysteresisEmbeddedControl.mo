@@ -15,9 +15,8 @@ model HysteresisEmbeddedControl "A control strategy that uses embedded C code"
 initial equation
   T = Tbar+5;
 equation
-  // Q = computeHeat(T, Tbar, Qcapacity) "Dangerous";
   when sample(0, 0.01) then
-    Q = computeHeat(T, Tbar, Qcapacity) "Safe";
+    Q = computeHeat(T, Tbar, Qcapacity);
   end when;
   C*der(T) = Q-h*(T-Tamb);
 end HysteresisEmbeddedControl;
