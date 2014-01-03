@@ -278,10 +278,16 @@ add_simple_plot(plot="Diff2", res="Diff2",
                 title="Polynomial and Derivative Evaluation")
 
 # Interpolation
-add_case(["IntegrateInterpolatedVector"], stopTime=7.99, res="IIV")
-add_simple_plot(plot="IIV",
+add_case(["IntegrateInterpolatedVector"], stopTime=7.0, res="IIV")
+add_simple_plot(plot="IIV", legloc="upper left",
                 vars=[Var("y", legend="y - interpolated data"),
                       Var("z", legend="z - integral of y")],
                 title="Integration of Interpolated Function")
+
+add_case(["IntegrateInterpolatedExternalVector"], stopTime=7.0, res="IIEV")
+add_simple_plot(plot="IIEV", legloc="upper left",
+                vars=[Var("y", legend="y - interpolated data"),
+                      Var("z", legend="z - integral of y")],
+                title="Integration of Interpolated Function using External Data")
 
 generate()
