@@ -51,7 +51,7 @@ section, which is assumed to be uniform, and :math:`L_i` is the length
 of the :math:`i^{th}` section.
 
 For our purposes, we will assume that the cross-sectional area is
-uniform across the rod and that all sections have the same length.  As
+uniform along the length of the rod and that all sections have the same length.  As
 such, we can simply assume that:
 
 .. math::
@@ -68,6 +68,8 @@ the thermal capacitance of each section would be:
 
 This, in turn, means that the net heat gained in that section at any
 time will be:
+
+.. math::
 
     \rho A \frac{L}{n} C \frac{\mathrm{d} T_i}{\mathrm{d}t}
 
@@ -147,7 +149,7 @@ following declarations:
    :lines: 25-26
 
 Finally, the only array in this problem is the temperature of each
-section (since this is the only quantity that actually varies across
+section (since this is the only quantity that actually varies along the length of 
 the rod):
 
 .. literalinclude:: /ModelicaByExample/ArrayEquations/HeatTransfer/Rod_ForLoop.mo
@@ -166,9 +168,9 @@ conditions.  This is captured by the following equation:
    :lines: 29-30
 
 where the ``linspace`` operator is used to create an array of ``n``
-values that varying linearly between ``200`` and ``300``.  Recall from
+values that vary linearly between ``200`` and ``300``.  Recall from
 our :ref:`state-space` examples that we can include equations where
-the left hand side and right hand side expressions are vector.  This
+the left hand side and right hand side expressions are vectors.  This
 is another example of such an equation.
 
 Finally, we come to the equations that describe how the temperature in
@@ -184,8 +186,8 @@ section :math:`n` and the middle equation covers all other sections.
 Note the use of ``end`` as a subscript.  When an expression is used to
 evaluate a subscript for a given dimension, ``end`` represents the
 size of that dimension.  In our case, we use ``end`` to represent the
-last section.  Of course, we could use ``n`` in this case but in
-general ``end`` can be very useful when the size of a dimension is not
+last section.  Of course, we could use ``n`` in this case, but in
+general, ``end`` can be very useful when the size of a dimension is not
 already associated with a variable.
 
 Also note the use of a ``for`` loop in this model.  A ``for`` loop
@@ -205,11 +207,11 @@ a sequence of values is to use the range operator, ``:``.  The value
 before the range operator is the initial value in the sequence and the
 value after the range operator is the final value in the sequence.
 So, for example, the expression ``5:10`` would generate a vector with
-the values ``5``, ``6``, ``7`, ``8``, ``9`` and ``10``.  Note that
+the values ``5``, ``6``, ``7``, ``8``, ``9`` and ``10``.  Note that
 this **includes** the values used to specify the range.
 
 When a ``for`` loop is used in an equation section, each iteration of
-the for loop generates a new equations for each equation inside the
+the for loop generates a new equation for each equation inside the
 ``for`` loop.  So in our case, we will generate :math:`n-2` equations
 corresponding to values of ``i`` between ``2`` and ``n-1``.
 
@@ -239,15 +241,15 @@ Alternatives
 It turns out that there are several ways we can generate the equations
 we need.  Each has its own advantages and disadvantages depending on
 the context.  We'll present them here just to demonstrate the
-possibilities.  The choice is up to the model developer which one they
-feel leads the most understandable equations.
+possibilities.  The choice of which one they
+feel leads to the most understandable equations is up to the model developer.
 
 .. index:: array comprehensions
 
 One array feature we can use to make these equations slightly simpler
 is called an array comprehension.  An array comprehension flips the
 ``for`` loop around so that we take a single equation and add some
-information at the end indicating that the equations should be
+information at the end indicating that the equation should be
 evaluated for different values of the loop index variable.  In our
 case, we can represent our equation section using array comprehensions
 as follows:
@@ -258,7 +260,7 @@ as follows:
 
 We could also combine the array comprehension with some ``if``
 expressions to nullify contributions to the heat balance that don't
-necessarily apply.  In that case, we can simply the ``equation``
+necessarily apply.  In that case, we can simplify the ``equation``
 section to the point where it contains one (admittedly multi-line)
 equation:
 

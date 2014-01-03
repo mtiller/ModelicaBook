@@ -22,7 +22,7 @@ differential equations in the following form:
 In this form, :math:`x` represents the states in the system, :math:`u`
 represents any externally specified inputs to the system and :math:`y`
 represents the outputs of the system (*i.e.,* variables that are not
-states but can ultimately be computed from the values of the states
+states, but can ultimately be computed from the values of the states
 and inputs).
 
 There is a particularly interesting special case of these equation
@@ -34,6 +34,9 @@ can be rewritten as:
 
    \dot{\vec{x}}(t) &= A(t) \vec{x}(t) + B(t) \vec{u}(t) \\
    \vec{y}(t) &= C(t) \vec{x}(t) + D(t) \vec{u}(t)
+
+.. todo:: A matrix not rendered, math markup command appears in output.  Should there
+be only one backtick on the A?
 
 The matrices in this problem are the so-called "ABCD" matrices.  This
 ABCD form is useful because there are several interesting
@@ -55,13 +58,13 @@ linear, is also time-invariant:
 
 .. index:: FMI
 
-This form is often called the "LTI" form.  The LTI form important
+This form is often called the "LTI" form.  The LTI form is important
 because, in addition to having the same special properties as the
 ABCD form, the LTI form can be used as a very simple form of
 "model exchange".  Historically, when someone derived the behavior
 equations for a given system (either by hand or using some modeling
 tool), one way they could import those equations into other tools was
-to put the in the LTI form.  This mean that the model could be
+to put them in the LTI form.  This means that the model could be
 exchanged, shared or published as a series of matrices with either
 numbers or expressions in them.  Today, technologies like Modelica and
 :ref:`FMI <http://fmi-standard.org>` provide much better options for
@@ -77,6 +80,8 @@ Modelica?  Here is one way we might choose to do it:
    :language: modelica
    :lines: 2-
 
+.. todo:: rendering problems from square bracket backticks to backticks for x0
+
 The first step in this model is to declare the parameters ``nx``,
 ``nu`` and ``ny``.  These represent the number of states, inputs and
 outputs, respectively.  Next, we define the matrices ``A``, ``B``,
@@ -86,7 +91,7 @@ We know that ``A``, ``B``, ``C`` and ``D`` are arrays because their
 declarations followed by ``[`` and ``]``.  We know they are matrices
 because within the ``[]``s there are two dimensions given.  Finally,
 we see declarations for ``x0``, ``x``, ``u`` and ``y``.  These are
-also arrays.  But in this case, they are vectors since they each have
+also arrays.  But in this case, they are vectors, since they each have
 only a single dimension.
 
 Another thing to note about this model is that all parameters have
@@ -152,9 +157,9 @@ the ``LTI`` model, we can write this model as:
 When we extend from ``LTI``, we only need to specify the parameter
 values that are different from the default values.  In this case, we
 specify that there is one state and one input.  Then we specify `A`
-and `B` as 1x1 matrices.  Finally, since we have an input we need to
+and `B` as 1x1 matrices.  Finally, since we have an input, we need to
 provide an equation for it.  The input can, in general, be
-time-varying so we don't represent it as a parameter but rather with
+time-varying so we don't represent it as a parameter, but rather with
 an equation.  Note that in the equation:
 
 .. code-block:: modelica
@@ -194,7 +199,7 @@ model as:
    :language: modelica
    :lines: 2-
 
-This model is very similar to the previous one.  However, in this case
+This model is very similar to the previous one.  However, in this case,
 instead of putting numbers into our matrices, we've put expressions
 involving other parameters like ``h``, ``m`` and so on.  In this way,
 if those physical parameters are changed, the values for ``A`` and
