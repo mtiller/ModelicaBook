@@ -290,4 +290,9 @@ add_simple_plot(plot="IIEV", legloc="upper left",
                       Var("z", legend="z - integral of y")],
                 title="Integration of Interpolated Function using External Data")
 
+# SiL
+add_case(["HysteresisEmbeddedControl"], stopTime=10.0, res="SIL")
+add_simple_plot(plot="SIL", vars=[Var("T"), Var("Tbar")],
+                title="Embedded Hysteresis Control")
+
 generate()
