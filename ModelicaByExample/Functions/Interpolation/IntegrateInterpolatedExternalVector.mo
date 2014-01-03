@@ -7,5 +7,5 @@ model IntegrateInterpolatedExternalVector
 equation
   x = time;
   der(y) = InterpolateExternalVector(x, vector);
-  annotation (experiment(StopTime=6), __Dymola_experimentSetupOutput);
+  annotation (experiment(StopTime=6));
 end IntegrateInterpolatedExternalVector;

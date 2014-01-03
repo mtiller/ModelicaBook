@@ -1,8 +1,8 @@
 within ModelicaByExample.Functions.Interpolation;
 function InterpolateVector "Interpolate a function defined by a vector"
-  input Real x;
+  input Real x         "Independent variable";
   input Real ybar[:,2] "Interpolation data";
-  output Real y;
+  output Real y        "Dependent variable";
 protected
   Integer i;
   Integer n = size(ybar,1) "Number of interpolation points";
