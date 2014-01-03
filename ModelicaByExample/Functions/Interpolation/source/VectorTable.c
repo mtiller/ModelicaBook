@@ -44,7 +44,7 @@ destroyVectorTable(void *object) {
 double
 interpolateVectorTable(void *object, double x) {
   VectorTable *table = (VectorTable *)object;
-  size_t cur = table->lastIndex;
+  size_t i = table->lastIndex;
   double p;
   
   ModelicaFormatMessage("Request to compute value of y at %g\n", x);
@@ -53,12 +53,12 @@ interpolateVectorTable(void *object, double x) {
   if (x>table->x[table->npoints-1])
     ModelicaFormatError("Requested value of x=%g is above the upper bound of %g\n", x, table->x[table->npoints-1]);
 	
-  while(x>=table->x[cur+1]) cur = cur + 1;
-  while(x<table->x[cur]) cur = cur - 1;
+  while(x>=table->x[i+1]) i = i + 1;
+  while(x<table->x[i]) i = i - 1;
   
-  p = (x-table->x[cur])/(table->x[cur+1]-table->x[cur]);
-  table->lastIndex = cur;
-  return p*table->y[cur+1]+(1-p)*table->y[cur];
+  p = (x-table->x[i])/(table->x[i+1]-table->x[i]);
+  table->lastIndex = i;
+  return p*table->y[i+1]+(1-p)*table->y[i];
 }
 
 #endif
