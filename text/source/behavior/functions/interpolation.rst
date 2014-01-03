@@ -157,8 +157,7 @@ source code.  The main use of the ``ExternalObject`` type is to
 represent data or state that is maintained outside the Modelica source
 code.  This might be interpolation data, as we will see in a moment,
 or it might represent some other software system that maintains its
-own state (like the :ref:`sil-controller` example in the next
-section).
+own state.
 
 Test Case
 ~~~~~~~~~
@@ -349,4 +348,4 @@ but leveraging C allows more complex (new or existing) algorithms to
 be used.
 
 The :ref:`next section <sil-controller>` includes another example of
-how an ``ExternalObject`` can be used to represent external state.
+how external C code can be called from Modelica.
