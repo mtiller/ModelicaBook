@@ -207,9 +207,9 @@ Part 1 - Mathematical Behavior:
       Chemical Reaction:
         # Where reaction coefficient (array) is replaced by function
         # call
-      Non-Linear Electric Circuit:
+      Non-Linear Equations:
         # ?
-        - homotopy
+        #- homotopy ? (not at present)
         - inverse
     Review:
       Modelica Functions:
