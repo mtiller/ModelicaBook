@@ -34,15 +34,14 @@ into the following mathematical ones:
     \frac{\mathrm{d}[B]}{\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] -k_3 [B] [X] \\
     \frac{\mathrm{d}[X]}{\mathrm{d}t} &= k_1 [A] [B] - k_2 [X] -k_3 [B] [X]
 
-where :math:`k_1` is the reaction coefficient for the first reaction,
-:math:`k_2` is the reaction coefficient for the second reaction and
-:math:`k_3` is the reaction coefficient for the third reaction.  These
+where :math:`k_1`, :math:`k_2` and :math:`k_3` are the reaction coefficients for the first, second and third reactions, respectively.
+These
 equations are derived by considering the change in each species due to
 each reaction involving that species.  So, for example, since the
 first reaction :math:`A + B \rightarrow X` transforms
 molecules of :math:`A` and :math:`B` into molecules of :math:`X`, we
 see the term :math:`-k_1 [A] [B]` in the balance equation for
-:math:`A` which represents the reduction in the amount of :math:`A` as
+:math:`A`, which represents the reduction in the amount of :math:`A` as
 a result of that reaction.  Each term in these balance equations is
 derived in a similar fashion.
 
@@ -82,7 +81,7 @@ vector equations:
    :language: modelica
    :lines: 2-
 
-The reaction equations are non-linear.  So they cannot be transformed
+The reaction equations are non-linear, so they cannot be transformed
 into a completely linear form.  But we could simplify them further by
 using a matrix-vector product.  In other words, the equations:
 
@@ -177,10 +176,10 @@ Conclusion
 ^^^^^^^^^^
 
 In this chapter, we showed how a set of chemical equations could be
-represented with and without arrays.  However, unlike previous
-chapters, this chapter demonstrated how the ``enumeration`` type can
+represented with and without arrays. We also  
+demonstrated how the ``enumeration`` type can
 be used in conjunction with arrays to make the resulting equations
-much more readable by replacing numeric indices with names.
+more readable by replacing numeric indices with names.
 Furthermore, this section also demonstrated how the ``enumeration``
-type can be used not only to index the array but also to define one or
+type can be used not only to index the array, but also to define one or
 more dimensions in the declaration.
