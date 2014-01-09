@@ -56,6 +56,8 @@ function ``size(x,1)`` will return the size of dimension 1 of the
 array ``x``.  There are many applications where it is useful to
 express that the dimensions of different are related in this way.
 
+.. _unspecd-dim:
+
 Unspecified Dimensions
 ^^^^^^^^^^^^^^^^^^^^^^
 

@@ -64,7 +64,28 @@ Default Input Arguments
 
 In some cases, it makes sense to include default values for some input
 arguments.  In these cases, it is possible to include a default value
-in the declaration of the input variable.  This has consequences for
+in the declaration of the input variable.  Consider the following
+function to compute the potential energy of a mass in a gravitational
+field:
+
+.. code-block:: modelica
+
+    function PotentialEnergy
+      input Real m "mass";
+      input Real h "height";
+      input Real g=9.81 "gravity";
+      output Real pe "potential energy";
+    algorithm
+      pe := m*g*h;
+    end PotentialEnergy;
+
+By providing a default value for ``g``, we do not force users of this
+function to provide a value for ``g`` each time.  Of course, this kind
+of approach should only be used when there is a reasonable default
+value for a given argument and it should never be used if you want to
+force users to provide a value.
+
+These default values have some important affects when
 :ref:`calling-functions` that we shall discuss shortly.
 
 Multiple Return Values
@@ -100,7 +121,7 @@ worth spending some time discussing the various ways of calling
 functions.  In general, functions are invoked in a way that would be
 expected by both mathematicians and programmers, *e.g.,*
 
-.. code-block::
+.. code-block:: modelica
 
     f(z, t);
 
@@ -114,7 +135,7 @@ Modelica functions have names, it is also possible to call functions
 using named arguments.  Consider the following function for computing
 the volume of a cube:
 
-.. code-block::
+.. code-block:: modelica
 
     function CylinderVolume
       input Real radius;
@@ -129,28 +150,15 @@ and the volume.  To avoid any possible confusion regarding their
 order, it is possible to call the function used named arguments.  In
 that case, the function call would look something like:
 
-.. code-block::
+.. code-block:: modelica
 
     CylinderVolume(radius=0.5, length=12.0);
 
 Named arguments are particularly useful in conjunction with default
-argument values.  Consider the following function to compute the
-potential energy of a mass in a gravitational field:
+argument values.  Recall the ``PotentialEnergy`` function introduced
+earlier.  It can be invoked in several ways:
 
-.. code-block::
-
-    function PotentialEnergy
-      input Real m "mass";
-      input Real h "height";
-      input Real g=9.81 "gravity";
-      output Real pe "potential energy";
-    algorithm
-      pe := m*g*h;
-    end PotentialEnergy;
-
-This function could be invoked in several ways:
-
-.. code-block::
+.. code-block:: modelica
 
     PotentialEnergy(1.0, 0.5, 9.79)       // m=1.0, h=0.5, g=9.79
     PotentialEnergy(m=1.0, h=0.5, g=9.79) // m=1.0, h=0.5, g=9.79
@@ -162,29 +170,62 @@ The reason named arguments are so important for arguments with default
 values is if a function has many arguments with default arguments, you
 can selectively override values for those arguments by referring to
 them by name.
-      
-* multiple return
 
+Finally, we previously pointed out the fact that it is possible for a
+function to have multiple return values.  But the question remains,
+how do we address multiple return values.  To see how this is done in
+practice, let us revisit the ``CircleProperties`` function we defined
+earlier in this section.  The following statement shows how we can
+reference both return values:
+
+.. code-block:: modelica
+
+    (c, a) := CircleProperties(radius);
+
+In other words, the left hand side is a comma separated list of the
+variables to be assigned to (or equated to, in the case of an
+``equation`` section) wrapped by a pair of parentheses.
+
+As this discussion demonstrates, there are many different ways to call
+a function in Modelica.
+      
 Important Restrictions
 ----------------------
 
-* Input arguments are read only
+In general, we can perform the same kinds of calculations in functions
+as we can in models.  But there are some important restrictions.
 
-* Can't use time
+#. Input arguments are read only - You are not allowed to assign a
+   value to a variable which is an input argument to the function.
 
-* No equations or when statements
+#. You are not allowed to reference the global variable `time` from
+   within a function.
 
-* No der, initial, terminal, sample, pre, edge, change, reinit,
-  delay, cardinality, inStream, actualStream
+#. No equations or when statements - A function can have no more than
+   one ``algorithm`` section and it cannot contain ``when`` statements.
 
-* No models or blocks
+#. The following functions cannot be invoked from a function: ``der``,
+   ``initial``, ``terminal``, ``sample``, ``pre``, ``edge``,
+   ``change``, ``reinit``, ``delay``, ``cardinality``, ``inStream``,
+   ``actualStream``
 
-* Array sizes
+#. Arguments, results and intermediate (``protected``) variables
+   cannot be models or blocks.
 
-* recursive
+#. Array sizes are restricted - Arguments that are arrays can have
+   :ref:`unspecd-dim` and the size will be implicitly determined by
+   the context in which the function is invoked.  Results that are
+   arrays must have their sizes specified in terms of constants or in
+   relation to the sizes of input arguments.
+
+One important thing to note is that functions are **not** restricted
+in terms of recursion (*i.e.,* a function **is** allowed to call itself).
 
 Function Template
 -----------------
+
+Taking all of this into account, the following can considered a
+generalized function definition:
 
 .. code-block:: modelica
 
