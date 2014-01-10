@@ -219,6 +219,8 @@ Part 1 - Mathematical Behavior:
       Control flow and return values:
         - break
         - return
+        - if statement
+        - for statement
         - while statement
       External Functions:
         - external
