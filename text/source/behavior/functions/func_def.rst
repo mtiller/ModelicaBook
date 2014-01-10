@@ -219,7 +219,23 @@ as we can in models.  But there are some important restrictions.
    relation to the sizes of input arguments.
 
 One important thing to note is that functions are **not** restricted
-in terms of recursion (*i.e.,* a function **is** allowed to call itself).
+in terms of recursion (*i.e.,* a function **is** allowed to call
+itself).
+
+Side Effects
+------------
+
+In the :ref:`sil-controller` example, we introduced external functions
+that had side effects.  This means that the value returned by the
+function was not strictly a function of its arguments.  Such a
+function is said to have "side effects".  For functions with
+side effects, should be qualified with the ``impure`` keyword.  This
+tells the Modelica compiler that these functions cannot be treated as
+purely mathematical functions.
+
+The use of ``impure`` functions is restricted.  They can only be
+invoked from within a ``when`` statement or another ``impure``
+function.
 
 Function Template
 -----------------

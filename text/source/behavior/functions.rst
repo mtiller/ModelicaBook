@@ -34,7 +34,6 @@ Review
    functions/func_def
    functions/control_flow
    functions/external
-   functions/side_effects
    functions/func_annos
 
 Restrictions
