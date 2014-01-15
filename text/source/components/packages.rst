@@ -13,3 +13,10 @@ Importing Physical Types
 
 Review
 ======
+
+.. _modelica-urls:
+
+``modelica://`` URLs
+--------------------
+
+* modelica:// url scheme
