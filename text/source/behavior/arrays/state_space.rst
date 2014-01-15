@@ -35,13 +35,10 @@ can be rewritten as:
    \dot{\vec{x}}(t) &= A(t) \vec{x}(t) + B(t) \vec{u}(t) \\
    \vec{y}(t) &= C(t) \vec{x}(t) + D(t) \vec{u}(t)
 
-.. todo:: A matrix not rendered, math markup command appears in output.  Should there
-be only one backtick on the A?
-
 The matrices in this problem are the so-called "ABCD" matrices.  This
 ABCD form is useful because there are several interesting
 calculations that can be performed once a system is in this form.  For
-example, using the :math:``A`` matrix, we can compute the natural
+example, using the :math:`A` matrix, we can compute the natural
 frequencies of the system.  Using various combinations of these
 matrices, we can determine several very important properties related
 to control of the underlying system (*e.g.,* observability and
