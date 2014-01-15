@@ -6,7 +6,7 @@ Packages
 So far, we've presented all of the models without any real discussion
 of how to properly organize them.  In some cases, like the
 ``NewtonCoolingWithTypes`` example in our discussion on :ref:`adding
-physical type information <getting-physical>`, it is awkward to try
+physical type information <physical-types>`, it is awkward to try
 and keep everything within a single model.  There are many cases where
 the same information gets repeated in multiple models and this makes
 maintaining those models very difficult.

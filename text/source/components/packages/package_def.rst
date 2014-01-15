@@ -1,4 +1,4 @@
-.. _package-definition:
+.. _package-definitions:
 
 Package Definitions
 -------------------
