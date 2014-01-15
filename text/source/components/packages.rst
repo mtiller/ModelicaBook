@@ -3,20 +3,24 @@
 Packages
 ********
 
+.. todo:: Explain packages and MSL
+
 Examples
 ========
 
-.. _importing_physical_types:
+.. toctree::
+   :maxdepth: 1
 
-Importing Physical Types
-------------------------
+   packages/organizing
+   packages/fqn
+   packages/nimport
 
 Review
 ======
 
-.. _modelica-urls:
+.. toctree::
+   :maxdepth: 1
 
-``modelica://`` URLs
---------------------
-
-* modelica:// url scheme
+   packages/package_def
+   packages/lookup
+   packages/importing
