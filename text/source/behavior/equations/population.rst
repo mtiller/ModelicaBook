@@ -16,7 +16,7 @@ Classic Lotka-Volterra
 ^^^^^^^^^^^^^^^^^^^^^^
 
 The `classic Lotka-Volterra model
-<http://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equation>`_
+<http://en.wikipedia.org/wiki/Lotka-Volterra_equation>`_
 involves two species.  One species is the "prey" species.  In this
 section, the population of the prey species will be represented by
 :math:`x`.  The other species is the "predator" species whose
