@@ -199,3 +199,61 @@ first look in ``/home/mtiller/Dir1`` for either a package named
 that contained a ``package.mo`` file that defined a package named
 ``MyLib``.  If neither of those could be found, it would then search
 the ``/home/mtiller/Dir2`` directory (for the same things).
+
+.. _modelica-urls:
+
+``modelica://`` URLs
+^^^^^^^^^^^^^^^^^^^^
+
+In many cases, it is useful to include non-Modelica files along with a
+Modelica package.  These non-Modelica files might contain data,
+scripts, images, etc.  We call these non-Modelica files "resources".
+Now that we've covered how Modelica definitions are mapped to a file
+system, we can introduce an extremely useful feature in Modelica which
+is the use of URLs to refer to the location of these resources.
+
+For example, when we discussed :ref:`ext-functions`, we introduced
+several annotations that specified the location of such resources.
+Specifically, the ``IncludeDirectory`` and ``LibraryDirectory``
+annotations specified where the Modelica compiler should look for
+include and library files, respectively.  As was briefly mentioned
+then, the default values for these annotations started with
+``modelica:://LibraryName/Resources``.  Such a URL allows us to define
+the location of resources **relative to a given Modelica definition on
+the file system**.  Let us revisit the directory structure we
+discussed earlier but with some resource files added::
+
+    /RootPackage               # Top-level package stored as a directory
+      package.mo               # Indicates this directory is a package
+      package.order            # Specifies an ordering for this package
+      NestedPackageAsFile.mo   # Definitions stored in one file
+      /NestedPackageAsDir      # Nested package stored as a directory
+        package.mo             # Indicates this directory is a package
+        package.order          # Specifies an ordering for this	package
+        datafile.mat           # Data specific to this package
+      /Resources               # Resources are stored here by convention
+        package.mo             # Indicates Resources is a package
+        logo.jpg               # An image file
+
+If we have a model that needs the data contained in
+``NestedPackageAsDir``, we can use the following URL to reference it::
+
+    modelica://RootPackage/NestedPackageAsDir/datafile.mat
+
+Such a URL starts with ``modelica://``.  This is our way of indicating
+that the resource being referenced is with respect to a Modelica model
+and not, for example, something to be fetched over the network.  The
+``//`` is then followed by the fully qualified name of a Modelica
+definition except that each component is separated by a ``/`` instead
+of a ``.``.  The Modelica compiler will interpret this as the name of
+the directory that contains that definition.  Finally, the last
+element in the URL names the file to be used.
+
+As another example, if we wished to reference the ``logo.jpg`` file in
+the ``Resources`` package, we would use the following URL::
+
+    modelica://RootPackage/Resources/logo.jpg
+
+It is a common convention to store resources related to a library in a
+nested package named ``Resources`` (hence the default values for
+``IncludeDirectory`` and ``LibraryDirectory``).

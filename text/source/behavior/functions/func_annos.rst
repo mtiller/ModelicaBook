@@ -337,6 +337,8 @@ over the ``Inline`` annotation if they are both applied to a function,
 ``true``          ``true``            ``LateInline=true``
 ================  ==================  =========================
 
+.. _ext-functions:
+
 External Functions
 ------------------
 
