@@ -298,7 +298,9 @@ epub_copyright = u'2013, Michael M. Tiller'
 
 todo_include_todos = True
 
-#plot_include_source = False
-#plot_html_show_formats = False
+if 'epub' in tags:
+    plot_include_source = False
+    plot_html_show_formats = False
+
 plot_formats = ["png", "hires.png", "pdf", "svg"]
 #plot_formats = []
