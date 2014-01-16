@@ -40,7 +40,7 @@ quantities and units.
 
 .. index:: fully qualified name
 
-As can be seen in the example code, these types are references by
+As can be seen in the example code, these types are referenced by
 their "fully qualified name".  That means that type name starts with
 the name of a top-level package (a package that is not contained
 within another package).  Each ``.`` in the name represents a new
@@ -51,7 +51,7 @@ In this case, we are using 5 different types from within the
 ``Modelica.SIunits`` package: ``Voltage``, ``Inductance``,
 ``Resistance``, ``Capacitance`` and ``Current``.  These types provide
 information about the units for each of these types, limitations on
-the values of these types (*e.g.*, a resistance cannot be less than
+the values of these types (*e.g.*, a capacitance cannot be less than
 zero), *etc*.  They are defined in the :ref:`msl` as follows:
 
 .. code-block:: modelica
