@@ -35,13 +35,10 @@ can be rewritten as:
    \dot{\vec{x}}(t) &= A(t) \vec{x}(t) + B(t) \vec{u}(t) \\
    \vec{y}(t) &= C(t) \vec{x}(t) + D(t) \vec{u}(t)
 
-.. todo:: A matrix not rendered, math markup command appears in output.  Should there
-be only one backtick on the A?
-
 The matrices in this problem are the so-called "ABCD" matrices.  This
 ABCD form is useful because there are several interesting
 calculations that can be performed once a system is in this form.  For
-example, using the :math:``A`` matrix, we can compute the natural
+example, using the :math:`A` matrix, we can compute the natural
 frequencies of the system.  Using various combinations of these
 matrices, we can determine several very important properties related
 to control of the underlying system (*e.g.,* observability and
@@ -67,7 +64,7 @@ tool), one way they could import those equations into other tools was
 to put them in the LTI form.  This means that the model could be
 exchanged, shared or published as a series of matrices with either
 numbers or expressions in them.  Today, technologies like Modelica and
-:ref:`FMI <http://fmi-standard.org>` provide much better options for
+`FMI <http://fmi-standard.org>`_ provide much better options for
 model exchange.
 
 LTI Models
@@ -80,8 +77,6 @@ Modelica?  Here is one way we might choose to do it:
    :language: modelica
    :lines: 2-
 
-.. todo:: rendering problems from square bracket backticks to backticks for x0
-
 The first step in this model is to declare the parameters ``nx``,
 ``nu`` and ``ny``.  These represent the number of states, inputs and
 outputs, respectively.  Next, we define the matrices ``A``, ``B``,
@@ -89,7 +84,7 @@ outputs, respectively.  Next, we define the matrices ``A``, ``B``,
 time-invariant representation all of these matrices can be parameters.
 We know that ``A``, ``B``, ``C`` and ``D`` are arrays because their
 declarations followed by ``[`` and ``]``.  We know they are matrices
-because within the ``[]``s there are two dimensions given.  Finally,
+because within the ``[]``\ s there are two dimensions given.  Finally,
 we see declarations for ``x0``, ``x``, ``u`` and ``y``.  These are
 also arrays.  But in this case, they are vectors, since they each have
 only a single dimension.

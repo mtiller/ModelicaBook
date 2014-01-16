@@ -32,8 +32,10 @@ extensions = ['sphinx.ext.doctest',
               'xogeny.sim',
               'matplotlib.sphinxext.plot_directive',
               'sphinx.ext.pngmath',
-              'sphinx.ext.mathjax',
               'sphinx.ext.ifconfig']
+
+# As long as we are not generating with the epub tag it is save to use MathJax.
+if 'epub' not in tags: extensions.append('sphinx.ext.mathjax')
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -206,10 +208,10 @@ latex_documents = [
 #latex_use_parts = False
 
 # If true, show page references after internal links.
-#latex_show_pagerefs = False
+latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
-#latex_show_urls = False
+latex_show_urls = True
 
 # Documents to append as an appendix to all manuals.
 #latex_appendices = []
@@ -296,7 +298,9 @@ epub_copyright = u'2013, Michael M. Tiller'
 
 todo_include_todos = True
 
-#plot_include_source = False
-#plot_html_show_formats = False
+if 'epub' in tags:
+    plot_include_source = False
+    plot_html_show_formats = False
+
 plot_formats = ["png", "hires.png", "pdf", "svg"]
 #plot_formats = []
