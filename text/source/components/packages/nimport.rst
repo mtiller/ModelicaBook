@@ -75,8 +75,8 @@ this:
 
 .. code-block:: modelica
 
-    import DegC = Modelica.SIunits.Temperature; // Celsius
-    import DegF = ImperialUnits.Temperature;    // Fahrenheit
+    import DegK = Modelica.SIunits.Temperature; // Kelvin
+    import DegR = ImperialUnits.Temperature;    // Rankine
 
 .. topic:: SI Units
 
@@ -121,16 +121,7 @@ into the current model.  With wildcard imports, there is no option to
 "rename" the types.  They will have exactly the name locally as they
 have in the named package.
 
-.. topic:: Wildcards considered harmful
-
-    These types of wildcard imports are dangerous because, as
-    mentioned, there is no option to rename a type.  As a consequence,
-    two or more wildcard imports in the same model could create name
-    clashes.  Furthermore, explicitly imports (or fully qualified
-    types) make it very easy to backtrack and locate the definition
-    associated with a given type.  Wildcards make this very difficult
-    because it is not clear what types are imported from what
-    packages.
+Before using wildcard imports, be sure to read :ref:`this caveat <wildcards-harmful>`.
 
 In this chapter, we've seen how ``import`` statements can be used to
 import types from other packages.  As it turns out, ``import``
