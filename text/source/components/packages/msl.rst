@@ -29,8 +29,7 @@ The Modelica Standard Library contains definitions of some common
 physical and machine constants.  The library is small enough that we
 can include the source code for this package directly.  The following
 represents the ``Modelica.Constants`` package from version 3.2.1 of
-the Modelica Standard Library (with a few cosmetic changes and
-additional comments):
+the Modelica Standard Library (with a few cosmetic changes):
 
 .. code-block:: modelica
 
@@ -80,14 +79,101 @@ additional comments):
       final constant NonSI.Temperature_degC T_zero=-273.15
 	"Absolute zero temperature";
 
+Noteworthy definitions are those for ``pi``, ``e``, ``g_n`` and
+``eps``.
 
+The first two, ``pi`` and ``e``, are mathematical constants
+representing :math:`pi` and :math:`e`, respectively.  Having these
+constants available not only avoids having provide your own numerical
+value for these (irrational) constants, but by using the version
+defined in the Modelica Standard Library, you get a value that has the
+highest possible precision.
+
+The next constant, ``g_n``, is a physical constant representing the
+gravitational constant on earth (for computing things like potential
+energy, *i.e.,* :math:`m g h`).
+
+Finally, ``eps`` is a machine constant that represents a "small
+number" for whatever computing platform is being used.
 
 SI Units
 ^^^^^^^^
 
+As we discussed previously, the use of units not only makes your code
+easier to understand, by associating concrete units with parameters
+and variables, it also allows unit consistency checking to be
+performed by the Modelica compiler.  For this reason it is very useful
+to associate physical types with parameters and variables whenever
+possible.
+
+The ``Modelica.SIunits`` package is very large and full of physical
+units that are rarely used.  They are included for completeness in
+adhering to the ```ISO 31-1992`` specification.  The following are
+examples of how common physical units are defined in the ``SIunits`` package:
+
+.. code-block:: modelica
+
+    type Length = Real (final quantity="Length", final unit="m");
+    type Radius = Length(min=0);
+    ...
+    type Velocity = Real (final quantity="Velocity", final unit="m/s");
+    type AngularVelocity = Real(final quantity="AngularVelocity",
+                                final unit="rad/s");
+    ...
+    type Mass = Real(quantity="Mass", final unit="kg", min=0);
+    type Density = Real(final quantity="Density", final unit="kg/m3",
+                        displayUnit="g/cm3", min=0.0);
+    type MomentOfInertia = Real(final quantity="MomentOfInertia",
+                                final unit="kg.m2");
+    ...
+    type Pressure = Real(final quantity="Pressure", final unit="Pa",
+                         displayUnit="bar");
+    ...
+    type ThermodynamicTemperature = Real(
+      final quantity="ThermodynamicTemperature",
+      final unit="K",
+      min = 0.0,
+      start = 288.15,
+      nominal = 300,
+      displayUnit="degC")
+    "Absolute temperature (use type TemperatureDifference for relative temperatures)";
+    type Temperature = ThermodynamicTemperature;
+    type TemperatureDifference = Real(final quantity="ThermodynamicTemperature",
+                                      final unit="K");
+
 Models
 ^^^^^^
 
+Blocks
+~~~~~~
+
+Electrical
+~~~~~~~~~~
+
+Mechanical
+~~~~~~~~~~
+
+Fluids and Media
+~~~~~~~~~~~~~~~~
+
+Magnetics
+~~~~~~~~~
+
+Thermal
+~~~~~~~
+
 Utilities
 ^^^^^^^^^
+
+Files
+~~~~~
+
+Streams
+~~~~~~~
+
+Strings
+~~~~~~~
+
+System
+~~~~~~
 
