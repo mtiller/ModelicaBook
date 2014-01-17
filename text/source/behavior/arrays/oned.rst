@@ -221,16 +221,17 @@ Putting all this together, the complete model would be:
    :language: modelica
    :lines: 2-
 
+.. note::
+
+    Note that we've included ``pi`` as a literal constant in this
+    model.  Later in the book, we'll discuss how to properly import
+    common :ref:`constants`.
+
 Simulating this model yields the following solution for each of the
 nodal temperatures:
 
-.. todo::
-
-   Figure out what is wrong with this plot.  The simulation fails and
-   I don't know why.
-
-#.. plot:: ../plots/RFL.py
-#   :include-source: no
+.. plot:: ../plots/RFL.py
+   :include-source: no
 
 Note how the temperatures are initially distributed linearly (as we
 specified in our ``initial equation`` section).

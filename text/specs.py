@@ -229,11 +229,11 @@ add_simple_plot(plot="LV_ABCD", vars=[Var("x[1]", "x[2]")],
                 legloc="upper right")
 
 # One Dimensional Heat Transfer
-#rfl_vars = map(lambda x: Var("x["+str(x)+"]"), range(1,11))
-#add_case(["Rod_ForLoop"], stopTime=1.0, res="RFL", tol=1e-3)
-#add_simple_plot(plot="RFL", vars=rfl_vars,
-#                title="One Dimensional Heat Transfer Response",
-#                legloc="upper right")
+rfl_vars = map(lambda x: Var("T["+str(x)+"]"), range(1,11))
+add_case(["Rod_ForLoop"], stopTime=1.0, res="RFL", tol=1e-3)
+add_simple_plot(plot="RFL", vars=rfl_vars,
+                title="One Dimensional Heat Transfer Response",
+                legloc="upper right")
 
 add_case(["Reactions_NoArrays"], stopTime=10.0, res="RNA")
 add_simple_plot(plot="RNA", vars=[Var("cA"), Var("cB"), Var("cX", scale=50.0, legend="cX*50")],
