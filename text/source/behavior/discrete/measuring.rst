@@ -131,7 +131,8 @@ where ``tooth_angle`` represents :math:`\Delta\theta`.  Note how
 the user species the number of teeth using the ``teeth`` parameter.
 The ``tooth_angle`` parameter is then computed using the value of
 ``teeth`` (note that while we have hand coded the value of :math:`pi`
-here, we'll learn how to avoid this later in the book).
+here, we'll learn how to avoid this later in the book when we talk
+about :ref:`constants`).
 
 Let's take a close look at the ``when`` statement in this model:
 

@@ -62,6 +62,3 @@ alias).
     associated with a given type.  Wildcards make this very difficult
     because it is not clear what types are imported from what
     packages.
-
-
-* Inheritance

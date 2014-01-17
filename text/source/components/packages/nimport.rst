@@ -121,7 +121,8 @@ into the current model.  With wildcard imports, there is no option to
 "rename" the types.  They will have exactly the name locally as they
 have in the named package.
 
-Before using wildcard imports, be sure to read :ref:`this caveat <wildcards-harmful>`.
+Before using wildcard imports, be sure to read :ref:`this caveat
+<wildcards-harmful>`.
 
 In this chapter, we've seen how ``import`` statements can be used to
 import types from other packages.  As it turns out, ``import``
