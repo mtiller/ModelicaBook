@@ -18,6 +18,9 @@ section, we'll review the key ideas behind ``when`` statements.  A
 
 .. _if-vs-when:
 
+``if`` vs. ``when``
+^^^^^^^^^^^^^^^^^^^
+
 In our discussion on :ref:`hysteresis`, we briefly discussed the
 difference between an ``if`` statement and a ``when`` statement.  The
 statements in a ``when`` statement become active only for an instant

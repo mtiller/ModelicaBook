@@ -83,7 +83,7 @@ in this case) and then at regular intervals after that.  The duration
 of these regular intervals is indicated by the second argument
 (``sample_time`` in this case).
 
-.. _interval_measurement:
+.. _interval-measurement:
 
 Interval Measurement
 ^^^^^^^^^^^^^^^^^^^^
