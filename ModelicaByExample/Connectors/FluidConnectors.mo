@@ -5,10 +5,10 @@ package FluidConnectors "Examples of fluid connectors"
     flow Modelica.SIunits.VolumeFlowRate q;
   end Incompressible;
 
-  connector Compressible
+  connector GenericFluid
     Modelica.SIunits.Pressure p;
     flow Modelica.SIunits.MassFlowRate m_dot;
-  end Compressible;
+  end GenericFluid;
 
   connector ThermoFluid
     Modelica.SIunits.Pressure p;
