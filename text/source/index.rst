@@ -40,6 +40,7 @@ Modelica By Example
    behavior/functions
    components/packages
    components/connectors
+   components/components
    components/subsystems
    components/architectures
    advanced
