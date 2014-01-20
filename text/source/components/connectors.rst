@@ -1,5 +1,9 @@
+.. _connectors:
+
 Connectors
 **********
+
+.. index: ! connector
 
 Introduction
 ============
@@ -38,6 +42,8 @@ wish to exchange this information and this chapter will focus on
 explaining the various semantics that can be used to describe
 connectors in Modelica.
 
+.. _acausal-connections:
+
 Acausal Connections
 -------------------
 
@@ -56,7 +62,7 @@ the system.
 
 The second class of variables we will discuss is "through" variables
 (also called *flow* variables).  Flow variables normally represent the
-flow of come conserved quantity like mass, momentum, energy, charge,
+flow of some conserved quantity like mass, momentum, energy, charge,
 *etc.*  These flows are usually the result of some difference in the
 across variables across a component model.  For example, current
 flowing through a resistor is in response to a voltage difference
@@ -64,6 +70,15 @@ across the two sides of the resistor.  As we will see in many of the
 examples to come, there are many different types of relationships
 between the through and across variables (Ohm's law being just one of
 many).
+
+.. topic:: Sign Conventions
+
+    It is extremely important to know that Modelica follows a
+    convention that a positive value for a through variable represents
+    flow of the conserved quantity **into** a component.  We'll repeat
+    this convention several times later in the book (especially once
+    we being our discussion of how to build models of
+    :ref:`components`).
 
 The next section will define through and across variables for a number
 of basic engineering domains.
@@ -78,6 +93,8 @@ Examples
    connectors/fluid_connectors
    connectors/block_connectors
    connectors/graphics
+
+.. _connector-review:
 
 Review
 ======

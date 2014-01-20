@@ -6,15 +6,20 @@ Components
 Examples
 ========
 
-.. _heat-transfer-components:
-
-Heat Transfer Components
-------------------------
-
 .. _electrical-components:
 
 Electrical Components
 ---------------------
+
+.. _heat-transfer-components:
+
+Rotational Components
+---------------------
+
+** This is essential to discuss the impact of coordinate systems **
+
+Heat Transfer Components
+------------------------
 
 .. _population-components:
 
