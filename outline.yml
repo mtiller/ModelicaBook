@@ -282,8 +282,6 @@ Part 2 - Components:
     Review:
       Connector Definitions:
         - connector
-      Physical compatibility:
-        # structural type system
       Variables:
         - parameter
         - flow
@@ -341,6 +339,7 @@ Part 2 - Components:
         - model
         - block
       Systems:
+        # structural type system
         - connect
         - element_modifications
         - final
