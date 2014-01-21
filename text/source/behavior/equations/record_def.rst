@@ -3,6 +3,11 @@
 Record Definitions
 ==================
 
+.. todo:: 
+
+    This has to be cleaned up because it was moved from a different
+    part of the book.
+
 Although we haven't seen any yet, Modelica includes a ``record``
 type.  This ``record`` type is very similar to a ``connector`` because it
 doesn't include any equations.  However, it also differs from a
