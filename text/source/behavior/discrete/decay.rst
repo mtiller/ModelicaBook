@@ -43,6 +43,8 @@ against evaluating the square root of a negative number, like this:
 
 Simulating this model we get the following trajectory[#tol]:
 
+.. todo:: what meaning has [#tol] here?
+
 .. plot:: ../plots/Decay2.py
    :include-source: no
 
@@ -118,6 +120,9 @@ The zero crossing function would be :math:`a-b`.  This function is
 chosen because it changes from positive to negative precisely at the
 point where ``a>b``.  In our case, the zero crossing function is
 simply :math:`x`.
+
+.. todo:: Which `x`, where does this come from in this example. All that I can see here is `y`, `a`
+	  and `b`. This seems to be confusing.
 
 The Modelica compiler collects all the zero crossing functions in the
 model for the integrator to use.  During integration, the integrator

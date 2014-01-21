@@ -112,7 +112,7 @@ following initial equation:
 
 .. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/LTI.mo
    :language: modelica
-   :lines: 14-15
+   :lines: 15-16
 
 This equation is a vector equation that expresses the fact that each
 element in ``x`` has the corresponding value in ``x0`` at the start of a
