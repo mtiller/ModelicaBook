@@ -168,5 +168,12 @@ results:
 	@echo "Generate results"
 	(cd results; make all tidy)
 
+docs:
+	@echo "Generate docs"
+	-rm -rf docs
+	-mkdir docs
+	export PYTHONPATH=../../openmodelica/build/share/omc/scripts/PythonInterface
+	(cd docs; omc ../GenerateDocs.mos)
+
 server: dirhtml
 	(cd build/dirhtml; python -m SimpleHTTPServer)
