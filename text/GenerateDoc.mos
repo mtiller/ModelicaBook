@@ -49,7 +49,7 @@ compfails := false;
 getErrorString();
 
 //alllibs := getAvailableLibraries();
-alllibs := {"Modelica", "ModelicaByExample", "Complex", "ModelicaServices"};
+alllibs := {"ModelicaByExample"};
 getErrorString();
 
 writeFile("loadModel.mos",sum("if loadModel(" + lib + ") then true else if loadModel(" + lib + ",languageStandard=\"2.x\") then true else loadModel(" + lib + ",languageStandard=\"1.x\");getErrorString();\n" for lib in alllibs));

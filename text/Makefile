@@ -170,10 +170,10 @@ results:
 
 docs:
 	@echo "Generate docs"
-	-rm -rf docs
-	-mkdir docs
-	export PYTHONPATH=../../openmodelica/build/share/omc/scripts/PythonInterface
-	(cd docs; omc ../GenerateDocs.mos)
+	-rm -rf docs-dir
+	-mkdir docs-dir
+	export PYTHONPATH=/Users/mtiller/Source/openmodelica/PythonInterface/build/lib
+	(cd docs-dir; omc ../GenerateDoc.mos)
 
 server: dirhtml
 	(cd build/dirhtml; python -m SimpleHTTPServer)
