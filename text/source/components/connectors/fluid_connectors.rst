@@ -1,4 +1,4 @@
-.. fluid-connectors:
+.. _fluid-connectors:
 
 Fluid Connectors
 ================

@@ -46,12 +46,12 @@ specification of graphical appearance is identical between them.
 
 .. topic:: Use of ``Icon`` in examples
 
-For the remainder of the book, we will show examples of graphical
-annotations using the ``Icon`` annotation.  These examples could
-equally be applied to a ``Diagram`` annotation but since the ``Icon``
-annotation is more commonly all further examples regarding graphical
-annotations will appear exclusively in the context of the ``Icon``
-annotation.
+    For the remainder of the book, we will show examples of graphical
+    annotations using the ``Icon`` annotation.  These examples could
+    equally be applied to a ``Diagram`` annotation but since the
+    ``Icon`` annotation is more commonly all further examples
+    regarding graphical annotations will appear exclusively in the
+    context of the ``Icon`` annotation.
 
 Coordinate System
 -----------------

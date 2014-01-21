@@ -26,9 +26,9 @@ following syntax:
 Variability
 ^^^^^^^^^^^
 
-.. _parameters:
-
 .. index:: ! parameter
+
+.. _parameters:
 
 Parameters
 ~~~~~~~~~~
