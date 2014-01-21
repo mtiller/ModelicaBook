@@ -160,6 +160,21 @@ else
 end if;
 """
 
+def _simcmd(model_name, fileNamePrefix, outputFormat="res", simflags=None,
+            stopTime=None, tolerance=None, numberOfIntervals=None):
+    ret = """simulate(%s, """ % (model_name,)
+    if stopTime:
+        ret = ret + """stopTime=%g, """ % (stopTime,)
+    if tolerance:
+        ret = ret + """tolerance=%g, """ % (tolerance,)
+    if numberOfIntervals:
+        ret = ret + """numberOfIntervals=%d """ % (numberOfIntervals,)
+    if simflags:
+        ret = ret + """simflags="%s", """ % (simflags,)
+    ret = ret + """fileNamePrefix="%s", """ % (fileNamePrefix,)
+    ret = ret + """outputFormat="%s")""" % (outputFormat,)
+    return ret
+
 def _generate_makefile():
     with open(os.path.join(path, "text", "results", "Makefile"), "w+") as ofp:
         ofp.write("all: ");
