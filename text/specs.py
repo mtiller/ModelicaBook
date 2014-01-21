@@ -18,6 +18,9 @@ add_compare_plot(plot="FOI",
                  res2="FO", v2=focvars,
                  title="Specifying (non-zero) Initial Conditions")
 
+add_case(["SimpleExample", "FirstOrderExperiment"], res="FOE")
+add_simple_plot(plot="FOE", vars=fovars, title="Simulation Using Experiment Annotation")
+
 fosvars = [Var("x", legend="x (FirstOrderSteady)")]
 add_case(["SimpleExample", "FirstOrderSteady"], stopTime=10, res="FOS")
 add_compare_plot(plot="FOS",
