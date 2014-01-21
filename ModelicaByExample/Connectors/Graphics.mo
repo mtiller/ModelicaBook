@@ -27,7 +27,6 @@ package Graphics
             fillColor={85,170,255},
             fillPattern=FillPattern.Solid,
             textString="%name")}),
-      Diagram(graphics),
       Documentation(info="<html>
 <p>This connector is used to represent the &QUOT;positive&QUOT; pins on electrical components.  This does not imply that the voltage at this pin needs to be positive or even greater than voltages on <a href=\"modelica://ModelicaByExample.Connectors.Graphics.NegativePin\">&QUOT;negative&QUOT; pins</a>.  It is simply a convention used to distinguish different connectors on components (particularly those with only two pins).</p>
 </html>"));
@@ -55,7 +54,6 @@ package Graphics
             fillColor={85,170,255},
             fillPattern=FillPattern.Solid,
             textString="%name")}),
-      Diagram(graphics),
       Documentation(info="<html>
 <p>This pin and <a href=\"modelica://ModelicaByExample.Connectors.Graphics.PositivePin\">its counterpart</a> are documented <a href=\"modelica://ModelicaByExample.Connectors.Graphics.PositivePin\">here</a>.</p>
 </html>"));
