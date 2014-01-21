@@ -21,10 +21,17 @@ Rotational Components
 Heat Transfer Components
 ------------------------
 
+.. _block-components:
+
+Block Diagram Components
+------------------------
+
 .. _population-components:
 
 Lotka-Volterra Equations Revisited
 ----------------------------------
+
+* And now for something completely different
 
 Review
 ======
