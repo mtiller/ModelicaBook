@@ -47,4 +47,12 @@ definitions are are identical to the ``Electrical`` connector
 definition presented in the discussion on :ref:`simple-domains`.
 
 The reason we've chosen to define two electrical pin connectors is so
-that they can be made graphically distinct. 
+that they can be made graphically distinct.  An instance of the
+``PositivePin`` connector looks like:
+
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Connectors.Graphics.PositivePin.svg
+
+while an instance of ``NegativePin`` looks like:
+
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Connectors.Graphics.NegativePin.svg
+
