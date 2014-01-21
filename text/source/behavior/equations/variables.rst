@@ -30,6 +30,9 @@ Variability
 
 .. index:: ! parameter
 
+Parameters
+~~~~~~~~~~
+
 By default, variables declared inside a model are assumed to be
 continuous variables (variables whose solution is generally smooth but
 which may also include discontinuities).  However, as we first saw in
@@ -40,6 +43,9 @@ parameter as "input data" to the model that is constant with respect
 to time.
 
 .. index:: ! constant
+
+Constants
+~~~~~~~~~
 
 Closely related to the ``parameter`` qualifier is the ``constant``
 qualifier.  When placed in front of a variable declaration, the
@@ -52,6 +58,9 @@ use of ``constant`` by a model developer ensures that end users are
 not given the option to make changes to the ``constant``.  A
 ``constant`` is frequently used to represent physical quantities like
 :math:`\pi` or the Earth's gravitational constant, which never change.
+
+Discrete Variables
+~~~~~~~~~~~~~~~~~~
 
 .. index:: discrete
 

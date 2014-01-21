@@ -56,3 +56,36 @@ while an instance of ``NegativePin`` looks like:
 
 .. image:: ../../../docs-dir/Icons/ModelicaByExample.Connectors.Graphics.NegativePin.svg
 
+Let's look in greater detail at the ``Icon`` annotation in the
+``PositivePin`` definition:
+
+.. literalinclude:: /ModelicaByExample/Connectors/Graphics.mo
+   :language: modelica
+   :lines: 7-29
+
+We will be discussing :ref:`graphical-annos` shortly.  But let's a
+quick look at what is going on in these definitions.  We can see that
+the ``Icon`` annotation contains another variable ``graphics``.  The
+``graphics`` variable is assigned a vector of graphical elements.  We
+see that this vector graphical elements includes an ``Ellipse`` (used
+to render the circle in the icon), two ``Rectangle`` elements (used to
+render the "+" sign) and a ``Text`` element.  Note the ``textString``
+field in the ``Text`` element contains ``"%name"``.  There are a
+number of substitution patterns that can appear in a graphical
+annotation.  This particular one will be filled in with the instance
+name whenever a variable is declared with the type ``PositivePin``.
+So, for example, the following declarations:
+
+.. code-block:: modelica
+
+    PositivePin p;
+
+would be rendered graphically with ``%name`` replaced with ``p``.  In
+this way, the textual names assigned to connectors in a diagram always
+match the name of the underlying connector declarations in a model.
+
+:ref:`graphical-annos` will be reviewed in detail later in this
+chapter and we will see many more uses of them as we transition from
+strictly textual representations of models to implementations that
+incorporate graphical rendering as well.
+
