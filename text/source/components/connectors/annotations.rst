@@ -222,16 +222,61 @@ annotations.  Their definitions are presented here for reference.
       TextAlignment horizontalAlignment = TextAlignment.Center;
     end Text; 
 
+.. _bitmap-anno:
+
+``Bitmap``
+^^^^^^^^^^
+
+.. code-block:: modelica
+
+    record Bitmap
+      extends GraphicItem;
+      Extent extent;
+      String fileName "Name of bitmap file";
+      String imageSource "Base64 representation of bitmap";
+    end Bitmap; 
+
 Inheriting Graphical Annotations
 --------------------------------
 
-* Inheritance
+When one model definition inherits from another, the graphical
+annotations are inherited by default.  However, this behavior can be
+controlled by annotating the ``extends`` clause with the following
+data (for the icon and diagram layers, respectively):
+
+.. code-block:: modelica
+
+    record IconMap
+      Extent extent = {{0, 0}, {0, 0}};
+      Boolean primitivesVisible = true;
+    end IconMap;
+
+    record DiagramMap
+      Extent extent = {{0, 0}, {0, 0}};
+      Boolean primitivesVisible = true;
+    end DiagramMap; 
+
+In both cases, the ``extent`` data allows the location of the
+inherited graphical elements to be adjusted.  Setting
+``primitivesVisible`` to ``false`` will suppress the rendering of
+inherited graphical elements.
 
 .. _substitutions:
 
 Substitutions
 -------------
-* Substitutions (%name)
+
+When working with the :ref:`text-anno` annotation, the ``textString``
+field can contain substitution patterns.  The following substitution
+patterns are supported:
+
+    * ``%name`` - This pattern will be replaced by the name of the
+      instance of the given definition.
+    * ``%class`` - This pattern will be replaced by the name of this
+      definition.
+    * ``%<name>`` - This pattern will be replaced by the **value** of
+      the named parameter.
+    * ``%%`` - This pattern will be replaced by ``%``.
 
 Putting It All Together
 -----------------------
