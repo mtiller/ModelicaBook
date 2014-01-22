@@ -4,15 +4,9 @@ Graphical Annotations
 =====================
 
 Although this section appears in the chapter on :ref:`connectors`,
-this topic applies to graphical annotations associated with other
-definitions in Modelica (*e.g.,* ``model`` definitions).  So the
-information presented here will be a useful reference with respect to
-many aspects of Modelica.
-
-.. todo::
-
-    Need to make sure we formally introduce annotations and their
-    structure at some point (before functions, I suppose)
+this topic applies to graphical annotations associated with model
+definitions in general.  So the information presented here will be a
+useful reference with respect to many aspects of Modelica.
 
 Graphical Layers
 ----------------
@@ -53,34 +47,183 @@ specification of graphical appearance is identical between them.
     regarding graphical annotations will appear exclusively in the
     context of the ``Icon`` annotation.
 
-Coordinate System
------------------
+Common Graphical Definitions
+----------------------------
 
-As we shall see shortly, the appearance of a entities defined in
-Modelica is described by a list of drawing primitives.  But before we
-can list the drawing primitives that should be used to represent an
-entities graphical appearance, we must first define a coordinate
-system in which to place these entities.
+The following definitions will be referenced throughout this section:
 
-The coordinate system is specified as:
+.. code-block:: modelica
 
+    type DrawingUnit = Real(final unit="mm");
+    type Point = DrawingUnit[2] "{x, y}";
+    type Extent = Point[2]
+      "Defines a rectangular area {{x1, y1}, {x2, y2}}"; 
+    type Color = Integer[3](min=0, max=255) "RGB representation";
+    constant Color Black = zeros(3);
+    type LinePattern = enumeration(None, Solid, Dash, Dot, DashDot, DashDotDot);
+    type FillPattern = enumeration(None, Solid, Horizontal, Vertical,
+                                   Cross, Forward, Backward,
+				   CrossDiag, HorizontalCylinder,
+				   VerticalCylinder, Sphere);
+    type BorderPattern = enumeration(None, Raised, Sunken, Engraved);
+    type Smooth = enumeration(None, Bezier); 
+    type Arrow = enumeration(None, Open, Filled, Half);
+    type TextStyle = enumeration(Bold, Italic, UnderLine);
+    type TextAlignment = enumeration(Left, Center, Right);
 
-Each Modelica definition can define its graphical appearance from to
-different perspectives.  The first perspective is the appearance of
-that entity when viewed from the outside.  This is called the entity's
-"icon".  It is used, for example, when dragging a model into a
-schematic.  In that context, the model is one object (potentially
-among many) in the schematic and its icon is rendered to represent it
-in the schematic.
+    record FilledShape "Style attributes for filled shapes"
+      Color lineColor = Black "Color of border line";
+      Color fillColor = Black "Interior fill color";
+      LinePattern pattern = LinePattern.Solid "Border line pattern";
+      FillPattern fillPattern = FillPattern.None "Interior fill pattern";
+      DrawingUnit lineThickness = 0.25 "Line thickness";
+    end FilledShape; 
 
-The other perspective is the entity's "diagram".  This representation
-indicates how the 
+In addition, many of the annotations we will be discussing include a
+set of common elements represented by the following ``record``
+definition:
 
+.. code-block:: modelica
 
-* Graphical annotations (both Icon and Diagram)
+    partial record GraphicItem
+      Boolean visible = true;
+      Point origin = {0, 0};
+      Real rotation(quantity="angle", unit="deg")=0;
+    end GraphicItem; 
 
-* Point out this isn't really specific to connectors and that we'll be
-  seeing more of this in the components section as well.
+In later sections, when we present ``record`` definitions that define
+the data associated with different annotations.  For annotations
+representing graphical elements, we will extend from this
+``GraphicItem`` to make the presence of these common elements
+explicitly clear.
+
+``Icon`` and ``Diagram`` Annotations
+------------------------------------
+
+The elements that should appear in the icon layer of a model are
+described by the following data:
+
+.. code-block:: modelica
+
+    record Icon "Representation of the icon layer"
+      CoordinateSystem coordinateSystem(extent = {{-100, -100}, {100, 100}});
+      GraphicItem[:] graphics;
+    end Icon;
+
+where the coordinate system data is defined as:
+
+.. code-block:: modelica
+
+    record CoordinateSystem
+      Extent extent;
+      Boolean preserveAspectRatio=true;
+      Real initialScale = 0.1;
+      DrawingUnit grid[2];
+    end CoordinateSystem; 
+
+In other words, the ``Icon`` annotation includes information about the
+coordinate system contained in the definition of ``coordinateSystem``
+and it also includes a list of graphical items stored in
+``graphics``.  The definition of the ``Diagram`` annotation is identical:
+
+.. code-block:: modelica
+
+    record Diagram "Representation of the diagram layer"
+      CoordinateSystem coordinateSystem(extent = {{-100, -100}, {100, 100}});
+      GraphicItem[:] graphics;
+    end Diagram; 
+
+Graphical Items
+---------------
+
+There are a number of different graphical items that are defined in
+the specification that can be used in constructing the ``graphics``
+vector associated with either the ``Icon`` or ``Diagram``
+annotations.  Their definitions are presented here for reference.
+
+.. _line-anno:
+
+``Line``
+^^^^^^^^
+
+.. code-block:: modelica
+
+    record Line
+      extends GraphicItem;
+      Point points[:];
+      Color color = Black;
+      LinePattern pattern = LinePattern.Solid;
+      DrawingUnit thickness = 0.25;
+      Arrow arrow[2] = {Arrow.None, Arrow.None}; "{start arrow, end arrow}"
+      DrawingUnit arrowSize=3;
+      Smooth smooth = Smooth.None "Spline";
+    end Line; 
+
+.. _polygon-anno:
+
+``Polygon``
+^^^^^^^^^^^
+
+.. code-block:: modelica
+
+    record Polygon
+      extends GraphicItem;
+      extends FilledShape;
+      Point points[:];
+      Smooth smooth = Smooth.None "Spline outline";
+    end Polygon; 
+
+.. _rect-anno:
+
+``Rectangle``
+^^^^^^^^^^^^^
+
+.. code-block:: modelica
+
+    record Rectangle
+      extends GraphicItem;
+      extends FilledShape;
+      BorderPattern borderPattern = BorderPattern.None;
+      Extent extent;
+      DrawingUnit radius = 0 "Corner radius";
+    end Rectangle;
+
+.. _ellipse-anno:
+
+``Ellipse``
+^^^^^^^^^^^
+
+.. code-block:: modelica
+
+    record Ellipse
+      extends GraphicItem;
+      extends FilledShape;
+      Extent extent;
+      Real startAngle(quantity="angle", unit="deg")=0;
+      Real endAngle(quantity="angle", unit="deg")=360;
+    end Ellipse; 
+
+.. _text-anno:
+
+``Text``
+^^^^^^^^
+
+.. code-block:: modelica
+
+    record Text
+      extends GraphicItem;
+      extends FilledShape;
+      Extent extent;
+      String textString;
+      Real fontSize = 0 "unit pt";
+      String fontName;
+      TextStyle textStyle[:];
+      Color textColor=lineColor;
+      TextAlignment horizontalAlignment = TextAlignment.Center;
+    end Text; 
+
+Inheriting Graphical Annotations
+--------------------------------
 
 * Inheritance
 
@@ -90,3 +233,24 @@ Substitutions
 -------------
 * Substitutions (%name)
 
+Putting It All Together
+-----------------------
+
+Having discussed all these aspects of graphical annotations, let us
+review the icon definitions presented during our discussion of
+:ref:`graphical-connectors`.
+
+.. literalinclude:: /ModelicaByExample/Connectors/Graphics.mo
+   :language: modelica
+   :lines: 7-29
+
+Here we see the ``annotation`` associated with the ``PositivePin``
+definition is a model annotation.  Furthermore, we can see the
+``Icon`` data associated with this annotation includes a list of
+graphical items.  The first graphical item is an :ref:`ellipse-anno`
+annotation.  That is followed by two :ref:`rect-anno` annotations and
+finally a :ref:`text-anno` (which also makes use of the
+:ref:`substitutions` we discussed earlier).
+
+Note how the data being presented in this ``annotation`` lines up with
+the data described in the record definitions we discussed earlier.
