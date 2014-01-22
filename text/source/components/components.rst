@@ -35,3 +35,10 @@ Lotka-Volterra Equations Revisited
 
 Review
 ======
+
+Diagram Layout
+--------------
+
+* annotations on declarations and connect(...) statements
+
+* Diagram layout annotations
