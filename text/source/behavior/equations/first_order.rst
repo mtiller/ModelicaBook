@@ -186,6 +186,8 @@ This provides a glimpse of the initialization capablities in Modelica.
 More complete coverage of the initialization topic can be found in the
 :ref:`initialization` section later in this chapter.
 
+.. _experimental-conditions:
+
 Experimental Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^
 

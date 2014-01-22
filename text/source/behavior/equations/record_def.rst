@@ -3,40 +3,41 @@
 Record Definitions
 ==================
 
-.. todo:: 
-
-    This has to be cleaned up because it was moved from a different
-    part of the book.
-
-Although we haven't seen any yet, Modelica includes a ``record``
-type.  This ``record`` type is very similar to a ``connector`` because it
-doesn't include any equations.  However, it also differs from a
-``connector`` in significant ways as well.  In this section, we will
-discuss how a ``record`` is defined in preparation for using them to
-explain our next topic, :ref:`graphical-annos`.
-
-Earlier in this chapter, we explained that a ``connector`` describes
-information that is exchanged information between components.  In
-fact, the way that components interact with each other is by having
-their connectors connected together.  In other words, a connector is a
-point of interaction between components.
-
-A ``record``, on the other hand, is more general and ordinary.  A
-record can be thought of simply as a means to **group** information
-together.
+Earlier, we introduced the idea of a ``model`` definition.  Although
+we haven't seen any yet, Modelica includes a ``record`` type.  A
+``record`` can have variables, just like a ``model``, but it is not
+allowed to include equations.  Records are primarily used to group
+data together.  But as we will see shortly, they are also very useful
+in describing the data associated with :ref:`annotations`.
 
 Syntax
 ------
 
-The syntax for a ``record`` is the same as for a ``connector``:
+The ``record`` definition looks essentially like a ``model``
+definition but without any equations:
 
 .. code-block:: modelica
 
-    connector RecordName "Description of the record"
+    record RecordName "Description of the record"
       // Declarations for record variables
     end RecordName;
 
-However, certain qualifiers that are used within a ``connector``
-(*e.g.,* ``flow``, ``input`` and ``output``) don't make sense within a
-``record``.  Like a ``connector``, a ``record`` cannot include
-behavior (*i.e.,* ``equation`` or ``algorithm`` sections).
+As with a ``model``, the definition starts (and ends) with the name of
+the record being defined.  An explanation of the ``record`` can be
+included as a string after the name.  All the variables associated
+with the record are declared within the ``record`` definition.
+
+The following are all examples of ``record`` definitions:
+
+.. code-block:: modelica
+
+    record Vector "A vector in 3D space"
+      Real x;
+      Real y;
+      Real z;
+    end Vector;
+
+    record Complex "Representation of a complex number"
+      Real re "Real component";
+      Real im "Imaginary component";
+    end Complex;

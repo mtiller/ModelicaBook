@@ -103,5 +103,4 @@ Review
    :maxdepth: 1
 
    connectors/connector_def
-   connectors/record_def
    connectors/annotations
