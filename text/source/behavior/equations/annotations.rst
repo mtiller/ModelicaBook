@@ -244,6 +244,10 @@ way of expressing the data associated contained in the annotation.
 ``Documentation``
 ^^^^^^^^^^^^^^^^^
 
+.. index:: annotation; Documentation
+
+**Type: Model Annotation**
+
 The ``Documentation`` annotation in Modelica allows raw text or HTML
 to be associated with a model as documentation.  This documentation is
 composed of two components.  The first is information about the model
@@ -279,9 +283,68 @@ terminating the ``info`` string.
 ``experiment``
 ^^^^^^^^^^^^^^
 
+.. index:: annotation; experiment
+
+**Type: Model Annotation**
+
+The ``experiment`` annotation is used to specify information about how
+a given model should be simulated.  The annotation data can be
+represented in ``record`` form as:
+
+.. code-block:: modelica
+
+    record experiment
+      Real StartTime "Time at which the simulation should start";
+      Real StopTime "Time at which the simulation should stop";
+      Real Interval(min=0) "Time interval between results";
+      Real Tolerance(min=0) "Solver tolerance to use";
+    end experiment;
+
 ``Evaluate``
 ^^^^^^^^^^^^
+
+.. index:: annotation; Evaluate
+
+**Type: Declaration Annotation (applies to parameters)**
+
+The ``Evaluate`` annotation indicates to a Modelica compiler that the
+value of a given ``parameter`` can be transformed into a ``constant``
+at compile time.  In other words, it indicates that the user does not
+require the ability to change the value of the ``parameter`` from one
+simulation to the next.
+
+The motivation behind having such an annotation is that it allows the
+Modelica compiler to assume many things about the ``parameter`` during
+model compilation that it could otherwise not assume.  These
+assumptions might restrict the structure of the equations in such a
+way that the underlying systems of equations are easier to solve than
+in the general case where the parameter could take on a range of
+values.
+
+The ``Evaluate`` annotation is simply a ``Boolean`` variable so it is
+used in an annotation as follows:
+
+.. code-block:: modelica
+
+    parameter Real x annotation(Evaluate=true);
 
 ``HideResult``
 ^^^^^^^^^^^^^^
 
+.. index:: annotation; HideResult
+
+**Type: Declaration Annotation**
+
+The ``HideResult`` annotation is used to indicate that the solution
+for a given variable is not of interest to the analyst.  By setting
+the value of ``HideResult`` to ``true``, the model developer is
+indicating to the Modelica compiler that it need not store the
+annotated variable in any simulation results that are produced.  This
+can save both simulation time and disk space because it avoids writing
+out data that will never be viewed.
+
+The ``HideResult`` annotation would be used as follows:
+
+.. code-block:: modelica
+
+    parameter Real z "Uninteresting variable" annotation(HideResult=true);
