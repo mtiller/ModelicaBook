@@ -3,8 +3,8 @@
 Annotations
 ===========
 
-Recall in this discussion on :ref:`experimental-conditions` we
-included information about the simulation start and stop time using an
+Recall in the discussion on :ref:`experimental-conditions` we included
+information about the simulation start and stop time using an
 ``annotation``.  An ``annotation`` is a way to include information
 that is not related to the behavior of the model.  In the case of
 experimental conditions, we injected information about how a
@@ -32,7 +32,7 @@ discuss each potential location and demonstrate the syntax for each case.
 Declaration Annotations
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. index:: annotation; declaration
+.. index:: annotation; associated with; declarations
 
 A declaration annotation comes at the end of a declaration, right
 before the ``;``.  Here is a simple declaration that includes an
@@ -49,7 +49,7 @@ before the ``;``.  Also, the ``...`` is simply a place holder for the
 Statement and Equation Annotations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. index:: annotation; equation
+.. index:: annotation; associated with; equation
 
 It is also possible to associate annotations with equations, for
 example:
@@ -65,7 +65,7 @@ ends the equation.
 Inheritance Annotations
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. index:: annotation; extends
+.. index:: annotation; associated with; extends
 
 We briefly discussed the ``extends`` keyword when we talked about
 :ref:`modifications` and :ref:`avoiding-repetition`.  It is a possible
@@ -82,10 +82,8 @@ precedes the ``;``.
 Model Annotations
 ^^^^^^^^^^^^^^^^^
 
-.. index:: ! model annotations
-.. index:: annotation; model
-.. index:: annotation; record
-
+.. index:: annotation; associated with; models
+.. index:: annotation; associated with; definitions
 
 A model annotation is an annotation that associated annotation data
 directly with the model definition itself.  This is exactly the kind
@@ -244,7 +242,7 @@ way of expressing the data associated contained in the annotation.
 ``Documentation``
 ^^^^^^^^^^^^^^^^^
 
-.. index:: annotation; Documentation
+.. index:: annotation; standard annotations; Documentation
 
 **Type: Model Annotation**
 
@@ -283,7 +281,7 @@ terminating the ``info`` string.
 ``experiment``
 ^^^^^^^^^^^^^^
 
-.. index:: annotation; experiment
+.. index:: annotation; standard annotations; experiment
 
 **Type: Model Annotation**
 
@@ -303,7 +301,7 @@ represented in ``record`` form as:
 ``Evaluate``
 ^^^^^^^^^^^^
 
-.. index:: annotation; Evaluate
+.. index:: annotation; standard annotations; Evaluate
 
 **Type: Declaration Annotation (applies to parameters)**
 
@@ -331,7 +329,7 @@ used in an annotation as follows:
 ``HideResult``
 ^^^^^^^^^^^^^^
 
-.. index:: annotation; HideResult
+.. index:: annotation; standard annotations; HideResult
 
 **Type: Declaration Annotation**
 
