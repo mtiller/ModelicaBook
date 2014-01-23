@@ -28,7 +28,7 @@ package Graphics
             fillPattern=FillPattern.Solid,
             textString="%name")}),
       Documentation(info="<html>
-<p>This connector is used to represent the &QUOT;positive&QUOT; pins on electrical components.  This does not imply that the voltage at this pin needs to be positive or even greater than voltages on <a href=\"modelica://ModelicaByExample.Connectors.Graphics.NegativePin\">&QUOT;negative&QUOT; pins</a>.  It is simply a convention used to distinguish different connectors on components (particularly those with only two pins).</p>
+<p>This connector is used to represent the &quot;positive&quot; pins on electrical components.  This does not imply that the voltage at this pin needs to be positive or even greater than voltages on <a href=\"modelica://ModelicaByExample.Connectors.Graphics.NegativePin\">&quot;negative&quot; pins</a>.  It is simply a convention used to distinguish different connectors on components (particularly those with only two pins).</p>
 </html>"));
   end PositivePin;
 
