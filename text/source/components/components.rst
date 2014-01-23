@@ -11,12 +11,15 @@ Examples
 Electrical Components
 ---------------------
 
-.. _heat-transfer-components:
+.. _rotational-components:
 
 Rotational Components
 ---------------------
 
 ** This is essential to discuss the impact of coordinate systems **
+
+.. _heat-transfer-components:
+
 
 Heat Transfer Components
 ------------------------
