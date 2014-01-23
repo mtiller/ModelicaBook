@@ -274,8 +274,8 @@ patterns are supported:
       instance of the given definition.
     * ``%class`` - This pattern will be replaced by the name of this
       definition.
-    * ``%<name>`` - This pattern will be replaced by the **value** of
-      the named parameter.
+    * ``%<name>`` where ``<name>`` is a parameter name - This pattern
+      will be replaced by the **value** of the named parameter.
     * ``%%`` - This pattern will be replaced by ``%``.
 
 Putting It All Together
