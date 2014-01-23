@@ -23,6 +23,8 @@ this form of import, the name of the alias always matches the last
 element in the name of what is being imported (*e.g.,*
 ``Temperature``).
 
+.. todo:: is the word follow the correct word here?
+
 In some cases, we want the alias that is introduced to be different
 from the last element of the imported name.  In this case, we can
 explicitly follow an alternative name for the alias, *e.g.,*
@@ -33,7 +35,7 @@ explicitly follow an alternative name for the alias, *e.g.,*
 
 After such an import, we can use the alias ``DegK`` to refer to
 ``Modelica.SIunits.Temperature``.  Providing alternative names avoid
-name collisions or simply make the model more readable.
+name collisions or simply makes the model more readable.
 
 Finally, it is possible to import all definitions within a package
 into the current scope.  This is done with a wildcard import.  For
@@ -57,7 +59,7 @@ alias).
     These types of wildcard imports are dangerous because, as
     mentioned, there is no option to rename a type.  As a consequence,
     two or more wildcard imports in the same model could create name
-    clashes.  Furthermore, explicitly imports (or fully qualified
+    clashes.  Furthermore, explicit imports (or fully qualified
     types) make it very easy to backtrack and locate the definition
     associated with a given type.  Wildcards make this very difficult
     because it is not clear what types are imported from what

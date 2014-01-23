@@ -37,7 +37,7 @@ definition associated with a name, the Modelica compiler starts by
 looking for the **first** name in the qualified name, *e.g.,*
 ``Modelica``.  It searches for a matching definition in the following order:
 
-  #. Look for a matching among builtin types
+  #. Look for a matching name among builtin types
   #. Look in the current definition for a nested definition with a
      matching name (include inherited definitions)
   #. Look in the current definition for an imported definition with a
@@ -55,7 +55,7 @@ looking for the **first** name in the qualified name, *e.g.,*
 If the given name cannot be found after searching all these locations,
 then the search fails and the type cannot be resolved.  If the search
 succeeds, then we've located the definition of the **first name** in
-the qualified name.  If the name is not qualified (*i.e.,* it has not
+the qualified name.  If the name is not qualified (*i.e.,* it does not have
 ``.`` in the name), then we are done.  However, if it does have other
 components in the name, these must be nested definitions contained
 within the definition returned by the search.  If nested definitions

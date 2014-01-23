@@ -58,7 +58,9 @@ function being annotated.  For example:
       dz := // some expression involving x, y, dx and dy
     end df;
 
-Note that the first arguments to the derivative function, ``df`` in
+.. todo:: the outputs of functions are called output arguments?
+
+Note that the first arguments to the derivative function, ``df``, in
 this case, are the same as for the original function, ``f``.  Those
 arguments are then followed by the differential versions of the input
 arguments to the original function.  Finally, the ``output``
@@ -67,7 +69,7 @@ of the ``output`` argument(s) of the original function.  It sounds
 complicated, but hopefully the same code conveys how simple the
 construction really is.
 
-Given such a Modelica function, the Modelica compiler can such a
+Given such a Modelica function, the Modelica compiler can use such a
 function to compute various derivatives, *e.g.*,
 
 .. math::
@@ -84,9 +86,9 @@ array of zero values, if the argument was an array.  That zero value
 will then be used in several calculations inside the derivative
 function. Most, if not all, of these will be multiplications and the
 results of those calculations will therefore be zeros.  Those zeros
-will then be added to the final result but will have no impact.  In
+will then be added to the final result, but will have no impact.  In
 other words, there are many calculations that could be skipped because
-they won't have any impact on the solution result.
+they won't have any impact on the result.
 
 In such cases, Modelica offers a way to avoid these calculations.  If
 the Modelica compiler knows *a priori* that one of the differentials
@@ -227,12 +229,12 @@ During our discussion on :ref:`nonlinearities`, we showed how the
 ``inverse`` annotation can be used to tell the Modelica compiler how
 to compute the inverse of a function.  The goal of an inverse function
 is to solve explicitly for one of the current function's input
-arguments.  As such, the ``inverse`` annotation contains an explicitly
+arguments.  As such, the ``inverse`` annotation contains an explicit
 equation involving the input and output variables of the current
-function but used in conjunction with another function to explicitly
-compute on of the input arguments.
+function, but used in conjunction with another function to explicitly
+compute one of the input arguments.
 
-For example, for a Modelica function defined as folloows:
+For example, for a Modelica function defined as follows:
 
 .. code-block:: modelica
 
@@ -277,7 +279,7 @@ code generation process should be done.
 
 The ``Inline`` annotation is a hint to the Modelica compiler that the
 statements in the function should be "inlined".  The value of the
-annotation is used to indicate whether inlining should be done.  The
+annotation is used to suggest whether inlining should be done.  The
 default value (if no ``Inline`` annotation is present) is ``false``.
 The following is a function that uses the ``Inline`` annotation:
 
@@ -294,7 +296,7 @@ The following is a function that uses the ``Inline`` annotation:
 
 Here we see that the ``Inline`` annotation suggests that the Modelica
 compiler should inline the ``SimpleCalculation`` function.  The
-function is inlined by replacing places where the function is invoked
+function is inlined by replacing invocations of the function
 with the statements in the function that compute the output result.
 This is useful for functions that perform very simple calculations.
 In those cases, the "cost" (in CPU time) of calling the function is on
@@ -364,6 +366,8 @@ inserted into the generated code, *e.g.,*
 
     annotation(Include="#include \"mydefs.h\"");
 
+.. todo:: is escaping discussed or is there an example?
+
 .. note:: The value of the ``Include`` annotation is a string.  If it
 	  included embedded strings, they need to be escaped.
 
@@ -381,7 +385,7 @@ searched to find the content specified with the ``Include``
 annotation.
 
 The value of this annotation is a string.  The string can represent a
-directory not but it can also be a URL.  For example, the default
+directory or it can be a URL.  For example, the default
 value for the ``IncludeDirectory`` annotation is:
 
 .. code-block:: modelica

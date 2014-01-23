@@ -35,6 +35,8 @@ The syntax of a ``for`` loop is the same in a function as it is in any
 other context.  It identifies an iteration variable and then assigns
 that iteration variable a set of values contained in a vector, *e.g.,*
 
+.. todo:: are only Assignment statements allowed in a for loop?
+
 .. code-block:: modelica
 
     algorithm
@@ -80,18 +82,20 @@ iterated over.  But there are cases where subsequent iterations are
 unnecessary.  Similarly, in a ``while`` loop, it may be convenient to
 have a check within the ``while`` loop that indicates when to
 terminate.  In these cases, a ``break`` statement can be used to
-terminate the inner most loop.
+terminate the innermost loop.
+
+.. todo:: does the apostrophe in functions need to be escaped?
 
 .. index:: return
 
-Another issue of control flow involves when to terminate exit from the
+Another issue of control flow involves when to terminate and exit from the
 ``algorithm`` section itself.  There are many circumstances in which
 all the ``output`` variables have been assigned their final values.
 While it is always true that ``if`` and ``else`` statements can be
 used to prevent any further calculations and assignments, it is often
 more readable to simple indicate clearly that no further calculations
 are needed.  In such cases, the ``return`` statement can be used to
-terminate any further processing within a functions ``algorithm``
+terminate any further processing within a function's ``algorithm``
 section.  When a ``return`` statement is encountered, whatever values
 are currently associated with the ``output`` variables are the ones
 that will be returned.

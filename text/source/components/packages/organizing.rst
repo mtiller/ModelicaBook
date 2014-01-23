@@ -24,7 +24,7 @@ that are ``constant``.  In this case, we see that this ``package``
 contains only ``type`` definitions.
 
 Now let's turn our attention to the Lotka-Volterra model itself.
-Assuming it doesn't need to define the types itself but can rely on
+Assuming it doesn't need to define the types itself, but can rely on
 the types we've just defined, it can be refactored to look as follows:
 
 .. literalinclude:: /ModelicaByExample/PackageExamples/NestedPackages.mo

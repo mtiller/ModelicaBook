@@ -14,7 +14,7 @@ functions not written in Modelica.  Typically, such functions are
 written in C or Fortran.  A function implemented outside Modelica does
 not contain an ``algorithm`` section.  Instead, it should include an
 ``external`` statement that provides information about the external
-function and how pass information to and from the function.
+function and how to pass information to and from the function.
 
 The minimal requirement for an externally implemented function is to
 include just the ``external`` keyword, *e.g.,*
@@ -46,7 +46,7 @@ specified.  The portion of the ``external`` statement that reads
 ``destroyVectorTable(table)`` specifies what data should be passed to
 the external function and in what order.
 
-In some cases, it may be necessary to specify compute some of the
+In some cases, it may be necessary to specify some of the
 values passed to the external function and to specify how the results
 of the function call map to the output variables.  We can see this
 kind of information in the following ``function``:
@@ -62,7 +62,7 @@ assigned to the ``output`` variable ``table``.  It might seem obvious
 that the return value of the C function should be treated as the
 return value from the Modelica function, but there are cases where the
 ``output`` variables should be passed as arguments to the function.
-In we will see shortly, in such cases pointers are used so that the
+We will see shortly, in such cases pointers are used so that the
 external function can assign values to these variables.
 
 Data Mapping
@@ -118,11 +118,11 @@ Modelica            C
 Fortran
 ~~~~~~~
 
-In the unfortunate event that you need to work with legacy Fortran
+If you need to work with Fortran
 functions, the following type mappings apply:
 
 =================  =============================================
-Modelica            FORTRAN 
+Modelica            Fortran 
 -----------------  ---------------------------------------------
 ``Real``            ``DOUBLE PRECISION``
 ``Integer``         ``INTEGER``
@@ -135,7 +135,7 @@ Modelica            FORTRAN
 =================  =============================================
 
 Two important things to note about this table.  First, there is no
-mapping for strings or records.  Second, since FORTRAN uses pass by
+mapping for strings or records.  Second, since Fortran uses pass by
 reference semantics, all variables passed into and out of these
 functions are assumed to be pointers.  For this reason, there is no
 distinction made whether the variable is an input or an output of the
@@ -223,5 +223,5 @@ does not return, but calls :ref:`modelica-error`.
 Same as :ref:`modelica-allocate-string`, except that in case of error,
 the function returns 0. This allows the external function to close
 files and free other open resources in case of error. After cleaning
-up resources use :ref:`modelica-error` or :ref:`modelica-format-error`
+up resources, use :ref:`modelica-error` or :ref:`modelica-format-error`
 to signal the error.

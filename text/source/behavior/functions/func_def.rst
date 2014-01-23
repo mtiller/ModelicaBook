@@ -85,7 +85,7 @@ of approach should only be used when there is a reasonable default
 value for a given argument and it should never be used if you want to
 force users to provide a value.
 
-These default values have some important affects when
+These default values have some important effects when
 :ref:`calling-functions` that we shall discuss shortly.
 
 Multiple Return Values
@@ -131,7 +131,7 @@ there are several interesting cases to discuss.
 
 The syntax above is "positional".  That means that values in the
 function call are assigned to arguments based on the order.  But since
-Modelica functions have names, it is also possible to call functions
+Modelica function arguments have names, it is also possible to call functions
 using named arguments.  Consider the following function for computing
 the volume of a cube:
 
@@ -173,7 +173,7 @@ them by name.
 
 Finally, we previously pointed out the fact that it is possible for a
 function to have multiple return values.  But the question remains,
-how do we address multiple return values.  To see how this is done in
+how do we address multiple return values?  To see how this is done in
 practice, let us revisit the ``CircleProperties`` function we defined
 earlier in this section.  The following statement shows how we can
 reference both return values:
@@ -228,7 +228,7 @@ Side Effects
 In the :ref:`sil-controller` example, we introduced external functions
 that had side effects.  This means that the value returned by the
 function was not strictly a function of its arguments.  Such a
-function is said to have "side effects".  For functions with
+function is said to have "side effects".  Functions with
 side effects, should be qualified with the ``impure`` keyword.  This
 tells the Modelica compiler that these functions cannot be treated as
 purely mathematical functions.
@@ -240,7 +240,7 @@ function.
 Function Template
 -----------------
 
-Taking all of this into account, the following can considered a
+Taking all of this into account, the following can be considered a
 generalized function definition:
 
 .. code-block:: modelica

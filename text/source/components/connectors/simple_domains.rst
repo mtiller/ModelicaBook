@@ -5,12 +5,12 @@ Simple Domains
 
 In this section, we'll discuss relatively simple engineering domains.
 These are ones where a ``connector`` deals with only one through and
-one across variable.  Conceptually, these means that only one
+one across variable.  Conceptually, this means that only one
 conserved quantity is involved with that connector.
 
 The following table covers four different engineering domains.  In
-each domain, we see the choice of through and across variable that we
-will be using along with the SI units for that quantity.
+each domain, we see the choice of through and across variables that we
+will be using along with the SI units for those quantities.
 
 ================  =======================  ============================
 Domain            Through Variable         Across Variable
@@ -23,11 +23,11 @@ Rotational        Torque [N.m]             Angle [rad]
 
 You may have seen a similar table before with slightly different
 choices.  For example, you will sometimes see velocity (in
-:math:`m/s`) chose as the across variable for translational motion.
+:math:`m/s`) chosen as the across variable for translational motion.
 The choices above are guided by two constraints.
 
 The first constraint is that the through variable should be the time
-derivative of some conserved quantity.  The reasons for this
+derivative of some conserved quantity.  The reason for this
 constraint is that the through variable will be used to formulate
 generalized conservation equations in our system.  As such, it is
 essential that the through variables be conserved quantities.
@@ -67,7 +67,7 @@ Note the presence of the ``flow`` qualifier in the declaration of
 compiler that ``i`` is the through variable.  Recall from our
 discussion on :ref:`acausal-connections` that the ``flow`` variable
 should be the time derivative of a conserved quantity.  We can see
-that this connector follows that convention since ``Current`` is the
+that this connector follows that convention, since ``Current`` is the
 time derivative of charge (and charge is a conserved quantity).
 
 Note the absence of any qualifier in the declaration of ``v``, the
@@ -76,10 +76,9 @@ voltage.  A variable without any qualifier is assumed to be the
 :ref:`connector-vars` (including the various qualifiers that can
 applied to them) later in this chapter.
 
-The interested reader may wish to jump ahead to see how we build on
-the connector definition to create electrical circuit components, the
-reader might want to jump ahead to the our discussion of
-:ref:`electrical-components`.
+The interested reader may wish to jump ahead to our discussion of
+:ref:`electrical-components`
+to see how we build on the connector definition to create electrical circuit components.
 
 Thermal
 -------
