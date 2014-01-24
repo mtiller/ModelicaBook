@@ -115,6 +115,13 @@ Modelica            C
 ``record``          ``struct *``
 =================  =============================================
 
+.. todo:: Is there a need to distinguish between Fortran functions and subroutines?
+    historically (use of this word is to hide the fact I'm not up-to-date)
+    functions were supposed to
+    1. return a single value
+    2. not modify their inputs
+    3. have no memory (random number generators possibly being an exception)
+
 Fortran
 ~~~~~~~
 

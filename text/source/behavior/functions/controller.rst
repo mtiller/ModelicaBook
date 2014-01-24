@@ -87,15 +87,15 @@ because it means that the function ``computeHeat`` can return
 **different results for the same input arguments**.  Mathematically
 speaking, this is not a true mathematical function since a
 mathematical function can only depend on its input arguments.  In
-computer science, we say such a function has "side effects".  This
+computer science, we say such a function is "impure".  This
 means that each invocation of the function changes some internal
 memory or variable which affects that value returned by the function.
 
-Given that such side effects are implemented in embedded control
+Given that such impurity is implemented in embedded control
 strategies **by design**, we need to be careful when using them in a
 mathematically oriented environment like Modelica.  This is because
-the Modelica compiler assumes, by default, that all functions are side
-effect free and the presence of side effects can result in very
+the Modelica compiler assumes, by default, that all functions are pure and side
+effect free and the presence of impurity or side effects can result in very
 inefficient simulations, at best, or completely erroneous results, at
 worst.
 
@@ -113,7 +113,7 @@ applied to the definition of ``computeHeat``:
    :lines: 2-3
 
 This informs the Modelica compiler that this function **has side
-effects** and that it **should not** be invoked when generating
+effects or returns a result that depends on something other than its inputs** and that it **should not** be invoked when generating
 candidate solutions.  At first, this seems like it would completely
 prohibit calling the function, but that isn't the case.  Recall our
 integration of the control strategy:
