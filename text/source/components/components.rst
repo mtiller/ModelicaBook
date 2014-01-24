@@ -6,35 +6,16 @@ Components
 Examples
 ========
 
-.. _electrical-components:
+.. toctree::
+   :maxdepth: 1
 
-Electrical Components
----------------------
-
-.. _rotational-components:
-
-Rotational Components
----------------------
-
-** This is essential to discuss the impact of coordinate systems **
-
-.. _heat-transfer-components:
-
-
-Heat Transfer Components
-------------------------
-
-.. _block-components:
-
-Block Diagram Components
-------------------------
-
-.. _population-components:
-
-Lotka-Volterra Equations Revisited
-----------------------------------
-
-* And now for something completely different
+   components/heat_transfer
+   components/elec_comps
+   components/rot_comps
+   components/population
+   components/speed_comps
+   components/block_comps
+   components/chem_comps
 
 Review
 ======
