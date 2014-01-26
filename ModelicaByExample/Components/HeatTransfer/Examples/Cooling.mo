@@ -17,5 +17,4 @@ equation
       points={{60,0},{30,0}},
       color={191,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end Cooling;
