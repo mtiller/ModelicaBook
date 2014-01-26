@@ -28,6 +28,8 @@ In other words, we didn't use the fully qualified name.  But the
 ``LotkaVolterra`` model compiles just fine.  So how is it that the
 Modelica compiler knows which definition of ``Wolves`` to use?
 
+.. index:: encapsulated
+
 The answer involves "name lookup" in Modelica.  Name lookup in
 Modelica involves searching for the named definition.  Type names in
 Modelica are generally qualified (although not necessarily **fully**
