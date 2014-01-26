@@ -78,12 +78,50 @@ avoids opportunities to introduce errors.
 Thermal Capacitance
 ~~~~~~~~~~~~~~~~~~~
 
-Our first component model will be a model of thermal capacitance.  The
-model (with the ``Icon`` annotation removed) is quite simple:
+Our first component model will be a model of thermal capacitance.
+This is a model for a lumped thermal capacitance with a uniform
+temperature distribution.  The equation we wish to associate with this
+component model is:
+
+.. math::
+
+    C \dot{T} = Q_{flow}
+
+The Modelica model (with the ``Icon`` annotation removed) representing
+this equation is quite simple:
 
 .. literalinclude:: /ModelicaByExample/Components/HeatTransfer/ThermalCapacitance.mo
    :language: modelica
    :lines: 1-10,41
+
+where ``C`` is the thermal capacitance and ``T0`` is the initial
+temperature.
+
+Note the presence of the ``node`` connector in this model.  This is
+how the ``ThermalCapacitance`` component model interacts with the
+"outside world".  We will use the temperature at the ``node``,
+``node.T`` to represent the temperature of the thermal capacitance.
+The ``flow`` variable, ``node.Q_flow``, represents the flow of heat
+**into** the thermal capacitance.  We can see this when looking at the
+equation for the thermal capacitance:
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/ThermalCapacitance.mo
+   :language: modelica
+   :lines: 10
+
+Note that when ``node.Q_flow`` is positive, the temperature of the
+thermal capacitance, ``node.T``, will increase.  This confirms that we
+have followed the Modelica convention that ``flow`` variables on a
+connector represent a flow of the conserved quantity, heat in this
+case, into the component (a more thorough discussion of
+:ref:`flow-signs` will be presented shortly).
+
+Using this model alone, we can already build a simple "system" model
+as follows:
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Examples/Adiabatic.mo
+   :language: modelica
+
 
 
 
@@ -95,6 +133,3 @@ Convection
 
 AmbientCondition
 ~~~~~~~~~~~~~~~~
-
-Example Systems
-^^^^^^^^^^^^^^^
