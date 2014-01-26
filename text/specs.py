@@ -307,4 +307,9 @@ add_case(["ImplicitEvaluation"], stopTime=239.0, res="NLIE")
 add_simple_plot(plot="NLIE", vars=[Var("y")],
                 title="Inversion of a Quadratic Polynomial")
 
+# Heat transfer components
+add_case(["Adiabatic"], stopTime=1.0, res="HTA");
+add_simple_plot(plot="HTA", vars=[Var("node.T")],
+                title="Thermal capacitance with no heat transfer")
+
 generate()
