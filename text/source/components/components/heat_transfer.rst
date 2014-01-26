@@ -75,6 +75,8 @@ configurations without the need to add any more equations.  This kind
 of reuse of equations makes the model developer more productive and
 avoids opportunities to introduce errors.
 
+.. _thermal-capacitance:
+
 Thermal Capacitance
 ~~~~~~~~~~~~~~~~~~~
 
@@ -122,11 +124,66 @@ as follows:
 .. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Examples/Adiabatic.mo
    :language: modelica
 
+This model contains only the thermal capacitance element (as indicated
+by the declaration of the variable ``cap`` of type
+``ThermalCapacitance``) and no other heat transfer elements (*e.g.,*
+conduction, convection, radiation).  Ignore the ``Placement``
+annotation for the moment, we'll come back to that shortly.
 
+Since no heat enters or leaves the thermal capacitance component,
+``cap``, the temperature of the capacitance remains constant as shown
+in the following plot:
 
+.. plot:: ../plots/HTA.py
+   :include-source: no
 
 ConvectionToAmbient
 ~~~~~~~~~~~~~~~~~~~
+
+To quickly add some heat transfer, we could define another component
+model to represent heat transfer to some ambient temperature.  Such a
+model could be represented in Modelica (again, without the ``Icon``
+annotation) as follows:
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/ConvectionToAmbient.mo
+   :language: modelica
+   :lines: 1-8,47
+
+This model includes parameters for the heat transfer coefficient,
+``h``, and the ambient temperature, ``T_amb``.  This model is attached
+to other heat transfer elements through the connector ``port_a``.
+
+Again, we must pay close attention to the sign convention.  Recall
+from our previous discussion of :ref:`thermal-capacitance` that
+Modelica follows a sign convention that a positive value for a
+``flow`` variable represents flow into the component.  In particular,
+let's take a close look at the equation in the ``ConvectionToAmbient``
+model:
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/ConvectionToAmbient.mo
+   :language: modelica
+   :lines: 8
+
+Note that when ``port_a.T`` is greater than ``T_amb``, the sign of
+``port_a.Q_flow`` is greater than zero.  That means heat is flowing
+**into** this component.  In other words, when ``port_a.T`` is greater
+than ``T_amb``, this component will **take heat away** from
+``port_a`` (and, conversely, when ``T_amb`` is greater than
+``port_a.T``, it will **inject heat into** ``port_a``).
+
+Having such a component model available enables us to combine with the
+``ThermalCapacitance`` model and simulate a system just like we
+modeled in :ref:`some of our earlier heat transfer examples
+<getting-physical>` using the following Modelica code:
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.mo
+   :language: modelica
+
+.. index:: connect
+
+In this model, we see two components have been declared, ``cap`` and
+``conv``.  The parameters for each of these components are also
+specified when they are declared.
 
 Convection
 ~~~~~~~~~~
