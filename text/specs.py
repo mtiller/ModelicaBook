@@ -309,7 +309,7 @@ add_simple_plot(plot="NLIE", vars=[Var("y")],
 
 # Heat transfer components
 add_case(["Adiabatic"], stopTime=1.0, res="HTA");
-add_simple_plot(plot="HTA", vars=[Var("node.T")],
+add_simple_plot(plot="HTA", vars=[Var("cap.node.T")],
                 title="Thermal capacitance with no heat transfer")
 
 generate()
