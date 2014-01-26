@@ -346,7 +346,7 @@ Part 2 - Components:
       Model Boundaries:
         - AssertionLevel
         - assert
-      Conditional ComponentS:
+      Conditional Components:
         - conditional
       Annotations:
         - Icon
