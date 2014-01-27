@@ -20,6 +20,8 @@ def findModel(*frags):
             match = True
             full = os.path.join(ent[0], f)
             rel = full[(len(path)+1):]
+            if rel[-3:]!=".mo":
+                continue
             modname = rel[:-3].replace("/",".")
             for rfrag in rfrags:
                 if len(rfrag.findall(modname))==0:
