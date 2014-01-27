@@ -130,6 +130,12 @@ by the declaration of the variable ``cap`` of type
 conduction, convection, radiation).  Ignore the ``Placement``
 annotation for the moment, we'll come back to that shortly.
 
+Using the graphical annotations in the model (some of which were left
+out of the previous listing) it can be rendered as:
+
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Adiabatic.svg
+   :width: 700
+
 Since no heat enters or leaves the thermal capacitance component,
 ``cap``, the temperature of the capacitance remains constant as shown
 in the following plot:
@@ -183,7 +189,14 @@ modeled in :ref:`some of our earlier heat transfer examples
 
 In this model, we see two components have been declared, ``cap`` and
 ``conv``.  The parameters for each of these components are also
-specified when they are declared.
+specified when they are declared.  But what is really remarkable about
+this model is the equation section:
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.mo
+   :language: modelica
+   :lines: 11-14
+
+
 
 Convection
 ~~~~~~~~~~
