@@ -196,6 +196,8 @@ this model is the equation section:
    :language: modelica
    :lines: 11-14
 
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.svg
+   :width: 700
 
 
 Convection
@@ -203,3 +205,11 @@ Convection
 
 AmbientCondition
 ~~~~~~~~~~~~~~~~
+
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.svg
+   :width: 700
+
+
+
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/ComplexNetwork.svg
+   :width: 700
