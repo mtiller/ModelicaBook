@@ -53,6 +53,9 @@ provide thorough coverage of the topics.
 	2. examples
 	3. what's the third?
 
+	Ah, I see now it is the review. Perhaps reword the sentence
+	starting with "Finally" as that threw me off.
+
 .. raw:: latex
 
    \setcounter{secnumdepth}{2}
