@@ -46,6 +46,13 @@ an example.  For this reason, most chapters include a review of the
 topics and a summary of any details not found in the examples to
 provide thorough coverage of the topics.
 
+.. todo::
+
+	You mention that most chapters are organized in three parts:
+	1. introduction of topics
+	2. examples
+	3. what's the third?
+
 .. raw:: latex
 
    \setcounter{secnumdepth}{2}
