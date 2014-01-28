@@ -35,9 +35,9 @@ introduce additional language features).  Hopefully, this approach
 enhances the reading experience without disorienting the user.
 
 Most chapters are organized into three parts.  The first part
-introduces the topics to be discussed in the chapter.  This is
-followed by an extensive set of examples that demonstrate how various
-language features address these various topics.  
+introduces the topics to be discussed in the chapter.  Next,
+an extensive set of examples are used to demonstrate the
+language features relevant to the topics introduced in part one.  
 Note that each example typically introduces a new topic, so it is
 best to review all the examples to provide the most complete coverage
 of these topics.  Finally, it is not generally practical to cover
