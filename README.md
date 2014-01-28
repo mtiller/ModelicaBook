@@ -7,7 +7,7 @@ chose this system after evaluating several others.  The main things I
 liked about Sphinx were:
 
   * The numerous output formats it supports (HTML, ePub and PDF being
-    the important ones.
+    the important ones).
   * The extensibility of the Sphinx system.
   * The fact that it supports internationalization.
   * The fact that it allows custom templates and CSS to be used.

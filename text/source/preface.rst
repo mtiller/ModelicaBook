@@ -30,14 +30,14 @@ building more structured models (e.g. packages, component models,
 subsystems, *etc.*) until later.  However, when reading about a
 particular example, the provided links will make it possible to
 sidestep this normal flow of topics and simply continue with further
-expansion on that particular example in subsequent chapters (enhancing
-it with additional language features).  Hopefully, this approach
+expansion on that particular example in subsequent chapters (which
+introduce additional language features).  Hopefully, this approach
 enhances the reading experience without disorienting the user.
 
 Most chapters are organized into three parts.  The first part
-introduces the topics to be discussed in the chapter.  This is
-followed by an extensive set of examples that demonstrate how various
-language features address these various topics.  
+introduces the topics to be discussed in the chapter.  Next,
+an extensive set of examples are used to demonstrate the
+language features relevant to the topics introduced in part one.  
 Note that each example typically introduces a new topic, so it is
 best to review all the examples to provide the most complete coverage
 of these topics.  Finally, it is not generally practical to cover
@@ -45,6 +45,16 @@ absolutely every language feature, function or syntactic construct in
 an example.  For this reason, most chapters include a review of the
 topics and a summary of any details not found in the examples to
 provide thorough coverage of the topics.
+
+.. todo::
+
+	You mention that most chapters are organized in three parts:
+	1. introduction of topics
+	2. examples
+	3. what's the third?
+
+	Ah, I see now it is the review. Perhaps reword the sentence
+	starting with "Finally" as that threw me off.
 
 .. raw:: latex
 
