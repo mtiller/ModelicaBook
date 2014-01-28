@@ -30,8 +30,8 @@ building more structured models (e.g. packages, component models,
 subsystems, *etc.*) until later.  However, when reading about a
 particular example, the provided links will make it possible to
 sidestep this normal flow of topics and simply continue with further
-expansion on that particular example in subsequent chapters (enhancing
-it with additional language features).  Hopefully, this approach
+expansion on that particular example in subsequent chapters (which
+introduce additional language features).  Hopefully, this approach
 enhances the reading experience without disorienting the user.
 
 Most chapters are organized into three parts.  The first part
