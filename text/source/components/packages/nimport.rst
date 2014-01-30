@@ -17,7 +17,7 @@ Recall again, this example from a previous discussion on :ref:`physical-types`:
 
 .. literalinclude:: /ModelicaByExample/BasicEquations/CoolingExample/NewtonCoolingWithTypes.mo
    :language: modelica
-   :emphasize-lines: 3-7
+   :emphasize-lines: 3-8
 
 The previous section described how we could avoid defining these types
 locally by using types from the :ref:`msl`.  But we can also use the
@@ -27,7 +27,7 @@ qualified names.  The resulting code would look something like:
 
 .. literalinclude:: /ModelicaByExample/PackageExamples/NewtonCooling.mo
    :language: modelica
-   :emphasize-lines: 10-14
+   :emphasize-lines: 11-16
 
 Here we have replaced the type definitions with ``import`` statements.
 Note how the highlighted lines are identical to the previous code.
@@ -50,19 +50,20 @@ Now let's look at another ``import`` statement:
 
 .. literalinclude:: /ModelicaByExample/PackageExamples/NewtonCooling.mo
    :language: modelica
-   :lines: 6
+   :lines: 7
 
 The syntax here is a little bit different.  In this case, the type
-that we are importing is ``Modelica.SIunits.ThermalConductance``.  But
-instead of creating a local type based on the last name in the fully
-qualified name, *i.e.,* ``ThermalConductance`` we are specifying that
-the local type should be ``ConvenctionCoefficient``.  In this case,
-this allows us to use the name we original used in our earliest
-examples.  In this way, we can avoid refactoring the any code that
-used the previous name.  Another reason for specifying an alternative
-name (other than the default one that the Modelica compiler would
-normally assign) would be to avoid name collision.  Imagine we wished
-to import two types from two different packages, *e.g.,*
+that we are importing is
+``Modelica.SIunits.CoefficientOfHeatTransfer``.  But instead of
+creating a local type based on the last name in the fully qualified
+name, *i.e.,* ``CoefficientOfHeatTransfer`` we are specifying that the
+local type should be ``ConvectionCoefficient``.  In this case, this
+allows us to use the name we original used in our earliest examples.
+In this way, we can avoid refactoring the any code that used the
+previous name.  Another reason for specifying an alternative name
+(other than the default one that the Modelica compiler would normally
+assign) would be to avoid name collision.  Imagine we wished to import
+two types from two different packages, *e.g.,*
 
 .. code-block:: modelica
 
