@@ -7,6 +7,8 @@ Component Models
 
 * Discuss acausal modeling
 
+* Number of equations per component
+
 .. _flow-signs:
 
 Sign Conventions for ``flow`` Variables

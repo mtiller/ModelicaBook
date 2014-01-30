@@ -45,7 +45,7 @@ Modelica Standard Library.  These connectors are defined as follows:
       connector HeatPort_b "Thermal port for 1-dim. heat transfer (unfilled rectangular icon)"
         extends HeatPort;
 
-        annotation(
+        annotation(...,
           Icon(coordinateSystem(preserveAspectRatio=true,
                                 extent={{-100,-100},{100,100}}),
                                 graphics={Rectangle(
@@ -155,11 +155,12 @@ annotation) as follows:
 
 .. literalinclude:: /ModelicaByExample/Components/HeatTransfer/ConvectionToAmbient.mo
    :language: modelica
-   :lines: 1-8,47
+   :lines: 1-9,48
 
 This model includes parameters for the heat transfer coefficient,
-``h``, and the ambient temperature, ``T_amb``.  This model is attached
-to other heat transfer elements through the connector ``port_a``.
+``h``, the surface area, ``A`` and the ambient temperature, ``T_amb``.
+This model is attached to other heat transfer elements through the
+connector ``port_a``.
 
 Again, we must pay close attention to the sign convention.  Recall
 from our previous discussion of :ref:`thermal-capacitance` that
@@ -170,7 +171,7 @@ model:
 
 .. literalinclude:: /ModelicaByExample/Components/HeatTransfer/ConvectionToAmbient.mo
    :language: modelica
-   :lines: 8
+   :lines: 9
 
 Note that when ``port_a.T`` is greater than ``T_amb``, the sign of
 ``port_a.Q_flow`` is greater than zero.  That means heat is flowing
@@ -250,8 +251,8 @@ A very simple way to summarize the behavior of a connection, in the
 context of a thermal problem, is to **think of a connection as a
 perfectly conducting element with no thermal capacitance**.
 
-Convection
-~~~~~~~~~~
+Digging Deeper
+^^^^^^^^^^^^^^
 
 There is on slight issue with the ``CoolingToAmbient`` model.  We
 mentioned earlier that when building component models it is best to
@@ -261,11 +262,61 @@ see in a moment, this limits the reusability of the component models.
 But first, let's refactor the code to separate these effects out and
 then we'll revisit the system level model using these new components.
 
+Convection
+~~~~~~~~~~
+
 The first new component is a ``Convection`` model.  In this case, we
-won't make any assumptions about either end of the 
+won't make any assumptions about the temperature at either end.
+Instead, we'll only assume that each is connected to something with an
+appropriate thermal connector.  The result is a model like this one:
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Convection.mo
+   :language: modelica
+   :lines: 1-11,50
+
+This model contains two equations.  The first equation:
+
+.. code-block:: modelica
+
+    port_a.Q_flow + port_b.Q_flow = 0 "Conservation of energy";
+
+represents the fact that this component does not store heat.  The
+equation enforces the constraint that whatever heat flows in from one
+connector must flow out from the other (which is exactly the same
+behavior we saw from the ``connect`` statement earlier in this
+section).  The next equation:
+
+.. code-block:: modelica
+
+    port_a.Q_flow = h*A*(port_a.T-port_b.T) "Heat transfer equation";
+
+captures the heat transfer relationship for convection by expressing
+the relationship between the flow of heat through this component and
+the temperatures on either end.
+
+.. index:: number of equations required
+
+.. topic:: Number of equations
+
+    All our previous models had one connector and one equation.  The
+    ``Convection`` model has two connectors.  As a result, it has two
+    equations.  A simple rule of thumb is that you need as many
+    equations as connectors.  But keep in mind that this rule of thumb
+    assumes that you are using connectors with only one through
+    variable on them and no "internal variables" in your model
+    (*e.g.,* ``protected`` variables).  The upcoming section on
+    :ref:`model-comps` will provide a more comprehensive discussion on
+    determining how many equations a component requires.
 
 AmbientCondition
 ~~~~~~~~~~~~~~~~
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/AmbientCondition.mo
+   :language: modelica
+   :lines: 1-9,28
+
+Flexibility
+~~~~~~~~~~~
 
 .. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.svg
    :height: 200px
