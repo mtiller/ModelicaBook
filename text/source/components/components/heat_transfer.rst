@@ -134,7 +134,9 @@ Using the graphical annotations in the model (some of which were left
 out of the previous listing) it can be rendered as:
 
 .. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Adiabatic.svg
-   :width: 700
+   :height: 200px
+   :align: center
+   :alt: Adiabatic system schematic
 
 Since no heat enters or leaves the thermal capacitance component,
 ``cap``, the temperature of the capacitance remains constant as shown
@@ -189,27 +191,88 @@ modeled in :ref:`some of our earlier heat transfer examples
 
 In this model, we see two components have been declared, ``cap`` and
 ``conv``.  The parameters for each of these components are also
-specified when they are declared.  But what is really remarkable about
-this model is the equation section:
+specified when they are declared.  The following is a schematic for
+the ``CoolingToAmbient`` model:
+
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.svg
+   :height: 200px
+   :align: center
+   :alt: Cooling to ambient schematic
+
+But what is really remarkable about this model is the equation
+section:
 
 .. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.mo
    :language: modelica
-   :lines: 11-14
+   :lines: 10-14
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.svg
-   :width: 700
+This statement introduces on of the most important features in
+Modelica.  Note that statement appears within an ``equation``
+section.  While the ``connect`` operator looks like a function, it is
+much more than that.  It represents the equations that should be
+generated to model the interaction between the two specified
+connectors, ``cap.node`` and ``conv.port_a``.
 
+In this context, a connection does two important things.  The first
+thing it does is to generate an equation that equates the "across"
+variables on either connector.  In this case, that means the following
+equation:
+
+.. code-block:: modelica
+
+    cap.node.T = conv.port_a.T "Equating across variables";
+
+In addition, a connection generates an equation for all the through
+variables as well.  The equation that is generated is a conservation
+equation.  You can think of this conservation equation as a
+generalization of Kirchoff's current law.  Basically, it represents
+the fact that the connection itself has no "storage" ability and that
+whatever amount of the conserved quantity, in this case heat, that
+flows out of one component must go into the other(s).  So in this
+case, the connect statement will generate the following equation with
+respect to the ``flow`` variables:
+
+.. code-block:: modelica
+
+    cap.node.Q_flow + conv.port_a.Q_flow = 0 "Sum of heat flows must be zero";
+
+Note the sign convention here.  All the ``flow`` variables are summed.
+We will examine more complex cases shortly where multiple components
+are interacting.  But in this simple case, with only two components,
+we see clearly that if one value for ``Q_flow`` is positive, the other
+must be negative.  In other words, if heat is flowing out of one
+component, it must be flowing into another.  These conservation
+equations ensure that we have a proper accounting of conserved
+quantities throughout our network and that no amount of the conserved
+quantity gets "lost".
+
+A very simple way to summarize the behavior of a connection, in the
+context of a thermal problem, is to **think of a connection as a
+perfectly conducting element with no thermal capacitance**.
 
 Convection
 ~~~~~~~~~~
+
+There is on slight issue with the ``CoolingToAmbient`` model.  We
+mentioned earlier that when building component models it is best to
+isolate each individual physical effect into a component.  But we've
+actually lumped two different effects into one component.  As we will
+see in a moment, this limits the reusability of the component models.
+But first, let's refactor the code to separate these effects out and
+then we'll revisit the system level model using these new components.
+
+The first new component is a ``Convection`` model.  In this case, we
+won't make any assumptions about either end of the 
 
 AmbientCondition
 ~~~~~~~~~~~~~~~~
 
 .. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.svg
-   :width: 700
-
-
+   :height: 200px
+   :align: center
+   :alt: Cooling example schematic
 
 .. image:: /ModelicaByExample/Components/HeatTransfer/Examples/ComplexNetwork.svg
-   :width: 700
+   :width: 100%
+   :align: center
+   :alt: Complex thermal network schematic
