@@ -251,6 +251,12 @@ A very simple way to summarize the behavior of a connection, in the
 context of a thermal problem, is to **think of a connection as a
 perfectly conducting element with no thermal capacitance**.
 
+If we simulate the ``CoolingToAmbient`` model above, we get the
+following temperature trajectory:
+
+.. plot:: ../plots/HT_CTA.py
+   :include-source: no
+
 Digging Deeper
 ^^^^^^^^^^^^^^
 
@@ -311,19 +317,88 @@ the temperatures on either end.
 AmbientCondition
 ~~~~~~~~~~~~~~~~
 
+Now that we have the convection model, we need something to represent
+the ambient conditions.  We need something like a thermal capacitance
+model but one that maintains a constant temperature.  Imagine if we
+took the ``ThermalCapacitance`` model and gave a very large value for
+its capacitance, ``C``.  Then we'd have something that changed
+temperature very slowly.  But what we want is something that doesn't
+change temperature at all, as if it had a ``C`` value that was
+infinitely large.
+
+.. index:: infinite reservoir
+
+This kind of model comes up frequently and it is commonly called an
+"infinite reservoir" model.  Typically, such a model is characterized
+by the fact that no matter how much of the conserved quantity (heat in
+this case) flows into or out of the component, the across variable
+remains constant.  In an electrical context, such a model would
+represent electrical ground.  In a mechanical context, it would
+represent a mechanical ground (something that didn't change position,
+regardless of how much force was applied).
+
+We will represent our ambient conditions using the
+``AmbientConditions`` model:
+
 .. literalinclude:: /ModelicaByExample/Components/HeatTransfer/AmbientCondition.mo
    :language: modelica
    :lines: 1-9,28
 
+Since we are talking about the heat transfer domain, this model is an
+infinite reservoir for heat and no matter how much heat flows into or
+out of this component, its temperature remains the same.
+
 Flexibility
 ~~~~~~~~~~~
+
+Using these new ``Convection`` and an ``AmbientCondition`` models, we
+can reconstruct our simple system level heat transfer modeling using
+the following model:
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.mo
+   :language: modelica
+
+When rendered, the model looks like this:
 
 .. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.svg
    :height: 200px
    :align: center
    :alt: Cooling example schematic
 
+This may not seem like much of an improvement.  Although we went to
+the trouble to break up the ``ConvectionToAmbient`` model into individual
+``Convection`` and ``AmbientTemperature`` models, we still end up with
+the same fundamental behavior, *i.e.,*
+
+.. plot:: ../plots/HT_C.py
+   :include-source: no
+
+The big benefit of breaking down ``ConvectionToAmbient`` into
+``Convection`` and ``AmbientTemperature`` models is the ability the
+recombine them in different ways.  The following schematic is just one
+example of how the handful of fundamental components we've constructed
+so far can be rearranged to form an entirely new (and more complex)
+model:
+
 .. image:: /ModelicaByExample/Components/HeatTransfer/Examples/ComplexNetwork.svg
    :width: 100%
    :align: center
    :alt: Complex thermal network schematic
+
+.. todo::
+
+   I should include some results here.  The issue is that the current
+   model is singular.  So I need to revisit the ``ComplexNetwork``
+   model.  There is already an entry in the spec file, I just need to
+   fix it so it can simulate.
+
+.. plot:: ../plots/HT_CN.py
+   :include-source: no
+
+In fact, with these components we can now make **arbitrarily complex**
+networks of components and still never have to worry about formulating
+the associated equations that describe their dynamics.  Everything
+that is required to do this has already been captured in our component
+models.  This allows us to focus on the process of creating and
+designing our system and leave the tedious, time-consuming and error
+prone work of manipulating equations behind.

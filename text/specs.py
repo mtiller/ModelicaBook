@@ -312,4 +312,16 @@ add_case(["Adiabatic"], stopTime=1.0, res="HTA");
 add_simple_plot(plot="HTA", vars=[Var("cap.node.T")],
                 title="Thermal capacitance with no heat transfer")
 
+add_case(["CoolingToAmbient"], stopTime=1.0, res="HT_CTA");
+add_simple_plot(plot="HT_CTA", vars=[Var("cap.node.T")],
+                title="Thermal capacitance with convection")
+
+add_case(["Examples.Cooling$"], stopTime=1.0, res="HT_C");
+add_simple_plot(plot="HT_C", vars=[Var("cap.node.T")],
+                title="Thermal capacitance with convection")
+
+add_case(["ComplexNetwork"], stopTime=1.0, res="HT_CN");
+add_simple_plot(plot="HT_CN", vars=[Var("cap1.node.T"), Var("cap2.node.T")],
+                title="Thermal warmup of cap1 and cap2")
+
 generate()
