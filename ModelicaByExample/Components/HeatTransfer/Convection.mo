@@ -40,5 +40,11 @@ equation
           lineColor={0,0,255},
           fillColor={255,170,170},
           fillPattern=FillPattern.Solid,
+          textString="A=%A"),
+        Text(
+          extent={{-100,180},{100,140}},
+          lineColor={0,0,255},
+          fillColor={255,170,170},
+          fillPattern=FillPattern.Solid,
           textString="h=%h")}));
 end Convection;
