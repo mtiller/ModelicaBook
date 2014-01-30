@@ -46,7 +46,7 @@ model to look:
 
 .. literalinclude:: /ModelicaByExample/Components/Electrical/VerboseApproach/Resistor.mo
    :language: modelica
-
+   :lines: 1-12,31
 
 The DRY Principle
 ^^^^^^^^^^^^^^^^^
