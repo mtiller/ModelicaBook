@@ -1,11 +1,12 @@
 within ModelicaByExample.Components.HeatTransfer;
 model ConvectionToAmbient "An overly specialized model of convection"
-  parameter Modelica.SIunits.ThermalConductance h "Convection coefficient";
+  parameter Modelica.SIunits.CoefficientOfHeatTransfer h;
+  parameter Modelica.SIunits.Area A;
   parameter Modelica.SIunits.Temperature T_amb "Ambient temperature";
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a port_a
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
 equation
-  port_a.Q_flow = h*(port_a.T-T_amb) "Heat transfer equation";
+  port_a.Q_flow = h*A*(port_a.T-T_amb) "Heat transfer equation";
   annotation (Diagram(graphics), Icon(graphics={
         Rectangle(
           extent={{-100,100},{-40,-100}},

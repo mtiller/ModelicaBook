@@ -33,12 +33,12 @@ can think of a ``parameter`` as a variable whose value we must
 provide.
 
 Looking at our ``NewtonCooling`` example, we see there are five
-parameters: ``T_inf``, ``T0``, ``h``, ``m`` and ``c_p``.  We don't
-need to bother explaining what these variables are because the model
-itself includes a descriptive string for each one.  At the moment,
-there are no values for these parameters, but we will return to that
-topic shortly.  As with all the variables we have seen so far, these
-are all of type ``Real``.
+parameters: ``T_inf``, ``T0``, ``h``, ``A``, ``m`` and ``c_p``.  We
+don't need to bother explaining what these variables are because the
+model itself includes a descriptive string for each one.  At the
+moment, there are no values for these parameters, but we will return
+to that topic shortly.  As with all the variables we have seen so far,
+these are all of type ``Real``.
 
 Let's examine the rest of this model.  The next variable is ``T``
 (also a ``Real``).  Since this variable doesn't have the ``parameter``
@@ -124,10 +124,11 @@ variable.  Furthermore, it doesn't take a very deep analysis of our
 previous model to determine that ``T0`` and ``T_inf`` must also be
 temperatures.
 
-But what about the other variables like ``h``?  What do they
+But what about the other variables like ``h`` or ``A``?  What do they
 represent?  Even more important, are the equations **physically
-consistent**?  By physically consistent, we mean that both side of the
-equations have the same physical units (*e.g.*, temperature, mass).
+consistent**?  By physically consistent, we mean that both sides of
+the equations have the same physical units (*e.g.*, temperature,
+mass, power).
 
 We could convey the physical units of the different variables more
 rigorously by actually including them in the variable declarations,
