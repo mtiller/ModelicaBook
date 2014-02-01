@@ -314,6 +314,8 @@ the temperatures on either end.
     :ref:`model-comps` will provide a more comprehensive discussion on
     determining how many equations a component requires.
 
+.. _amb-cond:
+
 AmbientCondition
 ~~~~~~~~~~~~~~~~
 
