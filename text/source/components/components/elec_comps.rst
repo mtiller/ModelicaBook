@@ -160,7 +160,7 @@ as follows:
 The schematic diagram for this model is rendered as:
 
 .. image:: /ModelicaByExample/Components/Electrical/Examples/SwitchedRLC.svg
-   :height: 300px
+   :width: 100%
    :align: center
    :alt: Modeling the step response of an RLC circuit
 
