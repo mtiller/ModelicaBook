@@ -1,9 +1,7 @@
 within ModelicaByExample.Components.Electrical.Examples;
 model SwitchedRLC "Recreation of the switched RLC circuit"
-  DryApproach.StepVoltage Vs(
-    V0=0,
-    Vf=24,
-    stepTime=0.5) annotation (Placement(transformation(
+  DryApproach.StepVoltage Vs(V0=0, Vf=24, stepTime=0.5)
+    annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-40,0})));

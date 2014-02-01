@@ -1,6 +1,5 @@
 within ModelicaByExample.Components.Electrical.DryApproach;
 model Ground "Electrical ground"
-
   Modelica.Electrical.Analog.Interfaces.PositivePin ground "Ground pin"
     annotation (Placement(transformation(extent={{-10,70},{10,90}})));
 equation
