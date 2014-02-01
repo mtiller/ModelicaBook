@@ -44,5 +44,4 @@ equation
       points={{-40,-10},{-40,-20},{0,-20}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end SwitchedRLC;
