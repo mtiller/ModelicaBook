@@ -1,6 +1,5 @@
 within ModelicaByExample.Components.Rotational.Examples;
 model SMD
-
   Components.Ground ground annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
