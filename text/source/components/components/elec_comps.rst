@@ -71,6 +71,8 @@ but also because this code needs to be *maintained* as well.  When you
 repeat code and then find a mistake in that code, you have to fix it
 everywhere.
 
+.. _dry-principle:
+
 The DRY Principle
 ^^^^^^^^^^^^^^^^^
 

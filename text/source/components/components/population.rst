@@ -179,17 +179,150 @@ system model, its icon will look like this:
 Reproduction
 ~~~~~~~~~~~~
 
+The first real effect we will examine is reproduction.  As we know
+from our previous discussion, the growth in a given population due to
+reproduction is proportional to the number of number of animals of
+that species in a given region.  As a result, we can describe
+reproduction very succinctly as:
+
+.. literalinclude:: /ModelicaByExample/Components/LotkaVolterra/Components/Reproduction.mo
+   :language: modelica
+   :lines: 1-6,49
+
+where ``alpha`` is the proportionality constant.  However, the
+simplicity and clarity of this model is due mostly to the inheritance
+of the ``SinkOrSource`` model in much the same way that our "DRY"
+:ref:`electrical-components` benefited from inheriting the ``TwoPin``
+model.
+
+The ``SinkOrSource`` model is a starting point for any model that
+either creates or destroys animals in a population.  It is defined as
+follows:
+
+.. literalinclude:: /ModelicaByExample/Components/LotkaVolterra/Interfaces/SinkOrSource.mo
+   :language: modelica
+   :lines: 1-11,18
+
+To understand these equations it is first necessary to understand that
+any model the ``extends`` from ``SinkOrSource`` will generally be
+connected to a ``RegionalPopulation`` instance (but will not, itself,
+**be** a ``RegionalPopulation`` model).  This means that if the
+``flow`` variable ``species.rate`` in such an instance is positive, it
+will have the effect of pulling animals **out** of the
+``RegionalPopulation`` model.  Looking at the ``SinkOrSource`` model
+in this way, we can see that the variable ``decline`` is simply an
+alias for ``species.rate``.  In other words, when ``decline`` has a
+positive value, ``species.rate`` will have a positive value and,
+therefore, any ``RegionalPopulation`` that this ``SinkOrSource``
+instance is connected to will suffer a drain on its population.
+Conversely, the ``growth`` variable is positive when ``species.rate``
+is negative.  In that case, the connected ``RegionalPopulation`` model
+will see an increase in species population.
+
+By defining the ``SinkOrSource`` model and inheriting from it, much of
+this complexity is hidden.  As a result, models like ``Reproduction``
+can write equations in a way that make their behavior more intuitive,
+*e.g.,* ``growth = alpha*species.population``.
+
+Although not shown, the ``Icon`` for the ``Reproduction`` model is
+rendered as:
+
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Reproduction.svg
+   :height: 200px
+   :align: center
+
 Starvation
 ~~~~~~~~~~
 
+Just like the ``Reproduction`` model just described, the
+``Starvation`` model also inherits from the ``SinkOrSource`` model.
+However, it chooses to describe its behavior with respect to the
+``decline`` variable, as follows:
+
+.. code-block:: modelica
+
+    within ModelicaByExample.Components.LotkaVolterra.Components;
+    model Starvation "Model of starvation"
+      extends Interfaces.SinkOrSource;
+      parameter Real gamma "Starvation coefficient";
+    equation
+      decline = gamma*species.population
+        "Decline is proporational to population (competition)";
+    end Starvation;
+
 Predation
 ~~~~~~~~~
+
+The last effect we need to consider before building a system model to
+represent the classic Lotka-Volterra behavior is a model for
+predation.
+
+Recall our previous discussion of the ``SinkOrSource`` model and the
+potential confusion associated with sign conventions.  The
+``SinkOrSource`` model was designed to work with effects that only
+interacted with a single ``RegionalPopulation`` (since it had only one
+``Species`` connector).  In order to address the same potential sign
+convention confusion for effects that involve interactions between two
+different regional populations, the following ``partial`` model,
+``Interaction`` was defined:
+
+.. literalinclude:: /ModelicaByExample/Components/LotkaVolterra/Interfaces/Interaction.mo
+   :language: modelica
+   :lines: 1-16,23
+
+Again, we have the concepts of growth and decline variables.  However
+this time we have two version of each.  One is associated with the
+``a`` connector and the other is associated with the ``b`` connector.
+
+Using these definitions, we can define ``Predation`` very simply as:
+
+.. literalinclude:: /ModelicaByExample/Components/LotkaVolterra/Components/Predation.mo
+   :language: modelica
+   :lines: 1-8,43
+
+This model captures the effect that the growth in the "B" (predator)
+population is proportional to the product of the predator and prey
+populations.  Similarly, the decline in the "A" (prey) population is
+also proportional the product of the predator and prey populations
+(although with a different proportionality constant).
+
+Although not shown, the ``Icon`` for the ``Predation`` model is
+rendered as:
+
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Predation.svg
+   :height: 200px
+   :align: center
+
+Note that the ``Predation`` model is asymmetric.  The ``b`` connector
+should be connected to the predator population and the ``a`` connector
+should be connected to the prey population.  This is reinforced by the
+image and asymmetry of the icon itself.
+
+Classic System Model
+~~~~~~~~~~~~~~~~~~~~
+
+With all of these components in hand, we can very easily construct a
+component-oriented version of the classic Lotka-Volterra behavior by
+dragging and dropping the components into the following system
+configuration:
 
 .. figure:: /ModelicaByExample/Components/LotkaVolterra/Examples/ClassicLotkaVolterra.svg
    :width: 100%
    :align: center
    :alt: Component-oriented version of the classic Lotka-Volterra model
    :figclass: align-center
+
+Here we see that the ``Starvation`` model is attached to the ``foxes``
+population while the ``Reproduction`` model is attached to the
+``rabbits`` population.  The ``Predation`` model is connected to both
+populations with the ``a`` (prey) connector attached to the
+``rabbits`` and the ``b`` (predator) connector attached to the ``foxes``.
+
+As we can see from the following plot, the behavior of this system is
+identical to the one presented in our earlier discussion of :ref:`lotka-volterra-systems`:
+
+.. plot:: ../plots/CLV.py
+   :include-source: no
 
 Introducing a Third Species
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -364,4 +364,10 @@ add_simple_plot(plot="SMD_CG", vars=[Var("inertia4.phi", legend="Position of ine
                                      Var("inertia1.w", legend="Velocity of inertia 1 [rad/s]")],
                 title="Implicitly and explicitly grounded ConfigurableGear");
 
+# Lotka-Volterra (components)
+add_case(["ClassicLotkaVolterra"], stopTime=140, res="CLV");
+add_simple_plot(plot="CLV", vars=[Var("rabbits.population", legend="Rabbit Population"),
+                                  Var("foxes.population", legend="Fox Population")],
+                title="Component-Oriented Lotka-Volterra");
+
 generate()
