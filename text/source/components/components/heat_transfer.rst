@@ -257,6 +257,8 @@ following temperature trajectory:
 .. plot:: ../plots/HT_CTA.py
    :include-source: no
 
+.. _digging-deeper:
+
 Digging Deeper
 ^^^^^^^^^^^^^^
 

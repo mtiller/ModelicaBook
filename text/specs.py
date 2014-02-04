@@ -332,6 +332,36 @@ smdvars = [Var("inertia1.phi", legend="Position of inertia 1 [rad]"),
 add_case(["Rotational\.Examples", "SMD$"], stopTime=5, res="SMD");
 add_simple_plot(plot="SMD", vars=smdvars,
                 title="Dual mass spring-mass-damper model");
+add_case(["Rotational\.Examples", "SMD_WithBacklash"], stopTime=5, res="SMD_WB");
+add_simple_plot(plot="SMD_WB", vars=smdvars,
+                title="Spring-mass-damper model including backlash");
+add_simple_plot(plot="SMD_WB_RT", vars=[Var("ground.flange_a.tau")], res="SMD_WB",
+                title="Reaction torque at mechanical ground");
+add_case(["Rotational\.Examples", "SMD_WithGroundedGear"], stopTime=5, res="SMD_GG");
+add_simple_plot(plot="SMD_GG", vars=[Var("inertia3.phi", legend="Position of inertia 3 [rad]"),
+                                     Var("inertia2.phi", legend="Position of inertia 2 [rad]"),
+                                     Var("inertia3.w", legend="Velocity of inertia 3 [rad/s]"),
+                                     Var("inertia2.w", legend="Velocity of inertia 2 [rad/s]")],
+                title="Dual mass spring-mass-damper model");
+add_case(["Rotational.\Examples", "SMD_GearComparison"], stopTime=2, res="SMD_GC");
+add_simple_plot(plot="SMD_GC_g", res="SMD_GC",
+                vars=[Var("inertia3.phi", legend="Position of inertia 3 [rad]"),
+                      Var("inertia1.phi", legend="Position of inertia 1 [rad]"),
+                      Var("inertia3.w", legend="Velocity of inertia 3 [rad/s]"),
+                      Var("inertia1.w", legend="Velocity of inertia 1 [rad/s]")],
+                title="Comparing explicitly and implicitly grounded gears");
 
+add_simple_plot(plot="SMD_GC_u", res="SMD_GC",
+                vars=[Var("inertia1.phi", legend="Position of inertia 1 [rad]"),
+                      Var("inertia5.phi", legend="Position of inertia 5 [rad]"),
+                      Var("inertia1.w", legend="Velocity of inertia 1 [rad/s]"),
+                      Var("inertia5.w", legend="Velocity of inertia 5 [rad/s]")],
+                title="Comparing grounded and ungrounded gears");
+add_case(["Rotational.\Examples", "SMD_ConfigurableGear"], stopTime=5, res="SMD_CG");
+add_simple_plot(plot="SMD_CG", vars=[Var("inertia4.phi", legend="Position of inertia 4 [rad]"),
+                                     Var("inertia1.phi", legend="Position of inertia 1 [rad]"),
+                                     Var("inertia4.w", legend="Velocity of inertia 4 [rad/s]"),
+                                     Var("inertia1.w", legend="Velocity of inertia 1 [rad/s]")],
+                title="Implicitly and explicitly grounded ConfigurableGear");
 
 generate()

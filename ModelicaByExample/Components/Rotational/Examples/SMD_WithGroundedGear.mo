@@ -33,7 +33,7 @@ model SMD_WithGroundedGear
   Components.Inertia inertia3(
     w(fixed=true, start=0),
     phi(displayUnit="rad", fixed=true, start=1),
-    J=1.8) annotation (Placement(transformation(extent={{-10,-50},{10,-30}})));
+    J=1.6) annotation (Placement(transformation(extent={{-10,-50},{10,-30}})));
 equation
   connect(ground.flange_a, damper2.flange_b) annotation (Line(
       points={{70,40},{60,40},{60,60},{50,60}},

@@ -11,10 +11,10 @@ model SMD_GearComparison "Use case using both grounded and ungrounded gears"
     annotation (Placement(transformation(extent={{28,-100},{48,-80}})));
   Components.Inertia inertia2(
     J=1,
-    phi(fixed=true, start=0.2),
+    phi(fixed=true, start=2),
     w(fixed=true, start=0))
     annotation (Placement(transformation(extent={{-10,-80},{10,-60}})));
-  Components.Inertia inertia1(J=0.4)
+  Components.Inertia inertia1(J=1.4)
     annotation (Placement(transformation(extent={{-90,-80},{-70,-60}})));
   Components.GroundedGear grounded(ratio=2)
     annotation (Placement(transformation(extent={{-50,-80},{-30,-60}})));
@@ -29,9 +29,9 @@ model SMD_GearComparison "Use case using both grounded and ungrounded gears"
   Components.Inertia inertia4(
     J=1,
     w(fixed=true,start=0),
-    phi(fixed=true, start=0.2))
+    phi(fixed=true, start=2))
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  Components.Inertia inertia3(J=0.4)
+  Components.Inertia inertia3(J=1.4)
     annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
   Components.UngroundedGear ungrounded(ratio=2)
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
@@ -48,12 +48,12 @@ model SMD_GearComparison "Use case using both grounded and ungrounded gears"
   Components.Inertia inertia6(
     J=1,
     w(fixed=true, start=0),
-    phi(fixed=true, start=0.2))
+    phi(fixed=true, start=2))
     annotation (Placement(transformation(extent={{-10,60},{10,80}})));
   Components.Inertia inertia5(
-    J=0.4,
+    J=1.4,
     w(fixed=true, start=0),
-    phi(fixed=true, start=0.2))
+    phi(fixed=true, start=4))
     annotation (Placement(transformation(extent={{-90,60},{-70,80}})));
   Components.UngroundedGear ungrounded1(ratio=2)
     annotation (Placement(transformation(extent={{-50,60},{-30,80}})));
@@ -63,7 +63,7 @@ model SMD_GearComparison "Use case using both grounded and ungrounded gears"
         origin={-86,40})));
   Components.Spring mount_c(c=80)
     annotation (Placement(transformation(extent={{-70,40},{-50,60}})));
-  Components.Damper mount_d(d=1)
+  Components.Damper mount_d(d=0.2)
     annotation (Placement(transformation(extent={{-70,20},{-50,40}})));
 equation
   connect(ground.flange_a, damper2.flange_b) annotation (Line(
