@@ -324,4 +324,14 @@ add_case(["ComplexNetwork"], stopTime=1.0, res="HT_CN");
 add_simple_plot(plot="HT_CN", vars=[Var("cap1.node.T"), Var("cap2.node.T")],
                 title="Thermal warmup of cap1 and cap2")
 
+# Rotational components
+smdvars = [Var("inertia1.phi", legend="Position of inertia 1 [rad]"),
+           Var("inertia2.phi", legend="Position of inertia 2 [rad]"),
+           Var("inertia1.w", legend="Velocity of inertia 1 [rad/s]"),
+           Var("inertia2.w", legend="Velocity of inertia 2 [rad/s]")]
+add_case(["Rotational\.Examples", "SMD$"], stopTime=5, res="SMD");
+add_simple_plot(plot="SMD", vars=smdvars,
+                title="Dual mass spring-mass-damper model");
+
+
 generate()
