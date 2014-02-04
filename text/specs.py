@@ -380,4 +380,21 @@ add_simple_plot(plot="ThreeS", vars=[Var("rabbits.population", legend="Rabbit Po
                                      Var("wolves.population", legend="Wolf Population")],
                 title="Equilibriums for rabbits, foxes and wolves");
 
+# Speed measurement
+add_case(["SpeedMeasurement", "Plant$"], stopTime=5, res="PBase", tol=1e-6);
+add_simple_plot(plot="PBase", vars=[Var("inertia.w", legend="Actual speed")],
+                title="Baseline plant response");
+add_case(["PlantWithSampleHold"], stopTime=5, res="PwSH", tol=1e-6);
+add_simple_plot(plot="PwSH", vars=[Var("inertia.w", legend="Actual speed"),
+                                   Var("sampleHold.w", legend="Measured speed")],
+                title="Comparison of actual speed with sampled speed");
+add_case(["PlantWithIntervalMeasure"], stopTime=5, res="PwIM", tol=1e-6);
+add_simple_plot(plot="PwIM", vars=[Var("inertia.w", legend="Actual speed"),
+                                   Var("intervalMeasure.w", legend="Measured speed")],
+                title="Comparison of actual speed with approximation by interval measurement");
+add_case(["PlantWithPulseCounter"], stopTime=5, res="PwPC", tol=1e-6);
+add_simple_plot(plot="PwPC", vars=[Var("inertia.w", legend="Actual speed"),
+                                   Var("pulseCounter.w", legend="Measured speed")],
+                title="Comparison of actual speed with approximation by pulse counting");
+
 generate()
