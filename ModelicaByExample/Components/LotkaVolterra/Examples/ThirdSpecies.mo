@@ -1,8 +1,8 @@
 within ModelicaByExample.Components.LotkaVolterra.Examples;
 model ThirdSpecies "Adding a third species to Lotka-Volterra"
-  extends ClassicLotkaVolterra;
   import ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.InitializationOptions.FixedPopulation;
-  Components.RegionalPopulation wolves(init=FixedPopulation, initial_population=10)
+  extends ClassicLotkaVolterra(rabbits(initial_population=25), foxes(initial_population=2));
+  Components.RegionalPopulation wolves(init=FixedPopulation, initial_population=4)
     annotation (Placement(transformation(extent={{30,40},{50,60}})));
   Components.Starvation wolf_starvation(gamma=0.4)
     annotation (Placement(transformation(extent={{70,40},{90,60}})));

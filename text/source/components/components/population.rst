@@ -386,3 +386,9 @@ the equilibrium population level for each species:
 .. plot:: ../plots/ThreeS.py
    :include-source: no
 
+From an ecological standpoint, we can already make an interesting
+observation about this system.  If we start it from a non-equilibrium
+condition the system quickly goes unstable.  In other words, the
+introduction of wolves into the otherwise stable eco-system involving
+only rabbits and foxes has a significant impact on the population
+dynamics.
