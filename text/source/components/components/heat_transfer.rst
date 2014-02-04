@@ -128,7 +128,8 @@ This model contains only the thermal capacitance element (as indicated
 by the declaration of the variable ``cap`` of type
 ``ThermalCapacitance``) and no other heat transfer elements (*e.g.,*
 conduction, convection, radiation).  Ignore the ``Placement``
-annotation for the moment, we'll come back to that shortly.
+annotation for the moment, we'll provide a complete explanation in a
+later section on :ref:`comp-annos`.
 
 Using the graphical annotations in the model (some of which were left
 out of the previous listing) it can be rendered as:
