@@ -28,6 +28,17 @@ You'll also need a copy of [OpenModelica](https://www.openmodelica.org/)
 installed.  I'm using [the Linux version](https://www.openmodelica.org/index.php/download/download-linux)
 and I built the Mac version from source.
 
+### Building
+
+To build the book in HTML, go to `ModelicaBook/text` and use these commands:
+
+     % make specs
+     % make results
+     % make dirhtml
+     % make server
+
+Other options for `make` can be found by using `make help`
+
 ## Proofreading
 
 Here are some guidelines on proofreading.
