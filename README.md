@@ -30,8 +30,12 @@ and I built the Mac version from source.
 
 ### Building
 
-To build the book in HTML, go to `ModelicaBook/text` and use these commands:
+To build the book in HTML, go to `ModelicaBook/text` and use this command:
+     
+     % make 
 
+If that doesn't work for some reason, the following can be used to troubleshoot the problem:     
+     
      % make specs
      % make results
      % make dirhtml
