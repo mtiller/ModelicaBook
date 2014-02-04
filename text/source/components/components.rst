@@ -24,7 +24,8 @@ Examples
 
    components/heat_transfer
    components/elec_comps
-   components/rot_comps
+   components/rot_comps_basic
+   components/rot_comps_adv
    components/population
    components/speed_comps
    components/block_comps

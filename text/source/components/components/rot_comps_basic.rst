@@ -1,16 +1,17 @@
 .. _rotational-components:
 
-Rotational Components
----------------------
+Basic Rotational Components
+---------------------------
 
 In this section, we'll show how to create basic components for
-modeling one-dimensional rotational systems.  But in addition to the
-normal process of building component models that we've seen in other
-sections, this section will also demonstrate how to incorporate event
-handling (to model a backlash).  Furthermore, we'll also show how to
-use parameter values to affect the interface of a component.
+modeling one-dimensional rotational systems.  We'll build on our
+discussion of rotational connectors and show how they can be used to
+define the interfaces for basic rotational components.  Finally, we'll
+show how those rotational components can then be assembled into a
+system model that replicates the behavior of the equation-based
+version of the same system presented in the first chapter.
 
-Basic Components
+Component Models
 ^^^^^^^^^^^^^^^^
 
 In the first chapter, we considered :ref:`mech-example` modeled
@@ -298,35 +299,9 @@ The diagram for this model, when rendered, looks like this:
    :align: center
    :alt: 
 
-Modeling Backlash
-^^^^^^^^^^^^^^^^^
+.. plot:: ../plots/SMD.py
+   :include-source: no
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithBacklash.svg
-   :width: 100%
-   :align: center
-   :alt: 
-
-Grounding and Reaction Torques
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithGroundedGear.svg
-   :width: 100%
-   :align: center
-   :alt: 
-
-Comparison
-^^^^^^^^^^
-
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_GearComparison.svg
-   :width: 100%
-   :align: center
-   :alt: 
-
-Optional Ground Connector
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. figure:: /ModelicaByExample/Components/Rotational/Examples/SMD_ConfigurableGear.svg
-   :width: 100%
-   :align: center
-   :alt: Example using a configurable gear
-   :figclass: align-center
+This completes our discussion of basic rotational components.  But
+there is quite a bit more to say about rotational components in the
+next section on :ref:`adv-rotational-components`.
