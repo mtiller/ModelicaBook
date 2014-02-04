@@ -327,21 +327,62 @@ identical to the one presented in our earlier discussion of :ref:`lotka-volterra
 Introducing a Third Species
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+As we will see over and over again, there is an initial investment in
+building component models over simply typing the equations that they
+encapsulate.  But there is also a significant "payoff" to this process
+because of the schematic based system composition that is then
+possible as a result.  In the context of the Lotka-Volterra example,
+this is exemplified by the addition of a third species, wolves, to the
+classic Lotka-Volterra system.
+
 Adding Wolves
 ~~~~~~~~~~~~~
 
-Resulting Dynamics
-~~~~~~~~~~~~~~~~~~
+The creation of a model with a third species does not require any
+additional component models to be defined.  Instead, we can reuse not
+only our existing models for ``Predation``, ``Starvation`` and
+``RegionalPopulation`` but we can also reuse the
+``ClassicLotkaVolterra`` model itself:
+
+.. literalinclude:: /ModelicaByExample/Components/LotkaVolterra/Examples/ThirdSpecies.mo
+   :language: modelica
+
+Such a model would not typically be created by typing in the source
+code you see above.  Instead, within a graphical development
+environment it would take less than a minute to assemble such a system
+by augmenting the existing ``ClassicLotkaVolterra`` model.  When
+visualized, the schematic for the resulting system is rendered as:
 
 .. figure:: /ModelicaByExample/Components/LotkaVolterra/Examples/ThirdSpecies.svg
    :width: 100%
    :align: center
-   :alt: Adding additional components to represent wolves and their interactions
+   :alt: The Classic Lotka-Volterra model augmented with an additional
+	 predatory species
    :figclass: align-center
 
 
-Equilibrium
-~~~~~~~~~~~
+Resulting Dynamics
+~~~~~~~~~~~~~~~~~~
+
+By creating such a model, we can quickly explore the differences in
+system dynamics between the classic model and this three species
+model.  The following plot shows how these three species interact:
+
+.. plot:: ../plots/ThirdS.py
+   :include-source: no
+
+By using the ``init`` parameter in the various ``RegionalPopulation``
+instances, we can also quickly create a model to solve for the
+equilibrium population levels for all three species:
 
 .. literalinclude:: /ModelicaByExample/Components/LotkaVolterra/Examples/ThreeSpecies_Quiescent.mo
    :language: modelica
+
+All that is required in this model is to extend from the
+``ThirdSpecies`` model and modify the ``init`` parameter for each of
+the underlying species populations.  Simulating this model gives us
+the equilibrium population level for each species:
+
+.. plot:: ../plots/ThreeS.py
+   :include-source: no
+
