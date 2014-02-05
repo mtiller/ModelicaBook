@@ -84,7 +84,7 @@ Note the quoted text in this model.
 It is important to understand that the quoted text blocks, called "strings"
 in computer science, are **not** comments.  They are "descriptive strings" and,
 unlike comments, they cannot be added in arbitrary places.  Instead,
-they can be inserted in specific places to provide additional
+they can only be inserted in specific places to provide additional
 documentation about the elements of the model they are associated with.
 
 For example, the first string "A simple first order differential
