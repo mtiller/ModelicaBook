@@ -95,10 +95,10 @@ model name as shown.
 
 As we will see later, this kind of documentation can be used by tools
 in many ways.  For example, when searching for models, a tool may use
-these descriptive strings when identifying matches.  For tools displaying
-models, this text may be associated with the graphical
-representation of the models.  And, of course, this kind of
-documentation is very useful for anybody reading the model.
+these descriptive strings when identifying matches.  This text may also
+be associated with a graphical representation of the models.  And, of
+course, this kind of documentation is very useful for anybody reading
+the model.
 
 As this example demonstrates, there are other places that the
 descriptive text can appear.  For example, it may be included after
