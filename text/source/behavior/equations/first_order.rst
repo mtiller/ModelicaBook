@@ -126,6 +126,10 @@ the initial value of ``x`` in our model to be *2*, we could add an
    :language: modelica
    :lines: 2-
 
+.. todo::
+   note: the descriptive strings for the model and for the variable Real x are
+   different between FirstOrderInitial and FirstOrderDocumented 
+
 Note that the only difference between this model and the previous one,
 presented in the section on :ref:`first-order-doc`, is the addition of
 the ``initial equation`` section which contains the equation ``x =
