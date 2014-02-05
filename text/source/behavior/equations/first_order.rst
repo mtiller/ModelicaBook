@@ -81,8 +81,8 @@ readable.  Consider the following model:
 
 Note the quoted text in this model.
 
-An important thing to understand about that quoted text is that those
-strings are **not** comments.  They are "descriptive strings" and,
+It is important to understand that the quoted text blocks, called "strings"
+in computer science, are **not** comments.  They are "descriptive strings" and,
 unlike comments, they cannot be added in arbitrary places.  Instead,
 they can be inserted in specific places to provide additional
 documentation about the elements of the model they are associated with.
