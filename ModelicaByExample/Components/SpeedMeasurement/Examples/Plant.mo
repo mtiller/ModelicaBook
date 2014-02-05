@@ -5,7 +5,7 @@ model Plant "The basic plant model"
                           rotation=0, origin={60,-30})));
   Modelica.Mechanics.Rotational.Components.Damper damper(d=0.1)
     annotation (Placement(transformation(extent={{30,-10},{50,10}})));
-  Modelica.Mechanics.Rotational.Components.Inertia inertia(J=0.1)
+  Modelica.Mechanics.Rotational.Components.Inertia inertia(J=0.1, phi(fixed=true, start=2.0))
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Mechanics.Rotational.Sources.Torque torque(useSupport=true)
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));

@@ -9,6 +9,7 @@ model Counter "Count teeth in a given interval"
   Real omega1_measured;
 initial equation
   next_phi = phi1+tooth_angle;
+  prev_phi = phi1-tooth_angle;
   count = 0;
 equation
   when {phi1>=pre(next_phi),phi1<=pre(prev_phi)} then

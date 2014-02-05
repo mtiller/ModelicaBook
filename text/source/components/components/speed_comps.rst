@@ -112,6 +112,9 @@ speed of the inertia with the signal returned from our sensor:
 Interval Measurement
 ^^^^^^^^^^^^^^^^^^^^
 
+.. literalinclude:: /ModelicaByExample/Components/SpeedMeasurement/Components/IntervalMeasure.mo
+   :language: modelica
+
 .. literalinclude:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithIntervalMeasure.mo
    :language: modelica
 
@@ -124,8 +127,15 @@ Interval Measurement
 .. plot:: ../plots/PwIM.py
    :include-source: no
 
+.. plot:: ../plots/PwIM_gaps.py
+   :include-source: no
+
+
 Pulse Counter
 ^^^^^^^^^^^^^
+
+.. literalinclude:: /ModelicaByExample/Components/SpeedMeasurement/Components/PulseCounter.mo
+   :language: modelica
 
 .. literalinclude:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithPulseCounter.mo
    :language: modelica

@@ -8,6 +8,7 @@ model IntervalMeasure "Measure interval between teeth"
   Real omega1_measured;
 initial equation
   next_phi = phi1+tooth_angle;
+  prev_phi = phi1-tooth_angle;
   last_time = time;
 equation
   when {phi1>=pre(next_phi),phi1<=pre(prev_phi)} then

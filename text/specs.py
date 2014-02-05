@@ -392,6 +392,11 @@ add_case(["PlantWithIntervalMeasure"], stopTime=5, res="PwIM", tol=1e-6);
 add_simple_plot(plot="PwIM", vars=[Var("inertia.w", legend="Actual speed"),
                                    Var("intervalMeasure.w", legend="Measured speed")],
                 title="Comparison of actual speed with approximation by interval measurement");
+add_simple_plot(plot="PwIM_gaps", res="PwIM",
+                vars=[Var("inertia.phi", legend="Inertia position"),
+                      Var("intervalMeasure.next_phi", legend="Next forward angle"),
+                      Var("intervalMeasure.prev_phi", legend="Next backward angle")],
+                title="Comparison of actual speed with approximation by interval measurement");
 add_case(["PlantWithPulseCounter"], stopTime=5, res="PwPC", tol=1e-6);
 add_simple_plot(plot="PwPC", vars=[Var("inertia.w", legend="Actual speed"),
                                    Var("pulseCounter.w", legend="Measured speed")],

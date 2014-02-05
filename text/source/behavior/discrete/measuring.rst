@@ -220,7 +220,7 @@ estimation technique:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/SpeedMeasurement/Counter.mo
    :language: modelica
-   :emphasize-lines: 16,20
+   :emphasize-lines: 17,21
    :lines: 2-
 
 However, there is a problem in this model.  Note that there are
