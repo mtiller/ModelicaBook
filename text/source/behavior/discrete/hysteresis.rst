@@ -84,7 +84,7 @@ heater turning on and the heater turning off.
 The logic for implementing hysteresis can be made slightly more
 explicit by using an ``algorithm`` section (as previous discussed
 during our discussion on :ref:`speed estimation techniques
-<counting>`).  
+<pulse-counting>`).  
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/Hysteresis/HysteresisControlWithAlgorithms.mo
    :language: modelica

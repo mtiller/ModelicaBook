@@ -1,8 +1,8 @@
-Gain
 Constant
+Gain
 Sum
-Integrator
 Product
 Feedback
+Integrator
 IdealTemperatureSensor
 HeatSource

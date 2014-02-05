@@ -1,5 +1,5 @@
 within ModelicaByExample.Components.BlockDiagrams.Components;
-model Gain "A gain block model"
+block Gain "A gain block model"
   extends Interfaces.SISO;
   parameter Real k "Gain coefficient";
 equation

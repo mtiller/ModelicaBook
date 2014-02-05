@@ -571,6 +571,8 @@ the array.  For example:
     max({10, 7, 2, 11})  // 11
     max([1, 2; 3, -4])   // 3
 
+.. _sum-func:
+
 ``sum``
 ~~~~~~~
 
@@ -585,6 +587,8 @@ elements in the array.  For example:
     sum({10, 7, 2, 11})  // 30
     sum([1, 2; 3, -4])   // 2
 
+
+.. _product-func:
 
 ``product``
 ~~~~~~~~~~~

@@ -1,5 +1,5 @@
 within ModelicaByExample.Components.BlockDiagrams.Components;
-model Constant "A constant source"
+block Constant "A constant source"
   parameter Real k "Constant output value";
   extends Icons.Axes;
   extends Interfaces.SO;
