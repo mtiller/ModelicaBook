@@ -198,7 +198,7 @@ following example:
 .. index:: type
 
 You can read the definition ``type Temperature=Real(unit="K",
-min=0);`` as "Let us define a new unit, ``Temperature``, that is a
+min=0);`` as "Let us define a new type, ``Temperature``, that is a
 specialization of the built-in type ``Real`` with physical units of
 Kelvin (``K``) and a minimum possible value of ``0``."
 
