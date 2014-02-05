@@ -103,7 +103,7 @@ When assembled, our final system looks like this:
    :alt: Plant with sample hold sensor
    :figclass: align-center
 
-If we simulate this system for 10 seconds, we can compare the actual
+If we simulate this system for 5 seconds, we can compare the actual
 speed of the inertia with the signal returned from our sensor:
 
 .. plot:: ../plots/PwSH.py
@@ -127,7 +127,10 @@ Interval Measurement
 .. plot:: ../plots/PwIM.py
    :include-source: no
 
-.. plot:: ../plots/PwIM_gaps.py
+.. plot:: ../plots/PwIMf.py
+   :include-source: no
+
+.. plot:: ../plots/PwIMf_gaps.py
    :include-source: no
 
 

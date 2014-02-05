@@ -382,24 +382,38 @@ add_simple_plot(plot="ThreeS", vars=[Var("rabbits.population", legend="Rabbit Po
 
 # Speed measurement
 add_case(["SpeedMeasurement", "Plant$"], stopTime=5, res="PBase", tol=1e-6);
-add_simple_plot(plot="PBase", vars=[Var("inertia.w", legend="Actual speed")],
+add_simple_plot(plot="PBase", vars=[Var("inertia1.w", legend="Actual speed")],
                 title="Baseline plant response");
 add_case(["PlantWithSampleHold"], stopTime=5, res="PwSH", tol=1e-6);
-add_simple_plot(plot="PwSH", vars=[Var("inertia.w", legend="Actual speed"),
-                                   Var("sampleHold.w", legend="Measured speed")],
+add_simple_plot(plot="PwSH", vars=[Var("inertia1.w", legend="Actual speed (inertia1.w)"),
+                                   Var("sampleHold.w", legend="Measured speed (sampleHold.w)")],
                 title="Comparison of actual speed with sampled speed");
 add_case(["PlantWithIntervalMeasure"], stopTime=5, res="PwIM", tol=1e-6);
-add_simple_plot(plot="PwIM", vars=[Var("inertia.w", legend="Actual speed"),
-                                   Var("intervalMeasure.w", legend="Measured speed")],
+add_simple_plot(plot="PwIM", vars=[Var("inertia1.w",
+                                       legend="Actual speed (inertia1.w)"),
+                                   Var("intervalMeasure.w",
+                                       legend="Measured speed (intervalMeasure.w)")],
                 title="Comparison of actual speed with approximation by interval measurement");
 add_simple_plot(plot="PwIM_gaps", res="PwIM",
-                vars=[Var("inertia.phi", legend="Inertia position"),
+                vars=[Var("inertia1.phi", legend="Inertia position (inertia1.phi)"),
                       Var("intervalMeasure.next_phi", legend="Next forward angle"),
                       Var("intervalMeasure.prev_phi", legend="Next backward angle")],
                 title="Comparison of actual speed with approximation by interval measurement");
-add_case(["PlantWithPulseCounter"], stopTime=5, res="PwPC", tol=1e-6);
-add_simple_plot(plot="PwPC", vars=[Var("inertia.w", legend="Actual speed"),
-                                   Var("pulseCounter.w", legend="Measured speed")],
+add_case(["PlantWithIntervalMeasure"], stopTime=5, res="PwIMf", tol=1e-6,
+         mods={"intervalMeasure.teeth": 20});
+add_simple_plot(plot="PwIMf", vars=[Var("inertia1.w", legend="Actual speed (inertia1.w)"),
+                                    Var("intervalMeasure.w",
+                                        legend="Measured speed (intervalMeasure.w)")],
+                title="Comparison of actual speed with approximation by interval measurement");
+add_simple_plot(plot="PwIMf_gaps", res="PwIMf",
+                vars=[Var("inertia1.phi", legend="Inertia position (intertia1.phi)"),
+                      Var("intervalMeasure.next_phi", legend="Next forward angle"),
+                      Var("intervalMeasure.prev_phi", legend="Next backward angle")],
+                title="Comparison of actual speed with approximation by interval measurement");
+add_case(["PlantWithPulseCounter"], stopTime=5, res="PwPC", tol=1e-3);
+add_simple_plot(plot="PwPC", vars=[Var("inertia1.w", legend="Actual speed (inertia.w)"),
+                                   Var("pulseCounter.w",
+                                       legend="Measured speed (pulseCounter.w)")],
                 title="Comparison of actual speed with approximation by pulse counting");
 
 generate()
