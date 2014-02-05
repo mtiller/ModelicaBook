@@ -2,8 +2,10 @@ within ModelicaByExample.Components.Rotational.Components;
 model Inertia "A rotational inertia model"
   parameter Modelica.SIunits.Inertia J;
   extends ModelicaByExample.Components.Rotational.Interfaces.TwoFlange;
-  Modelica.SIunits.AngularVelocity w "Angular Velocity" annotation(Dialog(group="Initialization", showStartAttribute=true));
-  Modelica.SIunits.Angle phi "Angle" annotation(Dialog(group="Initialization", showStartAttribute=true));
+  Modelica.SIunits.AngularVelocity w "Angular Velocity"
+    annotation(Dialog(group="Initialization", showStartAttribute=true));
+  Modelica.SIunits.Angle phi "Angle"
+    annotation(Dialog(group="Initialization", showStartAttribute=true));
 equation
   phi = flange_a.phi;
   w = der(flange_a.phi) "velocity of inertia";

@@ -10,7 +10,7 @@ behavior using vectors.  Finally, we'll implement the same model
 again using enumerations.
 
 In all of our examples, we'll be building a model for `the following
-system of reactions <http://library.wolfram.com/examples/chemicalkinetics/>`:
+system of reactions <http://library.wolfram.com/examples/chemicalkinetics/>`_:
 
 .. math::
 
@@ -123,7 +123,7 @@ which can then be represented in Modelica as:
               k[1]*C[2],  -k[3]*C[3], -k[2]]*C;
 
 The drawback of this approach is that we have to constantly keep track
-of which index (*e.g.,* ``1``, ``2`` or ``3``) corresponds to which
+of which index (*e.g.,* ``1``, ``2``, or ``3``) corresponds to which
 species (*e.g.,* :math:`A`, :math:`B`, or :math:`X`).
 
 Using Enumerations

@@ -21,14 +21,23 @@ following syntax:
 
     Real x, y;
 
+A declaration can also be followed by a description, e.g.:
+
+.. code-block:: modelica
+
+    Real alpha "angular acceleration";
+
 .. _variability:
 
 Variability
 ^^^^^^^^^^^
 
+.. index:: ! parameter
+
 .. _parameters:
 
-.. index:: ! parameter
+Parameters
+~~~~~~~~~~
 
 By default, variables declared inside a model are assumed to be
 continuous variables (variables whose solution is generally smooth but
@@ -41,6 +50,9 @@ to time.
 
 .. index:: ! constant
 
+Constants
+~~~~~~~~~
+
 Closely related to the ``parameter`` qualifier is the ``constant``
 qualifier.  When placed in front of a variable declaration, the
 ``constant`` qualifier also implies that the value of the variable is
@@ -52,6 +64,9 @@ use of ``constant`` by a model developer ensures that end users are
 not given the option to make changes to the ``constant``.  A
 ``constant`` is frequently used to represent physical quantities like
 :math:`\pi` or the Earth's gravitational constant, which never change.
+
+Discrete Variables
+~~~~~~~~~~~~~~~~~~
 
 .. index:: discrete
 
@@ -427,6 +442,8 @@ variable is listed having the type ``Real`` it should be pointed out
 explicitly that attributes cannot themselves have attributes.  In
 other words, the ``start`` attribute doesn't have a ``start``
 attribute.
+
+.. _modifications:
 
 Modifications
 ^^^^^^^^^^^^^

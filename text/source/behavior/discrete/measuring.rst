@@ -7,12 +7,10 @@ Speed Measurement
 Baseline System
 ^^^^^^^^^^^^^^^
 
-.. todo:: basic-equations link missing
-
 There are many applications where we need to model the interaction
 between continuous behavior and discrete behavior.  For this section,
 we'll look at techniques used to measure the speed of a rotating
-shaft.  For our discussion here, we will reuse the :ref:`mechincal
+shaft.  For our discussion here, we will reuse the :ref:`mechanical
 example <mech-example>` we discussed previously in our discussion of
 :ref:`basic-equations`:
 

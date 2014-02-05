@@ -20,6 +20,8 @@ def findModel(*frags):
             match = True
             full = os.path.join(ent[0], f)
             rel = full[(len(path)+1):]
+            if rel[-3:]!=".mo":
+                continue
             modname = rel[:-3].replace("/",".")
             for rfrag in rfrags:
                 if len(rfrag.findall(modname))==0:
@@ -35,7 +37,7 @@ def findModel(*frags):
             print str(r)
         sys.exit(1)
 
-def add_case(frags, res, stopTime=1.0, tol=1e-3, ncp=500, mods={},
+def add_case(frags, res, stopTime=None, tol=1e-3, ncp=500, mods={},
              msl=False, ms=False, compfails=False, simfails=False):
     mod = findModel(*frags)
     if res in results:
@@ -148,7 +150,7 @@ if not compfails and cf==false then
   exit(1);
 end if;
     
-rec := simulate(%s, stopTime=%g, tolerance=%g, numberOfIntervals=%d, fileNamePrefix="%s", simflags="%s");
+rec := %s;
 getErrorString();
 rfile := rec.resultFile;
 simfails := %s;
@@ -159,6 +161,21 @@ else
   exit(0);
 end if;
 """
+
+def _simcmd(model_name, fileNamePrefix, outputFormat="mat", simflags=None,
+            stopTime=None, tolerance=None, numberOfIntervals=None):
+    ret = """simulate(%s, """ % (model_name,)
+    if stopTime:
+        ret = ret + """stopTime=%g, """ % (stopTime,)
+    if tolerance:
+        ret = ret + """tolerance=%g, """ % (tolerance,)
+    if numberOfIntervals:
+        ret = ret + """numberOfIntervals=%d, """ % (numberOfIntervals,)
+    if simflags:
+        ret = ret + """simflags="%s", """ % (simflags,)
+    ret = ret + """fileNamePrefix="%s", """ % (fileNamePrefix,)
+    ret = ret + """outputFormat="%s")""" % (outputFormat,)
+    return ret
 
 def _generate_makefile():
     with open(os.path.join(path, "text", "results", "Makefile"), "w+") as ofp:
@@ -178,8 +195,12 @@ def _generate_makefile():
             with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
                 simfails = "true" if data["simfails"] else "false"
                 compfails = "true" if data["compfails"] else "false"
-                args = (path, compfails, data["name"], data["stopTime"],
-                        data["tol"], data["ncp"], res, simflags, simfails)
+                simcmd = _simcmd(model_name=data["name"], fileNamePrefix=res,
+                                 simflags=simflags, stopTime=data["stopTime"],
+                                 tolerance=data["tol"], numberOfIntervals=data["ncp"])
+                #args = (path, compfails, data["name"], data["stopTime"],
+                #        data["tol"], data["ncp"], res, simflags, simfails)
+                args = (path, compfails, simcmd, simfails)
                 if data["ms"]:
                     sfp.write("loadModel(ModelicaServices);\n");
                 if data["msl"]:

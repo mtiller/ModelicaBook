@@ -4,9 +4,11 @@ model RegionalPopulation "Population of animals in a specific region"
       Free "No initial conditions",
       FixedPopulation "Specify initial population",
       SteadyState "Population initially in steady state");
-  parameter InitializationOptions init=InitializationOptions.Free annotation(choicesAllMatching=true);
+  parameter InitializationOptions init=InitializationOptions.Free
+    annotation(choicesAllMatching=true);
   parameter Real initial_population
-    annotation(Dialog(group="Initialization", enable=init==InitializationOptions.FixedPopulation));
+    annotation(Dialog(group="Initialization",
+    enable=init==InitializationOptions.FixedPopulation));
   Interfaces.Species species
     annotation (Placement(transformation(extent={{-10,90},{10,110}}),
         iconTransformation(extent={{-10,90},{10,110}})));
@@ -14,14 +16,14 @@ protected
   Real population(start=10) = species.population "Population in this region";
 initial equation
   if init==InitializationOptions.FixedPopulation then
-    species.population = initial_population;
+    population = initial_population;
   elseif init==InitializationOptions.SteadyState then
-    der(species.population) = 0;
+    der(population) = 0;
   else
   end if;
 equation
-  der(species.population) = species.rate;
-  assert(species.population>0, "Population must be greater than zero");
+  der(population) = species.rate;
+  assert(population>=0, "Population must be greater than zero");
   annotation (Diagram(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,127,0},

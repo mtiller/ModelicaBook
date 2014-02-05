@@ -1,5 +1,6 @@
 within ModelicaByExample.Components.Rotational.VerboseApproach;
 model Inertia "Rotational inertia without inheritance"
+  parameter Modelica.SIunits.Inertia J;
   parameter Modelica.SIunits.RotationalDampingConstant d;
   Modelica.Mechanics.Rotational.Interfaces.Flange_a flange_a
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
@@ -20,26 +21,32 @@ equation
 
   // Kinematic constraint (inertia is rigid)
   phi_rel = 0;
-  annotation (Icon(graphics={
-        Line(points={{-100,0},{-70,0}},color={0,0,0}),
+  annotation (Diagram(graphics), Icon(graphics={
         Rectangle(
-          extent={{-70,30},{20,-30}},
+          extent={{-100,10},{-50,-10}},
           lineColor={0,0,0},
-          fillColor={192,192,192},
-          fillPattern=FillPattern.Solid),
-        Line(points={{-70,30},{50,30}}, color={0,0,0}),
-        Line(points={{20,0},{80,0}}, color={0,0,0}),
-        Line(points={{-70,-30},{50,-30}}, color={0,0,0}),
+          fillPattern=FillPattern.HorizontalCylinder,
+          fillColor={192,192,192}),
+        Rectangle(
+          extent={{-50,50},{50,-50}},
+          lineColor={0,0,0},
+          fillPattern=FillPattern.HorizontalCylinder,
+          fillColor={192,192,192}),
+        Rectangle(
+          extent={{50,10},{100,-10}},
+          lineColor={0,0,0},
+          fillPattern=FillPattern.HorizontalCylinder,
+          fillColor={192,192,192}),
         Text(
-          extent={{-100,-40},{100,-80}},
+          extent={{-100,-50},{100,-90}},
           lineColor={0,0,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="%name"),
         Text(
-          extent={{-100,80},{100,40}},
+          extent={{-100,90},{100,50}},
           lineColor={0,0,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="d=%d")}));
+          textString="J=%J")}));
 end Inertia;

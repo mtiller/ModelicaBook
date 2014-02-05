@@ -168,5 +168,14 @@ results:
 	@echo "Generate results"
 	(cd results; make all tidy)
 
+docs:
+	@echo "Generate docs"
+	-rm -rf docs-dir
+	-mkdir docs-dir
+#       If you have issues here, make sure you can import OMPython
+#       and OMPythonIDL into the default python interpreter (doing
+#       a `export PYTHONPATH=...` if necessary.
+	(cd docs-dir; omc ../GenerateDoc.mos)
+
 server: dirhtml
 	(cd build/dirhtml; python -m SimpleHTTPServer)

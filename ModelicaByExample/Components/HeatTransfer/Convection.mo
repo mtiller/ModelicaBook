@@ -1,13 +1,14 @@
 within ModelicaByExample.Components.HeatTransfer;
-model Convection "Modeling convective cooling"
-  parameter Modelica.SIunits.ThermalConductance h;
+model Convection "Modeling convection between port_a and port_b"
+  parameter Modelica.SIunits.CoefficientOfHeatTransfer h;
+  parameter Modelica.SIunits.Area A;
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a port_a
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b port_b
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 equation
   port_a.Q_flow + port_b.Q_flow = 0 "Conservation of energy";
-  port_a.Q_flow = h*(port_a.T-port_b.T) "Heat transfer equation";
+  port_a.Q_flow = h*A*(port_a.T-port_b.T) "Heat transfer equation";
   annotation (Diagram(graphics), Icon(graphics={
         Rectangle(
           extent={{-100,100},{-40,-100}},
@@ -36,6 +37,12 @@ equation
           textString="%name"),
         Text(
           extent={{-100,140},{100,100}},
+          lineColor={0,0,255},
+          fillColor={255,170,170},
+          fillPattern=FillPattern.Solid,
+          textString="A=%A"),
+        Text(
+          extent={{-100,180},{100,140}},
           lineColor={0,0,255},
           fillColor={255,170,170},
           fillPattern=FillPattern.Solid,

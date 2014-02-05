@@ -185,3 +185,42 @@ equilibrium.
 This provides a glimpse of the initialization capablities in Modelica.
 More complete coverage of the initialization topic can be found in the
 :ref:`initialization` section later in this chapter.
+
+.. _experimental-conditions:
+
+Experimental Conditions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. index:: annotation
+.. index:: annotation; experiment
+
+When building a model, the model developer might wish to associate
+specific experimental conditions with the model.  This can be done
+using something called an ``annotation``.  An annotation includes
+information that is not directly related to the behavior of the model.
+
+For example, experimental conditions describe information like the
+start time of the simulation, the stop time, solution tolerance and so
+on.  This is not information about the behavior of the model itself,
+but rather information about how to approach simulating that behavior.
+Experimental conditions are stored in a model using a specific
+annotation called the ``experiment`` annotation.
+
+There are four pieces of information that can be specified in an
+experiment annotation.  All of them are optional.  The following is a
+model of our first order system that includes an experiment
+annotation:
+
+.. literalinclude:: /ModelicaByExample/BasicEquations/SimpleExample/FirstOrderExperiment.mo
+   :language: modelica
+   :lines: 2-
+   :emphasize-lines: 3
+
+The following trajectory was simulated using these experimental
+conditions:
+
+.. plot:: ../plots/FOE.py
+   :include-source: no
+
+The trajectory terminates at 8 seconds because the simulator used the
+``experiment`` annotation to determine how long to run the simulation.

@@ -1,4 +1,4 @@
-.. fluid-connectors:
+.. _fluid-connectors:
 
 Fluid Connectors
 ================
@@ -134,6 +134,6 @@ that:
 Note that this connector includes **two** variables that have the
 ``flow`` qualifier, ``m_dot`` and ``q``.  These represent the flow of
 mass and energy, respectively.  Each of these is paired with an across
-variable.  One of those across variables it the pressure, ``p``, just
+variable.  One of those across variables is the pressure, ``p``, just
 as we saw in the previous connectors in this section.  The other
 across variable, ``T``, is the temperature of the working fluid.

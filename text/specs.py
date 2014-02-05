@@ -18,6 +18,9 @@ add_compare_plot(plot="FOI",
                  res2="FO", v2=focvars,
                  title="Specifying (non-zero) Initial Conditions")
 
+add_case(["SimpleExample", "FirstOrderExperiment"], res="FOE")
+add_simple_plot(plot="FOE", vars=fovars, title="Simulation Using Experiment Annotation")
+
 fosvars = [Var("x", legend="x (FirstOrderSteady)")]
 add_case(["SimpleExample", "FirstOrderSteady"], stopTime=10, res="FOS")
 add_compare_plot(plot="FOS",
@@ -303,5 +306,95 @@ add_simple_plot(plot="NLEE", vars=[Var("y")],
 add_case(["ImplicitEvaluation"], stopTime=239.0, res="NLIE")
 add_simple_plot(plot="NLIE", vars=[Var("y")],
                 title="Inversion of a Quadratic Polynomial")
+
+# Heat transfer components
+add_case(["Adiabatic"], stopTime=1.0, res="HTA");
+add_simple_plot(plot="HTA", vars=[Var("cap.node.T")],
+                title="Thermal capacitance with no heat transfer")
+
+add_case(["CoolingToAmbient"], stopTime=1.0, res="HT_CTA");
+add_simple_plot(plot="HT_CTA", vars=[Var("cap.node.T")],
+                title="Thermal capacitance with convection")
+
+add_case(["Examples.Cooling$"], stopTime=1.0, res="HT_C");
+add_simple_plot(plot="HT_C", vars=[Var("cap.node.T")],
+                title="Thermal capacitance with convection")
+
+add_case(["ComplexNetwork"], stopTime=1.0, res="HT_CN");
+add_simple_plot(plot="HT_CN", vars=[Var("cap1.node.T"), Var("cap2.node.T")],
+                title="Thermal warmup of cap1 and cap2")
+
+# Rotational components
+smdvars = [Var("inertia1.phi", legend="Position of inertia 1 [rad]"),
+           Var("inertia2.phi", legend="Position of inertia 2 [rad]"),
+           Var("inertia1.w", legend="Velocity of inertia 1 [rad/s]"),
+           Var("inertia2.w", legend="Velocity of inertia 2 [rad/s]")]
+add_case(["Rotational\.Examples", "SMD$"], stopTime=5, res="SMD");
+add_simple_plot(plot="SMD", vars=smdvars,
+                title="Dual mass spring-mass-damper model");
+add_case(["Rotational\.Examples", "SMD_WithBacklash"], stopTime=5, res="SMD_WB");
+add_simple_plot(plot="SMD_WB", vars=smdvars,
+                title="Spring-mass-damper model including backlash");
+add_simple_plot(plot="SMD_WB_RT", vars=[Var("ground.flange_a.tau")], res="SMD_WB",
+                title="Reaction torque at mechanical ground");
+add_case(["Rotational\.Examples", "SMD_WithGroundedGear"], stopTime=5, res="SMD_GG");
+add_simple_plot(plot="SMD_GG", vars=[Var("inertia3.phi", legend="Position of inertia 3 [rad]"),
+                                     Var("inertia2.phi", legend="Position of inertia 2 [rad]"),
+                                     Var("inertia3.w", legend="Velocity of inertia 3 [rad/s]"),
+                                     Var("inertia2.w", legend="Velocity of inertia 2 [rad/s]")],
+                title="Dual mass spring-mass-damper model");
+add_case(["Rotational.\Examples", "SMD_GearComparison"], stopTime=2, res="SMD_GC");
+add_simple_plot(plot="SMD_GC_g", res="SMD_GC",
+                vars=[Var("inertia3.phi", legend="Position of inertia 3 [rad]"),
+                      Var("inertia1.phi", legend="Position of inertia 1 [rad]"),
+                      Var("inertia3.w", legend="Velocity of inertia 3 [rad/s]"),
+                      Var("inertia1.w", legend="Velocity of inertia 1 [rad/s]")],
+                title="Comparing explicitly and implicitly grounded gears");
+
+add_simple_plot(plot="SMD_GC_u", res="SMD_GC",
+                vars=[Var("inertia1.phi", legend="Position of inertia 1 [rad]"),
+                      Var("inertia5.phi", legend="Position of inertia 5 [rad]"),
+                      Var("inertia1.w", legend="Velocity of inertia 1 [rad/s]"),
+                      Var("inertia5.w", legend="Velocity of inertia 5 [rad/s]")],
+                title="Comparing grounded and ungrounded gears");
+add_case(["Rotational.\Examples", "SMD_ConfigurableGear"], stopTime=5, res="SMD_CG");
+add_simple_plot(plot="SMD_CG", vars=[Var("inertia4.phi", legend="Position of inertia 4 [rad]"),
+                                     Var("inertia1.phi", legend="Position of inertia 1 [rad]"),
+                                     Var("inertia4.w", legend="Velocity of inertia 4 [rad/s]"),
+                                     Var("inertia1.w", legend="Velocity of inertia 1 [rad/s]")],
+                title="Implicitly and explicitly grounded ConfigurableGear");
+
+# Lotka-Volterra (components)
+add_case(["ClassicLotkaVolterra"], stopTime=140, res="CLV");
+add_simple_plot(plot="CLV", vars=[Var("rabbits.population", legend="Rabbit Population"),
+                                  Var("foxes.population", legend="Fox Population")],
+                title="Component-Oriented Lotka-Volterra");
+add_case(["ThirdSpecies"], stopTime=140, res="ThirdS", tol=1e-3);
+add_simple_plot(plot="ThirdS", vars=[Var("rabbits.population", legend="Rabbit Population"),
+                                     Var("foxes.population", legend="Fox Population"),
+                                     Var("wolves.population", legend="Wolf Population")],
+                title="Interactions between rabbits, foxes and wolves");
+add_case(["ThreeSpecies"], stopTime=140, res="ThreeS", tol=1e-3);
+add_simple_plot(plot="ThreeS", vars=[Var("rabbits.population", legend="Rabbit Population"),
+                                     Var("foxes.population", legend="Fox Population"),
+                                     Var("wolves.population", legend="Wolf Population")],
+                title="Equilibriums for rabbits, foxes and wolves");
+
+# Speed measurement
+add_case(["SpeedMeasurement", "Plant$"], stopTime=5, res="PBase", tol=1e-6);
+add_simple_plot(plot="PBase", vars=[Var("inertia.w", legend="Actual speed")],
+                title="Baseline plant response");
+add_case(["PlantWithSampleHold"], stopTime=5, res="PwSH", tol=1e-6);
+add_simple_plot(plot="PwSH", vars=[Var("inertia.w", legend="Actual speed"),
+                                   Var("sampleHold.w", legend="Measured speed")],
+                title="Comparison of actual speed with sampled speed");
+add_case(["PlantWithIntervalMeasure"], stopTime=5, res="PwIM", tol=1e-6);
+add_simple_plot(plot="PwIM", vars=[Var("inertia.w", legend="Actual speed"),
+                                   Var("intervalMeasure.w", legend="Measured speed")],
+                title="Comparison of actual speed with approximation by interval measurement");
+add_case(["PlantWithPulseCounter"], stopTime=5, res="PwPC", tol=1e-6);
+add_simple_plot(plot="PwPC", vars=[Var("inertia.w", legend="Actual speed"),
+                                   Var("pulseCounter.w", legend="Measured speed")],
+                title="Comparison of actual speed with approximation by pulse counting");
 
 generate()

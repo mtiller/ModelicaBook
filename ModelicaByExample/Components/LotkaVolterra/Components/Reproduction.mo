@@ -1,7 +1,7 @@
 within ModelicaByExample.Components.LotkaVolterra.Components;
 model Reproduction "Model of reproduction"
   extends Interfaces.SinkOrSource;
-  parameter Real alpha "Birth rate";
+  parameter Real alpha "Birth rate proportionality constant";
 equation
   growth = alpha*species.population "Growth is proporational to population";
   annotation (Diagram(graphics), Icon(graphics={

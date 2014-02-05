@@ -1,5 +1,5 @@
 within ModelicaByExample.Components.Rotational.Interfaces;
-model Compliant "A compliant rotational component"
+partial model Compliant "A compliant rotational component"
   extends ModelicaByExample.Components.Rotational.Interfaces.TwoFlange;
 protected
   Modelica.SIunits.Torque tau;

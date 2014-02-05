@@ -10,5 +10,4 @@ protected
   Modelica.SIunits.Angle phi_rel;
 equation
   phi_rel = flange_a.phi-flange_b.phi;
-  annotation (Diagram(graphics));
 end TwoFlange;
