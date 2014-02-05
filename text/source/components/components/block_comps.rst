@@ -191,9 +191,16 @@ When rendered, the block looks like this:
 ``Feedback``
 ~~~~~~~~~~~~
 
+The ``Feedback`` block differs from the previous blocks because it
+doesn't extend from any definitions in the Modelica Standard Library.
+Instead, it explicitly declares all of the connectors it uses:
+
 .. literalinclude:: /ModelicaByExample/Components/BlockDiagrams/Components/Feedback.mo
    :language: modelica
    :lines: 1-12,46
+
+The output of the ``Feedback`` block is the difference between the two
+``input`` signals ``u1`` and ``u2``.
 
 When rendered, the block looks like this:
 
@@ -203,9 +210,13 @@ When rendered, the block looks like this:
    :alt: Gain Block
    :figclass: align-center
 
-
 ``Integrator``
 ~~~~~~~~~~~~~~
+
+The ``Integrator`` block is another ``SISO`` block that integrates the
+input signal, ``u``, to compute the output signal, ``y``.  Since this
+``block`` performs an integral, it requires an initial condition which
+is specified using the parameter ``y0``:
 
 .. literalinclude:: /ModelicaByExample/Components/BlockDiagrams/Components/Integrator.mo
    :language: modelica
@@ -218,7 +229,6 @@ When rendered, the block looks like this:
    :align: center
    :alt: Gain Block
    :figclass: align-center
-
 
 Systems
 ^^^^^^^
