@@ -201,10 +201,10 @@ In this plot, we can clearly see how relatively low speeds and speed
 reversals create irregular events that introduce significant
 estimation error.
 
-.. _counting:
+.. _pulse-counting:
 
-Counting
-^^^^^^^^
+Pulse Counting
+^^^^^^^^^^^^^^
 
 The interval measuring technique mentioned above requires hardware
 that can perform speed calculations on hardware interrupts.  Another
