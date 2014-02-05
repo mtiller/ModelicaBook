@@ -53,13 +53,13 @@ parameter ``T0``.
 The other equation is the differential equation that governs the
 behavior of ``T``.  Mathematically, we could express this equation as:
 
-.. math:: m c_p \dot{T} = h (T_{\infty}-T)
+.. math:: m c_p \dot{T} = h A (T_{\infty}-T)
 
 but in Modelica, we write it as:
 
 .. code-block:: modelica
 
-    m*c_p*der(T) = h*(T_inf-T)
+    m*c_p*der(T) = h*A*(T_inf-T)
 
 Note that this is really no different than the equation we saw in our
 ``FirstOrder`` model from the :ref:`first-order` example.
