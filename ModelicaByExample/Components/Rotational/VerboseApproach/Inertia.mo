@@ -1,7 +1,6 @@
 within ModelicaByExample.Components.Rotational.VerboseApproach;
 model Inertia "Rotational inertia without inheritance"
   parameter Modelica.SIunits.Inertia J;
-  parameter Modelica.SIunits.RotationalDampingConstant d;
   Modelica.Mechanics.Rotational.Interfaces.Flange_a flange_a
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   Modelica.Mechanics.Rotational.Interfaces.Flange_b flange_b

@@ -435,6 +435,7 @@ Part 3 - Advanced Topics:
         - version
         - uses
   Creating Template Models:
+    # Riff off of the SMD model presented in the section on propagation
   Handling Data:
   Testing:
   Symbolic manipulation:
