@@ -351,8 +351,8 @@ Part 2 - Components:
       Annotations:
         - Icon
         - Documentation
-        # Include "showStartAttribute" in Dialog discussion
         - Dialog
+        # Include "showStartAttribute" in Dialog discussion
         - Documentation
         - DynamicSelect
         - defaultComponentName
