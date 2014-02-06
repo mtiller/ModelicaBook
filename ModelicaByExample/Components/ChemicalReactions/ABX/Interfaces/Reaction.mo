@@ -10,5 +10,4 @@ protected
 equation
   consumed = -produced;
   mixture.R = consumed;
-  annotation (Diagram(graphics));
 end Reaction;

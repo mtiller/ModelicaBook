@@ -435,5 +435,12 @@ add_compare_plot(plot="MDC_heat", legloc="upper right",
                                         legend="Heat (high-gain scenario)")],
                  title="Comparison of required actuator heat output")
 
+# Chemical components
+abxvars = [Var("solution.C[ModelicaByExample.Components.ChemicalReactions.ABX.Species.X]",
+               legend="X")]
+add_case(["ABX_System"], stopTime=10.0, res="ABX", tol=1e-3);
+add_simple_plot(plot="ABX",
+                vars=abxvars,
+                title="Concentrations of A, B and X");
 
 generate()

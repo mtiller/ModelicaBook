@@ -1,10 +1,8 @@
 within ModelicaByExample.Components.ChemicalReactions.ABX;
 package Components "Component models for chemical reactions"
-
-
   model 'A+B->X' "A+B -> X"
     extends Interfaces.Reaction;
-protected
+  protected
     Interfaces.ConcentrationRate R = k*C[Species.A]*C[Species.B];
   equation
     consumed[Species.A] = R;
@@ -12,10 +10,9 @@ protected
     produced[Species.X] = R;
   end 'A+B->X';
 
-
   model 'A+B<-X' "A+B <- X"
     extends Interfaces.Reaction;
-protected
+  protected
     Interfaces.ConcentrationRate R = k*C[Species.X];
   equation
     produced[Species.A] = R;
@@ -23,10 +20,9 @@ protected
     consumed[Species.X] = R;
   end 'A+B<-X';
 
-
   model 'X+B->R+S' "X+B->R+S"
     extends Interfaces.Reaction;
-protected
+  protected
     Interfaces.ConcentrationRate R = k*C[Species.B]*C[Species.X];
   equation
     consumed[Species.A] = 0;

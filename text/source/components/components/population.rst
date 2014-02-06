@@ -175,6 +175,7 @@ system model, its icon will look like this:
    :height: 200px
    :align: center
 
+.. _reproduction-component:
 
 Reproduction
 ~~~~~~~~~~~~
