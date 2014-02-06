@@ -62,21 +62,208 @@ Accounting
 
 The other advantage of acausal modeling is the amount of automatic
 "accounting" performed with acausal modeling.  To understand exactly
-what accounting is performed, let's consider the following electrical
-``connector``:
+what accounting is performed, let's consider the following rotational
+``connector`` definitions from the Modelica Standard Library:
 
-.. literalinclude:: /ModelicaByExample/Connectors/SimpleDomains.mo
-   :language: modelica
-   :lines: 3-6
+.. code-block:: modelica
+
+    connector Flange_a "1-dim. rotational flange of a shaft (filled square icon)"
+      Modelica.SIunits.Angle phi "Absolute rotation angle of flange";
+      flow Modelica.SIunits.Torque tau "Cut torque in the flange";
+      annotation(Icon(/* Filled gray circle */));
+    end Flange_a;
+
+    connector Flange_b "1-dim. rotational flange of a shaft (filled square icon)"
+      Modelica.SIunits.Angle phi "Absolute rotation angle of flange";
+      flow Modelica.SIunits.Torque tau "Cut torque in the flange";
+      annotation(Icon(/* Gray circular outline */));
+    end Flange_b;
 
 As we've discussed previously, an acausal connector includes two
 different types of variables, across variables and through variables.
 The through variable is indicated by the presence of the ``flow``
-qualifier.
+qualifier.  In the case of the ``Rotational`` connector, the across
+variable is ``phi``, the angular position, and the through variable is
+``tau``, the torque.
 
-* connection sets
+.. index:: connection set
 
-* generated equations
+Before we can get into the details of the accounting performed by the
+compiler, we need to introduce the concept of a *connection set*.  To
+demonstrate what a connection set is, consider the following
+schematic:
+
+.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD.svg
+   :width: 100%
+   :align: center
+   :alt: 
+
+Note that there are 8 connections in this model:
+
+.. code-block:: modelica
+
+    equation
+      connect(ground.flange_a, damper2.flange_b);
+      connect(ground.flange_a, spring2.flange_b);
+      connect(damper2.flange_a, inertia2.flange_b);
+      connect(spring2.flange_a, inertia2.flange_b);
+      connect(inertia2.flange_a, damper1.flange_b);
+      connect(inertia2.flange_a, spring1.flange_b);
+      connect(damper1.flange_a, inertia1.flange_b);
+      connect(spring1.flange_a, inertia1.flange_b);
+
+If two connect statements have one connector in common, **they belong
+to the same connection set**.  If a connector is not connected to any
+other connectors, then it belongs to a connection set that includes
+only itself.  Using this rule, we can organize the connectors into
+connection sets as follows:
+
+  * Connection Set #1
+
+    * ``ground.flange_a``
+    * ``damper2.flange_b``
+    * ``spring2.flange_b``
+
+  * Connection Set #2
+
+    * ``damper2.flange_a``
+    * ``spring2.flange_a``
+    * ``inertia2.flange_b``
+
+  * Connection Set #3
+
+    * ``inertia2.flange_a``
+    * ``damper1.flange_b``
+    * ``spring1.flange_b``
+
+  * Connection Set #4
+
+    * ``inertia1.flange_b``
+    * ``damper1.flange_a``
+    * ``spring1.flange_a``
+
+  * Connection Set #5
+
+    * ``inertia1.flange_a``
+
+Note that these connection sets appear from right to left in the
+diagram.  It may be useful to take the time to match the connectors in
+the diagram with those listed in the connection sets to understand
+what a connection set intuitively is.  Note that the ``flange_a``
+connectors are filled circles whereas the ``flange_b`` ones are only
+outlined.
+
+This is where the "accounting" starts.  For each connection **set**,
+special equations are automatically generated.  The first set of
+automatic equations are related to the across variables.  We need to
+impose the constraint, mathematically speaking, that all across
+variables must have the same value.  Furthermore, we also introduce an
+equation that states that the sum of all through variables in the
+connection set must sum to zero.
+
+In the case of the connection sets above, the following equations will
+be automatically generated:
+
+.. code-block:: modelica
+
+    // Connection Set #1
+    //   Equality Equations:
+    ground.flange_a.phi = damper2.flange_b;
+    damper2.flange_b.phi = spring2.flange_b;
+    //   Conservation Equation:
+    ground.flange_a.tau + damper2.flange_b.tau + spring2.flange_b.tau = 0;
+
+    // Connection Set #2
+    //   Equality Equations:
+    damper2.flange_a.phi = spring2.flange_a.phi;
+    spring2.flange_a.phi = inertia2.flange_b.phi;
+    //   Conservation Equation:
+    damper2.flange_a.tau + spring2.flange_a.tau + inertia2.flange_b.tau = 0;
+
+    // Connection Set #3
+    //   Equality Equations:
+    inertia2.flange_a.phi = damper1.flange_b.phi;
+    damper1.flange_b.phi = spring1.flange_b.phi;
+    //   Conservation Equation:
+    inertia2.flange_a.tau + damper1.flange_b.tau + spring1.flange_b.tau = 0;
+
+    // Connection Set #4
+    //   Equality Equations:
+    inertia1.flange_b.phi = damper1.flange_a.phi;
+    damper1.flange_a.phi = spring1.flange_a.phi;
+    //   Conservation Equation:
+    inertia1.flange_b.tau + damper1.flange_a.tau + spring1.flange_a.tau = 0;
+
+    // Connection Set #5
+    //   Equality Equations: NONE
+    //   Conservation Equation:
+    inertia1.flange_a.tau = 0;
+
+Note that for an empty connection set (*i.e.,* Connection Set #5),
+there is only one across variable in the set, so no equality equations
+are generated.  The conservation equation is still generated but it
+contains only one term.  So it amounts to a statement that nothing can
+flow out of an unconnected connector.  This makes intuitive physical
+sense as well.
+
+What does all this mean physically?  In the case of an electrical
+connection this implies that each connection can be treated as a
+"perfect short" between the connectors.  In the case of a mechanical
+system, connections are treated as perfectly rigid shafts with zero
+inertia.  The bottom line is that a connection means that the across
+variables on each connector will be equal and that any conserved
+quantity that leaves one component must enter another one.  Nothing
+can get lost or stored between components.
+
+There are two important consequences to these equations.  The first is
+that the ``flow`` variable is automatically conserved.  Typical
+``flow`` variables are current, torque, mass flow rate, etc.  Since
+these are all the time derivative of a conserved quantity (*i.e.,*
+charge, angular momentum and mass, respectively), such equations are
+automatically conserving these quantities.
+
+But something else is being implicitly conserved as well.
+Specifically, **we can ensure that energy is conserved** as well.  For
+all of these domains, the power flow through a connector can be
+represented by the product of the through variable and either the
+across variable or a derivative of the across variable.  As a result,
+for each domain we can easily derive a power conservation equation
+from the equations automatically generated for the connection set.
+From our example above, we know that in the first connection set we
+have the following equations:
+
+.. code-block:: modelica
+
+    ground.flange_a.phi = damper2.flange_b;
+    damper2.flange_b.phi = spring2.flange_b;
+    ground.flange_a.tau + damper2.flange_b.tau + spring2.flange_b.tau = 0;
+
+If we multiply the last equation by ``der(ground.flange_a.phi)``, the
+angular velocity of the ``ground.flange_a`` connector, we get:
+
+.. code-block:: modelica
+
+    der(ground.flange_a.phi)*ground.flange_a.tau
+    + der(ground.flange_a.phi)*damper2.flange_b.tau
+    + der(ground.flange_a.phi)*spring2.flange_b.tau = 0;
+
+However, we also know that all the across variables in the connection
+set are equal.  As a result, their derivatives must also be equal.
+This means that we can substitute any on of them for another.  Making
+two such substitutions gets us:
+
+    der(ground.flange_a.phi)*ground.flange_a.tau
+    + der(damper2.flange_b.phi)*damper2.flange_b.tau
+    + der(spring2.flange_b.phi)*spring2.flange_b.tau = 0;
+
+The first term in the equation above is the power flowing into the
+``ground`` component through ``flange_a``.  The second term is the
+power flowing into the ``damper2`` component through ``flange_b``.
+The last term is the power flowing into the ``spring2`` component
+through ``flange_b``.  Since these represent the power flowing through
+all connectors in the connection set, this implies that power is
+conserved by that connection set (*i.e.,* all power that flows out of
+one component must flow into another, nothing is lost or stored).
 
 
 .. _flow-signs:

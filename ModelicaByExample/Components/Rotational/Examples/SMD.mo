@@ -56,5 +56,4 @@ equation
       points={{-50,-20},{-60,-20},{-60,0},{-70,0}},
       color={0,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end SMD;
