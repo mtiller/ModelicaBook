@@ -57,8 +57,15 @@ requiring special tools or editors in each case, all of these
 different domains and formalisms can be freely combined in Modelica as
 appropriate.
 
+.. _default-flow:
+
+.. _flow-signs:
+
 Accounting
 ~~~~~~~~~~
+
+Connectors
+++++++++++
 
 The other advantage of acausal modeling is the amount of automatic
 "accounting" performed with acausal modeling.  To understand exactly
@@ -86,7 +93,24 @@ qualifier.  In the case of the ``Rotational`` connector, the across
 variable is ``phi``, the angular position, and the through variable is
 ``tau``, the torque.
 
+Sign Convections
+++++++++++++++++
+
+Also recall from our previous discussion that Modelica models should
+observe the following convention: a positive value for the ``flow``
+variable on a connector represents the flow of that quantity **into**
+the component that the connector is connected to.  This is an
+important sign convention not only because it make sure all the
+accounting is correct, but it also helps with composability as well by
+allowing (inherently symmetric) components like springs, dampers,
+*etc.* to be flipped over and still function identically.
+
 .. index:: connection set
+
+.. _connection-sets:
+
+Connection Sets
++++++++++++++++
 
 Before we can get into the details of the accounting performed by the
 compiler, we need to introduce the concept of a *connection set*.  To
@@ -153,6 +177,9 @@ what a connection set intuitively is.  Note that the ``flange_a``
 connectors are filled circles whereas the ``flange_b`` ones are only
 outlined.
 
+Generated Equations
++++++++++++++++++++
+
 This is where the "accounting" starts.  For each connection **set**,
 special equations are automatically generated.  The first set of
 automatic equations are related to the across variables.  We need to
@@ -215,6 +242,9 @@ variables on each connector will be equal and that any conserved
 quantity that leaves one component must enter another one.  Nothing
 can get lost or stored between components.
 
+Conservation
+++++++++++++
+
 There are two important consequences to these equations.  The first is
 that the ``flow`` variable is automatically conserved.  Typical
 ``flow`` variables are current, torque, mass flow rate, etc.  Since
@@ -252,6 +282,8 @@ set are equal.  As a result, their derivatives must also be equal.
 This means that we can substitute any on of them for another.  Making
 two such substitutions gets us:
 
+.. code-block:: modelica
+
     der(ground.flange_a.phi)*ground.flange_a.tau
     + der(damper2.flange_b.phi)*damper2.flange_b.tau
     + der(spring2.flange_b.phi)*spring2.flange_b.tau = 0;
@@ -265,18 +297,8 @@ all connectors in the connection set, this implies that power is
 conserved by that connection set (*i.e.,* all power that flows out of
 one component must flow into another, nothing is lost or stored).
 
-
-.. _flow-signs:
-
-Sign Conventions for ``flow`` Variables
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. _default-flow:
-
-Default ``flow`` Equations
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Sign convention
+Balanced Components
++++++++++++++++++++
 
 * Number of equations per component
 
