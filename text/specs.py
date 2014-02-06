@@ -416,4 +416,9 @@ add_simple_plot(plot="PwPC", vars=[Var("inertia1.w", legend="Actual speed (inert
                                        legend="Measured speed (pulseCounter.w)")],
                 title="Comparison of actual speed with approximation by pulse counting");
 
+# Block diagrams
+add_case(["BlockDiagrams", "NewtonCooling"], stopTime=1.0, res="BNC", tol=1e-3);
+add_simple_plot(plot="BNC", vars=[Var("T.y", legend="Temperature (T.y)")],
+                title="Temperature solution");
+
 generate()

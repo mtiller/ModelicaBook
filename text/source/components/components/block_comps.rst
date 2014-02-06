@@ -232,3 +232,43 @@ When rendered, the block looks like this:
 
 Systems
 ^^^^^^^
+
+Now that we've created this assortment of blocks, we'll explore how
+they can be used to model a couple of example systems.  As we'll see,
+the suitability of causal ``block`` components varies from application
+to application.
+
+Cooling Example
+~~~~~~~~~~~~~~~
+
+The first system that we will model using our ``block`` definitions is
+the heat transfer example we presented :ref:`earlier in this chapter
+<heat-transfer-components>`.  However this time, instead of using
+acausal components to build our model, we'll build it up in terms of
+the mathematical operations associated with our ``block`` definitions.
+
+Since these blocks represent mathematical operations, let us first
+revisit the equation associated with this example:
+
+.. math:: m c_p \dot{T} = h (T_{\infty}-T)
+
+The following block diagram will solve for the temperature profile,
+:math:`T`:
+
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Examples/NewtonCooling.svg
+   :width: 100%
+   :align: center
+   :alt: Gain Block
+   :figclass: align-center
+
+The Modelica source code for this example is:
+
+.. literalinclude:: /ModelicaByExample/Components/BlockDiagrams/Examples/NewtonCooling.mo
+   :language: modelica
+
+The temperature, :math:`T`, is represented in this model by the
+variable ``T.y``.  Simulating this system, we get the following
+solution for the temperature:
+
+.. plot:: ../plots/BNC.py
+   :include-source: no
