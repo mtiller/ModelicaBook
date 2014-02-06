@@ -47,7 +47,7 @@ Acausal Variables
 In our discussion of :ref:`simple-domains` and
 :ref:`fluid-connectors`, we saw numerous examples of ``connector``
 definitions that included through and across variables.  These
-variables always occured in pairs with the through variable being
+variables always occurred in pairs with the through variable being
 prefixed by the ``flow`` qualifier while the across variable had not
 qualifier associated with it.
 
