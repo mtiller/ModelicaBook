@@ -1,4 +1,4 @@
-.. _chem-components:
+o.. _chem-components:
 
 Chemical Components
 -------------------
@@ -91,9 +91,19 @@ turns one molecule of ``A`` and one molecule of ``B`` into one
 molecule of ``X``.  Using the ``Reaction`` model, we can model this
 reaction as follows:
 
-.. literalinclude:: /ModelicaByExample/Components/ChemicalReactions/ABX/package.mo
-   :language: modelica
-   :lines: 3-11
+.. todo:: Tweak pygments to work with single quoted names
+
+.. code-block:: modelica
+
+    model 'A+B->X' "A+B -> X"
+      extends Interfaces.Reaction;
+    protected
+      Interfaces.ConcentrationRate R = k*C[Species.A]*C[Species.B];
+    equation
+      consumed[Species.A] = R;
+      consumed[Species.B] = R;
+      produced[Species.X] = R;
+    end 'A+B->X';
 
 The first thing to note about this model is that it is composed of
 non-alphanumeric characters.  Specifically, the name of this model
@@ -112,9 +122,17 @@ The next reaction we will consider is one that takes one molecule of
 molecule of ``B``.  This is the reverse of the previous reaction.  The
 Modelica code for this reaction would be:
 
-.. literalinclude:: /ModelicaByExample/Components/ChemicalReactions/ABX/package.mo
-   :language: modelica
-   :lines: 13-21
+.. code-block:: modelica
+
+    model 'A+B<-X' "A+B <- X"
+      extends Interfaces.Reaction;
+    protected
+      Interfaces.ConcentrationRate R = k*C[Species.X];
+    equation
+      produced[Species.A] = R;
+      produced[Species.B] = R;
+      consumed[Species.X] = R;
+    end 'A+B<-X';
 
 Again, the equations convey clearly which species are reactants
 (*i.e.,* are consumed in the reaction) and which are the products
@@ -126,9 +144,17 @@ Again, the equations convey clearly which species are reactants
 Finally, our last reaction converts molecules of ``X`` and ``B`` into
 molecules of ``R`` and ``S``:
 
-.. literalinclude:: /ModelicaByExample/Components/ChemicalReactions/ABX/package.mo
-   :language: modelica
-   :lines: 23-31
+.. code-block:: modelica
+
+    model 'X+B->R+S' "X+B->R+S"
+      extends Interfaces.Reaction;
+    protected
+      Interfaces.ConcentrationRate R = k*C[Species.B]*C[Species.X];
+    equation
+      consumed[Species.A] = 0;
+      consumed[Species.B] = R;
+      consumed[Species.X] = R;
+    end 'X+B->R+S';
 
 We do not track the concentration of the ``R`` and ``S`` species since
 they are simply byproducts and do not participate in any other
@@ -154,7 +180,32 @@ connector.
 Simulating this system for 10 seconds yields the following
 concentration trajectories:
 
-.. plot:: ../plots/ABX.py
-   :include-source: no
+.. todo:: Fix the model that should generate the following plot
 
+.. comment::
 
+    .. plot:: ../plots/ABX.py
+       :include-source: no
+
+Conclusion
+^^^^^^^^^^
+
+From our earlier discussion of this chemical system, you may recall
+that the resulting system of equations was:
+
+.. math::
+
+    \frac{\mathrm{d}[A]}{\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] \\
+    \frac{\mathrm{d}[B]}{\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] -k_3 [B] [X] \\
+    \frac{\mathrm{d}[X]}{\mathrm{d}t} &= k_1 [A] [B] - k_2 [X] -k_3 [B] [X]
+
+Each equation represents the accumulation of a particular species and
+each term on the right hand side of those equations is computing the
+net flow of that particular species into the control volume.
+Constructing this system by hand for even a relatively small number of
+participating species is rife with opportunities to introduce errors.
+By using a component oriented approach instead, we never had to
+assemble such a system of equations.  As a result, these equations
+were generated automatically.  By automating this process, we can
+avoid many potential errors and the time required to identify and fix
+them.
