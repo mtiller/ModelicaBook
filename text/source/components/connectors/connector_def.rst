@@ -41,6 +41,8 @@ expected to be computed internally (and then transmitted to other
 components), it should have the ``output`` qualifier associated with
 it.
 
+.. _acausal-vars:
+
 Acausal Variables
 ^^^^^^^^^^^^^^^^^
 

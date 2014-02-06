@@ -19,7 +19,7 @@ We'll start with a discussion about acausal modeling.  We touched on
 this topic very briefly in the chapter on :ref:`connectors`.  Here we
 will provide a more comprehensive discussion about acausal modeling.
 
-Composibility
+Composability
 ~~~~~~~~~~~~~
 
 There are two very big advantages to acausal modeling.  The first is
@@ -297,10 +297,77 @@ all connectors in the connection set, this implies that power is
 conserved by that connection set (*i.e.,* all power that flows out of
 one component must flow into another, nothing is lost or stored).
 
+.. _balanced-components:
+
 Balanced Components
 +++++++++++++++++++
 
-* Number of equations per component
+.. index:: balanced models
+.. index:: models; balanced
+.. index:: models; equations; number
+
+If we look carefully at the previous discussion on equations generated
+involving acausal variables in connection sets, we'll see something
+very interesting.  But to see it, we first need to review a few things
+we've learned about connectors and connector sets:
+
+  1. A connection can only belong to one connection set.
+  2. As we learned in our previous discussion on :ref:`acausal-vars`,
+     for every through variable in a connector (*i.e.,* a variable
+     declared with the ``flow`` qualifier), there must be a matching
+     across variable (*i.e.,* a variable without any qualifier).
+  3. The number of equations generated in a connection set is equal to
+     the number of connectors in the connection set multiplied by the
+     number of through-across pairs in the connector.
+
+Remember that acausal variables come in pairs.  Equations for half of
+those variables (one per pair) will be generated automatically via
+connections.  That means the remaining half of the equations must come
+from the component models themselves.
+
+Keep in mind that this discussion is focused only on acausal variables
+in connectors.  We also need to take into account two other cases:
+
+  1. Variables declared within a component model (as opposed to on a
+     connector).
+  2. Causal variables on connectors (*i.e.,* those qualified by either
+     ``input`` or ``output``).
+
+Modelica requires that any non-``partial`` model be balanced.  But
+what does that mean?  It means that the component should provide the
+proper number of equations (no more than necessary, no less than
+necessary).  The question is how to compute the number of equations
+required?
+
+We already have a start based on our discussion about acausal
+variables.  Since half of the equations needed for acausal variables
+come from generated equations, the other half must come from within
+component models containing these connectors.  Specifically, the
+component must provide one equation for every through-across pair in
+each of its connectors.  In addition, it should also provide one
+equation for every variable on its connectors that has the ``output``
+qualifier (note, the component does not have to provide equations for
+any variables on its connectors with the ``input`` qualifier).  The
+rationale here is that a component can assume that all ``input``
+signals are known (specified externally) and that it is responsible
+for computing any ``output`` signals it advertises.  Finally, any
+(non-``parameter``) variable declared within the component must also
+have an equation.
+
+In summary, the number of equations that a component must provide is
+the sum of:
+
+  1. The number of through-across pairs across all its connectors
+  2. The number of non-``parameter`` variables declared in the
+     component model.
+  3. The number of ``output`` variables across all its connectors.
+
+Note that these equations can (and frequently do) originate in a
+``partial`` model that is inherited.
+
+If the number of equations provided by a component equals the number
+of equations required, then the component model is said to be
+**balanced**.
 
 Component Definitions
 ^^^^^^^^^^^^^^^^^^^^^

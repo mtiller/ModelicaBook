@@ -316,6 +316,8 @@ the temperatures on either end.
     (*e.g.,* ``protected`` variables).  The upcoming section on
     :ref:`model-comps` will provide a more comprehensive discussion on
     determining how many equations a component requires.
+    Specifically, it will provide guidance on how to build so-called
+    :ref:`balanced-components`.
 
 .. _amb-cond:
 
