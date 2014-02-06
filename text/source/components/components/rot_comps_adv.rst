@@ -309,6 +309,7 @@ wasn't.  This is clearly demonstrated in the following plot:
 
 .. todo:: Tune system to demonstrate a more remarkable difference
 
+.. _optional-ground-connector:
 
 Optional Ground Connector
 ^^^^^^^^^^^^^^^^^^^^^^^^^

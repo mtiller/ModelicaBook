@@ -372,8 +372,127 @@ of equations required, then the component model is said to be
 Component Definitions
 ^^^^^^^^^^^^^^^^^^^^^
 
-* Discuss input, output, record, model, block
+In this chapter we've discussed how to create component models.
+Fundamentally, nothing has changed since we first discussed what a
+:ref:`model-definition` should include.  But it is worth emphasizing a
+few things about component models.
 
-* assertions and model boundaries
+Blocks
+~~~~~~
 
-* Conditional components
+.. index:: block
+
+First, in the discussion on :ref:`block-components` we introduced the
+idea of a ``block``.  A ``block`` is a special kind of ``model`` where
+the connectors contain only ``input`` and ``output`` signals.
+
+Conditional Variables/Connectors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Another thing we saw in our discussion of the
+:ref:`optional-ground-connector` was the ability to make a declaration
+conditional.  The expression on which the conditional declaration
+depends cannot change as a function of time (*i.e.,* the variable
+cannot appear and disappear during the simulation).  Instead, it must
+be a function of parameters and constants so that the compiler or
+simulation runtime can determine whether the variable should be
+present prior to simulation.  As we saw, the syntax for such a
+declaration is:
+
+.. code-block:: modelica
+
+    VariableType variableName(/* modifications /*) if conditional_expression;
+
+In other words, by including the ``if`` keyword and a conditional
+expression immediately after the name of the variable (and any
+modifications that are applied to the variable), we can make the
+declaration of that variable conditional.  When the conditional
+expression is ``true``, the conditional variable will be present.
+When it is ``false``, it will not be present.
+
+Model Limitations
+~~~~~~~~~~~~~~~~~
+
+.. _assertions:
+
+``assert``
+++++++++++
+
+.. index:: ! assert
+
+To understand how to enforce model limitations, we must first explain
+the ``assert`` function.  The syntax of a call to the ``assert``
+function is:
+
+.. code-block:: modelica
+
+    assert(conditional_expression, "Explanation of failure", assertLevel);
+
+where ``conditional_expression`` is an expression that yields either
+``true`` or ``false``.  A value of ``false`` indicates a failure of
+the assertion.  We'll discuss the consequences of that momentarily.
+The second argument must be a ``String`` that describes the reason
+that the assertion failed.  The last argument, ``assertLevel``, is of
+type ``AssertionLevel`` (which was defined in our previous discussion
+on ``enumerations``).  This last argument is **optional** and has the
+default value of ``AssertionalLevel.error``.
+
+Now that we know how to use the ``assert`` function, let's examine the
+consequences of assertions during simulation to understand why they
+are important.
+
+Defining Model Limitations
+++++++++++++++++++++++++++
+
+.. index:: model limitations
+.. index:: assert
+.. index:: assertions
+
+When creating a component ``model`` (or any ``model``, for that
+matter), it is useful to incorporate any limitations on the equations
+in a model by including them directly in the model.  This is done by
+adding ``assert`` calls in either the ``equation`` or ``algorithm``
+section.  As their name implies, these assertions assert that certain
+conditions must always be true.
+
+If the equations within a model are only accurate or applicable under
+certain conditions, it is essential that these conditions be included
+in the model via assertions.  Otherwise, the model may silently yield
+an incorrect solution.  If not uncovered, this could lead to bad
+decisions based on model solutions.  If it is uncovered, it will
+undermine the trust people have in the models.  So always try to
+capture such model limitations.
+
+.. index:: candidate solutions
+
+It is worth taking a moment to understand what impact such an
+assertion has during simulation.  Part of the simulation process is
+the generation of so-called *candidate solutions*.  These solutions
+may, or may not, end up being actual solutions.  They are usually
+generated as the underlying solvers propose solutions and then check
+to make sure that the solutions are accurate to within some numerical
+tolerance.  Those candidate solutions that are found to be inaccurate
+are typically refined in some way until a sufficiently accurate
+solution is found.
+
+If a candidate solution violates an assertion, then it is
+automatically considered to be inaccurate.  The violated assertion
+will automatically trigger the refinement process in an attempt to
+find a solution that is more accurate and, hopefully, doesn't violate
+the solution.  However, if these refinement processes lead to a
+solution that is sufficiently accurate (*i.e.,* satisfies the accuracy
+requirements to within the acceptable tolerance) but that solution
+still violates any assertions in the system, then the simulation
+environment will do one of two things.  If the ``level`` argument in
+the ``assert`` call is ``AssertionLevel.error`` then the simulation is
+terminated.  If, on the other hand, the ``level`` argument is
+``AssertionLevel.warning``, then the assertion description will be
+used to generate a warning message to the user.  How this message is
+delivered is specific to each simulation environment.  Recall that the
+default value for the ``level`` argument (if none is provided in the
+call to ``assert``) is ``AssertionLevel.error``.
+
+.. todo::
+
+    Do I really need to discuss ``record`` here?  I think I already
+    covered it somewhere.
