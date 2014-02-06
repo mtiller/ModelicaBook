@@ -398,7 +398,7 @@ with control allows model developers to explore how overall system
 performance is impacted by both physical and control strategy design.
 
 Conclusion
-~~~~~~~~~~
+^^^^^^^^^^
 
 In this section, we've seen how to define causal ``block`` components
 and use them to model both the physical and control related behavior.
