@@ -106,7 +106,13 @@ block defines the input signal, ``u``, as a vector:
             transformation(extent={{100,-10},{120,10}}, rotation=0)));
     end MISO;
 
-The parameter ``nin`` is used to specify the number of inputs to the block.
+The parameter ``nin`` is used to specify the number of inputs to the
+block.
+
+It is worth pointing out that all of the blocks we are about to define
+are also available in the Modelica Standard Library.  But we'll create
+our own versions here just to demonstrate how such models can be
+defined.
 
 ``Constant``
 ~~~~~~~~~~~~
@@ -272,3 +278,131 @@ solution for the temperature:
 
 .. plot:: ../plots/BNC.py
    :include-source: no
+
+As we can see, the solution is exactly the same as it has been for all
+previous incarnations of this example.
+
+So far, we've seen this particular problem formulated three different
+ways.  The first formulation described the mathematical structure
+using a single equation.  The second formulation used acausal
+component models of individual physical effects to represent the same
+dynamics.  Finally, we have this most recent block diagram
+formulation.  But the real question is, **which ones of these approaches
+is the most appropriate for this particular problem?**
+
+There are really two extreme cases to consider.  If we wanted to solve
+only this one particular configuration of this problem with a single
+thermal capacitance convecting heat to some infinite ambient
+reservoir, the :ref:`equation based version <getting-physical>` would
+probably be the best choice since the behavior of the entire problem
+can be expressed by the single equation:
+
+.. code-block:: modelica
+
+    m*c_p*der(T) = h*A*(T_inf-T) "Newton's Law of Cooling";
+
+Such an equation can be typed in very quickly.  In contrast, the
+component based versions would require the user to drag, drop and
+connect component models which would invariably take longer.
+
+However, if you intend to create multiple variations of the problem
+combining different modes of heat transfer, different boundary
+conditions, etc. then the acausal version is better.  This because
+while some investment is required to create the component models, they
+can be reconfigured almost trivially once the component models are
+available.
+
+One might say the same is true for the block diagram version of the
+model (*i.e.,* that it can be trivially reconfigured), **but that is
+not the case**.  The block diagram version of the model is a
+**mathematical** representation of the problem not a schematic based
+formulation.  If you create variations of this heat transfer problem
+that specify alternative boundary conditions, add more thermal
+inertias or include additional modes of heat transfer, the changes to
+a schematic will be simple.  However, for a block diagram formulation
+**you will need to completely reformulate the block diagram**.  This
+is because the resulting mathematical equations might be very
+different when expressed in state-space form.  One of the big
+advantages of the acausal, schematic based approach is that the
+Modelica compiler will translate the textbook equations into
+state-space form automatically.  This saves a great deal of tedious,
+time-consuming and error prone work on the part of the model developer
+and this is precisely why the acausal approach is preferred.
+
+Thermal Control
+~~~~~~~~~~~~~~~
+
+For the next example, we'll mix both causal components, the blocks
+we've developed in this section, with acausal components, the
+:ref:`heat-transfer-components` developed earlier in this chapter.
+This will prove to be a powerful combination since it allows us to
+represent the physical components schematically but allows us to
+express the control strategy mathematically.
+
+Here is a schematic diagram showing how both approaches can be combined:
+
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Examples/MultiDomainControl.svg
+   :width: 100%
+   :align: center
+   :alt: Gain Block
+   :figclass: align-center
+
+When modeling a physical system together with a control system the
+physical components and effects will use an acausal formulation.  The
+components representing the control strategy will typically use a
+causal formulation.  What bridges the gap between these two approaches
+are the sensors and actuators.  The sensors measure some aspect of the
+system (temperature in this example) and the actuators apply some
+"influence" over the system (in this case, a heat flux).
+
+The actuator models will generally have signals as inputs combined
+with an acausal connection to the physical system (through which the
+"influence", like a force or an electric current, will be applied).
+This is reversed for the sensor models where the causal connectors
+will be outputs and the acausal connectors will be used to "sense"
+some aspect of the physical system (like a voltage, temperature,
+*etc.*).
+
+Our example model can be expressed in Modelica as:
+
+.. literalinclude:: /ModelicaByExample/Components/BlockDiagrams/Examples/MultiDomainControl.mo
+   :language: modelica
+
+Looking at the model, we can see that the initial temperature is
+:math:`90\,^{\circ}\mathrm{C}` and the ambient temperature is
+:math:`25\,^{\circ}\mathrm{C}`.  In addition, the setpoint temperature
+(the desired temperature) is :math:`30\,^{\circ}\mathrm{C}`.  So
+unlike our previous examples where the system temperature eventually
+came to rest at the ambient temperature, this system should approach
+the setpoint temperature due to the influence of the control system.
+Simulating this system, we get the following temperature response:
+
+.. plot:: ../plots/MDC.py
+   :include-source: no
+
+We can increase the "gain" of the controller, ``k``, and we see a
+different response:
+
+.. plot:: ../plots/MDC_hg.py
+   :include-source: no
+
+However, we can see from the following plot that much more heat output
+was required from our actuator in order to achieve the faster response
+in the second case:
+
+.. plot:: ../plots/MDC_heat.py
+   :include-source: no
+
+This is just a very simple example of how combining physical response
+with control allows model developers to explore how overall system
+performance is impacted by both physical and control strategy design.
+
+Conclusion
+~~~~~~~~~~
+
+In this section, we've seen how to define causal ``block`` components
+and use them to model both the physical and control related behavior.
+We've even seen how these causal components can be combined with
+acausal components to yield a "best of both worlds" combination where
+control features are implemented with causal components while physical
+components use acausal components.

@@ -420,5 +420,20 @@ add_simple_plot(plot="PwPC", vars=[Var("inertia1.w", legend="Actual speed (inert
 add_case(["BlockDiagrams", "NewtonCooling"], stopTime=1.0, res="BNC", tol=1e-3);
 add_simple_plot(plot="BNC", vars=[Var("T.y", legend="Temperature (T.y)")],
                 title="Temperature solution");
+add_case(["BlockDiagrams", "MultiDomainControl"], stopTime=0.35, res="MDC", tol=1e-3);
+add_simple_plot(plot="MDC", vars=[Var("sensor.y", legend="Temperature (sensor.y)")],
+                title="Closed loop temperature response");
+add_case(["BlockDiagrams", "MultiDomainControl"], stopTime=0.35, res="MDC_hg",
+         mods={"k": 10.0}, tol=1e-3);
+add_simple_plot(plot="MDC_hg", vars=[Var("sensor.y", legend="Temperature (sensor.y)")],
+                title="Closed loop temperature response with high gain");
+
+add_compare_plot(plot="MDC_heat", legloc="upper right",
+                 res1="MDC", v1=[Var("heatSource.node.Q_flow",
+                                     legend="Heat (low-gain scenario)")],
+                 res2="MDC_hg", v2=[Var("heatSource.node.Q_flow",
+                                        legend="Heat (high-gain scenario)")],
+                 title="Comparison of required actuator heat output")
+
 
 generate()
