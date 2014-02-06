@@ -1,5 +1,7 @@
 .. _record-def:
 
+.. index:: ! record
+
 Record Definitions
 ==================
 

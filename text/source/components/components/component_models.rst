@@ -491,8 +491,3 @@ used to generate a warning message to the user.  How this message is
 delivered is specific to each simulation environment.  Recall that the
 default value for the ``level`` argument (if none is provided in the
 call to ``assert``) is ``AssertionLevel.error``.
-
-.. todo::
-
-    Do I really need to discuss ``record`` here?  I think I already
-    covered it somewhere.
