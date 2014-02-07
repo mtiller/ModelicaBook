@@ -242,7 +242,7 @@ way of expressing the data associated contained in the annotation.
 ``Documentation``
 ^^^^^^^^^^^^^^^^^
 
-.. index:: annotation; standard annotations; Documentation
+.. index:: annotation; Documentation
 
 **Type: Model Annotation**
 
@@ -283,7 +283,7 @@ terminating the ``info`` string.
 ``experiment``
 ^^^^^^^^^^^^^^
 
-.. index:: annotation; standard annotations; experiment
+.. index:: annotation; experiment
 
 **Type: Model Annotation**
 
@@ -303,7 +303,7 @@ represented in ``record`` form as:
 ``Evaluate``
 ^^^^^^^^^^^^
 
-.. index:: annotation; standard annotations; Evaluate
+.. index:: annotation; Evaluate
 
 **Type: Declaration Annotation (applies to parameters)**
 
@@ -331,7 +331,7 @@ used in an annotation as follows:
 ``HideResult``
 ^^^^^^^^^^^^^^
 
-.. index:: annotation; standard annotations; HideResult
+.. index:: annotation; HideResult
 
 **Type: Declaration Annotation**
 

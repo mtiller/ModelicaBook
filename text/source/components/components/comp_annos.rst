@@ -12,6 +12,8 @@ purpose.
 ``defaultComponentName``
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. index:: annotation; defaultComponentName
+
 **Type: Model Annotation**
 
 The ``defaultComponentName`` annotation is used within a model
@@ -21,6 +23,8 @@ name to components when they are dragged into a diagram.
 
 ``defaultComponentPrefixes``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. index:: annotation; defaultComponentPrefixes
 
 **Type: Model Annotation**
 
@@ -40,6 +44,8 @@ them as qualifiers to that components declaration.
 
 ``Dialog``
 ^^^^^^^^^^
+
+.. index:: annotation; Dialog
 
 **Type: Declaration Annotation**
 
@@ -83,6 +89,8 @@ necessary size of that connector.
 ``DynamicSelect``
 ^^^^^^^^^^^^^^^^^
 
+.. index:: annotation; DynamicSelect
+
 **Type: Declaration Annotation**
 
 The ``DynamicSelect`` annotation is used to specify how annotation
@@ -106,6 +114,8 @@ results.
 ``preferredView``
 ^^^^^^^^^^^^^^^^^
 
+.. index:: annotation; preferredView
+
 **Type: Definition Annotation**
 
 The ``preferredView`` annotation is used to describe what particular
@@ -124,6 +134,8 @@ documentation to be shown when the definition is visited).
 
 ``unassignedMessage``
 ^^^^^^^^^^^^^^^^^^^^^
+
+.. index:: annotation; unassignedMessage
 
 **Type: Declaration Annotation**
 
