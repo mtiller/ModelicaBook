@@ -83,20 +83,44 @@ necessary size of that connector.
 ``DynamicSelect``
 ^^^^^^^^^^^^^^^^^
 
-.. todo:: Figure out if this is really standard
-
 **Type: Declaration Annotation**
+
+The ``DynamicSelect`` annotation is used to specify how annotation
+values can depend on a simulated solution.  For example, the
+``DynamicSelect`` annotation can be used to adjust the color of a
+component icon in response to a change in temperature.  The
+``DynamicSelect`` has two values associated with it, *i.e.,*
 
 .. code-block:: modelica
 
     DynamicSelect(static_value, dynamic_value)
 
+The first is the value is the "static" value.  This value is used when
+either no simulation results are available or in the case that the
+specific tool does not support linking simulation results to
+annotations.  The second value is the "dynamic" value.  This is an
+expression, typically involving variables in the scope in which the
+annotated declaration appears, which is evaluated based on simulation
+results.
+
 ``preferredView``
 ^^^^^^^^^^^^^^^^^
 
-.. todo:: Figure out if this is really standard
+**Type: Definition Annotation**
 
-**Type: Model Annotation**
+The ``preferredView`` annotation is used to describe what particular
+"view" of a given definition should be shown when that model is selected
+within a graphical tool.  Possible values for this annotation are:
+
+    * "info" - Show any documentation associated with this definition.
+    * "text" - Show the Modelica code associated with this definition.
+    * "diagram" - Show the schematic diagram associated with this definition.
+
+A common use for the ``preferredView`` annotation is to created a
+``package`` specifically for documentation.  In this case, the
+``package`` includes a ``Documentation`` annotation and the
+``preferredView`` annotation is set to ``info`` (thus causing the
+documentation to be shown when the definition is visited).
 
 ``unassignedMessage``
 ^^^^^^^^^^^^^^^^^^^^^
