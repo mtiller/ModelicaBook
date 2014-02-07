@@ -221,7 +221,7 @@ then, the default values for these annotations started with
 ``modelica:://LibraryName/Resources``.  Such a URL allows us to define
 the location of resources **relative to a given Modelica definition on
 the file system**.  Let us revisit the directory structure we
-discussed earlier but with some resource files added::
+discussed earlier, but with some resource files added::
 
     /RootPackage               # Top-level package stored as a directory
       package.mo               # Indicates this directory is a package

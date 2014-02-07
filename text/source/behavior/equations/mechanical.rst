@@ -70,7 +70,7 @@ Let's assume our system has the following initial conditions as well:
 
 These initial conditions essentially mean that the system starts in a
 state where neither inertia is actually moving (*i.e.*,
-:math:`\omega=0`) but there is a non-zero deflection across both
+:math:`\omega=0`), but there is a non-zero deflection across both
 springs.
 
 Pulling all of these variables and equations together, we can express

@@ -43,7 +43,7 @@ operator around any variables in ``expr`` that also appear inside the
 ``when`` statement.
 
 In the :ref:`bouncing-ball` example, we saw a case where ``expr`` was
-not a (scalar) conditional expression but rather a vector of
+not a (scalar) conditional expression, but rather a vector of
 conditional expressions.  Recall from that discussion that the
 ``when`` statement becomes active if **any** of the conditions in the
 vector of expressions becomes true.

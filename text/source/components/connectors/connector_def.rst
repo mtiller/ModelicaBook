@@ -32,7 +32,7 @@ Variables
 Causal Variables
 ^^^^^^^^^^^^^^^^
 
-In our previous discussion of :ref:`block-connectors`, we shows that
+In our previous discussion of :ref:`block-connectors`, we showed that
 variables within a Modelica ``connector`` definition can have a
 causality associated with them.  If the signal is expected to be
 computed externally, then the variable should have the ``input``
@@ -48,7 +48,7 @@ In our discussion of :ref:`simple-domains` and
 :ref:`fluid-connectors`, we saw numerous examples of ``connector``
 definitions that included through and across variables.  These
 variables always occured in pairs with the through variable being
-prefixed by the ``flow`` qualifier while the across variable had not
+prefixed by the ``flow`` qualifier while the across variable had no
 qualifier associated with it.
 
 As we will see in the coming chapters, such connector definitions are

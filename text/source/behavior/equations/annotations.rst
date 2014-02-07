@@ -26,7 +26,7 @@ included as part of the Modelica specification.
 Annotation Locations
 --------------------
 
-Annotations can appear in may different places in Modelica.  We will
+Annotations can appear in many different places in Modelica.  We will
 discuss each potential location and demonstrate the syntax for each case.
 
 Declaration Annotations
@@ -58,6 +58,9 @@ example:
 
     T = T0 "Specify initial value for T" annotation(...);
 
+.. todo:: where does it come if the textual description is not present?
+if it's always just before the ";", then just say it that way.
+
 Note that, just like with a declaration, the ``annotation`` follows
 the textual description (if present) and comes before the ``;`` that
 ends the equation.
@@ -68,14 +71,14 @@ Inheritance Annotations
 .. index:: annotation; associated with; extends
 
 We briefly discussed the ``extends`` keyword when we talked about
-:ref:`modifications` and :ref:`avoiding-repetition`.  It is a possible
+:ref:`modifications` and :ref:`avoiding-repetition`.  It is possible
 to associate an ``annotation`` with an ``extends`` clause as follows:
 
 .. code-block:: modelica
 
    extends QuiescientModelWithInheritance(gamma=0.3, delta=0.01) annotation(...);
 
-As we've observed in each previous case, the ``annotation`` immediate
+As we've observed in each previous case, the ``annotation`` immediately
 precedes the ``;``.
 
 
@@ -85,7 +88,7 @@ Model Annotations
 .. index:: annotation; associated with; models
 .. index:: annotation; associated with; definitions
 
-A model annotation is an annotation that associated annotation data
+A model annotation associates annotation data
 directly with the model definition itself.  This is exactly the kind
 of annotation we saw when describing :ref:`experimental-conditions`,
 *e.g.,*
@@ -115,7 +118,7 @@ an assignment to a variable in the annotation, *e.g.,*
 
     annotation(Evaluate=true);
 
-or it can include a modification to something **inside** a variable in
+or it will include a modification to something **inside** a variable in
 the annotation, *e.g.,*
 
 .. code-block:
@@ -124,6 +127,9 @@ the annotation, *e.g.,*
 
 User Annotations
 ^^^^^^^^^^^^^^^^
+
+.. todo:: be ware there is some controversy about the use of singular "they".
+(personally, I'm all for using singular they).
 
 Annotations were designed to allow model developers to attach
 **arbitrary data** to their models.  For example, if a user wanted to
@@ -164,9 +170,9 @@ This introduces another principle of annotations which is that it
 should be possible to have more than one **as long as the names are
 different**.  For this reason, choosing names is very important and
 they should be chosen to avoid potential conflicts with other names.
-For this reason, a much better approach for including the part number
+For example, a better approach for including the part number
 would be to enclose it in a variable that is more likely to be unique
-for your company or application, *e.g.,*:
+to your company or application, *e.g.,*:
 
 .. code-block:
 
@@ -219,7 +225,7 @@ Documentation
 
 It is very common to document Modelica annotations **as if** they had
 :ref:`record-def` associated with them.  We'll see several examples of
-this technique in our next topic.  Using this approach to documented
+this technique in our next topic.  Using this approach to document
 expected annotation data are strongly encouraged.  In fact, this
 technique is so popular and useful that there are proposals to
 actually make it part of the language itself in the future.
@@ -311,9 +317,11 @@ at compile time.  In other words, it indicates that the user does not
 require the ability to change the value of the ``parameter`` from one
 simulation to the next.
 
+.. todo:: what does the term "structure of equations" mean?
+
 The motivation behind having such an annotation is that it allows the
 Modelica compiler to assume many things about the ``parameter`` during
-model compilation that it could otherwise not assume.  These
+model compilation that it otherwise couldn't.  These
 assumptions might restrict the structure of the equations in such a
 way that the underlying systems of equations are easier to solve than
 in the general case where the parameter could take on a range of

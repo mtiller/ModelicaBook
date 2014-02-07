@@ -12,7 +12,7 @@ When building mathematical models of physical systems in Modelica, it
 is sometimes useful to integrate (external) control strategies into
 these models.  In many cases, these strategies exist as C code
 generated for use with an embedded controller.  This example revisits
-the topic of :ref:`hysteresis` but with an interesting twist.  Instead
+the topic of :ref:`hysteresis`, but with an interesting twist.  Instead
 of implementing the hysteresis behavior in Modelica using discrete
 states, we will implement it in an external C function.  Although this
 example is extremely simple, it demonstrates all the essential steps

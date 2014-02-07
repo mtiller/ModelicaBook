@@ -20,7 +20,7 @@ Integers
 
     For array dimensions specified using integers, Modelica uses
     indices starting with **1**.  Some languages choose to use zero as
-    the starting index but it is important to point out from the start
+    the starting index, but it is important to point out from the start
     that Modelica follows the 1-index convention.
 
 Obviously, the most directly way to index an array is to use an

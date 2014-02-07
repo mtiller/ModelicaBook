@@ -200,7 +200,7 @@ following example:
 You can read the definition ``type Temperature=Real(unit="K",
 min=0);`` as "Let us define a new unit, ``Temperature``, that is a
 specialization of the built-in type ``Real`` with physical units of
-Kelvin (``K``) and a minimum possible value of ``0``."
+Kelvin (``K``) and a minimum possible value of ``0``".
 
 From this example, we can see that once we define a physical type like
 ``Temperature``, we can use it to declare multiple variables (*e.g.*,

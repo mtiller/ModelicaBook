@@ -6,14 +6,14 @@ Lotka-Volterra Equations Revisited
 In this section, we will revisit the :ref:`lotka-volterra-systems`
 discussed in the first chapter.  However, this time we will create
 system models from individual components.  After recreating the
-behavior shown the first chapter, we'll expand the set of effects we
+behavior shown in the first chapter, we'll expand the set of effects we
 consider and reconfigure these component models into other system
 models that demonstrate different dynamics.
 
 Classic Lotka-Volterra
 ^^^^^^^^^^^^^^^^^^^^^^
 
-We'll start by looking at the class Lotka-Volterra system.  In order
+We'll start by looking at the classic Lotka-Volterra system.  In order
 to create such a system using component models, we will require models
 to represent the population of both rabbits and foxes as well as
 models for reproduction, starvation and predation.
@@ -32,7 +32,7 @@ this section is the ``Species`` connector and it is defined as follows:
    :lines: 1-4,22
 
 This connector definition is interesting because these definitions do
-not come from engineering principles.  Instead, they really arise from
+not come from engineering.  Instead, they really arise from
 ecology.  In this case, our across variable is ``population`` which
 represents the actual number of animals of a particular species.  Our
 through variable, indicated by the presence of the ``flow`` qualifier,
@@ -76,7 +76,7 @@ Note that the first ``parameter``, ``init``, utilizes the
 ``InitializationOptions`` enumeration both to specify its type (the
 enumeration itself) and its initial value, ``Free``.  Also note the
 presence of the ``choicesAllMatching`` annotation.  We'll talk more
-about this ``annotation`` both later in this chapter, when we are
+about this ``annotation`` later in this chapter, when we are
 reviewing the concepts introduced here, and in subsequent chapters.
 
 The next declaration is:
@@ -181,7 +181,7 @@ Reproduction
 
 The first real effect we will examine is reproduction.  As we know
 from our previous discussion, the growth in a given population due to
-reproduction is proportional to the number of number of animals of
+reproduction is proportional to the number of animals of
 that species in a given region.  As a result, we can describe
 reproduction very succinctly as:
 
@@ -204,7 +204,7 @@ follows:
    :lines: 1-11,18
 
 To understand these equations it is first necessary to understand that
-any model the ``extends`` from ``SinkOrSource`` will generally be
+any model that ``extends`` from ``SinkOrSource`` will generally be
 connected to a ``RegionalPopulation`` instance (but will not, itself,
 **be** a ``RegionalPopulation`` model).  This means that if the
 ``flow`` variable ``species.rate`` in such an instance is positive, it
@@ -221,7 +221,7 @@ will see an increase in species population.
 
 By defining the ``SinkOrSource`` model and inheriting from it, much of
 this complexity is hidden.  As a result, models like ``Reproduction``
-can write equations in a way that make their behavior more intuitive,
+can have equations written in a way that make their behavior more intuitive,
 *e.g.,* ``growth = alpha*species.population``.
 
 Although not shown, the ``Icon`` for the ``Reproduction`` model is
@@ -236,8 +236,8 @@ Starvation
 
 Just like the ``Reproduction`` model just described, the
 ``Starvation`` model also inherits from the ``SinkOrSource`` model.
-However, it chooses to describe its behavior with respect to the
-``decline`` variable, as follows:
+However, its behavior with respect to the
+``decline`` variable, is described as follows:
 
 .. code-block:: modelica
 
@@ -341,7 +341,7 @@ Adding Wolves
 The creation of a model with a third species does not require any
 additional component models to be defined.  Instead, we can reuse not
 only our existing models for ``Predation``, ``Starvation`` and
-``RegionalPopulation`` but we can also reuse the
+``RegionalPopulation``, but we can also reuse the
 ``ClassicLotkaVolterra`` model itself:
 
 .. literalinclude:: /ModelicaByExample/Components/LotkaVolterra/Examples/ThirdSpecies.mo

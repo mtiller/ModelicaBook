@@ -90,7 +90,7 @@ Intermediate Variables
 In order to simplify the expression for ``y``, we need to introduce
 some intermediate variables.  We can already see that ``x``, ``p0``
 and ``p1`` are variables that we can use from within the function.
-We'd like to introduce additional variables but they shouldn't be
+We'd like to introduce additional variables, but they shouldn't be
 arguments.  Instead, their values should be computed "internally" to
 the function.  To achieve this, we create a collection of variables
 that are ``protected``.  Such variables are assumed to be computed
@@ -192,7 +192,7 @@ Differentiation
 
 It is completely plausible that this polynomial evaluation might be
 used to represent a quantity that was ultimately differentiated by the
-Modelica compiler.  The following examples is admittedly contrived but
+Modelica compiler.  The following examples is admittedly contrived, but
 it demonstrates how such a polynomial might come to be differentiated
 in a model:
 

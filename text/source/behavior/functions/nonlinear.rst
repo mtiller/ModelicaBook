@@ -68,7 +68,7 @@ implemented:
 
 In particular, note the line specifying the ``inverse`` annotation.
 With this function definition, we not only tell the Modelica compiler
-how to evaluate the ``Quadratic`` function but, through the
+how to evaluate the ``Quadratic`` function, but, through the
 ``inverse`` annotation, we are also indicating that the
 ``InverseQuadratic`` function should be used to compute ``x`` in terms
 of ``y``.
@@ -113,6 +113,6 @@ solution for ``y``:
    :include-source: no
 
 Looking at this figure, we can see that, in fact, we got the correct
-result but, in general, without the need to solve the non-linear
+result, but, in general, without the need to solve the non-linear
 system that would otherwise result from our ``ImplicitEvaluation``
 model.

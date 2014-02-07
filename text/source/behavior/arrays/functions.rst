@@ -656,7 +656,7 @@ In this section, we've discussed the numerous functions in Modelica
 that are designed to work with arguments that are arrays.  But a very
 common use case is to apply a function element-wise to every element
 in a vector.  Modelica supports this use case through a feature called
-"vectorization".  If a function is designed to take a scalar but is
+"vectorization".  If a function is designed to take a scalar, but is
 passed an array instead, the Modelica compiler will automatically
 apply that function to each element in the vector.
 
@@ -726,5 +726,5 @@ expression will be an error:
 
     mod({5, 6, 7, 8}, {2, 3}) // Illegal
 
-because ``mod`` expects two scalar arguments but it was passed two
+because ``mod`` expects two scalar arguments, but it was passed two
 vector arguments.

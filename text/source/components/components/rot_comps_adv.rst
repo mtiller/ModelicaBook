@@ -6,8 +6,8 @@ Advanced Rotational Components
 In the previous section, we discussed :ref:`rotational-components` and
 showed how to build a system model from basic components.  In this
 section we will demonstrate how to incorporate event handling, which
-we will use to when modeling a backlash.  Furthermore, we'll also show
-how to use parameter values to affect the interface of a component.
+we will use when modeling a backlash.  Furthermore, we'll also show
+how to use parameter values to effect the interface of a component.
 
 Modeling Backlash
 ^^^^^^^^^^^^^^^^^
@@ -31,7 +31,7 @@ model is very simple:
 
    Include a torque-deflection diagram here.
 
-In Modelica, this component be described as follows:
+In Modelica, this component can be described as follows:
 
 .. literalinclude:: /ModelicaByExample/Components/Rotational/Components/Backlash.mo
    :language: modelica
@@ -76,7 +76,7 @@ this case) of a point in the system is called a *kinematic constraint*.
 
 When a kinematic constraint is imposed on a system, the component
 imposing the constraint must generate some kind of force or torque in
-order to affect the motion of the system.  This is called a reaction.
+order to affect the motion of the system.  This is called a reaction force or torque.
 
 The following plot shows the reaction torque that the mechanical
 ground element must impose on the system in order to fix the angular
@@ -89,7 +89,7 @@ position:
 Grounding and Reaction Torques
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As we saw in the previous example, the presence of the behavior of the
+As we saw in the previous example, the behavior of the
 mechanical ground element is such that it must exert a reaction torque
 on the system to constrain the motion of the system.  In this section,
 we will examine this effect a bit closer.
@@ -100,7 +100,7 @@ the inertia of the gear elements, efficiency losses in the gear and
 any backlash that might exist between the teeth in the gear.  Recall
 our discussion about :ref:`digging-deeper` earlier in this chapter
 where we mentioned that component models should focus on individual
-physical effects.  That same applies here.  Inertia, friction and
+physical effects.  That same principle applies here.  Inertia, friction and
 backlash can all be modeled as individual effects (as we've already
 seen in this chapter).  There is no need to lump them into our gear
 model.  Instead, we will focus only on the relationship between gear
@@ -115,7 +115,7 @@ speed and the output speed, *i.e.*,
 
     \omega_a = R \omega_b
 
-where :math:`R` is the gear ration.  Recall that we assume the gear to
+where :math:`R` is the gear ratio.  Recall that we assume the gear to
 be perfectly efficient.  This means that the power going into the gear must
 equal the power going out which we can express mathematically as:
 
@@ -128,7 +128,7 @@ value for the flow of a conserved quantity means a flow into the
 component.  In this case, :math:`\tau_a \omega_a` is the flow of
 mechanical power into the gear from ``flange_a`` and :math:`\tau_b
 \omega_b` is the flow of mechanical power into the gear from
-``flange_b``.  Therefore, there sum must be zero since our gear model
+``flange_b``.  Therefore, their sum must be zero, since our gear model
 does not include the inertia of the gear elements and, therefore, no
 way to store energy or momentum within the gear model.
 
@@ -157,7 +157,7 @@ To understand the issue, let's first consider Euler's second law:
 
   J \ddot{\varphi} = \sum_i \tau_i
 
-On other words, the sum of the torques on a body should be equal to
+In other words, the sum of the torques on a body should be equal to
 the amount of angular momentum being accumulated by the body.  Recall
 that our gear model doesn't include the inertia of the gear elements.
 As such, it has no capacity to store energy or angular momentum.  If
@@ -283,7 +283,7 @@ Now, let us build a system model with three different mechanisms.  In
 each mechanism the parameters for the gear, inertia, spring and damper
 are all identical.  The only difference is whether we use an implicit
 grounded gear, an explicitly grounded gear or a gear that is not
-directly connected to ground but is instead connected through a very
+directly connected to ground, but is instead connected through a very
 stiff mounting system.  The schematic for our system looks like this
 when rendered:
 
@@ -302,7 +302,7 @@ by the following plot:
 
 But the question still remains, how much difference would it make if
 we assumed that a gear was implicitly grounded when, in fact, it
-wasn't.  This is clearly demonstrated in the following plot:
+wasn't?  This is clearly demonstrated in the following plot:
 
 .. plot:: ../plots/SMD_GC_u.py
    :include-source: no

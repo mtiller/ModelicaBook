@@ -58,8 +58,8 @@ that we are importing is
 creating a local type based on the last name in the fully qualified
 name, *i.e.,* ``CoefficientOfHeatTransfer`` we are specifying that the
 local type should be ``ConvectionCoefficient``.  In this case, this
-allows us to use the name we original used in our earliest examples.
-In this way, we can avoid refactoring the any code that used the
+allows us to use the name we originally used in our earliest examples.
+In this way, we can avoid refactoring any code that used the
 previous name.  Another reason for specifying an alternative name
 (other than the default one that the Modelica compiler would normally
 assign) would be to avoid name collision.  Imagine we wished to import

@@ -52,7 +52,7 @@ enough, if we run this model, we see that the error is always zero:
 This kind of approach, where each signal is sampled based on a common
 "tick" (or clock), is a good way to avoid determinism issues.  However,
 what about cases where you have one signal that samples at a higher
-rate than another but you know that at certain times they should be
+rate than another, but you know that at certain times they should be
 sampled together?  Consider the following example:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/SynchronousSystems/SubsamplingWithIntegers.mo
