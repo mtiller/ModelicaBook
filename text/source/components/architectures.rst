@@ -11,3 +11,14 @@ Examples
 
 Review
 ======
+
+Annotations: choices, choicesAllMatching
+
+``choices``
+^^^^^^^^^^^
+
+
+.. _choices-all-matching:
+
+``choicesAllMatching``
+^^^^^^^^^^^^^^^^^^^^^^
