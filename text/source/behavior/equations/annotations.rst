@@ -278,6 +278,8 @@ documentation is wrapped by ``<html>`` tags **and all quotes used to
 define attributes are escaped by \\"** to avoid accidentally
 terminating the ``info`` string.
 
+.. index:: annotation; experiment
+
 ``experiment``
 ^^^^^^^^^^^^^^
 
