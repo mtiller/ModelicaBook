@@ -12,6 +12,49 @@ automatically generated and enforced.  The second part will provide an
 overview of how the topics in this chapter impact, mostly
 syntactically, the definition of component models.
 
+However, before we dive into that discussion, it is worth taking some
+time to talk about terminology.  In this chapter, we've created two
+different types of models.  The first type represent individual
+effects (*e.g.,* resistors, capacitors, springs, dampers).  The other
+type represent more complex assemblies (*e.g.,* circuits, mechanisms).
+
+Before we discuss some of the differences between these different
+types of models, let's introduce some terminology so we can refer to
+them precisely.  A *component model* is a model that is used to
+encapsulate equations into a reusable form.  By creating such a model,
+an instance of the component can be used in place of the equations it
+contains.  A *subsystem model* is a model that is composed of
+components or other subsystems.  In other words, it doesn't
+(generally) include equations.  Instead, it represents an assembly of
+other components.  Typically, these subsystem models are created by
+dragging, dropping and connecting component and other subsystem models
+schematically.  While component models are "flat" (they don't contain
+other components are subsystems, only equations), subsystem models are
+hierarchical.
+
+We'll often refer to a subsystem model as a *system model*.  A system
+model is a model that we expect to simulate.  In simulating it, the
+Modelica compiler will traverse the hierarchy of the model and note
+all the variables and equations present throughout the hierarchy.
+These are the variables and equations that will be used in the
+simulation.  Of course, in order for there to be a unique solution,
+the system model (like any non-``partial`` model), must be
+:ref:`balanced <balanced-components>`.
+
+Note that a subsystem model *can* include equations.  There is no rule
+against it in Modelica.  But most of the time models tend to be
+composed either of equations or other components/subsystems.  It is
+actually a good idea to avoid putting equations in models containing
+subcomponents or subsystems because it means that some information
+about the model will be "invisible" when looking at a diagram of the
+subsystem.  One possible exception to this could be the use of
+``initial equation`` sections in subsystems.
+
+OK, with that discussion of terminology out of the way, let's dive
+into discussions about component models.
+
+.. _acausal-modeling:
+
 Acausal Modeling
 ^^^^^^^^^^^^^^^^
 
@@ -63,6 +106,8 @@ appropriate.
 
 Accounting
 ~~~~~~~~~~
+
+.. index:: connect; flow
 
 Connectors
 ++++++++++

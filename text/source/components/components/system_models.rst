@@ -3,291 +3,245 @@
 System Models
 -------------
 
-Vocabulary
-^^^^^^^^^^
+The next chapter will provide an in-depth discussion about
+:ref:`subsystems`.  For now, we'll only discuss the handful of topics
+related to subsystems that we've seen so far.
 
-In this chapter, we've create two different types of models.  The
-first type represent individual effects (*e.g.,* resistors,
-capacitors, springs, dampers).  The other type represent more complex
-assemblies (*e.g.,* circuits, mechanisms).
-
-Before we discuss some of the differences between these different
-types of models, let's introduce some terminology so we can refer to
-them precisely.  A *component model* is a model that is used to
-encapsulate equations into a reusable form.  By creating such a model,
-an instance of the component can be used in place of the equations it
-contains.  A *subsystem model* is a model that is composed of
-components or other subsystems.  In other words, it doesn't
-(generally) include equations.  Instead, it represents an assembly of
-other components.  Typically, these subsystem models are created by
-dragging, dropping and connecting component and other subsystem models
-schematically.  While component models are "flat" (they don't contain
-other components are subsystems, only equations), subsystem models are
-hierarchical.
-
-We'll often refer to a subsystem model as a *system model*.  A system
-model is a model that we expect to simulate.  In simulating it, the
-Modelica compiler will traverse the hierarchy of the model and note
-all the variables and equations present throughout the hierarchy.
-These are the variables and equations that will be used in the
-simulation.  Of course, in order for there to be a unique solution,
-the system model (like any non-``partial`` model), must be
-:ref:`balanced <balanced-components>`.
-
-Note that a subsystem model *can* include equations.  There is no rule
-against it in Modelica.  But most of the time models tend to be
-composed either of equations or other components/subsystems.  It is
-actually a good idea to avoid putting equations in models containing
-subcomponents or subsystems because it means that some information
-about the model will be "invisible" when looking at a diagram of the
-subsystem.  One possible exception to this could be the use of
-``initial equation`` sections in subsystems.
-
-Modifications
-^^^^^^^^^^^^^
-
-Previously, we've seen examples of modifications applied to
-variables.  In some cases, these modifications are applied to
-:ref:`attributes` of built-in types, *e.g.,*
-
-.. code-block:: modelica
-
-    Real x(start=2, min=1);
-
-In other cases, they have been applied to ``model`` instances to
-change the values of parameters for that particular instance, *e.g.,*
-
-.. code-block:: modelica
-
-    StepVoltage Vs(V0=0, Vf=24, stepTime=0.5);
-
-But it is also worth pointing out that such modifications can reach
-down deeper into the hierarchy than simply one level.  For example,
-consider the previous example involving a ``StepVoltage`` component.
-We could also have made a modification to the ``min`` attribute
-associated with the ``Vf`` parameter in the ``Vs`` instance of the
-``StepVoltage`` model as follows:
-
-.. code-block:: modelica
-
-    StepVoltage Vs(V0=0, Vf(min=0), stepTime=0.5);
-
-But what if we wanted to change an attribute of the ``Vf`` parameter
-**and** give it a value?  The syntax for such a modification is:
-
-.. code-block:: modelica
-
-    StepVoltage Vs(V0=0, Vf(min=0)=24, stepTime=0.5);
-
-An important case worth discussion, with regards to modifications, is
-how modifications are performed on **arrays** of components.  Imagine
-we had an array of ``StepVoltage`` components declared as follows:
-
-.. code-block:: modelica
-
-    StepVoltage Vs[5];
-
-This is not only legal Modelica, but it can be useful to represent a
-collection of components within a subsystem.  If we want to give the
-parameter ``Vf`` a value, we have two choices.  The first is to
-specify an array of values, *e.g.,*
-
-.. code-block:: modelica
-
-    StepVoltage Vs[5](Vf={24,26,28,30,32});
-
-This assigns the values in the vector ``{24,26,28,30,32}`` to
-``Vs[1].Vf``, ``Vs[2].Vf``, ``Vs[3].Vf``, ``Vs[4].Vf`` and
-``Vs[5].Vf``, respectively.  The other choice we have is to give the
-same value to every element in the array.  We could use this same
-array initialization syntax, *e.g.,*
-
-.. code-block:: modelica
-
-    StepVoltage Vs[5](Vf={24,24,24,24,24});
-
-The problem comes when the number of elements in an array is defined
-by a ``parameter``, *e.g.,*
-
-.. code-block:: modelica
-
-    parameter Integer n;
-    StepVoltage Vs[n](Vf=/* ??? */);
-
-To address this situation, we could use the :ref:`fill-function`
-function:
-
-.. code-block:: modelica
-
-    parameter Integer n;
-    StepVoltage Vs[n](Vf=fill(24, n));
-
-This is an acceptable solution.  But imagine if we wanted to modify
-both the value of ``Vf`` and the ``min`` attribute inside ``Vf``?
-We'd end up with something like this:
-
-.. code-block:: modelica
-
-    parameter Integer n;
-    StepVoltage Vs[n](Vf(min=fill(0,n))=fill(24, n));
-
-With nested modifications, this kind of thing can get complicated
-quickly.  Fortunately, Modelica includes a feature to deal with such
-situations.  By placing the ``each`` keyword in front of a
-modification, that modification is applied to every instance, *e.g.,*
-
-.. code-block:: modelica
-
-    parameter Integer n;
-    StepVoltage Vs[n](each Vf(min=0)=24);
-
-Propagation
+Connections
 ^^^^^^^^^^^
 
-When building subsystem models, it is extremely common for a subsystem
-to contain parameters that it then "propagates" down to its
-components.  For example, consider the following system model used in
-our discussion of :ref:`rotational-components`:
+One distinction that we've seen in this chapter between component and
+subsystem models is that subsystem models include ``connect``
+statements.  To explore how the ``connect`` statement works, let's
+revisit the ``MultiDomainControl`` example from the discussion on
+:ref:`thermal-control`.  If we strip away all the annotations (which
+we will discuss shortly), we get a model that looks like this:
 
 .. code-block:: modelica
 
-    within ModelicaByExample.Components.Rotational.Examples;
-    model SMD
-      Components.Damper damper2(d=1);
-      Components.Ground ground;
-      Components.Spring spring2(c=5);
-      Components.Inertia inertia2(J=1,
-        phi(fixed=true, start=1),
-	w(fixed=true, start=0));
-      Components.Damper damper1(d=0.2);
-      Components.Spring spring1(c=11);
-      Components.Inertia inertia1(
-	J=0.4,
-	phi(fixed=true, start=0),
-	w(fixed=true, start=0));
+    within ModelicaByExample.Components.BlockDiagrams.Examples;
+    model MultiDomainControl
+      "Mixing thermal components with blocks for sensing, actuation and control"
+
+      import Modelica.SIunits.Conversions.from_degC;
+
+      parameter Real h = 0.7 "Convection coefficient";
+      parameter Real m = 0.1 "Thermal maass";
+      parameter Real c_p = 1.2 "Specific heat";
+      parameter Real T_inf = from_degC(25) "Ambient temperature";
+      parameter Real T_bar = from_degC(30.0) "Desired temperature";
+      parameter Real k = 2.0 "Controller gain";
+
+      Components.Constant setpoint(k=T_bar);
+      Components.Feedback feedback;
+      Components.Gain controller_gain(k=k);
+      HeatTransfer.ThermalCapacitance cap(C=m*c_p, T0 = from_degC(90));
+      HeatTransfer.Convection convection2(h=h);
+      HeatTransfer.AmbientCondition amb(T_amb(displayUnit="K") = T_inf);
+      Components.IdealTemperatureSensor sensor;
+      Components.HeatSource heatSource;
     equation
-      // ...
-    end SMD;
+      connect(setpoint.y, feedback.u1);
+      connect(feedback.y, controller_gain.u);
+      connect(convection2.port_a, cap.node);
+      connect(amb.node, convection2.port_b);
+      connect(sensor.y, feedback.u2);
+      connect(heatSource.node, cap.node);
+      connect(controller_gain.y, heatSource.u);
+      connect(sensor.node, cap.node);
+    end MultiDomainControl;
 
-If we wanted to use this model in different contexts where the values
-of the component parameters, like ``d``, might vary, we could make
-``d`` a parameter at the subsystem level and then propagate it down
-into the hierarchy using a modification.  The result would look
-something like this:
+During our earlier discussion on :ref:`acausal-modeling`, we talked
+about equations that are generated for **acausal** variables in a
+connector.  But the impact of a ``connect`` statement depends on the
+nature of the variables being connected.  The ``MultiDomainControl``
+model is useful because it isn't restricted to acausal connections.
+
+.. index:: ! connect
+
+Before we consider the specific connections in the
+``MultiDomainControl`` model, let's first elaborate on what the
+``connect`` statement actually does.  There are some complex cases
+that arise but for the sake of simplicity an pedagogy, we'll only
+discuss the basic case here.
+
+A ``connect`` statement connects exactly two connectors.  It then
+"pairs up" variables across each connector **by name**.  In other
+words, it takes each variable in one connector and pairs it up with
+the variable with the same name in the other connector.
+
+.. index:: connect; input
+.. index:: connect; output
+.. index:: connect; parameter
+
+For each pair, the compiler first checks to make sure that the two
+corresponding variables have the same type (*e.g.,* ``Real``,
+``Integer``).  But what equations are generated and what additional
+restrictions exists depend on what qualifiers have been applied to the
+variables.  The following list covers all the essential cases:
+
+   * **Through variables** - These are variables with the ``flow``
+     qualifier.  As we covered in our previous discussion on
+     :ref:`acausal-modeling`, a conservation equation is generated for
+     all variables in the connection set.
+   * **Parameters** - A variable that includes the ``parameter``
+     qualifier does not generate any equations.  Instead, it generates
+     an ``assert`` call that ensures that the values are identical
+     between the two variables.  This is useful when a ``connector``
+     includes ``Integer`` parameters that specify the size of arrays
+     in the connector, for example, because it asserts the arrays are
+     the same size.
+   * **Inputs** - A variable that has the ``input`` qualifier can only
+     be paired with a variable that has an ``input`` or an ``output``
+     qualifier.  Assuming this requirement is met, an equation will be
+     generated simply equating these two variables.
+   * **Outputs** - A variable that has the ``output`` qualifier can
+     only be paired with a variable that has the ``input`` qualifier
+     (*i.e.,* two outputs can never be connected).  As with the case
+     for input variables, an equality relationship is generated for
+     such a connection.
+   * **Across variables** - These are variables that lack any
+     qualifiers (unlike the previous cases).  As we covered in our
+     previous discussion on :ref:`acausal-modeling`, a series of
+     equations will be generated equating all the across variables in
+     the connection set.
+
+In our discussion of :ref:`block-components`, we describe the
+``input`` and ``output`` qualifiers as "causal".  In fact, the
+``input`` and ``output`` qualifiers do not actually specify the order
+in which calculations are performed.  As discussed above, they just
+enforce restrictions on how the variables can be connected.  In
+addition to the restriction already mentioned, there is one additional
+restriction that within a connection set, there can only be one
+``output`` signal (for obvious reasons).
+
+In our ``MultiDomainControl`` model, we can see several of these cases
+covered.  For example,
 
 .. code-block:: modelica
 
-    within ModelicaByExample.Components.Rotational.Examples;
-    model SMD
-      import Modelica.SIunits.*;
-      parameter RotationalDampingConstant d;
-      Components.Damper damper2(d=d);
-      // ...
+      connect(setpoint.y, feedback.u1);
 
-.. index:: ! final
-
-There is one complication here.  It is possible for a user to come
-along and change the value of ``damper2.d`` instead of modifying the
-``d`` parameter in the ``SMD`` model.  To avoid having the ``d``
-parameter and the ``damper2.d`` parameter from getting out of sync
-(having different values), we can permanently bind them using the
-``final`` qualifier:
-
-.. code-block:: modelica
-
-    within ModelicaByExample.Components.Rotational.Examples;
-    model SMD
-      import Modelica.SIunits.*;
-      parameter RotationalDampingConstant d;
-      Components.Damper damper2(final d=d);
-      // ...
-
-By adding the ``final`` qualifier, we are indicating that it is no
-longer possible to modify the value of ``damper2.d``.  Any
-modifications must be made to ``d`` only.
-
-Giving all of the "hard-wired" numerical values in the ``SMD`` model
-the same treatment, we would end up with a highly reusable model like
+Here, an ``output`` signal, ``setpoint.y``, is connected to an
+``input`` signal, ``feedback.u1``.  So this is a connection involving
+only causal signals.  On the other hand, we have connections like
 this:
 
 .. code-block:: modelica
 
-    within ModelicaByExample.Components.Rotational.Examples;
-    model SMD
-      import Modelica.SIunits.*;
+      connect(heatSource.node, cap.node);
 
-      parameter RotationalDampingConstant d1, d2;
-      parameter RotationalSpringConstant c1, c2;
-      parameter Inertia J1, J2;
-      parameter Angle phi1_init=0, phi2_init=0;
-      parameter AngularVelocity w1_init=0, w2_init=0;
+This will lead to the types of conservations equations :ref:`discussed
+earlier <acausal-modeling>`.
 
-      Components.Damper damper2(final d=d2);
-      Components.Ground ground;
-      Components.Spring spring2(final c=c2);
-      Components.Inertia inertia2(
-        final J=J2,
-        phi(fixed=true, final start=phi2_init),
-	w(fixed=true, final start=w2_init));
-      Components.Damper damper1(final d=d1);
-      Components.Spring spring1(final c=c1);
-      Components.Inertia inertia1(
-	final J=J1,
-	phi(fixed=true, final start=phi1_init),
-	w(fixed=true, final start=w1_init));
-    equation
-      // ...
-    end SMD;
+In summary, a ``connect`` statement is a way to generate equations
+that automatically manages complex tasks (like generation conservation
+and continuity equations) while at the same time checking to make sure
+that the connection make sense (*e.g..,* that the variables have the
+same type).
 
-If we wanted to use a specific set of parameter values, we could do it
-in one of two ways.  One way would be to extends the parameterized
-model above and include a modification in the ``extends`` statement,
-*e.g.,*
-
-.. code-block:: modelica
-
-    model SpecificSMD
-      extends SMD(d2=1, c2=5, J2=1,
-                  d1=0.5, c1=11, J1=0.4,
-                  phi1_init=1);
-
-Note that we did not need to include modifications for the values of
-``phi2_init``, ``w1_init`` and ``w2_init`` since those parameters were
-declared with default values.  In general, **default values for
-parameters should only be used when those defaults are reasonable for
-the vast majority of cases**.  The reason for this is that if a
-parameter has no default value most Modelica compilers will generate a
-warning alerting you that a value is required.  But if a default value
-is there, it will silently use the default value.  If that default
-value is not reasonable or typical, then you will silently introduce
-an unreasonable value into your model.
-
-But returning to the topic of propagation, the other approach that
-could be used would be to instantiate an instance of the ``SMD`` model
-and use modifications on the declared variable to specify parameter
-values, *e.g.,*
-
-.. code-block:: modelica
-
-    SMD mysmd(d2=1, c2=5, J2=1,
-              d1=0.5, c1=11, J1=0.4,
-              phi1_init=1);
-
-We'll defer the discussion on which of these approaches is better
-until upcoming chapter on :ref:`architectures`.
+.. _subsystem-diagrams:
 
 Diagrams
 ^^^^^^^^
 
-Previously, we discussed the :ref:`graphical-annos` ``Icon`` and
-``Diagram``.  For component models, the ``Icon`` representation is the
-most important.  But for subsystems, both views of the model are
-important.  Recall that the ``Icon`` represents how the subsystem
-appears from the outside (some kind of representative and intuitive
-"glyph" to represent the subsystem).  The ``Diagram`` visualization of
-a subsystem is the one that shows all the constituent components and
-their connections laid out graphically.
+In this chapter, we showed how Modelica subsystem models can be
+represented graphically, *e.g.,*
 
-* annotations on declarations and connect(...) statements
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.svg
+   :height: 200px
+   :align: center
+   :alt: Cooling example schematic
 
-* Diagram layout annotations
+All the information required to generate such a diagram is contained
+in the Modelica model.  While this information has been visible in
+some of the Modelica code listings in this chapter, we haven't really
+discussed what information is stored and where.
+
+To render a subsystem diagram, three pieces of information are needed:
+
+   * The icon to use to represent each component.
+   * The location of each component.
+   * The path for each connection
+
+Component Icon
+~~~~~~~~~~~~~~
+
+The icon used for each component is simply whatever drawing primitives
+are included in the ``Icon`` annotation for that component's
+definition.  The details of the ``Icon`` annotation were covered in
+our previous discussion of :ref:`graphical-annos`.
+
+.. index:: annotation; Placement
+
+.. _placement:
+
+Component Placement
+~~~~~~~~~~~~~~~~~~~
+
+Now that we know what to draw for each component, we need to know
+where to draw it.  This is where the ``Placement`` annotation comes
+in.  This annotation appeared in many of the examples in this
+chapter, *e.g.,*
+
+.. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.mo
+   :language: modelica
+   :lines: 6-7
+   :emphasize-lines: 7
+
+The ``Placement`` annotation simply establishes a rectangular region
+in which to draw the icon associated with each component.  As with
+other :ref:`graphical-annos`, we can describe the ``Placement``
+annotation in terms of a ``record`` definition:
+
+.. code-block:: modelica
+
+    record Placement
+      Boolean visible = true;
+      Transformation transformation "Placement in the diagram layer";
+      Transformation iconTransformation "Placement in the icon layer";
+    end Placement; 
+
+The ``visible`` field serves the same purpose as it does in the
+``GraphicItem`` annotation we discussed earlier, *i.e.,* it is used to
+control whether the component is rendered or not.
+
+The ``transformation`` field defines how the icon is rendered in a
+schematic diagram and the ``iconTransformation`` defines how it is
+rendered if it is considered part of the **subsystem's** icon.
+Generally, the ``iconTransformation`` is only defined for connectors
+since these are typically the only components that appear in the icon
+representation.
+
+The ``Transformation`` annotation which is defined as follows:
+
+.. code-block:: modelica
+
+    record Transformation
+      Point origin = {0, 0};
+      Extent extent;
+      Real rotation(quantity="angle", unit="deg")=0;
+    end Transformation; 
+
+The ``rotation`` field indicates how many degrees the component's icon
+should be rotated and the ``origin`` field indicates the point around
+which this rotation should occur.  Finally, the ``extent`` field
+indicates the size of the region the icon will be rendered into.
+
+Connection Rendering
+~~~~~~~~~~~~~~~~~~~~
+
+Finally, we have the third topic, rendering the connections.  Again,
+the annotations that govern how connections are rendered have appears
+in many examples.  Now, finally, we'll explain what that information
+represents.  Consider the following ``connect`` statement from our
+:ref:`thermal-control` example:
+
+.. literalinclude:: /ModelicaByExample/Components/BlockDiagrams/Examples/MultiDomainControl.mo
+   :language: modelica
+   :lines: 55-58
+
+Note that the ``connect`` statement is followed by an annotation.  In
+particular, note that this is a ``Line`` annotation.  We already
+discussed the :ref:`line-anno`.  The annotation data is the same in
+this context as it was then.

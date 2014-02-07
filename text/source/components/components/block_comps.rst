@@ -329,6 +329,8 @@ state-space form automatically.  This saves a great deal of tedious,
 time-consuming and error prone work on the part of the model developer
 and this is precisely why the acausal approach is preferred.
 
+.. _thermal-control:
+
 Thermal Control
 ~~~~~~~~~~~~~~~
 
