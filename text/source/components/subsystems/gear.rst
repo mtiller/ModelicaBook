@@ -74,7 +74,7 @@ have been assembled into the following subsystem model:
 
 .. literalinclude:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.mo
    :language: modelica
-   :lines: 1-67,95
+   :lines: 1-53,81
 
 
 Hierarchical Version

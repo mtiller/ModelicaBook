@@ -1,6 +1,7 @@
 within ModelicaByExample.Subsystems.GearSubsystemModel.Components;
 model GearWithBacklash "A subsystem model for a gear with backlash"
   extends Modelica.Mechanics.Rotational.Icons.Gear;
+  import Modelica.Mechanics.Rotational.Components.*;
 
   parameter Boolean useSupport(start=true);
   parameter Modelica.SIunits.Inertia J_a
@@ -16,20 +17,13 @@ model GearWithBacklash "A subsystem model for a gear with backlash"
   parameter Real ratio
     "Transmission ratio (flange_a.phi/flange_b.phi, once backlash is cleared)";
 protected
-  Modelica.Mechanics.Rotational.Components.Inertia inertia_a(final J=J_a)
-    "Inertia for the element 'a'"
+  Inertia inertia_a(final J=J_a) "Inertia for the element 'a'"
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
-  Modelica.Mechanics.Rotational.Components.Inertia inertia_b(final J=J_b)
+  Inertia inertia_b(final J=J_b)
     annotation (Placement(transformation(extent={{40,-10},{60,10}})));
-
-  Modelica.Mechanics.Rotational.Components.ElastoBacklash backlash(
-    final c=c,
-    final d=d,
-    final b=b) "Backlash as measured from flange_a"
+  ElastoBacklash backlash(final c=c, final d=d, final b=b) "Backlash as measured from flange_a"
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-
-  Modelica.Mechanics.Rotational.Components.IdealGear idealGear(final useSupport=
-        useSupport, final ratio=ratio)
+  IdealGear idealGear(final useSupport=useSupport, final ratio=ratio)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 public
   Modelica.Mechanics.Rotational.Interfaces.Flange_a flange_a
@@ -39,32 +33,24 @@ public
   Modelica.Mechanics.Rotational.Interfaces.Support support if useSupport
     annotation (Placement(transformation(extent={{-10,-110},{10,-90}})));
 equation
-  connect(inertia_a.flange_a, flange_a) annotation (Line(
-      points={{-80,0},{-100,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+  connect(inertia_a.flange_a, flange_a)
+    annotation (Line(points={{-80,0},{-100,0}},
+      color={0,0,0}, smooth=Smooth.None));
   connect(inertia_b.flange_b, flange_b)
-                                       annotation (Line(
-      points={{60,0},{100,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
-  connect(idealGear.support, support) annotation (Line(
-      points={{0,-10},{0,-100}},
-      color={0,0,0},
-      smooth=Smooth.None));
+    annotation (Line(points={{60,0},{100,0}},
+      color={0,0,0}, smooth=Smooth.None));
+  connect(idealGear.support, support)
+    annotation (Line(points={{0,-10},{0,-100}},
+      color={0,0,0}, smooth=Smooth.None));
   connect(idealGear.flange_b, inertia_b.flange_a)
-                                                 annotation (Line(
-      points={{10,0},{40,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
-  connect(backlash.flange_a, inertia_a.flange_b)       annotation (Line(
-      points={{-40,0},{-60,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
-  connect(backlash.flange_b, idealGear.flange_a)       annotation (Line(
-      points={{-20,0},{-10,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+    annotation (Line(points={{10,0},{40,0}},
+      color={0,0,0}, smooth=Smooth.None));
+  connect(backlash.flange_a, inertia_a.flange_b)
+    annotation (Line(points={{-40,0},{-60,0}},
+      color={0,0,0}, smooth=Smooth.None));
+  connect(backlash.flange_b, idealGear.flange_a)
+    annotation (Line(points={{-20,0},{-10,0}},
+      color={0,0,0}, smooth=Smooth.None));
   annotation (Diagram(graphics), Icon(graphics={
         Polygon(
           points={{-74,72},{-74,44},{-68,44},{-68,72},{-74,72}},
