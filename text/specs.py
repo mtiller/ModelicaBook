@@ -443,4 +443,9 @@ abxvars = [Var("solution.C[ModelicaByExample.Components.ChemicalReactions.ABX.Sp
 #                vars=abxvars,
 #                title="Concentrations of A, B and X");
 
+# Subsystem models
+add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB", tol=1e-3);
+add_simple_plot(plot="FSWB", vars=[Var("inertia_a.w"), Var("inertia_b.w")],
+                title="System schematic of gear system with backlash")
+
 generate()

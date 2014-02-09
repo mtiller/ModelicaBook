@@ -1,11 +1,8 @@
 within ModelicaByExample.Subsystems.GearSubsystemModel.Components;
 model GearWithBacklash "A subsystem model for a gear with backlash"
   extends Modelica.Mechanics.Rotational.Icons.Gear;
-  parameter Boolean useSupport(start=true);
-//  extends
-//    Modelica.Mechanics.Rotational.Interfaces.PartialElementaryTwoFlangesAndSupport2
-//    (                                                                               useSupport(start=false));
 
+  parameter Boolean useSupport(start=true);
   parameter Modelica.SIunits.Inertia J_a
     "Moment of inertia for element connected to flange 'a'";
   parameter Modelica.SIunits.Inertia J_b
