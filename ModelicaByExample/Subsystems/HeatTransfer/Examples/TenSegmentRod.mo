@@ -1,4 +1,4 @@
 within ModelicaByExample.Subsystems.HeatTransfer.Examples;
-model TenSigmentRod
+model TenSegmentRod
   extends SixSegmentRod(rod(n=10));
-end TenSigmentRod;
+end TenSegmentRod;
