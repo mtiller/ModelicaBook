@@ -488,4 +488,28 @@ add_case(["WithMigration"], stopTime=240.0, res="WM", tol=1e-3);
 add_simple_plot(plot="WM", vars=regvars, ncols=2, ymax=60,
                 title="Effect of migration on regional populations")
 
+# Power supply
+add_case(["FlatCircuit"], stopTime=1.0, res="FC", tol=1e-6);
+add_simple_plot(plot="FC", vars=[Var("load.v")], legloc="lower right",
+                title="Flat power supply circuit");
+
+sscvars = [Var("load.v")]
+add_case(["SubsystemCircuit"], stopTime=1.0, res="SSC", tol=1e-6);
+add_simple_plot(plot="SSC", vars=sscvars, legloc="lower right",
+                title="System with power supply component")
+
+add_case(["AdditionalLoad"], stopTime=1.0, res="SSC_AL", tol=1e-6);
+add_simple_plot(plot="SSC_AL", vars=sscvars, legloc="lower right",
+                title="Power supply component with additional load")
+
+add_case(["AdditionalLoad"], stopTime=1.0, res="SSC_ALC", tol=1e-6,
+         mods={"power_supply.C": 1e-1});
+add_simple_plot(plot="SSC_ALC", vars=sscvars, legloc="lower right",
+                title="Power supply component with additional load")
+
+add_case(["AdditionalLoad"], stopTime=1.0, res="SSC_ALC2", tol=1e-6,
+         mods={"power_supply.C": 100});
+add_simple_plot(plot="SSC_ALC2", vars=sscvars, legloc="lower right",
+                title="Effect of very large capacitance")
+
 generate()

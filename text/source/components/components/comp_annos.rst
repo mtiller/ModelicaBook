@@ -41,6 +41,7 @@ provided for the ``defaultComponentPrefixes`` annotation.  If so, it
 will extract the qualifiers listed in that string and immediately add
 them as qualifiers to that components declaration.
 
+.. _dialog-anno:
 
 ``Dialog``
 ^^^^^^^^^^
