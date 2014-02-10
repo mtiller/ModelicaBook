@@ -78,8 +78,15 @@ specify the number of capacitance and conductance elements in the rod:
    :language: modelica
    :lines: 23-32
 
-We can then wire together the capacitances and conductances using
-``for`` loops in an ``equation`` section:
+Note that if we wish to apply a modification, *e.g.,* ``G=G_rod`` to
+every component in an array of components, we can use the ``each``
+qualifier on the modification.  We'll discuss the ``each`` qualifier
+and how to apply modifications to arrays of components later in this
+chapter in the section on :ref:`sub-modifications`.
+
+How that we've declared our component arrays, we can then wire
+together the capacitances and conductances using ``for`` loops in an
+``equation`` section:
 
 .. literalinclude:: /ModelicaByExample/Subsystems/HeatTransfer/Components/Rod.mo
    :language: modelica
@@ -130,5 +137,17 @@ they appear to converge to a common solution and that ``n=10`` seems
 to provide a reasonable solution without the need to introduce a large
 number of superfluous components:
 
+.. todo::
+
+   Something is wrong with this plot.  I can't believe I would have
+   made a mistake here.  I need to check with Dymola.
+
 .. plot:: ../plots/SegC.py
    :include-source: no
+
+Conclusion
+^^^^^^^^^^
+
+In this section, we've seen how we can build assemblies of arbitrary
+size using arrays of components and ``for`` loops to connect them
+together.  
