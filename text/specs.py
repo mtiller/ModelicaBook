@@ -467,4 +467,25 @@ add_case(["BacklashExample"], stopTime=2.0, res="SWB", tol=1e-3);
 add_simple_plot(plot="SWB", vars=swb_vars,
                 title="Response of hierarchical gear system with backlash")
 
+# Lotka-Volterra (migration)
+regvars = [Var("A.rabbits.population", legend="Rabbits in A"),
+           Var("B.rabbits.population", legend="Rabbits in B"),
+           Var("C.rabbits.population", legend="Rabbits in C"),
+           Var("D.rabbits.population", legend="Rabbits in D"),
+           Var("A.foxes.population", legend="Foxes in A"),
+           Var("B.foxes.population", legend="Foxes in B"),
+           Var("C.foxes.population", legend="Foxes in C"),
+           Var("D.foxes.population", legend="Foxes in D")]
+add_case(["UnconnectedPopulations"], stopTime=160.0, res="Uncon", tol=1e-3);
+add_simple_plot(plot="Uncon", vars=regvars, ncols=2, ymax=60,
+                title="Comparison of regional populations")
+
+add_case(["InitiallyDifferent"], stopTime=160.0, res="ID", tol=1e-3);
+add_simple_plot(plot="ID", vars=regvars, ncols=2, ymax=85,
+                title="Effect of different initial populations")
+
+add_case(["WithMigration"], stopTime=240.0, res="WM", tol=1e-3);
+add_simple_plot(plot="WM", vars=regvars, ncols=2, ymax=60,
+                title="Effect of migration on regional populations")
+
 generate()
