@@ -516,4 +516,13 @@ add_simple_plot(plot="SSC_ALC2", vars=sscvars, legloc="lower right",
 add_case(["FlatRod"], stopTime=1.5, res="FR", tol=1e-3)
 add_simple_plot(plot="FR", vars=[Var("sensor.T")], title="Sensor measurement")
 
+add_case(["SegmentComparison"], stopTime=1.5, res="SegC", tol=1e-3)
+add_simple_plot(plot="SegC",
+                vars=[Var("rod3.sensor.T", legend="sensor.T, n=3"),
+                      Var("rod6.sensor.T", legend="sensor.T, n=6"),
+                      Var("rod10.sensor.T", legend="sensor.T, n=10"),
+                      Var("rod100.sensor.T", legend="sensor.T, n=100"),
+                      Var("rod200.sensor.T", legend="sensor.T, n=200")],
+                title="Comparison of segmentation")
+
 generate()
