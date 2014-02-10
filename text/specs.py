@@ -512,4 +512,8 @@ add_case(["AdditionalLoad"], stopTime=1.0, res="SSC_ALC2", tol=1e-6,
 add_simple_plot(plot="SSC_ALC2", vars=sscvars, legloc="lower right",
                 title="Effect of very large capacitance")
 
+# Rod models
+add_case(["FlatRod"], stopTime=1.5, res="FR", tol=1e-3)
+add_simple_plot(plot="FR", vars=[Var("sensor.T")], title="Sensor measurement")
+
 generate()
