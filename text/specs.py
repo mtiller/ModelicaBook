@@ -445,7 +445,26 @@ abxvars = [Var("solution.C[ModelicaByExample.Components.ChemicalReactions.ABX.Sp
 
 # Subsystem models
 add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB", tol=1e-3);
-add_simple_plot(plot="FSWB", vars=[Var("inertia_a.w"), Var("inertia_b.w")],
+add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB_nolash", tol=1e-3,
+         mods={"backlash.b": 0});
+
+fswb_vars = [Var("inertia_a.w"), Var("inertia_b.w")]
+add_compare_plot(plot="FSWB_comp", legloc="upper right",
+                 res1="FSWB",
+                 v1=[Var("inertia_a.w", legend="inertia_a.w (with lash)", style="-"),
+                     Var("inertia_b.w", legend="inertia_b.w (with lash)", style="-")],
+                 res2="FSWB_nolash",
+                 v2=[Var("inertia_a.w", legend="inertia_a.w (without lash)", style="-"),
+                     Var("inertia_b.w", legend="inertia_b.w (without lash)", style="-")],
+                 title="Gear response, with and without backlash")
+
+add_simple_plot(plot="FSWB", vars=fswb_vars,
                 title="System schematic of gear system with backlash")
+
+swb_vars = [Var("gearWithBacklash.inertia_a.w"),
+            Var("gearWithBacklash.inertia_b.w")]
+add_case(["BacklashExample"], stopTime=2.0, res="SWB", tol=1e-3);
+add_simple_plot(plot="SWB", vars=swb_vars,
+                title="Response of hierarchical gear system with backlash")
 
 generate()

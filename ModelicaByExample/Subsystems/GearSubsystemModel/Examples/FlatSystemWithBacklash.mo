@@ -5,8 +5,8 @@ model FlatSystemWithBacklash
   Modelica.Blocks.Sources.Trapezoid trapezoid(
     amplitude=2,
     offset=-1,
-    period=0.4,
-    width=0.2)
+    period=0.8,
+    width=0.4)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Modelica.Mechanics.Rotational.Sources.Torque torque(useSupport=true)
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
@@ -24,7 +24,7 @@ protected
     annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   Modelica.Mechanics.Rotational.Components.ElastoBacklash backlash(
     final c=1000,
-    final d=1,
+    final d=2,
     final b=0.17453292519943) "Backlash as measured from flange_a"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Mechanics.Rotational.Components.IdealGear idealGear(ratio=4,

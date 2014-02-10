@@ -48,7 +48,7 @@ load that is being driven by the gear.
 
 If we simulate this system, we get the following response:
 
-.. plot:: ../plots/FSWB.py
+.. plot:: ../plots/FSWB_comp.py
    :include-source: no
 
 The important thing to understand about this system is that the
@@ -111,6 +111,13 @@ subsystem level so users of this model will see all relevant
 parameters in one place (at the subsystem level).  This is called
 :ref:`propagation` and we will be discussing it in greater detail
 later in the chapter.
+
+As we can see in the following plot, the results are identical when
+compared to the "flat" version presented previously:
+
+.. plot:: ../plots/SWB.py
+   :include-source: no
+
 
 Conclusion
 ^^^^^^^^^^

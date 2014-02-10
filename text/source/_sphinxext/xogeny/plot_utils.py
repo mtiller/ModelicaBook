@@ -62,7 +62,7 @@ def render_comp_plot(name1, vars1, name2, vars2, title, legloc, ylabel):
             x2 = [x2[0]]*len(t2)
 
         ax.plot(t1, x1, "-", label=l1)
-        ax.plot(t2, x2, "-.", label=l2)
+        ax.plot(t2, x2, v2.get("style", "-."), label=l2)
 
     legend = ax.legend(loc=legloc, shadow=True)
 
