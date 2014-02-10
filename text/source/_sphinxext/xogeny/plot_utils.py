@@ -75,7 +75,7 @@ def render_comp_plot(name1, vars1, name2, vars2, title, legloc, ylabel):
     plt.show()
 
 
-def render_simple_plot(name, vars, title, legloc, ylabel):
+def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymax=None):
     import matplotlib.pyplot as plt
     import math
 
@@ -114,12 +114,15 @@ def render_simple_plot(name, vars, title, legloc, ylabel):
         print "len("+varname+") = "+str(len(x))
         ax.plot(t, x, style, label=legend)
 
-    legend = ax.legend(loc=legloc, shadow=True)
+    #legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+    legend = ax.legend(shadow=True, ncol=ncols, loc=legloc)
 
     if title==None:
         title = name.replace("_", ".")
     plt.title(title)
     plt.ylabel(ylabel)
     plt.xlabel('Time [s]')
+    if ymax!=None:
+        plt.axis(ymax=ymax)
 
     plt.show()
