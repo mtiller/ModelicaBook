@@ -130,3 +130,5 @@ they appear to converge to a common solution and that ``n=10`` seems
 to provide a reasonable solution without the need to introduce a large
 number of superfluous components:
 
+.. plot:: ../plots/SegC.py
+   :include-source: no

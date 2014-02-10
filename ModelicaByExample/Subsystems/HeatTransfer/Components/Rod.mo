@@ -20,7 +20,7 @@ model Rod "Modeling discretized rod"
     "Thermal connector for rod end 'a'"
     annotation (Placement(transformation(extent={{-10,-110},{10,-90}})));
 protected
-  HTC.HeatCapacitor capacitance[n](each final C=C/n)
+  HTC.HeatCapacitor capacitance[n](each final C=C/n, each T(start=T0, fixed=true))
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0, origin={-30,20})));
