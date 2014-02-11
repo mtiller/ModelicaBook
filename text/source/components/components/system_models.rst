@@ -7,6 +7,8 @@ The next chapter will provide an in-depth discussion about
 :ref:`subsystems`.  For now, we'll only discuss the handful of topics
 related to subsystems that we've seen so far.
 
+.. _system-connections:
+
 Connections
 ^^^^^^^^^^^
 
