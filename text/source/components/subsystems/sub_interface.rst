@@ -1,0 +1,162 @@
+Subsystem Interface
+-------------------
+
+The emphasis of this chapter was on how component models could be
+organized into reusable subsystems.  As we saw in numerous examples in
+this chapter, there is a common pattern that emerges.  Let's review
+various aspects of subsystem models to understand this pattern better.
+
+Parameters
+^^^^^^^^^^
+
+.. index:: ! public
+.. index:: protected
+
+Generally, parameters for a subsystem should be ``public``.  Normally,
+all declarations in any ``model`` or ``block`` definition will be
+public unless they come after the ``protected`` keyword.  In such
+cases, it is still possible to declare something as public by adding
+the ``public`` keyword and placing the declarations after it.  In
+other words:
+
+.. code-block:: modelica
+
+    model PublicAndProtected
+      Real x; // This is public (because that is the default)
+    protected
+      Real y1; // This is protected
+      Real y2; // This is *also* protected
+    public
+      Real z1; // This is public
+      Real z2; // This is *also* public
+    equation
+      // ...
+    end PublicAndProtected;
+
+In the examples from this chapter, it was common to see the parameters
+either at the start of the definition (where they are ``public`` by
+default) or in a collection of declarations explicitly marked ``public``.
+
+Obviously, parameters are made public so that users of the subsystem
+can have access to them.  We will see shortly, in our discussions on
+:ref:`sub-modifications` and :ref:`propagation` how the values of
+these parameters should be cascaded to lower level components.  But
+for now, the main point is to recognize that parameter declarations
+are part of the subsystem pattern.
+
+Connectors
+^^^^^^^^^^
+
+In some sense, connectors are what differentiates a subsystem from a
+system model.  A system model is something that is complete and ready
+to simulate and, as such, has no connectors because it does not expect
+to be influenced by anything external.  A subsystem can encapsulate a
+large hierarchy of components (and ultimately, equations).  But the
+fact that it includes connectors indicates that it is really meant to
+be used as part of some larger system.  Furthermore, as we have seen
+in the examples of this chapter, because these connectors are meant to
+be connected to, they should be ``public``.
+
+Hierarchical Connections
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Because subsystems are typically composed exclusively of components or
+other subsystems, any physical interaction with that subsystem is
+usually redirected to some nested component or subsystem.  We've seen
+this pattern many times in this chapter where connectors at the
+subsystem boundary really act as "proxies" for internal connectors.  A
+simple example of this can be seen in the ``GearWithBacklash`` model:
+
+.. literalinclude:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.mo
+   :language: modelica
+   :lines: 36
+
+Note that this ``connect`` statement connects ``flange_a``, a
+connector instance that belongs to the subsystem, with
+``inertia_a.flange_a``, a connector instance belonging to the
+subcomponent ``inertia_a``.  This is a common pattern in subsystem
+models and it can be easily recognized because one of the connectors
+named in the ``connect`` statement includes a "``.``" and the other
+one does not.  All the "internal" connections that wire together
+internal components directly to other internal components will have a
+"``.``" for both of the named connectors in the ``connect`` statement,
+*e.g.,*
+
+.. literalinclude:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.mo
+   :language: modelica
+   :lines: 45
+
+Equation Generation for Hierarchical Connections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this book, the point has been made repeatedly (*e.g.,* in our
+discussion of :ref:`acausal-connections`) that the sign convention for
+``flow`` variables is such that a positive value for the ``flow``
+variable represents a flow into the component or subsystem.  At the
+same time, we also pointed out that :ref:`system-connections` generate
+equations that sum all the corresponding ``flow`` variables in the
+connection set to zero.
+
+But, when dealing with hierarchical subsystem definitions there is a
+modification to this rule.  For a subsystem, the sign convention for
+``flow`` variables remains intact.  So, a positive value for the
+``flow`` variable on a connector still represents a flow of a
+conserved quantity into that component.  And it is still the case that
+a conservation equation will be generated for each ``flow`` variable
+in a connection set.  However, in that conservation equation, the sign
+for ``flow`` variables on connectors belonging to internal components
+will have the opposite sign as ``flow`` variables on connectors
+belonging to the subsystem itself.
+
+To understand the implications of this, let us consider the following
+to ``connect`` statements from the ``GearWithBacklash`` model:
+
+.. literalinclude:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.mo
+   :language: modelica
+   :lines: 36-38,45-47
+
+From these equations, we get the following two connection sets:
+
+   * **Connection Set #1**: `flange_a`, `inertia_a.flange_a`
+   * **Connection Set #2**: `idealGear.flange_b`, `inertia_b.flange_a`
+
+In each of these connection sets, there is a ``flow`` variable,
+``tau``.  Using the rules for :ref:`system-connections` described
+previously, we might expect the following two equations to be
+generated for the ``flow`` variables on these connectors:
+
+.. code-block:: modelica
+
+    flange_a.tau + inertia_a.flange_a.tau = 0;
+    idealGear.flange_b.tau + inertia_b.flange_a = 0;
+
+However, in our previous discussion on :ref:`system-connections` all
+the components were at the same hierarchical level (*i.e.,* as
+`idealGear.flange_b` and `inertia_b.flange_a` are).  But with
+subsystem models, this isn't always the case.  And, as described a
+moment ago, for cases where the connections are at different levels,
+we need to introduce a sign difference for contributions at different
+levels.  Taking that into account, **the actual equations that will be
+generated** will be:
+
+.. code-block:: modelica
+
+    -flange_a.tau + inertia_a.flange_a.tau = 0;
+    idealGear.flange_b.tau + inertia_b.flange_a = 0;
+
+Note the minus sign in front of the ``flange_a.tau``.  Remember that
+``flange_a`` is meant to be acting as a proxy for
+``inertia_a.flange_a``.  If that is the case, then by changing the
+sign of ``flange_a.tau`` the first equation above can be transformed
+into:
+
+.. code-block:: modelica
+
+    inertia_a.flange_a.tau = flange_a.tau;
+
+In other words, by introducing the sign change on ``flange_a.tau``,
+any conserved quantity the flows in through ``flange_a`` **also**
+flows into ``inertia_a.flange_a`` which is exactly what we expect from
+this kind of "proxy" relationship.
+
+

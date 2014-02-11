@@ -33,7 +33,7 @@ public
   Modelica.Mechanics.Rotational.Interfaces.Support support if useSupport
     annotation (Placement(transformation(extent={{-10,-110},{10,-90}})));
 equation
-  connect(inertia_a.flange_a, flange_a)
+  connect(flange_a, inertia_a.flange_a)
     annotation (Line(points={{-80,0},{-100,0}},
       color={0,0,0}, smooth=Smooth.None));
   connect(inertia_b.flange_b, flange_b)
