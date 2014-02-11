@@ -159,4 +159,32 @@ any conserved quantity the flows in through ``flange_a`` **also**
 flows into ``inertia_a.flange_a`` which is exactly what we expect from
 this kind of "proxy" relationship.
 
+Implementation
+^^^^^^^^^^^^^^
+
+A subsystem model is typically just a wrapper around a collection of
+components.  As we've discussed already in this section, the
+parameters and connectors exposed by the subsystem are ``public``
+because that is how users of the subsystem will interact with it.
+
+The actual internal details of the subsystem represent the
+implementation of the subsystem.  This implementation is generally a
+collection of components and other subsystems that are connected
+together with one or more of the their connectors connected to the
+subsystem's connectors.
+
+Normally, these implementation details are best hidden from the end
+user of the subsystem.  To accomplish this, all non-``parameter``
+declarations in a subsystem are typically marked as ``protected``.
+There are two main reasons for doing this.  First, it hides
+implementation details from the users of the subsystem model.  This
+has the effect of simplifying the interface down to just parameters
+and connectors and avoids mixing things the user really needs to know
+with things that they do not need to know (or even should not know).
+Another reason to make the implementation details ``protected`` is to
+provide the flexibility to improve or refactor the implementation in
+the future.  If users are allowed to reference the implementation
+details, that means they will then (perhaps even unintentionally)
+become **dependent** on them.  As a result, if they change in the
+future it will break the end user's models.
 
