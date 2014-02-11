@@ -176,6 +176,8 @@ The icon for the ``Damper`` model is rendered as:
    :height: 200px
    :align: center
 
+.. _dry-components:
+
 DRY Component Models
 ^^^^^^^^^^^^^^^^^^^^
 

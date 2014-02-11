@@ -47,6 +47,8 @@ have a look at the actual speed response from our plant model.
 Note that this is exactly the same response we saw when we initially
 covered this topic.
 
+.. _sample-hold-sensor:
+
 Sample and Hold Sensor
 ^^^^^^^^^^^^^^^^^^^^^^
 

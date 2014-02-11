@@ -1,6 +1,5 @@
 within ModelicaByExample.Architectures.SensorComparison.Examples;
-model HierarchicalSystem_Variant1
-  "Changing one subsystem of HierarchicalSystem"
+model HierarchicalSystem_Variant1 "Changing one subsystem of HierarchicalSystem"
   Implementation.BasicPlant plant
     annotation (Placement(transformation(extent={{-10,-40},{10,-20}})));
   Implementation.IdealActuator actuator
@@ -42,5 +41,4 @@ equation
       color={0,0,127},
       pattern=LinePattern.None,
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end HierarchicalSystem_Variant1;
