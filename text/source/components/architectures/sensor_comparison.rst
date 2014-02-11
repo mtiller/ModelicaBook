@@ -186,6 +186,8 @@ we need to be a bit more rigorous about it.
 We need to start by indicating that that component is allowed to be
 replaced.  We can do this by declaring the ``sensor`` as follows:
 
+.. index:: replaceable
+
 .. code-block:: modelica
 
   replaceable Implementation.IdealSensor sensor
@@ -204,19 +206,31 @@ this one:
 This introduces a complication.  What happens if we replace the
 ``sensor`` component with something that **does not have** a ``w``
 connector on it?  In that case, this ``connect`` statement will
-generate an error.  In general, we want to ensure that and
-redeclaration that we make is "safe".  The way we do that is to
-require that whatever type we decide to change our ``sensor``
-component to, it has to have **the same public interface** as the
-original type.  In other words, it has to have a ``w`` connector (and
-that connector, in turn, has to have the same public interface as what
-*it* is replacing) and it has to have a ``shaft`` connector (again,
-with the same public interface as what it is replacing).
+generate an error.  In this case, we say that the two sensor models
+are not **plug compatible**.  A model ``X`` is plug-compatible with a
+model ``Y`` if for every **public** variable in ``Y``, there is a
+corresponding public variable in ``X`` with the same name.
+Furthermore, every such variable in ``X`` must itself be
+plug-compatible with its counterpart in ``Y``.  This ensures that if
+you change a component of type ``Y`` into a component of type ``X``
+and everything you need (parameters, connectors, etc) will still be
+there and will still be compatible.  **However, please note** that if
+``X`` is plug-compatible with ``Y``, this **does not** imply that
+``Y`` is plug-compatible with ``X`` (as we will see in a moment).
+
+Plug compatibility is important because, in general, we want to ensure
+that any redeclaration that we make is "safe".  The way we do that is
+to require that whatever type we decide to change our ``sensor``
+component to, is plug compatible with the original type.  In this
+case, that means that it has to have a ``w`` connector (and that
+connector, in turn, must be plug compatible with the ``w`` that was
+there before) and it has to have a ``shaft`` connector (which, again,
+must be plug compatible with the previous ``shaft``).
 
 So the question then is, does our ``SampleAndHold`` implementation
-satisfy this requirement?  Does it have the same public interface as
-the ``IdealSensor`` model?  First, let's look at the ``IdealSensor``
-model:
+satisfy this requirement plug compatibility requirement?  Is it
+plug-compatible with the ``IdealSensor`` model?  First, let's look at
+the ``IdealSensor`` model:
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealSensor.mo
    :language: modelica
@@ -233,9 +247,10 @@ model:
 
 we see that its public interface also contains the connectors ``w``
 and ``shaft``.  Furthermore, they are exactly the same type as the
-connectors on the ``IdealSensor`` model.  For this reason, we should
-be able to replace an ``IdealSensor`` instance with a
-``SampleAndHold`` instance and our ``connect`` statements will still
+connectors on the ``IdealSensor`` model.  For this reason, the
+``SampleAndHold`` model is plug-compatible with the ``IdealSensor``
+model so we should be able to replace an ``IdealSensor`` instance with
+a ``SampleAndHold`` instance and our ``connect`` statements will still
 be valid.
 
 So, if our ``HierarchicalSystem`` model were declared as follows:
@@ -260,14 +275,138 @@ So, if our ``HierarchicalSystem`` model were declared as follows:
 Then we can achieve our original goal of creating a variation of this
 model without repeating ourselves as follows:
 
+.. index:: redeclare
+
 .. code-block:: modelica
 
     model Variation3 "DRY redeclaration"
-      extends HierarchicalSystem();
-      Implementation.SampleHoldSensor sensor
-        annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
+      extends HierarchicalSystem(
+        redeclare Implementation.SampleHoldSensor sensor
+      );
     end Variation3;
     
+There are several things worth noting about this model.  The first is
+that the syntax of a redeclaration is just like a normal declaration
+except it are preceded by the ``redeclare`` keyword.  Also note that
+the redeclaration is part of the ``extends`` clause.  Specifically, it
+is a modification, like any other modification, in the extends
+clause.  If we wanted to both redeclare the ``sensor`` component and
+change the ``startTime`` parameter of our setpoint, they would both be
+modifications of the ``extends`` clause, *e.g.,*
+
+.. code-block:: modelica
+
+    model Variation3 "DRY redeclaration"
+      extends HierarchicalSystem(
+        setpoint(startTime=1.0),
+        redeclare Implementation.SampleHoldSensor sensor
+      );
+    end Variation3;
+
+.. _constraining-types:
+
+Constraining Types
+^^^^^^^^^^^^^^^^^^
+
+Recall, from earlier in this section, that the public interface for
+the ``SampleAndHold`` model included:
+
+.. code-block:: modelica
+
+    parameter Modelica.SIunits.Time sample_rate=0.01;
+    Modelica.Mechanics.Rotational.Interfaces.Flange_a shaft;
+    Modelica.Blocks.Interfaces.RealOutput w;
+
+and that the ``IdealSensor`` public interface contained only:
+
+.. code-block:: modelica
+
+    Modelica.Mechanics.Rotational.Interfaces.Flange_a shaft;
+    Modelica.Blocks.Interfaces.RealOutput w;
+
+If redeclarations are restricted in such a way that the redeclared
+type has to be plug-compatible with the original type, then we could
+run into the following problem.  What if our initial model for our
+system used the ``SampleAndHold`` sensor, *i.e.,*
+
+.. code-block:: modelica
+
+    within ModelicaByExample.Architectures.SensorComparison.Examples;
+    model InitialSystem "Organzing components into subsystems"
+      replaceable Implementation.BasicPlant plant;
+      replaceable Implementation.IdealActuator actuator;
+      replaceable Implementation.SampleAndHold sensor;
+      replaceable Implementation.ProportionalController controller;
+      replaceable Modelica.Blocks.Sources.Trapezoid setpoint;
+    equation
+      // ...
+      connect(plant.flange_b, sensor.shaft);
+      connect(sensor.w, controller.measured);
+      // ...
+    end InitialSystem;
+
+Imagine further that we then wanted to redeclare the ``sensor``
+component to be an ``IdealSensor``, *e.g.,*
+
+.. code-block:: modelica
+
+    model Variation4
+      extends InitialSystem(
+        setpoint(startTime=1.0),
+        redeclare Implementation.IdealSensor sensor // illlegal
+      );
+    end Variation4;
+
+Now we have a problem.  The problem is that our original ``sensor``
+component has a parameter called ``sample_rate``.  But, we are trying
+to replace it with something that does not have that parameter.  In
+other words, the ``IdealSensor`` model is **not** plug-compatible with
+the ``SampleAndHold`` model because it is missing something,
+``sample_rate``, that the original model, ``SampleAndHold``, had.
+
+.. index:: constraining types
+
+But when we look at source code of the ``InitialSystem`` model, we see
+that the ``sample_rate`` parameter was never used.  So there is no
+real reason why we couldn't switch the type.  For this reason,
+Modelica includes the notion of a *constraining type*.
+
+The important thing to understand about redeclarations is that there
+are really two important types associated with the original
+declaration.  The first type is what the type of the original
+declaration was.  The second type is what the type *could be* and
+still work.  This second type is called the constraining type because
+as long as any redeclaration is plug-compatible with the constraining
+type, the model should still work.  So in our ``InitialSystem`` model
+above, the type of the original declaration was ``SampleAndHold``.
+But the model will still work as long as any new type is
+plug-compatible with ``IdealSensor``.
+
+When we indicate that a component is ``replaceable``, we can indicate
+the constraining type by adding a ``constrainedby`` clause at the end,
+*e.g.*,
+
+.. code-block:: modelica
+
+    replaceable Implementation.SampleAndHold sensor
+      constrainedby Implementation.IdealSensor;
+
+.. index:: default type
+
+This declaration says that the ``sensor`` component can be redeclared
+by anything that is plug-compatible with the ``IdealSensor`` model
+**but** if it isn't redeclared then **by default** it should be
+declared as a ``SampleAndHold`` sensor.  For this reason, the original
+type used in the declaration, ``SampleAndHold``, is called the
+**default type**.
+
+Recall that our original definition of the ``InitialSystem`` model
+didn't specify a constraining type.  It only specified the initial
+type.  In that case, the default type and the constraining type are
+assumed to be the initial type.
+
+Modifications
+^^^^^^^^^^^^^
 
 .. [ItPMwM] Michael M. Tiller, "Introduction to Physical Modeling with
 	    Modelica"
