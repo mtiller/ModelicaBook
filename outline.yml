@@ -390,6 +390,9 @@ Part 2 - Components:
       # Parameter propagation
       - final
       - protected
+      Protection:
+        - protected
+        - public
       # Arrays of components
       # Diagram annotations
   Architecture:
@@ -408,9 +411,6 @@ Part 2 - Components:
         - expandable
       # Another example???
     Review:
-      Protection:
-        - protected
-        - public
       Reuse:
         - partial
         - redeclare
