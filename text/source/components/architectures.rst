@@ -3,22 +3,25 @@
 Architectures
 *************
 
+* intro
+
 Examples
 ========
 
-* Revisit the propagation example in the components chapter using
-  protected parameters
+.. toctree::
+   :maxdepth: 1
+
+   architectures/sensor_comparison
+   architectures/thermal_control
 
 Review
 ======
 
-Annotations: choices, choicesAllMatching
+.. toctree::
+   :maxdepth: 1
 
-``choices``
-^^^^^^^^^^^
-
-
-.. _choices-all-matching:
-
-``choicesAllMatching``
-^^^^^^^^^^^^^^^^^^^^^^
+   architectures/int_vs_imp
+   architectures/replaceable
+   architectures/cats_and_temps
+   architectures/expandable
+   architectures/choices
