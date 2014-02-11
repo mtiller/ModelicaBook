@@ -532,4 +532,14 @@ add_simple_plot(plot="SegC",
 #                      Var("pendulum[1].revolute.phi")],
 #                title="Pendulum angles")
 
+# Sensor comparison
+scvars = [Var("inertia1.w", legend="Shaft speed"),
+          Var("speedSensor.w", legend="Measured speed"),
+          Var("feedback.u1", legend="Desired speed")]
+add_case(["SensorComparison", "FlatSystem$"], stopTime=5, res="AFS", tol=1e-3)
+add_simple_plot(plot="AFS", vars=scvars, title="Response using ideal sensor")
+
+add_case(["SensorComparison", "FlatSystem_"], stopTime=5, res="AFS_SH", tol=1e-3)
+add_simple_plot(plot="AFS_SH", vars=scvars, title="Response using a sample and hold sensor")
+
 generate()
