@@ -1,3 +1,5 @@
+.. _harmonic-motion:
+
 Harmonic Motion of Pendulums
 ----------------------------
 
