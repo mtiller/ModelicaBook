@@ -525,4 +525,11 @@ add_simple_plot(plot="SegC",
                       Var("rod200.sensor.T", legend="sensor.T, n=200")],
                 title="Comparison of segmentation")
 
+# Pendulum
+#add_case(["Pendula", "System"], stopTime=108, res="Harm", tol=1e-6)
+#add_simple_plot(plot="Harm",
+#                vars=[Var("pendulum[1].revolute.phi"),
+#                      Var("pendulum[1].revolute.phi")],
+#                title="Pendulum angles")
+
 generate()

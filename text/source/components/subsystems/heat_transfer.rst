@@ -1,3 +1,5 @@
+.. _distributed-heat-transfer:
+
 Spatially Distributed Heat Transfer
 -----------------------------------
 
