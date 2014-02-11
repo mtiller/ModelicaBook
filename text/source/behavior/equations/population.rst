@@ -4,7 +4,7 @@ Lotka-Volterra Systems
 ----------------------
 
 So far, we've seen thermal, electrical and mechanical examples.  In
-effect, these have all been engineering example.  However, Modelica is
+effect, these have all been engineering examples.  However, Modelica is
 not limited strictly to engineering disciplines.  To reinforce this
 point, this section will present a common ecological system dynamics
 model based on the relationship between predator and prey species.
