@@ -7,6 +7,6 @@ partial model Actuator "Interface for actuator"
     annotation (Placement(transformation(extent={{90,-70},{110,-50}})));
   Modelica.Blocks.Interfaces.RealInput tau "Input torque command"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-  annotation (Diagram(graphics), Icon(graphics={Rectangle(extent={{-100,100},{
+  annotation (Icon(graphics={Rectangle(extent={{-100,100},{
               100,-100}}, lineColor={255,85,85})}));
 end Actuator;

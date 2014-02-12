@@ -1,18 +1,14 @@
 within ModelicaByExample.Architectures.SensorComparison.Implementation;
 model PID_Controller "Controller subsystem implemented using a PID controller"
   extends Interfaces.Controller;
-  Modelica.Blocks.Continuous.LimPID PID(
-    k=k,
-    Ti=Ti,
-    Td=Td,
-    yMax=yMax) annotation (Placement(transformation(
-        extent={{10,-10},{-10,10}},
-        rotation=0,
-        origin={0,0})));
   parameter Real k "Gain of controller";
   parameter Modelica.SIunits.Time Ti "Time constant of Integrator block";
   parameter Modelica.SIunits.Time Td "Time constant of Derivative block";
   parameter Real yMax "Upper limit of output";
+protected
+  Modelica.Blocks.Continuous.LimPID PID(k=k, Ti=Ti, Td=Td, yMax=yMax)
+    annotation (Placement(transformation(
+        extent={{10,-10},{-10,10}}, rotation=0, origin={0,0})));
 equation
   connect(setpoint, PID.u_s) annotation (Line(
       points={{0,120},{0,60},{40,60},{40,0},{12,0}},
@@ -29,7 +25,7 @@ equation
       color={0,0,127},
       pattern=LinePattern.None,
       smooth=Smooth.None));
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation (Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},

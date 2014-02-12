@@ -1,8 +1,10 @@
+.. _propagation:
+
 Propagation
 -----------
 
 When building subsystem models, it is extremely common for a subsystem
-to contain parameters that it then "propagates" down to its
+to contain parameters that it then propagates or cascades down to its
 components.  For example, consider the following system model used in
 our discussion of :ref:`rotational-components`:
 

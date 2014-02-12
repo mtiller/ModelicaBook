@@ -1,3 +1,5 @@
+.. _sub-modifications:
+
 Modifications
 -------------
 
@@ -42,7 +44,8 @@ we had an array of ``StepVoltage`` components declared as follows:
 
     StepVoltage Vs[5];
 
-This is not only legal Modelica, but it can be useful to represent a
+As we saw in our discussion of :ref:`arrays-of-components`, this is
+not only legal Modelica, but it can be useful to represent a
 collection of components within a subsystem.  If we want to give the
 parameter ``Vf`` a value, we have two choices.  The first is to
 specify an array of values, *e.g.,*
@@ -69,8 +72,9 @@ by a ``parameter``, *e.g.,*
     parameter Integer n;
     StepVoltage Vs[n](Vf=/* ??? */);
 
-To address this situation, we could use the :ref:`fill-function`
-function:
+If we tried to initialize ``Vf`` with a literal array (*e.g.,*
+``{24,24,24}``, then it won't adapt to changes in ``n``.  `To address
+this situation, we could use the :ref:`fill-function` function:
 
 .. code-block:: modelica
 
@@ -95,3 +99,8 @@ modification, that modification is applied to every instance, *e.g.,*
 
     parameter Integer n;
     StepVoltage Vs[n](each Vf(min=0)=24);
+
+Modifications are an essential part of modeling because they allow us
+to modify the parameter values down through the hierarchy.  As you can
+see from the examples in this section, Modelica provides many features
+to make applying modifications to hierarchies simple and powerful.

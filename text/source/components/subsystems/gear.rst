@@ -48,7 +48,7 @@ load that is being driven by the gear.
 
 If we simulate this system, we get the following response:
 
-.. plot:: ../plots/FSWB.py
+.. plot:: ../plots/FSWB_comp.py
    :include-source: no
 
 The important thing to understand about this system is that the
@@ -57,6 +57,9 @@ repeated in any gear related application.  In fact, they may be
 repeated multiple times in a model of something like an automotive
 transmission model.
 
+
+Hierarchical Version
+^^^^^^^^^^^^^^^^^^^^
 So, in order to avoid redundancy (the reasons for which have already
 been discussed), we should create a reusable subsystem model of the
 components within the dashed line.  In such a case, our schematic
@@ -76,6 +79,55 @@ have been assembled into the following subsystem model:
    :language: modelica
    :lines: 1-53,81
 
+When rendered, we see the diagram for the ``GearWithBacklash`` model
+looks like this:
 
-Hierarchical Version
-^^^^^^^^^^^^^^^^^^^^
+.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.svg
+   :width: 100%
+   :align: center
+   :alt: Gear with backlash subsystem model
+
+There is quite a bit going on in this model.  First, note the presence
+of the ``useSupport`` parameter.  This is used to determine whether to
+include the :ref:`optional-ground-connector` we discussed in the
+previous chapter.
+
+Also note that all the subcomponents (``inertia_a``, ``inertia_b``,
+``backlash`` and ``idealGear``) are all ``protected``.  Only the
+connectors (``flange_a``, ``flange_b`` and ``support``) and the
+parameters (``J_a``, ``J_b``, ``c``, ``d``, ``b``, ``ratio``) are
+``public``.  The idea here is that the only thing that the user needs
+to be aware of (or should even be able to access) are the connectors
+and the parameters.  Everything else is an implementation detail.  The
+``protected`` elements of a model cannot be referenced from outside.
+This prevents models from breaking if the internal details (which the
+user should not require any knowledge of anyway) were to change.
+
+Also note how many of the parameters, *e.g.,* ``c``, are specified at
+the subsystem level and then assigned to parameters lower down in the
+hierarchy (often in conjunction with the ``final`` qualifier).  In
+this way, parameters of the components can be collected at the
+subsystem level so users of this model will see all relevant
+parameters in one place (at the subsystem level).  This is called
+:ref:`propagation` and we will be discussing it in greater detail
+later in the chapter.
+
+As we can see in the following plot, the results are identical when
+compared to the "flat" version presented previously:
+
+.. plot:: ../plots/SWB.py
+   :include-source: no
+
+
+Conclusion
+^^^^^^^^^^
+
+We've already seen how component models can be used to turn equations
+into reusable components.  This avoids the tedious, time-consuming and
+error prone process of manually entering equations over and over
+again.  This same principle applies when we find ourselves constantly
+building the same assembly of component models into similar
+assemblies.  We can use this subsystem model approach to create
+reusable assemblies of components and parameterize them such that the
+assembly can be used over and over again where the only changes
+required are parametric.

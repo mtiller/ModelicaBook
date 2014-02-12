@@ -2,7 +2,7 @@ within ModelicaByExample.Subsystems.GearSubsystemModel.Examples;
 model BacklashExample "An example demonstrating the GearWithBacklash model"
   Components.GearWithBacklash gearWithBacklash(
     c=1000,
-    d=1,
+    d=2,
     ratio=4,
     J_a=0.01,
     J_b=0.02,
@@ -20,8 +20,8 @@ model BacklashExample "An example demonstrating the GearWithBacklash model"
   Modelica.Blocks.Sources.Trapezoid torque_profile(
     amplitude=2,
     offset=-1,
-    period=0.4,
-    width=0.2) "Torque signal to apply to system"
+    period=0.8,
+    width=0.4) "Torque signal to apply to system"
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
 equation
   connect(torque.flange, gearWithBacklash.flange_a) annotation (Line(
@@ -57,5 +57,4 @@ equation
       points={{-59,0},{-32,0}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end BacklashExample;

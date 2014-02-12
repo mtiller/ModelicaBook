@@ -21,6 +21,7 @@ Review
 .. toctree::
    :maxdepth: 1
 
+   subsystems/sub_interface
    subsystems/comp_arrays
    subsystems/modifications
    subsystems/propagation

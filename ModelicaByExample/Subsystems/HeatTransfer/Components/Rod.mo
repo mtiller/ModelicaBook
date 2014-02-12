@@ -1,6 +1,8 @@
 within ModelicaByExample.Subsystems.HeatTransfer.Components;
 model Rod "Modeling discretized rod"
-  parameter Integer n(start=2) "Number of rod segments";
+  import HTC=Modelica.Thermal.HeatTransfer.Components;
+
+  parameter Integer n(start=2,min=2) "Number of rod segments";
   parameter Modelica.SIunits.Temperature T0 "Initial rod temperature";
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a port_a
     "Thermal connector for rod end 'a'"
@@ -18,17 +20,15 @@ model Rod "Modeling discretized rod"
     "Thermal connector for rod end 'a'"
     annotation (Placement(transformation(extent={{-10,-110},{10,-90}})));
 protected
-  Modelica.Thermal.HeatTransfer.Components.HeatCapacitor capacitance[n](each final C=C/n)
+  HTC.HeatCapacitor capacitance[n](each final C=C/n, each T(start=T0, fixed=true))
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={-30,20})));
-  Modelica.Thermal.HeatTransfer.Components.ThermalConductor wall[n](each final G=G_wall/n)
+        rotation=0, origin={-30,20})));
+  HTC.ThermalConductor wall[n](each final G=G_wall/n)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-30,-20})));
-  Modelica.Thermal.HeatTransfer.Components.ThermalConductor rod_conduction[n-1](each final G=G_rod)
+        rotation=90, origin={-30,-20})));
+  HTC.ThermalConductor rod_conduction[n-1](each final G=G_rod)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 equation
   for i in 1:n loop
@@ -43,7 +43,7 @@ equation
   end for;
   connect(capacitance[1].port, port_a) "First capacitance to rod end";
   connect(capacitance[n].port, port_b) "Last capacitance to (other) rod end";
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation (Icon(graphics={
         Ellipse(
           extent={{-56,20},{-44,-20}},
           lineColor={135,135,135},

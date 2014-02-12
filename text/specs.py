@@ -445,7 +445,117 @@ abxvars = [Var("solution.C[ModelicaByExample.Components.ChemicalReactions.ABX.Sp
 
 # Subsystem models
 add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB", tol=1e-3);
-add_simple_plot(plot="FSWB", vars=[Var("inertia_a.w"), Var("inertia_b.w")],
+add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB_nolash", tol=1e-3,
+         mods={"backlash.b": 0});
+
+fswb_vars = [Var("inertia_a.w"), Var("inertia_b.w")]
+add_compare_plot(plot="FSWB_comp", legloc="upper right",
+                 res1="FSWB",
+                 v1=[Var("inertia_a.w", legend="inertia_a.w (with lash)", style="-"),
+                     Var("inertia_b.w", legend="inertia_b.w (with lash)", style="-")],
+                 res2="FSWB_nolash",
+                 v2=[Var("inertia_a.w", legend="inertia_a.w (without lash)", style="-"),
+                     Var("inertia_b.w", legend="inertia_b.w (without lash)", style="-")],
+                 title="Gear response, with and without backlash")
+
+add_simple_plot(plot="FSWB", vars=fswb_vars,
                 title="System schematic of gear system with backlash")
+
+swb_vars = [Var("gearWithBacklash.inertia_a.w"),
+            Var("gearWithBacklash.inertia_b.w")]
+add_case(["BacklashExample"], stopTime=2.0, res="SWB", tol=1e-3);
+add_simple_plot(plot="SWB", vars=swb_vars,
+                title="Response of hierarchical gear system with backlash")
+
+# Lotka-Volterra (migration)
+regvars = [Var("A.rabbits.population", legend="Rabbits in A"),
+           Var("B.rabbits.population", legend="Rabbits in B"),
+           Var("C.rabbits.population", legend="Rabbits in C"),
+           Var("D.rabbits.population", legend="Rabbits in D"),
+           Var("A.foxes.population", legend="Foxes in A"),
+           Var("B.foxes.population", legend="Foxes in B"),
+           Var("C.foxes.population", legend="Foxes in C"),
+           Var("D.foxes.population", legend="Foxes in D")]
+add_case(["UnconnectedPopulations"], stopTime=160.0, res="Uncon", tol=1e-3);
+add_simple_plot(plot="Uncon", vars=regvars, ncols=2, ymax=60,
+                title="Comparison of regional populations")
+
+add_case(["InitiallyDifferent"], stopTime=160.0, res="ID", tol=1e-3);
+add_simple_plot(plot="ID", vars=regvars, ncols=2, ymax=85,
+                title="Effect of different initial populations")
+
+add_case(["WithMigration"], stopTime=240.0, res="WM", tol=1e-3);
+add_simple_plot(plot="WM", vars=regvars, ncols=2, ymax=60,
+                title="Effect of migration on regional populations")
+
+# Power supply
+add_case(["FlatCircuit"], stopTime=1.0, res="FC", tol=1e-6);
+add_simple_plot(plot="FC", vars=[Var("load.v")], legloc="lower right",
+                title="Flat power supply circuit");
+
+sscvars = [Var("load.v")]
+add_case(["SubsystemCircuit"], stopTime=1.0, res="SSC", tol=1e-6);
+add_simple_plot(plot="SSC", vars=sscvars, legloc="lower right",
+                title="System with power supply component")
+
+add_case(["AdditionalLoad"], stopTime=1.0, res="SSC_AL", tol=1e-6);
+add_simple_plot(plot="SSC_AL", vars=sscvars, legloc="lower right",
+                title="Power supply component with additional load")
+
+add_case(["AdditionalLoad"], stopTime=1.0, res="SSC_ALC", tol=1e-6,
+         mods={"power_supply.C": 1e-1});
+add_simple_plot(plot="SSC_ALC", vars=sscvars, legloc="lower right",
+                title="Power supply component with additional load")
+
+add_case(["AdditionalLoad"], stopTime=1.0, res="SSC_ALC2", tol=1e-6,
+         mods={"power_supply.C": 100});
+add_simple_plot(plot="SSC_ALC2", vars=sscvars, legloc="lower right",
+                title="Effect of very large capacitance")
+
+# Rod models
+add_case(["FlatRod"], stopTime=1.5, res="FR", tol=1e-3)
+add_simple_plot(plot="FR", vars=[Var("sensor.T")], title="Sensor measurement")
+
+add_case(["SegmentComparison"], stopTime=1.5, res="SegC", tol=1e-3)
+add_simple_plot(plot="SegC",
+                vars=[Var("rod3.sensor.T", legend="sensor.T, n=3"),
+                      Var("rod6.sensor.T", legend="sensor.T, n=6"),
+                      Var("rod10.sensor.T", legend="sensor.T, n=10"),
+                      Var("rod100.sensor.T", legend="sensor.T, n=100"),
+                      Var("rod200.sensor.T", legend="sensor.T, n=200")],
+                title="Comparison of segmentation")
+
+# Pendulum
+#add_case(["Pendula", "System"], stopTime=108, res="Harm", tol=1e-6)
+#add_simple_plot(plot="Harm",
+#                vars=[Var("pendulum[1].revolute.phi"),
+#                      Var("pendulum[1].revolute.phi")],
+#                title="Pendulum angles")
+
+# Sensor comparison
+scvars = [Var("inertia1.w", legend="Shaft speed"),
+          Var("speedSensor.w", legend="Measured speed"),
+          Var("feedback.u1", legend="Desired speed")]
+add_case(["SensorComparison", "FlatSystem$"], stopTime=5, res="AFS", tol=1e-3)
+add_simple_plot(plot="AFS", vars=scvars, title="Response using ideal sensor")
+
+add_case(["SensorComparison", "FlatSystem_"], stopTime=5, res="AFS_SH", tol=1e-3)
+add_simple_plot(plot="AFS_SH", vars=scvars, title="Response using a sample and hold sensor")
+
+ascvars = [Var("plant.inertia1.w", legend="Shaft speed"),
+           Var("sensor.w", legend="Measured speed"),
+           Var("controller.setpoint", legend="Desired speed")]
+
+add_case(["SensorComparison", "[^_]Variant1$"], stopTime=5, res="SV1", tol=1e-3)
+add_simple_plot(plot="SV1", vars=ascvars, title="Response with hold time of 0.01")
+
+add_case(["SensorComparison", "Variant1_"], stopTime=5, res="SV1U", tol=1e-3)
+add_simple_plot(plot="SV1U", vars=ascvars, title="Response with hold time of 0.036")
+
+#add_case(["SensorComparison", "[^_]Variant2$"], stopTime=5, res="SV2", tol=1e-3)
+#add_simple_plot(plot="SV2", vars=ascvars, title="Response using PID control")
+
+#add_case(["SensorComparison", "Variant2_"], stopTime=5, res="SV2T", tol=1e-3)
+#add_simple_plot(plot="SV2T", vars=ascvars, title="Response using a tuned PID controller")
 
 generate()
