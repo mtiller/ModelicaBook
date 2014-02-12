@@ -1,15 +1,16 @@
 within ModelicaByExample.Architectures.SensorComparison.Implementation;
 model LimitedActuator "An actuator with lag and saturation"
   extends Interfaces.Actuator;
+  parameter Modelica.SIunits.Time delayTime
+    "Delay time of output with respect to input signal";
+  parameter Real uMax "Upper limits of input signals";
+protected
   Modelica.Mechanics.Rotational.Sources.Torque torque(useSupport=true)
     annotation (Placement(transformation(extent={{30,-10},{50,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=uMax)
     annotation (Placement(transformation(extent={{-18,-10},{2,10}})));
   Modelica.Blocks.Nonlinear.FixedDelay lag(delayTime=delayTime)
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
-  parameter Modelica.SIunits.Time delayTime
-    "Delay time of output with respect to input signal";
-  parameter Real uMax "Upper limits of input signals";
 equation
   connect(torque.flange, shaft) annotation (Line(
       points={{50,0},{100,0}},
@@ -36,7 +37,7 @@ equation
       color={0,0,127},
       pattern=LinePattern.None,
       smooth=Smooth.None));
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation (Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},

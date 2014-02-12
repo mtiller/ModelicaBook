@@ -3,18 +3,23 @@ partial model SystemArchitecture_WithDefaults
   "A system architecture including default implementations"
 
   replaceable Implementation.BasicPlant plant constrainedby Interfaces.Plant
-    annotation (choicesAllMatching=true, Placement(transformation(extent={{-10,-50},{10,-30}})));
+    annotation (choicesAllMatching=true,
+      Placement(transformation(extent={{-10,-50},{10,-30}})));
   replaceable Implementation.IdealActuator actuator constrainedby
     Interfaces.Actuator
-    annotation (choicesAllMatching=true, Placement(transformation(extent={{-50,-50},{-30,-30}})));
+    annotation (choicesAllMatching=true,
+      Placement(transformation(extent={{-50,-50},{-30,-30}})));
   replaceable Implementation.IdealSensor sensor constrainedby Interfaces.Sensor
-    annotation (choicesAllMatching=true, Placement(transformation(extent={{30,-50},{50,-30}})));
+    annotation (choicesAllMatching=true,
+      Placement(transformation(extent={{30,-50},{50,-30}})));
   replaceable Implementation.ProportionalController controller constrainedby
     Interfaces.Controller
-    annotation (choicesAllMatching=true, Placement(transformation(extent={{-10,-10},{10,10}})));
+    annotation (choicesAllMatching=true,
+      Placement(transformation(extent={{-10,-10},{10,10}})));
   replaceable Modelica.Blocks.Sources.Trapezoid setpoint constrainedby
     Modelica.Blocks.Interfaces.SO
-    annotation (choicesAllMatching=true,Placement(transformation(extent={{-60,30},{-40,50}})));
+    annotation (choicesAllMatching=true,
+      Placement(transformation(extent={{-60,30},{-40,50}})));
 equation
   connect(actuator.shaft, plant.flange_a) annotation (Line(
       points={{-30,-40},{-10,-40}},
