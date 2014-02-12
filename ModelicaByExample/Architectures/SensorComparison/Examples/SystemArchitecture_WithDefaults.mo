@@ -16,7 +16,7 @@ partial model SystemArchitecture_WithDefaults
     Interfaces.Controller
     annotation (choicesAllMatching=true,
       Placement(transformation(extent={{-10,-10},{10,10}})));
-  replaceable Modelica.Blocks.Sources.Trapezoid setpoint constrainedby
+  replaceable Modelica.Blocks.Sources.Trapezoid setpoint(period=1.0) constrainedby
     Modelica.Blocks.Interfaces.SO
     annotation (choicesAllMatching=true,
       Placement(transformation(extent={{-60,30},{-40,50}})));

@@ -14,7 +14,7 @@ partial model SystemArchitecture
   replaceable Interfaces.Controller controller
     annotation (choicesAllMatching=true,
       Placement(transformation(extent={{-10,-10},{10,10}})));
-  Modelica.Blocks.Sources.Trapezoid setpoint
+  Modelica.Blocks.Sources.Trapezoid setpoint(period=1.0)
     annotation (choicesAllMatching=true,
       Placement(transformation(extent={{-60,30},{-40,50}})));
 equation
