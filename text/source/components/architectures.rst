@@ -50,6 +50,7 @@ Examples
    :maxdepth: 1
 
    architectures/sensor_comparison
+   architectures/sensor_comparison_ad
    architectures/thermal_control
 
 Review
