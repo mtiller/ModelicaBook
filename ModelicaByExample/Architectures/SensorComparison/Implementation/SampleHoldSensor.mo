@@ -1,6 +1,6 @@
 within ModelicaByExample.Architectures.SensorComparison.Implementation;
 model SampleHoldSensor "Implementation of a sample hold sensor"
-  parameter Modelica.SIunits.Time sample_rate=0.01;
+  parameter Modelica.SIunits.Time sample_rate(min=Modelica.Constants.eps);
   Modelica.Mechanics.Rotational.Interfaces.Flange_a shaft
     "Flange of shaft from which sensor information shall be measured"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));

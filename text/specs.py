@@ -542,4 +542,20 @@ add_simple_plot(plot="AFS", vars=scvars, title="Response using ideal sensor")
 add_case(["SensorComparison", "FlatSystem_"], stopTime=5, res="AFS_SH", tol=1e-3)
 add_simple_plot(plot="AFS_SH", vars=scvars, title="Response using a sample and hold sensor")
 
+ascvars = [Var("plant.inertia1.w", legend="Shaft speed"),
+           Var("sensor.w", legend="Measured speed"),
+           Var("controller.setpoint", legend="Desired speed")]
+
+add_case(["SensorComparison", "[^_]Variant1$"], stopTime=5, res="SV1", tol=1e-3)
+add_simple_plot(plot="SV1", vars=ascvars, title="Response with hold time of 0.01")
+
+add_case(["SensorComparison", "Variant1_"], stopTime=5, res="SV1U", tol=1e-3)
+add_simple_plot(plot="SV1U", vars=ascvars, title="Response with hold time of 0.036")
+
+add_case(["SensorComparison", "[^_]Variant2$"], stopTime=5, res="SV2", tol=1e-3)
+add_simple_plot(plot="SV2", vars=ascvars, title="Response using PID control")
+
+add_case(["SensorComparison", "Variant2_"], stopTime=5, res="SV2T", tol=1e-3)
+add_simple_plot(plot="SV2T", vars=ascvars, title="Response using a tuned PID controller")
+
 generate()

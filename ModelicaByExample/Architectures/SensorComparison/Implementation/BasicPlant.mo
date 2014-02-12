@@ -1,6 +1,23 @@
 within ModelicaByExample.Architectures.SensorComparison.Implementation;
 model BasicPlant "Implementation of the basic plant model"
+  parameter Modelica.SIunits.Inertia J_a=0.1 "Moment of inertia";
+  parameter Modelica.SIunits.Inertia J_b=0.3 "Moment of inertia";
+  parameter Modelica.SIunits.RotationalSpringConstant c=100 "Spring constant";
+  parameter Modelica.SIunits.RotationalDampingConstant d_shaft=3
+    "Shaft damping constant";
+  parameter Modelica.SIunits.RotationalDampingConstant d_load=4
+    "Load damping constant";
 
+  Modelica.Mechanics.Rotational.Interfaces.Support housing
+    "Connection to mounting"
+    annotation (Placement(transformation(extent={{-110,-70},{-90,-50}})));
+  Modelica.Mechanics.Rotational.Interfaces.Flange_a flange_a
+    "Input shaft for plant"
+    annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
+  Modelica.Mechanics.Rotational.Interfaces.Flange_b flange_b
+    "Output shaft of plant"
+    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
+protected
   Modelica.Mechanics.Rotational.Components.Fixed fixed
     annotation (Placement(transformation(extent={{-10,-80},{10,-60}})));
   Modelica.Mechanics.Rotational.Components.Inertia inertia(J=J_a)
@@ -12,22 +29,6 @@ model BasicPlant "Implementation of the basic plant model"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Mechanics.Rotational.Components.Damper damper(d=d_load)
     annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
-  Modelica.Mechanics.Rotational.Interfaces.Flange_b flange_b
-    "Output shaft of plant"
-    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  Modelica.Mechanics.Rotational.Interfaces.Flange_a flange_a
-    "Input shaft for plant"
-    annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
-  parameter Modelica.SIunits.Inertia J_a=0.1 "Moment of inertia";
-  parameter Modelica.SIunits.Inertia J_b=0.3 "Moment of inertia";
-  parameter Modelica.SIunits.RotationalSpringConstant c=100 "Spring constant";
-  parameter Modelica.SIunits.RotationalDampingConstant d_shaft=3
-    "Damping constant";
-  parameter Modelica.SIunits.RotationalDampingConstant d_load=4
-    "Damping constant";
-  Modelica.Mechanics.Rotational.Interfaces.Support housing
-    "Connection to mounting"
-    annotation (Placement(transformation(extent={{-110,-70},{-90,-50}})));
 equation
   connect(springDamper.flange_a, inertia.flange_b) annotation (Line(
       points={{-10,0},{-20,0}},
@@ -59,7 +60,7 @@ equation
       points={{0,-70},{0,-60},{-100,-60}},
       color={0,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation (Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},

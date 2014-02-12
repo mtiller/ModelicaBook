@@ -15,6 +15,6 @@ partial model Controller "Interface for controller subsystem"
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={-110,0})));
-  annotation (Diagram(graphics), Icon(graphics={Rectangle(extent={{-100,100},{
+  annotation (Icon(graphics={Rectangle(extent={{-100,100},{
               100,-100}}, lineColor={0,128,255})}));
 end Controller;
