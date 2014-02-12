@@ -31,12 +31,15 @@ that's fine for our purposes.
 
 Let's start by considering the interface for our ``sensor``
 subsystem.  We have already discussed the public interface in detail
-already.  Here is a Modelica definition for that interface:
-
-.. code-block:: modelica
+already.  Here is a Modelica definition and icon for that interface:
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Sensor.mo
    :language: modelica
+
+.. image:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Sensor.svg
+   :width: 25%
+   :align: center
+   :alt: Sensor interface
 
 A few things to note about this ``model`` definition.  The first is,
 as we mentioned a moment ago, that this model is ``partial``.  It
@@ -63,6 +66,11 @@ connector for the stator.  Otherwise, it is very similar to our
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Actuator.mo
    :language: modelica
 
+.. image:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Actuator.svg
+   :width: 25%
+   :align: center
+   :alt: Actuator interface
+
 The ``Plant`` interface has three rotational connectors.  One for the
 "input" side (where the actuator will be connected), one for the
 "output" side (where the sensor will be connected) and the last one
@@ -71,10 +79,21 @@ for the "support" side (so it can be "mounted" to something):
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Plant.mo
    :language: modelica
 
+.. image:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Plant.svg
+   :width: 25%
+   :align: center
+   :alt: Plant interface
+
 Finally, we have the ``Controller`` interface definition:
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Controller.mo
    :language: modelica
+
+.. image:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Controller.svg
+   :width: 25%
+   :align: center
+   :alt: Controller interface
+
 
 Regardless of how it is implemented (*e.g.,* proportional control, PID
 control), the ``Controller`` will require an input connector for the

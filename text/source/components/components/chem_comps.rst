@@ -182,10 +182,8 @@ concentration trajectories:
 
 .. todo:: Fix the model that should generate the following plot
 
-.. comment::
-
-    .. plot:: ../plots/ABX.py
-       :include-source: no
+#.. plot:: ../plots/ABX.py
+#   :include-source: no
 
 Conclusion
 ^^^^^^^^^^

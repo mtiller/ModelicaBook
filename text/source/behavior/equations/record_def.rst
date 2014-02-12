@@ -1,6 +1,6 @@
-.. _record-def:
-
 .. index:: ! record
+
+.. _record-def:
 
 Record Definitions
 ==================

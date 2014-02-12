@@ -27,9 +27,11 @@ pendulum.
 .. literalinclude:: /ModelicaByExample/Subsystems/Pendula/Pendulum.mo
    :language: modelica
 
-An individual pendulum can be visualized in three dimensions as follows:
+.. todo:: Need more discussion of the parts here
 
-.. image:: /ModelicaByExample/Subsystems/Pendula/Pendulum.png
+The components of the pendulum can be rendered as follows:
+
+.. image:: /ModelicaByExample/Subsystems/Pendula/Pendulum.svg
    :width: 100%
    :align: center
    :alt: A single pendulum
