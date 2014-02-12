@@ -265,10 +265,8 @@ limitations on the amount of torque it can supply, *i.e.*,
 
 we will get the following simulation results:
 
-.. todo:: I need to get these simulations working
-
-#.. plot:: ../plots/SV2.py
-#   :include-source: no
+.. plot:: ../plots/SV2.py
+   :include-source: no
 
 Furthermore, if take some time to tune the gains in the PID
 controller, *i.e.,*
@@ -278,8 +276,8 @@ controller, *i.e.,*
 
 Then, we will get even better simulation results:
 
-#.. plot:: ../plots/SV2T.py
-#   :include-source: no
+.. plot:: ../plots/SV2T.py
+   :include-source: no
 
 Conclusion
 ^^^^^^^^^^

@@ -8,7 +8,7 @@ model HierarchicalSystem "Organzing components into subsystems"
     annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
   Implementation.ProportionalController controller
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  Modelica.Blocks.Sources.Trapezoid setpoint
+  Modelica.Blocks.Sources.Trapezoid setpoint(period=1.0)
     annotation (Placement(transformation(extent={{-50,20},{-30,40}})));
 equation
   connect(actuator.shaft, plant.flange_a) annotation (Line(
