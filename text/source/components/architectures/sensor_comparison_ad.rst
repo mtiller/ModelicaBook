@@ -246,6 +246,8 @@ limitations on the amount of torque it can supply, *i.e.*,
 
 we will get the following simulation results:
 
+.. todo:: I need to get these simulations working
+
 #.. plot:: ../plots/SV2.py
 #   :include-source: no
 
