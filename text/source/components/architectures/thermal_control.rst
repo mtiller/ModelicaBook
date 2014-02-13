@@ -24,7 +24,7 @@ Architecture
 
 Let's start with the following architecture:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/BaseModel.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/ArchitecturesBaseArchitecture.svg
    :width: 80%
    :align: center
    :alt: Initial architecture
@@ -52,8 +52,12 @@ architecture schematic that our interface definitions are such:
 
     * The controller takes the measured temperature (from the sensor)
       as an input and outputs a commanded heat output (to the
-      actuator):
+      actuator)
 
+The Modelica code for this base system looks like this:
+
+.. literalinclude:: /ModelicaByExample/Architectures/ThermalControl/Architectures/BaseArchitecture.mo
+   :language: modelica
 
 Initial Implementations
 ^^^^^^^^^^^^^^^^^^^^^^^
