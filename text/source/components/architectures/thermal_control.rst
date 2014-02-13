@@ -386,8 +386,8 @@ that, we need to look at the actual source code:
 
 .. literalinclude:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ExpandablePIControl.mo
    :language: modelica
-   :lines: 1-21,38
-   :emphasize-lines: 13,19
+   :lines: 1-29,39
+   :emphasize-lines: 24,27
 
 Again, note the highlighted lines.  Not only do these ``connect``
 statements implicitly add the ``heat_command`` and ``temperature``
@@ -407,8 +407,62 @@ The source code for our system model is quite simple:
 .. literalinclude:: /ModelicaByExample/Architectures/ThermalControl/Examples/OnOffVariant.mo
    :language: modelica
 
-* Hyteresis
+.. plot:: ../plots/TCE_BB.py
+   :include-source: no
+
+However, there is still one remaining issue with these models and it
+can be seen more clearly if we look at the duty cycle of the furnace:
+
+.. plot:: ../plots/TCE_BBh.py
+   :include-source: no
+
+This is exactly the same issue we demonstrated in the previous section
+on :ref:`hysteresis`.  It is precisely the fact that our control
+strategy lacks any hysteresis that we see the furnace constantly
+turning on and off.  If we add hysteresis, our controller model
+becomes:
+
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffControl_WithHysteresis.mo
+   :width: 80%
+   :align: center
+   :alt: Bang-bang controller with hysteresis
+
+Nothing else has changed.  We will use the same sensor and actuator
+models and we still use the same bus signals since this is still a
+bang-bang controller.  So the only change to our system level model
+(compared to the ``OnOffVariant`` model) is the use of a different
+controller model.  As we can see, these configuration management
+features in Modelica do a nice job of conveying that in our system
+level model:
+
+.. literalinclude:: /ModelicaByExample/Architectures/ThermalControl/Architectures/HysteresisVariant.mo
+   :language: modelica
+
+Using hysteresis control, our simulation results look like this:
+
+.. plot:: ../plots/TCE_Hy.py
+   :include-source: no
+
+But the most important difference is the fact that the hysteresis
+doesn't lead to the kind of chattering we saw in our previous
+bang-bang controller:
+
+.. plot:: ../plots/TCE_Hyh.py
+   :include-source: no
 
 Conclusion
 ^^^^^^^^^^
 
+This is the second example of how we can use the configuration
+management features in Modelica to taken an architecturally based
+approach to building system models.  This architectural approach is
+very useful when there a many variations of a the same architecture
+that require analysis.  Using the ``redeclare`` feature, it is
+possible to easily substitute alternative designs for each subsystem
+or to consider more or less detail in any given subsystem as necessary
+for any given engineering analysis.
+
+In this particular example, we saw how an ``expandable`` connector can
+provide greater flexibility than a standard connector.  However, it
+also comes with some risk because the type checking normally done by
+the Modelica compiler is less rigorous.

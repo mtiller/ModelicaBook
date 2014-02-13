@@ -578,8 +578,24 @@ add_case(["ThermalControl", "ExpandableModel"], stopTime=50, res="TCE", tol=1e-3
 add_simple_plot(plot="TCE", vars=tcevars, legloc="lower right",
                 title="Response using PI controller in expandable architecture")
 
+tcebbvars = [Var("sensor.room.T", legend="Room Temperature (sensor.room.T)"),
+           Var("controller.bus.temperature", legend="Measured Temperature (controller.bus.temp"),
+           Var("controller.setpoint_signal.y", legend="Desired Temperature")]
+
 add_case(["ThermalControl", "OnOffVariant"], stopTime=50, res="TCE_BB", tol=1e-3)
-add_simple_plot(plot="TCE_BB", vars=tcevars, legloc="lower right",
+add_simple_plot(plot="TCE_BB", vars=tcebbvars, legloc="lower right",
                 title="Response using PI bang-bang control")
+
+add_simple_plot(plot="TCE_BBh", res="TCE_BB", vars=[Var("controller.bus.heat_command")],
+                legloc="lower right",
+                title="Actuator duty cycle using bang-bang control")
+
+add_case(["ThermalControl", "HysteresisVariant"], stopTime=50, res="TCE_Hy", tol=1e-3)
+add_simple_plot(plot="TCE_Hy", vars=tcebbvars, legloc="lower right",
+                title="Response using PI bang-bang control with hysteresis")
+
+add_simple_plot(plot="TCE_Hyh", res="TCE_Hy", vars=[Var("controller.bus.heat_command")],
+                legloc="lower right",
+                title="Actuator duty cycle using bang-bang control with hysteresis")
 
 generate()
