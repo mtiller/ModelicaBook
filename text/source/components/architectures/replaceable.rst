@@ -65,7 +65,7 @@ plug-compatible with the constraining type.  But, of course, the
 ``DefaultType`` must **also** be plug-compatible with the constraining
 type.
 
-.. topic::
+.. topic:: ``constrainedby`` vs. ``extends``
 
     Older versions of Modelica didn't include the ``constrainedby``
     keyword.  Instead, the ``extends`` keyword was used instead.  But
@@ -179,15 +179,98 @@ one element.
 Modifications
 ^^^^^^^^^^^^^
 
+.. index:: modifications; in the context of redeclarations
+
+One important complexity that comes with replaceability is what
+happens to modifications in the case of a redeclaration.  To
+understand the issue, consider the following example.
+
+.. code-block:: modelica
+
+    replaceable SampleHoldSensor sensor(sample_rate=0.01)
+      constrainedby Sensor;
+
+Now, what happens if we were to redeclare the ``sensor`` as follows:
+
+.. code-block:: modelica
+
+    redeclare IdealSensor sensor;
+
+Is the value for ``sample_rate`` lost?  We would hope so since the
+``IdealSensor`` model probably doesn't have a ``parameter`` called
+``sample_rate`` to set.
+
+But let's consider another case:
+
+.. code-block:: modelica
+
+    replaceable Resistor R1(R=100);
+
+Now imagine we had another resistor model, ``SensitiveResistor`` that
+was plug-compatible with ``Resistor`` (*i.e.,* it had a ``parameter``
+called ``R`) but included on additional parameter, ``dRdT``,
+indicating the (linear) sensitivity of the resistance to temperature.
+We might want to do something like this:
+
+.. code-block:: modelica
+
+    redeclare SensitiveResistor R1(dRdT=0.1);
+
+What happens to ``R`` in this case?  In this case, we would actually
+like to preserve the value of ``R`` so it persists across the
+redeclaration.  Otherwise, we'd need to restate it all the time,
+*i.e.,*
+
+.. code-block:: modelica
+
+    redeclare SensitiveResistor R1(R=100, dRdT=0.1);
+
+and this would violate the DRY principle.  The result would be that
+any change in the original value of ``R`` would be overridden by any
+redeclarations.
+
+So, we've seen two cases valid use cases.  In one case, we don't want
+a modification to persist following a redeclaration and in the other
+we would like the modification to persist.  Fortunately, Modelica has
+a way to express both of these.  The normal Modelica semantics take
+care of the first case.  If we redeclare something, all modifications
+from the original declaration are erased.  But what about the second
+case?  In that case, the solution is to **apply the modifications to
+the constraining type**.  So for our resistor example, our original
+declaration would need to be:
+
+.. code-block:: modelica
+
+    replaceable Resistor R1 constrainedby Resistor(R=100);
+
+Here we explicitly list both the default type ``Resistor`` and the
+constraining type ``Resistor(R=100)`` separately because the
+constraining type now includes a modification.  By moving the
+modification to the constraining type, **that modification will
+automatically be applied to both the original declaration and any
+subsequent redeclarations**.  So in this case, the resistor instance
+``R1`` will have an ``R`` value of ``100`` even though the
+modification isn't directly applied after the variable name.  But
+furthermore, if we perform the redeclaration we discussed previously, *i.e.,*
+
+.. code-block:: modelica
+
+    redeclare SensitiveResistor R1(dRdT=0.1);
+
+the ``R=100`` modification will automatically be applied here as well.
+
+In summary, if you want a modification to apply only to a specific
+declaration and not in subsequent redeclarations, apply it after the
+variable name.  If you want it to persist through subsequent
+redeclarations, apply it to the constraining type.
+
+Redefinitions
+^^^^^^^^^^^^^
+
+* type redefinition (modifications)
+
 Choices
 ^^^^^^^
 
-* replaceable
-* redeclare
-* constrainedby
-
-* modifications
-
 * choices
 
-* type redefinition (modifications)

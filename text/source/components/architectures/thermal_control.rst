@@ -435,7 +435,7 @@ controller model.  As we can see, these configuration management
 features in Modelica do a nice job of conveying that in our system
 level model:
 
-.. literalinclude:: /ModelicaByExample/Architectures/ThermalControl/Architectures/HysteresisVariant.mo
+.. literalinclude:: /ModelicaByExample/Architectures/ThermalControl/Examples/HysteresisVariant.mo
    :language: modelica
 
 Using hysteresis control, our simulation results look like this:
