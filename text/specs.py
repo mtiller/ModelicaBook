@@ -558,4 +558,15 @@ add_simple_plot(plot="SV2", vars=ascvars, title="Response using PID control")
 add_case(["SensorComparison", "Variant2_"], stopTime=5, res="SV2T", tol=1e-6)
 add_simple_plot(plot="SV2T", vars=ascvars, title="Response using a tuned PID controller")
 
+# Thermal Control
+
+tcbvars = [Var("sensor.room.T", legend="Room Temperature"),
+           Var("sensor.temperature", legend="Measured Temperature"),
+           Var("controller.feedback.u2", legend="Desired Temperature")]
+
+add_case(["ThermalControl", "BaseModel"], stopTime=50, res="TCB", tol=1e-3)
+add_simple_plot(plot="TCB", vars=tcbvars, title="Response using PI controller")
+add_simple_plot(plot="TCBh", res="TCB", vars=[Var("plant.furnace.Q_flow")],
+                title="Furnace heat using PI controller")
+
 generate()
