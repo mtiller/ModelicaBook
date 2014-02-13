@@ -231,7 +231,7 @@ connector, in turn, must be plug compatible with the ``w`` that was
 there before) and it has to have a ``shaft`` connector (which, again,
 must be plug compatible with the previous ``shaft``).
 
-So the question then is, does our ``SampleAndHold`` implementation
+So the question then is, does our ``SampleHoldSensor`` implementation
 satisfy this requirement plug compatibility requirement?  Is it
 plug-compatible with the ``IdealSensor`` model?  First, let's look at
 the ``IdealSensor`` model:
@@ -241,10 +241,14 @@ the ``IdealSensor`` model:
    :lines: 1-12
 
 The public interface of this component consists only of the two
-connectors ``w`` and ``shaft``.  Looking at the ``SampleAndHold``
+connectors ``w`` and ``shaft``.  Looking at the ``SampleHoldSensor``
 model:
 
-.. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/SampleAndHold.mo
+.. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealSensor.mo
+   :language: modelica
+   :lines: 1-12
+
+.. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/SampleHoldSensor.mo
    :language: modelica
    :lines: 1-12
    :emphasize-lines: 4-8
@@ -252,10 +256,10 @@ model:
 we see that its public interface also contains the connectors ``w``
 and ``shaft``.  Furthermore, they are exactly the same type as the
 connectors on the ``IdealSensor`` model.  For this reason, the
-``SampleAndHold`` model is plug-compatible with the ``IdealSensor``
+``SampleHoldSensor`` model is plug-compatible with the ``IdealSensor``
 model so we should be able to replace an ``IdealSensor`` instance with
-a ``SampleAndHold`` instance and our ``connect`` statements will still
-be valid.
+a ``SampleHoldSensor`` instance and our ``connect`` statements will
+still be valid.
 
 So, if our ``HierarchicalSystem`` model were declared as follows:
 
@@ -313,7 +317,7 @@ Constraining Types
 ^^^^^^^^^^^^^^^^^^
 
 Recall, from earlier in this section, that the public interface for
-the ``SampleAndHold`` model included:
+the ``SampleHoldSensor`` model included:
 
 .. code-block:: modelica
 
@@ -331,7 +335,7 @@ and that the ``IdealSensor`` public interface contained only:
 If redeclarations are restricted in such a way that the redeclared
 type has to be plug-compatible with the original type, then we could
 run into the following problem.  What if our initial model for our
-system used the ``SampleAndHold`` sensor, *i.e.,*
+system used the ``SampleHoldSensor`` sensor, *i.e.,*
 
 .. code-block:: modelica
 
@@ -339,7 +343,7 @@ system used the ``SampleAndHold`` sensor, *i.e.,*
     model InitialSystem "Organzing components into subsystems"
       replaceable Implementation.BasicPlant plant;
       replaceable Implementation.IdealActuator actuator;
-      replaceable Implementation.SampleAndHold sensor;
+      replaceable Implementation.SampleHoldSensor sensor;
       replaceable Implementation.ProportionalController controller;
       replaceable Modelica.Blocks.Sources.Trapezoid setpoint;
     equation
@@ -365,8 +369,8 @@ Now we have a problem.  The problem is that our original ``sensor``
 component has a parameter called ``sample_rate``.  But, we are trying
 to replace it with something that does not have that parameter.  In
 other words, the ``IdealSensor`` model is **not** plug-compatible with
-the ``SampleAndHold`` model because it is missing something,
-``sample_rate``, that the original model, ``SampleAndHold``, had.
+the ``SampleHoldSensor`` model because it is missing something,
+``sample_rate``, that the original model, ``SampleHoldSensor``, had.
 
 .. index:: constraining types
 
@@ -382,7 +386,7 @@ declaration was.  The second type is what the type *could be* and
 still work.  This second type is called the constraining type because
 as long as any redeclaration is plug-compatible with the constraining
 type, the model should still work.  So in our ``InitialSystem`` model
-above, the type of the original declaration was ``SampleAndHold``.
+above, the type of the original declaration was ``SampleHoldSensor``.
 But the model will still work as long as any new type is
 plug-compatible with ``IdealSensor``.
 
@@ -392,7 +396,7 @@ the constraining type by adding a ``constrainedby`` clause at the end,
 
 .. code-block:: modelica
 
-    replaceable Implementation.SampleAndHold sensor
+    replaceable Implementation.SampleHoldSensor sensor
       constrainedby Implementation.IdealSensor;
 
 .. index:: default type
@@ -400,8 +404,8 @@ the constraining type by adding a ``constrainedby`` clause at the end,
 This declaration says that the ``sensor`` component can be redeclared
 by anything that is plug-compatible with the ``IdealSensor`` model
 **but** if it isn't redeclared then **by default** it should be
-declared as a ``SampleAndHold`` sensor.  For this reason, the original
-type used in the declaration, ``SampleAndHold``, is called the
+declared as a ``SampleHoldSensor`` sensor.  For this reason, the original
+type used in the declaration, ``SampleHoldSensor``, is called the
 **default type**.
 
 Recall that our original definition of the ``InitialSystem`` model
