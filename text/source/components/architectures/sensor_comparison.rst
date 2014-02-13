@@ -1,3 +1,5 @@
+.. _sensor-comparison:
+
 Sensor Comparison
 -----------------
 
