@@ -6,21 +6,17 @@ model ConventionalPIControl "PIControl using conventional architecture"
   parameter Modelica.SIunits.Time T "Time Constant (T>0 required)";
 protected
   Modelica.Blocks.Sources.Trapezoid setpoint_signal(
-    amplitude=5,
-    final offset=setpoint,
-    rising=1,
-    width=10,
-    falling=1,
-    period=20)
+    amplitude=5, final offset=setpoint,
+    rising=1, width=10,
+    falling=1, period=20)
     annotation (Placement(transformation(extent={{-40,-40},{-20,-20}})));
   Modelica.Blocks.Math.Feedback feedback
     annotation (Placement(transformation(extent={{10,-10},{-10,10}})));
   Modelica.Blocks.Continuous.PI PI(final T=T, final k=-k)
     annotation (Placement(transformation(extent={{-30,-10},{-50,10}})));
-
 equation
   connect(setpoint_signal.y, feedback.u2)
-                                annotation (Line(
+    annotation (Line(
       points={{-19,-30},{0,-30},{0,-8}},
       color={0,0,127},
       smooth=Smooth.None));
