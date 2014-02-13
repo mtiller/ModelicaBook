@@ -564,9 +564,22 @@ tcbvars = [Var("sensor.room.T", legend="Room Temperature"),
            Var("sensor.temperature", legend="Measured Temperature"),
            Var("controller.feedback.u2", legend="Desired Temperature")]
 
+tcevars = [Var("sensor.room.T", legend="Room Temperature (sensor.room.T)"),
+           Var("controller.bus.temperature", legend="Measured Temperature (controller.bus.temp"),
+           Var("controller.feedback.u2", legend="Desired Temperature")]
+
 add_case(["ThermalControl", "BaseModel"], stopTime=50, res="TCB", tol=1e-3)
-add_simple_plot(plot="TCB", vars=tcbvars, title="Response using PI controller")
+add_simple_plot(plot="TCB", vars=tcbvars, legloc="lower right",
+                title="Response using PI controller")
 add_simple_plot(plot="TCBh", res="TCB", vars=[Var("plant.furnace.Q_flow")],
                 title="Furnace heat using PI controller")
+
+add_case(["ThermalControl", "ExpandableModel"], stopTime=50, res="TCE", tol=1e-3)
+add_simple_plot(plot="TCE", vars=tcevars, legloc="lower right",
+                title="Response using PI controller in expandable architecture")
+
+add_case(["ThermalControl", "OnOffVariant"], stopTime=50, res="TCE_BB", tol=1e-3)
+add_simple_plot(plot="TCE_BB", vars=tcevars, legloc="lower right",
+                title="Response using PI bang-bang control")
 
 generate()

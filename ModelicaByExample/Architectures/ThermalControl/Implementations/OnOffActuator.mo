@@ -10,22 +10,18 @@ protected
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
 equation
   connect(heater.port, furnace) annotation (Line(
-      points={{10,0},{100,0}},
-      color={191,0,0},
+      points={{10,0},{100,0}}, color={191,0,0},
       smooth=Smooth.None));
   connect(command.y, heater.Q_flow) annotation (Line(
-      points={{-39,0},{-10,0}},
-      color={0,0,127},
+      points={{-39,0},{-10,0}}, color={0,0,127},
       smooth=Smooth.None));
   connect(command.u, bus.heat_command) annotation (Line(
-      points={{-62,0},{-100,0}},
-      color={255,0,255},
+      points={{-62,0},{-100,0}}, color={255,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation (Icon(graphics={
         Rectangle(
           extent={{-80,80},{80,-80}},
-          lineColor={0,0,0},
-          fillColor={215,215,215},
+          lineColor={0,0,0}, fillColor={215,215,215},
           fillPattern=FillPattern.Solid),
         Line(
           points={{-40,60},{-40,50},{-50,40},{-30,30},{-50,20},{-30,10},{-50,0},

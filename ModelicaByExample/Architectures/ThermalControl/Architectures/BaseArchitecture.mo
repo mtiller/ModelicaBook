@@ -11,18 +11,14 @@ partial model BaseArchitecture "A basic thermal architecture"
 equation
   connect(plant.room, sensor.room) annotation (Line(
       points={{10,0},{32,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}, smooth=Smooth.None));
   connect(sensor.temperature, controller.temperature) annotation (Line(
       points={{53,0},{70,0},{70,40},{12,40}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}, smooth=Smooth.None));
   connect(actuator.furnace, plant.furnace) annotation (Line(
       points={{-30,0},{-10,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}, smooth=Smooth.None));
   connect(controller.heat, actuator.heat) annotation (Line(
       points={{-11,40},{-70,40},{-70,0},{-52,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}, smooth=Smooth.None));
 end BaseArchitecture;
