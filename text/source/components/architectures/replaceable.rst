@@ -6,3 +6,6 @@ Configuration Management
 * constrainedby
 
 * modifications
+
+* choices
+
