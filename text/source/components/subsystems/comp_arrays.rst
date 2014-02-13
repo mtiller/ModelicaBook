@@ -29,9 +29,10 @@ that component is replicated for each component in the array.
 Modelica imposes a restriction that in every array, every element must
 be the same type.  This may seem obvious, but that is partly because
 we haven't discussed ``replaceable`` components yet.  We'll learn more
-about ``replaceable`` components in the next chapter.  But for now we
-will simply point out that it is not possible to ``redeclare`` only
-one element in an array.
+about ``replaceable`` components in the next chapter when we talk
+about Modelica's :ref:`configuration-management` features.  But for
+now we will simply point out that it is not possible to ``redeclare``
+only one element in an array.
 
 .. index:: ! slicing
 

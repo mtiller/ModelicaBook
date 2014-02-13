@@ -1,6 +1,9 @@
 Interfaces and Implementations
 ------------------------------
 
+Conceptual Definitions
+^^^^^^^^^^^^^^^^^^^^^^
+
 In both of the examples we presented in this chapter, we used
 interface definitions as part of the architecture definition process.
 The term "interface" doesn't come from Modelica itself, it is a term
@@ -23,6 +26,11 @@ one additional level down in the model hierarchy (another case of a
 ``partial`` model).  But most of the time, these implementations will
 be complete (non-``partial``) models for a particular subsystem.
 
+.. _plug-compatibility:
+
+Plug-Compatibility
+^^^^^^^^^^^^^^^^^^
+
 The most important thing we need to consider when we talk about
 interfaces and implementations is the notion of
 **plug-compatibility**.  As we already discussed in our elaboration of
@@ -44,6 +52,9 @@ examples (and we will review shortly), the configuration management
 features in Modelica hinge on the relationship between interfaces and
 implementations and the process by which configuration management is
 performed is centered around plug-compatibility.
+
+Conclusion
+^^^^^^^^^^
 
 The bottom line is that it is very useful to not only think in terms
 of interface and implementation models, but also to create models to
