@@ -267,7 +267,138 @@ redeclarations, apply it to the constraining type.
 Redefinitions
 ^^^^^^^^^^^^^
 
-* type redefinition (modifications)
+It turns out that the ``replaceable`` keyword can also be associated
+with *definitions*, not just declarations.  The main use of this
+feature is to be able to change the type of **multiple** components at
+once.  For example, imagine a circuit model with several different
+resistor components:
+
+.. code-block:: Modelica
+
+    model Circuit
+      Resistor R1(R=100);
+      Resistor R2(R=150);
+      Resistor R4(R=45);
+      Resistor R5(R=90);
+      // ...
+    equation
+      connect(R1.p, R2.n);
+      connect(R1.n, R3.p);
+      // ...
+    end Circuit;
+
+Now imagine we wanted one version of this model with ordinary
+``Resistor`` components and the other where each resistor was an
+instance of the ``SensitiveResistor`` model.  One way we could achieve
+this would be to define our ``Circuit`` as follows:
+
+.. code-block:: Modelica
+
+    model Circuit
+      replaceable Resistor R1 constrinedby Resistor(R=100);
+      replaceable Resistor R2 constrinedby Resistor(R=150);
+      replaceable Resistor R4 constrinedby Resistor(R=45);
+      replaceable Resistor R5 constrinedby Resistor(R=90);
+      // ...
+    equation
+      connect(R1.p, R2.n);
+      connect(R1.n, R3.p);
+      // ...
+    end Circuit;
+
+But in that case, our circuit with ``SensitiveResistor`` components
+would be defined as:
+
+.. code-block:: Modelica
+
+    model SensitiveCircuit
+      extends Circuit(
+        redeclare SensitiveResistor R1(dRdT=0.1),
+        redeclare SensitiveResistor R2(dRdT=0.1),
+        redeclare SensitiveResistor R3(dRdT=0.1),
+        redeclare SensitiveResistor R4(dRdT=0.1)
+      );
+    end SensitiveCircuit;
+
+Note that we don't have to specify resistance values because the
+modifications that set the resistance were applied to the constraining
+type in our ``Circuit`` model.  But, it is a bit tedious that we have
+to change each individual resistor and specify ``dRdT`` over and over
+again even though they are all the same value.  However, Modelica
+gives us a way to do them all at once.  The way we do this.  The first
+step is to define a local type within the model like this:
+
+.. code-block:: modelica
+
+    model Circuit
+      model ResistorModel = Resistor;
+      ResistorModel R1(R=100);
+      ResistorModel R2(R=150);
+      ResistorModel R4(R=45);
+      ResistorModel R5(R=90);
+      // ...
+    equation
+      connect(R1.p, R2.n);
+      connect(R1.n, R3.p);
+      // ...
+    end Circuit;
+
+What this does is establish ``ResistorModel`` as a kind of alias for
+``Resistor``.  This by itself doesn't help us with changing the type
+of each resistor easily.  But making ``ResistorModel`` ``replaceable``
+does:
+
+.. code-block:: modelica
+
+    model Circuit
+      replaceable model ResistorModel = Resistor;
+      ResistorModel R1(R=100);
+      ResistorModel R2(R=150);
+      ResistorModel R4(R=45);
+      ResistorModel R5(R=90);
+      // ...
+    equation
+      connect(R1.p, R2.n);
+      connect(R1.n, R3.p);
+      // ...
+    end Circuit;
+
+If our ``Circuit`` is defined in this way, we can create the
+``SensitiveCircuit`` model as follows:
+
+    model SensitiveCircuit
+      extends Circuit(
+        redeclare ResistorModel = SensitiveResistor(dRdT=0.1)
+      );
+    end SensitiveCircuit;
+
+All our resistor components are still of type ``ResistorModel``, we
+didn't have to redeclare any of them.  What we **did do** was redefine
+what a ``ResistorModel`` is by changing its definition to
+``SensitiveResistor(dRdT=0.1)``.  Note that the modification
+``dRdT=0.1`` will be applied to all components of type
+``ResistorModel``.  Technically, this isn't a redeclaration of a
+component's type, it is a redefinition of a type.  But we reuse the
+``redeclare`` keyword.
+
+Interestingly, with these redefinitions we still have the notion of a
+default type and a constraining type.  The general syntax for a
+redefinable type is:
+
+.. code-block:: modelica
+
+    replaceable model AliasType = DefaultType(...) constrainedby ConstrainingType(...);
+
+Just as with a replaceable component, any modifications associated
+with the default type, ``DefaultType``, are only applied in the case
+that ``AliasType`` isn't redefined.  But, any modification associated
+with the constraining type, ``ConstrainingType``, will persist across
+redefinitions.  Furthermore, ``AliasType`` must always be plug
+compatible with the constraining type.
+
+Although this aspect of the language is less frequently used, compared
+to replaceable components, it can save time and help avoid errors in
+some cases.
 
 Choices
 ^^^^^^^
