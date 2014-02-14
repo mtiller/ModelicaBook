@@ -1,3 +1,5 @@
+.. _thermal-control:
+
 Thermal Control
 ---------------
 
