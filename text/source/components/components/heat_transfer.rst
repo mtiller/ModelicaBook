@@ -5,7 +5,7 @@ Heat Transfer Components
 
 We'll start our discussion of component models by building some
 component models in the heat transfer domain.  These models will allow
-us to recreate the models we saw :ref:`previously <getting-physical>`
+us to recreate the models we saw :ref:`previously <getting-physical>`,
 but this time using component models to represent each of the various
 effects.  Investing the time to make component models will then allow
 us to easily combine the underlying physical behavior to create models
@@ -67,6 +67,9 @@ utilize these connector definitions.
 Component Models
 ^^^^^^^^^^^^^^^^
 
+.. todo:: should "on physical effect" be "a physical effect"?
+if not, this needs re-writing.
+
 When building component models, the goal is to create component models
 that implement (only) on physical effect (*e.g.,* capacitance,
 convection).  By implementing component models in this way, we will
@@ -80,9 +83,9 @@ avoids opportunities to introduce errors.
 Thermal Capacitance
 ~~~~~~~~~~~~~~~~~~~
 
-Our first component model will be a model of thermal capacitance.
-This is a model for a lumped thermal capacitance with a uniform
-temperature distribution.  The equation we wish to associate with this
+Our first component model will be a model of lumped thermal capacitance.
+with uniform temperature distribution.  
+The equation we wish to associate with this
 component model is:
 
 .. math::
@@ -181,6 +184,8 @@ than ``T_amb``, this component will **take heat away** from
 ``port_a`` (and, conversely, when ``T_amb`` is greater than
 ``port_a.T``, it will **inject heat into** ``port_a``).
 
+.. todo:: combine with what? it?
+
 Having such a component model available enables us to combine with the
 ``ThermalCapacitance`` model and simulate a system just like we
 modeled in :ref:`some of our earlier heat transfer examples
@@ -208,7 +213,7 @@ section:
    :language: modelica
    :lines: 10-14
 
-This statement introduces on of the most important features in
+This statement introduces one of the most important features in
 Modelica.  Note that statement appears within an ``equation``
 section.  While the ``connect`` operator looks like a function, it is
 much more than that.  It represents the equations that should be
@@ -223,6 +228,9 @@ equation:
 .. code-block:: modelica
 
     cap.node.T = conv.port_a.T "Equating across variables";
+
+.. todo:: is it a generalization of Kirchoff's current law or merely the
+analog of Kirchoff's current law for this domain?
 
 In addition, a connection generates an equation for all the through
 variables as well.  The equation that is generated is a conservation
@@ -263,9 +271,9 @@ following temperature trajectory:
 Digging Deeper
 ^^^^^^^^^^^^^^
 
-There is on slight issue with the ``CoolingToAmbient`` model.  We
+There is one slight issue with the ``CoolingToAmbient`` model.  We
 mentioned earlier that when building component models it is best to
-isolate each individual physical effect into a component.  But we've
+isolate each individual physical effect to its own component.  But we've
 actually lumped two different effects into one component.  As we will
 see in a moment, this limits the reusability of the component models.
 But first, let's refactor the code to separate these effects out and
@@ -307,6 +315,8 @@ the temperatures on either end.
 
 .. topic:: Number of equations
 
+.. todo:: should e.g. be i.e. or are there unprotected internal variables?
+
     All our previous models had one connector and one equation.  The
     ``Convection`` model has two connectors.  As a result, it has two
     equations.  A simple rule of thumb is that you need as many
@@ -326,7 +336,7 @@ AmbientCondition
 
 Now that we have the convection model, we need something to represent
 the ambient conditions.  We need something like a thermal capacitance
-model but one that maintains a constant temperature.  Imagine if we
+model, but one that maintains a constant temperature.  Imagine if we
 took the ``ThermalCapacitance`` model and gave a very large value for
 its capacitance, ``C``.  Then we'd have something that changed
 temperature very slowly.  But what we want is something that doesn't
@@ -359,8 +369,8 @@ Flexibility
 ~~~~~~~~~~~
 
 Using these new ``Convection`` and an ``AmbientCondition`` models, we
-can reconstruct our simple system level heat transfer modeling using
-the following model:
+can reconstruct our simple system level heat transfer model using
+the following:
 
 .. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.mo
    :language: modelica
@@ -381,7 +391,7 @@ the same fundamental behavior, *i.e.,*
    :include-source: no
 
 The big benefit of breaking down ``ConvectionToAmbient`` into
-``Convection`` and ``AmbientTemperature`` models is the ability the
+``Convection`` and ``AmbientTemperature`` models is the ability to
 recombine them in different ways.  The following schematic is just one
 example of how the handful of fundamental components we've constructed
 so far can be rearranged to form an entirely new (and more complex)

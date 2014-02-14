@@ -64,9 +64,9 @@ follows:
 
 The important thing to notice about these models is the amount of
 common code shared between them.  In software development, this kind
-of redundancy is frowned up.  In fact, a common software maxim is
+of redundancy is frowned upon.  In fact, a common software maxim is
 "Redundancy is the root of all evil".  The reason this redundancy is a
-problem is partly because you are doing the same work multiple times
+problem is partly because you are doing the same work multiple times,
 but also because this code needs to be *maintained* as well.  When you
 repeat code and then find a mistake in that code, you have to fix it
 everywhere.

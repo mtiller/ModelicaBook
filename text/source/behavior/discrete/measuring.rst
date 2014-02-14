@@ -49,7 +49,7 @@ approach to measurement.  Some speed sensors have circuits for
 measuring the rotational speed of the system.  But instead of
 providing a continuous value for the speed, they sample it at a given
 point in time and then store it somewhere.  This is called "sample and
-hold."  The following model demonstrates how to implement a sample
+hold".  The following model demonstrates how to implement a sample
 and hold approach to measuring the angular velocity ``omega1``:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/SpeedMeasurement/SampleAndHold.mo

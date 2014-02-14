@@ -32,7 +32,7 @@ Variables
 Causal Variables
 ^^^^^^^^^^^^^^^^
 
-In our previous discussion of :ref:`block-connectors`, we shows that
+In our previous discussion of :ref:`block-connectors`, we showed that
 variables within a Modelica ``connector`` definition can have a
 causality associated with them.  If the signal is expected to be
 computed externally, then the variable should have the ``input``

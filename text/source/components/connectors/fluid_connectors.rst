@@ -3,13 +3,13 @@
 Fluid Connectors
 ================
 
-One area that Modelica has been widely used is in the modeling of
+One area that Modelica has been widely used in is the modeling of
 various types of fluid systems.  We saw in the previous section how to
 create connectors for various :ref:`simple-domains`.  But what makes
 Modelica so compelling for fluid systems is the ability to create more
 complex connectors involving multiple conserved quantities
 simultaneously.  Such connectors are essential for modeling fluid
-systems where a single connector might involve the flow of mass,
+systems, where a single connector might involve the flow of mass,
 momentum, energy and/or species.  Such cases require the definition of
 rich connectors types.
 
@@ -27,7 +27,7 @@ Incompressible Fluids
 Modeling of incompressible fluids is very useful in a number of
 engineering applications, most notably hydraulically actuated systems.
 We'll start by presenting a simple connector that can be used to model
-incompressible systems but with some important caveats.
+incompressible systems, but with some important caveats.
 
 Consider the following connector definition:
 
@@ -40,7 +40,7 @@ familiar pattern of an across variable and a through variable.  In
 this case the across variable is ``p`` (the pressure) and the through
 variable is ``q`` (the volumetric flow rate).  But this connector is
 different from all the previous examples because the ``flow`` variable
-is **not** the time derivative of a conserved quantity because volume
+is **not** the time derivative of a conserved quantity, since volume
 is not a conserved quantity.
 
 This connector works **as long as the fluid being modeled is
@@ -72,7 +72,7 @@ Such a connector definition is useful for relatively simple
 incompressible fluid flow networks because it can frequently describe
 the behavior of the system without having to specify (or know) the
 density of the working fluid.  However, this kind of approach is
-inherently limiting so it should only be used in situations where is
+inherently limiting so it should only be used in situations where it
 solves more problems than it creates.
 
 Compressible Fluids
@@ -88,15 +88,15 @@ While the previous connector definition should be strictly used for
 This connector can be used for **both** incompressible or compressible
 fluids.  This is because it doesn't make any inherent assumptions
 about the compressibility of the fluid.  Note that the across
-variable, ``p``, is still pressure but the through variable, ``m_dot``
+variable, ``p``, is still pressure, but the through variable, ``m_dot``,
 is a mass flow rate.  As such, the through variable conforms to the
-convention that the through variable should be the time derivative of
-a conserved quantity (*i.e.,* mass).  So there are no implicit
-assumptions in this connector which is why it can be used to model
+convention that a through variable should be the time derivative of
+a conserved quantity (in this case, mass).  So there are no implicit
+assumptions in this connector, which is why it can be used to model
 fluid flow of both compressible and incompressible fluids.
 
 This connector isn't really fundamentally different from the
-connectors associated with :ref:`simple-domains` but it appears in
+connectors associated with :ref:`simple-domains`, but it appears in
 this section because it is a stepping stone to the next example.
 
 Thermo-Fluid Modeling
@@ -113,7 +113,7 @@ There are many applications where the temperature of the working fluid
 is critical.  In some cases, the temperature changes the density of
 the working fluid.  In other cases, the temperature may trigger a
 phase change (*e.g.,* from liquid to gas).  Temperature can also
-affect other critical properties of the fluid like viscosity which
+affect other critical properties of the fluid like viscosity, which
 have a significant impact on the performance of, for example,
 lubrication systems.  As a result, those previous connector
 definitions would be inadequate for modeling systems where the
@@ -121,7 +121,7 @@ temperature of the working fluid had any significant impact on the
 system behavior.
 
 To predict the temperature of a working fluid, it is necessary to
-track the energy the flows with the fluid as it flows through a
+track the energy that flows with the fluid as it flows through a
 network.  To do this, the connector definition must be augmented to
 include energy, alongside mass, as a conserved quantity that flows
 through the connector.  The following connector definition does just

@@ -16,7 +16,7 @@ because it is expected that most readers will be reading an HTML
 version of the book.  As a result, the book makes heavy use of
 hyperlinking to allow users to explore the contents of the book as
 best suits their needs.  For the most part, this linking should only
-enhance eBook versions of the book but it may not always translate
+enhance eBook versions of the book, but it may not always translate
 well into a print medium format.  But every attempt has been made to
 provide a quality result in all supported formats.
 

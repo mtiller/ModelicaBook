@@ -16,8 +16,8 @@ required in order to understand what a ``connector`` in Modelica is,
 why it is used and the mathematical basis for their formulations.
 We'll cover these points first before proceeding.
 
-So far, we've talked primary about how to model behavior.  What we've
-seen so far are model composed largely of textual equations.  But from
+So far, we've talked primarily about how to model behavior.  What we've
+seen so far are models composed largely of textual equations.  But from
 this point forward, we will be exploring how to create reusable
 component models.  So instead of writing Ohm's law whenever we wish to
 model a resistor, we'll instead add an instance of a **resistor**
@@ -50,17 +50,17 @@ Acausal Connections
 In order to understand one specific class of connector semantics, it
 is first necessary to understand a bit more about acausal formulations
 of physical systems.  An acausal approach to physical modeling
-identifies to distinct classes of variables.
+identifies two distinct classes of variables.
 
-The first class of variables we will discuss is "across" variables
+The first class of variables we will discuss are "across" variables
 (also called *potential* or *effort* variables).  Differences in the
-value of across variables across a component are what trigger
+values of across variables across a component are what trigger
 components to react.  Typical examples of across variables, that we
 will be discussing shortly, are temperature, voltage and pressure.
 Differences in these quantities typically lead to dynamic behavior in
 the system.
 
-The second class of variables we will discuss is "through" variables
+The second class of variables we will discuss are "through" variables
 (also called *flow* variables).  Flow variables normally represent the
 flow of some conserved quantity like mass, momentum, energy, charge,
 *etc.*  These flows are usually the result of some difference in the
@@ -77,7 +77,7 @@ many).
     convention that a positive value for a through variable represents
     flow of the conserved quantity **into** a component.  We'll repeat
     this convention several times later in the book (especially once
-    we being our discussion of how to build models of
+    we begin our discussion of how to build models of
     :ref:`components`).
 
 The next section will define through and across variables for a number

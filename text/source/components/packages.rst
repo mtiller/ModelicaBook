@@ -6,8 +6,8 @@ Packages
 So far, we've presented all of the models without any real discussion
 of how to properly organize them.  In some cases, like the
 ``NewtonCoolingWithTypes`` example in our discussion on :ref:`adding
-physical type information <physical-types>`, it is awkward to try
-and keep everything within a single model.  There are many cases where
+physical type information <physical-types>`, it is awkward to
+keep everything within a single model.  There are many cases where
 the same information gets repeated in multiple models and this makes
 maintaining those models very difficult.
 
@@ -19,7 +19,7 @@ imported to avoid duplication.
 
 This chapter provides several examples that demonstrate how to use the
 package features in Modelica.  This chapter will conclude with a
-discussion of the :ref:`msl` which contains an enormous amount of
+discussion of the :ref:`msl`, which contains an enormous amount of
 reusable content that is available to all Modelica tools.
 
 Examples

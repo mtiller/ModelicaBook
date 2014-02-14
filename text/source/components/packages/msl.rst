@@ -15,7 +15,7 @@ definitions that are generally useful to scientists and engineers.
 In this section, we will provide an overview of the Modelica Standard
 Library so readers are aware of what they can expect to find and
 utilize from this library.  This is not an exhaustive tour and because
-the Modelica Standard Library is constantly be updated and improved,
+the Modelica Standard Library is constantly being updated and improved,
 it may not reflect the latest version of the library.  But it covers
 the basics and hopefully providers readers with an understanding of
 how to locate useful definitions.
@@ -84,7 +84,7 @@ Noteworthy definitions are those for ``pi``, ``e``, ``g_n`` and
 
 The first two, ``pi`` and ``e``, are mathematical constants
 representing :math:`pi` and :math:`e`, respectively.  Having these
-constants available not only avoids having provide your own numerical
+constants available not only avoids having to provide your own numerical
 value for these (irrational) constants, but by using the version
 defined in the Modelica Standard Library, you get a value that has the
 highest possible precision.
@@ -100,7 +100,7 @@ SI Units
 ^^^^^^^^
 
 As we discussed previously, the use of units not only makes your code
-easier to understand, by associating concrete units with parameters
+easier to understand by associating concrete units with parameters
 and variables, it also allows unit consistency checking to be
 performed by the Modelica compiler.  For this reason it is very useful
 to associate physical types with parameters and variables whenever

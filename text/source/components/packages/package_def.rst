@@ -51,7 +51,7 @@ Stored in a Single File
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 There are several ways that Modelica source code can be mapped to a
-file system.  The simplest way is to store everything file.  Such a
+file system.  The simplest way is to store everything in a file.  Such a
 file should have a .mo suffix.  Such a file might contain only a
 single model definition or it might contain a deeply nested hierarchy
 of packages or anything in between.
@@ -66,7 +66,7 @@ creating a directory **with the same name as the package**.  Then,
 inside that directory, there must be a file called ``package.mo`` that
 stores the definition of the package, **but not any nested
 definitions**.  The nested definitions can be stored either as single
-files (as described above) or directories representing packages (as
+files (as described above) or as directories representing packages (as
 described in this paragraph).  The following diagram attempts to
 visualize a sample directory layout::
 
@@ -104,11 +104,11 @@ Similarly, the ``package.mo`` file associated with the
     end NestedPackageAsDir;
 
 Again, there should be no definitions contained in this package, only
-annotations.  The ``within`` clause is slightly different reflecting
+annotations.  The ``within`` clause is slightly different, reflecting
 the fact that ``NestedPackageAsDir`` belongs to the ``RootPackage``
 package.
 
-Finally, the ``NestedPackageAsFile.mo`` file is would look something
+Finally, the ``NestedPackageAsFile.mo`` file would look something
 like this:
 
 .. code-block:: modelica
@@ -122,8 +122,8 @@ like this:
     end NestedPackageAsFile;
 
 The ``within`` clause is the same as for the ``NestedPackageAsDir``
-package definition but since we are storing this package as a single
-file nested definitions for constants, models, packages, functions,
+package definition, but since we are storing this package as a single
+file, nested definitions for constants, models, packages, functions,
 *etc.* are allowed here as well.
 
 Ordering for Directories
@@ -134,7 +134,7 @@ Ordering for Directories
 When all definitions are stored within a single file, the order they
 appear in the file indicates the order they should appear when
 visualized (*e.g.,* in a package browser).  But when they are stored
-on the file system, there is not implied ordering.  For this reason,
+on the file system, there is no implied ordering.  For this reason,
 an optional ``package.order`` file can be included alongside the
 package.mo file to specify an ordering.  The file is simply a list of
 the names for nested entities, one per line.  So, for example, if we
@@ -221,7 +221,7 @@ then, the default values for these annotations started with
 ``modelica:://LibraryName/Resources``.  Such a URL allows us to define
 the location of resources **relative to a given Modelica definition on
 the file system**.  Let us revisit the directory structure we
-discussed earlier but with some resource files added::
+discussed earlier, but with some resource files added::
 
     /RootPackage               # Top-level package stored as a directory
       package.mo               # Indicates this directory is a package

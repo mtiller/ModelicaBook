@@ -6,7 +6,7 @@ Model Definition
 A ``model`` definition is the most generic type of definition in
 Modelica.  Later in the book (and even in this chapter), we'll be
 introducing other types of definitions (*e.g.,* ``record``
-definitions) that share the same syntax as a ``model`` definition but
+definitions) that share the same syntax as a ``model`` definition, but
 include some restrictions on what the definition is allowed to contain.
 
 Syntax of a Model Definition

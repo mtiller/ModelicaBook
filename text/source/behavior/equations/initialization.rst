@@ -31,7 +31,7 @@ provide with additional ones until the problem is well-posed, but we
 cannot solve a problem where we have too many initial equations.
 
 Of course, saying the number of initial equations has to be equal to
-the number of states answers one question but quickly creates another,
+the number of states answers one question, but quickly creates another,
 *i.e.,* *how do we determine how many states there are*?  For the
 models we've seen in this chapter, the answer is quite simple.  The
 states in each of our examples so far are the variables that appear
@@ -55,7 +55,7 @@ only *some* of the differentiated variables can be considered states.
 
 As it turns out, understanding initialization doesn't really require
 us to get into a detailed discussion about DAEs.  In practice, all
-Modelica tools perform something called "index reduction."  While the
+Modelica tools perform something called "index reduction".  While the
 index reduction algorithms themselves are fairly complicated (so we
 won't get into those now), the effect is quite simple.  Index
 reduction transforms the DAEs into ODEs.  In other words, Modelica

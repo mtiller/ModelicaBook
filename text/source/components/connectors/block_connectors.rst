@@ -13,10 +13,10 @@ that can be represented in Modelica.
 Block connectors are used to model the flow of information through a
 system.  Here we are not concerned with physical quantities, like
 current, which might flow in one direction for a while and then
-reverse information.  Here we will consider how to model signals where
-some components product information and others consume it (and then,
-in turn produce other information).  In this kind of situation, we
-frequently refer to signals and components generally have "input
+reverse direction.  Here we will consider how to model signals where
+some components produce information and others consume it (and then,
+in turn, produce other information).  In this kind of situation, we
+frequently refer to signals, and components generally that have "input
 signals" and "output signals".
 
 To model such interactions, we can use connector definitions like
@@ -26,7 +26,7 @@ these:
    :language: modelica
 
 It should be pretty obvious from these definitions that, for example,
-the ``BooleanInput`` connector is used to identify an ``Boolean`` input
+the ``BooleanInput`` connector is used to identify a ``Boolean`` input
 signal and ``RealOutput`` identifies a ``Real`` output signal.
 
 We'll see how to utilize these connector definitions later when we

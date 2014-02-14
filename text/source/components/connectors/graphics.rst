@@ -32,7 +32,7 @@ Icon Annotations
 .. index:: icons; associating with definitions
 
 When we associate an annotation with a definition, we place it in the
-definition but do not associate it with any declarations or other
+definition, but do not associate it with any declarations or other
 entities in the definition.  Instead, it is just another element of
 the definition.  To demonstrate this, consider the following
 electrical pin connector definitions:
@@ -63,7 +63,7 @@ Let's look in greater detail at the ``Icon`` annotation in the
    :language: modelica
    :lines: 7-29
 
-We will be discussing :ref:`graphical-annos` shortly.  But let's a
+We will be discussing :ref:`graphical-annos` shortly.  But let's take a
 quick look at what is going on in these definitions.  We can see that
 the ``Icon`` annotation contains another variable ``graphics``.  The
 ``graphics`` variable is assigned a vector of graphical elements.  We

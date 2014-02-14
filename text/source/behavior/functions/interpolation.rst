@@ -282,7 +282,7 @@ follows.
 
 First, the ``struct`` called ``VectorTable`` is the data associated
 wit the ``VectorTable`` type in Modelica.  This includes not just the
-interpolation data (in the form of the ``x`` and ``y`` members) but
+interpolation data (in the form of the ``x`` and ``y`` members), but
 also the number of data points, ``npoints``, and a cached value for
 the last used index, ``lastIndex``.
 
@@ -311,7 +311,7 @@ Interpolation
 
 We've seen how ``interpolateVectorTable`` is defined, but so far we
 haven't seen where it is used.  We mentioned that performs very much
-the same role as ``InterpolateVector`` but using a ``VectorTable``
+the same role as ``InterpolateVector``, but using a ``VectorTable``
 object to represent the interpolation data.  To invoke
 ``interpolateVectorTable`` from Modelica, we simple need to define a
 Modelica function as follows:
@@ -343,7 +343,7 @@ could just as easily have passed a file name** to the initialization
 code.  That file could then have been read by the
 ``createVectorTable`` function and the contents of the ``VectorTable``
 structure could have been initialized using the data from that file.
-In many cases, this approach not only makes managing the data easier
+In many cases, this approach not only makes managing the data easier,
 but leveraging C allows more complex (new or existing) algorithms to
 be used.
 

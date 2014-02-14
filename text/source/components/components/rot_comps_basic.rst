@@ -18,7 +18,7 @@ In the first chapter, we considered :ref:`mech-example` modeled
 strictly in terms of equations (*i.e.,* without component models).  In
 this section, we will start by recreating that system model using
 components.  To do this, we first have to define models for the
-fundamental component models we require.  These models will consist of
+fundamental components we require.  These will consist of
 models for an inertia, a spring, a damper and a mechanical ground.
 
 As in :ref:`the previous section<electrical-components>`, we will
@@ -40,14 +40,14 @@ is momentum.  What makes momentum different from the conserved
 quantities we've already covered, heat and charge, is that it is
 directional.  Since we are only concerning ourselves with the one
 dimensional case here, the consequence of this directionality is that
-momentum is a singed quantity (*i.e.,* it can be positive or
+momentum is a signed quantity (*i.e.,* it can be positive or
 negative).
 
 .. todo::
 
    Add a figure here
 
-Consider a rotating inertia with a moment of inertia, :math:`J`.  If
+Consider a rotating mass with a moment of inertia, :math:`J`.  If
 the angular position of the inertia is represented by :math:`\varphi`,
 then the angular velocity of the inertia, :math:`\omega`, is defined
 as:
@@ -76,7 +76,7 @@ Finally, the angular momentum of this rotating inertia is defined as
 
 From this relationship, it is clear that a positive value for the
 torque, :math:`\tau`, will increase the amount of momentum stored in
-the inertia.
+the mass.
 
 The point of presenting all these relationships is to underscore the
 sign conventions associated with :math:`\varphi`, :math:`\omega`,
@@ -89,7 +89,7 @@ positive torque**.
 Rotational Inertia
 ~~~~~~~~~~~~~~~~~~
 
-This the discussion about sign conventions and coordinate systems out
+With this discussion about sign conventions and coordinate systems out
 of the way, we can start creating our component models.  We'll start
 with the inertia model:
 
@@ -154,7 +154,7 @@ equation:
    :language: modelica
    :lines: 19-20,41
 
-In fact, apart from this equation and the parameter ``c`` much of the
+In fact, apart from this equation and the parameter ``c``, much of the
 content in the ``Spring`` model is the same as the content in the
 ``Inertia`` model.
 
@@ -193,7 +193,7 @@ section<electrical-components>`, let's take the time to apply the DRY
 Common Code
 ~~~~~~~~~~~
 
-It is worth nothing that because the Modelica Standard Library has an
+It is worth noting that because the Modelica Standard Library has an
 extensive collection of rotational components, it was forced to deal
 with this issue of redundant code almost from the start.  However, we
 will not be using the ``partial`` models from the Modelica Standard
@@ -222,7 +222,7 @@ These are represented by the following ``TwoFlange`` model:
 In addition to defining the two flanges, ``flange_a`` and
 ``flange_b``, this model also defines the relative angle between these
 flanges, *i.e.,* ``phi_rel``.  Of course, this model is also marked as
-``partial`` since it is missing any description of the components
+``partial`` since it is missing any description of the component's
 behavior.
 
 We could have all three models inherit from this model.  But then we

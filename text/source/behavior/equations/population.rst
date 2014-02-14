@@ -153,7 +153,7 @@ which variables to treat as states.
 
 Finally, the ``start`` attribute is also "overloaded".  This means
 that it is actually used for two different things.  If the variable in
-question is not a state but is instead an "iteration variable"
+question is not a state, but is instead an "iteration variable"
 (*i.e.*, a variable whose solution depends on a non-linear system of
 equations), then the ``start`` attribute may be used by a Modelica
 compiler as an initial guess (*i.e.*, the value used for the variable
@@ -388,7 +388,7 @@ common?  If you look closely, you will see that they have almost
 **differences** between them!
 
 In software engineering, there is a saying that "Redundancy is the
-root of all evil."  Well the situation is no different here (in no
+root of all evil".  Well the situation is no different here (in no
 small part because Modelica code really is software).  The code we
 have written so far would be very annoying to maintain.  This is
 because any bugs we found would have to be fixed in each model.
@@ -460,7 +460,7 @@ the model being inherited from as shown below:
    :emphasize-lines: 2
    :lines: 2-
 
-Also note that we could have inherited from ``ClassicModel`` but then
+Also note that we could have inherited from ``ClassicModel``, but then
 we would have had to repeat the initial equations in order to have
 quiescient initial conditions.  But by instead inheriting from
 ``QuiescientModelWithModifications``, we reuse the content from

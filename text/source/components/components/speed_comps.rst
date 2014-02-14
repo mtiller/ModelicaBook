@@ -53,7 +53,7 @@ Sample and Hold Sensor
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Previously, we discussed the :ref:`sample-and-hold` approach to speed
-measurement.  Here we will revisit this topic but encapsulate the
+measurement.  Here we will revisit this topic, but encapsulate the
 speed approximation in a reusable sensor model.  The following model
 implements the "sample and hold" approximation to speed measurement:
 
@@ -73,8 +73,8 @@ various sensor models.  As we can see from the definition of the
 .. literalinclude:: /ModelicaByExample/Components/SpeedMeasurement/Interfaces/SpeedSensor.mo
    :language: modelica
 
-We can see from the ``SpeedSensor`` model that the output signal will
-be named ``w``.  But we also see that ``SpeedSensor`` inherits from
+We can see from the ``SpeedSensor`` model that the output signal is
+named ``w``.  But we also see that ``SpeedSensor`` inherits from
 another model in the Modelica Standard Library,
 ``PartialAbsoluteSensor``.  The ``PartialAbsoluteSensor`` model is
 defined as:

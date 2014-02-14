@@ -74,7 +74,7 @@ zero), *etc*.  They are defined in the :ref:`msl` as follows:
 
 Apart from providing better documentation, there is an immediate
 benefit to associating such types with variables and that is because
-it enables unit consistency checking on the equations.  For example,
+it enables unit consistency checking of the equations.  For example,
 note the following equation from this example:
 
 .. code-block:: modelica

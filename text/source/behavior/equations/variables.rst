@@ -40,7 +40,7 @@ Parameters
 ~~~~~~~~~~
 
 By default, variables declared inside a model are assumed to be
-continuous variables (variables whose solution is generally smooth but
+continuous variables (variables whose solution is generally smooth, but
 which may also include discontinuities).  However, as we first saw in
 the section titled :ref:`getting-physical`, it is also possible to add
 the ``parameter`` qualifier in front of a variable declaration and to
@@ -182,7 +182,7 @@ Attributes
 
 .. index:: ! attributes
 
-So far in this chapter we have mentioned attributes (*e.g.*, ``unit``)
+So far in this chapter we have mentioned attributes (*e.g.*, ``unit``),
 but we haven't discussed them in detail. For example, *which*
 attributes are present on a given variable?  This depends on the type
 of the variable (and which built-in and derived types it is based on).  The
@@ -245,7 +245,7 @@ Attributes of ``Real``
     condition).
 
     Another, more obscure, use of the ``fixed`` attribute is for
-    "computed parameters."  In rare cases where a ``parameter`` cannot
+    "computed parameters".  In rare cases where a ``parameter`` cannot
     be initialized explicitly, it is possible to provide a general
     equation for the parameter in an ``initial equation`` section.
     But in cases where the ``parameter`` is initialized in this way,

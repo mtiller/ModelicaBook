@@ -40,7 +40,7 @@ to hold intermediate results.  Such variables must be clearly
 distinguished from arguments and return values.  To declare such
 intermediate variables, make their declarations ``protected``.  Making
 the variables ``protected`` indicates to the Modelica compiler that
-these variables are not arguments or return values but are instead
+these variables are not arguments or return values, but are instead
 used internally by the function.  For example, if we wished to write a
 function to compute the circumference of a circle, we might utilize an
 intermediate variable to store the diameter:
@@ -85,7 +85,7 @@ of approach should only be used when there is a reasonable default
 value for a given argument and it should never be used if you want to
 force users to provide a value.
 
-These default values have some important affects when
+These default values have some important effects when
 :ref:`calling-functions` that we shall discuss shortly.
 
 Multiple Return Values
@@ -131,7 +131,7 @@ there are several interesting cases to discuss.
 
 The syntax above is "positional".  That means that values in the
 function call are assigned to arguments based on the order.  But since
-Modelica functions have names, it is also possible to call functions
+Modelica function arguments have names, it is also possible to call functions
 using named arguments.  Consider the following function for computing
 the volume of a cube:
 
@@ -173,7 +173,7 @@ them by name.
 
 Finally, we previously pointed out the fact that it is possible for a
 function to have multiple return values.  But the question remains,
-how do we address multiple return values.  To see how this is done in
+how do we address multiple return values?  To see how this is done in
 practice, let us revisit the ``CircleProperties`` function we defined
 earlier in this section.  The following statement shows how we can
 reference both return values:
@@ -222,13 +222,22 @@ One important thing to note is that functions are **not** restricted
 in terms of recursion (*i.e.,* a function **is** allowed to call
 itself).
 
+.. todo:: According to Wikipedia
+  "In computer science, a function or expression is said to have a side effect if, in addition to returning a value, it also modifies some state or has an observable interaction with calling functions of the outside world".
+    "In computer programming, a function may be described as a pure function if both these statements about the function hold:
+     The function always evaluates the same result value given the same argument value(s). The function result value cannot depend on any hidden information or state that may change as program execution proceeds or between different executions of the program, nor can it depend on any external input from I/O devices.
+         Evaluation of the result does not cause any semantically observable side effect or output, such as mutation of mutable objects or output to I/O devices".
+    Thus: side effects => the function is impure
+          impure functions do not => side effect
+    e.g., a function whose output is not a function of the inputs does not necessarily g    generate side effects
+
 Side Effects
 ------------
 
 In the :ref:`sil-controller` example, we introduced external functions
 that had side effects.  This means that the value returned by the
 function was not strictly a function of its arguments.  Such a
-function is said to have "side effects".  For functions with
+function is said to have "side effects".  Functions with
 side effects, should be qualified with the ``impure`` keyword.  This
 tells the Modelica compiler that these functions cannot be treated as
 purely mathematical functions.
@@ -240,7 +249,7 @@ function.
 Function Template
 -----------------
 
-Taking all of this into account, the following can considered a
+Taking all of this into account, the following can be considered a
 generalized function definition:
 
 .. code-block:: modelica

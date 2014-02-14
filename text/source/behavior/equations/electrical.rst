@@ -28,7 +28,7 @@ respectively:
 
 where :math:`V_b` is the battery voltage.
 
-Since we have only 3 equations but 4 variables, we need one additional
+Since we have only 3 equations, but 4 variables, we need one additional
 equation.  That additional equation is going to be Kirchoff's current
 law:
 
