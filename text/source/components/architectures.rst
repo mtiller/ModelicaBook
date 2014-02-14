@@ -61,6 +61,4 @@ Review
 
    architectures/int_vs_imp
    architectures/replaceable
-   architectures/cats_and_temps
    architectures/expandable
-   architectures/choices
