@@ -80,6 +80,12 @@ this problem in Modelica as follows:
    :language: modelica
    :lines: 2-
 
+.. todo::
+    Are these units correct?
+    I was expecting the Stiffness or Spring Constant to be N.m/rad
+    I was expecting the inertia to be kg.m2/rad or N.m.s2/rad
+    I was expecting dampening to be kg.m2/s.rad or N.m.s/rad
+
 As we did with the low-pass filter example, ``RLC1``, let's walk
 through this line by line.
 

@@ -53,13 +53,13 @@ parameter ``T0``.
 The other equation is the differential equation that governs the
 behavior of ``T``.  Mathematically, we could express this equation as:
 
-.. math:: m c_p \dot{T} = h (T_{\infty}-T)
+.. math:: m c_p \dot{T} = h A (T_{\infty}-T)
 
 but in Modelica, we write it as:
 
 .. code-block:: modelica
 
-    m*c_p*der(T) = h*(T_inf-T)
+    m*c_p*der(T) = h*A*(T_inf-T)
 
 Note that this is really no different than the equation we saw in our
 ``FirstOrder`` model from the :ref:`first-order` example.
@@ -81,7 +81,7 @@ more physical than the simple mathematical relationship used in the
 ``FirstOrder`` model because it is related to physical properties.
 
 Now, we can't really run the ``NewtonCooling`` model as is because it
-lacks *values* for the five parameters.  In order to create a model
+lacks *values* for the six parameters.  In order to create a model
 that is ready to be simulated, we need to provide those values,
 *e.g.*,
 
@@ -92,12 +92,12 @@ that is ready to be simulated, we need to provide those values,
 The only real difference here is that each of the ``parameter``
 variables now has a value specified.  One way to think about the
 ``NewtonCooling`` model is that we could not simulate it because it
-had 6 variables (total) and only one equation (see the section on
+had 7 variables (total) and only one equation (see the section on
 :ref:`initialization` for an explanation of why the ``initial
 equation`` doesn't really count).  However, the
-``NewtonCoolingWithDefaults`` model has, conceptually speaking, 6
-equations (5 of them coming from specifying the values of the
-``parameter`` variables + one in the equation section) and 6 unknowns.
+``NewtonCoolingWithDefaults`` model has, conceptually speaking, 7
+equations (6 of them coming from specifying the values of the
+``parameter`` variables + one in the equation section) and 7 unknowns.
 
 If we simulate the ``NewtonCoolingWithDefaults`` model, we get the
 following solution for ``T``.
@@ -198,7 +198,7 @@ following example:
 .. index:: type
 
 You can read the definition ``type Temperature=Real(unit="K",
-min=0);`` as "Let us define a new unit, ``Temperature``, that is a
+min=0);`` as "Let us define a new type, ``Temperature``, that is a
 specialization of the built-in type ``Real`` with physical units of
 Kelvin (``K``) and a minimum possible value of ``0``."
 
