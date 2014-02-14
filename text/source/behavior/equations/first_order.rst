@@ -81,10 +81,10 @@ readable.  Consider the following model:
 
 Note the quoted text in this model.
 
-An important thing to understand about that quoted text is that those
-strings are **not** comments.  They are "descriptive strings" and,
+It is important to understand that the quoted text blocks, called "strings"
+in computer science, are **not** comments.  They are "descriptive strings" and,
 unlike comments, they cannot be added in arbitrary places.  Instead,
-they can be inserted in specific places to provide additional
+they can only be inserted in specific places to provide additional
 documentation about the elements of the model they are associated with.
 
 For example, the first string "A simple first order differential
@@ -95,10 +95,10 @@ model name as shown.
 
 As we will see later, this kind of documentation can be used by tools
 in many ways.  For example, when searching for models, a tool may use
-these descriptive strings when identifying matches.  For tools displaying
-models, this text may be associated with the graphical
-representation of the models.  And, of course, this kind of
-documentation is very useful for anybody reading the model.
+these descriptive strings when identifying matches.  This text may also
+be associated with a graphical representation of the models.  And, of
+course, this kind of documentation is very useful for anybody reading
+the model.
 
 As this example demonstrates, there are other places that the
 descriptive text can appear.  For example, it may be included after
@@ -125,6 +125,10 @@ the initial value of ``x`` in our model to be *2*, we could add an
 .. literalinclude:: /ModelicaByExample/BasicEquations/SimpleExample/FirstOrderInitial.mo
    :language: modelica
    :lines: 2-
+
+.. todo::
+   note: the descriptive strings for the model and for the variable Real x are
+   different between FirstOrderInitial and FirstOrderDocumented 
 
 Note that the only difference between this model and the previous one,
 presented in the section on :ref:`first-order-doc`, is the addition of
@@ -224,3 +228,8 @@ conditions:
 
 The trajectory terminates at 8 seconds because the simulator used the
 ``experiment`` annotation to determine how long to run the simulation.
+
+.. todo::
+   Question: is the experiment annotation merely a suggestion? Or does
+   it force the tool running the model to use those settings? Or is
+   it implementation dependent?
