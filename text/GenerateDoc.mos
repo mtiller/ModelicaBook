@@ -43,7 +43,7 @@ setDebugFlags("nogen") /* Don't generate dll/so-files when instantiating classes
 
 loadModel(Modelica);
 
-setModelicaPath(getModelicaPath()+":"+"/Users/mtiller/Source/ModelicaBook");
+setModelicaPath(getModelicaPath()+":"+cd()+"/../..");
 cf := loadModel(ModelicaByExample);
 compfails := false;
 getErrorString();
@@ -413,9 +413,9 @@ system("python Tidy.py 2> tidy.err");
 "FilterTidy.sh";
 system("bash FilterTidy.sh");
 
-system("rm -f Icons/*.json"); 
+system("rm -f Icons/*.json");
 if readSymlinks then
-  system("for symlink in `find -type l`; do rm $symlink;  done"); 
+  system("for symlink in `find -type l`; do rm $symlink;  done");
 end if;
 
 "FindFiles.sh";

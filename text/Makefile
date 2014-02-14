@@ -7,6 +7,15 @@ SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
 
+# Variables for the SVG2PDF generation
+SOURCEDIR     = source
+#IMAGEDIRS can be a list of directories that contain SVG files and are relative to the SOURCEDIR
+IMAGEDIRS      = ../docs-dir/Icons
+
+# SVG to PDF conversion
+SVG2PDF       = inkscape
+SVG2PDF_FLAGS =
+
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
@@ -36,7 +45,8 @@ help:
 	@echo "  devhelp    to make HTML files and a Devhelp project"
 	@echo "  epub       to make an epub"
 	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
-	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
+	@echo "  pdf        to make LaTeX files and run them through pdflatex"
+	@echo "  latexpdf   alias for pdf"
 	@echo "  text       to make text files"
 	@echo "  man        to make manual pages"
 	@echo "  texinfo    to make Texinfo files"
@@ -48,6 +58,7 @@ help:
 
 distclean: clean
 	-rm -rf results tmp plots
+	-rm $(PDFs)
 
 clean:
 	-rm -rf $(BUILDDIR)/*
@@ -106,7 +117,7 @@ epub:
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
-latex:
+latex:	specs results images
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
@@ -179,3 +190,14 @@ docs:
 
 server: dirhtml
 	(cd build/dirhtml; python -m SimpleHTTPServer)
+
+# Pattern rule for converting SVG to PDF (and copying symlinks)
+%.pdf: 	%.svg
+	test -L $< || $(SVG2PDF) -f $< -A $@
+	test ! -L $< || ln -s `readlink $< | sed "s/[.]svg/.pdf/"` $@
+
+# Build a list of SVG files to convert to PDFs
+PDFs:= 	$(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(SOURCEDIR)/$(dir)/*.svg)))
+
+# Make a rule to build the PDFs
+images:  $(PDFs)
