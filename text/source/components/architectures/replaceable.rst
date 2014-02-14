@@ -273,7 +273,7 @@ feature is to be able to change the type of **multiple** components at
 once.  For example, imagine a circuit model with several different
 resistor components:
 
-.. code-block:: Modelica
+.. code-block:: modelica
 
     model Circuit
       Resistor R1(R=100);
@@ -292,7 +292,7 @@ Now imagine we wanted one version of this model with ordinary
 instance of the ``SensitiveResistor`` model.  One way we could achieve
 this would be to define our ``Circuit`` as follows:
 
-.. code-block:: Modelica
+.. code-block:: modelica
 
     model Circuit
       replaceable Resistor R1 constrinedby Resistor(R=100);
@@ -309,7 +309,7 @@ this would be to define our ``Circuit`` as follows:
 But in that case, our circuit with ``SensitiveResistor`` components
 would be defined as:
 
-.. code-block:: Modelica
+.. code-block:: modelica
 
     model SensitiveCircuit
       extends Circuit(
@@ -366,6 +366,8 @@ does:
 If our ``Circuit`` is defined in this way, we can create the
 ``SensitiveCircuit`` model as follows:
 
+.. code-block:: modelica
+
     model SensitiveCircuit
       extends Circuit(
         redeclare ResistorModel = SensitiveResistor(dRdT=0.1)
@@ -403,5 +405,92 @@ some cases.
 Choices
 ^^^^^^^
 
-* choices
+This section has focused on configuration management and we've learned
+that the constraining type controls what options are available when
+doing a ``redeclare``.  If a single model developer creates an
+architecture and all compatible implementations, then they have a very
+good sense of what potential configurations will satisfy the
+constraining types involved.
 
+But what if you are using an architecture developed by someone else?
+How can you determine what possibilities exist?  Fortunately, the
+Modelica specification includes a few standard annotations that help
+address this issue.
+
+``choices``
+~~~~~~~~~~~
+
+The ``choices`` annotation allows to original model developer to
+associate a list of modifications with a given declaration.  The very
+simplest use case for this could be to specify values for a given
+parameter:
+
+.. code-block:: modelica
+
+    parameter Modelica.SIunits.Density rho
+      annotation(choices(choice=1.1455 "Air",
+                         choice=992.2 "Water"));
+
+In this case, the model developer has listed several possible values
+that the user might want to give to the ``rho`` parameter.  Each
+choice is a modification to be applied to the ``rho`` variable.  This
+information is commonly used by graphical Modelica tools to provide
+users with intelligent choices.
+
+This feature can just as easily be used in the context of
+configuration management.  Consider the following example:
+
+.. code-block:: modelica
+
+    replaceable IdealSensor sensor constrainedby Sensor
+      annotation(
+        choices(
+          choice=redeclare SampleHoldSensor sensor
+                 "Sample and hold sensor",
+          choice=redeclare IdealSensor sensor
+                 "An ideal sensor"));
+
+Again, the model developer is embedding a set of possible
+modifications along with the declaration.  These ``choice`` values can
+also be used by graphical tools to provide a reasonable set of choices
+when configuring a system.
+
+``choicesAllMatching``
+~~~~~~~~~~~~~~~~~~~~~~
+
+But one problem here is that it is not only tedious to have to
+explicitly list all of these choices, but the set of possibilities
+might change.  After all, other developers (besides the original model
+developer) might come along and create implementations that satisfy a
+given constraining type.  How about giving users the option of seeing
+**all** legal options when configuring their system?
+
+Fortunately, Modelica includes just such an annotation.  It is the
+``choicesAllMatching`` annotation.  By setting the value of this
+annotation to ``true`` on a given declaration (or ``replaceable``
+definition), this instructs the tool to find all possible legal
+options and present them through the user interface.  For example,
+
+.. code-block:: modelica
+
+    replaceable IdealSensor sensor constrainedby Sensor
+      annotation(choicesAllMatching=true);
+
+By adding this annotation, the tool knows to find all legal
+redeclarations when a user is reconfiguring their models through the
+graphical user interface.  This can increase the usability of
+architecture based models **enormously** because it presents users
+with the full range of options at their disposal with trivial effort
+on the part of the model developer.
+
+Conclusion
+^^^^^^^^^^
+
+In this section, we've discussed the configuration management features
+in Modelica.  As with other aspects of the Modelica language, the
+goals here are the same: promote reuse, increase productivity and
+ensure correctness.  Modelica includes many powerful options for
+redeclaring components and redefining types.  By combining this with
+the ``choicesAllMatching`` annotation, models can be built to support
+a large combination of possible configurations using clearly defined
+choice points.
