@@ -62,7 +62,7 @@ assigned to the ``output`` variable ``table``.  It might seem obvious
 that the return value of the C function should be treated as the
 return value from the Modelica function, but there are cases where the
 ``output`` variables should be passed as arguments to the function.
-We will see shortly, in such cases pointers are used so that the
+As we will see shortly, in such cases pointers are used so that the
 external function can assign values to these variables.
 
 Data Mapping

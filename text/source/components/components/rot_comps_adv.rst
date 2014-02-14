@@ -76,7 +76,8 @@ this case) of a point in the system is called a *kinematic constraint*.
 
 When a kinematic constraint is imposed on a system, the component
 imposing the constraint must generate some kind of force or torque in
-order to affect the motion of the system.  This is called a reaction force or torque.
+order to affect the motion of the system.  This is called a reaction
+force or reaction torque.
 
 The following plot shows the reaction torque that the mechanical
 ground element must impose on the system in order to fix the angular

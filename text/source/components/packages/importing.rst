@@ -34,7 +34,7 @@ explicitly follow an alternative name for the alias, *e.g.,*
     import DegK = Modelica.SIunits.Temperature; // Kelvin
 
 After such an import, we can use the alias ``DegK`` to refer to
-``Modelica.SIunits.Temperature``.  Providing alternative names avoid
+``Modelica.SIunits.Temperature``.  Providing alternative names avoids
 name collisions or simply makes the model more readable.
 
 Finally, it is possible to import all definitions within a package

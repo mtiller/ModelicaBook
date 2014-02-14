@@ -57,12 +57,12 @@ looking for the **first** name in the qualified name, *e.g.,*
 If the given name cannot be found after searching all these locations,
 then the search fails and the type cannot be resolved.  If the search
 succeeds, then we've located the definition of the **first name** in
-the qualified name.  If the name is not qualified (*i.e.,* it does not have
-``.`` in the name), then we are done.  However, if it does have other
-components in the name, these must be nested definitions contained
-within the definition returned by the search.  If nested definitions
-cannot be found for all remaining components in a qualified name, then
-the search fails and the type cannot be resolved.
+the qualified name.  If the name is not qualified (*i.e.,* it does not
+have a ``.`` in the name), then we are done.  However, if it does have
+other components in the name, these must be nested definitions
+contained within the definition returned by the search.  If nested
+definitions cannot be found for all remaining components in a
+qualified name, then the search fails and the type cannot be resolved.
 
 At first, this might sound very complicated.  However, most of the
 time these rules are not very important.  The reason is that, as we

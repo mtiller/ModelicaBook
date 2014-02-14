@@ -16,8 +16,8 @@ current, which might flow in one direction for a while and then
 reverse direction.  Here we will consider how to model signals where
 some components produce information and others consume it (and then,
 in turn, produce other information).  In this kind of situation, we
-frequently refer to signals, and components generally that have "input
-signals" and "output signals".
+frequently refer to such signals as "input signals" and "output
+signals".
 
 To model such interactions, we can use connector definitions like
 these:

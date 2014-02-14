@@ -130,7 +130,7 @@ We've seen several ways to express the fact that there is an abrupt
 change in the behavior of our system.  But it's important to point out
 that we are not just describing a change in the ambient temperature,
 we are also specifying **when** it changes.  This a subtle, but very
-important point.
+important, point.
 
 Consider the last example, where our system began in an equilibrium
 state.  At the start of the simulation, there are no significant
