@@ -1,8 +1,10 @@
 {%- macro sidebar() %}
 <div class="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
-    <h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
-    {{ toc }}
+    <div class="toc">
+      <h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
+      {{ toc }}
+    </div>
   </div>
 </div>
 {%- endmacro %}
@@ -55,7 +57,8 @@
   </head>
   <body>
     <div id="header">
-      <h1><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a></h1>
+      <h1 class="title"><a href="{{ pathto(master_doc) }}">{{ title|e }}</a></h1>
+      <h4>Release: {{ release }}</h4>
       <ul>
 	{%- for parent in parents %}
         <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>,</li>
