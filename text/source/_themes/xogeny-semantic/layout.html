@@ -1,40 +1,10 @@
 {%- macro sidebar() %}
-      {%- if render_sidebar %}
-      {%- if theme_fixed_sidebar %}
-      <div class="span4">
-	<span>&nbsp;</span>
-      </div>
-      <div class="span3 sphinxsidebar well sidebar-nav sidebar-nav-fixed">
-      {%- else %}
-      <div class="span3 sphinxsidebar well sidebar-nav">
-      {%- endif %}
-        <div class="nav nav-list sphinxsidebarwrapper">
-          {%- block sidebarlogo %}
-          {%- if logo %}
-            <p class="logo"><a href="{{ pathto(master_doc) }}">
-              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
-            </a></p>
-          {%- endif %}
-          {%- endblock %}
-
-          {%- block sidebartoc %}
-          {%- include "localtoc.html" %}
-          {%- endblock %}
-          {%- block sidebarrel %}
-          {%- include "relations.html" %}
-          {%- endblock %}
-          {%- block sidebarsourcelink %}
-          {# {%- include "sourcelink.html" %} #}
-          {%- endblock %}
-          {%- if customsidebar %}
-          {%- include customsidebar %}
-          {%- endif %}
-          {%- block sidebarsearch %}
-          {%- include "searchbox.html" %}
-          {%- endblock %}
-        </div>
-      </div>
-      {%- endif %}
+<div class="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+    <h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
+    {{ toc }}
+  </div>
+</div>
 {%- endmacro %}
 
 {%- macro script() %}
@@ -85,6 +55,12 @@
   </head>
   <body>
     <div id="header">
+      <h1><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a></h1>
+      <ul>
+	{%- for parent in parents %}
+        <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>,</li>
+        {%- endfor %}
+      </ul>
     </div>
     <div id="sidebar">
       {{ sidebar() }}
