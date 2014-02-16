@@ -6,8 +6,22 @@
  * :license: BSD, see LICENSE for details.
  */
 
-{% set page_width = 940 %}
+{% set fixed_width = False %}
+{% set fixed_toc = True %}
+
+{% if fixed_width %}
+{% set page_width = "940px" %}
+{% set related_width = "920px" %}
+{% set footer_width = "925px" %}
+{% else %}
+{% set page_width = "100%" %}
+{% set related_width = "95%" %}
+{% set footer_width = "97%" %}
+{% endif %}
+{% set max_page_width = "1200px" %}
+{% set min_page_width = "640px" %}
 {% set sidebar_width = 220 %}
+{% set left_margin = 30 %}
 {% set body_font_stack = 'Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif' %}
 {% set headline_font_stack = 'Futura, "Trebuchet MS", Arial, sans-serif' %}
 {% set code_font_stack = "'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace" %}
@@ -23,10 +37,15 @@ body {
     color: #000;
     margin: 30px 0 0 0;
     padding: 0;
+    margin-left: {{left_margin}}px;
+    margin-right: 30px;
 }
 
 div.document {
-    width: {{ page_width }}px;
+    width: {{ page_width }};
+    max-width: {{ max_page_width }};
+    min-width: {{ min_page_width }};
+/*    width: 100%; */
     margin: 0 auto;
 }
 
@@ -39,7 +58,7 @@ p.developmentversion {
 }
 
 div.related {
-    width: {{ page_width - 20 }}px;
+    width: {{related_width}};
     padding: 5px 10px;
     background: #F2FCEE;
     margin: 15px auto 15px auto;
@@ -55,6 +74,12 @@ div.bodywrapper {
 }
 
 div.sphinxsidebar {
+{% if fixed_toc %}
+    position: fixed;
+    top: 45px;
+    left: {{left_margin}}px;
+    margin-left: 0px;
+{% endif %}
     width: {{ sidebar_width }}px;
 }
 
@@ -74,7 +99,7 @@ img.celerylogo {
 }
 
 div.footer {
-    width: {{ page_width - 15 }}px;
+    width: {{footer_width}};
     margin: 10px auto 30px auto;
     padding-right: 15px;
     font-size: 14px;
