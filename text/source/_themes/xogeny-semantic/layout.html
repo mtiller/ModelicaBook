@@ -2,8 +2,23 @@
 <div class="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
     <div class="toc">
-      <h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
+      <h2><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h2>
       {{ toc }}
+    </div>
+    <div class="rel">
+      {% if prev %}
+      <h2>Previous Topic</h2>
+      <ul>
+	<li><a href="{{ prev.link|e }}">{{ prev.title }}</a></li>
+      </ul>
+      {% endif %}
+
+      {% if next %}
+      <h2>Next Topic</h2>
+      <ul>
+	<li><a href="{{ next.link|e }}">{{ next.title }}</a></li>
+      </ul>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -60,9 +75,13 @@
       <h4 class="pull-right">Release: {{ release }}</h4>
       <h1 class="title"><a href="{{ pathto(master_doc) }}">{{ project|e }}</a></h1>
       {#
-      <ul>
+      <ul class="breadcrumbs">
 	{%- for parent in parents %}
-        <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>,</li>
+        <li class="breadcrumb">
+	  <a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>
+	    {{ parent.title }}
+	  </a>
+	</li>
         {%- endfor %}
       </ul>
       #}
