@@ -1,0 +1,72 @@
+/*
+ * xogeny.css_t
+ * ~~~~~~~~~~~~
+ */
+
+@import url("basic.css");
+
+/* Give the body a "paper" looking background */
+body {
+    background: url("/_static/bg.jpg") repeat scroll 0 0 #FCFCFC;
+}
+
+/***
+  This section is about spacing of the main elements on the page
+***/
+
+#header {
+    height: 80px;
+    /* background-color: rgba(0,0,255,0.1); */
+}
+
+#sidebar {
+    position: fixed;
+    left: 30px;
+    top: 130px;
+    width: 300px;
+    /* background-color: rgba(255,0,0,0.1); */
+}
+
+#content {
+    min-width: 800px;
+    margin-top: 30px;
+    margin-left: 330px;
+    margin-right: 30px;
+    /* background-color: rgba(0,255,0,0.1); */
+}
+
+/***
+  Everything below this line is providing CSS for sphinx supplied tags
+***/
+
+/* Make headers look "fancy" */
+.section > h1, h2, h3, h4, h5 {
+    color: #666666;
+    font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.highlight {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.highlight pre {
+    float: left;
+}
+
+.highlight {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.highlight pre {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 6px;
+
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
