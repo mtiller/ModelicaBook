@@ -57,13 +57,15 @@
   </head>
   <body>
     <div id="header">
-      <h1 class="title"><a href="{{ pathto(master_doc) }}">{{ title|e }}</a></h1>
-      <h4>Release: {{ release }}</h4>
+      <h4 class="pull-right">Release: {{ release }}</h4>
+      <h1 class="title"><a href="{{ pathto(master_doc) }}">{{ project|e }}</a></h1>
+      {#
       <ul>
 	{%- for parent in parents %}
         <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>,</li>
         {%- endfor %}
       </ul>
+      #}
     </div>
     <div id="sidebar">
       {{ sidebar() }}

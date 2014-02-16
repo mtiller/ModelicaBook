@@ -10,12 +10,19 @@ body {
     background: url("/_static/bg.jpg") repeat scroll 0 0 #FCFCFC;
 }
 
+/* Nice font for text */
+body {
+    font-family: Optima,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;
+    font-size: 17px;
+}
+
 /***
   This section is about spacing of the main elements on the page
 ***/
 
 #header {
     height: 80px;
+    margin-left: 330px;
     /* background-color: rgba(0,0,255,0.1); */
 }
 
@@ -40,7 +47,7 @@ body {
 ***/
 
 /* Make headers look "fancy" */
-.section > h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
     color: #666666;
     font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
     font-style: italic;
@@ -53,6 +60,11 @@ body {
 }
 .highlight pre {
     float: left;
+}
+
+/* This makes the font bigger for code */
+.highlight {
+    font-size: 100%;
 }
 
 /* Just a spacing issue */
@@ -87,13 +99,32 @@ div .sphinxsidebar {
 }
 
 /* Make TOC links look nicer */
-.toc > a:link {
+.toc * a {
   text-decoration:none;
 }
 
 /* Make permalinks look better */
-a:link .headerlink {
+a.headerlink {
   text-decoration:none;
+}
+
+/* Make title link look nicer */
+.title > a {
+  text-decoration:none;
+}
+
+/* Trim space at bottom of title */
+.title {
+  margin-bottom: 10px;
+}
+
+.pull-right {
+  float: right;
+}
+
+/* Center figures */
+.figure {
+    text-align: center;
 }
 
 /***
