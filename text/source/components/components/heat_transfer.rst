@@ -67,8 +67,7 @@ utilize these connector definitions.
 Component Models
 ^^^^^^^^^^^^^^^^
 
-.. todo:: should "on physical effect" be "a physical effect"?
-if not, this needs re-writing.
+.. todo:: should "on physical effect" be "a physical effect"? if not, this needs re-writing.
 
 When building component models, the goal is to create component models
 that implement (only) on physical effect (*e.g.,* capacitance,
@@ -229,8 +228,8 @@ equation:
 
     cap.node.T = conv.port_a.T "Equating across variables";
 
-.. todo:: is it a generalization of Kirchoff's current law or merely the
-analog of Kirchoff's current law for this domain?
+.. todo:: is it a generalization of Kirchoff's current law or merely
+	  the analog of Kirchoff's current law for this domain?
 
 In addition, a connection generates an equation for all the through
 variables as well.  The equation that is generated is a conservation
@@ -313,9 +312,9 @@ the temperatures on either end.
 
 .. index:: number of equations required
 
-.. topic:: Number of equations
-
 .. todo:: should e.g. be i.e. or are there unprotected internal variables?
+
+.. topic:: Number of equations
 
     All our previous models had one connector and one equation.  The
     ``Convection`` model has two connectors.  As a result, it has two
