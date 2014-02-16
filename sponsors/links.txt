@@ -2,3 +2,4 @@ CyDesign - http://www.cydesign.com/
 Ricardo - http://www.ricardo.com/software
 ITI - http://www.itisim.com/
 Suzhou Tongyuan - http://en.tongyuan.cc/
+OSMC - http://www.openmodelica.org/
