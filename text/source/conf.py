@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Modelica By Example documentation build configuration file, created by
+# Modelica by Example documentation build configuration file, created by
 # sphinx-quickstart on Fri Oct 11 16:46:34 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Modelica By Example'
+project = u'Modelica by Example'
 copyright = u'2013, Michael M. Tiller'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -195,7 +195,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'ModelicaByExample.tex', u'Modelica By Example Documentation',
+  ('index', 'ModelicaByExample.tex', u'Modelica by Example',
    u'Michael M. Tiller', 'manual'),
 ]
 
@@ -225,7 +225,7 @@ latex_show_urls = True
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'modelicabyexample', u'Modelica By Example Documentation',
+    ('index', 'modelicabyexample', u'Modelica by Example',
      [u'Michael M. Tiller'], 1)
 ]
 
@@ -239,7 +239,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ModelicaByExample', u'Modelica By Example Documentation',
+  ('index', 'ModelicaByExample', u'Modelica by Example',
    u'Michael M. Tiller', 'ModelicaByExample', 'One line description of project.',
    'Miscellaneous'),
 ]
@@ -257,7 +257,7 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'Modelica By Example'
+epub_title = u'Modelica by Example'
 epub_author = u'Michael M. Tiller'
 epub_publisher = u'Michael M. Tiller'
 epub_copyright = u'2013, Michael M. Tiller'
