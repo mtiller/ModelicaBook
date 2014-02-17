@@ -2,7 +2,7 @@
 <div class="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
     <div class="toc">
-      <h2><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h2>
+      <h2>{{ _('Table Of Contents') }}</h2>
       {{ toc }}
     </div>
     <div class="rel">
@@ -72,8 +72,9 @@
   </head>
   <body>
     <div id="header">
-      <h4 class="pull-right">Release: {{ release }}</h4>
-      <h1 class="title"><a href="{{ pathto(master_doc) }}">{{ project|e }}</a></h1>
+      <span class="title"><a href="{{ pathto(master_doc) }}">{{ project|e }}</a></span>
+      <hr class="heading-line">
+      <span class="pull-right">Release: {{ release }}</span>
       {#
       <ul class="breadcrumbs">
 	{%- for parent in parents %}
@@ -91,14 +92,6 @@
     </div>
     <div id="content">
       {% block body %} {% endblock %}
-<!--- <div class="ui">
-	<main class="ui three column grid">
-	  <div class="ui huge header">{{ title|striptags|e }}</div>
-	  <aside class="column">1</aside>
-	  <section class="column">2</section>
-	  <section class="column">3</section>
-	</main>
-      </div> -->
     </div>
   </body>
 </html>
