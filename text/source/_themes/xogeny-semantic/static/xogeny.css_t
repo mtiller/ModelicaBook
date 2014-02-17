@@ -38,9 +38,13 @@ pre {
     margin-left: 330px;
 }
 
+.title {
+  font-size: 250%;
+}
+
 /* Make the book title large */
 .title > a {
-  font-size: 250%;
+  vertical-align: text-bottom;
   font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
   font-style: italic;
   font-weight: normal;
