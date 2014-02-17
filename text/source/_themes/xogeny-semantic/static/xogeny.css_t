@@ -58,10 +58,17 @@ pre {
     width: 300px;
 }
 
-#content {
+#page-content {
     min-width: 800px;
     margin-top: 30px;
     margin-left: 330px;
+    margin-right: 30px;
+}
+
+#root-content {
+    min-width: 800px;
+    margin-top: 30px;
+    margin-left: 30px;
     margin-right: 30px;
 }
 
@@ -106,10 +113,9 @@ h1, h2, h3, h4, h5 {
     border: 1px solid rgba(0,0,0,0.5);
     border-radius: 6px;
 
-
-    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 3px 3px 2px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    3px 3px 2px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         3px 3px 2px 0px rgba(50, 50, 50, 0.75);
 }
 
 /* We need this or the sidebar is off the page */

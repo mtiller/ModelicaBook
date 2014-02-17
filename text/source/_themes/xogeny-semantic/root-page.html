@@ -22,12 +22,8 @@
       <span class="title"><a href="{{ pathto(master_doc) }}">{{ project|e }}</a></span>
       <hr class="heading-line">
       <span class="pull-right">Release: {{ release }}</span>
-      This is the root document!
     </div>
-    <div id="sidebar">
-      {{ sidebar() }}
-    </div>
-    <div id="content">
+    <div id="root-content">
       {% block body %} {% endblock %}
     </div>
   </body>
