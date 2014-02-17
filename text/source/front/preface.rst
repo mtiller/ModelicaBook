@@ -44,21 +44,9 @@ an extensive set of examples are used to demonstrate the
 language features relevant to the topics introduced in part one.  
 Note that each example typically introduces a new topic, so it is
 best to review all the examples to provide the most complete coverage
-of these topics.  Finally, it is not generally practical to cover
-absolutely every language feature, function or syntactic construct in
-an example.  For this reason, most chapters include a review of the
+of these topics.  Finally, most chapters include a review of the
 topics and a summary of any details not found in the examples to
 provide thorough coverage of the topics.
-
-.. todo::
-
-	You mention that most chapters are organized in three parts:
-	1. introduction of topics
-	2. examples
-	3. what's the third?
-
-	Ah, I see now it is the review. Perhaps reword the sentence
-	starting with "Finally" as that threw me off.
 
 .. raw:: latex
 

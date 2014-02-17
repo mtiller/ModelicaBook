@@ -152,8 +152,6 @@ The following expressions would evaluate as follows:
 Slicing
 ^^^^^^^
 
-.. todo:: Improve this forward reference
-
 There is another sophisticated way of indexing arrays in Modelica.
 But it doesn't make sense to talk about it just yet.  We will see it
-later when we start our discussion of :ref:`components`.
+later when we start our discussion of :ref:`arrays-of-components`.

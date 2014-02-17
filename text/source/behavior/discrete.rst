@@ -14,7 +14,9 @@ Normally, when we talk about discrete behavior we often refer to
 "events".  An event is something that occurs in our system that
 triggers some kind of discontinuity.
 
-.. todo:: since, earlier, in the section on variables, continuous variables could include discontinuities, either that section or this section or both need to be made more precise.
+.. todo:: since, earlier, in the section on variables, continuous
+          variables could include discontinuities, either that section
+          or this section or both need to be made more precise.
 
 .. index:: ! time events
 

@@ -19,11 +19,6 @@ Modelica by Example
    "Beautiful Soup" to tweak the generated code.  But I have figured
    out how to get Sphinx to use different layouts for different pages.
 
-.. todo::
-
-   Add a dedication.  Not sure where it needs to go.  In fact, I need
-   to organize the "front material" properly.
-
 .. toctree::
    :maxdepth: 1
 
