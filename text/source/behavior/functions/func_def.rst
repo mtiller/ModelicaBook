@@ -222,14 +222,26 @@ One important thing to note is that functions are **not** restricted
 in terms of recursion (*i.e.,* a function **is** allowed to call
 itself).
 
-.. todo:: According to Wikipedia
-  "In computer science, a function or expression is said to have a side effect if, in addition to returning a value, it also modifies some state or has an observable interaction with calling functions of the outside world".
-    "In computer programming, a function may be described as a pure function if both these statements about the function hold:
-     The function always evaluates the same result value given the same argument value(s). The function result value cannot depend on any hidden information or state that may change as program execution proceeds or between different executions of the program, nor can it depend on any external input from I/O devices.
-         Evaluation of the result does not cause any semantically observable side effect or output, such as mutation of mutable objects or output to I/O devices".
-    Thus: side effects => the function is impure
-          impure functions do not => side effect
-    e.g., a function whose output is not a function of the inputs does not necessarily g    generate side effects
+.. todo:: According to Wikipedia 
+
+	  "In computer science, a function or expression is said to
+	  have a side effect if, in addition to returning a value, it
+	  also modifies some state or has an observable interaction
+	  with calling functions of the outside world".  "In computer
+	  programming, a function may be described as a pure function
+	  if both these statements about the function hold: The
+	  function always evaluates the same result value given the
+	  same argument value(s). The function result value cannot
+	  depend on any hidden information or state that may change as
+	  program execution proceeds or between different executions
+	  of the program, nor can it depend on any external input from
+	  I/O devices.  Evaluation of the result does not cause any
+	  semantically observable side effect or output, such as
+	  mutation of mutable objects or output to I/O devices".
+	  Thus: side effects => the function is impure impure
+	  functions do not => side effect e.g., a function whose
+	  output is not a function of the inputs does not necessarily
+	  g generate side effects
 
 Side Effects
 ------------

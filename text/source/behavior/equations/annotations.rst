@@ -59,7 +59,7 @@ example:
     T = T0 "Specify initial value for T" annotation(...);
 
 .. todo:: where does it come if the textual description is not present?
-if it's always just before the ";", then just say it that way.
+	  if it's always just before the ";", then just say it that way.
 
 Note that, just like with a declaration, the ``annotation`` follows
 the textual description (if present) and comes before the ``;`` that
@@ -129,7 +129,7 @@ User Annotations
 ^^^^^^^^^^^^^^^^
 
 .. todo:: be ware there is some controversy about the use of singular "they".
-(personally, I'm all for using singular they).
+	  (personally, I'm all for using singular they).
 
 Annotations were designed to allow model developers to attach
 **arbitrary data** to their models.  For example, if a user wanted to
