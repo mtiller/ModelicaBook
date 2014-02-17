@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 ===================
-Modelica By Example
+Modelica by Example
 ===================
 
 .. highlight:: modelica
@@ -12,24 +12,25 @@ Modelica By Example
 
 .. todo::
 
-   I suspect for the "landing page", I'll need to do a hidden
-   `toctree` and then add a custom landing page with all the links.
-   But I need to wait until the structure is stable.  This will allow
-   me to identify the implicit partitioning of the chapters into parts
-   (which is not reflected in the explicit structure) and allow me to
-   include the sponsorship information.
+   This isn't the design I plan on having for the real landing page.
+   Ideally, I'd like to have the Table of Contents for the book
+   organized into "parts", but it looks like I'll either have to
+   handle code the landing page in that case or using something like
+   "Beautiful Soup" to tweak the generated code.  But I have figured
+   out how to get Sphinx to use different layouts for different pages.
 
 .. todo::
 
-   Add a dedication.  Not sure where it needs to go.
+   Add a dedication.  Not sure where it needs to go.  In fact, I need
+   to organize the "front material" properly.
 
 .. toctree::
    :maxdepth: 1
 
-   foreward
-   preface
-   intro
-
+   front/foreward
+   front/preface
+   front/intro
+   front/dedication
 
 .. toctree::
    :maxdepth: 3
