@@ -3,10 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-===================
-Modelica by Example
-===================
-
 .. highlight:: modelica
    :linenothreshold: 5
 
@@ -64,7 +60,10 @@ Advanced Topics
 TODO List
 =========
 
-.. todolist::
+.. toctree::
+   :maxdepth: 2
+
+   todo
 
 Indices and tables
 ==================
