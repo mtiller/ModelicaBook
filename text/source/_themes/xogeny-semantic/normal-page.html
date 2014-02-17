@@ -12,14 +12,17 @@
 
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     
+    {{ fonts() }}
     {{ css() }}
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
-
     {{ script() }}
   </head>
   <body>
     <div id="header">
-      <span class="title"><a href="{{ pathto(master_doc) }}">{{ project|e }}</a></span>
+      <span class="title">
+	<a class="title-font" href="{{ pathto(master_doc) }}">
+	  {{ project|e }}
+        </a>
+      </span>
       <hr class="heading-line">
       <span class="pull-right">Release: {{ release }}</span>
     </div>

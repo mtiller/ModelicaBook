@@ -24,9 +24,15 @@ p {
   margin-bottom: 7px;
 }
 
-/* Tighter lines in listings */
+/* Tighter lines in listings and nice font */
 pre {
+    font-family: Inconsolata, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     line-height: 1.2em;
+}
+
+.title-font {
+    font-family: American Typewriter, Inconsolata, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    font-weight: medium;
 }
 
 /***
@@ -46,9 +52,7 @@ pre {
 /* Make the book title large */
 .title > a {
   vertical-align: text-bottom;
-  font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
-  font-style: italic;
-  font-weight: normal;
+/*  font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif; */
 }
 
 #sidebar {
