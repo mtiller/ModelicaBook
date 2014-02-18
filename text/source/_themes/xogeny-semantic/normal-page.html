@@ -20,6 +20,31 @@
     <div id="thumb" class="ui button right attached">
       &nbsp;&nbsp;<i class="icon list layout"></i>
     </div>
+    <div id="header" class="segment">
+      <div class="container">
+	<h1 class="title title-font">
+	  <a class="title-font" href="{{ pathto(master_doc) }}">
+	    {{ project|e }}
+          </a>
+	</h1>
+	<div class="ui divider"></div>
+	<p class="pull-right">
+	  <span class="pull-right">Release: {{ release }}</span>
+	  <br>
+	  <span class="pull-right">File: {{ pagename }}.rst</span>
+	</p>
+	<div class="ui breadcrumb">
+	  {%- for parent in parents %}
+	  <a class="section" href="{{ parent.link|e }}">{{ parent.title }}</a>
+	  <i class="right arrow icon divider"></i>
+	  {%- endfor %}
+	  <div class="active section">{{ title }}</div>
+	</div>
+	<p>
+	</p>
+      </div>
+    </div>
+    {#
     <div id="header">
       <span class="title">
 	<a class="title-font" href="{{ pathto(master_doc) }}">
@@ -31,6 +56,7 @@
       <br>
       <span class="pull-right">File: {{ pagename }}.rst</span>
     </div>
+    #}
     <div id="toc-sidebar" class="ui styled sidebar">
       {{ sidebar() }}
     </div>

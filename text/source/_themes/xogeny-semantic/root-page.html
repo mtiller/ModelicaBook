@@ -17,11 +17,26 @@
     {{ script() }}
   </head>
   <body>
+    <div class="segment">
+      <div class="container">
+	<h1 class="title title-font">
+	  {{ project|e }}
+	</h1>
+	<div class="ui divider"></div>
+	<p class="pull-right">
+	  <span class="pull-right">Release: {{ release }}</span>
+	  <br>
+	  <span class="pull-right">File: {{ pagename }}.rst</span>
+	</p>
+      </div>
+    </div>
+    {#
     <div id="header">
       <span class="title title-font">{{ project|e }}</span>
       <hr class="heading-line">
       <span class="pull-right">Release: {{ release }}</span>
     </div>
+    #}
     <div id="root-content">
       {% block body %} {% endblock %}
     </div>

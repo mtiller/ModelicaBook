@@ -33,6 +33,7 @@ pre {
 .title-font {
     font-family: American Typewriter, Inconsolata, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     font-weight: medium;
+    font-style: normal;
 }
 
 /***
@@ -40,8 +41,6 @@ pre {
 ***/
 
 #header {
-    margin-top: 50px;
-    height: 50px;
     margin-left: 30px;
 }
 
@@ -80,8 +79,12 @@ pre {
     margin-right: 30px;
 }
 
-.breadcrumbs {
-  display: inline-block;
+#toc-sidebar {
+    background: url("/_static/dust.png") repeat scroll 0 0 #FCFCFC; 
+}
+
+.ui.breadcrumbs {
+    margin-top: 0px;
 }
 
 /***
@@ -94,6 +97,11 @@ h1, h2, h3, h4, h5 {
     font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
     font-style: italic;
     font-weight: normal;
+}
+
+/* Get rid of italics in the header */
+#header h1 {
+    font-style: normal;
 }
 
 /* This allows highlights to wrap tightly around the text */
@@ -209,7 +217,8 @@ hr.heading-line {
     background: linear-gradient(to bottom, #b2e1ff 0%,#66b6fc 100%);
     border-radius: 0 5px 5px 0;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 -1px 0 rgba(0, 0, 0, 0.3) inset;
-    margin: 30px 0 30px -30px;
+    margin-left: 60px;
+    margin-right: 60px;
     padding: 20px 20px 24px 50px;
     position: relative;
 }
@@ -219,7 +228,8 @@ hr.heading-line {
     background: linear-gradient(to bottom, #b2e1ff 0%,#66b6fc 100%);
     border-radius: 0 5px 5px 0;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 -1px 0 rgba(0, 0, 0, 0.3) inset;
-    margin: 30px 0 30px -30px;
+    margin-left: 60px;
+    margin-right: 60px;
     padding: 20px 20px 24px 50px;
     position: relative;
 }
