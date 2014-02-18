@@ -4,7 +4,7 @@
     <!-- Standard Meta -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properities -->
     <meta name="generator" content="Sphinx 1.2" />
@@ -17,6 +17,9 @@
     {{ script() }}
   </head>
   <body>
+    <div id="thumb" class="ui button right attached">
+      &nbsp;&nbsp;<i class="icon list layout"></i>
+    </div>
     <div id="header">
       <span class="title">
 	<a class="title-font" href="{{ pathto(master_doc) }}">
@@ -28,7 +31,7 @@
       <br>
       <span class="pull-right">File: {{ pagename }}.rst</span>
     </div>
-    <div id="sidebar">
+    <div id="toc-sidebar" class="ui styled sidebar">
       {{ sidebar() }}
     </div>
     <div id="page-content">

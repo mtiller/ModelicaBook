@@ -54,11 +54,15 @@
     {%- for scriptfile in script_files %}
     <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
     {%- endfor %}
+    <script type="text/javascript" src="{{ pathto('_static/semantic/semantic.js', 1) }}">
+    </script>
+    <script type="text/javascript" src="{{ pathto('_static/xogeny.js', 1) }}"></script>
 {%- endmacro %}
+
 
 {%- macro css() %}
     <link rel="stylesheet" type="text/css" class="ui"
-	  href="{{ pathto('_static/semantic/semantic.min.css', 1) }}">
+	  href="{{ pathto('_static/semantic/semantic.css', 1) }}">
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/tweaks.css', 1) }}" type="text/css" />
