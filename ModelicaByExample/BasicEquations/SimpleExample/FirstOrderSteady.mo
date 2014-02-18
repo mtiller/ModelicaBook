@@ -5,5 +5,5 @@ model FirstOrderSteady
 initial equation
   der(x) = 0 "Initialize the system in steady state";
 equation
-  der(x) = 1-x "Drive x toward 1.0 when time<=0.5";
+  der(x) = 1-x "Drives value of x toward 1.0";
 end FirstOrderSteady;
