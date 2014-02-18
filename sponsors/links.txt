@@ -3,3 +3,4 @@ Ricardo - http://www.ricardo.com/software
 ITI - http://www.itisim.com/
 Suzhou Tongyuan - http://en.tongyuan.cc/
 OSMC - http://www.openmodelica.org/
+DOFWare - http://www.dofware.com/
