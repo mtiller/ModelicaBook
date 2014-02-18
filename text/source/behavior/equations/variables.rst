@@ -136,8 +136,6 @@ means that multiple levels of specialization can be supported, *e.g.*,
    type Temperature = Real(unit="K"); // Could be a temperature difference
    type AbsoluteTemperature = Temperature(min=0); // Must be positive
 
-.. todo:: would you really name a type representing temperature diff as Temperature?
-
 .. _enumerations:
 
 Enumerations
@@ -171,9 +169,6 @@ follows:
 .. code-block:: modelica
 
    type StateSelect = enumeration(never, avoid, default, prefer, always);
-
-.. todo:: Add a reference to whatever future section will discuss
-	  state selection.
 
 .. _attributes:
 

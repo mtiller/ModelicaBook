@@ -35,18 +35,18 @@ The syntax of a ``for`` loop is the same in a function as it is in any
 other context.  It identifies an iteration variable and then assigns
 that iteration variable a set of values contained in a vector, *e.g.,*
 
-.. todo:: are only Assignment statements allowed in a for loop?
-
 .. code-block:: modelica
 
     algorithm
       for i in 1:10 loop
-        // Assignment statements
+        // Statements
       end for;
 
-The only significant difference for an ``algorithm`` section is that
-the loop must contain assignment statements, not equations.  Also, the
-number of iterations required can be a function of the input arguments.
+There two main differences between an ``equation`` section and an
+``algorithm`` section is that an ``algorithm`` section uses explicit
+assignment statements instead of equations and, since there are no
+equations, there are no concerns about generating a specified number
+of equations when using ``if`` or ``for``.
 
 .. index:: while
 .. index:: functions; while

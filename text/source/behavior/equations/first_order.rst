@@ -126,20 +126,18 @@ the initial value of ``x`` in our model to be *2*, we could add an
    :language: modelica
    :lines: 2-
 
-.. todo::
-   note: the descriptive strings for the model and for the variable Real x are
-   different between FirstOrderInitial and FirstOrderDocumented 
-
 Note that the only difference between this model and the previous one,
 presented in the section on :ref:`first-order-doc`, is the addition of
 the ``initial equation`` section which contains the equation ``x =
-2``.  By adding this equation to the ``initial equation`` section, we
-are specifying that this system has a different initial starting
-condition.
-
-.. todo::
-   different from what? - maybe explicityly mention default initial
-   values, although it seems to be implied
+2``.  In the previous example, the initial value of ``x`` at the start
+of the simulation was unspecified.  Generally speaking, this means
+that the initial value for ``x`` will be the value of its ``start``
+attribute (which is zero by default).  However, because each tool uses
+their own specific algorithms to formulate the final system of
+equations, it is always best to state initial conditions explicitly,
+as we have done here.  By adding this equation to the ``initial
+equation`` section, we are explicitly specifying the initial condition
+for ``x``.
 
 As a result, the solution trajectory is quite different as
 we can see in the following figure:
@@ -229,7 +227,8 @@ conditions:
 The trajectory terminates at 8 seconds because the simulator used the
 ``experiment`` annotation to determine how long to run the simulation.
 
-.. todo::
-   Question: is the experiment annotation merely a suggestion? Or does
-   it force the tool running the model to use those settings? Or is
-   it implementation dependent?
+.. topic:: Annotation Support
+
+    The ``experiment`` annotation is widely supported.  But it is
+    important to keep in mind that, in general, a tool is free to
+    ignore any or all annotations.
