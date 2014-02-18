@@ -3,8 +3,6 @@
 Switched RLC Circuit
 --------------------
 
-.. todo:: cooling revisted link is not showing up
-
 In this section, we'll present another model, like the heat transfer
 model presented :ref:`earlier in this chapter <cooling-revisited>`,
 that contains time events.  In this case, we'll show how we can

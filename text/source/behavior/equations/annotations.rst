@@ -128,9 +128,6 @@ the annotation, *e.g.,*
 User Annotations
 ^^^^^^^^^^^^^^^^
 
-.. todo:: be ware there is some controversy about the use of singular "they".
-	  (personally, I'm all for using singular they).
-
 Annotations were designed to allow model developers to attach
 **arbitrary data** to their models.  For example, if a user wanted to
 associate a part number with a given model definition, they might
@@ -319,15 +316,12 @@ at compile time.  In other words, it indicates that the user does not
 require the ability to change the value of the ``parameter`` from one
 simulation to the next.
 
-.. todo:: what does the term "structure of equations" mean?
-
 The motivation behind having such an annotation is that it allows the
 Modelica compiler to assume many things about the ``parameter`` during
-model compilation that it otherwise couldn't.  These
-assumptions might restrict the structure of the equations in such a
-way that the underlying systems of equations are easier to solve than
-in the general case where the parameter could take on a range of
-values.
+model compilation that it otherwise couldn't.  These assumptions might
+restrict the system of equations in such a way that the underlying
+systems of equations are easier to solve than in the general case
+where the parameter could take on a range of values.
 
 The ``Evaluate`` annotation is simply a ``Boolean`` variable so it is
 used in an annotation as follows:

@@ -35,8 +35,9 @@ add_simple_plot(plot="NCWD", vars=[Var("T")], title="Cooling to Ambient",
 
 ## RLC
 add_case(["RLC1"], stopTime=2, res="RLC1")
-add_simple_plot(plot="RLC1", vars=[Var("V", legend="Output Voltage [V]", style="-"),
-                                   Var("Vb", legend="Battery Voltage [V]", style="-.")],
+add_simple_plot(plot="RLC1", vars=[Var("V", legend="Output Voltage (V)", style="-"),
+                                   Var("Vb", legend="Battery Voltage (Vb)", style="-.")],
+                ylabel="Voltage [V]",
                 title="Circuit Response")
 
 ## RotationalSMD
