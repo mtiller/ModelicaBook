@@ -84,18 +84,16 @@ have a check within the ``while`` loop that indicates when to
 terminate.  In these cases, a ``break`` statement can be used to
 terminate the innermost loop.
 
-.. todo:: does the apostrophe in functions need to be escaped?
-
 .. index:: return
 
-Another issue of control flow involves when to terminate and exit from the
-``algorithm`` section itself.  There are many circumstances in which
-all the ``output`` variables have been assigned their final values.
-While it is always true that ``if`` and ``else`` statements can be
-used to prevent any further calculations and assignments, it is often
-more readable to simple indicate clearly that no further calculations
-are needed.  In such cases, the ``return`` statement can be used to
-terminate any further processing within a function's ``algorithm``
-section.  When a ``return`` statement is encountered, whatever values
-are currently associated with the ``output`` variables are the ones
-that will be returned.
+Another issue of control flow involves when to terminate and exit from
+the ``algorithm`` section itself.  There are many circumstances in
+which all the ``output`` variables have been assigned their final
+values.  While it is always true that ``if`` and ``else`` statements
+can be used to prevent any further calculations and assignments, it is
+often more readable to simply indicate clearly that no further
+calculations are needed.  In such cases, the ``return`` statement can
+be used to terminate any further processing within a function's
+``algorithm`` section.  When a ``return`` statement is encountered,
+whatever values are currently associated with the ``output`` variables
+are the ones that will be returned.

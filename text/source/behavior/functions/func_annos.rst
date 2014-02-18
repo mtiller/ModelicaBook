@@ -60,16 +60,13 @@ function being annotated.  For example:
       dz := // some expression involving x, y, dx and dy
     end df;
 
-.. todo:: the outputs of functions are called output arguments?
-
 Note that the first arguments to the derivative function, ``df``, in
 this case, are the same as for the original function, ``f``.  Those
 arguments are then followed by the differential versions of the input
-arguments to the original function.  Finally, the ``output``
-argument(s) of the derivative function are the differential versions
-of the ``output`` argument(s) of the original function.  It sounds
-complicated, but hopefully the same code conveys how simple the
-construction really is.
+arguments to the original function.  Finally, the output(s) of the
+derivative function are the differential versions of the output(s) of
+the original function.  It sounds complicated, but hopefully the same
+code conveys how simple the construction really is.
 
 Given such a Modelica function, the Modelica compiler can use such a
 function to compute various derivatives, *e.g.*,
