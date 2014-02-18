@@ -24,7 +24,9 @@ Front Matter
    front/foreward
    front/preface
    front/intro
-   front/dedication
+
+.. dedication should go here
+
 
 Describing Behavior
 ===================
