@@ -1,6 +1,27 @@
+Gold
+----
 CyDesign - http://www.cydesign.com/
-Ricardo - http://www.ricardo.com/software
+Wolfram Research
+Modelon
+Maplesoft
+Dassault Systèmes
+
+Silver
+------
+
+Ricardo Software - http://www.ricardo.com/software
 ITI - http://www.itisim.com/
+Modelica Association
+Global Crown Technology
+LMS Imagine
+
+
+Bronze
+------
+
 Suzhou Tongyuan - http://en.tongyuan.cc/
 OSMC - http://www.openmodelica.org/
 DOFWare - http://www.dofware.com/
+Bausch-Gall
+TUHH/TuTech
+Schlegel Simulation
