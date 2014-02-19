@@ -10,6 +10,11 @@ body {
     background: url("/_static/bg.jpg") repeat scroll 0 0 #FCFCFC; 
 }
 
+/* Nice background for the TOC */
+#toc-sidebar {
+    background: url("/_static/dust.png") repeat scroll 0 0 #FCFCFC; 
+}
+
 /* Nice font for text */
 body {
     font-family: Optima,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;
@@ -30,34 +35,18 @@ pre {
     line-height: 1.2em;
 }
 
-.title-font {
-    font-family: American Typewriter, Inconsolata, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-    font-weight: medium;
-    font-style: normal;
-}
-
 /***
   This section is about spacing of the main elements on the page
 ***/
 
 #header {
-    padding-top: 75px;
+    padding-top: 65px;
     margin-left: 30px;
 }
 
 #header .ui.divider {
     margin-top: 2px;
     margin-bottom: 2px;
-}
-
-.title {
-  font-size: 250%;
-}
-
-/* Make the book title large */
-.title > a {
-  vertical-align: text-bottom;
-/*  font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif; */
 }
 
 #thumb {
@@ -85,10 +74,6 @@ pre {
     margin-right: 30px;
 }
 
-#toc-sidebar {
-    background: url("/_static/dust.png") repeat scroll 0 0 #FCFCFC; 
-}
-
 .ui.breadcrumb {
     margin-top: 0px;
 }
@@ -103,11 +88,6 @@ h1, h2, h3, h4, h5 {
     font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
     font-style: italic;
     font-weight: normal;
-}
-
-/* Get rid of italics in the header */
-#header h1 {
-    font-style: normal;
 }
 
 /* This allows highlights to wrap tightly around the text */
@@ -154,12 +134,6 @@ div.sphinxsidebar * ul {
 div .sphinxsidebar {
     border: none;
     background: transparent;
-{#
-    background: rgba(255,255,255,0.5);
-    border-radius: 6px;
-    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-#}
 }
 
 /* Make TOC links look nicer */
@@ -172,22 +146,6 @@ a.headerlink {
   text-decoration: none;
   font-size: 17pt;
   font-style: normal;
-}
-
-/* Make title link look nicer */
-.title > a {
-  text-decoration: none;
-}
-
-/* Trim space at bottom of title */
-.title {
-  margin-bottom: 10px;
-}
-
-/* Line under title */
-hr.heading-line {
-    margin-top: 3px;
-    margin-bottom: 3px;
 }
 
 .pull-right {

@@ -20,7 +20,7 @@
     {{ navmenu() }}
     <div id="header" class="segment">
       <div class="container">
-	<a class="title-font" href="{{ pathto(master_doc) }}">
+	<a href="{{ pathto(master_doc) }}">
 	  <img src="{{ pathto('_static/TitleHeading.png', 1) }}">
         </a>
 	<div class="ui divider"></div>
@@ -45,23 +45,6 @@
     </div>
     <div id="page-content" class="main container">
       {% block body %} {% endblock %}
-      {%- if next %}
-      <div class="ui right floated segment">
-	<p>
-	  <a href="{{ next.link|e }}">{{ next.title }}</a>
-	  <i class="icon right arrow"></i>
-	</p>
-      </div>
-      {%- endif %}
-
-      {%- if prev %}
-      <div class="ui left floated segment">
-	<p>
-	  <i class="icon left arrow"></i>
-	  <a href="{{ prev.link|e }}">{{ prev.title }}</a>
-	</p>
-      </div>
-      {%- endif %}
     </div>
   </body>
 </html>
