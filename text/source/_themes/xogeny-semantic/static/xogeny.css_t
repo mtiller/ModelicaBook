@@ -74,6 +74,10 @@ pre {
     margin-right: 30px;
 }
 
+.sponsor {
+  min-width: 400px;	
+}
+
 .ui.breadcrumb {
     margin-top: 0px;
 }

@@ -1,3 +1,47 @@
+{%- macro sponsor_entry(id, url, img) -%}
+<a id="{{id}}" class="logo" href="{{url}}">
+  <img src="{{ pathto('_static/'+img, 1) }}">
+</a>
+{%- endmacro -%}
+
+{% macro sponsors() %}
+<h2>Sponsors</h2>
+
+<div class="sponsor">
+  {{ sponsor_entry("g1", "http://www.cydesign.com/", "cydesign.jpg") }}
+  <br>
+  {{ sponsor_entry("g2", "http://www.cydesign.com/", "cydesign.jpg") }}
+  <br>
+  {{ sponsor_entry("g3", "http://www.cydesign.com/", "cydesign.jpg") }}
+  <br>
+  {{ sponsor_entry("g4", "http://www.cydesign.com/", "cydesign.jpg") }}
+  <br>
+  {{ sponsor_entry("g5", "http://www.cydesign.com/", "cydesign.jpg") }}
+  <br>
+  {{ sponsor_entry("s1", "http://www.ricardo.com/software", "ricardo.jpg") }}
+  <br>
+  {{ sponsor_entry("s2", "http://www.itisim.com/", "Logo-ITI_4C_M_Standalone_200.png") }}
+  <br>
+  {{ sponsor_entry("s3", "http://www.ricardo.com/software", "ricardo.jpg") }}
+  <br>
+  {{ sponsor_entry("s4", "http://www.itisim.com/", "Logo-ITI_4C_M_Standalone_200.png") }}
+  <br>
+  {{ sponsor_entry("s5", "http://www.ricardo.com/software", "ricardo.jpg") }}
+  <br>
+  {{ sponsor_entry("b1", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
+  <br>
+  {{ sponsor_entry("b2", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
+  <br>
+  {{ sponsor_entry("b3", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
+  <br>
+  {{ sponsor_entry("b4", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
+  <br>
+  {{ sponsor_entry("b5", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
+  <br>
+  {{ sponsor_entry("b6", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
+</div>
+{% endmacro %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,12 +79,7 @@
       <div class="ui five column divided grid">
 	<div class="row">
 	  <div class="two wide column">
-	    <h2>Sponsors</h2>
-	    <h3>Gold Sponsors</h3>
-
-	    <h3>Silver Sponsors</h3>
-
-	    <h3>Bronze Sponsors</h3>
+	    {{ sponsors() }}
 	  </div>
 	  <div class="two wide column">
 	    {% block body %} {% endblock %}
