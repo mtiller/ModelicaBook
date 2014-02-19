@@ -1,24 +1,36 @@
+{%- macro navmenu() %}
+<div class="ui fixed transparent inverted main menu">
+  <div class="left menu">
+    <div id="thumb" class="title item">
+      <i class="icon list"></i>
+    </div>
+    {% if prev %}
+    <div class="title item">
+      <i class="icon left arrow"></i>
+      <a href="{{ prev.link|e }}">{{ prev.title }}</a>
+    </div>
+    {% endif %}
+  </div>
+  <div id="thumb" class="title item">
+    <i class="icon up arrow"></i>
+  </div>
+  <div class="right menu">
+    {% if next %}
+    <div class="title item">
+      <a href="{{ next.link|e }}">{{ next.title }}</a>
+      <i class="icon right arrow"></i>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{%- endmacro %}
+
 {%- macro sidebar() %}
 <div class="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
     <div class="toc">
       <h2>{{ _('Table Of Contents') }}</h2>
       {{ toc }}
-    </div>
-    <div class="rel">
-      {% if prev %}
-      <h2>Previous Topic</h2>
-      <ul>
-	<li><a href="{{ prev.link|e }}">{{ prev.title }}</a></li>
-      </ul>
-      {% endif %}
-
-      {% if next %}
-      <h2>Next Topic</h2>
-      <ul>
-	<li><a href="{{ next.link|e }}">{{ next.title }}</a></li>
-      </ul>
-      {% endif %}
     </div>
   </div>
 </div>

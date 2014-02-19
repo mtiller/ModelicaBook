@@ -16,15 +16,8 @@
     {{ css() }}
     {{ script() }}
   </head>
-  <body>
-    <div class="ui fixed transparent inverted main menu">
-    {%- if prev %}
-    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
-    {%- endif %}
-    </div>
-    <div id="thumb" class="ui button right attached">
-      &nbsp;&nbsp;<i class="icon list layout"></i>
-    </div>
+  <body class="segment" style="margin: 0px">
+    {{ navmenu() }}
     <div id="header" class="segment">
       <div class="container">
 	<h1 class="title title-font">
@@ -49,14 +42,28 @@
 	</p>
       </div>
     </div>
-    <div id="toc-sidebar" class="ui styled sidebar">
+    <div id="toc-sidebar" class="ui styled sidebar vertical">
       {{ sidebar() }}
     </div>
-    <div id="page-content">
+    <div id="page-content" class="main container">
       {% block body %} {% endblock %}
+      {%- if next %}
+      <div class="ui right floated segment">
+	<p>
+	  <a href="{{ next.link|e }}">{{ next.title }}</a>
+	  <i class="icon right arrow"></i>
+	</p>
+      </div>
+      {%- endif %}
+
+      {%- if prev %}
+      <div class="ui left floated segment">
+	<p>
+	  <i class="icon left arrow"></i>
+	  <a href="{{ prev.link|e }}">{{ prev.title }}</a>
+	</p>
+      </div>
+      {%- endif %}
     </div>
-    {%- if prev %}
-    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
-    {%- endif %}
   </body>
 </html>
