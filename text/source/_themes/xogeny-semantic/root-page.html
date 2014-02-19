@@ -18,27 +18,38 @@
   </head>
   <body>
     <div class="segment">
-      <div class="container">
-	<h1 class="title title-font">
-	  {{ project|e }}
-	</h1>
-	<div class="ui divider"></div>
-	<p class="pull-right">
+      <div class="container centered">
+	<p>
 	  <span class="pull-right">Release: {{ release }}</span>
 	  <br>
 	  <span class="pull-right">File: {{ pagename }}.rst</span>
 	</p>
       </div>
+      <div class="container centered">
+	<img src="{{ pathto('_static/TitleHeading.png', 1) }}">
+	<p>by Michael M. Tiller, Ph.D.</p>
+	<div class="ui divider"></div>
+      </div>
     </div>
-    {#
-    <div id="header">
-      <span class="title title-font">{{ project|e }}</span>
-      <hr class="heading-line">
-      <span class="pull-right">Release: {{ release }}</span>
-    </div>
-    #}
     <div id="root-content">
-      {% block body %} {% endblock %}
+      <div class="ui five column divided grid">
+	<div class="row">
+	  <div class="two wide column">
+	    <h2>Sponsors</h2>
+	    <h3>Gold Sponsors</h3>
+
+	    <h3>Silver Sponsors</h3>
+
+	    <h3>Bronze Sponsors</h3>
+	  </div>
+	  <div class="two wide column">
+	    {% block body %} {% endblock %}
+	  </div>
+	  <div class="column">
+	    <h2>Support</h2>
+	  </div>
+	</div>
+      </div>
     </div>
   </body>
 </html>

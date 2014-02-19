@@ -6,15 +6,6 @@
 .. highlight:: modelica
    :linenothreshold: 5
 
-.. todo::
-
-   This isn't the design I plan on having for the real landing page.
-   Ideally, I'd like to have the Table of Contents for the book
-   organized into "parts", but it looks like I'll either have to
-   handle code the landing page in that case or using something like
-   "Beautiful Soup" to tweak the generated code.  But I have figured
-   out how to get Sphinx to use different layouts for different pages.
-
 Front Matter
 ============
 

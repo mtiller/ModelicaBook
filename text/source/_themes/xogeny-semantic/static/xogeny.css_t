@@ -157,6 +157,10 @@ a.headerlink {
   float: left;
 }
 
+.centered {
+  text-align: center;
+}
+
 /* Center figures */
 .figure {
     text-align: center;
@@ -164,12 +168,13 @@ a.headerlink {
 
 .figure img {
     margin: 10px;
+{#
     border: 1px solid rgba(0,0,0,0.5);
     border-radius: 6px;
-
     -webkit-box-shadow: 3px 3px 2px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    3px 3px 2px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         3px 3px 2px 0px rgba(50, 50, 50, 0.75);
+#}
 }
 
 /***
