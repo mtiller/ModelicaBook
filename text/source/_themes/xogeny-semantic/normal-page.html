@@ -4,7 +4,7 @@
     <!-- Standard Meta -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
 
     <!-- Site Properities -->
     <meta name="generator" content="Sphinx 1.2" />
@@ -20,11 +20,9 @@
     {{ navmenu() }}
     <div id="header" class="segment">
       <div class="container">
-	<h1 class="title title-font">
-	  <a class="title-font" href="{{ pathto(master_doc) }}">
-	    {{ project|e }}
-          </a>
-	</h1>
+	<a class="title-font" href="{{ pathto(master_doc) }}">
+	  <img src="{{ pathto('_static/TitleHeading.png', 1) }}">
+        </a>
 	<div class="ui divider"></div>
 	<p class="pull-right">
 	  <span class="pull-right">Release: {{ release }}</span>

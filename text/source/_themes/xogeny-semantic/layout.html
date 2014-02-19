@@ -12,7 +12,15 @@
     {% endif %}
   </div>
   <div id="thumb" class="title item">
-    <i class="icon up arrow"></i>
+    {% if parents==[] %}
+    <a class="title-font" href="{{ pathto(master_doc) }}">
+      <i class="icon up arrow"></i>
+    </a>
+    {% else %}
+    <a class="title-font" href="{{ parents[-1].link|e  }}">
+      <i class="icon up arrow"></i>
+    </a>
+    {% endif %}
   </div>
   <div class="right menu">
     {% if next %}

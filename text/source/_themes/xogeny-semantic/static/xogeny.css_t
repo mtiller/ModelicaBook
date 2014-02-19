@@ -41,8 +41,13 @@ pre {
 ***/
 
 #header {
-    padding-top: 50px;
+    padding-top: 75px;
     margin-left: 30px;
+}
+
+#header .ui.divider {
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .title {
@@ -84,7 +89,7 @@ pre {
     background: url("/_static/dust.png") repeat scroll 0 0 #FCFCFC; 
 }
 
-.ui.breadcrumbs {
+.ui.breadcrumb {
     margin-top: 0px;
 }
 
