@@ -38,7 +38,16 @@
   <div class="sphinxsidebarwrapper">
     <div class="toc">
       <h2>{{ _('Table Of Contents') }}</h2>
-      {{ toc }}
+      {%- for parent in parents %}
+      <ul class="parentul">
+	<li>
+	  <a class="section" href="{{ parent.link|e }}">{{ parent.title }}</a>
+      {%- endfor %}
+	  {{ toc }}
+      {%- for parent in parents %}
+	</li>
+      </ul>
+      {%- endfor %}
     </div>
   </div>
 </div>
