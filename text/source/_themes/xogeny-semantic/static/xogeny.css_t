@@ -69,13 +69,22 @@ pre {
 
 #root-content {
     min-width: 800px;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .sponsor {
   min-width: 400px;	
+}
+
+.sponsorinfo {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.svis {
+      border: 1px solid red;
 }
 
 .ui.breadcrumb {

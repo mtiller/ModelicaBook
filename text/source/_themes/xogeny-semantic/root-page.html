@@ -1,7 +1,15 @@
 {%- macro sponsor_entry(id, url, img) -%}
-<a id="{{id}}" class="logo" href="{{url}}">
-  <img src="{{ pathto('_static/'+img, 1) }}">
-</a>
+<div id="{{id}}"
+     <a class="logo" href="{{url}}">
+       <img src="{{ pathto('_static/'+img, 1) }}">
+     </a>
+     <dl class="sponsorinfo">
+       <dt><b>Company name</b>: <i>Sponsorship level</i></dt>
+       <dd>This company is known throughout the world for its
+       excellent products and friendly staff.  Find out more
+       at <a href="http://www.example.com/">http://www.example.com</a></dd>
+     <br>
+</div>
 {%- endmacro -%}
 
 {% macro sponsors() %}
@@ -9,35 +17,20 @@
 
 <div class="sponsor">
   {{ sponsor_entry("g1", "http://www.cydesign.com/", "cydesign.jpg") }}
-  <br>
   {{ sponsor_entry("g2", "http://www.cydesign.com/", "cydesign.jpg") }}
-  <br>
   {{ sponsor_entry("g3", "http://www.cydesign.com/", "cydesign.jpg") }}
-  <br>
   {{ sponsor_entry("g4", "http://www.cydesign.com/", "cydesign.jpg") }}
-  <br>
   {{ sponsor_entry("g5", "http://www.cydesign.com/", "cydesign.jpg") }}
-  <br>
   {{ sponsor_entry("s1", "http://www.ricardo.com/software", "ricardo.jpg") }}
-  <br>
   {{ sponsor_entry("s2", "http://www.itisim.com/", "Logo-ITI_4C_M_Standalone_200.png") }}
-  <br>
   {{ sponsor_entry("s3", "http://www.ricardo.com/software", "ricardo.jpg") }}
-  <br>
   {{ sponsor_entry("s4", "http://www.itisim.com/", "Logo-ITI_4C_M_Standalone_200.png") }}
-  <br>
   {{ sponsor_entry("s5", "http://www.ricardo.com/software", "ricardo.jpg") }}
-  <br>
   {{ sponsor_entry("b1", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
-  <br>
   {{ sponsor_entry("b2", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
-  <br>
   {{ sponsor_entry("b3", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
-  <br>
   {{ sponsor_entry("b4", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
-  <br>
   {{ sponsor_entry("b5", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
-  <br>
   {{ sponsor_entry("b6", "http://en.tongyuan.cc/", "suzhou_tongyuan.jpg") }}
 </div>
 {% endmacro %}
@@ -79,6 +72,62 @@
       <div class="ui five column divided grid">
 	<div class="row">
 	  <div class="two wide column">
+	    <div class="ui fluid six column grid">
+	      <div class="row">
+		<div class="column">
+		  <i id="g1i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="g2i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="g3i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="g4i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="g5i" class="icon list layout"></i>
+		</div>
+	      </div>
+	      <div class="row">
+		<div class="column">
+		  <i id="s1i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="s2i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="s3i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="s4i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="s5i" class="icon list layout"></i>
+		</div>
+	      </div>
+	      <div class="row">
+		<div class="column">
+		  <i id="b1i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="b2i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="b3i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="b4i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="b5i" class="icon list layout"></i>
+		</div>
+		<div class="column">
+		  <i id="b6i" class="icon list layout"></i>
+		</div>
+	      </div>
+	    </div>
 	    {{ sponsors() }}
 	  </div>
 	  <div class="two wide column">
