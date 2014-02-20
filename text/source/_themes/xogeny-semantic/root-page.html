@@ -1,3 +1,14 @@
+{%- macro thumbnail(id) %}
+<div class="column">
+  <i id="{{id}}i" class="thumbnail icon list layout" data-html='<dl class="sponsorinfo">
+       <dt><b>Company name</b>: <i>Sponsorship level</i></dt>
+       <dd>This company is known throughout the world for its
+       excellent products and friendly staff.  Find out more
+       at <a href="http://www.example.com/">http://www.example.com</a></dd>
+     <br>'></i>
+</div>
+{%- endmacro %}
+
 {%- macro sponsor_entry(id, url, img) -%}
 <div id="{{id}}"
      <a class="logo" href="{{url}}">
@@ -74,58 +85,26 @@
 	  <div class="two wide column">
 	    <div class="ui fluid six column grid">
 	      <div class="row">
-		<div class="column">
-		  <i id="g1i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="g2i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="g3i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="g4i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="g5i" class="icon list layout"></i>
-		</div>
+		{{ thumbnail("g1") }}
+		{{ thumbnail("g2") }}
+		{{ thumbnail("g3") }}
+		{{ thumbnail("g4") }}
+		{{ thumbnail("g5") }}
 	      </div>
 	      <div class="row">
-		<div class="column">
-		  <i id="s1i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="s2i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="s3i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="s4i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="s5i" class="icon list layout"></i>
-		</div>
+		{{ thumbnail("s1") }}
+		{{ thumbnail("s2") }}
+		{{ thumbnail("s3") }}
+		{{ thumbnail("s4") }}
+		{{ thumbnail("s5") }}
 	      </div>
 	      <div class="row">
-		<div class="column">
-		  <i id="b1i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="b2i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="b3i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="b4i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="b5i" class="icon list layout"></i>
-		</div>
-		<div class="column">
-		  <i id="b6i" class="icon list layout"></i>
-		</div>
+		{{ thumbnail("b1") }}
+		{{ thumbnail("b2") }}
+		{{ thumbnail("b3") }}
+		{{ thumbnail("b4") }}
+		{{ thumbnail("b5") }}
+		{{ thumbnail("b6") }}
 	      </div>
 	    </div>
 	    {{ sponsors() }}

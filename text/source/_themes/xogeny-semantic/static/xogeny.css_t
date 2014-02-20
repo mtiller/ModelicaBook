@@ -83,6 +83,9 @@ pre {
   margin-bottom: 4px;
 }
 
+.thumbnail {
+}
+
 .svis {
       border: 1px solid red;
 }

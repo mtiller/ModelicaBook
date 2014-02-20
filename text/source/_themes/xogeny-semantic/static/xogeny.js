@@ -53,4 +53,6 @@ $(document).ready(function() {
 	});
 	setTimeout(animateLogos, 300);
     }
+
+    $(".thumbnail").popup();
 });
