@@ -56,7 +56,7 @@ If we were to declare an array of ``Point`` components, *e.g.,*
 is that if we leave off a subscript (*e.g.,* ``p.x``), it gets "pushed
 to the end" (or more technically, it is left "unbound" and can be
 "bound" later).  Also, if a subscript is supplied as a range (*e.g.,*
-``:``, ``1:end``, ``2:3``), then the expression resolves to subset of
+``:``, ``1:end``, ``2:3``), then the expression resolves to a subset of
 the array corresponding to the indices in the range.  All of this
 holds even for arrays of components containing arrays of components
 and so on.

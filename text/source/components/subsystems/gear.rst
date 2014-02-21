@@ -1,11 +1,11 @@
 Gear Assembly
 -------------
 
-In this section, we'll take a close look at how to model an simple
+In this section, we'll take a close look at how to model a simple
 gear.  We'll consider things like the inertia of each gear element,
 the backlash that exists between the teeth and, of course, the
 kinematic relationship between the two rotating shafts.  We'll first
-example how a "flat" model of such an assembly would be created and
+show an example how a "flat" model of such an assembly would be created and
 then we'll look at how this flat model can be refactored into a
 reusable subsystem model that can be used across a wide ranging of
 applications.
@@ -36,11 +36,11 @@ looked like this one:
    :align: center
    :alt: Flat system model including backlash
 
-This model includes to essential components.  Part of the model,
+This model includes two essential components.  Part of the model,
 inside the dashed line, represents how the gear itself is being
 modeled.  It includes the inertia for each gear element, the backlash
 between the gear teeth and the kinematic relationship between the two
-shafts.  Each of this is represented by an individual component
+shafts.  Each of these is represented by an individual component
 model.  The other part of the model, outside the dashed line,
 represents the specific scenario/experiment we are performing.  This
 includes a torque profile to be applied to the gear and the downstream
@@ -93,7 +93,7 @@ include the :ref:`optional-ground-connector` we discussed in the
 previous chapter.
 
 Also note that all the subcomponents (``inertia_a``, ``inertia_b``,
-``backlash`` and ``idealGear``) are all ``protected``.  Only the
+``backlash`` and ``idealGear``) are ``protected``.  Only the
 connectors (``flange_a``, ``flange_b`` and ``support``) and the
 parameters (``J_a``, ``J_b``, ``c``, ``d``, ``b``, ``ratio``) are
 ``public``.  The idea here is that the only thing that the user needs

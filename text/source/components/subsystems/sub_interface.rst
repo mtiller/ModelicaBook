@@ -39,7 +39,7 @@ default) or in a collection of declarations explicitly marked ``public``.
 
 Obviously, parameters are made public so that users of the subsystem
 can have access to them.  We will see shortly, in our discussions on
-:ref:`sub-modifications` and :ref:`propagation` how the values of
+:ref:`sub-modifications` and :ref:`propagation`, how the values of
 these parameters should be cascaded to lower level components.  But
 for now, the main point is to recognize that parameter declarations
 are part of the subsystem pattern.
@@ -109,7 +109,7 @@ will have the opposite sign as ``flow`` variables on connectors
 belonging to the subsystem itself.
 
 To understand the implications of this, let us consider the following
-to ``connect`` statements from the ``GearWithBacklash`` model:
+two ``connect`` statements from the ``GearWithBacklash`` model:
 
 .. literalinclude:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.mo
    :language: modelica
@@ -130,7 +130,7 @@ generated for the ``flow`` variables on these connectors:
     flange_a.tau + inertia_a.flange_a.tau = 0;
     idealGear.flange_b.tau + inertia_b.flange_a = 0;
 
-However, in our previous discussion on :ref:`system-connections` all
+However, in our previous discussion on :ref:`system-connections`, all
 the components were at the same hierarchical level (*i.e.,* as
 `idealGear.flange_b` and `inertia_b.flange_a` are).  But with
 subsystem models, this isn't always the case.  And, as described a
@@ -147,7 +147,7 @@ generated** will be:
 Note the minus sign in front of the ``flange_a.tau``.  Remember that
 ``flange_a`` is meant to be acting as a proxy for
 ``inertia_a.flange_a``.  If that is the case, then by changing the
-sign of ``flange_a.tau`` the first equation above can be transformed
+sign of ``flange_a.tau``, the first equation above can be transformed
 into:
 
 .. code-block:: modelica
@@ -156,7 +156,7 @@ into:
 
 In other words, by introducing the sign change on ``flange_a.tau``,
 any conserved quantity the flows in through ``flange_a`` **also**
-flows into ``inertia_a.flange_a`` which is exactly what we expect from
+flows into ``inertia_a.flange_a``, which is exactly what we expect from
 this kind of "proxy" relationship.
 
 Implementation

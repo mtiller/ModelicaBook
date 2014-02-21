@@ -42,6 +42,8 @@ rightmost thermal capacitance in the following plot:
 Segmented Rod Subsystem
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+.. todo:: N not being rendered correctly
+
 In our flat system model, we have 3 thermal capacitances and 5
 conductances.  This configuration represents a rod that has been
 divided into 3 equal segments and the conductance that occurs between
@@ -86,7 +88,7 @@ qualifier on the modification.  We'll discuss the ``each`` qualifier
 and how to apply modifications to arrays of components later in this
 chapter in the section on :ref:`sub-modifications`.
 
-How that we've declared our component arrays, we can then wire
+Now that we've declared our component arrays, we can then wire
 together the capacitances and conductances using ``for`` loops in an
 ``equation`` section:
 

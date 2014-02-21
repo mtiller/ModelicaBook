@@ -29,7 +29,7 @@ components or other subsystems.  In other words, it doesn't
 other components.  Typically, these subsystem models are created by
 dragging, dropping and connecting component and other subsystem models
 schematically.  While component models are "flat" (they don't contain
-other components are subsystems, only equations), subsystem models are
+other components that are subsystems, only equations), subsystem models are
 hierarchical.
 
 We'll often refer to a subsystem model as a *system model*.  A system
@@ -45,12 +45,12 @@ Note that a subsystem model *can* include equations.  There is no rule
 against it in Modelica.  But most of the time models tend to be
 composed either of equations or other components/subsystems.  It is
 actually a good idea to avoid putting equations in models containing
-subcomponents or subsystems because it means that some information
+subcomponents or subsystems because doing so means that some information
 about the model will be "invisible" when looking at a diagram of the
 subsystem.  One possible exception to this could be the use of
 ``initial equation`` sections in subsystems.
 
-OK, with that discussion of terminology out of the way, let's dive
+With that discussion of terminology out of the way, let's dive
 into discussions about component models.
 
 .. _acausal-modeling:
@@ -79,15 +79,16 @@ nature (*i.e.,* directionality) of the information exchange.
 
 But there are other implications to this composability.  Not only can
 we easily create systems by dragging, dropping and connecting
-components.  This kind of acausal composability also makes it easy to
+components, but also easily
 reconfigure systems.  Replacing a voltage source in an electrical
 circuit with a current source can have a profound impact on the
 mathematical representation of that system (*e.g.,* if the system is
 represented as a block diagram).  But such a change has no significant
 impact when using an acausal approach.  Although the underlying
 mathematical representation still changes, sometimes profoundly,
+there is no impact on the user,
 because that representation is generated automatically as part of the
-compilation process there is no impact on the user.
+compilation process.
 
 .. todo:: I really need to include one of the typical examples here.
 
@@ -113,7 +114,7 @@ Connectors
 ++++++++++
 
 The other advantage of acausal modeling is the amount of automatic
-"accounting" performed with acausal modeling.  To understand exactly
+"accounting" performed with it.  To understand exactly
 what accounting is performed, let's consider the following rotational
 ``connector`` definitions from the Modelica Standard Library:
 
@@ -279,7 +280,7 @@ flow out of an unconnected connector.  This makes intuitive physical
 sense as well.
 
 What does all this mean physically?  In the case of an electrical
-connection this implies that each connection can be treated as a
+connection, this implies that each connection can be treated as a
 "perfect short" between the connectors.  In the case of a mechanical
 system, connections are treated as perfectly rigid shafts with zero
 inertia.  The bottom line is that a connection means that the across
@@ -324,8 +325,8 @@ angular velocity of the ``ground.flange_a`` connector, we get:
 
 However, we also know that all the across variables in the connection
 set are equal.  As a result, their derivatives must also be equal.
-This means that we can substitute any on of them for another.  Making
-two such substitutions gets us:
+This means that we can substitute any of of them for another.  Making
+two such substitutions yields:
 
 .. code-block:: modelica
 
@@ -380,8 +381,7 @@ in connectors.  We also need to take into account two other cases:
 
 Modelica requires that any non-``partial`` model be balanced.  But
 what does that mean?  It means that the component should provide the
-proper number of equations (no more than necessary, no less than
-necessary).  The question is how to compute the number of equations
+proper number of equations (no more and no less than necessary).  The question is how to compute the number of equations
 required?
 
 We already have a start based on our discussion about acausal
@@ -526,7 +526,7 @@ will automatically trigger the refinement process in an attempt to
 find a solution that is more accurate and, hopefully, doesn't violate
 the solution.  However, if these refinement processes lead to a
 solution that is sufficiently accurate (*i.e.,* satisfies the accuracy
-requirements to within the acceptable tolerance) but that solution
+requirements to within the acceptable tolerance), but that solution
 still violates any assertions in the system, then the simulation
 environment will do one of two things.  If the ``level`` argument in
 the ``assert`` call is ``AssertionLevel.error`` then the simulation is
