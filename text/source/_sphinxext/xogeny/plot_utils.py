@@ -43,6 +43,12 @@ def render_comp_plot(name1, vars1, name2, vars2, title, legloc, ylabel):
 
     fig, ax = plt.subplots()
 
+    # Set background to be transparent
+    fig.patch.set_facecolor('none')
+    fig.patch.set_alpha(0.0);
+    ax.patch.set_facecolor('none')
+    ax.patch.set_alpha(0.0);
+
     var0name = vars1[0]["name"]
 
     t1 = res1.abscissa(vars1[0]["name"], valuesOnly=True)
@@ -89,6 +95,12 @@ def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymax=None):
     res = DyMatFile(fn)
 
     fig, ax = plt.subplots()
+
+    # Set background to be transparent
+    fig.patch.set_facecolor('none')
+    fig.patch.set_alpha(0.0);
+    ax.patch.set_facecolor('none')
+    ax.patch.set_alpha(0.0);
 
     try:
         t = res.abscissa(var0name, valuesOnly=True)
