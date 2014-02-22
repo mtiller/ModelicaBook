@@ -52,7 +52,6 @@ simulation step essentially amounts to solving (usually numerically)
 the equation and providing a solution trajectory like this:
 
 .. plot:: ../plots/FO.py
-   :include-source: no
 
 This gives you the first initial hint at one of the compelling aspects
 about using a modeling language to describe mathematical behavior.  We
@@ -143,7 +142,6 @@ As a result, the solution trajectory is quite different as
 we can see in the following figure:
 
 .. plot:: ../plots/FOI.py
-   :include-source: no
 
 The model ``FirstOrderInitial`` shows a typical way of initializing a
 system by providing explicit initial values for the states of the
@@ -177,7 +175,6 @@ constraint that :math:`\dot{x}(0)=0` directly in Modelica as follows:
 Simulating this system gives the following solution:
 
 .. plot:: ../plots/FOS.py
-   :include-source: no
 
 As we see from these results, the initial derivative of :math:`x` is
 zero at the start of the simulation and remains zero because there are
@@ -222,7 +219,7 @@ The following trajectory was simulated using these experimental
 conditions:
 
 .. plot:: ../plots/FOE.py
-   :include-source: no
+   :class: interactive
 
 The trajectory terminates at 8 seconds because the simulator used the
 ``experiment`` annotation to determine how long to run the simulation.
