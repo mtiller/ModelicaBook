@@ -4,22 +4,22 @@ model ComplexNetwork "A complex heat transfer network"
   ThermalCapacitance cap1(C=0.12, T0(displayUnit="degC") = 363.15)
     "Thermal capacitance component"
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
-  Convection conv3(h=0.7)
+  Convection conv3(h=0.7,A=1.0)
     annotation (Placement(transformation(extent={{52,-10},{72,10}})));
   AmbientCondition amb2(T_amb(displayUnit="degC") = 298.15)
     annotation (Placement(transformation(extent={{80,-10},{100,10}})));
-  Convection conv2(h=0.2)
+  Convection conv2(h=0.2,A=1.0)
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
-  Convection conv4(h=1.1)
+  Convection conv4(h=1.1,A=1.0)
     annotation (Placement(transformation(extent={{34,30},{54,50}})));
   ThermalCapacitance cap2(                              C=0.32, T0(displayUnit=
           "degC") = 363.15) "Thermal capacitance component"
     annotation (Placement(transformation(extent={{-20,-80},{0,-60}})));
-  Convection conv5(h=1.3) annotation (Placement(transformation(
+  Convection conv5(h=1.3,A=1.0) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={10,-40})));
-  Convection conv1(h=0.8)
+  Convection conv1(h=0.8,A=1.0)
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   AmbientCondition amb1(T_amb(displayUnit="K") = 300)
     annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
