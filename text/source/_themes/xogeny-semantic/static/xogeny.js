@@ -55,4 +55,11 @@ $(document).ready(function() {
     }
 
     $(".thumbnail").popup();
+
+    $(".interactive").each(function(i, elem) {
+	var p = $(elem).parent();
+	var was = $(p).html();
+	$(p).html('<div class="ui segment tight"><div class="figframe ui top button right attached label">Run</div>'+was+'</div></div>');
+    });
+
 });
