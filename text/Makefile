@@ -177,7 +177,7 @@ doctest:
 
 results:
 	@echo "Generate results"
-	(cd results; make all tidy)
+	(cd results; make results_files tidy)
 
 docs:
 	@echo "Generate docs"
