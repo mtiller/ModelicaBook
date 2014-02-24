@@ -1,0 +1,963 @@
+{
+  "experiment": {
+    "stopTime": "1.5", 
+    "tolerance": "0.001", 
+    "startTime": "0.0"
+  }, 
+  "tree": {
+    "G2": {
+      "port_b": {
+        "Q_flow": "G2.port_b.Q_flow", 
+        "T": "G2.port_b.T"
+      }, 
+      "dT": "G2.dT", 
+      "port_a": {
+        "Q_flow": "G2.port_a.Q_flow", 
+        "T": "G2.port_a.T"
+      }, 
+      "Q_flow": "G2.Q_flow", 
+      "G": "G2.G"
+    }, 
+    "G1": {
+      "port_b": {
+        "Q_flow": "G1.port_b.Q_flow", 
+        "T": "G1.port_b.T"
+      }, 
+      "dT": "G1.dT", 
+      "port_a": {
+        "Q_flow": "G1.port_a.Q_flow", 
+        "T": "G1.port_a.T"
+      }, 
+      "Q_flow": "G1.Q_flow", 
+      "G": "G1.G"
+    }, 
+    "bc": {
+      "y": "bc.y", 
+      "height": "bc.height", 
+      "startTime": "bc.startTime", 
+      "offset": "bc.offset"
+    }, 
+    "heating": {
+      "alpha": "heating.alpha", 
+      "Q_flow": "heating.Q_flow", 
+      "port": {
+        "Q_flow": "heating.port.Q_flow", 
+        "T": "heating.port.T"
+      }, 
+      "T_ref": "heating.T_ref"
+    }, 
+    "wall1": {
+      "port_b": {
+        "Q_flow": "wall1.port_b.Q_flow", 
+        "T": "wall1.port_b.T"
+      }, 
+      "dT": "wall1.dT", 
+      "port_a": {
+        "Q_flow": "wall1.port_a.Q_flow", 
+        "T": "wall1.port_a.T"
+      }, 
+      "Q_flow": "wall1.Q_flow", 
+      "G": "wall1.G"
+    }, 
+    "wall3": {
+      "port_b": {
+        "Q_flow": "wall3.port_b.Q_flow", 
+        "T": "wall3.port_b.T"
+      }, 
+      "dT": "wall3.dT", 
+      "port_a": {
+        "Q_flow": "wall3.port_a.Q_flow", 
+        "T": "wall3.port_a.T"
+      }, 
+      "Q_flow": "wall3.Q_flow", 
+      "G": "wall3.G"
+    }, 
+    "wall2": {
+      "port_b": {
+        "Q_flow": "wall2.port_b.Q_flow", 
+        "T": "wall2.port_b.T"
+      }, 
+      "dT": "wall2.dT", 
+      "port_a": {
+        "Q_flow": "wall2.port_a.Q_flow", 
+        "T": "wall2.port_a.T"
+      }, 
+      "Q_flow": "wall2.Q_flow", 
+      "G": "wall2.G"
+    }, 
+    "ambient": {
+      "port": {
+        "Q_flow": "ambient.port.Q_flow", 
+        "T": "ambient.port.T"
+      }, 
+      "T": "ambient.T"
+    }, 
+    "C3": {
+      "der(T)": "der(C3.T)", 
+      "C": "C3.C", 
+      "T": "C3.T", 
+      "der_T": "C3.der_T", 
+      "port": {
+        "Q_flow": "C3.port.Q_flow", 
+        "T": "C3.port.T"
+      }
+    }, 
+    "C2": {
+      "der(T)": "der(C2.T)", 
+      "C": "C2.C", 
+      "T": "C2.T", 
+      "der_T": "C2.der_T", 
+      "port": {
+        "Q_flow": "C2.port.Q_flow", 
+        "T": "C2.port.T"
+      }
+    }, 
+    "C1": {
+      "der(T)": "der(C1.T)", 
+      "C": "C1.C", 
+      "T": "C1.T", 
+      "der_T": "C1.der_T", 
+      "port": {
+        "Q_flow": "C1.port.Q_flow", 
+        "T": "C1.port.T"
+      }
+    }, 
+    "sensor": {
+      "port": {
+        "Q_flow": "sensor.port.Q_flow", 
+        "T": "sensor.port.T"
+      }, 
+      "T": "sensor.T"
+    }
+  }, 
+  "categories": {
+    "continuous": [
+      "C3.T", 
+      "C2.T", 
+      "C1.T", 
+      "der(C3.T)", 
+      "der(C2.T)", 
+      "der(C1.T)", 
+      "wall3.dT", 
+      "wall3.Q_flow", 
+      "wall2.dT", 
+      "wall2.Q_flow", 
+      "ambient.port.Q_flow", 
+      "wall1.dT", 
+      "wall1.Q_flow", 
+      "C3.port.Q_flow", 
+      "C3.der_T", 
+      "G2.dT", 
+      "G2.Q_flow", 
+      "C2.port.Q_flow", 
+      "C2.der_T", 
+      "G1.dT", 
+      "G1.Q_flow", 
+      "C1.port.Q_flow", 
+      "C1.der_T", 
+      "bc.y", 
+      "heating.port.Q_flow", 
+      "sensor.port.Q_flow", 
+      "ambient.port.T", 
+      "wall3.port_a.T", 
+      "wall2.port_a.T", 
+      "wall1.port_a.T", 
+      "C3.port.T", 
+      "wall3.port_b.T", 
+      "sensor.port.T", 
+      "sensor.T", 
+      "G2.port_b.T", 
+      "C2.port.T", 
+      "wall2.port_b.T", 
+      "G2.port_a.T", 
+      "G1.port_b.T", 
+      "C1.port.T", 
+      "wall1.port_b.T", 
+      "heating.port.T", 
+      "G1.port_a.T", 
+      "heating.Q_flow", 
+      "wall3.port_b.Q_flow", 
+      "wall3.port_a.Q_flow", 
+      "wall2.port_b.Q_flow", 
+      "wall2.port_a.Q_flow", 
+      "wall1.port_b.Q_flow", 
+      "wall1.port_a.Q_flow", 
+      "G2.port_b.Q_flow", 
+      "G2.port_a.Q_flow", 
+      "G1.port_b.Q_flow", 
+      "G1.port_a.Q_flow"
+    ], 
+    "parameter": [
+      "heating.T_ref", 
+      "heating.alpha", 
+      "bc.offset", 
+      "bc.startTime", 
+      "bc.height", 
+      "C1.C", 
+      "G1.G", 
+      "C2.C", 
+      "G2.G", 
+      "C3.C", 
+      "wall1.G", 
+      "ambient.T", 
+      "wall2.G", 
+      "wall3.G"
+    ]
+  }, 
+  "vars": {
+    "wall3.G": {
+      "variability": "parameter", 
+      "valueReference": "1039", 
+      "description": "Constant thermal conductance of material", 
+      "start": "0.9", 
+      "alias": "noAlias", 
+      "units": "W/K", 
+      "causality": "internal", 
+      "name": "wall3.G"
+    }, 
+    "wall2.port_b.T": {
+      "variability": "continuous", 
+      "valueReference": "1050", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "wall2.port_b.T"
+    }, 
+    "wall2.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1009", 
+      "description": "Heat flow rate from port_a -> port_b", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "wall2.Q_flow"
+    }, 
+    "G1.G": {
+      "variability": "parameter", 
+      "valueReference": "1032", 
+      "description": "Constant thermal conductance of material", 
+      "start": "1.2", 
+      "alias": "noAlias", 
+      "units": "W/K", 
+      "causality": "internal", 
+      "name": "G1.G"
+    }, 
+    "der(C1.T)": {
+      "variability": "continuous", 
+      "valueReference": "1005", 
+      "description": "Temperature of element", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "der(C1.T)"
+    }, 
+    "C3.C": {
+      "variability": "parameter", 
+      "valueReference": "1035", 
+      "description": "Heat capacity of element (= cp*m)", 
+      "start": "0.1", 
+      "alias": "noAlias", 
+      "units": "J/K", 
+      "causality": "internal", 
+      "name": "C3.C"
+    }, 
+    "wall1.port_b.T": {
+      "variability": "continuous", 
+      "valueReference": "1054", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "wall1.port_b.T"
+    }, 
+    "C2.T": {
+      "variability": "continuous", 
+      "valueReference": "1001", 
+      "description": "Temperature of element", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "C2.T"
+    }, 
+    "C2.port.T": {
+      "variability": "continuous", 
+      "valueReference": "1049", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "C2.port.T"
+    }, 
+    "wall1.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1012", 
+      "description": "Heat flow rate from port_a -> port_b", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "wall1.Q_flow"
+    }, 
+    "wall1.dT": {
+      "variability": "continuous", 
+      "valueReference": "1011", 
+      "description": "port_a.T - port_b.T", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "wall1.dT"
+    }, 
+    "wall1.port_a.T": {
+      "variability": "continuous", 
+      "valueReference": "1043", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "wall1.port_a.T"
+    }, 
+    "C2.der_T": {
+      "variability": "continuous", 
+      "valueReference": "1018", 
+      "description": "Time derivative of temperature (= der(T))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "K/s", 
+      "causality": "internal", 
+      "name": "C2.der_T"
+    }, 
+    "C2.C": {
+      "variability": "parameter", 
+      "valueReference": "1033", 
+      "description": "Heat capacity of element (= cp*m)", 
+      "start": "0.1", 
+      "alias": "noAlias", 
+      "units": "J/K", 
+      "causality": "internal", 
+      "name": "C2.C"
+    }, 
+    "G2.port_a.T": {
+      "variability": "continuous", 
+      "valueReference": "1051", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "G2.port_a.T"
+    }, 
+    "der(C3.T)": {
+      "variability": "continuous", 
+      "valueReference": "1003", 
+      "description": "Temperature of element", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "der(C3.T)"
+    }, 
+    "ambient.T": {
+      "variability": "parameter", 
+      "valueReference": "1037", 
+      "description": "Fixed temperature at port", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "ambient.T"
+    }, 
+    "heating.alpha": {
+      "variability": "parameter", 
+      "valueReference": "1027", 
+      "description": "Temperature coefficient of heat flow rate", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "1/K", 
+      "causality": "internal", 
+      "name": "heating.alpha"
+    }, 
+    "G1.port_a.T": {
+      "variability": "continuous", 
+      "valueReference": "1056", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "G1.port_a.T"
+    }, 
+    "heating.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1057", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "heating.Q_flow"
+    }, 
+    "C3.port.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1013", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "C3.port.Q_flow"
+    }, 
+    "G1.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1020", 
+      "description": "Heat flow rate from port_a -> port_b", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "G1.Q_flow"
+    }, 
+    "G1.port_b.T": {
+      "variability": "continuous", 
+      "valueReference": "1052", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "G1.port_b.T"
+    }, 
+    "C3.der_T": {
+      "variability": "continuous", 
+      "valueReference": "1014", 
+      "description": "Time derivative of temperature (= der(T))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "K/s", 
+      "causality": "internal", 
+      "name": "C3.der_T"
+    }, 
+    "wall1.G": {
+      "variability": "parameter", 
+      "valueReference": "1036", 
+      "description": "Constant thermal conductance of material", 
+      "start": "0.9", 
+      "alias": "noAlias", 
+      "units": "W/K", 
+      "causality": "internal", 
+      "name": "wall1.G"
+    }, 
+    "G1.port_b.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1066", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "G1.port_b.Q_flow"
+    }, 
+    "G1.dT": {
+      "variability": "continuous", 
+      "valueReference": "1019", 
+      "description": "port_a.T - port_b.T", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "G1.dT"
+    }, 
+    "sensor.port.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1025", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "sensor.port.Q_flow"
+    }, 
+    "wall2.dT": {
+      "variability": "continuous", 
+      "valueReference": "1008", 
+      "description": "port_a.T - port_b.T", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "wall2.dT"
+    }, 
+    "wall2.port_a.T": {
+      "variability": "continuous", 
+      "valueReference": "1042", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "wall2.port_a.T"
+    }, 
+    "wall3.port_a.T": {
+      "variability": "continuous", 
+      "valueReference": "1041", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "wall3.port_a.T"
+    }, 
+    "C1.T": {
+      "variability": "continuous", 
+      "valueReference": "1002", 
+      "description": "Temperature of element", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "C1.T"
+    }, 
+    "wall3.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1007", 
+      "description": "Heat flow rate from port_a -> port_b", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "wall3.Q_flow"
+    }, 
+    "wall3.port_a.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1059", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "wall3.port_a.Q_flow"
+    }, 
+    "heating.port.T": {
+      "variability": "continuous", 
+      "valueReference": "1055", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "heating.port.T"
+    }, 
+    "heating.T_ref": {
+      "variability": "parameter", 
+      "valueReference": "1026", 
+      "description": "Reference temperature", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "heating.T_ref"
+    }, 
+    "heating.port.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1024", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "heating.port.Q_flow"
+    }, 
+    "wall2.port_a.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1061", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "wall2.port_a.Q_flow"
+    }, 
+    "wall2.G": {
+      "variability": "parameter", 
+      "valueReference": "1038", 
+      "description": "Constant thermal conductance of material", 
+      "start": "0.9", 
+      "alias": "noAlias", 
+      "units": "W/K", 
+      "causality": "internal", 
+      "name": "wall2.G"
+    }, 
+    "der(C2.T)": {
+      "variability": "continuous", 
+      "valueReference": "1004", 
+      "description": "Temperature of element", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "der(C2.T)"
+    }, 
+    "G2.port_b.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1064", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "G2.port_b.Q_flow"
+    }, 
+    "C3.T": {
+      "variability": "continuous", 
+      "valueReference": "1000", 
+      "description": "Temperature of element", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "C3.T"
+    }, 
+    "G2.G": {
+      "variability": "parameter", 
+      "valueReference": "1034", 
+      "description": "Constant thermal conductance of material", 
+      "start": "1.2", 
+      "alias": "noAlias", 
+      "units": "W/K", 
+      "causality": "internal", 
+      "name": "G2.G"
+    }, 
+    "C1.port.T": {
+      "variability": "continuous", 
+      "valueReference": "1053", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "C1.port.T"
+    }, 
+    "G2.dT": {
+      "variability": "continuous", 
+      "valueReference": "1015", 
+      "description": "port_a.T - port_b.T", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "G2.dT"
+    }, 
+    "G2.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1016", 
+      "description": "Heat flow rate from port_a -> port_b", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "G2.Q_flow"
+    }, 
+    "C1.port.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1021", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "C1.port.Q_flow"
+    }, 
+    "C2.port.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1017", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "C2.port.Q_flow"
+    }, 
+    "sensor.T": {
+      "variability": "continuous", 
+      "valueReference": "1047", 
+      "description": "Absolute temperature as output signal", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "sensor.T"
+    }, 
+    "bc.y": {
+      "variability": "continuous", 
+      "valueReference": "1023", 
+      "description": "Connector of Real output signal", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "bc.y"
+    }, 
+    "C1.der_T": {
+      "variability": "continuous", 
+      "valueReference": "1022", 
+      "description": "Time derivative of temperature (= der(T))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "K/s", 
+      "causality": "internal", 
+      "name": "C1.der_T"
+    }, 
+    "G1.port_a.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1067", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "G1.port_a.Q_flow"
+    }, 
+    "bc.startTime": {
+      "variability": "parameter", 
+      "valueReference": "1029", 
+      "description": "Output y = offset for time < startTime", 
+      "start": "0.5", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "bc.startTime"
+    }, 
+    "G2.port_a.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1065", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "G2.port_a.Q_flow"
+    }, 
+    "wall3.port_b.T": {
+      "variability": "continuous", 
+      "valueReference": "1045", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "wall3.port_b.T"
+    }, 
+    "bc.offset": {
+      "variability": "parameter", 
+      "valueReference": "1028", 
+      "description": "Offset of output signal y", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "bc.offset"
+    }, 
+    "G2.port_b.T": {
+      "variability": "continuous", 
+      "valueReference": "1048", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "G2.port_b.T"
+    }, 
+    "bc.height": {
+      "variability": "parameter", 
+      "valueReference": "1030", 
+      "description": "Height of step", 
+      "start": "10.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "bc.height"
+    }, 
+    "wall2.port_b.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1060", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "wall2.port_b.Q_flow"
+    }, 
+    "wall1.port_b.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1062", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "wall1.port_b.Q_flow"
+    }, 
+    "C3.port.T": {
+      "variability": "continuous", 
+      "valueReference": "1044", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "C3.port.T"
+    }, 
+    "wall3.dT": {
+      "variability": "continuous", 
+      "valueReference": "1006", 
+      "description": "port_a.T - port_b.T", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "wall3.dT"
+    }, 
+    "sensor.port.T": {
+      "variability": "continuous", 
+      "valueReference": "1046", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "sensor.port.T"
+    }, 
+    "wall1.port_a.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1063", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "wall1.port_a.Q_flow"
+    }, 
+    "ambient.port.T": {
+      "variability": "continuous", 
+      "valueReference": "1040", 
+      "description": "Port temperature", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "ambient.port.T"
+    }, 
+    "ambient.port.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1010", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "ambient.port.Q_flow"
+    }, 
+    "wall3.port_b.Q_flow": {
+      "variability": "continuous", 
+      "valueReference": "1058", 
+      "description": "Heat flow rate (positive if flowing from outside into the component)", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "wall3.port_b.Q_flow"
+    }, 
+    "C1.C": {
+      "variability": "parameter", 
+      "valueReference": "1031", 
+      "description": "Heat capacity of element (= cp*m)", 
+      "start": "0.1", 
+      "alias": "noAlias", 
+      "units": "J/K", 
+      "causality": "internal", 
+      "name": "C1.C"
+    }
+  }, 
+  "desc": {
+    "variableNamingConvention": "structured", 
+    "cmt_numberOfRealAlgebraicVariables": "NY:       number of real variables,                           OMC", 
+    "cmt_numberOfFunctions": "NFUNC:    number of functions used by the simulation,         OMC", 
+    "cmt_numberOfBooleanParameters": "NPBOOL:   number of bool parameters,                          OMC", 
+    "fmiVersion": "1.0", 
+    "generationDateAndTime": "2014-02-24T10:44:05Z", 
+    "cmt_numberOfOutputVariables": "NO:       number of outputvar on topmodel,                    OMC", 
+    "numberOfIntegerAlgebraicVariables": "0", 
+    "numberOfOutputVariables": "0", 
+    "guid": "{8c4e810f-3df3-4a00-8276-176fa3c9f9e0}", 
+    "cmt_numberOfRealParameters": "NP:       number of parameters,                               OMC", 
+    "modelName": "ModelicaByExample.Subsystems.HeatTransfer.Examples.FlatRod", 
+    "cmt_numberOfContinuousStates": "NX:       number of states,                                   FMI", 
+    "OPENMODELICAHOME": "/home/mtiller/Xogeny/Source/Mod2JS/OpenModelica/build", 
+    "numberOfRealParameters": "14", 
+    "numberOfStringAliasVariables": "0", 
+    "cmt_numberOfEventIndicators": "NG:       number of zero crossings,                           FMI", 
+    "cmt_numberOfIntegerParameters": "NPINT:    number of int parameters,                           OMC", 
+    "numberOfStringParameters": "0", 
+    "cmt_numberOfIntegerAlgebraicVariables": "NYINT:    number of alg. int variables,                       OMC", 
+    "cmt_numberOfExternalObjects": "NEXT:     number of external objects,                         OMC", 
+    "numberOfIntegerAliasVariables": "0", 
+    "numberOfStringAlgebraicVariables": "0", 
+    "numberOfRealAlgebraicVariables": "20", 
+    "cmt_numberOfBooleanAliasVariables": "NABOOL:   number of alias bool variables,                     OMC", 
+    "cmt_numberOfResidualsForInitialization": "NR:       number of residuals for initialialization function, OMC", 
+    "numberOfBooleanAliasVariables": "0", 
+    "cmt_numberOfStringAlgebraicVariables": "NYSTR:    number of alg. string variables,                    OMC", 
+    "generationTool": "OpenModelica Compiler 1.9.1+dev (r19238) (Bootstrapping version)", 
+    "numberOfResidualsForInitialization": "0", 
+    "cmt_numberOfTimeEvents": "NG_SAM:   number of zero crossings that are samples,          OMC", 
+    "numberOfExternalObjects": "0", 
+    "numberOfFunctions": "0", 
+    "numberOfEventIndicators": "1", 
+    "cmt_numberOfInputVariables": "NI:       number of inputvar on topmodel,                     OMC", 
+    "cmt_numberOfBooleanAlgebraicVariables": "NYBOOL:   number of alg. bool variables,                      OMC", 
+    "numberOfBooleanAlgebraicVariables": "0", 
+    "cmt_numberOfStringAliasVariables": "NASTR:    number of alias string variables,                   OMC", 
+    "cmt_numberOfStringParameters": "NPSTR:    number of string parameters,                        OMC", 
+    "numberOfInputVariables": "0", 
+    "numberOfTimeEvents": "0", 
+    "cmt_numberOfIntegerAliasVariables": "NAINT:    number of alias int variables,                      OMC", 
+    "numberOfIntegerParameters": "0", 
+    "numberOfContinuousStates": "3", 
+    "cmt_numberOfRealAlgebraicAliasVariables": "NA:       number of alias variables,                          OMC", 
+    "numberOfRealAlgebraicAliasVariables": "28", 
+    "modelIdentifier": "ModelicaByExample_Subsystems_HeatTransfer_Examples_FlatRod", 
+    "numberOfBooleanParameters": "0"
+  }
+}

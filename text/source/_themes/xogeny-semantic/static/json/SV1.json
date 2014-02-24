@@ -1,0 +1,1573 @@
+{
+  "experiment": {
+    "stopTime": "5.0", 
+    "tolerance": "1e-06", 
+    "startTime": "0.0"
+  }, 
+  "tree": {
+    "plant": {
+      "J_a": "plant.J_a", 
+      "J_b": "plant.J_b", 
+      "housing": {
+        "tau": "plant.housing.tau", 
+        "phi": "plant.housing.phi"
+      }, 
+      "c": "plant.c", 
+      "flange_b": {
+        "tau": "plant.flange_b.tau", 
+        "phi": "plant.flange_b.phi"
+      }, 
+      "d_load": "plant.d_load", 
+      "flange_a": {
+        "tau": "plant.flange_a.tau", 
+        "phi": "plant.flange_a.phi"
+      }, 
+      "springDamper": {
+        "tau": "plant.springDamper.tau", 
+        "c": "plant.springDamper.c", 
+        "phi_rel0": "plant.springDamper.phi_rel0", 
+        "stateSelect": "plant.springDamper.stateSelect", 
+        "d": "plant.springDamper.d", 
+        "der(phi_rel)": "der(plant.springDamper.phi_rel)", 
+        "tau_d": "plant.springDamper.tau_d", 
+        "a_rel": "plant.springDamper.a_rel", 
+        "tau_c": "plant.springDamper.tau_c", 
+        "phi_rel": "plant.springDamper.phi_rel", 
+        "flange_b": {
+          "tau": "plant.springDamper.flange_b.tau", 
+          "phi": "plant.springDamper.flange_b.phi"
+        }, 
+        "flange_a": {
+          "tau": "plant.springDamper.flange_a.tau", 
+          "phi": "plant.springDamper.flange_a.phi"
+        }, 
+        "useHeatPort": "plant.springDamper.useHeatPort", 
+        "lossPower": "plant.springDamper.lossPower", 
+        "w_rel": "plant.springDamper.w_rel", 
+        "phi_nominal": "plant.springDamper.phi_nominal", 
+        "der(w_rel)": "der(plant.springDamper.w_rel)"
+      }, 
+      "inertia1": {
+        "a": "plant.inertia1.a", 
+        "phi": "plant.inertia1.phi", 
+        "stateSelect": "plant.inertia1.stateSelect", 
+        "der(w)": "der(plant.inertia1.w)", 
+        "J": "plant.inertia1.J", 
+        "flange_b": {
+          "tau": "plant.inertia1.flange_b.tau", 
+          "phi": "plant.inertia1.flange_b.phi"
+        }, 
+        "flange_a": {
+          "tau": "plant.inertia1.flange_a.tau", 
+          "phi": "plant.inertia1.flange_a.phi"
+        }, 
+        "w": "plant.inertia1.w"
+      }, 
+      "damper": {
+        "tau": "plant.damper.tau", 
+        "stateSelect": "plant.damper.stateSelect", 
+        "d": "plant.damper.d", 
+        "der(phi_rel)": "der(plant.damper.phi_rel)", 
+        "a_rel": "plant.damper.a_rel", 
+        "phi_rel": "plant.damper.phi_rel", 
+        "flange_b": {
+          "tau": "plant.damper.flange_b.tau", 
+          "phi": "plant.damper.flange_b.phi"
+        }, 
+        "flange_a": {
+          "tau": "plant.damper.flange_a.tau", 
+          "phi": "plant.damper.flange_a.phi"
+        }, 
+        "useHeatPort": "plant.damper.useHeatPort", 
+        "lossPower": "plant.damper.lossPower", 
+        "w_rel": "plant.damper.w_rel", 
+        "phi_nominal": "plant.damper.phi_nominal", 
+        "der(w_rel)": "der(plant.damper.w_rel)"
+      }, 
+      "fixed": {
+        "flange": {
+          "tau": "plant.fixed.flange.tau", 
+          "phi": "plant.fixed.flange.phi"
+        }, 
+        "phi0": "plant.fixed.phi0"
+      }, 
+      "inertia": {
+        "a": "plant.inertia.a", 
+        "phi": "plant.inertia.phi", 
+        "stateSelect": "plant.inertia.stateSelect", 
+        "der(w)": "der(plant.inertia.w)", 
+        "J": "plant.inertia.J", 
+        "flange_b": {
+          "tau": "plant.inertia.flange_b.tau", 
+          "phi": "plant.inertia.flange_b.phi"
+        }, 
+        "der(phi)": "der(plant.inertia.phi)", 
+        "flange_a": {
+          "tau": "plant.inertia.flange_a.tau", 
+          "phi": "plant.inertia.flange_a.phi"
+        }, 
+        "w": "plant.inertia.w"
+      }, 
+      "d_shaft": "plant.d_shaft"
+    }, 
+    "setpoint": {
+      "count": "setpoint.count", 
+      "startTime": "setpoint.startTime", 
+      "T_width": "setpoint.T_width", 
+      "period": "setpoint.period", 
+      "T_start": "setpoint.T_start", 
+      "T_falling": "setpoint.T_falling", 
+      "width": "setpoint.width", 
+      "rising": "setpoint.rising", 
+      "amplitude": "setpoint.amplitude", 
+      "offset": "setpoint.offset", 
+      "y": "setpoint.y", 
+      "falling": "setpoint.falling", 
+      "T_rising": "setpoint.T_rising", 
+      "nperiod": "setpoint.nperiod"
+    }, 
+    "$TMP_setpoint$Pcount_44": "$TMP_setpoint$Pcount_44", 
+    "controller": {
+      "feedback": {
+        "y": "controller.feedback.y", 
+        "u1": "controller.feedback.u1", 
+        "u2": "controller.feedback.u2"
+      }, 
+      "k": "controller.k", 
+      "command": "controller.command", 
+      "gain": {
+        "y": "controller.gain.y", 
+        "k": "controller.gain.k", 
+        "u": "controller.gain.u"
+      }, 
+      "measured": "controller.measured", 
+      "setpoint": "controller.setpoint"
+    }, 
+    "$whenCondition2": "$whenCondition2", 
+    "$TMP_setpoint$PT_start_44": "$TMP_setpoint$PT_start_44", 
+    "actuator": {
+      "tau": "actuator.tau", 
+      "housing": {
+        "tau": "actuator.housing.tau", 
+        "phi": "actuator.housing.phi"
+      }, 
+      "torque": {
+        "useSupport": "actuator.torque.useSupport", 
+        "tau": "actuator.torque.tau", 
+        "support": {
+          "tau": "actuator.torque.support.tau", 
+          "phi": "actuator.torque.support.phi"
+        }, 
+        "flange": {
+          "tau": "actuator.torque.flange.tau", 
+          "phi": "actuator.torque.flange.phi"
+        }, 
+        "phi_support": "actuator.torque.phi_support"
+      }, 
+      "shaft": {
+        "tau": "actuator.shaft.tau", 
+        "phi": "actuator.shaft.phi"
+      }
+    }, 
+    "$whenCondition1": "$whenCondition1", 
+    "sensor": {
+      "shaft": {
+        "tau": "sensor.shaft.tau", 
+        "phi": "sensor.shaft.phi"
+      }, 
+      "sample_rate": "sensor.sample_rate", 
+      "w": "sensor.w", 
+      "sampleHoldSensor": {
+        "sample_rate": "sensor.sampleHoldSensor.sample_rate", 
+        "flange": {
+          "der(phi)": "der(sensor.sampleHoldSensor.flange.phi)", 
+          "phi": "sensor.sampleHoldSensor.flange.phi", 
+          "der(der(phi))": "der(der(sensor.sampleHoldSensor.flange.phi))", 
+          "tau": "sensor.sampleHoldSensor.flange.tau"
+        }, 
+        "w": "sensor.sampleHoldSensor.w"
+      }
+    }
+  }, 
+  "categories": {
+    "discrete": [
+      "setpoint.T_start", 
+      "sensor.sampleHoldSensor.w", 
+      "setpoint.count", 
+      "$whenCondition1", 
+      "$whenCondition2"
+    ], 
+    "continuous": [
+      "plant.damper.w_rel", 
+      "plant.damper.phi_rel", 
+      "plant.springDamper.w_rel", 
+      "plant.springDamper.phi_rel", 
+      "der(plant.damper.w_rel)", 
+      "der(plant.damper.phi_rel)", 
+      "der(plant.springDamper.w_rel)", 
+      "der(plant.springDamper.phi_rel)", 
+      "controller.feedback.y", 
+      "controller.command", 
+      "controller.setpoint", 
+      "sensor.sampleHoldSensor.flange.phi", 
+      "plant.damper.lossPower", 
+      "plant.damper.tau", 
+      "plant.damper.a_rel", 
+      "plant.springDamper.tau_d", 
+      "plant.springDamper.tau_c", 
+      "plant.springDamper.lossPower", 
+      "plant.springDamper.tau", 
+      "plant.springDamper.a_rel", 
+      "plant.inertia.w", 
+      "plant.inertia.phi", 
+      "plant.inertia.a", 
+      "plant.fixed.flange.tau", 
+      "der(sensor.sampleHoldSensor.flange.phi)", 
+      "sensor.sampleHoldSensor.flange.tau", 
+      "$TMP_setpoint$PT_start_44", 
+      "setpoint.y", 
+      "controller.feedback.u1", 
+      "actuator.tau", 
+      "actuator.torque.tau", 
+      "actuator.torque.flange.tau", 
+      "actuator.shaft.tau", 
+      "plant.flange_a.tau", 
+      "plant.inertia.flange_a.tau", 
+      "actuator.torque.support.tau", 
+      "actuator.housing.tau", 
+      "plant.housing.tau", 
+      "controller.gain.y", 
+      "sensor.w", 
+      "controller.measured", 
+      "controller.feedback.u2", 
+      "sensor.shaft.phi", 
+      "plant.flange_b.phi", 
+      "plant.damper.flange_b.phi", 
+      "plant.inertia1.flange_b.phi", 
+      "plant.inertia1.phi", 
+      "plant.inertia1.flange_a.phi", 
+      "plant.springDamper.flange_b.phi", 
+      "plant.fixed.flange.phi", 
+      "plant.damper.flange_a.phi", 
+      "plant.housing.phi", 
+      "actuator.housing.phi", 
+      "actuator.torque.support.phi", 
+      "actuator.torque.phi_support", 
+      "plant.inertia.flange_b.phi", 
+      "plant.springDamper.flange_a.phi", 
+      "plant.inertia.flange_a.phi", 
+      "plant.flange_a.phi", 
+      "actuator.shaft.phi", 
+      "actuator.torque.flange.phi", 
+      "controller.gain.u", 
+      "sensor.shaft.tau", 
+      "plant.flange_b.tau", 
+      "plant.springDamper.flange_a.tau", 
+      "plant.inertia.flange_b.tau", 
+      "plant.springDamper.flange_b.tau", 
+      "plant.inertia1.flange_a.tau", 
+      "plant.damper.flange_a.tau", 
+      "plant.damper.flange_b.tau", 
+      "plant.inertia1.flange_b.tau", 
+      "plant.inertia1.w", 
+      "der(plant.inertia1.w)", 
+      "der(der(sensor.sampleHoldSensor.flange.phi))", 
+      "plant.inertia1.a", 
+      "der(plant.inertia.w)", 
+      "der(plant.inertia.phi)", 
+      "$TMP_setpoint$Pcount_44"
+    ], 
+    "parameter": [
+      "plant.J_a", 
+      "plant.J_b", 
+      "plant.c", 
+      "plant.d_shaft", 
+      "plant.d_load", 
+      "plant.fixed.phi0", 
+      "plant.inertia.J", 
+      "plant.inertia1.J", 
+      "plant.springDamper.phi_nominal", 
+      "plant.springDamper.c", 
+      "plant.springDamper.d", 
+      "plant.springDamper.phi_rel0", 
+      "plant.damper.phi_nominal", 
+      "plant.damper.d", 
+      "sensor.sample_rate", 
+      "sensor.sampleHoldSensor.sample_rate", 
+      "controller.k", 
+      "controller.gain.k", 
+      "setpoint.amplitude", 
+      "setpoint.rising", 
+      "setpoint.width", 
+      "setpoint.falling", 
+      "setpoint.period", 
+      "setpoint.offset", 
+      "setpoint.startTime", 
+      "setpoint.T_rising", 
+      "setpoint.T_width", 
+      "setpoint.T_falling", 
+      "plant.inertia.stateSelect", 
+      "plant.inertia1.stateSelect", 
+      "plant.springDamper.stateSelect", 
+      "plant.damper.stateSelect", 
+      "setpoint.nperiod", 
+      "plant.springDamper.useHeatPort", 
+      "plant.damper.useHeatPort", 
+      "actuator.torque.useSupport"
+    ]
+  }, 
+  "vars": {
+    "plant.springDamper.lossPower": {
+      "variability": "continuous", 
+      "valueReference": "1019", 
+      "description": "Loss power leaving component via heatPort (> 0, if heat is flowing out of component)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "plant.springDamper.lossPower"
+    }, 
+    "setpoint.width": {
+      "variability": "parameter", 
+      "valueReference": "1049", 
+      "description": "Width duration of trapezoid", 
+      "start": "0.5", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "setpoint.width"
+    }, 
+    "plant.springDamper.c": {
+      "variability": "parameter", 
+      "valueReference": "1038", 
+      "description": "Spring constant", 
+      "start": "100000.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m/rad", 
+      "causality": "internal", 
+      "name": "plant.springDamper.c"
+    }, 
+    "plant.damper.useHeatPort": {
+      "variability": "parameter", 
+      "valueReference": "1117", 
+      "description": "=true, if heatPort is enabled", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "plant.damper.useHeatPort"
+    }, 
+    "plant.damper.stateSelect": {
+      "variability": "parameter", 
+      "valueReference": "1112", 
+      "description": "Priority to use phi_rel and w_rel as states", 
+      "start": "4 /*ENUM:StateSelect.prefer*/", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "plant.damper.stateSelect"
+    }, 
+    "setpoint.y": {
+      "variability": "continuous", 
+      "valueReference": "1057", 
+      "description": "Connector of Real output signal", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "setpoint.y"
+    }, 
+    "plant.damper.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1074", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.damper.flange_b.phi"
+    }, 
+    "plant.inertia1.phi": {
+      "variability": "continuous", 
+      "valueReference": "1076", 
+      "description": "Absolute rotation angle of component", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.inertia1.phi"
+    }, 
+    "plant.damper.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1098", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.damper.flange_a.tau"
+    }, 
+    "$whenCondition2": {
+      "variability": "discrete", 
+      "valueReference": "1115", 
+      "description": "", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "$whenCondition2"
+    }, 
+    "plant.c": {
+      "variability": "parameter", 
+      "valueReference": "1031", 
+      "description": "Spring constant", 
+      "start": "100.0", 
+      "alias": "noAlias", 
+      "units": "N.m/rad", 
+      "causality": "internal", 
+      "name": "plant.c"
+    }, 
+    "der(plant.springDamper.phi_rel)": {
+      "variability": "continuous", 
+      "valueReference": "1007", 
+      "description": "Relative rotation angle (= flange_b.phi - flange_a.phi)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "der(plant.springDamper.phi_rel)"
+    }, 
+    "actuator.torque.useSupport": {
+      "variability": "parameter", 
+      "valueReference": "1118", 
+      "description": "= true, if support flange enabled, otherwise implicitly grounded", 
+      "start": "true", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "actuator.torque.useSupport"
+    }, 
+    "plant.damper.d": {
+      "variability": "parameter", 
+      "valueReference": "1042", 
+      "description": "Damping constant", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m.s/rad", 
+      "causality": "internal", 
+      "name": "plant.damper.d"
+    }, 
+    "sensor.sampleHoldSensor.flange.tau": {
+      "variability": "continuous", 
+      "valueReference": "1027", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "sensor.sampleHoldSensor.flange.tau"
+    }, 
+    "der(plant.inertia1.w)": {
+      "variability": "continuous", 
+      "valueReference": "1102", 
+      "description": "Absolute angular velocity of component (= der(phi))", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der(plant.inertia1.w)"
+    }, 
+    "setpoint.count": {
+      "variability": "discrete", 
+      "valueReference": "1107", 
+      "description": "Period count", 
+      "start": "0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "setpoint.count"
+    }, 
+    "controller.measured": {
+      "variability": "continuous", 
+      "valueReference": "1070", 
+      "description": "Actual system response", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "controller.measured"
+    }, 
+    "der(plant.inertia.phi)": {
+      "variability": "continuous", 
+      "valueReference": "1106", 
+      "description": "Absolute rotation angle of component", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der(plant.inertia.phi)"
+    }, 
+    "plant.housing.phi": {
+      "variability": "continuous", 
+      "valueReference": "1081", 
+      "description": "Absolute rotation angle of the support/housing", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.housing.phi"
+    }, 
+    "plant.springDamper.d": {
+      "variability": "parameter", 
+      "valueReference": "1039", 
+      "description": "Damping constant", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m.s/rad", 
+      "causality": "internal", 
+      "name": "plant.springDamper.d"
+    }, 
+    "plant.fixed.flange.tau": {
+      "variability": "continuous", 
+      "valueReference": "1025", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.fixed.flange.tau"
+    }, 
+    "plant.damper.phi_rel": {
+      "variability": "continuous", 
+      "valueReference": "1001", 
+      "description": "Relative rotation angle (= flange_b.phi - flange_a.phi)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.damper.phi_rel"
+    }, 
+    "actuator.torque.support.phi": {
+      "variability": "continuous", 
+      "valueReference": "1083", 
+      "description": "Absolute rotation angle of the support/housing", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "actuator.torque.support.phi"
+    }, 
+    "plant.damper.phi_nominal": {
+      "variability": "parameter", 
+      "valueReference": "1041", 
+      "description": "Nominal value of phi_rel (used for scaling)", 
+      "start": "0.0001", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.damper.phi_nominal"
+    }, 
+    "plant.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1088", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.flange_a.phi"
+    }, 
+    "setpoint.startTime": {
+      "variability": "parameter", 
+      "valueReference": "1053", 
+      "description": "Output = offset for time < startTime", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "setpoint.startTime"
+    }, 
+    "plant.inertia.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1087", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.inertia.flange_a.phi"
+    }, 
+    "actuator.torque.support.tau": {
+      "variability": "continuous", 
+      "valueReference": "1065", 
+      "description": "Reaction torque in the support/housing", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "actuator.torque.support.tau"
+    }, 
+    "controller.feedback.u2": {
+      "variability": "continuous", 
+      "valueReference": "1071", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "controller.feedback.u2"
+    }, 
+    "controller.feedback.u1": {
+      "variability": "continuous", 
+      "valueReference": "1058", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "controller.feedback.u1"
+    }, 
+    "plant.springDamper.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1096", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.springDamper.flange_b.tau"
+    }, 
+    "plant.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1063", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.flange_a.tau"
+    }, 
+    "actuator.torque.flange.phi": {
+      "variability": "continuous", 
+      "valueReference": "1090", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "actuator.torque.flange.phi"
+    }, 
+    "setpoint.offset": {
+      "variability": "parameter", 
+      "valueReference": "1052", 
+      "description": "Offset of output signal", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "setpoint.offset"
+    }, 
+    "actuator.tau": {
+      "variability": "continuous", 
+      "valueReference": "1059", 
+      "description": "Input torque command", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "actuator.tau"
+    }, 
+    "plant.d_shaft": {
+      "variability": "parameter", 
+      "valueReference": "1032", 
+      "description": "Shaft damping constant", 
+      "start": "3.0", 
+      "alias": "noAlias", 
+      "units": "N.m.s/rad", 
+      "causality": "internal", 
+      "name": "plant.d_shaft"
+    }, 
+    "plant.springDamper.tau_d": {
+      "variability": "continuous", 
+      "valueReference": "1017", 
+      "description": "Damping torque", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.springDamper.tau_d"
+    }, 
+    "plant.springDamper.tau_c": {
+      "variability": "continuous", 
+      "valueReference": "1018", 
+      "description": "Spring torque", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.springDamper.tau_c"
+    }, 
+    "plant.springDamper.phi_rel0": {
+      "variability": "parameter", 
+      "valueReference": "1040", 
+      "description": "Unstretched spring angle", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.springDamper.phi_rel0"
+    }, 
+    "actuator.housing.tau": {
+      "variability": "continuous", 
+      "valueReference": "1066", 
+      "description": "Reaction torque in the support/housing", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "actuator.housing.tau"
+    }, 
+    "plant.springDamper.phi_rel": {
+      "variability": "continuous", 
+      "valueReference": "1003", 
+      "description": "Relative rotation angle (= flange_b.phi - flange_a.phi)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.springDamper.phi_rel"
+    }, 
+    "plant.damper.a_rel": {
+      "variability": "continuous", 
+      "valueReference": "1016", 
+      "description": "Relative angular acceleration (= der(w_rel))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s2", 
+      "causality": "internal", 
+      "name": "plant.damper.a_rel"
+    }, 
+    "der(plant.damper.phi_rel)": {
+      "variability": "continuous", 
+      "valueReference": "1005", 
+      "description": "Relative rotation angle (= flange_b.phi - flange_a.phi)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "der(plant.damper.phi_rel)"
+    }, 
+    "$TMP_setpoint$Pcount_44": {
+      "variability": "continuous", 
+      "valueReference": "1108", 
+      "description": "", 
+      "start": "0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "none", 
+      "name": "$TMP_setpoint$Pcount_44"
+    }, 
+    "setpoint.T_falling": {
+      "variability": "parameter", 
+      "valueReference": "1056", 
+      "description": "End time of falling phase within one period", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "setpoint.T_falling"
+    }, 
+    "plant.springDamper.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1078", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.springDamper.flange_b.phi"
+    }, 
+    "plant.damper.w_rel": {
+      "variability": "continuous", 
+      "valueReference": "1000", 
+      "description": "Relative angular velocity (= der(phi_rel))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "plant.damper.w_rel"
+    }, 
+    "sensor.sampleHoldSensor.sample_rate": {
+      "variability": "parameter", 
+      "valueReference": "1044", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "sensor.sampleHoldSensor.sample_rate"
+    }, 
+    "actuator.housing.phi": {
+      "variability": "continuous", 
+      "valueReference": "1082", 
+      "description": "Absolute rotation angle of the support/housing", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "actuator.housing.phi"
+    }, 
+    "controller.gain.u": {
+      "variability": "continuous", 
+      "valueReference": "1091", 
+      "description": "Input signal connector", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "controller.gain.u"
+    }, 
+    "controller.gain.y": {
+      "variability": "continuous", 
+      "valueReference": "1068", 
+      "description": "Output signal connector", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "controller.gain.y"
+    }, 
+    "$whenCondition1": {
+      "variability": "discrete", 
+      "valueReference": "1114", 
+      "description": "", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "$whenCondition1"
+    }, 
+    "controller.command": {
+      "variability": "continuous", 
+      "valueReference": "1010", 
+      "description": "Command to send to actuator", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "controller.command"
+    }, 
+    "plant.housing.tau": {
+      "variability": "continuous", 
+      "valueReference": "1067", 
+      "description": "Reaction torque in the support/housing", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.housing.tau"
+    }, 
+    "controller.gain.k": {
+      "variability": "parameter", 
+      "valueReference": "1046", 
+      "description": "Gain value multiplied with input signal", 
+      "start": "1.0", 
+      "alias": "noAlias", 
+      "units": "1", 
+      "causality": "internal", 
+      "name": "controller.gain.k"
+    }, 
+    "plant.damper.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1099", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.damper.flange_b.tau"
+    }, 
+    "sensor.shaft.phi": {
+      "variability": "continuous", 
+      "valueReference": "1072", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "sensor.shaft.phi"
+    }, 
+    "sensor.sample_rate": {
+      "variability": "parameter", 
+      "valueReference": "1043", 
+      "description": "", 
+      "start": "0.01", 
+      "min": "1e-15", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "sensor.sample_rate"
+    }, 
+    "der(sensor.sampleHoldSensor.flange.phi)": {
+      "variability": "continuous", 
+      "valueReference": "1026", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der(sensor.sampleHoldSensor.flange.phi)"
+    }, 
+    "plant.damper.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1080", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.damper.flange_a.phi"
+    }, 
+    "$TMP_setpoint$PT_start_44": {
+      "variability": "continuous", 
+      "valueReference": "1028", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "none", 
+      "name": "$TMP_setpoint$PT_start_44"
+    }, 
+    "sensor.shaft.tau": {
+      "variability": "continuous", 
+      "valueReference": "1092", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "sensor.shaft.tau"
+    }, 
+    "plant.inertia.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1095", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.inertia.flange_b.tau"
+    }, 
+    "plant.inertia1.stateSelect": {
+      "variability": "parameter", 
+      "valueReference": "1110", 
+      "description": "Priority to use phi and w as states", 
+      "start": "3 /*ENUM:StateSelect.default*/", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "plant.inertia1.stateSelect"
+    }, 
+    "plant.inertia1.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1075", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.inertia1.flange_b.phi"
+    }, 
+    "plant.inertia1.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1097", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.inertia1.flange_a.tau"
+    }, 
+    "actuator.torque.phi_support": {
+      "variability": "continuous", 
+      "valueReference": "1084", 
+      "description": "Absolute angle of support flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "actuator.torque.phi_support"
+    }, 
+    "plant.inertia1.J": {
+      "variability": "parameter", 
+      "valueReference": "1036", 
+      "description": "Moment of inertia", 
+      "start": "1.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "kg.m2", 
+      "causality": "internal", 
+      "name": "plant.inertia1.J"
+    }, 
+    "actuator.torque.flange.tau": {
+      "variability": "continuous", 
+      "valueReference": "1061", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "actuator.torque.flange.tau"
+    }, 
+    "plant.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1093", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.flange_b.tau"
+    }, 
+    "plant.d_load": {
+      "variability": "parameter", 
+      "valueReference": "1033", 
+      "description": "Load damping constant", 
+      "start": "4.0", 
+      "alias": "noAlias", 
+      "units": "N.m.s/rad", 
+      "causality": "internal", 
+      "name": "plant.d_load"
+    }, 
+    "plant.inertia1.w": {
+      "variability": "continuous", 
+      "valueReference": "1101", 
+      "description": "Absolute angular velocity of component (= der(phi))", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "plant.inertia1.w"
+    }, 
+    "plant.springDamper.w_rel": {
+      "variability": "continuous", 
+      "valueReference": "1002", 
+      "description": "Relative angular velocity (= der(phi_rel))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "plant.springDamper.w_rel"
+    }, 
+    "setpoint.nperiod": {
+      "variability": "parameter", 
+      "valueReference": "1113", 
+      "description": "Number of periods (< 0 means infinite number of periods)", 
+      "start": "-1", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "setpoint.nperiod"
+    }, 
+    "plant.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1073", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.flange_b.phi"
+    }, 
+    "der(der(sensor.sampleHoldSensor.flange.phi))": {
+      "variability": "continuous", 
+      "valueReference": "1103", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der(der(sensor.sampleHoldSensor.flange.phi))"
+    }, 
+    "setpoint.period": {
+      "variability": "parameter", 
+      "valueReference": "1051", 
+      "description": "Time for one period", 
+      "start": "1.0", 
+      "min": "1e-60", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "setpoint.period"
+    }, 
+    "plant.inertia.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1064", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.inertia.flange_a.tau"
+    }, 
+    "plant.inertia1.a": {
+      "variability": "continuous", 
+      "valueReference": "1104", 
+      "description": "Absolute angular acceleration of component (= der(w))", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad/s2", 
+      "causality": "internal", 
+      "name": "plant.inertia1.a"
+    }, 
+    "plant.inertia.a": {
+      "variability": "continuous", 
+      "valueReference": "1024", 
+      "description": "Absolute angular acceleration of component (= der(w))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s2", 
+      "causality": "internal", 
+      "name": "plant.inertia.a"
+    }, 
+    "controller.setpoint": {
+      "variability": "continuous", 
+      "valueReference": "1011", 
+      "description": "Desired system response", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "controller.setpoint"
+    }, 
+    "plant.inertia.w": {
+      "variability": "continuous", 
+      "valueReference": "1022", 
+      "description": "Absolute angular velocity of component (= der(phi))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "plant.inertia.w"
+    }, 
+    "actuator.torque.tau": {
+      "variability": "continuous", 
+      "valueReference": "1060", 
+      "description": "Accelerating torque acting at flange (= -flange.tau)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "actuator.torque.tau"
+    }, 
+    "plant.J_b": {
+      "variability": "parameter", 
+      "valueReference": "1030", 
+      "description": "Moment of inertia", 
+      "start": "0.3", 
+      "alias": "noAlias", 
+      "units": "kg.m2", 
+      "causality": "internal", 
+      "name": "plant.J_b"
+    }, 
+    "plant.J_a": {
+      "variability": "parameter", 
+      "valueReference": "1029", 
+      "description": "Moment of inertia", 
+      "start": "0.1", 
+      "alias": "noAlias", 
+      "units": "kg.m2", 
+      "causality": "internal", 
+      "name": "plant.J_a"
+    }, 
+    "setpoint.rising": {
+      "variability": "parameter", 
+      "valueReference": "1048", 
+      "description": "Rising duration of trapezoid", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "setpoint.rising"
+    }, 
+    "controller.feedback.y": {
+      "variability": "continuous", 
+      "valueReference": "1009", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "controller.feedback.y"
+    }, 
+    "plant.inertia.J": {
+      "variability": "parameter", 
+      "valueReference": "1035", 
+      "description": "Moment of inertia", 
+      "start": "1.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "kg.m2", 
+      "causality": "internal", 
+      "name": "plant.inertia.J"
+    }, 
+    "setpoint.amplitude": {
+      "variability": "parameter", 
+      "valueReference": "1047", 
+      "description": "Amplitude of trapezoid", 
+      "start": "1.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "setpoint.amplitude"
+    }, 
+    "setpoint.T_width": {
+      "variability": "parameter", 
+      "valueReference": "1055", 
+      "description": "End time of width phase within one period", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "setpoint.T_width"
+    }, 
+    "plant.springDamper.phi_nominal": {
+      "variability": "parameter", 
+      "valueReference": "1037", 
+      "description": "Nominal value of phi_rel (used for scaling)", 
+      "start": "0.0001", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.springDamper.phi_nominal"
+    }, 
+    "setpoint.T_start": {
+      "variability": "discrete", 
+      "valueReference": "1008", 
+      "description": "Start time of current period", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "setpoint.T_start"
+    }, 
+    "plant.springDamper.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1094", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.springDamper.flange_a.tau"
+    }, 
+    "setpoint.T_rising": {
+      "variability": "parameter", 
+      "valueReference": "1054", 
+      "description": "End time of rising phase within one period", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "setpoint.T_rising"
+    }, 
+    "controller.k": {
+      "variability": "parameter", 
+      "valueReference": "1045", 
+      "description": "Controller gain", 
+      "start": "20.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "controller.k"
+    }, 
+    "plant.springDamper.useHeatPort": {
+      "variability": "parameter", 
+      "valueReference": "1116", 
+      "description": "=true, if heatPort is enabled", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "plant.springDamper.useHeatPort"
+    }, 
+    "plant.damper.lossPower": {
+      "variability": "continuous", 
+      "valueReference": "1014", 
+      "description": "Loss power leaving component via heatPort (> 0, if heat is flowing out of component)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "plant.damper.lossPower"
+    }, 
+    "der(plant.springDamper.w_rel)": {
+      "variability": "continuous", 
+      "valueReference": "1006", 
+      "description": "Relative angular velocity (= der(phi_rel))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "der(plant.springDamper.w_rel)"
+    }, 
+    "plant.fixed.phi0": {
+      "variability": "parameter", 
+      "valueReference": "1034", 
+      "description": "Fixed offset angle of housing", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.fixed.phi0"
+    }, 
+    "actuator.shaft.phi": {
+      "variability": "continuous", 
+      "valueReference": "1089", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "actuator.shaft.phi"
+    }, 
+    "sensor.sampleHoldSensor.w": {
+      "variability": "discrete", 
+      "valueReference": "1012", 
+      "description": "Sensed speed", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "sensor.sampleHoldSensor.w"
+    }, 
+    "der(plant.damper.w_rel)": {
+      "variability": "continuous", 
+      "valueReference": "1004", 
+      "description": "Relative angular velocity (= der(phi_rel))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "der(plant.damper.w_rel)"
+    }, 
+    "sensor.sampleHoldSensor.flange.phi": {
+      "variability": "continuous", 
+      "valueReference": "1013", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "sensor.sampleHoldSensor.flange.phi"
+    }, 
+    "plant.springDamper.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1086", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.springDamper.flange_a.phi"
+    }, 
+    "setpoint.falling": {
+      "variability": "parameter", 
+      "valueReference": "1050", 
+      "description": "Falling duration of trapezoid", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "setpoint.falling"
+    }, 
+    "plant.damper.tau": {
+      "variability": "continuous", 
+      "valueReference": "1015", 
+      "description": "Torque between flanges (= flange_b.tau)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.damper.tau"
+    }, 
+    "plant.springDamper.a_rel": {
+      "variability": "continuous", 
+      "valueReference": "1021", 
+      "description": "Relative angular acceleration (= der(w_rel))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s2", 
+      "causality": "internal", 
+      "name": "plant.springDamper.a_rel"
+    }, 
+    "plant.fixed.flange.phi": {
+      "variability": "continuous", 
+      "valueReference": "1079", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.fixed.flange.phi"
+    }, 
+    "plant.springDamper.stateSelect": {
+      "variability": "parameter", 
+      "valueReference": "1111", 
+      "description": "Priority to use phi_rel and w_rel as states", 
+      "start": "4 /*ENUM:StateSelect.prefer*/", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "plant.springDamper.stateSelect"
+    }, 
+    "plant.inertia.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1085", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.inertia.flange_b.phi"
+    }, 
+    "plant.springDamper.tau": {
+      "variability": "continuous", 
+      "valueReference": "1020", 
+      "description": "Torque between flanges (= flange_b.tau)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.springDamper.tau"
+    }, 
+    "plant.inertia1.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1100", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "plant.inertia1.flange_b.tau"
+    }, 
+    "der(plant.inertia.w)": {
+      "variability": "continuous", 
+      "valueReference": "1105", 
+      "description": "Absolute angular velocity of component (= der(phi))", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der(plant.inertia.w)"
+    }, 
+    "plant.inertia.stateSelect": {
+      "variability": "parameter", 
+      "valueReference": "1109", 
+      "description": "Priority to use phi and w as states", 
+      "start": "3 /*ENUM:StateSelect.default*/", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "plant.inertia.stateSelect"
+    }, 
+    "plant.inertia.phi": {
+      "variability": "continuous", 
+      "valueReference": "1023", 
+      "description": "Absolute rotation angle of component", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.inertia.phi"
+    }, 
+    "plant.inertia1.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1077", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "plant.inertia1.flange_a.phi"
+    }, 
+    "actuator.shaft.tau": {
+      "variability": "continuous", 
+      "valueReference": "1062", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "actuator.shaft.tau"
+    }, 
+    "sensor.w": {
+      "variability": "continuous", 
+      "valueReference": "1069", 
+      "description": "Absolute angular velocity of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "sensor.w"
+    }
+  }, 
+  "desc": {
+    "variableNamingConvention": "structured", 
+    "cmt_numberOfRealAlgebraicVariables": "NY:       number of real variables,                           OMC", 
+    "cmt_numberOfFunctions": "NFUNC:    number of functions used by the simulation,         OMC", 
+    "cmt_numberOfBooleanParameters": "NPBOOL:   number of bool parameters,                          OMC", 
+    "fmiVersion": "1.0", 
+    "generationDateAndTime": "2014-02-24T10:41:13Z", 
+    "cmt_numberOfOutputVariables": "NO:       number of outputvar on topmodel,                    OMC", 
+    "numberOfIntegerAlgebraicVariables": "2", 
+    "numberOfOutputVariables": "0", 
+    "guid": "{8c4e810f-3df3-4a00-8276-176fa3c9f9e0}", 
+    "cmt_numberOfRealParameters": "NP:       number of parameters,                               OMC", 
+    "modelName": "ModelicaByExample.Architectures.SensorComparison.Examples.Variant1", 
+    "cmt_numberOfContinuousStates": "NX:       number of states,                                   FMI", 
+    "OPENMODELICAHOME": "/home/mtiller/Xogeny/Source/Mod2JS/OpenModelica/build", 
+    "numberOfRealParameters": "28", 
+    "numberOfStringAliasVariables": "0", 
+    "cmt_numberOfEventIndicators": "NG:       number of zero crossings,                           FMI", 
+    "cmt_numberOfIntegerParameters": "NPINT:    number of int parameters,                           OMC", 
+    "numberOfStringParameters": "0", 
+    "cmt_numberOfIntegerAlgebraicVariables": "NYINT:    number of alg. int variables,                       OMC", 
+    "cmt_numberOfExternalObjects": "NEXT:     number of external objects,                         OMC", 
+    "numberOfIntegerAliasVariables": "0", 
+    "numberOfStringAlgebraicVariables": "0", 
+    "numberOfRealAlgebraicVariables": "21", 
+    "cmt_numberOfBooleanAliasVariables": "NABOOL:   number of alias bool variables,                     OMC", 
+    "cmt_numberOfResidualsForInitialization": "NR:       number of residuals for initialialization function, OMC", 
+    "numberOfBooleanAliasVariables": "0", 
+    "cmt_numberOfStringAlgebraicVariables": "NYSTR:    number of alg. string variables,                    OMC", 
+    "generationTool": "OpenModelica Compiler 1.9.1+dev (r19238) (Bootstrapping version)", 
+    "numberOfResidualsForInitialization": "3", 
+    "cmt_numberOfTimeEvents": "NG_SAM:   number of zero crossings that are samples,          OMC", 
+    "numberOfExternalObjects": "0", 
+    "numberOfFunctions": "0", 
+    "numberOfEventIndicators": "6", 
+    "cmt_numberOfInputVariables": "NI:       number of inputvar on topmodel,                     OMC", 
+    "cmt_numberOfBooleanAlgebraicVariables": "NYBOOL:   number of alg. bool variables,                      OMC", 
+    "numberOfBooleanAlgebraicVariables": "2", 
+    "cmt_numberOfStringAliasVariables": "NASTR:    number of alias string variables,                   OMC", 
+    "cmt_numberOfStringParameters": "NPSTR:    number of string parameters,                        OMC", 
+    "numberOfInputVariables": "0", 
+    "numberOfTimeEvents": "1", 
+    "cmt_numberOfIntegerAliasVariables": "NAINT:    number of alias int variables,                      OMC", 
+    "numberOfIntegerParameters": "5", 
+    "numberOfContinuousStates": "4", 
+    "cmt_numberOfRealAlgebraicAliasVariables": "NA:       number of alias variables,                          OMC", 
+    "numberOfRealAlgebraicAliasVariables": "50", 
+    "modelIdentifier": "ModelicaByExample_Architectures_SensorComparison_Examples_Variant1", 
+    "numberOfBooleanParameters": "3"
+  }
+}

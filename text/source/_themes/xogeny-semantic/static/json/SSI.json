@@ -1,0 +1,175 @@
+{
+  "experiment": {
+    "stopTime": "1.0", 
+    "tolerance": "0.001", 
+    "startTime": "0.0"
+  }, 
+  "tree": {
+    "z": "z", 
+    "$dummy": "$dummy", 
+    "der($dummy)": "der($dummy)", 
+    "$whenCondition2": "$whenCondition2", 
+    "$whenCondition3": "$whenCondition3", 
+    "$whenCondition1": "$whenCondition1", 
+    "y": "y", 
+    "x": "x", 
+    "tick": "tick"
+  }, 
+  "categories": {
+    "discrete": [
+      "z", 
+      "y", 
+      "x", 
+      "tick", 
+      "$whenCondition1", 
+      "$whenCondition2", 
+      "$whenCondition3"
+    ], 
+    "continuous": [
+      "$dummy", 
+      "der($dummy)"
+    ]
+  }, 
+  "vars": {
+    "z": {
+      "variability": "discrete", 
+      "valueReference": "1002", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "z"
+    }, 
+    "$dummy": {
+      "variability": "continuous", 
+      "valueReference": "1000", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "$dummy"
+    }, 
+    "der($dummy)": {
+      "variability": "continuous", 
+      "valueReference": "1001", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der($dummy)"
+    }, 
+    "$whenCondition2": {
+      "variability": "discrete", 
+      "valueReference": "1007", 
+      "description": "", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "$whenCondition2"
+    }, 
+    "$whenCondition3": {
+      "variability": "discrete", 
+      "valueReference": "1008", 
+      "description": "", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "$whenCondition3"
+    }, 
+    "$whenCondition1": {
+      "variability": "discrete", 
+      "valueReference": "1006", 
+      "description": "", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "$whenCondition1"
+    }, 
+    "y": {
+      "variability": "discrete", 
+      "valueReference": "1003", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "y"
+    }, 
+    "x": {
+      "variability": "discrete", 
+      "valueReference": "1004", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "x"
+    }, 
+    "tick": {
+      "variability": "discrete", 
+      "valueReference": "1005", 
+      "description": "Clock counter", 
+      "start": "0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "tick"
+    }
+  }, 
+  "desc": {
+    "variableNamingConvention": "structured", 
+    "cmt_numberOfRealAlgebraicVariables": "NY:       number of real variables,                           OMC", 
+    "cmt_numberOfFunctions": "NFUNC:    number of functions used by the simulation,         OMC", 
+    "cmt_numberOfBooleanParameters": "NPBOOL:   number of bool parameters,                          OMC", 
+    "fmiVersion": "1.0", 
+    "generationDateAndTime": "2014-02-24T10:43:51Z", 
+    "cmt_numberOfOutputVariables": "NO:       number of outputvar on topmodel,                    OMC", 
+    "numberOfIntegerAlgebraicVariables": "1", 
+    "numberOfOutputVariables": "0", 
+    "guid": "{8c4e810f-3df3-4a00-8276-176fa3c9f9e0}", 
+    "cmt_numberOfRealParameters": "NP:       number of parameters,                               OMC", 
+    "modelName": "ModelicaByExample.DiscreteBehavior.SynchronousSystems.SubsamplingWithIntegers", 
+    "cmt_numberOfContinuousStates": "NX:       number of states,                                   FMI", 
+    "OPENMODELICAHOME": "/home/mtiller/Xogeny/Source/Mod2JS/OpenModelica/build", 
+    "numberOfRealParameters": "0", 
+    "numberOfStringAliasVariables": "0", 
+    "cmt_numberOfEventIndicators": "NG:       number of zero crossings,                           FMI", 
+    "cmt_numberOfIntegerParameters": "NPINT:    number of int parameters,                           OMC", 
+    "numberOfStringParameters": "0", 
+    "cmt_numberOfIntegerAlgebraicVariables": "NYINT:    number of alg. int variables,                       OMC", 
+    "cmt_numberOfExternalObjects": "NEXT:     number of external objects,                         OMC", 
+    "numberOfIntegerAliasVariables": "0", 
+    "numberOfStringAlgebraicVariables": "0", 
+    "numberOfRealAlgebraicVariables": "3", 
+    "cmt_numberOfBooleanAliasVariables": "NABOOL:   number of alias bool variables,                     OMC", 
+    "cmt_numberOfResidualsForInitialization": "NR:       number of residuals for initialialization function, OMC", 
+    "numberOfBooleanAliasVariables": "0", 
+    "cmt_numberOfStringAlgebraicVariables": "NYSTR:    number of alg. string variables,                    OMC", 
+    "generationTool": "OpenModelica Compiler 1.9.1+dev (r19238) (Bootstrapping version)", 
+    "numberOfResidualsForInitialization": "0", 
+    "cmt_numberOfTimeEvents": "NG_SAM:   number of zero crossings that are samples,          OMC", 
+    "numberOfExternalObjects": "0", 
+    "numberOfFunctions": "0", 
+    "numberOfEventIndicators": "1", 
+    "cmt_numberOfInputVariables": "NI:       number of inputvar on topmodel,                     OMC", 
+    "cmt_numberOfBooleanAlgebraicVariables": "NYBOOL:   number of alg. bool variables,                      OMC", 
+    "numberOfBooleanAlgebraicVariables": "3", 
+    "cmt_numberOfStringAliasVariables": "NASTR:    number of alias string variables,                   OMC", 
+    "cmt_numberOfStringParameters": "NPSTR:    number of string parameters,                        OMC", 
+    "numberOfInputVariables": "0", 
+    "numberOfTimeEvents": "1", 
+    "cmt_numberOfIntegerAliasVariables": "NAINT:    number of alias int variables,                      OMC", 
+    "numberOfIntegerParameters": "0", 
+    "numberOfContinuousStates": "1", 
+    "cmt_numberOfRealAlgebraicAliasVariables": "NA:       number of alias variables,                          OMC", 
+    "numberOfRealAlgebraicAliasVariables": "0", 
+    "modelIdentifier": "ModelicaByExample_DiscreteBehavior_SynchronousSystems_SubsamplingWithIntegers", 
+    "numberOfBooleanParameters": "0"
+  }
+}

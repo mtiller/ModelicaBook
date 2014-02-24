@@ -1,0 +1,1783 @@
+{
+  "experiment": {
+    "stopTime": "1.0", 
+    "tolerance": "1e-06", 
+    "startTime": "0.0"
+  }, 
+  "tree": {
+    "load": {
+      "useHeatPort": "load.useHeatPort", 
+      "i": "load.i", 
+      "LossPower": "load.LossPower", 
+      "R_actual": "load.R_actual", 
+      "n": {
+        "i": "load.n.i", 
+        "v": "load.n.v"
+      }, 
+      "p": {
+        "i": "load.p.i", 
+        "v": "load.p.v"
+      }, 
+      "R": "load.R", 
+      "T": "load.T", 
+      "v": "load.v", 
+      "alpha": "load.alpha", 
+      "T_heatPort": "load.T_heatPort", 
+      "T_ref": "load.T_ref"
+    }, 
+    "transformer": {
+      "p2": {
+        "i": "transformer.p2.i", 
+        "v": "transformer.p2.v"
+      }, 
+      "p1": {
+        "i": "transformer.p1.i", 
+        "v": "transformer.p1.v"
+      }, 
+      "i1": "transformer.i1", 
+      "Lm1": "transformer.Lm1", 
+      "i2": "transformer.i2", 
+      "n": "transformer.n", 
+      "im1": "transformer.im1", 
+      "v1": "transformer.v1", 
+      "v2": "transformer.v2", 
+      "psim1": "transformer.psim1", 
+      "considerMagnetization": "transformer.considerMagnetization", 
+      "n1": {
+        "i": "transformer.n1.i", 
+        "v": "transformer.n1.v"
+      }, 
+      "n2": {
+        "i": "transformer.n2.i", 
+        "v": "transformer.n2.v"
+      }
+    }, 
+    "step": {
+      "y": "step.y", 
+      "startValue": "step.startValue", 
+      "startTime": "step.startTime"
+    }, 
+    "ground1": {
+      "p": {
+        "i": "ground1.p.i", 
+        "v": "ground1.p.v"
+      }
+    }, 
+    "switch": {
+      "control": "switch.control", 
+      "Ron": "switch.Ron", 
+      "i": "switch.i", 
+      "LossPower": "switch.LossPower", 
+      "n": {
+        "i": "switch.n.i", 
+        "v": "switch.n.v"
+      }, 
+      "p": {
+        "i": "switch.p.i", 
+        "v": "switch.p.v"
+      }, 
+      "s": "switch.s", 
+      "T": "switch.T", 
+      "v": "switch.v", 
+      "Goff": "switch.Goff", 
+      "T_heatPort": "switch.T_heatPort", 
+      "useHeatPort": "switch.useHeatPort"
+    }, 
+    "capacitor": {
+      "der(v)": "der(capacitor.v)", 
+      "i": "capacitor.i", 
+      "C": "capacitor.C", 
+      "n": {
+        "i": "capacitor.n.i", 
+        "v": "capacitor.n.v"
+      }, 
+      "p": {
+        "i": "capacitor.p.i", 
+        "v": "capacitor.p.v"
+      }, 
+      "v": "capacitor.v"
+    }, 
+    "D4": {
+      "off": "D4.off", 
+      "Ron": "D4.Ron", 
+      "i": "D4.i", 
+      "LossPower": "D4.LossPower", 
+      "Vknee": "D4.Vknee", 
+      "n": {
+        "i": "D4.n.i", 
+        "v": "D4.n.v"
+      }, 
+      "p": {
+        "i": "D4.p.i", 
+        "v": "D4.p.v"
+      }, 
+      "s": "D4.s", 
+      "T": "D4.T", 
+      "v": "D4.v", 
+      "Goff": "D4.Goff", 
+      "T_heatPort": "D4.T_heatPort", 
+      "useHeatPort": "D4.useHeatPort"
+    }, 
+    "wall_voltage": {
+      "v": "wall_voltage.v", 
+      "signalSource": {
+        "amplitude": "wall_voltage.signalSource.amplitude", 
+        "freqHz": "wall_voltage.signalSource.freqHz", 
+        "y": "wall_voltage.signalSource.y", 
+        "startTime": "wall_voltage.signalSource.startTime", 
+        "offset": "wall_voltage.signalSource.offset", 
+        "phase": "wall_voltage.signalSource.phase"
+      }, 
+      "i": "wall_voltage.i", 
+      "freqHz": "wall_voltage.freqHz", 
+      "offset": "wall_voltage.offset", 
+      "n": {
+        "i": "wall_voltage.n.i", 
+        "v": "wall_voltage.n.v"
+      }, 
+      "p": {
+        "i": "wall_voltage.p.i", 
+        "v": "wall_voltage.p.v"
+      }, 
+      "startTime": "wall_voltage.startTime", 
+      "V": "wall_voltage.V", 
+      "phase": "wall_voltage.phase"
+    }, 
+    "D2": {
+      "off": "D2.off", 
+      "Ron": "D2.Ron", 
+      "i": "D2.i", 
+      "LossPower": "D2.LossPower", 
+      "Vknee": "D2.Vknee", 
+      "n": {
+        "i": "D2.n.i", 
+        "v": "D2.n.v"
+      }, 
+      "p": {
+        "i": "D2.p.i", 
+        "v": "D2.p.v"
+      }, 
+      "s": "D2.s", 
+      "T": "D2.T", 
+      "v": "D2.v", 
+      "Goff": "D2.Goff", 
+      "T_heatPort": "D2.T_heatPort", 
+      "useHeatPort": "D2.useHeatPort"
+    }, 
+    "D3": {
+      "off": "D3.off", 
+      "Ron": "D3.Ron", 
+      "i": "D3.i", 
+      "LossPower": "D3.LossPower", 
+      "Vknee": "D3.Vknee", 
+      "n": {
+        "i": "D3.n.i", 
+        "v": "D3.n.v"
+      }, 
+      "p": {
+        "i": "D3.p.i", 
+        "v": "D3.p.v"
+      }, 
+      "s": "D3.s", 
+      "T": "D3.T", 
+      "v": "D3.v", 
+      "Goff": "D3.Goff", 
+      "T_heatPort": "D3.T_heatPort", 
+      "useHeatPort": "D3.useHeatPort"
+    }, 
+    "D1": {
+      "off": "D1.off", 
+      "Ron": "D1.Ron", 
+      "i": "D1.i", 
+      "LossPower": "D1.LossPower", 
+      "Vknee": "D1.Vknee", 
+      "n": {
+        "i": "D1.n.i", 
+        "v": "D1.n.v"
+      }, 
+      "p": {
+        "i": "D1.p.i", 
+        "v": "D1.p.v"
+      }, 
+      "s": "D1.s", 
+      "T": "D1.T", 
+      "v": "D1.v", 
+      "Goff": "D1.Goff", 
+      "T_heatPort": "D1.T_heatPort", 
+      "useHeatPort": "D1.useHeatPort"
+    }
+  }, 
+  "categories": {
+    "discrete": [
+      "D4.off", 
+      "D3.off", 
+      "D2.off", 
+      "step.y", 
+      "D1.off", 
+      "switch.control"
+    ], 
+    "continuous": [
+      "capacitor.v", 
+      "der(capacitor.v)", 
+      "ground1.p.i", 
+      "D4.s", 
+      "D4.LossPower", 
+      "D4.i", 
+      "D4.v", 
+      "D3.s", 
+      "D3.LossPower", 
+      "D3.i", 
+      "D3.v", 
+      "D2.s", 
+      "D2.LossPower", 
+      "D2.i", 
+      "D2.v", 
+      "load.LossPower", 
+      "load.i", 
+      "load.v", 
+      "capacitor.i", 
+      "D1.s", 
+      "D1.LossPower", 
+      "D1.i", 
+      "D1.v", 
+      "transformer.i2", 
+      "transformer.v2", 
+      "transformer.v1", 
+      "switch.s", 
+      "switch.LossPower", 
+      "switch.v", 
+      "wall_voltage.i", 
+      "wall_voltage.v", 
+      "transformer.psim1", 
+      "load.R_actual", 
+      "transformer.im1", 
+      "ground1.p.v", 
+      "load.p.v", 
+      "capacitor.p.v", 
+      "D4.n.v", 
+      "load.n.v", 
+      "capacitor.n.v", 
+      "D3.p.v", 
+      "transformer.p2.v", 
+      "D2.p.v", 
+      "D3.n.v", 
+      "wall_voltage.n.v", 
+      "transformer.n2.v", 
+      "transformer.n1.v", 
+      "D4.p.v", 
+      "transformer.p1.v", 
+      "wall_voltage.p.v", 
+      "wall_voltage.p.i", 
+      "switch.p.i", 
+      "switch.i", 
+      "switch.n.i", 
+      "transformer.p1.i", 
+      "transformer.i1", 
+      "transformer.n1.i", 
+      "wall_voltage.n.i", 
+      "D4.p.i", 
+      "D4.n.i", 
+      "D3.p.i", 
+      "D3.n.i", 
+      "D2.p.i", 
+      "D2.n.i", 
+      "load.T_heatPort", 
+      "load.p.i", 
+      "load.n.i", 
+      "capacitor.p.i", 
+      "capacitor.n.i", 
+      "D1.p.i", 
+      "D1.n.i", 
+      "transformer.p2.i", 
+      "transformer.n2.i", 
+      "wall_voltage.signalSource.y", 
+      "switch.p.v", 
+      "switch.n.v", 
+      "D1.n.v", 
+      "D1.p.v", 
+      "D2.n.v", 
+      "D4.T_heatPort", 
+      "D3.T_heatPort", 
+      "D2.T_heatPort", 
+      "D1.T_heatPort", 
+      "switch.T_heatPort"
+    ], 
+    "parameter": [
+      "wall_voltage.offset", 
+      "wall_voltage.startTime", 
+      "wall_voltage.V", 
+      "wall_voltage.phase", 
+      "wall_voltage.freqHz", 
+      "wall_voltage.signalSource.amplitude", 
+      "wall_voltage.signalSource.freqHz", 
+      "wall_voltage.signalSource.phase", 
+      "wall_voltage.signalSource.offset", 
+      "wall_voltage.signalSource.startTime", 
+      "switch.T", 
+      "switch.Ron", 
+      "switch.Goff", 
+      "transformer.n", 
+      "transformer.Lm1", 
+      "D1.T", 
+      "D1.Ron", 
+      "D1.Goff", 
+      "D1.Vknee", 
+      "capacitor.C", 
+      "load.R", 
+      "load.T_ref", 
+      "load.alpha", 
+      "load.T", 
+      "step.startTime", 
+      "D2.T", 
+      "D2.Ron", 
+      "D2.Goff", 
+      "D2.Vknee", 
+      "D3.T", 
+      "D3.Ron", 
+      "D3.Goff", 
+      "D3.Vknee", 
+      "D4.T", 
+      "D4.Ron", 
+      "D4.Goff", 
+      "D4.Vknee", 
+      "switch.useHeatPort", 
+      "transformer.considerMagnetization", 
+      "D1.useHeatPort", 
+      "load.useHeatPort", 
+      "step.startValue", 
+      "D2.useHeatPort", 
+      "D3.useHeatPort", 
+      "D4.useHeatPort"
+    ]
+  }, 
+  "vars": {
+    "wall_voltage.signalSource.y": {
+      "variability": "continuous", 
+      "valueReference": "1110", 
+      "description": "Connector of Real output signal", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "wall_voltage.signalSource.y"
+    }, 
+    "D3.useHeatPort": {
+      "variability": "parameter", 
+      "valueReference": "1132", 
+      "description": "=true, if HeatPort is enabled", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "D3.useHeatPort"
+    }, 
+    "transformer.n2.v": {
+      "variability": "continuous", 
+      "valueReference": "1082", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "transformer.n2.v"
+    }, 
+    "wall_voltage.signalSource.freqHz": {
+      "variability": "parameter", 
+      "valueReference": "1041", 
+      "description": "Frequency of sine wave", 
+      "start": "1.0", 
+      "alias": "noAlias", 
+      "units": "Hz", 
+      "causality": "internal", 
+      "name": "wall_voltage.signalSource.freqHz"
+    }, 
+    "D2.n.i": {
+      "variability": "continuous", 
+      "valueReference": "1100", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D2.n.i"
+    }, 
+    "D3.Goff": {
+      "variability": "parameter", 
+      "valueReference": "1066", 
+      "description": "Backward state-off conductance (opened diode conductance)", 
+      "start": "1e-05", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "S", 
+      "causality": "internal", 
+      "name": "D3.Goff"
+    }, 
+    "D1.useHeatPort": {
+      "variability": "parameter", 
+      "valueReference": "1128", 
+      "description": "=true, if HeatPort is enabled", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "D1.useHeatPort"
+    }, 
+    "D3.n.i": {
+      "variability": "continuous", 
+      "valueReference": "1098", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D3.n.i"
+    }, 
+    "D3.n.v": {
+      "variability": "continuous", 
+      "valueReference": "1080", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D3.n.v"
+    }, 
+    "D2.n.v": {
+      "variability": "continuous", 
+      "valueReference": "1115", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D2.n.v"
+    }, 
+    "D1.LossPower": {
+      "variability": "continuous", 
+      "valueReference": "1020", 
+      "description": "Loss power leaving component via HeatPort", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "D1.LossPower"
+    }, 
+    "D3.Vknee": {
+      "variability": "parameter", 
+      "valueReference": "1067", 
+      "description": "Forward threshold voltage", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D3.Vknee"
+    }, 
+    "load.alpha": {
+      "variability": "parameter", 
+      "valueReference": "1057", 
+      "description": "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "1/K", 
+      "causality": "internal", 
+      "name": "load.alpha"
+    }, 
+    "transformer.p1.v": {
+      "variability": "continuous", 
+      "valueReference": "1085", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "transformer.p1.v"
+    }, 
+    "D4.useHeatPort": {
+      "variability": "parameter", 
+      "valueReference": "1133", 
+      "description": "=true, if HeatPort is enabled", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "D4.useHeatPort"
+    }, 
+    "step.startValue": {
+      "variability": "parameter", 
+      "valueReference": "1130", 
+      "description": "Output before startTime", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "step.startValue"
+    }, 
+    "D3.s": {
+      "variability": "continuous", 
+      "valueReference": "1007", 
+      "description": "Auxiliary variable for actual position on the ideal diode characteristic", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "1", 
+      "causality": "internal", 
+      "name": "D3.s"
+    }, 
+    "transformer.p1.i": {
+      "variability": "continuous", 
+      "valueReference": "1091", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "transformer.p1.i"
+    }, 
+    "load.useHeatPort": {
+      "variability": "parameter", 
+      "valueReference": "1129", 
+      "description": "=true, if HeatPort is enabled", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "load.useHeatPort"
+    }, 
+    "D3.Ron": {
+      "variability": "parameter", 
+      "valueReference": "1065", 
+      "description": "Forward state-on differential resistance (closed diode resistance)", 
+      "start": "1e-05", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "Ohm", 
+      "causality": "internal", 
+      "name": "D3.Ron"
+    }, 
+    "der(capacitor.v)": {
+      "variability": "continuous", 
+      "valueReference": "1001", 
+      "description": "Voltage drop between the two pins (= p.v - n.v)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "der(capacitor.v)"
+    }, 
+    "load.R_actual": {
+      "variability": "continuous", 
+      "valueReference": "1032", 
+      "description": "Actual resistance = R*(1 + alpha*(T_heatPort - T_ref))", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "Ohm", 
+      "causality": "internal", 
+      "name": "load.R_actual"
+    }, 
+    "D2.p.v": {
+      "variability": "continuous", 
+      "valueReference": "1079", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D2.p.v"
+    }, 
+    "switch.n.i": {
+      "variability": "continuous", 
+      "valueReference": "1090", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "switch.n.i"
+    }, 
+    "D2.useHeatPort": {
+      "variability": "parameter", 
+      "valueReference": "1131", 
+      "description": "=true, if HeatPort is enabled", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "D2.useHeatPort"
+    }, 
+    "D2.off": {
+      "variability": "discrete", 
+      "valueReference": "1123", 
+      "description": "Switching state", 
+      "start": "true", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "D2.off"
+    }, 
+    "D4.T": {
+      "variability": "parameter", 
+      "valueReference": "1068", 
+      "description": "Fixed device temperature if useHeatPort = false", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "D4.T"
+    }, 
+    "wall_voltage.signalSource.offset": {
+      "variability": "parameter", 
+      "valueReference": "1043", 
+      "description": "Offset of output signal", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "wall_voltage.signalSource.offset"
+    }, 
+    "D2.Ron": {
+      "variability": "parameter", 
+      "valueReference": "1061", 
+      "description": "Forward state-on differential resistance (closed diode resistance)", 
+      "start": "1e-05", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "Ohm", 
+      "causality": "internal", 
+      "name": "D2.Ron"
+    }, 
+    "load.i": {
+      "variability": "continuous", 
+      "valueReference": "1016", 
+      "description": "Current flowing from pin p to pin n", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "load.i"
+    }, 
+    "D2.s": {
+      "variability": "continuous", 
+      "valueReference": "1011", 
+      "description": "Auxiliary variable for actual position on the ideal diode characteristic", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "1", 
+      "causality": "internal", 
+      "name": "D2.s"
+    }, 
+    "D3.off": {
+      "variability": "discrete", 
+      "valueReference": "1122", 
+      "description": "Switching state", 
+      "start": "true", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "D3.off"
+    }, 
+    "D2.v": {
+      "variability": "continuous", 
+      "valueReference": "1014", 
+      "description": "Voltage drop between the two pins (= p.v - n.v)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D2.v"
+    }, 
+    "D2.i": {
+      "variability": "continuous", 
+      "valueReference": "1013", 
+      "description": "Current flowing from pin p to pin n", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D2.i"
+    }, 
+    "switch.n.v": {
+      "variability": "continuous", 
+      "valueReference": "1112", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "switch.n.v"
+    }, 
+    "load.v": {
+      "variability": "continuous", 
+      "valueReference": "1017", 
+      "description": "Voltage drop between the two pins (= p.v - n.v)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "load.v"
+    }, 
+    "switch.control": {
+      "variability": "discrete", 
+      "valueReference": "1134", 
+      "description": "true => p--n connected, false => switch open", 
+      "start": "false", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "switch.control"
+    }, 
+    "transformer.n": {
+      "variability": "parameter", 
+      "valueReference": "1048", 
+      "description": "Turns ratio primary:secondary voltage", 
+      "start": "10.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "transformer.n"
+    }, 
+    "wall_voltage.signalSource.startTime": {
+      "variability": "parameter", 
+      "valueReference": "1044", 
+      "description": "Output = offset for time < startTime", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "wall_voltage.signalSource.startTime"
+    }, 
+    "D4.v": {
+      "variability": "continuous", 
+      "valueReference": "1006", 
+      "description": "Voltage drop between the two pins (= p.v - n.v)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D4.v"
+    }, 
+    "D4.s": {
+      "variability": "continuous", 
+      "valueReference": "1003", 
+      "description": "Auxiliary variable for actual position on the ideal diode characteristic", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "1", 
+      "causality": "internal", 
+      "name": "D4.s"
+    }, 
+    "D2.p.i": {
+      "variability": "continuous", 
+      "valueReference": "1099", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D2.p.i"
+    }, 
+    "D4.p.v": {
+      "variability": "continuous", 
+      "valueReference": "1084", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D4.p.v"
+    }, 
+    "D2.T": {
+      "variability": "parameter", 
+      "valueReference": "1060", 
+      "description": "Fixed device temperature if useHeatPort = false", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "D2.T"
+    }, 
+    "D2.Vknee": {
+      "variability": "parameter", 
+      "valueReference": "1063", 
+      "description": "Forward threshold voltage", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D2.Vknee"
+    }, 
+    "load.R": {
+      "variability": "parameter", 
+      "valueReference": "1055", 
+      "description": "Resistance at temperature T_ref", 
+      "start": "100.0", 
+      "alias": "noAlias", 
+      "units": "Ohm", 
+      "causality": "internal", 
+      "name": "load.R"
+    }, 
+    "load.T": {
+      "variability": "parameter", 
+      "valueReference": "1058", 
+      "description": "Fixed device temperature if useHeatPort = false", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "load.T"
+    }, 
+    "D4.p.i": {
+      "variability": "continuous", 
+      "valueReference": "1095", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D4.p.i"
+    }, 
+    "D1.off": {
+      "variability": "discrete", 
+      "valueReference": "1125", 
+      "description": "Switching state", 
+      "start": "true", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "D1.off"
+    }, 
+    "D4.i": {
+      "variability": "continuous", 
+      "valueReference": "1005", 
+      "description": "Current flowing from pin p to pin n", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D4.i"
+    }, 
+    "load.n.i": {
+      "variability": "continuous", 
+      "valueReference": "1103", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "load.n.i"
+    }, 
+    "D2.Goff": {
+      "variability": "parameter", 
+      "valueReference": "1062", 
+      "description": "Backward state-off conductance (opened diode conductance)", 
+      "start": "1e-05", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "S", 
+      "causality": "internal", 
+      "name": "D2.Goff"
+    }, 
+    "load.n.v": {
+      "variability": "continuous", 
+      "valueReference": "1075", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "load.n.v"
+    }, 
+    "wall_voltage.offset": {
+      "variability": "parameter", 
+      "valueReference": "1035", 
+      "description": "Voltage offset", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "wall_voltage.offset"
+    }, 
+    "transformer.p2.i": {
+      "variability": "continuous", 
+      "valueReference": "1108", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "transformer.p2.i"
+    }, 
+    "wall_voltage.p.v": {
+      "variability": "continuous", 
+      "valueReference": "1086", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "wall_voltage.p.v"
+    }, 
+    "capacitor.p.v": {
+      "variability": "continuous", 
+      "valueReference": "1073", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "capacitor.p.v"
+    }, 
+    "D3.LossPower": {
+      "variability": "continuous", 
+      "valueReference": "1008", 
+      "description": "Loss power leaving component via HeatPort", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "D3.LossPower"
+    }, 
+    "transformer.considerMagnetization": {
+      "variability": "parameter", 
+      "valueReference": "1127", 
+      "description": "Choice of considering magnetization", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "transformer.considerMagnetization"
+    }, 
+    "wall_voltage.startTime": {
+      "variability": "parameter", 
+      "valueReference": "1036", 
+      "description": "Time offset", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "wall_voltage.startTime"
+    }, 
+    "D1.n.v": {
+      "variability": "continuous", 
+      "valueReference": "1113", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D1.n.v"
+    }, 
+    "wall_voltage.freqHz": {
+      "variability": "parameter", 
+      "valueReference": "1039", 
+      "description": "Frequency of sine wave", 
+      "start": "60.0", 
+      "alias": "noAlias", 
+      "units": "Hz", 
+      "causality": "internal", 
+      "name": "wall_voltage.freqHz"
+    }, 
+    "load.T_heatPort": {
+      "variability": "continuous", 
+      "valueReference": "1101", 
+      "description": "Temperature of HeatPort", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "load.T_heatPort"
+    }, 
+    "capacitor.p.i": {
+      "variability": "continuous", 
+      "valueReference": "1104", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "capacitor.p.i"
+    }, 
+    "wall_voltage.phase": {
+      "variability": "parameter", 
+      "valueReference": "1038", 
+      "description": "Phase of sine wave", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "wall_voltage.phase"
+    }, 
+    "switch.useHeatPort": {
+      "variability": "parameter", 
+      "valueReference": "1126", 
+      "description": "=true, if HeatPort is enabled", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "switch.useHeatPort"
+    }, 
+    "switch.LossPower": {
+      "variability": "continuous", 
+      "valueReference": "1027", 
+      "description": "Loss power leaving component via HeatPort", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "switch.LossPower"
+    }, 
+    "transformer.p2.v": {
+      "variability": "continuous", 
+      "valueReference": "1078", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "transformer.p2.v"
+    }, 
+    "ground1.p.v": {
+      "variability": "continuous", 
+      "valueReference": "1034", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "ground1.p.v"
+    }, 
+    "switch.T": {
+      "variability": "parameter", 
+      "valueReference": "1045", 
+      "description": "Fixed device temperature if useHeatPort = false", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "switch.T"
+    }, 
+    "D3.v": {
+      "variability": "continuous", 
+      "valueReference": "1010", 
+      "description": "Voltage drop between the two pins (= p.v - n.v)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D3.v"
+    }, 
+    "D4.LossPower": {
+      "variability": "continuous", 
+      "valueReference": "1004", 
+      "description": "Loss power leaving component via HeatPort", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "D4.LossPower"
+    }, 
+    "load.LossPower": {
+      "variability": "continuous", 
+      "valueReference": "1015", 
+      "description": "Loss power leaving component via HeatPort", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "load.LossPower"
+    }, 
+    "D4.off": {
+      "variability": "discrete", 
+      "valueReference": "1121", 
+      "description": "Switching state", 
+      "start": "true", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "D4.off"
+    }, 
+    "D3.i": {
+      "variability": "continuous", 
+      "valueReference": "1009", 
+      "description": "Current flowing from pin p to pin n", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D3.i"
+    }, 
+    "wall_voltage.signalSource.amplitude": {
+      "variability": "parameter", 
+      "valueReference": "1040", 
+      "description": "Amplitude of sine wave", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "wall_voltage.signalSource.amplitude"
+    }, 
+    "ground1.p.i": {
+      "variability": "continuous", 
+      "valueReference": "1002", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "ground1.p.i"
+    }, 
+    "transformer.Lm1": {
+      "variability": "parameter", 
+      "valueReference": "1049", 
+      "description": "Magnetization inductance w.r.t. primary side", 
+      "start": "1.0", 
+      "alias": "noAlias", 
+      "units": "H", 
+      "causality": "internal", 
+      "name": "transformer.Lm1"
+    }, 
+    "load.p.i": {
+      "variability": "continuous", 
+      "valueReference": "1102", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "load.p.i"
+    }, 
+    "switch.v": {
+      "variability": "continuous", 
+      "valueReference": "1028", 
+      "description": "Voltage drop between the two pins (= p.v - n.v)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "switch.v"
+    }, 
+    "D3.T": {
+      "variability": "parameter", 
+      "valueReference": "1064", 
+      "description": "Fixed device temperature if useHeatPort = false", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "D3.T"
+    }, 
+    "switch.s": {
+      "variability": "continuous", 
+      "valueReference": "1026", 
+      "description": "Auxiliary variable", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "1", 
+      "causality": "internal", 
+      "name": "switch.s"
+    }, 
+    "D4.Vknee": {
+      "variability": "parameter", 
+      "valueReference": "1071", 
+      "description": "Forward threshold voltage", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D4.Vknee"
+    }, 
+    "D1.Goff": {
+      "variability": "parameter", 
+      "valueReference": "1052", 
+      "description": "Backward state-off conductance (opened diode conductance)", 
+      "start": "1e-05", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "S", 
+      "causality": "internal", 
+      "name": "D1.Goff"
+    }, 
+    "load.T_ref": {
+      "variability": "parameter", 
+      "valueReference": "1056", 
+      "description": "Reference temperature", 
+      "start": "300.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "load.T_ref"
+    }, 
+    "switch.i": {
+      "variability": "continuous", 
+      "valueReference": "1089", 
+      "description": "Current flowing from pin p to pin n", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "switch.i"
+    }, 
+    "D2.LossPower": {
+      "variability": "continuous", 
+      "valueReference": "1012", 
+      "description": "Loss power leaving component via HeatPort", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "W", 
+      "causality": "internal", 
+      "name": "D2.LossPower"
+    }, 
+    "load.p.v": {
+      "variability": "continuous", 
+      "valueReference": "1072", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "load.p.v"
+    }, 
+    "transformer.psim1": {
+      "variability": "continuous", 
+      "valueReference": "1031", 
+      "description": "Magnetic flux w.r.t. primary side", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "Wb", 
+      "causality": "internal", 
+      "name": "transformer.psim1"
+    }, 
+    "step.startTime": {
+      "variability": "parameter", 
+      "valueReference": "1059", 
+      "description": "Time instant of step start", 
+      "start": "0.25", 
+      "alias": "noAlias", 
+      "units": "s", 
+      "causality": "internal", 
+      "name": "step.startTime"
+    }, 
+    "wall_voltage.n.i": {
+      "variability": "continuous", 
+      "valueReference": "1094", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "wall_voltage.n.i"
+    }, 
+    "D4.Goff": {
+      "variability": "parameter", 
+      "valueReference": "1070", 
+      "description": "Backward state-off conductance (opened diode conductance)", 
+      "start": "1e-05", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "S", 
+      "causality": "internal", 
+      "name": "D4.Goff"
+    }, 
+    "D1.i": {
+      "variability": "continuous", 
+      "valueReference": "1021", 
+      "description": "Current flowing from pin p to pin n", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D1.i"
+    }, 
+    "transformer.im1": {
+      "variability": "continuous", 
+      "valueReference": "1033", 
+      "description": "Magnetization current w.r.t. primary side", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "transformer.im1"
+    }, 
+    "transformer.n2.i": {
+      "variability": "continuous", 
+      "valueReference": "1109", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "transformer.n2.i"
+    }, 
+    "wall_voltage.signalSource.phase": {
+      "variability": "parameter", 
+      "valueReference": "1042", 
+      "description": "Phase of sine wave", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "wall_voltage.signalSource.phase"
+    }, 
+    "switch.Goff": {
+      "variability": "parameter", 
+      "valueReference": "1047", 
+      "description": "Opened switch conductance", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "S", 
+      "causality": "internal", 
+      "name": "switch.Goff"
+    }, 
+    "transformer.i1": {
+      "variability": "continuous", 
+      "valueReference": "1092", 
+      "description": "Current flowing from pos. to neg. pin of the left port", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "transformer.i1"
+    }, 
+    "transformer.i2": {
+      "variability": "continuous", 
+      "valueReference": "1023", 
+      "description": "Current flowing from pos. to neg. pin of the right port", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "transformer.i2"
+    }, 
+    "D1.Ron": {
+      "variability": "parameter", 
+      "valueReference": "1051", 
+      "description": "Forward state-on differential resistance (closed diode resistance)", 
+      "start": "1e-05", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "Ohm", 
+      "causality": "internal", 
+      "name": "D1.Ron"
+    }, 
+    "D4.T_heatPort": {
+      "variability": "continuous", 
+      "valueReference": "1116", 
+      "description": "Temperature of HeatPort", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "D4.T_heatPort"
+    }, 
+    "D1.n.i": {
+      "variability": "continuous", 
+      "valueReference": "1107", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D1.n.i"
+    }, 
+    "switch.Ron": {
+      "variability": "parameter", 
+      "valueReference": "1046", 
+      "description": "Closed switch resistance", 
+      "start": "1e-05", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "Ohm", 
+      "causality": "internal", 
+      "name": "switch.Ron"
+    }, 
+    "D1.p.v": {
+      "variability": "continuous", 
+      "valueReference": "1114", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D1.p.v"
+    }, 
+    "D4.n.i": {
+      "variability": "continuous", 
+      "valueReference": "1096", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D4.n.i"
+    }, 
+    "D1.p.i": {
+      "variability": "continuous", 
+      "valueReference": "1106", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D1.p.i"
+    }, 
+    "capacitor.n.i": {
+      "variability": "continuous", 
+      "valueReference": "1105", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "capacitor.n.i"
+    }, 
+    "capacitor.n.v": {
+      "variability": "continuous", 
+      "valueReference": "1076", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "capacitor.n.v"
+    }, 
+    "D3.T_heatPort": {
+      "variability": "continuous", 
+      "valueReference": "1117", 
+      "description": "Temperature of HeatPort", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "D3.T_heatPort"
+    }, 
+    "D4.n.v": {
+      "variability": "continuous", 
+      "valueReference": "1074", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D4.n.v"
+    }, 
+    "transformer.n1.i": {
+      "variability": "continuous", 
+      "valueReference": "1093", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "transformer.n1.i"
+    }, 
+    "D1.T_heatPort": {
+      "variability": "continuous", 
+      "valueReference": "1119", 
+      "description": "Temperature of HeatPort", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "D1.T_heatPort"
+    }, 
+    "capacitor.i": {
+      "variability": "continuous", 
+      "valueReference": "1018", 
+      "description": "Current flowing from pin p to pin n", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "capacitor.i"
+    }, 
+    "wall_voltage.V": {
+      "variability": "parameter", 
+      "valueReference": "1037", 
+      "description": "Amplitude of sine wave", 
+      "start": "120.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "wall_voltage.V"
+    }, 
+    "capacitor.v": {
+      "variability": "continuous", 
+      "valueReference": "1000", 
+      "description": "Voltage drop between the two pins (= p.v - n.v)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "capacitor.v"
+    }, 
+    "D2.T_heatPort": {
+      "variability": "continuous", 
+      "valueReference": "1118", 
+      "description": "Temperature of HeatPort", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "D2.T_heatPort"
+    }, 
+    "D1.T": {
+      "variability": "parameter", 
+      "valueReference": "1050", 
+      "description": "Fixed device temperature if useHeatPort = false", 
+      "start": "293.15", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "D1.T"
+    }, 
+    "wall_voltage.p.i": {
+      "variability": "continuous", 
+      "valueReference": "1087", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "wall_voltage.p.i"
+    }, 
+    "transformer.n1.v": {
+      "variability": "continuous", 
+      "valueReference": "1083", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "transformer.n1.v"
+    }, 
+    "step.y": {
+      "variability": "discrete", 
+      "valueReference": "1124", 
+      "description": "Connector of Boolean output signal", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "step.y"
+    }, 
+    "transformer.v1": {
+      "variability": "continuous", 
+      "valueReference": "1025", 
+      "description": "Voltage drop over the left port", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "transformer.v1"
+    }, 
+    "D4.Ron": {
+      "variability": "parameter", 
+      "valueReference": "1069", 
+      "description": "Forward state-on differential resistance (closed diode resistance)", 
+      "start": "1e-05", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "Ohm", 
+      "causality": "internal", 
+      "name": "D4.Ron"
+    }, 
+    "capacitor.C": {
+      "variability": "parameter", 
+      "valueReference": "1054", 
+      "description": "Capacitance", 
+      "start": "0.01", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "F", 
+      "causality": "internal", 
+      "name": "capacitor.C"
+    }, 
+    "transformer.v2": {
+      "variability": "continuous", 
+      "valueReference": "1024", 
+      "description": "Voltage drop over the right port", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "transformer.v2"
+    }, 
+    "switch.p.v": {
+      "variability": "continuous", 
+      "valueReference": "1111", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "switch.p.v"
+    }, 
+    "switch.T_heatPort": {
+      "variability": "continuous", 
+      "valueReference": "1120", 
+      "description": "Temperature of HeatPort", 
+      "start": "288.15", 
+      "min": "0.0", 
+      "alias": "alias", 
+      "units": "K", 
+      "causality": "internal", 
+      "name": "switch.T_heatPort"
+    }, 
+    "D1.Vknee": {
+      "variability": "parameter", 
+      "valueReference": "1053", 
+      "description": "Forward threshold voltage", 
+      "start": "0.0", 
+      "min": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D1.Vknee"
+    }, 
+    "wall_voltage.v": {
+      "variability": "continuous", 
+      "valueReference": "1030", 
+      "description": "Voltage drop between the two pins (= p.v - n.v)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "wall_voltage.v"
+    }, 
+    "D3.p.v": {
+      "variability": "continuous", 
+      "valueReference": "1077", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D3.p.v"
+    }, 
+    "D3.p.i": {
+      "variability": "continuous", 
+      "valueReference": "1097", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "D3.p.i"
+    }, 
+    "wall_voltage.i": {
+      "variability": "continuous", 
+      "valueReference": "1029", 
+      "description": "Current flowing from pin p to pin n", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "wall_voltage.i"
+    }, 
+    "switch.p.i": {
+      "variability": "continuous", 
+      "valueReference": "1088", 
+      "description": "Current flowing into the pin", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "A", 
+      "causality": "internal", 
+      "name": "switch.p.i"
+    }, 
+    "D1.v": {
+      "variability": "continuous", 
+      "valueReference": "1022", 
+      "description": "Voltage drop between the two pins (= p.v - n.v)", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "D1.v"
+    }, 
+    "wall_voltage.n.v": {
+      "variability": "continuous", 
+      "valueReference": "1081", 
+      "description": "Potential at the pin", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "V", 
+      "causality": "internal", 
+      "name": "wall_voltage.n.v"
+    }, 
+    "D1.s": {
+      "variability": "continuous", 
+      "valueReference": "1019", 
+      "description": "Auxiliary variable for actual position on the ideal diode characteristic", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "1", 
+      "causality": "internal", 
+      "name": "D1.s"
+    }
+  }, 
+  "desc": {
+    "variableNamingConvention": "structured", 
+    "cmt_numberOfRealAlgebraicVariables": "NY:       number of real variables,                           OMC", 
+    "cmt_numberOfFunctions": "NFUNC:    number of functions used by the simulation,         OMC", 
+    "cmt_numberOfBooleanParameters": "NPBOOL:   number of bool parameters,                          OMC", 
+    "fmiVersion": "1.0", 
+    "generationDateAndTime": "2014-02-24T10:41:41Z", 
+    "cmt_numberOfOutputVariables": "NO:       number of outputvar on topmodel,                    OMC", 
+    "numberOfIntegerAlgebraicVariables": "0", 
+    "numberOfOutputVariables": "0", 
+    "guid": "{8c4e810f-3df3-4a00-8276-176fa3c9f9e0}", 
+    "cmt_numberOfRealParameters": "NP:       number of parameters,                               OMC", 
+    "modelName": "ModelicaByExample.Subsystems.PowerSupply.Examples.FlatCircuit", 
+    "cmt_numberOfContinuousStates": "NX:       number of states,                                   FMI", 
+    "OPENMODELICAHOME": "/home/mtiller/Xogeny/Source/Mod2JS/OpenModelica/build", 
+    "numberOfRealParameters": "37", 
+    "numberOfStringAliasVariables": "0", 
+    "cmt_numberOfEventIndicators": "NG:       number of zero crossings,                           FMI", 
+    "cmt_numberOfIntegerParameters": "NPINT:    number of int parameters,                           OMC", 
+    "numberOfStringParameters": "0", 
+    "cmt_numberOfIntegerAlgebraicVariables": "NYINT:    number of alg. int variables,                       OMC", 
+    "cmt_numberOfExternalObjects": "NEXT:     number of external objects,                         OMC", 
+    "numberOfIntegerAliasVariables": "0", 
+    "numberOfStringAlgebraicVariables": "0", 
+    "numberOfRealAlgebraicVariables": "33", 
+    "cmt_numberOfBooleanAliasVariables": "NABOOL:   number of alias bool variables,                     OMC", 
+    "cmt_numberOfResidualsForInitialization": "NR:       number of residuals for initialialization function, OMC", 
+    "numberOfBooleanAliasVariables": "1", 
+    "cmt_numberOfStringAlgebraicVariables": "NYSTR:    number of alg. string variables,                    OMC", 
+    "generationTool": "OpenModelica Compiler 1.9.1+dev (r19238) (Bootstrapping version)", 
+    "numberOfResidualsForInitialization": "0", 
+    "cmt_numberOfTimeEvents": "NG_SAM:   number of zero crossings that are samples,          OMC", 
+    "numberOfExternalObjects": "0", 
+    "numberOfFunctions": "0", 
+    "numberOfEventIndicators": "6", 
+    "cmt_numberOfInputVariables": "NI:       number of inputvar on topmodel,                     OMC", 
+    "cmt_numberOfBooleanAlgebraicVariables": "NYBOOL:   number of alg. bool variables,                      OMC", 
+    "numberOfBooleanAlgebraicVariables": "5", 
+    "cmt_numberOfStringAliasVariables": "NASTR:    number of alias string variables,                   OMC", 
+    "cmt_numberOfStringParameters": "NPSTR:    number of string parameters,                        OMC", 
+    "numberOfInputVariables": "0", 
+    "numberOfTimeEvents": "0", 
+    "cmt_numberOfIntegerAliasVariables": "NAINT:    number of alias int variables,                      OMC", 
+    "numberOfIntegerParameters": "0", 
+    "numberOfContinuousStates": "1", 
+    "cmt_numberOfRealAlgebraicAliasVariables": "NA:       number of alias variables,                          OMC", 
+    "numberOfRealAlgebraicAliasVariables": "49", 
+    "modelIdentifier": "ModelicaByExample_Subsystems_PowerSupply_Examples_FlatCircuit", 
+    "numberOfBooleanParameters": "8"
+  }
+}

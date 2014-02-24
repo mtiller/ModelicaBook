@@ -1,0 +1,897 @@
+{
+  "experiment": {
+    "stopTime": "5.0", 
+    "tolerance": "1e-06", 
+    "startTime": "0.0"
+  }, 
+  "tree": {
+    "idealSensor": {
+      "flange": {
+        "der(phi)": "der(idealSensor.flange.phi)", 
+        "phi": "idealSensor.flange.phi", 
+        "tau": "idealSensor.flange.tau"
+      }, 
+      "w": "idealSensor.w"
+    }, 
+    "damper2": {
+      "flange_b": {
+        "tau": "damper2.flange_b.tau", 
+        "phi": "damper2.flange_b.phi"
+      }, 
+      "tau": "damper2.tau", 
+      "flange_a": {
+        "tau": "damper2.flange_a.tau", 
+        "phi": "damper2.flange_a.phi"
+      }, 
+      "d": "damper2.d", 
+      "phi_rel": "damper2.phi_rel"
+    }, 
+    "damper1": {
+      "tau": "damper1.tau", 
+      "d": "damper1.d", 
+      "der(phi_rel)": "der(damper1.phi_rel)", 
+      "phi_rel": "damper1.phi_rel", 
+      "flange_b": {
+        "tau": "damper1.flange_b.tau", 
+        "phi": "damper1.flange_b.phi"
+      }, 
+      "flange_a": {
+        "tau": "damper1.flange_a.tau", 
+        "phi": "damper1.flange_a.phi"
+      }
+    }, 
+    "$whenCondition1": "$whenCondition1", 
+    "inertia2": {
+      "phi": "inertia2.phi", 
+      "der(w)": "der(inertia2.w)", 
+      "J": "inertia2.J", 
+      "phi_rel": "inertia2.phi_rel", 
+      "flange_b": {
+        "tau": "inertia2.flange_b.tau", 
+        "phi": "inertia2.flange_b.phi"
+      }, 
+      "flange_a": {
+        "der(phi)": "der(inertia2.flange_a.phi)", 
+        "phi": "inertia2.flange_a.phi", 
+        "tau": "inertia2.flange_a.tau"
+      }, 
+      "w": "inertia2.w"
+    }, 
+    "intervalMeasure": {
+      "next_phi": "intervalMeasure.next_phi", 
+      "flange": {
+        "tau": "intervalMeasure.flange.tau", 
+        "phi": "intervalMeasure.flange.phi", 
+        "der(phi)": "der(intervalMeasure.flange.phi)"
+      }, 
+      "last_time": "intervalMeasure.last_time", 
+      "w": "intervalMeasure.w", 
+      "teeth": "intervalMeasure.teeth", 
+      "tooth_angle": "intervalMeasure.tooth_angle", 
+      "prev_phi": "intervalMeasure.prev_phi"
+    }, 
+    "inertia1": {
+      "phi": "inertia1.phi", 
+      "der(w)": "der(inertia1.w)", 
+      "J": "inertia1.J", 
+      "phi_rel": "inertia1.phi_rel", 
+      "flange_b": {
+        "tau": "inertia1.flange_b.tau", 
+        "phi": "inertia1.flange_b.phi"
+      }, 
+      "flange_a": {
+        "tau": "inertia1.flange_a.tau", 
+        "phi": "inertia1.flange_a.phi"
+      }, 
+      "w": "inertia1.w"
+    }, 
+    "spring2": {
+      "flange_b": {
+        "tau": "spring2.flange_b.tau", 
+        "phi": "spring2.flange_b.phi"
+      }, 
+      "tau": "spring2.tau", 
+      "c": "spring2.c", 
+      "flange_a": {
+        "tau": "spring2.flange_a.tau", 
+        "phi": "spring2.flange_a.phi"
+      }, 
+      "phi_rel": "spring2.phi_rel"
+    }, 
+    "$whenCondition2": "$whenCondition2", 
+    "spring1": {
+      "flange_b": {
+        "tau": "spring1.flange_b.tau", 
+        "phi": "spring1.flange_b.phi"
+      }, 
+      "tau": "spring1.tau", 
+      "c": "spring1.c", 
+      "flange_a": {
+        "tau": "spring1.flange_a.tau", 
+        "phi": "spring1.flange_a.phi"
+      }, 
+      "phi_rel": "spring1.phi_rel"
+    }, 
+    "ground": {
+      "flange_a": {
+        "tau": "ground.flange_a.tau", 
+        "phi": "ground.flange_a.phi"
+      }
+    }
+  }, 
+  "categories": {
+    "discrete": [
+      "intervalMeasure.last_time", 
+      "intervalMeasure.prev_phi", 
+      "intervalMeasure.next_phi", 
+      "intervalMeasure.w", 
+      "$whenCondition1", 
+      "$whenCondition2"
+    ], 
+    "continuous": [
+      "idealSensor.flange.phi", 
+      "inertia1.w", 
+      "inertia2.w", 
+      "inertia2.flange_a.phi", 
+      "der(idealSensor.flange.phi)", 
+      "der(inertia1.w)", 
+      "der(inertia2.w)", 
+      "der(inertia2.flange_a.phi)", 
+      "intervalMeasure.flange.phi", 
+      "inertia1.flange_b.tau", 
+      "spring1.phi_rel", 
+      "spring1.flange_a.tau", 
+      "damper1.phi_rel", 
+      "damper1.flange_a.tau", 
+      "inertia2.flange_b.tau", 
+      "inertia2.flange_a.tau", 
+      "spring2.flange_a.tau", 
+      "damper2.flange_a.tau", 
+      "ground.flange_a.tau", 
+      "der(damper1.phi_rel)", 
+      "inertia2.phi_rel", 
+      "inertia1.phi_rel", 
+      "intervalMeasure.flange.tau", 
+      "idealSensor.flange.tau", 
+      "ground.flange_a.phi", 
+      "damper1.flange_b.phi", 
+      "spring1.flange_b.phi", 
+      "inertia2.phi", 
+      "spring2.flange_a.phi", 
+      "inertia2.flange_b.phi", 
+      "damper2.flange_b.phi", 
+      "spring2.flange_b.phi", 
+      "inertia1.flange_a.phi", 
+      "inertia1.phi", 
+      "damper1.flange_a.phi", 
+      "spring1.flange_a.phi", 
+      "inertia1.flange_b.phi", 
+      "inertia1.flange_a.tau", 
+      "spring1.flange_b.tau", 
+      "spring1.tau", 
+      "damper1.flange_b.tau", 
+      "damper1.tau", 
+      "spring2.flange_b.tau", 
+      "spring2.tau", 
+      "damper2.flange_b.tau", 
+      "damper2.tau", 
+      "damper2.flange_a.phi", 
+      "damper2.phi_rel", 
+      "spring2.phi_rel", 
+      "idealSensor.w", 
+      "der(intervalMeasure.flange.phi)"
+    ], 
+    "parameter": [
+      "damper2.d", 
+      "spring2.c", 
+      "inertia2.J", 
+      "damper1.d", 
+      "spring1.c", 
+      "inertia1.J", 
+      "intervalMeasure.tooth_angle", 
+      "intervalMeasure.teeth"
+    ]
+  }, 
+  "vars": {
+    "inertia2.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1040", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "inertia2.flange_b.phi"
+    }, 
+    "intervalMeasure.next_phi": {
+      "variability": "discrete", 
+      "valueReference": "1010", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "intervalMeasure.next_phi"
+    }, 
+    "damper2.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1055", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "damper2.flange_b.tau"
+    }, 
+    "intervalMeasure.w": {
+      "variability": "discrete", 
+      "valueReference": "1011", 
+      "description": "Sensed speed", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "intervalMeasure.w"
+    }, 
+    "intervalMeasure.last_time": {
+      "variability": "discrete", 
+      "valueReference": "1008", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "intervalMeasure.last_time"
+    }, 
+    "damper1.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1017", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "damper1.flange_a.tau"
+    }, 
+    "inertia2.J": {
+      "variability": "parameter", 
+      "valueReference": "1031", 
+      "description": "", 
+      "start": "1.0", 
+      "alias": "noAlias", 
+      "units": "kg.m2", 
+      "causality": "internal", 
+      "name": "inertia2.J"
+    }, 
+    "idealSensor.flange.tau": {
+      "variability": "continuous", 
+      "valueReference": "1027", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "idealSensor.flange.tau"
+    }, 
+    "inertia2.phi": {
+      "variability": "continuous", 
+      "valueReference": "1038", 
+      "description": "Angle", 
+      "start": "1.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "inertia2.phi"
+    }, 
+    "spring2.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1020", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "spring2.flange_a.tau"
+    }, 
+    "damper2.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1057", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "damper2.flange_a.phi"
+    }, 
+    "spring1.c": {
+      "variability": "parameter", 
+      "valueReference": "1033", 
+      "description": "", 
+      "start": "11.0", 
+      "alias": "noAlias", 
+      "units": "N.m/rad", 
+      "causality": "internal", 
+      "name": "spring1.c"
+    }, 
+    "spring2.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1053", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "spring2.flange_b.tau"
+    }, 
+    "inertia2.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1019", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "inertia2.flange_a.tau"
+    }, 
+    "damper1.tau": {
+      "variability": "continuous", 
+      "valueReference": "1052", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "damper1.tau"
+    }, 
+    "der(intervalMeasure.flange.phi)": {
+      "variability": "continuous", 
+      "valueReference": "1061", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der(intervalMeasure.flange.phi)"
+    }, 
+    "idealSensor.w": {
+      "variability": "continuous", 
+      "valueReference": "1060", 
+      "description": "Sensed speed", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "idealSensor.w"
+    }, 
+    "spring1.phi_rel": {
+      "variability": "continuous", 
+      "valueReference": "1014", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "spring1.phi_rel"
+    }, 
+    "$whenCondition1": {
+      "variability": "discrete", 
+      "valueReference": "1063", 
+      "description": "", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "$whenCondition1"
+    }, 
+    "intervalMeasure.flange.tau": {
+      "variability": "continuous", 
+      "valueReference": "1026", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "intervalMeasure.flange.tau"
+    }, 
+    "spring1.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1049", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "spring1.flange_b.tau"
+    }, 
+    "der(damper1.phi_rel)": {
+      "variability": "continuous", 
+      "valueReference": "1023", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der(damper1.phi_rel)"
+    }, 
+    "inertia1.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1043", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "inertia1.flange_a.phi"
+    }, 
+    "inertia2.w": {
+      "variability": "continuous", 
+      "valueReference": "1002", 
+      "description": "Angular Velocity", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "inertia2.w"
+    }, 
+    "spring1.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1046", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "spring1.flange_a.phi"
+    }, 
+    "ground.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1028", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "ground.flange_a.phi"
+    }, 
+    "$whenCondition2": {
+      "variability": "discrete", 
+      "valueReference": "1064", 
+      "description": "", 
+      "start": "false", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "$whenCondition2"
+    }, 
+    "inertia1.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1013", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "inertia1.flange_b.tau"
+    }, 
+    "damper2.phi_rel": {
+      "variability": "continuous", 
+      "valueReference": "1058", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "damper2.phi_rel"
+    }, 
+    "damper2.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1041", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "damper2.flange_b.phi"
+    }, 
+    "der(inertia2.flange_a.phi)": {
+      "variability": "continuous", 
+      "valueReference": "1007", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "der(inertia2.flange_a.phi)"
+    }, 
+    "inertia1.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1048", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "inertia1.flange_a.tau"
+    }, 
+    "idealSensor.flange.phi": {
+      "variability": "continuous", 
+      "valueReference": "1000", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "idealSensor.flange.phi"
+    }, 
+    "inertia1.w": {
+      "variability": "continuous", 
+      "valueReference": "1001", 
+      "description": "Angular Velocity", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "inertia1.w"
+    }, 
+    "spring2.tau": {
+      "variability": "continuous", 
+      "valueReference": "1054", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "spring2.tau"
+    }, 
+    "damper1.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1051", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "damper1.flange_b.tau"
+    }, 
+    "spring2.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1042", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "spring2.flange_b.phi"
+    }, 
+    "damper1.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1045", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "damper1.flange_a.phi"
+    }, 
+    "spring2.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1039", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "spring2.flange_a.phi"
+    }, 
+    "damper1.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1036", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "damper1.flange_b.phi"
+    }, 
+    "inertia2.flange_b.tau": {
+      "variability": "continuous", 
+      "valueReference": "1018", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "inertia2.flange_b.tau"
+    }, 
+    "intervalMeasure.tooth_angle": {
+      "variability": "parameter", 
+      "valueReference": "1035", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "intervalMeasure.tooth_angle"
+    }, 
+    "inertia2.phi_rel": {
+      "variability": "continuous", 
+      "valueReference": "1024", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "inertia2.phi_rel"
+    }, 
+    "damper2.d": {
+      "variability": "parameter", 
+      "valueReference": "1029", 
+      "description": "", 
+      "start": "1.0", 
+      "alias": "noAlias", 
+      "units": "N.m.s/rad", 
+      "causality": "internal", 
+      "name": "damper2.d"
+    }, 
+    "spring2.phi_rel": {
+      "variability": "continuous", 
+      "valueReference": "1059", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "spring2.phi_rel"
+    }, 
+    "intervalMeasure.prev_phi": {
+      "variability": "discrete", 
+      "valueReference": "1009", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "intervalMeasure.prev_phi"
+    }, 
+    "intervalMeasure.teeth": {
+      "variability": "parameter", 
+      "valueReference": "1062", 
+      "description": "", 
+      "start": "200", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "intervalMeasure.teeth"
+    }, 
+    "spring1.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1037", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "spring1.flange_b.phi"
+    }, 
+    "damper2.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1021", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "damper2.flange_a.tau"
+    }, 
+    "ground.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1022", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "ground.flange_a.tau"
+    }, 
+    "damper2.tau": {
+      "variability": "continuous", 
+      "valueReference": "1056", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "damper2.tau"
+    }, 
+    "inertia1.J": {
+      "variability": "parameter", 
+      "valueReference": "1034", 
+      "description": "", 
+      "start": "0.4", 
+      "alias": "noAlias", 
+      "units": "kg.m2", 
+      "causality": "internal", 
+      "name": "inertia1.J"
+    }, 
+    "inertia1.flange_b.phi": {
+      "variability": "continuous", 
+      "valueReference": "1047", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "inertia1.flange_b.phi"
+    }, 
+    "spring1.tau": {
+      "variability": "continuous", 
+      "valueReference": "1050", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "spring1.tau"
+    }, 
+    "spring2.c": {
+      "variability": "parameter", 
+      "valueReference": "1030", 
+      "description": "", 
+      "start": "5.0", 
+      "alias": "noAlias", 
+      "units": "N.m/rad", 
+      "causality": "internal", 
+      "name": "spring2.c"
+    }, 
+    "der(idealSensor.flange.phi)": {
+      "variability": "continuous", 
+      "valueReference": "1004", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "der(idealSensor.flange.phi)"
+    }, 
+    "der(inertia1.w)": {
+      "variability": "continuous", 
+      "valueReference": "1005", 
+      "description": "Angular Velocity", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "der(inertia1.w)"
+    }, 
+    "inertia1.phi_rel": {
+      "variability": "continuous", 
+      "valueReference": "1025", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "inertia1.phi_rel"
+    }, 
+    "damper1.d": {
+      "variability": "parameter", 
+      "valueReference": "1032", 
+      "description": "", 
+      "start": "0.2", 
+      "alias": "noAlias", 
+      "units": "N.m.s/rad", 
+      "causality": "internal", 
+      "name": "damper1.d"
+    }, 
+    "damper1.phi_rel": {
+      "variability": "continuous", 
+      "valueReference": "1016", 
+      "description": "", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "damper1.phi_rel"
+    }, 
+    "der(inertia2.w)": {
+      "variability": "continuous", 
+      "valueReference": "1006", 
+      "description": "Angular Velocity", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad/s", 
+      "causality": "internal", 
+      "name": "der(inertia2.w)"
+    }, 
+    "inertia2.flange_a.phi": {
+      "variability": "continuous", 
+      "valueReference": "1003", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "1.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "inertia2.flange_a.phi"
+    }, 
+    "inertia1.phi": {
+      "variability": "continuous", 
+      "valueReference": "1044", 
+      "description": "Angle", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "inertia1.phi"
+    }, 
+    "spring1.flange_a.tau": {
+      "variability": "continuous", 
+      "valueReference": "1015", 
+      "description": "Cut torque in the flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "N.m", 
+      "causality": "internal", 
+      "name": "spring1.flange_a.tau"
+    }, 
+    "intervalMeasure.flange.phi": {
+      "variability": "continuous", 
+      "valueReference": "1012", 
+      "description": "Absolute rotation angle of flange", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "rad", 
+      "causality": "internal", 
+      "name": "intervalMeasure.flange.phi"
+    }
+  }, 
+  "desc": {
+    "variableNamingConvention": "structured", 
+    "cmt_numberOfRealAlgebraicVariables": "NY:       number of real variables,                           OMC", 
+    "cmt_numberOfFunctions": "NFUNC:    number of functions used by the simulation,         OMC", 
+    "cmt_numberOfBooleanParameters": "NPBOOL:   number of bool parameters,                          OMC", 
+    "fmiVersion": "1.0", 
+    "generationDateAndTime": "2014-02-24T10:42:23Z", 
+    "cmt_numberOfOutputVariables": "NO:       number of outputvar on topmodel,                    OMC", 
+    "numberOfIntegerAlgebraicVariables": "0", 
+    "numberOfOutputVariables": "0", 
+    "guid": "{8c4e810f-3df3-4a00-8276-176fa3c9f9e0}", 
+    "cmt_numberOfRealParameters": "NP:       number of parameters,                               OMC", 
+    "modelName": "ModelicaByExample.Components.SpeedMeasurement.Examples.PlantWithIntervalMeasure", 
+    "cmt_numberOfContinuousStates": "NX:       number of states,                                   FMI", 
+    "OPENMODELICAHOME": "/home/mtiller/Xogeny/Source/Mod2JS/OpenModelica/build", 
+    "numberOfRealParameters": "7", 
+    "numberOfStringAliasVariables": "0", 
+    "cmt_numberOfEventIndicators": "NG:       number of zero crossings,                           FMI", 
+    "cmt_numberOfIntegerParameters": "NPINT:    number of int parameters,                           OMC", 
+    "numberOfStringParameters": "0", 
+    "cmt_numberOfIntegerAlgebraicVariables": "NYINT:    number of alg. int variables,                       OMC", 
+    "cmt_numberOfExternalObjects": "NEXT:     number of external objects,                         OMC", 
+    "numberOfIntegerAliasVariables": "0", 
+    "numberOfStringAlgebraicVariables": "0", 
+    "numberOfRealAlgebraicVariables": "21", 
+    "cmt_numberOfBooleanAliasVariables": "NABOOL:   number of alias bool variables,                     OMC", 
+    "cmt_numberOfResidualsForInitialization": "NR:       number of residuals for initialialization function, OMC", 
+    "numberOfBooleanAliasVariables": "0", 
+    "cmt_numberOfStringAlgebraicVariables": "NYSTR:    number of alg. string variables,                    OMC", 
+    "generationTool": "OpenModelica Compiler 1.9.1+dev (r19238) (Bootstrapping version)", 
+    "numberOfResidualsForInitialization": "3", 
+    "cmt_numberOfTimeEvents": "NG_SAM:   number of zero crossings that are samples,          OMC", 
+    "numberOfExternalObjects": "0", 
+    "numberOfFunctions": "0", 
+    "numberOfEventIndicators": "2", 
+    "cmt_numberOfInputVariables": "NI:       number of inputvar on topmodel,                     OMC", 
+    "cmt_numberOfBooleanAlgebraicVariables": "NYBOOL:   number of alg. bool variables,                      OMC", 
+    "numberOfBooleanAlgebraicVariables": "2", 
+    "cmt_numberOfStringAliasVariables": "NASTR:    number of alias string variables,                   OMC", 
+    "cmt_numberOfStringParameters": "NPSTR:    number of string parameters,                        OMC", 
+    "numberOfInputVariables": "0", 
+    "numberOfTimeEvents": "0", 
+    "cmt_numberOfIntegerAliasVariables": "NAINT:    number of alias int variables,                      OMC", 
+    "numberOfIntegerParameters": "1", 
+    "numberOfContinuousStates": "4", 
+    "cmt_numberOfRealAlgebraicAliasVariables": "NA:       number of alias variables,                          OMC", 
+    "numberOfRealAlgebraicAliasVariables": "26", 
+    "modelIdentifier": "ModelicaByExample_Components_SpeedMeasurement_Examples_PlantWithIntervalMeasure", 
+    "numberOfBooleanParameters": "0"
+  }
+}

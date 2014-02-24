@@ -196,6 +196,10 @@ a.headerlink {
   float: left;
 }
 
+.left-justified {
+  text-align: left;
+}
+
 .centered {
   text-align: center;
 }

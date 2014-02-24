@@ -1,0 +1,43 @@
+{% macro itemplate() %}
+{% raw -%}
+<script id="itemplate" type="text/x-handlebars-template">
+  <div class="ui segment tight left-justified">
+    <div id="plot-wrapper-{{id}}">
+      {{{image}}}
+    </div>
+    <div id="dyn-plot-{{id}}">
+    </div>
+    <div class="ui fluid accordion">
+      <div class="title">
+	<i class="dropdown icon"></i>
+	Run Interactively
+      </div>
+      <div class="content left-justified">
+	<div class="ui form segment">
+	  <div class="header">{{model.desc.modelName}}</div>
+	  <div class="field">
+	    <label>Parameter Name</label>
+	    <input placeholder="Initial value" value="Value" type="text">
+	  </div>
+	  {{#each model.categories.parameter}}
+	  <div class="field">
+	    <label>{{this}}</label>
+	    <input placeholder="Initial value"
+		   value="{{varinfo ../model this 'start'}}"
+		   type="text">
+	  </div>
+	  {{/each}}
+	</div>
+	<div class="ui mini button" id="sim-button-{{id}}">
+	  Simulate
+	</div>
+	<p>
+	  A form should go here.  With a button that hides
+	  #plot-wrapper-{{id}} and puts results in #dyn-plot-{{id}}
+	</p>
+      </div>
+    </div>
+  </div>
+</script>
+{%- endraw %}
+{% endmacro %}

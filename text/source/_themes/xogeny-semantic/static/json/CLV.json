@@ -1,0 +1,473 @@
+{
+  "experiment": {
+    "stopTime": "140.0", 
+    "tolerance": "0.001", 
+    "startTime": "0.0"
+  }, 
+  "tree": {
+    "fox_starvation": {
+      "decline": "fox_starvation.decline", 
+      "growth": "fox_starvation.growth", 
+      "species": {
+        "rate": "fox_starvation.species.rate", 
+        "population": "fox_starvation.species.population"
+      }, 
+      "gamma": "fox_starvation.gamma"
+    }, 
+    "fox_predation": {
+      "a": {
+        "rate": "fox_predation.a.rate", 
+        "population": "fox_predation.a.population"
+      }, 
+      "b": {
+        "rate": "fox_predation.b.rate", 
+        "population": "fox_predation.b.population"
+      }, 
+      "a_growth": "fox_predation.a_growth", 
+      "a_decline": "fox_predation.a_decline", 
+      "b_growth": "fox_predation.b_growth", 
+      "b_decline": "fox_predation.b_decline", 
+      "beta": "fox_predation.beta", 
+      "delta": "fox_predation.delta"
+    }, 
+    "rabbits": {
+      "der(population)": "der(rabbits.population)", 
+      "initial_population": "rabbits.initial_population", 
+      "init": "rabbits.init", 
+      "species": {
+        "rate": "rabbits.species.rate", 
+        "population": "rabbits.species.population"
+      }, 
+      "population": "rabbits.population"
+    }, 
+    "reproduction": {
+      "alpha": "reproduction.alpha", 
+      "growth": "reproduction.growth", 
+      "species": {
+        "rate": "reproduction.species.rate", 
+        "population": "reproduction.species.population"
+      }, 
+      "decline": "reproduction.decline"
+    }, 
+    "foxes": {
+      "der(population)": "der(foxes.population)", 
+      "initial_population": "foxes.initial_population", 
+      "init": "foxes.init", 
+      "species": {
+        "rate": "foxes.species.rate", 
+        "population": "foxes.species.population"
+      }, 
+      "population": "foxes.population"
+    }
+  }, 
+  "categories": {
+    "continuous": [
+      "foxes.population", 
+      "rabbits.population", 
+      "der(foxes.population)", 
+      "der(rabbits.population)", 
+      "fox_predation.b.rate", 
+      "fox_predation.a.rate", 
+      "fox_starvation.species.rate", 
+      "foxes.species.rate", 
+      "reproduction.species.rate", 
+      "rabbits.species.rate", 
+      "foxes.species.population", 
+      "fox_predation.b.population", 
+      "fox_starvation.species.population", 
+      "rabbits.species.population", 
+      "fox_predation.a.population", 
+      "reproduction.species.population", 
+      "fox_predation.b_decline", 
+      "fox_predation.b_growth", 
+      "fox_predation.a_decline", 
+      "fox_predation.a_growth", 
+      "fox_starvation.decline", 
+      "fox_starvation.growth", 
+      "reproduction.decline", 
+      "reproduction.growth"
+    ], 
+    "parameter": [
+      "rabbits.initial_population", 
+      "reproduction.alpha", 
+      "foxes.initial_population", 
+      "fox_starvation.gamma", 
+      "fox_predation.beta", 
+      "fox_predation.delta", 
+      "rabbits.init", 
+      "foxes.init"
+    ]
+  }, 
+  "vars": {
+    "rabbits.population": {
+      "variability": "continuous", 
+      "valueReference": "1001", 
+      "description": "Population in this region", 
+      "start": "10.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "rabbits.population"
+    }, 
+    "foxes.species.population": {
+      "variability": "continuous", 
+      "valueReference": "1016", 
+      "description": "Animal population", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "foxes.species.population"
+    }, 
+    "fox_starvation.species.rate": {
+      "variability": "continuous", 
+      "valueReference": "1006", 
+      "description": "Flows that affect animal population", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_starvation.species.rate"
+    }, 
+    "fox_predation.b.rate": {
+      "variability": "continuous", 
+      "valueReference": "1004", 
+      "description": "Flows that affect animal population", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.b.rate"
+    }, 
+    "foxes.init": {
+      "variability": "parameter", 
+      "valueReference": "1031", 
+      "description": "", 
+      "start": "2 /*ENUM:ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.InitializationOptions.FixedPopulation*/", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "foxes.init"
+    }, 
+    "rabbits.species.rate": {
+      "variability": "continuous", 
+      "valueReference": "1009", 
+      "description": "Flows that affect animal population", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "rabbits.species.rate"
+    }, 
+    "rabbits.initial_population": {
+      "variability": "parameter", 
+      "valueReference": "1010", 
+      "description": "", 
+      "start": "10.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "rabbits.initial_population"
+    }, 
+    "rabbits.species.population": {
+      "variability": "continuous", 
+      "valueReference": "1019", 
+      "description": "Animal population", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "rabbits.species.population"
+    }, 
+    "foxes.initial_population": {
+      "variability": "parameter", 
+      "valueReference": "1012", 
+      "description": "", 
+      "start": "10.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "foxes.initial_population"
+    }, 
+    "fox_predation.b_decline": {
+      "variability": "continuous", 
+      "valueReference": "1022", 
+      "description": "Decline in population of species B (if positive)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.b_decline"
+    }, 
+    "reproduction.species.rate": {
+      "variability": "continuous", 
+      "valueReference": "1008", 
+      "description": "Flows that affect animal population", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "reproduction.species.rate"
+    }, 
+    "der(rabbits.population)": {
+      "variability": "continuous", 
+      "valueReference": "1003", 
+      "description": "Population in this region", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der(rabbits.population)"
+    }, 
+    "fox_starvation.species.population": {
+      "variability": "continuous", 
+      "valueReference": "1018", 
+      "description": "Animal population", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_starvation.species.population"
+    }, 
+    "fox_predation.b.population": {
+      "variability": "continuous", 
+      "valueReference": "1017", 
+      "description": "Animal population", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.b.population"
+    }, 
+    "reproduction.growth": {
+      "variability": "continuous", 
+      "valueReference": "1029", 
+      "description": "Growth in the population (if positive)", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "reproduction.growth"
+    }, 
+    "fox_predation.beta": {
+      "variability": "parameter", 
+      "valueReference": "1014", 
+      "description": "Prey (Species A) consumed", 
+      "start": "0.02", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.beta"
+    }, 
+    "fox_predation.delta": {
+      "variability": "parameter", 
+      "valueReference": "1015", 
+      "description": "Predators (Species B) fed", 
+      "start": "0.02", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.delta"
+    }, 
+    "fox_predation.a.population": {
+      "variability": "continuous", 
+      "valueReference": "1020", 
+      "description": "Animal population", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.a.population"
+    }, 
+    "fox_predation.a.rate": {
+      "variability": "continuous", 
+      "valueReference": "1005", 
+      "description": "Flows that affect animal population", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.a.rate"
+    }, 
+    "reproduction.alpha": {
+      "variability": "parameter", 
+      "valueReference": "1011", 
+      "description": "Birth rate proportionality constant", 
+      "start": "0.1", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "reproduction.alpha"
+    }, 
+    "fox_predation.b_growth": {
+      "variability": "continuous", 
+      "valueReference": "1023", 
+      "description": "Growth in population of species B (if positive)", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.b_growth"
+    }, 
+    "fox_predation.a_decline": {
+      "variability": "continuous", 
+      "valueReference": "1024", 
+      "description": "Decline in population of species A (if positive)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.a_decline"
+    }, 
+    "foxes.population": {
+      "variability": "continuous", 
+      "valueReference": "1000", 
+      "description": "Population in this region", 
+      "start": "10.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "foxes.population"
+    }, 
+    "foxes.species.rate": {
+      "variability": "continuous", 
+      "valueReference": "1007", 
+      "description": "Flows that affect animal population", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "foxes.species.rate"
+    }, 
+    "fox_starvation.decline": {
+      "variability": "continuous", 
+      "valueReference": "1026", 
+      "description": "Decline in the population (if positive)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_starvation.decline"
+    }, 
+    "reproduction.species.population": {
+      "variability": "continuous", 
+      "valueReference": "1021", 
+      "description": "Animal population", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "reproduction.species.population"
+    }, 
+    "fox_predation.a_growth": {
+      "variability": "continuous", 
+      "valueReference": "1025", 
+      "description": "Growth in population of species A (if positive)", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_predation.a_growth"
+    }, 
+    "rabbits.init": {
+      "variability": "parameter", 
+      "valueReference": "1030", 
+      "description": "", 
+      "start": "2 /*ENUM:ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.InitializationOptions.FixedPopulation*/", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "rabbits.init"
+    }, 
+    "reproduction.decline": {
+      "variability": "continuous", 
+      "valueReference": "1028", 
+      "description": "Decline in the population (if positive)", 
+      "start": "0.0", 
+      "alias": "alias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "reproduction.decline"
+    }, 
+    "der(foxes.population)": {
+      "variability": "continuous", 
+      "valueReference": "1002", 
+      "description": "Population in this region", 
+      "start": "0.0", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "der(foxes.population)"
+    }, 
+    "fox_starvation.growth": {
+      "variability": "continuous", 
+      "valueReference": "1027", 
+      "description": "Growth in the population (if positive)", 
+      "start": "0.0", 
+      "alias": "negatedAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_starvation.growth"
+    }, 
+    "fox_starvation.gamma": {
+      "variability": "parameter", 
+      "valueReference": "1013", 
+      "description": "Starvation coefficient", 
+      "start": "0.4", 
+      "alias": "noAlias", 
+      "units": "-", 
+      "causality": "internal", 
+      "name": "fox_starvation.gamma"
+    }
+  }, 
+  "desc": {
+    "variableNamingConvention": "structured", 
+    "cmt_numberOfRealAlgebraicVariables": "NY:       number of real variables,                           OMC", 
+    "cmt_numberOfFunctions": "NFUNC:    number of functions used by the simulation,         OMC", 
+    "cmt_numberOfBooleanParameters": "NPBOOL:   number of bool parameters,                          OMC", 
+    "fmiVersion": "1.0", 
+    "generationDateAndTime": "2014-02-24T10:45:04Z", 
+    "cmt_numberOfOutputVariables": "NO:       number of outputvar on topmodel,                    OMC", 
+    "numberOfIntegerAlgebraicVariables": "0", 
+    "numberOfOutputVariables": "0", 
+    "guid": "{8c4e810f-3df3-4a00-8276-176fa3c9f9e0}", 
+    "cmt_numberOfRealParameters": "NP:       number of parameters,                               OMC", 
+    "modelName": "ModelicaByExample.Components.LotkaVolterra.Examples.ClassicLotkaVolterra", 
+    "cmt_numberOfContinuousStates": "NX:       number of states,                                   FMI", 
+    "OPENMODELICAHOME": "/home/mtiller/Xogeny/Source/Mod2JS/OpenModelica/build", 
+    "numberOfRealParameters": "6", 
+    "numberOfStringAliasVariables": "0", 
+    "cmt_numberOfEventIndicators": "NG:       number of zero crossings,                           FMI", 
+    "cmt_numberOfIntegerParameters": "NPINT:    number of int parameters,                           OMC", 
+    "numberOfStringParameters": "0", 
+    "cmt_numberOfIntegerAlgebraicVariables": "NYINT:    number of alg. int variables,                       OMC", 
+    "cmt_numberOfExternalObjects": "NEXT:     number of external objects,                         OMC", 
+    "numberOfIntegerAliasVariables": "0", 
+    "numberOfStringAlgebraicVariables": "0", 
+    "numberOfRealAlgebraicVariables": "6", 
+    "cmt_numberOfBooleanAliasVariables": "NABOOL:   number of alias bool variables,                     OMC", 
+    "cmt_numberOfResidualsForInitialization": "NR:       number of residuals for initialialization function, OMC", 
+    "numberOfBooleanAliasVariables": "0", 
+    "cmt_numberOfStringAlgebraicVariables": "NYSTR:    number of alg. string variables,                    OMC", 
+    "generationTool": "OpenModelica Compiler 1.9.1+dev (r19238) (Bootstrapping version)", 
+    "numberOfResidualsForInitialization": "2", 
+    "cmt_numberOfTimeEvents": "NG_SAM:   number of zero crossings that are samples,          OMC", 
+    "numberOfExternalObjects": "0", 
+    "numberOfFunctions": "0", 
+    "numberOfEventIndicators": "0", 
+    "cmt_numberOfInputVariables": "NI:       number of inputvar on topmodel,                     OMC", 
+    "cmt_numberOfBooleanAlgebraicVariables": "NYBOOL:   number of alg. bool variables,                      OMC", 
+    "numberOfBooleanAlgebraicVariables": "0", 
+    "cmt_numberOfStringAliasVariables": "NASTR:    number of alias string variables,                   OMC", 
+    "cmt_numberOfStringParameters": "NPSTR:    number of string parameters,                        OMC", 
+    "numberOfInputVariables": "0", 
+    "numberOfTimeEvents": "0", 
+    "cmt_numberOfIntegerAliasVariables": "NAINT:    number of alias int variables,                      OMC", 
+    "numberOfIntegerParameters": "2", 
+    "numberOfContinuousStates": "2", 
+    "cmt_numberOfRealAlgebraicAliasVariables": "NA:       number of alias variables,                          OMC", 
+    "numberOfRealAlgebraicAliasVariables": "14", 
+    "modelIdentifier": "ModelicaByExample_Components_LotkaVolterra_Examples_ClassicLotkaVolterra", 
+    "numberOfBooleanParameters": "0"
+  }
+}

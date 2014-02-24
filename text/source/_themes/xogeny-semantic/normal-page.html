@@ -15,7 +15,8 @@
     {{ fonts() }}
     {{ css() }}
     {{ script() }}
-    {{ itemplate() }}
+    {% import 'itemplate.html' as it %}
+    {{ it.itemplate() }}
   </head>
   <body class="segment" style="margin: 0px">
     {{ navmenu() }}
