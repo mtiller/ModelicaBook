@@ -56,10 +56,16 @@ $(document).ready(function() {
 
     $(".thumbnail").popup();
 
+    var source = $("#itemplate").html();
+    var it = Handlebars.compile(source);
+
     $(".interactive").each(function(i, elem) {
 	var p = $(elem).parent();
 	var was = $(p).html();
-	$(p).html('<div class="ui segment tight"><div class="figframe ui top button right attached label">Run</div>'+was+'</div></div>');
+	var context = {"image": was, "id": "F0"};
+	var newt = it(context) ;
+	$(p).html(newt);
+	$(".ui.accordion").accordion();
     });
 
 });

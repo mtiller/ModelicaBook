@@ -1,3 +1,31 @@
+{% macro itemplate() %}
+{% raw -%}
+<script id="itemplate" type="text/x-handlebars-template">
+  <div class="ui segment tight">
+    <div id="plot-wrapper-{{id}}">
+      {{{image}}}
+    </div>
+    <div id="dyn-plot-{{id}}">
+    </div>
+    <div class="ui fluid accordion">
+      <div class="title">
+	<i class="dropdown icon"></i>
+	Run Interactively
+      </div>
+      <div class="content">
+	A form should go here.  With a button that hides
+	#plot-wrapper-{{id}} and puts results in #dyn-plot-{{id}}
+	<br>
+	<div class="ui mini button" id="sim-button-{{id}}">
+	  Simulate
+	</div>
+      </div>
+    </div>
+  </div>
+</script>
+{%- endraw %}
+{% endmacro %}
+
 {%- macro navmenu() %}
 <div class="ui fixed transparent inverted main menu">
   <div class="left menu">
@@ -85,6 +113,7 @@
     {%- endfor %}
     <script type="text/javascript" src="{{ pathto('_static/semantic/semantic.js', 1) }}">
     </script>
+    <script type="text/javascript" src="{{ pathto('_static/handlebars-v1.3.0.js', 1) }}"></script>
     <script type="text/javascript" src="{{ pathto('_static/xogeny.js', 1) }}"></script>
 {%- endmacro %}
 
