@@ -13,23 +13,24 @@
 	Run Interactively
       </div>
       <div class="content left-justified">
-	<div class="ui form segment">
-	  <div class="header">{{model.desc.modelName}}</div>
-	  <div class="field">
-	    <label>Parameter Name</label>
-	    <input placeholder="Initial value" value="Value" type="text">
+	<div class="ui attached message">
+	  <div class="header">
+	    {{model.desc.modelName}}
 	  </div>
+	  <p>(Model description will go here)</p>
+	</div>
+	<div class="ui form attached fluid segment">
 	  {{#each model.categories.parameter}}
 	  <div class="field">
-	    <label>{{this}}</label>
+	    <label>{{this}}: {{varinfo ../model this 'description'}} [{{varinfo ../model this 'units'}}]</label>
 	    <input placeholder="Initial value"
 		   value="{{varinfo ../model this 'start'}}"
 		   type="text">
 	  </div>
 	  {{/each}}
-	</div>
-	<div class="ui mini button" id="sim-button-{{id}}">
-	  Simulate
+	  <div class="ui mini button" id="sim-button-{{id}}">
+	    Simulate
+	  </div>
 	</div>
 	<p>
 	  A form should go here.  With a button that hides
