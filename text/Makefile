@@ -16,7 +16,7 @@ IMAGEDIRS      = ../docs-dir/Icons
 SVG2PDF       = inkscape
 SVG2PDF_FLAGS =
 
-SYNC = s3cmd sync -P
+SYNC = s3cmd sync -P -F
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -43,7 +43,7 @@ results:
 
 # This builds all the JS and JSON files.  Use this if your development
 # environment is setup to compile the JS files
-local_js:
+local_js: specs
 	@echo "Generate JS files and deploy them"
 	(cd results; make js_files json_files tidy)
 	-rm results/js/*.node.js
@@ -77,11 +77,18 @@ docs:
 #       a `export PYTHONPATH=...` if necessary.
 	(cd docs-dir; omc ../GenerateDoc.mos)
 
-# This builds the HTML and then runs a simple web server
-server: dirhtml
+# This creates links for th JS and JSON
+build_links:
 	-(cd build/dirhtml/_static; ln -s ../../../results/js) 
 	-(cd build/dirhtml/_static; ln -s ../../../results/json) 
+
+# This builds the HTML and then runs a simple web server
+server: dirhtml build_links
 	(cd build/dirhtml; python -m SimpleHTTPServer)
+
+web: dirhtml build_links
+	(cd build/dirhtml; $(SYNC) * s3://beta.book.xogeny.com/)
+	# TODO: Set Content-Encoding on all gz files to be gzip (use find?)
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"

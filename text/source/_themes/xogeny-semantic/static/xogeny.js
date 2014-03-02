@@ -18,14 +18,39 @@ $(document).ready(function() {
 	    console.log("Error from worker:");
 	    console.log(event);
 	});
+
 	worker.addEventListener("message", function(event) {
 	    var data = event.data;
 	    console.log("Simulation status: "+data.status);
 	    var x = $.csv.toArrays(event.data.csv,
 				   {onParseValue: $.csv.hooks.castToScalar})
+	    var show = ["x", "der(x)"];
 	    console.log("x = ");
 	    console.log(x);
 	    console.log(event);
+	    //$("#placeholder").plot(data, options)
+	    var where = "#dyn-plot-"+id;
+	    var old = "#plot-wrapper-"+id;
+	    $(old).hide();
+	    $(where).width("640px");
+	    $(where).height("480px");
+	    console.log("Attempting to plot data to "+where);
+	    var data = []
+	    for(var i=0;i<show.length;i++) {
+		var vn = show[i];
+		for(var j=1;j<x[0].length;j++) {
+		    var sn = x[0][j];
+		    if (sn===vn) {
+			data.push({"label": sn,
+				   "data": x.slice(1).map(function(r) {
+				       return [r[0], r[j]];
+				   })})
+		    }
+		}
+	    }
+	    console.log("Data = ");
+	    console.log(data);
+	    $(where).plot(data);
 	});
 	console.log("Starting simulation");
 	var stopTime = parseFloat(jobj.experiment.stopTime);
