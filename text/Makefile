@@ -41,12 +41,27 @@ results:
 	@echo "Generate results"
 	(cd results; make results_files tidy)
 
-# This target builds all the simulation results
-deploy_js:
+# This builds all the JS and JSON files.  Use this if your development
+# environment is setup to compile the JS files
+local_js:
 	@echo "Generate JS files and deploy them"
 	(cd results; make js_files json_files tidy)
 	-rm results/js/*.node.js
 	-rm results/js/*.node.js.gz
+
+# This downloads already compiled JS and JSON files.  Use this if you
+# do not have the ability to compile JS files locally
+download_js:
+	-mkdir results/js
+	-mkdir results/json
+	(cd results/js; $(SYNC) s3://cdn.book.xogeny.com/js/*.js.gz results/js)
+	(cd results/js; gzip -dk *.js.gz)
+	(cd results/json; $(SYNC) s3://cdn.book.xogeny.com/json/*.json.gz results/json)
+	(cd results/json; gzip -dk *.json.gz)
+
+# This target builds all the simulation results and then pushes them
+# out to an S3 bucket for static hosting
+deploy_js: local_js
 	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip: s3://cdn.book.xogeny.com/js/)
 	(cd results/json; $(SYNC) *.json.gz --add-header=Content-Encoding:gzip s3://cdn.book.xogeny.com/json/)
 	(cd results/js; $(SYNC) *.js s3://cdn.book.xogeny.com/js/)
@@ -64,6 +79,8 @@ docs:
 
 # This builds the HTML and then runs a simple web server
 server: dirhtml
+	-(cd build/dirhtml/_static; ln -s ../../../results/js) 
+	-(cd build/dirhtml/_static; ln -s ../../../results/json) 
 	(cd build/dirhtml; python -m SimpleHTTPServer)
 
 help:
