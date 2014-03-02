@@ -13,7 +13,8 @@ $(document).ready(function() {
     var runsim = function(jobj, id) {
 	console.log("Whee! let's simulate "+id+"!");
 	if (worker!=null) worker.terminate();
-	worker = new Worker("/_static/js/"+id+".js");
+	worker = new Worker("http://cdn.book.xogeny.com/"+id+".js");
+	//worker = new Worker("/_static/js/"+id+".js");
 	worker.addEventListener("error", function(event) {
 	    console.log("Error from worker:");
 	    console.log(event);
@@ -53,7 +54,8 @@ $(document).ready(function() {
 	var id = src.split("/").pop().split(".")[0];
 	$.ajax({
 	    dataType: "json",
-	    url: "/_static/json/"+id+".json",
+	    url: "http://cdn.book.xogeny.com/json/"+id+".json",
+	    //url: "/_static/json/"+id+".json",
 	    success: function(jobj) { return fixfig(p, was, id, jobj); }
 	});
     });
