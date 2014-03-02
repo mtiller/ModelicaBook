@@ -55,9 +55,13 @@ $(document).ready(function() {
 	console.log("Starting simulation");
 	var stopTime = parseFloat(jobj.experiment.stopTime);
 	var step = stopTime/100;
-	worker.postMessage({"basename": "FO",
+	var tol = "1e-03";
+	console.log("stopTime = "+stopTime);
+	console.log("step = "+step);
+	console.log("tol = "+tol);
+	worker.postMessage({"basename": id,
 			    "stopTime": String(stopTime),
-			    "tolerance": "1e-03",
+			    "tolerance": tol,
 			    "stepSize": String(step)})
     };
     
