@@ -10,10 +10,10 @@ $(document).ready(function() {
     var it = Handlebars.compile(source);
     var worker = null;
 
-    var runsim = function(jobj, id) {
-	console.log("Whee! let's simulate "+id+"!");
+    var runsim = function(jobj, model_id, casedata, plot_id) {
+	console.log("Whee! let's simulate model "+model_id+"!");
 	if (worker!=null) worker.terminate();
-	worker = new Worker("/_static/js/"+id+".js");
+	worker = new Worker("/_static/js/"+model_id+".js");
 	worker.addEventListener("error", function(event) {
 	    console.log("Error from worker:");
 	    console.log(event);
@@ -24,55 +24,48 @@ $(document).ready(function() {
 	    console.log("Simulation status: "+data.status);
 	    var x = $.csv.toArrays(event.data.csv,
 				   {onParseValue: $.csv.hooks.castToScalar})
-	    //var show = ["x", "der(x)"];
-	    var show = x[0].slice(1);
-	    console.log("x = ");
-	    console.log(x);
-	    console.log(event);
-	    //$("#placeholder").plot(data, options)
-	    var where = "#dyn-plot-"+id;
-	    var old = "#plot-wrapper-"+id;
+	    var where = "#dyn-plot-"+plot_id;
+	    var old = "#plot-wrapper-"+plot_id;
 	    $(old).hide();
 	    $(where).width("640px");
 	    $(where).height("480px");
-	    console.log("Attempting to plot data to "+where);
 	    var data = []
-	    for(var i=0;i<show.length;i++) {
-		var vn = show[i];
+	    for(var i=0;i<casedata.vars.length;i++) {
+		var vn = casedata.vars[i]["name"];
 		for(var j=1;j<x[0].length;j++) {
 		    var sn = x[0][j];
 		    if (sn===vn) {
-			data.push({"label": sn,
+			data.push({"label": casedata.vars[i]["legend"],
 				   "data": x.slice(1).map(function(r) {
 				       return [r[0], r[j]];
 				   })})
 		    }
 		}
 	    }
-	    console.log("Data = ");
-	    console.log(data);
+	    $("#plot-title-"+plot_id).text(casedata.title);
 	    $(where).plot(data);
 	});
 	console.log("Starting simulation");
-	var stopTime = parseFloat(jobj.experiment.stopTime);
-	var step = stopTime/100;
-	var tol = "1e-03";
-	console.log("stopTime = "+stopTime);
-	console.log("step = "+step);
-	console.log("tol = "+tol);
-	worker.postMessage({"basename": id,
+	var stopTime = parseFloat(casedata.stopTime);
+	var step = stopTime/casedata.ncp;
+	var tol = casedata.tol;
+	worker.postMessage({"basename": model_id,
 			    "stopTime": String(stopTime),
-			    "tolerance": tol,
+			    "tolerance": String(tol),
 			    "stepSize": String(step)})
     };
     
-    var fixfig = function(p, was, id, jobj) {
-	var context = {"image": was, "id": id, "model": jobj};
+    var fixfig = function(p, was, plot_id, casedata, model_id, jobj) {
+	var context = {"image": was, "plot_id": plot_id, "casedata": casedata,
+		       "model_id": model_id, "model": jobj};
 	var newt = it(context);
 	$(p).html(newt);
 	$(".ui.accordion").accordion();
-	$("#sim-button-"+id).click(function () {
-	    runsim(jobj, id);
+	$(".ui.modal").modal();
+	$("#modal-plot-"+plot_id).modal('attach events',
+					"#sim-help-"+plot_id, 'show')
+	$("#sim-button-"+plot_id).click(function () {
+	    runsim(jobj, model_id, casedata, plot_id);
 	});
     }
 
@@ -80,11 +73,25 @@ $(document).ready(function() {
 	var p = $(elem).parent();
 	var src = $(elem).attr("src");
 	var was = $(p).html();
-	var id = src.split("/").pop().split(".")[0];
+	var plot_id = src.split("/").pop().split(".")[0];
+
+	var getModelData = function(casedata) {
+	    var model_id = casedata["res"]
+	    $.ajax({
+		dataType: "json",
+		url: "/_static/json/"+model_id+".json",
+		success: function(jobj) { 
+		    return fixfig(p, was,
+				  plot_id, casedata,
+				  model_id, jobj);
+		}
+	    });
+	};
+
 	$.ajax({
 	    dataType: "json",
-	    url: "/_static/json/"+id+".json",
-	    success: function(jobj) { return fixfig(p, was, id, jobj); }
+	    url: "/_static/json/"+plot_id+"-case.json",
+	    success: getModelData
 	});
     });
 });

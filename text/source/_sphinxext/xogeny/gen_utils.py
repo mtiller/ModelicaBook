@@ -1,6 +1,7 @@
 import re
 import os
 import sys
+import json
 from jinja2 import PackageLoader, Environment
 
 path = os.path.abspath(os.path.join(__file__,"..","..","..","..",".."));
@@ -126,6 +127,21 @@ def add_compare_plot(plot, res1, v1, res2, v2, title, legloc="lower right", ylab
         "ylabel": ylabel
     };
 
+def _generate_casedata():
+    for plot in plots:
+        pdata = plots[plot]
+        with open(os.path.join(path, "text", "results",
+                               "json", plot+"-case.json"), "w+") as ofp:
+            if pdata["type"]=="simple":
+                res = results[pdata["res"]]
+                obj = dict(pdata)
+                obj["vars"] = map(lambda x: x.dict(), pdata["vars"])
+                obj["stopTime"] = res["stopTime"]
+                obj["ncp"] = res["ncp"]
+                obj["tol"] = res["tol"]
+                obj["mods"] = res["mods"]
+                json.dump(obj, ofp, indent=2);
+
 def _generate_plots():
     for plot in plots:
         pdata = plots[plot]
@@ -225,3 +241,4 @@ def _generate_makefile():
 def generate():
     _generate_plots()
     _generate_makefile()
+    _generate_casedata()

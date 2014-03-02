@@ -162,7 +162,7 @@ solution for the angular positions and velocities:
 .. todo:: label vertical axis of both plots?
 
 .. plot:: ../plots/SOSIP.py
-   :include-source: no
+   :class: interactive
 
 However, if modify the ``phi1_init`` parameter to be *1* at the start
 of our simulation, we get this solution instead:

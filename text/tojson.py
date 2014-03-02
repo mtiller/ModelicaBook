@@ -18,6 +18,8 @@ desc = root.iter("fmiModelDescription").next()
 
 for k in desc.attrib:
     j["desc"][k] = desc.attrib[k]
+fqn = desc.attrib["modelName"]
+j["desc"]["shortName"] = fqn.split(".")[-1]
 
 exp = root.iter("DefaultExperiment").next()
 
