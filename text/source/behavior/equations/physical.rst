@@ -103,8 +103,7 @@ If we simulate the ``NewtonCoolingWithDefaults`` model, we get the
 following solution for ``T``.
 
 .. plot:: ../plots/NCWD.py
-   :include-source: no
-
+   :class: interactive
 
 .. _physical-units:
 

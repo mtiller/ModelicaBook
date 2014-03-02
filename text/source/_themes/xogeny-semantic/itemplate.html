@@ -2,11 +2,6 @@
 {% raw -%}
 <script id="itemplate" type="text/x-handlebars-template">
   <div class="ui segment tight left-justified">
-    <div id="plot-wrapper-{{id}}">
-      {{{image}}}
-    </div>
-    <div id="dyn-plot-{{id}}">
-    </div>
     <div class="ui fluid accordion">
       <div class="title">
 	<i class="dropdown icon"></i>
@@ -32,11 +27,19 @@
 	    Simulate
 	  </div>
 	</div>
+	<!--
 	<p>
 	  A form should go here.  With a button that hides
 	  #plot-wrapper-{{id}} and puts results in #dyn-plot-{{id}}
 	</p>
+	-->
       </div>
+
+    </div>
+    <div id="plot-wrapper-{{id}}">
+      {{{image}}}
+    </div>
+    <div id="dyn-plot-{{id}}">
     </div>
   </div>
 </script>

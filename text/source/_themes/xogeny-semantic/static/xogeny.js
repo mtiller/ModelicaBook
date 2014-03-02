@@ -24,7 +24,8 @@ $(document).ready(function() {
 	    console.log("Simulation status: "+data.status);
 	    var x = $.csv.toArrays(event.data.csv,
 				   {onParseValue: $.csv.hooks.castToScalar})
-	    var show = ["x", "der(x)"];
+	    //var show = ["x", "der(x)"];
+	    var show = x[0].slice(1);
 	    console.log("x = ");
 	    console.log(x);
 	    console.log(event);
