@@ -44,6 +44,8 @@ $(document).ready(function() {
 	    }
 	    $("#plot-title-"+plot_id).text(casedata.title);
 	    $(where).plot(data);
+	    $("#sim-button-"+plot_id).text("Simulate");
+	    $("#sim-button-"+plot_id).removeClass("disabled");
 	});
 	console.log("Starting simulation");
 	var stopTime = parseFloat(casedata.stopTime);
@@ -65,6 +67,8 @@ $(document).ready(function() {
 	$("#modal-plot-"+plot_id).modal('attach events',
 					"#sim-help-"+plot_id, 'show')
 	$("#sim-button-"+plot_id).click(function () {
+	    $("#sim-button-"+plot_id).text("Simulating...");
+	    $("#sim-button-"+plot_id).addClass("disabled");
 	    runsim(jobj, model_id, casedata, plot_id);
 	});
     }

@@ -1,3 +1,35 @@
+{% macro signup_head() %}
+<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css"
+      rel="stylesheet" type="text/css">
+<style type="text/css">
+  #mc_embed_signup{background:#transparent; clear:left; font:14px Helvetica,Arial,sans-serif; }
+  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+  We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+{% endmacro %}
+
+{% macro signup_form() %}
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+  <form action="http://xogeny.us3.list-manage.com/subscribe/post?u=3bfc2e5430d32efbe641d6e58&amp;id=f260a85b89" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <label for="mce-EMAIL">Stay informed about updates to the book</label>
+    <input type="email" value="" name="EMAIL"
+	   class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;">
+      <input type="text" name="b_3bfc2e5430d32efbe641d6e58_f260a85b89"
+	     value="">
+    </div>
+    <div class="clear">
+      <input type="submit" value="Subscribe" name="subscribe"
+	     id="mc-embedded-subscribe" class="button">
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+{% endmacro %}
+
 {%- macro thumbnail(id) %}
 <div class="column">
   <i id="{{id}}i" class="thumbnail icon list layout" data-html='<dl class="sponsorinfo">
@@ -65,6 +97,8 @@
     {{ script() }}
     <script type="text/javascript" src="{{ pathto('_static/logo-animation.js', 1) }}"></script>
 
+    {{ signup_head() }}
+
   </head>
   <body>
     <div class="segment">
@@ -116,6 +150,7 @@
 	  </div>
 	  <div class="column">
 	    <h2>Support</h2>
+	    {{ signup_form() }}
 	  </div>
 	</div>
       </div>

@@ -5,7 +5,7 @@
     <div class="ui fluid accordion">
       <div class="title">
 	<i class="dropdown icon"></i>
-	Run <code>{{model.desc.shortName}}</code> Interactively
+	Simulate <code>{{model.desc.shortName}}</code> in your browser
       </div>
       <div class="content left-justified">
 	<div class="ui attached message">
@@ -14,6 +14,13 @@
 	  </div>
 	  <p>Full name: {{model.desc.modelName}}</p>
 	</div>
+
+	<div class="ui top attached tabular menu">
+	  {{#each model.categories.parameter}}
+	  <a class="item">{{this}}</a>
+	  {{/each}}
+	</div>
+
 	<div class="ui form attached fluid segment">
 	  {{#each model.categories.parameter}}
 	  <div class="inline field">
@@ -78,14 +85,14 @@
 	night in Sweden and he was always extremely helpful.
       </p>
       <p>
-	<b>The results have been so successful, I plan on
+	The results have been so successful, <b>I plan on
 	incorporating integrated browser simulation into the Xogeny
-	FMQ service.  So in addition to giving users the option to
+	FMQ service</b>.  So in addition to giving users the option to
 	simulate models in the cloud, FMQ will also allow provide
 	developers with a simple path for converting their Modelica
 	models into Javascript and then serving them to web
 	applications so they can be simulated in the browser as
-	well.</b>
+	well <b>all as a simple web service</b>.
       </p>
     </div>
   </div>
