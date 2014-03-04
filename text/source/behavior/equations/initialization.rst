@@ -50,7 +50,7 @@ equations (ODEs).  When dealing with ODEs, every differentiated
 variable is a state, which, in turn, means that you need an initial
 equation for each of these differentiated variables.  But in
 subsequent chapters we will eventually run across examples that are
-so-called algebraic-differential equations (DAEs).  In those cases,
+so-called differential-algebraic equations (DAEs).  In those cases,
 only *some* of the differentiated variables can be considered states.
 
 As it turns out, understanding initialization doesn't really require
