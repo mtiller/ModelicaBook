@@ -63,7 +63,8 @@ of a ``constant`` cannot be changed once the model is compiled.  The
 use of ``constant`` by a model developer ensures that end users are
 not given the option to make changes to the ``constant``.  A
 ``constant`` is frequently used to represent physical quantities like
-:math:`\pi` or the Earth's gravitational constant, which never change.
+:math:`\pi` or the Earth's gravitational acceleration, which can be
+assumed constant for most engineering simulations.
 
 Discrete Variables
 ~~~~~~~~~~~~~~~~~~
