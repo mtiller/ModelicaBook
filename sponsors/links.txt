@@ -2,16 +2,16 @@ Gold
 ----
 CyDesign - Done
 Wolfram Research - Done
-Modelon
+Modelon - Done
 Maplesoft - Done
-Dassault Systèmes
+Dassault Systèmes - **Missing**
 
 Silver
 ------
 
 Ricardo Software - Done
 ITI - Done
-Modelica Association
+Modelica Association - **Missing**
 Global Crown Technology - Done
 LMS Imagine - Done
 
@@ -20,8 +20,8 @@ Bronze
 ------
 
 Suzhou Tongyuan - Done
-OSMC - http://www.openmodelica.org/
+OSMC - **No profile**
 DOFWare - Done
-Bausch-Gall
+Bausch-Gall - Done
 TUHH/TuTech - Done
-Schlegel Simulation
+Schlegel Simulation - Done
