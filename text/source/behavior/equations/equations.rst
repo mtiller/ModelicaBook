@@ -86,7 +86,7 @@ conditional expression can never change, it is necessary that all
 variables in the conditional expression have so-called *parametric
 variability*.
 
-Remember in our discussion of :ref:`variability` and the fact that
+Remember in our discussion of :ref:`variability` the fact that
 variables with the ``parameter`` qualifier cannot change during a
 simulation?  If a variable with the ``parameter`` qualifier cannot
 change during a simulation and all the variables in an expression have
