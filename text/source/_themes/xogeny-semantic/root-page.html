@@ -1,3 +1,14 @@
+{% macro thumbnail(id) %}
+<a class="active green item">
+  <i class="home icon thumbnail" data-html='<dl class="sponsorinfo">
+       <dt><b>Company name</b>: <i>Sponsorship level</i></dt>
+       <dd>This company is known throughout the world for its
+       excellent products and friendly staff.  Find out more
+       at <a href="http://www.example.com/">http://www.example.com</a></dd>
+     <br>'></i>
+</a>
+{% endmacro %}
+
 {% macro signup_head() %}
 <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css"
       rel="stylesheet" type="text/css">
@@ -30,16 +41,6 @@
 <!--End mc_embed_signup-->
 {% endmacro %}
 
-{%- macro thumbnail(id) %}
-<div class="column">
-  <i id="{{id}}i" class="thumbnail icon list layout" data-html='<dl class="sponsorinfo">
-       <dt><b>Company name</b>: <i>Sponsorship level</i></dt>
-       <dd>This company is known throughout the world for its
-       excellent products and friendly staff.  Find out more
-       at <a href="http://www.example.com/">http://www.example.com</a></dd>
-     <br>'></i>
-</div>
-{%- endmacro %}
 
 {%- macro sponsor_entry(id, url, img) -%}
 <div id="{{id}}"
@@ -97,6 +98,8 @@
     {{ fonts() }}
     {{ css() }}
     {{ script() }}
+    <script type="text/javascript" src="{{ pathto('_static/sponsors/sponsors.js', 1) }}">
+    </script>
     <script type="text/javascript" src="{{ pathto('_static/logo-animation.js', 1) }}"></script>
 
     {{ signup_head() }}
@@ -118,45 +121,44 @@
       </div>
     </div>
     <div id="root-content">
-      <div class="ui five column divided grid">
-	<div class="row">
-	  <div class="two wide column">
-	    <div class="ui fluid six column grid">
-	      <div class="row" style="margin-top: 2px; padding-top: 2px">
-		{{ thumbnail("g1") }}
-		{{ thumbnail("g2") }}
-		{{ thumbnail("g3") }}
-		{{ thumbnail("g4") }}
-		{{ thumbnail("g5") }}
-	      </div>
-	      <div class="row" style="margin-top: 2px; padding-top: 2px">
-		{{ thumbnail("s1") }}
-		{{ thumbnail("s2") }}
-		{{ thumbnail("s3") }}
-		{{ thumbnail("s4") }}
-		{{ thumbnail("s5") }}
-	      </div>
-	      <div class="row" style="margin-top: 2px; padding-top: 2px">
-		{{ thumbnail("b1") }}
-		{{ thumbnail("b2") }}
-		{{ thumbnail("b3") }}
-		{{ thumbnail("b4") }}
-		{{ thumbnail("b5") }}
-		{{ thumbnail("b6") }}
-	      </div>
-	    </div>
-	    {{ sponsors() }}
+      <div class="ui three column grid">
+	<div class="column">
+	  <p>Gold Sponsors</p>
+	  <div class="ui text menu" style="margin: 0px">
+	    {{ thumbnail("g1") }}
+	    {{ thumbnail("g2") }}
+	    {{ thumbnail("g3") }}
+	    {{ thumbnail("g4") }}
+	    {{ thumbnail("g5") }}
 	  </div>
-	  <div class="two wide column">
-	    {% block body %} {% endblock %}
+	  <p>Silver Sponsors</p>
+	  <div class="ui text menu" style="margin: 0px">
+	    {{ thumbnail("s1") }}
+	    {{ thumbnail("s2") }}
+	    {{ thumbnail("s3") }}
+	    {{ thumbnail("s4") }}
+	    {{ thumbnail("s5") }}
 	  </div>
-	  <div class="column">
-	    <a href="{{ pathto('_static/buypage.html', 1) }}">
-	      <img src="{{ pathto('_static/images/buybook.png', 1) }}">
-	    </a>
-	    <h2>Mailing List</h2>
-	    {{ signup_form() }}
+	  <p>Bronze Sponsors</p>
+	  <div class="ui text menu" style="margin: 0px">
+	    {{ thumbnail("b1") }}
+	    {{ thumbnail("b2") }}
+	    {{ thumbnail("b3") }}
+	    {{ thumbnail("b4") }}
+	    {{ thumbnail("b5") }}
+	    {{ thumbnail("b6") }}
 	  </div>
+	  {{ sponsors() }}
+	</div>
+	<div class="wide column">
+	  {% block body %} {% endblock %}
+	</div>
+	<div class="column">
+	  <a href="{{ pathto('_static/buypage.html', 1) }}">
+	    <img src="{{ pathto('_static/images/buybook.png', 1) }}">
+	  </a>
+	  <h2>Mailing List</h2>
+	  {{ signup_form() }}
 	</div>
       </div>
     </div>
