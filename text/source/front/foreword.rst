@@ -2,7 +2,7 @@
 
    \setcounter{secnumdepth}{-1}
 
-Foreward
+Foreword
 ********
 
 .. raw:: latex

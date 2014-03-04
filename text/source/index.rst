@@ -12,12 +12,10 @@ Front Matter
 .. toctree::
    :maxdepth: 1
 
-   front/foreward
+   front/foreword
    front/preface
    front/intro
-
-.. dedication should go here
-
+   front/dedication
 
 Describing Behavior
 ===================
