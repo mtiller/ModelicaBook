@@ -13,7 +13,7 @@ expression separated by an equals sign, *i.e.,*
 
 .. code-block:: modelica
 
-   <lhs> = <rhs>;
+   <left-hand expression> = <right-hand expression>;
 
 Through the examples presented in this chapter, the reader has been
 exposed to this pattern over and over again in each example.  The only
