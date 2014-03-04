@@ -134,7 +134,7 @@ solve a problem that looks like this:
 
 .. math::
 
-   \dot{\vec{x}}(t_0) &= \vec{f}(\vec{x}(t_0), \vec{u}(t), t_0) \\
+   \dot{\vec{x}}(t_0) &= \vec{f}(\vec{x}(t_0), \vec{u}(t_0), t_0) \\
    \vec{y}(t_0) &= \vec{g}(\vec{x}(t_0), \vec{u}(t_0), t_0) \\
    \vec{0} &= \vec{h}(\vec{x}(t_0), \dot{\vec{x}}(t_0), \vec{u}(t_0), t_0)
 
