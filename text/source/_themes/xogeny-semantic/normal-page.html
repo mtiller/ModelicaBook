@@ -11,6 +11,8 @@
     {{ metatags }}
 
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+
+    <link rel="icon" href="{{ pathto('_static/images/favicon.ico', 1) }}">
     
     {{ fonts() }}
     {{ css() }}
