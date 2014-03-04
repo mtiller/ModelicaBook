@@ -1,27 +1,27 @@
 Gold
 ----
-CyDesign - http://www.cydesign.com/
-Wolfram Research
+CyDesign - Done
+Wolfram Research - Done
 Modelon
-Maplesoft
+Maplesoft - Done
 Dassault Systèmes
 
 Silver
 ------
 
-Ricardo Software - http://www.ricardo.com/software
-ITI - http://www.itisim.com/
+Ricardo Software - Done
+ITI - Done
 Modelica Association
-Global Crown Technology
-LMS Imagine
+Global Crown Technology - Done
+LMS Imagine - Done
 
 
 Bronze
 ------
 
-Suzhou Tongyuan - http://en.tongyuan.cc/
+Suzhou Tongyuan - Done
 OSMC - http://www.openmodelica.org/
-DOFWare - http://www.dofware.com/
+DOFWare - Done
 Bausch-Gall
-TUHH/TuTech
+TUHH/TuTech - Done
 Schlegel Simulation
