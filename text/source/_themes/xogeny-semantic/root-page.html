@@ -122,7 +122,7 @@
       <input type="submit" value="Subscribe" name="subscribe"
 	     id="mc-embedded-subscribe" class="button">
     </div>
-</form>
+  </form>
 </div>
 
 <!--End mc_embed_signup-->
@@ -130,18 +130,47 @@
 
 
 {%- macro sponsor_entry(id, level) -%}
-<div id="sentry-{{id}}"
-     <a class="logo" href="{{SponsorsData[id].url}}">
-       <img src="_static/sponsors/{{id}}/logo.png">
-     </a>
-     <dl class="sponsorinfo">
-       <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}}</i></dt>
-       <dd>{{SponsorsData[id].profile}}</dd>
-     <br>
+<div id="sentry-{{id}}">
+  <a class="logo" href="{{SponsorsData[id].url}}" style="float: left">
+    <img src="_static/sponsors/{{id}}/logo.png">
+  </a>
+  <dl class="sponsorinfo">
+    <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}}</i></dt>
+    <dd>{{SponsorsData[id].profile}}</dd>
+  </dl>
+  <br>
 </div>
+<div style="clear: both"></div>
 {%- endmacro -%}
 
 {% macro sponsors() %}
+<h2>Sponsors</h2>
+
+<div class="ui text menu" style="margin: 3px">
+  <span class="blue item level">
+    Gold
+  </span>
+  {% for g in SponsorsData["Gold"] %}
+  {{ thumbnail(g, "Gold") }}
+  {% endfor %}
+</div>
+<div class="ui text menu" style="margin: 3px">
+  <span class="blue item level">
+    Silver
+  </span>
+  {% for g in SponsorsData["Silver"] %}
+  {{ thumbnail(g, "Silver") }}
+  {% endfor %}
+</div>
+<div class="ui text menu" style="margin: 3px">
+  <span class="blue item level">
+    Bronze
+  </span>
+  {% for g in SponsorsData["Bronze"] %}
+  {{ thumbnail(g, "Bronze") }}
+  {% endfor %}
+</div>
+<br>
 <div class="sponsor">
   {% for g in SponsorsData["Gold"] %}
   {{ sponsor_entry(g, "Gold") }}
@@ -182,54 +211,26 @@
 
   </head>
   <body>
-    <div class="segment">
-      <div class="container centered">
-	<img src="{{ pathto('_static/TitleHeading.png', 1) }}">
-	<p>by Michael M. Tiller, Ph.D.</p>
-	<div class="ui divider" style="margin: 0"></div>
+    <div id="root">
+      <div id="sponsors">
+	{{ sponsors() }}
       </div>
-    </div>
-    <div id="root-content">
-      <div class="ui three column grid">
-	<div class="column">
-	  <h2>Sponsors</h2>
+      <div id="content">
+	<div class="centered" style="margin-top: 10px">
+	  <img src="{{ pathto('_static/TitleHeading.png', 1) }}">
+	  <p>by Michael M. Tiller, Ph.D.</p>
+	</div>
 
-	  <div class="ui text menu" style="margin: 3px">
-	    <span class="blue item" style="margin-left: 5px; margin-right: 5px">
-	      Gold
-	    </span>
-	    {% for g in SponsorsData["Gold"] %}
-	    {{ thumbnail(g, "Gold") }}
-	    {% endfor %}
-	  </div>
-	  <div class="ui text menu" style="margin: 3px">
-	    <span class="blue item" style="margin-left: 5px; margin-right: 5px">
-	      Silver
-	    </span>
-	    {% for g in SponsorsData["Silver"] %}
-	    {{ thumbnail(g, "Silver") }}
-	    {% endfor %}
-	  </div>
-	  <div class="ui text menu" style="margin: 3px">
-	    <span class="blue item" style="margin-left: 5px; margin-right: 5px">
-	      Bronze
-	    </span>
-	    {% for g in SponsorsData["Bronze"] %}
-	    {{ thumbnail(g, "Bronze") }}
-	    {% endfor %}
-	  </div>
-	  <br>
-	  {{ sponsors() }}
-	</div>
-	<div class="wide column">
-	  {% block body %} {% endblock %}
-	</div>
-	<div class="column">
+	<div style="float: right">
 	  <a href="{{ pathto('_static/buypage.html', 1) }}">
 	    <img src="{{ pathto('_static/images/buybook.png', 1) }}">
 	  </a>
 	  <h2>Mailing List</h2>
 	  {{ signup_form() }}
+	</div>
+
+	<div style="margin-left: 450px; margin-top: 80px">
+	  {% block body %} {% endblock %}
 	</div>
       </div>
     </div>

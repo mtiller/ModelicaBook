@@ -5,3 +5,27 @@
 .highlight pre {
     background-color: transparent;
 }
+
+
+#root {
+    width: 100%;
+    position: relative;
+}
+
+#sponsors {
+    margin-top: 10px;
+    height: 100%;
+    width: 420px;
+    position: absolute;
+}
+
+#content {
+    height: 100%;
+}
+
+.level {
+    width: 65px;
+    text-align: right;
+    margin-left: 5px;
+    margin-right: 5px;
+}
