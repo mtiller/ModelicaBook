@@ -142,8 +142,6 @@
 {%- endmacro -%}
 
 {% macro sponsors() %}
-<h2>Sponsors</h2>
-
 <div class="sponsor">
   {% for g in SponsorsData["Gold"] %}
   {{ sponsor_entry(g, "Gold") }}
@@ -194,24 +192,33 @@
     <div id="root-content">
       <div class="ui three column grid">
 	<div class="column">
-	  <p>Gold Sponsors</p>
-	  <div class="ui text menu" style="margin: 0px">
+	  <h2>Sponsors</h2>
+
+	  <div class="ui text menu" style="margin: 3px">
+	    <span class="blue item" style="margin-left: 5px; margin-right: 5px">
+	      Gold
+	    </span>
 	    {% for g in SponsorsData["Gold"] %}
 	    {{ thumbnail(g, "Gold") }}
 	    {% endfor %}
 	  </div>
-	  <p>Silver Sponsors</p>
-	  <div class="ui text menu" style="margin: 0px">
+	  <div class="ui text menu" style="margin: 3px">
+	    <span class="blue item" style="margin-left: 5px; margin-right: 5px">
+	      Silver
+	    </span>
 	    {% for g in SponsorsData["Silver"] %}
 	    {{ thumbnail(g, "Silver") }}
 	    {% endfor %}
 	  </div>
-	  <p>Bronze Sponsors</p>
-	  <div class="ui text menu" style="margin: 0px">
+	  <div class="ui text menu" style="margin: 3px">
+	    <span class="blue item" style="margin-left: 5px; margin-right: 5px">
+	      Bronze
+	    </span>
 	    {% for g in SponsorsData["Bronze"] %}
 	    {{ thumbnail(g, "Bronze") }}
 	    {% endfor %}
 	  </div>
+	  <br>
 	  {{ sponsors() }}
 	</div>
 	<div class="wide column">
