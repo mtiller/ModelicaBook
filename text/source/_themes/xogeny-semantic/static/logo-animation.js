@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    /*
     var frames = [["s1", "s2"], ["b1", "b2", "b3"], ["g1"]];
     var showtime = 6000;
 
@@ -44,12 +45,15 @@ $(document).ready(function() {
     };
 
     if (true) {
-	/* Start animation of sponsors */
+	// Start animation of sponsors
 	$(".logo").transition({
 	    animation: "fade"
 	});
 	setTimeout(animateLogos, 300);
     }
+    */
 
-    $(".thumbnail").popup();
+    var thumbnails = $(".thumbnail");
+    console.log(thumbnails.length+" found");
+    thumbnails.popup();
 });

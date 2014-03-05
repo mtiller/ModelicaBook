@@ -4,8 +4,7 @@ var Sponsors = {
     "Bronze": ["ST", "OSMC", "dofware", "BauschGall", "TUHH", "Schlegel"],
     "BauschGall": {
 	"name": "Bausch-Gall GmbH",
-	"profile": "Modelica Technology is the base of our engineering projects and
-training classes. We develop, test and distribute Modelica Libraries.",
+	"profile": "Modelica Technology is the base of our engineering projects and training classes. We develop, test and distribute Modelica Libraries.",
 	"link": "http://www.bausch-gall.de/",
 	"logo": "logo.png"
     },

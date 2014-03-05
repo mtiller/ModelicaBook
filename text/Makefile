@@ -17,6 +17,7 @@ SVG2PDF       = inkscape
 SVG2PDF_FLAGS =
 
 SYNC = s3cmd sync -P -F
+S3GET = s3cmd get
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -54,9 +55,9 @@ local_js: specs
 download_js:
 	-mkdir results/js
 	-mkdir results/json
-	(cd results/js; $(SYNC) s3://cdn.book.xogeny.com/js/*.js.gz results/js)
+	(cd results/js; $(SYNC) 's3://beta.book.xogeny.com/_static/js/*.js.gz' .)
 	(cd results/js; gzip -dk *.js.gz)
-	(cd results/json; $(SYNC) s3://cdn.book.xogeny.com/json/*.json.gz results/json)
+	(cd results/json; $(SYNC) 's3://beta.book.xogeny.com/_static/json/*.json.gz' .)
 	(cd results/json; gzip -dk *.json.gz)
 
 # This target builds all the simulation results and then pushes them
