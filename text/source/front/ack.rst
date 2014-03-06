@@ -16,8 +16,8 @@ Technical
 
 On the subject of Modelica, the primary acknowledgment has to be to
 Hilding Elmqvist for not only having the technical vision to recognize
-the potential of symbolic manipulation techniques could have on the
-solution of dynamic systems but having the leadership to push this
+the potential impact that symbolic manipulation techniques could have
+on solving engineering problems but having the leadership to push this
 vision forward as an open standard.  Hilding is the undisputed "father
 of Modelica" and he deserves considerable credit for all that Modelica
 has become.
@@ -36,17 +36,17 @@ today.
 Of course, Martin isn't alone in running the Modelica Association.
 The Modelica Association Board and the Members are also extremely
 important for raising awareness about Modelica.  In the end, the
-Modelica Association is an organization committed to open standards to
-support engineering and I'd like to thank all the members for their
-hard work in this regard.
+Modelica Association is an organization committed to open standards
+that support engineering and I'd like to thank all the members for
+their hard work in this regard.
 
 There wasn't always a Modelica Association, but there was always a
 Modelica Design Group.  These are the people who come together several
 times a year and work on continuously improving the Modelica language.
-It is astounding how much energy has been poured into this effort.
-I'd like to thank all those people who've participated in the
-development of the Modelica Language and the Modelica Standard
-Library.
+It is astounding how much time and energy people have volunteered
+toward this effort.  I'd like to thank all those people who've
+participated in the development of the Modelica Language and the
+Modelica Standard Library.
 
 Personal
 ========
@@ -59,13 +59,14 @@ the energy and time I'm able to apply to projects like this one to
 them.
 
 The very idea of a book that is available for free might seem radical
-to some.  This was largely inspired by listening to and reading the
-works of Cory Doctorow and Lawrence Lessig.  I'd like to thank them
-for opening my eyes to the idea of Creative Commons licensing.  I'd
-also like to thank Dietmar Winkler for the many discussions we had on
-alternative publishing models.  We would frequently discuss the ideas
-of Doctorow and Lessig and how their ideas could be applied to create
-more accessible content for the Modelica world.
+to some.  The basic premise of this project was largely inspired by
+listening to and reading the works of Cory Doctorow and Lawrence
+Lessig.  I'd like to thank them for opening my eyes to the idea of
+Creative Commons licensing.  I'd also like to thank Dietmar Winkler
+for the many discussions we had on alternative publishing models.  We
+would frequently discuss the ideas of Doctorow and Lessig and how
+their ideas could be applied to the creation of more accessible
+content for the Modelica world.
 
 Looking back, I feel very fortunate to have worked for several
 companies that supported my involvement in Modelica.  I first got
@@ -76,26 +77,27 @@ Emmeskay (eventually acquired by LMS).  I benefited enormously from
 the interactions I had with my Emmeskay family.  In particular, I'd
 like to thank my partners, Swami Gopalswamy and Shiva Shivashankar for
 giving me the opportunity to be part of Emmeskay and for being great
-friends.  It was a privilege to work with Michael Sasena and John
-Batteh on several Modelica related projects.  Emmeskay was an
-incredible company and this was entirely a reflection on the great
-group of people who worked there.  Finally, I'd like to thank Dassault
-Systèmes for giving me the opportunity to work with all the excellent
-people there as well.  In particular, I'd like to thank Hilding
-Elmqvist and Marc Frouin for encouraging me to come work there.  I'd
-also like to thank Martin Malmheden, Dag Brück and Sandrine Loembe for
-all the good times during my excellent year in Paris.
+friends.  While at Emmeskay, it was a privilege to work with Michael
+Sasena and John Batteh on several Modelica related projects.  Emmeskay
+was an incredible company and this was entirely a reflection on the
+great group of people who worked there.  Finally, I'd like to thank
+Dassault Systèmes for giving me the opportunity to work with all the
+excellent people there as well.  In particular, I'd like to thank
+Hilding Elmqvist and Marc Frouin for encouraging me to come work
+there.  I'd also like to thank Martin Malmheden, Dag Brück and
+Sandrine Loembe for all the good times during my excellent year in
+Paris.
 
 Contributors
 ============
 
 This project was really an experiment to see if the Kickstarter
-approach could to publishing could be applied to a niche technical
-field like Modelica.  I was pleasantly surprised to see that it could
-and that this project had enough support to be funded.  For that
-reason, I'd like to thank the backers of the Kickstarter project (and
-the corporate sponsors in particular) for coming together to achieve
-are mutual goal of creating more quality educational material around
+approach to publishing could be applied to a niche technical field
+like Modelica.  I was pleasantly surprised to see that it could and
+that this project had enough support to be funded.  For that reason,
+I'd like to thank the backers of the Kickstarter project (and the
+corporate sponsors in particular) for coming together to achieve our
+mutual goal of creating more quality educational material around
 Modelica.  Literally, this project could not have happened without
 them.
 
@@ -132,8 +134,8 @@ capabilities in the HTML book.  OpenModelica supported all of these
 use cases.  But beyond that, I owe a big "Thank You" to Martin Sjölund
 and the OpenModelica team for quickly responding to various issues I
 had during the creation of the book.  Many times I would see Martin on
-Skype at late at night (Sweden time) and he was gracious enough to
-help me out.
+Skype late at night (Sweden time) and he was gracious enough to help
+me out.
 
 The browser integrated simulation capabilities in the HTML version of
 the book are only possible because of a tool called Emscripten which
@@ -141,7 +143,7 @@ allows ordinary code in languages like C and C++ to be cross-compiled
 (via LLVM) into Javascript.  Although I knew this was possible, I
 didn't really think this avenue was viable until I saw `the work of Tom Short <https://github.com/tshort/openmodelica-javascript>`_
 integrating OpenModelica and Emscripten.  The browser integrated
-simulation capabilities were enabled by his work.
+simulation capabilities were greatly enabled by his work in this area.
 
 This book was written using Git as the version control system and
 `GitHub <http://github.com>`_ for hosting.  Most people think of the
@@ -173,8 +175,9 @@ because I was convinced they could support the kind of command-line
 oriented development work I typically do.  I could not have been more
 wrong.  The eco-systems for MacOSX is almost identical to the one I
 was used to in the Linux world.  I am able to seamlessly transition
-between the MacOSX and Linux environments without any significant
-adjustments.
+between MacOSX and Linux environments without any significant
+adjustments.  The power and portability of the MacBook Air gave my
+entire work process a big boost.
 
 Developing this book involved a lot of testing and debugging of HTML
 layout, styling and embedded Javascript.  Most of this work was done

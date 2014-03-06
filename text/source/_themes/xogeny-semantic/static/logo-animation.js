@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var thumbnails = $(".thumbnail");
-    thumbnails.popup();
+    thumbnails.popup({"on": "focus"});
 
     var groups = ["CyDesign", "Wolfram", "Modelon", "Maplesoft", "DS",
 		  "Ricardo", "ITI", "GlobalCrown", "Siemens",
