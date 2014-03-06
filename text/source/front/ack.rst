@@ -58,10 +58,14 @@ cultivating and sustaining my interests in these topics so I owe all
 the energy and time I'm able to apply to projects like this one to
 them.
 
-I'd also like to thank Dietmar Winkler for the many discussions we had
-on alternative publishing models.  We would frequently discuss the
-ideas of people like Cory Doctorow and Lawrence Lessig and how their
-ideas could be applied to create more accessible content.
+The very idea of a book that is available for free might seem radical
+to some.  This was largely inspired by listening to and reading the
+works of Cory Doctorow and Lawrence Lessig.  I'd like to thank them
+for opening my eyes to the idea of Creative Commons licensing.  I'd
+also like to thank Dietmar Winkler for the many discussions we had on
+alternative publishing models.  We would frequently discuss the ideas
+of Doctorow and Lessig and how their ideas could be applied to create
+more accessible content for the Modelica world.
 
 Looking back, I feel very fortunate to have worked for several
 companies that supported my involvement in Modelica.  I first got
