@@ -183,7 +183,7 @@ I'd like to thank both the Mozilla Foundation and Google for creating
 such wonderful, standards compliant browsers.
 
 The style of the book owes a fair amount to the `Semantic UI
-<http://www.semantic-ui.org>`_ CSS framework.
+<http://www.semantic-ui.com>`_ CSS framework.
 
 .. raw:: latex
 
