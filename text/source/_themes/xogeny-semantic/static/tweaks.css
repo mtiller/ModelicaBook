@@ -35,3 +35,15 @@
     margin-left: 5px;
     margin-right: 5px;
 }
+
+.ribbon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.thumbshadow {
+  -webkit-box-shadow: 0 0 10px #888;
+     -moz-box-shadow: 0 0 10px #888;
+          box-shadow: 0 0 10px #888;
+}

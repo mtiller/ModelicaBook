@@ -32,7 +32,9 @@ $(document).ready(function() {
 
     var shownext = function() {
 	$(".sentry").hide();
+	$(".thumbnail").removeClass("thumbshadow");
 	$("#sentry-"+order[next]).show();
+	$("#thumbnail-"+order[next]).addClass("thumbshadow");
 	console.log("Showing "+order[next]);
 	if (next<order.length-1) next = next + 1;
 	else next = 0;
