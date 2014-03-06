@@ -65,7 +65,7 @@ energies and talents to help society.
     for right, we are one down. Parents all, we have lost a child. Let
     us weep."
 
-    -- Tim Berners-Lee
+    -- `Tim Berners-Lee <https://twitter.com/timberners_lee/status/290140454211698689>`_
 
 .. raw:: latex
 
