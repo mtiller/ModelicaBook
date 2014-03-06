@@ -56,4 +56,45 @@ $(document).ready(function() {
     var thumbnails = $(".thumbnail");
     console.log(thumbnails.length+" found");
     thumbnails.popup();
+
+    var groups = ["CyDesign", "Wolfram", "Modelon", "Maplesoft", "DS",
+		  "Ricardo", "ITI", "GlobalCrown", "Siemens",
+		  "ST", "OSMC", "dofware", "BauschGall", "TUHH", "Schlegel"];
+
+    function shuffle(array) {
+	var currentIndex = array.length
+	, temporaryValue
+	, randomIndex
+	;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+
+	    // Pick a remaining element...
+	    randomIndex = Math.floor(Math.random() * currentIndex);
+	    currentIndex -= 1;
+
+	    // And swap it with the current element.
+	    temporaryValue = array[currentIndex];
+	    array[currentIndex] = array[randomIndex];
+	    array[randomIndex] = temporaryValue;
+	}
+
+	return array;
+    }
+    var order = shuffle(groups);
+    var next = 0;
+    console.log("Order: ");
+    console.log(order);
+
+    var shownext = function() {
+	$(".sentry").hide();
+	$("#sentry-"+order[next]).show();
+	console.log("Showing "+order[next]);
+	if (next<order.length-1) next = next + 1;
+	else next = 0;
+    };
+
+    shownext();
+    setInterval(shownext, 1000);
 });
