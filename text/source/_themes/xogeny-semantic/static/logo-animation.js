@@ -1,7 +1,11 @@
 $(document).ready(function() {
     var thumbnails = $(".thumbnail");
     console.log("# of thumbnails: "+thumbnails.length);
-    thumbnails.popup({"position": "bottom right"});
+    thumbnails.popup({
+	"position": "bottom right",
+	"inline": true,
+	"preserve": true
+    });
 
     var groups = ["CyDesign", "Wolfram", "Modelon", "Maplesoft", "DS",
 		  "Ricardo", "ITI", "GlobalCrown", "Siemens",
@@ -42,5 +46,5 @@ $(document).ready(function() {
     };
 
     shownext();
-    setInterval(shownext, 5000);
+    //setInterval(shownext, 5000);
 });

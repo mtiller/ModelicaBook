@@ -80,14 +80,15 @@
 } %}
 
 {%- macro popup(id, level) -%}
-<img class="thumbnail ui image floated left" style="padding-top: 20px"
-     src="/_static/sponsors/{{id}}/logo.png" width="80">
-<div class="ui floated right">
-  <dl class="sponsorinfo">
-    <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}}</i></dt>
-    <dd>{{SponsorsData[id].profile}}</dd>
+<div style="min-width: 250px">
+  <img class="thumbnail ui image floated left" style="padding-top: 20px"
+       src="/_static/sponsors/{{id}}/logo.png" width="80">
+  <div class="ui floated right">
+    <dl class="sponsorinfo">
+      <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}}</i></dt>
+      <dd>{{SponsorsData[id].profile}}</dd>
+  </div>
 </div>
-<br>
 {%- endmacro -%}
 
 {% macro thumbnail(id, level) %}
