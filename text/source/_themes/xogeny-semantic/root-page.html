@@ -79,23 +79,24 @@
     }
 } %}
 
-{#
-       <img class="thumbnail ui image floated left" style="padding-top: 20px"
-	    src="/_static/sponsors/{{id}}/logo.png" width="80">
-       <div class="ui floated right">
-	 <dl class="sponsorinfo">
-	   <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}}</i></dt>
-	   <dd>{{SponsorsData[id].profile}}</dd>
-       </div>
-     <br>
-#}
+{%- macro popup(id, level) -%}
+<img class="thumbnail ui image floated left" style="padding-top: 20px"
+     src="/_static/sponsors/{{id}}/logo.png" width="80">
+<div class="ui floated right">
+  <dl class="sponsorinfo">
+    <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}}</i></dt>
+    <dd>{{SponsorsData[id].profile}}</dd>
+</div>
+<br>
+{%- endmacro -%}
+
 {% macro thumbnail(id, level) %}
 <a href="{{SponsorsData[id].url}}"
    class="active blue item"
    style="margin-left: 5px; margin-right: 5px">
   <img class="thumbnail" id="thumbnail-{{id}}"
        src="/_static/sponsors/{{id}}/logo.png" width="40"
-       data-html='<span>Hello</span>'>
+       data-html='{{popup(id,level)}}'>
 </a>
 {% endmacro %}
 
