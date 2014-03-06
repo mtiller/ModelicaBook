@@ -131,14 +131,18 @@
 
 {%- macro sponsor_entry(id, level) -%}
 <div id="sentry-{{id}}" class="sentry">
-  <a class="logo" href="{{SponsorsData[id].url}}" style="float: left">
+  <a class="logo" href="{{SponsorsData[id].url}}">
     <img src="_static/sponsors/{{id}}/logo.png">
   </a>
   <dl class="sponsorinfo">
-    <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}} Sponsor</i></dt>
-    <dd>{{SponsorsData[id].profile}}</dd>
+    <dt><b>{{SponsorsData[id].name}}</b></dt>
+    <dd>
+      <p><b>{{level}} Sponsor</b><p>
+      <p>{{SponsorsData[id].profile}}</p>
+    </dd>
   </dl>
   <br>
+  <a href="{{SponsorsData[id].url}}">{{SponsorsData[id].url}}</a>
 </div>
 <div style="clear: both"></div>
 {%- endmacro -%}

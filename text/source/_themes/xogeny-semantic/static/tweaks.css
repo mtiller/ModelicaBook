@@ -23,6 +23,12 @@
     height: 100%;
 }
 
+.logo {
+    margin: 0px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
 .level {
     width: 65px;
     text-align: right;
