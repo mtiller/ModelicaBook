@@ -12,8 +12,8 @@ Front Matter
 .. toctree::
    :maxdepth: 1
 
-   front/foreword
    front/preface
+   front/ack
    front/intro
    front/dedication
 

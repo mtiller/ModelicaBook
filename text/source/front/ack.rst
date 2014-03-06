@@ -9,7 +9,7 @@ This book is the culmination of so many lectures, books, discussions,
 conferences, *etc.* that it is impossible to provide a full accounting
 to all the people who've had an impact on the book.  Undoubtedly,
 there are people I've failed to mention here and I apologize in
-advance if I've left anyones name off this list.
+advance to anyone who feels they've been overlooked.
 
 Technical
 =========
@@ -79,8 +79,8 @@ group of people who worked there.  Finally, I'd like to thank Dassault
 Systèmes for giving me the opportunity to work with all the excellent
 people there as well.  In particular, I'd like to thank Hilding
 Elmqvist and Marc Frouin for encouraging me to come work there.  I'd
-also like to thank Martin Malmheden, Dag Brück and Sandrine Loembe
-during my excellent year in Paris.
+also like to thank Martin Malmheden, Dag Brück and Sandrine Loembe for
+all the good times during my excellent year in Paris.
 
 Contributors
 ============
@@ -114,33 +114,73 @@ Tools
 =====
 
 Building a book like this requires a lot of different tools.  My
-productivity was amplified enormously.
+productivity was amplified enormously by the use of these tools.
 
-Sphinx - 
+This book was written using Sphinx, a documentation generation tool
+that supports multiple outputs.  Sphinx allows me to focus on the
+content of the book and takes care of generating the book in multiple
+formats.
 
-OpenModelica - 
-Martin Sjoelund - 
+In creating this book, I needed a way to test the models that appear
+in the book, generate simulation results for plots and generated
+Javascript code that allows the browser integrated simulation
+capabilities in the HTML book.  OpenModelica supported all of these
+use cases.  But beyond that, I owe a big "Thank You" to Martin Sjölund
+and the OpenModelica team for quickly responding to various issues I
+had during the creation of the book.  Many times I would see Martin on
+Skype at late at night (Sweden time) and he was gracious enough to
+help me out.
 
-Emscripten - 
-Tom Smart - 
+The browser integrated simulation capabilities in the HTML version of
+the book are only possible because of a tool called Emscripten which
+allows ordinary code in languages like C and C++ to be cross-compiled
+(via LLVM) into Javascript.  Although I knew this was possible, I
+didn't really think this avenue was viable until I saw `the work of Tom Short <https://github.com/tshort/openmodelica-javascript>`_
+integrating OpenModelica and Emscripten.  The browser integrated
+simulation capabilities were enabled by his work.
 
-Git - 
-Dietmar Winkler
+This book was written using Git as the version control system and
+`GitHub <http://github.com>`_ for hosting.  Most people think of the
+version control system as some arcane backup system.  But version
+control systems are at the heart of collaboration and I'd like to see
+them used more widely in engineering.  For this book, the "pull
+request" system from GitHub was very useful in incorporating feedback
+from reviewers.  I'd like to again thank Dietmar Winkler for
+enlightening me about many different features in Git.
 
-Emacs - 
+I used the Emacs editor for this book.  Despite the proliferation of
+really excellent editors that support a wide range of languages and
+platforms, Emacs remains the work horse of my development process for
+most projects.  It seems to support just about every type of file I
+need to edit out of the box.
 
-Dymola, MapleSoft, SystemModeler, SimulationX
+During the production of this book several tool vendors gave me access
+to their proprietary tools.  I didn't utilize these very much, but I
+wanted to acknowledge their generosity in providing me with temporary
+licenses.  Specifically, I'd like to thank Dassault Systèmes,
+Maplesoft, Wolfram Research and ITI for giving me access to Dymola,
+MapleSim, SystemModeler and SimulationX, respectively.
 
-MacBookAir - 
+Much of this book was written on a MacBook Air.  My very first
+computer was an Apple //e.  But since that time, I've worked mainly
+with PCs and Unix workstations.  Most recently, I've done a great deal
+of development on Linux machines.  I always dismissed using Macs
+because I was convinced they could support the kind of command-line
+oriented development work I typically do.  I could not have been more
+wrong.  The eco-systems for MacOSX is almost identical to the one I
+was used to in the Linux world.  I am able to seamlessly transition
+between the MacOSX and Linux environments without any significant
+adjustments.
 
-iTerm2 - 
+Developing this book involved a lot of testing and debugging of HTML
+layout, styling and embedded Javascript.  Most of this work was done
+using Firefox but I've also used Chrome from time to time as well.
+I'd like to thank both the Mozilla Foundation and Google for creating
+such wonderful, standards compliant browsers.
 
-Firefox - 
-
-Chrome - 
+The style of the book owes a fair amount to the `Semantic UI
+<http://www.semantic-ui.org>`_ CSS framework.
 
 .. raw:: latex
 
    \setcounter{secnumdepth}{2}
-
-
