@@ -8,13 +8,6 @@
 Preface
 *******
 
-Acknowledgments
-===============
-
-
-Structure and Approach
-======================
-
 This book is a bit unusual in the way it is structured.  This is
 because it is expected that most readers will be reading an HTML
 version of the book.  As a result, the book makes heavy use of
