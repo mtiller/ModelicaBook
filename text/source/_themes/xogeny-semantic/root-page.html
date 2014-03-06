@@ -79,13 +79,7 @@
     }
 } %}
 
-{% macro thumbnail(id, level) %}
-<a href="{{SponsorsData[id].url}}"
-   class="active blue item"
-   style="margin-left: 5px; margin-right: 5px">
-  <img class="thumbnail" id="thumbnail-{{id}}"o
-       src="/_static/sponsors/{{id}}/logo.png" width="40"
-       data-position="bottom right" data-html='
+{#
        <img class="thumbnail ui image floated left" style="padding-top: 20px"
 	    src="/_static/sponsors/{{id}}/logo.png" width="80">
        <div class="ui floated right">
@@ -93,7 +87,15 @@
 	   <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}}</i></dt>
 	   <dd>{{SponsorsData[id].profile}}</dd>
        </div>
-     <br>'>
+     <br>
+#}
+{% macro thumbnail(id, level) %}
+<a href="{{SponsorsData[id].url}}"
+   class="active blue item"
+   style="margin-left: 5px; margin-right: 5px">
+  <img class="thumbnail" id="thumbnail-{{id}}"
+       src="/_static/sponsors/{{id}}/logo.png" width="40"
+       data-html='<span>Hello</span>'>
 </a>
 {% endmacro %}
 
@@ -136,7 +138,11 @@
     <img src="_static/sponsors/{{id}}/logo.png">
   </a>
   <dl class="sponsorinfo">
-    <dt><b>{{SponsorsData[id].name}}</b></dt>
+    <dt>
+      <a href="{{SponsorsData[id].url}}">
+	{{SponsorsData[id].name}}
+      </a>
+    </dt>
     <dd>
       <p><b>{{level}} Sponsor</b><p>
       <p>{{SponsorsData[id].profile}}</p>
