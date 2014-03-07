@@ -13,7 +13,7 @@ $(document).ready(function() {
     for(var i=0;i<groups.length;i++) {
 	(function() {
 	    var j = i;
-	    $("#thumbnail-"+groups[j]).hover(function () {
+	    $("#thumbnail-"+groups[j]).click(function () {
 		console.log("Show "+groups[j]);
 		showsponsor(groups[j]);
 	    });

@@ -97,13 +97,13 @@
 {%- endmacro -%}
 
 {% macro thumbnail(id, level) %}
-<a href="{{SponsorsData[id].url}}"
+<div 
    class="active blue item"
    style="margin-left: 5px; margin-right: 5px">
   <img class="thumbnail" id="thumbnail-{{id}}"
        src="/_static/sponsors/{{id}}/logo.png" width="40"
        data-html='{{popup(id,level)}}'>
-</a>
+</div>
 {% endmacro %}
 
 {% macro signup_head() %}
