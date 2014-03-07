@@ -306,4 +306,4 @@ if 'epub' in tags:
     plot_html_show_formats = False
 
 #plot_formats = ["png", "hires.png", "pdf", "svg"]
-plot_formats = []
+plot_formats = ["png", "hires.png", "pdf", "svg"]
