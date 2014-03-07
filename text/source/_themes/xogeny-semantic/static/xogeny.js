@@ -13,14 +13,49 @@ $(document).ready(function() {
     var runsim = function(jobj, model_id, casedata, plot_id) {
 	console.log("Whee! let's simulate model "+model_id+"!");
 	if (worker!=null) worker.terminate();
-	worker = new Worker("/_static/js/"+model_id+".js");
+	var jsurl = "/_static/js/"+model_id+".js";
+	console.log("Creating worker for script at "+jsurl);
+	worker = new Worker(jsurl);
+
+	/* Setup listeners, before we fire off any messages to the worker */
 	worker.addEventListener("error", function(event) {
 	    console.log("Error from worker:");
 	    console.log(event);
 	});
 
 	worker.addEventListener("message", function(event) {
+	    console.log("Message from worker: ");
+	    console.log(event);
 	    var data = event.data;
+	    if (data.preloaded) {
+		/* If we get here, the worker is telling us that
+		   they fetched the _init.xml and _info.xml files.
+		   So now we can fire off the actual simulation. */
+		console.log("Got preload message");
+		console.log("Starting simulation");
+		var stopTime = parseFloat(casedata.stopTime);
+		var step = stopTime/casedata.ncp;
+		var tol = casedata.tol;
+		var overrides = {
+		    "stopTime": String(stopTime),
+		    "tolerance": String(tol),
+		    "stepSize": String(step)
+		};
+		var formobj = $("#form-"+plot_id);
+		var params = $(formobj).children("div.paramrow");
+		params.each(function(i, elem) {
+		    var pname = $(elem).children("label.paramname").text();
+		    var pval = $(elem).children("input.paramvalue").val();
+		    overrides[pname] = pval;
+		});
+		var runmsg = {
+		    "basename": model_id,
+		    "override": overrides
+		};
+		console.log("Run command sent to worker:");
+		console.log(runmsg);
+		worker.postMessage(runmsg);
+	    }
 	    console.log("Simulation status: "+data.status);
 	    var x = $.csv.toArrays(event.data.csv,
 				   {onParseValue: $.csv.hooks.castToScalar})
@@ -47,14 +82,10 @@ $(document).ready(function() {
 	    $("#sim-button-"+plot_id).text("Simulate");
 	    $("#sim-button-"+plot_id).removeClass("disabled");
 	});
-	console.log("Starting simulation");
-	var stopTime = parseFloat(casedata.stopTime);
-	var step = stopTime/casedata.ncp;
-	var tol = casedata.tol;
-	worker.postMessage({"basename": model_id,
-			    "stopTime": String(stopTime),
-			    "tolerance": String(tol),
-			    "stepSize": String(step)})
+
+	/* Tell the worker to preload the _init.xml and _info.xml files */
+	console.log("Firing message to worker");
+	worker.postMessage({"basename": model_id, "preload": true});
     };
     
     var fixfig = function(p, was, plot_id, casedata, model_id, jobj) {

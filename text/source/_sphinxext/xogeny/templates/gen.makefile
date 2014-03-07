@@ -20,11 +20,15 @@ json/{{res}}.json.gz: json/{{res}}.json
 js/{{res}}.js:  {{results[res]["path"]}}
 	-mkdir js
 	omc {{res}}-js.mos
-	-mv {{res}}.node.js js/{{res}}.node.js
+	-mv {{res}}_node.js js/{{res}}_node.js
+	cp {{res}}_init.xml js/{{res}}_init.xml
+	cp {{res}}_info.xml js/{{res}}_info.xml
 	mv {{res}}.js js/{{res}}.js
 
 js/{{res}}.js.gz: js/{{res}}.js
 	(cd js; gzip -fk {{res}}.js)
+	-(cd js; gzip -fk {{res}}_init.xml)
+	-(cd js; gzip -fk {{res}}_info.xml)
 
 {% endfor %}
 

@@ -47,8 +47,8 @@ results:
 local_js: specs
 	@echo "Generate JS files and deploy them"
 	(cd results; make js_files json_files tidy)
-	-rm results/js/*.node.js
-	-rm results/js/*.node.js.gz
+	-rm results/js/*_node.js
+	-rm results/js/*_node.js.gz
 
 # This downloads already compiled JS and JSON files.  Use this if you
 # do not have the ability to compile JS files locally
@@ -63,10 +63,12 @@ download_js:
 # This target builds all the simulation results and then pushes them
 # out to an S3 bucket for static hosting
 deploy_js: local_js
-	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip: s3://cdn.book.xogeny.com/js/)
-	(cd results/json; $(SYNC) *.json.gz --add-header=Content-Encoding:gzip s3://cdn.book.xogeny.com/json/)
-	(cd results/js; $(SYNC) *.js s3://cdn.book.xogeny.com/js/)
-	(cd results/json; $(SYNC) *.json s3://cdn.book.xogeny.com/json/)
+	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip: s3://beta.book.xogeny.com/js/)
+	(cd results/js; $(SYNC) *.xml.gz --add-header=Content-Encoding:gzip: s3://beta.book.xogeny.com/js/)
+	(cd results/json; $(SYNC) *.json.gz --add-header=Content-Encoding:gzip s3://beta.book.xogeny.com/json/)
+	(cd results/js; $(SYNC) *.js s3://beta.book.xogeny.com/js/)
+	(cd results/js; $(SYNC) *.xml s3://beta.book.xogeny.com/js/)
+	(cd results/json; $(SYNC) *.json s3://beta.book.xogeny.com/json/)
 
 # This target builds all the SVG images
 docs:
@@ -90,6 +92,10 @@ server: dirhtml build_links
 web: dirhtml build_links
 	(cd build/dirhtml; $(SYNC) * s3://beta.book.xogeny.com/)
 	# TODO: Set Content-Encoding on all gz files to be gzip (use find?)
+
+nw: dirhtml build_links
+	cp nw-package.json build/dirhtml/package.json
+	(cd build/dirhtml; zip -r ../book.nw .)
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
