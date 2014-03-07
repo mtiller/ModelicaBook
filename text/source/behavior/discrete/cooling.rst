@@ -45,7 +45,7 @@ this model for one second, we get the following temperature
 trajectory:
 
 .. plot:: ../plots/NCD.py
-   :include-source: no
+   :class: interactive
 
 As you can see in these results, the ambient temperature does indeed
 start to decrease after half a second.  In studying the dynamic
@@ -87,8 +87,7 @@ longer includes any initial transient and we can focus only on the
 response to the disturbance:
 
 .. plot:: ../plots/NCSTD.py
-   :include-source: no
-
+   :class: interactive
 
 .. cooling-if-expr:
 

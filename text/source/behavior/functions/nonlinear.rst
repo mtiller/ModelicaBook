@@ -26,7 +26,7 @@ evaluates a quadratic polynomial.
 Simulating this model gives the following solution for ``y``:
 
 .. plot:: ../plots/NLEE.py
-   :include-source: no
+   :class: interactive
 
 So far, all of this appears quite reasonable and, based on our
 previous discussion on :ref:`polynomial-evaluation`, the
@@ -110,7 +110,7 @@ Simulating the ``ImplicitEvaluation`` model we get the following
 solution for ``y``:
 
 .. plot:: ../plots/NLIE.py
-   :include-source: no
+   :class: interactive
 
 Looking at this figure, we can see that, in fact, we got the correct
 result, but, in general, without the need to solve the non-linear

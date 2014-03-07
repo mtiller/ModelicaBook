@@ -142,4 +142,4 @@ It is this functionality that prevents chattering and which can be
 clearly observed in the simulated results for our example:
 
 .. plot:: ../plots/SIL.py
-   :include-source: no
+   :class: interactive

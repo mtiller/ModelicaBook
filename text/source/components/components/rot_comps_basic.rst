@@ -302,7 +302,7 @@ The diagram for this model, when rendered, looks like this:
    :alt: 
 
 .. plot:: ../plots/SMD.py
-   :include-source: no
+   :class: interactive
 
 This completes our discussion of basic rotational components.  But
 there is quite a bit more to say about rotational components in the

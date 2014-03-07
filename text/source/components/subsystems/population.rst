@@ -51,7 +51,7 @@ trajectory since their initial conditions are identical.  The
 following plot shows that this is, in fact, the case:
 
 .. plot:: ../plots/Uncon.py
-   :include-source: no
+   :class: interactive
 
 In a moment, we'll look at the effects of migration.  But in order to
 fully appreciate the effect that migration has, we'll need to
@@ -66,7 +66,7 @@ Simulating this model, we see that each region has a slightly
 different population dynamic:
 
 .. plot:: ../plots/ID.py
-   :include-source: no
+   :class: interactive
 
 Migration
 ^^^^^^^^^
@@ -109,7 +109,7 @@ different regions start off out of sync, but eventually stabilize into
 repeating patterns:
 
 .. plot:: ../plots/WM.py
-   :include-source: no
+   :class: interactive
 
 Conclusion
 ^^^^^^^^^^

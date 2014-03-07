@@ -168,7 +168,6 @@ However, if modify the ``phi1_init`` parameter to be *1* at the start
 of our simulation, we get this solution instead:
 
 .. plot:: ../plots/SOSIP1.py
-   :include-source: no
 
 .. topic:: Expanding on this mechanical example
 

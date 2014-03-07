@@ -61,7 +61,7 @@ If we simulate this model, we can see the impact that the backlash's
 presence has on the response of the system:
 
 .. plot:: ../plots/SMD_WB.py
-   :include-source: no
+   :class: interactive
 
 .. index:: kinematic constraint
 
@@ -84,8 +84,7 @@ ground element must impose on the system in order to fix the angular
 position:
 
 .. plot:: ../plots/SMD_WB_RT.py
-   :include-source: no
-
+   :class: interactive
 
 Grounding and Reaction Torques
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -240,8 +239,7 @@ assembly.  As a result, when we simulate this system, we see that
 .. todo:: Fix this plot
 
 .. plot:: ../plots/SMD_GG.py
-   :include-source: no
-
+   :class: interactive
 
 Comparison
 ^^^^^^^^^^
@@ -299,14 +297,14 @@ of the mechanism with the explicitly grounded gear.  This is verified
 by the following plot:
 
 .. plot:: ../plots/SMD_GC_g.py
-   :include-source: no
+   :class: interactive
 
 But the question still remains, how much difference would it make if
 we assumed that a gear was implicitly grounded when, in fact, it
 wasn't?  This is clearly demonstrated in the following plot:
 
 .. plot:: ../plots/SMD_GC_u.py
-   :include-source: no
+   :class: interactive
 
 .. todo:: Tune system to demonstrate a more remarkable difference
 
@@ -397,4 +395,4 @@ And, as we would expect, the response for ``inertia1`` and
 ``inertia4`` are identical:
 
 .. plot:: ../plots/SMD_CG.py
-   :include-source: no
+   :class: interactive

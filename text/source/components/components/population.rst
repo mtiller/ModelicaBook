@@ -323,7 +323,7 @@ As we can see from the following plot, the behavior of this system is
 identical to the one presented in our earlier discussion of :ref:`lotka-volterra-systems`:
 
 .. plot:: ../plots/CLV.py
-   :include-source: no
+   :class: interactive
 
 Introducing a Third Species
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -370,7 +370,7 @@ system dynamics between the classic model and this three species
 model.  The following plot shows how these three species interact:
 
 .. plot:: ../plots/ThirdS.py
-   :include-source: no
+   :class: interactive
 
 By using the ``init`` parameter in the various ``RegionalPopulation``
 instances, we can also quickly create a model to solve for the
@@ -385,7 +385,7 @@ the underlying species populations.  Simulating this model gives us
 the equilibrium population level for each species:
 
 .. plot:: ../plots/ThreeS.py
-   :include-source: no
+   :class: interactive
 
 From an ecological standpoint, we can already make an interesting
 observation about this system.  If we start it from a non-equilibrium

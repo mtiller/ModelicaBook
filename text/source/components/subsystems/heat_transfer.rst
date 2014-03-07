@@ -37,7 +37,7 @@ Simulating this system, we can see the temperature response of the
 rightmost thermal capacitance in the following plot:
 
 .. plot:: ../plots/FR.py
-   :include-source: no
+   :class: interactive
 
 Segmented Rod Subsystem
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -145,7 +145,7 @@ number of superfluous components:
    made a mistake here.  I need to check with Dymola.
 
 .. plot:: ../plots/SegC.py
-   :include-source: no
+   :class: interactive
 
 Conclusion
 ^^^^^^^^^^

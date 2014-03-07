@@ -21,7 +21,7 @@ Consider the following model:
 If we simulate this model, we get the following results:
 
 .. plot:: ../plots/CC1.py
-   :include-source: no
+   :class: interactive
 
 However, the simulation that yields these results takes a very long
 time to complete.  The reason for such poor simulation performance can
@@ -29,7 +29,7 @@ be better understood by looking at the heater output during the
 simulation:
 
 .. plot:: ../plots/CC1_Q.py
-   :include-source: no
+   :class: interactive
 
 .. todo:: the plot isn't showing this - it is just a solid blue background
 
@@ -72,14 +72,14 @@ true.  If we simulate this model and look at the temperature, we see
 that it stays within the hysteresis band of our desired temperature.
 
 .. plot:: ../plots/Hyst.py
-   :include-source: no
+   :class: interactive
 
 More importantly, if we look at the heat output from the system, we
 see that, unlike our previous example, some time elapses between the
 heater turning on and the heater turning off.
 
 .. plot:: ../plots/Hyst_Q.py
-   :include-source: no
+   :class: interactive
 
 The logic for implementing hysteresis can be made slightly more
 explicit by using an ``algorithm`` section (as previous discussed

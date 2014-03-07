@@ -27,7 +27,7 @@ If we simulate this model, we see the following voltage across the
 ``load`` resistor:
 
 .. plot:: ../plots/FC.py
-   :include-source: no
+   :class: interactive
 
 Note that our target here is an output voltage of 12 volts.  However,
 the greater the load on the power supply, the lower the quality of the
@@ -76,7 +76,7 @@ Using our hierarchical system model we get, as expected, exactly the
 same results as we got for the flat version:
 
 .. plot:: ../plots/SSC.py
-   :include-source: no
+   :class: interactive
 
 We can augment our system model to include an additional load (that
 comes online after some delay):
@@ -90,20 +90,20 @@ In that case, if we simulate the model we can see the impact that
 additional load will have on the quality of power supply output:
 
 .. plot:: ../plots/SSC_AL.py
-   :include-source: no
+   :class: interactive
 
 By increasing the capacitance in the power supply, we can reduce the
 amplitude of the voltage fluctuations, *e.g.,*
 
 .. plot:: ../plots/SSC_ALC.py
-   :include-source: no
+   :class: interactive
 
 However, if we increase the capacitance level too much, we will find
 that the power supply output is very slow to respond to load changes,
 *e.g.,*
 
 .. plot:: ../plots/SSC_ALC2.py
-   :include-source: no
+   :class: interactive
 
 Conclusion
 ^^^^^^^^^^

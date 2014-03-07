@@ -62,7 +62,7 @@ With this approach, we create an equation for the balance of each
 species.  If we simulate this model, we get the following results:
 
 .. plot:: ../plots/RNA.py
-   :include-source: no
+   :class: interactive
 
 Using Arrays
 ^^^^^^^^^^^^
@@ -170,7 +170,7 @@ our chemical system using enumerations as:
    :lines: 2-
 
 .. plot:: ../plots/RE.py
-   :include-source: no
+   :class: interactive
 
 Conclusion
 ^^^^^^^^^^

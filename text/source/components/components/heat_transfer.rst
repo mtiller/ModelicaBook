@@ -146,7 +146,7 @@ Since no heat enters or leaves the thermal capacitance component,
 in the following plot:
 
 .. plot:: ../plots/HTA.py
-   :include-source: no
+   :class: interactive
 
 ConvectionToAmbient
 ~~~~~~~~~~~~~~~~~~~
@@ -263,7 +263,7 @@ If we simulate the ``CoolingToAmbient`` model above, we get the
 following temperature trajectory:
 
 .. plot:: ../plots/HT_CTA.py
-   :include-source: no
+   :class: interactive
 
 .. _digging-deeper:
 
@@ -387,7 +387,7 @@ the trouble to break up the ``ConvectionToAmbient`` model into individual
 the same fundamental behavior, *i.e.,*
 
 .. plot:: ../plots/HT_C.py
-   :include-source: no
+   :class: interactive
 
 The big benefit of breaking down ``ConvectionToAmbient`` into
 ``Convection`` and ``AmbientTemperature`` models is the ability to
@@ -409,7 +409,7 @@ model:
    fix it so it can simulate.
 
 .. plot:: ../plots/HT_CN.py
-   :include-source: no
+   :class: interactive
 
 In fact, with these components we can now make **arbitrarily complex**
 networks of components and still never have to worry about formulating

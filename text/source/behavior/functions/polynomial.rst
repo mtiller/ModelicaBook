@@ -185,7 +185,7 @@ order term.  If we compare a direct evaluation of the polynomial,
 ``yp``, with one computed by our function, ``yf``, we see they are identical:
 
 .. plot:: ../plots/Eval1.py
-   :include-source: no
+   :class: interactive
 
 Differentiation
 ~~~~~~~~~~~~~~~
@@ -353,5 +353,5 @@ Simulating this model and comparing results, we see agreement between
 .. todo:: Yikes, OpenModelica computes the derivative incorrectly!
 
 .. plot:: ../plots/Diff2.py
-   :include-source: no
+   :class: interactive
 

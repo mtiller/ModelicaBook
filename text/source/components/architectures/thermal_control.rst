@@ -125,13 +125,13 @@ system is:
 If we simulate this system, we get the following results:
 
 .. plot:: ../plots/TCB.py
-   :include-source: no
+   :class: interactive
 
 As we can see, this approach works very well.  The furnace heat
 required to achieve this degree of control looks like this:
 
 .. plot:: ../plots/TCBh.py
-   :include-source: no
+   :class: interactive
 
 Bang Bang Control
 ^^^^^^^^^^^^^^^^^
@@ -295,7 +295,7 @@ If we plot the results from this system, we get the following
 response:
 
 .. plot:: ../plots/TCE.py
-   :include-source: no
+   :class: interactive
 
 Note that the measured temperature corresponds to the signal
 ``controller.bus.temp`` where ``bus`` is an instance of the expandable
@@ -410,13 +410,13 @@ The source code for our system model is quite simple:
    :language: modelica
 
 .. plot:: ../plots/TCE_BB.py
-   :include-source: no
+   :class: interactive
 
 However, there is still one remaining issue with these models and it
 can be seen more clearly if we look at the duty cycle of the furnace:
 
 .. plot:: ../plots/TCE_BBh.py
-   :include-source: no
+   :class: interactive
 
 This is exactly the same issue we demonstrated in the previous section
 on :ref:`hysteresis`.  It is precisely the fact that our control
@@ -443,14 +443,14 @@ level model:
 Using hysteresis control, our simulation results look like this:
 
 .. plot:: ../plots/TCE_Hy.py
-   :include-source: no
+   :class: interactive
 
 But the most important difference is the fact that the hysteresis
 doesn't lead to the kind of chattering we saw in our previous
 bang-bang controller:
 
 .. plot:: ../plots/TCE_Hyh.py
-   :include-source: no
+   :class: interactive
 
 Conclusion
 ^^^^^^^^^^

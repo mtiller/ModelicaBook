@@ -134,7 +134,7 @@ variable ``y``.  The value of ``y`` is then integrated to compute
 We can see the simulated results from this model in the following plot:
 
 .. plot:: ../plots/IIV.py
-   :include-source: no
+   :class: interactive
 
 There are a couple of drawbacks to this approach.  The first is that
 the data needs to be passed around anywhere the function is used.
@@ -186,7 +186,7 @@ Simulating this model, we see that the results are exactly what we
 would expect when compared to our previous test case:
 
 .. plot:: ../plots/IIEV.py
-   :include-source: no
+   :class: interactive
 
 Defining an ``ExternalObject``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

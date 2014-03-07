@@ -22,7 +22,7 @@ If we attempt to simulate this model for 5 seconds, we fine that the
 simulation terminates after about 2 seconds with the following trajectory:
 
 .. plot:: ../plots/Decay1.py
-   :include-source: no
+   :class: interactive
 
 Again, numerical issues creep in.  Even though mathematically it
 should not be possible for the value of ``x`` to drop below zero,
@@ -44,7 +44,7 @@ against evaluating the square root of a negative number, like this:
 Simulating this model we get the following trajectory[#tol]:
 
 .. plot:: ../plots/Decay2.py
-   :include-source: no
+   :class: interactive
 
 Again, the simulation fails.  But why?  It fails for the same reason,
 a numerical exception that results from taking the square root of a
@@ -162,7 +162,7 @@ operator in action in the following model:
 and the results can be seen here:
 
 .. plot:: ../plots/Decay3.py
-   :include-source: no
+   :class: interactive
 
 Now the simulation completes without any problem.  This is because the
 use of ``noEvent`` ensures that ``sqrt(x)`` is never called with a
@@ -195,7 +195,7 @@ sooner or later with Modelica.  Consider the following model:
 Simulating this model gives us the following results:
 
 .. plot:: ../plots/Decay4.py
-   :include-source: no
+   :class: interactive
 
 This model is interesting because looking at it, one might assume the
 equation:
@@ -267,7 +267,7 @@ In doing so, we will get the same solution, but with better simulation
 performance:
 
 .. plot:: ../plots/Decay5.py
-   :include-source: no
+   :class: interactive
 
 .. todo: Smooth operator?
 

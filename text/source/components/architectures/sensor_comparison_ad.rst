@@ -241,14 +241,14 @@ see that the performance matches that of our original
 :ref:`flat-sensor-system`.
 
 .. plot:: ../plots/SV1.py
-   :include-source: no
+   :class: interactive
 
 However, if we instead create a configuration with the longer hold
 time, we find that the system becomes unstable (exactly as it did in
 the :ref:`flat-sensor-system` as well):
 
 .. plot:: ../plots/SV1U.py
-   :include-source: no
+   :class: interactive
 
 ``Variation2``
 ~~~~~~~~~~~~~~
@@ -266,7 +266,7 @@ limitations on the amount of torque it can supply, *i.e.*,
 we will get the following simulation results:
 
 .. plot:: ../plots/SV2.py
-   :include-source: no
+   :class: interactive
 
 Furthermore, if take some time to tune the gains in the PID
 controller, *i.e.,*
@@ -277,7 +277,7 @@ controller, *i.e.,*
 Then, we will get even better simulation results:
 
 .. plot:: ../plots/SV2T.py
-   :include-source: no
+   :class: interactive
 
 Conclusion
 ^^^^^^^^^^

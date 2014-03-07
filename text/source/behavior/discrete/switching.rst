@@ -30,13 +30,13 @@ voltage in the following plot:
 .. todo:: Source Voltage V needs subscript s, other plots missing subscripts also
 
 .. plot:: ../plots/SRLCv.py
-   :include-source: no
+   :class: interactive
 
 Furthermore, we can see the current response for inductor, resistor
 and capacitor components in this plot:
 
 .. plot:: ../plots/SRLCi.py
-   :include-source: no
+   :class: interactive
 
 Hopefully by this point, the basic mechanisms for generating events
 and disturbances seem intuitive and familiar.

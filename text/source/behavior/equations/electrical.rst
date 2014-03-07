@@ -141,7 +141,7 @@ models.
 The following figure shows the dynamic response of the ``RLC1`` model:
 
 .. plot:: ../plots/RLC1.py
-   :include-source: no
+   :class: interactive
 
 .. topic:: Expanding on these electrical examples
 

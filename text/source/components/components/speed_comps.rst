@@ -42,7 +42,7 @@ Before we look at the different speed approximation methods, let's
 have a look at the actual speed response from our plant model.
 
 .. plot:: ../plots/PBase.py
-   :include-source: no
+   :class: interactive
 
 Note that this is exactly the same response we saw when we initially
 covered this topic.
@@ -116,7 +116,7 @@ If we simulate this system for 5 seconds, we can compare the actual
 speed of the inertia with the signal returned from our sensor:
 
 .. plot:: ../plots/PwSH.py
-   :include-source: no
+   :class: interactive
 
 These results are identical to the results from our previous
 discussion of the :ref:`sample-and-hold` approach.
@@ -149,7 +149,7 @@ When assembled, our system model looks like this:
 Simulating this system, we get the following results for estimated speed:
 
 .. plot:: ../plots/PwIM.py
-   :include-source: no
+   :class: interactive
 
 As we saw in our previous discussion of the
 :ref:`interval-measurement` technique, the quality of the estimated
@@ -159,20 +159,20 @@ the shaft angle with respect to the bracketing teeth angles, we see
 that the shaft cannot move very far without triggering a measurement:
 
 .. plot:: ../plots/PwIM_gaps.py
-   :include-source: no
+   :class: interactive
 
 On the other hand, if we reduce the number of teeth per rotation down
 to 20, we get the following results:
 
 .. plot:: ../plots/PwIMf.py
-   :include-source: no
+   :class: interactive
 
 Plotting the teeth angles that bracket the current shaft angle, we see
 that crossings are far less frequent, and, as a result the accuracy of
 the measurement is greatly reduced:
 
 .. plot:: ../plots/PwIMf_gaps.py
-   :include-source: no
+   :class: interactive
 
 Again, we can validate our component-oriented sensor implementations
 by noting that these results are identical to the results presented
@@ -206,7 +206,7 @@ Simulating the system, we see that the results are the same as in our
 previous discussion of :ref:`pulse-counting`:
 
 .. plot:: ../plots/PwPC.py
-   :include-source: no
+   :class: interactive
 
 Conclusion
 ^^^^^^^^^^

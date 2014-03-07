@@ -24,8 +24,7 @@ address this question, we include the variable ``e`` which measures
 the difference between them.
 
 .. plot:: ../plots/SIS.py
-   :include-source: no
-
+   :class: interactive
 
 Simulating this model, we get the following trajectories for ``x`` and
 ``y``.  Of course, they look identical.  But in order to really
@@ -33,7 +32,7 @@ determine if there are any differences between them, let's plot the
 error value, ``e``:
 
 .. plot:: ../plots/SIS_e.py
-   :include-source: no
+   :class: interactive
 
 Now, let's consider the following model:
 
@@ -47,7 +46,7 @@ becomes true, both ``x`` and ``y`` will be assigned a value.  Sure
 enough, if we run this model, we see that the error is always zero:
 
 .. plot:: ../plots/SSS.py
-   :include-source: no
+   :class: interactive
 
 This kind of approach, where each signal is sampled based on a common
 "tick" (or clock), is a good way to avoid determinism issues.  However,
@@ -68,7 +67,7 @@ updated, we can be sure that ``x`` and ``y`` are updated at exactly
 the same time.  Simulating this model gives us:
 
 .. plot:: ../plots/SSI.py
-   :include-source: no
+   :class: interactive
 
 This is the approach taken in Modelica prior to version 3.3.  But
 version 3.3 introduced some new features that allow us to more easily

@@ -175,7 +175,7 @@ be seen in this plot:
    Get this plot working
 
 .. plot:: ../plots/LVCM.py
-   :include-source: no
+   :class: interactive
 
 Note the cyclical behavior of each population.  Initially, there are
 more predators than can be supported by the existing food supply.
@@ -322,7 +322,7 @@ So what happens if we try to simulate our ``QuiescientModel``?  The
 answer is pretty obvious in the plot below:
 
 .. plot:: ../plots/LVQM.py
-   :include-source: no
+   :class: interactive
 
 We ended up with the trivial solution where the prey and predator
 populations are zero.  In this case, we have no reproduction,
@@ -363,7 +363,7 @@ populations for both the predator and prey species).
    Fix this plot. (can't see predator population)
 
 .. plot:: ../plots/LVQMUS.py
-   :include-source: no
+   :class: interactive
 
 .. todo:: word start not being rendered correctly possibly due to
 	  nesting

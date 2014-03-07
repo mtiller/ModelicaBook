@@ -49,7 +49,7 @@ load that is being driven by the gear.
 If we simulate this system, we get the following response:
 
 .. plot:: ../plots/FSWB_comp.py
-   :include-source: no
+   :class: interactive
 
 The important thing to understand about this system is that the
 particular assembly of components inside the dashed line are likely to
@@ -116,8 +116,7 @@ As we can see in the following plot, the results are identical when
 compared to the "flat" version presented previously:
 
 .. plot:: ../plots/SWB.py
-   :include-source: no
-
+   :class: interactive
 
 Conclusion
 ^^^^^^^^^^

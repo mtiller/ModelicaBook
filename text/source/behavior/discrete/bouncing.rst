@@ -76,7 +76,7 @@ Running the simulation for the case where ``h0`` is 1.0, we see the
 following behavior from this model:
 
 .. plot:: ../plots/BB1.py
-   :include-source: no
+   :class: interactive
 
 In this plot, we see that at around 0.48 seconds, the first impact with the
 surface occurs.  This occurs because the condition ``h<0`` first becomes
@@ -112,7 +112,7 @@ longer.  In that case, most Modelica tools will provide a solution
 like this:
 
 .. plot:: ../plots/BB2.py
-   :include-source: no
+   :class: interactive
 
 It should be immediately obvious when looking at this trajectory that
 something has gone wrong.  But what?

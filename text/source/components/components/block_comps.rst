@@ -277,7 +277,7 @@ variable ``T.y``.  Simulating this system, we get the following
 solution for the temperature:
 
 .. plot:: ../plots/BNC.py
-   :include-source: no
+   :class: interactive
 
 As we can see, the solution is exactly the same as it has been for all
 previous incarnations of this example.
@@ -380,20 +380,20 @@ the setpoint temperature due to the influence of the control system.
 Simulating this system, we get the following temperature response:
 
 .. plot:: ../plots/MDC.py
-   :include-source: no
+   :class: interactive
 
 We can increase the "gain" of the controller, ``k``, and we see a
 different response:
 
 .. plot:: ../plots/MDC_hg.py
-   :include-source: no
+   :class: interactive
 
 However, we can see from the following plot that much more heat output
 was required from our actuator in order to achieve the faster response
 in the second case:
 
 .. plot:: ../plots/MDC_heat.py
-   :include-source: no
+   :class: interactive
 
 This is just a very simple example of how combining physical response
 with control allows model developers to explore how overall system

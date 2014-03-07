@@ -231,7 +231,7 @@ Simulating this model yields the following solution for each of the
 nodal temperatures:
 
 .. plot:: ../plots/RFL.py
-   :include-source: no
+   :class: interactive
 
 Note how the temperatures are initially distributed linearly (as we
 specified in our ``initial equation`` section).
