@@ -15,18 +15,13 @@
 	  <p>Full name: {{model.desc.modelName}}</p>
 	</div>
 
-	<div class="ui top attached tabular menu">
-	  {{#each model.categories.parameter}}
-	  <a class="item">{{this}}</a>
-	  {{/each}}
-	</div>
-
-	<div class="ui form attached fluid segment">
+	<div class="ui form small attached fluid segment">
 	  {{#each model.categories.parameter}}
 	  <div class="inline field">
 	    <label style="width: 100px; text-align: right">{{this}}</label>
 	    <input placeholder="Initial value"
 		   value="{{varinfo ../model this 'start'}}"
+		   style="padding-top: 4px; padding-bottom: 4px"
 		   type="text">
 	    <label>&nbsp;{{varinfo ../model this 'description'}} [{{varinfo ../model this 'units'}}]</label>
 	  </div>

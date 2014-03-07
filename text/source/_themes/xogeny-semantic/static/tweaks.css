@@ -47,3 +47,7 @@
      -moz-box-shadow: 0 0 10px #888;
           box-shadow: 0 0 10px #888;
 }
+
+.ui.form .field {
+    margin-bottom: 4px;
+}
