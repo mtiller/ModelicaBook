@@ -52,6 +52,8 @@ simulation step essentially amounts to solving (usually numerically)
 the equation and providing a solution trajectory like this:
 
 .. plot:: ../plots/FO.py
+   :class: interactive
+
 
 This gives you the first initial hint at one of the compelling aspects
 about using a modeling language to describe mathematical behavior.  We

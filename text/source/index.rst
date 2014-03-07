@@ -12,18 +12,16 @@ Front Matter
 .. toctree::
    :maxdepth: 1
 
-   front/foreward
    front/preface
+   front/ack
    front/intro
-
-.. dedication should go here
-
+   front/dedication
 
 Describing Behavior
 ===================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    behavior/equations
    behavior/discrete
@@ -34,7 +32,7 @@ Object-Oriented Modeling
 ========================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    components/packages
    components/connectors
@@ -46,7 +44,7 @@ Advanced Topics
 ===============
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    advanced
 

@@ -1,6 +1,8 @@
 import re
 import os
 import sys
+import json
+from jinja2 import PackageLoader, Environment
 
 path = os.path.abspath(os.path.join(__file__,"..","..","..","..",".."));
 
@@ -125,6 +127,21 @@ def add_compare_plot(plot, res1, v1, res2, v2, title, legloc="lower right", ylab
         "ylabel": ylabel
     };
 
+def _generate_casedata():
+    for plot in plots:
+        pdata = plots[plot]
+        with open(os.path.join(path, "text", "results",
+                               "json", plot+"-case.json"), "w+") as ofp:
+            if pdata["type"]=="simple":
+                res = results[pdata["res"]]
+                obj = dict(pdata)
+                obj["vars"] = map(lambda x: x.dict(), pdata["vars"])
+                obj["stopTime"] = res["stopTime"]
+                obj["ncp"] = res["ncp"]
+                obj["tol"] = res["tol"]
+                obj["mods"] = res["mods"]
+                json.dump(obj, ofp, indent=2);
+
 def _generate_plots():
     for plot in plots:
         pdata = plots[plot]
@@ -177,47 +194,51 @@ def _simcmd(model_name, fileNamePrefix, outputFormat="mat", simflags=None,
         ret = ret + """numberOfIntervals=%d, """ % (numberOfIntervals,)
     if simflags:
         ret = ret + """simflags="%s", """ % (simflags,)
+    ret = ret + """method="radau5","""
     ret = ret + """fileNamePrefix="%s", """ % (fileNamePrefix,)
     ret = ret + """outputFormat="%s")""" % (outputFormat,)
     return ret
 
 def _generate_makefile():
-    with open(os.path.join(path, "text", "results", "Makefile"), "w+") as ofp:
-        ofp.write("all: ");
-        for res in results:
-            ofp.write("%s_res.mat " % (res,));
-        ofp.write("\n\n");
-        for res in results:
-            data = results[res]
-            mods = data["mods"]
-            directory = data["directory"]
-            srcpath = data["path"]
-            if len(mods)==0:
-                simflags = ""
-            else:
-                simflags = "-override "+(",".join(map(lambda x: str(x)+"="+str(mods[x]), mods)))
-            with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
-                simfails = "true" if data["simfails"] else "false"
-                compfails = "true" if data["compfails"] else "false"
-                simcmd = _simcmd(model_name=data["name"], fileNamePrefix=res,
-                                 simflags=simflags, stopTime=data["stopTime"],
-                                 tolerance=data["tol"], numberOfIntervals=data["ncp"])
-                #args = (path, compfails, data["name"], data["stopTime"],
-                #        data["tol"], data["ncp"], res, simflags, simfails)
-                args = (path, compfails, simcmd, simfails)
-                if data["ms"]:
-                    sfp.write("loadModel(ModelicaServices);\n");
-                if data["msl"]:
-                    sfp.write("loadModel(Modelica);");
-                sfp.write(script_tmpl % args);
-            ofp.write("%s_res.mat: %s\n" % (res, srcpath));
-            ofp.write("\tomc %s.mos\n" % (res,));
+    loader = PackageLoader('xogeny')
+    env = Environment(loader=loader)
+    genres = env.get_template("gen_result.mos")
+    genjs = env.get_template("gen_js.mos")
+    genmk = env.get_template("gen.makefile")
 
-        ofp.write("tidy:\n");
-        ofp.write("\t-rm *.o *.c *.xml *.h *.libs *.log *.makefile\n");
-        for res in results:
-            ofp.write("\t-rm %s\n" % (res,));
+    # Generate Makefile
+    with open(os.path.join(path, "text", "results", "Makefile"), "w+") as ofp:
+        ofp.write(genmk.render({"results": results}))
+            
+    for res in results:
+        data = results[res]
+        mods = data["mods"]
+        directory = data["directory"]
+        srcpath = data["path"]
+        if len(mods)==0:
+            simflags = ""
+        else:
+            simflags = "-override "+(",".join(map(lambda x: str(x)+"="+str(mods[x]), mods)))
+
+        simfails = "true" if data["simfails"] else "false"
+        compfails = "true" if data["compfails"] else "false"
+        simcmd = _simcmd(model_name=data["name"], fileNamePrefix=res,
+                         simflags=simflags, stopTime=data["stopTime"],
+                         tolerance=data["tol"],
+                         numberOfIntervals=data["ncp"])
+        context = {"path": path, "compfails": compfails,
+                   "simcmd": simcmd, "simfails": simfails,
+                   "name": data["name"], "pre": res}
+
+        # Write out script to generate simulation results
+
+        with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
+            sfp.write(genres.render(**context));
+        # Write out script to generate Javascript
+        with open(os.path.join(path, "text", "results", res+"-js.mos"), "w+") as sfp:
+            sfp.write(genjs.render(**context));
 
 def generate():
     _generate_plots()
     _generate_makefile()
+    _generate_casedata()

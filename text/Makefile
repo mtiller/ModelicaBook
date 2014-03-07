@@ -16,6 +16,9 @@ IMAGEDIRS      = ../docs-dir/Icons
 SVG2PDF       = inkscape
 SVG2PDF_FLAGS =
 
+SYNC = s3cmd sync -P -F
+S3GET = s3cmd get
+
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
@@ -25,13 +28,68 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
 .PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext results
 
-default: specs results dirhtml server
+# This builds the material necessary to create the book
+book: specs results dirhtml server
 
 specs: specs.py
 	-mkdir results
 	-mkdir plots
 	-rm -f plots/*
 	python specs.py
+
+# This target builds all the simulation results
+results:
+	@echo "Generate results"
+	(cd results; make results_files tidy)
+
+# This builds all the JS and JSON files.  Use this if your development
+# environment is setup to compile the JS files
+local_js: specs
+	@echo "Generate JS files and deploy them"
+	(cd results; make js_files json_files tidy)
+	-rm results/js/*.node.js
+	-rm results/js/*.node.js.gz
+
+# This downloads already compiled JS and JSON files.  Use this if you
+# do not have the ability to compile JS files locally
+download_js:
+	-mkdir results/js
+	-mkdir results/json
+	(cd results/js; $(SYNC) 's3://beta.book.xogeny.com/_static/js/*.js.gz' .)
+	(cd results/js; gzip -dk *.js.gz)
+	(cd results/json; $(SYNC) 's3://beta.book.xogeny.com/_static/json/*.json.gz' .)
+	(cd results/json; gzip -dk *.json.gz)
+
+# This target builds all the simulation results and then pushes them
+# out to an S3 bucket for static hosting
+deploy_js: local_js
+	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip: s3://cdn.book.xogeny.com/js/)
+	(cd results/json; $(SYNC) *.json.gz --add-header=Content-Encoding:gzip s3://cdn.book.xogeny.com/json/)
+	(cd results/js; $(SYNC) *.js s3://cdn.book.xogeny.com/js/)
+	(cd results/json; $(SYNC) *.json s3://cdn.book.xogeny.com/json/)
+
+# This target builds all the SVG images
+docs:
+	@echo "Generate docs"
+	-rm -rf docs-dir
+	-mkdir docs-dir
+#       If you have issues here, make sure you can import OMPython
+#       and OMPythonIDL into the default python interpreter (doing
+#       a `export PYTHONPATH=...` if necessary.
+	(cd docs-dir; omc ../GenerateDoc.mos)
+
+# This creates links for th JS and JSON
+build_links:
+	-(cd build/dirhtml/_static; ln -s ../../../results/js) 
+	-(cd build/dirhtml/_static; ln -s ../../../results/json) 
+
+# This builds the HTML and then runs a simple web server
+server: dirhtml build_links
+	(cd build/dirhtml; python -m SimpleHTTPServer)
+
+web: dirhtml build_links
+	(cd build/dirhtml; $(SYNC) * s3://beta.book.xogeny.com/)
+	# TODO: Set Content-Encoding on all gz files to be gzip (use find?)
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -175,21 +233,6 @@ doctest:
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
-results:
-	@echo "Generate results"
-	(cd results; make all tidy)
-
-docs:
-	@echo "Generate docs"
-	-rm -rf docs-dir
-	-mkdir docs-dir
-#       If you have issues here, make sure you can import OMPython
-#       and OMPythonIDL into the default python interpreter (doing
-#       a `export PYTHONPATH=...` if necessary.
-	(cd docs-dir; omc ../GenerateDoc.mos)
-
-server: dirhtml
-	(cd build/dirhtml; python -m SimpleHTTPServer)
 
 # Pattern rule for converting SVG to PDF (and copying symlinks)
 %.pdf: 	%.svg

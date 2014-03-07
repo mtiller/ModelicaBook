@@ -1,0 +1,100 @@
+{% macro itemplate() %}
+{% raw -%}
+<script id="itemplate" type="text/x-handlebars-template">
+  <div class="ui segment tight left-justified">
+    <div class="ui fluid accordion">
+      <div class="title">
+	<i class="dropdown icon"></i>
+	Simulate <code>{{model.desc.shortName}}</code> in your browser
+      </div>
+      <div class="content left-justified">
+	<div class="ui attached message">
+	  <div class="header">
+	    {{model.desc.shortName}}
+	  </div>
+	  <p>Full name: {{model.desc.modelName}}</p>
+	</div>
+
+	<div class="ui top attached tabular menu">
+	  {{#each model.categories.parameter}}
+	  <a class="item">{{this}}</a>
+	  {{/each}}
+	</div>
+
+	<div class="ui form attached fluid segment">
+	  {{#each model.categories.parameter}}
+	  <div class="inline field">
+	    <label style="width: 100px; text-align: right">{{this}}</label>
+	    <input placeholder="Initial value"
+		   value="{{varinfo ../model this 'start'}}"
+		   type="text">
+	    <label>&nbsp;{{varinfo ../model this 'description'}} [{{varinfo ../model this 'units'}}]</label>
+	  </div>
+	  {{/each}}
+	  <div class="ui mini button" id="sim-button-{{plot_id}}">
+	    Simulate
+	  </div>
+	  <a class="pull-right right ui mini button" id="sim-help-{{plot_id}}">
+	    How is this possible?
+	  </a>
+	</div>
+      </div>
+
+    </div>
+    <div id="plot-wrapper-{{plot_id}}">
+      {{{image}}}
+    </div>
+    <h2 id="plot-title-{{plot_id}}" style="text-align: center"></h2>
+    <div id="dyn-plot-{{plot_id}}"
+	 style="margin-left: auto; margin-right: auto">
+    </div>
+  </div>
+  <div id="modal-plot-{{plot_id}}" class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+      Integrated Browser Simulation
+    </div>
+    <div class="content">
+      <p>
+	My original plan for this book was to
+	leverage <a href="http://www.xogeny.com/">Xogeny's</a> FMQ
+	platform to do simulations.
+	While <a href="http://www.xogeny.com/products/">FMQ</a> is a
+	great option of larger simulations and dispatching large batches
+	of simulations, most of the examples in the book are relatively
+	simple and cloud computing is a little overkill.
+      </p>
+      <p>
+	While writing the book, I became aware
+	of <a href="https://github.com/tshort/openmodelica-javascript">Tom
+	Short's work compiling Modelica to Javascript</a> using
+	<a href="http://www.openmodelica.org">OpenModelica</a>
+	using <a href="https://en.wikipedia.org/wiki/Emscripten">Emscripten</a>.
+	While I had known this was possible, I didn't have the time to
+	dig into it and I was dubious about the potential performance.
+	Fortunately, Tom had blazed a trail here and I was able to
+	leverage his work in proving this was a viable path.
+      </p>
+      <p>
+	Of course, these integrated browser simulation capabilities
+	also leverage
+	OpenModelica.  <a href="https://www.ida.liu.se/~marsj/">Martin
+	Sjölund</a> was incredibly helpful in improving the Modelica
+	to Javascript compilation path in OpenModelica.  I can't count
+	the number of times I pestered him on Skype late into the
+	night in Sweden and he was always extremely helpful.
+      </p>
+      <p>
+	The results have been so successful, <b>I plan on
+	incorporating integrated browser simulation into the Xogeny
+	FMQ service</b>.  So in addition to giving users the option to
+	simulate models in the cloud, FMQ will also allow provide
+	developers with a simple path for converting their Modelica
+	models into Javascript and then serving them to web
+	applications so they can be simulated in the browser as
+	well <b>all as a simple web service</b>.
+      </p>
+    </div>
+  </div>
+</script>
+{%- endraw %} {% endmacro %}

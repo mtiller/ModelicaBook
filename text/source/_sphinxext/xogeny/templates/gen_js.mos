@@ -1,0 +1,14 @@
+compfails := {{compfails}};
+simfails := {{simfails}};
+
+setModelicaPath(getModelicaPath()+":"+"{{path}}");
+cf := loadModel(ModelicaByExample);
+getErrorString();
+
+if not compfails and cf==false then
+  exit(1);
+end if;
+    
+setCommandLineOptions("+simCodeTarget=JavaScript"); getErrorString();
+buildModel({{name}}, fileNamePrefix="{{pre}}");
+getErrorString();
