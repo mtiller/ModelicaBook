@@ -1,3 +1,7 @@
+.. raw:: latex
+
+   \setcounter{secnumdepth}{-1}
+
 Introduction
 ============
 
@@ -52,3 +56,7 @@ It is also multi-domain so it doesn't impose any artificial boundaries
 that restrict its use to select engineering domains or systems.  The
 result is that it provides a complete set of capabilities for building
 lumped system models of nearly any engineering system.
+
+.. raw:: latex
+
+   \setcounter{secnumdepth}{2}
