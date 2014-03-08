@@ -322,7 +322,6 @@ So what happens if we try to simulate our ``QuiescientModel``?  The
 answer is pretty obvious in the plot below:
 
 .. plot:: ../plots/LVQM.py
-   :class: interactive
 
 We ended up with the trivial solution where the prey and predator
 populations are zero.  In this case, we have no reproduction,
