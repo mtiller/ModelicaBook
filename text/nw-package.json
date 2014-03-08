@@ -1,6 +1,18 @@
 {
-    "name": "Modelica By Example",
-    "version": "0.2.0",
-    "description": "An interactive book on Modelica",
-    "main": "index.html"
+  "name": "ModelicaByExample",
+  "version": "0.2.0",
+  "description": "An interactive book about Modelica",
+  "main": "http://localhost:8001/",
+  "node-main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Modelica"
+  ],
+  "author": "Michael M. Tiller",
+  "license": "Creative Commons (BY-NC-ND)",
+  "dependencies": {
+    "node-static": "~0.7.3"
+  }
 }
