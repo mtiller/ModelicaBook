@@ -1,0 +1,18 @@
+metadata:
+  draft: false
+  title: Modelica By Example
+  desc: A Creative Commons Modelica Book
+  favicon: img/favicon.ico
+  animation: true
+  math: false
+  package: {}
+slides:
+  Start:
+    - start.html
+    - kickstarter.html
+    - freebook.html
+    - already.html
+    - done.html
+  Modelica By Example:
+    - intro.html
+    - link.html
