@@ -35,7 +35,7 @@ extensions = ['sphinx.ext.doctest',
               'sphinx.ext.ifconfig']
 
 # As long as we are not generating with the epub tag it is save to use MathJax.
-if 'epub' not in tags: extensions.append('sphinx.ext.mathjax')
+#if 'epub' not in tags: extensions.append('sphinx.ext.mathjax')
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
