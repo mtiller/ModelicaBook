@@ -63,12 +63,12 @@ download_js:
 # This target builds all the simulation results and then pushes them
 # out to an S3 bucket for static hosting
 deploy_js: local_js
-	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip: s3://beta.book.xogeny.com/js/)
-	(cd results/js; $(SYNC) *.xml.gz --add-header=Content-Encoding:gzip: s3://beta.book.xogeny.com/js/)
-	(cd results/json; $(SYNC) *.json.gz --add-header=Content-Encoding:gzip s3://beta.book.xogeny.com/json/)
-	(cd results/js; $(SYNC) *.js s3://beta.book.xogeny.com/js/)
-	(cd results/js; $(SYNC) *.xml s3://beta.book.xogeny.com/js/)
-	(cd results/json; $(SYNC) *.json s3://beta.book.xogeny.com/json/)
+	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip: s3://beta.book.xogeny.com/_static/js/)
+	(cd results/js; $(SYNC) *.xml.gz --add-header=Content-Encoding:gzip: s3://beta.book.xogeny.com/_static/js/)
+	(cd results/json; $(SYNC) *.json.gz --add-header=Content-Encoding:gzip s3://beta.book.xogeny.com/_static/json/)
+	(cd results/js; $(SYNC) *.js s3://beta.book.xogeny.com/_static/js/)
+	(cd results/js; $(SYNC) *.xml s3://beta.book.xogeny.com/_static/js/)
+	(cd results/json; $(SYNC) *.json s3://beta.book.xogeny.com/_static/json/)
 
 # This target builds all the SVG images
 docs:
@@ -93,9 +93,16 @@ web: dirhtml build_links
 	(cd build/dirhtml; $(SYNC) * s3://beta.book.xogeny.com/)
 	# TODO: Set Content-Encoding on all gz files to be gzip (use find?)
 
-nw: dirhtml build_links
-	cp nw-package.json build/dirhtml/package.json
-	(cd build/dirhtml; zip -r ../book.nw .)
+node: dirhtml build_links
+	-rm -rf build/node
+	-mkdir build/node
+	cp -r build/dirhtml/* build/node
+	cp nw-package.json build/node/package.json
+	cp nw-app.js build/node/app.js
+	(cd build/node; npm install)
+
+book.nw: node
+	(cd build/node; zip -r ../book.nw .)
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
