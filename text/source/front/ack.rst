@@ -95,11 +95,62 @@ This project was really an experiment to see if the Kickstarter
 approach to publishing could be applied to a niche technical field
 like Modelica.  I was pleasantly surprised to see that it could and
 that this project had enough support to be funded.  For that reason,
-I'd like to thank the backers of the Kickstarter project (and the
-corporate sponsors in particular) for coming together to achieve our
-mutual goal of creating more quality educational material around
-Modelica.  Literally, this project could not have happened without
-them.
+I'd like to thank the backers of the Kickstarter project.  In
+particular, I'd like the thank the following people for their
+exceptionally generous contributions:
+
+    * Robert Norris
+    * Matthis Thorade
+    * Henning Francke
+    * Yang Ji
+    * Christoph Höger
+    * Philipp Mossmann
+    * John Batteh
+    * Dirk Zimmer
+    * Jan Brugård
+    * Swami Gopalswamy
+    * Peter Aronsson
+    * Michael P. Case
+    * Markus Groetsch
+    * Vicente Ramírez Perea
+    * Tisha Villanueva
+    * Adrian Pop
+    * Nimalendiran Kailasanathan
+    * Kevin Davies
+    * Peter Harman
+    * Dietmar Winkler
+    * Johan Rhodin
+
+I'd also like to thank the corporate sponsors:
+
+    * Gold Sponsors
+
+      * CyDesign
+      * Wolfram Research
+      * Modelon
+      * Maplesoft
+      * Dassault Systèmes
+
+    * Silver Sponsors
+
+      * Ricardo Software
+      * ITI
+      * Modelica Association
+      * Global Crown Technology
+      * Siemens
+
+    * Bronze
+
+      * Suzhou Tongyuan
+      * Open Source Modelica Consortium
+      * DOFWare
+      * Bausch-Gall GmbH
+      * Technische Universität Hamburg/Harburg
+      * Schlegel Simulation GmbH
+
+This project shows the power of community to achieve the mutual goal
+of creating more quality educational material around Modelica.
+Literally, this project could not have happened without them.
 
 The Kickstarter funding allowed me to commit time to this project, but
 I also had several people helping me on this project.  First and
