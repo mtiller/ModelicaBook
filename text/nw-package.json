@@ -1,0 +1,6 @@
+{
+    "name": "Modelica By Example",
+    "version": "0.2.0",
+    "description": "An interactive book on Modelica",
+    "main": "index.html"
+}

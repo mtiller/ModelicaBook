@@ -97,13 +97,13 @@
 {%- endmacro -%}
 
 {% macro thumbnail(id, level) %}
-<a href="{{SponsorsData[id].url}}"
+<div 
    class="active blue item"
    style="margin-left: 5px; margin-right: 5px">
   <img class="thumbnail" id="thumbnail-{{id}}"
        src="/_static/sponsors/{{id}}/logo.png" width="40"
        data-html='{{popup(id,level)}}'>
-</a>
+</div>
 {% endmacro %}
 
 {% macro signup_head() %}
@@ -232,26 +232,35 @@
     <div class="ribbon">
       <img src="/_static/early_access.png">
     </div>
-    <div id="root">
-      <div id="sponsors">
-	{{ sponsors() }}
-      </div>
-      <div id="content">
+    <div class="ui two column grid">
+      <div class="column">
 	<div class="centered" style="margin-top: 10px">
 	  <img src="{{ pathto('_static/TitleHeading.png', 1) }}">
 	  <p>by Michael M. Tiller, Ph.D.</p>
 	</div>
 
-	<div style="float: right">
-	  <a href="{{ pathto('_static/buypage.html', 1) }}">
-	    <img src="{{ pathto('_static/images/buybook.png', 1) }}">
-	  </a>
-	  <h2>Mailing List</h2>
+	<div>
 	  {{ signup_form() }}
 	</div>
 
-	<div style="margin-left: 450px; margin-top: 80px">
+	<div style="float: right">
+	  <a class="float: left" href="{{ pathto('_static/buypage.html', 1) }}">
+	    <img src="{{ pathto('_static/images/buybook.png', 1) }}">
+	  </a>
+	  <p>
+	    Have a question? Send it
+	    to <a href="mailto:book@xogeny.com">book@xogeny.com</a>
+	  </p>
+	</div>
+
+	<div>
 	  {% block body %} {% endblock %}
+	</div>
+      </div>
+
+      <div class="column" style="min-width: 460px">
+	<div>
+	  {{ sponsors() }}
 	</div>
       </div>
     </div>

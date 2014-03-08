@@ -15,11 +15,14 @@
 	  <p>Full name: {{model.desc.modelName}}</p>
 	</div>
 
-	<div class="ui form small attached fluid segment">
+	<div class="ui form small attached fluid segment"
+	     id="form-{{plot_id}}">
 	  {{#each model.categories.parameter}}
-	  <div class="inline field">
-	    <label style="width: 100px; text-align: right">{{this}}</label>
-	    <input placeholder="Initial value"
+	  <div class="inline field paramrow">
+	    <label class="paramname"
+		   style="width: 100px; text-align: right">{{this}}</label>
+	    <input class="paramvalue"
+		   placeholder="Initial value"
 		   value="{{varinfo ../model this 'start'}}"
 		   style="padding-top: 4px; padding-bottom: 4px"
 		   type="text">
