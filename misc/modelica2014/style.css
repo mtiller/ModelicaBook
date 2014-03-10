@@ -5,3 +5,14 @@
 .white {
     background: white;
 }
+
+.ft-page {
+    background: url(img/bg.jpg);
+}
+
+.flowtime h1, .flowtime h2, .flowtime h3,
+.flowtime h4, .flowtime h5, .flowtime h6 {
+    color: #448;
+    text-shadow: 2px 2px 0 rgba(128, 128, 256, 0.5);
+    line-height: 110%;
+}
