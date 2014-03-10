@@ -1,4 +1,14 @@
+{% macro item(a) %}
+<h1 class="c-step">{{a|safe}}<h1>
+{% endmacro %}
+
 <hero>
-  <h1><a class="c-step" href="http://beta.book.xogeny.com">http://book.xogeny.com/</a></h1>
-  <h1 class="c-step">Let's take a look, shall we?...</h1>
+<div style="text-align: center">
+  {{ item("Creative Commons License") }}
+  {{ item("Free HTML version") }}
+  {{ item("Integrated Browser Simulation") }}
+  {{ item("Early Access Release") }}
+  {{ item('Now availabe at: <a href="http://beta.book.xogeny.com">http://book.xogeny.com/</a>') }}
+  {{ item('Thanks!') }}
+</div>
 </hero>

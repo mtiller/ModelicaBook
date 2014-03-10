@@ -6,6 +6,8 @@ metadata:
   animation: true
   math: false
   package: {}
+  styles:
+    - style.css
 slides:
   Start:
     - start.html
