@@ -63,8 +63,8 @@ download_js:
 # This target builds all the simulation results and then pushes them
 # out to an S3 bucket for static hosting
 deploy_js: local_js
-	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip: s3://beta.book.xogeny.com/_static/js/)
-	(cd results/js; $(SYNC) *.xml.gz --add-header=Content-Encoding:gzip: s3://beta.book.xogeny.com/_static/js/)
+	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip s3://beta.book.xogeny.com/_static/js/)
+	(cd results/js; $(SYNC) *.xml.gz --add-header=Content-Encoding:gzip s3://beta.book.xogeny.com/_static/js/)
 	(cd results/json; $(SYNC) *.json.gz --add-header=Content-Encoding:gzip s3://beta.book.xogeny.com/_static/json/)
 	(cd results/js; $(SYNC) *.js s3://beta.book.xogeny.com/_static/js/)
 	(cd results/js; $(SYNC) *.xml s3://beta.book.xogeny.com/_static/js/)

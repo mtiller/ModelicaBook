@@ -12,11 +12,9 @@ these through the various examples presented in this chapter.
 
 Normally, when we talk about discrete behavior we often refer to
 "events".  An event is something that occurs in our system that
-triggers some kind of discontinuity.
-
-.. todo:: since, earlier, in the section on variables, continuous
-          variables could include discontinuities, either that section
-          or this section or both need to be made more precise.
+triggers some kind of discontinuity.  Differential equations normally
+result in continuous solutions.  But when events occur, they can
+introduce various kinds of discontinuities.
 
 .. index:: ! time events
 

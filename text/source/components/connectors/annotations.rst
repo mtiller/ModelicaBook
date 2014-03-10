@@ -91,12 +91,8 @@ definition:
       Real rotation(quantity="angle", unit="deg")=0;
     end GraphicItem; 
 
-.. todo:: this is not a sentence
-
-In later sections, when we present ``record`` definitions that define
-the data associated with different annotations.  For annotations
-representing graphical elements, we will extend from this
-``GraphicItem`` to make the presence of these common elements
+For annotations representing graphical elements, we will extend from
+this ``GraphicItem`` to make the presence of these common elements
 explicitly clear.
 
 ``Icon`` and ``Diagram`` Annotations

@@ -9,7 +9,13 @@ we wish to model is the one shown in the following figure:
 
 .. todo::
 
-   Add a figure here of the two inertia system
+   Add a better figure here of the two inertia system
+
+.. figure:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithPulseCounter.svg
+   :width: 100%
+   :align: center
+   :alt: Plant with pulse counter sensor
+   :figclass: align-center
 
 It is worth pointing out how much easier it is to convey the intention
 of a model by presenting it in schematic form.  Assuming appropriate
@@ -79,12 +85,6 @@ this problem in Modelica as follows:
 .. literalinclude:: /ModelicaByExample/BasicEquations/RotationalSMD/SecondOrderSystem.mo
    :language: modelica
    :lines: 2-
-
-.. todo::
-    Are these units correct?
-    I was expecting the Stiffness or Spring Constant to be N.m/rad
-    I was expecting the inertia to be kg.m2/rad or N.m.s2/rad
-    I was expecting dampening to be kg.m2/s.rad or N.m.s/rad
 
 As we did with the low-pass filter example, ``RLC1``, let's walk
 through this line by line.
@@ -158,8 +158,6 @@ exactly the same as they were before.  But now, we have the freedom to
 explore other initial conditions as well.  For example, if we simulate
 the ``SecondOrderSystemInitParams`` model as is, we get the following
 solution for the angular positions and velocities:
-
-.. todo:: label vertical axis of both plots?
 
 .. plot:: ../plots/SOSIP.py
    :class: interactive

@@ -170,10 +170,6 @@ Using either initialization method, the results for these models will
 be the same.  The typical behavior for the Lotka-Volterra system can
 be seen in this plot:
 
-.. todo::
-
-   Get this plot working
-
 .. plot:: ../plots/LVCM.py
    :class: interactive
 
@@ -357,15 +353,8 @@ This model leads us to a set of initial conditions that is more inline
 with what we were originally looking for (*i.e.*, one with non-zero
 populations for both the predator and prey species).
 
-.. todo::
-
-   Fix this plot. (can't see predator population)
-
 .. plot:: ../plots/LVQMUS.py
    :class: interactive
-
-.. todo:: word start not being rendered correctly possibly due to
-	  nesting
 
 It is worth pointing out (as we will do shortly in the section on
 :ref:`builtin-types`), that **the default value of the ``start``

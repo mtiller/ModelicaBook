@@ -178,13 +178,11 @@ There are two important properties of this estimation algorithm that
 we can immediately see in these results.  The first is that the
 estimate is unsigned.  In other words, we cannot tell from a device
 like a tooth wheel encoder which **direction** the shaft is rotating.
-Also, low speeds and speed reversals can degrade the accuracy of the
-estimate significantly.  The results are also very sensitive the
-number of teeth involved.  If we were to reduce the number of teeth
-used in our encoder by setting ``teeth`` to 20, we'd get very
-different results.
-
-.. todo:: speed reversals?  I thought speed was always a positive value
+Also, low speeds and changes in rotational direction can degrade the
+accuracy of the estimate significantly.  The results are also very
+sensitive the number of teeth involved.  If we were to reduce the
+number of teeth used in our encoder by setting ``teeth`` to 20, we'd
+get very different results.
 
 .. plot:: ../plots/IntervalMeasure_Coarse.py
    :class: interactive
@@ -271,9 +269,10 @@ But be aware that one big reason to avoid ``algorithm`` sections is because they
 performed by the Modelica compiler.  This can result in both poor
 simulation performance and a loss of flexibility in how you compose
 your models.
+
 .. todo:: what would be the alternative?
-note, reworded this because it sounded like it was saying familiarity with
-assignment statements is the reason to avoid them
+	  note, reworded this because it sounded like it was saying familiarity with
+	  assignment statements is the reason to avoid them
 
 In our case, there are no significant consequences to using the
 ``algorithm`` section.  Here is an example of how the previous

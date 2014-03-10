@@ -63,7 +63,7 @@ add_case(["QuiescientModel$"], stopTime=140, res="LVQM")
 add_simple_plot(plot="LVQM", vars=lvvars, title="Queiscient Model (trivial solution)")
 
 add_case(["QuiescientModelUsingStart"], stopTime=140, res="LVQMUS")
-add_simple_plot(plot="LVQMUS", vars=lvvars,
+add_simple_plot(plot="LVQMUS", vars=lvvars, ymax=25,
                 title="Queiscient Model (using start values)")
 
 ## Cooling Revisited

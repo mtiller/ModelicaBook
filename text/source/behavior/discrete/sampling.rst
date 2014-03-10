@@ -3,8 +3,6 @@
 Synchronous Systems
 -------------------
 
-.. todo:: I cannot get to the page containing this text - is there a link missing?
-
 In Modelica version 3.3, new features were introduced to address
 concerns about non-deterministic discrete behavior.  In this section,
 we'll present some examples of how these issues presented themselves

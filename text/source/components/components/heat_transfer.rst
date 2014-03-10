@@ -67,10 +67,8 @@ utilize these connector definitions.
 Component Models
 ^^^^^^^^^^^^^^^^
 
-.. todo:: should "on physical effect" be "a physical effect"? if not, this needs re-writing.
-
 When building component models, the goal is to create component models
-that implement (only) on physical effect (*e.g.,* capacitance,
+that implement (only) one physical effect (*e.g.,* capacitance,
 convection).  By implementing component models in this way, we will
 see that they can then be combined in any infinite number of different
 configurations without the need to add any more equations.  This kind
@@ -183,10 +181,8 @@ than ``T_amb``, this component will **take heat away** from
 ``port_a`` (and, conversely, when ``T_amb`` is greater than
 ``port_a.T``, it will **inject heat into** ``port_a``).
 
-.. todo:: combine with what? it?
-
-Having such a component model available enables us to combine with the
-``ThermalCapacitance`` model and simulate a system just like we
+Having such a component model available enables us to combine it with
+the ``ThermalCapacitance`` model and simulate a system just like we
 modeled in :ref:`some of our earlier heat transfer examples
 <getting-physical>` using the following Modelica code:
 
@@ -228,18 +224,15 @@ equation:
 
     cap.node.T = conv.port_a.T "Equating across variables";
 
-.. todo:: is it a generalization of Kirchoff's current law or merely
-	  the analog of Kirchoff's current law for this domain?
-
 In addition, a connection generates an equation for all the through
 variables as well.  The equation that is generated is a conservation
 equation.  You can think of this conservation equation as a
-generalization of Kirchoff's current law.  Basically, it represents
-the fact that the connection itself has no "storage" ability and that
-whatever amount of the conserved quantity, in this case heat, that
-flows out of one component must go into the other(s).  So in this
-case, the connect statement will generate the following equation with
-respect to the ``flow`` variables:
+generalization of Kirchoff's current law to any conserved quantity.
+Basically, it represents the fact that the connection itself has no
+"storage" ability and that whatever amount of the conserved quantity,
+in this case heat, that flows out of one component must go into the
+other(s).  So in this case, the connect statement will generate the
+following equation with respect to the ``flow`` variables:
 
 .. code-block:: modelica
 
@@ -311,8 +304,6 @@ the relationship between the flow of heat through this component and
 the temperatures on either end.
 
 .. index:: number of equations required
-
-.. todo:: should e.g. be i.e. or are there unprotected internal variables?
 
 .. topic:: Number of equations
 

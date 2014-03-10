@@ -23,11 +23,9 @@ this form of import, the name of the alias always matches the last
 element in the name of what is being imported (*e.g.,*
 ``Temperature``).
 
-.. todo:: is the word follow the correct word here?
-
 In some cases, we want the alias that is introduced to be different
 from the last element of the imported name.  In this case, we can
-explicitly follow an alternative name for the alias, *e.g.,*
+explicitly introduce an alternative name for the alias, *e.g.,*
 
 .. code-block:: modelica
 
