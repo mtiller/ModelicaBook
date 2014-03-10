@@ -4,9 +4,10 @@ Synchronous Systems
 -------------------
 
 In Modelica version 3.3, new features were introduced to address
-concerns about non-deterministic discrete behavior.  In this section,
-we'll present some examples of how these issues presented themselves
-before version 3.3 and show how these new features help address them.
+concerns about non-deterministic discrete behavior [Elmqvist]_.  In
+this section, we'll present some examples of how these issues
+presented themselves before version 3.3 and show how these new
+features help address them.
 
 To start, consider the following model:
 
@@ -91,7 +92,12 @@ these lines one by one and discuss them.  First we have:
 
   Finish this explanation after checking on the semantics of Clock
 
+
 .. todo::
 
   Cite Hilding's paper for detailed discussion of synchronous
   features.
+
+.. [Elmqvist] "Fundamentals of Synchronous Control in Modelica",
+	      Hilding Elmqvist, Martin Otter and Sven-Erik Mattsson
+	      http://www.ep.liu.se/ecp/076/001/ecp12076001.pdf

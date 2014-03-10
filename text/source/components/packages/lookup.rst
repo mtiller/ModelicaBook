@@ -48,7 +48,9 @@ looking for the **first** name in the qualified name, *e.g.,*
      definition with a matching name (including inherited definitions)
   #. Look in the parent package for an imported definition with a
      matching name (not including inherited imports)
-  #. Look in each successive parent (using the same approach) until either:
+  #. Look in each successive parent (using the same approach) until
+     either:
+
        * The parent package has the ``encapsulated`` qualifier, in which
          case the search terminates.
        * There are no more parent packages, in which case you search for

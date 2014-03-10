@@ -2,9 +2,9 @@ within ModelicaByExample.BasicEquations.RotationalSMD;
 model SecondOrderSystem "A second order rotational system"
   type Angle=Real(unit="rad");
   type AngularVelocity=Real(unit="rad/s");
-  type Inertia=Real(unit="N.s2/rad2");
-  type Stiffness=Real(unit="N/rad");
-  type Damping=Real(unit="N.s/rad");
+  type Inertia=Real(unit="kg.m2");
+  type Stiffness=Real(unit="N.m/rad");
+  type Damping=Real(unit="N.m.s/rad");
   parameter Inertia J1=0.4 "Moment of inertia for inertia 1";
   parameter Inertia J2=1.0 "Moment of inertia for inertia 2";
   parameter Stiffness k1=11 "Spring constant for spring 1";
