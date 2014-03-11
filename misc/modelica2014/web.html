@@ -1,0 +1,16 @@
+{% macro item(a) %}
+<h1 class="c-step">{{a|safe}}<h1>
+{% endmacro %}
+
+{% macro item2(a) %}
+<h2 class="c-step">{{a|safe}}<h1>
+{% endmacro %}
+
+<hero>
+<div style="text-align: center">
+  {{ item("Free HTML Version") }}
+  {{ item2("Accessible anywhere") }}
+  {{ item2("Ideal for Students") }}
+  {{ item2("Indexed by Google") }}
+</div>
+</hero>

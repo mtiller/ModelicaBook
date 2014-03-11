@@ -1,0 +1,15 @@
+{% macro item(a) %}
+<h1 class="c-step">{{a|safe}}<h1>
+{% endmacro %}
+
+{% macro item2(a) %}
+<h2 class="c-step">{{a|safe}}<h1>
+{% endmacro %}
+
+<hero>
+<div style="text-align: center">
+  <h1>Integrated Browser Simulation</h1>
+  {{ item2("Huge thanks to Martin Sjölund, Tom Short and whole OpenModelica team") }}
+  {{ item2("Nearly every example can be simulated in the browser") }}
+</div>
+</hero>

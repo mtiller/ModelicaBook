@@ -1,0 +1,10 @@
+{% macro item(a) %}
+<h1>{{a|safe}}<h1>
+{% endmacro %}
+
+<hero>
+<div style="text-align: center">
+  <img src="img/ModelicaByExample.svg" width="1000">
+  {{ item('<a href="http://beta.book.xogeny.com">http://beta.book.xogeny.com/</a>') }}
+</div>
+</hero>

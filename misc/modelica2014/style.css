@@ -16,3 +16,13 @@
     text-shadow: 2px 2px 0 rgba(128, 128, 256, 0.5);
     line-height: 110%;
 }
+
+iframe {
+    position: absolute;
+    box-shadow: 2px 2px 0 rgba(128, 128, 256, 0.5);
+    border: 2px solid black;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}

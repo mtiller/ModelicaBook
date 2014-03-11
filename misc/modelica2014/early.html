@@ -1,0 +1,17 @@
+{% macro item(a) %}
+<h1 class="c-step">{{a|safe}}<h1>
+{% endmacro %}
+
+{% macro item2(a) %}
+<h2 class="c-step">{{a|safe}}<h1>
+{% endmacro %}
+
+<hero>
+<div style="text-align: center">
+  {{ item("Early Access Release") }}
+  {{ item2("Electronic versions available now") }}
+  {{ item2('More "stand-alone" chapters on advanced topics in the future') }}
+  {{ item2("Print versions to follow") }}
+  {{ item2("Seeking feedback from the community") }}
+</div>
+</hero>

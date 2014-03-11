@@ -1,0 +1,15 @@
+{% macro item(a) %}
+<h1 class="c-step">{{a|safe}}<h1>
+{% endmacro %}
+
+{% macro item2(a) %}
+<h2 class="c-step">{{a|safe}}<h1>
+{% endmacro %}
+
+<hero>
+<div style="text-align: center">
+  {{ item("Integrated Browser Simulation") }}
+  <iframe class="c-shy"
+	  src="http://localhost:8000/behavior/equations/electrical/">
+</div>
+</hero>

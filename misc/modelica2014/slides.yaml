@@ -17,5 +17,12 @@ slides:
     - done.html
   Modelica By Example:
     - intro.html
-    - features.html
+    - license.html
+    - web.html
+    - ibs.html
+    - ibs2.html
+    - early.html
+    - sessions.html
+  Conclusion:
     - link.html
+    - close.html
