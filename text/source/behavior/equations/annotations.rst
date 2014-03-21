@@ -240,7 +240,7 @@ interpreted consistently and universally by Modelica tools.
 We will follow a convention (whenever possible) of describing
 standard annotations in terms of ``record`` definitions.  These
 ``record`` definitions don't formally exist, they are simply a concise
-way of expressing the data associated contained in the annotation.
+way of expressing the data contained in the annotation.
 
 ``Documentation``
 ^^^^^^^^^^^^^^^^^
