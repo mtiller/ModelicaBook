@@ -323,8 +323,9 @@ restrict the system of equations in such a way that the underlying
 systems of equations are easier to solve than in the general case
 where the parameter could take on a range of values.
 
-The ``Evaluate`` annotation is simply a ``Boolean`` variable so it is
-used in an annotation as follows:
+The ``Evaluate`` annotation is simply a ``Boolean`` variable (``true``
+indicating that the ``parameter`` value can be transformed into a
+``constant``). It is used in an annotation as follows:
 
 .. code-block:: modelica
 
