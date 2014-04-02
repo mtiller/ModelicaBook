@@ -24,12 +24,12 @@ model SMD
           annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
 equation
   connect(ground.flange_a, damper2.flange_b) annotation (Line(
-      points={{70,3.67394e-016},{66,3.67394e-016},{66,0},{60,0},{60,20},{50,20}},
+      points={{70,0},{66,0},{66,0},{60,0},{60,20},{50,20}},
       color={0,0,0},
       smooth=Smooth.None));
 
   connect(ground.flange_a, spring2.flange_b) annotation (Line(
-      points={{70,3.67394e-016},{60,3.67394e-016},{60,-20},{48,-20}},
+      points={{70,0},{60,0},{60,-20},{48,-20}},
       color={0,0,0},
       smooth=Smooth.None));
   connect(damper2.flange_a, inertia2.flange_b) annotation (Line(

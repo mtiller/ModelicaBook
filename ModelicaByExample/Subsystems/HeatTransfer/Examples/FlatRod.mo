@@ -62,13 +62,13 @@ equation
       points={{-60,-30},{-60,-8}},
       color={191,0,0}, smooth=Smooth.None));
   connect(wall1.port_a, ambient.port) annotation (Line(
-      points={{-60,-50},{-60,-60},{6.12323e-016,-60},{6.12323e-016,-70}},
+      points={{-60,-50},{-60,-60},{0,-60},{0,-70}},
       color={191,0,0}, smooth=Smooth.None));
   connect(wall2.port_a, ambient.port) annotation (Line(
-      points={{-6.12323e-016,-50},{6.12323e-016,-50},{6.12323e-016,-70}},
+      points={{0,-50},{0,-50},{0,-70}},
       color={191,0,0}, smooth=Smooth.None));
   connect(wall3.port_a, ambient.port) annotation (Line(
-      points={{60,-50},{60,-60},{6.12323e-016,-60},{6.12323e-016,-70}},
+      points={{60,-50},{60,-60},{0,-60},{0,-70}},
       color={191,0,0}, smooth=Smooth.None));
   connect(wall3.port_b, C3.port) annotation (Line(
       points={{60,-30},{60,-8}},
@@ -77,7 +77,7 @@ equation
       points={{80,-20},{60,-20},{60,-8}},
       color={191,0,0}, smooth=Smooth.None));
   connect(C2.port, wall2.port_b) annotation (Line(
-      points={{0,-8},{0,-19},{0,-30},{6.12323e-016,-30}},
+      points={{0,-8},{0,-19},{0,-30},{0,-30}},
       color={191,0,0}, pattern=LinePattern.None,
       smooth=Smooth.None));
 end FlatRod;

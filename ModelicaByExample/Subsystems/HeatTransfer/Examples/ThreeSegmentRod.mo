@@ -22,7 +22,7 @@ equation
       color={191,0,0}, pattern=LinePattern.None,
       smooth=Smooth.None));
   connect(rod.ambient, ambient.port) annotation (Line(
-      points={{0,-20},{0,-70},{6.12323e-016,-70}},
+      points={{0,-20},{0,-70},{0,-70}},
       color={191,0,0}, pattern=LinePattern.None,
       smooth=Smooth.None));
   connect(rod.port_b, sensor.port) annotation (Line(
