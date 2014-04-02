@@ -13,7 +13,7 @@ typedef struct {
 } VectorTable;
 
 void *
-createVectorTable(const double *data, size_t np) {
+createVectorTable(double *data, size_t np) {
   VectorTable *table = (VectorTable *)malloc(sizeof(VectorTable));
   size_t i;
   
