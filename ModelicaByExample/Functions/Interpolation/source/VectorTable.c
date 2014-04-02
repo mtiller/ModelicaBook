@@ -25,7 +25,7 @@ createVectorTable(const double *data, size_t np) {
     table->x[i] = data[2*i];
     table->y[i] = data[2*i+1];
   }
-  for(i=0;i<2*np;i++) ModelicaFormatMessage("Value at %d is %g\n", i, data[i]);
+  for(i=0;i<2*np;i++) ModelicaFormatMessage("Value at %lu is %g\n", (unsigned long)i, data[i]);
   /* Initialize the rest of the table object */
   table->npoints = np;
   table->lastIndex = 0;
