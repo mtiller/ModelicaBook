@@ -8,8 +8,8 @@
 typedef struct {
   double *x; /* Independent variable values */
   double *y; /* Dependent variable values */
-  int npoints; /* Number of points in this data */
-  int lastIndex; /* Cached value of last index */
+  size_t npoints; /* Number of points in this data */
+  size_t lastIndex; /* Cached value of last index */
 } VectorTable;
 
 void *
