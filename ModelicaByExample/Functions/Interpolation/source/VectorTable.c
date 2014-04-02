@@ -1,6 +1,9 @@
 #ifndef _VECTOR_TABLE_C_
 #define _VECTOR_TABLE_C_
 
+#include <stdlib.h>
+#include "ModelicaUtilities.h"
+
 /*
   Here we define the structure associated
   with our ExternalObject type 'VectorTable'
