@@ -14,12 +14,12 @@ typedef struct {
 
 void *
 createVectorTable(const double *data, size_t np) {
-  VectorTable *table = (VectorTable *)malloc(sizeof(VectorTable));
+  VectorTable *table = malloc(sizeof(VectorTable));
   size_t i;
   
   /* Allocate memory for data */
-  table->x = (double *)malloc(sizeof(double)*np);
-  table->y = (double *)malloc(sizeof(double)*np);
+  table->x = malloc(sizeof(double)*np);
+  table->y = malloc(sizeof(double)*np);
   /* Copy data into our local array */
   for(i=0;i<np;i++) {
     table->x[i] = data[2*i];
