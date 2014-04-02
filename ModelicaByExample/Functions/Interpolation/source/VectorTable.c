@@ -23,7 +23,7 @@ createVectorTable(const double *data, size_t np) {
   /* Copy data into our local array */
   for(i=0;i<np;i++) {
     table->x[i] = data[2*i];
-	table->y[i] = data[2*i+1];
+    table->y[i] = data[2*i+1];
   }
   for(i=0;i<2*np;i++) ModelicaFormatMessage("Value at %d is %g\n", i, data[i]);
   /* Initialize the rest of the table object */
