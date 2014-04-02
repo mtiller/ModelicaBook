@@ -24,14 +24,14 @@ protected
         rotation=0, origin={0,0})));
 equation
   connect(feedback.y, gain.u) annotation (Line(
-      points={{-9,0},{2,0},{2,-1.46958e-015},{-38,-1.46958e-015}},
+      points={{-9,0},{2,0},{2,0},{-38,0}},
       color={0,0,127}, smooth=Smooth.None));
   connect(feedback.u1, setpoint) annotation (Line(
       points={{8,0},{40,0},{40,60},{0,60},{0,120}},
       color={0,0,127}, pattern=LinePattern.None,
       smooth=Smooth.None));
   connect(gain.y, command) annotation (Line(
-      points={{-61,1.34711e-015},{-80.5,1.34711e-015},{-80.5,0},{-110,0}},
+      points={{-61,0},{-80.5,0},{-80.5,0},{-110,0}},
       color={0,0,127}, pattern=LinePattern.None,
       smooth=Smooth.None));
   connect(measured, feedback.u2) annotation (Line(
