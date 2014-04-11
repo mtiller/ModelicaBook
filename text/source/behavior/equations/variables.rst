@@ -278,9 +278,16 @@ Attributes of ``Real``
     physical units associated with them.  There are rules about how
     these units are expressed, but the net result is that by using the
     ``unit`` attribute it is possible check models to make sure that
-    equations are physically consistent.
+    equations are physically consistent.  A value of ``"1"`` indicates
+    the value has no physical units.  On the other hand, a value of
+    ``""`` (the default value if no value is given) indicates that the
+    physical units are simply unspecified.  The difference between
+    ``"1"`` and ``""`` is that the former is an explicit statement
+    that the quantity is dimensionless (has not units) while the
+    latter indicates that the quantity may have physical units but
+    they are left unspecified.
 
-    **Default**: ``"1"`` (*i.e.,* no physical units)
+    **Default**: ``""`` (*i.e.,* no physical units specified)
 
     **Type**: ``String``
 
