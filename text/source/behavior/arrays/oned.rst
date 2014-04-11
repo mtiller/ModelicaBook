@@ -48,32 +48,35 @@ volume of the :math:`i^{th}` section as:
 
 where :math:`A_i` is the cross-sectional area of the :math:`i^{th}`
 section, which is assumed to be uniform, and :math:`L_i` is the length
-of the :math:`i^{th}` section.
-
-For our purposes, we will assume that the cross-sectional area is
-uniform along the length of the rod and that all sections have the same length.  As
-such, we can simply assume that:
+of the :math:`i^{th}` section.  For this example, we will assume the
+rod is composed of equal size pieces.  In this case, we can define the
+segment length, :math:`L_i`, to be:
 
 .. math::
 
-    m = \rho A \frac{L}{n}
+    L_i = \frac{L}{n}
 
-for every section in the rod where :math:`n` is the number of sections
-in the rod and :math:`L` is the overall length of rod.  In this case,
-the thermal capacitance of each section would be:
+We will also assume that the cross-sectional area is uniform along the
+length of the rod.  As such, the mass of each segment can be given as:
 
 .. math::
 
-    \rho A \frac{L}{n} C T_i
+    m = \rho A L_i
+
+In this case, the thermal capacitance of each section would be:
+
+.. math::
+
+    \rho A L_i C T_i
 
 This, in turn, means that the net heat gained in that section at any
 time will be:
 
 .. math::
 
-    \rho A \frac{L}{n} C \frac{\mathrm{d} T_i}{\mathrm{d}t}
+    \rho A L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t}
 
-where we assume that :math:`A`, :math:`L`, :math:`n` and :math:`C`
+where we assume that :math:`A`, :math:`L_i` and :math:`C`
 don't change with respect to time.
 
 That covers the thermal capacitance.  In addition, we will consider
@@ -94,32 +97,33 @@ exists.  These can be represented, respectively, as:
 
 .. math::
 
-   q_{k_{i \rightarrow {i-1}}} = -k A \frac{L}{n} (T_i-T_{i-1})
+   q_{k_{i \rightarrow {i-1}}} = -k A \frac{T_i-T_{i-1}}{L_i}
 
 .. math::
 
-   q_{k_{i \rightarrow {i+1}}} = -k A \frac{L}{n} (T_i-T_{i+1})
+   q_{k_{i \rightarrow {i+1}}} = -k A \frac{T_i-T_{i+1}}{L_i}
 
 Using these relations, we know that the heat balance for the first
 element would be:
 
 .. math::
 
-   \frac{\rho A L}{n} C \frac{\mathrm{d} T_1}{\mathrm{d}t} &= -\frac{k A L}{n} (T_1-T_2) -h A (T_1-T_{amb})
+   \rho A L_i C \frac{\mathrm{d} T_1}{\mathrm{d}t} &=
+   -k A \frac{T_1-T_2}{L_i} - h A (T_1-T_{amb})
 
 Similarly, the heat balance for the last element would be:
 
 .. math::
 
-   \frac{\rho A L}{n} C \frac{\mathrm{d} T_n}{\mathrm{d}t} &= -\frac{k
-   A L}{n} (T_n-T_{n-1}) -h A (T_n-T_{amb})
+   \rho A L_i C \frac{\mathrm{d} T_n}{\mathrm{d}t} &= -k
+   A\frac{T_n-T_{n-1}}{L_i} -h A (T_n-T_{amb})
 
 Finally, the heat balance for all other elements would be:
 
 .. math::
 
-   \frac{\rho A L}{n} C \frac{\mathrm{d} T_i}{\mathrm{d}t} &= -\frac{k
-   A L}{n} (T_i-T_{i-1}) -\frac{k A L}{n} (T_i-T_{i+1}) -h A (T_i-T_{amb})
+   \rho A L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t} &= -k
+   A\frac{T_i-T_{i-1}}{L_i} -k A\frac{T_i-T_{i+1}}{L_i} -h A (T_i-T_{amb})
 
 Implementation
 ^^^^^^^^^^^^^^
