@@ -91,6 +91,9 @@ build_links:
 server: dirhtml build_links
 	(cd build/dirhtml; python -m SimpleHTTPServer)
 
+server_fr: dirhtml_fr build_links
+	(cd build/dirhtml_fr; python -m SimpleHTTPServer)
+
 web: dirhtml build_links
 	(cd build/dirhtml; $(SYNC) * s3://beta.book.xogeny.com/)
 	# TODO: Set Content-Encoding on all gz files to be gzip (use find?)
@@ -236,13 +239,13 @@ update:
 	sphinx-intl update -l es -l cn -l fr -l de -d locale/ -p locale/pot
 
 buildmo:
-	sphinx-intl build
+	sphinx-intl build -d locale/ -p locale/pot
 
-html_es:
-	make -e SPHINXOPTS="-D language='es'" html
+dirhtml_es:
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language='es' source build/dirhtml_es
 
-html_fr:
-	make -e SPHINXOPTS="-D language='fr'" html
+dirhtml_fr:
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language='fr' source build/dirhtml_fr
 
 changes:
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
