@@ -194,7 +194,7 @@ def _simcmd(model_name, fileNamePrefix, outputFormat="mat", simflags=None,
         ret = ret + """numberOfIntervals=%d, """ % (numberOfIntervals,)
     if simflags:
         ret = ret + """simflags="%s", """ % (simflags,)
-    ret = ret + """method="radau5","""
+    ret = ret + """method="dassl","""
     ret = ret + """fileNamePrefix="%s", """ % (fileNamePrefix,)
     ret = ret + """outputFormat="%s")""" % (outputFormat,)
     return ret
