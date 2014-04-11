@@ -1,6 +1,9 @@
 #ifndef _VECTOR_TABLE_C_
 #define _VECTOR_TABLE_C_
 
+#include <stdlib.h>
+#include "ModelicaUtilities.h"
+
 /*
   Here we define the structure associated
   with our ExternalObject type 'VectorTable'
@@ -13,7 +16,7 @@ typedef struct {
 } VectorTable;
 
 void *
-createVectorTable(const double *data, size_t np) {
+createVectorTable(double *data, size_t np) {
   VectorTable *table = (VectorTable *)malloc(sizeof(VectorTable));
   size_t i;
   
