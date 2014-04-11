@@ -89,7 +89,7 @@ population can be represented by the following two equations:
 .. math::
 
    \dot{x} &= \dot{x}_r + \dot{x}_p \\
-   \dot{y} &= \dot{y}_p + \dot{x}_s
+   \dot{y} &= \dot{y}_p + \dot{y}_s
 
 Using the previous relationships, we can expand each of the right hand
 side terms in these two equations into:
