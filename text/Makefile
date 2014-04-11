@@ -33,6 +33,8 @@ book: specs results dirhtml server
 
 specs: specs.py
 	-mkdir results
+	-mkdir results/json
+	-mkdir results/js
 	-mkdir plots
 	-rm -f plots/*
 	python specs.py
