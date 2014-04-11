@@ -240,7 +240,7 @@ interpreted consistently and universally by Modelica tools.
 We will follow a convention (whenever possible) of describing
 standard annotations in terms of ``record`` definitions.  These
 ``record`` definitions don't formally exist, they are simply a concise
-way of expressing the data associated contained in the annotation.
+way of expressing the data contained in the annotation.
 
 ``Documentation``
 ^^^^^^^^^^^^^^^^^
@@ -323,8 +323,9 @@ restrict the system of equations in such a way that the underlying
 systems of equations are easier to solve than in the general case
 where the parameter could take on a range of values.
 
-The ``Evaluate`` annotation is simply a ``Boolean`` variable so it is
-used in an annotation as follows:
+The ``Evaluate`` annotation is simply a ``Boolean`` variable (``true``
+indicating that the ``parameter`` value can be transformed into a
+``constant``). It is used in an annotation as follows:
 
 .. code-block:: modelica
 
