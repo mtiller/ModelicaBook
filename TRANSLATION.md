@@ -20,29 +20,73 @@ volunteering to coordinate the translation into that language:
 
 ## Explanation
 
-At this point, I'm not entirely sure how the translation workflow
-should go.  The Sphinx documentation specifically discusses [document
-translation](http://sphinx-doc.org/intl.html#intl).  I can confirm that
+I've tried to make the translation process as simple as possible for
+translators by trying to do as much of the "up front" work on my end.
 
-     % sphinx-build -b gettext
+When you check out the Git repository, you'll find a directory called
+`text/locale`.  In there, you'll find directories that
+correspond to all the different languages for which translations are
+being done (*e.g.,* `es`=Spanish, `cn`=Chinese).  Simply go into the
+directory corresponding to the language you interested in translating
+and then into the `LC_MESSAGES` directory inside there and look for
+the `.po` files contained in those directories.  These files contain
+the text to be translated.
 
-does generate a series of .pot files with each paragraph present.  I
-haven't played around with what to do yet (other than adding a target
-in the Makefile).
+The file contains lots of entries corresponding to different passages
+of text.  A typical passage might look like this:
 
-Ideally, what we need is a workflow that allows translators to see
-what has changed in .pot files.  When the document source is changed,
-I can regenerate the .pot files.  Translators generally won't care
-what has disappeared from the .pot files (except for the wasted work
-associated with any previous translations).  But they should be made
-aware of any **new** entries in the .pot file.  I'm not sure how to do
-that.  I have noted that there seem to be two existing tools out there
-that are commonly used:
-[Pootle](http://sourceforge.net/projects/translate/) and
-[Weblate](http://weblate.org).  But I honestly don't know enough (yet)
-about those tools work to understand how to create an easy workflow
-for translators.  However, I do note that one feature that Weblate
-makes a big deal about is its Git integration.
+```
+#: ../../source/front/dedication.rst:11
+msgid ""
+"This book started as a Kickstarter project.  The idea of writing a book and "
+"making it freely available, under a Creative Commons license, was largely "
+"inspired by the writings of Cory Doctorow and Lawrence Lessig.  Their "
+"message of sharing resonated very strongly with me. I'm not interested in "
+"capitalizing on my knowledge of Modelica, I want to share it with others so "
+"they can experience the same joy I do in exploring this subject.  Happily, "
+"this Kickstarter project was successfully funded on December 4th, 2012 and "
+"my odyssey to create an entire Creative Commons licensed book began.  If "
+"circumstances had been different, this book would probably be dedicated to "
+"Cory Doctorow and Lawrence Lessig for inspiring me to take on this project."
+msgstr ""
+
+#: ../../source/front/dedication.rst:23
+```
+
+To translate this text, what is required is to add text below the
+**`msgstr`** line that is a translated version of the English language
+text above.  For example, the code above might be translated (*e.g.,*
+into French) as:
+
+```
+#: ../../source/front/dedication.rst:11
+msgid ""
+"This book started as a Kickstarter project.  The idea of writing a book and "
+"making it freely available, under a Creative Commons license, was largely "
+"inspired by the writings of Cory Doctorow and Lawrence Lessig.  Their "
+"message of sharing resonated very strongly with me. I'm not interested in "
+"capitalizing on my knowledge of Modelica, I want to share it with others so "
+"they can experience the same joy I do in exploring this subject.  Happily, "
+"this Kickstarter project was successfully funded on December 4th, 2012 and "
+"my odyssey to create an entire Creative Commons licensed book began.  If "
+"circumstances had been different, this book would probably be dedicated to "
+"Cory Doctorow and Lawrence Lessig for inspiring me to take on this project."
+msgstr ""
+"Ce livre a commencé comme un projet Kickstarter. L'idée d'écrire un livre et" 
+"rendant disponible gratuitement, sous une licence Creative Commons, était en grande partie" 
+"inspiré par les écrits de Cory Doctorow et Lawrence Lessig. Leur" 
+"un message de partage résonné très fort avec moi. Je ne suis pas intéressé par" 
+"capitaliser sur ma connaissance de Modelica, je veux le partager avec d'autres pour" 
+"ils peuvent éprouver la même joie que je fais dans l'exploration de ce sujet. Heureusement," 
+"ce projet Kickstarter a été financé avec succès le 4 Décembre 2012 et" 
+"mon odyssée à créer un ensemble de Creative Commons livre licence a commencé. Si" 
+"circonstances avaient été différentes, ce livre serait probablement dédié à" 
+"Cory Doctorow et Lawrence Lessig de m'inspirer de prendre sur ce projet."
+
+#: ../../source/front/dedication.rst:23
+```
+
+Note the addition of the lines following the line with the `msgstr` directive on it.
 
 ## Generating Translation Files
 
@@ -74,7 +118,7 @@ using `pip` (*e.g.,* `pip install sphinx-intl`).
 ### Generating the book in language <X>
 
 ```
-% make html_<X>
+% make dirhtml_<X>
 ```
 
 Currently supported languages are: `cn`, `es`, `fr` and `de (*e.g.,* `make html_es`)
