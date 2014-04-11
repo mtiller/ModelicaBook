@@ -30,7 +30,7 @@ model Rod_ArrayComprehensions
 initial equation
   T = linspace(200,300,n);
 equation
-  rho*V*C*der(T[1]) = -h*(T[1]-Tamb)-k*A/(L/n)*(T[1]-T[2]);
-  rho*V*C*der(T[2:n-1]) = {-k*(L/n)*(T[i]-T[i-1])-k*A/(L/n)*(T[i]-T[i+1]) for i in 2:(n-1)};
-  rho*V*C*der(T[end]) = -h*(T[end]-Tamb)-k*A/(L/n)*(T[end]-T[end-1]);
+  rho*V*C*der(T[1]) = -h*(T[1]-Tamb)-k*A*(T[1]-T[2])/(L/n);
+  rho*V*C*der(T[2:n-1]) = {-k*A*(T[i]-T[i-1])/(L/n)-k*A*(T[i]-T[i+1])/(L/n) for i in 2:(n-1)};
+  rho*V*C*der(T[end]) = -h*(T[end]-Tamb)-k*A*(T[end]-T[end-1])/(L/n);
 end Rod_ArrayComprehensions;

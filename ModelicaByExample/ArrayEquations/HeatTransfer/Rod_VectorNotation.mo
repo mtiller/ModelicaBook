@@ -30,7 +30,7 @@ model Rod_VectorNotation
 initial equation
   T = linspace(200,300,n);
 equation
-  rho*V*C*der(T[1]) = -h*(T[1]-Tamb)-k*A/(L/n)*(T[1]-T[2]);
-  rho*V*C*der(T[2:n-1]) = -k*(L/n)*(T[2:n-1]-T[1:n-2])-k*A/(L/n)*(T[2:n-1]-T[3:n]);
-  rho*V*C*der(T[end]) = -h*(T[end]-Tamb)-k*A/(L/n)*(T[end]-T[end-1]);
+  rho*V*C*der(T[1]) = -h*(T[1]-Tamb)-k*A*(T[1]-T[2])/(L/n);
+  rho*V*C*der(T[2:n-1]) = -k*A*(T[2:n-1]-T[1:n-2])/(L/n)-k*A*(T[2:n-1]-T[3:n])/(L/n);
+  rho*V*C*der(T[end]) = -h*(T[end]-Tamb)-k*A*(T[end]-T[end-1])/(L/n);
 end Rod_VectorNotation;

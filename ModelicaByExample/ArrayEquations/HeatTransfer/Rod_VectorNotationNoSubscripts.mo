@@ -33,7 +33,7 @@ model Rod_VectorNotationNoSubscripts
 initial equation
   T = linspace(200,300,n);
 equation
-  Qleft = {if i==1 then -h*(T[i]-Tamb) else -k*A/(L/n)*(T[i]-T[i-1]) for i in 1:n};
-  Qright = {if i==n then -h*(T[i]-Tamb) else -k*A/(L/n)*(T[i]-T[i+1]) for i in 1:n};
+  Qleft = {if i==1 then -h*(T[i]-Tamb) else -k*A*(T[i]-T[i-1])/(L/n) for i in 1:n};
+  Qright = {if i==n then -h*(T[i]-Tamb) else -k*A*(T[i]-T[i+1])/(L/n) for i in 1:n};
   rho*V*C*der(T) = Qleft+Qright;
 end Rod_VectorNotationNoSubscripts;
