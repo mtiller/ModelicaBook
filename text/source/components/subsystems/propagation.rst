@@ -99,7 +99,7 @@ this:
     end SMD;
 
 If we wanted to use a specific set of parameter values, we could do it
-in one of two ways.  One way would be to extends the parameterized
+in one of two ways.  One way would be to extend the parameterized
 model above and include a modification in the ``extends`` statement,
 *e.g.,*
 
@@ -111,7 +111,7 @@ model above and include a modification in the ``extends`` statement,
                   phi1_init=1);
 
 Note that we did not need to include modifications for the values of
-``phi2_init``, ``w1_init`` and ``w2_init`` since those parameters were
+``phi2_init``, ``w1_init`` and ``w2_init``, since those parameters were
 declared with default values.  In general, **default values for
 parameters should only be used when those defaults are reasonable for
 the vast majority of cases**.  The reason for this is that if a
@@ -133,4 +133,4 @@ values, *e.g.,*
               phi1_init=1);
 
 We'll defer the discussion on which of these approaches is better
-until upcoming chapter on :ref:`architectures`.
+until the upcoming chapter on :ref:`architectures`.

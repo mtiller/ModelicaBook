@@ -11,7 +11,7 @@ frequencies.  But if we remove any energy dissipation from the system,
 they will eventually all "reunite" at their initial position.
 
 In general, the period between these "reunion" events is the least
-common multiple of across the periods of all the pendulums in the
+common multiple of the periods of all the pendulums in the
 system.  We can choose the lengths of the pendulums to achieve a
 specific period between these "reunions".
 
@@ -38,6 +38,8 @@ The components of the pendulum can be rendered as follows:
 
 System Model
 ^^^^^^^^^^^^
+
+.. todo:: rendering problems follow 
 
 Now that we have an individual pendulum model, we can build a system
 of pendulums.  If we want a system of :math:`n` pendulums where the
@@ -76,7 +78,7 @@ value with the modification ``each m=1``.  However, in the case of
 ``L`` (and ``x``), we supply an array of values, ``L=lengths`` used to
 initialize the parameters where the values in the ``lengths`` array
 are computed using the equation for pendulum lengths we introduced
-earlier.  Will give a more complete discussion on how to apply
+earlier.  We will give a more complete discussion on how to apply
 modifications to arrays of components :ref:`later in this chapter
 <sub-modifications>`.
 
@@ -106,10 +108,10 @@ dimensions:
 Conclusion
 ^^^^^^^^^^
 
-In this section, we have seen how arrays of components can be used
+In this section, we have seen how arrays of components can be used,
 declared and modified.  In this particular case, this allows us to
 specify the number of pendulums in our system and then simulate them
-to observe the peculiar behavior of observed when we choose their
+to observe the peculiar behavior observed when we choose their
 lengths according to the equation specified earlier.
 
 .. [Berg] Richard E. Berg, "Pendulum waves: A demonstration of wave

@@ -22,7 +22,7 @@ this section, called a ``block``, that is restricted to having only
 In this section, we'll first look at how to construct causal blocks
 representing some basic mathematical operations.  We'll then see how
 those blocks can be used in two different ways.  The first way will be
-to model a sample physical system.  We'll include some discussion
+to model a simple physical system.  We'll include some discussion
 contrasting the causal and acausal approaches.  The second way to use
 such blocks is to model control systems.  As we'll see, using blocks
 to construct control systems is a much more natural fit for the block
@@ -75,7 +75,7 @@ use is the ``SO``, or "single output", definition:
             transformation(extent={{100,-10},{120,10}}, rotation=0)));
     end SO;
 
-Obviously, this definition is used to blocks that have a single
+Obviously, this definition is used for blocks that have a single
 output.  By convention, this output signal is named ``y``.  Another
 definition we'll use is the ``SISO`` or "single input, single output"
 block:
@@ -249,12 +249,15 @@ Cooling Example
 
 The first system that we will model using our ``block`` definitions is
 the heat transfer example we presented :ref:`earlier in this chapter
-<heat-transfer-components>`.  However this time, instead of using
+<heat-transfer-components>`.  However, this time, instead of using
 acausal components to build our model, we'll build it up in terms of
 the mathematical operations associated with our ``block`` definitions.
 
 Since these blocks represent mathematical operations, let us first
 revisit the equation associated with this example:
+
+.. todo:: this and some following expressions involving T are not being rendered correctly using
+https://book-preview.herokuapp.com
 
 .. math:: m c_p \dot{T} = h (T_{\infty}-T)
 
@@ -305,17 +308,16 @@ Such an equation can be typed in very quickly.  In contrast, the
 component based versions would require the user to drag, drop and
 connect component models which would invariably take longer.
 
-However, if you intend to create multiple variations of the problem
+However, if you intend to create variations of the problem
 combining different modes of heat transfer, different boundary
-conditions, etc. then the acausal version is better.  This because
+conditions, etc., then the acausal version is better.  This is because
 while some investment is required to create the component models, they
-can be reconfigured almost trivially once the component models are
-available.
+can be reconfigured almost trivially.
 
 One might say the same is true for the block diagram version of the
 model (*i.e.,* that it can be trivially reconfigured), **but that is
 not the case**.  The block diagram version of the model is a
-**mathematical** representation of the problem not a schematic based
+**mathematical** representation of the problem, not a schematic based
 formulation.  If you create variations of this heat transfer problem
 that specify alternative boundary conditions, add more thermal
 inertias or include additional modes of heat transfer, the changes to
@@ -337,8 +339,8 @@ Thermal Control
 For the next example, we'll mix both causal components, the blocks
 we've developed in this section, with acausal components, the
 :ref:`heat-transfer-components` developed earlier in this chapter.
-This will prove to be a powerful combination since it allows us to
-represent the physical components schematically but allows us to
+This will prove to be a powerful combination, since it allows us to
+represent the physical components schematically, but allows us to
 express the control strategy mathematically.
 
 Here is a schematic diagram showing how both approaches can be combined:
@@ -349,7 +351,7 @@ Here is a schematic diagram showing how both approaches can be combined:
    :alt: Gain Block
    :figclass: align-center
 
-When modeling a physical system together with a control system the
+When modeling a physical system together with a control system, the
 physical components and effects will use an acausal formulation.  The
 components representing the control strategy will typically use a
 causal formulation.  What bridges the gap between these two approaches
@@ -369,6 +371,8 @@ Our example model can be expressed in Modelica as:
 
 .. literalinclude:: /ModelicaByExample/Components/BlockDiagrams/Examples/MultiDomainControl.mo
    :language: modelica
+
+.. todo:: rendering problems follow
 
 Looking at the model, we can see that the initial temperature is
 :math:`90\,^{\circ}\mathrm{C}` and the ambient temperature is

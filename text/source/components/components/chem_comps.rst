@@ -14,7 +14,7 @@ Species
 
 .. index:: enumeration
 
-The species we will be dealing with in this example or defined by the
+The species we will be dealing with in this example are defined by the
 following ``enumeration``:
 
 .. literalinclude:: /ModelicaByExample/Components/ChemicalReactions/ABX/Species.mo
@@ -47,9 +47,9 @@ subscript is given by an ``enumeration`` type.  We saw earlier how
 ^^^^^^^^^^^^
 
 Our first component model is used to track the concentration of the
-various chemical species within a control volume.  As eluded to
+various chemical species within a control volume.  As alluded to
 earlier, since all reactions occur within the same volume, we don't
-need to actually specify the volume of the control volume.
+need to actually specify the size of the control volume.
 
 The ``Solution`` model is quite simple.  Like the
 ``RegionalPopulation`` model discussed :ref:`earlier in this chapter
@@ -76,7 +76,7 @@ model:
 We see that each reaction has a reaction coefficient, ``k``, and a
 ``Mixture`` connector, ``mixture``, that ultimately connects it to the
 ``Solution`` where the reaction is to take place.  The internal
-variables ``consumed`` and ``produced`` vectors play a role that is
+vector variables ``consumed`` and ``produced`` play a role that is
 similar to the ``decline`` and ``growth`` variables in the
 ``SinkOrSource`` :ref:`discussed earlier in this chapter
 <reproduction-component>` (*i.e.,* they allow us to write
@@ -172,7 +172,7 @@ models as follows:
 
 Note how modifications to the ``solution`` component are used to set
 the initial concentration of species within the ``solution``
-component.  Also, the reaction coefficients are also specified via
+component.  Also, the reaction coefficients are specified via
 modifications to each of the reaction components.  Finally, each of
 the reaction components is attached to the ``solution.mixture``
 connector.
@@ -190,6 +190,8 @@ Conclusion
 
 From our earlier discussion of this chemical system, you may recall
 that the resulting system of equations was:
+
+.. todo:: following is not rendered correctly.
 
 .. math::
 

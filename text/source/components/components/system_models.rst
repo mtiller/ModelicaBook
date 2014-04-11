@@ -64,13 +64,13 @@ model is useful because it isn't restricted to acausal connections.
 Before we consider the specific connections in the
 ``MultiDomainControl`` model, let's first elaborate on what the
 ``connect`` statement actually does.  There are some complex cases
-that arise but for the sake of simplicity an pedagogy, we'll only
+that arise, but for the sake of simplicity and pedagogy, we'll only
 discuss the basic case here.
 
 A ``connect`` statement connects exactly two connectors.  It then
 "pairs up" variables across each connector **by name**.  In other
 words, it takes each variable in one connector and pairs it up with
-the variable with the same name in the other connector.
+the variable of the same name in the other connector.
 
 .. index:: connect; input
 .. index:: connect; output
@@ -114,7 +114,7 @@ In our discussion of :ref:`block-components`, we describe the
 in which calculations are performed.  As discussed above, they just
 enforce restrictions on how the variables can be connected.  In
 addition to the restriction already mentioned, there is one additional
-restriction that within a connection set, there can only be one
+restriction that, within a connection set, there can only be one
 ``output`` signal (for obvious reasons).
 
 In our ``MultiDomainControl`` model, we can see several of these cases
@@ -137,9 +137,9 @@ This will lead to the types of conservations equations :ref:`discussed
 earlier <acausal-modeling>`.
 
 In summary, a ``connect`` statement is a way to generate equations
-that automatically manages complex tasks (like generation conservation
+that automatically manages complex tasks (like generation of conservation
 and continuity equations) while at the same time checking to make sure
-that the connection make sense (*e.g..,* that the variables have the
+that the connection makes sense (*e.g..,* that the variables have the
 same type).
 
 .. _subsystem-diagrams:
@@ -215,7 +215,7 @@ Generally, the ``iconTransformation`` is only defined for connectors
 since these are typically the only components that appear in the icon
 representation.
 
-The ``Transformation`` annotation which is defined as follows:
+The ``Transformation`` annotation, which is defined as follows:
 
 .. code-block:: modelica
 
@@ -234,7 +234,7 @@ Connection Rendering
 ~~~~~~~~~~~~~~~~~~~~
 
 Finally, we have the third topic, rendering the connections.  Again,
-the annotations that govern how connections are rendered have appears
+the annotations that govern how connections are rendered have appeared
 in many examples.  Now, finally, we'll explain what that information
 represents.  Consider the following ``connect`` statement from our
 :ref:`thermal-control` example:

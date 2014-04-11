@@ -5,7 +5,7 @@ In this section, we'll consider how a DC power supply model could be
 implemented in Modelica.  We'll show, once again, how a flat system
 model can be refactored to make use of a reusable subsystem model.
 
-Flat Power Supply
+Flat Power Supply Model
 ^^^^^^^^^^^^^^^^^
 
 In this case, our flat system model will be the DC power supply

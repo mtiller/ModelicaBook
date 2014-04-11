@@ -18,7 +18,7 @@ The advantage of using the ``replaceable`` keyword is that it allows
 new models to be created without having to reconnect anything.  This
 not only imposes a structural framework on future models (to ensure
 naming conventions are followed, interfaces are common, *etc.*), it
-also helps avoid potential errors by eliminating one potentially error
+also helps avoid potential errors by eliminating an error
 prone task from the model development process, *i.e.,* creating
 connections.
 
@@ -55,6 +55,8 @@ keyword is:
 .. code-block:: modelica
 
     replaceable DefaultType variableName constrainedby ConstrainingType;
+
+.. todo:: this sentence needs re-writing.
 
 where ``variableName`` is again the name of the variable being
 declared, ``DefaultType`` represents the type of ``variableName`` of
@@ -99,7 +101,7 @@ In this ``System`` model, only the sensor is ``replaceable``.  So the
 types of each of the other subsystems (*i.e.,* ``plant``,
 ``controller`` and ``actuator``) cannot be changed.
 
-If we wanted to extend this model but use a different model for the
+If we wanted to extend this model, but use a different model for the
 ``sensor`` subsystem, we would use the ``redeclare`` keyword as
 follows:
 
@@ -116,7 +118,7 @@ What this tells the Modelica compiler is that in the context of the
 instance of the ``CheapSensor`` model, not the (otherwise default)
 ``Sensor`` model.  **However**, the ``CheapSensor`` model (or any
 other type chosen during redeclaration) **must be plug-compatible with
-that variables constraining type**.
+that variable's constraining type**.
 
 The syntax of a ``redeclare`` statement is really exactly the same as
 a normal declaration except that it is preceded by the ``redeclare``
@@ -157,7 +159,7 @@ things that are plug-compatible), but we can never widen the type
 (which would make things that were previously not plug-compatible
 now plug-compatible).
 
-Earlier when discussing :ref:`arrays-of-components`, we made the point
+Earlier, when discussing :ref:`arrays-of-components`, we made the point
 that it was not possible to redeclare individual elements in arrays.
 Instead, a redeclaration must be applied to the entire array.  In
 other words, if we declare something initially as:
@@ -264,6 +266,8 @@ declaration and not in subsequent redeclarations, apply it after the
 variable name.  If you want it to persist through subsequent
 redeclarations, apply it to the constraining type.
 
+.. todo:: has definition vs. declaration been discussed somwehere?
+
 Redefinitions
 ^^^^^^^^^^^^^
 
@@ -325,7 +329,7 @@ modifications that set the resistance were applied to the constraining
 type in our ``Circuit`` model.  But, it is a bit tedious that we have
 to change each individual resistor and specify ``dRdT`` over and over
 again even though they are all the same value.  However, Modelica
-gives us a way to do them all at once.  The way we do this.  The first
+gives us a way to do them all at once.  The first
 step is to define a local type within the model like this:
 
 .. code-block:: modelica
@@ -420,7 +424,7 @@ address this issue.
 ``choices``
 ~~~~~~~~~~~
 
-The ``choices`` annotation allows to original model developer to
+The ``choices`` annotation allows the original model developer to
 associate a list of modifications with a given declaration.  The very
 simplest use case for this could be to specify values for a given
 parameter:

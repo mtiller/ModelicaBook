@@ -36,10 +36,10 @@ value of this annotation should be a **string** that is a space
 separated list of the qualifiers.
 
 When a component is instantiated, graphical tools will find the
-definition associated with that component and look if a value has been
+definition associated with that component and look to see if a value has been
 provided for the ``defaultComponentPrefixes`` annotation.  If so, it
 will extract the qualifiers listed in that string and immediately add
-them as qualifiers to that components declaration.
+them as qualifiers to that component's declaration.
 
 .. _dialog-anno:
 
@@ -104,7 +104,7 @@ component icon in response to a change in temperature.  The
 
     DynamicSelect(static_value, dynamic_value)
 
-The first is the value is the "static" value.  This value is used when
+The first is the "static" value.  This value is used when
 either no simulation results are available or in the case that the
 specific tool does not support linking simulation results to
 annotations.  The second value is the "dynamic" value.  This is an

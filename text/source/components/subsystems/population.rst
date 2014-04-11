@@ -86,7 +86,7 @@ proportional to the difference in population between the regions.  In
 other words, if there are more rabbits in one region than another, the
 rabbits will move from the more populated region to the less
 population region.  This is effectively a "diffusion" model of
-migration and has no basis in ecology.  It is introduced simply as an
+migration and does not necessarily have a basis in ecology.  It is introduced simply as an
 example of how we could add additional effects, on top of those
 implemented in each region, to change the population dynamics between
 regions.

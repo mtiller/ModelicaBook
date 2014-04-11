@@ -7,14 +7,14 @@ Conceptual Definitions
 In both of the examples we presented in this chapter, we used
 interface definitions as part of the architecture definition process.
 The term "interface" doesn't come from Modelica itself, it is a term
-common among object-oriented languages.  In Modelica, we can think of
+common among computer languages.  In Modelica, we can think of
 interfaces as models that define all the details of the model **that
 are externally visible**.  You can think of an interface as a "shell"
 without any internal details.  For this reason, interface models are
 almost always marked as ``partial``.
 
 Another important concept is that of an "implementation".  This is
-another term borrowed from the world of object-oriented languages.
+another term borrowed from the world of computer languages.
 Whereas an interface is used to simply describe the externally visible
 aspects of a model, an implementation includes internal details as
 well.  It includes the information required to actually implement that
@@ -58,6 +58,6 @@ Conclusion
 
 The bottom line is that it is very useful to not only think in terms
 of interface and implementation models, but also to create models to
-formally define interfaces and distinguish them from implementations
+formally define interfaces and distinguish them from implementations,
 since these will be very useful when creating architecture driven
 models.

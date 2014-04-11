@@ -3,7 +3,7 @@
 Sensor Comparison
 -----------------
 
-Let us start our study of architectures with an examples that is
+Let us start our study of architectures with an example that is
 similar to one presented in my previous book [ItPMwM]_.  In it, we
 will consider the performance of a control system using several
 different sensor models.
@@ -20,6 +20,8 @@ Our system schematic is structured as follows:
    :align: center
    :alt: Flat system model
 
+.. todo:: the purple box is showing as magenta
+
 All the components within the purple box represent the plant model.
 In this case, it is a simple rotational system involving two rotating
 inertias connected via a spring and a damper.  One of the inertias is
@@ -28,7 +30,7 @@ box identifies the sensor in the system.  The sensor is used to
 measure the speed of one of the rotating shafts.  Similarly, the
 purple box identifies the actuator.  The actuator applies a torque to
 the other shaft (the one whose speed is not measured).  Finally, all
-the components in the blue box represent the control system which
+the components in the blue box represent the control system, which
 tries to keep the measured speed as close as possible to the setpoint
 supplied by the signal generator at the top of the diagram.
 
@@ -77,8 +79,8 @@ following performance for the control system:
 .. plot:: ../plots/AFS_SH.py
    :include-source: no
 
-In this case, we can see that things are going from bad to worse in
-this case.  While we were initially unable to track the desired speed
+In this case, we can see that things are going from bad to worse.
+While we were initially unable to track the desired speed
 closely, now (as a result of the measurement artifact) our system has
 become unstable.
 
@@ -92,7 +94,7 @@ improvements might ultimately be required for the control system
 itself.
 
 If we plan on substituting sensors, actuators and control strategies
-our first step should be to organize our system in those subsystems.
+our first step should be to organize our system into those subsystems.
 Doing so, we end up with the following system model:
 
 .. image:: /ModelicaByExample/Architectures/SensorComparison/Examples/HierarchicalSystem.svg
@@ -145,6 +147,8 @@ model:
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Examples/HierarchicalSystem.mo
    :language: modelica
 
+.. todo:: sentence is missing some text at the end
+
 Now, we want to create a variation of this model where the ``sensor``
 component 
 
@@ -172,7 +176,7 @@ something like this:
     end Variation2;
 
 This is essentially what we want to do.  But this isn't legal in
-Modelica.  There are a couple of problems with this approach.  The
+Modelica and there are a couple of other problems with this approach.  The
 first is that the original model developer might not want to allow
 such changes.  The second problem is that we end up with two
 ``sensor`` components (of different types, no less).  Even if it truly
@@ -181,7 +185,7 @@ another problem is that we might type the name wrong for the variable
 name and end up with two sensors.  Finally, we still don't have a way
 to know if it even makes sense to change ``sensor`` into a
 ``SampleHoldSensor``.  In this case it does, but how do we ensure that
-in general.
+in general?
 
 Fortunately, there **is** a way to do almost exactly what we are
 attempting here.  But in order to address these other complications,
@@ -225,7 +229,7 @@ there and will still be compatible.  **However, please note** that if
 Plug compatibility is important because, in general, we want to ensure
 that any redeclaration that we make is "safe".  The way we do that is
 to require that whatever type we decide to change our ``sensor``
-component to, is plug compatible with the original type.  In this
+component to is plug compatible with the original type.  In this
 case, that means that it has to have a ``w`` connector (and that
 connector, in turn, must be plug compatible with the ``w`` that was
 there before) and it has to have a ``shaft`` connector (which, again,
@@ -295,7 +299,7 @@ model without repeating ourselves as follows:
     
 There are several things worth noting about this model.  The first is
 that the syntax of a redeclaration is just like a normal declaration
-except it are preceded by the ``redeclare`` keyword.  Also note that
+except it is preceded by the ``redeclare`` keyword.  Also note that
 the redeclaration is part of the ``extends`` clause.  Specifically, it
 is a modification, like any other modification, in the extends
 clause.  If we wanted to both redeclare the ``sensor`` component and
@@ -402,8 +406,8 @@ the constraining type by adding a ``constrainedby`` clause at the end,
 .. index:: default type
 
 This declaration says that the ``sensor`` component can be redeclared
-by anything that is plug-compatible with the ``IdealSensor`` model
-**but** if it isn't redeclared then **by default** it should be
+by anything that is plug-compatible with the ``IdealSensor`` model,
+**but** if it isn't redeclared, then **by default** it should be
 declared as a ``SampleHoldSensor`` sensor.  For this reason, the original
 type used in the declaration, ``SampleHoldSensor``, is called the
 **default type**.

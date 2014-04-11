@@ -4,7 +4,7 @@ Architecture Driven Approach
 ----------------------------
 
 So far in this section, we started with a flat approach and gradually
-adapted it to use the architectural features of Modelica.  Let's start
+adapted it to use the architectural features of Modelica.  Let's start to
 build out our system from the top down using an architectural
 approach where we define the structure of our system first and then
 add specific subsystem implementations after that.
@@ -30,8 +30,8 @@ or sub-components), it will end up being a ``partial`` model.  But
 that's fine for our purposes.
 
 Let's start by considering the interface for our ``sensor``
-subsystem.  We have already discussed the public interface in detail
-already.  Here is a Modelica definition and icon for that interface:
+subsystem.  We have already discussed the public interface in detail.
+Here is a Modelica definition and icon for that interface:
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Sensor.mo
    :language: modelica
@@ -43,7 +43,7 @@ already.  Here is a Modelica definition and icon for that interface:
 
 A few things to note about this ``model`` definition.  The first is,
 as we mentioned a moment ago, that this model is ``partial``.  It
-should be clear why since it has connectors but not equations to help
+should be clear why, since it has connectors, but not equations to help
 solve for the variables on those connectors.  Another thing worth
 noting is the fact that it contains annotations.  The annotations
 associated with the connector declarations specify how those
@@ -56,7 +56,7 @@ model that extends from this model will be able to draw **additional**
 graphics on top of what is defined by the ``Sensor`` model.
 
 The interface definition for the actuator model is almost identical
-except that it includes two rotational connector, one to apply the
+except that it includes two rotational connectors, one to apply the
 commanded torque to and the other that handles the reaction torque.
 If, for example, our actuator model were an electric motor, the former
 would be the connector for the rotor and the latter would be the
@@ -218,7 +218,7 @@ By doing so, we ensure that subsequent redeclarations are possible.
 
 
 If we had wanted our ``SystemArchitecture`` model to specify these
-implementations as the default but still used the interfaces as the
+implementations as the default but still use the interfaces as the
 constraining types, we could have declared the subsystems in
 ``SystemArchitecture`` as follows:
 

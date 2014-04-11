@@ -363,7 +363,7 @@ signals on the ``bus`` connector are referenced:
    :lines: 1-20,68
    :emphasize-lines: 18
 
-Again, not the emphasized line.  It references something called
+Again, note the emphasized line.  It references something called
 ``heat_command`` on the ``bus`` connector.  Again, that signal doesn't
 exist in the definition of ``ExpandableBus``, but it is implicitly
 created simply because it is referenced in the highlighted ``connect``
@@ -456,7 +456,7 @@ Conclusion
 ^^^^^^^^^^
 
 This is the second example of how we can use the configuration
-management features in Modelica to taken an architecturally based
+management features in Modelica to take an architecturally based
 approach to building system models.  This architectural approach is
 very useful when there a many variations of a the same architecture
 that require analysis.  Using the ``redeclare`` feature, it is
