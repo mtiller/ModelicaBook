@@ -50,7 +50,7 @@ equations (ODEs).  When dealing with ODEs, every differentiated
 variable is a state, which, in turn, means that you need an initial
 equation for each of these differentiated variables.  But in
 subsequent chapters we will eventually run across examples that are
-so-called algebraic-differential equations (DAEs).  In those cases,
+so-called differential-algebraic equations (DAEs).  In those cases,
 only *some* of the differentiated variables can be considered states.
 
 As it turns out, understanding initialization doesn't really require
@@ -134,7 +134,7 @@ solve a problem that looks like this:
 
 .. math::
 
-   \dot{\vec{x}}(t_0) &= \vec{f}(\vec{x}(t_0), \vec{u}(t), t_0) \\
+   \dot{\vec{x}}(t_0) &= \vec{f}(\vec{x}(t_0), \vec{u}(t_0), t_0) \\
    \vec{y}(t_0) &= \vec{g}(\vec{x}(t_0), \vec{u}(t_0), t_0) \\
    \vec{0} &= \vec{h}(\vec{x}(t_0), \dot{\vec{x}}(t_0), \vec{u}(t_0), t_0)
 
