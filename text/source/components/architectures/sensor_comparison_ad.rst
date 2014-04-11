@@ -42,18 +42,18 @@ Here is a Modelica definition and icon for that interface:
    :alt: Sensor interface
 
 A few things to note about this ``model`` definition.  The first is,
-as we mentioned a moment ago, that this model is ``partial``.  It
-should be clear why, since it has connectors, but not equations to help
-solve for the variables on those connectors.  Another thing worth
-noting is the fact that it contains annotations.  The annotations
-associated with the connector declarations specify how those
-connectors should be rendered.  These annotations will be inherited by
-any model that ``extends`` from this one.  So it is important to
-choose locations that will make sense across all implementations.  It
-also includes an ``Icon`` annotation.  This essentially defines a
-"backdrop" for the final implementations icon.  In other words, any
-model that extends from this model will be able to draw **additional**
-graphics on top of what is defined by the ``Sensor`` model.
+as we mentioned a moment ago, that this model is ``partial``.  This is
+because it has connectors but no equations to help solve for the
+variables on those connectors.  Another thing worth noting is the fact
+that it contains annotations.  The annotations associated with the
+connector declarations specify how those connectors should be
+rendered.  These annotations will be inherited by any model that
+``extends`` from this one.  So it is important to choose locations
+that will make sense across all implementations.  It also includes an
+``Icon`` annotation.  This essentially defines a "backdrop" for the
+final implementations icon.  In other words, any model that extends
+from this model will be able to draw **additional** graphics on top of
+what is defined by the ``Sensor`` model.
 
 The interface definition for the actuator model is almost identical
 except that it includes two rotational connectors, one to apply the

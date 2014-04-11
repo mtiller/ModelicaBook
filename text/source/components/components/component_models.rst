@@ -79,16 +79,15 @@ nature (*i.e.,* directionality) of the information exchange.
 
 But there are other implications to this composability.  Not only can
 we easily create systems by dragging, dropping and connecting
-components, but also easily
-reconfigure systems.  Replacing a voltage source in an electrical
-circuit with a current source can have a profound impact on the
-mathematical representation of that system (*e.g.,* if the system is
-represented as a block diagram).  But such a change has no significant
-impact when using an acausal approach.  Although the underlying
-mathematical representation still changes, sometimes profoundly,
-there is no impact on the user,
-because that representation is generated automatically as part of the
-compilation process.
+components, but we can also easily reconfigure them.  Replacing a
+voltage source in an electrical circuit with a current source can have
+a profound impact on the mathematical representation of that system
+(*e.g.,* if the system is represented as a block diagram).  But such a
+change has no significant impact when using an acausal approach.
+Although the underlying mathematical representation still changes,
+sometimes profoundly, there is no impact on the user, because that
+representation is generated automatically as part of the compilation
+process.
 
 .. todo:: I really need to include one of the typical examples here.
 
@@ -114,8 +113,8 @@ Connectors
 ++++++++++
 
 The other advantage of acausal modeling is the amount of automatic
-"accounting" performed with it.  To understand exactly
-what accounting is performed, let's consider the following rotational
+"accounting" performed with this approach.  To understand exactly what
+accounting is performed, let's consider the following rotational
 ``connector`` definitions from the Modelica Standard Library:
 
 .. code-block:: modelica
@@ -325,7 +324,7 @@ angular velocity of the ``ground.flange_a`` connector, we get:
 
 However, we also know that all the across variables in the connection
 set are equal.  As a result, their derivatives must also be equal.
-This means that we can substitute any of of them for another.  Making
+This means that we can substitute any one of them for another.  Making
 two such substitutions yields:
 
 .. code-block:: modelica
