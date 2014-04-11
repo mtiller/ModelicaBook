@@ -4,6 +4,9 @@ This file collects the significant changes to the book since it's initial public
 
 #### Bug Fixes
 
+  * Merged a bunch of changes from @tbeu that improve the external
+    function examples and clean up a few other things.
+
   * Fixed an error in the source code for the 1D heat conduction
     equation examples and fixed a recurring error (see issue
     [#53](https://github.com/xogeny/ModelicaBook/issues/53)) in the
