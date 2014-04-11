@@ -57,7 +57,7 @@ equation
       color={0,0,255}, pattern=LinePattern.None,
       smooth=Smooth.None));
   connect(sensor.node, cap.node) annotation (Line(
-      points={{-6.12323e-016,0},{0,0},{0,-20},{-20,-20}},
+      points={{0,0},{0,0},{0,-20},{-20,-20}},
       color={191,0,0}, pattern=LinePattern.None,
       smooth=Smooth.None));
 end MultiDomainControl;

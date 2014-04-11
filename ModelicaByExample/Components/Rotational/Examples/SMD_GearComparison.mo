@@ -91,11 +91,11 @@ equation
       color={0,0,0},
       smooth=Smooth.None));
   connect(ground1.flange_a,damper4. flange_b) annotation (Line(
-      points={{70,3.67394e-016},{60,3.67394e-016},{60,20},{50,20}},
+      points={{70,0},{60,0},{60,20},{50,20}},
       color={0,0,0},
       smooth=Smooth.None));
   connect(ground1.flange_a,spring4. flange_b) annotation (Line(
-      points={{70,3.67394e-016},{60,3.67394e-016},{60,-20},{48,-20}},
+      points={{70,0},{60,0},{60,-20},{48,-20}},
       color={0,0,0},
       smooth=Smooth.None));
   connect(damper4.flange_a,inertia4. flange_b) annotation (Line(
