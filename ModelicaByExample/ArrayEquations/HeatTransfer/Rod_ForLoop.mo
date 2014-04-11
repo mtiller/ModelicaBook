@@ -31,7 +31,7 @@ initial equation
 equation
   rho*V*C*der(T[1]) = -h*(T[1]-Tamb)-k*A/(L/n)*(T[1]-T[2]);
   for i in 2:(n-1) loop
-    rho*V*C*der(T[i]) = -k*(L/n)*(T[i]-T[i-1])-k*A/(L/n)*(T[i]-T[i+1]);
+    rho*V*C*der(T[i]) = -k*A/(L/n)*(T[i]-T[i-1])-k*A/(L/n)*(T[i]-T[i+1]);
   end for;
   rho*V*C*der(T[end]) = -h*(T[end]-Tamb)-k*A/(L/n)*(T[end]-T[end-1]);
 end Rod_ForLoop;
