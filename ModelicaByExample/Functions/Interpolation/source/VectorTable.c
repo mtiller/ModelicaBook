@@ -17,7 +17,7 @@ typedef struct {
 
 void *
 createVectorTable(double *data, size_t np) {
-  VectorTable *table = (VectorTable *)malloc(sizeof(VectorTable));
+  VectorTable *table = malloc(sizeof(VectorTable));
   if (table) {
     /* Allocate memory for data */
     table->x = malloc(sizeof(double)*np);
