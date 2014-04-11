@@ -20,6 +20,7 @@ This file collects the significant changes to the book since it's initial public
 
 #### Enhancements
 
+  * Updated the README to help orient people who want to contribute.
   * Incorporated a bunch of excellent fixes and improvements from
     @mrtiller related to
     [#42](https://github.com/xogeny/ModelicaBook/pull/42/files).
