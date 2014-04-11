@@ -84,6 +84,7 @@ true at that moment.  Note that what makes this a state event (unlike
 our example in :ref:`previous cooling examples <cooling-revisited>`) is the
 fact that this conditional expression references continuous variables
 other than ``time``.
+
 .. todo:: link to previous cooling examples not showing up correctly
 do the referenced variables have to be continuous to make a state event?
 
