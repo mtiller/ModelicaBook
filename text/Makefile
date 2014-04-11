@@ -228,9 +228,21 @@ info:
 	@echo "makeinfo finished; the Info files are in $(BUILDDIR)/texinfo."
 
 gettext:
-	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) $(BUILDDIR)/locale
+	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) locale/pot
 	@echo
 	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
+
+update:
+	sphinx-intl update -l es -l cn -l fr -l de -d locale/ -p locale/pot
+
+buildmo:
+	sphinx-intl build
+
+html_es:
+	make -e SPHINXOPTS="-D language='es'" html
+
+html_fr:
+	make -e SPHINXOPTS="-D language='fr'" html
 
 changes:
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes

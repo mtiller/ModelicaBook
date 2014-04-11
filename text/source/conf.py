@@ -307,3 +307,8 @@ if 'epub' in tags:
 
 #plot_formats = ["png", "hires.png", "pdf", "svg"]
 plot_formats = ["png", "hires.png", "pdf", "svg"]
+
+# Translation related stuff
+
+locale_dirs = ['locale/']   # path is example but recommended.
+gettext_compact = False     # optional.

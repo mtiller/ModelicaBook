@@ -44,3 +44,38 @@ about those tools work to understand how to create an easy workflow
 for translators.  However, I do note that one feature that Weblate
 makes a big deal about is its Git integration.
 
+## Generating Translation Files
+
+Generally, translators don't really need to worry about this step.
+But in case you have all the tools necessary to build the book, the
+following is a list of the various commands needed to build a version
+of the book in another language.  It should be noted that some of
+these steps require installation of `sphinx-intl`.  This can be done
+using `pip` (*e.g.,* `pip install sphinx-intl`).
+
+### Generating `pot` files
+
+```
+% make gettext
+```
+
+### Updating `po` files
+
+```
+% make update
+```
+
+### Building the `mo` files:
+
+```
+% make buildmo
+```
+
+### Generating the book in language <X>
+
+```
+% make html_<X>
+```
+
+Currently supported languages are: `cn`, `es`, `fr` and `de (*e.g.,* `make html_es`)
+
