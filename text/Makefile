@@ -242,10 +242,10 @@ buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
 
 dirhtml_es:
-	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language='es' source build/dirhtml_es
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=es source build/dirhtml_es
 
 dirhtml_fr:
-	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language='fr' source build/dirhtml_fr
+	$(SPHINXBUILD) -a -v -b dirhtml -d build/doctrees_fr -D language=fr source build/dirhtml_fr
 
 changes:
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
