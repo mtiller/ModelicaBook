@@ -220,7 +220,6 @@ The following trajectory was simulated using these experimental
 conditions:
 
 .. plot:: ../plots/FOE.py
-   :class: interactive
 
 The trajectory terminates at 8 seconds because the simulator used the
 ``experiment`` annotation to determine how long to run the simulation.
