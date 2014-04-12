@@ -132,7 +132,7 @@ is a vector of coefficients such that our polynomial is evaluated as:
 
 where ``N`` is the number of coefficients passed to the function.
 There are two important things to note at this point.  First, **the
-first element in :math:`\vec{c}` corresponds to the highest order term
+first element in** :math:`\vec{c}` **corresponds to the highest order term
 in the polynomial**.  Second, we are using a notation that assumes
 that the elements in :math:`\vec{c}` are numbered **starting from 1**
 to make the transition to Modelica code (where arrays are indexed
