@@ -1,4 +1,4 @@
-# 
+﻿# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example 0.2.1\n"
@@ -517,7 +517,7 @@ msgstr ""
 #: ../../source/behavior/equations/variables.rst:484
 msgid ""
 "Here, the modification is applied to elements that were inherited from the "
-"``QuiescientModelWithInheritance`` model.  As with modifications to "
+"``QuiescentModelWithInheritance`` model.  As with modifications to "
 "attributes, the element being modified (a model in this case) is followed by"
 " parentheses and inside those parentheses we specify the modifications we "
 "wish to make."
@@ -527,13 +527,13 @@ msgstr ""
 msgid ""
 "It is worth noting that modifications can be nested arbitrarily deep. For "
 "example, imagine we wanted to modify the ``start`` attribute for the "
-"variable ``x`` inherited from the ``QuiescientModelWithInheritance`` model."
+"variable ``x`` inherited from the ``QuiescentModelWithInheritance`` model."
 "  In Modelica, such a modification would be made as follows:"
 msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:502
 msgid ""
-"Here we first \"reach inside\" the ``QuiescientModelWithInheritance`` model "
+"Here we first \"reach inside\" the ``QuiescentModelWithInheritance`` model "
 "to modify the contents that we \"inherit\" from it (``x`` in this case) and "
 "then we \"reach inside\" ``x`` to modify the value of the ``start`` "
 "attribute."
