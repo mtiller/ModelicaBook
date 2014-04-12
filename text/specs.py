@@ -59,12 +59,12 @@ lvvars = [Var("x", legend="Prey population"),
 add_case(["ClassicModel$"], stopTime=140, res="LVCM")
 add_simple_plot(plot="LVCM", vars=lvvars, title="Classic Lotka-Volterra")
 
-add_case(["QuiescientModel$"], stopTime=140, res="LVQM")
-add_simple_plot(plot="LVQM", vars=lvvars, title="Queiscient Model (trivial solution)")
+add_case(["QuiescentModel$"], stopTime=140, res="LVQM")
+add_simple_plot(plot="LVQM", vars=lvvars, title="Quiescient Model (trivial solution)")
 
-add_case(["QuiescientModelUsingStart"], stopTime=140, res="LVQMUS")
+add_case(["QuiescentModelUsingStart"], stopTime=140, res="LVQMUS")
 add_simple_plot(plot="LVQMUS", vars=lvvars, ymax=25,
-                title="Queiscient Model (using start values)")
+                title="Quiescent Model (using start values)")
 
 ## Cooling Revisited
 ncdvars = [Var("T", legend="Temperature"),

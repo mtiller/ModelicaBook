@@ -1,7 +1,7 @@
 ClassicModel
 ClassicModelInitialEquations
-QuiescientModel
-QuiescientModelUsingStart
-QuiescientModelWithInheritance
-QuiescientModelWithModifications
+QuiescentModel
+QuiescentModelUsingStart
+QuiescentModelWithInheritance
+QuiescentModelWithModifications
 ComplexInitialization

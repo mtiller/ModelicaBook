@@ -479,10 +479,10 @@ conjunction with ``extends`` clauses, *e.g.,*
 
 .. code-block:: modelica
 
-   extends QuiescientModelWithInheritance(gamma=0.3, delta=0.01);
+   extends QuiescentModelWithInheritance(gamma=0.3, delta=0.01);
 
 Here, the modification is applied to elements that were inherited from
-the ``QuiescientModelWithInheritance`` model.  As with modifications
+the ``QuiescentModelWithInheritance`` model.  As with modifications
 to attributes, the element being modified (a model in this case) is
 followed by parentheses and inside those parentheses we specify the
 modifications we wish to make.
@@ -492,14 +492,14 @@ modifications we wish to make.
 It is worth noting that modifications can be nested arbitrarily deep.
 For example, imagine we wanted to modify the ``start`` attribute for
 the variable ``x`` inherited from the
-``QuiescientModelWithInheritance`` model.  In Modelica, such a
+``QuiescentModelWithInheritance`` model.  In Modelica, such a
 modification would be made as follows:
 
 .. code-block:: modelica
 
-   extends QuiescientModelWithInheritance(x(start=5));
+   extends QuiescentModelWithInheritance(x(start=5));
 
-Here we first "reach inside" the ``QuiescientModelWithInheritance``
+Here we first "reach inside" the ``QuiescentModelWithInheritance``
 model to modify the contents that we "inherit" from it (``x`` in this
 case) and then we "reach inside" ``x`` to modify the value of the
 ``start`` attribute.

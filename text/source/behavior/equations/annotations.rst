@@ -76,7 +76,7 @@ to associate an ``annotation`` with an ``extends`` clause as follows:
 
 .. code-block:: modelica
 
-   extends QuiescientModelWithInheritance(gamma=0.3, delta=0.01) annotation(...);
+   extends QuiescentModelWithInheritance(gamma=0.3, delta=0.01) annotation(...);
 
 As we've observed in each previous case, the ``annotation`` immediately
 precedes the ``;``.
