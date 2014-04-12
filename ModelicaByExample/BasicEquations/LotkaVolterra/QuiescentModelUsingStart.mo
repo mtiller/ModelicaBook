@@ -1,5 +1,5 @@
 within ModelicaByExample.BasicEquations.LotkaVolterra;
-model QuiescientModelUsingStart "Find steady-state solutions to LotkaVolterra equations"
+model QuiescentModelUsingStart "Find steady-state solutions to LotkaVolterra equations"
   parameter Real alpha=0.1;
   parameter Real beta=0.02;
   parameter Real gamma=0.4;
@@ -12,4 +12,4 @@ initial equation
 equation
   der(x) = x*(alpha-beta*y);
   der(y) = -y*(gamma-delta*x);
-end QuiescientModelUsingStart;
+end QuiescentModelUsingStart;
