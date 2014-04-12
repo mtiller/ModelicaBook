@@ -208,7 +208,7 @@ undesirable ecological consequences.  In such a case, it would be
 useful to understand what might reduce or even eliminate these
 fluctuations.  A simple approach would be to keep the populations in a
 state of equilibrium.  But how can we use these models to help use
-determine such a "quiescient" state?
+determine such a "quiescent" state?
 
 The answer lies in the initial conditions.  Instead of specifying an
 initial population for both the predator and prey species, we might
@@ -231,7 +231,7 @@ equilibrium if the following two conditions are met:
 To capture this in our Modelica model, all we need to do is use these
 equations in our ``initial equation`` section, like this:
 
-.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModel.mo
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescentModel.mo
    :language: modelica
    :emphasize-lines: 8-10
    :lines: 2-
@@ -271,7 +271,7 @@ integration that we would otherwise perform during simulation).
 
 In any case, the bottom line is that during initialization we require
 four different equations to arrive at a unique solution.  In the case
-of our ``QuiescientModel``, those four equations are:
+of our ``QuiescentModel``, those four equations are:
 
 .. math::
 
@@ -314,7 +314,7 @@ equations carefully we can spot the fact that there exist two
 potential solutions.  One solution is trivial (:math:`x=0;y=0`) and
 the other is not.
 
-So what happens if we try to simulate our ``QuiescientModel``?  The
+So what happens if we try to simulate our ``QuiescentModel``?  The
 answer is pretty obvious in the plot below:
 
 .. plot:: ../plots/LVQM.py
@@ -335,7 +335,7 @@ Recall that the ``start`` attribute is overloaded.  During our
 discussion of the :ref:`classic-lotka-volterra` model, it was pointed
 out that one of the purposes of the ``start`` attribute was to provide
 an initial guess if the variable with the ``start`` attribute was
-chosen as an iteration variable.  Well, our ``QuiesceintModel``
+chosen as an iteration variable.  Well, our ``QuiescentModel``
 happens to be a case where ``x`` and ``y`` are, in fact, iteration
 variables because they must be solved using a system of non-linear
 equations.  This means that if we want to avoid the trivial solution,
@@ -344,7 +344,7 @@ and ``y`` that are "far away" from the trivial solution we are trying
 to avoid (or at least closer to the non-trivial solution we seek).
 For example:
 
-.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModelUsingStart.mo
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescentModelUsingStart.mo
    :language: modelica
    :emphasize-lines: 6-7
    :lines: 2-
@@ -359,7 +359,7 @@ populations for both the predator and prey species).
 It is worth pointing out (as we will do shortly in the section on
 :ref:`builtin-types`), that **the default value of the ``start``
 attribute is zero**.  This is why when we simulated our original
-``QuiescientModel`` we happened to land exactly on the trivial
+``QuiescentModel`` we happened to land exactly on the trivial
 solution...because it was our initial guess and it happened to be an
 exact solution so no other solution or iterating was required.
 
@@ -369,7 +369,7 @@ Avoiding Repetition
 ^^^^^^^^^^^^^^^^^^^
 
 We've already seen several different models (``ClassicModel``,
-``QuiescientModel`` and ``QuiescientModelUsingStart``) based on the
+``QuiescentModel`` and ``QuiescentModelUsingStart``) based on the
 Lotka-Volterra equations.  Have you noticed something they all have in
 common?  If you look closely, you will see that they have almost
 **everything** in common and that there are actually hardly any
@@ -395,7 +395,7 @@ amount of redundant code.  They are *composition* (which we will address
 in the future chapter on :ref:`components`) and *inheritance* which
 we will briefly introduce here.
 
-If we look closely at the ``QuiescientModelUsingStart`` example, we
+If we look closely at the ``QuiescentModelUsingStart`` example, we
 see that there are almost no differences between it and our original
 ``ClassicModel`` version.  In fact, the only real differences are
 shown here:
@@ -404,7 +404,7 @@ shown here:
    :language: modelica
    :lines: 2-
 
-.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModelUsingStart.mo
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescentModelUsingStart.mo
    :language: modelica
    :emphasize-lines: 8-10
    :lines: 2-
@@ -418,9 +418,9 @@ contained non-zero ``start`` values for our two variables, ``x`` and
 simply defining a model in terms of the differences between it and
 another model.  As it turns out, this is exactly what the ``extends``
 keyword allows us to do.  Consider the following alternative to the
-``QuiescientModelUsingStart`` model:
+``QuiescentModelUsingStart`` model:
 
-.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModelWithInheritance.mo
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescentModelWithInheritance.mo
    :language: modelica
    :emphasize-lines: 9-11
    :lines: 2-
@@ -430,7 +430,7 @@ Note the presence of the ``extends`` keyword.  Conceptually, this
 another model (``ClassicModel`` in this case) into the model being
 defined.  In this way, we copy (or "inherit") everything from
 ``ClassicModel`` without having to repeat its contents.  As a result,
-the ``QuiescientModelWithInheritance`` is the same as the
+the ``QuiescentModelWithInheritance`` is the same as the
 ``ClassicModel`` with an additional set of initial equations inserted.
 
 .. index:: modifications
@@ -443,15 +443,15 @@ Modelica handles this by allowing us to include a set of "modifications"
 when we use ``extends``.  These modifications come after the name of
 the model being inherited from as shown below:
 
-.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescientModelWithModifications.mo
+.. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescentModelWithModifications.mo
    :language: modelica
    :emphasize-lines: 2
    :lines: 2-
 
 Also note that we could have inherited from ``ClassicModel``, but then
 we would have had to repeat the initial equations in order to have
-quiescient initial conditions.  But by instead inheriting from
-``QuiescientModelWithModifications``, we reuse the content from
+quiescent initial conditions.  But by instead inheriting from
+``QuiescentModelWithModifications``, we reuse the content from
 **two** different models and avoid repeating ourselves even once.
 
 .. topic:: More population dynamics
