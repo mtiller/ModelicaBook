@@ -60,7 +60,7 @@ add_case(["ClassicModel$"], stopTime=140, res="LVCM")
 add_simple_plot(plot="LVCM", vars=lvvars, title="Classic Lotka-Volterra")
 
 add_case(["QuiescentModel$"], stopTime=140, res="LVQM")
-add_simple_plot(plot="LVQM", vars=lvvars, title="Quiescient Model (trivial solution)")
+add_simple_plot(plot="LVQM", vars=lvvars, title="Quiescent Model (trivial solution)")
 
 add_case(["QuiescentModelUsingStart"], stopTime=140, res="LVQMUS")
 add_simple_plot(plot="LVQMUS", vars=lvvars, ymax=25,
