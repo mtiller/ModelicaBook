@@ -101,7 +101,7 @@ The ``Inertia`` model includes two "flanges", one on either end.  The
 significance of these flanges is made clearer from the icon of the
 ``Inertia`` model:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Inertia.svg
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Inertia.*
    :height: 200px
    :align: center
 
@@ -141,7 +141,7 @@ Next, let us consider the definition of a spring model:
 
 The icon for our spring model is rendered as:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Spring.svg
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Spring.*
    :height: 200px
    :align: center
 
@@ -172,7 +172,7 @@ one equation:
 
 The icon for the ``Damper`` model is rendered as:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Damper.svg
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Damper.*
    :height: 200px
    :align: center
 
@@ -296,7 +296,7 @@ based system model looks like this:
 
 The diagram for this model, when rendered, looks like this:
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD.svg
+.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD.*
    :width: 100%
    :align: center
    :alt: 

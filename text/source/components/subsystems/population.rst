@@ -22,7 +22,7 @@ dynamics.  The Modelica source code for the model is:
 
 The diagram for this component is rendered as:
 
-.. image:: /ModelicaByExample/Subsystems/LotkaVolterra/Components/TwoSpecies.svg
+.. image:: /ModelicaByExample/Subsystems/LotkaVolterra/Components/TwoSpecies.*
    :width: 100%
    :align: center
    :alt: Region containing rabbits and foxes
@@ -99,7 +99,7 @@ If we connect our previously unconnected regions with migration paths,
 
 the resulting system diagram becomes:
 
-.. image:: /ModelicaByExample/Subsystems/LotkaVolterra/Examples/WithMigration.svg
+.. image:: /ModelicaByExample/Subsystems/LotkaVolterra/Examples/WithMigration.*
    :width: 100%
    :align: center
    :alt: Four regional populations with migration paths

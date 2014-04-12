@@ -11,7 +11,7 @@ Flat Power Supply Model
 In this case, our flat system model will be the DC power supply
 circuit shown here:
 
-.. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/FlatCircuit.svg
+.. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/FlatCircuit.*
    :width: 100%
    :align: center
    :alt: Flat switching power supply model
@@ -44,14 +44,14 @@ Once again, we'll improve upon the flat version of our system by
 taking some collection of components and organizing them into a
 subsystem model.  Our system level circuit then becomes:
 
-.. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/SubsystemCircuit.svg
+.. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/SubsystemCircuit.*
    :width: 100%
    :align: center
    :alt: Hierarchical power supply model
 
 This model uses the ``BasicPowerSupply`` model whose diagram is shown here:
 
-.. image:: /ModelicaByExample/Subsystems/PowerSupply/Components/BasicPowerSupply.svg
+.. image:: /ModelicaByExample/Subsystems/PowerSupply/Components/BasicPowerSupply.*
    :width: 100%
    :align: center
    :alt: Reusable power supply subsystem model
@@ -81,7 +81,7 @@ same results as we got for the flat version:
 We can augment our system model to include an additional load (that
 comes online after some delay):
 
-.. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/AdditionalLoad.svg
+.. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/AdditionalLoad.*
    :width: 100%
    :align: center
    :alt: Flat switching power supply model
