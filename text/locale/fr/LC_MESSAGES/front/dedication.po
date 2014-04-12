@@ -35,7 +35,7 @@ msgstr ""
 "capitaliser sur ma connaissance de Modelica, je veux le partager avec d'autres pour " 
 "ils peuvent éprouver la même joie que je fais dans l'exploration de ce sujet. Heureusement, " 
 "ce projet Kickstarter a été financé avec succès le 4 Décembre 2012 et " 
-"mon odyssée à créer un ensemble de Creative Commons livre licence a commencé. Si " 
+"mon odyssée à créer un Creative Commons livre licence a commencé. Si " 
 "circonstances avaient été différentes, ce livre serait probablement dédié à " 
 "Cory Doctorow et Lawrence Lessig de m'inspirer de prendre sur ce projet."
 
