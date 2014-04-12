@@ -458,7 +458,7 @@ Conclusion
 This is the second example of how we can use the configuration
 management features in Modelica to take an architecturally based
 approach to building system models.  This architectural approach is
-very useful when there a many variations of a the same architecture
+very useful when there are many variations of the same architecture
 that require analysis.  Using the ``redeclare`` feature, it is
 possible to easily substitute alternative designs for each subsystem
 or to consider more or less detail in any given subsystem as necessary
