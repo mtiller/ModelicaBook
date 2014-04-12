@@ -46,7 +46,7 @@ Because `his life has been chronicled
 <http://boingboing.net/2013/01/12/rip-aaron-swartz.html>`_ by `better
 writers who actually knew him <http://www.huffingtonpost.com/lawrence-lessig/aaron-swartz-suicide_b_2467079.html>`_,
 I won't go into detail about Aaron's life except to say that as a
-business owner, a researcher and a U. S. citizen I truly admire his
+business owner, a researcher and a U. S. citizen, I truly admire his
 work and I am thoroughly outraged by the way he was bullied by federal
 prosecutors (and `Carmen Ortiz <https://petitions.whitehouse.gov/petition/remove-united-states-district-attorney-carmen-ortiz-office-overreach-case-aaron-swartz/RQNrG1Ck>`_
 in particular) who were determined to make an example of him.
