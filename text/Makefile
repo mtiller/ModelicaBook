@@ -84,8 +84,8 @@ docs:
 
 # This creates links for th JS and JSON
 build_links:
-	-(cd build/dirhtml/_static; ln -s ../../../results/js) 
-	-(cd build/dirhtml/_static; ln -s ../../../results/json) 
+	-(cd build/dirhtml/_static; ln -s ../../../results/js)
+	-(cd build/dirhtml/_static; ln -s ../../../results/json)
 
 # This builds the HTML and then runs a simple web server
 server: dirhtml build_links
@@ -266,8 +266,8 @@ doctest:
 
 # Pattern rule for converting SVG to PDF (and copying symlinks)
 %.pdf: 	%.svg
-	test -L $< || $(SVG2PDF) -f $< -A $@
-	test ! -L $< || ln -s `readlink $< | sed "s/[.]svg/.pdf/"` $@
+	test -L "$<" || $(SVG2PDF) -f "$<" -A "$@"
+	test ! -L "$<" || ln -s `readlink "$<" | sed "s/[.]svg/.pdf/"` "$@"
 
 # Build a list of SVG files to convert to PDFs
 PDFs:= 	$(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(SOURCEDIR)/$(dir)/*.svg)))
