@@ -329,7 +329,7 @@ indicating that the ``parameter`` value can be transformed into a
 
 .. code-block:: modelica
 
-    parameter Real x annotation(Evaluate=true);
+    parameter Real n[3]={1,0,0} "Unit vector of axis" annotation(Evaluate=true);
 
 ``HideResult``
 ^^^^^^^^^^^^^^
