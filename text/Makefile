@@ -10,7 +10,7 @@ BUILDDIR      = build
 # Variables for the SVG2PDF generation
 SOURCEDIR     = source
 #IMAGEDIRS can be a list of directories that contain SVG files and are relative to the SOURCEDIR
-IMAGEDIRS      = ../docs-dir/Icons $(shell find $(SOURCEDIR)/ModelicaByExample/ -name "*.svg" -exec dirname {} ";" | sort -u)
+IMAGEDIRS      = docs-dir/Icons $(shell find $(SOURCEDIR)/ModelicaByExample/ -name "*.svg" -exec dirname {} ";" | sort -u)
 
 # SVG to PDF conversion
 SVG2PDF       = inkscape
@@ -270,7 +270,7 @@ doctest:
 	test ! -L "$<" || ln -s `readlink "$<" | sed "s/[.]svg/.pdf/"` "$@"
 
 # Build a list of SVG files to convert to PDFs
-PDFs:=	$(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(SOURCEDIR)/$(dir)/*.svg)))
+PDFs:=	$(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(dir)/*.svg)))
 
 # Make a rule to build the PDFs
 images:  $(PDFs)
