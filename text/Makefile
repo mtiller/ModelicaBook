@@ -134,7 +134,7 @@ help:
 
 distclean: clean
 	-rm -rf results tmp plots
-	-rm $(PDFs)
+	$(foreach file, $(PDFs), $(shell rm "$(file)"))
 
 clean:
 	-rm -rf $(BUILDDIR)/*
