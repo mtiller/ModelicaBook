@@ -17,6 +17,7 @@ source/ModelicaByExample/*.lib
 source/ModelicaByExample/*.exe
 source/ModelicaByExample/*.c
 source/ModelicaByExample/*.exp
+source/ModelicaByExample/*.pdf
 source/Examples/*.mat
 source/Examples/*.txt
 source/Examples/*.lib
