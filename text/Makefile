@@ -10,7 +10,7 @@ BUILDDIR      = build
 # Variables for the SVG2PDF generation
 SOURCEDIR     = source
 #IMAGEDIRS can be a list of directories that contain SVG files and are relative to the SOURCEDIR
-IMAGEDIRS      = ../docs-dir/Icons
+IMAGEDIRS      = ../docs-dir/Icons $(shell find $(SOURCEDIR)/ModelicaByExample/ -name "*.svg" -exec dirname {} ";" | sort -u)
 
 # SVG to PDF conversion
 SVG2PDF       = inkscape
@@ -96,7 +96,7 @@ server_fr: dirhtml_fr build_links
 
 web: dirhtml build_links
 	(cd build/dirhtml; $(SYNC) * s3://beta.book.xogeny.com/)
-	# TODO: Set Content-Encoding on all gz files to be gzip (use find?)
+# TODO: Set Content-Encoding on all gz files to be gzip (use find?)
 
 node: dirhtml build_links
 	-rm -rf build/node
@@ -200,7 +200,7 @@ latex:	specs results images
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-pdf: 	latex
+pdf:	latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
@@ -265,12 +265,12 @@ doctest:
 
 
 # Pattern rule for converting SVG to PDF (and copying symlinks)
-%.pdf: 	%.svg
+%.pdf:	%.svg
 	test -L "$<" || $(SVG2PDF) -f "$<" -A "$@"
 	test ! -L "$<" || ln -s `readlink "$<" | sed "s/[.]svg/.pdf/"` "$@"
 
 # Build a list of SVG files to convert to PDFs
-PDFs:= 	$(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(SOURCEDIR)/$(dir)/*.svg)))
+PDFs:=	$(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(SOURCEDIR)/$(dir)/*.svg)))
 
 # Make a rule to build the PDFs
 images:  $(PDFs)
