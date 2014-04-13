@@ -350,4 +350,4 @@ The ``HideResult`` annotation would be used as follows:
 
 .. code-block:: modelica
 
-    parameter Real z "Uninteresting variable" annotation(HideResult=true);
+    Real z "Uninteresting variable" annotation(HideResult=true);
