@@ -166,7 +166,7 @@ commanded ``heat`` signal from our ``ControlSystem`` interface requires a
 .. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionOnOffActuator.*
    :width: 80%
    :align: center
-   :alt: 
+   :alt:
 
 The interface supplies an actuator that is a ``Real`` value but again
 we see that if our furnace expects an "on" or "off" command, we have a
@@ -424,7 +424,7 @@ strategy lacks any hysteresis that we see the furnace constantly
 turning on and off.  If we add hysteresis, our controller model
 becomes:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffControl_WithHysteresis.mo
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffControl_WithHysteresis.*
    :width: 80%
    :align: center
    :alt: Bang-bang controller with hysteresis

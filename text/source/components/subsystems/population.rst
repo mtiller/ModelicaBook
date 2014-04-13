@@ -41,7 +41,7 @@ regions.  The Modelica source code for such a model is quite simple:
 
 The diagram for this model is equally simple:
 
-.. image:: /ModelicaByExample/Subsystems/LotkaVolterra/Examples/UnconnectedPopulations.mo
+.. image:: /ModelicaByExample/Subsystems/LotkaVolterra/Examples/UnconnectedPopulations.*
    :width: 100%
    :align: center
    :alt: Four unconnected regional populations
