@@ -1,14 +1,14 @@
 within ModelicaByExample.BasicEquations.LotkaVolterra;
 model ClassicModel "This is the typical equation-oriented model"
-  parameter Real alpha=0.1;
-  parameter Real beta=0.02;
-  parameter Real gamma=0.4;
-  parameter Real delta=0.02;
-  parameter Real x0=10;
-  parameter Real y0=10;
-  Real x(start=x0);
-  Real y(start=y0);
+  parameter Real alpha=0.1 "Reproduction rate of prey";
+  parameter Real beta=0.02 "Mortality rate of predator per prey";
+  parameter Real gamma=0.4 "Mortality rate of predator";
+  parameter Real delta=0.02 "Reproduction rate of predator per prey";;
+  parameter Real x0=10 "Start number of prey";
+  parameter Real y0=10 "Start number of predator";
+  Real x(start=x0) "Number of prey";
+  Real y(start=y0) "Number of predator";
 equation
-  der(x) = x*(alpha-beta*y);
-  der(y) = y*(delta*x-gamma);
+  der(x) = x*(alpha - beta*y);
+  der(y) = y*(delta*x - gamma);
 end ClassicModel;
