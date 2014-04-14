@@ -28,6 +28,7 @@ msgid ""
 "circumstances had been different, this book would probably be dedicated to "
 "Cory Doctorow and Lawrence Lessig for inspiring me to take on this project."
 msgstr ""
+"我们试一下.可不可以翻译? "
 
 #: ../../source/front/dedication.rst:23
 msgid ""
