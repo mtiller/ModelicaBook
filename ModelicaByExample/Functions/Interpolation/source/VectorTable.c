@@ -70,9 +70,11 @@ interpolateVectorTable(void *object, double x) {
 
   ModelicaFormatMessage("Request to compute value of y at %g\n", x);
   if (x<table->x[0])
-    ModelicaFormatError("Requested value of x=%g is below the lower bound of %g\n", x, table->x[0]);
+    ModelicaFormatError("Requested value of x=%g is below the lower bound of %g\n",
+			x, table->x[0]);
   if (x>table->x[table->npoints-1])
-    ModelicaFormatError("Requested value of x=%g is above the upper bound of %g\n", x, table->x[table->npoints-1]);
+    ModelicaFormatError("Requested value of x=%g is above the upper bound of %g\n",
+			x, table->x[table->npoints-1]);
 
   while(x>=table->x[i+1]) i = i + 1;
   while(x<table->x[i]) i = i - 1;
