@@ -99,6 +99,7 @@ server_de: dirhtml_de build_links
 
 server_es: dirhtml_es build_links
 	(cd build/dirhtml_es; python -m SimpleHTTPServer)
+
 server_fr: dirhtml_fr build_links
 	(cd build/dirhtml_fr; python -m SimpleHTTPServer)
 
@@ -245,6 +246,7 @@ gettext:
 
 update_all: gettext
 	sphinx-intl update -l es -l cn -l fr -l de -d locale/ -p locale/pot
+
 update_cn: gettext
 	sphinx-intl update -l cn -d locale/ -p locale/pot
 
