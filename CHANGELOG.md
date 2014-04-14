@@ -1,4 +1,4 @@
-This file collects the significant changes to the book since it's initial public release.
+This file collects the significant changes to the book since its initial public release.
 
 ### Version 0.2.1
 
