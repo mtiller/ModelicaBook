@@ -91,6 +91,15 @@ build_links:
 server: dirhtml build_links
 	(cd build/dirhtml; python -m SimpleHTTPServer)
 
+server_cn: dirhtml_cn build_links
+	(cd build/dirhtml_cn; python -m SimpleHTTPServer)
+
+server_de: dirhtml_de build_links
+	(cd build/dirhtml_de; python -m SimpleHTTPServer)
+
+server_es: dirhtml_es build_links
+	(cd build/dirhtml_es; python -m SimpleHTTPServer)
+
 server_fr: dirhtml_fr build_links
 	(cd build/dirhtml_fr; python -m SimpleHTTPServer)
 
@@ -235,16 +244,34 @@ gettext:
 	@echo
 	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
 
-update:
+update_all:
 	sphinx-intl update -l es -l cn -l fr -l de -d locale/ -p locale/pot
+
+update_cn:
+	sphinx-intl update -l cn -d locale/ -p locale/pot
+
+update_de:
+	sphinx-intl update -l de -d locale/ -p locale/pot
+
+update_es:
+	sphinx-intl update -l es -d locale/ -p locale/pot
+
+update_fr:
+	sphinx-intl update -l fr -d locale/ -p locale/pot
 
 buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
 
-dirhtml_es:
+dirhtml_cn: update_cn buildmo
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
+
+dirhtml_de: update_de buildmo
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=de source build/dirhtml_de
+
+dirhtml_es: update_es buildmo
 	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=es source build/dirhtml_es
 
-dirhtml_fr:
+dirhtml_fr: update_fr buildmo
 	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=fr source build/dirhtml_fr
 
 changes:
