@@ -6,8 +6,8 @@ model ClassicModelInitialEquations "This is the typical equation-oriented model"
   parameter Real delta=0.02 "Reproduction rate of predator per prey";
   parameter Real x0=10 "Initial prey population";
   parameter Real y0=10 "Initial predator population";
-  Real x(start=x0) "Prey population";
-  Real y(start=y0) "Predator population";
+  Real x "Prey population";
+  Real y "Predator population";
 initial equation
   x = x0;
   y = y0;
