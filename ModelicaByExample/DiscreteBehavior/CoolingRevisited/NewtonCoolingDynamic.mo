@@ -10,8 +10,8 @@ model NewtonCoolingDynamic
   // Parameters
   parameter Temperature T0=363.15 "Initial temperature";
   parameter ConvectionCoefficient h=0.7 "Convective cooling coefficient";
-  parameter Real m=0.1 "Mass of thermal capacitance";
-  parameter Real c_p=1.2 "Specific heat";
+  parameter Mass m=0.1 "Mass of thermal capacitance";
+  parameter SpecificHeat c_p=1.2 "Specific heat";
 
   // Variables
   Temperature T_inf "Ambient temperature";
