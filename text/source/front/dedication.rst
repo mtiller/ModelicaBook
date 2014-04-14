@@ -5,8 +5,19 @@
 Dedication
 **********
 
-.. image:: ../_static/Aaron.jpg
-   :align: right
+.. only:: latex
+
+  .. raw:: latex
+
+     \begin{wrapfigure}{r}{0.35\textwidth}
+       \centering
+       \includegraphics[width=0.33\textwidth]{Aaron.jpg}
+     \end{wrapfigure}
+
+.. only:: html or epub
+
+  .. image:: ../_static/Aaron.jpg
+     :align: right
 
 This book started as a Kickstarter project.  The idea of writing a
 book and making it freely available, under a Creative Commons license,
