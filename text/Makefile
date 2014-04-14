@@ -13,7 +13,7 @@ SOURCEDIR     = source
 IMAGEDIRS      = docs-dir/Icons $(shell find $(SOURCEDIR)/ModelicaByExample/ -name "*.svg" -exec dirname {} ";" | sort -u)
 
 # SVG to PDF conversion
-SVG2PDF       = inkscape
+SVG2PDF       = rsvg-convert
 SVG2PDF_FLAGS =
 
 SYNC = s3cmd sync -P -F
@@ -266,7 +266,7 @@ doctest:
 
 # Pattern rule for converting SVG to PDF (and copying symlinks)
 %.pdf:	%.svg
-	test -L "$<" || $(SVG2PDF) -f "$<" -A "$@"
+	test -L "$<" || $(SVG2PDF)  -f pdf -o "$@" "$<"
 	test ! -L "$<" || ln -s `readlink "$<" | sed "s/[.]svg/.pdf/"` "$@"
 
 # Build a list of SVG files to convert to PDFs
