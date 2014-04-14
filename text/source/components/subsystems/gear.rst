@@ -31,7 +31,7 @@ If we were unfamiliar with the ability to create reusable subsystem
 models in Modelica, we might start by building a Modelica model that
 looked like this one:
 
-.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Examples/FlatSystemWithBacklash.svg
+.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Examples/FlatSystemWithBacklash.*
    :width: 100%
    :align: center
    :alt: Flat system model including backlash
@@ -65,7 +65,7 @@ been discussed), we should create a reusable subsystem model of the
 components within the dashed line.  In such a case, our schematic
 diagram would then look something like this:
 
-.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Examples/BacklashExample.svg
+.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Examples/BacklashExample.*
    :width: 100%
    :align: center
    :alt: System model including gear subsystem
@@ -82,7 +82,7 @@ have been assembled into the following subsystem model:
 When rendered, we see the diagram for the ``GearWithBacklash`` model
 looks like this:
 
-.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.svg
+.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.*
    :width: 100%
    :align: center
    :alt: Gear with backlash subsystem model

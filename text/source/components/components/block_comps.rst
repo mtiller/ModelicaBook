@@ -52,13 +52,13 @@ for representing real valued input and output signals respectively.
 When drawn in a diagram, the ``RealInput`` connector takes the form of
 a blue solid triangle:
 
-.. image:: ../../../docs-dir/Icons/Modelica.Blocks.Interfaces.RealInput.svg
+.. image:: ../../../docs-dir/Icons/Modelica.Blocks.Interfaces.RealInput.*
    :height: 200px
    :align: center
 
 The ``RealOutput`` connector is a blue triangle outline:
 
-.. image:: ../../../docs-dir/Icons/Modelica.Blocks.Interfaces.RealOutput.svg
+.. image:: ../../../docs-dir/Icons/Modelica.Blocks.Interfaces.RealOutput.*
    :height: 200px
    :align: center
 
@@ -127,7 +127,7 @@ from the ``SO`` block:
 
 When rendered, the block looks like this:
 
-.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Constant.svg
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Constant.*
    :width: 100%
    :align: center
    :alt: Gain Block
@@ -147,7 +147,7 @@ extends from the ``SISO`` model as follows:
 
 When rendered, the block looks like this:
 
-.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Gain.svg
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Gain.*
    :width: 100%
    :align: center
    :alt: Gain Block
@@ -169,7 +169,7 @@ over the array of input signals, ``u``, to compute the output signal
 
 When rendered, the block looks like this:
 
-.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Sum.svg
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Sum.*
    :width: 100%
    :align: center
    :alt: Gain Block
@@ -187,7 +187,7 @@ that it uses the :ref:`product-func` function:
 
 When rendered, the block looks like this:
 
-.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Product.svg
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Product.*
    :width: 100%
    :align: center
    :alt: Gain Block
@@ -210,7 +210,7 @@ The output of the ``Feedback`` block is the difference between the two
 
 When rendered, the block looks like this:
 
-.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Feedback.svg
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Feedback.*
    :width: 100%
    :align: center
    :alt: Gain Block
@@ -230,7 +230,7 @@ is specified using the parameter ``y0``:
 
 When rendered, the block looks like this:
 
-.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Integrator.svg
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Integrator.*
    :width: 100%
    :align: center
    :alt: Gain Block
@@ -264,7 +264,7 @@ https://book-preview.herokuapp.com
 The following block diagram will solve for the temperature profile,
 :math:`T`:
 
-.. figure:: /ModelicaByExample/Components/BlockDiagrams/Examples/NewtonCooling.svg
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Examples/NewtonCooling.*
    :width: 100%
    :align: center
    :alt: Gain Block
@@ -345,7 +345,7 @@ express the control strategy mathematically.
 
 Here is a schematic diagram showing how both approaches can be combined:
 
-.. figure:: /ModelicaByExample/Components/BlockDiagrams/Examples/MultiDomainControl.svg
+.. figure:: /ModelicaByExample/Components/BlockDiagrams/Examples/MultiDomainControl.*
    :width: 100%
    :align: center
    :alt: Gain Block

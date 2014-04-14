@@ -134,7 +134,7 @@ later section on :ref:`comp-annos`.
 Using the graphical annotations in the model (some of which were left
 out of the previous listing) it can be rendered as:
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Adiabatic.svg
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Adiabatic.*
    :height: 200px
    :align: center
    :alt: Adiabatic system schematic
@@ -196,7 +196,7 @@ In this model, we see two components have been declared, ``cap`` and
 specified when they are declared.  The following is a schematic for
 the ``CoolingToAmbient`` model:
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.svg
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.*
    :height: 200px
    :align: center
    :alt: Cooling to ambient schematic
@@ -367,7 +367,7 @@ the following:
 
 When rendered, the model looks like this:
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.svg
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.*
    :height: 200px
    :align: center
    :alt: Cooling example schematic
@@ -387,7 +387,7 @@ example of how the handful of fundamental components we've constructed
 so far can be rearranged to form an entirely new (and more complex)
 model:
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/ComplexNetwork.svg
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/ComplexNetwork.*
    :width: 100%
    :align: center
    :alt: Complex thermal network schematic

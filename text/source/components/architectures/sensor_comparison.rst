@@ -15,7 +15,7 @@ Flat System
 
 Our system schematic is structured as follows:
 
-.. image:: /ModelicaByExample/Architectures/SensorComparison/Examples/FlatSystem.svg
+.. image:: /ModelicaByExample/Architectures/SensorComparison/Examples/FlatSystem.*
    :width: 100%
    :align: center
    :alt: Flat system model
@@ -97,7 +97,7 @@ If we plan on substituting sensors, actuators and control strategies
 our first step should be to organize our system into those subsystems.
 Doing so, we end up with the following system model:
 
-.. image:: /ModelicaByExample/Architectures/SensorComparison/Examples/HierarchicalSystem.svg
+.. image:: /ModelicaByExample/Architectures/SensorComparison/Examples/HierarchicalSystem.*
    :width: 100%
    :align: center
    :alt: Hierarchical system model

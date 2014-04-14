@@ -171,7 +171,7 @@ definition.  As usual, the ``Icon`` annotation is not included in the
 source listing.  But when this component model is rendered within a
 system model, its icon will look like this:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.svg
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.*
    :height: 200px
    :align: center
 
@@ -228,7 +228,7 @@ can have equations written in a way that make their behavior more intuitive,
 Although not shown, the ``Icon`` for the ``Reproduction`` model is
 rendered as:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Reproduction.svg
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Reproduction.*
    :height: 200px
    :align: center
 
@@ -290,7 +290,7 @@ also proportional the product of the predator and prey populations
 Although not shown, the ``Icon`` for the ``Predation`` model is
 rendered as:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Predation.svg
+.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Predation.*
    :height: 200px
    :align: center
 
@@ -307,7 +307,7 @@ component-oriented version of the classic Lotka-Volterra behavior by
 dragging and dropping the components into the following system
 configuration:
 
-.. figure:: /ModelicaByExample/Components/LotkaVolterra/Examples/ClassicLotkaVolterra.svg
+.. figure:: /ModelicaByExample/Components/LotkaVolterra/Examples/ClassicLotkaVolterra.*
    :width: 100%
    :align: center
    :alt: Component-oriented version of the classic Lotka-Volterra model
@@ -354,7 +354,7 @@ environment it would take less than a minute to assemble such a system
 by augmenting the existing ``ClassicLotkaVolterra`` model.  When
 visualized, the schematic for the resulting system is rendered as:
 
-.. figure:: /ModelicaByExample/Components/LotkaVolterra/Examples/ThirdSpecies.svg
+.. figure:: /ModelicaByExample/Components/LotkaVolterra/Examples/ThirdSpecies.*
    :width: 100%
    :align: center
    :alt: The Classic Lotka-Volterra model augmented with an additional
