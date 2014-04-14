@@ -11,7 +11,7 @@ we wish to model is the one shown in the following figure:
 
    Add a better figure here of the two inertia system
 
-.. figure:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithPulseCounter.svg
+.. figure:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithPulseCounter.*
    :width: 100%
    :align: center
    :alt: Plant with pulse counter sensor

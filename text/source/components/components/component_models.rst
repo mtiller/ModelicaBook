@@ -162,7 +162,7 @@ compiler, we need to introduce the concept of a *connection set*.  To
 demonstrate what a connection set is, consider the following
 schematic:
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD.svg
+.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD.*
    :width: 100%
    :align: center
    :alt: 

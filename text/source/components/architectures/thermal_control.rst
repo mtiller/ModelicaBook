@@ -26,7 +26,7 @@ Architecture
 
 Let's start with the following architecture:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Architectures/BaseArchitecture.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Architectures/BaseArchitecture.*
    :width: 80%
    :align: center
    :alt: Initial architecture
@@ -69,7 +69,7 @@ Plant
 
 Our plant model looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ThreeZonePlantModel.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ThreeZonePlantModel.*
    :width: 100%
    :align: center
    :alt: Three zone plant model
@@ -78,7 +78,7 @@ Here we can see that the zone where furnace heat is added is separated
 from the zone where the temperature is measured by a third zone.  Our
 furnace model is a simple heat source:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalActuator.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalActuator.*
    :width: 100%
    :align: center
    :alt: A conventional actuator
@@ -88,7 +88,7 @@ injects that amount of heat into the system.
 
 The sensor is similarly simple:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalSensor.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalSensor.*
    :width: 100%
    :align: center
    :alt: A conventional sensor
@@ -98,7 +98,7 @@ exact temperature as a continuous signal.
 
 We will use the following PI controller to control the temperature:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalPIControl.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalPIControl.*
    :width: 100%
    :align: center
    :alt: The control system
@@ -109,7 +109,7 @@ Initial Results
 Populating our architecture with these implementations, our model now
 looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/BaseModel.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/BaseModel.*
    :width: 80%
    :align: center
    :alt: Initial system configuration
@@ -154,7 +154,7 @@ actuator models where the controller command is a boolean indicating
 whether the furnace should be on or off.  However, if we start this
 process, we quickly run into the following problem:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalOnOffControl.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalOnOffControl.*
    :width: 80%
    :align: center
    :alt: A control strategy with on/off control
@@ -163,10 +163,10 @@ Note that the output from our controller is ``Boolean`` value but the
 commanded ``heat`` signal from our ``ControlSystem`` interface requires a
 ``Real`` value.  We have the same problem on the actuator side:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionOnOffActuator.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionOnOffActuator.*
    :width: 80%
    :align: center
-   :alt: 
+   :alt:
 
 The interface supplies an actuator that is a ``Real`` value but again
 we see that if our furnace expects an "on" or "off" command, we have a
@@ -275,7 +275,7 @@ demonstrate that this is now possible.
 Using expandable connectors, we can create the following revised
 architecture:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Architectures/ExpandableArchitecture.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Architectures/ExpandableArchitecture.*
    :width: 80%
    :align: center
    :alt: Expandable architecture
@@ -286,7 +286,7 @@ Expandable Implementations
 With this more flexible architecture, let's first recreate our
 original configuration with the continuous control system:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/ExpandableModel.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/ExpandableModel.*
    :width: 80%
    :align: center
    :alt: Continuous control using the expandable architecture
@@ -305,7 +305,7 @@ is, how did it get on the connector.  The answer lies in the
 implementation of the sensor model.  The diagram for the sensor model
 looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/TemperatureSensor.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/TemperatureSensor.*
    :width: 100%
    :align: center
    :alt: Temperature sensor model using expandable bus
@@ -350,7 +350,7 @@ We've already seen the temperature sensor subsystem configured to work
 with the expandable connector.  What remains is the controller and
 actuator models.  The actuator model diagram looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffActuator.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffActuator.*
    :width: 80%
    :align: center
    :alt: Actuator attached via expandable connector
@@ -377,7 +377,7 @@ actuator from the controller is a ``Boolean`` signal named
 signals used by the controller model.  The diagram for the controller
 looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ExpandablePIControl.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ExpandablePIControl.*
    :width: 80%
    :align: center
    :alt: PI controller connected to expandable bus
@@ -399,7 +399,7 @@ the sensor and actuator models expect.
 Pulling all of these subsystems together, we get the following diagram
 for our system:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/OnOffVariant.svg
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/OnOffVariant.*
    :width: 80%
    :align: center
    :alt: System using bang-bang control
@@ -424,7 +424,7 @@ strategy lacks any hysteresis that we see the furnace constantly
 turning on and off.  If we add hysteresis, our controller model
 becomes:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffControl_WithHysteresis.mo
+.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffControl_WithHysteresis.*
    :width: 80%
    :align: center
    :alt: Bang-bang controller with hysteresis

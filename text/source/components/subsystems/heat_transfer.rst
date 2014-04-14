@@ -16,7 +16,7 @@ Flat System
 Let's start, as usual, with a flat system level model like the one
 shown below:
 
-.. image:: /ModelicaByExample/Subsystems/HeatTransfer/Examples/FlatRod.svg
+.. image:: /ModelicaByExample/Subsystems/HeatTransfer/Examples/FlatRod.*
    :width: 100%
    :align: center
    :alt: Flat version of our heat transfer system

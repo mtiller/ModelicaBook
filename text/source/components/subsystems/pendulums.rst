@@ -31,7 +31,7 @@ pendulum.
 
 The components of the pendulum can be rendered as follows:
 
-.. image:: /ModelicaByExample/Subsystems/Pendula/Pendulum.svg
+.. image:: /ModelicaByExample/Subsystems/Pendula/Pendulum.*
    :width: 100%
    :align: center
    :alt: A single pendulum

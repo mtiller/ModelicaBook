@@ -5,5 +5,5 @@ impure function computeHeat "Modelica wrapper for an embedded C controller"
   input Real Q;
   output Real heat;
   external "C" annotation (Include="#include \"ComputeHeat.c\"",
-                           IncludeDirectory="modelica://ModelicaByExample.Functions.ImpureFunctions/source");
+    IncludeDirectory="modelica://ModelicaByExample.Functions.ImpureFunctions/source");
 end computeHeat;

@@ -40,7 +40,7 @@ In Modelica, this component can be described as follows:
 We can add an instance of this backlash model into our previous model
 by placing it in parallel with the spring and the damper, *i.e.,*
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithBacklash.svg
+.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithBacklash.*
    :width: 100%
    :align: center
    :alt: 
@@ -224,7 +224,7 @@ important.
 Using the ``GroundedGear`` model, we can then build a system model
 using this gear as follows:
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithGroundedGear.svg
+.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithGroundedGear.*
    :width: 100%
    :align: center
    :alt: 
@@ -286,7 +286,7 @@ directly connected to ground, but is instead connected through a very
 stiff mounting system.  The schematic for our system looks like this
 when rendered:
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_GearComparison.svg
+.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_GearComparison.*
    :width: 100%
    :align: center
    :alt: 
@@ -385,7 +385,7 @@ The following model demonstrates how we can now use the
 ``ConfigurableGear`` models as both an implicitly and explicitly
 grounded gear:
 
-.. figure:: /ModelicaByExample/Components/Rotational/Examples/SMD_ConfigurableGear.svg
+.. figure:: /ModelicaByExample/Components/Rotational/Examples/SMD_ConfigurableGear.*
    :width: 100%
    :align: center
    :alt: Example using a configurable gear

@@ -150,7 +150,7 @@ Diagrams
 In this chapter, we showed how Modelica subsystem models can be
 represented graphically, *e.g.,*
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.svg
+.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.*
    :height: 200px
    :align: center
    :alt: Cooling example schematic
