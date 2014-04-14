@@ -41,7 +41,7 @@ against evaluating the square root of a negative number, like this:
    :language: modelica
    :lines: 2-
 
-Simulating this model we get the following trajectory[#tol]:
+Simulating this model we get the following trajectory [#tol]_:
 
 .. plot:: ../plots/Decay2.py
    :class: interactive
@@ -116,7 +116,7 @@ we had the following ``if`` expression:
 
 The zero crossing function would be :math:`a-b`.  This function is
 chosen because it changes from positive to negative precisely at the
-point where ``a>b``.  
+point where ``a>b``.
 
 Recall our previous equation:
 
