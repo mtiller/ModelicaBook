@@ -9,10 +9,10 @@ Dedication
 
   .. raw:: latex
 
-	 \begin{wrapfigure}{r}{0.35\textwidth}
-	   \centering
-	   \includegraphics[width=0.33\textwidth]{Aaron.jpg}
-	 \end{wrapfigure}
+     \begin{wrapfigure}{r}{0.35\textwidth}
+       \centering
+       \includegraphics[width=0.33\textwidth]{Aaron.jpg}
+     \end{wrapfigure}
 
 .. only:: html or epub
 
