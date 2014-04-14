@@ -99,7 +99,6 @@ server_de: dirhtml_de build_links
 
 server_es: dirhtml_es build_links
 	(cd build/dirhtml_es; python -m SimpleHTTPServer)
-
 server_fr: dirhtml_fr build_links
 	(cd build/dirhtml_fr; python -m SimpleHTTPServer)
 
@@ -246,7 +245,6 @@ gettext:
 
 update_all: gettext
 	sphinx-intl update -l es -l cn -l fr -l de -d locale/ -p locale/pot
-
 update_cn: gettext
 	sphinx-intl update -l cn -d locale/ -p locale/pot
 
@@ -263,16 +261,16 @@ buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
 
 dirhtml_cn: update_cn buildmo
-	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
+	$(SPHINXBUILD) -b dirhtml -t html -d build/doctrees -D language=cn source build/dirhtml_cn
 
 dirhtml_de: update_de buildmo
-	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=de source build/dirhtml_de
+	$(SPHINXBUILD) -b dirhtml -t html -d build/doctrees -D language=de source build/dirhtml_de
 
 dirhtml_es: update_es buildmo
-	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=es source build/dirhtml_es
+	$(SPHINXBUILD) -b dirhtml -t html -d build/doctrees -D language=es source build/dirhtml_es
 
 dirhtml_fr: update_fr buildmo
-	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=fr source build/dirhtml_fr
+	$(SPHINXBUILD) -b dirhtml -t html -d build/doctrees -D language=fr source build/dirhtml_fr
 
 changes:
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
