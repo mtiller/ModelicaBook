@@ -5,7 +5,7 @@ model Differentiation1 "Model that differentiates a function"
   Real d_yf;
   Real d_yp;
 equation
-  yf =  Polynomial(time, {1, -2, 2});
+  yf = Polynomial(time, {1, -2, 2});
   yp = time^2-2*time+2;
   d_yf = der(yf); // How to compute?
   d_yp = der(yp);
