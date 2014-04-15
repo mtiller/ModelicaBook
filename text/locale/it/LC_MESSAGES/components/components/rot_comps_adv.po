@@ -1,0 +1,474 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/components/rot_comps_adv.rst:4
+msgid "Advanced Rotational Components"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:6
+msgid ""
+"In the previous section, we discussed :ref:`rotational-components` and "
+"showed how to build a system model from basic components.  In this section "
+"we will demonstrate how to incorporate event handling, which we will use "
+"when modeling a backlash.  Furthermore, we'll also show how to use parameter"
+" values to effect the interface of a component."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:13
+msgid "Modeling Backlash"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:15
+msgid ""
+"Let's start our exploration of more advanced component models by looking at "
+"a rotational backlash element.  The equation for a backlash model is very "
+"simple:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:34
+msgid "In Modelica, this component can be described as follows:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:40
+msgid ""
+"We can add an instance of this backlash model into our previous model by "
+"placing it in parallel with the spring and the damper, *i.e.,*"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:48
+msgid ""
+"If we use the inheritance mechanism in Modelica, the resulting Modelica "
+"model is quite simple:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:55
+msgid ""
+"In this case, if the relative angle between ``inertia1`` and ``inertia2`` is"
+" more than 0.5 radians (*i.e.,* the value of ``b`` in our backlash "
+"instance), then the torque from the backlash element will be introduced."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:60
+msgid ""
+"If we simulate this model, we can see the impact that the backlash's "
+"presence has on the response of the system:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:70
+msgid ""
+"Another thing worth looking at (which we will delve into much more in the "
+"next topic) is the force felt by the mechanical ground element. Looking at "
+"our schematic, it is clear that the role of the mechanical ground element is"
+" to fix the angular position on one side of our system.  An equation to "
+"constrains the motion (or lack of motion, in this case) of a point in the "
+"system is called a *kinematic constraint*."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:77
+msgid ""
+"When a kinematic constraint is imposed on a system, the component imposing "
+"the constraint must generate some kind of force or torque in order to affect"
+" the motion of the system.  This is called a reaction force or reaction "
+"torque."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:82
+msgid ""
+"The following plot shows the reaction torque that the mechanical ground "
+"element must impose on the system in order to fix the angular position:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:90
+msgid "Grounding and Reaction Torques"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:92
+msgid ""
+"As we saw in the previous example, the behavior of the mechanical ground "
+"element is such that it must exert a reaction torque on the system to "
+"constrain the motion of the system.  In this section, we will examine this "
+"effect a bit closer."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:97
+msgid ""
+"To demonstrate some of the complexities of kinematic constraints, we need to"
+" create a mechanical gear model.  In this model, we will ignore the inertia "
+"of the gear elements, efficiency losses in the gear and any backlash that "
+"might exist between the teeth in the gear.  Recall our discussion about :ref"
+":`digging-deeper` earlier in this chapter where we mentioned that component "
+"models should focus on individual physical effects.  That same principle "
+"applies here.  Inertia, friction and backlash can all be modeled as "
+"individual effects (as we've already seen in this chapter).  There is no "
+"need to lump them into our gear model.  Instead, we will focus only on the "
+"relationship between gear input speed and output speed."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:109
+msgid ""
+"In a typical system dynamics class, the equations that describe the behavior"
+" of a gear are derived as follows.  First, we start with the understanding "
+"that a gear introduces a relationship between the input speed and the output"
+" speed, *i.e.*,"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:118
+msgid ""
+"where :math:`R` is the gear ratio.  Recall that we assume the gear to be "
+"perfectly efficient.  This means that the power going into the gear must "
+"equal the power going out which we can express mathematically as:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:126
+msgid ""
+"Note we are using the Modelica sign conventions here where a positive value "
+"for the flow of a conserved quantity means a flow into the component.  In "
+"this case, :math:`\\tau_a \\omega_a` is the flow of mechanical power into "
+"the gear from ``flange_a`` and :math:`\\tau_b \\omega_b` is the flow of "
+"mechanical power into the gear from ``flange_b``.  Therefore, their sum must"
+" be zero, since our gear model does not include the inertia of the gear "
+"elements and, therefore, no way to store energy or momentum within the gear "
+"model."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:135
+msgid ""
+"Given these two facts, we can substitute the relationship between the speeds"
+" into the relationship between the powers and get:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:142
+msgid ""
+"This allows us to cancel out :math:`\\omega_b` from the equation and "
+"rearranging terms gives us:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:149
+msgid ""
+"Such a derivation will probably look very familiar to most engineers. But it"
+" is important to recognize that there is something missing here.  More "
+"specifically, there is something implicitly assumed that is not necessarily "
+"a reasonable assumption."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:154
+msgid "To understand the issue, let's first consider Euler's second law:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:160
+msgid ""
+"In other words, the sum of the torques on a body should be equal to the "
+"amount of angular momentum being accumulated by the body.  Recall that our "
+"gear model doesn't include the inertia of the gear elements. As such, it has"
+" no capacity to store energy or angular momentum.  If that is the case the "
+"previous equation simplifies to:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:170
+msgid ""
+"Our gear has only two external torques, :math:`\\tau_a` and :math:`\\tau_b`."
+"  Using the relationships we derived earlier, we know that their sum is:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:178
+msgid ""
+"This equation implies that for any gear ratio, :math:`R`, not equal to 1.0, "
+"the torque at ``flange_a`` (and consequently, the torque at ``flange_b`` as "
+"well) must be zero.  But this cannot be correct if our gear is to function "
+"as a gear."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:183
+msgid ""
+"What this mathematical relationship is showing us about the physical "
+"behavior of the system is more clearly demonstrated in this relationship:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:191
+msgid ""
+"The first term, :math:`\\tau_a` is the torque entering the gear from "
+"``flange_a``.  The second term, :math:`R \\tau_a` is the torque entering the"
+" gear from ``flange_b``.  This equation tells us that these two torques will"
+" never sum to zero (for :math:`R \\neq 1`).  It appears that we have proven,"
+" mathematically, that :math:`\\tau_a=0`. But in fact, what we are really "
+"demonstrating is that there is **an imbalance** in the equation.  This "
+"imbalance is the result of having forgotten something in our formulation.  "
+"What is missing is the **reaction torque**."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:201
+msgid ""
+"If you aren't already familiar with this issue, you might be puzzled about "
+"where this reaction torque comes from.  After all, we have only two "
+"mechanical connections to this gear and we have expressions for the torque "
+"at both of these points.  But along the way, there was an implicit "
+"assumption that the **housing of the gear is grounded**.  In reality, a gear"
+" has three mechanical connections.  The third connection is the one between "
+"the housing of the gear and whatever the gear is mounted to.  If the housing"
+" is connected to a mechanical ground, then our equations so far are correct "
+"as we can capture the behavior of such a (grounded) gear as follows:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:215
+msgid ""
+"Note that instead of using the relationship :math:`\\omega_a=R\\omega_b` in "
+"the ``GroundedGear`` model, we instead used the relationship "
+":math:`\\varphi_a=R\\varphi_b`.  This is actually more accurate since, once "
+"assembled, the teeth of the gear really do constrain the angular positions "
+"of the two shafts.  Furthermore, there may be some applications (*e.g.* "
+"stepper motors) where preserving this relationship between positions, and "
+"not just velocities, could be very important."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:224
+msgid ""
+"Using the ``GroundedGear`` model, we can then build a system model using "
+"this gear as follows:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:232
+msgid ""
+"Note this system has two parallel mechanisms.  The first one uses the gear "
+"model we just developed.  The second one replaces the assembly of the gear "
+"and inertias with a single inertia.  This single inertia was specifically "
+"chosen to have the *\"effective inertia\"* of the assembly.  As a result, "
+"when we simulate this system, we see that ``inertia2`` and ``inertia3`` have"
+" the same response:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:245
+msgid "Comparison"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:247
+msgid ""
+"As previously mentioned, the issue with the ``GroundedGear`` model is that "
+"it is implicitly assumed to be grounded.  This assumption may not always be "
+"a reasonable one (*e.g.*, in an automotive transmission where gears are "
+"generally connected to compliant mounts).  To understand how much different "
+"the response of a system can be between grounded and ungrounded gears we "
+"will first create a more complete gear model that is not implicitly grounded"
+" and then compare its performance, side by side, with gears that are "
+"grounded."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:256
+msgid ""
+"Without the implicit assumption that the housing of the gear is grounded, "
+"the kinematic relationship between the two shafts and the housing is more "
+"completely expressed as:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:264
+msgid ""
+"Although it is beyond the scope of this discussion, we can derive the "
+"following two equations using conservation of energy and conservation of "
+"momentum:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:273
+msgid ""
+"Combining these relationships and adding an additional mechanical connector "
+"to represent the housing, we get the following Modelica model for an ideal "
+"gear:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:281
+msgid ""
+"Now, let us build a system model with three different mechanisms.  In each "
+"mechanism the parameters for the gear, inertia, spring and damper are all "
+"identical.  The only difference is whether we use an implicit grounded gear,"
+" an explicitly grounded gear or a gear that is not directly connected to "
+"ground, but is instead connected through a very stiff mounting system.  The "
+"schematic for our system looks like this when rendered:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:294
+msgid ""
+"The first thing we would expect is that the response of the mechanism with "
+"the implicitly grounded gear should be identical to the response of the "
+"mechanism with the explicitly grounded gear.  This is verified by the "
+"following plot:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:302
+msgid ""
+"But the question still remains, how much difference would it make if we "
+"assumed that a gear was implicitly grounded when, in fact, it wasn't?  This "
+"is clearly demonstrated in the following plot:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:314
+msgid "Optional Ground Connector"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:316
+msgid ""
+"So far in our discussion of rotational systems, we've created two different "
+"gear models, ``GroundedGear``, which is implicitly grounded, and "
+"``UngroundedGear``, which includes a mechanical connector for the housing.  "
+"Ultimately, the equations used by these two components are quite similar and"
+" there is a considerable amount of common code between them.  As we've "
+"talked about before, redundancy like this should be avoided."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:326
+msgid ""
+"One way that we can avoid redundancy in this case is to combine these two "
+"models.  It might seem like this is impractical since they have very "
+"different underlying assumptions and, more importantly, **different "
+"interfaces** (*i.e.,* different connectors). Nevertheless, it is possible to"
+" combine these models by making use of something called a *conditional "
+"declaration*."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:333
+msgid "Consider the following ``ConfigurableGear`` model:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:339
+msgid ""
+"In particular, notice that the declaration of ``housing`` ends with ``if not"
+" grounded``.  When ``if`` appears at the end of a declaration, it indicates "
+"that the variables only exists if the condition following the ``if`` is "
+"true.  So when the ``grounded`` parameter is true, there is no ``housing`` "
+"connector in this model.  Furthermore, the equations included, as "
+"modifications, in the declaration of ``housing`` (*i.e.,* "
+"``phi=housing_phi`` and ``tau=-flange_a.tau-flange_b.tau``) also disappear "
+"with the declaration."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:348
+msgid ""
+"Meanwhile, in the ``equation`` section, we see that the ``if`` statement "
+"there provides an additional equation, ``housing_phi=0``, in the case when "
+"the model is grounded.  This is necessary because the variable "
+"``housing_phi`` is always present (*i.e.,* there is no ``if`` at the end of "
+"its declaration) so there must be an equation for it."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:354
+msgid ""
+"To understand more completely what is going on here, recall that the number "
+"of equations required by a component model is equal to the number of flow "
+"variables across all the component's connectors + the number of (non-"
+"parameter) variables declared in the model."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:359
+msgid ""
+"The following table summarizes how these things add up for the case where "
+"``grounded`` is true and the case where it isn't:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:363
+msgid "Quantity"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:363
+msgid "``grounded==true``"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:363
+msgid "``grounded==false``"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:365
+msgid "Number of ``flow`` variables"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:365
+#: ../../source/components/components/rot_comps_adv.rst:373
+msgid "2"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:365
+#: ../../source/components/components/rot_comps_adv.rst:373
+msgid "3"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:367
+msgid "Number of variables"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:367
+#: ../../source/components/components/rot_comps_adv.rst:367
+msgid "1 (``housing_phi``)"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:369
+msgid "**Equations required**"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:369
+#: ../../source/components/components/rot_comps_adv.rst:375
+msgid "**3**"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:369
+#: ../../source/components/components/rot_comps_adv.rst:375
+msgid "**4**"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:371
+msgid "Equations in declarations"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:371
+msgid "0"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:371
+msgid "2 (from ``housing``)"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:373
+msgid "Equations in ``equation`` section"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:375
+msgid "**Equations provided**"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:378
+msgid ""
+"When using conditional declarations, it is very important to make sure that "
+"the number of equations provided balances with the number of equations "
+"required for all possible conditions.  In this case, we have only two "
+"conditions to concern ourselves with and we can clearly see from this table "
+"that we have met this requirement in both cases."
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:384
+msgid ""
+"The following model demonstrates how we can now use the ``ConfigurableGear``"
+" models as both an implicitly and explicitly grounded gear:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:394
+msgid ""
+"And, as we would expect, the response for ``inertia1`` and ``inertia4`` are "
+"identical:"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:66
+msgid "kinematic constraint"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:68
+msgid "reaction torque"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:324
+msgid "conditional declaration"
+msgstr ""

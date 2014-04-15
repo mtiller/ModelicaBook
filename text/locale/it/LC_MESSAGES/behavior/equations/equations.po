@@ -1,0 +1,141 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/equations/equations.rst:2
+msgid "Equations"
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:4
+msgid ""
+"Although equations are probably the single most important mathematical "
+"aspect of Modelica, they are also the simplest to explain."
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:8
+msgid "Basic Equations"
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:10
+msgid ""
+"There are really no complicated semantics to explain about equations. All "
+"equations are composed of a left hand expression and a right hand expression"
+" separated by an equals sign, *i.e.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:18
+msgid ""
+"Through the examples presented in this chapter, the reader has been exposed "
+"to this pattern over and over again in each example.  The only real "
+"deviation from the syntax shown above is the case where a description of the"
+" equation is included as well, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:28
+msgid ""
+"As was pointed out previously, the left hand and right hand sides of an "
+"equation in Modelica are expressions, not assignments.  In other words (and "
+"in contrast to most programming languages), the left hand side does **not** "
+"have to be a variable (as we can see in the case of Newton's law above)."
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:35
+msgid "Initial Equations"
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:37
+msgid ""
+"As we saw in many of the examples in this chapter, it is possible to specify"
+" equations within a model to be used to solve for initial conditions.  This "
+"entire topic of initialization will be discussed in detail in the next "
+"section, titled :ref:`initialization`.  For now, all we will say on this "
+"topic is that if an equation is to be applied *only* to solve for initial "
+"conditions, the ``equation`` section must be qualified by the ``initial`` "
+"keyword as follows:"
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:51
+msgid "Conditional Equations"
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:53
+msgid ""
+"In the next chapter, we'll discuss how to use ``if`` statements to represent"
+" conditional behavior.  It is worth getting ahead of ourselves a little bit "
+"to point out that equations can be conditional.  There are really two forms "
+"of conditional equations. The first is the balanced form, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:67
+msgid ""
+"In the balanced case, the number of equations is always the same (1 in the "
+"code above), but *which* equation can change.  This is important because to "
+"simulate a model in Modelica, the number of variables must equal the number "
+"of equations and the number of equations must be fixed during the "
+"simulation."
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:73
+msgid ""
+"The other type of conditional equations are ones where the number of "
+"equations is unbalanced.  This means that the number of equations on the "
+"``if`` side may not be equal to the number of equations on the ``else`` side"
+" (like it was in the balanced case, previously)."
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:80
+msgid ""
+"But remember, the number of equations cannot change during a simulation.  So"
+" how is it then that the number of equations can be different from the "
+"``if`` side to the ``else`` side?  It can only happen if **the value of the "
+"conditional expression cannot change during the simulation**.  In order to "
+"be able to ensure that the conditional expression can never change, it is "
+"necessary that all variables in the conditional expression have so-called "
+"*parametric variability*."
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:89
+msgid ""
+"Remember in our discussion of :ref:`variability` the fact that variables "
+"with the ``parameter`` qualifier cannot change during a simulation?  If a "
+"variable with the ``parameter`` qualifier cannot change during a simulation "
+"and all the variables in an expression have this parametric variability then"
+" the entire expression must also have parametric variability (*i.e.,* the "
+"value of the expression cannot change during a simulation)."
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:97
+msgid ""
+"At this point, you might be asking yourself why this unbalanced case would "
+"be useful?  Again, we are getting ahead of ourselves here, but one use case "
+"would be the conditional application of initial equations, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:112
+msgid ""
+"In other words, if the Boolean parameter ``steady_state`` is true, then the "
+"initial equations are enforced.  But if the parameter is false, they are "
+"not.  The conditional expression here clearly has parametric variability "
+"because the expression contains only a variable and that variable is a "
+"parameter."
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:118
+msgid ""
+"That's all we'll say on this topic for now, since discrete and conditional "
+"behavior will be discussed in detail in the :ref:`next chapter <discrete-"
+"behavior>`."
+msgstr ""
+
+#: ../../source/behavior/equations/equations.rst:78
+msgid "parametric variability"
+msgstr ""

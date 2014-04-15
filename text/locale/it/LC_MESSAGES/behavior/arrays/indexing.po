@@ -1,0 +1,160 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/arrays/indexing.rst:4
+msgid "Array Indexing"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:6
+msgid ""
+"We've seen many examples in this chapter showing how arrays are indexed.  So"
+" it might not seem necessary to have a section devoted to discussing how to "
+"index arrays.  It is true that normally you would simply reference elements "
+"in an array using integer values for each subscript.  But there are enough "
+"other ways to index arrays that it is worth spending some time to talk about"
+" them."
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:14
+msgid "Indices"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:17
+msgid "Integers"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:0
+msgid "1-index"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:21
+msgid ""
+"For array dimensions specified using integers, Modelica uses indices "
+"starting with **1**.  Some languages choose to use zero as the starting "
+"index, but it is important to point out from the start that Modelica follows"
+" the 1-index convention."
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:26
+msgid ""
+"Obviously, the most directly way to index an array is to use an integer.  "
+"For an array declared as:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:33
+msgid ""
+"we can index elements of the array by providing an integer between 1 and 5 "
+"for the first subscript and 1 and 4 for the second subscript."
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:36
+msgid ""
+"But it is worth pointing out that Modelica allows the subscripts to be "
+"vectors.  To understand how vector indices work, first consider the "
+"following matrix:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:50
+msgid "In Modelica, such an array would be declared as follows:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:56
+msgid "Imagine we wish to extract a submatrix of ``B`` as follows:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:62
+msgid ""
+"We could extract the same submatrix more easily using vector subscripts as "
+"follows:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:69
+msgid ""
+"By using vector subscripts we can extract or construct arbitrary sub-arrays."
+"  This is where :ref:`range-notation` can be very useful. The same submatrix"
+" extraction could also be represented as:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:78
+msgid "Enumerations"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:80
+msgid ""
+"In our :ref:`chemical-system` examples, we saw how enumerations can be used "
+"to specify array dimensions.  Furthermore, we saw how the values specified "
+"by an ``enumeration`` type can be used to index the array. In general, for "
+"an ``enumeration`` like the following:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:89
+msgid ""
+"and then declare an array where that ``enumeration`` is used to specify a "
+"dimension, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:96
+msgid ""
+"then we can use the enumeration values, ``Species.A``, ``Species.B`` and "
+"``Species.X`` as indices.  For example,"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:106
+msgid "Booleans"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:108
+msgid ""
+"We can use the ``Boolean`` type in much the same way as an ``enumeration``."
+"  Given an array declared with ``Boolean`` for a dimension:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:116
+msgid "We can then use boolean values to index that dimension, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:125
+msgid "``end``"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:127
+msgid ""
+"When specifying a subscript for an array, it is legal to use ``end`` in the "
+"subscript expression.  In this context, ``end`` will take on the value of "
+"the highest possible value for the corresponding array dimension.  The use "
+"of ``end`` within expressions allows easy reference to array elements with "
+"respect to the last element rather than the first.  For example, to "
+"reference the second from the last element in a vector, the expression "
+"``end-1`` can be used a subscript."
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:135
+msgid ""
+"Remember that ``end`` takes on the value of the highest possible index for "
+"the **corresponding array dimension**.  So for the following array:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:143
+msgid "The following expressions would evaluate as follows:"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:153
+msgid "Slicing"
+msgstr ""
+
+#: ../../source/behavior/arrays/indexing.rst:155
+msgid ""
+"There is another sophisticated way of indexing arrays in Modelica. But it "
+"doesn't make sense to talk about it just yet.  We will see it later when we "
+"start our discussion of :ref:`arrays-of-components`."
+msgstr ""

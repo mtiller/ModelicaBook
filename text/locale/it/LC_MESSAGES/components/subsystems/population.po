@@ -1,0 +1,143 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/subsystems/population.rst:2
+msgid "Lotka-Volterra with Migration"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:4
+msgid ""
+"In this section, we will once again revisit the Lotka-Volterra models to "
+"understand how we can build on the work we've already done of creating "
+"reusable component models.  We will now take the next step and create "
+"reusable models of individual geographical regions (each with the usual "
+"population dynamics) and then connect those geographical regions together "
+"with migration models."
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:12
+msgid "Two Species Region"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:14
+msgid ""
+"The models in this section will all make use of the following model that "
+"represents a region consisting of two populations, one of rabbits and the "
+"other foxes, with the usual Lotka-Volterra population dynamics.  The "
+"Modelica source code for the model is:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:23
+msgid "The diagram for this component is rendered as:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:30
+msgid ""
+"This model will be used as the basis for the regional population dynamics in"
+" subsequent models presented in this section."
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:34
+msgid "Unconnected Regions"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:36
+msgid ""
+"We'll start by building a model that consists of four unconnected regions.  "
+"The Modelica source code for such a model is quite simple:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:42
+msgid "The diagram for this model is equally simple:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:49
+msgid ""
+"If we simulate this model, each population should follow the same trajectory"
+" since their initial conditions are identical.  The following plot shows "
+"that this is, in fact, the case:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:56
+msgid ""
+"In a moment, we'll look at the effects of migration.  But in order to fully "
+"appreciate the effect that migration has, we'll need to introduce some "
+"differences in the evolution of the different regions. So let's modify the "
+"initial conditions of the ``UnconnectedPopulations`` model to introduce some"
+" regional variation:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:65
+msgid ""
+"Simulating this model, we see that each region has a slightly different "
+"population dynamic:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:72
+msgid "Migration"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:74
+msgid ""
+"Now that we have simulated the population dynamics in four **unconnected** "
+"regions, it would be interesting to note the impact that migration might "
+"have on these dynamics."
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:78
+msgid "Consider the following Modelica model for migration:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:83
+msgid ""
+"This model looks at the population of both rabbits and foxes in the "
+"connected regions and specifies a rate of migration that is proportional to "
+"the difference in population between the regions.  In other words, if there "
+"are more rabbits in one region than another, the rabbits will move from the "
+"more populated region to the less population region.  This is effectively a "
+"\"diffusion\" model of migration and does not necessarily have a basis in "
+"ecology.  It is introduced simply as an example of how we could add "
+"additional effects, on top of those implemented in each region, to change "
+"the population dynamics between regions."
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:94
+msgid ""
+"If we connect our previously unconnected regions with migration paths, "
+"*e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:100
+msgid "the resulting system diagram becomes:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:107
+msgid ""
+"Simulating this system, we see that the population dynamics in the different"
+" regions start off out of sync, but eventually stabilize into repeating "
+"patterns:"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:115
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/components/subsystems/population.rst:117
+msgid ""
+"Earlier, we turned the Lotka-Volterra equations into components representing"
+" predation, starvation and reproduction.  In this section, we were able to "
+"use those component models to build up subsystem models to represent the "
+"population dynamics in a particular region and then link those subsystems "
+"together into a hierarchical system model that also captured the effects of "
+"migration between these distinct regions."
+msgstr ""

@@ -1,0 +1,107 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/packages/fqn.rst:4
+msgid "Referencing Package Contents"
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:6
+msgid ""
+"Now that we've covered :ref:`organizing-content`, we'll discuss how to "
+"access that content across different packages.  Let's consider the following"
+" example:"
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:13
+msgid "As we learned in the previous section, the very first line,"
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:19
+msgid ""
+"tells us that the ``RLC`` model is contained within the "
+"``ModelicaByExample.PackageExamples`` package.  As with the previous "
+"example, we are going to make use of the Modelica ``package`` system to "
+"allow us to avoid defining types directly in our model.  In this way, we "
+"define the types once in one package and then we can reuse them in many "
+"places simply by referencing them."
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:26
+msgid ""
+"Unlike the previous example in this chapter, we don't define any types in "
+"this example.  Instead, we rely on types that are defined in the :ref:`msl`."
+"  The :ref:`msl` contains many useful types, models, constants, *etc*.  For "
+"this example, we'll just utilize a few of them.  These types can be easily "
+"recognized because they start with ``Modelica.`` in the name of the type."
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:33
+msgid ""
+"We look more closely at the :ref:`lookup-rules` later in this chapter. For "
+"now, it is sufficient to say that all the types starting with ``Modelica.`` "
+"exist within the ``Modelica`` package.  In this case, all types start with "
+"``Modelica.SIunits``.  ``SIunits`` is a package within the ``Modelica`` "
+"package.  The purpose of the ``SIunits`` package is to store type "
+"definitions that conform to ISO standard quantities and units."
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:43
+msgid ""
+"As can be seen in the example code, these types are referenced by their "
+"\"fully qualified name\".  That means that type name starts with the name of"
+" a top-level package (a package that is not contained within another "
+"package).  Each ``.`` in the name represents a new child package.  The last "
+"name in the sequence identifies that actual type being referenced."
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:50
+msgid ""
+"In this case, we are using 5 different types from within the "
+"``Modelica.SIunits`` package: ``Voltage``, ``Inductance``, ``Resistance``, "
+"``Capacitance`` and ``Current``.  These types provide information about the "
+"units for each of these types, limitations on the values of these types "
+"(*e.g.*, a capacitance cannot be less than zero), *etc*.  They are defined "
+"in the :ref:`msl` as follows:"
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:75
+msgid ""
+"Apart from providing better documentation, there is an immediate benefit to "
+"associating such types with variables and that is because it enables unit "
+"consistency checking of the equations.  For example, note the following "
+"equation from this example:"
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:84
+msgid ""
+"Clearly, this is a statement of Ohm's law.  But what if we made a mistake "
+"and accidentally wrote:"
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:91
+msgid ""
+"Syntactically speaking, this equation is perfectly legal. Furthermore, if "
+"the variable ``i_R``, ``V`` and ``R`` were all declared to have the type "
+"``Real``, there would be no issue with this equation.  However, because we "
+"know (from the type definitions) that these variables represent a current, a"
+" voltage and a resistance, respectively, a Modelica compiler is able to "
+"determine (in a completely automatic way using the definitions shown "
+"previously) that the left and right hand sides of this equation are "
+"inconsistent with respect to physical units.  In other words, by associating"
+" a physical type with variables it is possible to detect modeling errors, "
+"automatically."
+msgstr ""
+
+#: ../../source/components/packages/fqn.rst:41
+msgid "fully qualified name"
+msgstr ""

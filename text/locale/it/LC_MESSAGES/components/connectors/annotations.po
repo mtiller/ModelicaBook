@@ -1,0 +1,235 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/connectors/annotations.rst:4
+msgid "Graphical Annotations"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:6
+msgid ""
+"Although this section appears in the chapter on :ref:`connectors`, this "
+"topic applies to graphical annotations associated with model definitions in "
+"general.  So the information presented here will be a useful reference with "
+"respect to many aspects of Modelica."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:12
+msgid "Graphical Layers"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:14
+msgid ""
+"When describing the appearance of a Modelica entity, there are two different"
+" representations to choose from.  One is called the \"icon\" representation "
+"and the other is called the \"diagram\" representation. In Modelica, the "
+"icon representation is used when viewing something from the \"outside\".  "
+"Generally, the icon includes some distinctive visual representation along "
+"with additional information about that entity added via :ref:`substitutions`"
+" (which we will be covering shortly)."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:23
+msgid ""
+"The \"diagram\" representation, on the other hand, is used to represent the "
+"view of a component from the \"inside\".  The diagram representation is "
+"generally used to include additional graphical documentation about the "
+"Modelica component that would be too detailed for the \"icon\" view."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:28
+msgid ""
+"A definition's graphical appearance in an \"icon\" layer is specified by the"
+" ``Icon`` annotation (briefly touched on in our :ref:`graphical-connectors` "
+"discussion earlier).  Not surprisingly, a definition's graphical appearance "
+"in the \"diagram\" layer is specified by the ``Diagram`` annotation.  Both "
+"of these are annotations that appear directly in the definition and are not "
+"associated with existing elements like declarations or ``extends`` clauses."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:36
+msgid ""
+"Generally speaking, most definitions include an \"icon\" representation, but"
+" only a few bother to include a \"diagram\" representation.  However, it "
+"turns out that despite being rendered in different contexts, the "
+"specification of graphical appearance is identical between them."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:0
+msgid "Use of ``Icon`` in examples"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:43
+msgid ""
+"For the remainder of the book, we will show examples of graphical "
+"annotations using the ``Icon`` annotation.  These examples could equally be "
+"applied to a ``Diagram`` annotation, but since the ``Icon`` annotation is "
+"more common, all further examples regarding graphical annotations will "
+"appear exclusively in the context of the ``Icon`` annotation."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:51
+msgid "Common Graphical Definitions"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:53
+msgid "The following definitions will be referenced throughout this section:"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:82
+msgid ""
+"In addition, many of the annotations we will be discussing include a set of "
+"common elements represented by the following ``record`` definition:"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:94
+msgid ""
+"For annotations representing graphical elements, we will extend from this "
+"``GraphicItem`` to make the presence of these common elements explicitly "
+"clear."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:99
+msgid "``Icon`` and ``Diagram`` Annotations"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:101
+msgid ""
+"The elements that should appear in the icon layer of a model are described "
+"by the following data:"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:111
+msgid "where the coordinate system data is defined as:"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:122
+msgid ""
+"In other words, the ``Icon`` annotation includes information about the "
+"coordinate system contained in the definition of ``coordinateSystem`` and it"
+" also includes a list of graphical items stored in ``graphics``.  The "
+"definition of the ``Diagram`` annotation is identical:"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:135
+msgid "Graphical Items"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:137
+msgid ""
+"There are a number of different graphical items that are defined in the "
+"specification that can be used in constructing the ``graphics`` vector "
+"associated with either the ``Icon`` or ``Diagram`` annotations.  Their "
+"definitions are presented here for reference."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:145
+msgid "``Line``"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:163
+msgid "``Polygon``"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:177
+msgid "``Rectangle``"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:192
+msgid "``Ellipse``"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:207
+msgid "``Text``"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:226
+msgid "``Bitmap``"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:238
+msgid "Inheriting Graphical Annotations"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:240
+msgid ""
+"When one model definition inherits from another, the graphical annotations "
+"are inherited by default.  However, this behavior can be controlled by "
+"annotating the ``extends`` clause with the following data (for the icon and "
+"diagram layers, respectively):"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:257
+msgid ""
+"In both cases, the ``extent`` data allows the location of the inherited "
+"graphical elements to be adjusted.  Setting ``primitivesVisible`` to "
+"``false`` will suppress the rendering of inherited graphical elements."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:265
+msgid "Substitutions"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:267
+msgid ""
+"When working with the :ref:`text-anno` annotation, the ``textString`` field "
+"can contain substitution patterns.  The following substitution patterns are "
+"supported:"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:271
+msgid ""
+"``%name`` - This pattern will be replaced by the name of the instance of the"
+" given definition."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:273
+msgid ""
+"``%class`` - This pattern will be replaced by the name of this definition."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:275
+msgid ""
+"``%<name>`` where ``<name>`` is a parameter name - This pattern will be "
+"replaced by the **value** of the named parameter."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:277
+msgid "``%%`` - This pattern will be replaced by ``%``."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:280
+msgid "Putting It All Together"
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:282
+msgid ""
+"Having discussed all these aspects of graphical annotations, let us review "
+"the icon definitions presented during our discussion of :ref:`graphical-"
+"connectors`."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:290
+msgid ""
+"Here we see the ``annotation`` associated with the ``PositivePin`` "
+"definition is a model annotation.  Furthermore, we can see the ``Icon`` data"
+" associated with this annotation includes a list of graphical items.  The "
+"first graphical item is an :ref:`ellipse-anno` annotation.  That is followed"
+" by two :ref:`rect-anno` annotations and finally a :ref:`text-anno` (which "
+"also makes use of the :ref:`substitutions` we discussed earlier)."
+msgstr ""
+
+#: ../../source/components/connectors/annotations.rst:298
+msgid ""
+"Note how the data being presented in this ``annotation`` lines up with the "
+"data described in the record definitions we discussed earlier."
+msgstr ""

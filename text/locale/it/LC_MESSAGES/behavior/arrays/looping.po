@@ -1,0 +1,91 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/arrays/looping.rst:4
+msgid "Looping"
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:7
+msgid "``for``"
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:9
+msgid ""
+"One of the main uses of arrays is to allow code to be simplified through the"
+" use of loops.  So we will conclude this chapter on arrays by introducing "
+"some basic looping constructs and showing how they are used in conjunction "
+"with array features."
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:14
+msgid ""
+"In general, the ``for`` keyword is used to represent looping.  But there are"
+" many different contexts in which ``for`` can be used. Several of the "
+"examples in this chapter used ``for`` to generate a collection of equations."
+"  When ``for`` is used within an equation section, any equations contained "
+"within the ``for`` loop are generated **for each value of the loop index "
+"variables**.  In this way, we can easily generate many equations that have "
+"the same overall structure and only vary by the value of the loop index "
+"variable.  The general syntax for a ``for`` loop in an equation section is:"
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:31
+msgid ""
+"Note that the loop index variable (*e.g.,* ``i`` in this case) **does not "
+"have to be declared**.  It is also worth noting that these variables only "
+"exists within the scope of the ``for`` loop (not before or after the loop)."
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:36
+msgid "For loops can, of course, be nested.  For example:"
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:47
+msgid ""
+"They can also appear in other contexts.  For example, they can appear in "
+"``initial equation`` sections or in :ref:`algorithm-sections`."
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:50
+msgid ""
+"Another case where the ``for`` keyword can be seen is in our discussion of "
+":ref:`array-comprehensions`.  In that case, the ``for`` construct is not "
+"used to generate equations or statements, but to populate the various "
+"elements in an array."
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:57
+msgid "``while``"
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:59
+msgid ""
+"There is another type of loop in Modelica and that is the ``while`` loop.  "
+"The ``while`` loop is not used very often in Modelica.  The reason is that "
+"Modelica, unlike a general purpose language, is an equation oriented "
+"language.  Furthermore, it imposes a requirement that a model should include"
+" an equal number of equations and unknowns.  Such a model is considered a "
+"\"balanced model\"."
+msgstr ""
+
+#: ../../source/behavior/arrays/looping.rst:66
+msgid ""
+"The reason that the ``while`` construct is not widely used is because a "
+"balanced model requires that the number of equations is predictable (by the "
+"compiler).  Because a ``for`` loop is bounded and the number of values of "
+"the index variable is always known (because it is always derived from a "
+"vector of possible values), the number of equations it will generate is "
+"always known.  The same cannot be said of a ``while`` loop.  As such, "
+"``while`` loops are only practical in the context of :ref:`algorithm-"
+"sections` (typically in the definition of :ref:`functions`)."
+msgstr ""

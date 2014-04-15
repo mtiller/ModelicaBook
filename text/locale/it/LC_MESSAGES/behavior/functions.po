@@ -1,0 +1,41 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/functions.rst:4
+msgid "Functions"
+msgstr ""
+
+#: ../../source/behavior/functions.rst:6
+msgid ""
+"Up to this point, we've used many of the built-in functions in Modelica in "
+"previous examples and particularly in our discussion of :ref:`array-"
+"functions`.  While Modelica includes an extensive set of functions for many "
+"common calculations, users still need the ability to define their own "
+"functions.  The process of defining functions is the central topic of this "
+"chapter."
+msgstr ""
+
+#: ../../source/behavior/functions.rst:13
+msgid ""
+"As always, we'll start with several examples to motivate the need for user "
+"defined functions.  Then we'll review the important elements of user defined"
+" functions in Modelica."
+msgstr ""
+
+#: ../../source/behavior/functions.rst:18
+msgid "Examples"
+msgstr ""
+
+#: ../../source/behavior/functions.rst:29
+msgid "Review"
+msgstr ""

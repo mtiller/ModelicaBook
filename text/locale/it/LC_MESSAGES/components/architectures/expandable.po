@@ -1,0 +1,101 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/architectures/expandable.rst:2
+msgid "Expandable Connectors"
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:5
+msgid "Definition"
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:7
+msgid ""
+"As we saw in the :ref:`thermal-control` example from this chapter, when "
+"building architectures it can be difficult to define an interface that "
+"covers all important configurations.  One option, in this case, is to use "
+"``expandable`` connectors."
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:12
+msgid ""
+"An expandable connector uses exactly the same syntax as a normal connector "
+"definition (see previous discussion on :ref:`connector-def`) with the "
+"exception that the ``expandable`` qualifier is added before the definition, "
+"*e.g.,*"
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:23
+msgid ""
+"We can ignore the ``expandable`` qualifier and just treat this connector "
+"like a normal connector if we want.  The assumption is that components that "
+"use such a connector as a normal connector will provide the correct number "
+"of equations such that any component models are :ref:`balanced-components`."
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:29
+msgid ""
+"If, however, a user connects to a named element that is **not** part of the "
+"connector definition, this causes a new element to be added to that "
+"particular instance of the connector.  The type of this new element will be "
+"identical to the connector it is connected to. Ultimately, that element will"
+" be added to any other connector instances in the :ref:`connection set "
+"<connection-sets>` as well."
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:36
+msgid ""
+"In this way, an ``expandable`` connector definition can be \"grown\" to add "
+"additional signals not in the original definition.  In this way, any "
+"interface definition with an expandable connector has the flexibility to "
+"exchange more information than just what was in the initial connector "
+"definition.  As we saw in the :ref:`thermal-control` example, this can be "
+"very useful when the interface can vary significantly depending on the "
+"choice of subsystems."
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:44
+msgid ""
+"By far, the most common use case for expandable connectors is to add "
+"additional ``input`` and ``output`` signals to a connector.  This frequently"
+" occurs because the information required when pairing controllers up with "
+"sensors and actuators can change depending on the implementation details of "
+"those subsystems.  For example, an internal combustion engine with cam "
+"phasing will require a commanded cam angle from the controller.  But an "
+"engine without this feature will not."
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:53
+msgid ""
+"However, the ``expandable`` connector can also be used with acausal sub-"
+"connectors to add additional points of physical interaction between "
+"subsystems.  For example, one subsystem may not include thermal effects "
+"while another one does.  The one that does could include a thermal acausal "
+"connector to allow other subsystems to interact thermally with it."
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:61
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/components/architectures/expandable.rst:63
+msgid ""
+"Expandable connector definitions define a *minimum* set of variables that "
+"should appear on the connector.  It is assumed that all component models "
+"will be balanced with respect to those variables in the connector "
+"definition.  In addition, additional variables can be added to an "
+"``expandable`` connector as long as the overall system model is still "
+"balanced.  Expandable connectors are typically used in conjunction with "
+"interface definitions to define a minimum interface within an architecture "
+"that can be expanded by the choice of implementations."
+msgstr ""

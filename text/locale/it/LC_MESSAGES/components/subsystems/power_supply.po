@@ -1,0 +1,132 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/subsystems/power_supply.rst:2
+msgid "DC Power Supply"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:4
+msgid ""
+"In this section, we'll consider how a DC power supply model could be "
+"implemented in Modelica.  We'll show, once again, how a flat system model "
+"can be refactored to make use of a reusable subsystem model."
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:9
+msgid "Flat Power Supply Model"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:11
+msgid ""
+"In this case, our flat system model will be the DC power supply circuit "
+"shown here:"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:19
+msgid "Implemented in Modelica, this model looks like this:"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:24
+msgid ""
+"This kind of power supply works by taking an AC input voltage (120V at "
+"60Hz), rectifying it and then passing it through a low-pass filter. If we "
+"simulate this model, we see the following voltage across the ``load`` "
+"resistor:"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:32
+msgid ""
+"Note that our target here is an output voltage of 12 volts.  However, the "
+"greater the load on the power supply, the lower the quality of the output "
+"signal will be.  In this particular simulation, the load is initially zero "
+"(because the load connecting the switch to the power supply is open).  But "
+"when the switch is closed and current begins to flow through the load (the "
+"resistor named ``load``), we start to see some artifact."
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:41
+msgid "Hierarchical Power Supply"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:43
+msgid ""
+"Once again, we'll improve upon the flat version of our system by taking some"
+" collection of components and organizing them into a subsystem model.  Our "
+"system level circuit then becomes:"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:52
+msgid ""
+"This model uses the ``BasicPowerSupply`` model whose diagram is shown here:"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:59
+msgid ""
+"The Modelica source code for this reusable power supply subsystem model is:"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:65
+msgid ""
+"There are a couple of interesting things to note about this model. First, we"
+" see the same organizational structure as we have before where parameters "
+"and connectors are made ``public`` while the internal components are "
+"``protected``.  We can also see the use of the :ref:`dialog-anno` annotation"
+" to organize parameters into distinct groupings (in this case, "
+"``\"General\"`` and ``\"Transformer\"``).  We can also see the use of the "
+"``enable`` annotation in conjunction with ``considerMagnetization`` "
+"parameter to selectively expose the ``Lm1`` parameter only in the cases "
+"where ``considerMagnetization`` is true."
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:75
+msgid ""
+"Using our hierarchical system model we get, as expected, exactly the same "
+"results as we got for the flat version:"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:81
+msgid ""
+"We can augment our system model to include an additional load (that comes "
+"online after some delay):"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:89
+msgid ""
+"In that case, if we simulate the model we can see the impact that additional"
+" load will have on the quality of power supply output:"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:95
+msgid ""
+"By increasing the capacitance in the power supply, we can reduce the "
+"amplitude of the voltage fluctuations, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:101
+msgid ""
+"However, if we increase the capacitance level too much, we will find that "
+"the power supply output is very slow to respond to load changes, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:109
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/components/subsystems/power_supply.rst:111
+msgid ""
+"This example illustrates, once again, how a collection of components can be "
+"organized into a reusable subsystem model.  This example follows the best "
+"practice of placing parameters and connectors in the ``public`` section of "
+"the resulting subsystem model while keeping the internal components in the "
+"``protected`` section."
+msgstr ""

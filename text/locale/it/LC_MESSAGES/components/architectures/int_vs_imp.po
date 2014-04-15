@@ -1,0 +1,89 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/architectures/int_vs_imp.rst:2
+msgid "Interfaces and Implementations"
+msgstr ""
+
+#: ../../source/components/architectures/int_vs_imp.rst:5
+msgid "Conceptual Definitions"
+msgstr ""
+
+#: ../../source/components/architectures/int_vs_imp.rst:7
+msgid ""
+"In both of the examples we presented in this chapter, we used interface "
+"definitions as part of the architecture definition process. The term "
+"\"interface\" doesn't come from Modelica itself, it is a term common among "
+"computer languages.  In Modelica, we can think of interfaces as models that "
+"define all the details of the model **that are externally visible**.  You "
+"can think of an interface as a \"shell\" without any internal details.  For "
+"this reason, interface models are almost always marked as ``partial``."
+msgstr ""
+
+#: ../../source/components/architectures/int_vs_imp.rst:16
+msgid ""
+"Another important concept is that of an \"implementation\".  This is another"
+" term borrowed from the world of computer languages. Whereas an interface is"
+" used to simply describe the externally visible aspects of a model, an "
+"implementation includes internal details as well.  It includes the "
+"information required to actually implement that interface.  In some cases, "
+"it may only constitute a partial implementation (in which case it should "
+"also be marked as ``partial``).  In other cases, it may represent the "
+"architecture of a particular subsystem where further implementation details "
+"are pushed one additional level down in the model hierarchy (another case of"
+" a ``partial`` model).  But most of the time, these implementations will be "
+"complete (non-``partial``) models for a particular subsystem."
+msgstr ""
+
+#: ../../source/components/architectures/int_vs_imp.rst:32
+msgid "Plug-Compatibility"
+msgstr ""
+
+#: ../../source/components/architectures/int_vs_imp.rst:34
+msgid ""
+"The most important thing we need to consider when we talk about interfaces "
+"and implementations is the notion of **plug-compatibility**.  As we already "
+"discussed in our elaboration of the :ref:`sensor-comparison` example, a "
+"model ``X`` is plug-compatible with a model ``Y`` if for every **public** "
+"variable in ``Y``, there is a corresponding public variable in ``X`` with "
+"the same name. Furthermore, every such variable in ``X`` must itself be "
+"plug-compatible with its counterpart in ``Y``.  This ensures that if you "
+"change a component of type ``Y`` into a component of type ``X`` that "
+"everything you need (parameters, connectors, etc) will still be there and "
+"will still be compatible.  **However, please note** that if ``X`` is plug-"
+"compatible with ``Y``, this **does not** imply that ``Y`` is plug-compatible"
+" with ``X`` (as we will see in a moment)."
+msgstr ""
+
+#: ../../source/components/architectures/int_vs_imp.rst:48
+msgid ""
+"Generally speaking, most cases where we concern ourselves with plug-"
+"compatibility revolve around whether a given implementation is plug-"
+"compatible with a given interface.  As we've seen in these examples (and we "
+"will review shortly), the configuration management features in Modelica "
+"hinge on the relationship between interfaces and implementations and the "
+"process by which configuration management is performed is centered around "
+"plug-compatibility."
+msgstr ""
+
+#: ../../source/components/architectures/int_vs_imp.rst:57
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/components/architectures/int_vs_imp.rst:59
+msgid ""
+"The bottom line is that it is very useful to not only think in terms of "
+"interface and implementation models, but also to create models to formally "
+"define interfaces and distinguish them from implementations, since these "
+"will be very useful when creating architecture driven models."
+msgstr ""

@@ -1,0 +1,55 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/connectors/block_connectors.rst:4
+msgid "Block Connectors"
+msgstr ""
+
+#: ../../source/components/connectors/block_connectors.rst:6
+msgid ""
+"So far, all the connectors that have been presented have been acausal. This "
+"means that they consist of pairs of through and across variables. Such "
+"connectors are the basis for modeling physical interactions (ones where "
+"conserved quantities are exchanged between components).  But there are other"
+" types of interactions and other modeling formalisms that can be represented"
+" in Modelica."
+msgstr ""
+
+#: ../../source/components/connectors/block_connectors.rst:13
+msgid ""
+"Block connectors are used to model the flow of information through a system."
+"  Here we are not concerned with physical quantities, like current, which "
+"might flow in one direction for a while and then reverse direction.  Here we"
+" will consider how to model signals where some components produce "
+"information and others consume it (and then, in turn, produce other "
+"information).  In this kind of situation, we frequently refer to such "
+"signals as \"input signals\" and \"output signals\"."
+msgstr ""
+
+#: ../../source/components/connectors/block_connectors.rst:22
+msgid ""
+"To model such interactions, we can use connector definitions like these:"
+msgstr ""
+
+#: ../../source/components/connectors/block_connectors.rst:28
+msgid ""
+"It should be pretty obvious from these definitions that, for example, the "
+"``BooleanInput`` connector is used to identify a ``Boolean`` input signal "
+"and ``RealOutput`` identifies a ``Real`` output signal."
+msgstr ""
+
+#: ../../source/components/connectors/block_connectors.rst:32
+msgid ""
+"We'll see how to utilize these connector definitions later when we discuss "
+":ref:`block-components`."
+msgstr ""

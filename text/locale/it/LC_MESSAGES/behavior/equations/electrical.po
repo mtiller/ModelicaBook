@@ -1,0 +1,172 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/equations/electrical.rst:4
+msgid "An Electrical Example"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:6
+msgid ""
+"Let us return now to an engineering context.  For readers who are more "
+"familiar with electrical systems, consider the following circuit:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:17
+msgid "Low-Pass RLC Filter"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:19
+msgid ""
+"Suppose we want to solve for: :math:`V`, :math:`i_L`, :math:`i_R` and "
+":math:`i_C`.  To solve for each of the currents :math:`i_L`, :math:`i_R` and"
+" :math:`i_C`, we can use the equations associated with inductors, resistors "
+"and capacitors, respectively:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:29
+msgid "where :math:`V_b` is the battery voltage."
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:31
+msgid ""
+"Since we have only 3 equations, but 4 variables, we need one additional "
+"equation.  That additional equation is going to be Kirchoff's current law:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:37
+msgid ""
+"Now that we have determined the equations and variables for this problem, we"
+" will create a basic model (including physical types) by translating the "
+"equations directly into Modelica.  But in a later section on :ref"
+":`electrical-components` we will return to this same circuit and demonstrate"
+" how to create models by dragging, dropping and connecting models that "
+"really look like the circuit components in our :ref:`low-pass-rlc`."
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:45
+msgid ""
+"But for now, we will build a model composed simply of variables and "
+"equations.  Such a model could be written as follows:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:52
+msgid ""
+"Let's go through this example bit by bit and reinforce the meaning of the "
+"various statements.  Let's start at the top:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:59
+msgid ""
+"Here we see that the name of the model is ``RLC1``.  Furthermore, a "
+"description of this model has been included, namely ``\"A resistor-inductor-"
+"capacitor circuit model\"``.  Next, we introduce a few physical types that "
+"we will need:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:68
+msgid ""
+"Each of these lines introduces a physical type that specializes the built-in"
+" ``Real`` type by associating it with a particular physical unit.  Then, we "
+"declare all of the ``parameter`` variables in our problem:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:77
+msgid ""
+"These ``parameter`` variables represent various physical characteristics (in"
+" this case, voltage, inductance, resistance and capacitance, respectively)."
+"  The last variables we need to define are the ones we wish to solve for, "
+"*i.e.*,"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:86
+msgid ""
+"Now that all the variables have been declared, we add an ``equation`` "
+"section to the model that specifies the equations to use when generating "
+"solutions for this model:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:94
+msgid ""
+"Finally, we close the model by creating an ``end`` statement that includes "
+"the ``model`` name (*i.e.*, ``RLC1`` in this case):"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:103
+msgid ""
+"One thing that distinguishes this example from the previous examples is the "
+"fact that it contains more equations.  As with the ``NewtonCooling`` "
+"example, we have some equations with expressions on both the left and right "
+"hand sides.  We also have a mix of differential equation (ones that include "
+"the derivative of a variable) and others that are simply algebraic "
+"equations."
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:110
+msgid ""
+"This further emphasizes the point that in Modelica it is not necessary to "
+"put the system of equations into the so-called \"explicit state-space form\""
+" required in some modeling environments.  We could, of course, rearrange the"
+" equations into a more explicit form like this:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:120
+msgid ""
+"But the important point is that with Modelica, we do not need to perform "
+"such manipulations.  Instead, we are free to write the equations in whatever"
+" form we chose."
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:124
+msgid ""
+"Ultimately, these equations will probably need to be manipulated into a form"
+" like explicit state-space form.  But if such manipulations are necessary, "
+"it will be the responsibility of the Modelica compiler, not the model "
+"developer, to perform these manipulations.  This eliminates the need for the"
+" model developer to deal with this tedious, time consuming and error prone "
+"task."
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:131
+msgid ""
+"The ability to keep equations in their \"textbook form\" is important "
+"because, as we will show in later sections, we eventually want to get to the"
+" point where these equations are \"captured\" in individual components "
+"models.  In those cases, we won't know (when we create the component model) "
+"exactly what variable each equation will be used to solve for.  Making such "
+"manipulations the responsibility of the Modelica compiler not only makes the"
+" model development faster and easier, but it dramatically improves the "
+"**reusability** of the models."
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:141
+msgid "The following figure shows the dynamic response of the ``RLC1`` model:"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:0
+msgid "Expanding on these electrical examples"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:148
+msgid ""
+"As mentioned in the :ref:`preface`, the structure of this book allows us to "
+"explore a more hypermedia based approach in which readers are encouraged to "
+"process the material that is most aligned with their goals and interests.  "
+"The next chapter will present a model whose equations are derived from a "
+"mechanical system.  If you would prefer instead to see this electrical "
+"example extended to include more complex behavior, you may want to skip "
+"ahead to the :ref:`switched-rlc` example."
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:101
+msgid "state-space form"
+msgstr ""

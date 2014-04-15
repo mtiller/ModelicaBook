@@ -1,0 +1,59 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/discrete/if.rst:4
+msgid "If"
+msgstr ""
+
+#: ../../source/behavior/discrete/if.rst:8
+msgid ""
+"Although it is pretty intuitive, it is worth having a short review of the "
+"syntax for ``if`` statements and ``if`` expressions.  Let's start with "
+"``if`` expressions because they are the simplest to explain.  An ``if`` "
+"expression has the form:"
+msgstr ""
+
+#: ../../source/behavior/discrete/if.rst:17
+msgid ""
+"where ``cexpr`` is a conditional expression (that will evaluate to a "
+"``Boolean`` value), ``expr1`` is the value the expression will have if "
+"``cexpr`` evaluates to ``true`` and ``expr2`` is the value the expression "
+"will have if ``cexpr`` evaluates to ``false``."
+msgstr ""
+
+#: ../../source/behavior/discrete/if.rst:22
+msgid "An ``if`` statement has the general syntax:"
+msgstr ""
+
+#: ../../source/behavior/discrete/if.rst:38
+msgid ""
+"It is important to note that when an ``if`` statement appears in an "
+"``equation`` section, the number of equations must be the same regardless of"
+" which branch through the ``if`` statement is taken (this applies in the "
+"presence of ``elseif`` as well).  One exception is the use of ``if`` within "
+"an ``initial equation`` or ``initial algorithm`` section where an ``else`` "
+"clause is not required since the number of equations doesn't have to be same"
+" for both branches.  Another notable exception is the use of ``if`` within "
+":ref:`functions` where, again, there is not requirement that the number of "
+"equations be the same across both branches."
+msgstr ""
+
+#: ../../source/behavior/discrete/if.rst:51
+msgid ""
+"Note that conditional expressions within both ``if`` statements and ``if`` "
+"expressions have the potential to generate :ref:`events`."
+msgstr ""
+
+#: ../../source/behavior/discrete/if.rst:6
+msgid "if"
+msgstr ""

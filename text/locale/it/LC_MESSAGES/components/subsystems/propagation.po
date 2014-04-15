@@ -1,0 +1,91 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/subsystems/propagation.rst:4
+msgid "Propagation"
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:6
+msgid ""
+"When building subsystem models, it is extremely common for a subsystem to "
+"contain parameters that it then propagates or cascades down to its "
+"components.  For example, consider the following system model used in our "
+"discussion of :ref:`rotational-components`:"
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:31
+msgid ""
+"If we wanted to use this model in different contexts where the values of the"
+" component parameters, like ``d``, might vary, we could make ``d`` a "
+"parameter at the subsystem level and then propagate it down into the "
+"hierarchy using a modification.  The result would look something like this:"
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:48
+msgid ""
+"There is one complication here.  It is possible for a user to come along and"
+" change the value of ``damper2.d`` instead of modifying the ``d`` parameter "
+"in the ``SMD`` model.  To avoid having the ``d`` parameter and the "
+"``damper2.d`` parameter from getting out of sync (having different values), "
+"we can permanently bind them using the ``final`` qualifier:"
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:64
+msgid ""
+"By adding the ``final`` qualifier, we are indicating that it is no longer "
+"possible to modify the value of ``damper2.d``.  Any modifications must be "
+"made to ``d`` only."
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:68
+msgid ""
+"Giving all of the \"hard-wired\" numerical values in the ``SMD`` model the "
+"same treatment, we would end up with a highly reusable model like this:"
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:101
+msgid ""
+"If we wanted to use a specific set of parameter values, we could do it in "
+"one of two ways.  One way would be to extend the parameterized model above "
+"and include a modification in the ``extends`` statement, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:113
+msgid ""
+"Note that we did not need to include modifications for the values of "
+"``phi2_init``, ``w1_init`` and ``w2_init``, since those parameters were "
+"declared with default values.  In general, **default values for parameters "
+"should only be used when those defaults are reasonable for the vast majority"
+" of cases**.  The reason for this is that if a parameter has no default "
+"value most Modelica compilers will generate a warning alerting you that a "
+"value is required.  But if a default value is there, it will silently use "
+"the default value.  If that default value is not reasonable or typical, then"
+" you will silently introduce an unreasonable value into your model."
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:124
+msgid ""
+"But returning to the topic of propagation, the other approach that could be "
+"used would be to instantiate an instance of the ``SMD`` model and use "
+"modifications on the declared variable to specify parameter values, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:135
+msgid ""
+"We'll defer the discussion on which of these approaches is better until the "
+"upcoming chapter on :ref:`architectures`."
+msgstr ""
+
+#: ../../source/components/subsystems/propagation.rst:46
+msgid "final"
+msgstr ""

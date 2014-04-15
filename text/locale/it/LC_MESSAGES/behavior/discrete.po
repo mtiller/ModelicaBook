@@ -1,0 +1,78 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/discrete.rst:4
+msgid "Discrete Behavior"
+msgstr ""
+
+#: ../../source/behavior/discrete.rst:6
+msgid ""
+"So far, all the examples we've seen have been of a purely continuous nature."
+"  This means that there have been no abrupt disturbances in the system.  In "
+"this chapter, we'll focus on how to express what we call \"discrete "
+"behavior\".  There are a wide variety of different engineering use cases for"
+" describing such behavior and we'll explore these through the various "
+"examples presented in this chapter."
+msgstr ""
+
+#: ../../source/behavior/discrete.rst:13
+msgid ""
+"Normally, when we talk about discrete behavior we often refer to \"events\"."
+"  An event is something that occurs in our system that triggers some kind of"
+" discontinuity.  Differential equations normally result in continuous "
+"solutions.  But when events occur, they can introduce various kinds of "
+"discontinuities."
+msgstr ""
+
+#: ../../source/behavior/discrete.rst:21
+msgid ""
+"The simplest types of events are ones that happen at a particular time.  "
+"These are, not surprisingly, called \"time events\".  Because these events "
+"are tied to time, we know what time they will occur even before they happen."
+"  Examples of time events would be things like changes triggered by some "
+"kind of digital clock that is activated at some specified frequency."
+msgstr ""
+
+#: ../../source/behavior/discrete.rst:30
+msgid ""
+"The other type of event we will encounter are so-called \"state events\".  "
+"These kinds of events are much trickier to handle.  The reason is that we do"
+" not know *a priori* when these events will occur.  Unlike time events, we "
+"have to actually wait for some signal in our system to cross some specified "
+"threshold.  Generally speaking, we don't know when that crossing will occur."
+"  Furthermore, determining the precise moment when the event occurs is "
+"somewhat expensive."
+msgstr ""
+
+#: ../../source/behavior/discrete.rst:38
+msgid ""
+"In this chapter, we'll look at examples of both of these kinds of events and"
+" the various Modelica language features that can be used to describe when "
+"these events occur and how we describe responses to them."
+msgstr ""
+
+#: ../../source/behavior/discrete.rst:43
+msgid "Examples"
+msgstr ""
+
+#: ../../source/behavior/discrete.rst:57
+msgid "Review"
+msgstr ""
+
+#: ../../source/behavior/discrete.rst:19
+msgid "time events"
+msgstr ""
+
+#: ../../source/behavior/discrete.rst:28
+msgid "state events"
+msgstr ""

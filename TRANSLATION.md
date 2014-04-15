@@ -17,6 +17,7 @@ volunteering to coordinate the translation into that language:
 
   * **Spanish** - [Susana López](mailto:susana.lopez@tekniker.es)
   * **Chinese** - [Lionel Belmon](mailto:lionel.belmon@globalcrown.com.cn)
+  * **Italian** - [Marco Romanoni](mailto:marco.romanoni@dofware.com)
 
 ## Explanation
 

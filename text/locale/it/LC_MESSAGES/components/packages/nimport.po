@@ -1,0 +1,148 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/packages/nimport.rst:4
+msgid "Importing Physical Types"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:6
+msgid ""
+"In the previous section, we learned how to reference types defined in other "
+"packages.  This spares the developer from having to constantly define things"
+" in their local model.  Instead, they can place definitions in packages and "
+"then reference those packages."
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:11
+msgid ""
+"However, references with long fully qualified names can be tedious to type "
+"over and over again.  For that reason, Modelica includes an ``import`` "
+"statement that allows us to use a definition as if it were defined locally."
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:16
+msgid ""
+"Recall again, this example from a previous discussion on :ref:`physical-"
+"types`:"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:22
+msgid ""
+"The previous section described how we could avoid defining these types "
+"locally by using types from the :ref:`msl`.  But we can also use the "
+"``import`` command to import those types from the Modelica Standard Library "
+"once and then use them without having to specify their fully qualified "
+"names.  The resulting code would look something like:"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:32
+msgid ""
+"Here we have replaced the type definitions with ``import`` statements. Note "
+"how the highlighted lines are identical to the previous code. Let's look at "
+"two of these import statements more closely to understand what effect they "
+"have on the model.  Let's start with the following import statement:"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:42
+msgid ""
+"This imports the type ``Modelica.SIunits.Temperature`` into the current "
+"model.  By default, the name of this imported type will be the last name in "
+"the fully qualified name, *i.e.,* ``Temperature``.  This means that with "
+"this ``import`` statement present, we can simply use the type name "
+"``Temperature`` and that will automatically refer back to "
+"``Modelica.SIunits.Temperature``."
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:49
+msgid "Now let's look at another ``import`` statement:"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:55
+msgid ""
+"The syntax here is a little bit different.  In this case, the type that we "
+"are importing is ``Modelica.SIunits.CoefficientOfHeatTransfer``.  But "
+"instead of creating a local type based on the last name in the fully "
+"qualified name, *i.e.,* ``CoefficientOfHeatTransfer`` we are specifying that"
+" the local type should be ``ConvectionCoefficient``.  In this case, this "
+"allows us to use the name we originally used in our earliest examples. In "
+"this way, we can avoid refactoring any code that used the previous name.  "
+"Another reason for specifying an alternative name (other than the default "
+"one that the Modelica compiler would normally assign) would be to avoid name"
+" collision.  Imagine we wished to import two types from two different "
+"packages, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:73
+msgid ""
+"This would leave us two types both named ``Temperature``.  By defining an "
+"alternative name for the local alias, we could do something like this:"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:0
+msgid "SI Units"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:84
+msgid ""
+"Note that this example imports imperial units just to demonstrate how a "
+"potential name clash might occur.  But it is very bad practice to do this in"
+" practice.  When using Modelica you should always use SI units and never use"
+" any other system of units.  If you want to enter data or display results in"
+" other units, please use the ``displayUnit`` attribute discussed previously "
+"in the section on :ref:`attributes`."
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:92
+msgid ""
+"There is one last form of the ``import`` statement worth discussing which is"
+" the wildcard import statement.  Importing units one unit at a time can be "
+"tedious.  The wildcard import allows us to import **all** types from a given"
+" package at once.  Recall the following earlier example:"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:101
+msgid ""
+"We could replace these type definitions with import statements, *e.g.*,"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:112
+msgid ""
+"However, the more types we bring in, the more import statements we need to "
+"add.  Instead, we could write our model as follows:"
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:119
+msgid ""
+"Note the highlighted ``import`` statement.  This single (wildcard) import "
+"statement imports all definitions from ``Modelica.SIunits`` into the current"
+" model.  With wildcard imports, there is no option to \"rename\" the types."
+"  They will have exactly the name locally as they have in the named package."
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:125
+msgid ""
+"Before using wildcard imports, be sure to read :ref:`this caveat <wildcards-"
+"harmful>`."
+msgstr ""
+
+#: ../../source/components/packages/nimport.rst:128
+msgid ""
+"In this chapter, we've seen how ``import`` statements can be used to import "
+"types from other packages.  As it turns out, ``import`` statements are not "
+"always that useful.  When models are being developed within a graphical "
+"modeling environment, tools generally use the least ambiguous and most "
+"explicit method for reference types: using fully qualified names.  After "
+"all, when using a graphical tool the length of the name is not an issue "
+"because it doesn't need to be typed.  This also avoids issues with name "
+"lookup, naming conflicts, etc."
+msgstr ""

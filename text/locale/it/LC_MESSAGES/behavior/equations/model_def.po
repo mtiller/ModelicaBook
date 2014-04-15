@@ -1,0 +1,111 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/equations/model_def.rst:4
+msgid "Model Definition"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:6
+msgid ""
+"A ``model`` definition is the most generic type of definition in Modelica.  "
+"Later in the book (and even in this chapter), we'll be introducing other "
+"types of definitions (*e.g.,* ``record`` definitions) that share the same "
+"syntax as a ``model`` definition, but include some restrictions on what the "
+"definition is allowed to contain."
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:13
+msgid "Syntax of a Model Definition"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:17
+msgid ""
+"As we saw throughout this chapter, a model definition starts with the "
+"``model`` keyword and is followed by a model name (and optionally a model "
+"description).  The name of the model must start with a letter and can be "
+"followed by any collection of letters, numbers or underscores (``_``)."
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:0
+msgid "Naming conventions"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:27
+msgid ""
+"Although not strictly required by the language.  It is a convention that "
+"**model names start with an upper case letter**.  Most model developers use "
+"the so-called \"camel case\" convention where the first letter of each word "
+"in the model name is upper case."
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:32
+msgid ""
+"The model definition can contain variables and equations (to be discussed "
+"shortly).  The end of the model is indicated by the presence of the ``end`` "
+"keyword followed by a repetition of the model name. Any text appearing after"
+" the sequence ``//`` and until the end of the line or between the delimiters"
+" ``/*`` and ``*/`` is considered a comment."
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:39
+msgid "In summary, a model definition has the following general form:"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:52
+msgid "Inheritance"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:57
+msgid ""
+"As we saw in the section on :ref:`avoiding-repetition`, we can reuse code "
+"from other models by adding an ``extends`` clause to the model.  It is worth"
+" noting that a model definition can include multiple ``extends`` clauses."
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:62
+msgid ""
+"Each ``extends`` clause must include the name of the model being extended "
+"from and can be optionally followed by modifications that are applied to the"
+" contents of the model being extended from.  In the case of a model "
+"definition that inherits from other model definitions, you can think of the "
+"general syntax as looking something like this:"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:78
+msgid ""
+"By convention, ``extends`` clauses are normally listed at the very top of "
+"the model definition, before any variables."
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:81
+msgid ""
+"In later chapters, we will show how this same syntax can be used to define "
+"other entities besides models.  But for now, we will focus primarily on "
+"models"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:15
+msgid "model"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:23
+msgid "camel case"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:54
+msgid "inheritance"
+msgstr ""
+
+#: ../../source/behavior/equations/model_def.rst:55
+msgid "extends"
+msgstr ""

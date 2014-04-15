@@ -1,0 +1,233 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/components/chem_comps.rst:1
+msgid "o.. _chem-components:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:4
+msgid "Chemical Components"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:6
+msgid ""
+"For our last example of component oriented modeling, we'll return to the "
+":ref:`chemical-system` we discussed in the chapter on :ref:`vectors-and-"
+"arrays`.  However, this time we will create component models for the various"
+" effects and show how connections in Modelica automatically ensure "
+"conservation of species."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:13
+msgid "Species"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:17
+msgid ""
+"The species we will be dealing with in this example are defined by the "
+"following ``enumeration``:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:23
+msgid ""
+"Note that this definition exists within a package called ``ABX``. This "
+"indicates that the component models are designed to work with this three "
+"species system involving ``A``, ``B`` and ``X``."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:28
+msgid "``Mixture``"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:30
+msgid ""
+"Also contained in the ``ABX`` package is the following ``connector`` "
+"definition (which can be found in the ``Interfaces`` sub-package):"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:36
+msgid ""
+"Here we see that our ``Mixture`` connector uses concentrations as the across"
+" variables and a concentration rate as the flow variable. Although the "
+"``flow`` variable in this case is not strictly the flow of a conserved "
+"quantity, it will suffice in this example since all reactions are contained "
+"within the same volume."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:42
+msgid ""
+"Note that both ``C`` and ``R`` in this connector are arrays where the "
+"subscript is given by an ``enumeration`` type.  We saw earlier how :ref"
+":`array-enum-dim` can be used in this way."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:47
+msgid "``Solution``"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:49
+msgid ""
+"Our first component model is used to track the concentration of the various "
+"chemical species within a control volume.  As alluded to earlier, since all "
+"reactions occur within the same volume, we don't need to actually specify "
+"the size of the control volume."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:54
+msgid ""
+"The ``Solution`` model is quite simple.  Like the ``RegionalPopulation`` "
+"model discussed :ref:`earlier in this chapter <population-components>`, the "
+"rate of change of the across variable associated with its sole connector is "
+"equal to the ``flow`` variable on that same connector:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:64
+msgid "Reactions"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:67
+msgid "``Reaction``"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:69
+msgid ""
+"As we saw previously, this system has three reactions.  Each of the specific"
+" reactions we'll examine extend from the following ``partial`` model:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:76
+msgid ""
+"We see that each reaction has a reaction coefficient, ``k``, and a "
+"``Mixture`` connector, ``mixture``, that ultimately connects it to the "
+"``Solution`` where the reaction is to take place.  The internal vector "
+"variables ``consumed`` and ``produced`` play a role that is similar to the "
+"``decline`` and ``growth`` variables in the ``SinkOrSource`` :ref:`discussed"
+" earlier in this chapter <reproduction-component>` (*i.e.,* they allow us to"
+" write contributions from individual reactions using an intuitive "
+"terminology)."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:87
+msgid "``A+B->X``"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:89
+msgid ""
+"The first complete reaction model we will consider is the one that turns one"
+" molecule of ``A`` and one molecule of ``B`` into one molecule of ``X``.  "
+"Using the ``Reaction`` model, we can model this reaction as follows:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:108
+msgid ""
+"The first thing to note about this model is that it is composed of non-"
+"alphanumeric characters.  Specifically, the name of this model contains "
+"``+``, ``-`` and ``>``.  This is permitted in Modelica **as long as the name"
+" is quoted using single quote characters**.  The rate of the reaction, "
+"``R``, is used in conjunction with the ``consumed`` and ``produced`` "
+"variables inherited from the ``Reaction`` model to create equations that "
+"clearly describe both the reactants and the products in this reaction."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:118
+msgid "``A+B<-X``"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:120
+msgid ""
+"The next reaction we will consider is one that takes one molecule of ``X`` "
+"and transforms it (back) into one molecule of ``A`` and one molecule of "
+"``B``.  This is the reverse of the previous reaction.  The Modelica code for"
+" this reaction would be:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:137
+msgid ""
+"Again, the equations convey clearly which species are reactants (*i.e.,* are"
+" consumed in the reaction) and which are the products (*i.e.,* those species"
+" that are produced in the reaction)."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:142
+msgid "``X+B->R+S``"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:144
+msgid ""
+"Finally, our last reaction converts molecules of ``X`` and ``B`` into "
+"molecules of ``R`` and ``S``:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:159
+msgid ""
+"We do not track the concentration of the ``R`` and ``S`` species since they "
+"are simply byproducts and do not participate in any other reactions.  This "
+"model follows the same familiar pattern as before with the exception that "
+"the ``A`` species is not involved."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:165
+msgid "System"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:167
+msgid ""
+"We can combine the ``Solution`` model along with the various reaction models"
+" as follows:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:173
+msgid ""
+"Note how modifications to the ``solution`` component are used to set the "
+"initial concentration of species within the ``solution`` component.  Also, "
+"the reaction coefficients are specified via modifications to each of the "
+"reaction components.  Finally, each of the reaction components is attached "
+"to the ``solution.mixture`` connector."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:180
+msgid ""
+"Simulating this system for 10 seconds yields the following concentration "
+"trajectories:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:185
+msgid "#.. plot:: ../plots/ABX.py #   :include-source: no"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:189
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:191
+msgid ""
+"From our earlier discussion of this chemical system, you may recall that the"
+" resulting system of equations was:"
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:202
+msgid ""
+"Each equation represents the accumulation of a particular species and each "
+"term on the right hand side of those equations is computing the net flow of "
+"that particular species into the control volume. Constructing this system by"
+" hand for even a relatively small number of participating species is rife "
+"with opportunities to introduce errors. By using a component oriented "
+"approach instead, we never had to assemble such a system of equations.  As a"
+" result, these equations were generated automatically.  By automating this "
+"process, we can avoid many potential errors and the time required to "
+"identify and fix them."
+msgstr ""
+
+#: ../../source/components/components/chem_comps.rst:15
+msgid "enumeration"
+msgstr ""

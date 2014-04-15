@@ -1,0 +1,515 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/architectures/thermal_control.rst:4
+msgid "Thermal Control"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:6
+msgid ""
+"In this chapter, we'll consider another system that includes a plant, "
+"controller, sensor and actuator.  The application will be thermal control of"
+" a three zone house.  The plant will be the house itself, sensor will be a "
+"temperature sense and the actuator will be the furnace in the house.  Using "
+"these models, we will explore a few different control strategies."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:13
+msgid ""
+"We'll also follow the architecture driven approach to building the system "
+"that we followed in the previous section.  However, we'll start using one "
+"set of interfaces and then, after discussing their limitations, restart "
+"taking a different approach that will provide us with greater flexibility."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:22
+msgid "Initial Approach"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:25
+msgid "Architecture"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:27
+msgid "Let's start with the following architecture:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:34
+msgid ""
+"Here we see the same basic pieces was saw in the previous section, a plant "
+"model, a sensor, a controller and an actuator.  In fact, this is a pretty "
+"typical architecture.  On some cases, people may break down the plant model "
+"into a few subsystems and/or include multiple controllers and control loops."
+"  But many closed loop system control problems have a similar structure."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:41
+msgid ""
+"What tends to change from application are the specific signals exchanged "
+"between these parts.  In this case, we can see from the architecture "
+"schematic that our interface definitions are such:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:45
+msgid ""
+"The actuator receives a commanded temperature and then injects heat through "
+"a thermal connection to the plant"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:48
+msgid ""
+"The sensor model also has a thermal connector (to the plant) and an output "
+"signal containing the measured temperature."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:51
+msgid ""
+"The plant has two thermal connections.  One represents where the furnace "
+"heat is added to the system and the other is where the sensor is located."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:55
+msgid ""
+"The controller takes the measured temperature (from the sensor) as an input "
+"and outputs a commanded heat output (to the actuator)"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:59
+msgid "The Modelica code for this base system looks like this:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:65
+msgid "Initial Implementations"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:68
+msgid "Plant"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:70
+msgid "Our plant model looks like this:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:77
+msgid ""
+"Here we can see that the zone where furnace heat is added is separated from "
+"the zone where the temperature is measured by a third zone.  Our furnace "
+"model is a simple heat source:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:86
+msgid ""
+"This actuator takes a commanded heat level as an input and then injects that"
+" amount of heat into the system."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:89
+msgid "The sensor is similarly simple:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:96
+msgid ""
+"This sensor doesn't introduce any artifact.  Instead, it provides the exact "
+"temperature as a continuous signal."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:99
+msgid "We will use the following PI controller to control the temperature:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:107
+msgid "Initial Results"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:109
+msgid ""
+"Populating our architecture with these implementations, our model now looks "
+"like this:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:117
+msgid ""
+"Note how the icons for the various subsystems have changed.  This is because"
+" when we perform a ``redeclare``, the icon for the new type associated with "
+"that subsystem is used.  The Modelica code for this system is:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:125
+msgid "If we simulate this system, we get the following results:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:130
+msgid ""
+"As we can see, this approach works very well.  The furnace heat required to "
+"achieve this degree of control looks like this:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:137
+msgid "Bang Bang Control"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:139
+msgid ""
+"So far, this approach seems like it has been quite successful.  We have a "
+"nice architecture that we can use to consider different actuators, sensors, "
+"controllers or even plant models.  The control system we've developed seems "
+"to do a fairly good job of controlling our plant."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:145
+msgid ""
+"But one thing worth noting is that the furnace heat required in this case is"
+" continuous.  However, home heating systems do not typically use this type "
+"of control strategy.  Instead, they tend to use something called \"bang-"
+"bang\" control where the furnace is either \"off\" or \"on\"."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:151
+msgid ""
+"We have this flexible architecture, so perhaps to address this situation, we"
+" should create an implementation of our controller and actuator models where"
+" the controller command is a boolean indicating whether the furnace should "
+"be on or off.  However, if we start this process, we quickly run into the "
+"following problem:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:162
+msgid ""
+"Note that the output from our controller is ``Boolean`` value but the "
+"commanded ``heat`` signal from our ``ControlSystem`` interface requires a "
+"``Real`` value.  We have the same problem on the actuator side:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:171
+msgid ""
+"The interface supplies an actuator that is a ``Real`` value but again we see"
+" that if our furnace expects an \"on\" or \"off\" command, we have a "
+"mismatch."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:175
+msgid ""
+"So the question then becomes, **how can we handle situations where choosing "
+"different subsystems requires us to have different interfaces**?"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:182
+msgid "Expandable Approach"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:187
+msgid ""
+"The solution to this problem is ``expandable`` connector definitions. With "
+"this approach, our subsystem interface would be the same regardless of "
+"whether the control strategy generates a ``Boolean`` or ``Real``.  What "
+"changes is the contents of the connector instances."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:192
+msgid ""
+"To understand how these ``expandable`` connectors work, we'll reformulate "
+"our architecture to include ``expandable`` connectors and then see how these"
+" can be used for both continuous and \"bang-bang\" approaches."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:198
+msgid "Expandable Connectors"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:200
+msgid ""
+"The key feature that allows us to make more flexible architectures is the "
+"``expandable connector``.  For example, previously we defined the "
+"``Actuator`` interface as:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:207
+msgid ""
+"This interface contains two connectors, the ``heat`` connector and the "
+"``furnace`` connector.  The ``furnace`` connector is a thermal connector "
+"that allows the furnace to interact thermally with the plant.  The ``heat`` "
+"connector is a ``Real`` valued input signal that comes from the controller "
+"and specifies the desired heat output level. The fact that this is a "
+"``Real`` valued signal was the problem when we wanted to switch to a type of"
+" control that required a ``Boolean`` signal.  To address this, we'll use the"
+" following interface definition for our actuators:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:220
+msgid ""
+"Here we see the ``furnace`` connector is still present.  But the ``heat`` "
+"connector is gone.  Instead, it has been replaced by a new connector "
+"instance, ``bus``, of type ``ExpandableBus``.  The connector definition for "
+"``ExpandableBus`` is:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:229
+msgid ""
+"In other words, **it is empty**.  But what is significant is the presence of"
+" the ``expandable`` qualifier.  If a given bus is required to always have "
+"certain signals, they should be listed within the connector definition.  But"
+" the fact that there are no variables or sub-connectors listed in the "
+"``ExpandableBus`` class means there is no minimum requirement for "
+"information to be carried on the bus.  But the bus can be **expanded** to "
+"include additional information."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:237
+msgid ""
+"Of course, we could use inheritance to add new signals.  But that introduces"
+" a new type.  The types of connectors are fixed by the type used in the "
+"interface definition.  So creating richer connectors via inheritance doesn't"
+" really help."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:244
+msgid ""
+"Note that there is no formal definition of a \"bus\" in Modelica.  The term "
+"is often used in such contexts to connote a connector that is carrying "
+"multiple pieces of information."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:248
+msgid ""
+"Expandable connectors work in a special way.  The signals on an expandable "
+"bus **are determined by the connections themselves**.  By connecting "
+"something to the expandable bus, a signal is implicitly added to that "
+"connector.  Then the Modelica compiler looks at all the connectors in a "
+"connection set and expands each one so that they match.  We'll go into more "
+"details about this process once we get to the point where we have some "
+"implementation models to discuss."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:256
+msgid ""
+"The interface for the plant model is unaffected by the use of ``expandable``"
+" connectors, but the interfaces for the sensor and controller are as "
+"follows:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:266
+msgid ""
+"Note how simple the controller interface has become.  This is because with "
+"an ``expandable`` connector, we can put the temperature measurement received"
+" from the sensor and the heat command sent to the actuator **on the same "
+"bus**.  As such, we only need one connector.  A developer may still choose "
+"to use multiple buses simply to organize signals, to make them more "
+"representative of the physical partitioning or to avoid confusion.  Here we "
+"will use a single connector simply to demonstrate that this is now possible."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:275
+msgid ""
+"Using expandable connectors, we can create the following revised "
+"architecture:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:284
+msgid "Expandable Implementations"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:286
+msgid ""
+"With this more flexible architecture, let's first recreate our original "
+"configuration with the continuous control system:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:294
+msgid ""
+"If we plot the results from this system, we get the following response:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:300
+msgid ""
+"Note that the measured temperature corresponds to the signal "
+"``controller.bus.temp`` where ``bus`` is an instance of the expandable "
+"connector.  Further recall that the ``ExpandableBus`` definition **didn't "
+"contain a signal called** ``temperature``.  So the question is, how did it "
+"get on the connector.  The answer lies in the implementation of the sensor "
+"model.  The diagram for the sensor model looks like this:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:313
+msgid "The corresponding Modelica code is:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:320
+msgid "Of particular importance is the highlighted line."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:322
+msgid ""
+"In the diagram, we can see that the output signal from the temperature "
+"sensor component is connected to the bus.  But when we look at the "
+"``connect`` statement, it is more than just connected to the bus.  It is "
+"connected to something named ``temperature`` inside the bus.  This "
+"``temperature`` connector doesn't exist in the definition of "
+"``ExpandableBus``. Instead, **it is created by the** ``connect`` **statement"
+" itself**!  This is precisely what the ``expandable`` qualifier allows."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:333
+msgid ""
+"In general, we don't want all connectors to be ``expandable``.  In cases "
+"where we know *a priori* the names and types of all signals, it is better to"
+" list them explicitly.  This allows the Modelica compiler to make several "
+"important checks to ensure the correctness of the model.  It is worth noting"
+" that by adding the ``expandable`` qualifier on a connector, the risk of "
+"accidentally creating an unintended signal (*e.g.,* as a result of a typing "
+"error) becomes a possibility that would otherwise be caught by the compiler."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:343
+msgid "Reconfiguration"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:345
+msgid ""
+"Now that we've shown that we can use the expandable approach to model the "
+"continuous control version of our system, let's return our attention to the "
+"\"bang-bang\" version."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:349
+msgid ""
+"We've already seen the temperature sensor subsystem configured to work with "
+"the expandable connector.  What remains is the controller and actuator "
+"models.  The actuator model diagram looks like this:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:358
+msgid ""
+"Again, looking at the Modelica code is important to see how the signals on "
+"the ``bus`` connector are referenced:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:366
+msgid ""
+"Again, note the emphasized line.  It references something called "
+"``heat_command`` on the ``bus`` connector.  Again, that signal doesn't exist"
+" in the definition of ``ExpandableBus``, but it is implicitly created simply"
+" because it is referenced in the highlighted ``connect`` statement."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:372
+msgid ""
+"From the sensor model, we see that the measured temperature is added to the "
+"``bus`` connector as a ``Real`` signal named ``temperature``. From the "
+"actuator model, we see that the command expected by the actuator from the "
+"controller is a ``Boolean`` signal named ``heat_command``.  As such, we "
+"should expect to see both of these signals used by the controller model.  "
+"The diagram for the controller looks like this:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:385
+msgid ""
+"But the diagram doesn't include sufficient detail to know the precise names "
+"of the signals being referenced on the ``bus`` connector.  For that, we need"
+" to look at the actual source code:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:394
+msgid ""
+"Again, note the highlighted lines.  Not only do these ``connect`` statements"
+" implicitly add the ``heat_command`` and ``temperature`` signals to the "
+"``bus`` connector, **those names match** the names that the sensor and "
+"actuator models expect."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:399
+msgid ""
+"Pulling all of these subsystems together, we get the following diagram for "
+"our system:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:407
+msgid "The source code for our system model is quite simple:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:415
+msgid ""
+"However, there is still one remaining issue with these models and it can be "
+"seen more clearly if we look at the duty cycle of the furnace:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:421
+msgid ""
+"This is exactly the same issue we demonstrated in the previous section on "
+":ref:`hysteresis`.  It is precisely the fact that our control strategy lacks"
+" any hysteresis that we see the furnace constantly turning on and off.  If "
+"we add hysteresis, our controller model becomes:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:432
+msgid ""
+"Nothing else has changed.  We will use the same sensor and actuator models "
+"and we still use the same bus signals since this is still a bang-bang "
+"controller.  So the only change to our system level model (compared to the "
+"``OnOffVariant`` model) is the use of a different controller model.  As we "
+"can see, these configuration management features in Modelica do a nice job "
+"of conveying that in our system level model:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:443
+msgid "Using hysteresis control, our simulation results look like this:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:448
+msgid ""
+"But the most important difference is the fact that the hysteresis doesn't "
+"lead to the kind of chattering we saw in our previous bang-bang controller:"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:456
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:458
+msgid ""
+"This is the second example of how we can use the configuration management "
+"features in Modelica to take an architecturally based approach to building "
+"system models.  This architectural approach is very useful when there are "
+"many variations of the same architecture that require analysis.  Using the "
+"``redeclare`` feature, it is possible to easily substitute alternative "
+"designs for each subsystem or to consider more or less detail in any given "
+"subsystem as necessary for any given engineering analysis."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:467
+msgid ""
+"In this particular example, we saw how an ``expandable`` connector can "
+"provide greater flexibility than a standard connector.  However, it also "
+"comes with some risk because the type checking normally done by the Modelica"
+" compiler is less rigorous."
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:184
+msgid "expandable connectors"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:185
+msgid "connectors"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:185
+#: ../../source/components/architectures/thermal_control.rst:331
+msgid "expandable"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:242
+msgid "bus"
+msgstr ""
+
+#: ../../source/components/architectures/thermal_control.rst:331
+msgid "caveats"
+msgstr ""

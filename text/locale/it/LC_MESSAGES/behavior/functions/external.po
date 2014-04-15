@@ -1,0 +1,390 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/functions/external.rst:4
+msgid "External Functions"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:7
+msgid "``external``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:11
+msgid ""
+"As we saw with the ``InterpolateExternalVector`` function in our "
+":ref:`interpolation` related examples, it is possible to call functions not "
+"written in Modelica.  Typically, such functions are written in C or Fortran."
+"  A function implemented outside Modelica does not contain an ``algorithm`` "
+"section.  Instead, it should include an ``external`` statement that provides"
+" information about the external function and how to pass information to and "
+"from the function."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:19
+msgid ""
+"The minimal requirement for an externally implemented function is to include"
+" just the ``external`` keyword, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:26
+msgid ""
+"In this case, it is assumed that the function is implemented in C, that the "
+"name of the function matches the name of the Modelica \"wrapper\" function "
+"and that the arguments are passed in the same order as the ``input`` "
+"arguments to the Modelica function."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:31
+msgid ""
+"Let's consider a slightly more complex case like the one found in our "
+"``VectorTable`` type shown in the :ref:`interpolation` examples:"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:38
+msgid ""
+"Here we see that the implementation language of the function has been "
+"explicitly specified as ``\"C\"``.  There are two other possible values for "
+"the implementation language, ``\"FORTRAN 77\"`` and ``\"builtin\"``. The use"
+" of ``\"builtin\"`` is mainly of interest to Modelica tool vendors."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:44
+msgid ""
+"We also see that the name of the function has been explicitly specified.  "
+"The portion of the ``external`` statement that reads "
+"``destroyVectorTable(table)`` specifies what data should be passed to the "
+"external function and in what order."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:49
+msgid ""
+"In some cases, it may be necessary to specify some of the values passed to "
+"the external function and to specify how the results of the function call "
+"map to the output variables.  We can see this kind of information in the "
+"following ``function``:"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:58
+msgid ""
+"Here, the external function needs to know the size of the ``ybar`` array "
+"since that information is not passed directly to the function. It also "
+"indicates that the result from ``createVectorTable`` should be assigned to "
+"the ``output`` variable ``table``.  It might seem obvious that the return "
+"value of the C function should be treated as the return value from the "
+"Modelica function, but there are cases where the ``output`` variables should"
+" be passed as arguments to the function. As we will see shortly, in such "
+"cases pointers are used so that the external function can assign values to "
+"these variables."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:69
+msgid "Data Mapping"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:72
+#: ../../source/behavior/functions/external.rst:104
+msgid "C"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:74
+msgid ""
+"The following table shows how Modelica types map into native C types when "
+"passing data **into** external functions."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:78
+#: ../../source/behavior/functions/external.rst:104
+#: ../../source/behavior/functions/external.rst:125
+msgid "Modelica"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:78
+msgid "C (input arguments)"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:78
+msgid "C (output arguments)"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:80
+#: ../../source/behavior/functions/external.rst:106
+#: ../../source/behavior/functions/external.rst:127
+msgid "``Real``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:80
+#: ../../source/behavior/functions/external.rst:106
+msgid "``double``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:80
+msgid "``double *``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:81
+#: ../../source/behavior/functions/external.rst:107
+#: ../../source/behavior/functions/external.rst:128
+msgid "``Integer``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:81
+#: ../../source/behavior/functions/external.rst:82
+#: ../../source/behavior/functions/external.rst:88
+#: ../../source/behavior/functions/external.rst:107
+#: ../../source/behavior/functions/external.rst:108
+#: ../../source/behavior/functions/external.rst:114
+msgid "``int``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:81
+#: ../../source/behavior/functions/external.rst:82
+#: ../../source/behavior/functions/external.rst:88
+msgid "``int *``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:82
+#: ../../source/behavior/functions/external.rst:108
+#: ../../source/behavior/functions/external.rst:129
+msgid "``Boolean``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:83
+#: ../../source/behavior/functions/external.rst:109
+msgid "``String``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:83
+#: ../../source/behavior/functions/external.rst:109
+msgid "``const char *``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:83
+msgid "``const char **``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:84
+#: ../../source/behavior/functions/external.rst:110
+#: ../../source/behavior/functions/external.rst:130
+msgid "``T[d1]``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:84
+#: ../../source/behavior/functions/external.rst:84
+msgid "``T' *``, ``size_t d1``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:85
+#: ../../source/behavior/functions/external.rst:111
+#: ../../source/behavior/functions/external.rst:131
+msgid "``T[d1,d2]``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:85
+#: ../../source/behavior/functions/external.rst:85
+#: ../../source/behavior/functions/external.rst:111
+msgid "``T' *``, ``size_t d1``, ``size_t d2``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:86
+#: ../../source/behavior/functions/external.rst:112
+#: ../../source/behavior/functions/external.rst:132
+msgid "``T[d1,...,dn]``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:86
+#: ../../source/behavior/functions/external.rst:86
+#: ../../source/behavior/functions/external.rst:112
+msgid "``T' *``, ``size_t d1``, ..., ``size_t dn``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:87
+#: ../../source/behavior/functions/external.rst:113
+#: ../../source/behavior/functions/external.rst:133
+msgid "``size(...)``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:87
+#: ../../source/behavior/functions/external.rst:113
+msgid "``size_t``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:87
+msgid "N/A"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:88
+#: ../../source/behavior/functions/external.rst:114
+#: ../../source/behavior/functions/external.rst:134
+msgid "``enumeration``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:89
+#: ../../source/behavior/functions/external.rst:115
+msgid "``record``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:89
+#: ../../source/behavior/functions/external.rst:89
+#: ../../source/behavior/functions/external.rst:115
+msgid "``struct *``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:92
+msgid ""
+"A few additional comments about this table.  First, it is assumed that all "
+"strings are null (``\\0``) terminated.  Also, in the case of arrays the type"
+" ``T'`` indicate the C type that the Modelica type ``T`` would be mapped to "
+"(using this same table).  Finally, a ``record`` is mapped to a ``struct`` in"
+" C where the members of the C structure correspond in order to the members "
+"of the Modelica ``record``.  Types of members in ``records`` are mapped "
+"using the second column of this table (*i.e.,* as if they were input "
+"arguments)."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:101
+msgid "For data returned by a C function, the following mapping applies:"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:110
+msgid "``T' *``, ``size_t``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:119
+#: ../../source/behavior/functions/external.rst:125
+msgid "Fortran"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:121
+msgid ""
+"If you need to work with Fortran functions or subroutines, the following "
+"type mappings apply:"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:127
+msgid "``DOUBLE PRECISION``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:128
+#: ../../source/behavior/functions/external.rst:133
+#: ../../source/behavior/functions/external.rst:134
+msgid "``INTEGER``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:129
+msgid "``LOGICAL``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:130
+msgid "``T'``, ``INTEGER``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:131
+msgid "``T'``, ``INTEGER d1``, ``INTEGER d2``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:132
+msgid "``T'``, ``INTEGER d1``, ..., ``INTEGER dn``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:137
+msgid ""
+"Two important things to note about this table.  First, there is no mapping "
+"for strings or records.  Second, since Fortran uses pass by reference "
+"semantics, all variables passed into and out of these functions are assumed "
+"to be pointers.  For this reason, there is no distinction made whether the "
+"variable is an input or an output of the Modelica function."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:145
+msgid "Special Functions"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:147
+msgid ""
+"There are a number of functions that can be called **from** external "
+"functions to interact with the Modelica runtime.  For each function, the "
+"name of the function, its prototype and an explanation of the functions "
+"purpose are described."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:153
+msgid "``ModelicaVFormatMessage``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:159
+msgid ""
+"Output the message under the same format control as the C-function "
+"``vprintf``."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:165
+msgid "``ModelicaError``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:171
+msgid ""
+"Output the error message string (no format control). This function never "
+"returns to the calling function, but handles the error similarly to an "
+"assert in the Modelica code."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:176
+msgid "``ModelicaFormatError``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:182
+msgid ""
+"Output the error message under the same format control as the C-function "
+"``printf``. This function never returns to the calling function, but handles"
+" the error similarly to an assert in the Modelica code."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:190
+msgid "``ModelicaVFormatError``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:196
+msgid ""
+"Output the error message under the same format control as the C-function "
+"``vprintf``. This function never returns to the calling function, but "
+"handles the error similarly to an assert in the Modelica code."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:204
+msgid "``ModelicaAllocateString``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:210
+msgid ""
+"Allocate memory for a Modelica string which is used as return argument of an"
+" external Modelica function. Note, that the storage for string arrays (= "
+"pointer to string array) is still provided by the calling program, as for "
+"any other array. If an error occurs, this function does not return, but "
+"calls :ref:`modelica-error`."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:217
+msgid "``ModelicaAllocateStringWithErrorReturn``"
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:223
+msgid ""
+"Same as :ref:`modelica-allocate-string`, except that in case of error, the "
+"function returns 0. This allows the external function to close files and "
+"free other open resources in case of error. After cleaning up resources, use"
+" :ref:`modelica-error` or :ref:`modelica-format-error` to signal the error."
+msgstr ""
+
+#: ../../source/behavior/functions/external.rst:9
+msgid "external"
+msgstr ""

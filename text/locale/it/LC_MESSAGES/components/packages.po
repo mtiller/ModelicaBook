@@ -1,0 +1,51 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/packages.rst:4
+msgid "Packages"
+msgstr ""
+
+#: ../../source/components/packages.rst:6
+msgid ""
+"So far, we've presented all of the models without any real discussion of how"
+" to properly organize them.  In some cases, like the "
+"``NewtonCoolingWithTypes`` example in our discussion on :ref:`adding "
+"physical type information <physical-types>`, it is awkward to keep "
+"everything within a single model.  There are many cases where the same "
+"information gets repeated in multiple models and this makes maintaining "
+"those models very difficult."
+msgstr ""
+
+#: ../../source/components/packages.rst:14
+msgid ""
+"The good news is that many of these previous examples can be greatly "
+"improved by leveraging the ``package`` system in Modelica.  A ``package`` is"
+" conceptually like a directory.  It holds a collection of Modelica entities."
+"  These entities can then be referenced or imported to avoid duplication."
+msgstr ""
+
+#: ../../source/components/packages.rst:20
+msgid ""
+"This chapter provides several examples that demonstrate how to use the "
+"package features in Modelica.  This chapter will conclude with a discussion "
+"of the :ref:`msl`, which contains an enormous amount of reusable content "
+"that is available to all Modelica tools."
+msgstr ""
+
+#: ../../source/components/packages.rst:26
+msgid "Examples"
+msgstr ""
+
+#: ../../source/components/packages.rst:36
+msgid "Review"
+msgstr ""

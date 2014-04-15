@@ -1,0 +1,85 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/packages/importing.rst:4
+msgid "Importing"
+msgstr ""
+
+#: ../../source/components/packages/importing.rst:6
+msgid ""
+"As we saw previously, there are basically three forms of importing. In all "
+"cases, the ``import`` statement creates an \"alias\" within the definition "
+"that refers to a type defined elsewhere."
+msgstr ""
+
+#: ../../source/components/packages/importing.rst:10
+msgid ""
+"The first form simply imports a definition by its fully qualified name, "
+"e.g.:"
+msgstr ""
+
+#: ../../source/components/packages/importing.rst:17
+msgid ""
+"The result of such an import is that references to the name ``Temperature`` "
+"are mapped to the fully qualified name ``Modelica.SIunits.Temperature``.  In"
+" other words, the alias introduced by the ``import`` statement is "
+"``Temperature`` and it maps to the definition found at "
+"``Modelica.SIunits.Temperature``.  With this form of import, the name of the"
+" alias always matches the last element in the name of what is being imported"
+" (*e.g.,* ``Temperature``)."
+msgstr ""
+
+#: ../../source/components/packages/importing.rst:26
+msgid ""
+"In some cases, we want the alias that is introduced to be different from the"
+" last element of the imported name.  In this case, we can explicitly "
+"introduce an alternative name for the alias, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/packages/importing.rst:34
+msgid ""
+"After such an import, we can use the alias ``DegK`` to refer to "
+"``Modelica.SIunits.Temperature``.  Providing alternative names avoids name "
+"collisions or simply makes the model more readable."
+msgstr ""
+
+#: ../../source/components/packages/importing.rst:38
+msgid ""
+"Finally, it is possible to import all definitions within a package into the "
+"current scope.  This is done with a wildcard import.  For example, to import"
+" all the definitions in the ``Modelica.SIunits`` package, we would use the "
+"following ``import`` statement:"
+msgstr ""
+
+#: ../../source/components/packages/importing.rst:47
+msgid ""
+"Such an import would create as many aliases as there are definitions in "
+"``Modelica.SIunits``.  The only option available is for each alias to be "
+"named the same as the definition in the imported package (*i.e.,* it isn't "
+"possible to assign an alternative name for the alias)."
+msgstr ""
+
+#: ../../source/components/packages/importing.rst:0
+msgid "Wildcards considered harmful"
+msgstr ""
+
+#: ../../source/components/packages/importing.rst:57
+msgid ""
+"These types of wildcard imports are dangerous because, as mentioned, there "
+"is no option to rename a type.  As a consequence, two or more wildcard "
+"imports in the same model could create name clashes.  Furthermore, explicit "
+"imports (or fully qualified types) make it very easy to backtrack and locate"
+" the definition associated with a given type.  Wildcards make this very "
+"difficult because it is not clear what types are imported from what "
+"packages."
+msgstr ""

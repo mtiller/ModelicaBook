@@ -1,0 +1,73 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/architectures.rst:4
+msgid "Architectures"
+msgstr ""
+
+#: ../../source/components/architectures.rst:6
+msgid ""
+"At the start of this book, we looked at how to write equations and transform"
+" those into simulations.  That, by itself, is very interesting because we "
+"were able to avoid having to worry about how we would solve the resulting "
+"linear and non-linear systems of equations or how to integrate the resulting"
+" differential equations.  However, writing complex systems in terms of "
+"individual equations does not scale well."
+msgstr ""
+
+#: ../../source/components/architectures.rst:14
+msgid ""
+"So, we then explored the features of Modelica that allow us to create "
+"component models so that we could reuse these equations without having to "
+"take the time to write them out in every context where they would be used.  "
+"Not only did this allow us to compose systems from pre-defined (and "
+"presumably tested) component models, it also allowed us, through the use of "
+"Modelica's standard graphical annotations, to compose and represent systems "
+"graphically."
+msgstr ""
+
+#: ../../source/components/architectures.rst:22
+msgid ""
+"This too has scalability issues because building complex models strictly "
+"from components requires a great deal of dragging, dropping and connecting "
+"of components.  Furthermore, system models can become large and complex "
+"without any kind of hierarchy.  This is yet another limitation to "
+"scalability.  To address this issue, we examined how to define reusable "
+"subsystem models that, instead of containing equations to be reused, "
+"contained reusable assemblies of components and other subsystems.  In this "
+"way, we could drag, drop and connect common assemblies of components into "
+"reusable assemblies.  This minimized the amount of dragging, dropping and "
+"connecting that was required to build complex system models."
+msgstr ""
+
+#: ../../source/components/architectures.rst:34
+msgid ""
+"Each step in this progression has shown how to reduce the amount of tedious,"
+" time consuming and potentially error prone work we need to perform in order"
+" to build system models.  This chapter represents the last step along this "
+"progression.  Here, we will learn about architectures.  Architectures are "
+"models where a collection of subsystems have been **pre-connected** and the "
+"composition of the system is done by simply selecting specific "
+"implementations (models) for each subsystem in our system.  In this way, not"
+" only do we not need to supply equations, we don't even need to drag, drop "
+"and connect components or subsystems.  Instead, we only need to choose the "
+"specific model to use for each particular subsystem."
+msgstr ""
+
+#: ../../source/components/architectures.rst:47
+msgid "Examples"
+msgstr ""
+
+#: ../../source/components/architectures.rst:57
+msgid "Review"
+msgstr ""

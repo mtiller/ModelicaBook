@@ -1,0 +1,137 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/packages/lookup.rst:4
+msgid "Lookup Rules"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:6
+msgid ""
+"Recall the following example from our discussion on :ref:`organizing-"
+"content`:"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:12
+msgid ""
+"When we discussed :ref:`ref-pkg-contents`, the example that was presented "
+"used fully qualified names for all the types it referenced. But the example "
+"above doesn't.  We see, from the ``LotkaVolterra`` model that the ``Wolves``"
+" type is referenced as:"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:21
+msgid "And not as:"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:27
+msgid ""
+"In other words, we didn't use the fully qualified name.  But the "
+"``LotkaVolterra`` model compiles just fine.  So how is it that the Modelica "
+"compiler knows which definition of ``Wolves`` to use?"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:33
+msgid ""
+"The answer involves \"name lookup\" in Modelica.  Name lookup in Modelica "
+"involves searching for the named definition.  Type names in Modelica are "
+"generally qualified (although not necessarily **fully** qualified) names.  "
+"This means they may contain a ``.`` in them, *e.g.,* "
+"``Modelica.SIunits.Voltage``.  In order to locate the matching definition "
+"associated with a name, the Modelica compiler starts by looking for the "
+"**first** name in the qualified name, *e.g.,* ``Modelica``.  It searches for"
+" a matching definition in the following order:"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:42
+msgid "Look for a matching name among builtin types"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:43
+msgid ""
+"Look in the current definition for a nested definition with a matching name "
+"(include inherited definitions)"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:45
+msgid ""
+"Look in the current definition for an imported definition with a matching "
+"name (do not include inherited imports)"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:47
+msgid ""
+"Look in the parent package of the current definition for a nested definition"
+" with a matching name (including inherited definitions)"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:49
+msgid ""
+"Look in the parent package for an imported definition with a matching name "
+"(not including inherited imports)"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:51
+msgid "Look in each successive parent (using the same approach) until either:"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:54
+msgid ""
+"The parent package has the ``encapsulated`` qualifier, in which case the "
+"search terminates."
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:56
+msgid ""
+"There are no more parent packages, in which case you search for a match "
+"among root level packages."
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:59
+msgid ""
+"If the given name cannot be found after searching all these locations, then "
+"the search fails and the type cannot be resolved.  If the search succeeds, "
+"then we've located the definition of the **first name** in the qualified "
+"name.  If the name is not qualified (*i.e.,* it does not have a ``.`` in the"
+" name), then we are done.  However, if it does have other components in the "
+"name, these must be nested definitions contained within the definition "
+"returned by the search.  If nested definitions cannot be found for all "
+"remaining components in a qualified name, then the search fails and the type"
+" cannot be resolved."
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:69
+msgid ""
+"At first, this might sound very complicated.  However, most of the time "
+"these rules are not very important.  The reason is that, as we discussed "
+"previously, most graphical Modelica environments will use fully qualified "
+"names.  Most type names in Modelica code will either reference local "
+"definitions or will be specified with fully qualified names."
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:0
+msgid "Duplicate Names"
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:78
+msgid ""
+"You should always avoid having nested packages with the same name as a top-"
+"level package.  The reason this is a problem is that the lookup rules search"
+" up through the package hierarchy.  As a result, they will find the nested "
+"definition before the root level one.  This means that lookup of fully "
+"qualified names (ones that are referenced relative to the root of the "
+"package tree) will fail because they will find the nested definition first."
+msgstr ""
+
+#: ../../source/components/packages/lookup.rst:31
+msgid "encapsulated"
+msgstr ""

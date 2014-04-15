@@ -1,0 +1,223 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/subsystems/sub_interface.rst:2
+msgid "Subsystem Interface"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:4
+msgid ""
+"The emphasis of this chapter was on how component models could be organized "
+"into reusable subsystems.  As we saw in numerous examples in this chapter, "
+"there is a common pattern that emerges.  Let's review various aspects of "
+"subsystem models to understand this pattern better."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:10
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:15
+msgid ""
+"Generally, parameters for a subsystem should be ``public``.  Normally, all "
+"declarations in any ``model`` or ``block`` definition will be public unless "
+"they come after the ``protected`` keyword.  In such cases, it is still "
+"possible to declare something as public by adding the ``public`` keyword and"
+" placing the declarations after it.  In other words:"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:36
+msgid ""
+"In the examples from this chapter, it was common to see the parameters "
+"either at the start of the definition (where they are ``public`` by default)"
+" or in a collection of declarations explicitly marked ``public``."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:40
+msgid ""
+"Obviously, parameters are made public so that users of the subsystem can "
+"have access to them.  We will see shortly, in our discussions on :ref:`sub-"
+"modifications` and :ref:`propagation`, how the values of these parameters "
+"should be cascaded to lower level components.  But for now, the main point "
+"is to recognize that parameter declarations are part of the subsystem "
+"pattern."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:48
+msgid "Connectors"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:50
+msgid ""
+"In some sense, connectors are what differentiates a subsystem from a system "
+"model.  A system model is something that is complete and ready to simulate "
+"and, as such, has no connectors because it does not expect to be influenced "
+"by anything external.  A subsystem can encapsulate a large hierarchy of "
+"components (and ultimately, equations).  But the fact that it includes "
+"connectors indicates that it is really meant to be used as part of some "
+"larger system.  Furthermore, as we have seen in the examples of this "
+"chapter, because these connectors are meant to be connected to, they should "
+"be ``public``."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:61
+msgid "Hierarchical Connections"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:63
+msgid ""
+"Because subsystems are typically composed exclusively of components or other"
+" subsystems, any physical interaction with that subsystem is usually "
+"redirected to some nested component or subsystem.  We've seen this pattern "
+"many times in this chapter where connectors at the subsystem boundary really"
+" act as \"proxies\" for internal connectors.  A simple example of this can "
+"be seen in the ``GearWithBacklash`` model:"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:74
+msgid ""
+"Note that this ``connect`` statement connects ``flange_a``, a connector "
+"instance that belongs to the subsystem, with ``inertia_a.flange_a``, a "
+"connector instance belonging to the subcomponent ``inertia_a``.  This is a "
+"common pattern in subsystem models and it can be easily recognized because "
+"one of the connectors named in the ``connect`` statement includes a "
+"\"``.``\" and the other one does not.  All the \"internal\" connections that"
+" wire together internal components directly to other internal components "
+"will have a \"``.``\" for both of the named connectors in the ``connect`` "
+"statement, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:90
+msgid "Equation Generation for Hierarchical Connections"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:92
+msgid ""
+"In this book, the point has been made repeatedly (*e.g.,* in our discussion "
+"of :ref:`acausal-connections`) that the sign convention for ``flow`` "
+"variables is such that a positive value for the ``flow`` variable represents"
+" a flow into the component or subsystem.  At the same time, we also pointed "
+"out that :ref:`system-connections` generate equations that sum all the "
+"corresponding ``flow`` variables in the connection set to zero."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:100
+msgid ""
+"But, when dealing with hierarchical subsystem definitions there is a "
+"modification to this rule.  For a subsystem, the sign convention for "
+"``flow`` variables remains intact.  So, a positive value for the ``flow`` "
+"variable on a connector still represents a flow of a conserved quantity into"
+" that component.  And it is still the case that a conservation equation will"
+" be generated for each ``flow`` variable in a connection set.  However, in "
+"that conservation equation, the sign for ``flow`` variables on connectors "
+"belonging to internal components will have the opposite sign as ``flow`` "
+"variables on connectors belonging to the subsystem itself."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:111
+msgid ""
+"To understand the implications of this, let us consider the following two "
+"``connect`` statements from the ``GearWithBacklash`` model:"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:118
+msgid "From these equations, we get the following two connection sets:"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:120
+msgid "**Connection Set #1**: `flange_a`, `inertia_a.flange_a`"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:121
+msgid "**Connection Set #2**: `idealGear.flange_b`, `inertia_b.flange_a`"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:123
+msgid ""
+"In each of these connection sets, there is a ``flow`` variable, ``tau``.  "
+"Using the rules for :ref:`system-connections` described previously, we might"
+" expect the following two equations to be generated for the ``flow`` "
+"variables on these connectors:"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:133
+msgid ""
+"However, in our previous discussion on :ref:`system-connections`, all the "
+"components were at the same hierarchical level (*i.e.,* as "
+"`idealGear.flange_b` and `inertia_b.flange_a` are).  But with subsystem "
+"models, this isn't always the case.  And, as described a moment ago, for "
+"cases where the connections are at different levels, we need to introduce a "
+"sign difference for contributions at different levels.  Taking that into "
+"account, **the actual equations that will be generated** will be:"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:147
+msgid ""
+"Note the minus sign in front of the ``flange_a.tau``.  Remember that "
+"``flange_a`` is meant to be acting as a proxy for ``inertia_a.flange_a``.  "
+"If that is the case, then by changing the sign of ``flange_a.tau``, the "
+"first equation above can be transformed into:"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:157
+msgid ""
+"In other words, by introducing the sign change on ``flange_a.tau``, any "
+"conserved quantity the flows in through ``flange_a`` **also** flows into "
+"``inertia_a.flange_a``, which is exactly what we expect from this kind of "
+"\"proxy\" relationship."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:163
+msgid "Implementation"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:165
+msgid ""
+"A subsystem model is typically just a wrapper around a collection of "
+"components.  As we've discussed already in this section, the parameters and "
+"connectors exposed by the subsystem are ``public`` because that is how users"
+" of the subsystem will interact with it."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:170
+msgid ""
+"The actual internal details of the subsystem represent the implementation of"
+" the subsystem.  This implementation is generally a collection of components"
+" and other subsystems that are connected together with one or more of the "
+"their connectors connected to the subsystem's connectors."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:176
+msgid ""
+"Normally, these implementation details are best hidden from the end user of "
+"the subsystem.  To accomplish this, all non-``parameter`` declarations in a "
+"subsystem are typically marked as ``protected``. There are two main reasons "
+"for doing this.  First, it hides implementation details from the users of "
+"the subsystem model.  This has the effect of simplifying the interface down "
+"to just parameters and connectors and avoids mixing things the user really "
+"needs to know with things that they do not need to know (or even should not "
+"know). Another reason to make the implementation details ``protected`` is to"
+" provide the flexibility to improve or refactor the implementation in the "
+"future.  If users are allowed to reference the implementation details, that "
+"means they will then (perhaps even unintentionally) become **dependent** on "
+"them.  As a result, if they change in the future it will break the end "
+"user's models."
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:12
+msgid "public"
+msgstr ""
+
+#: ../../source/components/subsystems/sub_interface.rst:13
+msgid "protected"
+msgstr ""

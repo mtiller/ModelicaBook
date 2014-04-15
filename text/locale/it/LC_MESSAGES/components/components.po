@@ -1,0 +1,41 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/components.rst:4
+msgid "Components"
+msgstr ""
+
+#: ../../source/components/components.rst:6
+msgid ""
+"When most people think of Modelica, they think of the component-oriented "
+"approach that it enables.  As such, how to build such component models is "
+"probably the single most important topic to cover in this book."
+msgstr ""
+
+#: ../../source/components/components.rst:11
+msgid ""
+"Until now, we've focused primarily on how to describe the mathematical "
+"behavior (both continuous and discrete).  Now it is time to understand how "
+"that behavior can be wrapped up into reusable component models. The fact "
+"that these component models are reusable means that, once written and "
+"tested, the same code can be used over and over.  This kind of reuse saves "
+"development time, avoids errors and simplifies maintenance."
+msgstr ""
+
+#: ../../source/components/components.rst:20
+msgid "Examples"
+msgstr ""
+
+#: ../../source/components/components.rst:35
+msgid "Review"
+msgstr ""

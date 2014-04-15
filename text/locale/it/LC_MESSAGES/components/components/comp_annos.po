@@ -1,0 +1,211 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/components/comp_annos.rst:4
+msgid "Component Model Annotations"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:6
+msgid ""
+"Several of the annotation that appeared in the examples from this chapter "
+"have been explained previously (*e.g.,* in our discussions on :ref"
+":`graphical-annos` and :ref:`subsystem-diagrams`).  Here we'll run through "
+"those annotations that have not yet been explained and discuss their "
+"purpose."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:13
+msgid "``defaultComponentName``"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:17
+#: ../../source/components/components/comp_annos.rst:29
+msgid "**Type: Model Annotation**"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:19
+msgid ""
+"The ``defaultComponentName`` annotation is used within a model definition to"
+" define the default name that an instance of that model should have.  This "
+"is used by graphical tools to assign an initial name to components when they"
+" are dragged into a diagram."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:25
+msgid "``defaultComponentPrefixes``"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:31
+msgid ""
+"Where the ``defaultComponentName`` annotation defines the default name used "
+"when a component is dragged into a diagram, the ``defaultComponentPrefixes``"
+" defines any **qualifiers** that should automatically be included in the "
+"declaration of the component.  The value of this annotation should be a "
+"**string** that is a space separated list of the qualifiers."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:38
+msgid ""
+"When a component is instantiated, graphical tools will find the definition "
+"associated with that component and look to see if a value has been provided "
+"for the ``defaultComponentPrefixes`` annotation.  If so, it will extract the"
+" qualifiers listed in that string and immediately add them as qualifiers to "
+"that component's declaration."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:47
+msgid "``Dialog``"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:51
+#: ../../source/components/components/comp_annos.rst:95
+#: ../../source/components/components/comp_annos.rst:141
+msgid "**Type: Declaration Annotation**"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:53
+msgid ""
+"The ``Dialog`` annotation is used to help organize variables (typically "
+"``parameters``) in the context of a graphical user interface.  It provides "
+"additional information, beyond what is necessary to compile the model, that "
+"instructs graphical tools what content to include in component dialogs."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:59
+msgid ""
+"The structure of a ``Dialog`` annotation can be represented by the following"
+" ``record`` definition:"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:73
+msgid ""
+"The ``tab`` field is a string that indicates the name of the tab that this "
+"variable should be organized under.  The ``group`` field specifies the name "
+"of a \"group\" **within the specified tab** in which the variable should be "
+"placed.  The ``enable`` field should be given an expression that indicates "
+"when the parameter should be shown.  The ``showStartAttribute`` field can be"
+" used to incorporate the ``start`` attributes value (for this variable) into"
+" the user interface so the user can easily specify the value of the "
+"``start`` attribute.  The ``groupImage`` field allows the user to specify an"
+" image to associate with the group named by the ``group`` field.  Finally, "
+"the ``connectorSizing`` is only useful in declarations for integer "
+"parameters that are used to specify the size of arrays of connectors. In "
+"such circumstances, if the value of the ``connectorSizing`` field is "
+"``true``, the graphical environment **may** update the value of the "
+"annotated parameter in response to any action that impacts the necessary "
+"size of that connector."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:91
+msgid "``DynamicSelect``"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:97
+msgid ""
+"The ``DynamicSelect`` annotation is used to specify how annotation values "
+"can depend on a simulated solution.  For example, the ``DynamicSelect`` "
+"annotation can be used to adjust the color of a component icon in response "
+"to a change in temperature.  The ``DynamicSelect`` has two values associated"
+" with it, *i.e.,*"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:107
+msgid ""
+"The first is the \"static\" value.  This value is used when either no "
+"simulation results are available or in the case that the specific tool does "
+"not support linking simulation results to annotations.  The second value is "
+"the \"dynamic\" value.  This is an expression, typically involving variables"
+" in the scope in which the annotated declaration appears, which is evaluated"
+" based on simulation results."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:116
+msgid "``preferredView``"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:120
+msgid "**Type: Definition Annotation**"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:122
+msgid ""
+"The ``preferredView`` annotation is used to describe what particular "
+"\"view\" of a given definition should be shown when that model is selected "
+"within a graphical tool.  Possible values for this annotation are:"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:126
+msgid "\"info\" - Show any documentation associated with this definition."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:127
+msgid "\"text\" - Show the Modelica code associated with this definition."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:128
+msgid "\"diagram\" - Show the schematic diagram associated with this definition."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:130
+msgid ""
+"A common use for the ``preferredView`` annotation is to created a "
+"``package`` specifically for documentation.  In this case, the ``package`` "
+"includes a ``Documentation`` annotation and the ``preferredView`` annotation"
+" is set to ``info`` (thus causing the documentation to be shown when the "
+"definition is visited)."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:137
+msgid "``unassignedMessage``"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:143
+msgid ""
+"The value of the ``unassignedMessage`` annotation is a string.  If an "
+"equation cannot be found to compute a value for the annotated declaration, "
+"the string value given to the ``unassignedMessage`` annotation may be "
+"presented as a diagnostic message by the compiler."
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:15
+#: ../../source/components/components/comp_annos.rst:27
+#: ../../source/components/components/comp_annos.rst:49
+#: ../../source/components/components/comp_annos.rst:93
+#: ../../source/components/components/comp_annos.rst:118
+#: ../../source/components/components/comp_annos.rst:139
+msgid "annotation"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:15
+msgid "defaultComponentName"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:27
+msgid "defaultComponentPrefixes"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:49
+msgid "Dialog"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:93
+msgid "DynamicSelect"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:118
+msgid "preferredView"
+msgstr ""
+
+#: ../../source/components/components/comp_annos.rst:139
+msgid "unassignedMessage"
+msgstr ""

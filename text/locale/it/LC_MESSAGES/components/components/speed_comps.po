@@ -1,0 +1,235 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/components/speed_comps.rst:4
+msgid "Speed Measurement Revisited"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:6
+msgid ""
+"Recall our previous discussion on :ref:`speed-measurement`.  That discussion"
+" took place before we had introduced the idea of building reusable "
+"components.  As a result, adding equations associated with the various speed"
+" measurement techniques was awkward."
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:11
+msgid ""
+"In this section, we'll revisit that topic and all of the various speed "
+"estimation techniques discussed there.  As before, we assume that we have an"
+" existing model of the \"plant\" (the system whose speeds we wish to "
+"measure).  But this time, we'll create reusable component models for "
+"different speed estimation algorithms and add them to the plant model as "
+"graphical components."
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:19
+msgid "Plant Model"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:21
+msgid ""
+"We'll start with our \"plant model\".  It is identical in behavior to the "
+"system we used in our previous discussion of :ref:`speed-measurement` and "
+"when rendered as a schematic, looks like this:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:32
+msgid "The source code for the underlying Modelica model is:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:37
+msgid ""
+"In the remaining sections we will create models that use different "
+"approximation techniques to measure the speed of the ``inertia1`` component "
+"in our plant model."
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:41
+msgid ""
+"Before we look at the different speed approximation methods, let's have a "
+"look at the actual speed response from our plant model."
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:47
+msgid ""
+"Note that this is exactly the same response we saw when we initially covered"
+" this topic."
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:53
+msgid "Sample and Hold Sensor"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:55
+msgid ""
+"Previously, we discussed the :ref:`sample-and-hold` approach to speed "
+"measurement.  Here we will revisit this topic, but encapsulate the speed "
+"approximation in a reusable sensor model.  The following model implements "
+"the \"sample and hold\" approximation to speed measurement:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:63
+msgid ""
+"Behaviorally, there is not difference between this estimation technique and "
+"our previous implementation of :ref:`sample-and-hold`. But our approach is "
+"different this time because we have wrapped that estimation technique in a "
+"reusable component model."
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:68
+msgid ""
+"We have once again saved ourselves some trouble by utilizing a ``partial`` "
+"model to represent code that will be common across our various sensor "
+"models.  As we can see from the definition of the ``SpeedSensor`` model:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:76
+msgid ""
+"We can see from the ``SpeedSensor`` model that the output signal is named "
+"``w``.  But we also see that ``SpeedSensor`` inherits from another model in "
+"the Modelica Standard Library, ``PartialAbsoluteSensor``.  The "
+"``PartialAbsoluteSensor`` model is defined as:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:94
+msgid ""
+"In addition to providing a nice icon, the ``PartialAbsoluteSensor`` model "
+"features a rotational connector, ``flange``.  Furthermore, the model assumes"
+" that the sensor model is completely passive (*i.e.,* it has no impact on "
+"the system it is sensing) since it applies zero torque at the connection "
+"point."
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:100
+msgid ""
+"To test this model, we simply extend from our ``Plant`` model, add an "
+"instance of the ``SampleHold`` sensor and connect it to the ``inertia``, "
+"*e.g.*,"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:107
+msgid "When assembled, our final system looks like this:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:115
+msgid ""
+"If we simulate this system for 5 seconds, we can compare the actual speed of"
+" the inertia with the signal returned from our sensor:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:121
+msgid ""
+"These results are identical to the results from our previous discussion of "
+"the :ref:`sample-and-hold` approach."
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:125
+msgid "Interval Measurement"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:127
+msgid ""
+"Now let us turn our attention to the :ref:`interval-measurement` technique."
+"  Again, we will create a reusable component model by extending from our "
+"``Sensor`` model.  This time, the implementation will use the time between "
+"teeth to estimate speed:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:135
+msgid ""
+"Adding this sensor to our plant model is as simple as creating the following"
+" Modelica model:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:141
+msgid "When assembled, our system model looks like this:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:149
+msgid ""
+"Simulating this system, we get the following results for estimated speed:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:154
+msgid ""
+"As we saw in our previous discussion of the :ref:`interval-measurement` "
+"technique, the quality of the estimated signal is severely reduced if we "
+"reduce the number of teeth.  The previous plot used a sensor with 200 teeth "
+"per rotation.  If we plot the shaft angle with respect to the bracketing "
+"teeth angles, we see that the shaft cannot move very far without triggering "
+"a measurement:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:164
+msgid ""
+"On the other hand, if we reduce the number of teeth per rotation down to 20,"
+" we get the following results:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:170
+msgid ""
+"Plotting the teeth angles that bracket the current shaft angle, we see that "
+"crossings are far less frequent, and, as a result the accuracy of the "
+"measurement is greatly reduced:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:177
+msgid ""
+"Again, we can validate our component-oriented sensor implementations by "
+"noting that these results are identical to the results presented during our "
+"previous discussion of the :ref:`interval-measurement` technique."
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:183
+msgid "Pulse Counter"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:185
+msgid ""
+"Finally, we have the :ref:`pulse-counting` approach.  Again, the estimation "
+"technique can be wrapped in a reusable component that extends from the base "
+"``Sensor`` model:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:192
+msgid "and then added to our overall ``Plant`` model:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:197
+msgid "The resulting system, when rendered, looks like this:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:205
+msgid ""
+"Simulating the system, we see that the results are the same as in our "
+"previous discussion of :ref:`pulse-counting`:"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:212
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/components/components/speed_comps.rst:214
+msgid ""
+"The discussion of :ref:`speed-measurement` earlier in the book went into "
+"great detail about the various measurement techniques that can be used to "
+"estimate the speed of a rotating shaft.  The purpose of this section was not"
+" to revisit that discussion but rather to show how the estimation techniques"
+" presented earlier can benefit greatly from the component-oriented features "
+"in Modelica.  As we have seen, all of these techniques can be nicely "
+"encapsulated in component models.  The result is that utilizing these "
+"different estimation techniques is now as easy as dragging and dropping one "
+"of these sensor models into a system and attaching it to the rotating "
+"element whose speed you wish to measure."
+msgstr ""

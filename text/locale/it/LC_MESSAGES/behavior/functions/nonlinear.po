@@ -1,0 +1,134 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/functions/nonlinear.rst:4
+msgid "Non-Linearities"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:6
+msgid ""
+"Our next example involving functions demonstrates how to address issues that"
+" come up when solving non-linear systems of equations that involve "
+"functions."
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:10
+msgid ""
+"We'll start with a simple model that includes this simple mathematical "
+"relationship:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:17
+msgid ""
+"where :math:`t` is time.  This model can be implemented in Modelica as "
+"follows:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:23
+msgid ""
+"where the ``Quadratic`` function, which we will discuss shortly, evaluates a"
+" quadratic polynomial."
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:26
+msgid "Simulating this model gives the following solution for ``y``:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:31
+msgid ""
+"So far, all of this appears quite reasonable and, based on our previous "
+"discussion on :ref:`polynomial-evaluation`, the implementation of "
+"``Quadratic`` isn't likely to hold too many surprises.  However, let's make "
+"things a little more complicated. Consider the following model:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:41
+msgid "This model amounts to solving the following equation:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:47
+msgid ""
+"The important difference here is that the left hand side is known and we "
+"must compute the value of :math:`y` that satisfies this equation. In other "
+"words, instead of evaluating a quadratic polynomial, like we were doing in "
+"the previous example, now we have to solve a quadratic equation."
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:53
+msgid ""
+"A model that requires solving a non-linear system of equations is not "
+"remarkable by itself.  Modelica compilers are certainly more than capable of"
+" recognizing and solving non-linear systems of equations (although these "
+"methods usually depend on having a reasonable initial guess in order to "
+"converge)."
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:59
+msgid ""
+"However, it turns out that in this case, **the Modelica compiler doesn't "
+"actually need to solve a non-linear system**.  Although we couldn't know "
+"this until we saw how the ``Quadratic`` function is implemented:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:69
+msgid ""
+"In particular, note the line specifying the ``inverse`` annotation. With "
+"this function definition, we not only tell the Modelica compiler how to "
+"evaluate the ``Quadratic`` function, but, through the ``inverse`` "
+"annotation, we are also indicating that the ``InverseQuadratic`` function "
+"should be used to compute ``x`` in terms of ``y``."
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:76
+msgid "The ``InverseQuadratic`` function is defined as follows:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:84
+msgid ""
+"Note that the ``InverseQuadratic`` function computes only the positive root "
+"in the quadratic equation.  This can be both a good thing and a bad thing.  "
+"By computing only a single root, we avoid the issue of having multiple "
+"solutions when we invert the quadratic relationship.  However, if the "
+"negative root happens to be the one you want, this can be a problem."
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:91
+msgid ""
+"In the case of our ``ImplicitEvaluation`` model, the Modelica compiler can "
+"then substitute this inverse function into the equations.  So, where we "
+"initially had, ignoring the coefficient arguments for the moment, the "
+"following equation to solve:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:100
+msgid ""
+"which must be solved as an implicit equation for :math:`y`, we can now solve"
+" the following **explicit** equation:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:107
+msgid "by using the ``InverseQuadratic`` function as the inverse function."
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:109
+msgid ""
+"Simulating the ``ImplicitEvaluation`` model we get the following solution "
+"for ``y``:"
+msgstr ""
+
+#: ../../source/behavior/functions/nonlinear.rst:115
+msgid ""
+"Looking at this figure, we can see that, in fact, we got the correct result,"
+" but, in general, without the need to solve the non-linear system that would"
+" otherwise result from our ``ImplicitEvaluation`` model."
+msgstr ""

@@ -1,0 +1,178 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/functions/controller.rst:4
+msgid "Software-in-the-Loop Controller"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:6
+msgid ""
+"In the previous :ref:`interpolation` example, we saw external C functions "
+"could be used to manage and interpolate data.  In this section, we will "
+"explore how to integrate C code for an embedded controller into a Modelica "
+"model."
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:11
+msgid ""
+"When building mathematical models of physical systems in Modelica, it is "
+"sometimes useful to integrate (external) control strategies into these "
+"models.  In many cases, these strategies exist as C code generated for use "
+"with an embedded controller.  This example revisits the topic of "
+":ref:`hysteresis`, but with an interesting twist.  Instead of implementing "
+"the hysteresis behavior in Modelica using discrete states, we will implement"
+" it in an external C function.  Although this example is extremely simple, "
+"it demonstrates all the essential steps necessary to integrate external "
+"control strategies."
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:22
+msgid "Physical Model"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:24
+msgid ""
+"Let's start by looking at our \"physical model\".  In this case, it is "
+"essentially just a reimplementation of the model we created previously "
+"during our discussion on :ref:`hysteresis`.  Our revised implementation "
+"looks like this:"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:33
+msgid "Let's take a closer look at the ``equation`` section:"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:39
+msgid ""
+"The function ``computeHeat`` is called every 10 milliseconds to determine "
+"the amount of heat to be used.  As we will see in a moment, the controller "
+"implements a \"bang-bang\" control strategy.  That means it flips between "
+"zero heat generation and full heat generation.  As we saw in our previous "
+"discussion on :ref:`hysteresis`, this kind of approach can lead to "
+"\"chattering\".  For that reason, we put the calculation of ``Q`` inside a "
+"``when`` statement that is executed every 10 milliseconds.  This 10 "
+"millisecond interval is essentially implementing the behavior of what is "
+"normally called a \"scheduler\" which decides when different control "
+"strategies are executed."
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:51
+msgid "Embedded Control Strategy"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:53
+msgid ""
+"The Modelica function ``computeHeat`` used to determine how much heat should"
+" be applied to the system at any given time is implemented as:"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:60
+msgid ""
+"Note the presence of the ``external`` keyword.  This time, however, we don't"
+" see the name of the external C function like we did in the previous "
+"examples.  This means that the external C function has exactly the same name"
+" and arguments as its Modelica counterpart. Looking at the source code for "
+"the C function, we see that is the case:"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:70
+msgid ""
+"In other words, we can save ourselves the trouble of specifying how the "
+"input and output arguments of our Modelica function map to those of the "
+"underlying C function by defining them in such a way that no mapping is "
+"truly necessary."
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:75
+msgid ""
+"Note the presence of the ``static`` variable ``state`` in the C "
+"implementation of ``computeHeat``.  The use of the ``static`` keyword here "
+"indicates that the value of the variable ``state`` is preserved from one "
+"invocation of ``computeHeat`` to another.  This kind of variable is quite "
+"common in embedded control strategies because they need to preserve "
+"information from one invocation of the scheduler to the next (*e.g.,* to "
+"implement hysteresis control, as we see here)."
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:85
+msgid ""
+"The presence of this ``static`` variable is a significant problem because it"
+" means that the function ``computeHeat`` can return **different results for "
+"the same input arguments**.  Mathematically speaking, this is not a true "
+"mathematical function since a mathematical function can only depend on its "
+"input arguments.  In computer science, we say such a function is \"impure\"."
+"  This means that each invocation of the function changes some internal "
+"memory or variable which affects that value returned by the function."
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:94
+msgid ""
+"Given that such impurity is implemented in embedded control strategies **by "
+"design**, we need to be careful when using them in a mathematically oriented"
+" environment like Modelica.  This is because the Modelica compiler assumes, "
+"by default, that all functions are pure and side effect free and the "
+"presence of impurity or side effects can result in very inefficient "
+"simulations, at best, or completely erroneous results, at worst."
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:102
+msgid ""
+"These problems occur because the underlying solvers must compute many "
+"\"candidate\" solutions before they compute the \"real\" solution.  If "
+"generating candidate solutions requires the solver to invoke functions with "
+"side effects, the solver will be unable to anticipate the effects triggered "
+"by the changes to variables it is not aware of."
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:108
+msgid ""
+"It is for precisely this reason that the ``impure`` qualifier is applied to "
+"the definition of ``computeHeat``:"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:115
+msgid ""
+"This informs the Modelica compiler that this function **has side effects or "
+"returns a result that depends on something other than its inputs** and that "
+"it **should not** be invoked when generating candidate solutions.  At first,"
+" this seems like it would completely prohibit calling the function, but that"
+" isn't the case.  Recall our integration of the control strategy:"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:125
+msgid ""
+"In particular, note that ``computeHeat`` is invoked only within the ``when``"
+" statement and not as part of a \"continuous\" equation.  As a result, we "
+"can be certain that ``computeHeat`` will only be invoked in response to an "
+"event and in evaluating candidate solutions for the continuous variables."
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:132
+msgid "Results"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:134
+msgid ""
+"In the C function ``computeHeat``, we see that these two statements "
+"implement a +/- 2 degree deadband around the setpoint:"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:141
+msgid ""
+"It is this functionality that prevents chattering and which can be clearly "
+"observed in the simulated results for our example:"
+msgstr ""
+
+#: ../../source/behavior/functions/controller.rst:83
+msgid "side effects"
+msgstr ""

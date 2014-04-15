@@ -1,0 +1,272 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-15 14:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/functions/func_def.rst:4
+msgid "Function Definitions"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:6
+msgid ""
+"As we've already seen, Modelica includes many useful functions for "
+"describing mathematical behavior.  But, inevitably, it is necessary to "
+"create new functions for specific purposes.  Defining such functions is "
+"similar, syntactically, to a :ref:`model-definition`."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:12
+msgid "Basic Syntax"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:14
+msgid ""
+"A basic Modelica function includes one or more arguments, a return value and"
+" an ``algorithm`` section to compute the return value in terms of the "
+"arguments.  The arguments to the function are preceded by the ``input`` "
+"qualifier and the return value is preceded by the ``output`` qualifier.  For"
+" example, consider the following simple function that squares its input "
+"argument:"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:30
+msgid ""
+"Here the input argument ``x`` has the type ``Real``.  The output variable "
+"``y`` also has the ``Real`` type.  Arguments and return values can be "
+"scalars or arrays (or even records, although we won't introduce records "
+"until :ref:`later <components>`)."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:36
+msgid "Intermediate Variables"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:38
+msgid ""
+"For complex calculations, it is sometimes useful to define variables to hold"
+" intermediate results.  Such variables must be clearly distinguished from "
+"arguments and return values.  To declare such intermediate variables, make "
+"their declarations ``protected``.  Making the variables ``protected`` "
+"indicates to the Modelica compiler that these variables are not arguments or"
+" return values, but are instead used internally by the function.  For "
+"example, if we wished to write a function to compute the circumference of a "
+"circle, we might utilize an intermediate variable to store the diameter:"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:59
+msgid ""
+"Here we see how some intermediate result or common sub-expression can be "
+"associated with an internal variable."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:63
+msgid "Default Input Arguments"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:65
+msgid ""
+"In some cases, it makes sense to include default values for some input "
+"arguments.  In these cases, it is possible to include a default value in the"
+" declaration of the input variable.  Consider the following function to "
+"compute the potential energy of a mass in a gravitational field:"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:82
+msgid ""
+"By providing a default value for ``g``, we do not force users of this "
+"function to provide a value for ``g`` each time.  Of course, this kind of "
+"approach should only be used when there is a reasonable default value for a "
+"given argument and it should never be used if you want to force users to "
+"provide a value."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:88
+msgid ""
+"These default values have some important effects when :ref:`calling-"
+"functions` that we shall discuss shortly."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:92
+msgid "Multiple Return Values"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:94
+msgid ""
+"Note that a function can have multiple return values (*i.e.,* multiple "
+"declarations with the ``output`` qualifier).  For example, to consider a "
+"function that computes both the circumference and area of a circle:"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:111
+msgid ""
+"Our upcoming discussion on :ref:`calling-functions` will cover how to "
+"address multiple return values."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:117
+msgid "Calling Functions"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:119
+msgid ""
+"So far, we've covered how to define new functions.  But it is also worth "
+"spending some time discussing the various ways of calling functions.  In "
+"general, functions are invoked in a way that would be expected by both "
+"mathematicians and programmers, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:128
+msgid ""
+"Here we see the typical syntax name of the function name followed by a comma"
+" separated list of arguments surrounded by parentheses.  But there are "
+"several interesting cases to discuss."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:132
+msgid ""
+"The syntax above is \"positional\".  That means that values in the function "
+"call are assigned to arguments based on the order.  But since Modelica "
+"function arguments have names, it is also possible to call functions using "
+"named arguments.  Consider the following function for computing the volume "
+"of a cube:"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:148
+msgid ""
+"When calling this function, it is important not to confuse the radius and "
+"the volume.  To avoid any possible confusion regarding their order, it is "
+"possible to call the function used named arguments.  In that case, the "
+"function call would look something like:"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:157
+msgid ""
+"Named arguments are particularly useful in conjunction with default argument"
+" values.  Recall the ``PotentialEnergy`` function introduced earlier.  It "
+"can be invoked in several ways:"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:169
+msgid ""
+"The reason named arguments are so important for arguments with default "
+"values is if a function has many arguments with default arguments, you can "
+"selectively override values for those arguments by referring to them by "
+"name."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:174
+msgid ""
+"Finally, we previously pointed out the fact that it is possible for a "
+"function to have multiple return values.  But the question remains, how do "
+"we address multiple return values?  To see how this is done in practice, let"
+" us revisit the ``CircleProperties`` function we defined earlier in this "
+"section.  The following statement shows how we can reference both return "
+"values:"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:185
+msgid ""
+"In other words, the left hand side is a comma separated list of the "
+"variables to be assigned to (or equated to, in the case of an ``equation`` "
+"section) wrapped by a pair of parentheses."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:189
+msgid ""
+"As this discussion demonstrates, there are many different ways to call a "
+"function in Modelica."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:193
+msgid "Important Restrictions"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:195
+msgid ""
+"In general, we can perform the same kinds of calculations in functions as we"
+" can in models.  But there are some important restrictions."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:198
+msgid ""
+"Input arguments are read only - You are not allowed to assign a value to a "
+"variable which is an input argument to the function."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:201
+msgid ""
+"You are not allowed to reference the global variable `time` from within a "
+"function."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:204
+msgid ""
+"No equations or when statements - A function can have no more than one "
+"``algorithm`` section and it cannot contain ``when`` statements."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:207
+msgid ""
+"The following functions cannot be invoked from a function: ``der``, "
+"``initial``, ``terminal``, ``sample``, ``pre``, ``edge``, ``change``, "
+"``reinit``, ``delay``, ``cardinality``, ``inStream``, ``actualStream``"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:212
+msgid ""
+"Arguments, results and intermediate (``protected``) variables cannot be "
+"models or blocks."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:215
+msgid ""
+"Array sizes are restricted - Arguments that are arrays can have :ref"
+":`unspecd-dim` and the size will be implicitly determined by the context in "
+"which the function is invoked.  Results that are arrays must have their "
+"sizes specified in terms of constants or in relation to the sizes of input "
+"arguments."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:221
+msgid ""
+"One important thing to note is that functions are **not** restricted in "
+"terms of recursion (*i.e.,* a function **is** allowed to call itself)."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:247
+msgid "Side Effects"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:249
+msgid ""
+"In the :ref:`sil-controller` example, we introduced external functions that "
+"had side effects.  This means that the value returned by the function was "
+"not strictly a function of its arguments.  Such a function is said to have "
+"\"side effects\".  Functions with side effects, should be qualified with the"
+" ``impure`` keyword.  This tells the Modelica compiler that these functions "
+"cannot be treated as purely mathematical functions."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:257
+msgid ""
+"The use of ``impure`` functions is restricted.  They can only be invoked "
+"from within a ``when`` statement or another ``impure`` function."
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:262
+msgid "Function Template"
+msgstr ""
+
+#: ../../source/behavior/functions/func_def.rst:264
+msgid ""
+"Taking all of this into account, the following can be considered a "
+"generalized function definition:"
+msgstr ""
