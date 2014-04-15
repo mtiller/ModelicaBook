@@ -149,17 +149,17 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 html:
-	$(SPHINXBUILD) -b html -t html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXBUILD) -b html  $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 dirhtml:
-	$(SPHINXBUILD) -b dirhtml -t html $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
+	$(SPHINXBUILD) -b dirhtml  $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
 singlehtml:
-	$(SPHINXBUILD) -b singlehtml -t html $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
+	$(SPHINXBUILD) -b singlehtml  $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
@@ -263,16 +263,16 @@ buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
 
 dirhtml_cn: update_cn buildmo
-	$(SPHINXBUILD) -b dirhtml -t html -d build/doctrees -D language=cn source build/dirhtml_cn
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
 
 dirhtml_de: update_de buildmo
-	$(SPHINXBUILD) -b dirhtml -t html -d build/doctrees -D language=de source build/dirhtml_de
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=de source build/dirhtml_de
 
 dirhtml_es: update_es buildmo
-	$(SPHINXBUILD) -b dirhtml -t html -d build/doctrees -D language=es source build/dirhtml_es
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=es source build/dirhtml_es
 
 dirhtml_fr: update_fr buildmo
-	$(SPHINXBUILD) -b dirhtml -t html -d build/doctrees -D language=fr source build/dirhtml_fr
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=fr source build/dirhtml_fr
 
 changes:
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes

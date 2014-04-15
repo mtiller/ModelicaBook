@@ -218,7 +218,8 @@ latex_show_urls = True
 
 # If false, no module index is generated.
 #latex_domain_indices = True
-
+# A list of file names to copy to the build directory when building LaTeX output.
+latex_additional_files = ['_static/Aaron.jpg']
 
 # -- Options for manual page output --------------------------------------------
 
