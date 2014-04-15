@@ -14,7 +14,7 @@ Dedication
        \includegraphics[width=0.33\textwidth]{Aaron.jpg}
      \end{wrapfigure}
 
-.. only:: html or epub
+.. only:: not latex
 
   .. image:: ../_static/Aaron.jpg
      :align: right
