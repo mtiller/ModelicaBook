@@ -256,8 +256,8 @@ the mathematical operations associated with our ``block`` definitions.
 Since these blocks represent mathematical operations, let us first
 revisit the equation associated with this example:
 
-.. todo:: this and some following expressions involving T are not being rendered correctly using
-https://book-preview.herokuapp.com
+.. todo:: this and some following expressions involving T are not being rendered
+          correctly using https://book-preview.herokuapp.com
 
 .. math:: m c_p \dot{T} = h (T_{\infty}-T)
 

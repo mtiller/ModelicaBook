@@ -86,7 +86,7 @@ fact that this conditional expression references continuous variables
 other than ``time``.
 
 .. todo:: link to previous cooling examples not showing up correctly
-do the referenced variables have to be continuous to make a state event?
+          do the referenced variables have to be continuous to make a state event?
 
 As such, the simulation proceeds assuming the ball is in free fall
 until it identifies a solution trajectory where the value of the
