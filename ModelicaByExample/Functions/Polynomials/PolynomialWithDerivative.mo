@@ -1,6 +1,6 @@
 within ModelicaByExample.Functions.Polynomials;
 function PolynomialWithDerivative
-  "Create a generic polynomial from coefficiencts (with derivative information)"
+  "Create a generic polynomial from coefficients (with derivative information)"
   input Real x     "Independent variable";
   input Real c[:]  "Polynomial coefficients";
   output Real y    "Computed polynomial value";
