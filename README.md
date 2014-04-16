@@ -83,20 +83,25 @@ Unfortunately, I've lost track of exactly what the dependencies are.
 
 Under Ubuntu, I know at least the following packages are required:
 
-     % sudo apt-get install texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra python-sphinx python-scipy python-matplotlib
-     
+    $ sudo apt-get install texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra python-sphinx python-scipy python-matplotlib
+
+In addition you will need an updated development version of
+[Pygments](http://pygments.org/). The easiest way is to install @dietmarw's
+update version of Pygments by doing:
+
+    $ sudo pip install --upgrade https://bitbucket.org/dietmarw/pygments-main/get/default.tar.gz
+
 ### Building
 
 To build the book in HTML, go to `ModelicaBook/text` and use this command:
-     
-     % make 
 
-If that doesn't work for some reason, the following can be used to troubleshoot the problem:     
-     
-     % make specs
-     % make results
-     % make dirhtml
-     % make server
+    $ make
+
+If that doesn't work for some reason, the following can be used to troubleshoot the problem:
+
+    $ make specs
+    $ make results
+    $ make dirhtml
+    $ make server
 
 Other options for `make` can be found by using `make help`
-
