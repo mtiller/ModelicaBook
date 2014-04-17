@@ -127,7 +127,7 @@ declared in the first place (*i.e.,* you cannot use this syntax to
 declare a variable, only to *redeclare* it).
 
 It is **very important** to understand that when you redeclare a
-component, the new redeclaration supercedes the previous one.  For
+component, the new redeclaration supersedes the previous one.  For
 example, after the following redeclaration:
 
 .. code-block:: modelica
