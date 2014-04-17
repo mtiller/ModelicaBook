@@ -566,7 +566,7 @@ tcbvars = [Var("sensor.room.T", legend="Room Temperature"),
            Var("controller.feedback.u2", legend="Desired Temperature")]
 
 tcevars = [Var("sensor.room.T", legend="Room Temperature (sensor.room.T)"),
-           Var("controller.bus.temperature", legend="Measured Temperature (controller.bus.temp"),
+           Var("controller.bus.temperature", legend="Measured Temperature (controller.bus.temp)"),
            Var("controller.feedback.u2", legend="Desired Temperature")]
 
 add_case(["ThermalControl", "BaseModel"], stopTime=50, res="TCB", tol=1e-3)
@@ -580,7 +580,7 @@ add_simple_plot(plot="TCE", vars=tcevars, legloc="lower right",
                 title="Response using PI controller in expandable architecture")
 
 tcebbvars = [Var("sensor.room.T", legend="Room Temperature (sensor.room.T)"),
-           Var("controller.bus.temperature", legend="Measured Temperature (controller.bus.temp"),
+           Var("controller.bus.temperature", legend="Measured Temperature (controller.bus.temp)"),
            Var("controller.setpoint_signal.y", legend="Desired Temperature")]
 
 add_case(["ThermalControl", "OnOffVariant"], stopTime=50, res="TCE_BB", tol=1e-3)
