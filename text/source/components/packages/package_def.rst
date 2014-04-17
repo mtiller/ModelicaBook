@@ -116,7 +116,7 @@ like this:
     within RootPackage;
     package NestedPackageAsFile
       // The following can be stored here including:
-      //  * contants
+      //  * constants
       //  * nested definitions
       //  * annotations
     end NestedPackageAsFile;
