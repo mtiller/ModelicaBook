@@ -105,7 +105,7 @@ msgstr ""
 "procuratori federali (e `Carmen Ortiz "
 "<https://petitions.whitehouse.gov/petition/remove-united-states-district-" 
 "attorney-carmen-ortiz-office-overreach-case-aaron-swartz/RQNrG1Ck>`_ in "
-«particolare) che furono determinati nel fare di lui un esempio."
+"particolare) che furono determinati nel fare di lui un esempio."
 
 #: ../../source/front/dedication.rst:65
 msgid ""
