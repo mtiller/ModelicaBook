@@ -127,7 +127,7 @@ declared in the first place (*i.e.,* you cannot use this syntax to
 declare a variable, only to *redeclare* it).
 
 It is **very important** to understand that when you redeclare a
-component, the new redeclaration supercedes the previous one.  For
+component, the new redeclaration supersedes the previous one.  For
 example, after the following redeclaration:
 
 .. code-block:: modelica
@@ -210,7 +210,7 @@ But let's consider another case:
 
 Now imagine we had another resistor model, ``SensitiveResistor`` that
 was plug-compatible with ``Resistor`` (*i.e.,* it had a ``parameter``
-called ``R`) but included on additional parameter, ``dRdT``,
+called ``R``) but included an additional parameter, ``dRdT``,
 indicating the (linear) sensitivity of the resistance to temperature.
 We might want to do something like this:
 
@@ -299,10 +299,10 @@ this would be to define our ``Circuit`` as follows:
 .. code-block:: modelica
 
     model Circuit
-      replaceable Resistor R1 constrinedby Resistor(R=100);
-      replaceable Resistor R2 constrinedby Resistor(R=150);
-      replaceable Resistor R4 constrinedby Resistor(R=45);
-      replaceable Resistor R5 constrinedby Resistor(R=90);
+      replaceable Resistor R1 constrainedby Resistor(R=100);
+      replaceable Resistor R2 constrainedby Resistor(R=150);
+      replaceable Resistor R4 constrainedby Resistor(R=45);
+      replaceable Resistor R5 constrainedby Resistor(R=90);
       // ...
     equation
       connect(R1.p, R2.n);
