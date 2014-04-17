@@ -18,6 +18,7 @@ SVG2PDF_FLAGS =
 
 SYNC = s3cmd sync -P -F
 S3GET = s3cmd get
+S3PUT = s3cmd put -P
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -71,6 +72,15 @@ deploy_js: local_js
 	(cd results/js; $(SYNC) *.js s3://beta.book.xogeny.com/_static/js/)
 	(cd results/js; $(SYNC) *.xml s3://beta.book.xogeny.com/_static/js/)
 	(cd results/json; $(SYNC) *.json s3://beta.book.xogeny.com/_static/json/)
+
+# This target builds the PDF and the epub version and pushes them
+# out to an S3 bucket
+
+deploy_print: pdf epub
+	($(S3PUT) build/latex/ModelicaByExample.pdf  s3://files.xogeny.com/ModelicaByExample/)
+	($(S3PUT) build/epub/ModelicabyExample.epub  s3://files.xogeny.com/ModelicaByExample/)
+
+
 
 # This target builds all the SVG images
 docs:
