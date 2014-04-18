@@ -25,7 +25,7 @@ represents the outputs of the system (*i.e.,* variables that are not
 states, but can ultimately be computed from the values of the states
 and inputs).
 
-There is a particularly interesting special case of these equation
+There is a particularly interesting special case of these equations
 when the functions :math:`\vec{f}` and :math:`\vec{g}` depend linearly
 on :math:`\vec{x}` and :math:`\vec{u}`.  In this case, the equations
 can be rewritten as:
