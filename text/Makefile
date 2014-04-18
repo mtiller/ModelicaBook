@@ -50,8 +50,8 @@ results:
 local_js: specs
 	@echo "Generate JS files and deploy them"
 	(cd results; make js_files json_files tidy)
-	-rm results/js/*_node.js
-	-rm results/js/*_node.js.gz
+	-rm -f results/js/*_node.js
+	-rm -f results/js/*_node.js.gz
 
 # This downloads already compiled JS and JSON files.  Use this if you
 # do not have the ability to compile JS files locally
@@ -156,7 +156,7 @@ help:
 
 distclean: clean
 	-rm -rf results tmp plots
-	$(foreach file, $(PDFs), $(shell rm "$(file)"))
+	$(foreach file, $(PDFs), $(shell rm -f "$(file)"))
 
 clean:
 	-rm -rf $(BUILDDIR)/*
