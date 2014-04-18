@@ -33,7 +33,7 @@ js/{{res}}.js.gz: js/{{res}}.js
 {% endfor %}
 
 tidy:
-	-rm *.o *.c *.h *.libs *.log *.makefile
+	-rm -f *.o *.c *.h *.libs *.log *.makefile
 	{% for res in results -%}
-	-rm {{res}}
+	-rm -f {{res}}
 	{% endfor %}
