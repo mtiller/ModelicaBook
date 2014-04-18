@@ -82,15 +82,15 @@ deploy_print: pdf epub
 
 
 
-# This target builds all the SVG images
-docs:
-	@echo "Generate docs"
+# This target builds all the SVG images of icons
+icons:
+	@echo "Generate Icons"
 	-rm -rf docs-dir
 	-mkdir docs-dir
 #       If you have issues here, make sure you can import OMPython
 #       and OMPythonIDL into the default python interpreter (doing
 #       a `export PYTHONPATH=...` if necessary.
-	(cd docs-dir; omc ../GenerateDoc.mos)
+	(cd docs-dir; omc ../GenerateIcons.mos)
 
 # This creates links for th JS and JSON
 build_links:
