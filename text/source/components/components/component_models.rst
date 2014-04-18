@@ -100,8 +100,6 @@ requiring special tools or editors in each case, all of these
 different domains and formalisms can be freely combined in Modelica as
 appropriate.
 
-.. _default-flow:
-
 .. _flow-signs:
 
 Accounting
@@ -165,7 +163,7 @@ schematic:
 .. image:: /ModelicaByExample/Components/Rotational/Examples/SMD.*
    :width: 100%
    :align: center
-   :alt: 
+   :alt:
 
 Note that there are 8 connections in this model:
 
