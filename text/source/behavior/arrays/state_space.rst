@@ -200,7 +200,7 @@ involving other parameters like ``h``, ``m`` and so on.  In this way,
 if those physical parameters are changed, the values for ``A`` and
 ``B`` will change accordingly.
 
-We can take a similar approach in reformulating the our previous
+We can take a similar approach in reformulating our previous
 :ref:`mechanical example <mech-example>` into LTI form:
 
 .. literalinclude:: /ModelicaByExample/ArrayEquations/StateSpace/Examples/RotationalSMD.mo
