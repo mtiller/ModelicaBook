@@ -39,7 +39,7 @@ the mass as:
     m_i = \rho V_i
 
 where :math:`\rho` is the material density and :math:`V_i` is the
-volume of the :math:`i^{th}` section.  Finally, we can expression the
+volume of the :math:`i^{th}` section.  Finally, we can express the
 volume of the :math:`i^{th}` section as:
 
 .. math::

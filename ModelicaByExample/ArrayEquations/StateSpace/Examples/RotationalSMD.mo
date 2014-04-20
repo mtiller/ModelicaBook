@@ -1,6 +1,6 @@
 within ModelicaByExample.ArrayEquations.StateSpace.Examples;
 model RotationalSMD
-  "State space version of a rotationals spring-mass-damper system"
+  "State space version of a rotational spring-mass-damper system"
   parameter Real J1=0.4;
   parameter Real J2=1.0;
   parameter Real k1=11;
