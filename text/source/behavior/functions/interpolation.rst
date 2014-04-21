@@ -15,7 +15,7 @@ Modelica Implementation
 Function Definition
 ~~~~~~~~~~~~~~~~~~~
 
-For this example, we assume that we interpolation data in the
+For this example, we assume that we interpolate data in the
 following form:
 
 ===============================  ===============================
