@@ -304,7 +304,7 @@ an :math:`NxN` identity matrix.
 
 It turns out that for efficiency reasons, it is better for the
 Modelica compiler to give us :math:`\frac{\mathrm{d}x}{\mathrm{d}z}`
-and :math:`\frac{\mathrm{d}\vec{c}}{\mathrm{d}z}` than for us to
+and :math:`\frac{\mathrm{d}\vec{c}}{\mathrm{d}z}` than to
 provide functions to evaluate :math:`\frac{\partial p}{\partial x}`
 and :math:`\frac{\partial p}{\partial c_i}`.  So, mathematically
 speaking, what the Modelica compiler needs is a new function that is
