@@ -10,7 +10,7 @@ block Feedback "A block to compute feedback terms"
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 equation
   y = u1-u2;
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Ellipse(
           extent={{-20,20},{20,-20}},
           lineColor={0,0,0},

@@ -4,7 +4,7 @@ model Ground "Electrical ground"
     annotation (Placement(transformation(extent={{-10,70},{10,90}})));
 equation
   ground.v = 0;
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Rectangle(
           extent={{-62,42},{62,38}},
           lineColor={0,0,255},

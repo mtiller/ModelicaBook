@@ -1,3 +1,3 @@
 within ModelicaByExample.Functions;
-package ImpureFunctions 
+package ImpureFunctions
 end ImpureFunctions;

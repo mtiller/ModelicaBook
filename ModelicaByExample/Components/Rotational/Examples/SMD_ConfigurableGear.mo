@@ -90,5 +90,4 @@ equation
       points={{-30,-40},{-20,-40},{-20,-40},{-10,-40}},
       color={0,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end SMD_ConfigurableGear;

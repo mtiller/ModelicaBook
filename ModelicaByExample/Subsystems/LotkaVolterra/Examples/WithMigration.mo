@@ -56,5 +56,4 @@ equation
       points={{-6,70},{-6,76},{-20,76},{-20,90},{-10,90}},
       color={0,127,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end WithMigration;

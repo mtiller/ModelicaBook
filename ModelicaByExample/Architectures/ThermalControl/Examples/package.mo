@@ -1,3 +1,3 @@
 within ModelicaByExample.Architectures.ThermalControl;
-package Examples 
+package Examples
 end Examples;

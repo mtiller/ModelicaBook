@@ -1,3 +1,3 @@
 within ModelicaByExample.Components.SpeedMeasurement;
-package Examples 
+package Examples
 end Examples;

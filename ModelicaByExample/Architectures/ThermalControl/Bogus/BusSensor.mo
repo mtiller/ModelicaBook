@@ -44,5 +44,5 @@ equation
         Text(
           extent={{94,-28},{52,-78}},
           lineColor={0,0,0},
-          textString="K")}), Diagram(graphics));
+          textString="K")}));
 end BusSensor;

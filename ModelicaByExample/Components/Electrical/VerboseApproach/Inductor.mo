@@ -10,7 +10,7 @@ protected
 equation
   p.i + n.i = 0 "Conservation of charge";
   L*der(p.i) = p.v;
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Text(
           extent={{-100,-40},{100,-80}},
           lineColor={0,0,0},

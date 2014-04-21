@@ -1,3 +1,3 @@
 within ModelicaByExample.BasicEquations;
-package CoolingExample 
+package CoolingExample
 end CoolingExample;

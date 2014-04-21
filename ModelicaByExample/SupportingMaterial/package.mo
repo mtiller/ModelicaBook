@@ -1,3 +1,3 @@
 within ModelicaByExample;
-package SupportingMaterial 
+package SupportingMaterial
 end SupportingMaterial;

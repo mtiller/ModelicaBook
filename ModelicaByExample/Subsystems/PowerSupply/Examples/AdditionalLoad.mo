@@ -29,5 +29,4 @@ equation
       points={{61,50},{70,50},{70,27}},
       color={255,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end AdditionalLoad;

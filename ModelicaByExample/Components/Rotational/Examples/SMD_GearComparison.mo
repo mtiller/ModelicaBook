@@ -158,5 +158,4 @@ equation
       points={{-80,40},{-76,40},{-76,30},{-70,30}},
       color={0,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end SMD_GearComparison;

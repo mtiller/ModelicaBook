@@ -1,3 +1,3 @@
 within ModelicaByExample.DiscreteBehavior;
-package CoolingRevisited 
+package CoolingRevisited
 end CoolingRevisited;

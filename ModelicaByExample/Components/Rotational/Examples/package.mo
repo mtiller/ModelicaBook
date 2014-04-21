@@ -1,3 +1,3 @@
 within ModelicaByExample.Components.Rotational;
-package Examples 
+package Examples
 end Examples;

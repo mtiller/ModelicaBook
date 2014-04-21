@@ -1,3 +1,3 @@
 within ModelicaByExample.Components.BlockDiagrams;
-package Icons 
+package Icons
 end Icons;

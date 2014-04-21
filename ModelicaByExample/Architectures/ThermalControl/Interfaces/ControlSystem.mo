@@ -10,5 +10,4 @@ partial model ControlSystem "Control system interface"
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={-110,0})));
-  annotation (Diagram(graphics));
 end ControlSystem;

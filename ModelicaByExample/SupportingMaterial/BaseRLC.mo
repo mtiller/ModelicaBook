@@ -56,5 +56,4 @@ equation
       points={{50,-10},{50,-40},{0,-40}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end BaseRLC;

@@ -7,7 +7,7 @@ model ConvectionToAmbient "An overly specialized model of convection"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
 equation
   port_a.Q_flow = h*A*(port_a.T-T_amb) "Heat transfer equation";
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Rectangle(
           extent={{-100,100},{-40,-100}},
           lineColor={135,135,135},

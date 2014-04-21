@@ -60,5 +60,4 @@ equation
       points={{-50,0},{-80,0}},
       color={191,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end ComplexNetwork;

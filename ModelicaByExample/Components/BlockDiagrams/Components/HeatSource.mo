@@ -6,7 +6,7 @@ model HeatSource "Apply heating (or cooling) to a thermal system"
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 equation
   node.Q_flow = -u;
-  annotation (Diagram(graphics), Icon(graphics={Polygon(
+  annotation ( Icon(graphics={Polygon(
           points={{-100,20},{-100,-20},{40,-20},{40,-40},{90,0},{40,40},{40,20},
               {-100,20}},
           pattern=LinePattern.None,

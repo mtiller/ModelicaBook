@@ -66,5 +66,4 @@ equation
       points={{71,30},{80,30},{80,60},{-80,60},{-80,0.5},{-71,0.5}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end ControlledCooling;

@@ -51,5 +51,4 @@ equation
       color={0,0,127},
       pattern=LinePattern.None,
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end SystemArchitecture_WithDefaults;

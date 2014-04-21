@@ -1,7 +1,7 @@
 within ModelicaByExample.Components.BlockDiagrams.Icons;
 block Axes "Introduces graphics for independent and dependent axes"
 
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0},
           fillPattern=FillPattern.Solid,
           fillColor={255,255,255}),

@@ -62,5 +62,5 @@ equation
           lineColor={0,0,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="%name")}), Diagram(graphics));
+          textString="%name")}));
 end ConfigurableGear;

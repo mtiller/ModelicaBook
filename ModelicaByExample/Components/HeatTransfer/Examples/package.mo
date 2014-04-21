@@ -1,3 +1,3 @@
 within ModelicaByExample.Components.HeatTransfer;
-package Examples 
+package Examples
 end Examples;

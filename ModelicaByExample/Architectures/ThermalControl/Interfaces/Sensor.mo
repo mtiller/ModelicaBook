@@ -8,5 +8,4 @@ partial model Sensor "Sensor subsystem interface"
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={110,0})));
-  annotation (Diagram(graphics));
 end Sensor;

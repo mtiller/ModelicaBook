@@ -21,7 +21,7 @@ equation
       color={0,0,0},
       pattern=LinePattern.None,
       smooth=Smooth.None));
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},

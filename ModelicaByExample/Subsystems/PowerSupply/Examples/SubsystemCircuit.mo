@@ -51,5 +51,4 @@ equation
       points={{50,-10},{50,-20},{20,-20},{20,-6},{10,-6}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end SubsystemCircuit;

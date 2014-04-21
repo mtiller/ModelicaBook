@@ -51,7 +51,7 @@ equation
   connect(backlash.flange_b, idealGear.flange_a)
     annotation (Line(points={{-20,0},{-10,0}},
       color={0,0,0}, smooth=Smooth.None));
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Polygon(
           points={{-74,72},{-74,44},{-68,44},{-68,72},{-74,72}},
           smooth=Smooth.None,

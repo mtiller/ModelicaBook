@@ -1,3 +1,3 @@
 within ModelicaByExample.ArrayEquations.StateSpace;
-package Examples 
+package Examples
 end Examples;

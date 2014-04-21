@@ -43,5 +43,5 @@ equation
           extent={{-100,60},{100,-60}},
           lineColor={0,0,0},
           fillPattern=FillPattern.Solid,
-          textString="PI")}), Diagram(graphics));
+          textString="PI")}));
 end BusPIControl;

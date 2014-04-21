@@ -1,3 +1,3 @@
 within ModelicaByExample.Components.Electrical;
-package Examples 
+package Examples
 end Examples;
