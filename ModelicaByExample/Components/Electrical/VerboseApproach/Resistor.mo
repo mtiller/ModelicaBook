@@ -10,7 +10,7 @@ protected
 equation
   p.i + n.i = 0 "Conservation of charge";
   v = p.i*R "Ohm's law";
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
           Rectangle(extent={{-70,30},{70,-30}}, lineColor={0,0,255},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid),

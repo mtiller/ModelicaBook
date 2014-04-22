@@ -18,5 +18,5 @@ connector Species "Used to represent the population of a specific species"
           lineColor={0,127,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="%name")}), Diagram(graphics));
+          textString="%name")}));
 end Species;

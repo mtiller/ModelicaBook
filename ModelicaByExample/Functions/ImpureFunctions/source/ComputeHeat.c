@@ -14,7 +14,7 @@ computeHeat(double T, double Tbar, double Q) {
   }
   if (state==OFF && T<Tbar-2) state = ON;
   if (state==ON && T>Tbar+2) state = OFF;
-	
+
   if (state==ON) return Q;
   else return 0;
 }

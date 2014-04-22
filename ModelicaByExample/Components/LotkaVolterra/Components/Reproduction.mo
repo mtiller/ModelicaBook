@@ -4,7 +4,7 @@ model Reproduction "Model of reproduction"
   parameter Real alpha "Birth rate proportionality constant";
 equation
   growth = alpha*species.population "Growth is proporational to population";
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},

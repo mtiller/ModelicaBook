@@ -12,7 +12,7 @@ equation
   phi_rel = 0 "inertia is rigid";
   J*der(w) = flange_a.tau + flange_b.tau
     "Conservation of angular momentum with storage";
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Rectangle(
           extent={{-100,10},{-50,-10}},
           lineColor={0,0,0},

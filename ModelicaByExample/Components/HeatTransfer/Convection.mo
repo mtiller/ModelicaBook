@@ -9,7 +9,7 @@ model Convection "Modeling convection between port_a and port_b"
 equation
   port_a.Q_flow + port_b.Q_flow = 0 "Conservation of energy";
   port_a.Q_flow = h*A*(port_a.T-port_b.T) "Heat transfer equation";
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Rectangle(
           extent={{-100,100},{-40,-100}},
           lineColor={135,135,135},

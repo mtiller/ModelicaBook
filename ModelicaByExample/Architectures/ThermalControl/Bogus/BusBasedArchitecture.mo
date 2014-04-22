@@ -29,5 +29,4 @@ equation
       points={{50,0},{60,0},{60,28},{0,28},{0,50}},
       color={0,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end BusBasedArchitecture;

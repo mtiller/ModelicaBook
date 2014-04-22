@@ -3,5 +3,4 @@ partial model ControlSystem_WithBus
   "Control system interface using a bus connector"
   ModelicaByExample.Architectures.ThermalControl.Bogus.ControllerBus basicBus
     annotation (Placement(transformation(extent={{-10,-110},{10,-90}})));
-  annotation (Diagram(graphics));
 end ControlSystem_WithBus;

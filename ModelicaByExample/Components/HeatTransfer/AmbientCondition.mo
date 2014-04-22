@@ -24,5 +24,5 @@ equation
           lineColor={0,0,0},
           fillColor={255,170,170},
           fillPattern=FillPattern.Solid,
-          textString="T_amb=%T_amb")}), Diagram(graphics));
+          textString="T_amb=%T_amb")}));
 end AmbientCondition;

@@ -1,3 +1,3 @@
 within ModelicaByExample;
-package Subsystems 
+package Subsystems
 end Subsystems;

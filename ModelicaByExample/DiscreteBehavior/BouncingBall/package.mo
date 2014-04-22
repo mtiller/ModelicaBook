@@ -1,3 +1,3 @@
 within ModelicaByExample.DiscreteBehavior;
-package BouncingBall 
+package BouncingBall
 end BouncingBall;

@@ -108,7 +108,7 @@ equation
       points={{28,50},{30,50},{30,-20},{48,-20},{48,-40},{60,-40}},
       color={191,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0}),
         Ellipse(
           extent={{-80,20},{-40,-20}},

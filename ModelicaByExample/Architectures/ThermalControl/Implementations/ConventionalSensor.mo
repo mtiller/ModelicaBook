@@ -11,7 +11,7 @@ equation
   connect(sensor.port, room) annotation (Line(
       points={{-10,0},{-100,0}},
       color={191,0,0}, smooth=Smooth.None));
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Ellipse(
           extent={{-8,-98},{32,-60}},
           lineColor={0,0,0},

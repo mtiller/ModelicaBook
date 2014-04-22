@@ -20,7 +20,7 @@ equation
 
   // Kinematic constraint (inertia is rigid)
   phi_rel = 0;
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Rectangle(
           extent={{-100,10},{-50,-10}},
           lineColor={0,0,0},

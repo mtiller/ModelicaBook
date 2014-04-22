@@ -61,5 +61,4 @@ equation
       points={{-50,-20},{-56,-20},{-56,0},{-60,0}},
       color={0,0,0},
       smooth=Smooth.None));
-  annotation (Diagram(graphics));
 end RotSMD;

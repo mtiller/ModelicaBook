@@ -1,4 +1,4 @@
 within ModelicaByExample.DiscreteBehavior;
-package SpeedMeasurement 
+package SpeedMeasurement
 
 end SpeedMeasurement;

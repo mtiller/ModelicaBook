@@ -56,5 +56,5 @@ equation
         Line(
           points={{22,0},{100,0}},
           color={0,0,255},
-          smooth=Smooth.None)}), Diagram(graphics));
+          smooth=Smooth.None)}));
 end IdealTemperatureSensor;

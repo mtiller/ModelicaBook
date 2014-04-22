@@ -1,3 +1,3 @@
 within ModelicaByExample.Components.HodgkinHuxley;
-package Components 
+package Components
 end Components;

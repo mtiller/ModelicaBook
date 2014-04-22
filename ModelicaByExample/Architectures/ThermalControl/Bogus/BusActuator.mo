@@ -54,5 +54,5 @@ equation
               {30,-20},{50,-30},{30,-40},{40,-50},{40,-60}},
           color={255,0,0},
           smooth=Smooth.None,
-          thickness=0.5)}), Diagram(graphics));
+          thickness=0.5)}));
 end BusActuator;

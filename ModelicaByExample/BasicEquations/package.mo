@@ -1,3 +1,3 @@
 within ModelicaByExample;
-package BasicEquations 
+package BasicEquations
 end BasicEquations;
