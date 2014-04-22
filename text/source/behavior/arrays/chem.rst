@@ -145,15 +145,15 @@ enumeration **as a dimension in an array** as follows:
 
 .. code-block:: modelica
 
-    Real C[Species] ;
+    Real C[Species];
 
 Since the ``Species`` type has only three possible values, this means
 that the vector ``C`` has exactly three components.  We can then refer
 to the individual components of ``C`` as ``C[Species.A]``,
-``C[Species.B]`` and ``C[Species.C]``.
+``C[Species.B]`` and ``C[Species.X]``.
 
 Because it is awkward to constantly prefix each species name with
-``Species``, we can define a few convenient constants, we follows:
+``Species``, we can define a few convenient constants as follows:
 
 .. code-block:: modelica
 
