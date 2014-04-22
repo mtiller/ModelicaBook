@@ -3,9 +3,9 @@ model SecondOrderSystemInitParams
   "A second order rotational system with initialization parameters"
   type Angle=Real(unit="rad");
   type AngularVelocity=Real(unit="rad/s");
-  type Inertia=Real(unit="N.s2/rad2");
-  type Stiffness=Real(unit="N/rad");
-  type Damping=Real(unit="N.s/rad");
+  type Inertia=Real(unit="kg.m2");
+  type Stiffness=Real(unit="N.m/rad");
+  type Damping=Real(unit="N.m.s/rad");
   parameter Angle phi1_init = 0;
   parameter Angle phi2_init = 1;
   parameter AngularVelocity omega1_init = 0;
