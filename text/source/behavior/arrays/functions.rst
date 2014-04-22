@@ -526,7 +526,7 @@ the following matrix:
 .. index:: functions; cross
 
 The ``cross`` function takes two vectors (each with 3 components) and
-returns the following scalar:
+returns the following vector (with three components):
 
 .. math::
 
