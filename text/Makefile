@@ -78,7 +78,7 @@ deploy_js: local_js
 
 deploy_print: pdf epub
 	($(S3PUT) build/latex/ModelicaByExample.pdf  s3://files.xogeny.com/ModelicaByExample/)
-	($(S3PUT) build/epub/ModelicabyExample.epub  s3://files.xogeny.com/ModelicaByExample/)
+	($(S3PUT) build/epub/ModelicaByExample.epub  s3://files.xogeny.com/ModelicaByExample/)
 
 
 
