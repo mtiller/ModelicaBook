@@ -52,7 +52,7 @@ start to decrease after half a second.  In studying the dynamic
 response of the temperature itself, we see two distinct phases.  The
 first phase is the initial transient response toward equilibrium (to
 match the ambient temperature).  The second phase is the tracking of
-the ambient temperature as it increases.
+the ambient temperature as it decreases.
 
 Initial Transients
 ^^^^^^^^^^^^^^^^^^
