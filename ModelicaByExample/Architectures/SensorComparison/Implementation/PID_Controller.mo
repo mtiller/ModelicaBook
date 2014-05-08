@@ -8,7 +8,7 @@ model PID_Controller "Controller subsystem implemented using a PID controller"
 protected
   Modelica.Blocks.Continuous.LimPID PID(k=k, Ti=Ti, Td=Td, yMax=yMax)
     annotation (Placement(transformation(
-        extent={{10,-10},{-10,10}}, rotation=0, origin={0,0})));
+        extent={{10,-10},{-10,10}})));
 equation
   connect(setpoint, PID.u_s) annotation (Line(
       points={{0,120},{0,60},{40,60},{40,0},{12,0}},
