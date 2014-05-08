@@ -18,7 +18,7 @@ dynamics.  The Modelica source code for the model is:
 
 .. literalinclude:: /ModelicaByExample/Subsystems/LotkaVolterra/Components/TwoSpecies.mo
    :language: modelica
-   :lines: 1-71,80
+   :lines: 1-70,79
 
 The diagram for this component is rendered as:
 

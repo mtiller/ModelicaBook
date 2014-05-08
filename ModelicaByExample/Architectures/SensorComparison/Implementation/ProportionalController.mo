@@ -20,8 +20,7 @@ protected
         rotation=180, origin={-50,0})));
   Modelica.Blocks.Math.Feedback feedback
     annotation (Placement(transformation(
-        extent={{10,-10},{-10,10}},
-        rotation=0, origin={0,0})));
+        extent={{10,-10},{-10,10}})));
 equation
   connect(feedback.y, gain.u) annotation (Line(
       points={{-9,0},{2,0},{2,0},{-38,0}},
