@@ -1,6 +1,17 @@
 This file collects the significant changes to the book since its initial public release.
 
-### Version 0.2.1
+### Version 0.3.0
+
+#### Enhancements
+
+  * Moved the site to [book.xogeny.com](http://book.xogeny.com) with redirects
+    from beta site.
+  * Lots of cleanup of annotations by @tbeu and @dietmarw
+  * Switched back to using MathJax (looks nicer, but requires JS)
+  * Updated the README to help orient people who want to contribute.
+  * Incorporated a bunch of excellent fixes and improvements from
+    @mrtiller related to
+    [#42](https://github.com/xogeny/ModelicaBook/pull/42/files).
 
 #### Bug Fixes
 
@@ -28,14 +39,6 @@ This file collects the significant changes to the book since its initial public 
   * Corrected the explanation on the `unit` attribute raised in
     [#59](https://github.com/xogeny/ModelicaBook/issues/59)
 
-#### Enhancements
-
-  * Lots of cleanup of annotations by @tbeu and @dietmarw
-  * Switched back to using MathJax (looks nicer, but requires JS)
-  * Updated the README to help orient people who want to contribute.
-  * Incorporated a bunch of excellent fixes and improvements from
-    @mrtiller related to
-    [#42](https://github.com/xogeny/ModelicaBook/pull/42/files).
 
 ### Version 0.2.0
 

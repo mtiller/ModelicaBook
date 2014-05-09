@@ -91,6 +91,8 @@ update version of Pygments by doing:
 
     $ sudo pip install --upgrade https://bitbucket.org/dietmarw/pygments-main/get/default.tar.gz
 
+For PDF production, you'll need (at least) `rsvg-convert` as well.
+
 ### Building
 
 To build the book in HTML, go to `ModelicaBook/text` and use this command:
