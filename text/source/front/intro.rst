@@ -46,8 +46,8 @@ freely available and tool vendors are encouraged to support the
 import and export of Modelica (without being compelled to pay any
 royalty of any kind).
 
-What Modelica allows me to do
------------------------------
+What Modelica allows me to do?
+------------------------------
 
 Modelica is really an ideal language for modeling the behavior of
 engineering systems in nearly any engineering domain.  It seamlessly
