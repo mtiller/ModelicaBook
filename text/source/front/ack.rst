@@ -99,6 +99,7 @@ I'd like to thank the backers of the Kickstarter project.  In
 particular, I'd like the thank the following people for their
 exceptionally generous contributions:
 
+    * Hilding Elmqvist
     * Robert Norris
     * Matthis Thorade
     * Henning Francke
