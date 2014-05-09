@@ -27,7 +27,6 @@ protected
   Reproduction reproduction(alpha=alpha) "Reproduction of rabbits"
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-80,-50})));
   RegionalPopulation fox_population(
       init=RegionalPopulation.InitializationOptions.FixedPopulation,

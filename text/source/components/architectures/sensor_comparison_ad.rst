@@ -179,7 +179,7 @@ Controller Models
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/ProportionalController.mo
    :language: modelica
-   :lines: 1-39,55
+   :lines: 1-38,54
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/PID_Controller.mo
    :language: modelica
@@ -190,7 +190,7 @@ Sensor Models
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealSensor.mo
    :language: modelica
-   :lines: 1-23,42
+   :lines: 1-22,41
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/SampleHoldSensor.mo
    :language: modelica

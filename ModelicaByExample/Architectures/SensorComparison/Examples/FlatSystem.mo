@@ -17,7 +17,7 @@ model FlatSystem "A rotational system with no architecture"
         extent={{-10,-10},{10,10}}, rotation=90, origin={70,0})));
   Modelica.Blocks.Math.Feedback feedback annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
-        rotation=0, origin={70,40})));
+        origin={70,40})));
   Modelica.Blocks.Sources.Trapezoid trapezoid(period=1.0)
     annotation (Placement(transformation(extent={{40,70},{60,90}})));
   Modelica.Blocks.Math.Gain gain(k=20) annotation (Placement(transformation(

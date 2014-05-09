@@ -6,7 +6,6 @@ model ClassicLotkaVolterra "Includes reproduction, starvation and predation"
   Components.Reproduction reproduction(alpha=0.1) "Reproduction of rabbits"
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-80,-30})));
   Components.RegionalPopulation foxes(init=ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.InitializationOptions.FixedPopulation,
       initial_population=10)

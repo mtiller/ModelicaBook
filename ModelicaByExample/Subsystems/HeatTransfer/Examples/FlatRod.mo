@@ -8,19 +8,19 @@ model FlatRod "Modeling a heat transfer in a rod in a without subsystems"
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor C1(C=0.1, T(fixed=true))
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0, origin={-60,2})));
+        origin={-60,2})));
   Modelica.Thermal.HeatTransfer.Components.ThermalConductor G1(G=1.2)
     annotation (Placement(transformation(extent={{-40,-30},{-20,-10}})));
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor C2(C=0.1, T(fixed=true))
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0, origin={0,2})));
+        origin={0,2})));
   Modelica.Thermal.HeatTransfer.Components.ThermalConductor G2(G=1.2)
     annotation (Placement(transformation(extent={{20,-30},{40,-10}})));
   Modelica.Thermal.HeatTransfer.Components.HeatCapacitor C3(C=0.1, T(fixed=true))
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0, origin={60,2})));
+        origin={60,2})));
   Modelica.Thermal.HeatTransfer.Sensors.TemperatureSensor sensor
     annotation (Placement(transformation(extent={{80,-30},{100,-10}})));
   Modelica.Thermal.HeatTransfer.Components.ThermalConductor wall1(G=0.9)
