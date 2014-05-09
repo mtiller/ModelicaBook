@@ -4,6 +4,16 @@ This file collects the significant changes to the book since its initial public 
 
 #### Bug Fixes
 
+  * Merged a the following pull requests from @tbeu:
+	[#143](https://github.com/xogeny/ModelicaBook/issues/143),
+	[#142](https://github.com/xogeny/ModelicaBook/issues/142),
+	[#141](https://github.com/xogeny/ModelicaBook/issues/141),
+	[#139](https://github.com/xogeny/ModelicaBook/issues/139),
+	[#137](https://github.com/xogeny/ModelicaBook/issues/137),
+	[#117](https://github.com/xogeny/ModelicaBook/issues/117) and
+	[#93](https://github.com/xogeny/ModelicaBook/issues/93)
+  * Merged a change from @tbeu regarding a heat transfer example
+    in the discussion on packages.
   * Merged a bunch of changes from @tbeu that improve the external
     function examples and clean up a few other things.
   * Fixed an error in the source code for the 1D heat conduction
@@ -20,6 +30,7 @@ This file collects the significant changes to the book since its initial public 
 
 #### Enhancements
 
+  * Lots of cleanup of annotations by @tbeu and @dietmarw
   * Switched back to using MathJax (looks nicer, but requires JS)
   * Updated the README to help orient people who want to contribute.
   * Incorporated a bunch of excellent fixes and improvements from
