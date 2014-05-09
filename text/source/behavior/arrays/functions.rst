@@ -507,7 +507,7 @@ transposed from above the diagonal.  In other words,
 .. index:: functions; skew
 
 The ``skew`` function takes a vector with three components and returns
-the following matrix:
+the following skew-symmetric matrix:
 
 .. math::
 
