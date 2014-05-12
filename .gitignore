@@ -3,7 +3,6 @@ demosite
 *~
 *.pyc
 *.mat
-*.txt
 *.lib
 *.exe
 dsmodel.c

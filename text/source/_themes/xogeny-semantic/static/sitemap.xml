@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+  <url>
+    <loc>/behavior/equations/</loc>
+  </url>
+  <url>
+    <loc>/behavior/discrete/</loc>
+  </url>
+  <url>
+    <loc>/behavior/arrays/</loc>
+  </url>
+  <url>
+    <loc>/behavior/functions/</loc>
+  </url>
+  <url>
+    <loc>/components/packages/</loc>
+  </url>
+  <url>
+    <loc>/components/connectors/</loc>
+  </url>
+  <url>
+    <loc>/components/components/</loc>
+  </url>
+  <url>
+    <loc>/components/subsystems/</loc>
+  </url>
+  <url>
+    <loc>/components/architectures/</loc>
+  </url>
+</urlset>
