@@ -8,5 +8,5 @@ model UnconnectedPopulations "Several unconnected regional populations"
     annotation (Placement(transformation(extent={{-10,-40},{10,-20}})));
   Components.TwoSpecies D "Region D"
     annotation (Placement(transformation(extent={{-10,-100},{10,-80}})));
-  annotation (experiment(StopTime=40, NumberOfIntervals=5000));
+  annotation (experiment(StopTime=40, Intervals=0.008));
 end UnconnectedPopulations;
