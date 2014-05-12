@@ -81,17 +81,16 @@ the complete version of the book, you need to have
 [OpenModelica](https://openmodelica.org/) and a bunch of other tools.
 Unfortunately, I've lost track of exactly what the dependencies are.
 
-Under Ubuntu, I know at least the following packages are required:
+For Ubuntu, the requirements are listed in [requirements.txt](requirements.txt)
+which you can install by doing:
 
-    $ sudo apt-get install texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra python-sphinx python-scipy python-matplotlib
+    $ cat requirements.txt | xargs sudo apt-get install
 
 In addition you will need an updated development version of
-[Pygments](http://pygments.org/). The easiest way is to install @dietmarw's
-update version of Pygments by doing:
+[Pygments](http://pygments.org/). The easiest way is to install the updated
+version of Pygments from @dietmarw by doing:
 
     $ sudo pip install --upgrade https://bitbucket.org/dietmarw/pygments-main/get/default.tar.gz
-
-For PDF production, you'll need (at least) `rsvg-convert` as well.
 
 ### Building
 

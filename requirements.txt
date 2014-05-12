@@ -1,4 +1,8 @@
+librsvg2-bin
 texlive-fonts-recommended
 texlive-latex-recommended
 texlive-latex-extra
+python-matplotlib
+python-pip
+python-scipy
 python-sphinx
