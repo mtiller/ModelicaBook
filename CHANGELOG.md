@@ -1,5 +1,11 @@
 This file collects the significant changes to the book since its initial public release.
 
+### Version 0.3.1
+
+#### Enhancements
+
+  * Improved visibility for search engines
+
 ### Version 0.3.0
 
 #### Enhancements

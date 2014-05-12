@@ -92,8 +92,12 @@ icons:
 #       a `export PYTHONPATH=...` if necessary.
 	(cd docs-dir; omc ../GenerateIcons.mos)
 
-# This creates links for th JS and JSON
+# This creates links for the JS and JSON and puts the sitemap and robots
+# files where they need to be
 build_links:
+	mv build/dirhtml/_static/sitemap.xml build/dirhtml
+	mv build/dirhtml/_static/robots.txt build/dirhtml
+
 	-(cd build/dirhtml/_static; ln -s ../../../results/js)
 	-(cd build/dirhtml/_static; ln -s ../../../results/json)
 
