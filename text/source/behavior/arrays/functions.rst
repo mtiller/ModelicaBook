@@ -507,7 +507,7 @@ transposed from above the diagonal.  In other words,
 .. index:: functions; skew
 
 The ``skew`` function takes a vector with three components and returns
-the following matrix:
+the following skew-symmetric matrix:
 
 .. math::
 
@@ -526,7 +526,7 @@ the following matrix:
 .. index:: functions; cross
 
 The ``cross`` function takes two vectors (each with 3 components) and
-returns the following scalar:
+returns the following vector (with three components):
 
 .. math::
 

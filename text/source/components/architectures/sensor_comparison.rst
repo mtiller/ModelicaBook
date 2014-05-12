@@ -150,7 +150,7 @@ model:
 .. todo:: sentence is missing some text at the end
 
 Now, we want to create a variation of this model where the ``sensor``
-component 
+component
 
 Previously, we dealt with redundancy by using inheritance.  We can
 certainly use inheritance to pull the subsystems from
@@ -242,7 +242,7 @@ the ``IdealSensor`` model:
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealSensor.mo
    :language: modelica
-   :lines: 1-12
+   :lines: 1-11
 
 The public interface of this component consists only of the two
 connectors ``w`` and ``shaft``.  Looking at the ``SampleHoldSensor``
@@ -250,7 +250,7 @@ model:
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealSensor.mo
    :language: modelica
-   :lines: 1-12
+   :lines: 1-11
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/SampleHoldSensor.mo
    :language: modelica
@@ -296,7 +296,7 @@ model without repeating ourselves as follows:
         redeclare Implementation.SampleHoldSensor sensor
       );
     end Variation3;
-    
+
 There are several things worth noting about this model.  The first is
 that the syntax of a redeclaration is just like a normal declaration
 except it is preceded by the ``redeclare`` keyword.  Also note that
@@ -424,4 +424,3 @@ top-down, :ref:`arch-driven-approach`.
 .. [ItPMwM] Michael M. Tiller, "Introduction to Physical Modeling with
 	    Modelica"
 	    http://www.amazon.com/Introduction-Physical-Modeling-International-Engineering/dp/0792373677
-

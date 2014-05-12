@@ -8,8 +8,7 @@ model IdealSensor "Implementation of an ideal sensor"
 protected
   Modelica.Mechanics.Rotational.Sensors.SpeedSensor idealSpeedSensor
     "An ideal speed sensor" annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}}, rotation=0,
-        origin={0,0})));
+        extent={{-10,-10},{10,10}})));
 equation
   connect(idealSpeedSensor.flange, shaft) annotation (Line(
       points={{-10,0},{-100,0}},

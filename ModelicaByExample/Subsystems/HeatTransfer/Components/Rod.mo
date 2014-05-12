@@ -23,7 +23,7 @@ protected
   HTC.HeatCapacitor capacitance[n](each final C=C/n, each T(start=T0, fixed=true))
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0, origin={-30,20})));
+        origin={-30,20})));
   HTC.ThermalConductor wall[n](each final G=G_wall/n)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},

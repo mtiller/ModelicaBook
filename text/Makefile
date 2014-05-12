@@ -58,20 +58,20 @@ local_js: specs
 download_js:
 	-mkdir results/js
 	-mkdir results/json
-	(cd results/js; $(SYNC) 's3://beta.book.xogeny.com/_static/js/*.js.gz' .)
+	(cd results/js; $(SYNC) 's3://book.xogeny.com/_static/js/*.js.gz' .)
 	(cd results/js; gzip -dk *.js.gz)
-	(cd results/json; $(SYNC) 's3://beta.book.xogeny.com/_static/json/*.json.gz' .)
+	(cd results/json; $(SYNC) 's3://book.xogeny.com/_static/json/*.json.gz' .)
 	(cd results/json; gzip -dk *.json.gz)
 
 # This target builds all the simulation results and then pushes them
 # out to an S3 bucket for static hosting
 deploy_js: local_js
-	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip s3://beta.book.xogeny.com/_static/js/)
-	(cd results/js; $(SYNC) *.xml.gz --add-header=Content-Encoding:gzip s3://beta.book.xogeny.com/_static/js/)
-	(cd results/json; $(SYNC) *.json.gz --add-header=Content-Encoding:gzip s3://beta.book.xogeny.com/_static/json/)
-	(cd results/js; $(SYNC) *.js s3://beta.book.xogeny.com/_static/js/)
-	(cd results/js; $(SYNC) *.xml s3://beta.book.xogeny.com/_static/js/)
-	(cd results/json; $(SYNC) *.json s3://beta.book.xogeny.com/_static/json/)
+	(cd results/js; $(SYNC) *.js.gz --add-header=Content-Encoding:gzip s3://book.xogeny.com/_static/js/)
+	(cd results/js; $(SYNC) *.xml.gz --add-header=Content-Encoding:gzip s3://book.xogeny.com/_static/js/)
+	(cd results/json; $(SYNC) *.json.gz --add-header=Content-Encoding:gzip s3://book.xogeny.com/_static/json/)
+	(cd results/js; $(SYNC) *.js s3://book.xogeny.com/_static/js/)
+	(cd results/js; $(SYNC) *.xml s3://book.xogeny.com/_static/js/)
+	(cd results/json; $(SYNC) *.json s3://book.xogeny.com/_static/json/)
 
 # This target builds the PDF and the epub version and pushes them
 # out to an S3 bucket
@@ -117,7 +117,7 @@ server_it: dirhtml_it build_links
 	(cd build/dirhtml_it; python -m SimpleHTTPServer)
 
 web: dirhtml build_links
-	(cd build/dirhtml; $(SYNC) * s3://beta.book.xogeny.com/)
+	(cd build/dirhtml; $(SYNC) * s3://book.xogeny.com/)
 # TODO: Set Content-Encoding on all gz files to be gzip (use find?)
 
 node: dirhtml build_links
