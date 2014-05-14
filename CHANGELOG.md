@@ -10,6 +10,7 @@ This file collects the significant changes to the book since its initial public 
 #### Bug Fixes
 
   * Fixed non-standard annotation (issue [#155](https://github.com/xogeny/ModelicaBook/pull/155))
+  * Fixed sponsor links (issue [#160](https://github.com/xogeny/ModelicaBook/pull/160))
 
 ### Version 0.3.0
 
