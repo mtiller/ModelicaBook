@@ -2,7 +2,7 @@
 
 ## Location on the Web
 
-This book is currently published at http://beta.book.xogeny.com.  This
+This book is currently published at http://book.xogeny.com.  This
 is an **early access** version that gives people a chance to comment
 on the book before making an "official" release.  The goal is to
 collect sufficient feedback that we can move forward with the
