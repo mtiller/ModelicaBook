@@ -5,6 +5,11 @@ This file collects the significant changes to the book since its initial public 
 #### Enhancements
 
   * Improved visibility for search engines
+  * Simplified README (issue [#151](https://github.com/xogeny/ModelicaBook/pull/151)
+
+#### Bug Fixes
+
+  * Fixed non-standard annotation (issue [#155](https://github.com/xogeny/ModelicaBook/pull/155))
 
 ### Version 0.3.0
 
