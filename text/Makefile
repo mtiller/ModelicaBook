@@ -76,9 +76,10 @@ deploy_js: local_js
 # This target builds the PDF and the epub version and pushes them
 # out to an S3 bucket
 
-deploy_print: pdf epub
+deploy_print: pdf ebook
 	($(S3PUT) build/latex/ModelicaByExample.pdf  s3://files.xogeny.com/ModelicaByExample/)
 	($(S3PUT) build/epub/ModelicabyExample.epub  s3://files.xogeny.com/ModelicaByExample/)
+	($(S3PUT) build/epub/ModelicabyExample.mobi  s3://files.xogeny.com/ModelicaByExample/)
 
 
 
@@ -218,6 +219,13 @@ epub:
 	$(SPHINXBUILD) -b epub -t epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
+
+mobi:   epub
+	(cd $(BUILDDIR)/epub; ebook-convert ModelicabyExample.epub ModelicabyExample.mobi)
+	@echo
+	@echo "Conversion to mobi finished. The mobi file is in $(BUILDDIR)/epub."
+
+ebook:  epub mobi
 
 latex:	specs results images
 	$(SPHINXBUILD) -b latex -t latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
