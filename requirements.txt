@@ -1,3 +1,4 @@
+calibre
 librsvg2-bin
 texlive-fonts-recommended
 texlive-latex-recommended
