@@ -18,7 +18,7 @@ Consider the following almost trivial model:
    :language: modelica
    :lines: 2-
 
-If we attempt to simulate this model for 5 seconds, we fine that the
+If we attempt to simulate this model for 5 seconds, we find that the
 simulation terminates after about 2 seconds with the following trajectory:
 
 .. plot:: ../plots/Decay1.py
