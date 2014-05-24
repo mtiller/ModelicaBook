@@ -114,14 +114,14 @@ The syntax of an annotation is the same syntax used for
 :ref:`modifications`.  This means the annotation will include either
 an assignment to a variable in the annotation, *e.g.,*
 
-.. code-block:
+.. code-block:: modelica
 
     annotation(Evaluate=true);
 
 or it will include a modification to something **inside** a variable in
 the annotation, *e.g.,*
 
-.. code-block:
+.. code-block:: modelica
 
     annotation(experiment(StartTime=0,StopTime=8));
 
@@ -133,7 +133,7 @@ Annotations were designed to allow model developers to attach
 associate a part number with a given model definition, they might
 introduce a model annotation like this:
 
-.. code-block:
+.. code-block:: modelica
 
     annotation(PartNumber="FF78-E4B879");
 
@@ -149,7 +149,7 @@ Imagine a user wanted to specify **both** a part number and an
 experiment annotation.  Then they might end up with an annotation like
 this one:
 
-.. code-block:
+.. code-block:: modelica
 
     annotation(PartNumber="FF78-E4B879",
                experiment(StartTime=0,StopTime=8));
@@ -171,7 +171,7 @@ For example, a better approach for including the part number
 would be to enclose it in a variable that is more likely to be unique
 to your company or application, *e.g.,*:
 
-.. code-block:
+.. code-block:: modelica
 
     annotation(XogenyIndustries(PartNumber="FF78-E4B879"),
                experiment(StartTime=0,StopTime=8));
@@ -182,7 +182,7 @@ organization came along and wanted to associate a different part
 number with the same model, they could do that by establishing their
 own separate hierarchy in the annotation, *e.g.,*:
 
-.. code-block:
+.. code-block:: modelica
 
     annotation(XogenyIndustries(PartNumber="FF78-E4B879"),
                AcmeEquipment(PartNumber="A23335-992"),
@@ -193,7 +193,7 @@ annotations (*e.g.,* in the Modelica Standard Library).  By
 convention, tool vendors use names that are prefixed by two
 underscores, *e.g.,*
 
-.. code-block:
+.. code-block:: modelica
 
     annotation(XogenyIndustries(PartNumber="FF78-E4B879"),
                __ModelicateTechnologies(enableCoolFeature10=true),
