@@ -18,7 +18,7 @@ Consider the following almost trivial model:
    :language: modelica
    :lines: 2-
 
-If we attempt to simulate this model for 5 seconds, we fine that the
+If we attempt to simulate this model for 5 seconds, we find that the
 simulation terminates after about 2 seconds with the following trajectory:
 
 .. plot:: ../plots/Decay1.py
@@ -63,7 +63,7 @@ Given the ``if`` expression:
 
 .. code-block:: modelica
 
-    der(x) = if x>=0 sqrt(x) else 0;
+    der(x) = if x>=0 then sqrt(x) else 0;
 
 it is entirely possible that ``sqrt`` will be called with a negative
 argument.  The reason is related to the fact that this is a state
@@ -122,7 +122,7 @@ Recall our previous equation:
 
 .. code-block:: modelica
 
-    der(x) = if x>=0 sqrt(x) else 0;
+    der(x) = if x>=0 then sqrt(x) else 0;
 
 In this case, the zero crossing function is simply :math:`x` since the
 event occurs when :math:`x` itself crosses zero.
