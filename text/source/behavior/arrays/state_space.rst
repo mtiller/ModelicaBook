@@ -226,7 +226,7 @@ about this example is the construction of ``A``.  Mathematically, the
 
 One thing we can note about this construction of :math:`A` is that the
 first two rows might be easier to express as a matrix of zeros and an
-identify matrix.  In other words, it might be simpler to construct the
+identity matrix.  In other words, it might be simpler to construct the
 matrix as a set of sub-matrices, *i.e.,*
 
 .. math::
