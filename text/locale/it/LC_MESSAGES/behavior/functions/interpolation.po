@@ -33,12 +33,6 @@ msgstr ""
 msgid "Function Definition"
 msgstr ""
 
-#: ../../source/behavior/functions/interpolation.rst:18
-msgid ""
-"For this example, we assume that we interpolation data in the following "
-"form:"
-msgstr ""
-
 #: ../../source/behavior/functions/interpolation.rst:22
 msgid "Independent Variable, :math:`x`"
 msgstr ""
@@ -461,3 +455,13 @@ msgstr ""
 #: ../../source/behavior/functions/interpolation.rst:152
 msgid "ExternalObject"
 msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:18
+msgid ""
+"For this example, we assume that we interpolate data in the following form:"
+msgstr ""
+
+#~ msgid ""
+#~ "For this example, we assume that we interpolation data in the following "
+#~ "form:"
+#~ msgstr ""
