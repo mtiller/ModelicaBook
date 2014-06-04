@@ -106,11 +106,6 @@ msgid ""
 " ``time``."
 msgstr ""
 
-#: ../../source/behavior/discrete/bouncing.rst:89
-msgid ""
-"do the referenced variables have to be continuous to make a state event?"
-msgstr ""
-
 #: ../../source/behavior/discrete/bouncing.rst:91
 msgid ""
 "As such, the simulation proceeds assuming the ball is in free fall until it "
@@ -276,3 +271,7 @@ msgid ""
 "later in this chapter when we talk about the important differences between "
 ":ref:`if-vs-when`."
 msgstr ""
+
+#~ msgid ""
+#~ "do the referenced variables have to be continuous to make a state event?"
+#~ msgstr ""

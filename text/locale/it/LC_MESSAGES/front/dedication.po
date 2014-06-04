@@ -33,7 +33,7 @@ msgstr ""
 "ispirata dagli scritti di Cory Doctorow e Lawrence Lessig. Il loro" 
 "messaggio di condivisione è mi ha molto colpito. A me non interessa" 
 "capitalizzare la mia conoscenza del linguaggio Modelica, la voglio condividere con gli altri in modo che" 
-"possano provare la stessa gioia che ho io nell'esplorare questa disciplina. Fortunatamente", 
+"possano provare la stessa gioia che ho io nell'esplorare questa disciplina. Fortunatamente"
 "questo progetto Kickstarter è stato finanziato con successo il 4 dicembre 2012 ed" 
 "è iniziata la mia odissea di creare un libro intero sotto licenza Creative Commons. Se" 
 "le circostanze fossero state diverse, questo libro probabilmente sarebbe stato dedicato a" 

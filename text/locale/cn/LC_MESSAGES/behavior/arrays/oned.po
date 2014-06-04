@@ -49,13 +49,6 @@ msgid ""
 ":math:`i^{th}` section.  We can further describe the mass as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:41
-msgid ""
-"where :math:`\\rho` is the material density and :math:`V_i` is the volume of"
-" the :math:`i^{th}` section.  Finally, we can expression the volume of the "
-":math:`i^{th}` section as:"
-msgstr ""
-
 #: ../../source/behavior/arrays/oned.rst:49
 msgid ""
 "where :math:`A_i` is the cross-sectional area of the :math:`i^{th}` section,"
@@ -321,3 +314,16 @@ msgstr ""
 #: ../../source/behavior/arrays/oned.rst:252
 msgid "array comprehensions"
 msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:41
+msgid ""
+"where :math:`\\rho` is the material density and :math:`V_i` is the volume of"
+" the :math:`i^{th}` section.  Finally, we can express the volume of the "
+":math:`i^{th}` section as:"
+msgstr ""
+
+#~ msgid ""
+#~ "where :math:`\\rho` is the material density and :math:`V_i` is the volume of"
+#~ " the :math:`i^{th}` section.  Finally, we can expression the volume of the "
+#~ ":math:`i^{th}` section as:"
+#~ msgstr ""

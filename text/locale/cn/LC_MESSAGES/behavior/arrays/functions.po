@@ -663,20 +663,8 @@ msgstr ""
 msgid "``skew``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:509
-msgid ""
-"The ``skew`` function takes a vector with three components and returns the "
-"following matrix:"
-msgstr ""
-
 #: ../../source/behavior/arrays/functions.rst:523
 msgid "``cross``"
-msgstr ""
-
-#: ../../source/behavior/arrays/functions.rst:528
-msgid ""
-"The ``cross`` function takes two vectors (each with 3 components) and "
-"returns the following scalar:"
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:542
@@ -1058,3 +1046,25 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:657
 msgid "vectorization"
 msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:509
+msgid ""
+"The ``skew`` function takes a vector with three components and returns the "
+"following skew-symmetric matrix:"
+msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:528
+msgid ""
+"The ``cross`` function takes two vectors (each with 3 components) and "
+"returns the following vector (with three components):"
+msgstr ""
+
+#~ msgid ""
+#~ "The ``skew`` function takes a vector with three components and returns the "
+#~ "following matrix:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``cross`` function takes two vectors (each with 3 components) and "
+#~ "returns the following scalar:"
+#~ msgstr ""
