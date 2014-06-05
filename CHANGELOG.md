@@ -5,7 +5,7 @@ This file collects the significant changes to the book since its initial public 
 #### Enhancements
 
   * Improved visibility for search engines
-  * Simplified README (issue [#151](https://github.com/xogeny/ModelicaBook/pull/151)
+  * Simplified README (issue [#151](https://github.com/xogeny/ModelicaBook/pull/151))
   * Improved highlighting (thanks to [@dietmarw](https://github.com/dietmarw) and the
     newest version of Pygments)
 
