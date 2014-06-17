@@ -18,7 +18,7 @@ where the time of the event is known *a priori*, a state event depends
 on the solution trajectory.  So we cannot entirely avoid the
 "searching" for the point at which the event occurs.
 
-To see a state even in action, let us consider the behavior of a
+To see a state event in action, let us consider the behavior of a
 bouncing ball bouncing on a flat horizontal surface.  When the ball is
 above the surface, it accelerates due to gravitational forces.  When
 the ball eventually comes in contact with the surface, it bounces off
