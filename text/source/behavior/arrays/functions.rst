@@ -201,6 +201,9 @@ Conversion Functions
 The following functions provide a means to transform arrays into other
 arrays.
 
+.. todo:: It would be nice to get examples for each function call in
+          order to be able to understand.
+
 ``scalar``
 ~~~~~~~~~~
 
