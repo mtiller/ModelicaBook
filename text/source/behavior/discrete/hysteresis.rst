@@ -42,7 +42,7 @@ temperature you have specified.  Instead, it waits until the
 temperature gets some specified amount above or below the desired
 temperature before acting.
 
-..todo: there seems to be a formatting problem around code{ChatteringControl}
+.. todo:: there seems to be a formatting problem around code{ChatteringControl}
 
 This "band" that is introduced around the desired temperature is
 called hysteresis.  The problem with the \code{ChatteringControl}
@@ -84,7 +84,7 @@ heater turning on and the heater turning off.
 The logic for implementing hysteresis can be made slightly more
 explicit by using an ``algorithm`` section (as previous discussed
 during our discussion on :ref:`speed estimation techniques
-<pulse-counting>`).  
+<pulse-counting>`).
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/Hysteresis/HysteresisControlWithAlgorithms.mo
    :language: modelica
