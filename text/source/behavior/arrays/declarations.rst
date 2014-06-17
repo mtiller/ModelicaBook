@@ -101,6 +101,6 @@ Booleans
 It is also possible to declare an array where a dimension is specified
 as ``Boolean``, *e.g.,*
 
-.. math::
+.. code-block:: modelica
 
     Real x[Boolean];
