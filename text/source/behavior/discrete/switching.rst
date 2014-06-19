@@ -27,10 +27,11 @@ equations.
 
 We can see the voltage response of this model to the switched supply
 voltage in the following plot:
-.. todo:: Source Voltage V needs subscript s, other plots missing subscripts also
 
 .. plot:: ../plots/SRLCv.py
    :class: interactive
+
+.. todo:: Source Voltage V needs subscript s, other plots missing subscripts also
 
 Furthermore, we can see the current response for inductor, resistor
 and capacitor components in this plot:

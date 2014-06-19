@@ -136,7 +136,7 @@ Let's take a close look at the ``when`` statement in this model:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/SpeedMeasurement/IntervalMeasure.mo
    :language: modelica
-   :lines: 13-18
+   :lines: 13-19
 
 Here, we use the vector expression syntax used previously in the
 :ref:`bouncing-ball` example.  Recall that the ``when`` statement
