@@ -1,3 +1,3 @@
-within ModelicaByExample.FluidSystems;
-package Incompressible
-end Incompressible;
+within ModelicaByExample.FluidSystems.Incompressible;
+package Examples
+end Examples;
