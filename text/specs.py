@@ -599,4 +599,9 @@ add_simple_plot(plot="TCE_Hyh", res="TCE_Hy", vars=[Var("controller.bus.heat_com
                 legloc="lower right",
                 title="Actuator duty cycle using bang-bang control with hysteresis")
 
+add_case(["LoneTank"], stopTime=1.0, res="LT", tol=1e-3)
+add_simple_plot(plot="LT", vars=[Var("h", legend="Fluid height"),
+                                 Var("V", legend="Fluid volume")], legloc="lower right",
+                title="Response of a closed tank")
+
 generate()
