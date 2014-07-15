@@ -223,7 +223,7 @@ Much of this book was written on a MacBook Air.  My very first
 computer was an Apple //e.  But since that time, I've worked mainly
 with PCs and Unix workstations.  Most recently, I've done a great deal
 of development on Linux machines.  I always dismissed using Macs
-because I was convinced they could support the kind of command-line
+because I was convinced they couldn't support the kind of command-line
 oriented development work I typically do.  I could not have been more
 wrong.  The eco-systems for MacOSX is almost identical to the one I
 was used to in the Linux world.  I am able to seamlessly transition
