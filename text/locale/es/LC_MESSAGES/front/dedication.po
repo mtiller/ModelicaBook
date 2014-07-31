@@ -28,6 +28,10 @@ msgid ""
 "circumstances had been different, this book would probably be dedicated to "
 "Cory Doctorow and Lawrence Lessig for inspiring me to take on this project."
 msgstr ""
+"Este libro comenzó como un proyecto de Kickstarter. La idea de escribir un libro y"
+"hacerlo de libre disposición, bajo una licencia Creative Commons, fue inspirada"
+"en gran parte por los escritos de Cory Doctorow y Lawrence Lessig. Su"
+
 
 #: ../../source/front/dedication.rst:23
 msgid ""
