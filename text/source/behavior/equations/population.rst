@@ -64,8 +64,8 @@ species would simply die off.  So predation is what balances out this
 effect and keeps the predator population from going to zero.  Again,
 we have a proportionality relationship.  But this time, it is actually
 a bilinear relationship that is, again, conceptually similar to the
-Law of Mass Action.  This relationship is simply capturing
-mathematically the fact that the chance that a predator will find and
+Law of Mass Action.  This relationship is simply capturing,
+mathematically, the fact that the chance that a predator will find and
 consume some prey is proportional to both the population of the prey
 and the predators.  Since this particular effect requires both species
 to be involved, this mathematical relationship has a slightly
