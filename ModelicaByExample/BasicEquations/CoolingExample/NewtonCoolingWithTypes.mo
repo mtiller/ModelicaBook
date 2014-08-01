@@ -20,5 +20,5 @@ model NewtonCoolingWithTypes "Cooling example with physical types"
 initial equation
   T = T0 "Specify initial value for T";
 equation
-  m*c_p*der(T) = h*A*(T_inf-T) "Newton's Law of Cooling";
+  m*c_p*der(T) = h*A*(T_inf-T) "Newton's law of Cooling";
 end NewtonCoolingWithTypes;

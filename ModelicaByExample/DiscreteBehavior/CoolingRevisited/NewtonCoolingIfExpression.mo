@@ -15,5 +15,5 @@ initial equation
   der(T) = 0 "Steady state initial conditions";
 equation
   T_inf = 298.15 - (if time<0.5 then 0 else 20*(time-0.5));
-  m*c_p*der(T) = h*(T_inf-T) "Newton's Law of Cooling";
+  m*c_p*der(T) = h*(T_inf-T) "Newton's law of cooling";
 end NewtonCoolingIfExpression;

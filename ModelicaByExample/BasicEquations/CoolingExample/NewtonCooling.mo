@@ -1,5 +1,5 @@
 within ModelicaByExample.BasicEquations.CoolingExample;
-model NewtonCooling "An example of Newton's Law of Cooling"
+model NewtonCooling "An example of Newton's law of cooling"
   parameter Real T_inf "Ambient temperature";
   parameter Real T0 "Initial temperature";
   parameter Real h "Convective cooling coefficient";
@@ -10,5 +10,5 @@ model NewtonCooling "An example of Newton's Law of Cooling"
 initial equation
   T = T0 "Specify initial value for T";
 equation
-  m*c_p*der(T) = h*A*(T_inf-T) "Newton's Law of Cooling";
+  m*c_p*der(T) = h*A*(T_inf-T) "Newton's law of cooling";
 end NewtonCooling;

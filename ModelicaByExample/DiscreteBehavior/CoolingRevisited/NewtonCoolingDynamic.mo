@@ -24,5 +24,5 @@ equation
   else
     T_inf = 298.15-20*(time-0.5) "Otherwise, increasing";
   end if;
-  m*c_p*der(T) = h*(T_inf-T) "Newton's Law of Cooling";
+  m*c_p*der(T) = h*(T_inf-T) "Newton's law of cooling";
 end NewtonCoolingDynamic;
