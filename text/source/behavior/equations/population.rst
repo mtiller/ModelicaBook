@@ -151,13 +151,33 @@ completely ignore it.  Next, whether it will be ignored is also hard
 to predict since different tools may make different choices about
 which variables to treat as states.
 
-Finally, the ``start`` attribute is also "overloaded".  This means
-that it is actually used for two different things.  If the variable in
-question is not a state, but is instead an "iteration variable"
-(*i.e.*, a variable whose solution depends on a non-linear system of
-equations), then the ``start`` attribute may be used by a Modelica
-compiler as an initial guess (*i.e.*, the value used for the variable
-during the initial iteration of the non-linear solver).
+One way to avoid both of these disadvantages is to use the ``fixed``
+attribute (also discussed in the section on :ref:`builtin-types`).
+The ``fixed`` attribute can be used to tell the compiler that the
+start attribute **must** be used as an initial condition.  In other
+words, an ``initial equation`` like this:
+
+.. code-block:: modelica
+
+     Real x;
+   initial equation
+     x = 5;
+
+is equivalent to the following declaration utilizing the ``start`` and
+``fixed`` attributes:
+
+.. code-block:: modelica
+
+     Real x(start=5, fixed=true);
+
+Finally, one additional complication is that the ``start`` attribute
+is also "overloaded".  This means that it is actually used for two
+different things.  If the variable in question is not a state, but is
+instead an "iteration variable" (*i.e.*, a variable whose solution
+depends on a non-linear system of equations), then the ``start``
+attribute may be used by a Modelica compiler as an initial guess
+(*i.e.*, the value used for the variable during the initial iteration
+of the non-linear solver).
 
 Whether to specify a ``start`` attribute or not depends on how
 strictly you want a given initial condition to be enforced.  Knowing
