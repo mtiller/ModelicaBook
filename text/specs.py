@@ -50,7 +50,7 @@ add_simple_plot(plot="SOSIP", vars=sosvars, title="Mechanical System Response")
 
 add_case(["SecondOrderSystemInitParams"], stopTime=5, res="SOSIP1",
          mods={"phi1_init": 1.0})
-add_simple_plot(plot="SOSIP1", vars=sosvars, title="Mechanical Response; phi1(0)=1")
+add_simple_plot(plot="SOSIP1", vars=sosvars, title="Mechanical Response specifying phi1(0)")
 
 ## LotkaVolterra
 lvvars = [Var("x", legend="Prey population"),
