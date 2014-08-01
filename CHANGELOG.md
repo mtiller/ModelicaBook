@@ -1,5 +1,20 @@
 This file collects the significant changes to the book since its initial public release.
 
+### Version 0.3.2
+
+#### Enhancements
+
+  * Improved discussion of initial conditions to mention the `fixed`
+    attribute (issue
+    [#133](https://github.com/xogeny/ModelicaBook/pull/133))
+
+#### Bug Fixes
+
+  * Added missing explanation of annotation structure
+  * Added an explanation of `record` constructors (issue
+    [#60](https://github.com/xogeny/ModelicaBook/pull/60), opened by
+    @casella)
+	
 ### Version 0.3.1
 
 #### Enhancements
