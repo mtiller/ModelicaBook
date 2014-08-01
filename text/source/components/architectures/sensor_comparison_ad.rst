@@ -255,7 +255,7 @@ the :ref:`flat-sensor-system` as well):
 
 Note how, even with an adequate sensor, the controller in our
 ``Variant1`` configuration seems to be converging to the wrong
-steady-state speed.  This is because we are only using a proportional
+steady state speed.  This is because we are only using a proportional
 gain controller.  However, if we extend from the ``Variant1`` model
 and add a PID controller and a more realistic actuator with
 limitations on the amount of torque it can supply, *i.e.*,
