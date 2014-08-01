@@ -7,10 +7,6 @@ If you are more familiar with mechanical systems, this example might
 help reinforce some of the concepts we've covered so far.  The system
 we wish to model is the one shown in the following figure:
 
-.. todo::
-
-   Add a better figure here of the two inertia system
-
 .. figure:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithPulseCounter.*
    :width: 100%
    :align: center
