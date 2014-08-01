@@ -197,8 +197,6 @@ brief description of the attribute:
 .. index:: ! nominal attribute
 .. index:: ! stateSelect attribute
 
-.. todo:: Get descriptions from the specification
-
 .. _fixed-attribute:
 
 Attributes of ``Real``
