@@ -1,18 +1,18 @@
 .. _one-dimensional-heat-transfer:
 
-One Dimensional Heat Transfer
+One-Dimensional Heat Transfer
 -----------------------------
 
 Our previous discussion on :ref:`state-space` introduced matrices and
 vectors.  The focus was primarily on mathematical aspects of arrays.
 In this section, we will consider how arrays can be used to represent
-something a bit more physical, the one dimensional spatial
+something a bit more physical, the one-dimensional spatial
 distribution of variables.  We'll look at several features in Modelica
 that are related to arrays and how they allow us to compactly express
 behavior involving arrays.
 
 Our problems will center around the a simple heat transfer problem.
-Consider a one dimensional rod like the one shown below:
+Consider a one-dimensional rod like the one shown below:
 
 .. todo::
 
@@ -315,7 +315,7 @@ Conclusion
 ^^^^^^^^^^
 
 In this section, we've seen various ways that we can use vector
-variables and vector equations to represent one dimensional heat
+variables and vector equations to represent one-dimensional heat
 transfer.  Of course, this vector related functionality can be used
 for a wide range of different problem types.  The goal of this section
 was to introduce several features to demonstrate the various options
