@@ -338,5 +338,5 @@ using `pip` (*e.g.,* `pip install sphinx-intl`).
 % make dirhtml_<X>
 ```
 
-Currently supported languages are: `cn`, `es`, `fr` and `de (*e.g.,* `make html_es`)
+Currently supported languages are: `cn`, `es`, `fr` and `de` (*e.g.,* `make html_es`)
 
