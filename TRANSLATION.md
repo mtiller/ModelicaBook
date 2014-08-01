@@ -5,6 +5,12 @@ follow.  This will be an evolving discussion and I will gladly accept
 pull requests from translators or others who have experience in such
 matters in an effort to improve the translation process.
 
+## Current Status
+
+At this point, it should be "safe" to translate any text up to and
+including **Chapter 1 (Basic Equations)** without fear of the
+underlying text changing.
+
 ## Coordinators
 
 The following people have taken on the responsibility for translation
