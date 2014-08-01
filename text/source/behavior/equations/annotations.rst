@@ -58,12 +58,8 @@ example:
 
     T = T0 "Specify initial value for T" annotation(...);
 
-.. todo:: where does it come if the textual description is not present?
-	  if it's always just before the ";", then just say it that way.
-
-Note that, just like with a declaration, the ``annotation`` follows
-the textual description (if present) and comes before the ``;`` that
-ends the equation.
+In declarations and equations, the ``annotation`` is always at the
+very end and comes immediately before the ``;``.
 
 Inheritance Annotations
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -158,7 +154,11 @@ Note how these two pieces of information can exist side by side.  One
 way to think about annotations is to visualize them as a tree like
 this:
 
-.. todo:: Add a figure here of a tree structure
+  * ``PartNumber="FF78-E4B879"``
+  * ``experiment``
+
+    * ``StartTime=0``
+    * ``StopTime=8``
 
 Namespaces
 ^^^^^^^^^^
