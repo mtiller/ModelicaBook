@@ -35,15 +35,6 @@ msgid ""
 "point at which the event occurs."
 msgstr ""
 
-#: ../../source/behavior/discrete/bouncing.rst:21
-msgid ""
-"To see a state even in action, let us consider the behavior of a bouncing "
-"ball bouncing on a flat horizontal surface.  When the ball is above the "
-"surface, it accelerates due to gravitational forces.  When the ball "
-"eventually comes in contact with the surface, it bounces off the surface "
-"according to the following relationship:"
-msgstr ""
-
 #: ../../source/behavior/discrete/bouncing.rst:31
 msgid ""
 "where :math:`v_\\text{final}` is the (vertical) velocity of the ball "
@@ -104,11 +95,6 @@ msgid ""
 "example in :ref:`previous cooling examples <cooling-revisited>`) is the fact"
 " that this conditional expression references continuous variables other than"
 " ``time``."
-msgstr ""
-
-#: ../../source/behavior/discrete/bouncing.rst:89
-msgid ""
-"do the referenced variables have to be continuous to make a state event?"
 msgstr ""
 
 #: ../../source/behavior/discrete/bouncing.rst:91
@@ -276,3 +262,24 @@ msgid ""
 "later in this chapter when we talk about the important differences between "
 ":ref:`if-vs-when`."
 msgstr ""
+
+#: ../../source/behavior/discrete/bouncing.rst:21
+msgid ""
+"To see a state event in action, let us consider the behavior of a bouncing "
+"ball bouncing on a flat horizontal surface.  When the ball is above the "
+"surface, it accelerates due to gravitational forces.  When the ball "
+"eventually comes in contact with the surface, it bounces off the surface "
+"according to the following relationship:"
+msgstr ""
+
+#~ msgid ""
+#~ "To see a state even in action, let us consider the behavior of a bouncing "
+#~ "ball bouncing on a flat horizontal surface.  When the ball is above the "
+#~ "surface, it accelerates due to gravitational forces.  When the ball "
+#~ "eventually comes in contact with the surface, it bounces off the surface "
+#~ "according to the following relationship:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "do the referenced variables have to be continuous to make a state event?"
+#~ msgstr ""

@@ -11,26 +11,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/behavior/arrays/oned.rst:4
-msgid "One Dimensional Heat Transfer"
-msgstr ""
-
-#: ../../source/behavior/arrays/oned.rst:6
-msgid ""
-"Our previous discussion on :ref:`state-space` introduced matrices and "
-"vectors.  The focus was primarily on mathematical aspects of arrays. In this"
-" section, we will consider how arrays can be used to represent something a "
-"bit more physical, the one dimensional spatial distribution of variables.  "
-"We'll look at several features in Modelica that are related to arrays and "
-"how they allow us to compactly express behavior involving arrays."
-msgstr ""
-
-#: ../../source/behavior/arrays/oned.rst:14
-msgid ""
-"Our problems will center around the a simple heat transfer problem. Consider"
-" a one dimensional rod like the one shown below:"
-msgstr ""
-
 #: ../../source/behavior/arrays/oned.rst:22
 msgid "Deriving Equations"
 msgstr ""
@@ -47,13 +27,6 @@ msgid ""
 "where :math:`m` is the mass of the :math:`i^{th}` section, :math:`C` is the "
 "capacitance (a material property) and :math:`T_i` is the temperature of the "
 ":math:`i^{th}` section.  We can further describe the mass as:"
-msgstr ""
-
-#: ../../source/behavior/arrays/oned.rst:41
-msgid ""
-"where :math:`\\rho` is the material density and :math:`V_i` is the volume of"
-" the :math:`i^{th}` section.  Finally, we can expression the volume of the "
-":math:`i^{th}` section as:"
 msgstr ""
 
 #: ../../source/behavior/arrays/oned.rst:49
@@ -308,16 +281,75 @@ msgstr ""
 msgid "Conclusion"
 msgstr ""
 
+#: ../../source/behavior/arrays/oned.rst:252
+msgid "array comprehensions"
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:4
+msgid "One-Dimensional Heat Transfer"
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:6
+msgid ""
+"Our previous discussion on :ref:`state-space` introduced matrices and "
+"vectors.  The focus was primarily on mathematical aspects of arrays. In this"
+" section, we will consider how arrays can be used to represent something a "
+"bit more physical, the one-dimensional spatial distribution of variables.  "
+"We'll look at several features in Modelica that are related to arrays and "
+"how they allow us to compactly express behavior involving arrays."
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:14
+msgid ""
+"Our problems will center around the a simple heat transfer problem. Consider"
+" a one-dimensional rod like the one shown below:"
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:41
+msgid ""
+"where :math:`\\rho` is the material density and :math:`V_i` is the volume of"
+" the :math:`i^{th}` section.  Finally, we can express the volume of the "
+":math:`i^{th}` section as:"
+msgstr ""
+
 #: ../../source/behavior/arrays/oned.rst:317
 msgid ""
 "In this section, we've seen various ways that we can use vector variables "
-"and vector equations to represent one dimensional heat transfer.  Of course,"
+"and vector equations to represent one-dimensional heat transfer.  Of course,"
 " this vector related functionality can be used for a wide range of different"
 " problem types.  The goal of this section was to introduce several features "
 "to demonstrate the various options that are available to the developer when "
 "working with vectors."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:252
-msgid "array comprehensions"
-msgstr ""
+#~ msgid "One Dimensional Heat Transfer"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Our previous discussion on :ref:`state-space` introduced matrices and "
+#~ "vectors.  The focus was primarily on mathematical aspects of arrays. In this"
+#~ " section, we will consider how arrays can be used to represent something a "
+#~ "bit more physical, the one dimensional spatial distribution of variables.  "
+#~ "We'll look at several features in Modelica that are related to arrays and "
+#~ "how they allow us to compactly express behavior involving arrays."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Our problems will center around the a simple heat transfer problem. Consider"
+#~ " a one dimensional rod like the one shown below:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "where :math:`\\rho` is the material density and :math:`V_i` is the volume of"
+#~ " the :math:`i^{th}` section.  Finally, we can expression the volume of the "
+#~ ":math:`i^{th}` section as:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In this section, we've seen various ways that we can use vector variables "
+#~ "and vector equations to represent one dimensional heat transfer.  Of course,"
+#~ " this vector related functionality can be used for a wide range of different"
+#~ " problem types.  The goal of this section was to introduce several features "
+#~ "to demonstrate the various options that are available to the developer when "
+#~ "working with vectors."
+#~ msgstr ""

@@ -134,15 +134,15 @@ msgid ""
 "in Modelica as appropriate."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:108
+#: ../../source/components/components/component_models.rst:106
 msgid "Accounting"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:113
+#: ../../source/components/components/component_models.rst:111
 msgid "Connectors"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:115
+#: ../../source/components/components/component_models.rst:113
 msgid ""
 "The other advantage of acausal modeling is the amount of automatic "
 "\"accounting\" performed with this approach.  To understand exactly what "
@@ -150,7 +150,7 @@ msgid ""
 "``connector`` definitions from the Modelica Standard Library:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:134
+#: ../../source/components/components/component_models.rst:132
 msgid ""
 "As we've discussed previously, an acausal connector includes two different "
 "types of variables, across variables and through variables. The through "
@@ -159,11 +159,11 @@ msgid ""
 "angular position, and the through variable is ``tau``, the torque."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:142
+#: ../../source/components/components/component_models.rst:140
 msgid "Sign Convections"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:144
+#: ../../source/components/components/component_models.rst:142
 msgid ""
 "Also recall from our previous discussion that Modelica models should observe"
 " the following convention: a positive value for the ``flow`` variable on a "
@@ -175,22 +175,22 @@ msgid ""
 "identically."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:158
+#: ../../source/components/components/component_models.rst:156
 msgid "Connection Sets"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:160
+#: ../../source/components/components/component_models.rst:158
 msgid ""
 "Before we can get into the details of the accounting performed by the "
 "compiler, we need to introduce the concept of a *connection set*.  To "
 "demonstrate what a connection set is, consider the following schematic:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:170
+#: ../../source/components/components/component_models.rst:168
 msgid "Note that there are 8 connections in this model:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:184
+#: ../../source/components/components/component_models.rst:182
 msgid ""
 "If two connect statements have one connector in common, **they belong to the"
 " same connection set**.  If a connector is not connected to any other "
@@ -199,79 +199,79 @@ msgid ""
 "follows:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:190
+#: ../../source/components/components/component_models.rst:188
 msgid "Connection Set #1"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:192
+#: ../../source/components/components/component_models.rst:190
 msgid "``ground.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:193
+#: ../../source/components/components/component_models.rst:191
 msgid "``damper2.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:194
+#: ../../source/components/components/component_models.rst:192
 msgid "``spring2.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:196
+#: ../../source/components/components/component_models.rst:194
 msgid "Connection Set #2"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:198
+#: ../../source/components/components/component_models.rst:196
 msgid "``damper2.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:199
+#: ../../source/components/components/component_models.rst:197
 msgid "``spring2.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:200
+#: ../../source/components/components/component_models.rst:198
 msgid "``inertia2.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:202
+#: ../../source/components/components/component_models.rst:200
 msgid "Connection Set #3"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:204
+#: ../../source/components/components/component_models.rst:202
 msgid "``inertia2.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:205
+#: ../../source/components/components/component_models.rst:203
 msgid "``damper1.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:206
+#: ../../source/components/components/component_models.rst:204
 msgid "``spring1.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:208
+#: ../../source/components/components/component_models.rst:206
 msgid "Connection Set #4"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:210
+#: ../../source/components/components/component_models.rst:208
 msgid "``inertia1.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:211
+#: ../../source/components/components/component_models.rst:209
 msgid "``damper1.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:212
+#: ../../source/components/components/component_models.rst:210
 msgid "``spring1.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:214
+#: ../../source/components/components/component_models.rst:212
 msgid "Connection Set #5"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:216
+#: ../../source/components/components/component_models.rst:214
 msgid "``inertia1.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:218
+#: ../../source/components/components/component_models.rst:216
 msgid ""
 "Note that these connection sets appear from right to left in the diagram.  "
 "It may be useful to take the time to match the connectors in the diagram "
@@ -280,11 +280,11 @@ msgid ""
 "whereas the ``flange_b`` ones are only outlined."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:226
+#: ../../source/components/components/component_models.rst:224
 msgid "Generated Equations"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:228
+#: ../../source/components/components/component_models.rst:226
 msgid ""
 "This is where the \"accounting\" starts.  For each connection **set**, "
 "special equations are automatically generated.  The first set of automatic "
@@ -294,13 +294,13 @@ msgid ""
 "the sum of all through variables in the connection set must sum to zero."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:236
+#: ../../source/components/components/component_models.rst:234
 msgid ""
 "In the case of the connection sets above, the following equations will be "
 "automatically generated:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:274
+#: ../../source/components/components/component_models.rst:272
 msgid ""
 "Note that for an empty connection set (*i.e.,* Connection Set #5), there is "
 "only one across variable in the set, so no equality equations are generated."
@@ -309,7 +309,7 @@ msgid ""
 "unconnected connector.  This makes intuitive physical sense as well."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:281
+#: ../../source/components/components/component_models.rst:279
 msgid ""
 "What does all this mean physically?  In the case of an electrical "
 "connection, this implies that each connection can be treated as a \"perfect "
@@ -321,11 +321,11 @@ msgid ""
 "components."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:291
+#: ../../source/components/components/component_models.rst:289
 msgid "Conservation"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:293
+#: ../../source/components/components/component_models.rst:291
 msgid ""
 "There are two important consequences to these equations.  The first is that "
 "the ``flow`` variable is automatically conserved.  Typical ``flow`` "
@@ -335,7 +335,7 @@ msgid ""
 "quantities."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:300
+#: ../../source/components/components/component_models.rst:298
 msgid ""
 "But something else is being implicitly conserved as well. Specifically, **we"
 " can ensure that energy is conserved** as well.  For all of these domains, "
@@ -347,13 +347,13 @@ msgid ""
 " set we have the following equations:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:316
+#: ../../source/components/components/component_models.rst:314
 msgid ""
 "If we multiply the last equation by ``der(ground.flange_a.phi)``, the "
 "angular velocity of the ``ground.flange_a`` connector, we get:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:325
+#: ../../source/components/components/component_models.rst:323
 msgid ""
 "However, we also know that all the across variables in the connection set "
 "are equal.  As a result, their derivatives must also be equal. This means "
@@ -361,7 +361,7 @@ msgid ""
 "substitutions yields:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:336
+#: ../../source/components/components/component_models.rst:334
 msgid ""
 "The first term in the equation above is the power flowing into the "
 "``ground`` component through ``flange_a``.  The second term is the power "
@@ -373,11 +373,11 @@ msgid ""
 "nothing is lost or stored)."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:348
+#: ../../source/components/components/component_models.rst:346
 msgid "Balanced Components"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:354
+#: ../../source/components/components/component_models.rst:352
 msgid ""
 "If we look carefully at the previous discussion on equations generated "
 "involving acausal variables in connection sets, we'll see something very "
@@ -385,11 +385,11 @@ msgid ""
 "learned about connectors and connector sets:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:359
+#: ../../source/components/components/component_models.rst:357
 msgid "A connection can only belong to one connection set."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:360
+#: ../../source/components/components/component_models.rst:358
 msgid ""
 "As we learned in our previous discussion on :ref:`acausal-vars`, for every "
 "through variable in a connector (*i.e.,* a variable declared with the "
@@ -397,14 +397,14 @@ msgid ""
 "variable without any qualifier)."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:364
+#: ../../source/components/components/component_models.rst:362
 msgid ""
 "The number of equations generated in a connection set is equal to the number"
 " of connectors in the connection set multiplied by the number of through-"
 "across pairs in the connector."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:368
+#: ../../source/components/components/component_models.rst:366
 msgid ""
 "Remember that acausal variables come in pairs.  Equations for half of those "
 "variables (one per pair) will be generated automatically via connections.  "
@@ -412,24 +412,24 @@ msgid ""
 "models themselves."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:373
+#: ../../source/components/components/component_models.rst:371
 msgid ""
 "Keep in mind that this discussion is focused only on acausal variables in "
 "connectors.  We also need to take into account two other cases:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:376
+#: ../../source/components/components/component_models.rst:374
 msgid ""
 "Variables declared within a component model (as opposed to on a connector)."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:378
+#: ../../source/components/components/component_models.rst:376
 msgid ""
 "Causal variables on connectors (*i.e.,* those qualified by either ``input`` "
 "or ``output``)."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:381
+#: ../../source/components/components/component_models.rst:379
 msgid ""
 "Modelica requires that any non-``partial`` model be balanced.  But what does"
 " that mean?  It means that the component should provide the proper number of"
@@ -437,7 +437,7 @@ msgid ""
 "compute the number of equations required?"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:386
+#: ../../source/components/components/component_models.rst:384
 msgid ""
 "We already have a start based on our discussion about acausal variables.  "
 "Since half of the equations needed for acausal variables come from generated"
@@ -454,42 +454,42 @@ msgid ""
 " equation."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:401
+#: ../../source/components/components/component_models.rst:399
 msgid ""
 "In summary, the number of equations that a component must provide is the sum"
 " of:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:404
+#: ../../source/components/components/component_models.rst:402
 msgid "The number of through-across pairs across all its connectors"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:405
+#: ../../source/components/components/component_models.rst:403
 msgid ""
 "The number of non-``parameter`` variables declared in the component model."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:407
+#: ../../source/components/components/component_models.rst:405
 msgid "The number of ``output`` variables across all its connectors."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:409
+#: ../../source/components/components/component_models.rst:407
 msgid ""
 "Note that these equations can (and frequently do) originate in a ``partial``"
 " model that is inherited."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:412
+#: ../../source/components/components/component_models.rst:410
 msgid ""
 "If the number of equations provided by a component equals the number of "
 "equations required, then the component model is said to be **balanced**."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:417
+#: ../../source/components/components/component_models.rst:415
 msgid "Component Definitions"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:419
+#: ../../source/components/components/component_models.rst:417
 msgid ""
 "In this chapter we've discussed how to create component models. "
 "Fundamentally, nothing has changed since we first discussed what a :ref"
@@ -497,22 +497,22 @@ msgid ""
 "things about component models."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:425
+#: ../../source/components/components/component_models.rst:423
 msgid "Blocks"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:429
+#: ../../source/components/components/component_models.rst:427
 msgid ""
 "First, in the discussion on :ref:`block-components` we introduced the idea "
 "of a ``block``.  A ``block`` is a special kind of ``model`` where the "
 "connectors contain only ``input`` and ``output`` signals."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:434
+#: ../../source/components/components/component_models.rst:432
 msgid "Conditional Variables/Connectors"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:436
+#: ../../source/components/components/component_models.rst:434
 msgid ""
 "Another thing we saw in our discussion of the :ref:`optional-ground-"
 "connector` was the ability to make a declaration conditional.  The "
@@ -524,7 +524,7 @@ msgid ""
 "such a declaration is:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:450
+#: ../../source/components/components/component_models.rst:448
 msgid ""
 "In other words, by including the ``if`` keyword and a conditional expression"
 " immediately after the name of the variable (and any modifications that are "
@@ -533,21 +533,21 @@ msgid ""
 "variable will be present. When it is ``false``, it will not be present."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:458
+#: ../../source/components/components/component_models.rst:456
 msgid "Model Limitations"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:463
+#: ../../source/components/components/component_models.rst:461
 msgid "``assert``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:467
+#: ../../source/components/components/component_models.rst:465
 msgid ""
 "To understand how to enforce model limitations, we must first explain the "
 "``assert`` function.  The syntax of a call to the ``assert`` function is:"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:475
+#: ../../source/components/components/component_models.rst:473
 msgid ""
 "where ``conditional_expression`` is an expression that yields either "
 "``true`` or ``false``.  A value of ``false`` indicates a failure of the "
@@ -559,18 +559,18 @@ msgid ""
 "``AssertionalLevel.error``."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:484
+#: ../../source/components/components/component_models.rst:482
 msgid ""
 "Now that we know how to use the ``assert`` function, let's examine the "
 "consequences of assertions during simulation to understand why they are "
 "important."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:489
+#: ../../source/components/components/component_models.rst:487
 msgid "Defining Model Limitations"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:495
+#: ../../source/components/components/component_models.rst:493
 msgid ""
 "When creating a component ``model`` (or any ``model``, for that matter), it "
 "is useful to incorporate any limitations on the equations in a model by "
@@ -580,7 +580,7 @@ msgid ""
 "true."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:502
+#: ../../source/components/components/component_models.rst:500
 msgid ""
 "If the equations within a model are only accurate or applicable under "
 "certain conditions, it is essential that these conditions be included in the"
@@ -590,7 +590,7 @@ msgid ""
 "have in the models.  So always try to capture such model limitations."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:512
+#: ../../source/components/components/component_models.rst:510
 msgid ""
 "It is worth taking a moment to understand what impact such an assertion has "
 "during simulation.  Part of the simulation process is the generation of so-"
@@ -602,7 +602,7 @@ msgid ""
 "sufficiently accurate solution is found."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:522
+#: ../../source/components/components/component_models.rst:520
 msgid ""
 "If a candidate solution violates an assertion, then it is automatically "
 "considered to be inaccurate.  The violated assertion will automatically "
@@ -621,52 +621,52 @@ msgid ""
 "``AssertionLevel.error``."
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:110
+#: ../../source/components/components/component_models.rst:108
 msgid "connect"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:110
+#: ../../source/components/components/component_models.rst:108
 msgid "flow"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:153
+#: ../../source/components/components/component_models.rst:151
 msgid "connection set"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:350
+#: ../../source/components/components/component_models.rst:348
 msgid "balanced models"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:351
-#: ../../source/components/components/component_models.rst:352
+#: ../../source/components/components/component_models.rst:349
+#: ../../source/components/components/component_models.rst:350
 msgid "models"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:351
+#: ../../source/components/components/component_models.rst:349
 msgid "balanced"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:352
+#: ../../source/components/components/component_models.rst:350
 msgid "equations; number"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:427
+#: ../../source/components/components/component_models.rst:425
 msgid "block"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:465
-#: ../../source/components/components/component_models.rst:492
+#: ../../source/components/components/component_models.rst:463
+#: ../../source/components/components/component_models.rst:490
 msgid "assert"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:491
+#: ../../source/components/components/component_models.rst:489
 msgid "model limitations"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:493
+#: ../../source/components/components/component_models.rst:491
 msgid "assertions"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:510
+#: ../../source/components/components/component_models.rst:508
 msgid "candidate solutions"
 msgstr ""

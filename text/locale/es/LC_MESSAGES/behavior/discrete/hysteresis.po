@@ -53,12 +53,6 @@ msgid ""
 " desired temperature before acting."
 msgstr ""
 
-#: ../../source/behavior/discrete/hysteresis.rst:45
-msgid ""
-"..todo: there seems to be a formatting problem around "
-"code{ChatteringControl}"
-msgstr ""
-
 #: ../../source/behavior/discrete/hysteresis.rst:47
 msgid ""
 "This \"band\" that is introduced around the desired temperature is called "
@@ -112,3 +106,8 @@ msgid ""
 "``algorithm`` section because they both assign to the same variable, "
 "``heat``."
 msgstr ""
+
+#~ msgid ""
+#~ "..todo: there seems to be a formatting problem around "
+#~ "code{ChatteringControl}"
+#~ msgstr ""

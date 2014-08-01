@@ -31,12 +31,6 @@ msgstr ""
 msgid "Consider the following almost trivial model:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:21
-msgid ""
-"If we attempt to simulate this model for 5 seconds, we fine that the "
-"simulation terminates after about 2 seconds with the following trajectory:"
-msgstr ""
-
 #: ../../source/behavior/discrete/decay.rst:27
 msgid ""
 "Again, numerical issues creep in.  Even though mathematically it should not "
@@ -311,3 +305,14 @@ msgid ""
 "integration error is introduced and this, in turn, depends on the numerical "
 "tolerances used."
 msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:21
+msgid ""
+"If we attempt to simulate this model for 5 seconds, we find that the "
+"simulation terminates after about 2 seconds with the following trajectory:"
+msgstr ""
+
+#~ msgid ""
+#~ "If we attempt to simulate this model for 5 seconds, we fine that the "
+#~ "simulation terminates after about 2 seconds with the following trajectory:"
+#~ msgstr ""

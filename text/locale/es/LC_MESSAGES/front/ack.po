@@ -130,178 +130,178 @@ msgid ""
 "people for their exceptionally generous contributions:"
 msgstr ""
 
-#: ../../source/front/ack.rst:102
+#: ../../source/front/ack.rst:103
 msgid "Robert Norris"
 msgstr ""
 
-#: ../../source/front/ack.rst:103
+#: ../../source/front/ack.rst:104
 msgid "Matthis Thorade"
 msgstr ""
 
-#: ../../source/front/ack.rst:104
+#: ../../source/front/ack.rst:105
 msgid "Henning Francke"
 msgstr ""
 
-#: ../../source/front/ack.rst:105
+#: ../../source/front/ack.rst:106
 msgid "Yang Ji"
 msgstr ""
 
-#: ../../source/front/ack.rst:106
+#: ../../source/front/ack.rst:107
 msgid "Christoph Höger"
 msgstr ""
 
-#: ../../source/front/ack.rst:107
+#: ../../source/front/ack.rst:108
 msgid "Philipp Mossmann"
 msgstr ""
 
-#: ../../source/front/ack.rst:108
+#: ../../source/front/ack.rst:109
 msgid "John Batteh"
 msgstr ""
 
-#: ../../source/front/ack.rst:109
+#: ../../source/front/ack.rst:110
 msgid "Dirk Zimmer"
 msgstr ""
 
-#: ../../source/front/ack.rst:110
+#: ../../source/front/ack.rst:111
 msgid "Jan Brugård"
 msgstr ""
 
-#: ../../source/front/ack.rst:111
+#: ../../source/front/ack.rst:112
 msgid "Swami Gopalswamy"
 msgstr ""
 
-#: ../../source/front/ack.rst:112
+#: ../../source/front/ack.rst:113
 msgid "Peter Aronsson"
 msgstr ""
 
-#: ../../source/front/ack.rst:113
+#: ../../source/front/ack.rst:114
 msgid "Michael P. Case"
 msgstr ""
 
-#: ../../source/front/ack.rst:114
+#: ../../source/front/ack.rst:115
 msgid "Markus Groetsch"
 msgstr ""
 
-#: ../../source/front/ack.rst:115
+#: ../../source/front/ack.rst:116
 msgid "Vicente Ramírez Perea"
 msgstr ""
 
-#: ../../source/front/ack.rst:116
+#: ../../source/front/ack.rst:117
 msgid "Tisha Villanueva"
 msgstr ""
 
-#: ../../source/front/ack.rst:117
+#: ../../source/front/ack.rst:118
 msgid "Adrian Pop"
 msgstr ""
 
-#: ../../source/front/ack.rst:118
+#: ../../source/front/ack.rst:119
 msgid "Nimalendiran Kailasanathan"
 msgstr ""
 
-#: ../../source/front/ack.rst:119
+#: ../../source/front/ack.rst:120
 msgid "Kevin Davies"
 msgstr ""
 
-#: ../../source/front/ack.rst:120
+#: ../../source/front/ack.rst:121
 msgid "Peter Harman"
 msgstr ""
 
-#: ../../source/front/ack.rst:121
+#: ../../source/front/ack.rst:122
 msgid "Dietmar Winkler"
 msgstr ""
 
-#: ../../source/front/ack.rst:122
+#: ../../source/front/ack.rst:123
 msgid "Johan Rhodin"
 msgstr ""
 
-#: ../../source/front/ack.rst:124
+#: ../../source/front/ack.rst:125
 msgid "I'd also like to thank the corporate sponsors:"
 msgstr ""
 
-#: ../../source/front/ack.rst:126
+#: ../../source/front/ack.rst:127
 msgid "Gold Sponsors"
 msgstr ""
 
-#: ../../source/front/ack.rst:128
+#: ../../source/front/ack.rst:129
 msgid "CyDesign"
 msgstr ""
 
-#: ../../source/front/ack.rst:129
+#: ../../source/front/ack.rst:130
 msgid "Wolfram Research"
 msgstr ""
 
-#: ../../source/front/ack.rst:130
+#: ../../source/front/ack.rst:131
 msgid "Modelon"
 msgstr ""
 
-#: ../../source/front/ack.rst:131
+#: ../../source/front/ack.rst:132
 msgid "Maplesoft"
 msgstr ""
 
-#: ../../source/front/ack.rst:132
+#: ../../source/front/ack.rst:133
 msgid "Dassault Systèmes"
 msgstr ""
 
-#: ../../source/front/ack.rst:134
+#: ../../source/front/ack.rst:135
 msgid "Silver Sponsors"
 msgstr ""
 
-#: ../../source/front/ack.rst:136
+#: ../../source/front/ack.rst:137
 msgid "Ricardo Software"
 msgstr ""
 
-#: ../../source/front/ack.rst:137
+#: ../../source/front/ack.rst:138
 msgid "ITI"
 msgstr ""
 
-#: ../../source/front/ack.rst:138
+#: ../../source/front/ack.rst:139
 msgid "Modelica Association"
 msgstr ""
 
-#: ../../source/front/ack.rst:139
+#: ../../source/front/ack.rst:140
 msgid "Global Crown Technology"
 msgstr ""
 
-#: ../../source/front/ack.rst:140
+#: ../../source/front/ack.rst:141
 msgid "Siemens"
 msgstr ""
 
-#: ../../source/front/ack.rst:142
+#: ../../source/front/ack.rst:143
 msgid "Bronze"
 msgstr ""
 
-#: ../../source/front/ack.rst:144
+#: ../../source/front/ack.rst:145
 msgid "Suzhou Tongyuan"
 msgstr ""
 
-#: ../../source/front/ack.rst:145
+#: ../../source/front/ack.rst:146
 msgid "Open Source Modelica Consortium"
 msgstr ""
 
-#: ../../source/front/ack.rst:146
+#: ../../source/front/ack.rst:147
 msgid "DOFWare"
 msgstr ""
 
-#: ../../source/front/ack.rst:147
+#: ../../source/front/ack.rst:148
 msgid "Bausch-Gall GmbH"
 msgstr ""
 
-#: ../../source/front/ack.rst:148
+#: ../../source/front/ack.rst:149
 msgid "Technische Universität Hamburg/Harburg"
 msgstr ""
 
-#: ../../source/front/ack.rst:149
+#: ../../source/front/ack.rst:150
 msgid "Schlegel Simulation GmbH"
 msgstr ""
 
-#: ../../source/front/ack.rst:151
+#: ../../source/front/ack.rst:152
 msgid ""
 "This project shows the power of community to achieve the mutual goal of "
 "creating more quality educational material around Modelica. Literally, this "
 "project could not have happened without them."
 msgstr ""
 
-#: ../../source/front/ack.rst:155
+#: ../../source/front/ack.rst:156
 msgid ""
 "The Kickstarter funding allowed me to commit time to this project, but I "
 "also had several people helping me on this project.  First and foremost, I'd"
@@ -313,7 +313,7 @@ msgid ""
 "issues related to supporting ePub and PDF formats."
 msgstr ""
 
-#: ../../source/front/ack.rst:165
+#: ../../source/front/ack.rst:166
 msgid ""
 "I'd like to thank Jeff Waters for being the \"voice of the sponsor\".  I had"
 " several very productive discussions with Jeff during the course of writing "
@@ -321,24 +321,24 @@ msgid ""
 "sponsors' expectations."
 msgstr ""
 
-#: ../../source/front/ack.rst:171
+#: ../../source/front/ack.rst:172
 msgid "Tools"
 msgstr ""
 
-#: ../../source/front/ack.rst:173
+#: ../../source/front/ack.rst:174
 msgid ""
 "Building a book like this requires a lot of different tools.  My "
 "productivity was amplified enormously by the use of these tools."
 msgstr ""
 
-#: ../../source/front/ack.rst:176
+#: ../../source/front/ack.rst:177
 msgid ""
 "This book was written using Sphinx, a documentation generation tool that "
 "supports multiple outputs.  Sphinx allows me to focus on the content of the "
 "book and takes care of generating the book in multiple formats."
 msgstr ""
 
-#: ../../source/front/ack.rst:181
+#: ../../source/front/ack.rst:182
 msgid ""
 "In creating this book, I needed a way to test the models that appear in the "
 "book, generate simulation results for plots and generated Javascript code "
@@ -350,7 +350,7 @@ msgid ""
 "gracious enough to help me out."
 msgstr ""
 
-#: ../../source/front/ack.rst:191
+#: ../../source/front/ack.rst:192
 msgid ""
 "The browser integrated simulation capabilities in the HTML version of the "
 "book are only possible because of a tool called Emscripten which allows "
@@ -362,7 +362,7 @@ msgid ""
 " were greatly enabled by his work in this area."
 msgstr ""
 
-#: ../../source/front/ack.rst:199
+#: ../../source/front/ack.rst:200
 msgid ""
 "This book was written using Git as the version control system and `GitHub "
 "<http://github.com>`_ for hosting.  Most people think of the version control"
@@ -374,7 +374,7 @@ msgid ""
 "Git."
 msgstr ""
 
-#: ../../source/front/ack.rst:208
+#: ../../source/front/ack.rst:209
 msgid ""
 "I used the Emacs editor for this book.  Despite the proliferation of really "
 "excellent editors that support a wide range of languages and platforms, "
@@ -383,7 +383,7 @@ msgid ""
 "box."
 msgstr ""
 
-#: ../../source/front/ack.rst:214
+#: ../../source/front/ack.rst:215
 msgid ""
 "During the production of this book several tool vendors gave me access to "
 "their proprietary tools.  I didn't utilize these very much, but I wanted to "
@@ -393,21 +393,7 @@ msgid ""
 " SimulationX, respectively."
 msgstr ""
 
-#: ../../source/front/ack.rst:221
-msgid ""
-"Much of this book was written on a MacBook Air.  My very first computer was "
-"an Apple //e.  But since that time, I've worked mainly with PCs and Unix "
-"workstations.  Most recently, I've done a great deal of development on Linux"
-" machines.  I always dismissed using Macs because I was convinced they could"
-" support the kind of command-line oriented development work I typically do."
-"  I could not have been more wrong.  The eco-systems for MacOSX is almost "
-"identical to the one I was used to in the Linux world.  I am able to "
-"seamlessly transition between MacOSX and Linux environments without any "
-"significant adjustments.  The power and portability of the MacBook Air gave "
-"my entire work process a big boost."
-msgstr ""
-
-#: ../../source/front/ack.rst:233
+#: ../../source/front/ack.rst:234
 msgid ""
 "Developing this book involved a lot of testing and debugging of HTML layout,"
 " styling and embedded Javascript.  Most of this work was done using Firefox "
@@ -416,8 +402,39 @@ msgid ""
 "compliant browsers."
 msgstr ""
 
-#: ../../source/front/ack.rst:239
+#: ../../source/front/ack.rst:240
 msgid ""
 "The style of the book owes a fair amount to the `Semantic UI <http://www"
 ".semantic-ui.com>`_ CSS framework."
 msgstr ""
+
+#: ../../source/front/ack.rst:102
+msgid "Hilding Elmqvist"
+msgstr ""
+
+#: ../../source/front/ack.rst:222
+msgid ""
+"Much of this book was written on a MacBook Air.  My very first computer was "
+"an Apple //e.  But since that time, I've worked mainly with PCs and Unix "
+"workstations.  Most recently, I've done a great deal of development on Linux"
+" machines.  I always dismissed using Macs because I was convinced they "
+"couldn't support the kind of command-line oriented development work I "
+"typically do.  I could not have been more wrong.  The eco-systems for MacOSX"
+" is almost identical to the one I was used to in the Linux world.  I am able"
+" to seamlessly transition between MacOSX and Linux environments without any "
+"significant adjustments.  The power and portability of the MacBook Air gave "
+"my entire work process a big boost."
+msgstr ""
+
+#~ msgid ""
+#~ "Much of this book was written on a MacBook Air.  My very first computer was "
+#~ "an Apple //e.  But since that time, I've worked mainly with PCs and Unix "
+#~ "workstations.  Most recently, I've done a great deal of development on Linux"
+#~ " machines.  I always dismissed using Macs because I was convinced they could"
+#~ " support the kind of command-line oriented development work I typically do."
+#~ "  I could not have been more wrong.  The eco-systems for MacOSX is almost "
+#~ "identical to the one I was used to in the Linux world.  I am able to "
+#~ "seamlessly transition between MacOSX and Linux environments without any "
+#~ "significant adjustments.  The power and portability of the MacBook Air gave "
+#~ "my entire work process a big boost."
+#~ msgstr ""

@@ -40,21 +40,26 @@ msgid ""
 "occur while integrating the underlying equations."
 msgstr ""
 
-#: ../../source/behavior/discrete/switching.rst:28
-msgid ""
-"We can see the voltage response of this model to the switched supply voltage"
-" in the following plot: .. todo:: Source Voltage V needs subscript s, other "
-"plots missing subscripts also"
-msgstr ""
-
-#: ../../source/behavior/discrete/switching.rst:35
+#: ../../source/behavior/discrete/switching.rst:36
 msgid ""
 "Furthermore, we can see the current response for inductor, resistor and "
 "capacitor components in this plot:"
 msgstr ""
 
-#: ../../source/behavior/discrete/switching.rst:41
+#: ../../source/behavior/discrete/switching.rst:42
 msgid ""
 "Hopefully by this point, the basic mechanisms for generating events and "
 "disturbances seem intuitive and familiar."
 msgstr ""
+
+#: ../../source/behavior/discrete/switching.rst:28
+msgid ""
+"We can see the voltage response of this model to the switched supply voltage"
+" in the following plot:"
+msgstr ""
+
+#~ msgid ""
+#~ "We can see the voltage response of this model to the switched supply voltage"
+#~ " in the following plot: .. todo:: Source Voltage V needs subscript s, other "
+#~ "plots missing subscripts also"
+#~ msgstr ""

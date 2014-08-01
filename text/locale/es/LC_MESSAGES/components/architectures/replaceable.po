@@ -147,13 +147,6 @@ msgid ""
 "*redeclare* it)."
 msgstr ""
 
-#: ../../source/components/architectures/replaceable.rst:129
-msgid ""
-"It is **very important** to understand that when you redeclare a component, "
-"the new redeclaration supercedes the previous one.  For example, after the "
-"following redeclaration:"
-msgstr ""
-
 #: ../../source/components/architectures/replaceable.rst:137
 msgid ""
 "the ``sensor`` component **is no longer replaceable**.  This is because the "
@@ -220,15 +213,6 @@ msgstr ""
 
 #: ../../source/components/architectures/replaceable.rst:205
 msgid "But let's consider another case:"
-msgstr ""
-
-#: ../../source/components/architectures/replaceable.rst:211
-msgid ""
-"Now imagine we had another resistor model, ``SensitiveResistor`` that was "
-"plug-compatible with ``Resistor`` (*i.e.,* it had a ``parameter`` called "
-"``R`) but included on additional parameter, ``dRdT``, indicating the "
-"(linear) sensitivity of the resistance to temperature. We might want to do "
-"something like this:"
 msgstr ""
 
 #: ../../source/components/architectures/replaceable.rst:221
@@ -476,3 +460,33 @@ msgstr ""
 #: ../../source/components/architectures/replaceable.rst:184
 msgid "in the context of redeclarations"
 msgstr ""
+
+#: ../../source/components/architectures/replaceable.rst:129
+msgid ""
+"It is **very important** to understand that when you redeclare a component, "
+"the new redeclaration supersedes the previous one.  For example, after the "
+"following redeclaration:"
+msgstr ""
+
+#: ../../source/components/architectures/replaceable.rst:211
+msgid ""
+"Now imagine we had another resistor model, ``SensitiveResistor`` that was "
+"plug-compatible with ``Resistor`` (*i.e.,* it had a ``parameter`` called "
+"``R``) but included an additional parameter, ``dRdT``, indicating the "
+"(linear) sensitivity of the resistance to temperature. We might want to do "
+"something like this:"
+msgstr ""
+
+#~ msgid ""
+#~ "It is **very important** to understand that when you redeclare a component, "
+#~ "the new redeclaration supercedes the previous one.  For example, after the "
+#~ "following redeclaration:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now imagine we had another resistor model, ``SensitiveResistor`` that was "
+#~ "plug-compatible with ``Resistor`` (*i.e.,* it had a ``parameter`` called "
+#~ "``R`) but included on additional parameter, ``dRdT``, indicating the "
+#~ "(linear) sensitivity of the resistance to temperature. We might want to do "
+#~ "something like this:"
+#~ msgstr ""
