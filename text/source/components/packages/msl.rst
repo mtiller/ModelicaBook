@@ -288,6 +288,7 @@ models using components like:
   * Sensors
 
 ``FluidHeatFlow``
+=================
 
 Normally, the ``Modelica.Fluid`` and ``Modelica.Media`` libraries
 should be used to model thermo-fluid systems because they are capable
