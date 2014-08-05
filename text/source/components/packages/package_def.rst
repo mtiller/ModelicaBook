@@ -164,7 +164,7 @@ should come before ``NestedPackageAsDir``.
 Versioning
 ^^^^^^^^^^
 
-.. todo: If we don't add an advanced topic on building libraries that
+.. todo:: If we don't add an advanced topic on building libraries that
    discusses versioning, then we should add it here.  It should
    include a discussion of the uses and version annotations as well
    as the ability to include version numbers in the names of files and

@@ -108,7 +108,7 @@ possible.
 
 The ``Modelica.SIunits`` package is very large and full of physical
 units that are rarely used.  They are included for completeness in
-adhering to the ```ISO 31-1992`` specification.  The following are
+adhering to the ``ISO 31-1992`` specification.  The following are
 examples of how common physical units are defined in the ``SIunits`` package:
 
 .. code-block:: modelica
@@ -288,6 +288,7 @@ models using components like:
   * Sensors
 
 ``FluidHeatFlow``
+=================
 
 Normally, the ``Modelica.Fluid`` and ``Modelica.Media`` libraries
 should be used to model thermo-fluid systems because they are capable
