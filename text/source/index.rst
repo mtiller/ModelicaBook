@@ -48,14 +48,6 @@ Advanced Topics
 
    advanced
 
-TODO List
-=========
-
-.. toctree::
-   :maxdepth: 2
-
-   todo
-
 Indices and tables
 ==================
 
@@ -63,3 +55,12 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+.. ifconfig:: todo_include_todos
+
+   TODO List
+   ---------
+
+   .. toctree::
+      :maxdepth: 2
+
+      todo
