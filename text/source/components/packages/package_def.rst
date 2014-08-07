@@ -232,7 +232,6 @@ discussed earlier, but with some resource files added::
         package.order          # Specifies an ordering for this	package
         datafile.mat           # Data specific to this package
       /Resources               # Resources are stored here by convention
-        package.mo             # Indicates Resources is a package
         logo.jpg               # An image file
 
 If we have a model that needs the data contained in
