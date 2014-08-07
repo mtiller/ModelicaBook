@@ -269,7 +269,7 @@ performance:
 .. plot:: ../plots/Decay5.py
    :class: interactive
 
-.. todo: Smooth operator?
+.. todo:: Smooth operator?
 
 .. [#tol] This model will not always fail.  The failure depends on how
 	  much integration error is introduced and this, in turn,
