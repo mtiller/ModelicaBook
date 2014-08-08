@@ -1,5 +1,22 @@
 This file collects the significant changes to the book since its initial public release.
 
+### Version 0.3.3
+
+#### Enhancements
+
+  * Made the first few plots in the discussion of state events NOT
+    interactive.  This is because they are showing results of problematic
+    simulations that don't run well in the browser.
+
+  * Clarification of heater output plot in discussion of hysteresis.
+
+  * Emphasized the use of equations over algorithms in discussion on
+    hysteresis.
+
+#### Bug Fixes
+
+  * Completed discussion of synchronous clock features in section on Sampling.
+
 ### Version 0.3.2
 
 #### Enhancements
