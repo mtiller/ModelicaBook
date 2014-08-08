@@ -22,6 +22,11 @@ body {
     line-height: 1.4em;
 }
 
+/* Add some padding at the bottom */
+body {
+	padding-bottom: 20px;
+}
+
 /* Adjust paragraph spacing */
 p {
   padding-left: 1em;
