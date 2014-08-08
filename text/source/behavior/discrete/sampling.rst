@@ -88,15 +88,66 @@ these lines one by one and discuss them.  First we have:
    :language: modelica
    :lines: 5
 
-.. todo::
+Note that we have done away with the ``0.1``.  We no longer see any
+mention of the clock interval as a real number.  Instead, we use the
+``Clock`` operator to the define clock interval for ``x`` as a
+rational number.  This is important because it allows us to do exact
+comparisons between clocks.  This brings us to the next line:
 
-  Finish this explanation after checking on the semantics of Clock
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/SynchronousSystems/SamplingWithClocks.mo
+   :language: modelica
+   :lines: 6
 
+Again, we see the rational representation of the clock.  What this
+means, in practice, is that the Modelica compiler can know for certain
+that these two clocks, ``x`` and ``y``, are identical because they are
+defined in terms of integer quantities which allow exact comparison.
+This means that when executing a simulation, we can know for certain
+that these two clocks will trigger simultaneously.
 
-.. todo::
+If we wanted to create a clock that was exactly two times slower than
+``x``, we can use the ``subSample`` operator to accomplish this.  We
+see this in the definition of ``z``:
 
-  Cite Hilding's paper for detailed discussion of synchronous
-  features.
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/SynchronousSystems/SamplingWithClocks.mo
+   :language: modelica
+   :lines: 7
+
+Behind the scenes, the Modelica compiler can reason about these
+clocks.  It knows that the ``x`` clock triggers every
+:math:`\frac{1}{10}` of a second.  Using the information provided by
+the ``subSample`` operator the Modelica compiler can therefore deduce
+that ``z`` triggers every :math:`\frac{2}{10}` of a second.
+Conceptually, this means that ``z`` could also have been defined as:
+
+.. code-block:: modelica
+
+  z = sample(time, Clock(2,10));
+
+But by defining ``z`` using the ``subSample`` operator and defining it
+with respect to ``x`` we ensure that ``z`` is always triggering at
+half the frequency of ``x`` regardless of how ``x`` is defined.
+
+In a similar way, we can define another clock, ``w`` that triggers 3 times more
+frequently than ``x`` by using the ``superSample`` operator:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/SynchronousSystems/SamplingWithClocks.mo
+   :language: modelica
+   :lines: 8
+
+Again, we could have defined ``w`` directly using ``sample`` with:
+
+.. code-block:: modelica
+
+  w = sample(time, Clock(1,30));
+
+But by using ``superSample``, we can ensure that ``w`` is always
+sampling three times faster than ``x`` and six times faster than ``z``
+(since ``z`` is also defined with respect to ``x``).
+
+The synchronous clock features in Modelica are relatively new.  To
+learn more about these synchronous features and their applications see
+[Elmqvist]_ and/or the Modelica Specification, version 3.3 or later.
 
 .. [Elmqvist] "Fundamentals of Synchronous Control in Modelica",
 	      Hilding Elmqvist, Martin Otter and Sven-Erik Mattsson

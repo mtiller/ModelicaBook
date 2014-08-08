@@ -22,7 +22,6 @@ If we attempt to simulate this model for 5 seconds, we find that the
 simulation terminates after about 2 seconds with the following trajectory:
 
 .. plot:: ../plots/Decay1.py
-   :class: interactive
 
 Again, numerical issues creep in.  Even though mathematically it
 should not be possible for the value of ``x`` to drop below zero,
@@ -44,7 +43,6 @@ against evaluating the square root of a negative number, like this:
 Simulating this model we get the following trajectory [#tol]_:
 
 .. plot:: ../plots/Decay2.py
-   :class: interactive
 
 Again, the simulation fails.  But why?  It fails for the same reason,
 a numerical exception that results from taking the square root of a
@@ -268,8 +266,6 @@ performance:
 
 .. plot:: ../plots/Decay5.py
    :class: interactive
-
-.. todo:: Smooth operator?
 
 .. [#tol] This model will not always fail.  The failure depends on how
 	  much integration error is introduced and this, in turn,

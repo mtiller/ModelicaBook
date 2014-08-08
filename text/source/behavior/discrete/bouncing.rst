@@ -78,15 +78,12 @@ following behavior from this model:
 .. plot:: ../plots/BB1.py
    :class: interactive
 
-In this plot, we see that at around 0.48 seconds, the first impact with the
-surface occurs.  This occurs because the condition ``h<0`` first becomes
-true at that moment.  Note that what makes this a state event (unlike
-our example in :ref:`previous cooling examples <cooling-revisited>`) is the
-fact that this conditional expression references continuous variables
-other than ``time``.
-
-.. todo:: link to previous cooling examples not showing up correctly
-          do the referenced variables have to be continuous to make a state event?
+In this plot, we see that at around 0.48 seconds, the first impact
+with the surface occurs.  This occurs because the condition ``h<0``
+first becomes true at that moment.  Note that what makes this a state
+event (unlike our example in :ref:`previous cooling examples
+<cooling-revisited>`) is the fact that this conditional expression
+references variables other than ``time``.
 
 As such, the simulation proceeds assuming the ball is in free fall
 until it identifies a solution trajectory where the value of the

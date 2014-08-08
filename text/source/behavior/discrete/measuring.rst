@@ -263,16 +263,15 @@ In this way, an ``algorithm`` section is very much like the way most
 programming languages work.  The statements in the algorithm section
 are executed in order and each statement isn't interpreted as an
 equation, but rather as an assignment of an expression to a variable.
-The familiarity of assignment statements may make using ``algorithm`` sections attractive to people with a programming background who find the otherwise
-equation oriented aspects of Modelica disorienting and unfamiliar.
-But be aware that one big reason to avoid ``algorithm`` sections is because they interfere with the symbolic manipulation
+The familiarity of assignment statements may make using ``algorithm``
+sections attractive to people with a programming background who find
+the otherwise equation oriented aspects of Modelica disorienting and
+unfamiliar.  But be aware that one big reason to avoid ``algorithm``
+sections is because they interfere with the symbolic manipulation
 performed by the Modelica compiler.  This can result in both poor
 simulation performance and a loss of flexibility in how you compose
-your models.
-
-.. todo:: what would be the alternative?
-	  note, reworded this because it sounded like it was saying familiarity with
-	  assignment statements is the reason to avoid them
+your models.  So it is best to use an ``equation`` section whenever
+possible
 
 In our case, there are no significant consequences to using the
 ``algorithm`` section.  Here is an example of how the previous

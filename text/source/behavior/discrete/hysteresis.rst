@@ -31,21 +31,21 @@ simulation:
 .. plot:: ../plots/CC1_Q.py
    :class: interactive
 
-.. todo:: the plot isn't showing this - it is just a solid blue background
-
 What you see is that after around 0.2 seconds, the heater is
-constantly turning on and off.  This is actually a real problem in
-control systems.  If you look carefully at the way the furnace works
-in your own home, you will see that it does not turn on and off
-constantly as the temperature goes above and below the desired room
-temperature you have specified.  Instead, it waits until the
-temperature gets some specified amount above or below the desired
-temperature before acting.
+constantly turning on and off.  This happens so frequently, in fact,
+that you would have to zoom in quite a bit on the plot to see the
+transitions.  With normal scaling, there are so many transitions that
+the results resemble a filled rectangle.
 
-.. todo:: there seems to be a formatting problem around code{ChatteringControl}
+This is actually a real problem in control systems.  If you look
+carefully at the way the furnace works in your own home, you will see
+that it does not turn on and off constantly as the temperature goes
+above and below the desired room temperature you have specified.
+Instead, it waits until the temperature gets some specified amount
+above or below the desired temperature before acting.
 
 This "band" that is introduced around the desired temperature is
-called hysteresis.  The problem with the \code{ChatteringControl}
+called hysteresis.  The problem with the ``ChatteringControl``
 model is that it doesn't have any hysteresis.  Instead, it is
 constantly turning the heater off and on in response to miniscule
 changes in temperature.
