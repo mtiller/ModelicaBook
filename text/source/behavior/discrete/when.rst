@@ -115,16 +115,10 @@ simulation performance and/or reusability of the models.
 It is also worth noting that if the semantics of an ``algorithm``
 section are needed during initialization, Modelica includes an
 ``initial algorithm`` section that is analogous to the ``initial
-equation`` discussed in the previous section on :ref:`initialization`.
-The ``initial algorithm`` section will be applied only during the
-initialization phase to determine initial conditions, just like an
-``initial equation`` section, but the ``initial algorithm`` section
-will allow multiple assignments to the same variable.  The same
-caveats apply with respect to symbolic manipulation.
-
-.. todo:: what would be the purpose in having multiple assignments to
-          the same variable?is the order important like in non-initial
-          algorithm sections where the last assigment is the one used?
-          for any algorithm section (initial or otherwise):
-          are the statements executed sequentially so that
-          x = 2; y = x; z = y is well defined?
+equation`` section discussed in the previous discussion on
+:ref:`initialization`.  The ``initial algorithm`` section will be
+applied only during the initialization phase to determine initial
+conditions, just like an ``initial equation`` section, but the
+``initial algorithm`` section will allow multiple assignments to the
+same variable.  The same caveats apply with respect to symbolic
+manipulation.

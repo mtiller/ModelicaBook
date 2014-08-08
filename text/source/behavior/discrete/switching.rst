@@ -31,8 +31,6 @@ voltage in the following plot:
 .. plot:: ../plots/SRLCv.py
    :class: interactive
 
-.. todo:: Source Voltage V needs subscript s, other plots missing subscripts also
-
 Furthermore, we can see the current response for inductor, resistor
 and capacitor components in this plot:
 
