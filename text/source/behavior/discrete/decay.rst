@@ -57,6 +57,9 @@ evaluated if ``x`` is less than zero.  **But this assumption is incorrect.**
 Events and Conditional Expressions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The Role of Events in Behavior
+******************************
+
 Given the ``if`` expression:
 
 .. code-block:: modelica
@@ -88,7 +91,67 @@ Most users initially assume that each time ``der(x)`` is evaluated,
 the ``if`` expression is evaluated (specifically the conditional
 expression in the ``if`` expression).  Hopefully the previous
 paragraph has made it clear that this is not the case.  But the
-question remains.  Why?
+question remains, why not skip these events and just evaluate all
+conditional expressions every time?
+
+Speed vs. Accuracy
+******************
+
+If the integration routines skip over the events, they miss important
+changes in behavior.  The accuracy of most integration routines is
+based on assumptions about the underlying derivatives being
+continuous.  If those assumptions are violated, we need to let the
+integration routines know so they can account this changes in
+behavior.
+
+This is where events come in.  They force the integration to stop at
+the point where a behavior change occurs and then restart again after
+the behavior change has occurred.  The result is greater accuracy but
+at the cost of slower simulations.  Let's look at a concrete example.
+Consider the following simple Modelica model:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/Accuracy/WithEvents.mo
+   :language: modelica
+   :lines: 2-
+
+Looking at this system, we can see that half the time the derivative
+of ``x`` will be ``2`` and the other half of the time the derivative
+of ``x`` will be ``0``.  So over each of these cycles, the average
+derivative of ``x`` should be ``1``.  This means at the end of each
+cycle, ``x`` and ``y`` should be equal.
+
+If we simulate the ``WithEvents`` model, we get the following results:
+
+.. plot:: ../plots/WE.py
+   :class: interactive
+
+Note how, at the end of each cycle, the trajectories of ``x`` and
+``y`` meet.  This is a visual indication of the accuracy of the
+underlying integration.  Even if we increase the frequency of the
+underlying cycle, we see that this property holds true:
+
+.. plot:: ../plots/WEf.py
+   :class: interactive
+
+However, now let us consider the case where we suppress events by
+using the ``noEvents`` operator as follows:
+
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/Accuracy/WithNoEvents.mo
+   :language: modelica
+   :lines: 2-
+
+In this case, the integrator is blind to the changes in behavior.  It
+does its best to integrate accuracy but without explicit knowledge of
+where the behavior changes occur, we see that error gradually creeps
+in.  We can see this in the deviation between the ``x`` and ``y``
+signals in the following plot:
+
+.. plot:: ../plots/WNE.py
+   :class: interactive
+
+.. plot:: ../plots/WNEf.py
+   :class: interactive
+
 
 The reason has to do with performance.  If the conditional expression
 led to an abrupt change in behavior (like the one we saw in our

@@ -110,6 +110,26 @@ add_simple_plot(plot="Decay5", vars=[Var("x")],
                 title="No Chattering",
                 legloc="upper right")
 
+## Accuracy
+avs = [Var("x", legend="Integrated value"),
+       Var("y", legend="Zero")]
+#       Var("active", legend="Activation flag")]
+add_case(["WithEvents$"], stopTime=50, res="WE", tol=1.0)
+add_case(["WithEvents$"], stopTime=50, res="WEf", tol=1.0, mods={"freq": 20.0})
+add_case(["WithNoEvents$"], stopTime=50, res="WNE", tol=1.0)
+add_case(["WithNoEvents$"], stopTime=50, res="WNEf", tol=1.0, mods={"freq": 20.0})
+
+add_simple_plot(plot="WE", vars=avs, title="Integration with Events",
+                legloc="upper right")
+
+add_simple_plot(plot="WEf", vars=avs, title="Integration with Events (Higher Frequency)",
+                legloc="upper right")
+
+add_simple_plot(plot="WNE", vars=avs, title="Integration without Events",
+                legloc="upper right")
+
+add_simple_plot(plot="WNEf", vars=avs, title="Integration without Events (Higher Frequency)",
+                legloc="upper right")
 
 ## Switched RLC
 srlc_vvars = [Var("Vs", legend="Source Voltage, Vs [V]"),
