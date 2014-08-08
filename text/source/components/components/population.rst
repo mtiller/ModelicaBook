@@ -50,10 +50,10 @@ aspects so we'll present the model piece by piece starting with:
    :language: modelica
    :lines: 1-6
 
+.. todo:: Confirm this must be encapsulated
+
 .. index:: encapsulated
 .. index:: enumeration
-
-.. todo:: Confirm this must be encapsulated
 
 The first two lines are as expected.  But after that we see that this
 model defines a type called ``InitializationOptions``.  The type
