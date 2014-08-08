@@ -112,8 +112,8 @@ add_simple_plot(plot="Decay5", vars=[Var("x")],
 
 
 ## Switched RLC
-srlc_vvars = [Var("Vs", legend="Source Voltage [V]"),
-              Var("V", legend="Response Voltage [V]")]
+srlc_vvars = [Var("Vs", legend="Source Voltage, Vs [V]"),
+              Var("V", legend="Response Voltage, V [V]")]
 srlc_ivars = [Var("i_R", legend="Resistor Current [A]"),
               Var("i_C", legend="Capacitor Current [A]"),
               Var("i_L", legend="Inductor Current [A]")]
