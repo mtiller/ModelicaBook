@@ -1,5 +1,5 @@
 within ModelicaByExample.Functions.Polynomials;
-model Differentiation2 "Model that differentiates a function using smooth"
+model Differentiation2 "Model that differentiates a function using derivative annotation"
   Real yf;
   Real yp;
   Real d_yf;

@@ -13,9 +13,18 @@ This file collects the significant changes to the book since its initial public 
   * Emphasized the use of equations over algorithms in discussion on
     hysteresis.
 
+  * Added padding and the end of the HTML body so page doesn't end abruptly
+
+  * Added discussion of the ``smooth`` operator (issue
+    [#188](https://github.com/xogeny/ModelicaBook/pull/188)
+
 #### Bug Fixes
 
   * Completed discussion of synchronous clock features in section on Sampling.
+
+  * Completed table that discusses the relationship between events and
+    various functions/operators (issue
+    [#187](https://github.com/xogeny/ModelicaBook/pull/187)
 
 ### Version 0.3.2
 
