@@ -26,6 +26,9 @@ This file collects the significant changes to the book since its initial public 
     various functions/operators (issue
     [#187](https://github.com/xogeny/ModelicaBook/pull/187)
 
+  * Used a consistent heat transfer formulation throughout the book (issue
+    [#150](https://github.com/xogeny/ModelicaBook/pull/150)
+
 ### Version 0.3.2
 
 #### Enhancements

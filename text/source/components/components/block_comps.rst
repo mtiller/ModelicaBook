@@ -259,7 +259,7 @@ revisit the equation associated with this example:
 .. todo:: this and some following expressions involving T are not being rendered
           correctly using https://book-preview.herokuapp.com
 
-.. math:: m c_p \dot{T} = h (T_{\infty}-T)
+.. math:: m c_p \dot{T} = h A (T_{\infty}-T)
 
 The following block diagram will solve for the temperature profile,
 :math:`T`:

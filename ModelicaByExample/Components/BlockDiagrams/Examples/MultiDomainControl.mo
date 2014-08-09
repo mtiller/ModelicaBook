@@ -5,6 +5,7 @@ model MultiDomainControl
   import Modelica.SIunits.Conversions.from_degC;
 
   parameter Real h = 0.7 "Convection coefficient";
+  parameter Real A = 1.0 "Area";
   parameter Real m = 0.1 "Thermal maass";
   parameter Real c_p = 1.2 "Specific heat";
   parameter Real T_inf = from_degC(25) "Ambient temperature";
@@ -20,8 +21,7 @@ model MultiDomainControl
   HeatTransfer.ThermalCapacitance cap(C=m*c_p, T0 = from_degC(90))
     "Thermal capacitance component"
     annotation (Placement(transformation(extent={{-30,-30},{-10,-10}})));
-  HeatTransfer.Convection
-             convection2(h=h)
+  HeatTransfer.Convection convection2(h=h*A)
     annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   HeatTransfer.AmbientCondition
                    amb(T_amb(displayUnit="K") = T_inf)
