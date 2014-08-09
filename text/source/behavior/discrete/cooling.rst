@@ -15,7 +15,7 @@ This revised model is written as follows:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/CoolingRevisited/NewtonCoolingDynamic.mo
    :language: modelica
-   :emphasize-lines: 21-25
+   :emphasize-lines: 23-27
    :lines: 2-
 
 .. index:: if statement
@@ -76,7 +76,7 @@ system starts in an equilibrium state, *i.e.,*
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/CoolingRevisited/NewtonCoolingSteadyThenDynamic.mo
    :language: modelica
-   :emphasize-lines: 15
+   :emphasize-lines: 17
    :lines: 2-
 
 The only thing we've changed is the initial equation.  Instead of

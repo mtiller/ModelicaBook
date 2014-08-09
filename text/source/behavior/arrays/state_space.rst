@@ -196,7 +196,7 @@ model as:
 
 This model is very similar to the previous one.  However, in this case,
 instead of putting numbers into our matrices, we've put expressions
-involving other parameters like ``h``, ``m`` and so on.  In this way,
+involving other parameters like ``m``, ``c_p`` and so on.  In this way,
 if those physical parameters are changed, the values for ``A`` and
 ``B`` will change accordingly.
 
