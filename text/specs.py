@@ -112,12 +112,12 @@ add_simple_plot(plot="Decay5", vars=[Var("x")],
 
 ## Accuracy
 avs = [Var("x", legend="Integrated value"),
-       Var("y", legend="Zero")]
+       Var("y", legend="Reference value")]
 #       Var("active", legend="Activation flag")]
-add_case(["WithEvents$"], stopTime=50, res="WE", tol=1.0)
-add_case(["WithEvents$"], stopTime=50, res="WEf", tol=1.0, mods={"freq": 20.0})
-add_case(["WithNoEvents$"], stopTime=50, res="WNE", tol=1.0)
-add_case(["WithNoEvents$"], stopTime=50, res="WNEf", tol=1.0, mods={"freq": 20.0})
+add_case(["WithEvents$"], stopTime=7.0, res="WE", tol=1e-1)
+add_case(["WithEvents$"], stopTime=7.0, res="WEf", tol=1e-1, mods={"freq": 5.0})
+add_case(["WithNoEvents$"], stopTime=7.0, res="WNE", tol=1e-1)
+add_case(["WithNoEvents$"], stopTime=7.0, res="WNEf", tol=1e-1, mods={"freq": 5.0})
 
 add_simple_plot(plot="WE", vars=avs, title="Integration with Events",
                 legloc="upper right")
