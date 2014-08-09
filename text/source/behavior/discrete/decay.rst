@@ -267,7 +267,7 @@ to suppress events in some cases.  But one might reasonably ask, why
 not skip events and just evaluate conditional expressions all the
 time?  So let's take some time to explore this question and explain
 why, on the whole, associated events with conditional expressions is
-very good idea.
+very good idea[#Belmon]_.
 
 Without event detection, the integrator will simply step right over
 events.  When this happens, the integrator will miss important changes
@@ -345,3 +345,9 @@ a significant impact on accuracy simulation results.
 .. [#tol] This model will not always fail.  The failure depends on how
 	  much integration error is introduced and this, in turn,
 	  depends on the numerical tolerances used.
+
+.. [#Belmon] A special thanks to Lionel Belmon for challenging my
+			 original discussion and identifying several
+			 unsubstantiated assumptions on my part.  As a result,
+			 this explanation is much better and includes results to
+			 support the conclusions drawn.
