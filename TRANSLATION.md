@@ -8,7 +8,7 @@ matters in an effort to improve the translation process.
 ## Current Status
 
 At this point, it should be "safe" to translate any text up to and
-including **Chapter 1 (Basic Equations)** without fear of the
+including **Chapter 2 (Discrete Behavior)** without fear of the
 underlying text changing.
 
 ## Coordinators
