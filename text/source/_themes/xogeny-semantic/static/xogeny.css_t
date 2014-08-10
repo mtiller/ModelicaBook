@@ -17,7 +17,7 @@ body {
 
 /* Nice font for text */
 body {
-    font-family: Optima,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;
+    font-family: Optima,Domine,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;
     font-size: 17px;
     line-height: 1.4em;
 }
