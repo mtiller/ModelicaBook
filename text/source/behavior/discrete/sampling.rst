@@ -145,8 +145,9 @@ But by using ``superSample``, we can ensure that ``w`` is always
 sampling three times faster than ``x`` and six times faster than ``z``
 (since ``z`` is also defined with respect to ``x``).
 
-The synchronous clock features in Modelica are relatively new.  To
-learn more about these synchronous features and their applications see
+The synchronous clock features in Modelica are relatively new.  As
+such, they are not yet supported by all Modelica compilers.  To learn
+more about these synchronous features and their applications see
 [Elmqvist]_ and/or the Modelica Specification, version 3.3 or later.
 
 .. [Elmqvist] "Fundamentals of Synchronous Control in Modelica",

@@ -62,4 +62,3 @@ Review
    discrete/events
    discrete/if
    discrete/when
-   discrete/sample
