@@ -116,8 +116,8 @@ pre {
 /* Make headers look "fancy" */
 h1, h2, h3, h4, h5 {
     color: black;
-    font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",Georgia,serif;
-    font-style: italic;
+    font-family: Lato, Georgia, sans-serif;
+    font-style: normal;
     font-weight: normal;
 }
 
