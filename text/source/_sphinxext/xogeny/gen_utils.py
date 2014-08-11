@@ -234,7 +234,7 @@ def _generate_makefile():
 
         with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
             sfp.write(genres.render(**context));
-        # Write out script to generate Javascript
+        # Write out script to generate JavaScript
         with open(os.path.join(path, "text", "results", res+"-js.mos"), "w+") as sfp:
             sfp.write(genjs.render(**context));
 
