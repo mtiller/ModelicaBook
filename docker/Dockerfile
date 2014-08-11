@@ -63,3 +63,5 @@ USER builder
 WORKDIR /opt/MBE
 
 RUN git clone https://github.com/xogeny/ModelicaBook.git
+
+RUN go install xogeny/pubbook
