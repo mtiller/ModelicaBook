@@ -197,11 +197,17 @@ latex_elements = {
                    \\setcounter{tocdepth}{3}''',
 }
 
+# If the tag 'a4' is given we switch to a4paper
+
+if 'a4' in tags:
+    latex_elements['papersize']= 'a4paper'
+
+
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'ModelicaByExample.tex', u'Modelica by Example',
-   u'Michael M. Tiller', 'manual'),
+   u'Michael M. Tiller', 'book'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
