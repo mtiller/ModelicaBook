@@ -272,7 +272,7 @@ texinfo_documents = [
 epub_title = u'Modelica by Example'
 epub_author = u'Michael M. Tiller'
 epub_publisher = u'Michael M. Tiller'
-epub_copyright = u'2013, Michael M. Tiller'
+epub_copyright = u'2013-2014, Michael M. Tiller'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
