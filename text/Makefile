@@ -229,7 +229,9 @@ mobi:   epub
 
 ebook:  epub mobi
 
-latex:	specs results images
+latex: latex-letter latex-a4
+
+latex-letter:	specs results images
 	$(SPHINXBUILD) -b latex -t latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
@@ -243,18 +245,17 @@ latex-a4:	specs results images
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
+pdf:	pdf-letter pdf-a4
 
-pdf:	latex latex-a4
+pdf-letter: latex-letter
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@echo "pdflatex letter finished; the PDF files are in $(BUILDDIR)/latex."
-	$(MAKE) -C $(BUILDDIR)/latex-a4 all-pdf
-	@echo "pdflatex a4paper finished; the PDF files are in $(BUILDDIR)/latex-a4."
 
-pdf-a4:	latex latex-a4
+pdf-a4:	latex-a4
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex-a4 all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex-a4."
 
 latexpdf: pdf
 
