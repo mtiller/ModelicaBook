@@ -1,7 +1,3 @@
-.. raw:: latex
-
-   \setcounter{secnumdepth}{-1}
-
 Acknowledgments
 ***************
 
@@ -239,7 +235,3 @@ such wonderful, standards compliant browsers.
 
 The style of the book owes a fair amount to the `Semantic UI
 <http://www.semantic-ui.com>`_ CSS framework.
-
-.. raw:: latex
-
-   \setcounter{secnumdepth}{2}

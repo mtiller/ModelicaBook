@@ -1,7 +1,3 @@
-.. raw:: latex
-
-   \setcounter{secnumdepth}{-1}
-
 Dedication
 **********
 
@@ -77,7 +73,3 @@ energies and talents to help society.
     us weep."
 
     -- `Tim Berners-Lee <https://twitter.com/timberners_lee/status/290140454211698689>`_
-
-.. raw:: latex
-
-   \setcounter{secnumdepth}{2}

@@ -9,6 +9,7 @@
 .. raw:: latex
 
          \frontmatter
+         \setcounter{secnumdepth}{-1}
 
 ############
 Front Matter
@@ -25,6 +26,7 @@ Front Matter
 .. raw:: latex
 
          \mainmatter
+         \setcounter{secnumdepth}{2}
 
 ###################
 Describing Behavior
