@@ -3,18 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-###################
-Modelica by Example
-###################
-
-
-.. highlight:: modelica
-   :linenothreshold: 5
-
 .. raw:: latex
 
          \frontmatter
-         \setcounter{secnumdepth}{-1}
+         \setcounter{secnumdepth}{-2}
 
 ************
 Front Matter
