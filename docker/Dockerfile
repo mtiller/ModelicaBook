@@ -39,7 +39,20 @@ RUN pip install --upgrade https://bitbucket.org/dietmarw/pygments-main/get/defau
 # Now install Git and grab the book
 RUN apt-get install -y git
 
+# Now install a few more bits needed by Go
+RUN apt-get update -y && apt-get install --no-install-recommends -y -q curl build-essential ca-certificates git mercurial bzr
+
+# And then install Go itself
+RUN mkdir /goroot && curl https://storage.googleapis.com/golang/go1.3.linux-amd64.tar.gz | tar xvzf - -C /goroot --strip-components=1
+
+# Setup GO environment variables
+ENV GOROOT /goroot
+ENV GOPATH /opt/MBE/docker/gopath
+ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin
+
+# Create a directory for all the book related stuff
 RUN mkdir /opt/MBE
+
 # The rest of this we do as a user
 RUN useradd builder
 
