@@ -181,7 +181,7 @@ formats.
 
 In creating this book, I needed a way to test the models that appear
 in the book, generate simulation results for plots and generated
-Javascript code that allows the browser integrated simulation
+JavaScript code that allows the browser integrated simulation
 capabilities in the HTML book.  OpenModelica supported all of these
 use cases.  But beyond that, I owe a big "Thank You" to Martin Sjölund
 and the OpenModelica team for quickly responding to various issues I
@@ -192,7 +192,7 @@ me out.
 The browser integrated simulation capabilities in the HTML version of
 the book are only possible because of a tool called Emscripten which
 allows ordinary code in languages like C and C++ to be cross-compiled
-(via LLVM) into Javascript.  Although I knew this was possible, I
+(via LLVM) into JavaScript.  Although I knew this was possible, I
 didn't really think this avenue was viable until I saw `the work of Tom Short <https://github.com/tshort/openmodelica-javascript>`_
 integrating OpenModelica and Emscripten.  The browser integrated
 simulation capabilities were greatly enabled by his work in this area.
@@ -232,7 +232,7 @@ adjustments.  The power and portability of the MacBook Air gave my
 entire work process a big boost.
 
 Developing this book involved a lot of testing and debugging of HTML
-layout, styling and embedded Javascript.  Most of this work was done
+layout, styling and embedded JavaScript.  Most of this work was done
 using Firefox but I've also used Chrome from time to time as well.
 I'd like to thank both the Mozilla Foundation and Google for creating
 such wonderful, standards compliant browsers.
