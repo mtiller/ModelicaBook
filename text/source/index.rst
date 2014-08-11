@@ -6,8 +6,13 @@
 .. highlight:: modelica
    :linenothreshold: 5
 
+.. raw:: latex
+
+         \frontmatter
+
+############
 Front Matter
-============
+############
 
 .. toctree::
    :maxdepth: 1
@@ -17,8 +22,13 @@ Front Matter
    front/intro
    front/dedication
 
+.. raw:: latex
+
+         \mainmatter
+
+###################
 Describing Behavior
-===================
+###################
 
 .. toctree::
    :maxdepth: 3
@@ -28,8 +38,9 @@ Describing Behavior
    behavior/arrays
    behavior/functions
 
+########################
 Object-Oriented Modeling
-========================
+########################
 
 .. toctree::
    :maxdepth: 3
@@ -40,16 +51,23 @@ Object-Oriented Modeling
    components/subsystems
    components/architectures
 
+###############
 Advanced Topics
-===============
+###############
 
 .. toctree::
    :maxdepth: 3
 
    advanced
 
+.. raw:: latex
+
+         \backmatter
+
+
+##################
 Indices and tables
-==================
+##################
 
 * :ref:`genindex`
 * :ref:`modindex`
