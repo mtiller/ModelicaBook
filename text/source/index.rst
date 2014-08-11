@@ -3,6 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+###################
+Modelica by Example
+###################
+
+
 .. highlight:: modelica
    :linenothreshold: 5
 
@@ -11,9 +16,9 @@
          \frontmatter
          \setcounter{secnumdepth}{-1}
 
-############
+************
 Front Matter
-############
+************
 
 .. toctree::
    :maxdepth: 1
@@ -72,13 +77,13 @@ Indices and tables
 ##################
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
 .. ifconfig:: todo_include_todos
 
+   *********
    TODO List
-   ---------
+   *********
 
    .. toctree::
       :maxdepth: 2

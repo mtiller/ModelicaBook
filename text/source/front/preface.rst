@@ -1,7 +1,7 @@
 .. _preface:
 
 Preface
-*******
+=======
 
 This book is a bit unusual in the way it is structured.  This is
 because it is expected that most readers will be reading an HTML

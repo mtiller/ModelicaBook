@@ -1,5 +1,5 @@
 Dedication
-**********
+==========
 
 .. only:: latex
 
