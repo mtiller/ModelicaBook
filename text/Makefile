@@ -77,11 +77,11 @@ deploy_js: local_js
 # out to an S3 bucket
 
 deploy_print: pdf ebook
-	($(S3PUT) build/latex/ModelicaByExample.pdf  s3://files.xogeny.com/ModelicaByExample/)
-	($(S3PUT) build/latex-a4/ModelicaByExample.pdf  s3://files.xogeny.com/ModelicaByExample/ModelicaByExample-a4.pdf)
+	($(S3PUT) build/latex/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/)
+	($(S3PUT) build/latex-a4/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/ModelicaByExample-a4.pdf)
 
-	($(S3PUT) build/epub/ModelicabyExample.epub  s3://files.xogeny.com/ModelicaByExample/)
-	($(S3PUT) build/epub/ModelicabyExample.mobi  s3://files.xogeny.com/ModelicaByExample/)
+	($(S3PUT) build/epub/ModelicabyExample.epub s3://files.xogeny.com/ModelicaByExample/ModelicaByExample.epub)
+	($(S3PUT) build/epub/ModelicaByExample.mobi s3://files.xogeny.com/ModelicaByExample/)
 
 
 
@@ -223,7 +223,7 @@ epub:
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
 mobi:   epub
-	(cd $(BUILDDIR)/epub; ebook-convert ModelicabyExample.epub ModelicabyExample.mobi)
+	(cd $(BUILDDIR)/epub; ebook-convert ModelicabyExample.epub ModelicaByExample.mobi)
 	@echo
 	@echo "Conversion to mobi finished. The mobi file is in $(BUILDDIR)/epub."
 
