@@ -194,7 +194,7 @@ latex_elements = {
 
 # Additional stuff for the LaTeX preamble.
     'preamble': '''\\usepackage[multidot]{grffile}
-                   \\setcounter{tocdepth}{3}''',
+                   \\setcounter{tocdepth}{2}''',
 }
 
 # If the tag 'a4' is given we switch to a4paper
@@ -207,7 +207,7 @@ if 'a4' in tags:
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'ModelicaByExample.tex', u'Modelica by Example',
-   u'Michael M. Tiller', 'book'),
+   u'Michael M. Tiller', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

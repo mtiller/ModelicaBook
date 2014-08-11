@@ -5,7 +5,7 @@
 
 .. raw:: latex
 
-         \frontmatter
+         \pagenumbering{roman}
          \setcounter{secnumdepth}{-2}
 
 ************
@@ -22,8 +22,9 @@ Front Matter
 
 .. raw:: latex
 
-         \mainmatter
          \setcounter{secnumdepth}{2}
+         \pagenumbering{arabic}
+
 
 ###################
 Describing Behavior
@@ -50,18 +51,19 @@ Object-Oriented Modeling
    components/subsystems
    components/architectures
 
-###############
-Advanced Topics
-###############
 
-.. toctree::
-   :maxdepth: 3
+.. todo::
+   Advanced topics need to be written.
 
-   advanced
+..
+   ###############
+   Advanced Topics
+   ###############
 
-.. raw:: latex
+   .. toctree::
+      :maxdepth: 3
 
-         \backmatter
+      advanced
 
 
 ##################
