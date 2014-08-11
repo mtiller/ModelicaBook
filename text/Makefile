@@ -78,6 +78,8 @@ deploy_js: local_js
 
 deploy_print: pdf ebook
 	($(S3PUT) build/latex/ModelicaByExample.pdf  s3://files.xogeny.com/ModelicaByExample/)
+	($(S3PUT) build/latex-a4/ModelicaByExample.pdf  s3://files.xogeny.com/ModelicaByExample/ModelicaByExample-a4.pdf)
+
 	($(S3PUT) build/epub/ModelicabyExample.epub  s3://files.xogeny.com/ModelicaByExample/)
 	($(S3PUT) build/epub/ModelicabyExample.mobi  s3://files.xogeny.com/ModelicaByExample/)
 
@@ -234,9 +236,24 @@ latex:	specs results images
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-pdf:	latex
+latex-a4:	specs results images
+	$(SPHINXBUILD) -b latex -t latex -t a4 $(ALLSPHINXOPTS) $(BUILDDIR)/latex-a4
+	@echo
+	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex-a4."
+	@echo "Run \`make' in that directory to run these through (pdf)latex" \
+	      "(use \`make latexpdf' here to do that automatically)."
+
+
+pdf:	latex latex-a4
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
+	@echo "pdflatex letter finished; the PDF files are in $(BUILDDIR)/latex."
+	$(MAKE) -C $(BUILDDIR)/latex-a4 all-pdf
+	@echo "pdflatex a4paper finished; the PDF files are in $(BUILDDIR)/latex-a4."
+
+pdf-a4:	latex latex-a4
+	@echo "Running LaTeX files through pdflatex..."
+	$(MAKE) -C $(BUILDDIR)/latex-a4 all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
 
 latexpdf: pdf
