@@ -231,15 +231,32 @@ ebook:  epub mobi
 
 latex: latex-letter latex-a4
 
-latex-letter:	specs results images
+latex-letter: specs results images
+	@echo
+	@echo "Applying horrible LaTeX hack..."
+	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
+	cp $(SOURCEDIR)/index.rst $(SOURCEDIR)/index.rst.orig
+	(echo "#####\nDUMMY\n#####"; cat $(SOURCEDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
+	@echo
 	$(SPHINXBUILD) -b latex -t latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	@echo "Reverting horrible LaTeX hack..."
+	git checkout $(SOURCEDIR)/index.rst # revert back to pristine index.rst
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-latex-a4:	specs results images
+
+latex-a4: specs results images
+	@echo
+	@echo "Applying horrible LaTeX hack..."
+	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
+	cp $(SOURCEDIR)/index.rst $(SOURCEDIR)/index.rst.orig
+	(echo "#####\nDUMMY\n#####"; cat $(SOURCEDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
+	@echo
 	$(SPHINXBUILD) -b latex -t latex -t a4 $(ALLSPHINXOPTS) $(BUILDDIR)/latex-a4
+	@echo "Reverting horrible LaTeX hack..."
+	git checkout $(SOURCEDIR)/index.rst # revert back to pristine index.rst
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex-a4."
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
