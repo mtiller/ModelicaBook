@@ -5,7 +5,7 @@
 
 .. raw:: latex
 
-         \pagenumbering{roman}
+         \pagenumbering{Roman}
          \setcounter{secnumdepth}{-2}
 
 ************
