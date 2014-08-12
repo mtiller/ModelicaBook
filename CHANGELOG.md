@@ -1,5 +1,13 @@
 This file collects the significant changes to the book since its initial public release.
 
+### Version 0.3.4
+
+#### Enhancements
+
+  * Greatly improved structure for PDF.  This is all thanks to Dietmar Winkler
+    (@dietmarw) who restructured many things to give the PDF version a more
+	proper structure that includes parts, chapters and sections.
+
 ### Version 0.3.3
 
 #### Enhancements
