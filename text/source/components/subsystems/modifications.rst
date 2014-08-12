@@ -73,7 +73,7 @@ by a ``parameter``, *e.g.,*
     StepVoltage Vs[n](Vf=/* ??? */);
 
 If we tried to initialize ``Vf`` with a literal array (*e.g.,*
-``{24,24,24}``, then it won't adapt to changes in ``n``.  `To address
+``{24,24,24}``, then it won't adapt to changes in ``n``.  To address
 this situation, we could use the :ref:`fill-function` function:
 
 .. code-block:: modelica
