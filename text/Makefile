@@ -235,8 +235,8 @@ latex-letter: specs results images
 	@echo
 	@echo "Applying horrible LaTeX hack..."
 	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
-	cp $(SOURCEDIR)/index.rst $(SOURCEDIR)/index.rst.orig
-	(echo "#####\nDUMMY\n#####"; cat $(SOURCEDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
+	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
+	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
 	@echo
 	$(SPHINXBUILD) -b latex -t latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Reverting horrible LaTeX hack..."
@@ -251,8 +251,8 @@ latex-a4: specs results images
 	@echo
 	@echo "Applying horrible LaTeX hack..."
 	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
-	cp $(SOURCEDIR)/index.rst $(SOURCEDIR)/index.rst.orig
-	(echo "#####\nDUMMY\n#####"; cat $(SOURCEDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
+	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
+	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
 	@echo
 	$(SPHINXBUILD) -b latex -t latex -t a4 $(ALLSPHINXOPTS) $(BUILDDIR)/latex-a4
 	@echo "Reverting horrible LaTeX hack..."
