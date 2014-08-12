@@ -18,20 +18,16 @@ equation
   connect(setpoint_signal.y, feedback.u2)
     annotation (Line(
       points={{-19,-30},{0,-30},{0,-8}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(PI.u, feedback.y) annotation (Line(
       points={{-28,0},{-9,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(feedback.u1, temperature) annotation (Line(
       points={{8,0},{120,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(PI.y, heat) annotation (Line(
       points={{-51,0},{-110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   annotation ( Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},

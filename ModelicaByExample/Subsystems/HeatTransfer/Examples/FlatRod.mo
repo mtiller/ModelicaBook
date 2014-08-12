@@ -42,42 +42,41 @@ model FlatRod "Modeling a heat transfer in a rod in a without subsystems"
 equation
   connect(bc.y, heating.Q_flow) annotation (Line(
       points={{-69,60},{-60,60}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   connect(C1.port, G1.port_a) annotation (Line(
       points={{-60,-8},{-60,-20},{-40,-20}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(C2.port, G2.port_a) annotation (Line(
       points={{0,-8},{0,-20},{20,-20}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(G2.port_b, C3.port) annotation (Line(
       points={{40,-20},{60,-20},{60,-8}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(G1.port_b, C2.port) annotation (Line(
       points={{-20,-20},{0,-20},{0,-8}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(heating.port, C1.port) annotation (Line(
       points={{-40,60},{-30,60},{-30,20},{-80,20},{-80,-20},{-60,-20},{-60,-8}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(wall1.port_b, C1.port) annotation (Line(
       points={{-60,-30},{-60,-8}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(wall1.port_a, ambient.port) annotation (Line(
       points={{-60,-50},{-60,-60},{0,-60},{0,-70}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(wall2.port_a, ambient.port) annotation (Line(
       points={{0,-50},{0,-50},{0,-70}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(wall3.port_a, ambient.port) annotation (Line(
       points={{60,-50},{60,-60},{0,-60},{0,-70}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(wall3.port_b, C3.port) annotation (Line(
       points={{60,-30},{60,-8}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(sensor.port, C3.port) annotation (Line(
       points={{80,-20},{60,-20},{60,-8}},
-      color={191,0,0}, smooth=Smooth.None));
+      color={191,0,0}));
   connect(C2.port, wall2.port_b) annotation (Line(
       points={{0,-8},{0,-19},{0,-30},{0,-30}},
-      color={191,0,0}, pattern=LinePattern.None,
-      smooth=Smooth.None));
+      color={191,0,0}, pattern=LinePattern.None));
 end FlatRod;

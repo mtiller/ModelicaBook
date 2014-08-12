@@ -70,54 +70,41 @@ protected
 equation
   connect(D3.n,D4. p) annotation (Line(
       points={{5.07107,-17.0711},{10,-18},{14.9289,-17.0711}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(D1.n,D2. p) annotation (Line(
       points={{5.07107,17.0711},{10,18},{14.9289,18},{14.9289,17.0711}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(D1.p,D3. p) annotation (Line(
       points={{-9.07107,2.92893},{-10,0},{-9.07107,-2.92893}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(D2.n,D4. n) annotation (Line(
       points={{29.0711,2.92893},{30,0},{29.0711,-2.92893}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(transformer.p2,D1. n) annotation (Line(
       points={{-40,5},{-40,24},{10,24},{10,17.0711},{5.07107,17.0711}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(D4.p,transformer. n2) annotation (Line(
       points={{14.9289,-17.0711},{10,-17.0711},{10,-30},{-40,-30},{-40,-5}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(D1.p, capacitor.n) annotation (Line(
       points={{-9.07107,2.92893},{-14,2.92893},{-14,-42},{70,-42},{70,-30}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(transformer.n1, gnd) annotation (Line(
       points={{-60,-5},{-60,-60},{-100,-60}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(transformer.n2, gnd) annotation (Line(
       points={{-40,-5},{-40,-60},{-100,-60}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(transformer.p1, p) annotation (Line(
       points={{-60,5},{-60,60},{-100,60}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(capacitor.p, D2.n) annotation (Line(
       points={{70,-10},{70,2.92893},{29.0711,2.92893}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(capacitor.p, p_load) annotation (Line(
       points={{70,-10},{70,60},{100,60}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(capacitor.n, n_load) annotation (Line(
       points={{70,-30},{70,-60},{100,-60}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
 end BasicPowerSupply;

@@ -28,42 +28,32 @@ model ControlledCooling "Adding a setpoint and control strategy"
 equation
   connect(gain1.y, T.u) annotation (Line(
       points={{-19,0},{-11,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(total_heat.y, gain1.u) annotation (Line(
       points={{-49,0},{-41,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(convection.y, total_heat.u[1]) annotation (Line(
       points={{71,-30},{80,-30},{80,-60},{-80,-60},{-80,-0.5},{-71,-0.5}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(setpoint.y, feedback.u1) annotation (Line(
       points={{11,30},{19,30}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(feedback1.y, convection.u) annotation (Line(
       points={{40,-30},{49,-30}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(ambient.y, feedback1.u1) annotation (Line(
       points={{11,-30},{19,-30}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(T.y, feedback1.u2) annotation (Line(
       points={{11,0},{30,0},{30,-19}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(T.y, feedback.u2) annotation (Line(
       points={{11,0},{30,0},{30,19}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(feedback.y, convection1.u) annotation (Line(
       points={{40,30},{49,30}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(convection1.y, total_heat.u[2]) annotation (Line(
       points={{71,30},{80,30},{80,60},{-80,60},{-80,0.5},{-71,0.5}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
 end ControlledCooling;

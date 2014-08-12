@@ -26,8 +26,7 @@ equation
           textString="c=%c"),
         Line(
           points={{-100,-80},{-40,0},{40,0},{100,80}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Text(
           extent={{-100,40},{100,0}},
           lineColor={0,0,0},

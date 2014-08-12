@@ -18,16 +18,13 @@ equation
           fillPattern=FillPattern.Solid),
         Line(
           points={{-100,0},{-20,0}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Line(
           points={{0,-100},{0,-20}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Line(
           points={{20,0},{100,0}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Rectangle(
           extent={{-32,18},{-28,2}},
           lineColor={0,0,0},

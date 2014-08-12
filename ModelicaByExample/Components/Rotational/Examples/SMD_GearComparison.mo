@@ -68,94 +68,71 @@ model SMD_GearComparison "Use case using both grounded and ungrounded gears"
 equation
   connect(ground.flange_a, damper2.flange_b) annotation (Line(
       points={{70,-70},{60,-70},{60,-50},{50,-50}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground.flange_a, spring2.flange_b) annotation (Line(
       points={{70,-70},{60,-70},{60,-90},{48,-90}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper2.flange_a, inertia2.flange_b) annotation (Line(
       points={{30,-50},{20,-50},{20,-70},{10,-70}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(spring2.flange_a, inertia2.flange_b) annotation (Line(
       points={{28,-90},{20,-90},{20,-70},{10,-70}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(grounded.flange_b, inertia2.flange_a) annotation (Line(
       points={{-30,-70},{-10,-70}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(grounded.flange_a, inertia1.flange_b) annotation (Line(
       points={{-50,-70},{-70,-70}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground1.flange_a,damper4. flange_b) annotation (Line(
       points={{70,0},{60,0},{60,20},{50,20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground1.flange_a,spring4. flange_b) annotation (Line(
       points={{70,0},{60,0},{60,-20},{48,-20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper4.flange_a,inertia4. flange_b) annotation (Line(
       points={{30,20},{20,20},{20,0},{10,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(spring4.flange_a,inertia4. flange_b) annotation (Line(
       points={{28,-20},{20,-20},{20,0},{10,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ungrounded.flange_b,inertia4. flange_a) annotation (Line(
       points={{-30,0},{-10,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ungrounded.flange_a, inertia3.flange_b) annotation (Line(
       points={{-50,0},{-70,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground2.flange_a, ungrounded.housing) annotation (Line(
       points={{-40,-20},{-40,-10}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground3.flange_a,damper6. flange_b) annotation (Line(
       points={{70,70},{60,70},{60,90},{50,90}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground3.flange_a,spring6. flange_b) annotation (Line(
       points={{70,70},{60,70},{60,50},{48,50}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper6.flange_a,inertia6. flange_b) annotation (Line(
       points={{30,90},{20,90},{20,70},{10,70}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(spring6.flange_a,inertia6. flange_b) annotation (Line(
       points={{28,50},{20,50},{20,70},{10,70}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ungrounded1.flange_b,inertia6. flange_a) annotation (Line(
       points={{-30,70},{-10,70}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ungrounded1.flange_a, inertia5.flange_b) annotation (Line(
       points={{-50,70},{-70,70}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(mount_d.flange_b, ungrounded1.housing) annotation (Line(
       points={{-50,30},{-40,30},{-40,60}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(mount_c.flange_b, ungrounded1.housing) annotation (Line(
       points={{-50,50},{-40,50},{-40,60}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground4.flange_a, mount_c.flange_a) annotation (Line(
       points={{-80,40},{-76,40},{-76,50},{-70,50}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground4.flange_a, mount_d.flange_a) annotation (Line(
       points={{-80,40},{-76,40},{-76,30},{-70,30}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
 end SMD_GearComparison;

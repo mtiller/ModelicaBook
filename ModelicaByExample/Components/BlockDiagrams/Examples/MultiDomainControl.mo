@@ -34,30 +34,23 @@ model MultiDomainControl
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
 equation
   connect(setpoint.y, feedback.u1) annotation (Line(
-      points={{-19,40},{-11,40}}, color={0,0,255},
-      smooth=Smooth.None));
+      points={{-19,40},{-11,40}}, color={0,0,255}));
   connect(feedback.y, controller_gain.u) annotation (Line(
-      points={{10,40},{19,40}}, color={0,0,255},
-      smooth=Smooth.None));
+      points={{10,40},{19,40}}, color={0,0,255}));
   connect(convection2.port_a, cap.node) annotation (Line(
-      points={{10,-20},{-20,-20}}, color={191,0,0},
-      smooth=Smooth.None));
+      points={{10,-20},{-20,-20}}, color={191,0,0}));
   connect(amb.node, convection2.port_b) annotation (Line(
-      points={{60,-20},{30,-20}}, color={191,0,0},
-      smooth=Smooth.None));
+      points={{60,-20},{30,-20}}, color={191,0,0}));
   connect(sensor.y, feedback.u2) annotation (Line(
       points={{0,21},{0,24.5},{0,24.5},{0,29}},
-      color={0,0,255}, pattern=LinePattern.None,
-      smooth=Smooth.None));
+      color={0,0,255}, pattern=LinePattern.None));
   connect(heatSource.node, cap.node) annotation (Line(
       points={{-40,-20},{-20,-20}}, color={191,0,0},
-      pattern=LinePattern.None, smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(controller_gain.y, heatSource.u) annotation (Line(
       points={{41,40},{50,40},{50,60},{-70,60},{-70,-20},{-61,-20}},
-      color={0,0,255}, pattern=LinePattern.None,
-      smooth=Smooth.None));
+      color={0,0,255}, pattern=LinePattern.None));
   connect(sensor.node, cap.node) annotation (Line(
       points={{0,0},{0,0},{0,-20},{-20,-20}},
-      color={191,0,0}, pattern=LinePattern.None,
-      smooth=Smooth.None));
+      color={191,0,0}, pattern=LinePattern.None));
 end MultiDomainControl;

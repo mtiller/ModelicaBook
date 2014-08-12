@@ -7,7 +7,6 @@ equation
   annotation (Icon(graphics={Polygon(
           points={{-100,100},{-100,-100},{100,0},{-100,100}},
           lineColor={0,0,0},
-          smooth=Smooth.None,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid), Text(
           extent={{-100,30},{40,-26}},

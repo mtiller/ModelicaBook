@@ -25,35 +25,27 @@ model SMD
 equation
   connect(ground.flange_a, damper2.flange_b) annotation (Line(
       points={{70,0},{66,0},{66,0},{60,0},{60,20},{50,20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
 
   connect(ground.flange_a, spring2.flange_b) annotation (Line(
       points={{70,0},{60,0},{60,-20},{48,-20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper2.flange_a, inertia2.flange_b) annotation (Line(
       points={{30,20},{20,20},{20,0},{10,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(spring2.flange_a, inertia2.flange_b) annotation (Line(
       points={{28,-20},{20,-20},{20,0},{10,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(inertia2.flange_a, damper1.flange_b) annotation (Line(
       points={{-10,0},{-20,0},{-20,20},{-30,20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(inertia2.flange_a, spring1.flange_b) annotation (Line(
       points={{-10,0},{-20,0},{-20,-20},{-30,-20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper1.flange_a, inertia1.flange_b) annotation (Line(
       points={{-50,20},{-60,20},{-60,0},{-70,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(spring1.flange_a, inertia1.flange_b) annotation (Line(
       points={{-50,-20},{-60,-20},{-60,0},{-70,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
 end SMD;

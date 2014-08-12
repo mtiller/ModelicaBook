@@ -7,12 +7,10 @@ protected
 equation
   connect(sensor.T, bus.temperature) annotation (Line(
       points={{10,0},{100,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(room, sensor.port) annotation (Line(
       points={{-100,0},{-10,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   annotation (Icon(graphics={
         Ellipse(
           extent={{-8,-98},{32,-60}},

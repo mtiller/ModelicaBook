@@ -35,26 +35,25 @@ public
 equation
   connect(flange_a, inertia_a.flange_a)
     annotation (Line(points={{-80,0},{-100,0}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(inertia_b.flange_b, flange_b)
     annotation (Line(points={{60,0},{100,0}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(idealGear.support, support)
     annotation (Line(points={{0,-10},{0,-100}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(idealGear.flange_b, inertia_b.flange_a)
     annotation (Line(points={{10,0},{40,0}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(backlash.flange_a, inertia_a.flange_b)
     annotation (Line(points={{-40,0},{-60,0}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(backlash.flange_b, idealGear.flange_a)
     annotation (Line(points={{-20,0},{-10,0}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   annotation ( Icon(graphics={
         Polygon(
           points={{-74,72},{-74,44},{-68,44},{-68,72},{-74,72}},
-          smooth=Smooth.None,
           fillColor={255,170,170},
           fillPattern=FillPattern.Solid,
           pattern=LinePattern.None),
@@ -62,14 +61,12 @@ equation
           points={{-100,72},{-94,72},{-94,52},{-74,52},{-74,72},{-44,72},{-44,76},
               {-100,76},{-100,72}},
           lineColor={0,0,0},
-          smooth=Smooth.None,
           fillColor={175,175,175},
           fillPattern=FillPattern.Solid),
         Polygon(
           points={{-100,44},{-68,44},{-68,64},{-48,64},{-48,44},{-44,44},{-44,40},
               {-100,40},{-100,44}},
           lineColor={0,0,0},
-          smooth=Smooth.None,
           fillColor={175,175,175},
           fillPattern=FillPattern.Solid),
         Text(

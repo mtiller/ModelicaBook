@@ -14,13 +14,11 @@ equation
   connect(sampleHoldSensor.w, w) annotation (Line(
       points={{11,0},{110,0}},
       color={0,0,127},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(sampleHoldSensor.flange, shaft) annotation (Line(
       points={{-10,0},{-100,0}},
       color={0,0,0},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   annotation ( Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},

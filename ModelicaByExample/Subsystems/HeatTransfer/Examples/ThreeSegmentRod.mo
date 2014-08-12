@@ -16,17 +16,14 @@ model ThreeSegmentRod "Modeling a heat transfer using 3 segment rod subsystem"
 equation
   connect(bc.y, heating.Q_flow) annotation (Line(
       points={{-69,60},{-60,60}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   connect(heating.port, rod.port_a) annotation (Line(
       points={{-40,60},{-30,60},{-30,0},{-20,0}},
-      color={191,0,0}, pattern=LinePattern.None,
-      smooth=Smooth.None));
+      color={191,0,0}, pattern=LinePattern.None));
   connect(rod.ambient, ambient.port) annotation (Line(
       points={{0,-20},{0,-70},{0,-70}},
-      color={191,0,0}, pattern=LinePattern.None,
-      smooth=Smooth.None));
+      color={191,0,0}, pattern=LinePattern.None));
   connect(rod.port_b, sensor.port) annotation (Line(
       points={{20,0},{80,0}},
-      color={191,0,0}, pattern=LinePattern.None,
-      smooth=Smooth.None));
+      color={191,0,0}, pattern=LinePattern.None));
 end ThreeSegmentRod;

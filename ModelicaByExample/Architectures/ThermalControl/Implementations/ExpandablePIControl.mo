@@ -17,16 +17,16 @@ equation
   connect(setpoint_signal.y, feedback.u2)
     annotation (Line(
       points={{1,-30},{20,-30},{20,-8}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   connect(PI.u,feedback. y) annotation (Line(
       points={{-8,0},{11,0}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   connect(bus.temperature, feedback.u1) annotation (Line(
       points={{0,-100},{60,-100},{60,0},{28,0}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(PI.y, bus.heat) annotation (Line(
       points={{-31,0},{-60,0},{-60,-100},{0,-100}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},

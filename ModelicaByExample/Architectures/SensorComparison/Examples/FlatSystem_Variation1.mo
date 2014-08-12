@@ -25,37 +25,37 @@ model FlatSystem_Variation1 "Variation containing a different sensor model"
 equation
   connect(springDamper.flange_a, inertia.flange_b) annotation (Line(
       points={{10,-40},{0,-40}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(springDamper.flange_b, inertia1.flange_a) annotation (Line(
       points={{30,-40},{40,-40}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(torque.support, fixed.flange) annotation (Line(
       points={{-50,-50},{-50,-70},{20,-70},{20,-80}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper.flange_b, inertia1.flange_b) annotation (Line(
       points={{60,-70},{70,-70},{70,-40},{60,-40}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper.flange_a, fixed.flange) annotation (Line(
       points={{40,-70},{20,-70},{20,-80}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(torque.flange, inertia.flange_a) annotation (Line(
       points={{-40,-40},{-20,-40}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(speedSensor.flange, inertia1.flange_b) annotation (Line(
       points={{70,-10},{70,-40},{60,-40}},
-      color={0,0,0}, smooth=Smooth.None));
+      color={0,0,0}));
   connect(feedback.y, gain.u) annotation (Line(
       points={{61,40},{-18,40}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   connect(gain.y, torque.tau) annotation (Line(
       points={{-41,40},{-80,40},{-80,-40},{-62,-40}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   connect(trapezoid.y, feedback.u1) annotation (Line(
       points={{61,80},{90,80},{90,40},{78,40}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   connect(speedSensor.w, feedback.u2) annotation (Line(
       points={{70,11},{70,32}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   annotation (
     Diagram(graphics={
         Rectangle(

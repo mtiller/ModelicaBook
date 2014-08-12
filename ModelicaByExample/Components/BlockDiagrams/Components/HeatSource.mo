@@ -10,7 +10,6 @@ equation
           points={{-100,20},{-100,-20},{40,-20},{40,-40},{90,0},{40,40},{40,20},
               {-100,20}},
           pattern=LinePattern.None,
-          smooth=Smooth.None,
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid)}));
 end HeatSource;

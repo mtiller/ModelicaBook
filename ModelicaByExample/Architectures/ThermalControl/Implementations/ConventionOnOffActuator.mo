@@ -11,12 +11,10 @@ protected
 equation
   connect(heater.port, furnace) annotation (Line(
       points={{10,0},{100,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(command.y, heater.Q_flow) annotation (Line(
       points={{-39,0},{-10,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   annotation (Diagram(graphics={Text(
           extent={{-100,20},{-60,-20}},
           lineColor={255,0,0},

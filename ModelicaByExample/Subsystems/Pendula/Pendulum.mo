@@ -32,16 +32,13 @@ equation
   connect(string.frame_a, ball.frame_a) annotation (Line(
       points={{0,-40},{0,-40},{0,-80}},
       color={95,95,95},
-      thickness=0.5,
-      smooth=Smooth.None));
+      thickness=0.5));
   connect(revolute.frame_b, ground.frame_b) annotation (Line(
       points={{0,30},{0,40},{0,40},{0,50}},
       color={95,95,95},
-      thickness=0.5,
-      smooth=Smooth.None));
+      thickness=0.5));
   connect(revolute.frame_a, string.frame_b) annotation (Line(
       points={{0,10},{0,10},{0,-20},{0,-20}},
       color={95,95,95},
-      thickness=0.5,
-      smooth=Smooth.None));
+      thickness=0.5));
 end Pendulum;

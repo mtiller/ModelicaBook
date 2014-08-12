@@ -15,18 +15,14 @@ partial model BusBasedArchitecture
 equation
   connect(actuator.furnace, plant.furnace) annotation (Line(
       points={{-30,0},{-10,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(plant.room, sensor.room) annotation (Line(
       points={{10,0},{30,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(actuator.basicBus, controller.basicBus) annotation (Line(
       points={{-50,0},{-60,0},{-60,28},{0,28},{0,50}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(sensor.basicBus, controller.basicBus) annotation (Line(
       points={{50,0},{60,0},{60,28},{0,28},{0,50}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
 end BusBasedArchitecture;

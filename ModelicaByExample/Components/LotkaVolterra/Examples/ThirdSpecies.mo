@@ -13,23 +13,18 @@ model ThirdSpecies "Adding a third species to Lotka-Volterra"
 equation
   connect(wolf_predation.b, wolves.species) annotation (Line(
       points={{60,30},{60,80},{40,80},{40,60},{40,60}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(wolf_rabbit_predation.a, rabbits.species) annotation (Line(
       points={{-10,40},{-40,40},{-40,-20}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(wolf_predation.a, foxes.species) annotation (Line(
       points={{60,10},{60,0},{40,0},{40,-20}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(wolf_starvation.species, wolves.species) annotation (Line(
       points={{80,60},{80,80},{40,80},{40,60}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(wolves.species, wolf_rabbit_predation.b) annotation (Line(
       points={{40,60},{40,80},{20,80},{20,40},{10,40}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   annotation (experiment(StopTime=100, Tolerance=1e-006));
 end ThirdSpecies;

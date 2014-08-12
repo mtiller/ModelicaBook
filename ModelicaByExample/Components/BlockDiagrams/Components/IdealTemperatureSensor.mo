@@ -51,10 +51,8 @@ equation
           fillPattern=FillPattern.Solid),
         Line(
           points={{-90,0},{-22,0}},
-          color={127,0,0},
-          smooth=Smooth.None),
+          color={127,0,0}),
         Line(
           points={{22,0},{100,0}},
-          color={0,0,255},
-          smooth=Smooth.None)}));
+          color={0,0,255})}));
 end IdealTemperatureSensor;

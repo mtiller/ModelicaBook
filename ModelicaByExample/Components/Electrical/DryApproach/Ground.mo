@@ -22,8 +22,7 @@ equation
           fillPattern=FillPattern.Solid),
         Line(
           points={{0,76},{0,40}},
-          color={0,0,255},
-          smooth=Smooth.None),
+          color={0,0,255}),
         Rectangle(
           extent={{-46,22},{46,18}},
           lineColor={0,0,255},

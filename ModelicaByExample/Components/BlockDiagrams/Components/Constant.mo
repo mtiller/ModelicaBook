@@ -7,8 +7,7 @@ equation
   y = k;
   annotation ( Icon(graphics={Line(
           points={{-80,20},{80,20}},
-          color={0,128,255},
-          smooth=Smooth.None), Text(
+          color={0,128,255}), Text(
           extent={{-80,60},{80,20}},
           lineColor={0,128,255},
           fillPattern=FillPattern.Solid,

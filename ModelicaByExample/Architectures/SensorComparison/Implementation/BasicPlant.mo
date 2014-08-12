@@ -32,34 +32,27 @@ protected
 equation
   connect(springDamper.flange_a, inertia.flange_b) annotation (Line(
       points={{-10,0},{-20,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(springDamper.flange_b, inertia1.flange_a) annotation (Line(
       points={{10,0},{20,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper.flange_b, inertia1.flange_b) annotation (Line(
       points={{40,-30},{50,-30},{50,0},{40,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper.flange_a, fixed.flange) annotation (Line(
       points={{20,-30},{0,-30},{0,-70}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(inertia1.flange_b, flange_b) annotation (Line(
       points={{40,0},{100,0}},
       color={0,0,0},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(inertia.flange_a, flange_a) annotation (Line(
       points={{-40,0},{-100,0}},
       color={0,0,0},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(fixed.flange, housing) annotation (Line(
       points={{0,-70},{0,-60},{-100,-60}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   annotation (Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},

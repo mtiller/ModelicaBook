@@ -18,19 +18,15 @@ model ClassicLotkaVolterra "Includes reproduction, starvation and predation"
 equation
   connect(reproduction.species, rabbits.species) annotation (Line(
       points={{-80,-20},{-80,0},{-40,0},{-40,-20}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(fox_predation.a, rabbits.species) annotation (Line(
       points={{-10,0},{-40,0},{-40,-20}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(fox_starvation.species, foxes.species) annotation (Line(
       points={{80,-20},{80,0},{40,0},{40,-20}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(foxes.species, fox_predation.b) annotation (Line(
       points={{40,-20},{40,0},{10,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   annotation (experiment(StopTime=100, Tolerance=1e-006));
 end ClassicLotkaVolterra;

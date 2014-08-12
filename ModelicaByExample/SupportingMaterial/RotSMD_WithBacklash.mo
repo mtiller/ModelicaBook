@@ -9,10 +9,8 @@ model RotSMD_WithBacklash "Inserting a backlash element"
 equation
   connect(backlash.flange_b, J2.flange_a) annotation (Line(
       points={{-30,0},{-20,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(backlash.flange_a, J1.flange_b) annotation (Line(
       points={{-50,0},{-60,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
 end RotSMD_WithBacklash;
