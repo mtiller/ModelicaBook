@@ -15,7 +15,7 @@ rich connectors types.
 
 We'll start this section with a discussion of basic connectors very
 similar to the ones used for :ref:`simple-domains`.  But we will
-conclude with a connector that is fundamentally different than the
+conclude with a connector that is fundamentally different from the
 previous examples because it describes a connector that involves the
 conservation of both mass and energy.
 

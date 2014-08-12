@@ -61,7 +61,7 @@ but in Modelica, we write it as:
 
     m*c_p*der(T) = h*A*(T_inf-T)
 
-Note that this is really no different than the equation we saw in our
+Note that this is really no different from the equation we saw in our
 ``FirstOrder`` model from the :ref:`first-order` example.
 
 One thing worth noting is that the equation in our ``NewtonCooling``
