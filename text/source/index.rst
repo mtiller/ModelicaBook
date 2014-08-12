@@ -22,9 +22,9 @@ Front Matter
 
 .. raw:: latex
 
-         \setcounter{secnumdepth}{2}
+         \cleardoublepage
          \pagenumbering{arabic}
-
+         \setcounter{secnumdepth}{2}
 
 ###################
 Describing Behavior
