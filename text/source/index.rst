@@ -3,11 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. highlight:: modelica
-   :linenothreshold: 5
+.. raw:: latex
 
+         \pagenumbering{Roman}
+         \setcounter{secnumdepth}{-2}
+
+************
 Front Matter
-============
+************
 
 .. toctree::
    :maxdepth: 1
@@ -17,8 +20,15 @@ Front Matter
    front/intro
    front/dedication
 
+.. raw:: latex
+
+         \cleardoublepage
+         \pagenumbering{arabic}
+         \setcounter{secnumdepth}{2}
+
+###################
 Describing Behavior
-===================
+###################
 
 .. toctree::
    :maxdepth: 3
@@ -28,8 +38,9 @@ Describing Behavior
    behavior/arrays
    behavior/functions
 
+########################
 Object-Oriented Modeling
-========================
+########################
 
 .. toctree::
    :maxdepth: 3
@@ -40,25 +51,33 @@ Object-Oriented Modeling
    components/subsystems
    components/architectures
 
-Advanced Topics
-===============
 
-.. toctree::
-   :maxdepth: 3
+.. todo::
+   Advanced topics need to be written.
 
-   advanced
+..
+   ###############
+   Advanced Topics
+   ###############
 
+   .. toctree::
+      :maxdepth: 3
+
+      advanced
+
+
+##################
 Indices and tables
-==================
+##################
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
 .. ifconfig:: todo_include_todos
 
+   *********
    TODO List
-   ---------
+   *********
 
    .. toctree::
       :maxdepth: 2

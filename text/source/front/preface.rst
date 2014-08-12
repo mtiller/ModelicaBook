@@ -1,11 +1,7 @@
-.. raw:: latex
-
-   \setcounter{secnumdepth}{-1}
-
 .. _preface:
 
 Preface
-*******
+=======
 
 This book is a bit unusual in the way it is structured.  This is
 because it is expected that most readers will be reading an HTML
@@ -33,13 +29,9 @@ enhances the reading experience without disorienting the user.
 Most chapters are organized into three parts.  The first part
 introduces the topics to be discussed in the chapter.  Next,
 an extensive set of examples are used to demonstrate the
-language features relevant to the topics introduced in part one.  
+language features relevant to the topics introduced in part one.
 Note that each example typically introduces a new topic, so it is
 best to review all the examples to provide the most complete coverage
 of these topics.  Finally, most chapters include a review of the
 topics and a summary of any details not found in the examples to
 provide thorough coverage of the topics.
-
-.. raw:: latex
-
-   \setcounter{secnumdepth}{2}

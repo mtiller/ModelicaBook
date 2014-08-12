@@ -1,9 +1,5 @@
-.. raw:: latex
-
-   \setcounter{secnumdepth}{-1}
-
 Acknowledgments
-***************
+===============
 
 This book is the culmination of so many lectures, books, discussions,
 conferences, *etc.* that it is impossible to provide a full accounting
@@ -12,7 +8,7 @@ there are people I've failed to mention here and I apologize in
 advance to anyone who feels they've been overlooked.
 
 Technical
-=========
+---------
 
 On the subject of Modelica, the primary acknowledgment has to be to
 Hilding Elmqvist for not only having the technical vision to recognize
@@ -49,7 +45,7 @@ participated in the development of the Modelica Language and the
 Modelica Standard Library.
 
 Personal
-========
+--------
 
 On a personal note, I am forever indebted to my mother, my father, my
 wife, my kids and my in-laws for their endless support of my passion
@@ -89,7 +85,7 @@ Sandrine Loembe for all the good times during my excellent year in
 Paris.
 
 Contributors
-============
+------------
 
 This project was really an experiment to see if the Kickstarter
 approach to publishing could be applied to a niche technical field
@@ -169,7 +165,7 @@ writing this book to make sure that the layout and graphical design
 lived up to sponsors' expectations.
 
 Tools
-=====
+-----
 
 Building a book like this requires a lot of different tools.  My
 productivity was amplified enormously by the use of these tools.
@@ -239,7 +235,3 @@ such wonderful, standards compliant browsers.
 
 The style of the book owes a fair amount to the `Semantic UI
 <http://www.semantic-ui.com>`_ CSS framework.
-
-.. raw:: latex
-
-   \setcounter{secnumdepth}{2}

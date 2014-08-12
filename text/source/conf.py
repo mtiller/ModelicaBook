@@ -194,8 +194,14 @@ latex_elements = {
 
 # Additional stuff for the LaTeX preamble.
     'preamble': '''\\usepackage[multidot]{grffile}
-                   \\setcounter{tocdepth}{3}''',
+                   \\setcounter{tocdepth}{2}''',
 }
+
+# If the tag 'a4' is given we switch to a4paper
+
+if 'a4' in tags:
+    latex_elements['papersize']= 'a4paper'
+
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
@@ -210,7 +216,7 @@ latex_documents = [
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-#latex_use_parts = False
+latex_use_parts = True
 
 # If true, show page references after internal links.
 latex_show_pagerefs = True
@@ -266,7 +272,7 @@ texinfo_documents = [
 epub_title = u'Modelica by Example'
 epub_author = u'Michael M. Tiller'
 epub_publisher = u'Michael M. Tiller'
-epub_copyright = u'2013, Michael M. Tiller'
+epub_copyright = u'2013-2014, Michael M. Tiller'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.

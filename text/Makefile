@@ -77,9 +77,11 @@ deploy_js: local_js
 # out to an S3 bucket
 
 deploy_print: pdf ebook
-	($(S3PUT) build/latex/ModelicaByExample.pdf  s3://files.xogeny.com/ModelicaByExample/)
-	($(S3PUT) build/epub/ModelicabyExample.epub  s3://files.xogeny.com/ModelicaByExample/)
-	($(S3PUT) build/epub/ModelicabyExample.mobi  s3://files.xogeny.com/ModelicaByExample/)
+	($(S3PUT) build/latex/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/)
+	($(S3PUT) build/latex-a4/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/ModelicaByExample-a4.pdf)
+
+	($(S3PUT) build/epub/ModelicabyExample.epub s3://files.xogeny.com/ModelicaByExample/ModelicaByExample.epub)
+	($(S3PUT) build/epub/ModelicaByExample.mobi s3://files.xogeny.com/ModelicaByExample/)
 
 
 
@@ -221,23 +223,56 @@ epub:
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
 mobi:   epub
-	(cd $(BUILDDIR)/epub; ebook-convert ModelicabyExample.epub ModelicabyExample.mobi)
+	(cd $(BUILDDIR)/epub; ebook-convert ModelicabyExample.epub ModelicaByExample.mobi)
 	@echo
 	@echo "Conversion to mobi finished. The mobi file is in $(BUILDDIR)/epub."
 
 ebook:  epub mobi
 
-latex:	specs results images
+latex: latex-letter latex-a4
+
+latex-letter: specs results images
+	@echo
+	@echo "Applying horrible LaTeX hack..."
+	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
+	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
+	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
+	@echo
 	$(SPHINXBUILD) -b latex -t latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	@echo "Reverting horrible LaTeX hack..."
+	git checkout $(SOURCEDIR)/index.rst # revert back to pristine index.rst
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-pdf:	latex
+
+latex-a4: specs results images
+	@echo
+	@echo "Applying horrible LaTeX hack..."
+	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
+	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
+	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
+	@echo
+	$(SPHINXBUILD) -b latex -t latex -t a4 $(ALLSPHINXOPTS) $(BUILDDIR)/latex-a4
+	@echo "Reverting horrible LaTeX hack..."
+	git checkout $(SOURCEDIR)/index.rst # revert back to pristine index.rst
+	@echo
+	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex-a4."
+	@echo "Run \`make' in that directory to run these through (pdf)latex" \
+	      "(use \`make latexpdf' here to do that automatically)."
+
+pdf:	pdf-letter pdf-a4
+
+pdf-letter: latex-letter
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+	@echo "pdflatex letter finished; the PDF files are in $(BUILDDIR)/latex."
+
+pdf-a4:	latex-a4
+	@echo "Running LaTeX files through pdflatex..."
+	$(MAKE) -C $(BUILDDIR)/latex-a4 all-pdf
+	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex-a4."
 
 latexpdf: pdf
 
