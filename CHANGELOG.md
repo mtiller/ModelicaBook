@@ -24,7 +24,7 @@ This file collects the significant changes to the book since its initial public 
   * Added padding and the end of the HTML body so page doesn't end abruptly
 
   * Added discussion of the ``smooth`` operator (issue
-    [#188](https://github.com/xogeny/ModelicaBook/pull/188)
+    [#188](https://github.com/xogeny/ModelicaBook/pull/188))
 
 #### Bug Fixes
 
@@ -32,10 +32,10 @@ This file collects the significant changes to the book since its initial public 
 
   * Completed table that discusses the relationship between events and
     various functions/operators (issue
-    [#187](https://github.com/xogeny/ModelicaBook/pull/187)
+    [#187](https://github.com/xogeny/ModelicaBook/pull/187))
 
   * Used a consistent heat transfer formulation throughout the book (issue
-    [#150](https://github.com/xogeny/ModelicaBook/pull/150)
+    [#150](https://github.com/xogeny/ModelicaBook/pull/150))
 
   * Added review of missing clock related functions
   
