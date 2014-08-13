@@ -273,7 +273,7 @@ Without event detection, the integrator will simply step right over
 events.  When this happens, the integrator will miss important changes
 in behavior and this will have a significant impact on the accuracy of
 the simulation.  This is because the accuracy of most integration
-routines is based on assumptions about continuous of the underlying
+routines is based on continuity assumptions of the underlying
 function and its derivatives.  If those assumptions are violated, we
 need to let the integration routines know so they can account these
 changes in behavior.
