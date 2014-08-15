@@ -54,7 +54,9 @@ Consider the following:
 In this case, ``y`` will have one dimension of size 5.  The use of the
 function ``size(x,1)`` will return the size of dimension 1 of the
 array ``x``.  There are many applications where it is useful to
-express that the dimensions of different are related in this way.
+express that the dimensions of different arrays are related in this
+way (*e.g.*, ensuring that arrays are sized such that operations like
+matrix multiplication are possible).
 
 .. _unspecd-dim:
 
