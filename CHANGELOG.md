@@ -13,6 +13,12 @@ This file collects the significant changes to the book since its initial public 
     Thomas Beutlich (@tbeu) that improved the quality of the text,
     images and the models.
 
+  * Added a note about non-linear and time-variant models to the
+    discussions in the section on state space representations.  This,
+    again, the result of a
+    [discussion](https://github.com/xogeny/ModelicaBook/issues/135)
+    with Thomas Beutlich @tbeu.
+
 ### Version 0.3.4
 
 #### Enhancements
