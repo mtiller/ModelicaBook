@@ -302,7 +302,7 @@ can be expressed by the single equation:
 
 .. code-block:: modelica
 
-    m*c_p*der(T) = h*A*(T_inf-T) "Newton's law of Cooling";
+    m*c_p*der(T) = h*A*(T_inf-T) "Newton's law of cooling";
 
 Such an equation can be typed in very quickly.  In contrast, the
 component based versions would require the user to drag, drop and
