@@ -1,5 +1,5 @@
 within ModelicaByExample.DiscreteBehavior.Accuracy;
-model WithNoEvents "Integrate with events"
+model WithNoEvents "Integrate without events"
   parameter Real freq = 1.0;
   Real x(start=0);
   Real y = time;
