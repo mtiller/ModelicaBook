@@ -14,9 +14,10 @@ behavior involving arrays.
 Our problems will center around the a simple heat transfer problem.
 Consider a one-dimensional rod like the one shown below:
 
-.. todo::
-
-   Add a figure of a discretized 1D rod
+.. image:: /_static/images/bar.*
+   :width: 50%
+   :align: center
+   :alt: Discretization of a one-dimensional bar
 
 Deriving Equations
 ^^^^^^^^^^^^^^^^^^
