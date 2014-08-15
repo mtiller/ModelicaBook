@@ -11,7 +11,7 @@ the number of components used using a parameter (as we saw in our
 discussions of both :ref:`distributed-heat-transfer` and
 :ref:`harmonic-motion`).
 
-Creating an array of components is really no different than creating
+Creating an array of components is really no different from creating
 an array of scalar variables like we did in our previous discussion on
 :ref:`vectors-and-arrays`.  As we can see in this example,
 
