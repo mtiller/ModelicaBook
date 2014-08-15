@@ -19,6 +19,14 @@ This file collects the significant changes to the book since its initial public 
     [discussion](https://github.com/xogeny/ModelicaBook/issues/135)
     with Thomas Beutlich @tbeu.
 
+  * At @dietmarw's request, I added a few more examples to the
+    discussion of array related functions.
+
+#### Bug Fixes
+
+  * Added missing figure in discussion on one-dimensional heat
+    transfer using arrays.
+
 ### Version 0.3.4
 
 #### Enhancements

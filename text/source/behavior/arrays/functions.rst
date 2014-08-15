@@ -199,9 +199,6 @@ Conversion Functions
 The following functions provide a means to transform arrays into other
 arrays.
 
-.. todo:: It would be nice to get examples for each function call in
-          order to be able to understand.
-
 ``scalar``
 ~~~~~~~~~~
 
@@ -216,7 +213,19 @@ The ``scalar`` function is invoked as follows:
 
 where ``A`` is an array with an arbitrary number of dimensions as long
 as each dimension is of size :math:`1`.  The ``scalar`` function
-returns the (only) scalar value contained in the array.
+returns the (only) scalar value contained in the array.  For example,
+
+.. code-block:: modelica
+
+    scalar([5]) // Argument is a two-dimensional array (matrix)
+
+and
+
+.. code-block:: modelica
+
+    scalar({5}) // Argument is a one-dimensional array (vector)
+
+would both give the scalar value ``5``.
 
 ``vector``
 ~~~~~~~~~~
@@ -233,7 +242,24 @@ The ``vector`` function is invoked as follows:
 where ``A`` is an array with an arbitrary number of dimensions as long
 as only one dimension has a size greater than :math:`1`.  The
 ``vector`` function returns the contents of the array as a vector
-(*i.e.,* an array with only a single dimension).
+(*i.e.,* an array with only a single dimension).  So, for example, if
+we passed a column or row matrix, *e.g.*,
+
+.. code-block:: modelica
+
+    vector([1;2;3;4]) // Argument is a column matrix
+
+or
+
+.. code-block:: modelica
+
+    vector([1,2,3,4]) // Argument is a row matrix
+
+we would get back:
+
+.. code-block:: modelica
+
+    {1,2,3,4}
 
 ``matrix``
 ~~~~~~~~~~
