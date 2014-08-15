@@ -1,5 +1,18 @@
 This file collects the significant changes to the book since its initial public release.
 
+### Version 0.3.5
+
+#### Enhancements
+
+  * Incorporated [a](https://github.com/xogeny/ModelicaBook/pull/196)
+    [number](https://github.com/xogeny/ModelicaBook/pull/198)
+    [of](https://github.com/xogeny/ModelicaBook/pull/199)
+    [nice](https://github.com/xogeny/ModelicaBook/pull/200)
+    [pull](https://github.com/xogeny/ModelicaBook/pull/201)
+    [requests](https://github.com/xogeny/ModelicaBook/pull/202) from
+    Thomas Beutlich (@tbeu) that improved the quality of the text,
+    images and the models.
+
 ### Version 0.3.4
 
 #### Enhancements
