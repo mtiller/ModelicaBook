@@ -268,6 +268,15 @@ this way:
    :language: modelica
    :lines: 2-
 
+In the section above we do not include a representation of the
+Lotka-Volterra equations in LTI form.  This is because the
+Lotka-Volterra equations, while being time-invariant, are not linear.
+It is worth pointing out that Modelica does not directly enforce
+either of these properties when using the ``LTI`` model.  So it is
+possible to represent non-linear or time-variant models using this
+approach.  But it would be confusing since the term LTI implies that
+the equations are both linear and time-invariant.
+
 Using Components
 ^^^^^^^^^^^^^^^^
 
