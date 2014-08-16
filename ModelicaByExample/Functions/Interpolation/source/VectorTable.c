@@ -17,12 +17,12 @@ typedef struct {
 
 void *
 createVectorTable(double *data, size_t np) {
-  VectorTable *table = malloc(sizeof(VectorTable));
+  VectorTable *table = (VectorTable*) malloc(sizeof(VectorTable));
   if (table) {
     /* Allocate memory for data */
-    table->x = malloc(sizeof(double)*np);
+    table->x = (double*) malloc(sizeof(double)*np);
     if (table->x) {
-      table->y = malloc(sizeof(double)*np);
+      table->y = (double*) malloc(sizeof(double)*np);
       if (table->y) {
         /* Copy data into our local array */
         size_t i;
