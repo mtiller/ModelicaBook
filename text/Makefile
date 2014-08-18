@@ -234,6 +234,7 @@ latex: latex-letter latex-a4
 latex-letter: specs results images
 	@echo
 	@echo "Applying horrible LaTeX hack..."
+	-mkdir build
 	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
 	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
 	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
@@ -250,6 +251,7 @@ latex-letter: specs results images
 latex-a4: specs results images
 	@echo
 	@echo "Applying horrible LaTeX hack..."
+	-mkdir build
 	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
 	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
 	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
