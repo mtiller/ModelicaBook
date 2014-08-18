@@ -71,7 +71,7 @@ numbers:
     1.0:5.0   // {1.0, 2.0, 3.0, 4.0, 5.0}
 
 Note, care should be taken when vectors of reals in this way since
-issues with floating point representations may result in the vector no
+issues with floating point representations may result in the vector not
 including the final value.  The following alternatives are also
 available (and probably more robust):
 
