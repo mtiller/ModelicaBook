@@ -12,7 +12,7 @@ Dedication
 
 .. only:: not latex
 
-  .. image:: ../_static/Aaron.jpg
+  .. image:: /_static/img/Aaron.jpg
      :align: right
 
 This book started as a Kickstarter project.  The idea of writing a

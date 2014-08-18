@@ -10,7 +10,7 @@ BUILDDIR      = build
 # Variables for the SVG2PDF generation
 SOURCEDIR     = source
 #IMAGEDIRS can be a list of directories that contain SVG files and are relative to the SOURCEDIR
-IMAGEDIRS      = docs-dir/Icons $(shell find $(SOURCEDIR)/ModelicaByExample/ -name "*.svg" -exec dirname {} ";" | sort -u)
+IMAGEDIRS      = docs-dir/Icons source/_static/img $(shell find $(SOURCEDIR)/ModelicaByExample/ -name "*.svg" -exec dirname {} ";" | sort -u)
 
 # SVG to PDF conversion
 SVG2PDF       = rsvg-convert
@@ -234,6 +234,7 @@ latex: latex-letter latex-a4
 latex-letter: specs results images
 	@echo
 	@echo "Applying horrible LaTeX hack..."
+	-mkdir build
 	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
 	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
 	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
@@ -250,6 +251,7 @@ latex-letter: specs results images
 latex-a4: specs results images
 	@echo
 	@echo "Applying horrible LaTeX hack..."
+	-mkdir build
 	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
 	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
 	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst

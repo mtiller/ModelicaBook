@@ -6,13 +6,15 @@
 @import url("basic.css");
 
 /* Give the body a "paper" looking background */
+/* bg.jpg does currently not exist so commenting this
 body {
-    background: url("/_static/bg.jpg") repeat scroll 0 0 #FCFCFC; 
+    background: url("/_static/bg.jpg") repeat scroll 0 0 #FCFCFC;
 }
+*/
 
 /* Nice background for the TOC */
 #toc-sidebar {
-    background: url("/_static/dust.png") repeat scroll 0 0 #FCFCFC; 
+    background: url("/_static/images/dust.png") repeat scroll 0 0 #FCFCFC;
 }
 
 /* Nice font for text */
@@ -80,7 +82,7 @@ pre {
 }
 
 .sponsor {
-  min-width: 400px;	
+  min-width: 400px;
 }
 
 .sponsorinfo {
@@ -174,7 +176,7 @@ div.sphinxsidebar * ul {
     padding-left: 10px;
 }
 
-/* Add a nice box around the side bar */   
+/* Add a nice box around the side bar */
 div .sphinxsidebar {
     border: none;
     background: transparent;
@@ -255,4 +257,3 @@ a.headerlink {
 .admonition-todo {
     background: linear-gradient(to bottom, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);
 }
-

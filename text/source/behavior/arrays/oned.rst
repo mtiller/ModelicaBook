@@ -14,7 +14,7 @@ behavior involving arrays.
 Our problems will center around the a simple heat transfer problem.
 Consider a one-dimensional rod like the one shown below:
 
-.. image:: /_static/images/bar.*
+.. image:: /_static/img/bar.*
    :width: 50%
    :align: center
    :alt: Discretization of a one-dimensional bar
@@ -154,7 +154,7 @@ following declarations:
    :lines: 25-26
 
 Finally, the only array in this problem is the temperature of each
-section (since this is the only quantity that actually varies along the length of 
+section (since this is the only quantity that actually varies along the length of
 the rod):
 
 .. literalinclude:: /ModelicaByExample/ArrayEquations/HeatTransfer/Rod_ForLoop.mo
