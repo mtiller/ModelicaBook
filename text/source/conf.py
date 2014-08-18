@@ -194,7 +194,12 @@ latex_elements = {
 
 # Additional stuff for the LaTeX preamble.
     'preamble': '''\\usepackage[multidot]{grffile}
-                   \\setcounter{tocdepth}{2}''',
+                   \\setcounter{tocdepth}{2}
+    \\hypersetup{%
+    pdftitle = {Modelica by Example},
+    pdfauthor = {Michael M. Tiller, Ph.D},
+    pdfsubject = {Origin: http://book.xogeny.com},
+    pdfkeywords = {Modelica, book, free-online}}''',
 }
 
 # If the tag 'a4' is given we switch to a4paper
