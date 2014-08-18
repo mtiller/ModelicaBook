@@ -6,9 +6,11 @@
 @import url("basic.css");
 
 /* Give the body a "paper" looking background */
+/* bg.jpg does currently not exist so commenting this
 body {
-    background: url("/_static/bg.jpg") repeat scroll 0 0 #FCFCFC; 
+    background: url("/_static/bg.jpg") repeat scroll 0 0 #FCFCFC;
 }
+*/
 
 /* Nice background for the TOC */
 #toc-sidebar {
