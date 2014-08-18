@@ -39,7 +39,7 @@ The components of the pendulum can be rendered as follows:
 System Model
 ^^^^^^^^^^^^
 
-.. todo:: rendering problems follow 
+.. todo:: rendering problems follow
 
 Now that we have an individual pendulum model, we can build a system
 of pendulums.  If we want a system of :math:`n` pendulums where the
@@ -93,10 +93,11 @@ trajectory of each of the pendulums:
 As we can see from this plot, every 54 seconds all the pendulums
 return to their initial position.
 
-The results are even more impressive when visualized in three
-dimensions:
 
 .. only:: html
+
+   The results are even more impressive when visualized in three
+   dimensions:
 
     .. raw:: html
 
