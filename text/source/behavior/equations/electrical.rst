@@ -8,7 +8,7 @@ familiar with electrical systems, consider the following circuit:
 
 .. _low-pass-rlc:
 
-.. figure:: ../../_static/img/RLC_low-pass.png
+.. figure:: /_static/img/RLC_low-pass.*
     :align: center
     :width: 50%
     :alt: Low-Pass RLC Filter

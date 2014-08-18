@@ -10,7 +10,7 @@ BUILDDIR      = build
 # Variables for the SVG2PDF generation
 SOURCEDIR     = source
 #IMAGEDIRS can be a list of directories that contain SVG files and are relative to the SOURCEDIR
-IMAGEDIRS      = docs-dir/Icons $(shell find $(SOURCEDIR)/ModelicaByExample/ -name "*.svg" -exec dirname {} ";" | sort -u)
+IMAGEDIRS      = docs-dir/Icons source/_static/img $(shell find $(SOURCEDIR)/ModelicaByExample/ -name "*.svg" -exec dirname {} ";" | sort -u)
 
 # SVG to PDF conversion
 SVG2PDF       = rsvg-convert
