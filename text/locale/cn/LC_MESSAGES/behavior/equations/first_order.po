@@ -14,17 +14,17 @@ msgstr ""
 #: ../../source/behavior/equations/first_order.rst:4
 msgid "Simple First Order System"
 msgstr ""
-
+"简单的一阶系统"
 #: ../../source/behavior/equations/first_order.rst:6
 msgid "Let us consider an extremely simple differential equation:"
 msgstr ""
-
+"让我们首先考虑一个非常简单的微分方程:"
 #: ../../source/behavior/equations/first_order.rst:10
 msgid ""
 "Looking at this equation, we see there is only one variable, :math:`x`.  "
 "This equation can be represented in Modelica as follows:"
 msgstr ""
-
+"在这个方程中，只有一个变量 :math:`x` ，如果用Modelica语言可以表述如下："
 #: ../../source/behavior/equations/first_order.rst:23
 msgid ""
 "This code starts with the keyword ``model`` which is used to indicate the "
@@ -32,7 +32,7 @@ msgid ""
 "model name, ``FirstOrder``.  This, in turn, is followed by a declaration of "
 "all the variables we are interested in."
 msgstr ""
-
+"这段程序以关键词 ``model`` 开始，以表明模型定义的开始，后面紧跟着模型的名字 ``FirstOrder`` 。接下来，才是我们感兴趣的变量声明部分。"
 #: ../../source/behavior/equations/first_order.rst:28
 msgid ""
 "Since the variable :math:`x` in our equation is clearly meant to be a "
@@ -41,18 +41,19 @@ msgid ""
 "complete description of the various possibilities will be discussed in the "
 "upcoming section on :ref:`variables`)."
 msgstr ""
-
+"从这个方程中，我们可以确定变量 :math:`x` 是一个连续实数，在Modelica语言中可以用 ``Real x;`` 语句来声明它。"
+" ``Real`` 类型只是众多数据类型的一种（在接下来的变量一节中 :ref:`variables` ，将会对数据类型的描述进行更加详细的讨论）。"
 #: ../../source/behavior/equations/first_order.rst:34
 msgid ""
 "Once all the variables have been declared, we can begin including the "
 "equations that describe the behavior of our model.  In this case, we can use"
 " the ``der`` operator to represent the time derivative of ``x``.  Thus,"
 msgstr ""
-
+"当所有的变量声明完成后，我们就可以编写描述模型特性的方程了。在这个例子中，我们可以用运算符 ``der`` 来表示变量 ``x`` 的一阶导数，即"
 #: ../../source/behavior/equations/first_order.rst:43
 msgid "is equivalent to:"
 msgstr ""
-
+"其所描述的含义等同于方程 "
 #: ../../source/behavior/equations/first_order.rst:47
 msgid ""
 "Unlike most programming languages, we don't approach code like this as a "
@@ -62,7 +63,8 @@ msgid ""
 " amounts to solving (usually numerically) the equation and providing a "
 "solution trajectory like this:"
 msgstr ""
-
+"不同于大多数的编程语言，我们并不像运行程序 \"program\" 那样逐条执行指令以解析代码。"
+"相反，我们使用Modelica编译器将代码转换成可以仿真的模型。这种仿真的步骤基本上等同于求解方程（通常是数字形式）并获取根轨迹，如下图所示："
 #: ../../source/behavior/equations/first_order.rst:57
 msgid ""
 "This gives you the first initial hint at one of the compelling aspects about"
@@ -72,22 +74,24 @@ msgid ""
 "will see that **much of the tedious work involving the solution process is "
 "handled automatically by the Modelica compiler**."
 msgstr ""
-
+"通过上面的例子，让你对使用建模语言描述系统的数学特性方面有了一个直观的了解。"
+"我们并不需要描述如何去求解这个微分方程，我们关注的重点完全放在方程本身的特性上。"
+"当我们处理更复杂的实例时， ** 就会发现很多涉及求解过程的繁琐工作都是由Modelica语言编译器处理的 ** 。"
 #: ../../source/behavior/equations/first_order.rst:68
 msgid "Adding Some Documentation"
 msgstr ""
-
+"添加注释"
 #: ../../source/behavior/equations/first_order.rst:70
 msgid ""
 "Now that we've solved this simple mathematical equation, let's turn our "
 "attention briefly to how we can make the model a bit more readable.  "
 "Consider the following model:"
 msgstr ""
-
+"现在，我们已经完成了这个简单数学方程的求解，让我们把重点转移到怎样才能使模型更具可读性。考虑如下的模型："
 #: ../../source/behavior/equations/first_order.rst:82
 msgid "Note the quoted text in this model."
 msgstr ""
-
+"注意在这个模型中所引用的文本。"
 #: ../../source/behavior/equations/first_order.rst:84
 msgid ""
 "It is important to understand that the quoted text blocks, called "
@@ -97,7 +101,8 @@ msgid ""
 "provide additional documentation about the elements of the model they are "
 "associated with."
 msgstr ""
-
+"理解这些引用的文本模块非常重要，它们在计算机科学中被称为 \"strings\" （字符串），而 ** 不是 ** 注释。"
+"它们是 \"descriptive strings\" （描述性字符串），不像注释，不能在任意的地方插入。相反的，它们只能在特定的地方插入，以提供与其关联的模型元素注释。"
 #: ../../source/behavior/equations/first_order.rst:90
 msgid ""
 "For example, the first string \"A simple first order differential equation\""
@@ -105,7 +110,7 @@ msgid ""
 "of the model.  If you wish to include such documentation about the model, it"
 " must appear immediately after the model name as shown."
 msgstr ""
-
+"例如，第一个字符串 \"A simple first order differential equation\" （一个简单的一阶微分方程）用来描述模型的属性。你可以注意到，它紧跟在模型名字后面。如果你希望对模型做相应的注释，注释语句必须插入在模型名字的后面。"
 #: ../../source/behavior/equations/first_order.rst:96
 msgid ""
 "As we will see later, this kind of documentation can be used by tools in "
@@ -114,25 +119,26 @@ msgid ""
 "associated with a graphical representation of the models.  And, of course, "
 "this kind of documentation is very useful for anybody reading the model."
 msgstr ""
-
+"在后面我们将会看到，这种注释可以被很多工具所使用。例如，搜索模型时，搜索工具可以利用这些描述性的字符串进行识别匹配。"
+"这些文本模块也可以与模型的图示相关联。当然，这种注释对任何人阅读模型都是很有帮助的。"
 #: ../../source/behavior/equations/first_order.rst:103
 msgid ""
 "As this example demonstrates, there are other places that the descriptive "
 "text can appear.  For example, it may be included after the declaration of a"
 " variable or equation to document them."
 msgstr ""
-
+"通过上面的例子，我们可以看到，这些描述性的注释也可以放置在模型的其他位置。比如，在变量声明或数学公式后面添加相应的注释。"
 #: ../../source/behavior/equations/first_order.rst:110
 msgid "Initialization"
 msgstr ""
-
+"初始化"
 #: ../../source/behavior/equations/first_order.rst:112
 msgid ""
 "As we have seen already, Modelica allows us to describe model behavior in "
 "terms of differential equations.  But the initial conditions we choose are "
 "just as important as the equations."
 msgstr ""
-
+"通过上面的例子可以看到，Modelica语言允许我们使用微分方程去描述模型的属性。但是，如何选择初始条件和书写方程同等重要。"
 #: ../../source/behavior/equations/first_order.rst:116
 msgid ""
 "For this reason, Modelica also provides constructs for describing the "
@@ -140,7 +146,7 @@ msgid ""
 "initial value of ``x`` in our model to be *2*, we could add an ``initial "
 "equation`` section to our model as follows:"
 msgstr ""
-
+"出于这个原因，Modelica语言提供构建体结构用于描述我们方程系列的初始化。例如，如果我们想给模型中变量 ``x`` 赋初值为 * 2 * ，可以在模型中增加 ``initial equation`` （初始化方程）部分，如下所示："
 #: ../../source/behavior/equations/first_order.rst:129
 msgid ""
 "Note that the only difference between this model and the previous one, "
@@ -155,13 +161,16 @@ msgid ""
 " ``initial equation`` section, we are explicitly specifying the initial "
 "condition for ``x``."
 msgstr ""
-
+"我们可以看到，上述模型和前面章节（添加注释章节 :ref:`first-order-doc` ）所述模型唯一不同的地方在于增加了 ``initial equation`` 部分，即包含方程 ``x = 2`` 。"
+"在前面的例子中，变量 ``x`` 的初始值在模型仿真开始时是不确定的。一般来说，这意味着变量 ``x`` 的初始值是它的 ``start`` 属性（其缺省值为零）。"
+"但是，每个工具都会使用自己特定的算法对最终的方程系列进行格式化，因此，我们最好明确的声明方程的初始化条件，就像上述模型声明的那样。"
+"通过在 ``initial equation`` 部分添加相应的方程，我们就明确的完成了变量 ``x`` 的初始化声明。"
 #: ../../source/behavior/equations/first_order.rst:142
 msgid ""
 "As a result, the solution trajectory is quite different as we can see in the"
 " following figure:"
 msgstr ""
-
+"如下图所示，是否对变量进行初始化定义，其方程的根轨迹是完全不同的："
 #: ../../source/behavior/equations/first_order.rst:147
 msgid ""
 "The model ``FirstOrderInitial`` shows a typical way of initializing a system"
@@ -170,14 +179,15 @@ msgid ""
 "specification for how the initial conditions are determined. Our "
 "``FirstOrderInitial`` model would be represented mathematically as:"
 msgstr ""
-
+"在 ``FirstOrderInitial`` 模型中，对系统状态提供明确的初始值是系统初始化的典型方式。"
+"事实上，没有确定的初始条件，整个微分方程系统是不完整的。 ``FirstOrderInitial`` 模型可以用数学公式表示如下："
 #: ../../source/behavior/equations/first_order.rst:156
 msgid ""
 "However, there are many cases where you want a more sophisticated type of "
 "initialization.  An ``initial equation`` section can contain more than just "
 "explicit equations for the initial values of the state variables."
 msgstr ""
-
+"当然了，很多情况下，你也许需要更为复杂的初始化条件， ``initial equation`` 部分可以包含的不仅仅是显示方程的状态变量初始值。"
 #: ../../source/behavior/equations/first_order.rst:161
 msgid ""
 "For example, we might want our initial conditions to be such that the "
@@ -189,29 +199,30 @@ msgid ""
 " it is possible to express the constraint that :math:`\\dot{x}(0)=0` "
 "directly in Modelica as follows:"
 msgstr ""
-
+"例如，我们可能希望在仿真开始时， :math:`x` 的导数为零。在这种情况下，稍有点代数知识的就会知道，可以通过指定初始条件 :math:`x(0)=1` 来实现。"
+"但是，对于更复杂的系统，通过观察确定初始条件以满足系统的要求将会变得远远不够。在这种情况下，可以在Modelica中直接添加初始条件  :math:`\\dot{x}(0)=0` ，如下程序段所示："
 #: ../../source/behavior/equations/first_order.rst:176
 msgid "Simulating this system gives the following solution:"
 msgstr ""
-
+"仿真该系统会得到以下结果："
 #: ../../source/behavior/equations/first_order.rst:180
 msgid ""
 "As we see from these results, the initial derivative of :math:`x` is zero at"
 " the start of the simulation and remains zero because there are no external "
 "influences acting on this system that would disrupt this equilibrium."
 msgstr ""
-
+"从这些结果中可以看到，因为没有外部的激励作用以破坏系统的平衡， :math:`x` 的导数在仿真开始并在仿真过程中一直保持为0。"
 #: ../../source/behavior/equations/first_order.rst:185
 msgid ""
 "This provides a glimpse of the initialization capablities in Modelica. More "
 "complete coverage of the initialization topic can be found in the "
 ":ref:`initialization` section later in this chapter."
 msgstr ""
-
+"上述章节提供了Modelica初始化功能的部分讲解，关于初始化功能更完整的内容将在本章后面的章节 :ref:`initialization` 进行讲述。"
 #: ../../source/behavior/equations/first_order.rst:192
 msgid "Experimental Conditions"
 msgstr ""
-
+"实验条件"
 #: ../../source/behavior/equations/first_order.rst:197
 msgid ""
 "When building a model, the model developer might wish to associate specific "
@@ -219,7 +230,7 @@ msgid ""
 "called an ``annotation``.  An annotation includes information that is not "
 "directly related to the behavior of the model."
 msgstr ""
-
+"当建立模型时，模型开发人员可能希望将特定的实验条件与模型相关联。这可以通过 ``annotation`` （注释）来完成，注释包含的信息和模型的属性没有直接的关联。"
 #: ../../source/behavior/equations/first_order.rst:202
 msgid ""
 "For example, experimental conditions describe information like the start "
@@ -229,36 +240,37 @@ msgid ""
 "conditions are stored in a model using a specific annotation called the "
 "``experiment`` annotation."
 msgstr ""
-
+"例如，实验条件的描述包括仿真开始时间、停止时间以及容差范围等，这些信息并不描述模型的特性，只是提供如何进行仿真模拟的信息。"
+"实验条件通过特定的 ``experiment`` 注释保存在模型中."
 #: ../../source/behavior/equations/first_order.rst:209
 msgid ""
 "There are four pieces of information that can be specified in an experiment "
 "annotation.  All of them are optional.  The following is a model of our "
 "first order system that includes an experiment annotation:"
 msgstr ""
-
+"可以通过设定4个参数完成实验注释的设置，并且4个参数都是可选的。如下所示为包含实验注释的一阶系统模型："
 #: ../../source/behavior/equations/first_order.rst:219
 msgid ""
 "The following trajectory was simulated using these experimental conditions:"
 msgstr ""
-
+"下图是包含实验条件的仿真结果："
 #: ../../source/behavior/equations/first_order.rst:224
 msgid ""
 "The trajectory terminates at 8 seconds because the simulator used the "
 "``experiment`` annotation to determine how long to run the simulation."
 msgstr ""
-
+"从图中可以看到，仿真结果终止于8秒处，因为仿真求解器通过 ``experiment`` 注释来确定仿真过程的运行时间。"
 #: ../../source/behavior/equations/first_order.rst:0
 msgid "Annotation Support"
 msgstr ""
-
+"注释应用"
 #: ../../source/behavior/equations/first_order.rst:229
 msgid ""
 "The ``experiment`` annotation is widely supported.  But it is important to "
 "keep in mind that, in general, a tool is free to ignore any or all "
 "annotations."
 msgstr ""
-
+"虽然 ``experiment`` 注释在建立模型时被广泛的应用，但是也要注意到，一般情况下，建模工具是可以忽略任何或者全部注释内容的。"
 #: ../../source/behavior/equations/first_order.rst:19
 msgid "model"
 msgstr ""

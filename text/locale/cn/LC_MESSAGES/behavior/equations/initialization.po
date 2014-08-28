@@ -28,6 +28,9 @@ msgid ""
 "equations (present in `equation` sections) with any initial equations "
 "(present in `initial equation` sections)."
 msgstr ""
+"正如我们先前在 :ref:`steady-state` 这节中提到过的，"
+"初始化是由一个模型中的两个方程和模型中初始条件给定的状态变量来描述的。"
+"在Modelica中，初始条件是通过结合普通方程（在 `equation` （方程）节描述）和初始化方程（在 `initial equation` （初始方程）节中描述）来计算的。"
 
 #: ../../source/behavior/equations/initialization.rst:23
 msgid ""
@@ -41,6 +44,9 @@ msgid ""
 "problem is well-posed, but we cannot solve a problem where we have too many "
 "initial equations."
 msgstr ""
+"对于初学者来说第一个混淆的来源是理解需要多少初始条件。这个问题的答案是简单的。"
+"为了有一个适定的初始化问题（就是没有过多或者过少的初始方程），需要如之前在系统中提到的在 `initial equation` (初始方程)中具有相同数量的方程。"
+" **注意** ,应当避免有太少的初始方程，因为工具可以增加我们给定的初始方程的数量直到问题适定，但是如果初始方程太多那问题就不能求解。"
 
 #: ../../source/behavior/equations/initialization.rst:33
 msgid ""
@@ -52,6 +58,9 @@ msgid ""
 "operator.  In other words, every variable that we differentiated in those "
 "examples is a state."
 msgstr ""
+"当然，提到初始方程的数量等于状态的数量只回答了一个问题，却很快产生了另一个问题, *例如,* "
+" *如何决定需要多少状态* ？对于本章中的模型，这个答案很简单。"
+"目前为止每个例子中的出现在 ``der(...)`` 操作中的状态都是变量。换句话说，例子中不同的变量表示一个状态。"
 
 #: ../../source/behavior/equations/initialization.rst:44
 msgid "Ordinary Differential Equations"
@@ -69,6 +78,9 @@ msgid ""
 "  In those cases, only *some* of the differentiated variables can be "
 "considered states."
 msgstr ""
+"需要注意的是，我们区分的每个变量 **并不总是** 都是状态。这章中，目前看到的所有模型都是常微分方程（ODEs）。"
+"当处理ODEs时，每个不同的变量都是状态，也就是说，每个初始变量需要一个初始方程。"
+"但是在接下来的章节中将会遇到所谓的微分代数方程（DAEs）。在这些方程中，仅仅只有 **一些** 不同的变量可以认为是状态。"
 
 #: ../../source/behavior/equations/initialization.rst:56
 msgid ""
@@ -81,6 +93,9 @@ msgid ""
 "problem contained in our Modelica code into this relatively easy to explain "
 "ODE form."
 msgstr ""
+"事实上理解初始化不需要详细讨论DAEs。实际上，所有的Modelica工具都要执行所谓的 \"index reduction\" (指数缩减)规则。"
+"但是指数缩减算法本身是相当的复杂（因为现在不讨论），而效果却相当简单。指数缩减将DAEs转化为ODEs。"
+"换句话说，Modelica编译器将包含Modelica代码的DAE问题转化为相对简单的ODE形式。"
 
 #: ../../source/behavior/equations/initialization.rst:65
 msgid ""
@@ -90,6 +105,8 @@ msgid ""
 "understand is that initialization is required for all states in the model "
 "and that our model will have the following general ODE form:"
 msgstr ""
+"因此忽略DAEs和指数缩减的讨论，假定问题已经转化为ODE，讨论初始化。"
+"在这种情况下，唯一需要理解的是模型中的每个状态都是需要初始化的，模型将具有如下的ODE形式："
 
 #: ../../source/behavior/equations/initialization.rst:78
 msgid ""
@@ -97,6 +114,7 @@ msgid ""
 "values of the states in our system at time :math:`t`, :math:`\\vec{u}(t)` "
 "are the values of any external inputs to our system at time :math:`t`."
 msgstr ""
+" :math:`t` 是当前模拟的时间， :math:`\\vec{x}(t)` 是系统中时间 :math:`t` 的状态值， :math:`\\vec{u}(t)` 是系统中时间 :math:`t` 的外部输入。"
 
 #: ../../source/behavior/equations/initialization.rst:83
 msgid ""
@@ -107,6 +125,9 @@ msgid ""
 "note about this system is that neither function, :math:`\\vec{f}` nor "
 ":math:`\\vec{g}`, depends on :math:`\\vec{y}`."
 msgstr ""
+"注意，变量上部的箭头仅仅指的是这个变量是个矢量而不是标量。"
+"这个问题中出现的唯一的变量是 :math:`\\vec{x}` 。 :math:`\\vec{x}` 代表了系统的状态。"
+"另外需要注意的是无论是方程 :math:`\\vec{f}` 还是 :math:`\\vec{g}` 都不依赖于变量 :math:`\\vec{y}` 。"
 
 #: ../../source/behavior/equations/initialization.rst:90
 msgid ""
@@ -117,13 +138,16 @@ msgid ""
 ":math:`\\dot{\\vec{x}}(t)` and :math:`\\vec{y}(t)` (which, in turn, are the "
 "only things we need to compute in order to arrive at a solution)."
 msgstr ""
+"如果认为 :math:`t` 和 :math:`\\vec{u}(t)` 都是系统外部的量，那就不需要计算或者控制它们。"
+"认为 :math:`\\vec{x}` 是系统状态的原因是它是计算 :math:`\\dot{\\vec{x}}(t)` 和 :math:`\\vec{y}(t)` 的唯一信息（它们是求解唯一需要计算的）。"
 
 #: ../../source/behavior/equations/initialization.rst:97
 msgid ""
 "Getting back to the topic of initialization, during a normal time step we "
-"will solve for :math:`\\vec{x}(t)` by integrating :math:`\\dot{\\vec{x}}(t)`"
+"will solve for :math:`\\vec{x}(t)` by integrating :math:`\\dot{\\vec{x}}(t)` "
 " to compute :math:`\\vec{x}(t)`.  In other words:"
 msgstr ""
+"回到最初的初始化的主题，在一个正常的时间步内，将 :math:`\\dot{\\vec{x}}(t)` 积分来求解 :math:`\\vec{x}(t)` 。换句话说："
 
 #: ../../source/behavior/equations/initialization.rst:106
 msgid ""
@@ -132,12 +156,16 @@ msgid ""
 " into our equations has to be the very first value of :math:`\\vec{x}` in "
 "our simulation.  In other words, our initial conditions."
 msgstr ""
+"只要 **有** 前一个时间步就可以进行下去。当没有前面的时间步，那么插入方程的 :math:`\\vec{x}` 的值将成为模拟的第一个 :math:`\\vec{x}` 值。"
+"换句话说，也就是初始条件。"
+
 
 #: ../../source/behavior/equations/initialization.rst:112
 msgid ""
 "One might imagine that we would specify our initial conditions by adding an "
 "equation like this:"
 msgstr ""
+"可以想象，通过指定如下方程来指定初始条件:"
 
 #: ../../source/behavior/equations/initialization.rst:119
 msgid ""
@@ -150,6 +178,9 @@ msgid ""
 "values for :math:`\\dot{\\vec{x}}(t_0)`.  So how can we capture both of "
 "these cases?"
 msgstr ""
+" :math:`t_0` 是模拟的起始时间, :math:`\\vec{x}_0` 是具体的初始值。为状态提供具体的值是指定初始条件最常见的情况。"
+"因此需要处理这种情况。但是这个方法在 ref:`steady-state` 中是不起作用的，"
+"不需要为状态提供具体的初始值，而是为 :math:`\\dot{\\vec{x}}(t_0)` 提供初始值。那如何处理这两种情况呢？"
 
 #: ../../source/behavior/equations/initialization.rst:130
 msgid "Initial Equations"
@@ -160,6 +191,7 @@ msgid ""
 "The answer is to assume that at the start of our simulation we need to solve"
 " a problem that looks like this:"
 msgstr ""
+"答案是假定在模拟的始点需要求解下面的问题："
 
 #: ../../source/behavior/equations/initialization.rst:141
 msgid ""
@@ -170,12 +202,16 @@ msgid ""
 "range of initial conditions.  To define explicit initial values for states, "
 "we could define :math:`\\vec{h}` as:"
 msgstr ""
+"注意到引进了新方程 :math:`\\vec{h}` 。这个新方程代表了 `initial equation` （初始方程）中的任何方程。"
+" :math:`\\vec{h}` 将 :math:`\\vec{x}`  **和**  :math:`\\dot{\\vec{x}}` 作为参数，允许表达一个宽广的初始值。"
+"为了给状态定义一个明确的值，定义 :math:`\\vec{h}` 如下："
 
 #: ../../source/behavior/equations/initialization.rst:152
 msgid ""
 "But we could also express our desire to start with a steady state solution "
 "by defining :math:`\\vec{h}` as:"
 msgstr ""
+"如果希望从一个稳态求解开始，则应该定义 :math:`\\vec{h}` 如下："
 
 #: ../../source/behavior/equations/initialization.rst:159
 msgid ""
@@ -185,6 +221,8 @@ msgid ""
 "need to be of the general form shown above and that you cannot have more of "
 "them than you have states in your system."
 msgstr ""
+"当然，在每个状态下也可以将不同的形式混合在一起或者使用其他更为宽广的形式去描述初始条件。"
+"因此当写初始方程的时候，需要明白的是它们需要上面所示的一般通用形式，不能使用超过比系统中状态更多的方程。"
 
 #: ../../source/behavior/equations/initialization.rst:166
 msgid "Conclusion"
@@ -198,6 +236,8 @@ msgid ""
 "system.  But we are given tremendous latitude in describing exactly how "
 "those values will be computed."
 msgstr ""
+"正如在本章中证明的那样，Modelica中的构建的初始方程允许表达多种方式去初始化系统。"
+"最终它们都是为了计算系统的初始值。但是在正确描述这些值是如何被计算的时候有巨大的自由度。"
 
 #: ../../source/behavior/equations/initialization.rst:174
 msgid ""
@@ -205,6 +245,7 @@ msgid ""
 "treatment in Modelica and this flexibility pays off in many real world "
 "applications."
 msgstr ""
+"这是一个Modelica擅长的领域。Modelica为初始化提供了一流的处理方法，这种灵活性体现在许多真实的应用方面。"
 
 #: ../../source/behavior/equations/initialization.rst:10
 msgid "initial equation"

@@ -21,6 +21,8 @@ msgid ""
 "aspect of Modelica, they are also the simplest to explain."
 msgstr ""
 
+"尽管方程可能是Modelica语言中唯一最重要的数学方面的体现，但是他们仍然是最易于解释的。"
+
 #: ../../source/behavior/equations/equations.rst:8
 msgid "Basic Equations"
 msgstr ""
@@ -31,6 +33,8 @@ msgid ""
 "equations are composed of a left hand expression and a right hand expression"
 " separated by an equals sign, *i.e.,*"
 msgstr ""
+"关于方程真的没有复杂的语义需要解释。"
+"所有的方程都是由左边一个表达式和右边一个表达式组成，中间被等号隔开。 *例如,* "
 
 #: ../../source/behavior/equations/equations.rst:18
 msgid ""
@@ -39,6 +43,8 @@ msgid ""
 "deviation from the syntax shown above is the case where a description of the"
 " equation is included as well, *e.g.,*"
 msgstr ""
+"通过本章中的实例，读者可以反复接触每个例子中的这种格式。"
+"上面展示的唯一真实存在的语法偏差是关于方程的描述应该如下, *例如,* "
 
 #: ../../source/behavior/equations/equations.rst:28
 msgid ""
@@ -46,7 +52,9 @@ msgid ""
 "equation in Modelica are expressions, not assignments.  In other words (and "
 "in contrast to most programming languages), the left hand side does **not** "
 "have to be a variable (as we can see in the case of Newton's law above)."
-msgstr ""
+msgstr "
+"正如我们先前指出的那样，在Modelica语言中，方程的左边和右边是表达式，而不是赋值。"
+"换句话说（对比大多数的程序语言），方程的左边 **不能** 包含变量（正如上面牛顿第一定律中看到的那样）。"
 
 #: ../../source/behavior/equations/equations.rst:35
 msgid "Initial Equations"
@@ -62,6 +70,9 @@ msgid ""
 "conditions, the ``equation`` section must be qualified by the ``initial`` "
 "keyword as follows:"
 msgstr ""
+"正如在本章中看到的许多例子一样。在一个模型中指定方程用于求解初始状态是可能的。"
+"关于初始化的整个主题将会在下章中详细讨论，标题就是 :ref:`initialization` "
+"目前在本章中要说的是如果方程 **仅仅** 用于求解初始化， ``equation`` （方程）部分必须冠以 ``initial`` （初始）关键词。"
 
 #: ../../source/behavior/equations/equations.rst:51
 msgid "Conditional Equations"
@@ -74,6 +85,8 @@ msgid ""
 "to point out that equations can be conditional.  There are really two forms "
 "of conditional equations. The first is the balanced form, *e.g.,*"
 msgstr ""
+"下一章将讨论如何应用 ``if`` （如果）命令表示有条件的行为。"
+"值得提前指出的是方程可以是有条件的。条件方程有两种形式。第一种是平衡态。 *例如,* "
 
 #: ../../source/behavior/equations/equations.rst:67
 msgid ""
@@ -83,6 +96,8 @@ msgid ""
 "of equations and the number of equations must be fixed during the "
 "simulation."
 msgstr ""
+"在平衡态的情况下，方程的数量总是一致的（代码为1），但是是 *哪个* 方程可以改变。"
+"这个很重要，因为在Modeliaca中模拟一个模型，变量的数量必须等于方程的数量，而且在模拟的过程中方程的数量必须是固定的。"
 
 #: ../../source/behavior/equations/equations.rst:73
 msgid ""
@@ -91,6 +106,8 @@ msgid ""
 "``if`` side may not be equal to the number of equations on the ``else`` side"
 " (like it was in the balanced case, previously)."
 msgstr ""
+"另外一种条件方程的类型是方程的数量是不平衡的。"
+"这意味着方程的数量在 ``if`` 和 ``else`` 的两侧可能是不相等的（像之前平衡态中那样）。"
 
 #: ../../source/behavior/equations/equations.rst:80
 msgid ""
@@ -102,6 +119,9 @@ msgid ""
 "necessary that all variables in the conditional expression have so-called "
 "*parametric variability*."
 msgstr ""
+"但是请记得，方程的数量在模拟过程中不能改变。"
+"那么是如何做到 ``if`` 和 ``else`` 两侧的方程数量是不同的呢？只有一种情况 **模拟过程中条件表达式的值不能改变。** "
+"为了确保条件表达式永不改变，条件表达式中所有的变量必须拥有所谓的*参变量*。"
 
 #: ../../source/behavior/equations/equations.rst:89
 msgid ""
@@ -112,6 +132,9 @@ msgid ""
 " the entire expression must also have parametric variability (*i.e.,* the "
 "value of the expression cannot change during a simulation)."
 msgstr ""
+“还记得讨论 :ref:`variability` 的时候，带有 ``parameter`` （参数）限定词的变量在模拟过程中不能改变的事实吗？"
+"如果带有 ``parameter`` (参数)限定词的变量在模拟过程中不能改变，且表达式中的所有变量都拥有这个参变量，"
+"那么整个表达式一定也拥有参变量（ *例如,* 表达式的值在模拟过程中不能改变）。"
 
 #: ../../source/behavior/equations/equations.rst:97
 msgid ""
@@ -119,6 +142,7 @@ msgid ""
 "be useful?  Again, we are getting ahead of ourselves here, but one use case "
 "would be the conditional application of initial equations, *e.g.,*"
 msgstr ""
+"关于这个问题，一定会质疑这种不平衡态方程有用吗？再次提前指出，可以用的是指有条件的初始方程的应用, *例如,* "
 
 #: ../../source/behavior/equations/equations.rst:112
 msgid ""
@@ -128,6 +152,8 @@ msgid ""
 "because the expression contains only a variable and that variable is a "
 "parameter."
 msgstr ""
+"换句话说，如果布尔参数 ``steady_state`` （稳定状态）是真的，那么初始方程是强制执行的。"
+"但是如果参数是错的，他们就不会被强制执行。这里的条件表达式含有参变量因为表达式仅仅包含一个变量且这个变量是个参数。"
 
 #: ../../source/behavior/equations/equations.rst:118
 msgid ""
@@ -135,6 +161,7 @@ msgid ""
 "behavior will be discussed in detail in the :ref:`next chapter <discrete-"
 "behavior>`."
 msgstr ""
+"这些就是本节所要讨论的，离散和有条件的行为将在 :ref:`next chapter <discrete-behavior>` 中讨论。
 
 #: ../../source/behavior/equations/equations.rst:78
 msgid "parametric variability"
