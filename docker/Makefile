@@ -1,5 +1,9 @@
 images:
-	docker build -t xogeny/om OM
-	docker build -t xogeny/py PY
-	docker build --no-cache=true -t xogeny/mbe MBE
-	docker build -t xogeny/pubbook PB
+	docker build -t mtiller/book-om OM
+	docker build -t mtiller/book-py PY
+	docker build -t mtiller/book-hook PB
+
+push: images
+	docker push mtiller/book-om
+	docker push mtiller/book-py
+	docker push mtiller/book-hook

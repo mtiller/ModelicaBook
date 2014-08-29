@@ -1,7 +1,7 @@
 # This is a Dockerfile that creates a docker image with all the necessary
 # dependencies for building the book.
 
-FROM xogeny/om
+FROM mtiller/book-om
 
 # Now Install base Python
 RUN apt-get install -y python python-dev python-pip python-virtualenv
