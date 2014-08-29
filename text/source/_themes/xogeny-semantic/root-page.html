@@ -28,9 +28,9 @@
 	"link": "http://www.itisim.com"
     },
     "MA": {
-        "name": "Modelica Association",
-        "profile": "The Modelica Association is a non-profit organization that develops the Modelica language and the Modelica Standard Library",
-        "link": "https://www.modelica.org/"
+    "name": "Modelica Associtaion",
+    "profile": "The Modelica Association is a non-profit organization that develops the Modelica language and the Modelica Standard Library",
+    "link": "http://www.modelica.org/"
     },
     "Maplesoft": {
 	"name": "Maplesoft",
@@ -87,7 +87,7 @@
 {%- macro popup(id, level) -%}
 <div style="min-width: 250px">
   <img class="thumbnail ui image floated left" style="padding-top: 20px"
-       src="/_static/sponsors/{{id}}/logo.png" width="80">
+       src="_static/sponsors/{{id}}/logo.png" width="80">
   <div class="ui floated right">
     <dl class="sponsorinfo">
       <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}}</i></dt>
@@ -101,7 +101,7 @@
    class="active blue item"
    style="margin-left: 5px; margin-right: 5px">
   <img class="thumbnail" id="thumbnail-{{id}}"
-       src="/_static/sponsors/{{id}}/logo.png" width="40"
+       src="_static/sponsors/{{id}}/logo.png" width="40"
        data-html='{{popup(id,level)}}'>
 </div>
 {% endmacro %}
@@ -231,7 +231,7 @@
   </head>
   <body>
     <div class="ribbon">
-      <img src="/_static/images/early_access.png">
+      <img src="_static/images/early_access.png">
     </div>
     <div class="ui two column grid">
       <div class="column">
