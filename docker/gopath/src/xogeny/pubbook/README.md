@@ -11,3 +11,14 @@ docker server where it can be extracted for the build process.  This
 is necessary because this build requires additional files beyond just
 the instructions contained in the `Dockerfile`.  Those additional
 files need to be available for the build (which is not done locally).
+
+# Running
+
+When running this container, it is important to provide some
+information on `docker` command line.  Specifically, the following
+environment variables should be provided to the container:
+
+  * AWS_ACCESS_KEY_ID
+  * AWS_SECRET_ACCESS_KEY
+  * MBE_WEBHOOK_SECRET
+
