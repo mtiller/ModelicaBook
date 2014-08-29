@@ -126,7 +126,21 @@ server_it: dirhtml_it build_links
 
 web: dirhtml build_links
 	(cd build/dirhtml; $(SYNC) * s3://$(S3BUCKET)/)
-# TODO: Set Content-Encoding on all gz files to be gzip (use find?)
+
+web_cn: dirhtml_cn build_links
+	(cd build/dirhtml_cn; $(SYNC) * s3://$(S3BUCKET)/cn/)
+
+web_de: dirhtml_de build_links
+	(cd build/dirhtml_de; $(SYNC) * s3://$(S3BUCKET)/de/)
+
+web_es: dirhtml_es build_links
+	(cd build/dirhtml_es; $(SYNC) * s3://$(S3BUCKET)/es/)
+
+web_fr: dirhtml_fr build_links
+	(cd build/dirhtml_fr; $(SYNC) * s3://$(S3BUCKET)/fr/)
+
+web_it: dirhtml_it build_links
+	(cd build/dirhtml_it; $(SYNC) * s3://$(S3BUCKET)/it/)
 
 node: dirhtml build_links
 	-rm -rf build/node
