@@ -82,9 +82,9 @@ func (b Builder) Push(msg hs.HubMessage, params map[string][]string) {
 	log.Printf("Ref:     %s", ref);
 	log.Printf("Targets: %v", targets);
 
-	// TODO: Get these from query parameters
-
 	dir := path.Join("_cache", user);
+
+	// TODO: Create a lock file and check for it...
 
 	diri, err := os.Stat(dir);
 
@@ -123,7 +123,9 @@ func (b Builder) Push(msg hs.HubMessage, params map[string][]string) {
 }
 
 func main() {
-	h := hs.NewHookSink("");
+	secret := os.Getenv("MBE_WEBHOOK_SECRET");
+	log.Printf("Secret = '%s'", secret);
+	h := hs.NewHookSink(secret);
 	h.Add("/build", Builder{Debug: true});
 	h.Start();
 }
