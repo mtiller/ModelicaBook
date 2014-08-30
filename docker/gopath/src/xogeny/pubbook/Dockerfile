@@ -1,9 +1,7 @@
 # This is a Dockerfile that creates a docker image with all the necessary
 # dependencies for building the book.
 
-FROM mtiller/book-py
-
-RUN apt-get install -y golang
+FROM mtiller/book-go
 
 # The rest of this we do as a user
 RUN useradd builder
@@ -15,7 +13,6 @@ RUN chown -R builder /opt/MBE
 USER builder
 
 # Create a directory for all the book related stuff
-#RUN mkdir /opt/MBE/src
 RUN mkdir /opt/MBE/bin
 RUN mkdir /opt/MBE/pkg
 

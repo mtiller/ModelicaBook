@@ -16,6 +16,7 @@ RUN apt-get install -y python-matplotlib
 RUN apt-get install -y python-pip
 RUN apt-get install -y python-scipy
 RUN apt-get install -y python-sphinx
+RUN apt-get install -y python-jinja2
 
 # Finally, upgrade Pygments to the latest Modelica syntax rules
 RUN pip install --upgrade https://bitbucket.org/dietmarw/pygments-main/get/default.tar.gz

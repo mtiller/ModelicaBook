@@ -51,10 +51,10 @@ func runmake(dir string, targets...string) error {
 	cmd.Stderr = stderr;
 	cmd.Stdout = stdout;
 	cmd.Dir = path.Join(dir, "text");
-	log.Printf("Running initial make: %v...", targets);
+	log.Printf("Running make: %v...", targets);
 	err := cmd.Run()
 	if err != nil {
-		log.Printf("Error running initial make '%v': %s", targets, err.Error());
+		log.Printf("Error running make '%v': %s", targets, err.Error());
 		log.Print("=== Output ===");
 		log.Print(stdout.String());
 		log.Print("=== Error ===");
@@ -112,11 +112,10 @@ func (b Builder) Push(msg hs.HubMessage, params map[string][]string) {
 		if (err!=nil) { return; }
 	}
 
-	/* Run make */
-	args := []string{"results"};
-	args = append(args, targets...);
-	args = append(args, bucket);
-	targets = append(targets, bucket);
+	err = runmake(dir, "results");
+	if (err!=nil) { return; }
+
+	args := append(targets, bucket);
 	err = runmake(dir, args...);
 	if (err != nil) { return; }
 	

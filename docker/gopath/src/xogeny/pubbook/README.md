@@ -21,4 +21,3 @@ environment variables should be provided to the container:
   * AWS_ACCESS_KEY_ID
   * AWS_SECRET_ACCESS_KEY
   * MBE_WEBHOOK_SECRET
-
