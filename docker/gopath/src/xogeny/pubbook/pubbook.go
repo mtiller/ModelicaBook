@@ -14,35 +14,54 @@ type Builder struct {
 
 func (b Builder) Push(msg hs.HubMessage) {
 	url := "git@github.com:xogeny/ModelicaBook.git"
-	ref := "master"
+	ref := "origin/master"
 	target1 := "dirhtml_cn"
 	target2 := "web_cn"
 	user := "xogeny"
-	repo := "ModelicaBook"
-	dir := "temp"
 
-	if (!b.Debug) {
-		defer func() {
-			err := os.RemoveAll(dir);
-			if err != nil {
-				log.Printf("Error cleaning up directory '%s': %s", dir, err.Error());
-			}
-		}();
-	}
+	dir := path.Join("_cache", user);
 
-	log.Printf("Cloning repository: %s", url);
-	/* Clone repo locally */
-	cmd := exec.Command("git", "clone", url, dir)
-	err := cmd.Run()
-	if err != nil {
-		log.Printf("Error cloning repository at '%s' to directory %s: %s",
-			url, dir, err.Error());
+	diri, err := os.Stat(dir);
+	/*
+	if (err!=nil) {
+		log.Printf("Error getting file information: %s", err.Error());
 		return;
+	}
+    */
+
+	var cmd *exec.Cmd;
+	var exists bool;
+
+	exists = err==nil && diri.IsDir();
+
+	// TODO: Have a query parameter to clear cache
+
+	if (exists) {
+		log.Printf("Repository already exists, fetching latest updates...");
+		/* Clone repo locally */
+		cmd = exec.Command("git", "fetch", "origin")
+		err := cmd.Run()
+		if err != nil {
+			log.Printf("Error fetching updates: %s", err.Error());
+			return;
+		} else {
+			log.Printf("...successful");
+		}
 	} else {
-		log.Printf("...successful");
+		log.Printf("Cloning repository: %s...", url);
+		/* Clone repo locally */
+		cmd = exec.Command("git", "clone", url, dir)
+		err := cmd.Run()
+		if err != nil {
+			log.Printf("Error cloning repository at '%s' to directory %s: %s",
+				url, dir, err.Error());
+			return;
+		} else {
+			log.Printf("...successful");
+		}
 	}
 
-	log.Printf("Checking out: %s", ref);
+	log.Printf("Checking out: %s...", ref);
 	/* Repo checkout correct ref */
 	cmd = exec.Command("git", "checkout", ref)
 	err = cmd.Run()
@@ -53,14 +72,29 @@ func (b Builder) Push(msg hs.HubMessage) {
 		log.Printf("...successful");
 	}
 
+	bucket := fmt.Sprintf("S3BUCKET=dev.book.xogeny.com/%s", user);
+	if (!exists) {
+		// If it didn't already exist, we need to run some make targets
+		/* Run make */
+		cmd = exec.Command("make", "specs", "results");
+		cmd.Dir = path.Join(dir, "text");
+		log.Printf("Running initial make: %v...", cmd);
+		err = cmd.Run()
+		if err != nil {
+			log.Printf("Error running initial make '%v': %s", cmd, err.Error());
+			return;
+		} else {
+			log.Printf("...successful");
+		}
+	}
+
 	/* Run make */
-	bucket := fmt.Sprintf("S3BUCKET=dev.book.xogeny.com/%s/%s", user, repo);
-	cmd = exec.Command("make", "specs", "results", target1, target2, bucket);
+	cmd = exec.Command("make", target1, target2, bucket);
 	cmd.Dir = path.Join(dir, "text");
-	log.Printf("Running make: %v", cmd);
+	log.Printf("Running build make: %v...", cmd);
 	err = cmd.Run()
 	if err != nil {
-		log.Printf("Error running make '%v': %s", cmd, err.Error());
+		log.Printf("Error running build make '%v': %s", cmd, err.Error());
 		return;
 	} else {
 		log.Printf("...successful");
