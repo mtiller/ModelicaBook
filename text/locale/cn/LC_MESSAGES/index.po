@@ -11,38 +11,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/index.rst:10
+#: ../../source/index.rst:13
 msgid "Front Matter"
 msgstr ""
 
-#: ../../source/index.rst:21
+#: ../../source/index.rst:31
 msgid "Describing Behavior"
 msgstr ""
 
-#: ../../source/index.rst:32
+#: ../../source/index.rst:43
 msgid "Object-Oriented Modeling"
 msgstr ""
 
-#: ../../source/index.rst:44
-msgid "Advanced Topics"
-msgstr ""
-
-#: ../../source/index.rst:52
-msgid "TODO List"
-msgstr ""
-
-#: ../../source/index.rst:60
+#: ../../source/index.rst:71
 msgid "Indices and tables"
 msgstr ""
 
-#: ../../source/index.rst:62
+#: ../../source/index.rst:73
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ../../source/index.rst:63
-msgid ":ref:`modindex`"
-msgstr ""
-
-#: ../../source/index.rst:64
+#: ../../source/index.rst:74
 msgid ":ref:`search`"
 msgstr ""
+
+#~ msgid "Advanced Topics"
+#~ msgstr ""
+
+#~ msgid "TODO List"
+#~ msgstr ""
+
+#~ msgid ":ref:`modindex`"
+#~ msgstr ""

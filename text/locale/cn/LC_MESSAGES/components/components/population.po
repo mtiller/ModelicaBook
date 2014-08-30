@@ -424,11 +424,11 @@ msgid ""
 "rabbits and foxes has a significant impact on the population dynamics."
 msgstr ""
 
-#: ../../source/components/components/population.rst:53
+#: ../../source/components/components/population.rst:55
 msgid "encapsulated"
 msgstr ""
 
-#: ../../source/components/components/population.rst:54
+#: ../../source/components/components/population.rst:56
 msgid "enumeration"
 msgstr ""
 

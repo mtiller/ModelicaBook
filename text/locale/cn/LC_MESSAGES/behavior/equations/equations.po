@@ -132,7 +132,7 @@ msgid ""
 " the entire expression must also have parametric variability (*i.e.,* the "
 "value of the expression cannot change during a simulation)."
 msgstr ""
-“还记得讨论 :ref:`variability` 的时候，带有 ``parameter`` （参数）限定词的变量在模拟过程中不能改变的事实吗？"
+"还记得讨论 :ref:`variability` 的时候，带有 ``parameter`` （参数）限定词的变量在模拟过程中不能改变的事实吗？"
 "如果带有 ``parameter`` (参数)限定词的变量在模拟过程中不能改变，且表达式中的所有变量都拥有这个参变量，"
 "那么整个表达式一定也拥有参变量（ *例如,* 表达式的值在模拟过程中不能改变）。"
 

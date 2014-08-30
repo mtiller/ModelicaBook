@@ -76,74 +76,67 @@ msgid ""
 "It is also possible to associate annotations with equations, for example:"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:64
-msgid ""
-"Note that, just like with a declaration, the ``annotation`` follows the "
-"textual description (if present) and comes before the ``;`` that ends the "
-"equation."
-msgstr ""
-
-#: ../../source/behavior/equations/annotations.rst:69
+#: ../../source/behavior/equations/annotations.rst:65
 msgid "Inheritance Annotations"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:73
+#: ../../source/behavior/equations/annotations.rst:69
 msgid ""
 "We briefly discussed the ``extends`` keyword when we talked about "
 ":ref:`modifications` and :ref:`avoiding-repetition`.  It is possible to "
 "associate an ``annotation`` with an ``extends`` clause as follows:"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:81
+#: ../../source/behavior/equations/annotations.rst:77
 msgid ""
 "As we've observed in each previous case, the ``annotation`` immediately "
 "precedes the ``;``."
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:86
+#: ../../source/behavior/equations/annotations.rst:82
 msgid "Model Annotations"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:91
+#: ../../source/behavior/equations/annotations.rst:87
 msgid ""
 "A model annotation associates annotation data directly with the model "
 "definition itself.  This is exactly the kind of annotation we saw when "
 "describing :ref:`experimental-conditions`, *e.g.,*"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:101
+#: ../../source/behavior/equations/annotations.rst:97
 msgid ""
 "Note how, unlike all the previous annotation locations we've described, this"
 " annotation isn't really \"attached\" to anything.  This indicates that it "
 "is annotating the model itself."
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:108
+#: ../../source/behavior/equations/annotations.rst:104
 msgid "Annotation Data"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:111
+#: ../../source/behavior/equations/annotations.rst:107
 msgid "General Syntax"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:113
+#: ../../source/behavior/equations/annotations.rst:109
 msgid ""
 "The syntax of an annotation is the same syntax used for "
 ":ref:`modifications`.  This means the annotation will include either an "
 "assignment to a variable in the annotation, *e.g.,*"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:121
+#: ../../source/behavior/equations/annotations.rst:117
 msgid ""
 "or it will include a modification to something **inside** a variable in the "
 "annotation, *e.g.,*"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:129
+#: ../../source/behavior/equations/annotations.rst:125
 msgid "User Annotations"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:131
+#: ../../source/behavior/equations/annotations.rst:127
 msgid ""
 "Annotations were designed to allow model developers to attach **arbitrary "
 "data** to their models.  For example, if a user wanted to associate a part "
@@ -151,7 +144,7 @@ msgid ""
 "annotation like this:"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:140
+#: ../../source/behavior/equations/annotations.rst:136
 msgid ""
 "A general principle of annotation data is that if a tool reads in a model, "
 "**it must preserve the annotation information** when it writes it back out."
@@ -159,17 +152,17 @@ msgid ""
 "  But the data must be preserved."
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:146
+#: ../../source/behavior/equations/annotations.rst:142
 msgid "Multiple Annotations"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:148
+#: ../../source/behavior/equations/annotations.rst:144
 msgid ""
 "Imagine a user wanted to specify **both** a part number and an experiment "
 "annotation.  Then they might end up with an annotation like this one:"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:157
+#: ../../source/behavior/equations/annotations.rst:153
 msgid ""
 "Note how these two pieces of information can exist side by side.  One way to"
 " think about annotations is to visualize them as a tree like this:"
@@ -296,6 +289,7 @@ msgid ""
 " escaped by \\\\\"** to avoid accidentally terminating the ``info`` string."
 msgstr ""
 
+#: ../../source/behavior/equations/annotations.rst:158
 #: ../../source/behavior/equations/annotations.rst:287
 msgid "``experiment``"
 msgstr ""
@@ -365,9 +359,9 @@ msgstr ""
 
 #: ../../source/behavior/equations/annotations.rst:35
 #: ../../source/behavior/equations/annotations.rst:52
-#: ../../source/behavior/equations/annotations.rst:71
-#: ../../source/behavior/equations/annotations.rst:88
-#: ../../source/behavior/equations/annotations.rst:89
+#: ../../source/behavior/equations/annotations.rst:67
+#: ../../source/behavior/equations/annotations.rst:84
+#: ../../source/behavior/equations/annotations.rst:85
 #: ../../source/behavior/equations/annotations.rst:248
 #: ../../source/behavior/equations/annotations.rst:284
 #: ../../source/behavior/equations/annotations.rst:289
@@ -384,15 +378,15 @@ msgstr ""
 msgid "associated with; equation"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:71
+#: ../../source/behavior/equations/annotations.rst:67
 msgid "associated with; extends"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:88
+#: ../../source/behavior/equations/annotations.rst:84
 msgid "associated with; models"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:89
+#: ../../source/behavior/equations/annotations.rst:85
 msgid "associated with; definitions"
 msgstr ""
 
@@ -407,4 +401,22 @@ msgstr ""
 
 #: ../../source/behavior/equations/annotations.rst:337
 msgid "HideResult"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:61
+msgid ""
+"In declarations and equations, the ``annotation`` is always at the very end "
+"and comes immediately before the ``;``."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:157
+msgid "``PartNumber=\"FF78-E4B879\"``"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:160
+msgid "``StartTime=0``"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:161
+msgid "``StopTime=8``"
 msgstr ""

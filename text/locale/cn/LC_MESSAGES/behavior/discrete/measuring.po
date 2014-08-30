@@ -282,52 +282,37 @@ msgid ""
 " you must write *assignment statements*."
 msgstr ""
 
-#: ../../source/behavior/discrete/measuring.rst:262
-msgid ""
-"In this way, an ``algorithm`` section is very much like the way most "
-"programming languages work.  The statements in the algorithm section are "
-"executed in order and each statement isn't interpreted as an equation, but "
-"rather as an assignment of an expression to a variable. The familiarity of "
-"assignment statements may make using ``algorithm`` sections attractive to "
-"people with a programming background who find the otherwise equation "
-"oriented aspects of Modelica disorienting and unfamiliar. But be aware that "
-"one big reason to avoid ``algorithm`` sections is because they interfere "
-"with the symbolic manipulation performed by the Modelica compiler.  This can"
-" result in both poor simulation performance and a loss of flexibility in how"
-" you compose your models."
-msgstr ""
-
-#: ../../source/behavior/discrete/measuring.rst:277
+#: ../../source/behavior/discrete/measuring.rst:276
 msgid ""
 "In our case, there are no significant consequences to using the "
 "``algorithm`` section.  Here is an example of how the previous estimation "
 "algorithm could be refactored using an ``algorithm`` section:"
 msgstr ""
 
-#: ../../source/behavior/discrete/measuring.rst:286
+#: ../../source/behavior/discrete/measuring.rst:285
 msgid ""
 "The simulated results of this estimation technique can be seen in the "
 "following plot:"
 msgstr ""
 
-#: ../../source/behavior/discrete/measuring.rst:292
+#: ../../source/behavior/discrete/measuring.rst:291
 msgid ""
 "Again, we see that this approach cannot determine the direction of rotation."
 "  With the following plot, we can get a sense of how many events occur "
 "within each sample interval:"
 msgstr ""
 
-#: ../../source/behavior/discrete/measuring.rst:299
+#: ../../source/behavior/discrete/measuring.rst:298
 msgid ""
 "In general, the higher the count gets in an interval, the more accurate the "
 "estimate."
 msgstr ""
 
-#: ../../source/behavior/discrete/measuring.rst:303
+#: ../../source/behavior/discrete/measuring.rst:302
 msgid "Conclusion"
 msgstr ""
 
-#: ../../source/behavior/discrete/measuring.rst:305
+#: ../../source/behavior/discrete/measuring.rst:304
 msgid ""
 "This section demonstrates how we can use the ``when`` construct to respond "
 "to physical events that occur in our system.  These kinds of events and the "
@@ -348,4 +333,20 @@ msgstr ""
 
 #: ../../source/behavior/discrete/measuring.rst:246
 msgid "algorithm section"
+msgstr ""
+
+#: ../../source/behavior/discrete/measuring.rst:262
+msgid ""
+"In this way, an ``algorithm`` section is very much like the way most "
+"programming languages work.  The statements in the algorithm section are "
+"executed in order and each statement isn't interpreted as an equation, but "
+"rather as an assignment of an expression to a variable. The familiarity of "
+"assignment statements may make using ``algorithm`` sections attractive to "
+"people with a programming background who find the otherwise equation "
+"oriented aspects of Modelica disorienting and unfamiliar.  But be aware that"
+" one big reason to avoid ``algorithm`` sections is because they interfere "
+"with the symbolic manipulation performed by the Modelica compiler.  This can"
+" result in both poor simulation performance and a loss of flexibility in how"
+" you compose your models.  So it is best to use an ``equation`` section "
+"whenever possible"
 msgstr ""

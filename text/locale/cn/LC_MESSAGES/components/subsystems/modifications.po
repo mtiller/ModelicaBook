@@ -73,13 +73,6 @@ msgid ""
 "``parameter``, *e.g.,*"
 msgstr ""
 
-#: ../../source/components/subsystems/modifications.rst:75
-msgid ""
-"If we tried to initialize ``Vf`` with a literal array (*e.g.,* "
-"``{24,24,24}``, then it won't adapt to changes in ``n``.  `To address this "
-"situation, we could use the :ref:`fill-function` function:"
-msgstr ""
-
 #: ../../source/components/subsystems/modifications.rst:84
 msgid ""
 "This is an acceptable solution.  But imagine if we wanted to modify both the"
@@ -101,4 +94,11 @@ msgid ""
 "modify the parameter values down through the hierarchy.  As you can see from"
 " the examples in this section, Modelica provides many features to make "
 "applying modifications to hierarchies simple and powerful."
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:75
+msgid ""
+"If we tried to initialize ``Vf`` with a literal array (*e.g.,* "
+"``{24,24,24}``, then it won't adapt to changes in ``n``.  To address this "
+"situation, we could use the :ref:`fill-function` function:"
 msgstr ""

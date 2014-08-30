@@ -11,11 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/front/dedication.rst:6
+#: ../../source/front/dedication.rst:2
 msgid "Dedication"
 msgstr ""
 
-#: ../../source/front/dedication.rst:56
+#: ../../source/front/dedication.rst:52
 msgid ""
 "Because `his life has been chronicled <http://boingboing.net/2013/01/12/rip-"
 "aaron-swartz.html>`_ by `better writers who actually knew him "
@@ -31,25 +31,14 @@ msgstr ""
 "有更出色，对他很了解的作家1，已经为他写了传记2。因此我不再介绍他人生的细节，而只关注他作为一个企业家，研究员和一名美国公民。我非常的佩服他从事的工作，对那些决定把他作为案例以儆效尤的联邦检查人员（和Carmen"
 " Ortiz 3）对待他的方式感到非常愤怒。"
 
-#: ../../source/front/dedication.rst:75
+#: ../../source/front/dedication.rst:71
 msgid ""
 "\"Aaron dead. World wanderers, we have lost a wise elder. Hackers for right,"
 " we are one down. Parents all, we have lost a child. Let us weep.\""
 msgstr ""
 "\"Aaron走了。全世界的流浪者们，我们失去了一位智者。所有为真理抗争的黑客们，我们中的一员倒下了。所有的父母们，我们失去了一个孩子。让我们为他哭泣。\""
 
-#: ../../source/front/dedication.rst:84
-msgid ""
-"`Tim Berners-Lee "
-"<https://twitter.com/timberners_lee/status/290140454211698689>`_"
-msgstr ""
-"Tim Berners-Lee 4\n1.\t<http://www.huffingtonpost.com/lawrence-lessig/aaron-"
-"swartz-suicide_b_2467079.html>2.\t<http://boingboing.net/2013/01/12/rip-"
-"aaron-swartz.html>3.\t<https://petitions.whitehouse.gov/petition/remove-"
-"united-states-district-attorney-carmen-ortiz-office-overreach-case-aaron-"
-"swartz/RQNrG1Ck>4.\t<https://twitter.com/timberners_lee/status/290140454211698689>"
-
-#: ../../source/front/dedication.rst:22
+#: ../../source/front/dedication.rst:18
 msgid ""
 "This book started as a Kickstarter project.  The idea of writing a book and "
 "making it freely available, under a Creative Commons license, was largely "
@@ -67,7 +56,7 @@ msgstr ""
 "Lessig的著作。他们的信息共享理念使我产生强烈的共鸣。我对运用我的Modelica知识盈利毫无兴趣，我希望可以分享这些知识，让大家同样可以体验我在该领域探索时的快乐。令人开心的是，这个Kickstarter项目在2012年12月4日成功获得资助，我这个创作具有完全创作公共授权书籍的旅程可以开展。如果情况发生变化，本书将可能献给Cory"
 " Doctorow和Lawrence Lessig，感谢他们激励我从事这个项目。"
 
-#: ../../source/front/dedication.rst:34
+#: ../../source/front/dedication.rst:30
 msgid ""
 "But this book isn't dedicated to them.  Instead, it is dedicated to **Aaron "
 "Swartz**.  Aaron was without a doubt a wunderkind.  At the age of 14, Aaron "
@@ -83,7 +72,7 @@ msgstr ""
 "Swartz**。Aaron无疑是一位神童，在14岁时参与了RSS标准的开发。他创建了自己的公司——Infogami，最终被Reddit合并。沿着这条道路，他致力于创作公共授权方面的工作，反抗互联网审查制度。他既聪明又成功，并且无私，他非常关心技术和人类的未来。他具有无数我所钦佩和向往的品质。可是在2013年1月11日，Aaron"
 " Swartz结束了自己的生命。"
 
-#: ../../source/front/dedication.rst:45
+#: ../../source/front/dedication.rst:41
 msgid ""
 "Barely a month after the successful funding of my Kickstarter project, Aaron"
 " Swartz was dead at the age of 26.  It is astounding what Aaron managed to "
@@ -98,7 +87,7 @@ msgstr ""
 "我成功获得Kickstarter项目资助后不到一个月，Aaron "
 "Swartz就离世了，年仅26岁。Aaron在自己年轻的生命中，取得了令人惊讶的成就。每当想到他以后可能达到的成就，就令人对他的死亡更加感到悲伤。尽管Aaron比我年轻近20岁，却给我指明了道路，对我而言，写作本书，最终是为了让本书的读者了解他在RSS,知识共享和互联网领域的成就。令人心碎的是，我刚开始这个项目，他就去世了。我决定将这本书献给他。"
 
-#: ../../source/front/dedication.rst:65
+#: ../../source/front/dedication.rst:61
 msgid ""
 "This book is dedicated to Aaron Swartz in an attempt to keep his memory and,"
 " more importantly, the things he stood for alive.  Over a year has past "

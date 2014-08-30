@@ -105,16 +105,11 @@ msgid ""
 "their initial position."
 msgstr ""
 
-#: ../../source/components/subsystems/pendulums.rst:96
-msgid ""
-"The results are even more impressive when visualized in three dimensions:"
-msgstr ""
-
-#: ../../source/components/subsystems/pendulums.rst:109
+#: ../../source/components/subsystems/pendulums.rst:110
 msgid "Conclusion"
 msgstr ""
 
-#: ../../source/components/subsystems/pendulums.rst:111
+#: ../../source/components/subsystems/pendulums.rst:112
 msgid ""
 "In this section, we have seen how arrays of components can be used, declared"
 " and modified.  In this particular case, this allows us to specify the "
@@ -123,7 +118,7 @@ msgid ""
 "equation specified earlier."
 msgstr ""
 
-#: ../../source/components/subsystems/pendulums.rst:117
+#: ../../source/components/subsystems/pendulums.rst:118
 msgid ""
 "Richard E. Berg, \"Pendulum waves: A demonstration of wave motion using "
 "pendula\" http://dx.doi.org/10.1119/1.16608"

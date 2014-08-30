@@ -244,16 +244,6 @@ msgstr ""
 msgid "``Variation2``"
 msgstr ""
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:256
-msgid ""
-"Note how, even with an adequate sensor, the controller in our ``Variant1`` "
-"configuration seems to be converging to the wrong steady-state speed.  This "
-"is because we are only using a proportional gain controller.  However, if we"
-" extend from the ``Variant1`` model and add a PID controller and a more "
-"realistic actuator with limitations on the amount of torque it can supply, "
-"*i.e.*,"
-msgstr ""
-
 #: ../../source/components/architectures/sensor_comparison_ad.rst:266
 msgid "we will get the following simulation results:"
 msgstr ""
@@ -284,4 +274,14 @@ msgid ""
 " each subsystem and, even then, the Modelica compiler can check to make sure"
 " that their choices are plug-compatible with the constraining types used to "
 "specify the architecture."
+msgstr ""
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:256
+msgid ""
+"Note how, even with an adequate sensor, the controller in our ``Variant1`` "
+"configuration seems to be converging to the wrong steady state speed.  This "
+"is because we are only using a proportional gain controller.  However, if we"
+" extend from the ``Variant1`` model and add a PID controller and a more "
+"realistic actuator with limitations on the amount of torque it can supply, "
+"*i.e.*,"
 msgstr ""
