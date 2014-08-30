@@ -8,7 +8,7 @@ matters in an effort to improve the translation process.
 ## Current Status
 
 At this point, it should be "safe" to translate any text up to and
-including **Chapter 3 (Vectors and Arrays)** without fear of the
+including **Chapter 2 (Vectors and Arrays)** without fear of the
 underlying text changing.
 
 ## Coordinators
@@ -89,11 +89,71 @@ msgstr ""
 "mon odyssée à créer un ensemble de Creative Commons livre licence a commencé. Si " 
 "circonstances avaient été différentes, ce livre serait probablement dédié à " 
 "Cory Doctorow et Lawrence Lessig de m'inspirer de prendre sur ce projet."
-
-#: ../../source/front/dedication.rst:23
 ```
 
 Note the addition of the lines following the line with the `msgstr` directive on it.
+
+## Retranslation
+
+In some cases, I may fix a typo or adjust the text after something has
+been translated.  So I want to take a moment to explain what happens
+in that case.  If a section of the original text has changed, the
+translation will be commented out using both a `#` character **and** a
+`~`, as follows:
+
+```
+#: ../../source/front/dedication.rst:11
+#~ msgid ""
+#~ "This book started as a Kickstarter project.  The idea of writing a book and "
+#~ "making it freely available, under a Creative Commons license, was largely "
+#~ "inspired by the writings of Cory Doctorow and Lawrence Lessig.  Their "
+#~ "message of sharing resonated very strongly with me. I'm not interested in "
+#~ "capitalizing on my knowledge of Modelica, I want to share it with others so "
+#~ "they can experience the same joy I do in exploring this subject.  Happily, "
+#~ "this Kickstarter project was successfully funded on December 4th, 2012 and "
+#~ "my odyssey to create an entire Creative Commons licensed book began.  If "
+#~ "circumstances had been different, this book would probably be dedicated to "
+#~ "Cory Doctorow and Lawrence Lessig for inspiring me to take on this project."
+#~ msgstr ""
+#~ "Ce livre a commencé comme un projet Kickstarter. L'idée d'écrire un livre et " 
+#~ "rendant disponible gratuitement, sous une licence Creative Commons, était en grande partie " 
+#~ "inspiré par les écrits de Cory Doctorow et Lawrence Lessig. Leur " 
+#~ "un message de partage résonné très fort avec moi. Je ne suis pas intéressé par " 
+#~ "capitaliser sur ma connaissance de Modelica, je veux le partager avec d'autres pour " 
+#~ "ils peuvent éprouver la même joie que je fais dans l'exploration de ce sujet. Heureusement, " 
+#~ "ce projet Kickstarter a été financé avec succès le 4 Décembre 2012 et " 
+#~ "mon odyssée à créer un ensemble de Creative Commons livre licence a commencé. Si " 
+#~ "circonstances avaient été différentes, ce livre serait probablement dédié à " 
+#~ "Cory Doctorow et Lawrence Lessig de m'inspirer de prendre sur ce projet."
+```
+
+You will generally also find an untranslated version of the *new* original text, e.g.:
+
+```
+#: ../../source/front/dedication.rst:11
+msgid ""
+"This book started as a simple Kickstarter project.  The idea of writing a book and "
+"making it freely available, under a Creative Commons license, was largely "
+"inspired by the writings of Cory Doctorow and Lawrence Lessig.  Their "
+"message of sharing resonated very strongly with me. I'm not interested in "
+"capitalizing on my knowledge of Modelica, I want to share it with others so "
+"they can experience the same joy I do in exploring this subject.  Happily, "
+"this Kickstarter project was successfully funded on December 4th, 2012 and "
+"my odyssey to create an entire Creative Commons licensed book began.  If "
+"circumstances had been different, this book would probably be dedicated to "
+"Cory Doctorow and Lawrence Lessig for inspiring me to take on this project."
+msgstr ""
+```
+
+*(note the addition of the word "simple" in the first line)*
+
+The key point is that any previous translation is provided as a
+reference (just commented out with `#~` characters).  Ideally
+(assuming changes are small), it should be possible to reuse much of
+the translated text.  Unfortunately, I don't know if any easy way to
+identify what change has occurred except by looking at both versions
+of the original text and trying to identify the difference.  But
+hopefully we can avoid retranslations as much as possible.
 
 ## Git Workflow
 
