@@ -105,42 +105,49 @@ build_links:
 	-(cd build/dirhtml/_static; ln -s ../../../results/js)
 	-(cd build/dirhtml/_static; ln -s ../../../results/json)
 
+build_links_cn:
+	cp build/dirhtml_cn/_static/sitemap.xml build/dirhtml_cn
+	cp build/dirhtml_cn/_static/robots.txt build/dirhtml_cn
+
+	-(cd build/dirhtml_cn/_static; ln -s ../../../results/js)
+	-(cd build/dirhtml_cn/_static; ln -s ../../../results/json)
+
 # This builds the HTML and then runs a simple web server
 server: dirhtml build_links
 	(cd build/dirhtml; python -m SimpleHTTPServer)
 
-server_cn: dirhtml_cn build_links
+server_cn: dirhtml_cn build_links_cn
 	(cd build/dirhtml_cn; python -m SimpleHTTPServer)
 
-server_de: dirhtml_de build_links
-	(cd build/dirhtml_de; python -m SimpleHTTPServer)
+#server_de: dirhtml_de build_links
+#	(cd build/dirhtml_de; python -m SimpleHTTPServer)
 
-server_es: dirhtml_es build_links
-	(cd build/dirhtml_es; python -m SimpleHTTPServer)
+#server_es: dirhtml_es build_links
+#	(cd build/dirhtml_es; python -m SimpleHTTPServer)
 
-server_fr: dirhtml_fr build_links
-	(cd build/dirhtml_fr; python -m SimpleHTTPServer)
+#server_fr: dirhtml_fr build_links
+#	(cd build/dirhtml_fr; python -m SimpleHTTPServer)
 
-server_it: dirhtml_it build_links
-	(cd build/dirhtml_it; python -m SimpleHTTPServer)
+#server_it: dirhtml_it build_links
+#	(cd build/dirhtml_it; python -m SimpleHTTPServer)
 
 web: dirhtml build_links
 	(cd build/dirhtml; $(SYNC) * s3://$(S3BUCKET)/)
 
-web_cn: dirhtml_cn build_links
+web_cn: dirhtml_cn build_links_cn
 	(cd build/dirhtml_cn; $(SYNC) * s3://$(S3BUCKET)/cn/)
 
-web_de: dirhtml_de build_links
-	(cd build/dirhtml_de; $(SYNC) * s3://$(S3BUCKET)/de/)
+#web_de: dirhtml_de build_links
+#	(cd build/dirhtml_de; $(SYNC) * s3://$(S3BUCKET)/de/)
 
-web_es: dirhtml_es build_links
-	(cd build/dirhtml_es; $(SYNC) * s3://$(S3BUCKET)/es/)
+#web_es: dirhtml_es build_links
+#	(cd build/dirhtml_es; $(SYNC) * s3://$(S3BUCKET)/es/)
 
-web_fr: dirhtml_fr build_links
-	(cd build/dirhtml_fr; $(SYNC) * s3://$(S3BUCKET)/fr/)
+#web_fr: dirhtml_fr build_links
+#	(cd build/dirhtml_fr; $(SYNC) * s3://$(S3BUCKET)/fr/)
 
-web_it: dirhtml_it build_links
-	(cd build/dirhtml_it; $(SYNC) * s3://$(S3BUCKET)/it/)
+#web_it: dirhtml_it build_links
+#	(cd build/dirhtml_it; $(SYNC) * s3://$(S3BUCKET)/it/)
 
 node: dirhtml build_links
 	-rm -rf build/node
