@@ -1,5 +1,6 @@
 image:
-	tar zcf - . | docker build -t xogeny/book-hook -
+	-rm -rf _cache
+	tar zcf - . | docker build -t mtiller/book-hook -
 
-push:
+push: image
 	docker push mtiller/book-hook
