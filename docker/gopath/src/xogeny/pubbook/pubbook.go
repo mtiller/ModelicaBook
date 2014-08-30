@@ -85,12 +85,12 @@ func (b Builder) Push(msg hs.HubMessage) {
 		err = git(dir, "fetch", "origin");
 		if (err!=nil) { return; }
 	} else {
-		err = git(dir, "clone", url, dir);
+		err = git(".", "clone", url, dir);
 		if (err!=nil) { return; }
 	}
 
 	/* Repo checkout correct ref */
-	err = git(".", "checkout", ref)
+	err = git(dir, "checkout", ref)
 	if err != nil { return; }
 
 	bucket := fmt.Sprintf("S3BUCKET=dev.book.xogeny.com/%s", user);
