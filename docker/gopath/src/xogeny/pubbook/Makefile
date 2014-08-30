@@ -1,6 +1,5 @@
 image:
-	-rm -rf _cache
-	tar zcf - . | docker build -t mtiller/book-hook -
+	tar zcf - Dockerfile pubbook.go | docker build -t mtiller/book-hook -
 
 run: image
 	docker run -P -t mtiller/book-hook

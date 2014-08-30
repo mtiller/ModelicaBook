@@ -40,7 +40,7 @@ func git(dir string, args...string) error {
 	return nil;
 }
 
-func make(dir string, targets...string) error {
+func runmake(dir string, targets...string) error {
 	ebuf := []byte{};
 	obuf := []byte{};
 
@@ -66,12 +66,23 @@ func make(dir string, targets...string) error {
 	return nil;
 }
 
-func (b Builder) Push(msg hs.HubMessage) {
-	url := "git@github.com:xogeny/ModelicaBook.git"
-	ref := "origin/master"
-	target1 := "dirhtml_cn"
-	target2 := "web_cn"
-	user := "xogeny"
+func (b Builder) Push(msg hs.HubMessage, params map[string][]string) {
+	user := msg.Repository.Owner.Name;
+	url := msg.Repository.GitUrl;
+	ref := msg.After;
+	var targets []string = params["target"];
+	if (user=="") {
+		user = "xogeny";
+		url = "https://github.com/xogeny/ModelicaBook.git"
+		ref = "origin/master"
+		targets = []string{"dirhtml_cn", "web_cn"}
+	}
+	log.Printf("User:    %s", user);
+	log.Printf("URL:     %s", url);
+	log.Printf("Ref:     %s", ref);
+	log.Printf("Targets: %v", targets);
+
+	// TODO: Get these from query parameters
 
 	dir := path.Join("_cache", user);
 
@@ -97,14 +108,18 @@ func (b Builder) Push(msg hs.HubMessage) {
 	if (!exists) {
 		// If it didn't already exist, we need to run some make targets
 		/* Run make */
-		make(dir, "specs");
+		err = runmake(dir, "specs");
 		if (err!=nil) { return; }
 	}
 
 	/* Run make */
-	make(dir, "results", target1, target2, bucket);
-	if err != nil {	return; }
-
+	args := []string{"results"};
+	args = append(args, targets...);
+	args = append(args, bucket);
+	targets = append(targets, bucket);
+	err = runmake(dir, args...);
+	if (err != nil) { return; }
+	
 	log.Printf("Make ran!");
 }
 
