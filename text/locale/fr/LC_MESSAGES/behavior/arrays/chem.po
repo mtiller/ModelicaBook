@@ -134,20 +134,6 @@ msgid ""
 "**as a dimension in an array** as follows:"
 msgstr ""
 
-#: ../../source/behavior/arrays/chem.rst:150
-msgid ""
-"Since the ``Species`` type has only three possible values, this means that "
-"the vector ``C`` has exactly three components.  We can then refer to the "
-"individual components of ``C`` as ``C[Species.A]``, ``C[Species.B]`` and "
-"``C[Species.C]``."
-msgstr ""
-
-#: ../../source/behavior/arrays/chem.rst:155
-msgid ""
-"Because it is awkward to constantly prefix each species name with "
-"``Species``, we can define a few convenient constants, we follows:"
-msgstr ""
-
 #: ../../source/behavior/arrays/chem.rst:164
 msgid ""
 "In this way, we can now refer to the concentration of species :math:`A` as "
@@ -169,3 +155,29 @@ msgid ""
 " be used not only to index the array, but also to define one or more "
 "dimensions in the declaration."
 msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:150
+msgid ""
+"Since the ``Species`` type has only three possible values, this means that "
+"the vector ``C`` has exactly three components.  We can then refer to the "
+"individual components of ``C`` as ``C[Species.A]``, ``C[Species.B]`` and "
+"``C[Species.X]``."
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:155
+msgid ""
+"Because it is awkward to constantly prefix each species name with "
+"``Species``, we can define a few convenient constants as follows:"
+msgstr ""
+
+#~ msgid ""
+#~ "Since the ``Species`` type has only three possible values, this means that "
+#~ "the vector ``C`` has exactly three components.  We can then refer to the "
+#~ "individual components of ``C`` as ``C[Species.A]``, ``C[Species.B]`` and "
+#~ "``C[Species.C]``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Because it is awkward to constantly prefix each species name with "
+#~ "``Species``, we can define a few convenient constants, we follows:"
+#~ msgstr ""

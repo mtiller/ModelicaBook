@@ -23,13 +23,6 @@ msgid ""
 ":`distributed-heat-transfer` and :ref:`harmonic-motion`)."
 msgstr ""
 
-#: ../../source/components/subsystems/comp_arrays.rst:14
-msgid ""
-"Creating an array of components is really no different than creating an "
-"array of scalar variables like we did in our previous discussion on :ref"
-":`vectors-and-arrays`.  As we can see in this example,"
-msgstr ""
-
 #: ../../source/components/subsystems/comp_arrays.rst:22
 msgid ""
 "the syntax for creating an array of components is identical to the syntax "
@@ -87,3 +80,16 @@ msgstr ""
 #: ../../source/components/subsystems/comp_arrays.rst:37
 msgid "slicing"
 msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:14
+msgid ""
+"Creating an array of components is really no different from creating an "
+"array of scalar variables like we did in our previous discussion on :ref"
+":`vectors-and-arrays`.  As we can see in this example,"
+msgstr ""
+
+#~ msgid ""
+#~ "Creating an array of components is really no different than creating an "
+#~ "array of scalar variables like we did in our previous discussion on :ref"
+#~ ":`vectors-and-arrays`.  As we can see in this example,"
+#~ msgstr ""

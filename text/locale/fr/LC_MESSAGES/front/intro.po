@@ -11,11 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/front/intro.rst:6
+#: ../../source/front/intro.rst:2
 msgid "Introduction"
 msgstr ""
 
-#: ../../source/front/intro.rst:8
+#: ../../source/front/intro.rst:4
 msgid ""
 "If, for some reason, you are coming upon this book without any previous "
 "knowledge of Modelica, there are probably a couple of questions you have.  "
@@ -23,11 +23,11 @@ msgid ""
 "intrigue you and cause you to dig deeper."
 msgstr ""
 
-#: ../../source/front/intro.rst:14
+#: ../../source/front/intro.rst:10
 msgid "What is Modelica?"
 msgstr ""
 
-#: ../../source/front/intro.rst:16
+#: ../../source/front/intro.rst:12
 msgid ""
 "Modelica is a high-level declarative language for describing mathematical "
 "behavior.  It is typically applied to engineering systems and can be used to"
@@ -36,11 +36,11 @@ msgid ""
 "be combined into subsystems, systems or even architectures."
 msgstr ""
 
-#: ../../source/front/intro.rst:24
+#: ../../source/front/intro.rst:20
 msgid "Why Modelica?"
 msgstr ""
 
-#: ../../source/front/intro.rst:26
+#: ../../source/front/intro.rst:22
 msgid ""
 "Modelica is compelling for several reasons.  First and foremost, it is "
 "technically very capable.  By using complex algorithms behind the scenes, "
@@ -51,7 +51,7 @@ msgid ""
 "numeric solvers, code generation, post-processing, *etc.*."
 msgstr ""
 
-#: ../../source/front/intro.rst:35
+#: ../../source/front/intro.rst:31
 msgid ""
 "The key to Modelica's technical success is its support for a wide range of "
 "modeling formalisms that allow the description of both continuous and "
@@ -61,7 +61,7 @@ msgid ""
 "designs) approaches *within the same model*."
 msgstr ""
 
-#: ../../source/front/intro.rst:43
+#: ../../source/front/intro.rst:39
 msgid ""
 "Finally, another compelling aspect of Modelica is the fact that it was "
 "designed from the start as an open language.  The specification is freely "
@@ -69,11 +69,11 @@ msgid ""
 "of Modelica (without being compelled to pay any royalty of any kind)."
 msgstr ""
 
-#: ../../source/front/intro.rst:50
+#: ../../source/front/intro.rst:46
 msgid "What Modelica allows me to do"
 msgstr ""
 
-#: ../../source/front/intro.rst:52
+#: ../../source/front/intro.rst:48
 msgid ""
 "Modelica is really an ideal language for modeling the behavior of "
 "engineering systems in nearly any engineering domain.  It seamlessly "

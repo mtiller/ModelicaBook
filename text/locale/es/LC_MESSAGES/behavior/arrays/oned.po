@@ -11,25 +11,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/behavior/arrays/oned.rst:22
+#: ../../source/behavior/arrays/oned.rst:23
 msgid "Deriving Equations"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:24
+#: ../../source/behavior/arrays/oned.rst:25
 msgid ""
 "Let us consider the heat balance for each discrete section of this rod.  "
 "First, we have the thermal capacitance of the :math:`i^{th}` section.  This "
 "can expressed as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:32
+#: ../../source/behavior/arrays/oned.rst:33
 msgid ""
 "where :math:`m` is the mass of the :math:`i^{th}` section, :math:`C` is the "
 "capacitance (a material property) and :math:`T_i` is the temperature of the "
 ":math:`i^{th}` section.  We can further describe the mass as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:49
+#: ../../source/behavior/arrays/oned.rst:50
 msgid ""
 "where :math:`A_i` is the cross-sectional area of the :math:`i^{th}` section,"
 " which is assumed to be uniform, and :math:`L_i` is the length of the "
@@ -38,29 +38,29 @@ msgid ""
 "length, :math:`L_i`, to be:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:59
+#: ../../source/behavior/arrays/oned.rst:60
 msgid ""
 "We will also assume that the cross-sectional area is uniform along the "
 "length of the rod.  As such, the mass of each segment can be given as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:66
+#: ../../source/behavior/arrays/oned.rst:67
 msgid "In this case, the thermal capacitance of each section would be:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:72
+#: ../../source/behavior/arrays/oned.rst:73
 msgid ""
 "This, in turn, means that the net heat gained in that section at any time "
 "will be:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:79
+#: ../../source/behavior/arrays/oned.rst:80
 msgid ""
 "where we assume that :math:`A`, :math:`L_i` and :math:`C` don't change with "
 "respect to time."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:82
+#: ../../source/behavior/arrays/oned.rst:83
 msgid ""
 "That covers the thermal capacitance.  In addition, we will consider two "
 "different forms of heat transfer.  The first form of heat transfer we will "
@@ -69,7 +69,7 @@ msgid ""
 "as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:92
+#: ../../source/behavior/arrays/oned.rst:93
 msgid ""
 "where :math:`h` is the convection coefficient.  The other form of heat "
 "transfer is conduction to neighboring sections.  Here there will be two "
@@ -78,52 +78,52 @@ msgid ""
 "be represented, respectively, as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:106
+#: ../../source/behavior/arrays/oned.rst:107
 msgid ""
 "Using these relations, we know that the heat balance for the first element "
 "would be:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:114
+#: ../../source/behavior/arrays/oned.rst:115
 msgid "Similarly, the heat balance for the last element would be:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:121
+#: ../../source/behavior/arrays/oned.rst:122
 msgid "Finally, the heat balance for all other elements would be:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:129
+#: ../../source/behavior/arrays/oned.rst:130
 msgid "Implementation"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:131
+#: ../../source/behavior/arrays/oned.rst:132
 msgid ""
 "We start by defining types for the various physical quantities.  This will "
 "give us the proper units and, depending on the tool, allows us to do unit "
 "checking on our equations.  Our type definitions are as follows:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:140
+#: ../../source/behavior/arrays/oned.rst:141
 msgid ""
 "We will also define several parameters to describe the rod we are "
 "simulating:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:147
+#: ../../source/behavior/arrays/oned.rst:148
 msgid ""
 "Given these parameters, we can compute the area and volume for each section "
 "in terms of the parameters we have already defined using the following "
 "declarations:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:155
+#: ../../source/behavior/arrays/oned.rst:156
 msgid ""
 "Finally, the only array in this problem is the temperature of each section "
 "(since this is the only quantity that actually varies along the length of "
 "the rod):"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:163
+#: ../../source/behavior/arrays/oned.rst:164
 msgid ""
 "This concludes all the declarations we need to make.  Now let's consider the"
 " various equations required.  First, we need to specify the initial "
@@ -133,7 +133,7 @@ msgid ""
 "by the following equation:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:174
+#: ../../source/behavior/arrays/oned.rst:175
 msgid ""
 "where the ``linspace`` operator is used to create an array of ``n`` values "
 "that vary linearly between ``200`` and ``300``.  Recall from our :ref"
@@ -142,13 +142,13 @@ msgid ""
 "of such an equation."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:180
+#: ../../source/behavior/arrays/oned.rst:181
 msgid ""
 "Finally, we come to the equations that describe how the temperature in each "
 "section changes over time:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:187
+#: ../../source/behavior/arrays/oned.rst:188
 msgid ""
 "The first equation corresponds to the heat balance for section :math:`1`, "
 "the last equation corresponds to the heat balance for section :math:`n` and "
@@ -160,7 +160,7 @@ msgid ""
 "dimension is not already associated with a variable."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:197
+#: ../../source/behavior/arrays/oned.rst:198
 msgid ""
 "Also note the use of a ``for`` loop in this model.  A ``for`` loop allows "
 "the loop index variable to loop over a range of values.  In our case, the "
@@ -168,7 +168,7 @@ msgid ""
 ":math:`n-1`.  The general syntax for a ``for`` loop is:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:209
+#: ../../source/behavior/arrays/oned.rst:210
 msgid ""
 "where ``<range>`` is a vector of values.  A convenient way to generate a "
 "sequence of values is to use the range operator, ``:``.  The value before "
@@ -179,7 +179,7 @@ msgid ""
 " to specify the range."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:217
+#: ../../source/behavior/arrays/oned.rst:218
 msgid ""
 "When a ``for`` loop is used in an equation section, each iteration of the "
 "for loop generates a new equation for each equation inside the ``for`` loop."
@@ -187,33 +187,33 @@ msgid ""
 "values of ``i`` between ``2`` and ``n-1``."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:222
+#: ../../source/behavior/arrays/oned.rst:223
 msgid "Putting all this together, the complete model would be:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:230
+#: ../../source/behavior/arrays/oned.rst:231
 msgid ""
 "Note that we've included ``pi`` as a literal constant in this model.  Later "
 "in the book, we'll discuss how to properly import common :ref:`constants`."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:234
+#: ../../source/behavior/arrays/oned.rst:235
 msgid ""
 "Simulating this model yields the following solution for each of the nodal "
 "temperatures:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:240
+#: ../../source/behavior/arrays/oned.rst:241
 msgid ""
 "Note how the temperatures are initially distributed linearly (as we "
 "specified in our ``initial equation`` section)."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:244
+#: ../../source/behavior/arrays/oned.rst:245
 msgid "Alternatives"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:246
+#: ../../source/behavior/arrays/oned.rst:247
 msgid ""
 "It turns out that there are several ways we can generate the equations we "
 "need.  Each has its own advantages and disadvantages depending on the "
@@ -222,7 +222,7 @@ msgid ""
 " is up to the model developer."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:254
+#: ../../source/behavior/arrays/oned.rst:255
 msgid ""
 "One array feature we can use to make these equations slightly simpler is "
 "called an array comprehension.  An array comprehension flips the ``for`` "
@@ -232,7 +232,7 @@ msgid ""
 "equation section using array comprehensions as follows:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:266
+#: ../../source/behavior/arrays/oned.rst:267
 msgid ""
 "We could also combine the array comprehension with some ``if`` expressions "
 "to nullify contributions to the heat balance that don't necessarily apply.  "
@@ -240,7 +240,7 @@ msgid ""
 " contains one (admittedly multi-line) equation:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:276
+#: ../../source/behavior/arrays/oned.rst:277
 msgid ""
 "Recall, from several previous examples, that Modelica supports vector "
 "equations.  In these cases, when the left hand and right hand side are "
@@ -249,7 +249,7 @@ msgid ""
 "as follows:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:286
+#: ../../source/behavior/arrays/oned.rst:287
 msgid ""
 "Note that when a vector variable like ``T`` has a range of subscripts "
 "applied to it, the result is a vector containing the components indicated by"
@@ -259,29 +259,29 @@ msgid ""
 "T[9]}``."
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:293
+#: ../../source/behavior/arrays/oned.rst:294
 msgid ""
 "Finally, let us consider one last way of refactoring these equations. "
 "Imagine we introduced two additional vector variables:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:300
+#: ../../source/behavior/arrays/oned.rst:301
 msgid ""
 "Then we can write these two equations (again using vector equations) to "
 "define the heat lost to the previous and next section in the rod:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:307
+#: ../../source/behavior/arrays/oned.rst:308
 msgid ""
 "This allows us to express the heat balance for each section using a vector "
 "equation that doesn't include any subscripts:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:315
+#: ../../source/behavior/arrays/oned.rst:316
 msgid "Conclusion"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:252
+#: ../../source/behavior/arrays/oned.rst:253
 msgid "array comprehensions"
 msgstr ""
 
@@ -305,14 +305,14 @@ msgid ""
 " a one-dimensional rod like the one shown below:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:41
+#: ../../source/behavior/arrays/oned.rst:42
 msgid ""
 "where :math:`\\rho` is the material density and :math:`V_i` is the volume of"
 " the :math:`i^{th}` section.  Finally, we can express the volume of the "
 ":math:`i^{th}` section as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:317
+#: ../../source/behavior/arrays/oned.rst:318
 msgid ""
 "In this section, we've seen various ways that we can use vector variables "
 "and vector equations to represent one-dimensional heat transfer.  Of course,"

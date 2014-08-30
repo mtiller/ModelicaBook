@@ -11,11 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/front/ack.rst:6
+#: ../../source/front/ack.rst:2
 msgid "Acknowledgments"
 msgstr ""
 
-#: ../../source/front/ack.rst:8
+#: ../../source/front/ack.rst:4
 msgid ""
 "This book is the culmination of so many lectures, books, discussions, "
 "conferences, *etc.* that it is impossible to provide a full accounting to "
@@ -24,11 +24,11 @@ msgid ""
 "feels they've been overlooked."
 msgstr ""
 
-#: ../../source/front/ack.rst:15
+#: ../../source/front/ack.rst:11
 msgid "Technical"
 msgstr ""
 
-#: ../../source/front/ack.rst:17
+#: ../../source/front/ack.rst:13
 msgid ""
 "On the subject of Modelica, the primary acknowledgment has to be to Hilding "
 "Elmqvist for not only having the technical vision to recognize the potential"
@@ -38,7 +38,7 @@ msgid ""
 "he deserves considerable credit for all that Modelica has become."
 msgstr ""
 
-#: ../../source/front/ack.rst:25
+#: ../../source/front/ack.rst:21
 msgid ""
 "Second only to Hilding is Martin Otter, a man who has worked tirelessly for "
 "the advancement of Modelica.  I can honestly say that Martin works harder "
@@ -51,7 +51,7 @@ msgid ""
 "Modelica Association what it is today."
 msgstr ""
 
-#: ../../source/front/ack.rst:36
+#: ../../source/front/ack.rst:32
 msgid ""
 "Of course, Martin isn't alone in running the Modelica Association. The "
 "Modelica Association Board and the Members are also extremely important for "
@@ -60,7 +60,7 @@ msgid ""
 " like to thank all the members for their hard work in this regard."
 msgstr ""
 
-#: ../../source/front/ack.rst:43
+#: ../../source/front/ack.rst:39
 msgid ""
 "There wasn't always a Modelica Association, but there was always a Modelica "
 "Design Group.  These are the people who come together several times a year "
@@ -70,11 +70,11 @@ msgid ""
 " Modelica Language and the Modelica Standard Library."
 msgstr ""
 
-#: ../../source/front/ack.rst:52
+#: ../../source/front/ack.rst:48
 msgid "Personal"
 msgstr ""
 
-#: ../../source/front/ack.rst:54
+#: ../../source/front/ack.rst:50
 msgid ""
 "On a personal note, I am forever indebted to my mother, my father, my wife, "
 "my kids and my in-laws for their endless support of my passion for science, "
@@ -83,7 +83,7 @@ msgid ""
 "apply to projects like this one to them."
 msgstr ""
 
-#: ../../source/front/ack.rst:61
+#: ../../source/front/ack.rst:57
 msgid ""
 "The very idea of a book that is available for free might seem radical to "
 "some.  The basic premise of this project was largely inspired by listening "
@@ -95,7 +95,7 @@ msgid ""
 "more accessible content for the Modelica world."
 msgstr ""
 
-#: ../../source/front/ack.rst:71
+#: ../../source/front/ack.rst:67
 msgid ""
 "Looking back, I feel very fortunate to have worked for several companies "
 "that supported my involvement in Modelica.  I first got involved with "
@@ -116,11 +116,11 @@ msgid ""
 "the good times during my excellent year in Paris."
 msgstr ""
 
-#: ../../source/front/ack.rst:92
+#: ../../source/front/ack.rst:88
 msgid "Contributors"
 msgstr ""
 
-#: ../../source/front/ack.rst:94
+#: ../../source/front/ack.rst:90
 msgid ""
 "This project was really an experiment to see if the Kickstarter approach to "
 "publishing could be applied to a niche technical field like Modelica.  I was"
@@ -130,178 +130,178 @@ msgid ""
 "people for their exceptionally generous contributions:"
 msgstr ""
 
-#: ../../source/front/ack.rst:102
+#: ../../source/front/ack.rst:99
 msgid "Robert Norris"
 msgstr ""
 
-#: ../../source/front/ack.rst:103
+#: ../../source/front/ack.rst:100
 msgid "Matthis Thorade"
 msgstr ""
 
-#: ../../source/front/ack.rst:104
+#: ../../source/front/ack.rst:101
 msgid "Henning Francke"
 msgstr ""
 
-#: ../../source/front/ack.rst:105
+#: ../../source/front/ack.rst:102
 msgid "Yang Ji"
 msgstr ""
 
-#: ../../source/front/ack.rst:106
+#: ../../source/front/ack.rst:103
 msgid "Christoph Höger"
 msgstr ""
 
-#: ../../source/front/ack.rst:107
+#: ../../source/front/ack.rst:104
 msgid "Philipp Mossmann"
 msgstr ""
 
-#: ../../source/front/ack.rst:108
+#: ../../source/front/ack.rst:105
 msgid "John Batteh"
 msgstr ""
 
-#: ../../source/front/ack.rst:109
+#: ../../source/front/ack.rst:106
 msgid "Dirk Zimmer"
 msgstr ""
 
-#: ../../source/front/ack.rst:110
+#: ../../source/front/ack.rst:107
 msgid "Jan Brugård"
 msgstr ""
 
-#: ../../source/front/ack.rst:111
+#: ../../source/front/ack.rst:108
 msgid "Swami Gopalswamy"
 msgstr ""
 
-#: ../../source/front/ack.rst:112
+#: ../../source/front/ack.rst:109
 msgid "Peter Aronsson"
 msgstr ""
 
-#: ../../source/front/ack.rst:113
+#: ../../source/front/ack.rst:110
 msgid "Michael P. Case"
 msgstr ""
 
-#: ../../source/front/ack.rst:114
+#: ../../source/front/ack.rst:111
 msgid "Markus Groetsch"
 msgstr ""
 
-#: ../../source/front/ack.rst:115
+#: ../../source/front/ack.rst:112
 msgid "Vicente Ramírez Perea"
 msgstr ""
 
-#: ../../source/front/ack.rst:116
+#: ../../source/front/ack.rst:113
 msgid "Tisha Villanueva"
 msgstr ""
 
-#: ../../source/front/ack.rst:117
+#: ../../source/front/ack.rst:114
 msgid "Adrian Pop"
 msgstr ""
 
-#: ../../source/front/ack.rst:118
+#: ../../source/front/ack.rst:115
 msgid "Nimalendiran Kailasanathan"
 msgstr ""
 
-#: ../../source/front/ack.rst:119
+#: ../../source/front/ack.rst:116
 msgid "Kevin Davies"
 msgstr ""
 
-#: ../../source/front/ack.rst:120
+#: ../../source/front/ack.rst:117
 msgid "Peter Harman"
 msgstr ""
 
-#: ../../source/front/ack.rst:121
+#: ../../source/front/ack.rst:118
 msgid "Dietmar Winkler"
 msgstr ""
 
-#: ../../source/front/ack.rst:122
+#: ../../source/front/ack.rst:119
 msgid "Johan Rhodin"
 msgstr ""
 
-#: ../../source/front/ack.rst:124
+#: ../../source/front/ack.rst:121
 msgid "I'd also like to thank the corporate sponsors:"
 msgstr ""
 
-#: ../../source/front/ack.rst:126
+#: ../../source/front/ack.rst:123
 msgid "Gold Sponsors"
 msgstr ""
 
-#: ../../source/front/ack.rst:128
+#: ../../source/front/ack.rst:125
 msgid "CyDesign"
 msgstr ""
 
-#: ../../source/front/ack.rst:129
+#: ../../source/front/ack.rst:126
 msgid "Wolfram Research"
 msgstr ""
 
-#: ../../source/front/ack.rst:130
+#: ../../source/front/ack.rst:127
 msgid "Modelon"
 msgstr ""
 
-#: ../../source/front/ack.rst:131
+#: ../../source/front/ack.rst:128
 msgid "Maplesoft"
 msgstr ""
 
-#: ../../source/front/ack.rst:132
+#: ../../source/front/ack.rst:129
 msgid "Dassault Systèmes"
 msgstr ""
 
-#: ../../source/front/ack.rst:134
+#: ../../source/front/ack.rst:131
 msgid "Silver Sponsors"
 msgstr ""
 
-#: ../../source/front/ack.rst:136
+#: ../../source/front/ack.rst:133
 msgid "Ricardo Software"
 msgstr ""
 
-#: ../../source/front/ack.rst:137
+#: ../../source/front/ack.rst:134
 msgid "ITI"
 msgstr ""
 
-#: ../../source/front/ack.rst:138
+#: ../../source/front/ack.rst:135
 msgid "Modelica Association"
 msgstr ""
 
-#: ../../source/front/ack.rst:139
+#: ../../source/front/ack.rst:136
 msgid "Global Crown Technology"
 msgstr ""
 
-#: ../../source/front/ack.rst:140
+#: ../../source/front/ack.rst:137
 msgid "Siemens"
 msgstr ""
 
-#: ../../source/front/ack.rst:142
+#: ../../source/front/ack.rst:139
 msgid "Bronze"
 msgstr ""
 
-#: ../../source/front/ack.rst:144
+#: ../../source/front/ack.rst:141
 msgid "Suzhou Tongyuan"
 msgstr ""
 
-#: ../../source/front/ack.rst:145
+#: ../../source/front/ack.rst:142
 msgid "Open Source Modelica Consortium"
 msgstr ""
 
-#: ../../source/front/ack.rst:146
+#: ../../source/front/ack.rst:143
 msgid "DOFWare"
 msgstr ""
 
-#: ../../source/front/ack.rst:147
+#: ../../source/front/ack.rst:144
 msgid "Bausch-Gall GmbH"
 msgstr ""
 
-#: ../../source/front/ack.rst:148
+#: ../../source/front/ack.rst:145
 msgid "Technische Universität Hamburg/Harburg"
 msgstr ""
 
-#: ../../source/front/ack.rst:149
+#: ../../source/front/ack.rst:146
 msgid "Schlegel Simulation GmbH"
 msgstr ""
 
-#: ../../source/front/ack.rst:151
+#: ../../source/front/ack.rst:148
 msgid ""
 "This project shows the power of community to achieve the mutual goal of "
 "creating more quality educational material around Modelica. Literally, this "
 "project could not have happened without them."
 msgstr ""
 
-#: ../../source/front/ack.rst:155
+#: ../../source/front/ack.rst:152
 msgid ""
 "The Kickstarter funding allowed me to commit time to this project, but I "
 "also had several people helping me on this project.  First and foremost, I'd"
@@ -313,7 +313,7 @@ msgid ""
 "issues related to supporting ePub and PDF formats."
 msgstr ""
 
-#: ../../source/front/ack.rst:165
+#: ../../source/front/ack.rst:162
 msgid ""
 "I'd like to thank Jeff Waters for being the \"voice of the sponsor\".  I had"
 " several very productive discussions with Jeff during the course of writing "
@@ -321,48 +321,24 @@ msgid ""
 "sponsors' expectations."
 msgstr ""
 
-#: ../../source/front/ack.rst:171
+#: ../../source/front/ack.rst:168
 msgid "Tools"
 msgstr ""
 
-#: ../../source/front/ack.rst:173
+#: ../../source/front/ack.rst:170
 msgid ""
 "Building a book like this requires a lot of different tools.  My "
 "productivity was amplified enormously by the use of these tools."
 msgstr ""
 
-#: ../../source/front/ack.rst:176
+#: ../../source/front/ack.rst:173
 msgid ""
 "This book was written using Sphinx, a documentation generation tool that "
 "supports multiple outputs.  Sphinx allows me to focus on the content of the "
 "book and takes care of generating the book in multiple formats."
 msgstr ""
 
-#: ../../source/front/ack.rst:181
-msgid ""
-"In creating this book, I needed a way to test the models that appear in the "
-"book, generate simulation results for plots and generated Javascript code "
-"that allows the browser integrated simulation capabilities in the HTML book."
-"  OpenModelica supported all of these use cases.  But beyond that, I owe a "
-"big \"Thank You\" to Martin Sjölund and the OpenModelica team for quickly "
-"responding to various issues I had during the creation of the book.  Many "
-"times I would see Martin on Skype late at night (Sweden time) and he was "
-"gracious enough to help me out."
-msgstr ""
-
-#: ../../source/front/ack.rst:191
-msgid ""
-"The browser integrated simulation capabilities in the HTML version of the "
-"book are only possible because of a tool called Emscripten which allows "
-"ordinary code in languages like C and C++ to be cross-compiled (via LLVM) "
-"into Javascript.  Although I knew this was possible, I didn't really think "
-"this avenue was viable until I saw `the work of Tom Short "
-"<https://github.com/tshort/openmodelica-javascript>`_ integrating "
-"OpenModelica and Emscripten.  The browser integrated simulation capabilities"
-" were greatly enabled by his work in this area."
-msgstr ""
-
-#: ../../source/front/ack.rst:199
+#: ../../source/front/ack.rst:196
 msgid ""
 "This book was written using Git as the version control system and `GitHub "
 "<http://github.com>`_ for hosting.  Most people think of the version control"
@@ -374,7 +350,7 @@ msgid ""
 "Git."
 msgstr ""
 
-#: ../../source/front/ack.rst:208
+#: ../../source/front/ack.rst:205
 msgid ""
 "I used the Emacs editor for this book.  Despite the proliferation of really "
 "excellent editors that support a wide range of languages and platforms, "
@@ -383,7 +359,7 @@ msgid ""
 "box."
 msgstr ""
 
-#: ../../source/front/ack.rst:214
+#: ../../source/front/ack.rst:211
 msgid ""
 "During the production of this book several tool vendors gave me access to "
 "their proprietary tools.  I didn't utilize these very much, but I wanted to "
@@ -393,31 +369,102 @@ msgid ""
 " SimulationX, respectively."
 msgstr ""
 
-#: ../../source/front/ack.rst:221
+#: ../../source/front/ack.rst:236
+msgid ""
+"The style of the book owes a fair amount to the `Semantic UI <http://www"
+".semantic-ui.com>`_ CSS framework."
+msgstr ""
+
+#: ../../source/front/ack.rst:98
+msgid "Hilding Elmqvist"
+msgstr ""
+
+#: ../../source/front/ack.rst:178
+msgid ""
+"In creating this book, I needed a way to test the models that appear in the "
+"book, generate simulation results for plots and generated JavaScript code "
+"that allows the browser integrated simulation capabilities in the HTML book."
+"  OpenModelica supported all of these use cases.  But beyond that, I owe a "
+"big \"Thank You\" to Martin Sjölund and the OpenModelica team for quickly "
+"responding to various issues I had during the creation of the book.  Many "
+"times I would see Martin on Skype late at night (Sweden time) and he was "
+"gracious enough to help me out."
+msgstr ""
+
+#: ../../source/front/ack.rst:188
+msgid ""
+"The browser integrated simulation capabilities in the HTML version of the "
+"book are only possible because of a tool called Emscripten which allows "
+"ordinary code in languages like C and C++ to be cross-compiled (via LLVM) "
+"into JavaScript.  Although I knew this was possible, I didn't really think "
+"this avenue was viable until I saw `the work of Tom Short "
+"<https://github.com/tshort/openmodelica-javascript>`_ integrating "
+"OpenModelica and Emscripten.  The browser integrated simulation capabilities"
+" were greatly enabled by his work in this area."
+msgstr ""
+
+#: ../../source/front/ack.rst:218
 msgid ""
 "Much of this book was written on a MacBook Air.  My very first computer was "
 "an Apple //e.  But since that time, I've worked mainly with PCs and Unix "
 "workstations.  Most recently, I've done a great deal of development on Linux"
-" machines.  I always dismissed using Macs because I was convinced they could"
-" support the kind of command-line oriented development work I typically do."
-"  I could not have been more wrong.  The eco-systems for MacOSX is almost "
-"identical to the one I was used to in the Linux world.  I am able to "
-"seamlessly transition between MacOSX and Linux environments without any "
+" machines.  I always dismissed using Macs because I was convinced they "
+"couldn't support the kind of command-line oriented development work I "
+"typically do.  I could not have been more wrong.  The eco-systems for MacOSX"
+" is almost identical to the one I was used to in the Linux world.  I am able"
+" to seamlessly transition between MacOSX and Linux environments without any "
 "significant adjustments.  The power and portability of the MacBook Air gave "
 "my entire work process a big boost."
 msgstr ""
 
-#: ../../source/front/ack.rst:233
+#: ../../source/front/ack.rst:230
 msgid ""
 "Developing this book involved a lot of testing and debugging of HTML layout,"
-" styling and embedded Javascript.  Most of this work was done using Firefox "
+" styling and embedded JavaScript.  Most of this work was done using Firefox "
 "but I've also used Chrome from time to time as well. I'd like to thank both "
 "the Mozilla Foundation and Google for creating such wonderful, standards "
 "compliant browsers."
 msgstr ""
 
-#: ../../source/front/ack.rst:239
-msgid ""
-"The style of the book owes a fair amount to the `Semantic UI <http://www"
-".semantic-ui.com>`_ CSS framework."
-msgstr ""
+#~ msgid ""
+#~ "In creating this book, I needed a way to test the models that appear in the "
+#~ "book, generate simulation results for plots and generated Javascript code "
+#~ "that allows the browser integrated simulation capabilities in the HTML book."
+#~ "  OpenModelica supported all of these use cases.  But beyond that, I owe a "
+#~ "big \"Thank You\" to Martin Sjölund and the OpenModelica team for quickly "
+#~ "responding to various issues I had during the creation of the book.  Many "
+#~ "times I would see Martin on Skype late at night (Sweden time) and he was "
+#~ "gracious enough to help me out."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The browser integrated simulation capabilities in the HTML version of the "
+#~ "book are only possible because of a tool called Emscripten which allows "
+#~ "ordinary code in languages like C and C++ to be cross-compiled (via LLVM) "
+#~ "into Javascript.  Although I knew this was possible, I didn't really think "
+#~ "this avenue was viable until I saw `the work of Tom Short "
+#~ "<https://github.com/tshort/openmodelica-javascript>`_ integrating "
+#~ "OpenModelica and Emscripten.  The browser integrated simulation capabilities"
+#~ " were greatly enabled by his work in this area."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Much of this book was written on a MacBook Air.  My very first computer was "
+#~ "an Apple //e.  But since that time, I've worked mainly with PCs and Unix "
+#~ "workstations.  Most recently, I've done a great deal of development on Linux"
+#~ " machines.  I always dismissed using Macs because I was convinced they could"
+#~ " support the kind of command-line oriented development work I typically do."
+#~ "  I could not have been more wrong.  The eco-systems for MacOSX is almost "
+#~ "identical to the one I was used to in the Linux world.  I am able to "
+#~ "seamlessly transition between MacOSX and Linux environments without any "
+#~ "significant adjustments.  The power and portability of the MacBook Air gave "
+#~ "my entire work process a big boost."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Developing this book involved a lot of testing and debugging of HTML layout,"
+#~ " styling and embedded Javascript.  Most of this work was done using Firefox "
+#~ "but I've also used Chrome from time to time as well. I'd like to thank both "
+#~ "the Mozilla Foundation and Google for creating such wonderful, standards "
+#~ "compliant browsers."
+#~ msgstr ""

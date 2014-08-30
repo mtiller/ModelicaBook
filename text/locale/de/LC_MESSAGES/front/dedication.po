@@ -11,11 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/front/dedication.rst:6
+#: ../../source/front/dedication.rst:2
 msgid "Dedication"
 msgstr ""
 
-#: ../../source/front/dedication.rst:11
+#: ../../source/front/dedication.rst:18
 msgid ""
 "This book started as a Kickstarter project.  The idea of writing a book and "
 "making it freely available, under a Creative Commons license, was largely "
@@ -29,7 +29,7 @@ msgid ""
 "Cory Doctorow and Lawrence Lessig for inspiring me to take on this project."
 msgstr ""
 
-#: ../../source/front/dedication.rst:23
+#: ../../source/front/dedication.rst:30
 msgid ""
 "But this book isn't dedicated to them.  Instead, it is dedicated to **Aaron "
 "Swartz**.  Aaron was without a doubt a wunderkind.  At the age of 14, Aaron "
@@ -42,7 +42,7 @@ msgid ""
 "2013, Aaron Swartz took his own life."
 msgstr ""
 
-#: ../../source/front/dedication.rst:34
+#: ../../source/front/dedication.rst:41
 msgid ""
 "Barely a month after the successful funding of my Kickstarter project, Aaron"
 " Swartz was dead at the age of 26.  It is astounding what Aaron managed to "
@@ -55,7 +55,7 @@ msgid ""
 " then to dedicate this book to him."
 msgstr ""
 
-#: ../../source/front/dedication.rst:45
+#: ../../source/front/dedication.rst:52
 msgid ""
 "Because `his life has been chronicled <http://boingboing.net/2013/01/12/rip-"
 "aaron-swartz.html>`_ by `better writers who actually knew him "
@@ -69,7 +69,7 @@ msgid ""
 "particular) who were determined to make an example of him."
 msgstr ""
 
-#: ../../source/front/dedication.rst:54
+#: ../../source/front/dedication.rst:61
 msgid ""
 "This book is dedicated to Aaron Swartz in an attempt to keep his memory and,"
 " more importantly, the things he stood for alive.  Over a year has past "
@@ -81,14 +81,13 @@ msgid ""
 "on ways to channel their abundant energies and talents to help society."
 msgstr ""
 
-#: ../../source/front/dedication.rst:64
+#: ../../source/front/dedication.rst:71
 msgid ""
 "\"Aaron dead. World wanderers, we have lost a wise elder. Hackers for right,"
 " we are one down. Parents all, we have lost a child. Let us weep.\""
 msgstr ""
 
-#: ../../source/front/dedication.rst:73
-msgid ""
-"`Tim Berners-Lee "
-"<https://twitter.com/timberners_lee/status/290140454211698689>`_"
-msgstr ""
+#~ msgid ""
+#~ "`Tim Berners-Lee "
+#~ "<https://twitter.com/timberners_lee/status/290140454211698689>`_"
+#~ msgstr ""

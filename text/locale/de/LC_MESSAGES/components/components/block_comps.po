@@ -231,10 +231,6 @@ msgid ""
 "the equation associated with this example:"
 msgstr ""
 
-#: ../../source/components/components/block_comps.rst:260
-msgid "https://book-preview.herokuapp.com"
-msgstr ""
-
 #: ../../source/components/components/block_comps.rst:264
 msgid ""
 "The following block diagram will solve for the temperature profile, "
@@ -403,3 +399,6 @@ msgid ""
 "implemented with causal components while physical components use acausal "
 "components."
 msgstr ""
+
+#~ msgid "https://book-preview.herokuapp.com"
+#~ msgstr ""

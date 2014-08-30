@@ -11,11 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/front/dedication.rst:6
+#: ../../source/front/dedication.rst:2
 msgid "Dedication"
 msgstr "Dédicace"
 
-#: ../../source/front/dedication.rst:11
+#: ../../source/front/dedication.rst:18
 msgid ""
 "This book started as a Kickstarter project.  The idea of writing a book and "
 "making it freely available, under a Creative Commons license, was largely "
@@ -40,7 +40,7 @@ msgstr ""
 "ce livre serait probablement dédié à Cory Doctorow et Lawrence Lessig de "
 "m'inspirer de prendre sur ce projet."
 
-#: ../../source/front/dedication.rst:23
+#: ../../source/front/dedication.rst:30
 msgid ""
 "But this book isn't dedicated to them.  Instead, it is dedicated to **Aaron "
 "Swartz**.  Aaron was without a doubt a wunderkind.  At the age of 14, Aaron "
@@ -62,7 +62,7 @@ msgstr ""
 "l'humanité. Ileu d'innombrables qualités que j'admire et aspirer. Mais le 11"
 " Janvier,2013, Aaron Swartz a pris sa propre vie."
 
-#: ../../source/front/dedication.rst:34
+#: ../../source/front/dedication.rst:41
 msgid ""
 "Barely a month after the successful funding of my Kickstarter project, Aaron"
 " Swartz was dead at the age of 26.  It is astounding what Aaron managed to "
@@ -74,17 +74,17 @@ msgid ""
 "heartbreaking that just as this project started, his life ended.  I resolved"
 " then to dedicate this book to him."
 msgstr ""
-"A peine un mois après le financement succès de mon projet Kickstarter, Aaron "
-" Swartz était mort à l'âge de 26 ans. C'est incroyable ce que Aaron a réussi "
-" à accomplir dans sa jeune vie et il est mort d'autant plus tragique à "
-"penser tout le bien qu'il aurait pu le faire avec le reste de sa vie. Aaron, "
-" en dépit d'être près de 20 ans plus jeune que moi, avait contribué à ouvrir "
-" la voie pour moi, ce projet de livre et, en fin de compte, ceux qui lisent "
-"ce livre par son travail avec RSS, Creative Commons, l'Internet, et ainsi de "
-" suite. C'était navrant que, tout comme ce projet a commencé, fin de sa vie. "
-" Je résolus à dédier ce livre à lui."
+"A peine un mois après le financement succès de mon projet Kickstarter, Aaron"
+"  Swartz était mort à l'âge de 26 ans. C'est incroyable ce que Aaron a "
+"réussi  à accomplir dans sa jeune vie et il est mort d'autant plus tragique "
+"à penser tout le bien qu'il aurait pu le faire avec le reste de sa vie. "
+"Aaron,  en dépit d'être près de 20 ans plus jeune que moi, avait contribué à"
+" ouvrir  la voie pour moi, ce projet de livre et, en fin de compte, ceux qui"
+" lisent ce livre par son travail avec RSS, Creative Commons, l'Internet, et "
+"ainsi de  suite. C'était navrant que, tout comme ce projet a commencé, fin "
+"de sa vie.  Je résolus à dédier ce livre à lui."
 
-#: ../../source/front/dedication.rst:54
+#: ../../source/front/dedication.rst:61
 msgid ""
 "This book is dedicated to Aaron Swartz in an attempt to keep his memory and,"
 " more importantly, the things he stood for alive.  Over a year has past "
@@ -101,11 +101,11 @@ msgstr ""
 " que cettedévouement rappelle aux gens ce qu'il représentait. Nous devons "
 "apprendre de cettetragédie et de faire en sorte que nos gouvernements "
 "comprennent que des gens comme AaronSwartz, tandis que peut-être passionné "
-"et trop zélé, ne mérite pas d'être poursuivis et traités comme des criminels. "
-" Ils méritent orientation et la formationsur les moyens de canaliser leurs "
-"énergies et leurs talents abondantes pour aider la société."
+"et trop zélé, ne mérite pas d'être poursuivis et traités comme des "
+"criminels.  Ils méritent orientation et la formationsur les moyens de "
+"canaliser leurs énergies et leurs talents abondantes pour aider la société."
 
-#: ../../source/front/dedication.rst:64
+#: ../../source/front/dedication.rst:71
 msgid ""
 "\"Aaron dead. World wanderers, we have lost a wise elder. Hackers for right,"
 " we are one down. Parents all, we have lost a child. Let us weep.\""
@@ -113,15 +113,7 @@ msgstr ""
 "\"Aaron dead. World wanderers, we have lost a wise elder. Hackers for right,"
 " we are one down. Parents all, we have lost a child. Let us weep.\""
 
-#: ../../source/front/dedication.rst:73
-msgid ""
-"`Tim Berners-Lee "
-"<https://twitter.com/timberners_lee/status/290140454211698689>`_"
-msgstr ""
-"`Tim Berners-Lee "
-"<https://twitter.com/timberners_lee/status/290140454211698689>`_"
-
-#: ../../source/front/dedication.rst:45
+#: ../../source/front/dedication.rst:52
 msgid ""
 "Because `his life has been chronicled <http://boingboing.net/2013/01/12/rip-"
 "aaron-swartz.html>`_ by `better writers who actually knew him "
@@ -145,3 +137,10 @@ msgstr ""
 "<https://petitions.whitehouse.gov/petition/remove-united-states-district-"
 "attorney-carmen-ortiz-office-overreach-case-aaron-swartz/RQNrG1Ck>`_ dans "
 "notamment) qui ont été déterminées à faire de lui un exemple."
+
+#~ msgid ""
+#~ "`Tim Berners-Lee "
+#~ "<https://twitter.com/timberners_lee/status/290140454211698689>`_"
+#~ msgstr ""
+#~ "`Tim Berners-Lee "
+#~ "<https://twitter.com/timberners_lee/status/290140454211698689>`_"

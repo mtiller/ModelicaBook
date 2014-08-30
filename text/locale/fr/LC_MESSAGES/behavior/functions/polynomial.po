@@ -329,17 +329,6 @@ msgid ""
 ":math:`NxN` identity matrix."
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:305
-msgid ""
-"It turns out that for efficiency reasons, it is better for the Modelica "
-"compiler to give us :math:`\\frac{\\mathrm{d}x}{\\mathrm{d}z}` and "
-":math:`\\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z}` than for us to provide "
-"functions to evaluate :math:`\\frac{\\partial p}{\\partial x}` and "
-":math:`\\frac{\\partial p}{\\partial c_i}`.  So, mathematically speaking, "
-"what the Modelica compiler needs is a new function that is invoked with the "
-"following arguments:"
-msgstr ""
-
 #: ../../source/behavior/functions/polynomial.rst:317
 msgid "such that:"
 msgstr ""
@@ -405,3 +394,24 @@ msgstr ""
 #: ../../source/behavior/functions/polynomial.rst:218
 msgid "differentiating"
 msgstr ""
+
+#: ../../source/behavior/functions/polynomial.rst:305
+msgid ""
+"It turns out that for efficiency reasons, it is better for the Modelica "
+"compiler to give us :math:`\\frac{\\mathrm{d}x}{\\mathrm{d}z}` and "
+":math:`\\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z}` than to provide functions "
+"to evaluate :math:`\\frac{\\partial p}{\\partial x}` and "
+":math:`\\frac{\\partial p}{\\partial c_i}`.  So, mathematically speaking, "
+"what the Modelica compiler needs is a new function that is invoked with the "
+"following arguments:"
+msgstr ""
+
+#~ msgid ""
+#~ "It turns out that for efficiency reasons, it is better for the Modelica "
+#~ "compiler to give us :math:`\\frac{\\mathrm{d}x}{\\mathrm{d}z}` and "
+#~ ":math:`\\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z}` than for us to provide "
+#~ "functions to evaluate :math:`\\frac{\\partial p}{\\partial x}` and "
+#~ ":math:`\\frac{\\partial p}{\\partial c_i}`.  So, mathematically speaking, "
+#~ "what the Modelica compiler needs is a new function that is invoked with the "
+#~ "following arguments:"
+#~ msgstr ""

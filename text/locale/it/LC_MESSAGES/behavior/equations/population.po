@@ -76,24 +76,6 @@ msgid ""
 "proportionality constant capturing the likelihood of starvation."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:58
-msgid ""
-"Finally, the last effect we need to consider is \"predation\", *i.e.*, the "
-"consumption of the prey species by the predator species.  Without predators,"
-" the prey species would (at least mathematically) grow exponentially.  So "
-"predation is the effect that keeps the prey species population in check.  "
-"Similarly, without any prey, the predator species would simply die off.  So "
-"predation is what balances out this effect and keeps the predator population"
-" from going to zero.  Again, we have a proportionality relationship.  But "
-"this time, it is actually a bilinear relationship that is, again, "
-"conceptually similar to the Law of Mass Action.  This relationship is simply"
-" capturing mathematically the fact that the chance that a predator will find"
-" and consume some prey is proportional to both the population of the prey "
-"and the predators.  Since this particular effect requires both species to be"
-" involved, this mathematical relationship has a slightly different structure"
-" than reproduction and starvation, *i.e.,*"
-msgstr ""
-
 #: ../../source/behavior/equations/population.rst:79
 msgid ""
 "where :math:`\\dot{x}_p` is the decline in the prey population *due to "
@@ -172,18 +154,7 @@ msgid ""
 " states."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:154
-msgid ""
-"Finally, the ``start`` attribute is also \"overloaded\".  This means that it"
-" is actually used for two different things.  If the variable in question is "
-"not a state, but is instead an \"iteration variable\" (*i.e.*, a variable "
-"whose solution depends on a non-linear system of equations), then the "
-"``start`` attribute may be used by a Modelica compiler as an initial guess "
-"(*i.e.*, the value used for the variable during the initial iteration of the"
-" non-linear solver)."
-msgstr ""
-
-#: ../../source/behavior/equations/population.rst:162
+#: ../../source/behavior/equations/population.rst:182
 msgid ""
 "Whether to specify a ``start`` attribute or not depends on how strictly you "
 "want a given initial condition to be enforced.  Knowing that is something "
@@ -192,14 +163,14 @@ msgid ""
 "different options along with a basic explanation of the trade-offs."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:169
+#: ../../source/behavior/equations/population.rst:189
 msgid ""
 "Using either initialization method, the results for these models will be the"
 " same.  The typical behavior for the Lotka-Volterra system can be seen in "
 "this plot:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:176
+#: ../../source/behavior/equations/population.rst:196
 msgid ""
 "Note the cyclical behavior of each population.  Initially, there are more "
 "predators than can be supported by the existing food supply. Those predators"
@@ -210,7 +181,7 @@ msgid ""
 "those lost to predation so the prey population declines as well."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:185
+#: ../../source/behavior/equations/population.rst:205
 msgid ""
 "At some point, the predator population gets so low that the rate of "
 "reproduction in the prey species is larger than the rate of prey consumption"
@@ -223,7 +194,7 @@ msgid ""
 "infinitum*."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:195
+#: ../../source/behavior/equations/population.rst:215
 msgid ""
 "The fact that the system returns again and again to the same initial "
 "conditions (ignoring numerical error, of course) is one of the most "
@@ -231,11 +202,11 @@ msgid ""
 " fact that the Lotka-Volterra system of equations is actually non-linear."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:204
+#: ../../source/behavior/equations/population.rst:224
 msgid "Steady State Initialization"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:206
+#: ../../source/behavior/equations/population.rst:226
 msgid ""
 "Let's imagine that these extreme swings in species population had some "
 "undesirable ecological consequences.  In such a case, it would be useful to "
@@ -245,7 +216,7 @@ msgid ""
 "state?"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:213
+#: ../../source/behavior/equations/population.rst:233
 msgid ""
 "The answer lies in the initial conditions.  Instead of specifying an initial"
 " population for both the predator and prey species, we might instead chose "
@@ -257,20 +228,20 @@ msgid ""
 "useful types of initial conditions."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:222
+#: ../../source/behavior/equations/population.rst:242
 msgid ""
 "To ensure that our system starts in equilibrium, we simply need to define "
 "what equilibrium is.  Mathematically speaking, the system is in equilibrium "
 "if the following two conditions are met:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:231
+#: ../../source/behavior/equations/population.rst:251
 msgid ""
 "To capture this in our Modelica model, all we need to do is use these "
 "equations in our ``initial equation`` section, like this:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:239
+#: ../../source/behavior/equations/population.rst:259
 msgid ""
 "The main difference between this and our previous model is the presence of "
 "the highlighted initial equations.  Looking at this model, you might wonder "
@@ -279,7 +250,7 @@ msgid ""
 "initial equations.  So how are they solved for?"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:246
+#: ../../source/behavior/equations/population.rst:266
 msgid ""
 "The answer lies in understanding that the functions :math:`x(t)` and "
 ":math:`y(t)` are solved for by integrating the differential equations "
@@ -287,13 +258,13 @@ msgid ""
 ":math:`x` and :math:`\\dot{x}` are \"coupled\" by the following equations:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:254
+#: ../../source/behavior/equations/population.rst:274
 msgid ""
 "(and, of course, a similar relationship exists between :math:`y` and "
 ":math:`\\dot{y}`)"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:257
+#: ../../source/behavior/equations/population.rst:277
 msgid ""
 "**However**, during initialization of the system (*i.e.*, when solving for "
 "the initial conditions) this relationship doesn't hold.  So there is no "
@@ -305,7 +276,7 @@ msgid ""
 " four independent variables."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:266
+#: ../../source/behavior/equations/population.rst:286
 msgid ""
 "Said another way, while simulating, we solve for :math:`x` by integrating "
 ":math:`\\dot{x}`.  So that integral equation is the equation used to solve "
@@ -314,14 +285,14 @@ msgid ""
 "perform during simulation)."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:272
+#: ../../source/behavior/equations/population.rst:292
 msgid ""
 "In any case, the bottom line is that during initialization we require four "
 "different equations to arrive at a unique solution.  In the case of our "
 "``QuiescentModel``, those four equations are:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:283
+#: ../../source/behavior/equations/population.rst:303
 msgid ""
 "It is very important to understand that these equations **do not contradict "
 "each other**.  Especially if you come from a programming background you "
@@ -331,7 +302,7 @@ msgid ""
 "true!"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:290
+#: ../../source/behavior/equations/population.rst:310
 msgid ""
 "The essential thing to remember here is that these are **equations not "
 "assignment statements**.  The following system of equations is "
@@ -339,7 +310,7 @@ msgid ""
 ":math:`y` could be solved:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:302
+#: ../../source/behavior/equations/population.rst:322
 msgid ""
 "In this form, it is a bit easier to recognize how we could arrive at values "
 "of :math:`x` and :math:`y`.  The first thing to note is that we cannot solve"
@@ -350,7 +321,7 @@ msgid ""
 ":math:`x` and :math:`y`."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:310
+#: ../../source/behavior/equations/population.rst:330
 msgid ""
 "But the situation is further complicated by the fact that this system is "
 "non-linear (which is precisely why we cannot use linear algebra to arrive at"
@@ -359,13 +330,13 @@ msgid ""
 "One solution is trivial (:math:`x=0;y=0`) and the other is not."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:317
+#: ../../source/behavior/equations/population.rst:337
 msgid ""
 "So what happens if we try to simulate our ``QuiescentModel``?  The answer is"
 " pretty obvious in the plot below:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:322
+#: ../../source/behavior/equations/population.rst:342
 msgid ""
 "We ended up with the trivial solution where the prey and predator "
 "populations are zero.  In this case, we have no reproduction, predation or "
@@ -374,7 +345,7 @@ msgid ""
 "solution."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:328
+#: ../../source/behavior/equations/population.rst:348
 msgid ""
 "There are two solutions to this system of equations because it is non-"
 "linear.  How can we steer the non-linear solver away from this trivial "
@@ -383,7 +354,7 @@ msgid ""
 " the answer."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:334
+#: ../../source/behavior/equations/population.rst:354
 msgid ""
 "Recall that the ``start`` attribute is overloaded.  During our discussion of"
 " the :ref:`classic-lotka-volterra` model, it was pointed out that one of the"
@@ -398,14 +369,14 @@ msgid ""
 "For example:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:352
+#: ../../source/behavior/equations/population.rst:372
 msgid ""
 "This model leads us to a set of initial conditions that is more inline with "
 "what we were originally looking for (*i.e.*, one with non-zero populations "
 "for both the predator and prey species)."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:359
+#: ../../source/behavior/equations/population.rst:379
 msgid ""
 "It is worth pointing out (as we will do shortly in the section on :ref"
 ":`builtin-types`), that **the default value of the ``start`` attribute is "
@@ -415,11 +386,11 @@ msgid ""
 "or iterating was required."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:369
+#: ../../source/behavior/equations/population.rst:389
 msgid "Avoiding Repetition"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:371
+#: ../../source/behavior/equations/population.rst:391
 msgid ""
 "We've already seen several different models (``ClassicModel``, "
 "``QuiescentModel`` and ``QuiescentModelUsingStart``) based on the Lotka-"
@@ -428,7 +399,7 @@ msgid ""
 "common and that there are actually hardly any **differences** between them!"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:378
+#: ../../source/behavior/equations/population.rst:398
 msgid ""
 "In software engineering, there is a saying that \"Redundancy is the root of "
 "all evil\".  Well the situation is no different here (in no small part "
@@ -441,7 +412,7 @@ msgid ""
 "models with only slight differences between them."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:392
+#: ../../source/behavior/equations/population.rst:412
 msgid ""
 "So what can be done about this?  In object-oriented programming languages "
 "there are basically two mechanisms that exist to reduce the amount of "
@@ -450,14 +421,14 @@ msgid ""
 "introduce here."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:398
+#: ../../source/behavior/equations/population.rst:418
 msgid ""
 "If we look closely at the ``QuiescentModelUsingStart`` example, we see that "
 "there are almost no differences between it and our original ``ClassicModel``"
 " version.  In fact, the only real differences are shown here:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:414
+#: ../../source/behavior/equations/population.rst:434
 msgid ""
 "In other words, the only real difference is the addition of the ``initial "
 "equation`` section (the original ``ClassicModel`` already contained non-zero"
@@ -468,7 +439,7 @@ msgid ""
 "following alternative to the ``QuiescentModelUsingStart`` model:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:428
+#: ../../source/behavior/equations/population.rst:448
 msgid ""
 "Note the presence of the ``extends`` keyword.  Conceptually, this \"extends "
 "clause\" simply asks the compiler to insert the contents of another model "
@@ -479,21 +450,21 @@ msgid ""
 " inserted."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:438
+#: ../../source/behavior/equations/population.rst:458
 msgid ""
 "But what about a case where we don't want **exactly** what is in the model "
 "we are inheriting from?  For example, what if we wanted to change the values"
 " of the ``gamma`` and ``delta`` parameters?"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:442
+#: ../../source/behavior/equations/population.rst:462
 msgid ""
 "Modelica handles this by allowing us to include a set of \"modifications\" "
 "when we use ``extends``.  These modifications come after the name of the "
 "model being inherited from as shown below:"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:451
+#: ../../source/behavior/equations/population.rst:471
 msgid ""
 "Also note that we could have inherited from ``ClassicModel``, but then we "
 "would have had to repeat the initial equations in order to have quiescent "
@@ -506,7 +477,7 @@ msgstr ""
 msgid "More population dynamics"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:459
+#: ../../source/behavior/equations/population.rst:479
 msgid ""
 "This concludes the set of examples for this chapter.  If you'd like to "
 "explore the Lotka-Volterra equations in greater depth, an upcoming section "
@@ -515,20 +486,20 @@ msgid ""
 "schematic and connected together."
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:465
+#: ../../source/behavior/equations/population.rst:485
 msgid ""
 "Lotka, A.J., \"Contribution to the Theory of Periodic Reaction\", J. Phys. "
 "Chem., 14 (3), pp 271–274 (1910)"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:466
+#: ../../source/behavior/equations/population.rst:486
 msgid ""
 "Volterra, V., Variations and fluctuations of the number of individuals in "
 "animal species living together in Animal Ecology, Chapman, R.N. (ed), "
 "McGraw–Hill, (1931)"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:467
+#: ../../source/behavior/equations/population.rst:487
 msgid ""
 "C.M. Guldberg and P. Waage,\"Studies Concerning Affinity\" C. M. "
 "Forhandlinger: Videnskabs-Selskabet i Christiana (1864), 35"
@@ -538,18 +509,89 @@ msgstr ""
 msgid "start attribute"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:389
+#: ../../source/behavior/equations/population.rst:409
 msgid "composition"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:390
+#: ../../source/behavior/equations/population.rst:410
 msgid "inheritance"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:412
+#: ../../source/behavior/equations/population.rst:432
 msgid "extends"
 msgstr ""
 
-#: ../../source/behavior/equations/population.rst:436
+#: ../../source/behavior/equations/population.rst:456
 msgid "modifications"
 msgstr ""
+
+#: ../../source/behavior/equations/population.rst:58
+msgid ""
+"Finally, the last effect we need to consider is \"predation\", *i.e.*, the "
+"consumption of the prey species by the predator species.  Without predators,"
+" the prey species would (at least mathematically) grow exponentially.  So "
+"predation is the effect that keeps the prey species population in check.  "
+"Similarly, without any prey, the predator species would simply die off.  So "
+"predation is what balances out this effect and keeps the predator population"
+" from going to zero.  Again, we have a proportionality relationship.  But "
+"this time, it is actually a bilinear relationship that is, again, "
+"conceptually similar to the Law of Mass Action.  This relationship is simply"
+" capturing, mathematically, the fact that the chance that a predator will "
+"find and consume some prey is proportional to both the population of the "
+"prey and the predators.  Since this particular effect requires both species "
+"to be involved, this mathematical relationship has a slightly different "
+"structure than reproduction and starvation, *i.e.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/population.rst:154
+msgid ""
+"One way to avoid both of these disadvantages is to use the ``fixed`` "
+"attribute (also discussed in the section on :ref:`builtin-types`). The "
+"``fixed`` attribute can be used to tell the compiler that the start "
+"attribute **must** be used as an initial condition.  In other words, an "
+"``initial equation`` like this:"
+msgstr ""
+
+#: ../../source/behavior/equations/population.rst:166
+msgid ""
+"is equivalent to the following declaration utilizing the ``start`` and "
+"``fixed`` attributes:"
+msgstr ""
+
+#: ../../source/behavior/equations/population.rst:173
+msgid ""
+"Finally, one additional complication is that the ``start`` attribute is also"
+" \"overloaded\".  This means that it is actually used for two different "
+"things.  If the variable in question is not a state, but is instead an "
+"\"iteration variable\" (*i.e.*, a variable whose solution depends on a non-"
+"linear system of equations), then the ``start`` attribute may be used by a "
+"Modelica compiler as an initial guess (*i.e.*, the value used for the "
+"variable during the initial iteration of the non-linear solver)."
+msgstr ""
+
+#~ msgid ""
+#~ "Finally, the last effect we need to consider is \"predation\", *i.e.*, the "
+#~ "consumption of the prey species by the predator species.  Without predators,"
+#~ " the prey species would (at least mathematically) grow exponentially.  So "
+#~ "predation is the effect that keeps the prey species population in check.  "
+#~ "Similarly, without any prey, the predator species would simply die off.  So "
+#~ "predation is what balances out this effect and keeps the predator population"
+#~ " from going to zero.  Again, we have a proportionality relationship.  But "
+#~ "this time, it is actually a bilinear relationship that is, again, "
+#~ "conceptually similar to the Law of Mass Action.  This relationship is simply"
+#~ " capturing mathematically the fact that the chance that a predator will find"
+#~ " and consume some prey is proportional to both the population of the prey "
+#~ "and the predators.  Since this particular effect requires both species to be"
+#~ " involved, this mathematical relationship has a slightly different structure"
+#~ " than reproduction and starvation, *i.e.,*"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Finally, the ``start`` attribute is also \"overloaded\".  This means that it"
+#~ " is actually used for two different things.  If the variable in question is "
+#~ "not a state, but is instead an \"iteration variable\" (*i.e.*, a variable "
+#~ "whose solution depends on a non-linear system of equations), then the "
+#~ "``start`` attribute may be used by a Modelica compiler as an initial guess "
+#~ "(*i.e.*, the value used for the variable during the initial iteration of the"
+#~ " non-linear solver)."
+#~ msgstr ""

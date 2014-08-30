@@ -27,15 +27,6 @@ msgid ""
 "Such cases require the definition of rich connectors types."
 msgstr ""
 
-#: ../../source/components/connectors/fluid_connectors.rst:16
-msgid ""
-"We'll start this section with a discussion of basic connectors very similar "
-"to the ones used for :ref:`simple-domains`.  But we will conclude with a "
-"connector that is fundamentally different than the previous examples because"
-" it describes a connector that involves the conservation of both mass and "
-"energy."
-msgstr ""
-
 #: ../../source/components/connectors/fluid_connectors.rst:25
 msgid "Incompressible Fluids"
 msgstr ""
@@ -170,3 +161,20 @@ msgid ""
 "previous connectors in this section.  The other across variable, ``T``, is "
 "the temperature of the working fluid."
 msgstr ""
+
+#: ../../source/components/connectors/fluid_connectors.rst:16
+msgid ""
+"We'll start this section with a discussion of basic connectors very similar "
+"to the ones used for :ref:`simple-domains`.  But we will conclude with a "
+"connector that is fundamentally different from the previous examples because"
+" it describes a connector that involves the conservation of both mass and "
+"energy."
+msgstr ""
+
+#~ msgid ""
+#~ "We'll start this section with a discussion of basic connectors very similar "
+#~ "to the ones used for :ref:`simple-domains`.  But we will conclude with a "
+#~ "connector that is fundamentally different than the previous examples because"
+#~ " it describes a connector that involves the conservation of both mass and "
+#~ "energy."
+#~ msgstr ""

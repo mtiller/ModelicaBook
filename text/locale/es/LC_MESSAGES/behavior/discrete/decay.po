@@ -31,7 +31,7 @@ msgstr ""
 msgid "Consider the following almost trivial model:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:27
+#: ../../source/behavior/discrete/decay.rst:26
 msgid ""
 "Again, numerical issues creep in.  Even though mathematically it should not "
 "be possible for the value of ``x`` to drop below zero, using numerical "
@@ -40,28 +40,28 @@ msgid ""
 "generates a floating point exception and the simulation terminates."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:35
+#: ../../source/behavior/discrete/decay.rst:34
 msgid "Guard Expressions"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:37
+#: ../../source/behavior/discrete/decay.rst:36
 msgid ""
 "To prevent this, we might introduce an ``if`` expression to guard against "
 "evaluating the square root of a negative number, like this:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:44
+#: ../../source/behavior/discrete/decay.rst:43
 msgid "Simulating this model we get the following trajectory [#tol]_:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:49
+#: ../../source/behavior/discrete/decay.rst:47
 msgid ""
 "Again, the simulation fails.  But why?  It fails for the same reason, a "
 "numerical exception that results from taking the square root of a negative "
 "number."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:53
+#: ../../source/behavior/discrete/decay.rst:51
 msgid ""
 "Most people are quite puzzled when they see an error message about a "
 "floating point exception like this (or, for example division by zero) after "
@@ -70,15 +70,15 @@ msgid ""
 "less than zero.  **But this assumption is incorrect.**"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:60
+#: ../../source/behavior/discrete/decay.rst:58
 msgid "Events and Conditional Expressions"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:62
+#: ../../source/behavior/discrete/decay.rst:63
 msgid "Given the ``if`` expression:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:68
+#: ../../source/behavior/discrete/decay.rst:69
 msgid ""
 "it is entirely possible that ``sqrt`` will be called with a negative "
 "argument.  The reason is related to the fact that this is a state event.  "
@@ -88,7 +88,7 @@ msgid ""
 "condition (*e.g.,* ``x>=0`` becomes false)."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:76
+#: ../../source/behavior/discrete/decay.rst:77
 msgid ""
 "The important thing to understand is that **until the event occurs, the "
 "behavior doesn't change**.  In other words, the two sides of this ``if`` "
@@ -103,28 +103,7 @@ msgid ""
 "``der(x)=sqrt(x)`` even though ``x`` is negative."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:89
-msgid ""
-"Most users initially assume that each time ``der(x)`` is evaluated, the "
-"``if`` expression is evaluated (specifically the conditional expression in "
-"the ``if`` expression).  Hopefully the previous paragraph has made it clear "
-"that this is not the case.  But the question remains.  Why?"
-msgstr ""
-
-#: ../../source/behavior/discrete/decay.rst:95
-msgid ""
-"The reason has to do with performance.  If the conditional expression led to"
-" an abrupt change in behavior (like the one we saw in our discussion on :ref"
-":`cooling-revisited`) it would cause a variable time step integrator to "
-"spend an exceptional (and unnecessary) amount of time trying to localize the"
-" source of the additional integration error.  Because the integrator doesn't"
-" know *a priori* where the event occurs (as with a time event) and it has no"
-" way to quickly identify the point at which the event occurs, it has no "
-"choice but to repeatedly re-attempt the integration step until it finds a "
-"step size where the integration error is tolerable."
-msgstr ""
-
-#: ../../source/behavior/discrete/decay.rst:106
+#: ../../source/behavior/discrete/decay.rst:96
 msgid ""
 "This time spent trying and retrying integration steps can be saved thanks to"
 " the fact that Modelica can extract a so-called \"zero crossing\" function "
@@ -134,24 +113,24 @@ msgid ""
 "expression:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:117
+#: ../../source/behavior/discrete/decay.rst:107
 msgid ""
 "The zero crossing function would be :math:`a-b`.  This function is chosen "
 "because it changes from positive to negative precisely at the point where "
 "``a>b``."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:121
+#: ../../source/behavior/discrete/decay.rst:111
 msgid "Recall our previous equation:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:127
+#: ../../source/behavior/discrete/decay.rst:117
 msgid ""
 "In this case, the zero crossing function is simply :math:`x` since the event"
 " occurs when :math:`x` itself crosses zero."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:130
+#: ../../source/behavior/discrete/decay.rst:120
 msgid ""
 "The Modelica compiler collects all the zero crossing functions in the model "
 "for the integrator to use.  During integration, the integrator checks to see"
@@ -166,11 +145,11 @@ msgid ""
 "evaluating the interpolation functions from the triggering integration step."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:148
+#: ../../source/behavior/discrete/decay.rst:138
 msgid "Event Suppression"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:150
+#: ../../source/behavior/discrete/decay.rst:140
 msgid ""
 "But after all this, it still isn't clear how to avoid the problems we saw in"
 " the ``Decay1`` and ``Decay2`` models.  The answer is a special operator "
@@ -181,18 +160,18 @@ msgid ""
 "model:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:162
+#: ../../source/behavior/discrete/decay.rst:152
 msgid "and the results can be seen here:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:167
+#: ../../source/behavior/discrete/decay.rst:157
 msgid ""
 "Now the simulation completes without any problem.  This is because the use "
 "of ``noEvent`` ensures that ``sqrt(x)`` is never called with a negative "
 "value of ``x``."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:171
+#: ../../source/behavior/discrete/decay.rst:161
 msgid ""
 "It might seems strange that we have to explicitly include the ``noEvent`` "
 "operator in order to get what we consider the most intuitive behavior.  Why "
@@ -208,31 +187,31 @@ msgid ""
 " performance issues."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:186
+#: ../../source/behavior/discrete/decay.rst:176
 msgid "Chattering"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:188
+#: ../../source/behavior/discrete/decay.rst:178
 msgid ""
 "There is a common effect known as \"chattering\" that you will run into "
 "sooner or later with Modelica.  Consider the following model:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:195
+#: ../../source/behavior/discrete/decay.rst:185
 msgid "Simulating this model gives us the following results:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:200
+#: ../../source/behavior/discrete/decay.rst:190
 msgid ""
 "This model is interesting because looking at it, one might assume the "
 "equation:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:207
+#: ../../source/behavior/discrete/decay.rst:197
 msgid "was equivalent to:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:213
+#: ../../source/behavior/discrete/decay.rst:203
 msgid ""
 "After all, each branch in the ``if`` expression evaluates to ``-x`` and the "
 "simulated result appears to be consistent with this assumption.  **But these"
@@ -242,7 +221,7 @@ msgid ""
 "steps and restart the simulation."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:221
+#: ../../source/behavior/discrete/decay.rst:211
 msgid ""
 "Let's take a step back and consider the mathematical solution to this "
 "problem.  We would expect the solution trajectory for ``x`` to be a decaying"
@@ -253,7 +232,7 @@ msgid ""
 "exactly zero.  Instead it will be slightly above or below zero."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:230
+#: ../../source/behavior/discrete/decay.rst:220
 msgid ""
 "This kind of model can introduce an effect known as \"chattering\". "
 "Chattering is simply the degradation in simulation performance due to a "
@@ -267,7 +246,7 @@ msgid ""
 "the high frequency of events."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:241
+#: ../../source/behavior/discrete/decay.rst:231
 msgid ""
 "One obvious solution would be to remove the ``if`` expression entirely from "
 "this example.  It should be noted that while the ``Decay4`` model is a bit "
@@ -278,14 +257,14 @@ msgid ""
 "differential equation to be:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:253
+#: ../../source/behavior/discrete/decay.rst:243
 msgid ""
 "Here we have a different \"gain\" depending on the sign of ``x``.  These "
 "kinds of cases do show up in realistic models.  So the question is, how do "
 "we avoid the chattering that can occur in these cases."
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:257
+#: ../../source/behavior/discrete/decay.rst:247
 msgid ""
 "This is another case where the ``noEvent`` operator can help us out. Because"
 " we know that this ``if`` expression doesn't introduce any abrupt changes in"
@@ -293,13 +272,13 @@ msgid ""
 "operator as follows:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:266
+#: ../../source/behavior/discrete/decay.rst:256
 msgid ""
 "In doing so, we will get the same solution, but with better simulation "
 "performance:"
 msgstr ""
 
-#: ../../source/behavior/discrete/decay.rst:274
+#: ../../source/behavior/discrete/decay.rst:345
 msgid ""
 "This model will not always fail.  The failure depends on how much "
 "integration error is introduced and this, in turn, depends on the numerical "
@@ -311,6 +290,134 @@ msgid ""
 "If we attempt to simulate this model for 5 seconds, we find that the "
 "simulation terminates after about 2 seconds with the following trajectory:"
 msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:61
+msgid "The Role of Events in Behavior"
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:90
+msgid ""
+"Most users initially assume that each time ``der(x)`` is evaluated, the "
+"``if`` expression is evaluated (specifically the conditional expression in "
+"the ``if`` expression).  Hopefully the previous paragraph has made it clear "
+"that this is not the case."
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:263
+msgid "Speed vs. Accuracy"
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:265
+msgid ""
+"Hopefully the discussion so far has made it clear why it is necessary to "
+"suppress events in some cases.  But one might reasonably ask, why not skip "
+"events and just evaluate conditional expressions all the time?  So let's "
+"take some time to explore this question and explain why, on the whole, "
+"associated events with conditional expressions is very good idea[#Belmon]_."
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:272
+msgid ""
+"Without event detection, the integrator will simply step right over events."
+"  When this happens, the integrator will miss important changes in behavior "
+"and this will have a significant impact on the accuracy of the simulation.  "
+"This is because the accuracy of most integration routines is based on "
+"assumptions about the continuity of the underlying function and its "
+"derivatives.  If those assumptions are violated, we need to let the "
+"integration routines know so they can account these changes in behavior."
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:281
+msgid ""
+"This is where events come in.  They force the integration to stop at the "
+"point where a behavior change occurs and then restart again after the "
+"behavior change has occurred.  The result is greater accuracy but at the "
+"cost of slower simulations.  Let's look at a concrete example. Consider the "
+"following simple Modelica model:"
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:291
+msgid ""
+"Looking at this system, we can see that half the time the derivative of "
+"``x`` will be ``2`` and the other half of the time the derivative of ``x`` "
+"will be ``0``.  So over each of these cycles, the average derivative of "
+"``x`` should be ``1``.  This means at the end of each cycle, ``x`` and ``y``"
+" should be equal."
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:297
+msgid "If we simulate the ``WithEvents`` model, we get the following results:"
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:302
+msgid ""
+"Note how, at the end of each cycle, the trajectories of ``x`` and ``y`` "
+"meet.  This is a visual indication of the accuracy of the underlying "
+"integration.  Even if we increase the frequency of the underlying cycle, we "
+"see that this property holds true:"
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:310
+msgid ""
+"However, now let us consider the case where we use exactly the same "
+"integration parameters but suppress events by using the ``noEvents`` "
+"operator as follows:"
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:318
+msgid ""
+"In this case, the integrator is blind to the changes in behavior.  It does "
+"its best to integrate accuracy but without explicit knowledge of where the "
+"behavior changes occur, it will blindly continue using the wrong value of "
+"the derivative and extrapolate well beyond the change in behavior.  If we "
+"simulate the ``WithNoEvents`` model, using the same integrator settings, we "
+"can see how significantly different our results will be:"
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:329
+msgid ""
+"Note how quickly the integrator introduces some pretty significant error."
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:335
+msgid ""
+"The integration settings used in these examples were chosen to demonstrate "
+"the impact that the ``noEvent`` operator can have on accuracy.  However, the"
+" settings were admittedly chosen to accentuate these differences.  Using "
+"more typical settings, the differences in the results probably would not "
+"have been so dramatic.  Furthermore, the impact of using ``noEvent`` are "
+"impossible to predict or quantify since they will vary significantly from "
+"one solver to another.  But the underlying point is clear, using the "
+"``noEvent`` operator can have a significant impact on accuracy simulation "
+"results."
+msgstr ""
+
+#: ../../source/behavior/discrete/decay.rst:349
+msgid ""
+"A special thanks to Lionel Belmon for challenging my original discussion and"
+" identifying several unsubstantiated assumptions on my part.  As a result, "
+"this explanation is much better and includes results to support the "
+"conclusions drawn."
+msgstr ""
+
+#~ msgid ""
+#~ "Most users initially assume that each time ``der(x)`` is evaluated, the "
+#~ "``if`` expression is evaluated (specifically the conditional expression in "
+#~ "the ``if`` expression).  Hopefully the previous paragraph has made it clear "
+#~ "that this is not the case.  But the question remains.  Why?"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The reason has to do with performance.  If the conditional expression led to"
+#~ " an abrupt change in behavior (like the one we saw in our discussion on :ref"
+#~ ":`cooling-revisited`) it would cause a variable time step integrator to "
+#~ "spend an exceptional (and unnecessary) amount of time trying to localize the"
+#~ " source of the additional integration error.  Because the integrator doesn't"
+#~ " know *a priori* where the event occurs (as with a time event) and it has no"
+#~ " way to quickly identify the point at which the event occurs, it has no "
+#~ "choice but to repeatedly re-attempt the integration step until it finds a "
+#~ "step size where the integration error is tolerable."
+#~ msgstr ""
 
 #~ msgid ""
 #~ "If we attempt to simulate this model for 5 seconds, we fine that the "

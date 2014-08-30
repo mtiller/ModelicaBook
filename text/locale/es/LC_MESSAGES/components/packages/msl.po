@@ -91,14 +91,6 @@ msgid ""
 "with parameters and variables whenever possible."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:109
-msgid ""
-"The ``Modelica.SIunits`` package is very large and full of physical units "
-"that are rarely used.  They are included for completeness in adhering to the"
-" ```ISO 31-1992`` specification.  The following are examples of how common "
-"physical units are defined in the ``SIunits`` package:"
-msgstr ""
-
 #: ../../source/components/packages/msl.rst:145
 msgid "Models"
 msgstr ""
@@ -419,11 +411,11 @@ msgstr ""
 msgid "Sensors"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:290
+#: ../../source/components/packages/msl.rst:291
 msgid "``FluidHeatFlow``"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:292
+#: ../../source/components/packages/msl.rst:293
 msgid ""
 "Normally, the ``Modelica.Fluid`` and ``Modelica.Media`` libraries should be "
 "used to model thermo-fluid systems because they are capable of handling a "
@@ -432,166 +424,181 @@ msgid ""
 "library can be used to build simple flow networks of thermo-fluid systems."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:300
+#: ../../source/components/packages/msl.rst:301
 msgid "Utilities"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:302
+#: ../../source/components/packages/msl.rst:303
 msgid ""
 "The ``Utilities`` library provides support functionality to other libraries "
 "and model developers.  It includes several sub-packages for dealing with "
 "non-mathematical aspects of modeling."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:307
+#: ../../source/components/packages/msl.rst:308
 msgid "``Files``"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:309
+#: ../../source/components/packages/msl.rst:310
 msgid ""
 "The ``Modelica.Utilities.Files`` library provides functions for accessing "
 "and manipulating a computers file system.  The following functions are "
 "provided by the ``Files`` package:"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:313
+#: ../../source/components/packages/msl.rst:314
 msgid "``list`` - List contents of a file or directory"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:314
+#: ../../source/components/packages/msl.rst:315
 msgid "``copy`` - Copy a file or directory"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:315
+#: ../../source/components/packages/msl.rst:316
 msgid "``move`` - Move a file or directory"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:316
+#: ../../source/components/packages/msl.rst:317
 msgid "``remove`` - Remove a file or directory"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:317
+#: ../../source/components/packages/msl.rst:318
 msgid "``createDirectory`` - Create a directory"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:318
+#: ../../source/components/packages/msl.rst:319
 msgid "``exist`` - Test whether a given file or directory already exists"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:319
+#: ../../source/components/packages/msl.rst:320
 msgid ""
 "``fullPathName`` - Determine the full path to a named file or directory"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:320
+#: ../../source/components/packages/msl.rst:321
 msgid "``splitPathName`` - Split a file name by path"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:321
+#: ../../source/components/packages/msl.rst:322
 msgid ""
 "``temporaryFileName`` - Return the name of a temporary file that does not "
 "already exist."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:323
+#: ../../source/components/packages/msl.rst:324
 msgid ""
 "``loadResource`` - Convert a :ref:`Modelica URL <modelica-urls>` into an "
 "absolute file system path (for use with functions that don't accept Modelica"
 " URLs)."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:329
+#: ../../source/components/packages/msl.rst:330
 msgid "``Streams``"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:331
+#: ../../source/components/packages/msl.rst:332
 msgid ""
 "The ``Streams`` package is used reading and writing data to and from the "
 "terminal or files.  It includes the following functions:"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:334
+#: ../../source/components/packages/msl.rst:335
 msgid "``print`` - Writes data to either the terminal or a file."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:335
+#: ../../source/components/packages/msl.rst:336
 msgid ""
 "``readFile`` - Reads data from a file and return a vector of strings "
 "representing the lines in the file."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:337
+#: ../../source/components/packages/msl.rst:338
 msgid "``readLine`` - Reads a single line of text from a file."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:338
+#: ../../source/components/packages/msl.rst:339
 msgid "``countLines`` - Returns the number of lines in a file."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:339
+#: ../../source/components/packages/msl.rst:340
 msgid "``error`` - Used to print an error message."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:340
+#: ../../source/components/packages/msl.rst:341
 msgid "``close`` - Closes a file."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:343
+#: ../../source/components/packages/msl.rst:344
 msgid "``Strings``"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:345
+#: ../../source/components/packages/msl.rst:346
 msgid ""
 "The ``Strings`` package contains functions that operate on strings. The "
 "general capabilities of this library include:"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:348
+#: ../../source/components/packages/msl.rst:349
 msgid "Find the length of a string"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:349
+#: ../../source/components/packages/msl.rst:350
 msgid "Constructing and extracting strings"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:350
+#: ../../source/components/packages/msl.rst:351
 msgid "Comparing strings"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:351
+#: ../../source/components/packages/msl.rst:352
 msgid "Parsing and searching strings"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:354
+#: ../../source/components/packages/msl.rst:355
 msgid "``System``"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:356
+#: ../../source/components/packages/msl.rst:357
 msgid ""
 "The ``System`` package is used to interact with the underlying operating "
 "system.  It includes the following functions:"
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:359
+#: ../../source/components/packages/msl.rst:360
 msgid "``getWorkingDirectory`` - Get the current working directory."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:360
+#: ../../source/components/packages/msl.rst:361
 msgid "``setWorkingDirectory`` - Set the current working directory."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:361
+#: ../../source/components/packages/msl.rst:362
 msgid "``getEnvironmentVariable`` - Get the value of an environment variable."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:363
+#: ../../source/components/packages/msl.rst:364
 msgid "``setEnvironmentVariable`` - Set the value of an environment variable."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:364
+#: ../../source/components/packages/msl.rst:365
 msgid "``command`` - Pass a command to the operating system to execute."
 msgstr ""
 
-#: ../../source/components/packages/msl.rst:365
+#: ../../source/components/packages/msl.rst:366
 msgid "``exit`` - Terminate execution."
 msgstr ""
+
+#: ../../source/components/packages/msl.rst:109
+msgid ""
+"The ``Modelica.SIunits`` package is very large and full of physical units "
+"that are rarely used.  They are included for completeness in adhering to the"
+" ``ISO 31-1992`` specification.  The following are examples of how common "
+"physical units are defined in the ``SIunits`` package:"
+msgstr ""
+
+#~ msgid ""
+#~ "The ``Modelica.SIunits`` package is very large and full of physical units "
+#~ "that are rarely used.  They are included for completeness in adhering to the"
+#~ " ```ISO 31-1992`` specification.  The following are examples of how common "
+#~ "physical units are defined in the ``SIunits`` package:"
+#~ msgstr ""

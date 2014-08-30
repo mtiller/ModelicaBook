@@ -22,7 +22,7 @@ msgid ""
 "model is the one shown in the following figure:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:20
+#: ../../source/behavior/equations/mechanical.rst:16
 msgid ""
 "It is worth pointing out how much easier it is to convey the intention of a "
 "model by presenting it in schematic form.  Assuming appropriate graphical "
@@ -34,7 +34,7 @@ msgid ""
 "schematic form from the beginning**."
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:30
+#: ../../source/behavior/equations/mechanical.rst:26
 msgid ""
 "For now, however, we will focus on how to express the equations associated "
 "with this simple mechanical system.  Each inertia has a rotational position,"
@@ -43,14 +43,14 @@ msgid ""
 " momentum for the inertia can be expressed as:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:38
+#: ../../source/behavior/equations/mechanical.rst:34
 msgid ""
 "In other words, the sum of the torques, :math:`\\tau`, applied to the "
 "inertia should be equal to the product of the moment of inertia, :math:`J`, "
 "and the angular acceleration, :math:`\\dot{\\omega}`."
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:44
+#: ../../source/behavior/equations/mechanical.rst:40
 msgid ""
 "At this point, all we are missing are the torque values, :math:`\\tau_i`.  "
 "From the previous figure, we can see that there are two springs and two "
@@ -58,78 +58,78 @@ msgid ""
 "relationship between torque and angular displacement as follows:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:52
+#: ../../source/behavior/equations/mechanical.rst:48
 msgid ""
 "For each damper, we express the relationship between torque and relative "
 "angular velocity as:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:57
+#: ../../source/behavior/equations/mechanical.rst:53
 msgid ""
 "If we pull together all of these relations, we get the following system of "
 "equations:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:67
+#: ../../source/behavior/equations/mechanical.rst:63
 msgid "Let's assume our system has the following initial conditions as well:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:77
+#: ../../source/behavior/equations/mechanical.rst:73
 msgid ""
 "These initial conditions essentially mean that the system starts in a state "
 "where neither inertia is actually moving (*i.e.*, :math:`\\omega=0`), but "
 "there is a non-zero deflection across both springs."
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:82
+#: ../../source/behavior/equations/mechanical.rst:78
 msgid ""
 "Pulling all of these variables and equations together, we can express this "
 "problem in Modelica as follows:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:89
+#: ../../source/behavior/equations/mechanical.rst:85
 msgid ""
 "As we did with the low-pass filter example, ``RLC1``, let's walk through "
 "this line by line."
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:92
+#: ../../source/behavior/equations/mechanical.rst:88
 msgid "As usual, we start with the name of the model:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:98
+#: ../../source/behavior/equations/mechanical.rst:94
 msgid ""
 "Next, we introduce physical types for a rotational mechanical system, "
 "namely:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:104
+#: ../../source/behavior/equations/mechanical.rst:100
 msgid ""
 "Then we define the various parameters used to represent the different "
 "physical characteristics of our system:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:111
+#: ../../source/behavior/equations/mechanical.rst:107
 msgid ""
 "For this system, there are four non-``parameter`` variables.  These are "
 "defined as follows:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:117
+#: ../../source/behavior/equations/mechanical.rst:113
 msgid ""
 "The initial conditions (which we will revisit shortly) are then defined "
 "with:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:123
+#: ../../source/behavior/equations/mechanical.rst:119
 msgid "Then come the equations describing the dynamic response of our system:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:129
+#: ../../source/behavior/equations/mechanical.rst:125
 msgid "And finally, we have the closing of our model definition."
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:137
+#: ../../source/behavior/equations/mechanical.rst:133
 msgid ""
 "The only drawback of this model is that all of our initial conditions have "
 "been \"hard-coded\" into the model.  This means that we will be unable to "
@@ -139,14 +139,14 @@ msgid ""
 "initial conditions as follows:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:150
+#: ../../source/behavior/equations/mechanical.rst:146
 msgid ""
 "In this way, the parameter values can be changed either in the simulation "
 "environment (where parameters are typically editable by the user) or, as we "
 "will see shortly, via so-called \"modifications\"."
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:154
+#: ../../source/behavior/equations/mechanical.rst:150
 msgid ""
 "You will see in this latest version of the model that the values for the "
 "newly introduced parameters are the same as the hard-coded values used "
@@ -157,7 +157,7 @@ msgid ""
 "for the angular positions and velocities:"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:165
+#: ../../source/behavior/equations/mechanical.rst:161
 msgid ""
 "However, if modify the ``phi1_init`` parameter to be *1* at the start of our"
 " simulation, we get this solution instead:"
@@ -167,23 +167,23 @@ msgstr ""
 msgid "Expanding on this mechanical example"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:172
+#: ../../source/behavior/equations/mechanical.rst:168
 msgid ""
 "If you would like to see this example further developed, you may wish to "
 "jump to the set of examples involving rotational systems found in the "
 "section on :ref:`speed-measurement`."
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:176
+#: ../../source/behavior/equations/mechanical.rst:172
 msgid ""
 "Otherwise, you can continue to the next set of examples which involve "
 "population dynamics."
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:42
+#: ../../source/behavior/equations/mechanical.rst:38
 msgid "Hooke's law"
 msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:135
+#: ../../source/behavior/equations/mechanical.rst:131
 msgid "modifications"
 msgstr ""

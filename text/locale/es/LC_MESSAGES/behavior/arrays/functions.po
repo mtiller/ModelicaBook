@@ -137,56 +137,41 @@ msgstr ""
 msgid "would yield the vector:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:199
+#: ../../source/behavior/arrays/functions.rst:197
 msgid "Conversion Functions"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:201
+#: ../../source/behavior/arrays/functions.rst:199
 msgid ""
 "The following functions provide a means to transform arrays into other "
 "arrays."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:208
+#: ../../source/behavior/arrays/functions.rst:203
 msgid "``scalar``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:213
+#: ../../source/behavior/arrays/functions.rst:208
 msgid "The ``scalar`` function is invoked as follows:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:219
-msgid ""
-"where ``A`` is an array with an arbitrary number of dimensions as long as "
-"each dimension is of size :math:`1`.  The ``scalar`` function returns the "
-"(only) scalar value contained in the array."
-msgstr ""
-
-#: ../../source/behavior/arrays/functions.rst:224
+#: ../../source/behavior/arrays/functions.rst:231
 msgid "``vector``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:229
+#: ../../source/behavior/arrays/functions.rst:236
 msgid "The ``vector`` function is invoked as follows:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:235
-msgid ""
-"where ``A`` is an array with an arbitrary number of dimensions as long as "
-"only one dimension has a size greater than :math:`1`.  The ``vector`` "
-"function returns the contents of the array as a vector (*i.e.,* an array "
-"with only a single dimension)."
-msgstr ""
-
-#: ../../source/behavior/arrays/functions.rst:241
+#: ../../source/behavior/arrays/functions.rst:265
 msgid "``matrix``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:246
+#: ../../source/behavior/arrays/functions.rst:270
 msgid "The ``matrix`` function is invoked as follows:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:252
+#: ../../source/behavior/arrays/functions.rst:276
 msgid ""
 "where ``A`` is an array with an arbitrary number of dimensions as long as "
 "only two dimension have a size greater than :math:`1`.  The ``matrix`` "
@@ -194,11 +179,11 @@ msgid ""
 "with only two dimensions)."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:258
+#: ../../source/behavior/arrays/functions.rst:282
 msgid "Mathematical Operations"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:260
+#: ../../source/behavior/arrays/functions.rst:284
 msgid ""
 "In linear algebra, there are many different types of mathematical operations"
 " that are commonly performed on vectors and matrices. Modelica provides "
@@ -207,7 +192,7 @@ msgid ""
 " in linear algebra."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:266
+#: ../../source/behavior/arrays/functions.rst:290
 msgid ""
 "Let's start with operations like addition, subtraction, multiplication, "
 "division and exponentiation.  For the most part, these operations work just "
@@ -220,7 +205,7 @@ msgstr ""
 msgid "Explanation of Notation"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:275
+#: ../../source/behavior/arrays/functions.rst:299
 msgid ""
 "Each of the operations described below involves two arguments, :math:`a` and"
 " :math:`b`, and a result, :math:`c`.  If an argument represents a scalar, it"
@@ -230,103 +215,103 @@ msgid ""
 "given combination is not shown, then it is not allowed."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:284
+#: ../../source/behavior/arrays/functions.rst:308
 msgid "Addition (``+``)"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:291
-#: ../../source/behavior/arrays/functions.rst:307
-#: ../../source/behavior/arrays/functions.rst:332
-#: ../../source/behavior/arrays/functions.rst:352
-#: ../../source/behavior/arrays/functions.rst:375
-#: ../../source/behavior/arrays/functions.rst:387
-#: ../../source/behavior/arrays/functions.rst:415
+#: ../../source/behavior/arrays/functions.rst:315
+#: ../../source/behavior/arrays/functions.rst:331
+#: ../../source/behavior/arrays/functions.rst:356
+#: ../../source/behavior/arrays/functions.rst:376
+#: ../../source/behavior/arrays/functions.rst:399
+#: ../../source/behavior/arrays/functions.rst:411
+#: ../../source/behavior/arrays/functions.rst:439
 msgid "Expression"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:291
-#: ../../source/behavior/arrays/functions.rst:307
-#: ../../source/behavior/arrays/functions.rst:332
-#: ../../source/behavior/arrays/functions.rst:352
-#: ../../source/behavior/arrays/functions.rst:375
-#: ../../source/behavior/arrays/functions.rst:387
-#: ../../source/behavior/arrays/functions.rst:415
+#: ../../source/behavior/arrays/functions.rst:315
+#: ../../source/behavior/arrays/functions.rst:331
+#: ../../source/behavior/arrays/functions.rst:356
+#: ../../source/behavior/arrays/functions.rst:376
+#: ../../source/behavior/arrays/functions.rst:399
+#: ../../source/behavior/arrays/functions.rst:411
+#: ../../source/behavior/arrays/functions.rst:439
 msgid "Result"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:293
+#: ../../source/behavior/arrays/functions.rst:317
 msgid ":math:`a + b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:293
+#: ../../source/behavior/arrays/functions.rst:317
 msgid ":math:`c = a + b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:294
+#: ../../source/behavior/arrays/functions.rst:318
 msgid ":math:`a_{i} + b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:294
+#: ../../source/behavior/arrays/functions.rst:318
 msgid ":math:`c_{i} = a_{i} + b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:295
+#: ../../source/behavior/arrays/functions.rst:319
 msgid ":math:`a_{ij} + b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:295
+#: ../../source/behavior/arrays/functions.rst:319
 msgid ":math:`c_{ij} = a_{ij} + b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:296
+#: ../../source/behavior/arrays/functions.rst:320
 msgid ":math:`a_{ijk} + b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:296
+#: ../../source/behavior/arrays/functions.rst:320
 msgid ":math:`c_{ijk} = a_{ijk} + b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:300
+#: ../../source/behavior/arrays/functions.rst:324
 msgid "Subtraction (``-``)"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:309
+#: ../../source/behavior/arrays/functions.rst:333
 msgid ":math:`a - b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:309
+#: ../../source/behavior/arrays/functions.rst:333
 msgid ":math:`c = a - b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:310
+#: ../../source/behavior/arrays/functions.rst:334
 msgid ":math:`a_{i} - b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:310
+#: ../../source/behavior/arrays/functions.rst:334
 msgid ":math:`c_{i} = a_{i} - b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:311
+#: ../../source/behavior/arrays/functions.rst:335
 msgid ":math:`a_{ij} - b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:311
+#: ../../source/behavior/arrays/functions.rst:335
 msgid ":math:`c_{ij} = a_{ij} - b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:312
+#: ../../source/behavior/arrays/functions.rst:336
 msgid ":math:`a_{ijk} - b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:312
+#: ../../source/behavior/arrays/functions.rst:336
 msgid ":math:`c_{ijk} = a_{ijk} - b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:318
+#: ../../source/behavior/arrays/functions.rst:342
 msgid "Multiplication (``*`` and ``.*``)"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:325
+#: ../../source/behavior/arrays/functions.rst:349
 msgid ""
 "There are two types of multiplication operators.  The first is the normal "
 "multiplication operator, ``*``, that follows the usual mathematical "
@@ -334,213 +319,213 @@ msgid ""
 "behavior of the ``*`` operator is summarized in the following table:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:334
+#: ../../source/behavior/arrays/functions.rst:358
 msgid ":math:`a * b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:334
-#: ../../source/behavior/arrays/functions.rst:354
+#: ../../source/behavior/arrays/functions.rst:358
+#: ../../source/behavior/arrays/functions.rst:378
 msgid ":math:`c = a * b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:335
+#: ../../source/behavior/arrays/functions.rst:359
 msgid ":math:`a * b_i`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:335
+#: ../../source/behavior/arrays/functions.rst:359
 msgid ":math:`c_i = a * b_i`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:336
+#: ../../source/behavior/arrays/functions.rst:360
 msgid ":math:`a * b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:336
+#: ../../source/behavior/arrays/functions.rst:360
 msgid ":math:`c_{ij} = a * b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:337
+#: ../../source/behavior/arrays/functions.rst:361
 msgid ":math:`a * b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:337
+#: ../../source/behavior/arrays/functions.rst:361
 msgid ":math:`c_{ijk} = a * b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:338
+#: ../../source/behavior/arrays/functions.rst:362
 msgid ":math:`a_i * b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:338
+#: ../../source/behavior/arrays/functions.rst:362
 msgid ":math:`c_i = a_i * b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:339
+#: ../../source/behavior/arrays/functions.rst:363
 msgid ":math:`a_{ij} * b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:339
+#: ../../source/behavior/arrays/functions.rst:363
 msgid ":math:`c_{ij} = a_{ij} * b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:340
+#: ../../source/behavior/arrays/functions.rst:364
 msgid ":math:`a_{ijk} * b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:340
+#: ../../source/behavior/arrays/functions.rst:364
 msgid ":math:`c_{ijk} = a_{ijk} * b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:341
+#: ../../source/behavior/arrays/functions.rst:365
 msgid ":math:`a_{i} * b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:341
+#: ../../source/behavior/arrays/functions.rst:365
 msgid ":math:`c = \\sum_i a_{i} * b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:342
+#: ../../source/behavior/arrays/functions.rst:366
 msgid ":math:`a_{i} * b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:342
+#: ../../source/behavior/arrays/functions.rst:366
 msgid ":math:`c_j = \\sum_i a_{i} * b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:343
+#: ../../source/behavior/arrays/functions.rst:367
 msgid ":math:`a_{ij} * b_{j}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:343
+#: ../../source/behavior/arrays/functions.rst:367
 msgid ":math:`c_i = \\sum_j a_{ij} * b_{j}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:344
+#: ../../source/behavior/arrays/functions.rst:368
 msgid ":math:`a_{ik} * b_{kj}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:344
+#: ../../source/behavior/arrays/functions.rst:368
 msgid ":math:`c_{ij} = \\sum_k a_{ik} * b_{kj}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:347
+#: ../../source/behavior/arrays/functions.rst:371
 msgid ""
 "The second type of multiplication operator is a special element-wise "
 "version, ``.*``, which doesn't perform any summations and simply applies the"
 " operator element-wise to all array elements."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:354
+#: ../../source/behavior/arrays/functions.rst:378
 msgid ":math:`a` ``.*`` :math:`b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:355
+#: ../../source/behavior/arrays/functions.rst:379
 msgid ":math:`a_{i}` ``.*`` :math:`b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:355
+#: ../../source/behavior/arrays/functions.rst:379
 msgid ":math:`c_{i} = a_{i} * b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:356
+#: ../../source/behavior/arrays/functions.rst:380
 msgid ":math:`a_{ij}` ``.*`` :math:`b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:356
+#: ../../source/behavior/arrays/functions.rst:380
 msgid ":math:`c_{ij} = a_{ij} * b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:357
+#: ../../source/behavior/arrays/functions.rst:381
 msgid ":math:`a_{ijk}` ``.*`` :math:`b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:357
+#: ../../source/behavior/arrays/functions.rst:381
 msgid ":math:`c_{ijk} = a_{ijk} * b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:363
+#: ../../source/behavior/arrays/functions.rst:387
 msgid "Division (``/`` and ``./``)"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:369
+#: ../../source/behavior/arrays/functions.rst:393
 msgid ""
 "As with :ref:`array-multiplication`, there are two division operators.  The "
 "first is the normal division operator, ``/``, which can be used to divide "
 "arrays by a scalar value.  The following table summarizes its behavior:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:377
+#: ../../source/behavior/arrays/functions.rst:401
 msgid ":math:`a / b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:377
-#: ../../source/behavior/arrays/functions.rst:389
+#: ../../source/behavior/arrays/functions.rst:401
+#: ../../source/behavior/arrays/functions.rst:413
 msgid ":math:`c = a / b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:378
+#: ../../source/behavior/arrays/functions.rst:402
 msgid ":math:`a_i / b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:378
+#: ../../source/behavior/arrays/functions.rst:402
 msgid ":math:`c_i = a_i / b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:379
+#: ../../source/behavior/arrays/functions.rst:403
 msgid ":math:`a_{ij} / b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:379
+#: ../../source/behavior/arrays/functions.rst:403
 msgid ":math:`c_{ij} = a_{ij} / b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:380
+#: ../../source/behavior/arrays/functions.rst:404
 msgid ":math:`a_{ijk} / b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:380
+#: ../../source/behavior/arrays/functions.rst:404
 msgid ":math:`c_{ijk} = a_{ijk} / b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:383
+#: ../../source/behavior/arrays/functions.rst:407
 msgid ""
 "In addition, there is also an element-wise version of the division operator,"
 " ``./``, whose behavior is summarized in the following table:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:389
+#: ../../source/behavior/arrays/functions.rst:413
 msgid ":math:`a` ``./`` :math:`b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:390
+#: ../../source/behavior/arrays/functions.rst:414
 msgid ":math:`a_{i}` ``./`` :math:`b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:390
+#: ../../source/behavior/arrays/functions.rst:414
 msgid ":math:`c_{i} = a_{i} / b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:391
+#: ../../source/behavior/arrays/functions.rst:415
 msgid ":math:`a_{ij}` ``./`` :math:`b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:391
+#: ../../source/behavior/arrays/functions.rst:415
 msgid ":math:`c_{ij} = a_{ij} / b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:392
+#: ../../source/behavior/arrays/functions.rst:416
 msgid ":math:`a_{ijk}` ``./`` :math:`b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:392
+#: ../../source/behavior/arrays/functions.rst:416
 msgid ":math:`c_{ijk} = a_{ijk} / b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:396
+#: ../../source/behavior/arrays/functions.rst:420
 msgid "Exponentiation (``^`` and ``.^``)"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:402
+#: ../../source/behavior/arrays/functions.rst:426
 msgid ""
 "As with :ref:`array-multiplication` and :ref:`array-division`, the "
 "exponentiation operator comes in two forms.  The first is the standard "
@@ -550,49 +535,49 @@ msgid ""
 "to a scalar power (*i.e.,* :math:`a_{ij}` ``^`` :math:`b`)."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:410
+#: ../../source/behavior/arrays/functions.rst:434
 msgid ""
 "The other form of exponentiation is the element-wise form indicated with the"
 " ``.^`` operator.  Its behavior is summarized in the following table:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:417
+#: ../../source/behavior/arrays/functions.rst:441
 msgid ":math:`a` ``.^`` :math:`b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:417
+#: ../../source/behavior/arrays/functions.rst:441
 msgid ":math:`c = a^b`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:418
+#: ../../source/behavior/arrays/functions.rst:442
 msgid ":math:`a_{i}` ``.^`` :math:`b_{i}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:418
+#: ../../source/behavior/arrays/functions.rst:442
 msgid ":math:`c_{i} = a_{i}^{b_{i}}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:419
+#: ../../source/behavior/arrays/functions.rst:443
 msgid ":math:`a_{ij}` ``.^`` :math:`b_{ij}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:419
+#: ../../source/behavior/arrays/functions.rst:443
 msgid ":math:`c_{ij} = a_{ij}^{b_{ij}}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:420
+#: ../../source/behavior/arrays/functions.rst:444
 msgid ":math:`a_{ijk}` ``.^`` :math:`b_{ijk}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:420
+#: ../../source/behavior/arrays/functions.rst:444
 msgid ":math:`c_{ijk} = a_{ijk}^{b_{ijk}}`"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:426
+#: ../../source/behavior/arrays/functions.rst:450
 msgid "Equality (``=``)"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:431
+#: ../../source/behavior/arrays/functions.rst:455
 msgid ""
 "The equality operator, ``=`` used to construct equations can be used with "
 "scalars as well as arrays **as long as the left hand side and right hand "
@@ -602,42 +587,42 @@ msgid ""
 "element on the left hand side and its counterpart on the right hand side."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:441
+#: ../../source/behavior/arrays/functions.rst:465
 msgid "Assignment (``:=``)"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:446
+#: ../../source/behavior/arrays/functions.rst:470
 msgid ""
 "The ``:=`` (assignment) operator is applied in the same element-wise way as "
 "the :ref:`array-equality` operator."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:450
+#: ../../source/behavior/arrays/functions.rst:474
 msgid "Relational Operators"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:455
+#: ../../source/behavior/arrays/functions.rst:479
 msgid ""
 "All relational operators (``and``, ``or``, ``not``, ``>``, ``>=``, ``<=``, "
 "``<``) are applied in the same element-wise way as the :ref:`array-equality`"
 " operator."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:460
+#: ../../source/behavior/arrays/functions.rst:484
 msgid "``transpose``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:466
+#: ../../source/behavior/arrays/functions.rst:490
 msgid ""
 "The ``transpose`` function takes a matrix as an argument and returns a "
 "transposed version of that matrix."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:470
+#: ../../source/behavior/arrays/functions.rst:494
 msgid "``outerProduct``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:476
+#: ../../source/behavior/arrays/functions.rst:500
 msgid ""
 "The ``outerProduct`` function takes two arguments.  Each argument must be a "
 "vector and they must have the same size.  The function returns a matrix "
@@ -647,11 +632,11 @@ msgid ""
 "elements are defined as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:488
+#: ../../source/behavior/arrays/functions.rst:512
 msgid "``symmetric``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:492
+#: ../../source/behavior/arrays/functions.rst:516
 msgid ""
 "The ``symmetric`` function takes a square matrix as an argument.  It returns"
 " a matrix of the same size where all the elements below the diagonal of the "
@@ -659,81 +644,81 @@ msgid ""
 "diagonal.  In other words,"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:507
+#: ../../source/behavior/arrays/functions.rst:531
 msgid "``skew``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:526
+#: ../../source/behavior/arrays/functions.rst:550
 msgid "``cross``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:545
+#: ../../source/behavior/arrays/functions.rst:569
 msgid "Reduction Operators"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:547
+#: ../../source/behavior/arrays/functions.rst:571
 msgid "Reduction operators are ones that reduce arrays down to scalar values."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:550
+#: ../../source/behavior/arrays/functions.rst:574
 msgid "``min``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:555
+#: ../../source/behavior/arrays/functions.rst:579
 msgid ""
 "The ``min`` function takes an array and returns the smallest value in the "
 "array.  For example:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:564
+#: ../../source/behavior/arrays/functions.rst:588
 msgid "``max``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:569
+#: ../../source/behavior/arrays/functions.rst:593
 msgid ""
 "The ``max`` function takes an array and returns the largest value in the "
 "array.  For example:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:580
+#: ../../source/behavior/arrays/functions.rst:604
 msgid "``sum``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:585
+#: ../../source/behavior/arrays/functions.rst:609
 msgid ""
 "The ``sum`` function takes an array and returns the sum of all elements in "
 "the array.  For example:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:597
+#: ../../source/behavior/arrays/functions.rst:621
 msgid "``product``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:602
+#: ../../source/behavior/arrays/functions.rst:626
 msgid ""
 "The ``product`` function takes an array and returns the product of all "
 "elements in the array.  For example:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:611
+#: ../../source/behavior/arrays/functions.rst:635
 msgid "Miscellaneous Functions"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:614
+#: ../../source/behavior/arrays/functions.rst:638
 msgid "``ndims``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:619
+#: ../../source/behavior/arrays/functions.rst:643
 msgid ""
 "The ``ndims`` function takes an array as its argument and returns the number"
 " of dimensions in that array.  For example:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:628
+#: ../../source/behavior/arrays/functions.rst:652
 msgid "``size``"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:633
+#: ../../source/behavior/arrays/functions.rst:657
 msgid ""
 "The ``size`` function can be invoked two different ways.  The first way is "
 "with a single argument that is an array.  In this case, ``size`` returns a "
@@ -741,18 +726,18 @@ msgid ""
 "corresponding dimension in the array.  For example:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:643
+#: ../../source/behavior/arrays/functions.rst:667
 msgid ""
 "It is also possible to call ``size`` with an optional additional argument "
 "indicating a specific dimension number.  In that case, it will return the "
 "size of that specific dimension as a scalar integer. For example,"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:657
+#: ../../source/behavior/arrays/functions.rst:681
 msgid "Vectorization"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:662
+#: ../../source/behavior/arrays/functions.rst:686
 msgid ""
 "In this section, we've discussed the numerous functions in Modelica that are"
 " designed to work with arguments that are arrays.  But a very common use "
@@ -763,36 +748,36 @@ msgid ""
 "each element in the vector."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:670
+#: ../../source/behavior/arrays/functions.rst:694
 msgid ""
 "To understand how this works, first consider a normal evaluation using the "
 "``abs`` function:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:677
+#: ../../source/behavior/arrays/functions.rst:701
 msgid ""
 "Obviously, ``abs`` is normally meant to accept a scalar argument and return "
 "a scalar.  But in Modelica, we can also do this:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:684
+#: ../../source/behavior/arrays/functions.rst:708
 msgid ""
 "Since this function is designed for scalar, the Modelica compiler will "
 "transform:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:691
-#: ../../source/behavior/arrays/functions.rst:722
+#: ../../source/behavior/arrays/functions.rst:715
+#: ../../source/behavior/arrays/functions.rst:746
 msgid "into"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:697
+#: ../../source/behavior/arrays/functions.rst:721
 msgid ""
 "In other words, it transforms the function applies to a vector of scalars "
 "into a vector a functions applied to scalar."
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:700
+#: ../../source/behavior/arrays/functions.rst:724
 msgid ""
 "**This feature also works functions that take multiple arguments** as long "
 "as only **one** of the expected scalar arguments is a vector.  To understand"
@@ -800,22 +785,22 @@ msgid ""
 "``mod``.  If applied to scalar arguments we get the following behavior:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:710
+#: ../../source/behavior/arrays/functions.rst:734
 msgid "If we turn the first argument into a vector, we get:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:716
+#: ../../source/behavior/arrays/functions.rst:740
 msgid "In other words, it transforms:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:728
+#: ../../source/behavior/arrays/functions.rst:752
 msgid ""
 "However, this vectorization does **not** apply if more than one scalar "
 "arguments is presented as a vector.  For example, the following expression "
 "will be an error:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:736
+#: ../../source/behavior/arrays/functions.rst:760
 msgid ""
 "because ``mod`` expects two scalar arguments, but it was passed two vector "
 "arguments."
@@ -832,21 +817,21 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:110
 #: ../../source/behavior/arrays/functions.rst:142
 #: ../../source/behavior/arrays/functions.rst:172
-#: ../../source/behavior/arrays/functions.rst:211
-#: ../../source/behavior/arrays/functions.rst:227
-#: ../../source/behavior/arrays/functions.rst:244
-#: ../../source/behavior/arrays/functions.rst:463
-#: ../../source/behavior/arrays/functions.rst:473
-#: ../../source/behavior/arrays/functions.rst:490
-#: ../../source/behavior/arrays/functions.rst:510
-#: ../../source/behavior/arrays/functions.rst:529
+#: ../../source/behavior/arrays/functions.rst:206
+#: ../../source/behavior/arrays/functions.rst:234
+#: ../../source/behavior/arrays/functions.rst:268
+#: ../../source/behavior/arrays/functions.rst:487
+#: ../../source/behavior/arrays/functions.rst:497
+#: ../../source/behavior/arrays/functions.rst:514
+#: ../../source/behavior/arrays/functions.rst:534
 #: ../../source/behavior/arrays/functions.rst:553
-#: ../../source/behavior/arrays/functions.rst:567
-#: ../../source/behavior/arrays/functions.rst:583
-#: ../../source/behavior/arrays/functions.rst:600
-#: ../../source/behavior/arrays/functions.rst:617
-#: ../../source/behavior/arrays/functions.rst:631
-#: ../../source/behavior/arrays/functions.rst:660
+#: ../../source/behavior/arrays/functions.rst:577
+#: ../../source/behavior/arrays/functions.rst:591
+#: ../../source/behavior/arrays/functions.rst:607
+#: ../../source/behavior/arrays/functions.rst:624
+#: ../../source/behavior/arrays/functions.rst:641
+#: ../../source/behavior/arrays/functions.rst:655
+#: ../../source/behavior/arrays/functions.rst:684
 msgid "functions"
 msgstr ""
 
@@ -875,189 +860,234 @@ msgstr ""
 msgid "linspace"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:210
-#: ../../source/behavior/arrays/functions.rst:211
+#: ../../source/behavior/arrays/functions.rst:205
+#: ../../source/behavior/arrays/functions.rst:206
 msgid "scalar"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:226
-#: ../../source/behavior/arrays/functions.rst:227
-#: ../../source/behavior/arrays/functions.rst:287
-#: ../../source/behavior/arrays/functions.rst:303
-#: ../../source/behavior/arrays/functions.rst:321
-#: ../../source/behavior/arrays/functions.rst:366
-#: ../../source/behavior/arrays/functions.rst:399
-#: ../../source/behavior/arrays/functions.rst:429
-#: ../../source/behavior/arrays/functions.rst:444
+#: ../../source/behavior/arrays/functions.rst:233
+#: ../../source/behavior/arrays/functions.rst:234
+#: ../../source/behavior/arrays/functions.rst:311
+#: ../../source/behavior/arrays/functions.rst:327
+#: ../../source/behavior/arrays/functions.rst:345
+#: ../../source/behavior/arrays/functions.rst:390
+#: ../../source/behavior/arrays/functions.rst:423
+#: ../../source/behavior/arrays/functions.rst:453
+#: ../../source/behavior/arrays/functions.rst:468
 msgid "vector"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:243
-#: ../../source/behavior/arrays/functions.rst:244
-#: ../../source/behavior/arrays/functions.rst:288
-#: ../../source/behavior/arrays/functions.rst:304
-#: ../../source/behavior/arrays/functions.rst:322
-#: ../../source/behavior/arrays/functions.rst:367
-#: ../../source/behavior/arrays/functions.rst:400
-#: ../../source/behavior/arrays/functions.rst:464
+#: ../../source/behavior/arrays/functions.rst:267
+#: ../../source/behavior/arrays/functions.rst:268
+#: ../../source/behavior/arrays/functions.rst:312
+#: ../../source/behavior/arrays/functions.rst:328
+#: ../../source/behavior/arrays/functions.rst:346
+#: ../../source/behavior/arrays/functions.rst:391
+#: ../../source/behavior/arrays/functions.rst:424
+#: ../../source/behavior/arrays/functions.rst:488
 msgid "matrix"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:286
-#: ../../source/behavior/arrays/functions.rst:302
-#: ../../source/behavior/arrays/functions.rst:320
-#: ../../source/behavior/arrays/functions.rst:365
-#: ../../source/behavior/arrays/functions.rst:398
-#: ../../source/behavior/arrays/functions.rst:428
-#: ../../source/behavior/arrays/functions.rst:443
+#: ../../source/behavior/arrays/functions.rst:310
+#: ../../source/behavior/arrays/functions.rst:326
+#: ../../source/behavior/arrays/functions.rst:344
+#: ../../source/behavior/arrays/functions.rst:389
+#: ../../source/behavior/arrays/functions.rst:422
 #: ../../source/behavior/arrays/functions.rst:452
+#: ../../source/behavior/arrays/functions.rst:467
+#: ../../source/behavior/arrays/functions.rst:476
 msgid "arrays"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:286
+#: ../../source/behavior/arrays/functions.rst:310
 msgid "mathematical operations; addition"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:287
-#: ../../source/behavior/arrays/functions.rst:288
+#: ../../source/behavior/arrays/functions.rst:311
+#: ../../source/behavior/arrays/functions.rst:312
 msgid "addition"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:302
+#: ../../source/behavior/arrays/functions.rst:326
 msgid "mathematical operations; subtraction"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:303
-#: ../../source/behavior/arrays/functions.rst:304
+#: ../../source/behavior/arrays/functions.rst:327
+#: ../../source/behavior/arrays/functions.rst:328
 msgid "subtraction"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:320
+#: ../../source/behavior/arrays/functions.rst:344
 msgid "mathematical operations; multiplication"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:321
-#: ../../source/behavior/arrays/functions.rst:322
+#: ../../source/behavior/arrays/functions.rst:345
+#: ../../source/behavior/arrays/functions.rst:346
 msgid "multiplication"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:323
+#: ../../source/behavior/arrays/functions.rst:347
 msgid "matrix-vector products"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:365
+#: ../../source/behavior/arrays/functions.rst:389
 msgid "mathematical operations; division"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:366
-#: ../../source/behavior/arrays/functions.rst:367
+#: ../../source/behavior/arrays/functions.rst:390
+#: ../../source/behavior/arrays/functions.rst:391
 msgid "division"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:398
+#: ../../source/behavior/arrays/functions.rst:422
 msgid "mathematical operations; exponentiation"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:399
-#: ../../source/behavior/arrays/functions.rst:400
+#: ../../source/behavior/arrays/functions.rst:423
+#: ../../source/behavior/arrays/functions.rst:424
 msgid "exponentiation"
-msgstr ""
-
-#: ../../source/behavior/arrays/functions.rst:428
-#: ../../source/behavior/arrays/functions.rst:429
-msgid "equations"
-msgstr ""
-
-#: ../../source/behavior/arrays/functions.rst:443
-#: ../../source/behavior/arrays/functions.rst:444
-msgid "assignment"
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:452
 #: ../../source/behavior/arrays/functions.rst:453
+msgid "equations"
+msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:467
+#: ../../source/behavior/arrays/functions.rst:468
+msgid "assignment"
+msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:476
+#: ../../source/behavior/arrays/functions.rst:477
 msgid "relational operators"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:453
-#: ../../source/behavior/arrays/functions.rst:474
+#: ../../source/behavior/arrays/functions.rst:477
+#: ../../source/behavior/arrays/functions.rst:498
 msgid "vectors"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:462
-#: ../../source/behavior/arrays/functions.rst:463
-#: ../../source/behavior/arrays/functions.rst:464
+#: ../../source/behavior/arrays/functions.rst:486
+#: ../../source/behavior/arrays/functions.rst:487
+#: ../../source/behavior/arrays/functions.rst:488
 msgid "transpose"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:472
-#: ../../source/behavior/arrays/functions.rst:474
+#: ../../source/behavior/arrays/functions.rst:496
+#: ../../source/behavior/arrays/functions.rst:498
 msgid "outer product"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:473
+#: ../../source/behavior/arrays/functions.rst:497
 msgid "outerProduct"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:490
+#: ../../source/behavior/arrays/functions.rst:514
 msgid "symmetric"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:509
-#: ../../source/behavior/arrays/functions.rst:510
+#: ../../source/behavior/arrays/functions.rst:533
+#: ../../source/behavior/arrays/functions.rst:534
 msgid "skew"
-msgstr ""
-
-#: ../../source/behavior/arrays/functions.rst:528
-#: ../../source/behavior/arrays/functions.rst:529
-msgid "cross"
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:552
 #: ../../source/behavior/arrays/functions.rst:553
+msgid "cross"
+msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:576
+#: ../../source/behavior/arrays/functions.rst:577
 msgid "min (vector)"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:566
-#: ../../source/behavior/arrays/functions.rst:567
+#: ../../source/behavior/arrays/functions.rst:590
+#: ../../source/behavior/arrays/functions.rst:591
 msgid "max (vector)"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:582
-#: ../../source/behavior/arrays/functions.rst:583
+#: ../../source/behavior/arrays/functions.rst:606
+#: ../../source/behavior/arrays/functions.rst:607
 msgid "sum"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:599
-#: ../../source/behavior/arrays/functions.rst:600
+#: ../../source/behavior/arrays/functions.rst:623
+#: ../../source/behavior/arrays/functions.rst:624
 msgid "product"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:616
-#: ../../source/behavior/arrays/functions.rst:617
+#: ../../source/behavior/arrays/functions.rst:640
+#: ../../source/behavior/arrays/functions.rst:641
 msgid "ndims"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:630
-#: ../../source/behavior/arrays/functions.rst:631
+#: ../../source/behavior/arrays/functions.rst:654
+#: ../../source/behavior/arrays/functions.rst:655
 msgid "size"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:659
-#: ../../source/behavior/arrays/functions.rst:660
+#: ../../source/behavior/arrays/functions.rst:683
+#: ../../source/behavior/arrays/functions.rst:684
 msgid "vectorization"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:512
+#: ../../source/behavior/arrays/functions.rst:536
 msgid ""
 "The ``skew`` function takes a vector with three components and returns the "
 "following skew-symmetric matrix:"
 msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:531
+#: ../../source/behavior/arrays/functions.rst:555
 msgid ""
 "The ``cross`` function takes two vectors (each with 3 components) and "
 "returns the following vector (with three components):"
 msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:214
+msgid ""
+"where ``A`` is an array with an arbitrary number of dimensions as long as "
+"each dimension is of size :math:`1`.  The ``scalar`` function returns the "
+"(only) scalar value contained in the array.  For example,"
+msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:222
+msgid "and"
+msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:228
+msgid "would both give the scalar value ``5``."
+msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:242
+msgid ""
+"where ``A`` is an array with an arbitrary number of dimensions as long as "
+"only one dimension has a size greater than :math:`1`.  The ``vector`` "
+"function returns the contents of the array as a vector (*i.e.,* an array "
+"with only a single dimension).  So, for example, if we passed a column or "
+"row matrix, *e.g.*,"
+msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:252
+msgid "or"
+msgstr ""
+
+#: ../../source/behavior/arrays/functions.rst:258
+msgid "we would get back:"
+msgstr ""
+
+#~ msgid ""
+#~ "where ``A`` is an array with an arbitrary number of dimensions as long as "
+#~ "each dimension is of size :math:`1`.  The ``scalar`` function returns the "
+#~ "(only) scalar value contained in the array."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "where ``A`` is an array with an arbitrary number of dimensions as long as "
+#~ "only one dimension has a size greater than :math:`1`.  The ``vector`` "
+#~ "function returns the contents of the array as a vector (*i.e.,* an array "
+#~ "with only a single dimension)."
+#~ msgstr ""
 
 #~ msgid ""
 #~ "The ``skew`` function takes a vector with three components and returns the "

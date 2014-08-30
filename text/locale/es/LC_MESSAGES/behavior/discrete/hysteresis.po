@@ -42,25 +42,6 @@ msgid ""
 "understood by looking at the heater output during the simulation:"
 msgstr ""
 
-#: ../../source/behavior/discrete/hysteresis.rst:36
-msgid ""
-"What you see is that after around 0.2 seconds, the heater is constantly "
-"turning on and off.  This is actually a real problem in control systems.  If"
-" you look carefully at the way the furnace works in your own home, you will "
-"see that it does not turn on and off constantly as the temperature goes "
-"above and below the desired room temperature you have specified.  Instead, "
-"it waits until the temperature gets some specified amount above or below the"
-" desired temperature before acting."
-msgstr ""
-
-#: ../../source/behavior/discrete/hysteresis.rst:47
-msgid ""
-"This \"band\" that is introduced around the desired temperature is called "
-"hysteresis.  The problem with the \\code{ChatteringControl} model is that it"
-" doesn't have any hysteresis.  Instead, it is constantly turning the heater "
-"off and on in response to miniscule changes in temperature."
-msgstr ""
-
 #: ../../source/behavior/discrete/hysteresis.rst:53
 msgid ""
 "The tricky thing about modeling hysteresis is that it is \"stateful\". "
@@ -106,6 +87,50 @@ msgid ""
 "``algorithm`` section because they both assign to the same variable, "
 "``heat``."
 msgstr ""
+
+#: ../../source/behavior/discrete/hysteresis.rst:34
+msgid ""
+"What you see is that after around 0.2 seconds, the heater is constantly "
+"turning on and off.  This happens so frequently, in fact, that you would "
+"have to zoom in quite a bit on the plot to see the transitions.  With normal"
+" scaling, there are so many transitions that the results resemble a filled "
+"rectangle."
+msgstr ""
+
+#: ../../source/behavior/discrete/hysteresis.rst:40
+msgid ""
+"This is actually a real problem in control systems.  If you look carefully "
+"at the way the furnace works in your own home, you will see that it does not"
+" turn on and off constantly as the temperature goes above and below the "
+"desired room temperature you have specified. Instead, it waits until the "
+"temperature gets some specified amount above or below the desired "
+"temperature before acting."
+msgstr ""
+
+#: ../../source/behavior/discrete/hysteresis.rst:47
+msgid ""
+"This \"band\" that is introduced around the desired temperature is called "
+"hysteresis.  The problem with the ``ChatteringControl`` model is that it "
+"doesn't have any hysteresis.  Instead, it is constantly turning the heater "
+"off and on in response to miniscule changes in temperature."
+msgstr ""
+
+#~ msgid ""
+#~ "What you see is that after around 0.2 seconds, the heater is constantly "
+#~ "turning on and off.  This is actually a real problem in control systems.  If"
+#~ " you look carefully at the way the furnace works in your own home, you will "
+#~ "see that it does not turn on and off constantly as the temperature goes "
+#~ "above and below the desired room temperature you have specified.  Instead, "
+#~ "it waits until the temperature gets some specified amount above or below the"
+#~ " desired temperature before acting."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This \"band\" that is introduced around the desired temperature is called "
+#~ "hysteresis.  The problem with the \\code{ChatteringControl} model is that it"
+#~ " doesn't have any hysteresis.  Instead, it is constantly turning the heater "
+#~ "off and on in response to miniscule changes in temperature."
+#~ msgstr ""
 
 #~ msgid ""
 #~ "..todo: there seems to be a formatting problem around "

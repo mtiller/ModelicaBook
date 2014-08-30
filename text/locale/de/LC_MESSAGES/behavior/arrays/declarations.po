@@ -61,19 +61,11 @@ msgid ""
 "array in terms of another array. Consider the following:"
 msgstr ""
 
-#: ../../source/behavior/arrays/declarations.rst:54
-msgid ""
-"In this case, ``y`` will have one dimension of size 5.  The use of the "
-"function ``size(x,1)`` will return the size of dimension 1 of the array "
-"``x``.  There are many applications where it is useful to express that the "
-"dimensions of different are related in this way."
-msgstr ""
-
-#: ../../source/behavior/arrays/declarations.rst:62
+#: ../../source/behavior/arrays/declarations.rst:64
 msgid "Unspecified Dimensions"
 msgstr ""
 
-#: ../../source/behavior/arrays/declarations.rst:64
+#: ../../source/behavior/arrays/declarations.rst:66
 msgid ""
 "There are some circumstances where we can leave the size of an array "
 "unspecified so that it can be specified by some later context.  For example,"
@@ -81,13 +73,13 @@ msgid ""
 "have arguments which are arrays."
 msgstr ""
 
-#: ../../source/behavior/arrays/declarations.rst:69
+#: ../../source/behavior/arrays/declarations.rst:71
 msgid ""
 "To indicate that the size of a given array dimension is not (yet) known, we "
 "can use the `:` symbol as the dimension.  So in a declaration like this:"
 msgstr ""
 
-#: ../../source/behavior/arrays/declarations.rst:77
+#: ../../source/behavior/arrays/declarations.rst:79
 msgid ""
 "we are declaring an array with two dimensions.  The size of the first "
 "dimension is not specified.  However, the size of the second dimension is "
@@ -95,15 +87,15 @@ msgid ""
 "matrix with an unspecified number of rows and two columns."
 msgstr ""
 
-#: ../../source/behavior/arrays/declarations.rst:83
+#: ../../source/behavior/arrays/declarations.rst:85
 msgid "Non-Integer Dimensions"
 msgstr ""
 
-#: ../../source/behavior/arrays/declarations.rst:88
+#: ../../source/behavior/arrays/declarations.rst:90
 msgid "Enumerations"
 msgstr ""
 
-#: ../../source/behavior/arrays/declarations.rst:90
+#: ../../source/behavior/arrays/declarations.rst:92
 msgid ""
 "As we saw in our :ref:`chemical-system` examples, another way to specify the"
 " dimension for an array is with an enumeration.  If an enumeration is used "
@@ -113,12 +105,29 @@ msgid ""
 "array that uses enumerations as dimensions."
 msgstr ""
 
-#: ../../source/behavior/arrays/declarations.rst:99
+#: ../../source/behavior/arrays/declarations.rst:101
 msgid "Booleans"
 msgstr ""
 
-#: ../../source/behavior/arrays/declarations.rst:101
+#: ../../source/behavior/arrays/declarations.rst:103
 msgid ""
 "It is also possible to declare an array where a dimension is specified as "
 "``Boolean``, *e.g.,*"
 msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:54
+msgid ""
+"In this case, ``y`` will have one dimension of size 5.  The use of the "
+"function ``size(x,1)`` will return the size of dimension 1 of the array "
+"``x``.  There are many applications where it is useful to express that the "
+"dimensions of different arrays are related in this way (*e.g.*, ensuring "
+"that arrays are sized such that operations like matrix multiplication are "
+"possible)."
+msgstr ""
+
+#~ msgid ""
+#~ "In this case, ``y`` will have one dimension of size 5.  The use of the "
+#~ "function ``size(x,1)`` will return the size of dimension 1 of the array "
+#~ "``x``.  There are many applications where it is useful to express that the "
+#~ "dimensions of different are related in this way."
+#~ msgstr ""

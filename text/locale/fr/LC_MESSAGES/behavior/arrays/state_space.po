@@ -33,14 +33,6 @@ msgid ""
 " but can ultimately be computed from the values of the states and inputs)."
 msgstr ""
 
-#: ../../source/behavior/arrays/state_space.rst:28
-msgid ""
-"There is a particularly interesting special case of these equation when the "
-"functions :math:`\\vec{f}` and :math:`\\vec{g}` depend linearly on "
-":math:`\\vec{x}` and :math:`\\vec{u}`.  In this case, the equations can be "
-"rewritten as:"
-msgstr ""
-
 #: ../../source/behavior/arrays/state_space.rst:38
 msgid ""
 "The matrices in this problem are the so-called \"ABCD\" matrices.  This ABCD"
@@ -210,34 +202,11 @@ msgid ""
 "also discussed earlier.  In LTI form, we could have written the model as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/state_space.rst:197
-msgid ""
-"This model is very similar to the previous one.  However, in this case, "
-"instead of putting numbers into our matrices, we've put expressions "
-"involving other parameters like ``h``, ``m`` and so on.  In this way, if "
-"those physical parameters are changed, the values for ``A`` and ``B`` will "
-"change accordingly."
-msgstr ""
-
-#: ../../source/behavior/arrays/state_space.rst:203
-msgid ""
-"We can take a similar approach in reformulating the our previous "
-":ref:`mechanical example <mech-example>` into LTI form:"
-msgstr ""
-
 #: ../../source/behavior/arrays/state_space.rst:210
 msgid ""
 "Again, we compute ``A`` from physical parameters.  One thing to note about "
 "this example is the construction of ``A``.  Mathematically, the :math:`A` "
 "matrix is defined as:"
-msgstr ""
-
-#: ../../source/behavior/arrays/state_space.rst:227
-msgid ""
-"One thing we can note about this construction of :math:`A` is that the first"
-" two rows might be easier to express as a matrix of zeros and an identify "
-"matrix.  In other words, it might be simpler to construct the matrix as a "
-"set of sub-matrices, *i.e.,*"
 msgstr ""
 
 #: ../../source/behavior/arrays/state_space.rst:264
@@ -246,11 +215,11 @@ msgid ""
 "way:"
 msgstr ""
 
-#: ../../source/behavior/arrays/state_space.rst:272
+#: ../../source/behavior/arrays/state_space.rst:281
 msgid "Using Components"
 msgstr ""
 
-#: ../../source/behavior/arrays/state_space.rst:274
+#: ../../source/behavior/arrays/state_space.rst:283
 msgid ""
 "In all of these examples so far, we've used inheritance (via ``extends``) to"
 " reuse the equations from the ``LTI`` model.  In general, there is a **much "
@@ -260,7 +229,7 @@ msgid ""
 " create a named instance of the ``LTI`` model:"
 msgstr ""
 
-#: ../../source/behavior/arrays/state_space.rst:286
+#: ../../source/behavior/arrays/state_space.rst:295
 msgid ""
 "Note that this time we do not use ``extends`` or inheritance of any kind.  "
 "Instead, we actually declare a variable called ``rlc_comp`` that is of type "
@@ -270,7 +239,7 @@ msgid ""
 "this is just a \"sneak peak\" of (big) things to come."
 msgstr ""
 
-#: ../../source/behavior/arrays/state_space.rst:294
+#: ../../source/behavior/arrays/state_space.rst:303
 msgid ""
 "What we see in this `RLC` example is that we now have a variable called "
 "``rlc_comp`` and this component, in turn, has all the parameters and "
@@ -278,7 +247,7 @@ msgid ""
 "equation to specify the input, ``u``, is written as:"
 msgstr ""
 
-#: ../../source/behavior/arrays/state_space.rst:304
+#: ../../source/behavior/arrays/state_space.rst:313
 msgid ""
 "Note that this equation means that we are providing an equation for the "
 "variable ``u`` that is **inside** the variable ``rlc_comp``.  As we will see"
@@ -296,3 +265,72 @@ msgstr ""
 #: ../../source/behavior/arrays/state_space.rst:56
 msgid "FMI"
 msgstr ""
+
+#: ../../source/behavior/arrays/state_space.rst:28
+msgid ""
+"There is a particularly interesting special case of these equations when the"
+" functions :math:`\\vec{f}` and :math:`\\vec{g}` depend linearly on "
+":math:`\\vec{x}` and :math:`\\vec{u}`.  In this case, the equations can be "
+"rewritten as:"
+msgstr ""
+
+#: ../../source/behavior/arrays/state_space.rst:197
+msgid ""
+"This model is very similar to the previous one.  However, in this case, "
+"instead of putting numbers into our matrices, we've put expressions "
+"involving other parameters like ``m``, ``c_p`` and so on.  In this way, if "
+"those physical parameters are changed, the values for ``A`` and ``B`` will "
+"change accordingly."
+msgstr ""
+
+#: ../../source/behavior/arrays/state_space.rst:203
+msgid ""
+"We can take a similar approach in reformulating our previous "
+":ref:`mechanical example <mech-example>` into LTI form:"
+msgstr ""
+
+#: ../../source/behavior/arrays/state_space.rst:227
+msgid ""
+"One thing we can note about this construction of :math:`A` is that the first"
+" two rows might be easier to express as a matrix of zeros and an identity "
+"matrix.  In other words, it might be simpler to construct the matrix as a "
+"set of sub-matrices, *i.e.,*"
+msgstr ""
+
+#: ../../source/behavior/arrays/state_space.rst:271
+msgid ""
+"In the section above we do not include a representation of the Lotka-"
+"Volterra equations in LTI form.  This is because the Lotka-Volterra "
+"equations, while being time-invariant, are not linear. It is worth pointing "
+"out that Modelica does not directly enforce either of these properties when "
+"using the ``LTI`` model.  So it is possible to represent non-linear or time-"
+"variant models using this approach.  But it would be confusing since the "
+"term LTI implies that the equations are both linear and time-invariant."
+msgstr ""
+
+#~ msgid ""
+#~ "There is a particularly interesting special case of these equation when the "
+#~ "functions :math:`\\vec{f}` and :math:`\\vec{g}` depend linearly on "
+#~ ":math:`\\vec{x}` and :math:`\\vec{u}`.  In this case, the equations can be "
+#~ "rewritten as:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This model is very similar to the previous one.  However, in this case, "
+#~ "instead of putting numbers into our matrices, we've put expressions "
+#~ "involving other parameters like ``h``, ``m`` and so on.  In this way, if "
+#~ "those physical parameters are changed, the values for ``A`` and ``B`` will "
+#~ "change accordingly."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We can take a similar approach in reformulating the our previous "
+#~ ":ref:`mechanical example <mech-example>` into LTI form:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "One thing we can note about this construction of :math:`A` is that the first"
+#~ " two rows might be easier to express as a matrix of zeros and an identify "
+#~ "matrix.  In other words, it might be simpler to construct the matrix as a "
+#~ "set of sub-matrices, *i.e.,*"
+#~ msgstr ""

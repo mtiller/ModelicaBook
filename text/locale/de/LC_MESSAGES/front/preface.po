@@ -11,11 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/front/preface.rst:8
+#: ../../source/front/preface.rst:4
 msgid "Preface"
 msgstr ""
 
-#: ../../source/front/preface.rst:10
+#: ../../source/front/preface.rst:6
 msgid ""
 "This book is a bit unusual in the way it is structured.  This is because it "
 "is expected that most readers will be reading an HTML version of the book.  "
@@ -26,7 +26,7 @@ msgid ""
 " has been made to provide a quality result in all supported formats."
 msgstr ""
 
-#: ../../source/front/preface.rst:19
+#: ../../source/front/preface.rst:15
 msgid ""
 "One aspect of the book worth remarking on at this point is the fact that "
 "there are a couple of different \"flows\" supported in the book. Overall, "
@@ -42,7 +42,7 @@ msgid ""
 "reading experience without disorienting the user."
 msgstr ""
 
-#: ../../source/front/preface.rst:33
+#: ../../source/front/preface.rst:29
 msgid ""
 "Most chapters are organized into three parts.  The first part introduces the"
 " topics to be discussed in the chapter.  Next, an extensive set of examples "

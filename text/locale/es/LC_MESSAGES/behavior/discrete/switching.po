@@ -40,13 +40,13 @@ msgid ""
 "occur while integrating the underlying equations."
 msgstr ""
 
-#: ../../source/behavior/discrete/switching.rst:36
+#: ../../source/behavior/discrete/switching.rst:34
 msgid ""
 "Furthermore, we can see the current response for inductor, resistor and "
 "capacitor components in this plot:"
 msgstr ""
 
-#: ../../source/behavior/discrete/switching.rst:42
+#: ../../source/behavior/discrete/switching.rst:40
 msgid ""
 "Hopefully by this point, the basic mechanisms for generating events and "
 "disturbances seem intuitive and familiar."
