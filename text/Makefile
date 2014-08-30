@@ -329,7 +329,7 @@ gettext:
 	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
 
 update_all: gettext
-	sphinx-intl update -l es -l cn -l fr -l de -d locale/ -p locale/pot
+	sphinx-intl update -l cn -l de -l es -l fr -l it -d locale/ -p locale/pot
 
 update_cn: gettext
 	sphinx-intl update -l cn -d locale/ -p locale/pot
