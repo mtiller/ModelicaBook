@@ -90,7 +90,7 @@ func (b Builder) Push(msg hs.HubMessage) {
 	}
 
 	/* Repo checkout correct ref */
-	err = git(dir, "checkout", ref)
+	err = git(".", "checkout", ref)
 	if err != nil { return; }
 
 	bucket := fmt.Sprintf("S3BUCKET=dev.book.xogeny.com/%s", user);
