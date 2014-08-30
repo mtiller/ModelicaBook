@@ -250,6 +250,8 @@ msgid ""
 "will solve for :math:`\\vec{x}(t)` by integrating :math:`\\dot{\\vec{x}}(t)`"
 " to compute :math:`\\vec{x}(t)`.  In other words:"
 msgstr ""
+"回到最初的初始化的主题，在一个正常的时间步内，将 :math:`\\dot{\\vec{x}}(t)` 积分来求解 "
+":math:`\\vec{x}(t)` 。换句话说："
 
 #~ msgid ""
 #~ "Getting back to the topic of initialization, during a normal time step we "
