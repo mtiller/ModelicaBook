@@ -24,6 +24,7 @@ WORKDIR /opt/MBE/src/pubbook
 
 RUN go get
 RUN go install
+RUN cp /opt/MBE/src/pubbook/s3cfg /opt/MBE
 
 WORKDIR /opt/MBE
 

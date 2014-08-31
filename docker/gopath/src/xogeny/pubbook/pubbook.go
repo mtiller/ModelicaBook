@@ -67,7 +67,7 @@ func runmake(dir string, targets...string) error {
 	return nil;
 }
 
-func (b Builder) Push(msg hs.HubMessage, params map[string][]string) {
+func (b Builder) Push(msg hs.PushMessage, params map[string][]string) {
 	user := msg.Repository.Owner.Name;
 	url := msg.Repository.GitUrl;
 	ref := msg.After;
