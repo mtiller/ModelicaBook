@@ -16,9 +16,11 @@ IMAGEDIRS      = docs-dir/Icons source/_static/img $(shell find $(SOURCEDIR)/Mod
 SVG2PDF       = rsvg-convert
 SVG2PDF_FLAGS =
 
-SYNC = s3cmd sync -P -F
-S3GET = s3cmd get
-S3PUT = s3cmd put -P
+S3CMD = s3cmd $(S3FLAGS)
+
+SYNC = $(S3CMD) sync -P -F
+S3GET = $(S3CMD) get
+S3PUT = $(S3CMD) put -P
 S3BUCKET = book.xogeny.com
 
 # Internal variables.
