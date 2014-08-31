@@ -6,6 +6,7 @@ import "log"
 import "path"
 import "bytes"
 import "os/exec"
+import "io/ioutil"
 
 import hs "github.com/xogeny/go-hooksink"
 
@@ -104,6 +105,7 @@ func (b Builder) Push(msg hs.HubMessage, params map[string][]string) {
 	err = git(dir, "checkout", ref)
 	if err != nil { return; }
 
+	s3flags := fmt.Sprintf("S3FLAGS='--config=/opt/MBE/src/pubbook/.s3cfg'");
 	bucket := fmt.Sprintf("S3BUCKET=dev.book.xogeny.com/%s", user);
 	if (!exists) {
 		// If it didn't already exist, we need to run some make targets
@@ -115,7 +117,7 @@ func (b Builder) Push(msg hs.HubMessage, params map[string][]string) {
 	err = runmake(dir, "results");
 	if (err!=nil) { return; }
 
-	args := append(targets, bucket);
+	args := append(targets, bucket, s3flags);
 	err = runmake(dir, args...);
 	if (err != nil) { return; }
 	
@@ -125,6 +127,26 @@ func (b Builder) Push(msg hs.HubMessage, params map[string][]string) {
 func main() {
 	secret := os.Getenv("MBE_WEBHOOK_SECRET");
 	log.Printf("Secret = '%s'", secret);
+
+	// Take the template config file, append keys and then
+	// write it back out.
+	cf, err := os.Open("s3cfg");
+	defer cf.Close();
+	if (err!=nil) {
+		log.Printf("Unable to open template s3cfg file");
+	}
+	conf, err := ioutil.ReadAll(cf);
+	if (err!=nil) {
+		log.Printf("Unable to read template s3cfg file");
+	}
+	nconf := fmt.Sprintf("%s\naccess_key=%s\nsecret_key=%s\n",
+		string(conf), os.Getenv("AWS_ACCESS_KEY_ID"),
+		os.Getenv("AWS_SECRET_ACCESS_KEY"));
+	err = ioutil.WriteFile(".s3cfg", []byte(nconf), 0660);
+	if (err!=nil) {
+		log.Printf("Unable to write .s3cfg file");
+	}
+
 	h := hs.NewHookSink(secret);
 	h.Add("/build", Builder{Debug: true});
 	h.Start();
