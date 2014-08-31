@@ -105,7 +105,12 @@ func (b Builder) Push(msg hs.HubMessage, params map[string][]string) {
 	err = git(dir, "checkout", ref)
 	if err != nil { return; }
 
-	s3flags := fmt.Sprintf("S3FLAGS='--config=/opt/MBE/src/pubbook/.s3cfg'");
+	wd, err := os.Getwd();
+	if (err!=nil) {
+		log.Printf("Unable to get working directory!");
+		wd = ".";
+	}
+	s3flags := fmt.Sprintf("S3FLAGS='--config=%s'",	path.Join(wd, ".s3cfg"));
 	bucket := fmt.Sprintf("S3BUCKET=dev.book.xogeny.com/%s", user);
 	if (!exists) {
 		// If it didn't already exist, we need to run some make targets
