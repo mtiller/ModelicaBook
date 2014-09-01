@@ -4,7 +4,6 @@ import "os"
 import "fmt"
 import "log"
 import "path"
-import "bytes"
 import "os/exec"
 import "io/ioutil"
 
@@ -17,23 +16,14 @@ type Builder struct {
 func git(dir string, args...string) error {
 	log.Printf("Running %v...", args);
 
-	ebuf := []byte{};
-	obuf := []byte{};
-
-	stderr := bytes.NewBuffer(ebuf);
-	stdout := bytes.NewBuffer(obuf);
-
 	cmd := exec.Command("git", args...)
 	cmd.Dir = dir;
-	cmd.Stderr = stderr;
-	cmd.Stdout = stdout;
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	
 	err := cmd.Run()
 	if err != nil {
 		log.Printf("Error: %s", err.Error());
-		log.Print("=== Output ===");
-		log.Print(stdout.String());
-		log.Print("=== Error ===");
-		log.Print(stderr.String());
 		return err;
 	} else {
 		log.Printf("...successful");
@@ -42,24 +32,14 @@ func git(dir string, args...string) error {
 }
 
 func runmake(dir string, targets...string) error {
-	ebuf := []byte{};
-	obuf := []byte{};
-
-	stderr := bytes.NewBuffer(ebuf);
-	stdout := bytes.NewBuffer(obuf);
-
 	cmd := exec.Command("make", targets...);
-	cmd.Stderr = stderr;
-	cmd.Stdout = stdout;
+	cmd.Stderr = os.Stderr
+	cmd.Stdout = os.Stdout
 	cmd.Dir = path.Join(dir, "text");
 	log.Printf("Running make: %v...", targets);
 	err := cmd.Run()
 	if err != nil {
 		log.Printf("Error running make '%v': %s", targets, err.Error());
-		log.Print("=== Output ===");
-		log.Print(stdout.String());
-		log.Print("=== Error ===");
-		log.Print(stderr.String());
 		return err;
 	} else {
 		log.Printf("...successful");
