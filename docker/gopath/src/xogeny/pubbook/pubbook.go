@@ -47,7 +47,7 @@ func runmake(dir string, targets...string) error {
 	return nil;
 }
 
-func (b Builder) Push(msg hs.PushMessage, params map[string][]string) {
+func (b Builder) Push(msg hs.PushMessage, params map[string][]string) error {
 	user := msg.Repository.Owner.Name;
 	url := msg.Repository.GitUrl;
 	ref := msg.After;
@@ -75,15 +75,15 @@ func (b Builder) Push(msg hs.PushMessage, params map[string][]string) {
 
 	if (exists) {
 		err = git(dir, "fetch", "origin");
-		if (err!=nil) { return; }
+		if (err!=nil) { return err; }
 	} else {
 		err = git(".", "clone", url, dir);
-		if (err!=nil) { return; }
+		if (err!=nil) { return err; }
 	}
 
 	/* Repo checkout correct ref */
 	err = git(dir, "checkout", ref)
-	if err != nil { return; }
+	if err != nil { return err; }
 
 	wd, err := os.Getwd();
 	if (err!=nil) {
@@ -96,17 +96,18 @@ func (b Builder) Push(msg hs.PushMessage, params map[string][]string) {
 		// If it didn't already exist, we need to run some make targets
 		/* Run make */
 		err = runmake(dir, "specs");
-		if (err!=nil) { return; }
+		if (err!=nil) { return err; }
 	}
 
 	err = runmake(dir, "results");
-	if (err!=nil) { return; }
+	if (err!=nil) { return err; }
 
 	args := append(targets, bucket, s3flags);
 	err = runmake(dir, args...);
-	if (err != nil) { return; }
+	if (err != nil) { return err; }
 	
 	log.Printf("Make ran!");
+	return nil;
 }
 
 func main() {
