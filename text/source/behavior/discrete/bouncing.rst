@@ -105,7 +105,7 @@ consider discrete behavior.  This is because at the heart of all
 events (time or state events) are conditional expressions, like ``h<0``
 from our current example.
 
-The implications become clear if we simulation our bouncing ball a bit
+The implications become clear if we simulate our bouncing ball a bit
 longer.  In that case, most Modelica tools will provide a solution
 like this:
 
