@@ -1,5 +1,5 @@
 within ModelicaByExample.DiscreteBehavior.CoolingRevisited;
-model NewtonCoolingMinFunction "Cooling example with min function"
+model NewtonCoolingMaxFunction "Cooling example with min function"
   type Temperature=Real(unit="K", min=0);
   type ConvectionCoefficient=Real(unit="W/(m2.K)", min=0);
   type Area=Real(unit="m2", min=0);
@@ -18,4 +18,4 @@ initial equation
 equation
   T_inf = 298.15 - max(0, 20*(time-0.5));
   m*c_p*der(T) = h*A*(T_inf-T) "Newton's law of cooling";
-end NewtonCoolingMinFunction;
+end NewtonCoolingMaxFunction;

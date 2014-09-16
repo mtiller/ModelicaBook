@@ -110,7 +110,7 @@ been simplified to:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/CoolingRevisited/NewtonCoolingIfExpression.mo
    :language: modelica
-   :lines: 16-18
+   :lines: 18-20
 
 .. index:: max
 
@@ -118,9 +118,9 @@ Alternatively, we could use one of the many built-in Modelica
 functions, like ``max``, to represent the change in the ambient
 temperature, *e.g.,*
 
-.. literalinclude:: /ModelicaByExample/DiscreteBehavior/CoolingRevisited/NewtonCoolingMinFunction.mo
+.. literalinclude:: /ModelicaByExample/DiscreteBehavior/CoolingRevisited/NewtonCoolingMaxFunction.mo
    :language: modelica
-   :lines: 16-18
+   :lines: 18-20
 
 Events
 ^^^^^^
