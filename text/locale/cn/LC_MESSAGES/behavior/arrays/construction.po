@@ -79,14 +79,6 @@ msgid ""
 "The same syntax can be used to construct arrays of floating point numbers:"
 msgstr ""
 
-#: ../../source/behavior/arrays/construction.rst:73
-msgid ""
-"Note, care should be taken when vectors of reals in this way since issues "
-"with floating point representations may result in the vector no including "
-"the final value.  The following alternatives are also available (and "
-"probably more robust):"
-msgstr ""
-
 #: ../../source/behavior/arrays/construction.rst:83
 msgid ""
 "It is also possible to construct ranges where the interval between values is"
@@ -227,3 +219,18 @@ msgid ""
 "This code builds an array with 1800 elements with only a few lines of "
 "Modelica code."
 msgstr ""
+
+#: ../../source/behavior/arrays/construction.rst:73
+msgid ""
+"Note, care should be taken when vectors of reals in this way since issues "
+"with floating point representations may result in the vector not including "
+"the final value.  The following alternatives are also available (and "
+"probably more robust):"
+msgstr ""
+
+#~ msgid ""
+#~ "Note, care should be taken when vectors of reals in this way since issues "
+#~ "with floating point representations may result in the vector no including "
+#~ "the final value.  The following alternatives are also available (and "
+#~ "probably more robust):"
+#~ msgstr ""
