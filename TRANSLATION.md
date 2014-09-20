@@ -383,7 +383,7 @@ using `pip` (*e.g.,* `pip install sphinx-intl`).
 ### Updating `po` files
 
 ```
-% make update
+% make update_all
 ```
 
 ### Building the `mo` files:
