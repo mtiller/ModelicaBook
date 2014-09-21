@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: Modelica by Example 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-09-23 12:20+0100\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../source/behavior/discrete/cooling.rst:4
 msgid "Cooling Revisited"
-msgstr ""
+msgstr "再探冷却"
 
 #: ../../source/behavior/discrete/cooling.rst:7
 msgid "Changing Ambient Conditions"
-msgstr ""
+msgstr "改变环境条件"
 
 #: ../../source/behavior/discrete/cooling.rst:9
 msgid ""
@@ -28,16 +28,23 @@ msgid ""
 "ambient temperature after half a second of simulation. This revised model is"
 " written as follows:"
 msgstr ""
+"我们将从一个简单的例子开始介绍了时间事件。"
+"我们将重新审视在前面 :ref:`physical-types` 中介绍的热学模型。"
+"不过，这次我们将对该系统添加一个扰动。"
+"具体地说，我们将仿真开始的半秒后让环境温度的突然下降。"
+"修正后的模型可以如下："
 
 #: ../../source/behavior/discrete/cooling.rst:23
 msgid ""
 "The highlight lines show an ``if`` statement.  This particular ``if`` "
 "statement provides two different equations for computing ``T_inf``."
 msgstr ""
+"高亮一行是一个\ ``if``\ 语句。"
+"这个特定的\ ``if``\ 语句对\ ``T_inf``\ 的计算提供两条不同的等式。"
 
 #: ../../source/behavior/discrete/cooling.rst:0
 msgid "Time"
-msgstr ""
+msgstr "Time"
 
 #: ../../source/behavior/discrete/cooling.rst:28
 msgid ""
@@ -45,6 +52,8 @@ msgid ""
 " model.  This is because ``time`` is a built-in variable in all Modelica "
 "models."
 msgstr ""
+"你会注意到这个模型中没有声明变量\ ``time``\ 。"
+"之所以如此是因为\ ``time``\ 是一个内置在所有Modelica模型内的变量。"
 
 #: ../../source/behavior/discrete/cooling.rst:32
 msgid ""
@@ -58,16 +67,25 @@ msgid ""
 "examples of other state events where this would not be possible, in the next"
 " section when we present the classic :ref:`bouncing-ball` example."
 msgstr ""
+"两个方程中实际使用哪个依赖于条件表达式\ ``time<=0.5``\ 。"
+"正因为这个表达式仅仅取决于\ ``time``\ ，而不是在模型中的任何其他变量，"
+"我们可以把这两个公式之间的转换称为“时间事件”。"
+"关键的一点是，当对这些方程进行积分时，我们可以告诉对方程组进行积分的求解器精"
+"确地停在第0.5秒，然后继续使用不同的公式进行求解。"
+"当在下一节我们介绍的经典的 :ref:`bouncing-ball` 例子里，"
+"我们会看到对于其他状态事件，这是不可能的。"
 
 #: ../../source/behavior/discrete/cooling.rst:43
 msgid ""
 "But for now, let us continue with our cooling example.  If we simulate this "
 "model for one second, we get the following temperature trajectory:"
 msgstr ""
+"但是现在，让我们继续考虑我们的冷却例子。"
+"如果我们对这个模型进行一秒的仿真，我们将得到以下的温度轨迹："
 
 #: ../../source/behavior/discrete/cooling.rst:58
 msgid "Initial Transients"
-msgstr ""
+msgstr "初始瞬态"
 
 #: ../../source/behavior/discrete/cooling.rst:72
 msgid ""
@@ -76,6 +94,9 @@ msgid ""
 "that will determine a value for ``T`` such that our system starts in an "
 "equilibrium state, *i.e.,*"
 msgstr ""
+"正如我们在 :ref:`initialization` 中的讨论所了解到的一样，"
+"我们可以通过添加初始方程解决初始瞬态的问题。我们用初始方程找到这样的一个"
+"\ ``T``\ 值，使得我们的系统从平衡态开始仿真，\ *即，* " 
 
 #: ../../source/behavior/discrete/cooling.rst:82
 msgid ""
@@ -85,10 +106,13 @@ msgid ""
 " zero.  Now the temperature response no longer includes any initial "
 "transient and we can focus only on the response to the disturbance:"
 msgstr ""
+"我们唯一改变了的是初始化的方程。"
+"相比从某一固定温度开始系统的仿真，我们现在让仿真开始时温度的变化为零（至少在一开始没有外加扰动影响的时候）。"
+"现在的温度响应不再包括任何初始瞬态，我们可以只专注于系统对干扰的响应。"
 
 #: ../../source/behavior/discrete/cooling.rst:95
 msgid "Compactness"
-msgstr ""
+msgstr "简洁性"
 
 #: ../../source/behavior/discrete/cooling.rst:97
 msgid ""
@@ -97,6 +121,8 @@ msgid ""
 "alternative constructs we can use to get the same behavior with fewer lines "
 "of code."
 msgstr ""
+"``if``\ 语句的一个问题是，它们可以让相对简单的行为变化看起来相当复杂。"
+"我们可以用好几种另外的语法结构以更少的代码获得相同的行为。"
 
 #: ../../source/behavior/discrete/cooling.rst:104
 msgid ""
@@ -106,16 +132,22 @@ msgid ""
 "``if`` expression is also less verbose.  If we had chosen to use an ``if`` "
 "expression our ``equation`` could have been simplified to:"
 msgstr ""
+"第一种方法是使用一个\ ``if``\ **表达式**\ 。"
+"相对于包含方程组“分支”的\ ``if``\ 语句，\ ``if``\ 表达式只包含表达式分支。"
+"此外，语法上\ ``if``\ 表达式也更为简洁。"
+"倘若我们使用\ ``if``\ 表达式，我们的\ ``equation``\ 部分会被简化为："
 
 #: ../../source/behavior/discrete/cooling.rst:117
 msgid ""
 "Alternatively, we could use one of the many built-in Modelica functions, "
 "like ``max``, to represent the change in the ambient temperature, *e.g.,*"
 msgstr ""
+"此外，我们可以使用许多Modelica的内置函数，如\ ``max``\ "
+"来表示在环境温度的变化，\ *例如：*"
 
 #: ../../source/behavior/discrete/cooling.rst:126
 msgid "Events"
-msgstr ""
+msgstr "事件"
 
 #: ../../source/behavior/discrete/cooling.rst:128
 msgid ""
@@ -124,6 +156,9 @@ msgid ""
 "not just describing a change in the ambient temperature, we are also "
 "specifying **when** it changes.  This a subtle, but very important, point."
 msgstr ""
+"我们已经看到了几种方式来表达在系统行为的突然变化。"
+"但要特别指出的是，我们不仅仅描述了环境温度的变化，"
+"我们也规定了\ **何时（when）**\ 它会发生变化。"
 
 #: ../../source/behavior/discrete/cooling.rst:134
 msgid ""
@@ -134,6 +169,10 @@ msgid ""
 "amount of time required to complete the simulation, variable time step "
 "integrators will, in such circumstances, increase their step size."
 msgstr ""
+"考虑最后一个例子：我们的系统初始状态是一个平衡态。"
+"在仿真的开始，系统没有显著的动态。"
+"因为系统中并没有真正变化，积分器是不可能积累显著的积分误差。"
+"所以，为了最小化完成仿真所需的时间，可变步长的积分器会在这样的情况下提高其步长。"
 
 #: ../../source/behavior/discrete/cooling.rst:142
 msgid ""
@@ -142,6 +181,9 @@ msgid ""
 "disturbance were to occur, the integrator's assumptions that a large step "
 "will not lead to significant integration error would not be true."
 msgstr ""
+"但这样做有其风险。风险在于，系统中突然的扰动可能会让积分器“措手不及” 。"
+"如果发生了这样的扰动，积分器对于大步长不会导致显著积分误差的假设，"
+"便不再成立了。"
 
 #: ../../source/behavior/discrete/cooling.rst:148
 msgid ""
@@ -155,6 +197,13 @@ msgid ""
 " to get under the error threshold, which means they will continue to blindly"
 " try smaller and smaller steps."
 msgstr ""
+"那么问题就变成，积分器如何\ *知道*\ 何时它可以使用一个大的时间步长，何时不能。"
+"通常情况下，这些积分方案使用一种试错法。他们试图使用大步长，"
+"然后估算由该步长引入的误差。"
+"如果误差小于某个阈值，则积分器接受新算出的状态（或可能尝试更大的步长）。"
+"但倘若在该步长引入了过多的错误，那么积分器便尝试较小的步长。"
+"但它们不知道为了符合误差阈值要求需要多小的步长。"
+"这意味着它们将盲目地尝试更小的步长，直到符合条件。"
 
 #: ../../source/behavior/discrete/cooling.rst:159
 msgid ""
@@ -165,6 +214,12 @@ msgid ""
 "*i.e.,* an event whose time is known *a priori* without any knowledge of the"
 " solution trajectory."
 msgstr ""
+"但Modelica不止是关于相关系统的积分。"
+"Modelica编译器研究问题的\ **结构**\ 。"
+"在我们的所有例子中，编译器都可以看到系统有一个明显的行为变化。"
+"不仅如此，它可以看到这个行为改变是一个时间事件。"
+"\ *亦即*\ 一个这样的一个事件，其发生时间被\ *先验*\ 地、"
+"不需要任何关于解的轨迹的信息就被确定"
 
 #: ../../source/behavior/discrete/cooling.rst:166
 msgid ""
@@ -178,6 +233,12 @@ msgid ""
 "integrate right up to that point automatically and then restart after that "
 "point."
 msgstr ""
+"因此，Modelica语言编译器会告诉底层的积分器，"
+"在第0.5秒时系统行为会突然发生变化，然后它会指导积分器一步不多地积到该时点。"
+"结果，\ **在时间步长内**\ 从不会发生急剧的变化。"
+"相反，该积分器会简单地在该事件的另一侧重新开始积分。"
+"这完全避免为了最小化步长内的误差而去盲目搜索截止时间。"
+"相反，该积分器会自动恰好积到该点，然后在该点后重新启动。"
 
 #: ../../source/behavior/discrete/cooling.rst:176
 msgid ""
@@ -187,18 +248,22 @@ msgid ""
 "coming sections, we'll also see more complex examples of events that depend "
 "on the solution variables."
 msgstr ""
+"这是众多能优化仿真进行方式的Modelica语言特性中的一个。"
+"对于本处理方式的进一步讨论可以在\ :ref:`events`\  紧接的小节中找到。"
+"在接下来的章节中，我们还可以看到另一种更复杂事件的例子。"
+"这种事件依赖于解中的变量的值。"
 
 #: ../../source/behavior/discrete/cooling.rst:21
 msgid "if statement"
-msgstr ""
+msgstr "if语句"
 
 #: ../../source/behavior/discrete/cooling.rst:102
 msgid "if expression"
-msgstr ""
+msgstr "if表达式"
 
 #: ../../source/behavior/discrete/cooling.rst:115
 msgid "max"
-msgstr ""
+msgstr "max"
 
 #: ../../source/behavior/discrete/cooling.rst:50
 msgid ""
@@ -209,6 +274,10 @@ msgid ""
 "temperature).  The second phase is the tracking of the ambient temperature "
 "as it decreases."
 msgstr ""
+"正如你在这些结果中看到的，环境温度确实在半秒后开始减少。"
+"在研究的温度本身的动态响应时，我们看到两个不同的阶段。"
+"第一阶段是趋向平衡态的初始瞬态响应（从而和环境温度相匹配）。"
+"第二阶段是随在环境温度的减小的进行的追踪。 "
 
 #: ../../source/behavior/discrete/cooling.rst:60
 msgid ""
@@ -223,25 +292,11 @@ msgid ""
 ":`steady-state`).  This avoids the initial transient altogether and allows "
 "us to focus entirely on the disturbance that we are interested in."
 msgstr ""
+"值得注意的是，这是建模中一个的非常常见的问题。"
+"你常常要模拟的是系统对一些扰动的响应（如在此例中环境温度的下降） 。"
+"但是，如果系统开始时不处于某种平衡态下，系统响应将包括某种形式的初始瞬态（图示） 。"
+"为了清楚地区分这两种响应，我们要避免它们之间有任何重叠。"
+"\ **要做到这一点最简单的方法就是从平衡态开始仿真**\ "
+"（参见我们之前在\ :ref:`steady-state`\ 的讨论） 。"
+"这完全避免了初始瞬态，允许我们完全专注于我们所感兴趣的扰动。"
 
-#~ msgid ""
-#~ "As you can see in these results, the ambient temperature does indeed start "
-#~ "to decrease after half a second.  In studying the dynamic response of the "
-#~ "temperature itself, we see two distinct phases.  The first phase is the "
-#~ "initial transient response toward equilibrium (to match the ambient "
-#~ "temperature).  The second phase is the tracking of the ambient temperature "
-#~ "as it increases."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "It is worth noting that this is a very common issue in modeling. Frequently,"
-#~ " you wish to model the systems response to some disturbance (like the "
-#~ "ambient temperature increase in this case).  However, if you don't start "
-#~ "your system in some kind of equilibrium state, the system response will also"
-#~ " include some kind of initial transient (like the one shown here).  In order"
-#~ " to distinguish these two responses clearly, we want to avoid any overlap "
-#~ "between them.  **The simplest way to do that is to start the simulation in "
-#~ "an equilibrium condition** (as discussed previous in our discussion of :ref"
-#~ ":`steady-state`).  This avoids the initial transient altogether and allows "
-#~ "us to focus entirely on the disturbance that we are interested in."
-#~ msgstr ""
