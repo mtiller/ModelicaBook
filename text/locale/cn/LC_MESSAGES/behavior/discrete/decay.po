@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: Modelica by Example 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-09-22 22:20+0100\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/decay.rst:4
 msgid "State Event Handling"
-msgstr ""
+msgstr "状态事件的处理"
 
 #: ../../source/behavior/discrete/decay.rst:6
 msgid ""
@@ -22,14 +22,18 @@ msgid ""
 "important complications associated with state events. Surprisingly, these "
 "complications can be introduced by even simple models."
 msgstr ""
+"现在我们已经介绍了\ :ref:`时间事件 <cooling-revisited>`\ 和"
+"\ :ref:`状态事件 <bouncing-ball>`\ ,"
+"让我们来看看与状态事件相关的一些重要的困难。"
+"出人意料的是，这些困难甚至会在简单的模型里出现。"
 
 #: ../../source/behavior/discrete/decay.rst:13
 msgid "Basic Decay Model"
-msgstr ""
+msgstr "基本衰减模型"
 
 #: ../../source/behavior/discrete/decay.rst:15
 msgid "Consider the following almost trivial model:"
-msgstr ""
+msgstr "请考虑以下简单得几近不值一提的模型"
 
 #: ../../source/behavior/discrete/decay.rst:26
 msgid ""
@@ -39,20 +43,25 @@ msgid ""
 " and drive ``x`` below zero.  When that happens, the ``sqrt(x)`` expression "
 "generates a floating point exception and the simulation terminates."
 msgstr ""
+"再一次，数值问题混了进来。尽管在数学上\ ``x``\ 的值应该不可能的降到低于零，"
+"但在使用数值积分方法时，少量错误可能混入结果，使得\ ``x``\ 低于零。"
+"当发生这种情况时，\ ``sqrt(x)``\ 的表达式产生浮点异常，结果仿真终止。"
 
 #: ../../source/behavior/discrete/decay.rst:34
 msgid "Guard Expressions"
-msgstr ""
+msgstr "保护表达式"
 
 #: ../../source/behavior/discrete/decay.rst:36
 msgid ""
 "To prevent this, we might introduce an ``if`` expression to guard against "
 "evaluating the square root of a negative number, like this:"
 msgstr ""
+"为了避免这种情况，我们可以引入一个\ ``if``\ 表达式防止计算负数的平方根，"
+"如下："
 
 #: ../../source/behavior/discrete/decay.rst:43
 msgid "Simulating this model we get the following trajectory [#tol]_:"
-msgstr ""
+msgstr "这个模型进行仿真，我们得到如下的轨迹\ [#tol]_:"
 
 #: ../../source/behavior/discrete/decay.rst:47
 msgid ""
@@ -60,6 +69,8 @@ msgid ""
 "numerical exception that results from taking the square root of a negative "
 "number."
 msgstr ""
+"再一次地，仿真失败。但是为什么呢？"
+"它出于相同的原因失败了：对负数的求平方根而导致的数值异常。"
 
 #: ../../source/behavior/discrete/decay.rst:51
 msgid ""
@@ -69,14 +80,18 @@ msgid ""
 "assume that there is no way that ``sqrt(x)`` can be evaluated if ``x`` is "
 "less than zero.  **But this assumption is incorrect.**"
 msgstr ""
+"当大多数人看到像这样（或者例如被零除）的浮点异常错误信息时， 他们都非常困惑，"
+"毕竟他们都像我们一样写下了一个保护表达式。"
+"他们自然认为是当\ ``x``\ 小于零时\ ``sqrt(x)``\ 根本不可能会被计算。"
+"\ **但这个假设是错误的。**"
 
 #: ../../source/behavior/discrete/decay.rst:58
 msgid "Events and Conditional Expressions"
-msgstr ""
+msgstr "事件和条件表达式"
 
 #: ../../source/behavior/discrete/decay.rst:63
 msgid "Given the ``if`` expression:"
-msgstr ""
+msgstr "若有如下\ ``if``\ 表达式："
 
 #: ../../source/behavior/discrete/decay.rst:69
 msgid ""
@@ -87,6 +102,10 @@ msgid ""
 "event will occur, we have to search the solution trajectory to see when the "
 "condition (*e.g.,* ``x>=0`` becomes false)."
 msgstr ""
+"\ ``sqrt``\ 被以负参数调用是完全有可能的。其原因与这是状态事件有关。"
+"请记住，\ *时间事件*\ 的发生时间是可以预知的。"
+"但是，状态事件则不然。 为了确定事件何时会发生，我们必须在解的轨迹寻找以确定"
+"条件（\ *例如：*\ ``x>=0``\ ）何时为假。"
 
 #: ../../source/behavior/discrete/decay.rst:77
 msgid ""
@@ -102,6 +121,15 @@ msgid ""
 "``x>=0`` changes from true to false, it will continue to use the equation "
 "``der(x)=sqrt(x)`` even though ``x`` is negative."
 msgstr ""
+"要了解的重要一点是，\ **直到事件发生时，行为都不会改变** \ 。"
+"换句话说，这个\ ``if``\ 表达式的两个值代表了两种类型的行为，"
+"\ ``der(x)=sqrt(x)``\ 和\ ``der(x)=0``\ 。 "
+"由于\ ``x``\ 最初大于零，最初的行为便是\ ``der(x)=sqrt(x)``\ 。"
+"\ **求解器将继续使用该方程，直到它确定了**\ "
+"由\ ``x>=0``\ 所表示的\ **事件发生的时间。"
+"而为了确定该事件发生的时间，\ **求解器必须越过条件表达式的值发生变化的点**\ 。"
+"这意味着，在试图准确确定条件\ ``x>=0``\ 从真假的变化的时间这一过程中，"
+"虽然\ ``x``\ 已经为负，求解器仍会继续使用公式\ ``der(x)=sqrt(x)``\ 。"
 
 #: ../../source/behavior/discrete/decay.rst:96
 msgid ""
@@ -112,6 +140,11 @@ msgid ""
 "where the event will occur.  For example, if we had the following ``if`` "
 "expression:"
 msgstr ""
+"我们可以减少在尝试和重试积分步长中所花费的时间。这是得益于Modelica可以从"
+"\ ``if``\ 表达式提取出所谓的“过零”函数。这些函数被之所以被称为过零函数，"
+"因为它通常被构造成为事件发生的位置有根存在的形式。"
+"例如，如果我们有以下\ ``if``\ 表达式："
+
 
 #: ../../source/behavior/discrete/decay.rst:107
 msgid ""
@@ -119,16 +152,20 @@ msgid ""
 "because it changes from positive to negative precisely at the point where "
 "``a>b``."
 msgstr ""
+"这里的过零函数是\ :math:`a-b`\ 。"
+"之所以选择这个函数的原因是，它在\ ``a>b``\ 成立的时刻正好是由正转为负。"
 
 #: ../../source/behavior/discrete/decay.rst:111
 msgid "Recall our previous equation:"
-msgstr ""
+msgstr "回想我们在前面的公式"
 
 #: ../../source/behavior/discrete/decay.rst:117
 msgid ""
 "In this case, the zero crossing function is simply :math:`x` since the event"
 " occurs when :math:`x` itself crosses zero."
 msgstr ""
+"在此过零函数显然是\ :math:`x`\ 。这是因为事件在 \ :math:`x`\ "
+"自己穿过零时发生"
 
 #: ../../source/behavior/discrete/decay.rst:120
 msgid ""
@@ -144,6 +181,10 @@ msgid ""
 "cheap because it doesn't involve taking additional integration steps, only "
 "evaluating the interpolation functions from the triggering integration step."
 msgstr ""
+"Modelica编译器收集在模型中所有的过零函数以给予积分器使用。"
+"在积分时，积分器检查是否有任何的过零函数变了号。"
+"If they have, it uses the solution it computed during that step to interpolate the zero crossing function to find the location, in time, of the root of the zero crossing function and this is the point in time where the event occurs.  "
+"This process is much more efficient because the root finding algorithms have more information to help them identify to location of the root (information like the derivative of the zero crossing function) and evaluation is very cheap because it doesn't involve taking additional integration steps, only evaluating the interpolation functions from the triggering integration step."
 
 #: ../../source/behavior/discrete/decay.rst:138
 msgid "Event Suppression"

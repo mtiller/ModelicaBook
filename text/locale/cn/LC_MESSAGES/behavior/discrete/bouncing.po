@@ -26,7 +26,7 @@ msgid ""
 "event.  In this section, we'll examine the other type of event, the state "
 "event.  A state event is an event that depends on the solution trajectory."
 msgstr ""
-"在\ :ref:`前面的例子 <cooling-revisited>\` 里，我们看到了某些事件和时间的关系。这些所谓“时间事件”（time "
+"在\ :ref:`前面的例子 <cooling-revisited>`\ 里，我们看到了某些事件和时间的关系。这些所谓“时间事件”（time "
 "event）只是其中一种“事件”（event）。我们将在本节中研究另一类事件，即状态事件（state event）。状态事件是依赖于解的轨迹的一类事件。"
 
 #: ../../source/behavior/discrete/bouncing.rst:16
