@@ -126,7 +126,7 @@ msgstr ""
 "\ ``der(x)=sqrt(x)``\ 和\ ``der(x)=0``\ 。 "
 "由于\ ``x``\ 最初大于零，最初的行为便是\ ``der(x)=sqrt(x)``\ 。"
 "\ **求解器将继续使用该方程，直到它确定了**\ "
-"由\ ``x>=0``\ 所表示的\ **事件发生的时间。"
+"由\ ``x>=0``\ 所表示的\ **事件发生的时间。**\ "
 "而为了确定该事件发生的时间，\ **求解器必须越过条件表达式的值发生变化的点**\ 。"
 "这意味着，在试图准确确定条件\ ``x>=0``\ 从真假的变化的时间这一过程中，"
 "虽然\ ``x``\ 已经为负，求解器仍会继续使用公式\ ``der(x)=sqrt(x)``\ 。"
@@ -141,7 +141,8 @@ msgid ""
 "expression:"
 msgstr ""
 "我们可以减少在尝试和重试积分步长中所花费的时间。这是得益于Modelica可以从"
-"\ ``if``\ 表达式提取出所谓的“过零”函数。这些函数被之所以被称为过零函数，"
+"\ ``if``\ 表达式提取出所谓的“过零”（zero-crossing）函数。"
+"这些函数被之所以被称为过零函数，"
 "因为它通常被构造成为事件发生的位置有根存在的形式。"
 "例如，如果我们有以下\ ``if``\ 表达式："
 
@@ -165,7 +166,7 @@ msgid ""
 " occurs when :math:`x` itself crosses zero."
 msgstr ""
 "在此过零函数显然是\ :math:`x`\ 。这是因为事件在 \ :math:`x`\ "
-"自己穿过零时发生"
+"自己穿过零时发生。"
 
 #: ../../source/behavior/discrete/decay.rst:120
 msgid ""
@@ -183,12 +184,16 @@ msgid ""
 msgstr ""
 "Modelica编译器收集在模型中所有的过零函数以给予积分器使用。"
 "在积分时，积分器检查是否有任何的过零函数变了号。"
-"If they have, it uses the solution it computed during that step to interpolate the zero crossing function to find the location, in time, of the root of the zero crossing function and this is the point in time where the event occurs.  "
-"This process is much more efficient because the root finding algorithms have more information to help them identify to location of the root (information like the derivative of the zero crossing function) and evaluation is very cheap because it doesn't involve taking additional integration steps, only evaluating the interpolation functions from the triggering integration step."
+"如果这些过零函数变了号，那积分器便使用在该步长中计算出的解去内插过零函数，"
+"以此计算交叉函数变号的时刻。 而这就是事件发生的时间点。"
+"这种方法非常有效率。因为求根算法可以使用更多的信息来帮助他们识别为根的位置"
+"（如过零函数的导数）。"
+"加上由于它不涉及采取额外的积分步骤， 而仅从触发事件的积分步长开始"
+"计算内插函数的值，这种求解算法本身非常花销非常低。"
 
 #: ../../source/behavior/discrete/decay.rst:138
 msgid "Event Suppression"
-msgstr ""
+msgstr "事件的抑制"
 
 #: ../../source/behavior/discrete/decay.rst:140
 msgid ""
@@ -200,10 +205,16 @@ msgid ""
 " of ``x``.  We can see the ``noEvent`` operator in action in the following "
 "model:"
 msgstr ""
+"但经过这一切，如何避免我们在\ ``Decay1``\ 和\ ``Decay2``\ "
+"模型中所看到的问题，仍然是不明确的。答案是一个特殊的操作符，\ ``noEvent``\ 。" 
+"\ ``noEvent``\ 操作符抑制了这种特殊的事件处理方式。"
+"相反，它提供大多数用户一开始预期中的行为。也就是，在每一个\ ``x``\ 的"
+"取值都会进行条件表达式的计算"
+"我们可以从下面的模型中看到\ ``noEvent``\ 操作符的作用："
 
 #: ../../source/behavior/discrete/decay.rst:152
 msgid "and the results can be seen here:"
-msgstr ""
+msgstr "结果如下："
 
 #: ../../source/behavior/discrete/decay.rst:157
 msgid ""
@@ -211,6 +222,8 @@ msgid ""
 "of ``noEvent`` ensures that ``sqrt(x)`` is never called with a negative "
 "value of ``x``."
 msgstr ""
+"现在仿真毫无问题地完成了。"
+"这是因为\ ``noEvent``\ 确保了\ ``sqrt(x)``\ 不会在\ ``x``\ 值为负时被调用。"
 
 #: ../../source/behavior/discrete/decay.rst:161
 msgid ""
@@ -227,30 +240,42 @@ msgid ""
 " used when there is a smooth transition in behavior, otherwise it can create"
 " performance issues."
 msgstr ""
+"这似乎有点奇怪，我们必须显式地加入\ ``noEvent``\ 操作符才能得到"
+"我们认为最直观的行为。为什么不把默认行为设为最直观的一个呢？"
+"答案是性能原因。使用条件表达式生成事件提高了仿真的性能。"
+"因为这给予求解何时要为行为的突变做准备。"
+"大多数时候，这种方法不会导致任何问题。"
+"我们在本章中提出了的例子都是为了强调这个问题，但它们并不能代表大多数情况。"
+"出于这个原因，\ ``noEvent``\ 不是默认的，而是必须显式地使用。" 
+"但是应当指出的是， \ ``noEvent``\ 操作符应该只用于行为变化是平滑过渡的时候。"
+"否则它会带来性能问题。"
 
 #: ../../source/behavior/discrete/decay.rst:176
 msgid "Chattering"
-msgstr ""
+msgstr "抖振"
 
 #: ../../source/behavior/discrete/decay.rst:178
 msgid ""
 "There is a common effect known as \"chattering\" that you will run into "
 "sooner or later with Modelica.  Consider the following model:"
 msgstr ""
+"用Modelica语言时，你早晚会遇到一个被称为“抖动”（chattering）常见现象。"
+"考虑下面的模型："
 
 #: ../../source/behavior/discrete/decay.rst:185
 msgid "Simulating this model gives us the following results:"
-msgstr ""
+msgstr "对此模型进行仿真给了我们如下结果："
 
 #: ../../source/behavior/discrete/decay.rst:190
 msgid ""
 "This model is interesting because looking at it, one might assume the "
 "equation:"
 msgstr ""
+"这个模型很有趣。因为看着它，大家可能会假设："
 
 #: ../../source/behavior/discrete/decay.rst:197
 msgid "was equivalent to:"
-msgstr ""
+msgstr "等价于："
 
 #: ../../source/behavior/discrete/decay.rst:203
 msgid ""
@@ -261,6 +286,11 @@ msgid ""
 "generates an event.  This means it will force the solver to truncate time "
 "steps and restart the simulation."
 msgstr ""
+"毕竟，\ ``if``\ 表达式每个分支都是\ ``-x``\ 。"
+"而且，模拟结果似乎与这个假设是一致的。"
+"\ **但是，这两个等式是不等价的**\ 。"
+"正如我们在本节已经讨论过的一样，不同点在于拥有条件表达式的等式会生成事件。"
+"这意味着它将迫使求解器截断时间步长，然后重新启动仿真。"
 
 #: ../../source/behavior/discrete/decay.rst:211
 msgid ""
@@ -272,6 +302,12 @@ msgid ""
 "these equations.  As a result, the answer will (at least in general) not be "
 "exactly zero.  Instead it will be slightly above or below zero."
 msgstr ""
+"让我们退一步，考虑这个问题的解析解。"
+"我们预计这个解的轨迹\ ``x``\ 是一个衰减的指数函数而且渐近趋近于零。"
+"问题在于，事件发生在零的位置上。"
+"请记住，数值求解器在对这些方程进行积分时，会在每一个步长带来少量的局部误差。"
+"其结果是，答案将（至少在通常情况下）不完全为零，"
+"相反，它会稍微高于或低于零。 "
 
 #: ../../source/behavior/discrete/decay.rst:220
 msgid ""
@@ -331,10 +367,12 @@ msgid ""
 "If we attempt to simulate this model for 5 seconds, we find that the "
 "simulation terminates after about 2 seconds with the following trajectory:"
 msgstr ""
+"如果我们试图对此模型进行5秒的仿真，我们发现用仿真在大概2秒后停止。"
+"结果是如下的轨迹："
 
 #: ../../source/behavior/discrete/decay.rst:61
 msgid "The Role of Events in Behavior"
-msgstr ""
+msgstr "事件在行为上的作用"
 
 #: ../../source/behavior/discrete/decay.rst:90
 msgid ""
@@ -343,6 +381,9 @@ msgid ""
 "the ``if`` expression).  Hopefully the previous paragraph has made it clear "
 "that this is not the case."
 msgstr ""
+"大多数用户开始是认为每次\ ``der(x)``\ 被计算时，\ ``if``\ 表达式也会被计算"
+"（特别是在\ ``if``\ 表达式中的条件表达式） 。"
+"但愿前面的章节已经很清楚地阐释了，这并非事实。"
 
 #: ../../source/behavior/discrete/decay.rst:263
 msgid "Speed vs. Accuracy"
