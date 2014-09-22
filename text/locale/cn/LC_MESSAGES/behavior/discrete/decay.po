@@ -478,16 +478,17 @@ msgid ""
 "simulate the ``WithNoEvents`` model, using the same integrator settings, we "
 "can see how significantly different our results will be:"
 msgstr ""
-"In this case, the integrator is blind to the changes in behavior.  
-"在这种情况下，积分器不能得知行为变化。
-It does its best to integrate accuracy but without explicit knowledge of where the behavior changes occur, it will blindly continue using the wrong value of the derivative and extrapolate well beyond the change in behavior.  
-积分器会尽力整合的准确性，但没有发生这些行为的改变显性知识，它会盲目继续使用衍生工具的错误值，并推断远远超出了行为的变化。
-If we simulate the ``WithNoEvents`` model, using the same integrator settings, we can see how significantly different our results will be:"
+"在这种情况下，积分器不能得知行为变化。"
+"尽管它会尽量准确地进行积分，但如果积分器没有明确知道这些行为改变发生，那么"
+"它会继续盲目地使用错误的微分值，并在行为变化后很长时间继续进行外推。"
+"如果使用相同的积分器设置对使用了\ ``WithNoEvents``\ 的模型进行仿真，"
+"我们可以看到两者的结果有如何显著的不同： "
 
 #: ../../source/behavior/discrete/decay.rst:329
 msgid ""
 "Note how quickly the integrator introduces some pretty significant error."
-msgstr ""
+msgstr "" 
+"请注意积分器何其迅速地引入了些非常显著的错误。"
 
 #: ../../source/behavior/discrete/decay.rst:335
 msgid ""
@@ -501,6 +502,13 @@ msgid ""
 "``noEvent`` operator can have a significant impact on accuracy simulation "
 "results."
 msgstr ""
+"在这些例子中使用的积分器设定是为了说明\ ``noEvent``\ "
+"操作符对精度可能造成的影响而设置的。"
+"然而，选择这些设置的目的确实是为了强调这些差异。"
+"如果使用更典型的设置，结果上的差异很可能不这么会引人注目。"
+"此外，使用\ ``noEvent``\ 的影响无法预测或量化。"
+"因为，这些影响在使用不用的求解器时会显著有所不同。"
+"但核心的问题名曲：使用\ ``noEvent``\ 操作符可能对仿真结果的精度有显著影响。"
 
 #: ../../source/behavior/discrete/decay.rst:349
 msgid ""
@@ -509,3 +517,5 @@ msgid ""
 "this explanation is much better and includes results to support the "
 "conclusions drawn."
 msgstr ""
+"特别感谢Lionel Belmon对我原来讨论的质疑，以及找出了我的几个未经证实的假设。"
+"因为如此，现在的解释有了很大的改进，而且还加上了仿真结果以支持我的结论。"
