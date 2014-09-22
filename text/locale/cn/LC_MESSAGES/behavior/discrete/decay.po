@@ -466,8 +466,8 @@ msgid ""
 "integration parameters but suppress events by using the ``noEvents`` "
 "operator as follows:"
 msgstr ""
-"不过，在使用完全相同的积分参数的情况下，现在让我们考虑通过
-\ ``noEvents``\ 操作符以抑制事件产生的情况："
+"不过，在使用完全相同的积分参数的情况下，现在让我们考虑通过"
+"\ ``noEvents``\ 操作符以抑制事件产生的情况："
 
 #: ../../source/behavior/discrete/decay.rst:318
 msgid ""
