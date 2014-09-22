@@ -245,7 +245,7 @@ msgstr ""
 "答案是性能原因。使用条件表达式生成事件提高了仿真的性能。"
 "因为这给予求解何时要为行为的突变做准备。"
 "大多数时候，这种方法不会导致任何问题。"
-"我们在本章中提出了的例子都是为了强调这个问题，但它们并不能代表大多数情况。"
+"我们在本章中提出了的例子都是为了强调这个问题，但这些例子并不能代表大多数情况。"
 "出于这个原因，\ ``noEvent``\ 不是默认的，而是必须显式地使用。" 
 "但是应当指出的是， \ ``noEvent``\ 操作符应该只用于行为变化是平滑过渡的时候。"
 "否则它会带来性能问题。"
@@ -271,7 +271,7 @@ msgid ""
 "This model is interesting because looking at it, one might assume the "
 "equation:"
 msgstr ""
-"这个模型很有趣。因为看着它，大家可能会假设："
+"这个模型很有趣。因为当大家看着它的时候，可能会假设："
 
 #: ../../source/behavior/discrete/decay.rst:197
 msgid "was equivalent to:"
@@ -387,7 +387,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/decay.rst:263
 msgid "Speed vs. Accuracy"
-msgstr ""
+msgstr "速度与准确性"
 
 #: ../../source/behavior/discrete/decay.rst:265
 msgid ""
@@ -397,6 +397,10 @@ msgid ""
 "take some time to explore this question and explain why, on the whole, "
 "associated events with conditional expressions is very good idea[#Belmon]_."
 msgstr ""
+"希望讨论至今大家已经明确，为什么在某些情况下有必要抑制事件的产生。"
+"不过，人们可能会问，为什么不直接跳过事件每次都计算条件表达式？"
+"那么，让我们花一些时间来探讨这个问题，并解释为何就整体而言把条件表"
+"达式与事件进行关联是个非常好的主意\ [#Belmon]_\ 。"
 
 #: ../../source/behavior/discrete/decay.rst:272
 msgid ""
@@ -408,6 +412,12 @@ msgid ""
 "derivatives.  If those assumptions are violated, we need to let the "
 "integration routines know so they can account these changes in behavior."
 msgstr ""
+"如果没有事件检测，积分器只会直接跳过事件。"
+"而当这种情况发生时，积分器会错过重要的行为改变。"
+"这将会对仿真的准确性有显著的影响。"
+"这是因为大多数积分程序的准确性是基于对被积函数及其导数连续性的假设。"
+"倘若这些假设不再成立了，我们需要让积分程序知道这点。"
+"如此，积分器便可以考虑这些行为的改变。"
 
 #: ../../source/behavior/discrete/decay.rst:281
 msgid ""
@@ -417,6 +427,10 @@ msgid ""
 "cost of slower simulations.  Let's look at a concrete example. Consider the "
 "following simple Modelica model:"
 msgstr ""
+"这就到事件出场的时候了。事件强迫积分器在行为发生变化的时刻停止，"
+"然后在发生行为变化后的时点重新启动。"
+"其结果是在牺牲模拟速度的前提下获得更高的精度"
+"让我们看一个具体的例子。请考虑下面这个简单的Modelica模型："
 
 #: ../../source/behavior/discrete/decay.rst:291
 msgid ""
@@ -426,10 +440,14 @@ msgid ""
 "``x`` should be ``1``.  This means at the end of each cycle, ``x`` and ``y``"
 " should be equal."
 msgstr ""
+"我们可以从这个系统看到在一半的时间里\ ``x``\ 的微分为\``2``\ 。"
+"而在另外一半时间里\ ``x``\ 的微分则为\ ``0``\ 。"
+"所以，在每一个周期中，\``x``\ 平均的微分应该是 ``1``\ 。"
+"这意味着在每一个周期结束时，\ ``x``\ 和\ ``y``应该相等。"
 
 #: ../../source/behavior/discrete/decay.rst:297
 msgid "If we simulate the ``WithEvents`` model, we get the following results:"
-msgstr ""
+msgstr "倘若我们使用\ ``WithEvents``\ 对模型进行仿真，我们会得到如下的结果："
 
 #: ../../source/behavior/discrete/decay.rst:302
 msgid ""
@@ -438,6 +456,9 @@ msgid ""
 "integration.  Even if we increase the frequency of the underlying cycle, we "
 "see that this property holds true:"
 msgstr ""
+"请注意在每个周期结束时，\ ``x``\ 和\ ``y``的轨迹如何在一点汇合。"
+"这是潜在的积分精度的视觉指示。"
+"即使我们增加基本周期的频率，我们可以看到这个特点仍然存在： "
 
 #: ../../source/behavior/discrete/decay.rst:310
 msgid ""
@@ -445,6 +466,8 @@ msgid ""
 "integration parameters but suppress events by using the ``noEvents`` "
 "operator as follows:"
 msgstr ""
+"不过，在使用完全相同的积分参数的情况下，现在让我们考虑通过
+\ ``noEvents``\ 操作符以抑制事件产生的情况："
 
 #: ../../source/behavior/discrete/decay.rst:318
 msgid ""
@@ -455,6 +478,11 @@ msgid ""
 "simulate the ``WithNoEvents`` model, using the same integrator settings, we "
 "can see how significantly different our results will be:"
 msgstr ""
+"In this case, the integrator is blind to the changes in behavior.  
+"在这种情况下，积分器不能得知行为变化。
+It does its best to integrate accuracy but without explicit knowledge of where the behavior changes occur, it will blindly continue using the wrong value of the derivative and extrapolate well beyond the change in behavior.  
+积分器会尽力整合的准确性，但没有发生这些行为的改变显性知识，它会盲目继续使用衍生工具的错误值，并推断远远超出了行为的变化。
+If we simulate the ``WithNoEvents`` model, using the same integrator settings, we can see how significantly different our results will be:"
 
 #: ../../source/behavior/discrete/decay.rst:329
 msgid ""
