@@ -316,7 +316,7 @@ operator as follows:
    :lines: 2-
 
 In this case, the integrator is blind to the changes in behavior.  It
-does its best to integrate accuracy but without explicit knowledge of
+does its best to integrate accurately but without explicit knowledge of
 where the behavior changes occur, it will blindly continue using the
 wrong value of the derivative and extrapolate well beyond the change
 in behavior.  If we simulate the ``WithNoEvents`` model, using the
