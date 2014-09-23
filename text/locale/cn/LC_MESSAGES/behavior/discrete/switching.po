@@ -46,7 +46,7 @@ msgid ""
 "occur while integrating the underlying equations."
 msgstr ""
 "时间事件在这个模型里是通过\ ``if``\ 表达式引入的。"
-"条件表达式里唯一随着时间变化的两就是\ ``time``\ 。这意味着条件表达式会触发"
+"条件表达式里唯一随着时间变化的量就是\ ``time``\ 。这意味着条件表达式会触发"
 "时间事件。而当底层的数值求解器在对系统公式进行积分时，它可以\ *先验*\ 地知道"
 "事件的发生时间。"
 
@@ -55,7 +55,6 @@ msgid ""
 "Furthermore, we can see the current response for inductor, resistor and "
 "capacitor components in this plot:"
 msgstr ""
-"Furthermore, we can see the current response for inductor, resistor and capacitor components in this plot:"
 "此外，从下图我们可以看到电感，电阻和电容等元件的电流响应： "
 
 #: ../../source/behavior/discrete/switching.rst:40
