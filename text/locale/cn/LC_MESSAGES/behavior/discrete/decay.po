@@ -315,7 +315,7 @@ msgid ""
 " behavior, we can wrap the conditional expression with the ``noEvent`` "
 "operator as follows:"
 msgstr ""
-"This is another case where the ``noEvent`` operator can help us out这是另一种\\ "
+"这是另一种\\ "
 "``noEvent``\\ 运算符有所助益的情况。因为我们知道，这\\ ``if``\\ 表达式并不引入任何行为上的突然变化，我们可以用\\ "
 "``noEvent``\\ 操作符把条件表达式包裹起来。如下："
 
@@ -365,6 +365,8 @@ msgid ""
 "take some time to explore this question and explain why, on the whole, "
 "associated events with conditional expressions is very good idea[#Belmon]_."
 msgstr ""
+"希望讨论至今大家已经明确，为什么在某些情况下有必要抑制事件的产生。不过，人们可能会问，为什么不直接跳过事件每次都计算条件表达式？那么，让我们花一些时间来探讨这个问题，并解释为何就整体而言把条件表达式与事件进行关联是个非常好的主意"
+"\ [#Belmon]_\ 。"
 
 #: ../../source/behavior/discrete/decay.rst:272
 msgid ""
@@ -412,7 +414,7 @@ msgid ""
 "see that this property holds true:"
 msgstr ""
 "请注意在每个周期结束时，\\ ``x``\\ 和\\ "
-"``y``的轨迹如何在一点汇合。这是潜在的积分精度的视觉指示。即使我们增加基本周期的频率，我们可以看到这个特点仍然存在： "
+"``y``\ 的轨迹如何在一点汇合。这是潜在的积分精度的视觉指示。即使我们增加基本周期的频率，我们可以看到这个特点仍然存在： "
 
 #: ../../source/behavior/discrete/decay.rst:310
 msgid ""
@@ -424,7 +426,7 @@ msgstr "不过，在使用完全相同的积分参数的情况下，现在让我
 #: ../../source/behavior/discrete/decay.rst:318
 msgid ""
 "In this case, the integrator is blind to the changes in behavior.  It does "
-"its best to integrate accuracy but without explicit knowledge of where the "
+"its best to integrate accurately but without explicit knowledge of where the "
 "behavior changes occur, it will blindly continue using the wrong value of "
 "the derivative and extrapolate well beyond the change in behavior.  If we "
 "simulate the ``WithNoEvents`` model, using the same integrator settings, we "
