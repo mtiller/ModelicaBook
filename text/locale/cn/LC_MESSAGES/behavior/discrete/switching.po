@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: Modelica by Example 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-09-23 22:20+0100\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/switching.rst:4
 msgid "Switched RLC Circuit"
-msgstr ""
+msgstr "开关式RLC电路"
 
 #: ../../source/behavior/discrete/switching.rst:6
 msgid ""
@@ -26,10 +26,16 @@ msgid ""
 "example is simply to present time events in the context of an electrical "
 "model."
 msgstr ""
+"在本节中，我们将介绍另一个模型。正如\ :ref:`\ 本章前面部分\ "
+"<cooling-revisited>`\ 介绍的传热模型一样，这个模型里包含时间事件。"
+"这次，我们将展示如何能够模拟:ref:`\ 在第一章中介绍的那个\ <elec-example>`\ "
+"RLC电路的开关行为。"
+"在介绍了前面的例子后，这个模型应该不会让大家感到意外。"
+"介绍这个例子仅仅是为了在电气模型背景下介绍时间事件。"
 
 #: ../../source/behavior/discrete/switching.rst:15
 msgid "Our switched RLC circuit model is as follows:"
-msgstr ""
+msgstr "开关式RLC电路模型如下："
 
 #: ../../source/behavior/discrete/switching.rst:21
 msgid ""
@@ -39,21 +45,29 @@ msgid ""
 "numerical solver will be able to determine *a priori* when the event will "
 "occur while integrating the underlying equations."
 msgstr ""
+"时间事件在这个模型里是通过\ ``if``\ 表达式引入的。"
+"条件表达式里唯一随着时间变化的两就是\ ``time``\ 。这意味着条件表达式会触发"
+"时间事件。而当底层的数值求解器在对系统公式进行积分时，它可以\ *先验*\ 地知道"
+"事件的发生时间。"
 
 #: ../../source/behavior/discrete/switching.rst:34
 msgid ""
 "Furthermore, we can see the current response for inductor, resistor and "
 "capacitor components in this plot:"
 msgstr ""
+"Furthermore, we can see the current response for inductor, resistor and capacitor components in this plot:"
+"此外，从下图我们可以看到电感，电阻和电容等元件的电流响应： "
 
 #: ../../source/behavior/discrete/switching.rst:40
 msgid ""
 "Hopefully by this point, the basic mechanisms for generating events and "
 "disturbances seem intuitive and familiar."
 msgstr ""
+"希望到这里，用以产生事件和扰动的基本机制对读者会显得直观而熟悉。"
 
 #: ../../source/behavior/discrete/switching.rst:28
 msgid ""
 "We can see the voltage response of this model to the switched supply voltage"
 " in the following plot:"
 msgstr ""
+"在下图我们可以看到在开关式电压供应下模型的电压响应："
