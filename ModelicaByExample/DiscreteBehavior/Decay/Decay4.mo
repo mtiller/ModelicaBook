@@ -2,7 +2,7 @@ within ModelicaByExample.DiscreteBehavior.Decay;
 model Decay4
   Real x;
 initial equation
-  x = 1;
+  x = 2;
 equation
-  der(x) = if x>=0 then -x else -x;
+  der(x) = if x>=1 then -1 else 1;
 end Decay4;
