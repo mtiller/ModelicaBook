@@ -81,7 +81,7 @@ def render_comp_plot(name1, vars1, name2, vars2, title, legloc, ylabel):
     plt.show()
 
 
-def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymax=None):
+def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymin=None, ymax=None):
     import matplotlib.pyplot as plt
     import math
 
@@ -136,5 +136,7 @@ def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymax=None):
     plt.xlabel('Time [s]')
     if ymax!=None:
         plt.axis(ymax=ymax)
+    if ymin!=None:
+        plt.axis(ymin=ymin)
 
     plt.show()
