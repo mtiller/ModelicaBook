@@ -192,7 +192,7 @@ But we will not be solving these equations in a strictly mathematical
 way.  We'll be using floating point representations and using
 numerical integrators. As such, we have limited precision and
 integration error to content with.  The net effect will be that the
-trajectory of ``x`` will not remain exactly $1$ but will deviate
+trajectory of ``x`` will not remain exactly 1 but will deviate
 slightly above and below.  Each time this happens, it will generate an
 event.
 
