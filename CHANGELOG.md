@@ -1,5 +1,34 @@
 This file collects the significant changes to the book since its initial public release.
 
+### Version 0.3.6
+
+#### Enhancements
+
+  * Addressed
+    [an issue](https://github.com/xogeny/ModelicaBook/issue/205) with
+    the discussion on chattering.  Resulted in a fair amount of
+    reworking.  But I think it demonstrates the issue better. Thanks
+    to @sjoelund for pointing that out and his suggestions.
+
+  * Several enhancements related to creation of eBook versions were
+    added by @dietmarw.
+
+  * Merged https://github.com/xogeny/ModelicaBook/pull/208
+
+  * Tried to address
+    [@tbeu's concerns](https://github.com/xogeny/ModelicaBook/issues/146)
+    about Linux dependencies.
+
+#### Bug Fixes
+
+  * Addressed some issues with wording not being updated in
+    [issue #210](https://github.com/xogeny/ModelicaBook/issues/210)
+
+  * Merged pull requests for
+    [a](https://github.com/xogeny/ModelicaBook/pull/209)
+    [few](https://github.com/xogeny/ModelicaBook/pull/211)
+    [more](https://github.com/xogeny/ModelicaBook/pull/215) typos.
+
 ### Version 0.3.5
 
 #### Enhancements
