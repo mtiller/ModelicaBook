@@ -266,7 +266,7 @@ Hopefully the discussion so far has made it clear why it is necessary
 to suppress events in some cases.  But one might reasonably ask, why
 not skip events and just evaluate conditional expressions all the
 time?  So let's take some time to explore this question and explain
-why, on the whole, associated events with conditional expressions is
+why, on the whole, associating events with conditional expressions is
 very good idea [#Belmon]_.
 
 Without event detection, the integrator will simply step right over
