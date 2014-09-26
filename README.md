@@ -76,21 +76,31 @@ Sphinx is completely portable so in theory, it should be possible to
 run Sphinx under nearly any operating system.
 
 I wrote most of the book under MacOS, but I'm confident it can be
-compiled without much effort under Linux as well.  In order to compile
-the complete version of the book, you need to have
-[OpenModelica](https://openmodelica.org/) and a bunch of other tools.
-Unfortunately, I've lost track of exactly what the dependencies are.
+compiled without much effort under Linux as well.  For MacOSX, I used
+`brew` (homebrew) to install the various tools required.  For Linux,
+the following commands are necessary in order to install all the tools
+required to build the book:
 
-For Ubuntu, the requirements are listed in [requirements.txt](requirements.txt)
-which you can install by doing:
+```
+$ apt-get install -y wget
+$ for deb in deb deb-src; do echo "$deb http://build.openmodelica.org/apt `lsb_release -cs` stable"; done | sudo tee /etc/apt/sources.list.d/openmodelica.list
+$ wget -q http://build.openmodelica.org/apt/openmodelica.asc -O- | sudo apt-key add - 
+$ apt-get update
+$ apt-get install -y openmodelica
 
-    $ cat requirements.txt | xargs sudo apt-get install
+$ apt-get install -y python python-dev python-pip python-virtualenv
+$ apt-get install -y calibre librsvg2-bin texlive-fonts-recommended
+$ apt-get install -y texlive-latex-recommended texlive-latex-extra
+$ apt-get install -y python-matplotlib python-pip python-scipy
+$ apt-get install -y python-sphinx python-jinja2 s3cmd
 
-In addition you will need an updated development version of
-[Pygments](http://pygments.org/). The easiest way is to install the updated
-version of Pygments from @dietmarw by doing:
+$ pip install sphinx-intl
 
-    $ sudo pip install --upgrade https://bitbucket.org/dietmarw/pygments-main/get/default.tar.gz
+$ pip install --upgrade https://bitbucket.org/dietmarw/pygments-main/get/default.tar.gz
+```
+
+This corresponds to the `Dockerfile` in the `docker/PY` directory (for
+anybody interested in building the book using a Docker container).
 
 ### Building
 
