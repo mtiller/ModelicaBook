@@ -267,7 +267,7 @@ to suppress events in some cases.  But one might reasonably ask, why
 not skip events and just evaluate conditional expressions all the
 time?  So let's take some time to explore this question and explain
 why, on the whole, associated events with conditional expressions is
-very good idea[#Belmon]_.
+very good idea [#Belmon]_.
 
 Without event detection, the integrator will simply step right over
 events.  When this happens, the integrator will miss important changes
