@@ -101,13 +101,13 @@ add_case(["Decay3$"], stopTime=5, res="Decay3", tol=1e-6)
 add_simple_plot(plot="Decay3", vars=[Var("x")],
                 title="Decay without Issue",
                 legloc="upper right")
-add_case(["Decay4$"], stopTime=5, res="Decay4", tol=1e-3)
-add_simple_plot(plot="Decay4", vars=[Var("x")],
-                title="Chattering",
+add_case(["WithChatter$"], stopTime=2, res="WC", tol=1e-1)
+add_simple_plot(plot="WC", vars=[Var("x"), Var("$cpuTime", legend="CPU Time")],
+                title="Chattering", ymin=-1,
                 legloc="upper right")
-add_case(["Decay5$"], stopTime=5, res="Decay5", tol=1e-3)
-add_simple_plot(plot="Decay5", vars=[Var("x")],
-                title="No Chattering",
+add_case(["WithoutChatter$"], stopTime=2, res="WOC", tol=1e-1)
+add_simple_plot(plot="WOC", vars=[Var("x"), Var("$cpuTime", legend="CPU Time")],
+                title="No Chattering", ymin=-1,
                 legloc="upper right")
 
 ## Accuracy
