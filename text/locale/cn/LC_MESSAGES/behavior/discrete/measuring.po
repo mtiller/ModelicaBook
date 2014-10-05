@@ -302,7 +302,6 @@ msgid ""
 "reversals create irregular events that introduce significant estimation "
 "error."
 msgstr ""
-"In this plot, we can clearly see how relatively low speeds and speed reversals create irregular events that introduce significant estimation error."
 "在这个图里， 我们可以清楚地看到相对低的转速以及转速反向会产生不规则的事件，"
 "从而就是引入显著估计误差。"
 
