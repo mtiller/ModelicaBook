@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Modelica by Example 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
-"PO-Revision-Date: 2014-09-22 22:20+0100\n"
+"PO-Revision-Date: 2014-10-03 22:20+0100\n"
 "Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -227,99 +227,11 @@ msgid ""
 "sooner or later with Modelica.  Consider the following model:"
 msgstr "用Modelica语言时，你早晚会遇到一个被称为“抖动”（chattering）常见现象。考虑下面的模型："
 
-#: ../../source/behavior/discrete/decay.rst:185
+#: ../../source/behavior/discrete/decay.rst:199
 msgid "Simulating this model gives us the following results:"
 msgstr "对此模型进行仿真给了我们如下结果："
 
-#: ../../source/behavior/discrete/decay.rst:190
-msgid ""
-"This model is interesting because looking at it, one might assume the "
-"equation:"
-msgstr "这个模型很有趣。因为当大家看着它的时候，可能会假设："
-
-#: ../../source/behavior/discrete/decay.rst:197
-msgid "was equivalent to:"
-msgstr "等价于："
-
-#: ../../source/behavior/discrete/decay.rst:203
-msgid ""
-"After all, each branch in the ``if`` expression evaluates to ``-x`` and the "
-"simulated result appears to be consistent with this assumption.  **But these"
-" two equations are not equivalent**.  The difference, as we've already "
-"discussed in this section, is that the one with the conditional expression "
-"generates an event.  This means it will force the solver to truncate time "
-"steps and restart the simulation."
-msgstr ""
-"毕竟，\\ ``if``\\ 表达式每个分支都是\\ ``-x``\\ 。而且，模拟结果似乎与这个假设是一致的。\\ "
-"**但是，这两个等式是不等价的**\\ "
-"。正如我们在本节已经讨论过的一样，不同点在于拥有条件表达式的等式会生成事件。这意味着它将迫使求解器截断时间步长，然后重新启动仿真。"
-
-#: ../../source/behavior/discrete/decay.rst:211
-msgid ""
-"Let's take a step back and consider the mathematical solution to this "
-"problem.  We would expect the solution trajectory for ``x`` to be a decaying"
-" exponential that asymptotically approaches zero.  The problem is that zero "
-"is exactly where the event happens.  Keep in mind that the numerical solver "
-"will introduce small amounts of local error on each step when integrating "
-"these equations.  As a result, the answer will (at least in general) not be "
-"exactly zero.  Instead it will be slightly above or below zero."
-msgstr ""
-"让我们退一步，考虑这个问题的解析解。我们预计这个解的轨迹\\ ``x``\\ "
-"是一个衰减的指数函数而且渐近趋近于零。问题在于，事件发生在零的位置上。请记住，数值求解器在对这些方程进行积分时，会在每一个步长带来少量的局部误差。其结果是，答案将（至少在通常情况下）不完全为零，相反，它会稍微高于或低于零。"
-" "
-
-#: ../../source/behavior/discrete/decay.rst:220
-msgid ""
-"This kind of model can introduce an effect known as \"chattering\". "
-"Chattering is simply the degradation in simulation performance due to a "
-"large number of events occurring that artificially shorten the time steps "
-"taken by the solver.  What we see in the ``Decay4`` model is that the "
-"solution asymptotically approaches a point where an event occurs.  This is "
-"not uncommon, so it is important to watch out for such cases because they "
-"can unnecessarily slow down simulations.  The important thing about the "
-"``Decay4`` example is that it is physically realistic and has a smooth "
-"solution, but still suffers from degraded simulation performance because of "
-"the high frequency of events."
-msgstr ""
-"这种模型可能会引起一种被称为“抖动”的现象 "
-"。抖动只不过是由于求解器在大量事件产生时过度地缩短时间步长所引致的仿真速度下降而已。我们在\\ ``Decay4``\\ "
-"模式所看到的是，该解在渐进地接近事件发生的点。这种情况并不少见。因此，由于这种情况可能会不必要地减慢仿真的速度，我们必须密切注意。关于\\ "
-"``Decay4``\\ 的重要一点是，虽然它不仅在物理中真实存在而且又有光滑的解，但其仿真性能仍会受到大量事件的影响。 "
-
-#: ../../source/behavior/discrete/decay.rst:231
-msgid ""
-"One obvious solution would be to remove the ``if`` expression entirely from "
-"this example.  It should be noted that while the ``Decay4`` model is a bit "
-"contrived, because it has the **same** expression regardless of how the "
-"conditional expression is evaluated, there are many physically realistic use"
-" cases where a solution variable will converge asymptotically to the "
-"location of a state event.  For example, we might have changed our "
-"differential equation to be:"
-msgstr ""
-"一个明显的解决办法是把\\ ``if``\\ 表达式从这个例子中彻底删除。应当指出的是，虽然\\ ``Decay4``\\ "
-"模型是有些许牵强，因为无论条件表达式的结果如何最终表达式仍然是\\ **不变的**\\ "
-"，但是在许多物理上现实的情况里，解中的变量会渐近收敛到状态事件的位置。例如，我们可以把微分方程改写为： "
-
-#: ../../source/behavior/discrete/decay.rst:243
-msgid ""
-"Here we have a different \"gain\" depending on the sign of ``x``.  These "
-"kinds of cases do show up in realistic models.  So the question is, how do "
-"we avoid the chattering that can occur in these cases."
-msgstr ""
-"在这里， 视\\ ``x``\\ 符号的正负，我们有不同的“增益”。这情况也出现在现实的模型里。因此问题是，在这些情况下我们如何避免可能发生的抖动。"
-
-#: ../../source/behavior/discrete/decay.rst:247
-msgid ""
-"This is another case where the ``noEvent`` operator can help us out. Because"
-" we know that this ``if`` expression doesn't introduce any abrupt changes in"
-" behavior, we can wrap the conditional expression with the ``noEvent`` "
-"operator as follows:"
-msgstr ""
-"这是另一种\\ "
-"``noEvent``\\ 运算符有所助益的情况。因为我们知道，这\\ ``if``\\ 表达式并不引入任何行为上的突然变化，我们可以用\\ "
-"``noEvent``\\ 操作符把条件表达式包裹起来。如下："
-
-#: ../../source/behavior/discrete/decay.rst:345
+#: ../../source/behavior/discrete/decay.rst:333
 msgid ""
 "This model will not always fail.  The failure depends on how much "
 "integration error is introduced and this, in turn, depends on the numerical "
@@ -346,29 +258,11 @@ msgstr ""
 "大多数用户开始是认为每次\\ ``der(x)``\\ 被计算时，\\ ``if``\\ 表达式也会被计算（特别是在\\ ``if``\\ "
 "表达式中的条件表达式） 。但愿前面的章节已经很清楚地阐释了，这并非事实。"
 
-#: ../../source/behavior/discrete/decay.rst:256
-msgid ""
-"In doing so, we will get the same solution, but with better simulation "
-"performance:"
-msgstr ""
-"这样做以后，我们会得到同样的解，但仿真性能更佳："
-
-#: ../../source/behavior/discrete/decay.rst:263
+#: ../../source/behavior/discrete/decay.rst:251
 msgid "Speed vs. Accuracy"
 msgstr "速度与准确性"
 
-#: ../../source/behavior/discrete/decay.rst:265
-msgid ""
-"Hopefully the discussion so far has made it clear why it is necessary to "
-"suppress events in some cases.  But one might reasonably ask, why not skip "
-"events and just evaluate conditional expressions all the time?  So let's "
-"take some time to explore this question and explain why, on the whole, "
-"associated events with conditional expressions is very good idea[#Belmon]_."
-msgstr ""
-"希望讨论至今大家已经明确，为什么在某些情况下有必要抑制事件的产生。不过，人们可能会问，为什么不直接跳过事件每次都计算条件表达式？那么，让我们花一些时间来探讨这个问题，并解释为何就整体而言把条件表达式与事件进行关联是个非常好的主意"
-"\ [#Belmon]_\ 。"
-
-#: ../../source/behavior/discrete/decay.rst:272
+#: ../../source/behavior/discrete/decay.rst:260
 msgid ""
 "Without event detection, the integrator will simply step right over events."
 "  When this happens, the integrator will miss important changes in behavior "
@@ -380,7 +274,7 @@ msgid ""
 msgstr ""
 "如果没有事件检测，积分器只会直接跳过事件。而当这种情况发生时，积分器会错过重要的行为改变。这将会对仿真的准确性有显著的影响。这是因为大多数积分程序的准确性是基于对被积函数及其导数连续性的假设。倘若这些假设不再成立了，我们需要让积分程序知道这点。如此，积分器便可以考虑这些行为的改变。"
 
-#: ../../source/behavior/discrete/decay.rst:281
+#: ../../source/behavior/discrete/decay.rst:269
 msgid ""
 "This is where events come in.  They force the integration to stop at the "
 "point where a behavior change occurs and then restart again after the "
@@ -390,7 +284,7 @@ msgid ""
 msgstr ""
 "这就到事件出场的时候了。事件强迫积分器在行为发生变化的时刻停止，然后在发生行为变化后的时点重新启动。其结果是在牺牲模拟速度的前提下获得更高的精度让我们看一个具体的例子。请考虑下面这个简单的Modelica模型："
 
-#: ../../source/behavior/discrete/decay.rst:291
+#: ../../source/behavior/discrete/decay.rst:279
 msgid ""
 "Looking at this system, we can see that half the time the derivative of "
 "``x`` will be ``2`` and the other half of the time the derivative of ``x`` "
@@ -402,32 +296,32 @@ msgstr ""
 "``0``\\ 。所以，在每一个周期中，\\``x``\\ 平均的微分应该是 ``1``\\ 。这意味着在每一个周期结束时，\\ ``x``\\ 和\\"
 " ``y``应该相等。"
 
-#: ../../source/behavior/discrete/decay.rst:297
+#: ../../source/behavior/discrete/decay.rst:285
 msgid "If we simulate the ``WithEvents`` model, we get the following results:"
 msgstr "倘若我们使用\\ ``WithEvents``\\ 对模型进行仿真，我们会得到如下的结果："
 
-#: ../../source/behavior/discrete/decay.rst:302
+#: ../../source/behavior/discrete/decay.rst:290
 msgid ""
 "Note how, at the end of each cycle, the trajectories of ``x`` and ``y`` "
 "meet.  This is a visual indication of the accuracy of the underlying "
 "integration.  Even if we increase the frequency of the underlying cycle, we "
 "see that this property holds true:"
 msgstr ""
-"请注意在每个周期结束时，\\ ``x``\\ 和\\ "
-"``y``\ 的轨迹如何在一点汇合。这是潜在的积分精度的视觉指示。即使我们增加基本周期的频率，我们可以看到这个特点仍然存在： "
+"请注意在每个周期结束时，\\ ``x``\\ 和\\ ``y``\\ "
+"的轨迹如何在一点汇合。这是潜在的积分精度的视觉指示。即使我们增加基本周期的频率，我们可以看到这个特点仍然存在： "
 
-#: ../../source/behavior/discrete/decay.rst:310
+#: ../../source/behavior/discrete/decay.rst:298
 msgid ""
 "However, now let us consider the case where we use exactly the same "
 "integration parameters but suppress events by using the ``noEvents`` "
 "operator as follows:"
 msgstr "不过，在使用完全相同的积分参数的情况下，现在让我们考虑通过\\ ``noEvents``\\ 操作符以抑制事件产生的情况："
 
-#: ../../source/behavior/discrete/decay.rst:318
+#: ../../source/behavior/discrete/decay.rst:306
 msgid ""
 "In this case, the integrator is blind to the changes in behavior.  It does "
-"its best to integrate accurately but without explicit knowledge of where the "
-"behavior changes occur, it will blindly continue using the wrong value of "
+"its best to integrate accurately but without explicit knowledge of where the"
+" behavior changes occur, it will blindly continue using the wrong value of "
 "the derivative and extrapolate well beyond the change in behavior.  If we "
 "simulate the ``WithNoEvents`` model, using the same integrator settings, we "
 "can see how significantly different our results will be:"
@@ -435,12 +329,12 @@ msgstr ""
 "在这种情况下，积分器不能得知行为变化。尽管它会尽量准确地进行积分，但如果积分器没有明确知道这些行为改变发生，那么它会继续盲目地使用错误的微分值，并在行为变化后很长时间继续进行外推。如果使用相同的积分器设置对使用了\\"
 " ``WithNoEvents``\\ 的模型进行仿真，我们可以看到两者的结果有如何显著的不同： "
 
-#: ../../source/behavior/discrete/decay.rst:329
+#: ../../source/behavior/discrete/decay.rst:317
 msgid ""
 "Note how quickly the integrator introduces some pretty significant error."
 msgstr "请注意积分器何其迅速地引入了些非常显著的错误。"
 
-#: ../../source/behavior/discrete/decay.rst:335
+#: ../../source/behavior/discrete/decay.rst:323
 msgid ""
 "The integration settings used in these examples were chosen to demonstrate "
 "the impact that the ``noEvent`` operator can have on accuracy.  However, the"
@@ -457,7 +351,7 @@ msgstr ""
 " ``noEvent``\\ 的影响无法预测或量化。因为，这些影响在使用不用的求解器时会显著有所不同。但核心的问题名曲：使用\\ "
 "``noEvent``\\ 操作符可能对仿真结果的精度有显著影响。"
 
-#: ../../source/behavior/discrete/decay.rst:349
+#: ../../source/behavior/discrete/decay.rst:337
 msgid ""
 "A special thanks to Lionel Belmon for challenging my original discussion and"
 " identifying several unsubstantiated assumptions on my part.  As a result, "
@@ -467,4 +361,184 @@ msgstr ""
 "特别感谢Lionel "
 "Belmon对我原来讨论的质疑，以及找出了我的几个未经证实的假设。因为如此，现在的解释有了很大的改进，而且还加上了仿真结果以支持我的结论。"
 
+#: ../../source/behavior/discrete/decay.rst:185
+msgid ""
+"Effectively, the behavior of this model is that for any initial value of "
+"``x``, it will progress linearly toward 1.  Mathematically speaking, once "
+"the value of ``x`` gets to 1, it should just stay there.  This is because "
+"any deviation away from 1, either greater than or less than, will "
+"immediately cause it to go back to 1."
+msgstr ""
+"实际上，这个模型的行为是，对\ ``x``\ 的任何初值，状态\ ``x``\ 都会线性渐近到1 。"
+"在数学上讲，一旦\ ``x``\ 值到达1 ，它的值便不再会变更。"
+"因为，任何从1的偏移，不论正负，都将立即导致它返回到1。"
+
+#: ../../source/behavior/discrete/decay.rst:191
+msgid ""
+"But we will not be solving these equations in a strictly mathematical way.  "
+"We'll be using floating point representations and using numerical "
+"integrators. As such, we have limited precision and integration error to "
+"content with.  The net effect will be that the trajectory of ``x`` will not "
+"remain exactly 1 but will deviate slightly above and below.  Each time this "
+"happens, it will generate an event."
+msgstr ""
+"但我们不会用一个严格的数学方法去求解这些方程。 "
+"相反，我们将使用浮点数表示法表示变量，而用数值积分器计算结果。"
+"因此，我们只能满足于有限的精度和积分误差。"
+"这些误差的净效应是，\ ``x``\ 的轨迹不会完全保持1而将偏离略微上方和下方。"
+"而每次发生这种情况都会生成一个事件。"
+
+#: ../../source/behavior/discrete/decay.rst:203
+msgid ""
+"This kind of model can introduce an effect known as \"chattering\". "
+"Chattering is simply the degradation in simulation performance due to a "
+"large number of events occurring that artificially shorten the time steps "
+"taken by the solver.  The impact on simulation performance is clear if we "
+"look at the CPU time taken during the simulation.  It starts to rise "
+"dramatically once ``x`` is close to 1.  This is because behind the scenes "
+"the events are causing lots of very small time steps which dramatically "
+"increases the number of computations being performed.  The important thing "
+"about the ``WithChatter`` example is that it has a seemingly obvious "
+"mathematical solutions but still suffers from degraded simulation "
+"performance because of the high frequency of events."
+msgstr ""
+"这种模型可能会引起一种被称为“抖动”的现象 。抖动其实只是由于求解器在大量事件产生时,过度地缩短时间步长所引致的仿真速度下降。"
+"如果我们观察在仿真过程中所使用的CPU时间，抖动对仿真性能的影响其实是显而易见的。"
+"当\ ``x``\ 接近1时，CPU时间便开始急剧上升。"
+"原因是在幕后事件造成大量的非常小的时间步长而显着地增加所执行的计算的数量。"
+"这是因为在幕后，事件造成大量非常小的时间步长，从而让所执行的计算量也急剧增加。"
+"\ ``WithChatter``\ 这个例子之所以重要，在于本例有一个显而易见的解析解，但即使如此，本例仍然"
+"受到事件的高频率产生而减低了仿真性能。"
+
+
+#: ../../source/behavior/discrete/decay.rst:216
+msgid ""
+"This is another case where the ``noEvent`` operator can help us out. We can "
+"suppress the events being generated by the conditional expression by using "
+"the ``noEvent`` operator as follows:"
+msgstr ""
+"这是另一种\\ ``noEvent``\\ 运算符有所助益的情况。因为我们知道，这\\ ``if``\\ "
+"表达式并不引入任何行为上的突然变化，我们可以用\\ ``noEvent``\\ 操作符把条件表达式包裹起来。如下："
+
+#: ../../source/behavior/discrete/decay.rst:224
+msgid ""
+"In doing so, we will get approximately the same solution, but with better "
+"simulation performance:"
+msgstr "这样做以后，我们会得到几乎相同的解，但仿真性能更佳："
+
+#: ../../source/behavior/discrete/decay.rst:229
+msgid ""
+"Note how there is no perceptible change in the slope of the CPU usage before"
+" and after ``x`` arrives at 1.  Contrast this with the significant "
+"difference seen in the case of ``WithChatter``."
+msgstr ""
+"请注意` x``到达1的前后，CPU占用率的斜率没有明显的变化。"
+"这与在\ ``WithChatter``\ 的情况对比下有着显著差异。"
+
+#: ../../source/behavior/discrete/decay.rst:233
+msgid ""
+"In reality, equations like this are uncommon.  In this case, we've used an "
+"extreme case in an attempt to clearly show the impact of chattering.  The "
+"behavior being described here is not particularly realistic or physical.  In"
+" this case, we've exaggerated the effect to clearly demonstrate the impact "
+"on simulation performance."
+msgstr ""
+"在现实中，像这样的方程是罕见的。"
+"在本例中，我们使用一个极端情况试图清楚地显示抖动所带来的影响。"
+"这里所描述的行为并不是特别现实或物理的。"
+"在这种情况下，我们夸大了抖动产生的效果以清楚地表明仿真性能受到的影响。"
+
+#: ../../source/behavior/discrete/decay.rst:239
+msgid ""
+"More typical examples of chattering in the real world will feature a "
+"conditional expression that sits at some stable point (``Decay2`` is a good "
+"example).  In such cases, chattering occurs because the system tends to "
+"naturally settle at or near the point where the conditional expression "
+"occurs.  But because of precision and numerical considerations, the event "
+"associated with the conditional expression is frequently triggered.  The "
+"effect is exacerbated in cases where there are many components in the system"
+" all sitting at or near such equilibrium points."
+msgstr ""
+"抖动在现实世界中的更典型的例子包括，在某个稳定点周围生效的条件表达式（\ ``Decay2``\ 就是一个很好的例子）。"
+"在这种情况下就会发生抖动，因为该系统往往会自然稳定到其中在条件表达式的发生点或者其附近。"
+"而由于精确度和数值计算上的考虑，与条件式相关联的事件会被频繁触发。"
+"倘若系统有许多部件在这样的平衡点附近，这个效果便会被加剧了。"
+
+#: ../../source/behavior/discrete/decay.rst:253
+msgid ""
+"Hopefully the discussion so far has made it clear why it is necessary to "
+"suppress events in some cases.  But one might reasonably ask, why not skip "
+"events and just evaluate conditional expressions all the time?  So let's "
+"take some time to explore this question and explain why, on the whole, "
+"associating events with conditional expressions is very good idea "
+"[#Belmon]_."
+msgstr ""
+"希望讨论至今大家已经明确，为什么在某些情况下有必要抑制事件的产生。不过，大家可能会问，为什么不直接跳过事件每次都计算条件表达式？那么，让我们花一些时间来探讨这个问题，并解释为何就整体而言把条件表达式与事件进行关联是个非常好的主意\\"
+" [#Belmon]_\\ 。"
+
+#~ msgid ""
+#~ "This model is interesting because looking at it, one might assume the "
+#~ "equation:"
+#~ msgstr "这个模型很有趣。因为当大家看着它的时候，可能会假设："
+
+#~ msgid "was equivalent to:"
+#~ msgstr "等价于："
+
+#~ msgid ""
+#~ "After all, each branch in the ``if`` expression evaluates to ``-x`` and the "
+#~ "simulated result appears to be consistent with this assumption.  **But these"
+#~ " two equations are not equivalent**.  The difference, as we've already "
+#~ "discussed in this section, is that the one with the conditional expression "
+#~ "generates an event.  This means it will force the solver to truncate time "
+#~ "steps and restart the simulation."
+#~ msgstr ""
+#~ "毕竟，\\ ``if``\\ 表达式每个分支都是\\ ``-x``\\ 。而且，模拟结果似乎与这个假设是一致的。\\ "
+#~ "**但是，这两个等式是不等价的**\\ "
+#~ "。正如我们在本节已经讨论过的一样，不同点在于拥有条件表达式的等式会生成事件。这意味着它将迫使求解器截断时间步长，然后重新启动仿真。"
+
+#~ msgid ""
+#~ "Let's take a step back and consider the mathematical solution to this "
+#~ "problem.  We would expect the solution trajectory for ``x`` to be a decaying"
+#~ " exponential that asymptotically approaches zero.  The problem is that zero "
+#~ "is exactly where the event happens.  Keep in mind that the numerical solver "
+#~ "will introduce small amounts of local error on each step when integrating "
+#~ "these equations.  As a result, the answer will (at least in general) not be "
+#~ "exactly zero.  Instead it will be slightly above or below zero."
+#~ msgstr ""
+#~ "让我们退一步，考虑这个问题的解析解。我们预计这个解的轨迹\\ ``x``\\ "
+#~ "是一个衰减的指数函数而且渐近趋近于零。问题在于，事件发生在零的位置上。请记住，数值求解器在对这些方程进行积分时，会在每一个步长带来少量的局部误差。其结果是，答案将（至少在通常情况下）不完全为零，相反，它会稍微高于或低于零。"
+#~ " "
+
+#~ msgid ""
+#~ "This kind of model can introduce an effect known as \"chattering\". "
+#~ "Chattering is simply the degradation in simulation performance due to a "
+#~ "large number of events occurring that artificially shorten the time steps "
+#~ "taken by the solver.  What we see in the ``Decay4`` model is that the "
+#~ "solution asymptotically approaches a point where an event occurs.  This is "
+#~ "not uncommon, so it is important to watch out for such cases because they "
+#~ "can unnecessarily slow down simulations.  The important thing about the "
+#~ "``Decay4`` example is that it is physically realistic and has a smooth "
+#~ "solution, but still suffers from degraded simulation performance because of "
+#~ "the high frequency of events."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "One obvious solution would be to remove the ``if`` expression entirely from "
+#~ "this example.  It should be noted that while the ``Decay4`` model is a bit "
+#~ "contrived, because it has the **same** expression regardless of how the "
+#~ "conditional expression is evaluated, there are many physically realistic use"
+#~ " cases where a solution variable will converge asymptotically to the "
+#~ "location of a state event.  For example, we might have changed our "
+#~ "differential equation to be:"
+#~ msgstr ""
+#~ "一个明显的解决办法是把\\ ``if``\\ 表达式从这个例子中彻底删除。应当指出的是，虽然\\ ``Decay4``\\ "
+#~ "模型是有些许牵强，因为无论条件表达式的结果如何最终表达式仍然是\\ **不变的**\\ "
+#~ "，但是在许多物理上现实的情况里，解中的变量会渐近收敛到状态事件的位置。例如，我们可以把微分方程改写为： "
+
+#~ msgid ""
+#~ "Here we have a different \"gain\" depending on the sign of ``x``.  These "
+#~ "kinds of cases do show up in realistic models.  So the question is, how do "
+#~ "we avoid the chattering that can occur in these cases."
+#~ msgstr ""
+#~ "在这里， 视\\ ``x``\\ 符号的正负，我们有不同的“增益”。这情况也出现在现实的模型里。因此问题是，在这些情况下我们如何避免可能发生的抖动。"
 

@@ -353,12 +353,6 @@ msgstr ""
 msgid "``Clock(i,r)``"
 msgstr ""
 
-#: ../../source/behavior/discrete/events.rst:151
-msgid ""
-"A clock that fires every :math:`\\frac{i}{r}` seconds where ``i`` and ``r`` "
-"are ``Integer``s"
-msgstr ""
-
 #: ../../source/behavior/discrete/events.rst:152
 msgid "``Clock(dt)``"
 msgstr ""
@@ -403,3 +397,14 @@ msgid ""
 "Martin Otter and Sven-Erik Mattsson "
 "http://www.ep.liu.se/ecp/076/001/ecp12076001.pdf"
 msgstr ""
+
+#: ../../source/behavior/discrete/events.rst:151
+msgid ""
+"A clock that fires every :math:`\\frac{i}{r}` seconds where ``i`` and ``r`` "
+"are both of type ``Integer``"
+msgstr ""
+
+#~ msgid ""
+#~ "A clock that fires every :math:`\\frac{i}{r}` seconds where ``i`` and ``r`` "
+#~ "are ``Integer``s"
+#~ msgstr ""
