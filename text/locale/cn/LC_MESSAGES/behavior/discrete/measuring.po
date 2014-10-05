@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "在许多应用中，我们需要对连续行为与离散行为之间的相互作用进行建模。"
 "在本节中，我们将看到用于测量旋转轴速度的技术。"
-"在这里的讨论里，我们将重用前面在\ :ref:`basic-equations`:\ 中讨论过的\ :ref:`\ 机械中的例子 <mech-example>`\ 。"
+"在这里的讨论里，我们将重用前面在\ :ref:`basic-equations`\ 中讨论过的\ :ref:`\ 机械中的例子 <mech-example>`\ 。"
 
 #: ../../source/behavior/discrete/measuring.rst:23
 msgid ""
