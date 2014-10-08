@@ -346,7 +346,7 @@ msgid ""
 " formulate everything under a single ``when`` statement, like this:"
 msgstr ""
 "那么，我们应该如何处理这种情况呢？"
-"之所以需要两个不同的方程是因为在更新\ ``count``\ 时，我们需要对不同的事件作出不同的反应。"
+"之所以需要两个不同的方程，是因为在更新\ ``count``\ 时，我们需要对不同的事件作出不同的反应。"
 "我们可以尝试用如下形式将需求表达为一个\ ``when``\ 语句，："
 
 #: ../../source/behavior/discrete/measuring.rst:248
@@ -356,7 +356,7 @@ msgid ""
 "``algorithm`` section."
 msgstr ""
 "但是，这种代码很快就会变得难以阅读。"
-"幸运的是，我们可以通过把所有的``when``陈述中放在\ ``algorithm``\ （算法）段落以解决这个问题。"
+"幸运的是，我们可以通过把所有的\ ``when``\ 陈述中放在\ ``algorithm``\ （算法）段落以解决这个问题。"
 
 #: ../../source/behavior/discrete/measuring.rst:252
 msgid ""
