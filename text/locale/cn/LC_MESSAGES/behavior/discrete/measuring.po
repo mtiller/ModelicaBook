@@ -385,7 +385,7 @@ msgid ""
 "algorithm could be refactored using an ``algorithm`` section:"
 msgstr ""
 "在本例里\ ``algorithm``\ 段落的使用并不会带来显著的影响。"
-"以下是将前述测算方法用\ ``algorithm``\ 段落重够后的结果："
+"以下是将前述测算方法用\ ``algorithm``\ 段落重构后的结果："
 
 #: ../../source/behavior/discrete/measuring.rst:285
 msgid ""
