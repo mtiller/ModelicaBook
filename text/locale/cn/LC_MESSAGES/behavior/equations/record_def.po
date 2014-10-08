@@ -14,7 +14,7 @@ msgstr ""
 #: ../../source/behavior/equations/record_def.rst:6
 msgid "Record Definitions"
 msgstr ""
-
+"Record类型定义"
 #: ../../source/behavior/equations/record_def.rst:8
 msgid ""
 "Earlier, we introduced the idea of a ``model`` definition.  Although we "
@@ -24,17 +24,19 @@ msgid ""
 "But as we will see shortly, they are also very useful in describing the data"
 " associated with :ref:`annotations`."
 msgstr ""
-
+"本书的前些章节，我们介绍了 ``model`` 类型的定义概念。虽然目前为止我们还没有看到任何其他的类型，Modelica语言其实还"
+"包括 ``record`` 类型。像 ``model`` 类型一样， ``record`` 类型可以有自己的变量，但是不允许包含方程。 ``record`` 类型"
+"主要用于分组数据。但是，在下面的章节 :ref:`annotations` 中你会发现它们在描述与注释相关的数据时也非常有用。"
 #: ../../source/behavior/equations/record_def.rst:16
 msgid "Syntax"
 msgstr ""
-
+"语法"
 #: ../../source/behavior/equations/record_def.rst:18
 msgid ""
 "The ``record`` definition looks essentially like a ``model`` definition, but"
 " without any equations:"
 msgstr ""
-
+" ``record`` 类型的定义看起来基本上类似于 ``model`` 类型，只是不包含任何的方程："
 #: ../../source/behavior/equations/record_def.rst:27
 msgid ""
 "As with a ``model``, the definition starts and ends with the name of the "
@@ -42,15 +44,17 @@ msgid ""
 " string after the name.  All the variables associated with the record are "
 "declared within the ``record`` definition."
 msgstr ""
-
+"像 ``model`` 定义那样，类型定义的开始和结束都紧跟所定义的 ``record`` 类型名称。"
+"对所定义的 ``record`` 类型的说明以字符串的形式紧跟类型名的后面。"
+"与 ``record`` 类型相关联的所有变量都在 ``record`` 类型定义内声明。"
 #: ../../source/behavior/equations/record_def.rst:32
 msgid "The following are all examples of ``record`` definitions:"
 msgstr ""
-
+"以下是 ``record`` 类型定义方面的实例："
 #: ../../source/behavior/equations/record_def.rst:48
 msgid "Record Constructors"
 msgstr ""
-
+"Record类型的构造函数"
 #: ../../source/behavior/equations/record_def.rst:1
 msgid "record"
 msgstr ""
@@ -63,7 +67,9 @@ msgid ""
 "specify the values of variables inside the record using modifications, "
 "*e.g.*,"
 msgstr ""
-
+"现在，我们已经知道了如何定义一个 ``record`` 类型，应该如何创建 ``record`` 类型呢？"
+"如果我们想声明一个变量，恰巧这个变量属于 ``record`` 类型，变量声明的本身就会创建一个 ``record`` 类型实例，"
+"而且我们还可以通过修改功能指定 ``record`` 类型内的变量值， *例如* ，"
 #: ../../source/behavior/equations/record_def.rst:62
 msgid ""
 "But there are some cases where we might want to create an instance of a "
@@ -76,13 +82,16 @@ msgid ""
 " case of the ``Vector`` definition above, we could also initialize a "
 "``parameter`` using the record constructor as follows:"
 msgstr ""
-
+"但在某些情况下，我们可能希望创建一个 ``record`` 类型而不是一个变量（ *例如* ，在表达式中使用，作为参数传递给函数或者在修改功能中使用）。"
+"对每个 ``record`` 类型定义，都会自动生成与 ``record`` 类型名称 **完全相同的函数名** 。"
+"这个函数称为 \"记录构造函数\" 。记录构造函数输入与 ``record`` 类型内部定义相匹配的变量，并返回一个 ``record`` 类型实例。"
+"所以，在上述 ``Vector`` 定义实例中，我们也可以通过记录构造函数初始化 ``parameter`` 变量，如下所示："
 #: ../../source/behavior/equations/record_def.rst:77
 msgid ""
 "In this case, the value for ``v`` comes from the **expression** "
 "``Vector(x=1.0, y=2.0, z=0.0)`` which is a call to the record constructor."
 msgstr ""
-
+"在这种情况下，变量 ``v`` 的值通过 **表达式** ``Vector(x=1.0, y=2.0, z=0.0)`` 调用记录构造函数进行赋值。"
 #: ../../source/behavior/equations/record_def.rst:50
 msgid "record constructor"
 msgstr ""

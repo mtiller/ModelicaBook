@@ -23,7 +23,9 @@ msgid ""
 "syntax as a ``model`` definition, but include some restrictions on what the "
 "definition is allowed to contain."
 msgstr ""
-
+"模型定义是Modelica语言中最通用的定义方式"
+"稍后在本书中（或者在本章中）将会介绍其他的定义方式（例如：档案定义）"
+"这些定义方式和模型定义享有相同的语法结构，但是在包含的内容方面有所受限"
 #: ../../source/behavior/equations/model_def.rst:13
 msgid "Syntax of a Model Definition"
 msgstr ""
@@ -35,7 +37,8 @@ msgid ""
 "description).  The name of the model must start with a letter and can be "
 "followed by any collection of letters, numbers or underscores (``_``)."
 msgstr ""
-
+"正如我们在本章中看到的，模型定义首先是模型关键词，其次是模型的名字（或者是模型的描述）"
+"模型的名字必须以字母开头，后面可以是字母、数字或者下划线。"
 #: ../../source/behavior/equations/model_def.rst:0
 msgid "Naming conventions"
 msgstr ""
@@ -47,7 +50,8 @@ msgid ""
 "the so-called \"camel case\" convention where the first letter of each word "
 "in the model name is upper case."
 msgstr ""
-
+"尽管Modelica语言不是一种严格要求的语言，但是还是约定模型名字以大写字母开头"
+"大多数开发者使用所谓的“驼峰式”规则，即模型名字的首字母是大写字母"
 #: ../../source/behavior/equations/model_def.rst:32
 msgid ""
 "The model definition can contain variables and equations (to be discussed "
@@ -56,7 +60,9 @@ msgid ""
 " the sequence ``//`` and until the end of the line or between the delimiters"
 " ``/*`` and ``*/`` is considered a comment."
 msgstr ""
-
+"模型定义包含变量和方程（稍后讨论）"
+"模型的结束是以模型名字的重复出现作为标志的"
+"在//之后可以出现任何文本，直到本行结束；在分隔符/*和*/之间的是关于模型的描述"
 #: ../../source/behavior/equations/model_def.rst:39
 msgid "In summary, a model definition has the following general form:"
 msgstr ""
@@ -71,7 +77,8 @@ msgid ""
 "from other models by adding an ``extends`` clause to the model.  It is worth"
 " noting that a model definition can include multiple ``extends`` clauses."
 msgstr ""
-
+"正如我们在避免重复这个部分提到的一样，我们可以在当前模型中添加扩展条来使用其他模型中的代码"
+"并且值得注意的是，模型定义中可以包含多个扩展条"
 #: ../../source/behavior/equations/model_def.rst:62
 msgid ""
 "Each ``extends`` clause must include the name of the model being extended "
@@ -80,20 +87,23 @@ msgid ""
 "definition that inherits from other model definitions, you can think of the "
 "general syntax as looking something like this:"
 msgstr ""
-
+"每个扩展条必须包含被引用模型的名字"
+"它可以随意的跟随被引用模型的修改而修改"
+"在一个由其他模型继承过来的模型定义中，可以看到如下的通用语法"
 #: ../../source/behavior/equations/model_def.rst:78
 msgid ""
 "By convention, ``extends`` clauses are normally listed at the very top of "
 "the model definition, before any variables."
 msgstr ""
-
+"按照惯例，扩展条通常被列在模型定义最高的位置，在任何变量之前"
 #: ../../source/behavior/equations/model_def.rst:81
 msgid ""
 "In later chapters, we will show how this same syntax can be used to define "
 "other entities besides models.  But for now, we will focus primarily on "
 "models"
 msgstr ""
-
+"在后面的章节中，将展示上述语法如何用来定义除了模型之外的其他实体"
+"但是目前首先关注的是模型"
 #: ../../source/behavior/equations/model_def.rst:15
 msgid "model"
 msgstr ""
