@@ -327,7 +327,7 @@ msgid ""
 "Building on the previous examples in this section, the following seems like "
 "a natural way to create a model that implements this estimation technique:"
 msgstr ""
-"基于本节前面的例子，我们似乎会很自然地用以下列形式在模型里实现这种估测技术："
+"基于本节前面的例子，我们似乎会很自然地用以下形式在模型里实现这种估测技术："
 
 #: ../../source/behavior/discrete/measuring.rst:224
 msgid ""
