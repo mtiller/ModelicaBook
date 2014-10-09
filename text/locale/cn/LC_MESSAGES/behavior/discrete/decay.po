@@ -42,7 +42,7 @@ msgid ""
 "generates a floating point exception and the simulation terminates."
 msgstr ""
 "再一次，数值问题混了进来。尽管在数学上\\ ``x``\\ 的值应该不可能的降到低于零，但在使用数值积分方法时，少量错误可能混入结果，使得\\ "
-"``x``\\ 低于零。当发生这种情况时，\\ ``sqrt(x)``\\ 的表达式产生浮点异常，结果仿真终止。"
+"``x``\\ 低于零。发生这种情况时，\\ ``sqrt(x)``\\ 的表达式产生浮点异常，结果仿真终止。"
 
 #: ../../source/behavior/discrete/decay.rst:34
 msgid "Guard Expressions"
@@ -73,7 +73,7 @@ msgid ""
 "assume that there is no way that ``sqrt(x)`` can be evaluated if ``x`` is "
 "less than zero.  **But this assumption is incorrect.**"
 msgstr ""
-"当大多数人看到像这样（或者例如被零除）的浮点异常错误信息时， 他们都非常困惑，毕竟他们都像我们一样写下了一个保护表达式。他们自然认为是当\\ "
+"大多数人在看到像这样（或者例如被零除）的浮点异常错误信息时， 他们都非常困惑，毕竟他们都像我们一样写下了一个保护表达式。他们自然认为是当\\ "
 "``x``\\ 小于零时\\ ``sqrt(x)``\\ 根本不可能会被计算。\\ **但这个假设是错误的。**"
 
 #: ../../source/behavior/discrete/decay.rst:58
@@ -272,7 +272,7 @@ msgid ""
 "derivatives.  If those assumptions are violated, we need to let the "
 "integration routines know so they can account these changes in behavior."
 msgstr ""
-"如果没有事件检测，积分器只会直接跳过事件。而当这种情况发生时，积分器会错过重要的行为改变。这将会对仿真的准确性有显著的影响。这是因为大多数积分程序的准确性是基于对被积函数及其导数连续性的假设。倘若这些假设不再成立了，我们需要让积分程序知道这点。如此，积分器便可以考虑这些行为的改变。"
+"如果没有事件检测，积分器只会直接跳过事件。而如果这种情况发生，积分器会错过重要的行为改变。这将会对仿真的准确性有显著的影响。这是因为大多数积分程序的准确性是基于对被积函数及其导数连续性的假设。倘若这些假设不再成立了，我们需要让积分程序知道这点。如此，积分器便可以考虑这些行为的改变。"
 
 #: ../../source/behavior/discrete/decay.rst:269
 msgid ""

@@ -47,7 +47,7 @@ msgid ""
 "eventually comes in contact with the surface, it bounces off the surface "
 "according to the following relationship:"
 msgstr ""
-"为了看到状态事件的效果，我们考虑一个弹跳球在平坦的水平面上弹跳时的行为。当球在平面以上时，它在重力的作用下加速。当球最终与平面接触时，它会遵从以下关系从表面反弹："
+"为了看到状态事件的效果，我们考虑一个弹跳球在平坦的水平面上弹跳时的行为。球在平面以上时会在重力作用下加速。而球最终与平面接触时，它会遵从以下关系从表面反弹："
 
 #: ../../source/behavior/discrete/bouncing.rst:31
 msgid ""
@@ -235,7 +235,7 @@ msgid ""
 " flag is to effectively turn off gravity."
 msgstr ""
 "应该指出的是，许多方法都可以用以解决这个问题。这里提出的解决方案仅是其中之一。在这种方法中，我们实际上创建了两个表面。其中一个在\\ ``0``\\ "
-"的高度上，另一个在一个高度\\ ``-eps``\\ （略低于\\ ``0``\\ ）。当球“正常地”弹起时只会触发\\ ``when``\\ "
+"的高度上，另一个在一个高度\\ ``-eps``\\ （略低于\\ ``0``\\ ）。球“正常地”弹起时只会触发\\ ``when``\\ "
 "语句的首个条件。然而，如果球在触地后不能足够高地回弹从而“穿过”中的第一表面。我们检测到这点（以及球已经穿过的事实），并设置\\ ``done``\\ "
 "标志符。``done``\\ 标志符的效果实际上就是关闭重力。"
 
@@ -317,7 +317,7 @@ msgid ""
 ":ref:`if-vs-when`."
 msgstr ""
 "关键是要记住的是，对于\\ ``when``\\ 语句，向量条件表示\\ **任何， 而非逻辑或**\\ 。此外，该语句仅在条件\\ **变为真**\\"
-" 的瞬间被激活。当我们在本章的后面部分讨论\\ :ref:`if-vs-when`\\ 之间的重要区别时，我们将进一步探讨最后这句话的含义。"
+" 的瞬间被激活。我们会在本章的后面部分讨论\\ :ref:`if-vs-when`\\ 之间的重要区别时，进一步探讨最后这句话的含义。"
 
 #: ../../source/behavior/discrete/bouncing.rst:167
 msgid "Note the syntax of the ``when`` statement in this case:"
