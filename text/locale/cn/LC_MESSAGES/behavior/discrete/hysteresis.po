@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/hysteresis.rst:4
 msgid "Hysteresis"
-msgstr ""
+msgstr "滞回"
 
 #: ../../source/behavior/discrete/hysteresis.rst:6
 msgid ""
@@ -24,16 +24,23 @@ msgid ""
 "address the issue because the chattering was purely a response to numerical "
 "noise and not triggered by abrupt changes in behavior."
 msgstr ""
+"在本节中，我们将讨论滞回。"
+"是为了理解某些特定的建模类型所必须的一个重要概念。"
+"还记得我们前面在\ :ref:`state-events`\ 的讨论中看到了抖动的例子。"
+"在那些例子里，我们可以使用\ ``noEvent``\ 运算符来解决抖动的问题。"
+"这是因为前述的抖动的情况纯粹是由数值噪音产生的，和行为的突然变化毫无关系。"
 
 #: ../../source/behavior/discrete/hysteresis.rst:14
 msgid ""
 "In this section, we will consider a slightly more extreme case. Consider the"
 " following model:"
 msgstr ""
+"在本节中，我们将考虑一个稍微极端的例子。"
+"请考虑以下模型："
 
 #: ../../source/behavior/discrete/hysteresis.rst:21
 msgid "If we simulate this model, we get the following results:"
-msgstr ""
+msgstr "倘若我们对模型进行仿真，便会得到下列结果："
 
 #: ../../source/behavior/discrete/hysteresis.rst:26
 msgid ""
@@ -41,6 +48,8 @@ msgid ""
 "complete.  The reason for such poor simulation performance can be better "
 "understood by looking at the heater output during the simulation:"
 msgstr ""
+"然而，从开始仿真到产生上述结果却需要很长的时间。"
+"读者可以通过观察加热器在仿真中的输出去进一步了解性能不佳的原因。" 
 
 #: ../../source/behavior/discrete/hysteresis.rst:53
 msgid ""
@@ -51,6 +60,12 @@ msgid ""
 "nothing else.  To implement hysteresis, we need to use ``when`` statements."
 "  Consider the following model:"
 msgstr ""
+"要建模滞回必须考虑一个棘手的问题，也就是滞回是“有状态的（stateful）”。 "
+"那么要确定系统的行为我们必须知道系统的历史。"
+"因此，我们并不能简单地使用\ ``if``\ 语句。"
+"其原因是\ ``if``\ 语句除去考虑系统的当前状态外，并不会考虑别的因素。"
+"为了实现滞回，我们需要用到\ ``when``\ 语句。"
+"考虑下列模型："
 
 #: ../../source/behavior/discrete/hysteresis.rst:64
 msgid ""
@@ -64,6 +79,14 @@ msgid ""
 "and look at the temperature, we see that it stays within the hysteresis band"
 " of our desired temperature."
 msgstr ""
+"仔细观察上面的\ ``when``\ 语句，我们可以知道仅当"
+"\ ``T>Tbar+1``\  或者 \ ``T<Tbar-1``\ 变为真时，系统才会有响应。"
+"\ **请注意，当上述表达式变为假时，系统并不会有响应**\  。"  
+"这就是为何\ ``if``\ 语句在此并不适用。"
+"当使用\ ``if``\ 语句或者\ ``if``\ 表达式时，只要条件表达式的值发生了变化，"
+"系统的行为就会改变。"
+"而当使用\ ``when``\ 语句时，\ **仅仅**\ 当条件为真时，\ ``when``\ 语句内的代码才会被激活。"
+"如果我们对该模型进行仿真并观察其温度，那么我们会看到温度保持在期望温度的滞环带内。"
 
 #: ../../source/behavior/discrete/hysteresis.rst:77
 msgid ""
@@ -71,6 +94,7 @@ msgid ""
 "that, unlike our previous example, some time elapses between the heater "
 "turning on and the heater turning off."
 msgstr ""
+"更重要的是，当我们观察系统输出的热量时便会发现，与先前例子不同的是，解热器的开与关之间有些许的时间间隔。"
 
 #: ../../source/behavior/discrete/hysteresis.rst:84
 msgid ""
@@ -78,6 +102,7 @@ msgid ""
 "using an ``algorithm`` section (as previous discussed during our discussion "
 "on :ref:`speed estimation techniques <pulse-counting>`)."
 msgstr ""
+"通过使用\ ``algorithm``\ 段落可以让变得更显然（正如我们前面在\:ref:`速度估测方法\ <pulse-counting>`\ 的讨论一样）。"
 
 #: ../../source/behavior/discrete/hysteresis.rst:94
 msgid ""
@@ -87,6 +112,11 @@ msgid ""
 "``algorithm`` section because they both assign to the same variable, "
 "``heat``."
 msgstr ""
+"注意这两个条件表达式是如何被分成两个独立的\ ``when``\ 语句的。"
+"如此这般，热源开闭的缘由也就显而易见了。"
+"由于这两个\ ``when``\ 语句都是对同一个变量\ ``heat``\ 进行赋值，"
+"因此两句都是在\ ``algorithm``\ 段落里定义的。"
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:34
 msgid ""
@@ -96,6 +126,9 @@ msgid ""
 " scaling, there are so many transitions that the results resemble a filled "
 "rectangle."
 msgstr ""
+"你会看到，在0.2秒左右之后，加热器不断地打开和关闭。"
+"这发生得如此频繁，以致于你要将图放大多次后才能看到这些转换。"
+"大量的状态转换让结果在正常比例下像一个填充满了的矩形。"
 
 #: ../../source/behavior/discrete/hysteresis.rst:40
 msgid ""
@@ -106,6 +139,9 @@ msgid ""
 "temperature gets some specified amount above or below the desired "
 "temperature before acting."
 msgstr ""
+"这实际上是在控制系统中的现实问题。"
+"如果你仔细观察家里电炉的工作方式便会发现，电炉不会在高于或低于设定的室内温度时就不停地打开关闭。"
+"相反，电炉会等到温度变得高于或低于设定温度一定额度后，才会开始作出反应。"
 
 #: ../../source/behavior/discrete/hysteresis.rst:47
 msgid ""
@@ -114,3 +150,6 @@ msgid ""
 "doesn't have any hysteresis.  Instead, it is constantly turning the heater "
 "off and on in response to miniscule changes in temperature."
 msgstr ""
+"围绕着设定温度周围引入的“带”就叫做滞回。"
+"\ ``ChatteringControl``\ 模型的问题就在于它并没有任何滞回。"
+"相反，该模型不停地开关加热器以响应微乎其微的温度变化 。"
