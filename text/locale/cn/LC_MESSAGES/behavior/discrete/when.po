@@ -22,10 +22,13 @@ msgid ""
 "review the key ideas behind ``when`` statements.  A ``when`` statement has "
 "the following general form:"
 msgstr ""
+"通过使用\ ``when``\ ，我们可以表达我们感兴趣的条件判断以及对这些条件判断的回应。"
+"在本节中，我们将回顾\ ``when``\ 语句背后的主要思想。"
+"\ `` when``\ 语句的一般形式如下："
 
 #: ../../source/behavior/discrete/when.rst:22
 msgid "``if`` vs. ``when``"
-msgstr ""
+msgstr "对比\ ``if``\ 和\ ``when``"
 
 #: ../../source/behavior/discrete/when.rst:24
 msgid ""
@@ -38,10 +41,17 @@ msgid ""
 "statement or ``if`` expression includes an ``else`` clause then some branch "
 "will always be active."
 msgstr ""
+"在前面对\ :ref:`hysteresis`\ 的讨论里，我们简要地讨论了\ ``if``\ 语句和\ ``when``\ 语句之间的区别。"
+"在\ ``when``\ 语句内的代码仅会在触发条件表达式为真的一瞬间被激活。"
+At all other times, the ``when`` statement has no effect.  
+"在所有其它的时候，\ ``when``\ 语句不会有任何影响。"
+An ``if`` statement or ``if`` expression remains active as long as the conditional expression is true.  
+"而\ ``if`` 陈述或\ ``if``\ 表达式只要在条件表达式为真时，它们就有效。"
+"倘若\ ``if`` 陈述或\ ``if``\ 表达式包含了\ ``else``\ 子句，那么总会有一个分支有效。"
 
 #: ../../source/behavior/discrete/when.rst:34
 msgid "Expressions"
-msgstr ""
+msgstr "表达式"
 
 #: ../../source/behavior/discrete/when.rst:36
 msgid ""

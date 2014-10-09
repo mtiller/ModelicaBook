@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/sampling.rst:4
 msgid "Synchronous Systems"
-msgstr ""
+msgstr "同步系统"
 
 #: ../../source/behavior/discrete/sampling.rst:6
 msgid ""
@@ -22,10 +22,12 @@ msgid ""
 "we'll present some examples of how these issues presented themselves before "
 "version 3.3 and show how these new features help address them."
 msgstr ""
+"Modelica语言3.3版引入了一个新功能以解决有关非确定性离散行为的问题\ [ Elmqvist ] _ \ 。"
+"本节将介绍这些问题在3.3版本之前的表现。然后，我们将用例子展示新功能如何能帮助解决这类问题。"
 
 #: ../../source/behavior/discrete/sampling.rst:12
 msgid "To start, consider the following model:"
-msgstr ""
+msgstr "先考虑下列模型："
 
 #: ../../source/behavior/discrete/sampling.rst:18
 msgid ""
@@ -35,6 +37,10 @@ msgid ""
 "is, are they really identical?  To help address this question, we include "
 "the variable ``e`` which measures the difference between them."
 msgstr ""
+"倘若你仔细观察，你会发现\ ``x``\ 和\ ``y``\ 都在离散的时间点上被计算。"
+"此外，两变量的采样时点都是在仿真开始时以及之后的每0.1秒。"
+"但问题是，它们真的一样吗？"
+"为了更容易解决这个问题，我们加入变量\ ``e``\ 以计算两者间的差。 "
 
 #: ../../source/behavior/discrete/sampling.rst:28
 msgid ""
