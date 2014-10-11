@@ -169,13 +169,13 @@ msgid ""
 "the compiler's ability to perform symbolic manipulation and, therefore, may "
 "impact simulation performance and/or reusability of the models."
 msgstr ""
-"One final note about ``when`` statements is how they interact with the \"single assignment\" rule in Modelica.  
-"关于\ ``when``\ 声明最后要注意的是，他们与\如何相互作用”的Modelica语言分配一次\ “的规则。[21m
-This rule, from the specification, states that there must be exactly one equation used to determine the value "
-"of each variable.  
-As we saw in the sections on :ref:`speed-measurement` and :ref:`hysteresis`, it is sometimes necessary (or least clearer) to express behavior in terms of multiple assignments.  
-In those cases, if all the assignments are included within a single ``algorithm`` section, they are effectively combined into a single equation.  
-However, doing so will limit the compiler's ability to perform symbolic manipulation and, therefore, may impact simulation performance and/or reusability of the models."
+"最后要注意\ ``when``\ 语句如何与Modelica的“单赋值规则”产生关系。"
+"Modelica规范中的这条规则规定了每一个变量的值都正好对应一个求值的方程。"
+"正如\ :ref:`speed-measurement`\ 以及\ :ref:`hysteresis`\ 小节里提到的，有时我们需要"
+"用多个赋值语句来描述系统行为（或者说这样可以表达得更为清晰）。"
+"在这些情况下，如果所有的赋值语句都被只被放在\ ``algorithm``\ 段落，"
+"那么这些语句实际上会被看成是一个等式。"
+"但是，这样做会减弱编译器执行符号运算的能力，结果可能至少会影响仿真的性能和模型的可重用性中的一个。"
 
 #: ../../source/behavior/discrete/when.rst:6
 msgid "when"
@@ -196,3 +196,9 @@ msgid ""
 "``initial algorithm`` section will allow multiple assignments to the same "
 "variable.  The same caveats apply with respect to symbolic manipulation."
 msgstr ""
+"值得注意的是，如果在初始化期间需要\ ``algorithm``\ 段落这种语义，Modelica包含了一种"
+"\ ``initial algorithm``\ 段落来实现这种功能。\ ``initial algorithm``\ 段落的作用可以类比"
+"前面在\ :ref:`initialization`\ 讨论过的\ ``initial equation``\ 段落。"
+"正如\ ``initial equation``\ 一样，\ ``initial algorithm``\ 只会在初始化阶段确定初始化条件时有效，"
+"但这种段落支持多次赋值。"
+"前述关于符号操作的警告仍然有效。"
