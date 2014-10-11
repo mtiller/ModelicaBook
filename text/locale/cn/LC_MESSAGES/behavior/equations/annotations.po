@@ -14,7 +14,7 @@ msgstr ""
 #: ../../source/behavior/equations/annotations.rst:4
 msgid "Annotations"
 msgstr ""
-
+"注释"
 #: ../../source/behavior/equations/annotations.rst:6
 msgid ""
 "Recall in the discussion on :ref:`experimental-conditions` we included "
@@ -30,7 +30,11 @@ msgid ""
 " and beyond behavior, that can be \"attached\" to different elements in "
 "Modelica."
 msgstr ""
-
+"回顾一下，在 :ref:`experimental-conditions` 章节中，我们讨论了通过 ``annotation`` 功能定义模型仿真开始和结束的时间。"
+"通过 ``annotation`` 功能包含上述信息是一种方法，并且不包含与模型特性相关的信息。"
+"在试验条件下，我们可以定义特定模型如何进行仿真的信息。但是，在Modelica语言中，注释广泛应用于提供各种与模型相关的附加信息。"
+"例如，在后续的章节中 :ref:`later in the book <graphical-annos>` ，我们可以看到注释可以用来描述图形外观组件和连接器。"
+"现在，重要的是要理解注释只是额外的数据，除了描述模型的物理特性，它可以 \"attached\" （附加）在Modelica不同的元素上。"
 #: ../../source/behavior/equations/annotations.rst:20
 msgid ""
 "In this section, we will first cover where an ``annotation`` can appear in a"
@@ -39,103 +43,108 @@ msgid ""
 "the many \"standard\" annotations that are included as part of the Modelica "
 "specification."
 msgstr ""
-
+"在本节中，我们将首先讨论 ``annotation`` 在Modelica模型中可以出现的地方。接下来，我们将解释如何使用 :ref:`record-def` （Record定义）"
+"来描述注释所包含的内容。最后，我们将介绍一些包含在Modelica规范内的 \"standard\" （标准）注释。"
 #: ../../source/behavior/equations/annotations.rst:27
 msgid "Annotation Locations"
 msgstr ""
-
+"注释的位置"
 #: ../../source/behavior/equations/annotations.rst:29
 msgid ""
 "Annotations can appear in many different places in Modelica.  We will "
 "discuss each potential location and demonstrate the syntax for each case."
 msgstr ""
-
+"注释可以在Modelica模型的不同位置上出现。我们将讨论每个可能出现的位置并讲述每种情况下的语法。"
 #: ../../source/behavior/equations/annotations.rst:33
 msgid "Declaration Annotations"
 msgstr ""
-
+"注释的声明"
 #: ../../source/behavior/equations/annotations.rst:37
 msgid ""
 "A declaration annotation comes at the end of a declaration, right before the"
 " ``;``.  Here is a simple declaration that includes an annotation:"
 msgstr ""
-
+"注释的声明紧跟在一个声明的后面，并且在标示符 ``;`` 的前面。下面是一个包含注释的简单声明："
 #: ../../source/behavior/equations/annotations.rst:45
 msgid ""
 "Note that the ``annotation`` comes after the descriptive string and before "
 "the ``;``.  Also, the ``...`` is simply a place holder for the :ref"
 ":`annotation-data`, which will be discussed shortly."
 msgstr ""
-
+"从上述程序段中可以看到，注释紧跟在描述性字符串的后面，并在标示符 ``;`` 的前面。"
+"另外，括号内的 ``...`` 只是用来放置注释数据的占位符，将在本书后面的章节 :ref:`annotation-data` 中讨论。"
 #: ../../source/behavior/equations/annotations.rst:50
 msgid "Statement and Equation Annotations"
 msgstr ""
-
+"注释语句和方程"
 #: ../../source/behavior/equations/annotations.rst:54
 msgid ""
 "It is also possible to associate annotations with equations, for example:"
 msgstr ""
-
+"另外，也可以将注释和方程相关联，例如："
 #: ../../source/behavior/equations/annotations.rst:65
 msgid "Inheritance Annotations"
 msgstr ""
-
+"注释的继承"
 #: ../../source/behavior/equations/annotations.rst:69
 msgid ""
 "We briefly discussed the ``extends`` keyword when we talked about "
 ":ref:`modifications` and :ref:`avoiding-repetition`.  It is possible to "
 "associate an ``annotation`` with an ``extends`` clause as follows:"
 msgstr ""
-
+"在章节 :ref:`modifications` 和 :ref:`avoiding-repetition` 中，我们已经简单的对关键词 ``extends`` 进行了讨论。"
+"如下所示，我们也可以将 ``annotation`` （注释）和 ``extends`` 相关联："
 #: ../../source/behavior/equations/annotations.rst:77
 msgid ""
 "As we've observed in each previous case, the ``annotation`` immediately "
 "precedes the ``;``."
 msgstr ""
-
+"正如我们在前面的每个例子中观察到的那样， ``annotation`` 的声明总是在标示符 ``;`` 的前面结束。"
 #: ../../source/behavior/equations/annotations.rst:82
 msgid "Model Annotations"
 msgstr ""
-
+"模型的注释"
 #: ../../source/behavior/equations/annotations.rst:87
 msgid ""
 "A model annotation associates annotation data directly with the model "
 "definition itself.  This is exactly the kind of annotation we saw when "
 "describing :ref:`experimental-conditions`, *e.g.,*"
 msgstr ""
-
+"与模型注释相关的注释数据直接在模型自身定义的时候声明。在前面章节 :ref:`experimental-conditions` 讨论的时候，如下"
+"正是我们所看到的注释， *即* ，"
 #: ../../source/behavior/equations/annotations.rst:97
 msgid ""
 "Note how, unlike all the previous annotation locations we've described, this"
 " annotation isn't really \"attached\" to anything.  This indicates that it "
 "is annotating the model itself."
 msgstr ""
-
+"请注意，不像前面我们描述的注释位置那样，该注释并不是任何部分的 \"attached\" （附加）。"
+"这表明它是模型本身的注释。"
 #: ../../source/behavior/equations/annotations.rst:104
 msgid "Annotation Data"
 msgstr ""
-
+"注释数据"
 #: ../../source/behavior/equations/annotations.rst:107
 msgid "General Syntax"
 msgstr ""
-
+"一般的语法"
 #: ../../source/behavior/equations/annotations.rst:109
 msgid ""
 "The syntax of an annotation is the same syntax used for "
 ":ref:`modifications`.  This means the annotation will include either an "
 "assignment to a variable in the annotation, *e.g.,*"
 msgstr ""
-
+"注释的使用语法与前面章节 :ref:`modifications` 讨论的语法相同。这就意味着，注释中即可以包含对变量的赋值， *即,* "
 #: ../../source/behavior/equations/annotations.rst:117
 msgid ""
 "or it will include a modification to something **inside** a variable in the "
 "annotation, *e.g.,*"
 msgstr ""
-
+"也可以包含对一些 **内部** 变量的修改， *即,* "
 #: ../../source/behavior/equations/annotations.rst:125
 msgid "User Annotations"
 msgstr ""
-
+"用户注释"
 #: ../../source/behavior/equations/annotations.rst:127
 msgid ""
 "Annotations were designed to allow model developers to attach **arbitrary "
@@ -143,7 +152,8 @@ msgid ""
 "number with a given model definition, they might introduce a model "
 "annotation like this:"
 msgstr ""
-
+"注释就是为了方便模型开发者将 **任意数据** 添加到模型中而设计的。例如，如果用户想要将部分数据与给定的"
+"模型定义相关联，他们可以为模型添加如下的注释："
 #: ../../source/behavior/equations/annotations.rst:136
 msgid ""
 "A general principle of annotation data is that if a tool reads in a model, "
@@ -151,27 +161,29 @@ msgid ""
 "  The tool does not (and, in general, will not) have to understand the data."
 "  But the data must be preserved."
 msgstr ""
-
+"注释数据的一般原则是，如果一个读入模型的工具，在写入模型的时候， **必须保留注释信息** 。"
+"该工具不必（一般来说，无需）理解读入的注释信息，但是，必须将这些数据保存。"
 #: ../../source/behavior/equations/annotations.rst:142
 msgid "Multiple Annotations"
 msgstr ""
-
+"多个注释"
 #: ../../source/behavior/equations/annotations.rst:144
 msgid ""
 "Imagine a user wanted to specify **both** a part number and an experiment "
 "annotation.  Then they might end up with an annotation like this one:"
 msgstr ""
-
+"假设，用户想要 **同时** 指定编号和试验注释，他们可以采用下述方式定义注释："
 #: ../../source/behavior/equations/annotations.rst:153
 msgid ""
 "Note how these two pieces of information can exist side by side.  One way to"
 " think about annotations is to visualize them as a tree like this:"
 msgstr ""
-
+"注意，这两条注释信息可以并存。"
+"可以将注释可视化为如下树状结构来理解注释的定义："
 #: ../../source/behavior/equations/annotations.rst:164
 msgid "Namespaces"
 msgstr ""
-
+"名称空间"
 #: ../../source/behavior/equations/annotations.rst:166
 msgid ""
 "This introduces another principle of annotations which is that it should be "
@@ -181,7 +193,12 @@ msgid ""
 "for including the part number would be to enclose it in a variable that is "
 "more likely to be unique to your company or application, *e.g.,*:"
 msgstr ""
-
+""
+""
+""
+""
+""
+""
 #: ../../source/behavior/equations/annotations.rst:179
 msgid ""
 "In this case, the variable ``XogenyIndustries`` can be used to carve out a "
@@ -190,14 +207,20 @@ msgid ""
 " the same model, they could do that by establishing their own separate "
 "hierarchy in the annotation, *e.g.,*:"
 msgstr ""
-
+""
+""
+""
+""
 #: ../../source/behavior/equations/annotations.rst:191
 msgid ""
 "Occasionally, Modelica tool vendors include their own special annotations "
 "(*e.g.,* in the Modelica Standard Library).  By convention, tool vendors use"
 " names that are prefixed by two underscores, *e.g.,*"
 msgstr ""
-
+""
+""
+""
+""
 #: ../../source/behavior/equations/annotations.rst:204
 msgid "Intepretation"
 msgstr ""
@@ -213,14 +236,20 @@ msgid ""
 "some way (using some Modelica tool, compiler or other Modelica aware "
 "technology) of extracting and interpreting their annotation data."
 msgstr ""
-
+""
+""
+""
+""
 #: ../../source/behavior/equations/annotations.rst:216
 msgid ""
 "The bottom line is that while you can inject (non-standard) annotation data "
 "into the model, tools are only required to preserve it and not to interpret "
 "it."
 msgstr ""
-
+""
+""
+""
+""
 #: ../../source/behavior/equations/annotations.rst:221
 #: ../../source/behavior/equations/annotations.rst:248
 msgid "Documentation"
@@ -235,7 +264,10 @@ msgid ""
 "popular and useful that there are proposals to actually make it part of the "
 "language itself in the future."
 msgstr ""
-
+""
+""
+""
+""
 #: ../../source/behavior/equations/annotations.rst:231
 msgid "Introductory Annotations"
 msgstr ""
@@ -408,7 +440,8 @@ msgid ""
 "In declarations and equations, the ``annotation`` is always at the very end "
 "and comes immediately before the ``;``."
 msgstr ""
-
+"注释总是紧跟在声明和方程定义的结束处，并且在标示符 ``;`` 的前面。"
+""
 #: ../../source/behavior/equations/annotations.rst:157
 msgid "``PartNumber=\"FF78-E4B879\"``"
 msgstr ""
