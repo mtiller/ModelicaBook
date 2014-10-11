@@ -43,9 +43,7 @@ msgid ""
 msgstr ""
 "在前面对\ :ref:`hysteresis`\ 的讨论里，我们简要地讨论了\ ``if``\ 语句和\ ``when``\ 语句之间的区别。"
 "在\ ``when``\ 语句内的代码仅会在触发条件表达式为真的一瞬间被激活。"
-At all other times, the ``when`` statement has no effect.  
 "在所有其它的时候，\ ``when``\ 语句不会有任何影响。"
-An ``if`` statement or ``if`` expression remains active as long as the conditional expression is true.  
 "而\ ``if`` 陈述或\ ``if``\ 表达式只要在条件表达式为真时，它们就有效。"
 "倘若\ ``if`` 陈述或\ ``if``\ 表达式包含了\ ``else``\ 子句，那么总会有一个分支有效。"
 
@@ -63,6 +61,10 @@ msgid ""
 "that you should **almost always** put the ``pre`` operator around any "
 "variables in ``expr`` that also appear inside the ``when`` statement."
 msgstr ""
+"大多数时候，\ ``expr``\ 表达式会是个条件表达式，而且通常会涉及关系运算符。"
+"\ ``when``\ 语句常用的条件表达式有例如\ ``time>=2.0``\ 、\ ``x>=y+2``\ 、\ ``phi<=prev_phi``\ 等。"
+"回忆前面在讨论\ :ref:`interval-measurement`\ 测算算法时，对于同时出现在\ ``expr``\ 以及\ ``when``\ "
+"表达式里的变量，你\ **几乎总要**\ 在给这些变量加上\ ``pre``\ 操作符。"
 
 #: ../../source/behavior/discrete/when.rst:45
 msgid ""
@@ -72,10 +74,15 @@ msgid ""
 "becomes active if **any** of the conditions in the vector of expressions "
 "becomes true."
 msgstr ""
+"在\ :ref:`bouncing-ball`\ 的例子里，我们遇到过\ ``expre``\ 并非有一个（标量）条件表达式，而是"
+"由条件表达式向量组成的情况。"
+"请回忆前面关于有向量形式条件语句的\ ``when``\ 语句的讨论：当向量中的\ **任何一个**\ 条件变为真时，"
+"\ ``when``\ 语句就会被激活。"
+
 
 #: ../../source/behavior/discrete/when.rst:52
 msgid "Statements"
-msgstr ""
+msgstr "语句"
 
 #: ../../source/behavior/discrete/when.rst:54
 msgid ""
@@ -83,6 +90,9 @@ msgid ""
 "new values can be assigned in one of two ways.  The first is by introducing "
 "an equation of the form:"
 msgstr ""
+"\ `` when``语句的作用是为变量定义新的取值。"
+"我们可以用两种方法定义新的取值。"
+"第一种方法是通过将具有以下形式的公式："
 
 #: ../../source/behavior/discrete/when.rst:62
 msgid ""
@@ -94,6 +104,12 @@ msgid ""
 "assigned in this way cannot be continuous over any interval in the "
 "simulation."
 msgstr ""
+"在这种情况下，\ ``var``\ 将会等于\ ``expr``\ 的取值。"
+"而 ``expr``\ 里的\ ``pre``\ 操作符用于指代变量在事件前的取值。"
+"任何以这种方式赋值的变量均为离散变量。"
+"这意味着，这些变量的值仅在事件进行时发生变化。"
+"换句话说，变量将是分段常数函数。"
+"请注意，以这种方式赋值的变量不可能在仿真的任何时间间隔内都保持连续。"
 
 #: ../../source/behavior/discrete/when.rst:70
 msgid ""
@@ -103,6 +119,9 @@ msgid ""
 "By adding the ``discrete`` qualifier you ensure that the variable's value "
 "must be determined within a ``when`` statement."
 msgstr ""
+"虽然严格而言并非必须，但如果你想明确地将变量标记为离散，你可以用\ ``discrete``\ 限定词作为其前缀"
+"（ 正如我们在本章前面的\ :ref:`sample-and-hold`\ 所看到的例子一样）。"
+"添加\ ``discrete``\ 限定词可以确保该变量的值必须由\ ``when``\ 语句来确定。"
 
 #: ../../source/behavior/discrete/when.rst:79
 msgid ""
@@ -111,6 +130,9 @@ msgid ""
 "``reinit`` operator.  In that case, the statement within the ``when`` "
 "statement will take the form:"
 msgstr ""
+"另一种在\ ``when``\ 变量里为变量赋值的方法，正如在\ :ref:`bouncing-ball`\ 的例子里一样，是通过使用"
+"\ ``reinit``\ 操作符。"
+"在这种情况下，\ ``when``\ 语句内部的代码将会有如下形式："
 
 #: ../../source/behavior/discrete/when.rst:88
 msgid ""
@@ -123,10 +145,16 @@ msgid ""
 " are effectively a new set of initial conditions.  The values of all other "
 "states not re-initialized with the ``reinit`` operator remain unchanged."
 msgstr ""
+"在使用\ ``reinit``\ 操作符时，变量\ ``var``\ **必须是一个状态**\ 。"
+"换句话说，此变量必须是微分方程求解的结果。"
+"在这样的变量里使用\ ``reinit``\ 会停止积分过程并改变该状态"
+" （以及其它在同一个\ ``when``\ 语句里添加了\ ``reinit``\ 的）的值。"
+"紧接着，积分实际上使用了一套新的初始条件重新开始。"
+"而没有使用\ ``reinit``\ 操作符进行重新初始化的其他状态会保持不变。"
 
 #: ../../source/behavior/discrete/when.rst:101
 msgid "``algorithm`` Sections"
-msgstr ""
+msgstr "``algorithm``\ 段落"
 
 #: ../../source/behavior/discrete/when.rst:103
 msgid ""
@@ -141,6 +169,13 @@ msgid ""
 "the compiler's ability to perform symbolic manipulation and, therefore, may "
 "impact simulation performance and/or reusability of the models."
 msgstr ""
+"One final note about ``when`` statements is how they interact with the \"single assignment\" rule in Modelica.  
+"关于\ ``when``\ 声明最后要注意的是，他们与\如何相互作用”的Modelica语言分配一次\ “的规则。[21m
+This rule, from the specification, states that there must be exactly one equation used to determine the value "
+"of each variable.  
+As we saw in the sections on :ref:`speed-measurement` and :ref:`hysteresis`, it is sometimes necessary (or least clearer) to express behavior in terms of multiple assignments.  
+In those cases, if all the assignments are included within a single ``algorithm`` section, they are effectively combined into a single equation.  
+However, doing so will limit the compiler's ability to perform symbolic manipulation and, therefore, may impact simulation performance and/or reusability of the models."
 
 #: ../../source/behavior/discrete/when.rst:6
 msgid "when"
