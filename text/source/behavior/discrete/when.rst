@@ -105,7 +105,7 @@ One final note about ``when`` statements is how they interact with the
 specification, states that there must be exactly one equation used to
 determine the value of each variable.  As we saw in the sections on
 :ref:`speed-measurement` and :ref:`hysteresis`, it is sometimes
-necessary (or least clearer) to express behavior in terms of multiple
+necessary (or at least clearer) to express behavior in terms of multiple
 assignments.  In those cases, if all the assignments are included
 within a single ``algorithm`` section, they are effectively combined
 into a single equation.  However, doing so will limit the compiler's
