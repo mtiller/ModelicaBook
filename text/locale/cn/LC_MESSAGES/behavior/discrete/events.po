@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/events.rst:4
 msgid "Events"
-msgstr ""
+msgstr "事件"
 
 #: ../../source/behavior/discrete/events.rst:8
 msgid ""
@@ -140,14 +140,14 @@ msgstr ""
 #: ../../source/behavior/discrete/events.rst:132
 #: ../../source/behavior/discrete/events.rst:149
 msgid "Function"
-msgstr ""
+msgstr "函数"
 
 #: ../../source/behavior/discrete/events.rst:95
 #: ../../source/behavior/discrete/events.rst:116
 #: ../../source/behavior/discrete/events.rst:132
 #: ../../source/behavior/discrete/events.rst:149
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ../../source/behavior/discrete/events.rst:97
 msgid "``div(x,y)``"
@@ -155,7 +155,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/events.rst:97
 msgid "Algebraic quotient with fractional part discarded."
-msgstr ""
+msgstr "省去小数部分的代数商。"
 
 #: ../../source/behavior/discrete/events.rst:98
 msgid "``mod(x,y)``"
@@ -163,7 +163,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/events.rst:98
 msgid "Modulus of ``x``/``y``"
-msgstr ""
+msgstr "``x``/``y``\ 的余数"
 
 #: ../../source/behavior/discrete/events.rst:99
 msgid "``rem(x,y)``"
@@ -403,8 +403,3 @@ msgid ""
 "A clock that fires every :math:`\\frac{i}{r}` seconds where ``i`` and ``r`` "
 "are both of type ``Integer``"
 msgstr ""
-
-#~ msgid ""
-#~ "A clock that fires every :math:`\\frac{i}{r}` seconds where ``i`` and ``r`` "
-#~ "are ``Integer``s"
-#~ msgstr ""
