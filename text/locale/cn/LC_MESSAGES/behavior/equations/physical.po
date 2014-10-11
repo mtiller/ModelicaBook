@@ -265,7 +265,7 @@ msgid ""
 "minimum possible value of ``0``\"."
 msgstr ""
 "你可以看到关于类型的定义 ``type Temperature=Real(unit=\"K\", min=0);`` ， ``如 \"让我们定义一个新类型 ``Temperature`` ，"
-"这是内置 ``Real`` 类型和物理单位开尔文 ( ``K`` )以及最小可能值为 ``0``\ 的一个特例" 。"
+"这是内置 ``Real`` 类型和物理单位开尔文 ( ``K`` )以及最小可能值为 ``0``\ 的一个特例 。"
 #: ../../source/behavior/equations/physical.rst:204
 msgid ""
 "From this example, we can see that once we define a physical type like "
