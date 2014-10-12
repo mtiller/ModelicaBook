@@ -20,7 +20,6 @@ msgid ""
 "Although equations are probably the single most important mathematical "
 "aspect of Modelica, they are also the simplest to explain."
 msgstr ""
-
 "尽管方程可能是Modelica语言中唯一最重要的数学方面的体现，但是他们仍然是最易于解释的。"
 
 #: ../../source/behavior/equations/equations.rst:8
@@ -96,7 +95,7 @@ msgid ""
 "of equations and the number of equations must be fixed during the "
 "simulation."
 msgstr ""
-"在平衡态的情况下，方程的数量总是一致的（代码为1），但是是 *哪个* 方程可以改变。"
+"在平衡的情况下，方程的数量总是一致的（代码中都为1），但是是 *哪个* 方程这点可以改变。"
 "这个很重要，因为在Modeliaca中模拟一个模型，变量的数量必须等于方程的数量，而且在模拟的过程中方程的数量必须是固定的。"
 
 #: ../../source/behavior/equations/equations.rst:73
@@ -107,7 +106,7 @@ msgid ""
 " (like it was in the balanced case, previously)."
 msgstr ""
 "另外一种条件方程的类型是方程的数量是不平衡的。"
-"这意味着方程的数量在 ``if`` 和 ``else`` 的两侧可能是不相等的（像之前平衡态中那样）。"
+"这意味着方程的数量在 ``if`` 和 ``else`` 的两侧可能是不相等的（像之前平衡情况中那样）。"
 
 #: ../../source/behavior/equations/equations.rst:80
 msgid ""
@@ -121,7 +120,7 @@ msgid ""
 msgstr ""
 "但是请记得，方程的数量在模拟过程中不能改变。"
 "那么是如何做到 ``if`` 和 ``else`` 两侧的方程数量是不同的呢？只有一种情况 **模拟过程中条件表达式的值不能改变。** "
-"为了确保条件表达式永不改变，条件表达式中所有的变量必须拥有所谓的*参变量*。"
+"为了确保条件表达式永不改变，条件表达式中所有的变量必须拥有所谓的*参数级别的可变性*。"
 
 #: ../../source/behavior/equations/equations.rst:89
 msgid ""
@@ -133,8 +132,8 @@ msgid ""
 "value of the expression cannot change during a simulation)."
 msgstr ""
 "还记得讨论 :ref:`variability` 的时候，带有 ``parameter`` （参数）限定词的变量在模拟过程中不能改变的事实吗？"
-"如果带有 ``parameter`` (参数)限定词的变量在模拟过程中不能改变，且表达式中的所有变量都拥有这个参变量，"
-"那么整个表达式一定也拥有参变量（ *例如,* 表达式的值在模拟过程中不能改变）。"
+"如果带有 ``parameter`` (参数)限定词的变量在模拟过程中不能改变，且表达式中的所有变量都拥有这个参数级别的可变性，"
+"那么整个表达式一定也拥有参数级别的可变性（ *亦即，* 表达式的值在模拟过程中不能改变）。"
 
 #: ../../source/behavior/equations/equations.rst:97
 msgid ""
@@ -142,7 +141,7 @@ msgid ""
 "be useful?  Again, we are getting ahead of ourselves here, but one use case "
 "would be the conditional application of initial equations, *e.g.,*"
 msgstr ""
-"关于这个问题，一定会质疑这种不平衡态方程有用吗？再次提前指出，可以用的是指有条件的初始方程的应用, *例如,* "
+"关于这个问题，你一定会质疑，这种不平衡的情况有用吗？再次提前指出，其中一种应用是在带条件的初始方程, *例如,* "
 
 #: ../../source/behavior/equations/equations.rst:112
 msgid ""
@@ -152,8 +151,8 @@ msgid ""
 "because the expression contains only a variable and that variable is a "
 "parameter."
 msgstr ""
-"换句话说，如果布尔参数 ``steady_state`` （稳定状态）是真的，那么初始方程是强制执行的。"
-"但是如果参数是错的，他们就不会被强制执行。这里的条件表达式含有参变量因为表达式仅仅包含一个变量且这个变量是个参数。"
+"换句话说，如果布尔参数 ``steady_state`` （稳定状态）为真，那么初始方程是有效的。"
+"但是如果参数为假，它们就无效。这里的条件表达式具有参数级别的可变性是因为，表达式仅仅包含一个变量，而这个变量是个参数。"
 
 #: ../../source/behavior/equations/equations.rst:118
 msgid ""
@@ -165,4 +164,4 @@ msgstr ""
 
 #: ../../source/behavior/equations/equations.rst:78
 msgid "parametric variability"
-msgstr ""
+msgstr "参数级别的可变性（parametric variability）"
