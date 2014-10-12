@@ -14,7 +14,6 @@ msgstr ""
 #: ../../source/behavior/discrete/sampling.rst:4
 msgid "Synchronous Systems"
 msgstr "同步系统"
-
 #: ../../source/behavior/discrete/sampling.rst:6
 msgid ""
 "In Modelica version 3.3, new features were introduced to address concerns "
@@ -218,6 +217,6 @@ msgid ""
 "these synchronous features and their applications see [Elmqvist]_ and/or the"
 " Modelica Specification, version 3.3 or later."
 msgstr ""
-"Modelica语言的同步时钟的特性是相对较新。"
+"Modelica语言的同步时钟特性是相对较新。"
 "因此，并非所有的Modelica语言编译器都支持这些特性。"
 "要了解更多有关这些同步功能及其应用，可以参考\ [Elmqvist]_\ 以及／或者3.3版以后的Modelica规范。"
