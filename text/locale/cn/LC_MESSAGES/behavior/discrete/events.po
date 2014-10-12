@@ -85,7 +85,7 @@ msgstr "也可以触发事件的产生。"
 
 #: ../../source/behavior/discrete/events.rst:83
 msgid "Events and Functions"
-msgstr "时件与函数"
+msgstr "事件与函数"
 
 #: ../../source/behavior/discrete/events.rst:137
 msgid "``sample(expr,clock)``"
@@ -128,8 +128,8 @@ msgid ""
 "reason, Modelica includes the ``smooth`` operator to explicitly express such"
 " conditions.  For example, using the ``smooth`` operator as follows:"
 msgstr ""
-"Modelica编译器很难可靠地确定函数是否连续或者函数的是否有连续导数。"
-"出于这个原因， Modelica自带了\ ``smooth``\ 操作符去明示这种情况。"
+"Modelica编译器很难可靠地确定函数是否连续或者函数是否有连续导数。"
+"出于这个原因， Modelica自带了\ ``smooth``\ 操作符用以明示这种情况。"
 "例如，用以下形式使用\ ``smooth``\ 运算符："
 
 #: ../../source/behavior/discrete/events.rst:76
@@ -237,7 +237,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/events.rst:104
 msgid "``true`` at end of simulation, otherwise ``false``"
-msgstr "仿真结束时时为\ ``true``\ ，否则为\ ``false``"
+msgstr "仿真结束时为\ ``true``\ ，否则为\ ``false``"
 
 #: ../../source/behavior/discrete/events.rst:105
 msgid "``sample(t0,dt)``"
@@ -344,7 +344,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/events.rst:136
 msgid "Anytime, value of ``x`` during previous clock tick"
-msgstr "任何时间时都保存了\ ``x``\ 在上个时钟节拍的取值"
+msgstr "任何时间都保存了\ ``x``\ 在上个时钟节拍的取值"
 
 #: ../../source/behavior/discrete/events.rst:137
 msgid "During clock tick, value of ``expr``"
