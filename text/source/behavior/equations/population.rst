@@ -395,7 +395,7 @@ common?  If you look closely, you will see that they have almost
 **everything** in common and that there are actually hardly any
 **differences** between them!
 
-In software engineering, there is a saying that "Redundancy is the
+In software engineering, there is a saying that "Repetition is the
 root of all evil".  Well the situation is no different here (in no
 small part because Modelica code really is software).  The code we
 have written so far would be very annoying to maintain.  This is
