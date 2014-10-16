@@ -22,9 +22,9 @@ msgid ""
 "review the key ideas behind ``when`` statements.  A ``when`` statement has "
 "the following general form:"
 msgstr ""
-"通过使用\ ``when``\ ，我们可以表达我们感兴趣的条件判断以及对这些条件判断的回应。"
+"通过使用\ ``when``\ ，我们可以表达我们所感兴趣的条件判断以及对这些条件判断的回应。"
 "在本节中，我们将回顾\ ``when``\ 语句背后的主要思想。"
-"\ `` when``\ 语句的一般形式如下："
+"\ ``when``\ 语句的一般形式如下："
 
 #: ../../source/behavior/discrete/when.rst:22
 msgid "``if`` vs. ``when``"

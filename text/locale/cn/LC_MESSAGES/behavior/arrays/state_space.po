@@ -13,17 +13,18 @@ msgstr ""
 
 #: ../../source/behavior/arrays/state_space.rst:4
 msgid "State Space"
-msgstr ""
+msgstr "状态空间"
 
 #: ../../source/behavior/arrays/state_space.rst:9
 msgid "ABCD Form"
-msgstr ""
+msgstr "ABCD形式"
 
 #: ../../source/behavior/arrays/state_space.rst:14
 msgid ""
 "Recall from our previous discussion on :ref:`odes` that we can express "
 "differential equations in the following form:"
 msgstr ""
+"回顾前面关于\ :ref:`odes`\ 的讨论，我们可将微分方程表述为如下形式："
 
 #: ../../source/behavior/arrays/state_space.rst:22
 msgid ""
@@ -32,6 +33,10 @@ msgid ""
 "represents the outputs of the system (*i.e.,* variables that are not states,"
 " but can ultimately be computed from the values of the states and inputs)."
 msgstr ""
+"在这种形式下，\ :math:`x`\ 表示系统中的状态，"
+"\ :math:`u`\ 表示系统的任何外部指定的输入，"
+"而\ :math:`y`\ 表示该系统的输出
+(*亦即*非状态的变量，但这些变量可通过状态和输入的值求得。）"
 
 #: ../../source/behavior/arrays/state_space.rst:38
 msgid ""
@@ -43,6 +48,10 @@ msgid ""
 "important properties related to control of the underlying system (*e.g.,* "
 "observability and controllability)."
 msgstr ""
+"此问题中的矩阵是所谓“ABCD”矩阵。"
+"“ABCD”形式是很有用的，因为如果系统用这种形式表达的，那么我们就可以在系统上进行一些有趣的计算。"
+"例如，我们可以使用\ :math:`A`\ 矩阵计算系统的自然频率。"
+"而使用这些矩阵的不同组合，我们可以确定对系统控制相关的几个极其重要的性质（\ *例如*\ 可观察性和可控性）。"
 
 #: ../../source/behavior/arrays/state_space.rst:47
 msgid ""
@@ -50,6 +59,8 @@ msgid ""
 " slightly more specialized form that, in addition to being linear, is also "
 "time-invariant:"
 msgstr ""
+"请注意，ABCD形式允许这些矩阵随时间变化。"
+"有一种稍为更专门的形式，除去线性以外，也不随时间变化："
 
 #: ../../source/behavior/arrays/state_space.rst:58
 msgid ""
@@ -64,16 +75,25 @@ msgid ""
 "like Modelica and `FMI <http://fmi-standard.org>`_ provide much better "
 "options for model exchange."
 msgstr ""
+"这种形式通常被称LTI（线性时不变）形式。"
+"LTI形式是很重要的。因为这种形式除了具有与ABCD的形式一样的特殊性质外， 还可以以一个非常简单的形式实现“模型交换”。"
+"以前，当用户（采用手工方法或者用建模软件）推导给定系统的行为方程后，"
+"其中一个将这些方程导入其他工具的方法，就是把方程变为LTI形式。"
+"这意味着，该模型可以用带有数字或表达式的一系列矩阵进行交换、共享或者发布。"
+"如今，新技术如Modelica语言和\ `FMI <http://fmi-standard.org>`_\ 为模型交换提供了更好的选择。"
 
 #: ../../source/behavior/arrays/state_space.rst:71
 msgid "LTI Models"
-msgstr ""
+msgstr "LTI模型"
 
 #: ../../source/behavior/arrays/state_space.rst:73
 msgid ""
 "If someone gave us a model in LTI form, how would we express that in "
 "Modelica?  Here is one way we might choose to do it:"
 msgstr ""
+"If someone gave us a model in LTI form, how would we express that in Modelica?  
+"如果有人提供了我们一个LTI形式的模型，我们要如何用Modelica描述它呢？"
+"这是其中一种可能的方法："
 
 #: ../../source/behavior/arrays/state_space.rst:80
 msgid ""
@@ -88,6 +108,15 @@ msgid ""
 " ``y``.  These are also arrays.  But in this case, they are vectors, since "
 "they each have only a single dimension."
 msgstr ""
+"第一步，是在模型里声明\ ``nx``\ 、\ ``nu``\ 、\ ``ny``\ 等参数。"
+"这些参数分别代表了状态、输入和输出的数量。"
+"然后，我们定义矩阵\ ``A``\ 、 \ ``B``\ 、 \ ``C``\  以及 \ ``D``\ 。"
+"因为我们正在创建一个线性时不变表示下的模型，所以所有这些矩阵都可以被定义为参数。"
+"由于矩阵\ ``A``\ 、 \ ``B``\ 、 \ ``C``\  和 \ ``D``\ 的定义紧接着\ ``[``\ 以及\ ``]``\ ，"
+"因此我们知道它们均是数组。"
+"而由于\ ``[]``\ 内有标示了两个维度，我们知道以上的数组均是矩阵。"
+"最后，我们看到\ ``x0``\ 、\ ``x``、\ ``u``\ 以及\ ``y``\ 的变量声明。"
+"这些变量也都是数组。不过，由于这些变量仅有一维，因此它们都是向量。"
 
 #: ../../source/behavior/arrays/state_space.rst:92
 msgid ""
@@ -100,10 +129,15 @@ msgid ""
 "assumptions make it possible for us to write very simple models by simply "
 "overriding the values for these parameters."
 msgstr ""
+"本模型的另一个特点是其参数均有默认值。"
+"对于\ ``nx``\ 、\ ``nu``\ 、\ ``ny``\ 等参数，默认的假设是状态、输入和输出的数量均为零。"
+"而对于矩阵则默认其元素均为零。"
+"除非另有规定，对于初始条件我们同样假设所有的状态在仿真开始取零值。"
+"我们将很快看到，这些假设如何可以让我们通过直接覆盖参数值来写编写简单的模型。"
 
 #: ../../source/behavior/arrays/state_space.rst:103
 msgid "Vector Equations"
-msgstr ""
+msgstr "向量方程"
 
 #: ../../source/behavior/arrays/state_space.rst:105
 msgid ""
@@ -114,6 +148,11 @@ msgid ""
 "same number of dimensions and the same size for each dimension.  So in the "
 "case of the ``LTI`` model, we have the following initial equation:"
 msgstr ""
+"该模型的其余部分现在看起来应该非常熟悉了。"
+"必须指出，模型中的方程皆是\ **矢量**\ 方程。"
+"Modelica语言中方程可以包括标量或数组。"
+"对于矢量方程唯一的要求是，方程的两侧需要有相同的维数和以及每个维度大小均相等。"
+"因此，在本例的\ ``LTI``\ 模型里，我们有以下的初始化方程："
 
 #: ../../source/behavior/arrays/state_space.rst:117
 msgid ""
@@ -122,6 +161,8 @@ msgid ""
 "simulation.  In practice, what happens is that each element in these vectors"
 " is automatically expanded into a series of scalar equations."
 msgstr ""
+"这个方程是一个向量方程，内容是\ ``x``\ 的每一个元素在仿真开始时等于其在\ ``x0``\ 的对应元素值。"
+"实际上，这些向量中的每组对应元素会自动展开为一系列的标量方程。"
 
 #: ../../source/behavior/arrays/state_space.rst:122
 msgid ""
@@ -134,6 +175,11 @@ msgid ""
 "a vector where each element in the vector represents the derivative of the "
 "respective element of ``x``."
 msgstr ""
+"还有另外一点有助于保持这些方程可读性。"
+"Modelica语言包含了关于函数\ :ref:`vectorization`\ 的一些特殊的规则。"
+"概括地说，这些规则规定了，倘若你有一个函数可以对标量进行运算，那么你就可以立刻用这个函数可以进行向量运算。"
+"如果你尝试用该函数进行向量运算， Modelica语言会自动将函数应用在向量中的每个元素上。"
+"因此，\ ``LTI``\ 模型内的\ ``der(x)``\ 表达式就是一个表示\ ``x``\ 中每个元素微分的向量。"
 
 #: ../../source/behavior/arrays/state_space.rst:131
 msgid ""
@@ -143,10 +189,13 @@ msgid ""
 "mathematical notation.  So in the ``LTI`` model, the expression ``A*x`` "
 "corresponds to a matrix-vector product."
 msgstr ""
+"最后，许多代数运算符（如：\ ``+``\ \ ``-``\ 以及\ ``*``）在应用于向量或矩阵时有着特殊的意义。"
+"运算符的定义设计得与常规的数学符号对应。"
+"所以，在\ ``LTI``\ 模型里，表达式\ ``A*x``\ 对应了矩阵与向量的积。"
 
 #: ../../source/behavior/arrays/state_space.rst:138
 msgid "LTI Examples"
-msgstr ""
+msgstr "LTI例子"
 
 #: ../../source/behavior/arrays/state_space.rst:140
 msgid ""
@@ -155,12 +204,17 @@ msgid ""
 " we will again use inheritance (via the ``extends`` keyword) to reuse the "
 "code in the ``LTI`` model."
 msgstr ""
+"考虑到这一点的所有，让我们重新审视我们几个以前的例子，看看他们如何能在长期激励形式表示使用我们的`` LTI``模型。"
+"讨论了上述的内容，让我们重新检视前述的数个例子，看看它们可以如何被用我们的\ ``LTI``\ 模型表示为LTI形式。"
+"注意，我们会再次使用继承（通过使用\ ``extends``\ 关键词）以重用\ ``LTI``\ 模型的代码。"
 
 #: ../../source/behavior/arrays/state_space.rst:145
 msgid ""
 "Let's start with the :ref:`first-order` we presented earlier.  Using the "
 "``LTI`` model, we can write this model as:"
 msgstr ""
+"让我们从前面介绍的\ :ref:`first-order`\ 开始。"
+"使用\ ``LTI``\ 模型，我们可以将模型重写为："
 
 #: ../../source/behavior/arrays/state_space.rst:152
 msgid ""
@@ -171,6 +225,12 @@ msgid ""
 "for it.  The input can, in general, be time-varying so we don't represent it"
 " as a parameter, but rather with an equation.  Note that in the equation:"
 msgstr ""
+"在我们扩展继承\ ``LTI``\ 时，我们只需要指定与默认值不同的参数即可。"
+"在这里，我们指定模型有一个状态和一个输入。"
+"然后，我们定义\ `A`\ 和\ `B`\ 为1x1矩阵。"
+"最后，由于有一个输入，我们需要为这个输入提供一个方程。"
+"该输入一般而言可以随时间变化，因此我们不把它表示为参数，而表示为方程。"
+"请注意，在方程中有："
 
 #: ../../source/behavior/arrays/state_space.rst:164
 msgid ""
@@ -179,6 +239,10 @@ msgid ""
 "one component, ``1``.  But we can build longer vectors using a comma "
 "separated list of expressions, *e.g.,*"
 msgstr ""
+"表达式\ ``{1}``\ 是一个向量源代码文本。"
+"这表示，我们其元素组成的列表来构建向量。"
+"在这里，向量仅有一个元素\ ``1``\ 。"
+"但我们建立一个用逗号分隔开的表达式列表去创建较长的向量，\ *例如：*\ "
 
 #: ../../source/behavior/arrays/state_space.rst:175
 msgid ""
@@ -187,6 +251,8 @@ msgid ""
 "avoided the ``equation`` section altogether and written the model more "
 "compactly as:"
 msgstr ""
+"值得一提的是，我们在\ ``extends``\ 语句内除了设置参数值，也可以包含等式。"
+"因此，我们可以完全避免\ ``equation``\ 段落，而将模型简化为："
 
 #: ../../source/behavior/arrays/state_space.rst:184
 msgid ""
@@ -195,29 +261,37 @@ msgid ""
 "convenient to include the equation as a modification in the ``extends`` "
 "statement."
 msgstr ""
+"一般来说，加入\ ``equation``\ 段落可以使代码有点更具可读性。"
+"但也有一些情况下，向\ ``extends``\ 语句加入等式作为对模型的修改会更为方便。"
 
 #: ../../source/behavior/arrays/state_space.rst:189
 msgid ""
 "Now let's turn our attention to the :ref:`cooling <getting-physical>` we "
 "also discussed earlier.  In LTI form, we could have written the model as:"
 msgstr ""
+"现在，让我们来关注也是前面讨论过的\ :ref:`cooling <getting-physical>`\ 。"
+"我们可以把模型用LTI形式改写如下："
 
 #: ../../source/behavior/arrays/state_space.rst:210
 msgid ""
-"Again, we compute ``A`` from physical parameters.  One thing to note about "
-"this example is the construction of ``A``.  Mathematically, the :math:`A` "
-"matrix is defined as:"
+"Again, we compute ``A`` from physical parameters. 
+One thing to note about this example is the construction of ``A``.  
+Mathematically, the :math:`A` matrix is defined as:"
 msgstr ""
+"同样，我们从物理参数得到\ ``A`\ 的值。"
+"在本例里要注意\ ``A``\ 的构造。"
+"数学上，矩阵\ :math:`A`\ 被定义为："
 
 #: ../../source/behavior/arrays/state_space.rst:264
 msgid ""
 "In Modelica, we can construct our ``A`` matrix from sub-matrices in this "
 "way:"
 msgstr ""
+"在Modelica语言，我们可以如下地用子矩阵构建\ ``A``\ 矩阵："
 
 #: ../../source/behavior/arrays/state_space.rst:281
 msgid "Using Components"
-msgstr ""
+msgstr "使用部件"
 
 #: ../../source/behavior/arrays/state_space.rst:283
 msgid ""
@@ -228,6 +302,10 @@ msgid ""
 ":ref:`electrical examples <elec-example>` in LTI form.  But this time, we'll"
 " create a named instance of the ``LTI`` model:"
 msgstr ""
+"在至今所有的例子中，我们已经（通过``extends``）用继承来重用\ ``LTI``\ 模型的公式。"
+"一般而言，\ **把方程作为子组件**\ 是一个相比之下\ **好得多**\ 的代码复用方法。"
+"为了说明这种方法，我们将前面讨论过的\ :ref:`electrical examples <elec-example>`\ 重写为LTI形式。"
+"不过这次，我们会建立为\ ``LTI``\ 模型创建一个命名实例。"
 
 #: ../../source/behavior/arrays/state_space.rst:295
 msgid ""
@@ -238,6 +316,10 @@ msgid ""
 "organize all these equations into reusable :ref:`components`.  But for now, "
 "this is just a \"sneak peak\" of (big) things to come."
 msgstr ""
+"请注意，这一次我们没有使用\ ``extends``\ 或任何形式的继承。"
+"相反，我们实际上声明了一个类型为\ ``LTI``\ 而名为\ ``rlc_comp``\ 的变量。"
+"一旦我们介绍完Modelica语言中描述不同行为的所有基础知识，我们就会将注意力转向如何将这些方程整理成可重用的\ :ref:`components`\ 。"
+"但现在，这不过是对后面的（重要）内容\ “先睹为快”\ 而已。"
 
 #: ../../source/behavior/arrays/state_space.rst:303
 msgid ""
@@ -246,6 +328,8 @@ msgid ""
 "variables of the ``LTI`` model inside it.  So, for example, we see that our "
 "equation to specify the input, ``u``, is written as:"
 msgstr ""
+"我们在这个\ `RLC`\ 例子中看到的是，我们现在有一个叫做\ ``rlc_comp``\ 的变量，而此部件拥有所有\ ``LTI``\ 模型的参数和变量。"
+"所以，例如我们可以看到用于指定输入\ ``u``\ 的方程写作："
 
 #: ../../source/behavior/arrays/state_space.rst:313
 msgid ""
@@ -257,6 +341,11 @@ msgid ""
 "hierarchical manner.  Again, this will be discussed thoroughly when we "
 "introduce :ref:`components`."
 msgstr ""
+"请注意，我们所提供的这个方程中变量\ ``u``\ 是\ ``rlc_comp``\ **里面**\ 的变量。"
+"正如我们将在后面看到的，我们可以用层次结构来管理在描述复杂系统时产生的复杂度。"
+"在这里，使用\ ``.``\ 操作符可以让我们引用层级结构里的变量。"
+"同样，我们会在介绍\ :ref:`components`\ 时对此进行彻底讨论。"
+
 
 #: ../../source/behavior/arrays/state_space.rst:11
 msgid "ABCD"
@@ -273,12 +362,15 @@ msgid ""
 ":math:`\\vec{x}` and :math:`\\vec{u}`.  In this case, the equations can be "
 "rewritten as:"
 msgstr ""
+"这些方程有一个有趣的特例。这个特例发生在是当函数\ :math:`\\vec{f}`\ 以及\ :math:`\\vec{g}`\ 和向量\ :math:`\\vec{x}`\ 还有\ :math:`\\vec{u}`\ 线性相关时。"
+"在这种情况下，方程可以改写为："
 
 #: ../../source/behavior/arrays/state_space.rst:203
 msgid ""
 "We can take a similar approach in reformulating our previous "
 ":ref:`mechanical example <mech-example>` into LTI form:"
 msgstr ""
+"我们可以采取类似的做法把前面的\ :ref:`mechanical example <mech-example>`\ 改写为LTI形式。"
 
 #: ../../source/behavior/arrays/state_space.rst:227
 msgid ""
@@ -287,6 +379,8 @@ msgid ""
 "matrix.  In other words, it might be simpler to construct the matrix as a "
 "set of sub-matrices, *i.e.,*"
 msgstr ""
+"在构造\ :math:`A`\ 时，我们可以注意到其前两列可以更容易表示为一个零矩阵以及一个单位矩阵的组合。"
+"换句话说，将矩阵表示为子矩阵的组合可能更为清晰，\ *即：*"
 
 #: ../../source/behavior/arrays/state_space.rst:197
 msgid ""
@@ -296,6 +390,10 @@ msgid ""
 "those physical parameters are changed, the values for ``A`` and ``B`` will "
 "change accordingly."
 msgstr ""
+"这个模型非常类似于前一个。"
+"然而，在这种情况下我们并不是把数字直接输入矩阵里。相反，我们用输入带有参数"
+"\ ``m``\ 、\ ``c_p``\ 等等的表达式。"
+"这样的话，当这些物理参数改变时，矩阵\ ``A``\ 和\ ``B``\ 的值也会相应改变。"
 
 #: ../../source/behavior/arrays/state_space.rst:271
 msgid ""
@@ -307,3 +405,8 @@ msgid ""
 "variant models using this approach.  But it would be confusing since the "
 "term LTI implies that the equations are both linear and time-invariant."
 msgstr ""
+"本节里，我们并没有把Lotka-Volterra方程表示为LTI形式。"
+"Lotka-Volterra方程虽然是时不变系统，但是同时却是非线性的。"
+"值得一提的是，Modelica并没有在\ ``LTI``\ 模型内执行对线性和时不变这两个属性的约束。"
+"因此，用上述方法其实可以描述非线性或者时变的模型。"
+"但倘若如此就会引起一定的混乱，因为LTI这个术语意味这方程是线性时不变的。"
