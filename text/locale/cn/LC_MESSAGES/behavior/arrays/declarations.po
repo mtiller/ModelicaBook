@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../source/behavior/arrays/declarations.rst:4
 msgid "Array Declarations"
-msgstr ""
+msgstr "数组声明"
 
 #: ../../source/behavior/arrays/declarations.rst:7
 msgid "Syntax"
-msgstr ""
+msgstr "语法"
 
 #: ../../source/behavior/arrays/declarations.rst:9
 msgid ""
@@ -26,22 +26,29 @@ msgid ""
 "subscripts to specify the size of each dimension of the array.  The general "
 "form for an array declaration would be:"
 msgstr ""
+"数组声明的语法很简单。"
+"除了在变量名之后应标以指定数组各维度的大小外，语法与正常变量声明是相同的。"
+"数组声明的一般形式为："
 
 #: ../../source/behavior/arrays/declarations.rst:18
 msgid ""
 "where ``VariableType`` is a Modelica type like ``Real`` or ``Integer``, "
 "``varName`` is the name of the variable."
 msgstr ""
+"其中\ ``VariableType``\ 是一个Modelica类型，如：\ ``Real``\ 或\ ``Integer``\ 。"
+"\ ``varName``\ 为变量名称。"
 
 #: ../../source/behavior/arrays/declarations.rst:22
 msgid "Integer Sizes"
-msgstr ""
+msgstr "整数大小"
 
 #: ../../source/behavior/arrays/declarations.rst:24
 msgid ""
 "Normally, the dimension specifications are simply integers that indicate the"
 " size of that dimension.  For example:"
 msgstr ""
+"通常情况下，维度定义仅仅是表明该维度的大小的整数。"
+"例如："
 
 #: ../../source/behavior/arrays/declarations.rst:31
 msgid ""
@@ -49,10 +56,12 @@ msgid ""
 "dimension of size 5.  It is possible to use parameters or constants specify "
 "the size of an array, *e.g.,*"
 msgstr ""
+"在这种情况下，\ ``x``\ 是实数型数组。而这个数组仅有大小为5的一个维度。"
+"使用参数或常量去指定数组大小也是可以的，\ *如：*\ "
 
 #: ../../source/behavior/arrays/declarations.rst:42
 msgid "Linked Dimensions"
-msgstr ""
+msgstr "相关维度"
 
 #: ../../source/behavior/arrays/declarations.rst:44
 msgid ""
@@ -60,10 +69,13 @@ msgid ""
 " Modelica, we can even use the ``size`` function to specify the size of one "
 "array in terms of another array. Consider the following:"
 msgstr ""
+"在后面讨论Modelica内的\ :ref:`array-functions`\ 时，我们就会看到，"
+"我们甚至可以使用\ ``size``\ 函数去用一个数组的大小定义另外一个的大小。"
+"请考虑以下声明："
 
 #: ../../source/behavior/arrays/declarations.rst:64
 msgid "Unspecified Dimensions"
-msgstr ""
+msgstr "未定义维度"
 
 #: ../../source/behavior/arrays/declarations.rst:66
 msgid ""
@@ -72,12 +84,16 @@ msgid ""
 " we will see examples of this later when we discuss :ref:`functions` that "
 "have arguments which are arrays."
 msgstr ""
+"一些情况下，我们可以不定义数组的大小，让其大小可以在后来的某些情景里确定。"
+"例如，我们会在讨论一些有向量参数的\ :ref:`functions`\ 时看到这样的例子。"
 
 #: ../../source/behavior/arrays/declarations.rst:71
 msgid ""
 "To indicate that the size of a given array dimension is not (yet) known, we "
 "can use the `:` symbol as the dimension.  So in a declaration like this:"
 msgstr ""
+"为了表明数组某个特定维数的大小（还）仍为未知，我们可以使用\ `：`\ 符号作为维度的大小。"
+"所以，在如下的声明里："
 
 #: ../../source/behavior/arrays/declarations.rst:79
 msgid ""
@@ -86,14 +102,18 @@ msgid ""
 "definitively specified as 2.  In effect, we have declared that ``A`` is a "
 "matrix with an unspecified number of rows and two columns."
 msgstr ""
+"我们定义了一个二维数组。"
+"第一维的大小没有被定义。"
+"而第二维的大小明确被指定为2 。"
+"实际上，我们已经声明了\ ``A``\ 为一个行数不详而有两列的矩阵。"
 
 #: ../../source/behavior/arrays/declarations.rst:85
 msgid "Non-Integer Dimensions"
-msgstr ""
+msgstr "非整数维度"
 
 #: ../../source/behavior/arrays/declarations.rst:90
 msgid "Enumerations"
-msgstr ""
+msgstr "枚举"
 
 #: ../../source/behavior/arrays/declarations.rst:92
 msgid ""
@@ -104,16 +124,20 @@ msgid ""
 "discussion on :ref:`array-indexing`, we'll see how to properly index an "
 "array that uses enumerations as dimensions."
 msgstr ""
+"正如我们在\ :ref:`chemical-system`\ 例子内看到的，另一种指定维度的方法是用枚举。"
+"如果用枚举指定一个维度，则该维度的大小将等于该枚举可能值的总数目。"
+"在即将到来的关于\ :ref:`array-indexing`\ 的讨论里，我们将看到正确地索引一个使用枚举作为维数的数组。"
 
 #: ../../source/behavior/arrays/declarations.rst:101
 msgid "Booleans"
-msgstr ""
+msgstr "布尔值"
 
 #: ../../source/behavior/arrays/declarations.rst:103
 msgid ""
 "It is also possible to declare an array where a dimension is specified as "
 "``Boolean``, *e.g.,*"
 msgstr ""
+"我们还可以将其中一个维度声明为\ ``Boolean``\ ， \ *例如：*"
 
 #: ../../source/behavior/arrays/declarations.rst:54
 msgid ""
@@ -124,3 +148,7 @@ msgid ""
 "that arrays are sized such that operations like matrix multiplication are "
 "possible)."
 msgstr ""
+"在这种情况下，\ ``y``将拥有大小为5的一个维度。"
+"函数\ ``size(x,1)``\ 会返回数组\ ``x``\ 第\ ``1``\ 维度的大小。"
+"在许多应用里，以这种方式表达不同数组维度间的关系是很有用的"
+"（\ *例如*\ ，为确保数组总有正确的大小以进行矩阵乘法等操作）。"
