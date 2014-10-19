@@ -287,7 +287,7 @@ our equations as follows:
 Note that when a vector variable like ``T`` has a range of subscripts
 applied to it, the result is a vector containing the components
 indicated by the values in the subscript.  For example, the expression
-``T[2:4]`` is equivalent to ``{T[2], T[3], T[4}``.  The subscript
+``T[2:4]`` is equivalent to ``{T[2], T[3], T[4]}``.  The subscript
 expression doesn't need to be a range.  For example, ``T[{2,5,9}]`` is
 equivalent to ``{T[2], T[5], T[9]}``.
 
