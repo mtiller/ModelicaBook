@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/oned.rst:23
 msgid "Deriving Equations"
-msgstr ""
+msgstr "推导方程"
 
 #: ../../source/behavior/arrays/oned.rst:25
 msgid ""
@@ -21,6 +21,9 @@ msgid ""
 "First, we have the thermal capacitance of the :math:`i^{th}` section.  This "
 "can expressed as:"
 msgstr ""
+"让我们考虑此杆在每个离散截面的热平衡。"
+"首先，我们可以得到第\ :math:`i`\ 个截面的热容。"
+"这可以表示为："
 
 #: ../../source/behavior/arrays/oned.rst:33
 msgid ""
@@ -28,6 +31,10 @@ msgid ""
 "capacitance (a material property) and :math:`T_i` is the temperature of the "
 ":math:`i^{th}` section.  We can further describe the mass as:"
 msgstr ""
+"其中\ :math:`m`\ 为第\ :math:`i`\ 节的质量,"
+"\ :math:`C`\ 为比热容（材料属性）, "
+"而\ :math:`T`\ i则是第\ :math:`i`\ 节的温度, "
+"我们可以进一步将质量描述为："
 
 #: ../../source/behavior/arrays/oned.rst:50
 msgid ""
@@ -37,28 +44,36 @@ msgid ""
 "composed of equal size pieces.  In this case, we can define the segment "
 "length, :math:`L_i`, to be:"
 msgstr ""
+"其中\ :math:`A_i`\ 为第\ :math:`i`\ 节的截面积（假设其为恒定）,"
+"而\ :math:`L_i`\ 为第\ :math:`i`\ 节的长度。"
+"对于这个例子，我们假定该杆是由相等大小的部分组成。"
+"在这种情况下，我们可以定义各段长度\ :math:`L_i`\ 如下："
 
 #: ../../source/behavior/arrays/oned.rst:60
 msgid ""
 "We will also assume that the cross-sectional area is uniform along the "
 "length of the rod.  As such, the mass of each segment can be given as:"
 msgstr ""
+"我们也将假定全杆的截面积为恒定。"
+"因此，每节的质量可以写为："
 
 #: ../../source/behavior/arrays/oned.rst:67
 msgid "In this case, the thermal capacitance of each section would be:"
-msgstr ""
+msgstr "在这种情况下，各部分的热容量会是："
 
 #: ../../source/behavior/arrays/oned.rst:73
 msgid ""
 "This, in turn, means that the net heat gained in that section at any time "
 "will be:"
 msgstr ""
+"反过来，这意味着在任何时间该节中的热量增长是："
 
 #: ../../source/behavior/arrays/oned.rst:80
 msgid ""
 "where we assume that :math:`A`, :math:`L_i` and :math:`C` don't change with "
 "respect to time."
 msgstr ""
+"其中我们假定\ :math:`A`\ 、\ :math:`L_i`\ 还有\ :math:`C`\ 不会随着时间变化。"
 
 #: ../../source/behavior/arrays/oned.rst:83
 msgid ""
@@ -68,6 +83,9 @@ msgid ""
 ":math:`T_{amb}`.  We can express the amount of heat lost from each section "
 "as:"
 msgstr ""
+"完成了以上热容。"
+"此外，我们将考虑两种不同形式的热传递。"
+"热传递的第一种形式，我们将考虑每节在特定环境温度\ :math:`T_{amb}`\ 下的对流。"
 
 #: ../../source/behavior/arrays/oned.rst:93
 msgid ""
@@ -77,24 +95,29 @@ msgid ""
 " the other lost to the :math:`{i+1}^{th}` section, if it exists.  These can "
 "be represented, respectively, as:"
 msgstr ""
+"其中\ :math:`h`\ 为对流系数。"
+"另一个形式的热传递是相邻部分之间的热传导。"
+"这里有两个影响因素，其中之一是与\ :math:`{i-1}`\ 元素的热传导（如果这个元素存在），另外则是与\ :math:`{i-1}`\ 元素的热传导（前提也是该元素存在）。"
+"这些因素可以分别表示为："
 
 #: ../../source/behavior/arrays/oned.rst:107
 msgid ""
 "Using these relations, we know that the heat balance for the first element "
 "would be:"
 msgstr ""
+"利用上述关系，我们对首个元素的热平衡方程有： "
 
 #: ../../source/behavior/arrays/oned.rst:115
 msgid "Similarly, the heat balance for the last element would be:"
-msgstr ""
+msgstr "类似地，最后一个元素的热平衡方程为： "
 
 #: ../../source/behavior/arrays/oned.rst:122
 msgid "Finally, the heat balance for all other elements would be:"
-msgstr ""
+msgstr "最后，所有其他元素的热平衡有："
 
 #: ../../source/behavior/arrays/oned.rst:130
 msgid "Implementation"
-msgstr ""
+msgstr "实现"
 
 #: ../../source/behavior/arrays/oned.rst:132
 msgid ""
@@ -102,12 +125,16 @@ msgid ""
 "give us the proper units and, depending on the tool, allows us to do unit "
 "checking on our equations.  Our type definitions are as follows:"
 msgstr ""
+"我们首先定义各物理量的类型。定义类型可以让变量有正确的单位。"
+"而在特定的软件会支持对方程的进行量纲检测。"
+"我们的类型定义如下："
 
 #: ../../source/behavior/arrays/oned.rst:141
 msgid ""
 "We will also define several parameters to describe the rod we are "
 "simulating:"
 msgstr ""
+"我们也将定义几个参数以描述所模拟的棒。"
 
 #: ../../source/behavior/arrays/oned.rst:148
 msgid ""
@@ -115,6 +142,7 @@ msgid ""
 "in terms of the parameters we have already defined using the following "
 "declarations:"
 msgstr ""
+"在上述参数给定的情况下，就可以用以下列参数定义式计算每节的面积和体积："
 
 #: ../../source/behavior/arrays/oned.rst:156
 msgid ""
@@ -122,6 +150,8 @@ msgid ""
 "(since this is the only quantity that actually varies along the length of "
 "the rod):"
 msgstr ""
+"最后，这个问题唯一数组是各部分的温度"
+"（因为实际上这是唯一沿杆长而改变的量）："
 
 #: ../../source/behavior/arrays/oned.rst:164
 msgid ""
@@ -132,6 +162,11 @@ msgid ""
 " linearly interpolated between these two end conditions.  This is captured "
 "by the following equation:"
 msgstr ""
+"以上就是我们需要做出的所有声明。"
+"现在让我们考虑所需的各种方程。"
+"首先，我们需要指定杆的初始条件。"
+"我们将假定\ :math:`T_1(0)=200`\ 、\ :math:`T_n(0)=300`\ ，而其他所有元素的初始温度则为上述条件的线性内插值。"
+"下列方程便体现了上述的条件："
 
 #: ../../source/behavior/arrays/oned.rst:175
 msgid ""
@@ -141,12 +176,18 @@ msgid ""
 "side and right hand side expressions are vectors.  This is another example "
 "of such an equation."
 msgstr ""
+"其中\ ``linspace``\ 操作符用于产生一个\ ``n``\ 值的数组。"
+"而这\ ``n``\ 个值介于\ ``200``\ 和\``300``\ 之间线性改变。"
+"回想之前的\ :ref:`state-space`\ 例子，我们可以加入其两边表达式均为向量的方程。"
+"本例的方程便是此类方程的又一个例子。"
+
 
 #: ../../source/behavior/arrays/oned.rst:181
 msgid ""
 "Finally, we come to the equations that describe how the temperature in each "
 "section changes over time:"
 msgstr ""
+"最后，我们介绍每部分的温度随时间变化的方程："
 
 #: ../../source/behavior/arrays/oned.rst:188
 msgid ""
@@ -159,6 +200,12 @@ msgid ""
 " this case, but in general, ``end`` can be very useful when the size of a "
 "dimension is not already associated with a variable."
 msgstr ""
+"第一个方程对应的第\ :math:`1`\ 个元素的热平衡，而最后一个方程则对应第\ :math:`n`\ 个。"
+"中间的方程则对应了其他所有元素。"
+"注意这里使用了\ ``end``\ 作为下标。"
+"如果某维度的下标为一个表达式时，表达式内的\ ``end``\ 表示该维度的大小。"
+"在这里，我们用\ ``end``\ 表示最后一个元素。"
+"当然，我们在这里也可以用\ ``n``\ 来表示，但一般而言，当某个维度的大小不曾与某个特定变量相关时，\ ``end``\ 可能会非常有用。"
 
 #: ../../source/behavior/arrays/oned.rst:198
 msgid ""
@@ -167,6 +214,10 @@ msgid ""
 "loop index variable is ``i`` and the range of values is :math:`2` through "
 ":math:`n-1`.  The general syntax for a ``for`` loop is:"
 msgstr ""
+"另外，请注意模型内使用的\ ``for``\ 循环。"
+"\ ``for``\ 循环让循环变量在一定范围的值里变化。"
+"在本例里，循环变量为\ ``i``\ ，而值的变化范围则是从\ :math:`2`\ 到\ :math:`n-1`\ 。"
+"\ ``for``\ 循环的基本语法如下："
 
 #: ../../source/behavior/arrays/oned.rst:210
 msgid ""
@@ -178,6 +229,11 @@ msgid ""
 "``7``, ``8``, ``9`` and ``10``.  Note that this **includes** the values used"
 " to specify the range."
 msgstr ""
+"其中，\ ``<range>``\ 是一个含有不同值的向量。"
+"而一种方便的产生数列的方式是使用范围操作符\ ``：``\ 。"
+"范围操作符前的值是数列的初值，而在操作符后的值则是数列的终值。"
+"因此，以表达式\ ``5:10``\ 例，表达式会生成一个由``5``\ 、\ ``6``\ 、\ ``7``\ 、\ ``8``\ 、\ ``9``\ 、\ ``10``组成的向量。"
+"注意，生成的向量\ **包括了**\ 用于指定范围的两个值。"
 
 #: ../../source/behavior/arrays/oned.rst:218
 msgid ""
@@ -186,32 +242,39 @@ msgid ""
 "  So in our case, we will generate :math:`n-2` equations corresponding to "
 "values of ``i`` between ``2`` and ``n-1``."
 msgstr ""
+"当\ ``for``\ 循环用在等式段落时，循环内的每个方程都会在for循环的每次迭代时产生一个新的方程。"
+"因此，在本例对应每个在\ ``2``\ 和\ ``n-1``\ 之间的\ ``i``\ ，我们会一共生成\ :math:`n-2`\ 个方程。"
 
 #: ../../source/behavior/arrays/oned.rst:223
 msgid "Putting all this together, the complete model would be:"
-msgstr ""
+msgstr "综合以上内容，完整的模型如下："
 
 #: ../../source/behavior/arrays/oned.rst:231
 msgid ""
 "Note that we've included ``pi`` as a literal constant in this model.  Later "
 "in the book, we'll discuss how to properly import common :ref:`constants`."
 msgstr ""
+"请注意，我们用常量形式在模型里包含了\ ``pi``\ 。"
+"在这本书的后面，我们将讨论如何正确导入常用的\ :ref:`constants`\ 。"
 
 #: ../../source/behavior/arrays/oned.rst:235
 msgid ""
 "Simulating this model yields the following solution for each of the nodal "
 "temperatures:"
 msgstr ""
+"对模型进行仿真就会得到各节点温度的解，如下："
 
 #: ../../source/behavior/arrays/oned.rst:241
 msgid ""
 "Note how the temperatures are initially distributed linearly (as we "
 "specified in our ``initial equation`` section)."
 msgstr ""
+"注意温度在开始是如何线性分布的"
+"（正如我们在``initial equation``\ 段落所指定的一样）。"
 
 #: ../../source/behavior/arrays/oned.rst:245
 msgid "Alternatives"
-msgstr ""
+msgstr "其他可选方法"
 
 #: ../../source/behavior/arrays/oned.rst:247
 msgid ""
@@ -221,6 +284,10 @@ msgid ""
 "The choice of which one they feel leads to the most understandable equations"
 " is up to the model developer."
 msgstr ""
+"实际上，有好几种方法可以生成我们需要的方程。"
+"而每种方法在不同的情景下有其优点与缺点。"
+"我们将在下面一一介绍这些可能的方法。"
+"而选择哪种方法可以让方程感觉上最容易理解则是取决于模型开发者自己。"
 
 #: ../../source/behavior/arrays/oned.rst:255
 msgid ""
@@ -231,6 +298,9 @@ msgid ""
 "values of the loop index variable.  In our case, we can represent our "
 "equation section using array comprehensions as follows:"
 msgstr ""
+"我们可以用一个数组特性让这些方程变得更为简单。这个特性叫做数组解析（译注：原文为array comprehension，类似Python的list comprehension）。"
+"数组解析将\ ``for``\ 循环倒了过来。也就是说，我们在单一的等式后加上了循环变量在循环时如何取不同值的信息。"
+"在我们的例子中，我们可以使用数组解析将方程表达为如下方式："
 
 #: ../../source/behavior/arrays/oned.rst:267
 msgid ""
@@ -239,6 +309,9 @@ msgid ""
 "In that case, we can simplify the ``equation`` section to the point where it"
 " contains one (admittedly multi-line) equation:"
 msgstr ""
+"我们还可以在数组解析内加上一些\ ``if``\ 表达式以删去不存在的热平衡效应。"
+"在这种情况下，我们可以把\ ``equation``\ 简化为一个（虽然占用了多行的）方程："
+
 
 #: ../../source/behavior/arrays/oned.rst:277
 msgid ""
@@ -248,6 +321,9 @@ msgid ""
 " many scalar equations.  We can use this feature to simplify our equations "
 "as follows:"
 msgstr ""
+"回顾前述几个例子，Modelica语言支持矢量方程。"
+"在这些情况下，只要方程左右均是大小同样的向量，我们就可以使用一个（向量）方程来表示多个标量方程。"
+"我们可以利用这个特性来简化方程式，结果如下："
 
 #: ../../source/behavior/arrays/oned.rst:287
 msgid ""
@@ -258,28 +334,37 @@ msgid ""
 "to be a range.  For example, ``T[{2,5,9}]`` is equivalent to ``{T[2], T[5], "
 "T[9]}``."
 msgstr ""
+"注意，倘若大家使用一定范围的下表去存取向量变量如\ ``T``\ ，那么结果就会得到包含这些下标所对应的元素的向量。"
+"例如，表达式\ ``T[2:4]``\ 等价于\ ``{T[2], T[3], T[4]}``\ 。"
+"下标表达式并不需要是一个范围表达式。"
+"例如，表达式\ ``T[{2,5,9}]``\ 等价于\ ``{T[2], T[5], T[9]}``\ 。"
 
 #: ../../source/behavior/arrays/oned.rst:294
 msgid ""
 "Finally, let us consider one last way of refactoring these equations. "
 "Imagine we introduced two additional vector variables:"
 msgstr ""
+"最后，让我们考虑重构这些方程的最后一个方法。"
+"想象一下，我们引入了另外两个向量变量："
 
 #: ../../source/behavior/arrays/oned.rst:301
 msgid ""
 "Then we can write these two equations (again using vector equations) to "
 "define the heat lost to the previous and next section in the rod:"
 msgstr ""
+"然后我们就可以写出以下的两个方程（再次使用矢量方程），用以"
+"定义到前后两节分别的热损失。"
 
 #: ../../source/behavior/arrays/oned.rst:308
 msgid ""
 "This allows us to express the heat balance for each section using a vector "
 "equation that doesn't include any subscripts:"
 msgstr ""
+"这使我们可以为用矢量方程表达每个部分的热平衡，而无须包含任何下标。"
 
 #: ../../source/behavior/arrays/oned.rst:316
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/behavior/arrays/oned.rst:253
 msgid "array comprehensions"
@@ -291,10 +376,12 @@ msgid ""
 " the :math:`i^{th}` section.  Finally, we can express the volume of the "
 ":math:`i^{th}` section as:"
 msgstr ""
+"其中\ :math:`\\rho`\ 是材料的密度，而\ :math:`V_i`\ 则是第\ :math:`i`\ 节的体积。"
+"最后，第\ :math:`i`\ 节的体积如下："
 
 #: ../../source/behavior/arrays/oned.rst:4
 msgid "One-Dimensional Heat Transfer"
-msgstr ""
+msgstr "一维热传导"
 
 #: ../../source/behavior/arrays/oned.rst:6
 msgid ""
@@ -305,12 +392,18 @@ msgid ""
 "We'll look at several features in Modelica that are related to arrays and "
 "how they allow us to compactly express behavior involving arrays."
 msgstr ""
+"我们前面关于\ :ref:`state-space`\ 的讨论引入了矩阵和向量。"
+"上面讨论的焦点主要是数组的数学性质。"
+"在本节中，我们将考虑如何用数组来表述更实际的问题，即变量的一维空间分布。"
+"我们将观察Modelica与数组有关的语言特性，以及这些特性如何帮助我们更简略地表达系统行为。"
 
 #: ../../source/behavior/arrays/oned.rst:14
 msgid ""
 "Our problems will center around the a simple heat transfer problem. Consider"
 " a one-dimensional rod like the one shown below:"
 msgstr ""
+"我们的问题关于一个简单的热传导问题。"
+"考虑如下所示的一维棒："
 
 #: ../../source/behavior/arrays/oned.rst:318
 msgid ""
@@ -321,3 +414,6 @@ msgid ""
 "to demonstrate the various options that are available to the developer when "
 "working with vectors."
 msgstr ""
+"在本节中，我们看到了使用向量变量以及向量方程式来表示一维传热的多种方法。"
+"当然，这些向量的相关功能可用于类型广泛的不同问题。"
+"本节的目的是为大家介绍几种特性，以演示开发者在使用向量时拥有的不同选项。"
