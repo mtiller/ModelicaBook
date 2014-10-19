@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/chem.rst:4
 msgid "Chemical System"
-msgstr ""
+msgstr "化学系统"
 
 #: ../../source/behavior/arrays/chem.rst:6
 msgid ""
@@ -23,24 +23,32 @@ msgid ""
 "using vectors.  Finally, we'll implement the same model again using "
 "enumerations."
 msgstr ""
+"在本节中，我们会考虑几种不同的方式去描述化学系统的行为。"
+"首先，我们会在不使用数组功能的前提下进行建模。"
+"然后，我们会用向量描述相同的行为。"
+"最后，我们将使用枚举再次实现相同的模型。"
 
 #: ../../source/behavior/arrays/chem.rst:12
 msgid ""
 "In all of our examples, we'll be building a model for `the following system "
 "of reactions <http://library.wolfram.com/examples/chemicalkinetics/>`_:"
 msgstr ""
+"在我们所有的例子里，我们建立的模型均是基于\ `以下的反应系统\ <http://library.wolfram.com/examples/chemicalkinetics/>`_\ ："
 
 #: ../../source/behavior/arrays/chem.rst:21
 msgid ""
 "It should be noted that :math:`X` is simply an intermediate result of this "
 "reaction.  The overall reaction can be expressed as:"
 msgstr ""
+"必须注意\ :math:`X`\ 不过是反应的中间结果。"
+"总反应可表示为："
 
 #: ../../source/behavior/arrays/chem.rst:28
 msgid ""
 "Using the law of mass action we can transform these chemical equations into "
 "the following mathematical ones:"
 msgstr ""
+"使用质量作用定律，我们可以将这些化学方程式转化为一下数学方程："
 
 #: ../../source/behavior/arrays/chem.rst:37
 msgid ""
@@ -54,10 +62,16 @@ msgid ""
 ":math:`A` as a result of that reaction.  Each term in these balance "
 "equations is derived in a similar fashion."
 msgstr ""
+"where 
+"其中\ :math:`k_1`\ 、\ :math:`k_2`\ 、\ :math:`k_3`\ 分别是第一、二、三个反应的反应系数。"
+"这些方程是通过在考虑每种物质的变化，以及涉及该物质的每个反应后所推导得到的。"
+"因此，例如第一个反应\ :math:`A + B \\rightarrow X`\ 是把\ :math:`A`\ 分子和\ :math:`B`\ 分子转化为\ :math:`X`\ 分子。"
+"我们可以看到\ :math:`-k_1 [A] [B]`\ 这项出现在\ :math:`A`\ 的平衡方程里。这项表示了\ :math:`A`\ 应为该反应而减少的量。"
+"这些平衡方程的每一项均是以类似的方式推导出来的。"
 
 #: ../../source/behavior/arrays/chem.rst:50
 msgid "Without Arrays"
-msgstr ""
+msgstr "不使用数组"
 
 #: ../../source/behavior/arrays/chem.rst:52
 msgid ""
@@ -65,16 +79,20 @@ msgid ""
 "case, we simply represent the concentrations :math:`[A]`, :math:`[B]` and "
 ":math:`[X]` by the variables ``cA``, ``cB`` and ``cX`` as follows:"
 msgstr ""
+"首先，让我们采取完全不使用数组的方法。"
+"在这里，我们直接把浓度\ :math:`[A]`\ 、\ :math:`[B]`\ 以及\ :math:`[X]`\ 用变量\ ``cA``\ 、\ ``cB``\ 、\ ``cX``\ 表示如下："
 
 #: ../../source/behavior/arrays/chem.rst:61
 msgid ""
 "With this approach, we create an equation for the balance of each species.  "
 "If we simulate this model, we get the following results:"
 msgstr ""
+"通过这种方法，我们建立了每种物质的平衡方程。"
+"对模型进行仿真后，我们会得到以下结果："
 
 #: ../../source/behavior/arrays/chem.rst:68
 msgid "Using Arrays"
-msgstr ""
+msgstr "使用数组"
 
 #: ../../source/behavior/arrays/chem.rst:70
 msgid ""
@@ -85,12 +103,17 @@ msgid ""
 "cast the reaction coefficients into a vector of reaction coefficients, "
 "``k``."
 msgstr ""
+"另一种对化学系统进行建模的方法是使用向量。"
+"用这种方法，我们将化学物质\ :math:`A`\ 、\ :math:`B`\ 、\ :math:`X`\ 分别用索引\ :math:`1`\ 、\ :math:`2`\ 、\ :math:`3`\ 标记。"
+"浓度则被映射到向量变量\ ``C`` \ 。"
+"我们同时也将反应系数储存在反应系数向量\ ``k`` \ 里。"
 
 #: ../../source/behavior/arrays/chem.rst:77
 msgid ""
 "With this transformation, all the equations are then transformed into vector"
 " equations:"
 msgstr ""
+"进行了上述变换后，所有的方程都转化为向量方程："
 
 #: ../../source/behavior/arrays/chem.rst:84
 msgid ""
@@ -98,14 +121,17 @@ msgid ""
 "completely linear form.  But we could simplify them further by using a "
 "matrix-vector product.  In other words, the equations:"
 msgstr ""
+"反应方程是非线性的，所以这些方程不能被转换成完全线性的形式。"
+"但是，我们可以通过使用矩阵向量积进行进一步简化。"
+"换句话说，方程："
 
 #: ../../source/behavior/arrays/chem.rst:94
 msgid "can be transformed into the following form:"
-msgstr ""
+msgstr "可以转化为下面的形式："
 
 #: ../../source/behavior/arrays/chem.rst:117
 msgid "which can then be represented in Modelica as:"
-msgstr ""
+msgstr "而上述方程可以用以下的Modelica形式进行表示："
 
 #: ../../source/behavior/arrays/chem.rst:125
 msgid ""
@@ -113,10 +139,12 @@ msgid ""
 "which index (*e.g.,* ``1``, ``2``, or ``3``) corresponds to which species "
 "(*e.g.,* :math:`A`, :math:`B`, or :math:`X`)."
 msgstr ""
+"这种方法的问题是，我们必须时刻留意各个索引（\ *如*\ ``1``\  、\ ``2``\ 或\ ``3``\ ）"
+"分别对应哪种物质（\ *如*\ :math:`A`\  、\ :math:`B`\ 及\ :math:`X`\ ）。"
 
 #: ../../source/behavior/arrays/chem.rst:130
 msgid "Using Enumerations"
-msgstr ""
+msgstr "使用枚举"
 
 #: ../../source/behavior/arrays/chem.rst:132
 msgid ""
@@ -126,6 +154,9 @@ msgid ""
 "define the subscripts associated with an array.  We'll define our "
 "enumeration as follows:"
 msgstr ""
+"为了解决数字和名称来回映射的问题，我们的第三种方法则是利用Modelica的\ ``enumeration``\ 类型。"
+"枚举类型可以让我们定义一个名称的集合。然后，我们可以用这个名称的几何对应数组的下表。"
+"我们将定义以下的枚举："
 
 #: ../../source/behavior/arrays/chem.rst:142
 msgid ""
@@ -133,6 +164,8 @@ msgid ""
 "possible values, ``A``, ``B`` and ``X``.  We can then use this enumeration "
 "**as a dimension in an array** as follows:"
 msgstr ""
+"上述语句定义了一个特殊的类型叫做\ ``Species``\ ，而这个类型有三个可能值：\ ``A``\ 、\ ``B``\ 及\ ``X``\ 。"
+"然后，我们可以使用这个枚举**作为数组的一个维度**，如下："
 
 #: ../../source/behavior/arrays/chem.rst:164
 msgid ""
@@ -140,10 +173,12 @@ msgid ""
 "``C[A]``.  Pulling all of this together we can represent our chemical system"
 " using enumerations as:"
 msgstr ""
+"这样一来，我们现在可以用\ ``C[A]``\ 来指代物质\ :math:`A`\ 的浓度。"
+"综合以上的结果，我们可以使用如下方式用枚举描述我们的化学系统："
 
 #: ../../source/behavior/arrays/chem.rst:176
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/behavior/arrays/chem.rst:178
 msgid ""
@@ -155,6 +190,9 @@ msgid ""
 " be used not only to index the array, but also to define one or more "
 "dimensions in the declaration."
 msgstr ""
+"在这一章中，我们介绍了如何在使用以及不使用数组的前提下描述一组化学方程式。"
+"我们还演示了如何在数组中使用\ ``enumeration``\ 类型以用名称代替数字索引，从而让产生的方程式更具可读性。"
+"此外，本节还表明了\ ``enumeration``\ 类型可以不仅用于索引数组，也能在变量声明中定义一个或多个维度。"
 
 #: ../../source/behavior/arrays/chem.rst:150
 msgid ""
@@ -163,21 +201,12 @@ msgid ""
 "individual components of ``C`` as ``C[Species.A]``, ``C[Species.B]`` and "
 "``C[Species.X]``."
 msgstr ""
+"由于\ ``Species``\ 类型只有三种可能的值，这意味着矢量\ ``C``\ 恰好有三个分量。"
+"然后，我们可以分别使用\ ``C[Species.A]``\  、\ ``C[Species.B]``\  、\ ``C[Species.X]``\ 去指代\ ``C``\ 的分量。"
 
 #: ../../source/behavior/arrays/chem.rst:155
 msgid ""
 "Because it is awkward to constantly prefix each species name with "
 "``Species``, we can define a few convenient constants as follows:"
 msgstr ""
-
-#~ msgid ""
-#~ "Since the ``Species`` type has only three possible values, this means that "
-#~ "the vector ``C`` has exactly three components.  We can then refer to the "
-#~ "individual components of ``C`` as ``C[Species.A]``, ``C[Species.B]`` and "
-#~ "``C[Species.C]``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Because it is awkward to constantly prefix each species name with "
-#~ "``Species``, we can define a few convenient constants, we follows:"
-#~ msgstr ""
+"由于每次在物质名称前加入\ ``Species``\ 颇为不便，为方便起见，我们可以定义以下常量："
