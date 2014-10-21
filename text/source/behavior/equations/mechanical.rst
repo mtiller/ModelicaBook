@@ -158,7 +158,7 @@ solution for the angular positions and velocities:
 .. plot:: ../plots/SOSIP.py
    :class: interactive
 
-However, if modify the ``phi1_init`` parameter to be *1* at the start
+However, if we modify the ``phi1_init`` parameter to be *1* at the start
 of our simulation, we get this solution instead:
 
 .. plot:: ../plots/SOSIP1.py

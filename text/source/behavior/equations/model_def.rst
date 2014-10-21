@@ -80,4 +80,4 @@ top of the model definition, before any variables.
 
 In later chapters, we will show how this same syntax can be used to
 define other entities besides models.  But for now, we will focus
-primarily on models
+primarily on models.
