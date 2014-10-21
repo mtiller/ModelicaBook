@@ -5,7 +5,7 @@ This file collects the significant changes to the book since its initial public 
 #### Enhancements
 
   * Addressed
-    [an issue](https://github.com/xogeny/ModelicaBook/issue/205) with
+    [an issue](https://github.com/xogeny/ModelicaBook/issues/205) with
     the discussion on chattering.  Resulted in a fair amount of
     reworking.  But I think it demonstrates the issue better. Thanks
     to @sjoelund for pointing that out and his suggestions.
