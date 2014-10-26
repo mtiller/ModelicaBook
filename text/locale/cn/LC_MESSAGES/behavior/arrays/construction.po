@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/construction.rst:4
 msgid "Array Construction"
-msgstr ""
+msgstr "数组的建构"
 
 #: ../../source/behavior/arrays/construction.rst:6
 msgid ""
@@ -21,6 +21,9 @@ msgid ""
 "declarations>`, the next step is filling in all the elements of those "
 "arrays.  There are many different ways to construct arrays in Modelica."
 msgstr ""
+"现在我们知道了\ :ref:`如何将变量声明为向量\ <array-declarations>`\ 。"
+"下一步则是填充在这些数组中的元素。"
+"有许多不同的方式可以构造的Modelica数组。"
 
 #: ../../source/behavior/arrays/construction.rst:12
 msgid "Literals"
@@ -37,6 +40,9 @@ msgid ""
 "individual elements.  For example, given the following parameter declaration"
 " for a variable named ``x`` meant to represent a vector:"
 msgstr ""
+"用于构建数组最简单的方法是枚举每一个单独的元素。"
+"例如，下面的参数声明表明变量\ ``x``\ 为向量："
+
 
 #: ../../source/behavior/arrays/construction.rst:25
 msgid ""
@@ -44,6 +50,8 @@ msgid ""
 "only one subscript dimension.  If we wanted to assign a value to this "
 "vector, we could do so as follows:"
 msgstr ""
+"我们在此使用“向量”这个术语时，其指代的是仅有一个维度下标的数组。"
+"如果我们想要为向量赋值，我们可以这样做："
 
 #: ../../source/behavior/arrays/construction.rst:33
 msgid ""
@@ -55,16 +63,23 @@ msgid ""
 " a comma separated list of expressions to build vectors of any size we wish,"
 " *e.g.,*"
 msgstr ""
+"显然，变量\ ``x``是（被声明为）有三个实值分量的向量。"
+"为了保持一致性，等式的右侧也必须是具有三个实值分量的向量。"
+"幸运的是，它确实是。"
+"表达式\ ``{1.0, 0.0, -1.0}``\ 是Modelica里用于创建向量的一种特殊语法。"
+"用这种由包含着以逗号分隔的一系列表达式的一对\ ``{}``\ ，我们可以用这种语法来构任何大小的向量。"
+"\ *如：*\ "
 
 #: ../../source/behavior/arrays/construction.rst:45
 msgid ""
 "While it is possible to use the ``{}`` notation to construct arrays of any "
 "dimension, *e.g.,*"
 msgstr ""
+"尽管可以使用\ ``{}``\ 表示法来构建任何维度的数组，\ *如*\ "
 
 #: ../../source/behavior/arrays/construction.rst:55
 msgid "Range Notation"
-msgstr ""
+msgstr "范围表示法"
 
 #: ../../source/behavior/arrays/construction.rst:57
 msgid ""
@@ -73,11 +88,14 @@ msgid ""
 "construct a vector of integers with elements having values from 1 to 5, the "
 "following syntax can be used:"
 msgstr ""
+"Modelica语言包含速记表示法用以构建有连续或者等差的数列组成的向量。"
+"例如，为了构建一个由1到5之间整数组成的向量，可以使用如下的语法："
 
 #: ../../source/behavior/arrays/construction.rst:66
 msgid ""
 "The same syntax can be used to construct arrays of floating point numbers:"
 msgstr ""
+"相同的语法可以用以构建一个由1到5之间整数组成的向量："
 
 #: ../../source/behavior/arrays/construction.rst:83
 msgid ""
@@ -85,6 +103,8 @@ msgid ""
 " not 1 by adding the \"stride\" between the first and last values.  For "
 "example, all odd numbers between 3 and 9 can be represented as:"
 msgstr ""
+"此外，也可以通过在初始值以及终值之间加入“步长”值以构建一个元素间间隔不为1的范围值。"
+"例如，3和9之间的所有奇数可以表示为："
 
 #: ../../source/behavior/arrays/construction.rst:92
 msgid ""
@@ -92,10 +112,12 @@ msgid ""
 "point numbers as well.  This range notation can also be used with an "
 "``enumeration`` type (but a stride value is not permitted in that case)."
 msgstr ""
+"另外，在处理浮点数字时也插入一个步长值。"
+"范围表示法还可以应用在\ ``enumeration``\ 类里（但在此情况下不能使用步长值）。"
 
 #: ../../source/behavior/arrays/construction.rst:98
 msgid "Matrix Construction"
-msgstr ""
+msgstr "矩阵的构造"
 
 #: ../../source/behavior/arrays/construction.rst:100
 msgid ""
@@ -103,12 +125,15 @@ msgid ""
 "constructing matrices (arrays with exactly two subscript dimensions).  "
 "Consider the following parameter declarations with initializer:"
 msgstr ""
+"但值得注意的是，有另一种用于构成矩阵（正好有两个下标维度的数组）的特殊语法。"
+"请考虑以下带有初始化语句的参数声明："
 
 #: ../../source/behavior/arrays/construction.rst:109
 msgid ""
 "In this case, the parameter ``B`` is equivalent to the following in "
 "mathematical notation:"
 msgstr ""
+"在这种情况下，参数\ ``B``\ 相当于如下的数学记号："
 
 #: ../../source/behavior/arrays/construction.rst:121
 msgid ""
@@ -120,12 +145,18 @@ msgid ""
 "commas **and semicolons** are used as delimiters.  The semicolons are used "
 "to separate rows and the commas are used to separate the columns."
 msgstr ""
+"正如我们在Modelica代码里以及更数学的表示形式里知道的一样，矩阵\ ``B``\ 有两行三列。"
+"使用这种方式构建矩阵的语法比仅仅构建向量时更为复杂。"
+"从表面上我们看到，向量的两旁是\ ``{} ``\ ，而矩阵两旁则为\ ``[]``\ 。"
+"但更重要的是，逗号\ **和分号**\ 混在一起用作分隔符。"
+"分号用来分隔行，逗号则用来分隔列。"
 
 #: ../../source/behavior/arrays/construction.rst:130
 msgid ""
 "One nice feature about this matrix construction notation is that it is "
 "possible to embed vectors or submatrices."
 msgstr ""
+"这个矩阵构建方法的一个很好的特性在于，在其中可以嵌入向量或子矩阵。"
 
 #: ../../source/behavior/arrays/construction.rst:135
 msgid ""
@@ -134,12 +165,16 @@ msgid ""
 "construction, a vector of size :math:`n` is treated as a matrix with "
 ":math:`n` rows and 1 column."
 msgstr ""
+"当嵌入向量时，值得注意的是\ **向量均为列向量**\ 。"
+"还句话说，在建构矩阵时，大小为\ :math:`n`\ 的向量被看作\ :math:`n`\ 行1列的矩阵。"
 
 #: ../../source/behavior/arrays/construction.rst:140
 msgid ""
 "To demonstrate how this embedding is done, consider the case where we wished"
 " to construct the following matrix:"
 msgstr ""
+"To demonstrate how this embedding is done, consider the case where we wished to construct the following matrix:"
+"为了演示嵌入的流程，可以考虑在这里我们希望构建以下矩阵的情况："
 
 #: ../../source/behavior/arrays/construction.rst:204
 msgid ""
@@ -147,12 +182,15 @@ msgid ""
 "submatrices and then filling in :math:`C` using these submatrices as "
 "follows:"
 msgstr ""
+"我们可以用Modelica简洁地构建这个矩阵："
+"先创建每个子矩阵，继而如下将子矩阵填入\ :math:`C`\ ："
 
 #: ../../source/behavior/arrays/construction.rst:216
 msgid ""
 "In other words, the ``,`` and ``;`` delimiters work with either scalars or "
 "submatrices."
 msgstr ""
+"换句话说，\ ``,``\ 和\ ``;``\ 分隔符可以用于标量或子矩阵。"
 
 #: ../../source/behavior/arrays/construction.rst:219
 msgid ""
@@ -160,10 +198,11 @@ msgid ""
 "construction-functions` that can be extremely useful when building matrices "
 "in this way."
 msgstr ""
+"正如我们将看到的，对于上述矩阵构建有数个不同的\ :ref:`array-construction-functions`\ 是很有用的。"
 
 #: ../../source/behavior/arrays/construction.rst:224
 msgid "Arrays of Any Size"
-msgstr ""
+msgstr "任意大小的数组"
 
 #: ../../source/behavior/arrays/construction.rst:226
 msgid ""
@@ -173,6 +212,9 @@ msgid ""
 "example, to construct an array with three dimensions, we could simply nested"
 " a collection of vectors as follows:"
 msgstr ""
+"到目前为止，我们已经讨论了向量和矩阵。"
+"但是，利用一系列嵌套向量，你可以构造任意维数的数组（包括向量和矩阵）。"
+"例如，为了构建一个三维矩阵，我们可以简单地嵌套向量，如下："
 
 #: ../../source/behavior/arrays/construction.rst:241
 msgid ""
@@ -182,10 +224,13 @@ msgid ""
 "of those two elements is a vector containing three elements and each of "
 "those three elements is a vector of 4 scalars."
 msgstr ""
+"如在此示例中可以看出，在此嵌套结构的最内层元素对应于声明内最右的维度。"
+"换句话说，此数组为包含两个元素的向量。而这两个元素则均为含有三个元素的向量。"
+"进而，上述的三个元素则各为含有4个标量的向量。"
 
 #: ../../source/behavior/arrays/construction.rst:251
 msgid "Array Comprehensions"
-msgstr ""
+msgstr "数组解析"
 
 #: ../../source/behavior/arrays/construction.rst:253
 msgid ""
@@ -198,12 +243,19 @@ msgid ""
 "compact notation.  The second is that it allows us to easily express how the"
 " values in the array are tied to the various indices."
 msgstr ""
+"到目前为止，我们已经展示了如何通过枚举数组中的元素来构造向量、矩阵以及高维数组。"
+"正如我们在高维数组的情况下看到，构造语句会变得非常复杂。"
+"幸运的是，Modelica语言包括数组解析这个方便的语法，让我们可以编程构建数组。"
+"这种方法有两个主要优点。"
+"首先，这是一个更为紧凑的表示法。"
+"其次，这种方法可以让我们轻松地表达数组中的值是如何与指标联系在一起。"
 
 #: ../../source/behavior/arrays/construction.rst:263
 msgid ""
 "To demonstrate array comprehensions, consider the following relationship "
 "between elements in an array and the indices of the array:"
 msgstr ""
+"为了演示数组解析，请考虑数组内元素与其索引的关系。"
 
 #: ../../source/behavior/arrays/construction.rst:271
 msgid ""
@@ -213,24 +265,25 @@ msgid ""
 "tedious it is to read and write.  Using array comprehensions, we can "
 "construct the :math:`a` array quite easily as:"
 msgstr ""
+"其中\ :math:`x`\ 、\ :math:`y`\ 均为向量。"
+"我们已经看到了如何递归地使用一系列嵌套向量去定义这样的数组。"
+"但是，我们也看到了表达式可能会变得多长，而读写这样的表达式会变得如何的费力。"
+"使用数组解析我们可以容易地建构数组\ :math:`a`\ ："
 
 #: ../../source/behavior/arrays/construction.rst:283
 msgid ""
 "This code builds an array with 1800 elements with only a few lines of "
 "Modelica code."
 msgstr ""
+"这个代码以区区数行Modelica代码生成了有1800个元素的数组。"
 
 #: ../../source/behavior/arrays/construction.rst:73
 msgid ""
 "Note, care should be taken when vectors of reals in this way since issues "
 "with floating point representations may result in the vector not including "
-"the final value.  The following alternatives are also available (and "
+"the final value.  The following alternatives are also available (and " 
 "probably more robust):"
 msgstr ""
+"应当注意，在用此形式表示实数向量时，浮点精度问题可能会导致终值不包括在向量内的情况。"
+"也可以使用另外一种方法（而且可能更安全）："
 
-#~ msgid ""
-#~ "Note, care should be taken when vectors of reals in this way since issues "
-#~ "with floating point representations may result in the vector no including "
-#~ "the final value.  The following alternatives are also available (and "
-#~ "probably more robust):"
-#~ msgstr ""
