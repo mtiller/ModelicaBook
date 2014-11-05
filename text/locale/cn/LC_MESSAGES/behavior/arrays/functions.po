@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:4
 msgid "Array Functions"
-msgstr ""
+msgstr "数组函数"
 
 #: ../../source/behavior/arrays/functions.rst:6
 msgid ""
@@ -21,10 +21,12 @@ msgid ""
 " this section, we'll go through different categories of functions and "
 "describe how they are used."
 msgstr ""
+"Modelica自带了大量和数组有关的函数。"
+"在本节，我们会浏览不同类型的函数，并介绍这些函数的使用方法。"
 
 #: ../../source/behavior/arrays/functions.rst:13
 msgid "Array Construction Functions"
-msgstr ""
+msgstr "数据建构函数"
 
 #: ../../source/behavior/arrays/functions.rst:15
 msgid ""
@@ -35,6 +37,12 @@ msgid ""
 " matrices and higher-dimension arrays as both an alternative or complement "
 "to those previous presented."
 msgstr ""
+"我们已经讨论过\ :ref:`array-construction`\ 。"  
+"我们看到用以建立向量和矩阵的不同语法结构。"
+"此外，我们看到了如何从其他矩阵来创建新矩阵。"
+"Modelica的另外有几个函数可以用来构造向量、矩阵和更高维数组。"
+"这些函数可以替代或补充先前介绍的方法。"
+
 
 #: ../../source/behavior/arrays/functions.rst:26
 msgid "``fill``"
@@ -45,6 +53,8 @@ msgid ""
 "The ``fill`` function is used to create an array where each element in the "
 "array has the same value.  The arguments for ``fill`` are:"
 msgstr ""
+"函数\ ``fill``\ 用于创建拥有唯一元素值的数组。"
+"\ ``fill``\ 的参数有："
 
 #: ../../source/behavior/arrays/functions.rst:38
 msgid ""
@@ -53,11 +63,14 @@ msgid ""
 "resulting array will have the same type as ``v``.  So, to fill a 5x7 array "
 "of reals with the value ``1.7``, we could use the following:"
 msgstr ""
+"其中\ ``v``\ 是阵列中每个元素的值，而剩下的参数则是每一维的尺寸。"
+"所得到的数组中的元素将具有和\ ``v``\ 相同的类型。"
+"因此，若要用\ ``1.7``\ 这个值填充一个5×7实数数组，我们可以使用以下语句："
 
 #: ../../source/behavior/arrays/functions.rst:48
 #: ../../source/behavior/arrays/functions.rst:94
 msgid "This would result in a matrix filled as follows:"
-msgstr ""
+msgstr "这会让矩阵用以下方式被填充："
 
 #: ../../source/behavior/arrays/functions.rst:65
 msgid "``zeros``"
@@ -70,6 +83,10 @@ msgid ""
 "the ``fill`` function, but since the value is known it is only necessary to "
 "specify the sizes.  Using ``zeros`` we can initialize an array as follows:"
 msgstr ""
+"在使用数组时，一个常见的用例是创建一个只包含零元素的数组。"
+"实际上，这实现了和\ ``fill``\ 函数相同的功能。"
+"不过，由于需要填充的值为已知的，用户只需要指定大小。"
+"我们可以使用\ ``zeros``\ 以如下形式初始化数组："
 
 #: ../../source/behavior/arrays/functions.rst:81
 msgid "``ones``"
@@ -81,6 +98,9 @@ msgid ""
 "every element in the resulting array has the value :math:`1`. So, for "
 "example:"
 msgstr ""
+"\ ``ones``\ 的函数与\ ``zeros``\ 函数几乎相同。"
+"唯一的不同是，生成的数组中的每个元素取值为\ :math:`1`\ 。"
+"因此，例如："
 
 #: ../../source/behavior/arrays/functions.rst:107
 msgid "``identity``"
@@ -97,7 +117,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:123
 msgid "would produce the following matrix:"
-msgstr ""
+msgstr "会声称下列矩阵："
 
 #: ../../source/behavior/arrays/functions.rst:139
 msgid "``diagonal``"
@@ -113,7 +133,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:160
 msgid "one could use the following Modelica code:"
-msgstr ""
+msgstr "用户可以使用下列Modelica代码："
 
 #: ../../source/behavior/arrays/functions.rst:169
 msgid "``linspace``"
@@ -125,6 +145,8 @@ msgid ""
 "are all linearly distributed over an interval.  The ``linspace`` function is"
 " invoked as follows:"
 msgstr ""
+"\ ``linspace``\ 函数可以创建一个其元素的取值在一定间隔内线性分布的向量。"
+"\ ``linspace``\ 函数的调用方法如下："
 
 #: ../../source/behavior/arrays/functions.rst:182
 msgid ""
@@ -132,20 +154,24 @@ msgid ""
 " last element in the vector and ``n`` is the total number of values in the "
 "vector.  So, for example, invoking ``linspace`` as:"
 msgstr ""
+"其中\ ``v0``\ 是向量的首个元素，"
+"\ ``v1``\ 是向量的最后一个元素，而\ ``n``\ 向量的元素个数。"
+"因此，例如以如下方式调用\ ``linspace``\ ："
 
 #: ../../source/behavior/arrays/functions.rst:190
 msgid "would yield the vector:"
-msgstr ""
+msgstr "会得到向量："
 
 #: ../../source/behavior/arrays/functions.rst:197
 msgid "Conversion Functions"
-msgstr ""
+msgstr "转换函数"
 
 #: ../../source/behavior/arrays/functions.rst:199
 msgid ""
 "The following functions provide a means to transform arrays into other "
 "arrays."
 msgstr ""
+"下面的函数提供了变换数组的方法。"
 
 #: ../../source/behavior/arrays/functions.rst:203
 msgid "``scalar``"
@@ -153,7 +179,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:208
 msgid "The ``scalar`` function is invoked as follows:"
-msgstr ""
+msgstr "\ ``scalar``\ 函数以如下方式被调用："
 
 #: ../../source/behavior/arrays/functions.rst:231
 msgid "``vector``"
@@ -161,7 +187,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:236
 msgid "The ``vector`` function is invoked as follows:"
-msgstr ""
+msgstr "\ ``vector``\ 函数以如下方式被调用："
 
 #: ../../source/behavior/arrays/functions.rst:265
 msgid "``matrix``"
@@ -169,7 +195,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:270
 msgid "The ``matrix`` function is invoked as follows:"
-msgstr ""
+msgstr "\ ``matrix``\ 函数以如下方式被调用："
 
 #: ../../source/behavior/arrays/functions.rst:276
 msgid ""
@@ -178,10 +204,12 @@ msgid ""
 "function returns the contents of the array as a matrix (*i.e.,* an array "
 "with only two dimensions)."
 msgstr ""
+"其中\ ``A``\ 为一任意维数的数组，且只有两个大小大于\ :math:`1`\ 的维度。"
+"\ ``matrix``\ 函数将数组的内容返回为一个矩阵（\ *即*\ 只有两个维度的数组）。"
 
 #: ../../source/behavior/arrays/functions.rst:282
 msgid "Mathematical Operations"
-msgstr ""
+msgstr "数学操作"
 
 #: ../../source/behavior/arrays/functions.rst:284
 msgid ""
@@ -191,6 +219,9 @@ msgid ""
 "equations can be made to look very much like their mathematical counterparts"
 " in linear algebra."
 msgstr ""
+"在线性代数里，有许多不同类型的数学运算通常可以应用在向量和矩阵上。"
+"Modelica语言提供了函数来执行大多数的上述操作。"
+"以这种方式， Modelica的等式可以看起来非常像其线性代数里数学对应版本。"
 
 #: ../../source/behavior/arrays/functions.rst:290
 msgid ""
@@ -200,10 +231,13 @@ msgid ""
 "scalars, vectors and matrices.  However, for completeness and reference, the"
 " following tables summarize how these operations are defined."
 msgstr ""
+"让我们从加法，减法，乘法，除法和求幂等运算开始。"
+"在大多数情况下，这些操作符应用在标量，矢量和矩阵的各种组合时，和其在数学上的定义是一样的。"
+"但是，为了介绍的完整性和以及提供读者以作参考，下表总结了这些操作的定义。"
 
 #: ../../source/behavior/arrays/functions.rst:0
 msgid "Explanation of Notation"
-msgstr ""
+msgstr "符号说明"
 
 #: ../../source/behavior/arrays/functions.rst:299
 msgid ""
@@ -214,10 +248,16 @@ msgid ""
 " for arbitrary arrays, a case will be included with three subscripts.  If a "
 "given combination is not shown, then it is not allowed."
 msgstr ""
+"以下所述的每个操作涉及两个参数\ :math:`a`\ 和\ :math:`b`\ ，以及一个结果\ :math:`c`\ 。"  
+"如果参数表示一个标量就不会有下标。"
+"如果参数是一个向量，就会有一个下标。"
+"如果参数是一个矩阵，则会有两个下标。"
+"如果该操作定义在任意的阵列上，则参数会包含三个下标。"
+"如果某个特定的组合没有出现，那么这种组合是无效的。"
 
 #: ../../source/behavior/arrays/functions.rst:308
 msgid "Addition (``+``)"
-msgstr ""
+msgstr "加法（\ ``+``\ ）"
 
 #: ../../source/behavior/arrays/functions.rst:315
 #: ../../source/behavior/arrays/functions.rst:331
@@ -227,7 +267,7 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:411
 #: ../../source/behavior/arrays/functions.rst:439
 msgid "Expression"
-msgstr ""
+msgstr "表达式"
 
 #: ../../source/behavior/arrays/functions.rst:315
 #: ../../source/behavior/arrays/functions.rst:331
@@ -237,7 +277,7 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:411
 #: ../../source/behavior/arrays/functions.rst:439
 msgid "Result"
-msgstr ""
+msgstr "结果"
 
 #: ../../source/behavior/arrays/functions.rst:317
 msgid ":math:`a + b`"
@@ -309,7 +349,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:342
 msgid "Multiplication (``*`` and ``.*``)"
-msgstr ""
+msgstr "乘法（\ ``*``\ 和\ ``.*``\ ）"
 
 #: ../../source/behavior/arrays/functions.rst:349
 msgid ""
@@ -318,6 +358,9 @@ msgid ""
 "conventions of linear algebra that matrix-vector products, *etc.*.  The "
 "behavior of the ``*`` operator is summarized in the following table:"
 msgstr ""
+"乘法运算符分为两种类型。"
+"第一种是正常的乘法运算符\ ``*``\ 。此运算符遵从线性代数里的一般数学定义，如矩阵向量积，\ *等等*\ 。"
+"\ ``*``\ 操作符的行为如下表所示："
 
 #: ../../source/behavior/arrays/functions.rst:358
 msgid ":math:`a * b`"
@@ -414,6 +457,8 @@ msgid ""
 "version, ``.*``, which doesn't perform any summations and simply applies the"
 " operator element-wise to all array elements."
 msgstr ""
+"第二类乘法运算符是一种特殊的逐元素运算版本\ ``.*``\ 。"
+"此版本不进行任何求和运算而简单地将运算逐元素施加在的所有数组元素上。"
 
 #: ../../source/behavior/arrays/functions.rst:378
 msgid ":math:`a` ``.*`` :math:`b`"
@@ -445,7 +490,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:387
 msgid "Division (``/`` and ``./``)"
-msgstr ""
+msgstr "除法（\ ``/``\ 及\ ``./``\ ）"
 
 #: ../../source/behavior/arrays/functions.rst:393
 msgid ""
@@ -453,6 +498,9 @@ msgid ""
 "first is the normal division operator, ``/``, which can be used to divide "
 "arrays by a scalar value.  The following table summarizes its behavior:"
 msgstr ""
+"正如\ :ref:`array-multiplication`\ ，除法运算符也分为两种。"
+"第一种是通常的除法运算符\ ``/``\ ，用于求数组除以一个标量值的商。"
+"下表总结了其行为："
 
 #: ../../source/behavior/arrays/functions.rst:401
 msgid ":math:`a / b`"
@@ -492,6 +540,8 @@ msgid ""
 "In addition, there is also an element-wise version of the division operator,"
 " ``./``, whose behavior is summarized in the following table:"
 msgstr ""
+"此外，除法运算符也有一个逐元素的版本\ ``./``\ 。"
+"其行为如下表所示："
 
 #: ../../source/behavior/arrays/functions.rst:413
 msgid ":math:`a` ``./`` :math:`b`"
@@ -523,7 +573,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:420
 msgid "Exponentiation (``^`` and ``.^``)"
-msgstr ""
+msgstr "幂指数（\ ``^``\ 及\ ``.^``\ ）"
 
 #: ../../source/behavior/arrays/functions.rst:426
 msgid ""
@@ -534,12 +584,19 @@ msgid ""
 "(*i.e.,* :math:`a` ``^`` :math:`b`).  The other is to raise a square matrix "
 "to a scalar power (*i.e.,* :math:`a_{ij}` ``^`` :math:`b`)."
 msgstr ""
+"和\ :ref:`array-multiplication`\ 以及\ :ref:`array-division`\ 一样，指数操作符也有两种形式。"
+"第一种是标准的指数操作符\ ``^``\ 。"  
+"此标准版有两种不同的使用方式。"
+"第一种使用方法是两个标量的乘方运算（*即*\ :math:`a` ``^`` :math:`b`\ ）。"
+"另外一种则是求方阵的标量次乘方（*即*\ :math:`a_{ij}` ``^`` :math:`b`\ ）。"
 
 #: ../../source/behavior/arrays/functions.rst:434
 msgid ""
 "The other form of exponentiation is the element-wise form indicated with the"
 " ``.^`` operator.  Its behavior is summarized in the following table:"
 msgstr ""
+"另外一种求幂的形式是由\ ``.^``\ 操作符代表的逐元素形式。"
+"其行为如下表所示："
 
 #: ../../source/behavior/arrays/functions.rst:441
 msgid ":math:`a` ``.^`` :math:`b`"
@@ -567,7 +624,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:444
 msgid ":math:`a_{ijk}` ``.^`` :math:`b_{ijk}`"
-msgstr ""
+msgstr ":math:`a_{ijk}`\ ``.^``\ :math:`b_{ijk}`"
 
 #: ../../source/behavior/arrays/functions.rst:444
 msgid ":math:`c_{ijk} = a_{ijk}^{b_{ijk}}`"
@@ -575,7 +632,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:450
 msgid "Equality (``=``)"
-msgstr ""
+msgstr "相等（\ ``=``\ ）"
 
 #: ../../source/behavior/arrays/functions.rst:455
 msgid ""
@@ -586,20 +643,24 @@ msgid ""
 "applied element-wise.  This means that the operator is applied between each "
 "element on the left hand side and its counterpart on the right hand side."
 msgstr ""
+"相等操作符\ ``=``\ 用于构造标量和数组方程，前提是\ **只要两边的维数相等且每个维度的大小也一样**\ 。"
+"假设满足这一要求，那么操作符会逐元素地作用在数组上。"
+"这意味着操作符是应用在左边和右边的每个对应元素上。"
 
 #: ../../source/behavior/arrays/functions.rst:465
 msgid "Assignment (``:=``)"
-msgstr ""
+msgstr "赋值（\ ``:=``\ ）"
 
 #: ../../source/behavior/arrays/functions.rst:470
 msgid ""
 "The ``:=`` (assignment) operator is applied in the same element-wise way as "
 "the :ref:`array-equality` operator."
 msgstr ""
+"\ ``:=``\ （赋值）\ 操作符与\ :ref:`array-equality`\ 操作符一样，均是逐元素地作用在数组上的。"
 
 #: ../../source/behavior/arrays/functions.rst:474
 msgid "Relational Operators"
-msgstr ""
+msgstr "关系操作符"
 
 #: ../../source/behavior/arrays/functions.rst:479
 msgid ""
@@ -607,6 +668,8 @@ msgid ""
 "``<``) are applied in the same element-wise way as the :ref:`array-equality`"
 " operator."
 msgstr ""
+"所有关系操作符（\ ``and``\ 、\ ``or``\ 、\ ``not``\ 、\ ``>``\ 、\ ``>=``\ 、\ ``<=``\ 、\ ``<``\ ）"
+"与\ :ref:`array-equality`\ 操作符一样，均是逐元素地作用在数组上的。"
 
 #: ../../source/behavior/arrays/functions.rst:484
 msgid "``transpose``"
@@ -617,6 +680,7 @@ msgid ""
 "The ``transpose`` function takes a matrix as an argument and returns a "
 "transposed version of that matrix."
 msgstr ""
+"\ ``transpose``\ 函数接受一个矩阵作为参数，并返回该矩阵的转置版本。"
 
 #: ../../source/behavior/arrays/functions.rst:494
 msgid "``outerProduct``"
@@ -631,6 +695,11 @@ msgid ""
 "Invoking ``outerProduct(a,b)`` will return a matrix, :math:`c`, whose "
 "elements are defined as:"
 msgstr ""
+"\ ``outerProduct``\ 函数有两个参数。"
+"每个参数均必须是矢量，且须具有相同的尺寸。"
+"函数将返回其表示两向量外积的矩阵。"
+"从数学上来说，假设\ :math:`a`\ 与\ :math:`b`\ 是相同大小的矢量。"
+"调用\ ``outerProduct(a,b)``\ 会返回有如下元素的矩阵\ :math:`c`\ ："
 
 #: ../../source/behavior/arrays/functions.rst:512
 msgid "``symmetric``"
@@ -643,6 +712,9 @@ msgid ""
 "original matrix have been replaced by elements transposed from above the "
 "diagonal.  In other words,"
 msgstr ""
+"\ ``symmetric``\ 函数接受一个方阵作为参数。"
+"函数返回一个相同大小的矩阵，其对角线下的元素被替换为原矩阵对角线上元素组成矩阵的转置。"
+"换句话说，"
 
 #: ../../source/behavior/arrays/functions.rst:531
 msgid "``skew``"
@@ -654,11 +726,11 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:569
 msgid "Reduction Operators"
-msgstr ""
+msgstr "缩减运算符"
 
 #: ../../source/behavior/arrays/functions.rst:571
 msgid "Reduction operators are ones that reduce arrays down to scalar values."
-msgstr ""
+msgstr "缩减运算符把数组缩减为标量值。"
 
 #: ../../source/behavior/arrays/functions.rst:574
 msgid "``min``"
@@ -669,6 +741,8 @@ msgid ""
 "The ``min`` function takes an array and returns the smallest value in the "
 "array.  For example:"
 msgstr ""
+"\ ``min``\ 函数接受一个数组为参数，并返回数组中的最小值。"
+"例如："
 
 #: ../../source/behavior/arrays/functions.rst:588
 msgid "``max``"
@@ -679,6 +753,8 @@ msgid ""
 "The ``max`` function takes an array and returns the largest value in the "
 "array.  For example:"
 msgstr ""
+"\ ``max``\ 函数接受一个数组为参数，并返回数组中的最大值。"
+"例如："
 
 #: ../../source/behavior/arrays/functions.rst:604
 msgid "``sum``"
@@ -689,6 +765,8 @@ msgid ""
 "The ``sum`` function takes an array and returns the sum of all elements in "
 "the array.  For example:"
 msgstr ""
+"\ ``sum``\ 函数接受一个数组为参数，并返回该数组中所有元素的总和。"
+"例如："
 
 #: ../../source/behavior/arrays/functions.rst:621
 msgid "``product``"
@@ -699,10 +777,12 @@ msgid ""
 "The ``product`` function takes an array and returns the product of all "
 "elements in the array.  For example:"
 msgstr ""
+"\ ``product``\ 函数接受一个数组作为参数，并返回数组中所有元素的乘积。"
+"例如："
 
 #: ../../source/behavior/arrays/functions.rst:635
 msgid "Miscellaneous Functions"
-msgstr ""
+msgstr "其它函数"
 
 #: ../../source/behavior/arrays/functions.rst:638
 msgid "``ndims``"
@@ -713,6 +793,8 @@ msgid ""
 "The ``ndims`` function takes an array as its argument and returns the number"
 " of dimensions in that array.  For example:"
 msgstr ""
+"\ ``ndims``\ 函数接受一个数组作为参数，并返回该数组的维数。"
+"例如："
 
 #: ../../source/behavior/arrays/functions.rst:652
 msgid "``size``"
@@ -725,6 +807,10 @@ msgid ""
 "vector where each component in the vector corresponds to the size of the "
 "corresponding dimension in the array.  For example:"
 msgstr ""
+"\ ``size``\ 函数可以通过两种不同方式调用。"
+"第一种方法是，使用一个数组作为唯一参数。"
+"在这种情况下，\ ``size``\ 返回一个矢量。这个矢量中各分量分别对应于数组中相应维度的大小。"
+"例如："
 
 #: ../../source/behavior/arrays/functions.rst:667
 msgid ""
@@ -732,10 +818,12 @@ msgid ""
 "indicating a specific dimension number.  In that case, it will return the "
 "size of that specific dimension as a scalar integer. For example,"
 msgstr ""
+"另外，也可以通过附加可选参数的方法调用\ ``size``\ ，从而指定所需的特定维度标号。"
+"这种情况下，函数会将该特定维度的大小作为一个标量整数返回。例如："
 
 #: ../../source/behavior/arrays/functions.rst:681
 msgid "Vectorization"
-msgstr ""
+msgstr "向量化"
 
 #: ../../source/behavior/arrays/functions.rst:686
 msgid ""
@@ -747,35 +835,44 @@ msgid ""
 "instead, the Modelica compiler will automatically apply that function to "
 "each element in the vector."
 msgstr ""
+"本节中，我们已经讨论了Modelica语言里许多为了数组参数而设计的函数。"
+"不过，一个很常见的用法是将一个函数逐元素应用到向量的每个元素上。"
+"Modelica的“向量化（vectorization）”语言特性支持这种用例。"
+"如果一个函数设计为输入一个标量，但传值却为一个数组，那么Modelica语言编译器会自动将函数应用在向量的每个元素上。"
 
 #: ../../source/behavior/arrays/functions.rst:694
 msgid ""
 "To understand how this works, first consider a normal evaluation using the "
 "``abs`` function:"
 msgstr ""
+"为了了解这个功能，首先考虑\ ``abs``\ 函数的正常求值："
 
 #: ../../source/behavior/arrays/functions.rst:701
 msgid ""
 "Obviously, ``abs`` is normally meant to accept a scalar argument and return "
 "a scalar.  But in Modelica, we can also do this:"
 msgstr ""
+"显然，\ ``abs``\ 通常是接受标量参数，然后返回一个标量。"
+"但在Modelica里，我们也可以这样做："
 
 #: ../../source/behavior/arrays/functions.rst:708
 msgid ""
 "Since this function is designed for scalar, the Modelica compiler will "
 "transform:"
 msgstr ""
+"由于该函数是为变量设计的，Modelica语言编译器会将其从："
 
 #: ../../source/behavior/arrays/functions.rst:715
 #: ../../source/behavior/arrays/functions.rst:746
 msgid "into"
-msgstr ""
+msgstr "变换为"
 
 #: ../../source/behavior/arrays/functions.rst:721
 msgid ""
 "In other words, it transforms the function applies to a vector of scalars "
 "into a vector a functions applied to scalar."
 msgstr ""
+"换句话说，Modelica把函数应用于由标量组成的向量这种情况，变换为输入标量后函数的取值所组成的向量。"
 
 #: ../../source/behavior/arrays/functions.rst:724
 msgid ""
@@ -784,14 +881,17 @@ msgid ""
 " this slightly more complex functionality, consider the modulo function, "
 "``mod``.  If applied to scalar arguments we get the following behavior:"
 msgstr ""
+"\ **此特性也适用多个参数的函数**\ 前提是仅仅\ **1**\ 个预期为标量的参数为向量。"
+"要理解这个稍微复杂的功能，可以考虑取模函数\ ``mod``\ 。"
+"如果将函数应用于标量输入，我们会得到以下行为："
 
 #: ../../source/behavior/arrays/functions.rst:734
 msgid "If we turn the first argument into a vector, we get:"
-msgstr ""
+msgstr "倘若将首个参数改为向量，我们会得到："
 
 #: ../../source/behavior/arrays/functions.rst:740
 msgid "In other words, it transforms:"
-msgstr ""
+msgstr "换言之，这个特性会将"
 
 #: ../../source/behavior/arrays/functions.rst:752
 msgid ""
@@ -799,12 +899,15 @@ msgid ""
 "arguments is presented as a vector.  For example, the following expression "
 "will be an error:"
 msgstr ""
+"不过，向量化特性\ **不能**\ 用在有多于一个标量参数被改为矢量的情况。"
+"例如，下面的表达式将是错的："
 
 #: ../../source/behavior/arrays/functions.rst:760
 msgid ""
 "because ``mod`` expects two scalar arguments, but it was passed two vector "
 "arguments."
 msgstr ""
+"因为\ ``mod``\ 需要两个标量参数，但得到的却是两个矢量参数。"
 
 #: ../../source/behavior/arrays/functions.rst:28
 #: ../../source/behavior/arrays/functions.rst:29
@@ -833,7 +936,7 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:655
 #: ../../source/behavior/arrays/functions.rst:684
 msgid "functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../source/behavior/arrays/functions.rst:67
 #: ../../source/behavior/arrays/functions.rst:68
@@ -863,7 +966,7 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:205
 #: ../../source/behavior/arrays/functions.rst:206
 msgid "scalar"
-msgstr ""
+msgstr "标量"
 
 #: ../../source/behavior/arrays/functions.rst:233
 #: ../../source/behavior/arrays/functions.rst:234
@@ -875,7 +978,7 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:453
 #: ../../source/behavior/arrays/functions.rst:468
 msgid "vector"
-msgstr ""
+msgstr "向量"
 
 #: ../../source/behavior/arrays/functions.rst:267
 #: ../../source/behavior/arrays/functions.rst:268
@@ -886,7 +989,7 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:424
 #: ../../source/behavior/arrays/functions.rst:488
 msgid "matrix"
-msgstr ""
+msgstr "矩阵"
 
 #: ../../source/behavior/arrays/functions.rst:310
 #: ../../source/behavior/arrays/functions.rst:326
@@ -897,76 +1000,76 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:467
 #: ../../source/behavior/arrays/functions.rst:476
 msgid "arrays"
-msgstr ""
+msgstr "数组"
 
 #: ../../source/behavior/arrays/functions.rst:310
 msgid "mathematical operations; addition"
-msgstr ""
+msgstr "数学运算；加法"
 
 #: ../../source/behavior/arrays/functions.rst:311
 #: ../../source/behavior/arrays/functions.rst:312
 msgid "addition"
-msgstr ""
+msgstr "加法"
 
 #: ../../source/behavior/arrays/functions.rst:326
 msgid "mathematical operations; subtraction"
-msgstr ""
+msgstr "数学运算；减法"
 
 #: ../../source/behavior/arrays/functions.rst:327
 #: ../../source/behavior/arrays/functions.rst:328
 msgid "subtraction"
-msgstr ""
+msgstr "减法"
 
 #: ../../source/behavior/arrays/functions.rst:344
 msgid "mathematical operations; multiplication"
-msgstr ""
+msgstr "数学运算；乘法"
 
 #: ../../source/behavior/arrays/functions.rst:345
 #: ../../source/behavior/arrays/functions.rst:346
 msgid "multiplication"
-msgstr ""
+msgstr "乘法"
 
 #: ../../source/behavior/arrays/functions.rst:347
 msgid "matrix-vector products"
-msgstr ""
+msgstr "矩阵向量积"
 
 #: ../../source/behavior/arrays/functions.rst:389
 msgid "mathematical operations; division"
-msgstr ""
+msgstr "数学运算；除法"
 
 #: ../../source/behavior/arrays/functions.rst:390
 #: ../../source/behavior/arrays/functions.rst:391
 msgid "division"
-msgstr ""
+msgstr "除法"
 
 #: ../../source/behavior/arrays/functions.rst:422
 msgid "mathematical operations; exponentiation"
-msgstr ""
+msgstr "数学运算；指数函数"
 
 #: ../../source/behavior/arrays/functions.rst:423
 #: ../../source/behavior/arrays/functions.rst:424
 msgid "exponentiation"
-msgstr ""
+msgstr "指数函数"
 
 #: ../../source/behavior/arrays/functions.rst:452
 #: ../../source/behavior/arrays/functions.rst:453
 msgid "equations"
-msgstr ""
+msgstr "方程"
 
 #: ../../source/behavior/arrays/functions.rst:467
 #: ../../source/behavior/arrays/functions.rst:468
 msgid "assignment"
-msgstr ""
+msgstr "赋值"
 
 #: ../../source/behavior/arrays/functions.rst:476
 #: ../../source/behavior/arrays/functions.rst:477
 msgid "relational operators"
-msgstr ""
+msgstr "关系操作符"
 
 #: ../../source/behavior/arrays/functions.rst:477
 #: ../../source/behavior/arrays/functions.rst:498
 msgid "vectors"
-msgstr ""
+msgstr "向量"
 
 #: ../../source/behavior/arrays/functions.rst:486
 #: ../../source/behavior/arrays/functions.rst:487
@@ -977,7 +1080,7 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:496
 #: ../../source/behavior/arrays/functions.rst:498
 msgid "outer product"
-msgstr ""
+msgstr "外积"
 
 #: ../../source/behavior/arrays/functions.rst:497
 msgid "outerProduct"
@@ -1030,19 +1133,21 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:683
 #: ../../source/behavior/arrays/functions.rst:684
 msgid "vectorization"
-msgstr ""
+msgstr "向量化"
 
 #: ../../source/behavior/arrays/functions.rst:536
 msgid ""
 "The ``skew`` function takes a vector with three components and returns the "
 "following skew-symmetric matrix:"
 msgstr ""
+"\ ``skew``\ 函数用具有三个分量的矢量作为输入，并返回以下斜对称矩阵："
 
 #: ../../source/behavior/arrays/functions.rst:555
 msgid ""
 "The ``cross`` function takes two vectors (each with 3 components) and "
 "returns the following vector (with three components):"
 msgstr ""
+"\ ``cross``\ 函数用两个矢量（各有3个分量）作为输入，并返回以下矢量（有3个分量）："
 
 #: ../../source/behavior/arrays/functions.rst:214
 msgid ""
@@ -1050,14 +1155,17 @@ msgid ""
 "each dimension is of size :math:`1`.  The ``scalar`` function returns the "
 "(only) scalar value contained in the array.  For example,"
 msgstr ""
+"其中\ ``A``\ 为有任意维数的数组，前提是每个维度的大小均为\ :math:`1`\ 。"
+"\ ``scalar``\ 函数（仅）返回包含在数组中的标量值。"
+"例如，"
 
 #: ../../source/behavior/arrays/functions.rst:222
 msgid "and"
-msgstr ""
+msgstr "以及"
 
 #: ../../source/behavior/arrays/functions.rst:228
 msgid "would both give the scalar value ``5``."
-msgstr ""
+msgstr "均会得到标量值\ ``5``\ 。"
 
 #: ../../source/behavior/arrays/functions.rst:242
 msgid ""
@@ -1067,11 +1175,15 @@ msgid ""
 "with only a single dimension).  So, for example, if we passed a column or "
 "row matrix, *e.g.*,"
 msgstr ""
+"其中\ ``A``\ 为有任意维数的数组，前提是仅有一个维度的大小大于\ :math:`1`\ 。"
+"在\ ``vector``\ 函数将数组内容返回为一个矢量"
+"（\ *即*\ 仅有单个维度的数组）。"
+"因此，若我们传入列矩阵或行矩阵，\ *如*\ ："
 
 #: ../../source/behavior/arrays/functions.rst:252
 msgid "or"
-msgstr ""
+msgstr "或"
 
 #: ../../source/behavior/arrays/functions.rst:258
 msgid "we would get back:"
-msgstr ""
+msgstr "我们会得到："
