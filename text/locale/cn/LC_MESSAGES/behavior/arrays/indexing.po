@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/indexing.rst:4
 msgid "Array Indexing"
-msgstr ""
+msgstr "数组索引"
 
 #: ../../source/behavior/arrays/indexing.rst:6
 msgid ""
@@ -24,18 +24,22 @@ msgid ""
 "other ways to index arrays that it is worth spending some time to talk about"
 " them."
 msgstr ""
+"我们已经在本章看到很多说明如何索引数组的例子。"
+"因此，似乎没有必要专门用一节来讨论如何索引数组。"
+"的确，通常你只会使用在使用整数值下标以索引数组中的元素。"
+"但也有其它不少索引数组的方式，从而值得花一些时间来讨论。"
 
 #: ../../source/behavior/arrays/indexing.rst:14
 msgid "Indices"
-msgstr ""
+msgstr "索引"
 
 #: ../../source/behavior/arrays/indexing.rst:17
 msgid "Integers"
-msgstr ""
+msgstr "整数"
 
 #: ../../source/behavior/arrays/indexing.rst:0
 msgid "1-index"
-msgstr ""
+msgstr "数组索引从1开始"
 
 #: ../../source/behavior/arrays/indexing.rst:21
 msgid ""
@@ -44,18 +48,23 @@ msgid ""
 "index, but it is important to point out from the start that Modelica follows"
 " the 1-index convention."
 msgstr ""
+"在用整数指定数组维度时，Modelica使用的索引是从\ **1**\ 开始的。"
+"某些语言中选择使用零作为起始索引，但要指出Modelica是使用从1开始的索引。"
 
 #: ../../source/behavior/arrays/indexing.rst:26
 msgid ""
 "Obviously, the most directly way to index an array is to use an integer.  "
 "For an array declared as:"
 msgstr ""
+"很明显，最直接的方法来是使用整数去索引数组。"
+"数组声明如下："
 
 #: ../../source/behavior/arrays/indexing.rst:33
 msgid ""
 "we can index elements of the array by providing an integer between 1 and 5 "
 "for the first subscript and 1 and 4 for the second subscript."
 msgstr ""
+"我们可以在首个下表使用1到5之间的整数、在第二个下标使用1到4之间的整数去索引数组的元素。"
 
 #: ../../source/behavior/arrays/indexing.rst:36
 msgid ""
@@ -63,20 +72,23 @@ msgid ""
 "vectors.  To understand how vector indices work, first consider the "
 "following matrix:"
 msgstr ""
+"但值得指出的是， Modelica允许用向量作为下标。"
+"要理解向量指标是如何工作的，首先要考虑以下矩阵："
 
 #: ../../source/behavior/arrays/indexing.rst:50
 msgid "In Modelica, such an array would be declared as follows:"
-msgstr ""
+msgstr "在Modelica语言，这样的阵列将被声明如下："
 
 #: ../../source/behavior/arrays/indexing.rst:56
 msgid "Imagine we wish to extract a submatrix of ``B`` as follows:"
-msgstr ""
+msgstr "想象，我们要从\ ``B``\ 提取一个如下的子矩阵："
 
 #: ../../source/behavior/arrays/indexing.rst:62
 msgid ""
 "We could extract the same submatrix more easily using vector subscripts as "
 "follows:"
 msgstr ""
+"用如下方法，我们可以更容易地用向量下标提取相同的子矩阵："
 
 #: ../../source/behavior/arrays/indexing.rst:69
 msgid ""
@@ -84,10 +96,13 @@ msgid ""
 "  This is where :ref:`range-notation` can be very useful. The same submatrix"
 " extraction could also be represented as:"
 msgstr ""
+"通过使用向量下标，我们可以提取或构造任意子阵列。"
+"这就是\ :ref:`range-notation`\ 派上用场的时候了。"
+"同一个提取方法也可以用以下方法表示："
 
 #: ../../source/behavior/arrays/indexing.rst:78
 msgid "Enumerations"
-msgstr ""
+msgstr "枚举类"
 
 #: ../../source/behavior/arrays/indexing.rst:80
 msgid ""
@@ -96,32 +111,41 @@ msgid ""
 "by an ``enumeration`` type can be used to index the array. In general, for "
 "an ``enumeration`` like the following:"
 msgstr ""
+"在前面的\ :ref:`chemical-system`\ 例子里，我们看到了如何用枚举类来指定数组的维度。"
+"然后，我们看到了如何通过一个\ ``enumeration``\ 类型的值来索引阵列。"
+"一般来说，对于一个如下的\ ``enumeration``\ 值："
 
 #: ../../source/behavior/arrays/indexing.rst:89
 msgid ""
 "and then declare an array where that ``enumeration`` is used to specify a "
 "dimension, *e.g.,*"
 msgstr ""
+"然后声明一个用\ ``enumeration``\ 指代维数的数组，"
+"\ *即：*\ "
 
 #: ../../source/behavior/arrays/indexing.rst:96
 msgid ""
 "then we can use the enumeration values, ``Species.A``, ``Species.B`` and "
 "``Species.X`` as indices.  For example,"
 msgstr ""
+"那么我们可以使用枚举值\ ``Species.A``\ 、\ ``Species.B``\ 以及\ ``Species.X``\ 作为索引。"
+"例如："
 
 #: ../../source/behavior/arrays/indexing.rst:106
 msgid "Booleans"
-msgstr ""
+msgstr "布尔值"
 
 #: ../../source/behavior/arrays/indexing.rst:108
 msgid ""
 "We can use the ``Boolean`` type in much the same way as an ``enumeration``."
 "  Given an array declared with ``Boolean`` for a dimension:"
 msgstr ""
+"我们可以用\ ``enumeration``\ 类型相同的当时使用\ ``Boolean``\ 类型。"
+"考虑声明有某一维定义为\ ``Boolean``\ 类型的数组："
 
 #: ../../source/behavior/arrays/indexing.rst:116
 msgid "We can then use boolean values to index that dimension, *e.g.,*"
-msgstr ""
+msgstr "然后我们可以使用布尔值索引该维度，\ *如：*\ "
 
 #: ../../source/behavior/arrays/indexing.rst:125
 msgid "``end``"
@@ -137,20 +161,26 @@ msgid ""
 "reference the second from the last element in a vector, the expression "
 "``end-1`` can be used a subscript."
 msgstr ""
+"当指定数组下标时，在下标表达式里使用\ ``end``\ 是合法使用的。"
+"在这种情况下，\ ``end``\ 对应数组维度的最大可能值。"
+"在表达式中\ ``end``\ 允许用数组元素指代最后一个而不是第一个元素。"
+"例如，要指代向量中的倒数第二个元素，那么可以用\ ``end-1``\ 表达式作为下标。"
 
 #: ../../source/behavior/arrays/indexing.rst:135
 msgid ""
 "Remember that ``end`` takes on the value of the highest possible index for "
 "the **corresponding array dimension**.  So for the following array:"
 msgstr ""
+"请记住，\ ``end``\ 取\ **相应的数组维度**\ 的最大可能索引值。"
+"因此，对于下面的数组："
 
 #: ../../source/behavior/arrays/indexing.rst:143
 msgid "The following expressions would evaluate as follows:"
-msgstr ""
+msgstr "下面的表达式计算结果如下："
 
 #: ../../source/behavior/arrays/indexing.rst:153
 msgid "Slicing"
-msgstr ""
+msgstr "切片"
 
 #: ../../source/behavior/arrays/indexing.rst:155
 msgid ""
@@ -158,3 +188,6 @@ msgid ""
 "doesn't make sense to talk about it just yet.  We will see it later when we "
 "start our discussion of :ref:`arrays-of-components`."
 msgstr ""
+"Modelica语言中有另一种复杂的数组索引方式。"
+"但现在没有讨论的必要。"
+"在我们稍后讨论\ :ref:`arrays-of-components`\ 的时候，便会看到这个效果。"
