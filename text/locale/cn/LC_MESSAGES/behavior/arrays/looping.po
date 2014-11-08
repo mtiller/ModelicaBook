@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/looping.rst:4
 msgid "Looping"
-msgstr ""
+msgstr "循环"
 
 #: ../../source/behavior/arrays/looping.rst:7
 msgid "``for``"
@@ -26,6 +26,8 @@ msgid ""
 "some basic looping constructs and showing how they are used in conjunction "
 "with array features."
 msgstr ""
+"数组的主要用途之一是允许代码通过使用循环得到简化。"
+"因此，我们将通过介绍一些基本的循环结构结束这一章数组，以及循环是如何与数组功能相结合的。"
 
 #: ../../source/behavior/arrays/looping.rst:14
 msgid ""
@@ -38,6 +40,12 @@ msgid ""
 "the same overall structure and only vary by the value of the loop index "
 "variable.  The general syntax for a ``for`` loop in an equation section is:"
 msgstr ""
+"一般而言，\ ``for``\ 关键字用以表示循环。"
+"但\ ``for``\ 也可以用在很多不同的情景里。"
+"本章中内的数个例子使用了\ \ ``for``\ 来生成方程组。"
+"\ ``for``\ 用在等式段落内时，每个在\ ``for``\ 循环内的方程都会\ **对应每一个循环变量的取值**\ 再生成相应的方程。"
+"用这种方式，我们可以很容易地生成具有相同总体结构、而仅仅是循环索引变量值不同的一组方程。"
+"\ ``for``\ 循环在等式段落内的一般语法是："
 
 #: ../../source/behavior/arrays/looping.rst:31
 msgid ""
@@ -45,16 +53,20 @@ msgid ""
 "have to be declared**.  It is also worth noting that these variables only "
 "exists within the scope of the ``for`` loop (not before or after the loop)."
 msgstr ""
+"注意，循环索引变量（\ *如*\ 这里的\ ``i``\ ）\ **并不需要被声明** 。"
+"还要注意这些变量仅仅在\ ``for``\ 循环的范围内存在（而在循环的前后均不存在）。"
 
 #: ../../source/behavior/arrays/looping.rst:36
 msgid "For loops can, of course, be nested.  For example:"
-msgstr ""
+msgstr "for循环当然可以嵌套在自身之中。例如："
 
 #: ../../source/behavior/arrays/looping.rst:47
 msgid ""
 "They can also appear in other contexts.  For example, they can appear in "
 "``initial equation`` sections or in :ref:`algorithm-sections`."
 msgstr ""
+"for循环还可以出现在其它段落里。"
+"例如，for循环可以出现在\ ``initial equation``\ 段落里，或者\ :ref:`algorithm-sections`\ 。"
 
 #: ../../source/behavior/arrays/looping.rst:50
 msgid ""
@@ -63,6 +75,8 @@ msgid ""
 "used to generate equations or statements, but to populate the various "
 "elements in an array."
 msgstr ""
+"另一种可以看到\ ``for``\ 关键字的情形是在我们关于\ :ref:`array-comprehensions`\ 的讨论里。"
+"在这种情况下，\ ``for``\ 结构没有用于生成方程或语句，而是在填充在数组中的各个元素。"
 
 #: ../../source/behavior/arrays/looping.rst:57
 msgid "``while``"
@@ -77,6 +91,11 @@ msgid ""
 " an equal number of equations and unknowns.  Such a model is considered a "
 "\"balanced model\"."
 msgstr ""
+"Modelica语言还有另一种类型的循环，那就是\ ``while``\ 循环。"
+"\ ``while``\ 循环在Modelica里并不常用。"
+"其原因在于，不同于通用的语言，Modelica是一种面向等式的语言。"
+"此外，Modelica规定了一个模型应该包括相等数量的方程和未知数。"
+"这样的模型被认为是“平衡的模型” 。"
 
 #: ../../source/behavior/arrays/looping.rst:66
 msgid ""
@@ -89,3 +108,10 @@ msgid ""
 "``while`` loops are only practical in the context of :ref:`algorithm-"
 "sections` (typically in the definition of :ref:`functions`)."
 msgstr ""
+"之所以说\ ``while``\ 结构不常用，是因为平衡的模型要求等式数目（对于编译器）是可预测的。"
+"因为\ ``for``\ 循环有界而且下标变量值的数目总是已知的"
+"（因为下标变量总是来自于可能值组成的向量），"
+"所以产生方程的数量也总是已知的。"
+"对于\ ``while``\ 循环就不能下同样的结论了。"
+"因此，\ ``while``\ 循环仅仅在\ :ref:`algorithm-sections`\ 里有用处"
+"（一般在\ :ref:`functions`\ 定义里）。"
