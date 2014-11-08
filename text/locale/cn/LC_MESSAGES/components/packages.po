@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/packages.rst:4
 msgid "Packages"
-msgstr ""
+msgstr "包"
 
 #: ../../source/components/packages.rst:6
 msgid ""
@@ -25,6 +25,10 @@ msgid ""
 "information gets repeated in multiple models and this makes maintaining "
 "those models very difficult."
 msgstr ""
+"到目前为止，我们已经介绍了所有类型的模型，而没有任何真正讨论过如何正确地对模型进行组织。"
+"在某些情况下，如在\ ``NewtonCoolingWithTypes``\ 例子讨论\ :ref:`\ 添加物理量类型信息\ <physical-types>`\ 时，"
+"把所有信息放在单一的模型内实在有些奇怪。"
+"有许多情况，相同的信息在多个模型里被重复，这使得对这些模型的维护变得非常困难。"
 
 #: ../../source/components/packages.rst:14
 msgid ""
@@ -33,6 +37,10 @@ msgid ""
 " conceptually like a directory.  It holds a collection of Modelica entities."
 "  These entities can then be referenced or imported to avoid duplication."
 msgstr ""
+"好消息是，许多这样的前述例子能够通过借助Modelica的\ ``package``\ 系统得到极大改善。"
+"\ ``package``\ 在概念上类似于目录。"
+"它包含一系列Modelica实体的集合。"
+"通过引用或者导入这些实体，我们就可以避免重复。"
 
 #: ../../source/components/packages.rst:20
 msgid ""
@@ -41,11 +49,13 @@ msgid ""
 "of the :ref:`msl`, which contains an enormous amount of reusable content "
 "that is available to all Modelica tools."
 msgstr ""
+"本章提供了几个例子，去演示如何使用Modelica的包这个功能。"
+"本章结束时将讨论\ :ref:`msl`\ ，这个所有Modelica工具都附带的包含了大量可重用内容的模型库。"
 
 #: ../../source/components/packages.rst:26
 msgid "Examples"
-msgstr ""
+msgstr "例子"
 
 #: ../../source/components/packages.rst:36
 msgid "Review"
-msgstr ""
+msgstr "复习"
