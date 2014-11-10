@@ -1,11 +1,11 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/packages/importing.rst:4
 msgid "Importing"
-msgstr ""
+msgstr "导入"
 
 #: ../../source/components/packages/importing.rst:6
 msgid ""
@@ -21,12 +21,15 @@ msgid ""
 "cases, the ``import`` statement creates an \"alias\" within the definition "
 "that refers to a type defined elsewhere."
 msgstr ""
+"正如我们前面所看到的，导入基本上有三种形式。"
+"在所有情况下，\ ``import``\ 语句创建了一个“别名”去引用模型外定义的类型。"
 
 #: ../../source/components/packages/importing.rst:10
 msgid ""
 "The first form simply imports a definition by its fully qualified name, "
 "e.g.:"
 msgstr ""
+"第一种形式采用类型的全限定名引入定义，例如："
 
 #: ../../source/components/packages/importing.rst:17
 msgid ""
@@ -38,6 +41,9 @@ msgid ""
 " alias always matches the last element in the name of what is being imported"
 " (*e.g.,* ``Temperature``)."
 msgstr ""
+"导入的结果是，对名称\ ``Temperature``\ 的引用会映射到全限定名\ ``Modelica.SIunits.Temperature``\ 处。"
+"换言之，由\ ``import``\ 声明引入别名\ ``Temperature``\ ，并将其映射到在\ ``Modelica.SIunits.Temperature``\ 出现的定义。"
+"这种形式的导入会让别名总与被导入名称的最后一个元素相同。"
 
 #: ../../source/components/packages/importing.rst:26
 msgid ""
@@ -45,6 +51,8 @@ msgid ""
 " last element of the imported name.  In this case, we can explicitly "
 "introduce an alternative name for the alias, *e.g.,*"
 msgstr ""
+"在某些情况下，我们希望别名与被导入名称的最后一个元素不同。"
+"这种情况下，我们可以明确地引入一个替代名称。\ *例如：*\ "
 
 #: ../../source/components/packages/importing.rst:34
 msgid ""
@@ -52,6 +60,8 @@ msgid ""
 "``Modelica.SIunits.Temperature``.  Providing alternative names avoids name "
 "collisions or simply makes the model more readable."
 msgstr ""
+"在上述的导入后，我们就可以使用别名\ ``DegK``\ 指代\ ``Modelica.SIunits.Temperature``\ 。"
+"提供替代名称可避免命名冲突或者只是为了让模型更具可读性。"
 
 #: ../../source/components/packages/importing.rst:38
 msgid ""
@@ -60,6 +70,9 @@ msgid ""
 " all the definitions in the ``Modelica.SIunits`` package, we would use the "
 "following ``import`` statement:"
 msgstr ""
+"最后，也可以在一个包中导入所有定义到当前作用域。"
+"这可以通过通配符导入实现。"
+"例如，要导入\ ``Modelica.SIunits``\ 包内的所有定义，我们可以使用下面的\ ``import``\ 语句："
 
 #: ../../source/components/packages/importing.rst:47
 msgid ""
@@ -68,10 +81,12 @@ msgid ""
 "named the same as the definition in the imported package (*i.e.,* it isn't "
 "possible to assign an alternative name for the alias)."
 msgstr ""
+"上述导入会创建和\ ``Modelica.SIunits``\ 内总定义数目相等的别名。"
+"别名名称的唯一可能性就是和所导入包内定义的原名相同（\ *即*\ 不可能为别名分配替代名称）。"
 
 #: ../../source/components/packages/importing.rst:0
 msgid "Wildcards considered harmful"
-msgstr ""
+msgstr "通配符有害处"
 
 #: ../../source/components/packages/importing.rst:57
 msgid ""
@@ -83,3 +98,7 @@ msgid ""
 "difficult because it is not clear what types are imported from what "
 "packages."
 msgstr ""
+"这种通配符导入很危险。而原因如上所述，用户不能对类型进行重命名。"
+"其结果是，在一个模型内进行两次或多次通配符导入可能产生命名冲突。"
+"再者，明确的导入（或全限定的类型）使得对于类型所关联定义的回溯与定位变得更为容易。"
+"而使用通配符则使这变得非常困难，原因是使用通配符后，导入类型和所在包的关系便不再清晰。"
