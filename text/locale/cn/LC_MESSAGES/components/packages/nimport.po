@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/packages/nimport.rst:4
 msgid "Importing Physical Types"
-msgstr ""
+msgstr "导入物理类型"
 
 #: ../../source/components/packages/nimport.rst:6
 msgid ""
@@ -22,6 +22,9 @@ msgid ""
 " in their local model.  Instead, they can place definitions in packages and "
 "then reference those packages."
 msgstr ""
+"在前面的小节里，我们学会了如何引用其他包中定义的类型。"
+"这令开发者不必不断地在自己的局部模型进行重复定义。"
+"相反，他们可以将定义放在包内，然后去引用这些软件包。"
 
 #: ../../source/components/packages/nimport.rst:11
 msgid ""
@@ -29,12 +32,15 @@ msgid ""
 "over and over again.  For that reason, Modelica includes an ``import`` "
 "statement that allows us to use a definition as if it were defined locally."
 msgstr ""
+"不过，一遍又一遍地键入冗长的全限定名进行引用不一定十分有趣。"
+"因此，Modelica语言包括\ ``import``\ 语句，令我们可以方便地使用这些定义，仿佛这些定义是在本模型进行的一样。"
 
 #: ../../source/components/packages/nimport.rst:16
 msgid ""
 "Recall again, this example from a previous discussion on :ref:`physical-"
 "types`:"
 msgstr ""
+"再次回忆前面讨论\ :ref:`physical-types`\ 时的这个例子："
 
 #: ../../source/components/packages/nimport.rst:22
 msgid ""
@@ -44,6 +50,9 @@ msgid ""
 "once and then use them without having to specify their fully qualified "
 "names.  The resulting code would look something like:"
 msgstr ""
+"前面已经介绍了，我们要如何通过使用\ :ref:`msl`\ 内的类型以避免进行本地定义。"
+"但是，我们也可以使用\ ``import``\ 命令一次性地从Modelica语言标准库中导入这些类型，然后不需输入指定其全限定名而去使用它们。"
+"这样代码变为如下："
 
 #: ../../source/components/packages/nimport.rst:32
 msgid ""
@@ -52,6 +61,10 @@ msgid ""
 "two of these import statements more closely to understand what effect they "
 "have on the model.  Let's start with the following import statement:"
 msgstr ""
+"在这里，我们将类型定义换成\ ``import``\ 语句。"
+"注意被高亮行如何等价于以前的代码。"
+"让我们仔细观察其中的两个导入语句以了解其对模型的影响。"
+"首先观察下面的导入语句："
 
 #: ../../source/components/packages/nimport.rst:42
 msgid ""
