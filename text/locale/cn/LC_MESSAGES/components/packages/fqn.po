@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/packages/fqn.rst:4
 msgid "Referencing Package Contents"
-msgstr ""
+msgstr "引用包内内容"
 
 #: ../../source/components/packages/fqn.rst:6
 msgid ""
@@ -21,10 +21,12 @@ msgid ""
 "access that content across different packages.  Let's consider the following"
 " example:"
 msgstr ""
+"现在，我们已经介绍了\ :ref:`organizing-content`\ ，下面将开始讨论如何访问不同包里的内容。"
+"让我们观察以下例子："
 
 #: ../../source/components/packages/fqn.rst:13
 msgid "As we learned in the previous section, the very first line,"
-msgstr ""
+msgstr "正如我们在上节里知道的，第一行："
 
 #: ../../source/components/packages/fqn.rst:19
 msgid ""
@@ -35,6 +37,9 @@ msgid ""
 "define the types once in one package and then we can reuse them in many "
 "places simply by referencing them."
 msgstr ""
+"告诉我们\``RLC``\ 模型是\ ``ModelicaByExample.PackageExamples``\ 包的一部分。"
+"正如前面的例子一样，我们将利用Modelica的\ ``package``\ 系统，以避免直接在模型中定义类型。"
+"这样一来，我们一旦在包内定义了类型，就可以简单地通过引用而在不同的地方而对类型进行重用。"
 
 #: ../../source/components/packages/fqn.rst:26
 msgid ""
@@ -44,6 +49,11 @@ msgid ""
 "this example, we'll just utilize a few of them.  These types can be easily "
 "recognized because they start with ``Modelica.`` in the name of the type."
 msgstr ""
+"不像本章之前例子，我们并没有在本例内定义任何类型。"
+"相反，我们依赖于在\ :ref:`msl`\ 内定义的类型。"
+"\ :ref:`msl`\ 包含了许多有用的类型、模型、常量\ *等*\ 。"
+"在本例里，我们只会利用其中的几个。"
+"这些类型可以容易地识别，因为它们的名字均以\ ``Modelica.``\ 开头。"
 
 #: ../../source/components/packages/fqn.rst:33
 msgid ""
@@ -54,6 +64,11 @@ msgid ""
 "package.  The purpose of the ``SIunits`` package is to store type "
 "definitions that conform to ISO standard quantities and units."
 msgstr ""
+"在本章后面，我们会进一步研究\ :ref:`lookup-rules`\ 。"
+"就目前而言，可以暂时认为所有以\ ``Modelica.``\ 开头的类型均存在于\ ``Modelica``\ 包内。"
+"在此例里，所有的类型均以\ ``Modelica.SIunits``\ 开始。"
+"\ ``SIunits``\ 为\ ``Modelica``\ 包内的一个包。"
+"\ ``SIunits``\ 包的目的是存储符合ISO标准的物理量和量度单位定义。"
 
 #: ../../source/components/packages/fqn.rst:43
 msgid ""
@@ -63,6 +78,10 @@ msgid ""
 "package).  Each ``.`` in the name represents a new child package.  The last "
 "name in the sequence identifies that actual type being referenced."
 msgstr ""
+"在示例代码中可以看出，这些类型是以其“全限定名”引用的。"
+"这意味着，类型名称的开头是顶层包（不包含在其他包内的包）的名称。"
+"每个在名称里的\ ``.``\ 代表一个新的子包。"
+"序列中的最后一个名称标记所引用的实际类型。"
 
 #: ../../source/components/packages/fqn.rst:50
 msgid ""
@@ -73,6 +92,10 @@ msgid ""
 "(*e.g.*, a capacitance cannot be less than zero), *etc*.  They are defined "
 "in the :ref:`msl` as follows:"
 msgstr ""
+"在本例里，我们从\ ``Modelica.SIunits``\ 包内使用了5种不同的类型："
+"\ ``Voltage``\ 、\  ``Inductance``\ 、\  ``Resistance``\ 、\  ``Capacitance``\ 以及\ ``Current``\ 。"
+"这些类型提供了每种类型的单位，以及对这些类型值所在范围的限制（*例如* ，电容不能小于零）等信息。"
+"这些类型在\ :ref:`msl`\ 内定义如下："
 
 #: ../../source/components/packages/fqn.rst:75
 msgid ""
@@ -81,12 +104,17 @@ msgid ""
 "consistency checking of the equations.  For example, note the following "
 "equation from this example:"
 msgstr ""
+"除了能提供更好的文档外，将变量类型关联起来有一个直接的好处。"
+"那就是支持方程单位一致性检查。"
+"例如，注意本例中的以下等式："
 
 #: ../../source/components/packages/fqn.rst:84
 msgid ""
 "Clearly, this is a statement of Ohm's law.  But what if we made a mistake "
 "and accidentally wrote:"
 msgstr ""
+"显然，这是对欧姆定律的陈述。"
+"但是，假若我们犯了一个错误，而意外写成了："
 
 #: ../../source/components/packages/fqn.rst:91
 msgid ""
@@ -101,7 +129,12 @@ msgid ""
 " a physical type with variables it is possible to detect modeling errors, "
 "automatically."
 msgstr ""
+"在语法上来讲，这个公式是完全合法的。"
+"再者，若变量\ ``i_R``\ 、\  ``V``\ 、\ ``R`` 均声明为\ ``Real``\ 类型，那么上述方程便没有任何问题。"
+"然而，因为（从类型定义）我们知道 ，这些变量分别表示电流、电压和电阻，"
+"Modelica语言编译器能够确定（完全自动地使用上述定义）这个等式的左侧和右侧的物理单位不一致。"
+"换句话说，将变量和物理类型相关联可以自动地检查建模错误。"
 
 #: ../../source/components/packages/fqn.rst:41
 msgid "fully qualified name"
-msgstr ""
+msgstr "全限定名"
