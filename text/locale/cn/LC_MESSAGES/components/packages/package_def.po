@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../source/components/packages/package_def.rst:4
 msgid "Package Definitions"
-msgstr ""
+msgstr "包的定义"
 
 #: ../../source/components/packages/package_def.rst:7
 msgid "Basic Syntax"
-msgstr ""
+msgstr "基本语法"
 
 #: ../../source/components/packages/package_def.rst:9
 msgid ""
@@ -26,26 +26,32 @@ msgid ""
 "  The syntax definition of a ``package`` has a lot in common with other "
 "Modelica definitions.  The general syntax for a package is:"
 msgstr ""
+"正如我们在本章所了解的一样，\ ``package``\ 是一种允许我们对定义进行组织（包含其它包的定义）的Modelica实体。"
+"\ ``package``\ 的语法定义与其它Modelica定义有很多共同点。"
+"定义包的一般语法是："
 
 #: ../../source/components/packages/package_def.rst:21
 msgid ""
 "A package definition can be prefixed by the ``encapsulated`` qualifier.  "
 "We'll discuss that more when we examine Modelica's :ref:`lookup-rules`."
 msgstr ""
+"包定义可用\ ``encapsulated``\ 限定词作为前缀。"
+"我们将在考察的Modelica的\ :ref:`lookup-rules`\ 时进行进一步讨论。"
 
 #: ../../source/components/packages/package_def.rst:25
 msgid "Packages can also be nested, *e.g.,*"
-msgstr ""
+msgstr "如果必要包也可以进行嵌套\ *例如：*\ "
 
 #: ../../source/components/packages/package_def.rst:36
 msgid ""
 "In fact, nesting of packages is very common and allows us to represent "
 "complex taxonomies."
 msgstr ""
+"实际上，包嵌套十分常见。这使我们能够表达复杂的分类。"
 
 #: ../../source/components/packages/package_def.rst:40
 msgid "Directory Storage"
-msgstr ""
+msgstr "文件夹储存"
 
 #: ../../source/components/packages/package_def.rst:42
 msgid ""
@@ -57,10 +63,13 @@ msgid ""
 "much better to break things into smaller files to help avoid any merge "
 "conflicts."
 msgstr ""
+"虽然我们将整个Modelica定义库存作为一系列嵌套的包储存在单一的文件内，但至少有两个原因令这种做法不可取。"
+"首先，由于文件长度和缩进层次，所得到的文件将相当没有可读性。"
+"然后，从版本控制的角度来看，将库分成更小的文件可以帮助避免合并冲突。"
 
 #: ../../source/components/packages/package_def.rst:51
 msgid "Stored in a Single File"
-msgstr ""
+msgstr "储存在单一文件内"
 
 #: ../../source/components/packages/package_def.rst:53
 msgid ""
@@ -70,10 +79,14 @@ msgid ""
 "definition or it might contain a deeply nested hierarchy of packages or "
 "anything in between."
 msgstr ""
+"Modelica语言源代码可以用数种方法映射到文件系统中。"
+"最简单的方法将所有信息存储为一个文件。"
+"此类文件会带有.mo后缀。"
+"这个文件可能只包含一个模型定义，也可能包含一个内有深层嵌套的包或任何两者之间的内容。"
 
 #: ../../source/components/packages/package_def.rst:60
 msgid "Stored as a Directory"
-msgstr ""
+msgstr "储存为文件夹"
 
 #: ../../source/components/packages/package_def.rst:62
 msgid ""
@@ -87,12 +100,19 @@ msgid ""
 "representing packages (as described in this paragraph).  The following "
 "diagram attempts to visualize a sample directory layout::"
 msgstr ""
+"正如上述讨论，将一切存储在单个文件内通常不是一个好主意。"
+"另一种方法是Modelica语言定义映射到一个目录结构里。"
+"要将包储存为一个文件夹，可以通过创建一个\ **与这个包名称相同的**\ 的文件夹以达成目的。"
+"然后，该目录内必须有一个名为\ ``package.mo``\ 的文件存储此包内的定义，\ **不过不包括任何嵌套定义** \ 。"
+"嵌套定义可以存储为（如上文所述的）单个文件，或者（如在本段中描述般）作为目录形式 。"
+"下图试图以可视化形式描述一个文件夹布局的例子："
 
 #: ../../source/components/packages/package_def.rst:79
 msgid ""
 "The ``package.mo`` file associated with the package named ``RootPackage`` "
 "would look something like this:"
 msgstr ""
+"与名为\ ``RootPackage``\ 的包关联的\ ``package.mo``\ 文件将有类似如下的形式："
 
 #: ../../source/components/packages/package_def.rst:89
 msgid ""
@@ -102,12 +122,18 @@ msgid ""
 "``NestedPackageAsFile`` and ``NestedPackageAsDir`` are not (and cannot be) "
 "present.  Those must be stored outside the ``package.mo`` file."
 msgstr ""
+"这里要注意两点。"
+"首先，这里没有本应存在的\ ``within``\ 子句。"
+"这表明该包不在任何其它的包内。"
+"再者，\ ``NestedPackageAsFile``\ 和\ ``NestedPackageAsDir``\ 的定义并没有（也不能）出现。"
+"两者必须存储在\ ``package.mo``\ 文件之外。"
 
 #: ../../source/components/packages/package_def.rst:96
 msgid ""
 "Similarly, the ``package.mo`` file associated with the "
 "``NestedPackageAsDir`` package would look like this:"
 msgstr ""
+"同样，与名为\ ``NestedPackageAsDir``\ 的包关联的\ ``package.mo``\ 文件如下："
 
 #: ../../source/components/packages/package_def.rst:106
 msgid ""
@@ -115,11 +141,14 @@ msgid ""
 "annotations.  The ``within`` clause is slightly different, reflecting the "
 "fact that ``NestedPackageAsDir`` belongs to the ``RootPackage`` package."
 msgstr ""
+"再一次，此包没有包含任何定义，只有注解。"
+"\ ``within``\ 子句则略有不同，以反映\ ``NestedPackageAsDir``\ 属于\ ``RootPackage``\ 包这一事实。"
 
 #: ../../source/components/packages/package_def.rst:111
 msgid ""
 "Finally, the ``NestedPackageAsFile.mo`` file would look something like this:"
 msgstr ""
+"最后，\ ``NestedPackageAsFile.mo``\ 文件看起来会是这样的："
 
 #: ../../source/components/packages/package_def.rst:124
 msgid ""
@@ -128,10 +157,12 @@ msgid ""
 "definitions for constants, models, packages, functions, *etc.* are allowed "
 "here as well."
 msgstr ""
+"这里的\ ``within``\ 子句和\ ``NestedPackageAsDir``\ 的包内的一致。"
+"不过，由于我们将本包存为单独的文件，常量、模型、包、函数\ *等*\ 的嵌套定义均是允许的。"
 
 #: ../../source/components/packages/package_def.rst:130
 msgid "Ordering for Directories"
-msgstr ""
+msgstr "文件夹内的排序"
 
 #: ../../source/components/packages/package_def.rst:134
 msgid ""
@@ -144,6 +175,11 @@ msgid ""
 "for example, if we wanted to impose an ordering on this sample package "
 "structure, the file system would be populated as follows::"
 msgstr ""
+"若所有定义被存储在单个文件内，那么定义出现在文件中出现的顺序就是其在可视化环境（\ *例如*\ 包浏览器）内的顺序。"
+"但是，若定义被存储在文件系统中，上述隐含的顺序便不存在。"
+"出于这个原因，开发者可以在package.mo旁边加入一个可选的\ ``package.order``\ 文件以指定定义的顺序。"
+"该文件不过是包内嵌套的实体名称一行一个地组成的列表。"
+"因此，例如我们要为示例包结构加上顺序，那么文件系统将有如下内容:"
 
 #: ../../source/components/packages/package_def.rst:152
 msgid ""
@@ -152,16 +188,20 @@ msgid ""
 " of the ``RootPackage`` in reverse alphabetical order, the ``package.order``"
 " file in the ``RootPackage`` directory would look like this::"
 msgstr ""
+"若没有\ ``package.order``\ 文件，Modelica语言工具很可能会简单地按字母顺序对包的内容进行排序。"
+"但如果我们想将\ ``RootPackage``\ 的内容按字母顺序逆向排序，"
+"那么\ ``RootPackage``\ 文件夹内的\ ``package.order``\ 文件将如下所示："
 
 #: ../../source/components/packages/package_def.rst:161
 msgid ""
 "This would specify to the Modelica tool that ``NestedPackageAsFile`` should "
 "come before ``NestedPackageAsDir``."
 msgstr ""
+"这将告诉Modelica工具\ ``NestedPackageAsFile``\ 应该排在\ ``NestedPackageAsDir``\ 之前。"
 
 #: ../../source/components/packages/package_def.rst:165
 msgid "Versioning"
-msgstr ""
+msgstr "版本"
 
 #: ../../source/components/packages/package_def.rst:174
 msgid "``MODELICAPATH``"
@@ -177,6 +217,10 @@ msgid ""
 "specify the location of the source code they want the tool to be able to "
 "automatically locate."
 msgstr ""
+"多数Modelica工具允许用户通过指定文件的完整路径，或通过使用文件选择对话框打开文件。"
+"但每次查找打开大量文件并不十分有趣。"
+"出于这个原因，Modelica规范定义了名为\ ``MODELICAPATH``\ 的特殊环境变量。"
+"用户可以用此变量来帮助工具自动地定位源代码的位置。"
 
 #: ../../source/components/packages/package_def.rst:186
 msgid ""
@@ -188,6 +232,10 @@ msgid ""
 "for either a matching file or directory.  For example, if the "
 "``MODELICAPATH`` was defined as (assuming Unix conventions)::"
 msgstr ""
+"\ ``MODELICAPATH``\ 环境变量包含了应搜索目录的列表。"
+"在Windows中，该列表的分隔符为\ ``;``\ ，而在Unix中则为\ ``:``\ 。"
+"当Modelica编译器遇到一个尚未读取的包时，编译器会从\ ``MODELICAPATH``\ 环境变量的给定目录里搜索寻找匹配的文件或文件夹。"
+"例如，若\ ``MODELICAPATH``\ 定义如下（假设我们使用Unix惯例）："
 
 #: ../../source/components/packages/package_def.rst:196
 msgid ""
@@ -198,10 +246,13 @@ msgid ""
 "those could be found, it would then search the ``/home/mtiller/Dir2`` "
 "directory (for the same things)."
 msgstr ""
+"而编译器在寻找一个名为\ ``MyLib``\ 的包。"
+"那么编译器会首先在\ ``/home/mtiller/Dir1``\ 内寻找名为\ ``MyLib.mo``\ 的（作为单个文件存储的）包，或者一个名为\ ``MyLib``\ 且内含\ ``package.mo``\ 文件的文件夹。"
+"如果两者都没有出现，那么编译器会继而在\ ``/home/mtiller/Dir1``\ 内（对相同的内容）进行查找。"
 
 #: ../../source/components/packages/package_def.rst:206
 msgid "``modelica://`` URLs"
-msgstr ""
+msgstr "\ ``modelica://`` URL地址"
 
 #: ../../source/components/packages/package_def.rst:208
 msgid ""
@@ -212,6 +263,10 @@ msgid ""
 "introduce an extremely useful feature in Modelica which is the use of URLs "
 "to refer to the location of these resources."
 msgstr ""
+"在许多情况下，我们需要在Modelica包内包含非Modelica文件。"
+"这些非Modelica的文件可能包括数据、脚本、图像等。我们将这些非Modelica的文件称为“资源（resource）”。"
+"现在，我们已经介绍了Modelica定义是如何映射到文件系统中的。"
+"因此，我们可以讨论Modelica的一个非常有用的功能，即利用URL地址来指代资源的位置。"
 
 #: ../../source/components/packages/package_def.rst:215
 msgid ""
@@ -225,12 +280,18 @@ msgid ""
 " definition on the file system**.  Let us revisit the directory structure we"
 " discussed earlier, but with some resource files added::"
 msgstr ""
+"例如，当我们讨论\ :ref:`ext-functions`\ 时，我们引入了数个注解来指定资源的位置。"
+"具体而言，\ ``IncludeDirectory``\ 和\ ``LibraryDirectory``\ 注解分别指定了Modelica编译器寻找文件和库文件的位置。"
+"正如之前简要地提到的一样，上述注释的默认值以\ ``modelica:://LibraryName/Resources``\ 开始。"
+"这样的URL地址允许我们\ **相对于一个给定Modelica定义所在文件系统上的位置** \ 定义资源的位置。"
+"让我们重新考虑前述的目录结构，不过这次我们增加了一些资源文件："
 
 #: ../../source/components/packages/package_def.rst:237
 msgid ""
 "If we have a model that needs the data contained in ``NestedPackageAsDir``, "
 "we can use the following URL to reference it::"
 msgstr ""
+"如果我们有模型需要包含在\ ``NestedPackageAsDir``\ 内的数据文件，我们可以使用下面的URL来引用这个文件："
 
 #: ../../source/components/packages/package_def.rst:242
 msgid ""
@@ -243,19 +304,27 @@ msgid ""
 " definition.  Finally, the last element in the URL names the file to be "
 "used."
 msgstr ""
+"这样的URL地址\ ``modelica://``\ 开始。"
+"这是我们指示所引用的资源是对于一个Modelica的模型所在的位置，而不是，例如说，通过网络获取的文件。"
+"在\ ``//``\ 后面接着是Modelica定义的完全限定名，唯一的不同只是组件之间是由一个\ ``.``\ 分隔开的，而是用\ ``/``\ 。"
+"Modelica编译器会将其解释为包含该定义的文件夹名称。"
+"最后，URL的最末元素确定要使用文件的名称。"
 
 #: ../../source/components/packages/package_def.rst:251
 msgid ""
 "As another example, if we wished to reference the ``logo.jpg`` file in the "
 "``Resources`` package, we would use the following URL::"
 msgstr ""
+"在另一个例子里，如果要引用\ ``Resources``\ 包中的\ ``logo.jpg``\ 文件，我们会使用如下URL："
 
 #: ../../source/components/packages/package_def.rst:256
 msgid ""
 "It is a common convention to store resources related to a library in a "
 "nested package named ``Resources`` (hence the default values for "
-"``IncludeDirectory`` and ``LibraryDirectory``)."
+"``IncludeDirectory`` and ``LibraryDirectory``)." 
 msgstr ""
+"对于模型库的相关文件，常用惯例是将其存储在名为\ ``Resources``\ 的子包内"
+"（因此\ ``IncludeDirectory``\ 和\ ``LibraryDirectory``\ 有上述默认值）。"
 
 #: ../../source/components/packages/package_def.rst:132
 msgid "packages"
