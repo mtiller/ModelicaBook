@@ -75,10 +75,14 @@ msgid ""
 "``Temperature`` and that will automatically refer back to "
 "``Modelica.SIunits.Temperature``."
 msgstr ""
+"这将类型\ ``Modelica.SIunits.Temperature``\ 导入到当前的模型。"
+"默认情况下，导入类型的名称会是全限定名最后一项的名称，\ *即*\ ``Temperature``\ 。"
+"这意味着，只要有上述\ ``import``\ 语句，"
+"我们可以简单地使用类型名\ ``Temperature``\ ，而引用将自动转到\ ``Modelica.SIunits.Temperature``\ 处。"
 
 #: ../../source/components/packages/nimport.rst:49
 msgid "Now let's look at another ``import`` statement:"
-msgstr ""
+msgstr "现在，让我们来看看另一种\ ``import``\ 语句： "
 
 #: ../../source/components/packages/nimport.rst:55
 msgid ""
@@ -94,16 +98,26 @@ msgid ""
 " collision.  Imagine we wished to import two types from two different "
 "packages, *e.g.,*"
 msgstr ""
+"这里的语法有点不同。"
+"在这种情况下，我们正在导入的类型是\ ``Modelica.SIunits.CoefficientOfHeatTransfer``\ 。"
+"但是，相对于直接用全限定名最后一项的名称，\ *即*\ ``CoefficientOfHeatTransfer``\ ，"
+"我们将此类型的本地名称指定为\ ``ConvectionCoefficient``\ 。"
+"在这里，改变名称允许我们使用在最初几个例子中定义的名称。"
+"通过这种方式，我们能够避免重构任何使用了旧名称的代码。"
+"另一个指定替代名称（而非Modelica编译器通常指派的默认名称）的原因是为了避免命名冲突。"
+"试想，我们希望从两个不同的包导入两种类型，\ *如：*\ "
 
 #: ../../source/components/packages/nimport.rst:73
 msgid ""
 "This would leave us two types both named ``Temperature``.  By defining an "
 "alternative name for the local alias, we could do something like this:"
 msgstr ""
+"这将使两种名为\ ``Temperature``\ 的类型。"
+"通过为本地别名定义替代名称，我们进行以下行为："
 
 #: ../../source/components/packages/nimport.rst:0
 msgid "SI Units"
-msgstr ""
+msgstr "国际单位"
 
 #: ../../source/components/packages/nimport.rst:84
 msgid ""
@@ -114,6 +128,10 @@ msgid ""
 " other units, please use the ``displayUnit`` attribute discussed previously "
 "in the section on :ref:`attributes`."
 msgstr ""
+"请注意，此示例导入英制单位只是为了演示潜在的命名冲突可能如何发生。"
+"但这样做在实践中是非常不好的做法。"
+"使用Modelica语言时，用户应该完全使用国际单位，切勿使用任何其他单位系统。"
+"如果你想用其他单位来输入数据或显示效果，请使用在 \ :ref:`attributes`\ 小节里讨论的\ ``displayUnit``\ 属性。"
 
 #: ../../source/components/packages/nimport.rst:92
 msgid ""
@@ -122,17 +140,24 @@ msgid ""
 "tedious.  The wildcard import allows us to import **all** types from a given"
 " package at once.  Recall the following earlier example:"
 msgstr ""
+"\ ``import``\ 语句最后一个值得讨论的形式是通配符导入语句。"
+"一个一个地导入单位可能有些乏味。"
+"通配符导入允许我们从给定的包里一次性导入\ **所有**\ 类型。"
+"回想一下早前的如下例子："
 
 #: ../../source/components/packages/nimport.rst:101
 msgid ""
 "We could replace these type definitions with import statements, *e.g.*,"
 msgstr ""
+"我们可以用导入语句替换这些类型定义，\ *如：*\ "
 
 #: ../../source/components/packages/nimport.rst:112
 msgid ""
 "However, the more types we bring in, the more import statements we need to "
 "add.  Instead, we could write our model as follows:"
 msgstr ""
+"不过，导入的类型越多，我们需要添加的导入语句就越多。"
+"相对地，我们可以将模型写成如下形式："
 
 #: ../../source/components/packages/nimport.rst:119
 msgid ""
@@ -141,12 +166,17 @@ msgid ""
 " model.  With wildcard imports, there is no option to \"rename\" the types."
 "  They will have exactly the name locally as they have in the named package."
 msgstr ""
+"注意高亮的\ ``import``\ 语句。"
+"这条（通配符）导入语句从\ ``Modelica.SIunits``\ 导入其中的所有定义到当前的模型里。"
+"通配符导入语句不能\ “重命名”类型。"
+"导入类型的本地名称将和其在包内的名称一样。"
 
 #: ../../source/components/packages/nimport.rst:125
 msgid ""
 "Before using wildcard imports, be sure to read :ref:`this caveat <wildcards-"
 "harmful>`."
 msgstr ""
+"在使用通配符进口之前，请务必阅读\ :ref:`\ 这条警告\ <wildcards-harmful>`\ 。"
 
 #: ../../source/components/packages/nimport.rst:128
 msgid ""
@@ -159,3 +189,8 @@ msgid ""
 "because it doesn't need to be typed.  This also avoids issues with name "
 "lookup, naming conflicts, etc."
 msgstr ""
+"在本章里，我们已经看到\ ``import``\ 语句如何用于从其他包内导入类型。"
+"事实证明，\ ``import``\ 语句并非总是那么有用的。"
+"当使用图形化建模环境开发模型时，工具一般采用歧义最少、最明确的方法去引用类型：使用全限定名。"
+"毕竟，使用图形工具时，名称的长度不会是问题了，用户不再需要输入类型的名称。"
+"这也避免了名称查找，命名冲突等问题。"
