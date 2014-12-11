@@ -1,0 +1,171 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-11 09:58-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/arrays/chem.rst:4
+msgid "Chemical System"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:6
+msgid ""
+"In this section, we'll consider a few different ways to describe the "
+"behavior of a chemical system.  We'll start by building a model without "
+"using the array functionality.  Then, we'll implement the same behavior "
+"using vectors.  Finally, we'll implement the same model again using "
+"enumerations."
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:12
+msgid ""
+"In all of our examples, we'll be building a model for `the following system "
+"of reactions <http://library.wolfram.com/examples/chemicalkinetics/>`_:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:21
+msgid ""
+"It should be noted that :math:`X` is simply an intermediate result of this "
+"reaction.  The overall reaction can be expressed as:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:28
+msgid ""
+"Using the law of mass action we can transform these chemical equations into "
+"the following mathematical ones:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:37
+msgid ""
+"where :math:`k_1`, :math:`k_2` and :math:`k_3` are the reaction coefficients"
+" for the first, second and third reactions, respectively. These equations "
+"are derived by considering the change in each species due to each reaction "
+"involving that species.  So, for example, since the first reaction :math:`A "
+"+ B \\rightarrow X` transforms molecules of :math:`A` and :math:`B` into "
+"molecules of :math:`X`, we see the term :math:`-k_1 [A] [B]` in the balance "
+"equation for :math:`A`, which represents the reduction in the amount of "
+":math:`A` as a result of that reaction.  Each term in these balance "
+"equations is derived in a similar fashion."
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:50
+msgid "Without Arrays"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:52
+msgid ""
+"Let us start with an approach that doesn't utilize arrays at all.  In this "
+"case, we simply represent the concentrations :math:`[A]`, :math:`[B]` and "
+":math:`[X]` by the variables ``cA``, ``cB`` and ``cX`` as follows:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:61
+msgid ""
+"With this approach, we create an equation for the balance of each species.  "
+"If we simulate this model, we get the following results:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:68
+msgid "Using Arrays"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:70
+msgid ""
+"Another way to approach modeling of the chemical system is to use vectors.  "
+"With this approach, we associated the species :math:`A`, :math:`B` and "
+":math:`X` with the indices :math:`1`, :math:`2` and :math:`3`, respectively."
+"  The concentrations are mapped to the vector variable ``C``.  We can also "
+"cast the reaction coefficients into a vector of reaction coefficients, "
+"``k``."
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:77
+msgid ""
+"With this transformation, all the equations are then transformed into vector"
+" equations:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:84
+msgid ""
+"The reaction equations are non-linear, so they cannot be transformed into a "
+"completely linear form.  But we could simplify them further by using a "
+"matrix-vector product.  In other words, the equations:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:94
+msgid "can be transformed into the following form:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:117
+msgid "which can then be represented in Modelica as:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:125
+msgid ""
+"The drawback of this approach is that we have to constantly keep track of "
+"which index (*e.g.,* ``1``, ``2``, or ``3``) corresponds to which species "
+"(*e.g.,* :math:`A`, :math:`B`, or :math:`X`)."
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:130
+msgid "Using Enumerations"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:132
+msgid ""
+"To address this issue of having to map back and forth from numbers to names,"
+" our third approach will utilize the ``enumeration`` type in Modelica.  An "
+"enumeration allows us to define a set of names which we can then use to "
+"define the subscripts associated with an array.  We'll define our "
+"enumeration as follows:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:142
+msgid ""
+"This defines a special type named ``Species`` that has exactly three "
+"possible values, ``A``, ``B`` and ``X``.  We can then use this enumeration "
+"**as a dimension in an array** as follows:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:150
+msgid ""
+"Since the ``Species`` type has only three possible values, this means that "
+"the vector ``C`` has exactly three components.  We can then refer to the "
+"individual components of ``C`` as ``C[Species.A]``, ``C[Species.B]`` and "
+"``C[Species.X]``."
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:155
+msgid ""
+"Because it is awkward to constantly prefix each species name with "
+"``Species``, we can define a few convenient constants as follows:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:164
+msgid ""
+"In this way, we can now refer to the concentration of species :math:`A` as "
+"``C[A]``.  Pulling all of this together we can represent our chemical system"
+" using enumerations as:"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:176
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/behavior/arrays/chem.rst:178
+msgid ""
+"In this chapter, we showed how a set of chemical equations could be "
+"represented with and without arrays. We also demonstrated how the "
+"``enumeration`` type can be used in conjunction with arrays to make the "
+"resulting equations more readable by replacing numeric indices with names. "
+"Furthermore, this section also demonstrated how the ``enumeration`` type can"
+" be used not only to index the array, but also to define one or more "
+"dimensions in the declaration."
+msgstr ""

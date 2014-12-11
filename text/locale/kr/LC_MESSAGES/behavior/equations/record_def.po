@@ -1,0 +1,88 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-11 09:58-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/equations/record_def.rst:6
+msgid "Record Definitions"
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:8
+msgid ""
+"Earlier, we introduced the idea of a ``model`` definition.  Although we "
+"haven't seen any yet, Modelica also includes a ``record`` type.  A "
+"``record`` can have variables, just like a ``model``, but it is not allowed "
+"to include equations.  Records are primarily used to group data together.  "
+"But as we will see shortly, they are also very useful in describing the data"
+" associated with :ref:`annotations`."
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:16
+msgid "Syntax"
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:18
+msgid ""
+"The ``record`` definition looks essentially like a ``model`` definition, but"
+" without any equations:"
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:27
+msgid ""
+"As with a ``model``, the definition starts and ends with the name of the "
+"record being defined.  An explanation of the ``record`` can be included as a"
+" string after the name.  All the variables associated with the record are "
+"declared within the ``record`` definition."
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:32
+msgid "The following are all examples of ``record`` definitions:"
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:48
+msgid "Record Constructors"
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:52
+msgid ""
+"Now that we know how to define a ``record``, we need to know how to create "
+"one.  If we are declaring a variable that happens to be a ``record``, the "
+"declaration itself will create an instance of the ``record`` and we can "
+"specify the values of variables inside the record using modifications, "
+"*e.g.*,"
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:62
+msgid ""
+"But there are some cases where we might want to create an instance of a "
+"``record`` that isn't a variable (*e.g.*, to use in an expression, pass as "
+"an argument to a function or use in a modification).  For each ``record`` "
+"definition, a function is automatically generated with the **same name** as "
+"the ``record``.  This function is called the \"record constructor\".  The "
+"record constructor has input arguments that match the variables inside the "
+"``record`` definition and returns an instance of that ``record``.  So in the"
+" case of the ``Vector`` definition above, we could also initialize a "
+"``parameter`` using the record constructor as follows:"
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:77
+msgid ""
+"In this case, the value for ``v`` comes from the **expression** "
+"``Vector(x=1.0, y=2.0, z=0.0)`` which is a call to the record constructor."
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:1
+msgid "record"
+msgstr ""
+
+#: ../../source/behavior/equations/record_def.rst:50
+msgid "record constructor"
+msgstr ""

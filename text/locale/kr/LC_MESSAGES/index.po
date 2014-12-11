@@ -1,0 +1,36 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-11 09:58-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/index.rst:13
+msgid "Front Matter"
+msgstr ""
+
+#: ../../source/index.rst:31
+msgid "Describing Behavior"
+msgstr ""
+
+#: ../../source/index.rst:43
+msgid "Object-Oriented Modeling"
+msgstr ""
+
+#: ../../source/index.rst:71
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../source/index.rst:73
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../source/index.rst:74
+msgid ":ref:`search`"
+msgstr ""

@@ -1,0 +1,89 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-11 09:58-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/subsystems/comp_arrays.rst:4
+msgid "Arrays of Component"
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:8
+msgid ""
+"Several of the examples in this chapter used arrays of components. Arrays of"
+" components are useful when the user might want to \"scale\" the number of "
+"components used using a parameter (as we saw in our discussions of both :ref"
+":`distributed-heat-transfer` and :ref:`harmonic-motion`)."
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:14
+msgid ""
+"Creating an array of components is really no different from creating an "
+"array of scalar variables like we did in our previous discussion on :ref"
+":`vectors-and-arrays`.  As we can see in this example,"
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:22
+msgid ""
+"the syntax for creating an array of components is identical to the syntax "
+"used for other types.  All that is required is to follow the name of the "
+"variable being declared by a set of dimensions."
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:26
+msgid ""
+"However, unlike scalars, components have other declarations inside them.  So"
+" whenever an array of components is created, the structure of that component"
+" is replicated for each component in the array. Modelica imposes a "
+"restriction that in every array, every element must be the same type.  This "
+"may seem obvious, but that is partly because we haven't discussed "
+"``replaceable`` components yet.  We'll learn more about ``replaceable`` "
+"components in the next chapter when we talk about Modelica's :ref"
+":`configuration-management` features.  But for now we will simply point out "
+"that it is not possible to ``redeclare`` only one element in an array."
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:39
+msgid ""
+"As we touched on briefly in our discussion of :ref:`harmonic-motion`, when "
+"we make :ref:`sub-modifications` to arrays of components, each variable "
+"inside the component is implicitly treated as an array.  For example, "
+"consider the following ``record`` definition:"
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:52
+msgid ""
+"If we were to declare an array of ``Point`` components, *e.g.,* ``Point "
+"p[5]``, any reference to ``p.x`` is treated as an array of 5 ``Real`` "
+"variables, *i.e.,* ``p[1].x``, ``p[2].x``, ``p[3].x``, ``p[4].x`` and "
+"``p[5].x``.  This is called *slicing*.  The bottom line is that if we leave "
+"off a subscript (*e.g.,* ``p.x``), it gets \"pushed to the end\" (or more "
+"technically, it is left \"unbound\" and can be \"bound\" later).  Also, if a"
+" subscript is supplied as a range (*e.g.,* ``:``, ``1:end``, ``2:3``), then "
+"the expression resolves to a subset of the array corresponding to the "
+"indices in the range.  All of this holds even for arrays of components "
+"containing arrays of components and so on."
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:64
+msgid "The following example, demonstrates some of the more common cases:"
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:6
+msgid "arrays"
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:6
+msgid "of components"
+msgstr ""
+
+#: ../../source/components/subsystems/comp_arrays.rst:37
+msgid "slicing"
+msgstr ""
