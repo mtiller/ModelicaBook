@@ -121,6 +121,9 @@ server: dirhtml build_links
 server_cn: dirhtml_cn build_links_cn
 	(cd build/dirhtml_cn; python -m SimpleHTTPServer)
 
+server_kr: dirhtml_kr build_links_kr
+	(cd build/dirhtml_kr; python -m SimpleHTTPServer)
+
 #server_de: dirhtml_de build_links
 #	(cd build/dirhtml_de; python -m SimpleHTTPServer)
 
@@ -138,6 +141,9 @@ web: dirhtml build_links
 
 web_cn: dirhtml_cn build_links_cn
 	(cd build/dirhtml_cn; $(SYNC) * s3://$(S3BUCKET)/cn/)
+
+web_kr: dirhtml_kr build_links_kr
+	(cd build/dirhtml_kr; $(SYNC) * s3://$(S3BUCKET)/kr/)
 
 #web_de: dirhtml_de build_links
 #	(cd build/dirhtml_de; $(SYNC) * s3://$(S3BUCKET)/de/)
@@ -331,10 +337,13 @@ gettext:
 	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
 
 update_all: gettext
-	sphinx-intl update -l cn -l de -l es -l fr -l it -d locale/ -p locale/pot
+	sphinx-intl update -l cn -l kr -l de -l es -l fr -l it -d locale/ -p locale/pot
 
 update_cn: gettext
 	sphinx-intl update -l cn -d locale/ -p locale/pot
+
+update_kr: gettext
+	sphinx-intl update -l kr -d locale/ -p locale/pot
 
 update_de: gettext
 	sphinx-intl update -l de -d locale/ -p locale/pot
@@ -353,6 +362,9 @@ buildmo:
 
 dirhtml_cn: update_cn buildmo
 	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
+
+dirhtml_kr: update_kr buildmo
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=kr source build/dirhtml_kr
 
 dirhtml_de: update_de buildmo
 	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=de source build/dirhtml_de
