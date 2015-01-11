@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/packages/msl.rst:4
 msgid "Modelica Standard Library"
-msgstr ""
+msgstr "Modelica标准库"
 
 #: ../../source/components/packages/msl.rst:6
 msgid ""
@@ -26,6 +26,8 @@ msgid ""
 "library includes definitions that are generally useful to scientists and "
 "engineers."
 msgstr ""
+"Modelica包的功用是将常用的类型、模型、函数\\ *等\\ "
+"组织成包，并直接通过对其的引用来实现重用（而不是重新建模）。但倘若每个用户都需要建立对常用定义制作模型包，那么重复建模的问题仍将存在。因此，Modelica协会维护着一个Modelica标准库的模型包。这个库包括了对科学家和工程师有用的定义。"
 
 #: ../../source/components/packages/msl.rst:15
 msgid ""
@@ -37,10 +39,14 @@ msgid ""
 "hopefully providers readers with an understanding of how to locate useful "
 "definitions."
 msgstr ""
+"在本节中，我们概述Modelica标准库，让读者对标准库内可用的定义有一个大概的概念。"
+"由于这不会是一个彻底的介绍，而且Modelica标准库持续也在持续更新以及改进，"
+"这里的介绍并不一定会反映标准库最新版本的情况。"
+"但介绍涵盖了基础部分，作者希望由此能够让读者了解如何寻找需要的定义。"
 
 #: ../../source/components/packages/msl.rst:26
 msgid "Constants"
-msgstr ""
+msgstr "Constants （常数）"
 
 #: ../../source/components/packages/msl.rst:28
 msgid ""
@@ -50,11 +56,13 @@ msgid ""
 "``Modelica.Constants`` package from version 3.2.1 of the Modelica Standard "
 "Library (with a few cosmetic changes):"
 msgstr ""
+"Modelica的标准库包含了一些常见的物理、计算机常量的定义。此部分由于篇幅较少，其源码可以直接引用如下。以下内容来自Modelica标准库3.2.1版本内的\\"
+" ``Modelica.Constants``\\ 包（带有一些排版上的美化）："
 
 #: ../../source/components/packages/msl.rst:82
 msgid ""
 "Noteworthy definitions are those for ``pi``, ``e``, ``g_n`` and ``eps``."
-msgstr ""
+msgstr "值得注意的是\\ ``pi``\\ 、\\ ``e``\\ 、\\ ``g_n``\\ 以及\\ ``eps``\\ 的定义。"
 
 #: ../../source/components/packages/msl.rst:85
 msgid ""
@@ -64,23 +72,25 @@ msgid ""
 "(irrational) constants, but by using the version defined in the Modelica "
 "Standard Library, you get a value that has the highest possible precision."
 msgstr ""
+"前两个定义\\ ``pi``\\ 和\\ ``e``\\ 分别表示数学常数\\ :math:`pi`\\ 以及\\ :math:`e`\\ "
+"。这两个常量定义不仅免去了用户自己提供这些（无理数）常量的麻烦，而且使用这些定义可以让用户得到一个在精度范围限制内的最优值。"
 
 #: ../../source/components/packages/msl.rst:92
 msgid ""
 "The next constant, ``g_n``, is a physical constant representing the "
 "gravitational constant on earth (for computing things like potential energy,"
 " *i.e.,* :math:`m g h`)."
-msgstr ""
+msgstr "紧接的常数，\\ ``g_n``\\ 是代表地球的重力加速度（可用于计算势能\\ *如*\\ :math:`m g h`\\ ）。"
 
 #: ../../source/components/packages/msl.rst:96
 msgid ""
 "Finally, ``eps`` is a machine constant that represents a \"small number\" "
 "for whatever computing platform is being used."
-msgstr ""
+msgstr "最后， `` eps``是一个计算机相关的常数，代表一个为任何正在使用计算平台“极小数”。"
 
 #: ../../source/components/packages/msl.rst:100
 msgid "SI Units"
-msgstr ""
+msgstr "SI Units （国际单位）"
 
 #: ../../source/components/packages/msl.rst:102
 msgid ""
@@ -90,21 +100,22 @@ msgid ""
 "compiler.  For this reason it is very useful to associate physical types "
 "with parameters and variables whenever possible."
 msgstr ""
+"正如上述讨论的一样，为参数与变量标示单位不仅可以让提高代码可读性，而且Modelica编译器可以由此测试变量量纲是否匹配。出于这个原因，尽量在参数和变量里使用物理类型是相当有益的。"
 
 #: ../../source/components/packages/msl.rst:145
 msgid "Models"
-msgstr ""
+msgstr "模型"
 
 #: ../../source/components/packages/msl.rst:147
 msgid ""
 "The Modelica Standard Library includes many different domain specific "
 "libraries inside of it.  This section provides an overview of each of these "
 "domains and discusses how models in each domain are organized."
-msgstr ""
+msgstr "Modelica标准库包含了很多描述不同特定领域的模型库。本节概述这些领域的内容，并讨论如何在各个领域模型的组织。"
 
 #: ../../source/components/packages/msl.rst:152
 msgid "Blocks"
-msgstr ""
+msgstr "Blocks （框图）"
 
 #: ../../source/components/packages/msl.rst:154
 msgid ""
@@ -113,45 +124,47 @@ msgid ""
 " in the ``Modelica.Blocks`` package.  Examples of components that can be "
 "found in this library include:"
 msgstr ""
+"Modelica标准库包含了一系列模型用以进行因果性的框图模型的建模。这些模型的定义均在\\ ``Modelica.Blocks``\\ "
+"包内。本库内的模型包括了以下例子："
 
 #: ../../source/components/packages/msl.rst:159
 msgid "Input connectors (``Real``, ``Integer`` and ``Boolean``)"
-msgstr ""
+msgstr "输入端口（``Real``\\ 、\\ ``Integer``\\ 以及\\ ``Boolean``）"
 
 #: ../../source/components/packages/msl.rst:160
 msgid "Output connectors (``Real``, ``Integer`` and ``Boolean``)"
-msgstr ""
+msgstr "输出端口（``Real``\\ 、\\ ``Integer``\\ 以及\\ ``Boolean``）"
 
 #: ../../source/components/packages/msl.rst:161
 msgid "Gain block, summation blocks, product blocks"
-msgstr ""
+msgstr "增益模块、加法器模块、乘法模块"
 
 #: ../../source/components/packages/msl.rst:162
 msgid "Integration and differentiation blocks"
-msgstr ""
+msgstr "积分与微分模块"
 
 #: ../../source/components/packages/msl.rst:163
 msgid "Deadband and hyteresis blocks"
-msgstr ""
+msgstr "死区以及滞回模块"
 
 #: ../../source/components/packages/msl.rst:164
 msgid "Logic and relational operation blocks"
-msgstr ""
+msgstr "逻辑及关系运算模块"
 
 #: ../../source/components/packages/msl.rst:165
 msgid "Mux and demux blocks"
-msgstr ""
+msgstr "多路复用器和多路分配器模块"
 
 #: ../../source/components/packages/msl.rst:167
 msgid ""
 "The ``Blocks`` package contains a wide variety of blocks for performing "
 "operations on signals.  Such blocks are typically used for describing the "
 "function of control systems and strategies."
-msgstr ""
+msgstr "``Blocks``\\ 包里包含了相当多种对信号进行操作的模块。这样的模块常用于描述控制系统和控制策略内的功能模块。"
 
 #: ../../source/components/packages/msl.rst:172
 msgid "Electrical"
-msgstr ""
+msgstr "Electrical （电气）"
 
 #: ../../source/components/packages/msl.rst:174
 msgid ""
@@ -160,130 +173,132 @@ msgid ""
 "includes a library of basic electrical machines as well.  In this library "
 "you will find components like:"
 msgstr ""
+"``Modelica.Electrical``\\ "
+"包内有数个子包，分别用于描述模拟、数字以及多相的电子系统。相当多种对信号进行操作的模块。此包内还包括一个描述基本电机的模型。在这个库中，你会发现以下形式的部件："
 
 #: ../../source/components/packages/msl.rst:179
 msgid "Resistors, capacitors, inductors"
-msgstr ""
+msgstr "电阻、电容、电感"
 
 #: ../../source/components/packages/msl.rst:180
 msgid "Voltage and current actuators"
-msgstr ""
+msgstr "电压源和电流源"
 
 #: ../../source/components/packages/msl.rst:181
 msgid "Voltage and current sensors"
-msgstr ""
+msgstr "电压和电流传感器"
 
 #: ../../source/components/packages/msl.rst:182
 msgid "Transistor and other semiconductor related models"
-msgstr ""
+msgstr "晶体管以及其他半导体相关模型"
 
 #: ../../source/components/packages/msl.rst:183
 msgid "Diodes and switches"
-msgstr ""
+msgstr "二极管与开关"
 
 #: ../../source/components/packages/msl.rst:184
 msgid "Logic gates"
-msgstr ""
+msgstr "逻辑门"
 
 #: ../../source/components/packages/msl.rst:185
 msgid "Star and Delta connections (multi-phase)"
-msgstr ""
+msgstr "星形与三角连接（多相位）"
 
 #: ../../source/components/packages/msl.rst:186
 msgid "Synchronous and Asynchronous machines"
-msgstr ""
+msgstr "同步电机与异步电机"
 
 #: ../../source/components/packages/msl.rst:187
 msgid "Motor models (DC, permanent magnet, *etc.*)"
-msgstr ""
+msgstr "电机模型（直流电机、永磁电机\\ *等*\\ ）"
 
 #: ../../source/components/packages/msl.rst:188
 msgid "Spice3 models"
-msgstr ""
+msgstr "Spice3模型"
 
 #: ../../source/components/packages/msl.rst:191
 msgid "Mechanical"
-msgstr ""
+msgstr "机械部件（Mechanical）"
 
 #: ../../source/components/packages/msl.rst:193
 msgid "The ``Modelica.Mechanics`` library contains three main libraries."
-msgstr ""
+msgstr "\\ ``Modelica.Mechanics``\\ 库包含三个主要的库。"
 
 #: ../../source/components/packages/msl.rst:196
 msgid "``Translational``"
-msgstr ""
+msgstr "``Translational``\\ （平移）"
 
 #: ../../source/components/packages/msl.rst:198
 msgid ""
 "The translational library contains component models used for modeling one-"
 "dimensional translational motion.  This library contains components like:"
-msgstr ""
+msgstr "平移库包含用于模拟的一维平移运动的组件模型。这个库包含了以下组件："
 
 #: ../../source/components/packages/msl.rst:202
 #: ../../source/components/packages/msl.rst:214
 msgid "Springs, dampers and backlashes"
-msgstr ""
+msgstr "弹簧、减震器以及间隙"
 
 #: ../../source/components/packages/msl.rst:203
 msgid "Masses"
-msgstr ""
+msgstr "质点"
 
 #: ../../source/components/packages/msl.rst:204
 msgid "Sensors and actuators"
-msgstr ""
+msgstr "传感器和执行器"
 
 #: ../../source/components/packages/msl.rst:205
 msgid "Friction"
-msgstr ""
+msgstr "摩擦"
 
 #: ../../source/components/packages/msl.rst:208
 msgid "``Rotational``"
-msgstr ""
+msgstr "``Rotational``\\ （转动）"
 
 #: ../../source/components/packages/msl.rst:210
 msgid ""
 "The rotational library contains component models used for modeling one-"
 "dimensional rotational motion.  This library contains components like:"
-msgstr ""
+msgstr "旋转库包含用于模拟一维旋转运动的组件模型。这个库包含了以下组件："
 
 #: ../../source/components/packages/msl.rst:215
 msgid "Inertias"
-msgstr ""
+msgstr "惯量"
 
 #: ../../source/components/packages/msl.rst:216
 msgid "Clutches and Brakes"
-msgstr ""
+msgstr "离合器和制动器"
 
 #: ../../source/components/packages/msl.rst:217
 msgid "Gears"
-msgstr ""
+msgstr "齿轮机构"
 
 #: ../../source/components/packages/msl.rst:218
 #: ../../source/components/packages/msl.rst:229
 msgid "Sensors and Actuators"
-msgstr ""
+msgstr "传感器和执行器"
 
 #: ../../source/components/packages/msl.rst:221
 msgid "``MultiBody``"
-msgstr ""
+msgstr "``MultiBody``\\ （多体）"
 
 #: ../../source/components/packages/msl.rst:223
 msgid ""
 "The multibody library contains component models used for modeling three-"
 "dimensional mechanical systems.  This library contains components like:"
-msgstr ""
+msgstr "多体库包含用于模拟三维机械系统的组件模型。这个库包含了以下组件："
 
 #: ../../source/components/packages/msl.rst:227
 msgid "Bodies (including associated inertia tensors and 3D CAD geometry)"
-msgstr ""
+msgstr "物体（包括相关的惯性张量和3D CAD几何结构） "
 
 #: ../../source/components/packages/msl.rst:228
 msgid "Joints (*e.g.,* prismatic, revolute, universal)"
-msgstr ""
+msgstr "关节（\\ *如*\\ 棱形关节、回转关节、万向关节）"
 
 #: ../../source/components/packages/msl.rst:232
 msgid "Fluids and Media"
-msgstr ""
+msgstr "流体与介质"
 
 #: ../../source/components/packages/msl.rst:234
 msgid ""
@@ -291,72 +306,75 @@ msgid ""
 "modeling fluid systems.  The first is ``Modelica.Media`` which is a library "
 "of property models for various media like:"
 msgstr ""
+"Modelica标准库中有两个包与流体系统建模有关。 The first is ``Modelica.Media`` which is a "
+"library of property models for various media like:首先是\\ ``Modelica.Media``\\"
+" 这是属性模型对各种媒体，如库"
 
 #: ../../source/components/packages/msl.rst:238
 msgid "Ideal gases (based on NASA Glenn coefficient data)"
-msgstr ""
+msgstr "理想气体（基于NASA格伦系数）"
 
 #: ../../source/components/packages/msl.rst:239
 msgid "Air (dry, reference, moist)"
-msgstr ""
+msgstr "空气（干燥空气、参考状态空气、潮湿空气）"
 
 #: ../../source/components/packages/msl.rst:240
 msgid "Water (simple, salt, two-phase)"
-msgstr ""
+msgstr "水（简单，含盐，两相）"
 
 #: ../../source/components/packages/msl.rst:241
 msgid "Generic incompressible fluids"
-msgstr ""
+msgstr "一般不可压缩流体"
 
 #: ../../source/components/packages/msl.rst:242
 msgid "R134a (tetrafluoroethane) refrigerant"
-msgstr ""
+msgstr "R134a（四氟乙烷）制冷剂"
 
 #: ../../source/components/packages/msl.rst:244
 msgid ""
 "These property models provide functions for computing fluid properties like "
 "enthalpy, density and specific heat ratios for a variety of pure fluids and "
 "mixtures."
-msgstr ""
+msgstr "这些属性模型为计算各种纯液体和混合物的流体性质如焓，密度和比热比提供了函数。"
 
 #: ../../source/components/packages/msl.rst:248
 msgid ""
 "In addition to these medium models, the Modelica Standard Library also "
 "includes the ``Modelica.Fluid`` library which is a library of components to "
 "describe fluid devices, for example:"
-msgstr ""
+msgstr "除了这些介质模型， Modelica标准库还包括\\ ``Modelica.Fluid``\\ 库，流体库提供了一系列组件用以描述流体装置，如："
 
 #: ../../source/components/packages/msl.rst:252
 msgid "Volumes, tanks and junctions"
-msgstr ""
+msgstr "容积、水箱与合流点"
 
 #: ../../source/components/packages/msl.rst:253
 msgid "Pipes"
-msgstr ""
+msgstr "管道"
 
 #: ../../source/components/packages/msl.rst:254
 msgid "Pumps"
-msgstr ""
+msgstr "泵"
 
 #: ../../source/components/packages/msl.rst:255
 msgid "Valves"
-msgstr ""
+msgstr "阀"
 
 #: ../../source/components/packages/msl.rst:256
 msgid "Pressure losses"
-msgstr ""
+msgstr "压力损失"
 
 #: ../../source/components/packages/msl.rst:257
 msgid "Heat exchangers"
-msgstr ""
+msgstr "热交换器"
 
 #: ../../source/components/packages/msl.rst:258
 msgid "Sources and ambient conditions"
-msgstr ""
+msgstr "源以及环境条件"
 
 #: ../../source/components/packages/msl.rst:261
 msgid "Magnetics"
-msgstr ""
+msgstr "磁"
 
 #: ../../source/components/packages/msl.rst:263
 msgid ""
@@ -367,53 +385,56 @@ msgid ""
 "well as sensors and actuators.  The other is the ``FundamentalWave`` library"
 " which is used to model electrical fields in rotating electrical machinery."
 msgstr ""
+"\\ ``Modelica.Magnetic``\\ 库包含两个子包。其一是用以构造的磁性元件集总网络模型的\\ ``FluxTubes``\\ "
+"包。这包括了一系列组件用以表示基本圆柱形和棱柱形元件的磁特性形状、相关的传感器以及执行器。其二则是被用于模拟在旋转电机电场的\\ "
+"``FundamentalWave``\\ 库。"
 
 #: ../../source/components/packages/msl.rst:272
 msgid "Thermal"
-msgstr ""
+msgstr "热"
 
 #: ../../source/components/packages/msl.rst:274
 msgid "The ``Modelica.Thermal`` package has two sub-packages:"
-msgstr ""
+msgstr "\\ ``Modelica.Thermal``\\ 库有两个子包： "
 
 #: ../../source/components/packages/msl.rst:277
 msgid "``HeatTransfer``"
-msgstr ""
+msgstr "``HeatTransfer``\\ （热传递） "
 
 #: ../../source/components/packages/msl.rst:279
 msgid ""
 "The ``HeatTransfer`` is for modeling heat transfer in lumped solids. Models "
 "in this library can be used to build lumped thermal network models using "
 "components like:"
-msgstr ""
+msgstr "\\ ``HeatTransfer``\\ 用以模拟集总模型的热传递。这个库中的模型可以用于建立集总热网络模型，如："
 
 #: ../../source/components/packages/msl.rst:283
 msgid "Lumped thermal capacitances"
-msgstr ""
+msgstr "集总热容"
 
 #: ../../source/components/packages/msl.rst:284
 msgid "Conduction"
-msgstr ""
+msgstr "热传导"
 
 #: ../../source/components/packages/msl.rst:285
 msgid "Convection"
-msgstr ""
+msgstr "热对流"
 
 #: ../../source/components/packages/msl.rst:286
 msgid "Radiation"
-msgstr ""
+msgstr "热辐射"
 
 #: ../../source/components/packages/msl.rst:287
 msgid "Ambient conditions"
-msgstr ""
+msgstr "环境条件"
 
 #: ../../source/components/packages/msl.rst:288
 msgid "Sensors"
-msgstr ""
+msgstr "传感器"
 
 #: ../../source/components/packages/msl.rst:291
 msgid "``FluidHeatFlow``"
-msgstr ""
+msgstr "``FluidHeatFlow``\\ （流体传热）"
 
 #: ../../source/components/packages/msl.rst:293
 msgid ""
@@ -423,21 +444,24 @@ msgid ""
 "However, for a certain class of simpler problems, the ``FluidHeatFlow`` "
 "library can be used to build simple flow networks of thermo-fluid systems."
 msgstr ""
+"一般而言，模拟热流体系统开发者应当使用\\ ``Modelica.Fluid``\\ 和\\ ``Modelica.Media``\\ "
+"，因为它们能够处理各种各样的涉及复杂媒介和多个相的问题。然而，对于某些特定的简单问题，\\ ``FluidHeatFlow``\\ "
+"库可以用来构建简单的热流体网络。"
 
 #: ../../source/components/packages/msl.rst:301
 msgid "Utilities"
-msgstr ""
+msgstr "工具"
 
 #: ../../source/components/packages/msl.rst:303
 msgid ""
 "The ``Utilities`` library provides support functionality to other libraries "
 "and model developers.  It includes several sub-packages for dealing with "
 "non-mathematical aspects of modeling."
-msgstr ""
+msgstr "\\ ``Utilities``\\ 库为其他库以及模型开发者提供了支持功能。此库包括几个子包以处理建模里和数学无关的方面的问题。"
 
 #: ../../source/components/packages/msl.rst:308
 msgid "``Files``"
-msgstr ""
+msgstr "``Files``\\ （文件）"
 
 #: ../../source/components/packages/msl.rst:310
 msgid ""
@@ -445,45 +469,47 @@ msgid ""
 "and manipulating a computers file system.  The following functions are "
 "provided by the ``Files`` package:"
 msgstr ""
+"\\ ``Modelica.Utilities.Files``\\ 库提供了函数用于访问和操作计算机的文件系统。以下函数提供了\\ "
+"``Files``\\ 包："
 
 #: ../../source/components/packages/msl.rst:314
 msgid "``list`` - List contents of a file or directory"
-msgstr ""
+msgstr "\\ ``list``\\  - 列举一个文件或目录的内容"
 
 #: ../../source/components/packages/msl.rst:315
 msgid "``copy`` - Copy a file or directory"
-msgstr ""
+msgstr "\\ ``copy``\\  - 复制一个文件或目录"
 
 #: ../../source/components/packages/msl.rst:316
 msgid "``move`` - Move a file or directory"
-msgstr ""
+msgstr "\\ ``move``\\  - 移动一个文件或目录"
 
 #: ../../source/components/packages/msl.rst:317
 msgid "``remove`` - Remove a file or directory"
-msgstr ""
+msgstr "\\ ``remove``\\  - 删除文件或目录"
 
 #: ../../source/components/packages/msl.rst:318
 msgid "``createDirectory`` - Create a directory"
-msgstr ""
+msgstr "\\ ``createDirectory``\\  - 创建一个目录"
 
 #: ../../source/components/packages/msl.rst:319
 msgid "``exist`` - Test whether a given file or directory already exists"
-msgstr ""
+msgstr "\\ ``exist``\\  - 确定给定文件或目录是否已存在"
 
 #: ../../source/components/packages/msl.rst:320
 msgid ""
 "``fullPathName`` - Determine the full path to a named file or directory"
-msgstr ""
+msgstr "\\ ``fullPathName``\\  - 得到给定文件或目录的完整路径"
 
 #: ../../source/components/packages/msl.rst:321
 msgid "``splitPathName`` - Split a file name by path"
-msgstr ""
+msgstr "\\ ``splitPathName``\\  - 按路径分割的文件名"
 
 #: ../../source/components/packages/msl.rst:322
 msgid ""
 "``temporaryFileName`` - Return the name of a temporary file that does not "
 "already exist."
-msgstr ""
+msgstr "\\ ``temporaryFileName``\\  - 返回一个不存在的临时文件的名字。"
 
 #: ../../source/components/packages/msl.rst:324
 msgid ""
@@ -491,102 +517,100 @@ msgid ""
 "absolute file system path (for use with functions that don't accept Modelica"
 " URLs)."
 msgstr ""
+"\\ ``loadResource``\\  - 将\\ :ref:`Modelica URL <modelica-urls>`\\ "
+"转换成一个文件系统的绝对路径（用于不接受Modelica的URL的函数）。"
 
 #: ../../source/components/packages/msl.rst:330
 msgid "``Streams``"
-msgstr ""
+msgstr "``Streams``\\ （流）"
 
 #: ../../source/components/packages/msl.rst:332
 msgid ""
 "The ``Streams`` package is used reading and writing data to and from the "
 "terminal or files.  It includes the following functions:"
-msgstr ""
-
-#: ../../source/components/packages/msl.rst:335
-msgid "``print`` - Writes data to either the terminal or a file."
-msgstr ""
+msgstr "\\ ``Streams``\\ 包用于从终端或文件读取和写入数据。此包括以下函数："
 
 #: ../../source/components/packages/msl.rst:336
 msgid ""
 "``readFile`` - Reads data from a file and return a vector of strings "
 "representing the lines in the file."
-msgstr ""
+msgstr "\\ ``readFile``\\  - 从文件中读取数据，并返回一个字符串向量以表示文件中各行的内容。"
 
 #: ../../source/components/packages/msl.rst:338
 msgid "``readLine`` - Reads a single line of text from a file."
-msgstr ""
+msgstr "\\ ``readLine``\\  - 从文件中读取一行文字。 "
 
 #: ../../source/components/packages/msl.rst:339
 msgid "``countLines`` - Returns the number of lines in a file."
-msgstr ""
+msgstr "\\ ``countLines``\\  - 返回的文件的总行数。"
 
 #: ../../source/components/packages/msl.rst:340
 msgid "``error`` - Used to print an error message."
-msgstr ""
+msgstr "\\ ``error``\\  - 用于打印错误信息。"
 
 #: ../../source/components/packages/msl.rst:341
 msgid "``close`` - Closes a file."
-msgstr ""
+msgstr "\\ ``close``\\  - 关闭文件。"
 
 #: ../../source/components/packages/msl.rst:344
 msgid "``Strings``"
-msgstr ""
+msgstr "``Strings``\\ （字符串）"
 
 #: ../../source/components/packages/msl.rst:346
 msgid ""
 "The ``Strings`` package contains functions that operate on strings. The "
 "general capabilities of this library include:"
-msgstr ""
+msgstr "在\\ ``Strings``\\ 包中包含对字符串进行操作的函数。这个库的基本功能包括："
 
 #: ../../source/components/packages/msl.rst:349
 msgid "Find the length of a string"
-msgstr ""
+msgstr "确定字符串的长度"
 
 #: ../../source/components/packages/msl.rst:350
 msgid "Constructing and extracting strings"
-msgstr ""
+msgstr "构建和提取字符串"
 
 #: ../../source/components/packages/msl.rst:351
 msgid "Comparing strings"
-msgstr ""
+msgstr "比较字符串"
 
 #: ../../source/components/packages/msl.rst:352
 msgid "Parsing and searching strings"
-msgstr ""
+msgstr "解析和搜索字符串"
 
 #: ../../source/components/packages/msl.rst:355
 msgid "``System``"
-msgstr ""
+msgstr "``System``\\ （系统）"
 
 #: ../../source/components/packages/msl.rst:357
 msgid ""
 "The ``System`` package is used to interact with the underlying operating "
 "system.  It includes the following functions:"
-msgstr ""
+msgstr "\\ ``System``\\ 包用于与底层操作系统的交互。它包括以下功能："
 
 #: ../../source/components/packages/msl.rst:360
 msgid "``getWorkingDirectory`` - Get the current working directory."
-msgstr ""
+msgstr "\\ ``getWorkingDirectory``\\  - 获取当前工作目录。"
 
 #: ../../source/components/packages/msl.rst:361
 msgid "``setWorkingDirectory`` - Set the current working directory."
-msgstr ""
+msgstr "\\ ``setWorkingDirectory``\\  - 设置当前工作目录。 "
 
 #: ../../source/components/packages/msl.rst:362
 msgid "``getEnvironmentVariable`` - Get the value of an environment variable."
-msgstr ""
+msgstr "\\ ``getEnvironmentVariable``\\  - 获取特定环境变量的值。 "
 
 #: ../../source/components/packages/msl.rst:364
 msgid "``setEnvironmentVariable`` - Set the value of an environment variable."
-msgstr ""
+msgstr "\\ ``setEnvironmentVariable``\\  - 设置特定环境变量的值。 "
 
 #: ../../source/components/packages/msl.rst:365
 msgid "``command`` - Pass a command to the operating system to execute."
-msgstr ""
+msgstr "\\ ``command``\\  - 让操作系统来执行一个命令。"
 
 #: ../../source/components/packages/msl.rst:366
 msgid "``exit`` - Terminate execution."
-msgstr ""
+msgstr "\\ ``exit``\\  - 终止执行。 "
 
 #: ../../source/components/packages/msl.rst:109
 msgid ""
@@ -595,3 +619,14 @@ msgid ""
 " ``ISO 31-1992`` specification.  The following are examples of how common "
 "physical units are defined in the ``SIunits`` package:"
 msgstr ""
+"\\ ``Modelica.SIunits``\\ 包是内容非常多，而且充满了很少使用的物理单位。之所以包含这些非常用单位是为了完整地遵守\\ "
+"``ISO 31-1992``\\ 标准。以下是例子说明了\\ ``SIunits``\\ 包中常用物理单位是如何定义的："
+
+#: ../../source/components/packages/msl.rst:335
+msgid "``print`` - Writes data to either the terminal or a file."
+msgstr ""
+
+#~ msgid ""
+#~ "``print`` - Writes data to either the terminal or a file.``print`` - Writes "
+#~ "data to either the terminal or a file."
+#~ msgstr "\\ ``print``\\  - 向终端或文件写入数据。 "
