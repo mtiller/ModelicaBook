@@ -86,7 +86,7 @@ msgstr "紧接的常数，\\ ``g_n``\\ 是代表地球的重力加速度（可�
 msgid ""
 "Finally, ``eps`` is a machine constant that represents a \"small number\" "
 "for whatever computing platform is being used."
-msgstr "最后， `` eps``是一个计算机相关的常数，代表一个为任何正在使用计算平台“极小数”。"
+msgstr "最后，\ ``eps``\ 是一个计算机相关的常数，代表一个为任何正在使用计算平台“极小数”。"
 
 #: ../../source/components/packages/msl.rst:100
 msgid "SI Units"
@@ -129,11 +129,11 @@ msgstr ""
 
 #: ../../source/components/packages/msl.rst:159
 msgid "Input connectors (``Real``, ``Integer`` and ``Boolean``)"
-msgstr "输入端口（``Real``\\ 、\\ ``Integer``\\ 以及\\ ``Boolean``）"
+msgstr "输入端口（\ ``Real``\\ 、\\ ``Integer``\\ 以及\\ ``Boolean``\ ）"
 
 #: ../../source/components/packages/msl.rst:160
 msgid "Output connectors (``Real``, ``Integer`` and ``Boolean``)"
-msgstr "输出端口（``Real``\\ 、\\ ``Integer``\\ 以及\\ ``Boolean``）"
+msgstr "输出端口（\ ``Real``\\ 、\\ ``Integer``\\ 以及\\ ``Boolean``\ ）"
 
 #: ../../source/components/packages/msl.rst:161
 msgid "Gain block, summation blocks, product blocks"
@@ -306,9 +306,8 @@ msgid ""
 "modeling fluid systems.  The first is ``Modelica.Media`` which is a library "
 "of property models for various media like:"
 msgstr ""
-"Modelica标准库中有两个包与流体系统建模有关。 The first is ``Modelica.Media`` which is a "
-"library of property models for various media like:首先是\\ ``Modelica.Media``\\"
-" 这是属性模型对各种媒体，如库"
+"Modelica标准库中有两个包与流体系统建模有关。 "
+"首先是\\ ``Modelica.Media``\\ 。此库包括各种介质的属性模型，如："
 
 #: ../../source/components/packages/msl.rst:238
 msgid "Ideal gases (based on NASA Glenn coefficient data)"
@@ -517,7 +516,7 @@ msgid ""
 "absolute file system path (for use with functions that don't accept Modelica"
 " URLs)."
 msgstr ""
-"\\ ``loadResource``\\  - 将\\ :ref:`Modelica URL <modelica-urls>`\\ "
+"\\ ``loadResource``\\  - 将\\ :ref:`Modelica URL地址\ <modelica-urls>`\\ "
 "转换成一个文件系统的绝对路径（用于不接受Modelica的URL的函数）。"
 
 #: ../../source/components/packages/msl.rst:330
