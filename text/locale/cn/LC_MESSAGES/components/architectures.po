@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/architectures.rst:4
 msgid "Architectures"
-msgstr ""
+msgstr "架构"
 
 #: ../../source/components/architectures.rst:6
 msgid ""
@@ -24,6 +24,9 @@ msgid ""
 " differential equations.  However, writing complex systems in terms of "
 "individual equations does not scale well."
 msgstr ""
+"在本书的开头，我们讨论了表述方程式并将其转化为仿真模型。"
+"仅仅是这一点就非常有趣了。原因是，我们不再需要当心如何去解由此得到的线性或非线性方程组，也不需要考虑对生成的微分方程组进行积分。"
+"然而，将复杂系统表述成一条条的方程并不是一种可扩展的方案。"
 
 #: ../../source/components/architectures.rst:14
 msgid ""
@@ -35,6 +38,10 @@ msgid ""
 "Modelica's standard graphical annotations, to compose and represent systems "
 "graphically."
 msgstr ""
+"因此，我们会探索Modelica里一些用以创建部件模型的特性。"
+"我们可以用上述特性重用这些方程组，而不需要在每次使用的时候将其重写一遍。"
+"这种做法不仅让以我们可以把预先创建的（且多半是测试过的）部件模型组合为系统，"
+"而且可以通过Modelica的标准图形注解支持用图形化方式组合和表示系统。"
 
 #: ../../source/components/architectures.rst:22
 msgid ""
@@ -49,6 +56,11 @@ msgid ""
 "reusable assemblies.  This minimized the amount of dragging, dropping and "
 "connecting that was required to build complex system models."
 msgstr ""
+"这种方法同样会有可扩展性问题。原因是用部件进行复杂建模需要大量的拖拽以及连接部件的操作。"
+"再者，在没有任何层级的情况下系统模型会变得庞大而复杂。"
+"这又在另一个层面限制可扩展性。"
+"为了解决这一问题，我们不考虑如何将可重用的方程组成模型，而是定义包含可重用子系统组成的模型。"
+"这种做法减少了在构建复杂系统模型时的所需的大量的拖拽以及连接部件的操作。"
 
 #: ../../source/components/architectures.rst:34
 msgid ""
@@ -63,11 +75,16 @@ msgid ""
 "and connect components or subsystems.  Instead, we only need to choose the "
 "specific model to use for each particular subsystem."
 msgstr ""
+"上述的步骤演示了如何在建立系统模型时减少那些繁琐、费时且可能很易出错的工作。"
+"本章介绍了此进程的最后一步，即：如何使用架构"
+"架构是指包含了\ **预连接**\ 的子系统集合的模型。架构模型可以通过简单选择子系统的某个具体实施（模型）来组成系统。"
+"这样，我们不仅不用提供方程，而且也没有任何拖拽或连接组件、子系统的必要。"
+"相反，我们只需要为每个子系统所使用选定模型就可以进行仿真了。"
 
 #: ../../source/components/architectures.rst:47
 msgid "Examples"
-msgstr ""
+msgstr "例子"
 
 #: ../../source/components/architectures.rst:57
 msgid "Review"
-msgstr ""
+msgstr "复习"
