@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-14 10:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Dongping Xie <dongping.xie.tud@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,13 +13,14 @@ msgstr ""
 
 #: ../../source/components/packages/lookup.rst:4
 msgid "Lookup Rules"
-msgstr ""
+msgstr "查找规则"
 
 #: ../../source/components/packages/lookup.rst:6
 msgid ""
 "Recall the following example from our discussion on :ref:`organizing-"
 "content`:"
 msgstr ""
+"回想我们在讨论\ :ref:`organizing-content`\ 时的以下例子："
 
 #: ../../source/components/packages/lookup.rst:12
 msgid ""
@@ -28,10 +29,13 @@ msgid ""
 "above doesn't.  We see, from the ``LotkaVolterra`` model that the ``Wolves``"
 " type is referenced as:"
 msgstr ""
+"在我们讨论\ :ref:`ref-pkg-contents`\ 时，演示例子中所有引用了的类型均使用了全限定名。"
+"但上述例子则不然。"
+"我们从\ ``LotkaVolterra``\ 模型中可以看到，\ ``Wolves``\ 类型被引用为："
 
 #: ../../source/components/packages/lookup.rst:21
 msgid "And not as:"
-msgstr ""
+msgstr "而不是："
 
 #: ../../source/components/packages/lookup.rst:27
 msgid ""
@@ -39,6 +43,9 @@ msgid ""
 "``LotkaVolterra`` model compiles just fine.  So how is it that the Modelica "
 "compiler knows which definition of ``Wolves`` to use?"
 msgstr ""
+"换言之，我们没有使用全限定名。"
+"但\ ``LotkaVolterra``\ 模型的编译毫无问题。"
+"那么Modelica编译器是如何知道要使用哪个\ ``Wolves``\ 的定义呢？"
 
 #: ../../source/components/packages/lookup.rst:33
 msgid ""
@@ -51,50 +58,62 @@ msgid ""
 "**first** name in the qualified name, *e.g.,* ``Modelica``.  It searches for"
 " a matching definition in the following order:"
 msgstr ""
+"答案涉及到Modelica的“名称查找”。"
+"Modelica的名称查找涉及指定定义的搜索。"
+"Modelica的类型名称一般为限定（虽然不一定为\ **完全**\ 限定）名称。"
+"这意味着名称中可能包含了\ ``.``\ ，\ *如*\ ``Modelica.SIunits.Voltage``\  。"
+"为了找到与一个名称相匹配的定义， Modelica的编译器开始由限定名称中寻找\ **第一项**\ 名称，\ *如*\ ``Modelica``\  。"
+"编译器按以下顺序搜索匹配的定义： "
 
 #: ../../source/components/packages/lookup.rst:42
 msgid "Look for a matching name among builtin types"
-msgstr ""
+msgstr "在内建类型中寻找匹配的名称"
 
 #: ../../source/components/packages/lookup.rst:43
 msgid ""
 "Look in the current definition for a nested definition with a matching name "
 "(include inherited definitions)"
 msgstr ""
+"在当前定义（包括了其继承的定义）内寻找j的具有匹配名称的内嵌定义"
 
 #: ../../source/components/packages/lookup.rst:45
 msgid ""
 "Look in the current definition for an imported definition with a matching "
 "name (do not include inherited imports)"
 msgstr ""
+"查找在当前定义内名称匹配的导入定义（不包括继承的导入定义）"
 
 #: ../../source/components/packages/lookup.rst:47
 msgid ""
 "Look in the parent package of the current definition for a nested definition"
 " with a matching name (including inherited definitions)"
 msgstr ""
+"在当前定义的父包查找与名称匹配的内嵌定义（包括继承的定义）"
 
 #: ../../source/components/packages/lookup.rst:49
 msgid ""
 "Look in the parent package for an imported definition with a matching name "
 "(not including inherited imports)"
 msgstr ""
+"查找在当前定义的父包内名称匹配的导入定义（不包括继承的导入定义）"
 
 #: ../../source/components/packages/lookup.rst:51
 msgid "Look in each successive parent (using the same approach) until either:"
-msgstr ""
+msgstr "（用上述算法）上溯每个父包直到下列条件至少有一个成立："
 
 #: ../../source/components/packages/lookup.rst:54
 msgid ""
 "The parent package has the ``encapsulated`` qualifier, in which case the "
 "search terminates."
 msgstr ""
+"某个父包有\ ``encapsulated``\ 限定词，在这种情况下搜索终止。"
 
 #: ../../source/components/packages/lookup.rst:56
 msgid ""
 "There are no more parent packages, in which case you search for a match "
 "among root level packages."
 msgstr ""
+"没有更多的父包，在这种情况下会在根级别的包内搜索匹配。"
 
 #: ../../source/components/packages/lookup.rst:59
 msgid ""
@@ -108,6 +127,11 @@ msgid ""
 "remaining components in a qualified name, then the search fails and the type"
 " cannot be resolved."
 msgstr ""
+"如果编译器在搜索所有这些地点后不能发现给定名称，那么搜索失败，类型无法找到。"
+"如果搜索成功，那么我们便找到在限定名定义里的\ **首个名称**\ 。"
+"如果名称是非限定名称（\ *即*\ 名称内不包含\ ``.``\ ），那么我们就完成任务了。"
+"然而，如果名称中有其他组件，那么该组件必须包含在由前述搜索返回的定义范围内，亦即前述定义内的内嵌定义。"
+"如果编译器在相应的内嵌定义里不能找到限定名称内的任一组件，那么搜索失败，类型无法找到。"
 
 #: ../../source/components/packages/lookup.rst:69
 msgid ""
@@ -117,10 +141,14 @@ msgid ""
 "names.  Most type names in Modelica code will either reference local "
 "definitions or will be specified with fully qualified names."
 msgstr ""
+"第一眼看上去这很复杂。"
+"然而大多数情况下，这些规则其实不太重要。"
+"原因是，正如我们前面所讨论的一样，大多数的图形化Modelica环境会使用全限定名称。"
+"Modelica代码里大部分类型的名称要么引用本地定义或是用全限定名称来指定。"
 
 #: ../../source/components/packages/lookup.rst:0
 msgid "Duplicate Names"
-msgstr ""
+msgstr "重复命名"
 
 #: ../../source/components/packages/lookup.rst:78
 msgid ""
@@ -131,6 +159,10 @@ msgid ""
 "qualified names (ones that are referenced relative to the root of the "
 "package tree) will fail because they will find the nested definition first."
 msgstr ""
+"读者一定要避免在嵌套包里使用和顶级包相同的名称。"
+"原因是，基于查找规则，搜索会上溯包的层次结构，从而会造成一个问题。"
+"其结果是，编译器会先发现嵌套定义，而不是根级别的定义。"
+"这意味着基于全限定名称（相对于包根目录引用的名称）的查找将会失败，因为编译器将首先找到嵌套定义。"
 
 #: ../../source/components/packages/lookup.rst:31
 msgid "encapsulated"
