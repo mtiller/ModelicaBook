@@ -126,7 +126,7 @@ This technique for speed estimation can be represented in Modelica as:
 
 where ``tooth_angle`` represents :math:`\Delta\theta`.  Note how
 ``tooth_angle`` is not something the user needs to specify.  Instead,
-the user species the number of teeth using the ``teeth`` parameter.
+the user specifies the number of teeth using the ``teeth`` parameter.
 The ``tooth_angle`` parameter is then computed using the value of
 ``teeth`` (note that while we have hand coded the value of :math:`pi`
 here, we'll learn how to avoid this later in the book when we talk
