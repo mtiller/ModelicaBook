@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:4
 msgid "Architecture Driven Approach"
-msgstr ""
+msgstr "架构驱动方法"
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:6
 msgid ""
@@ -23,6 +23,9 @@ msgid ""
 " we define the structure of our system first and then add specific subsystem"
 " implementations after that."
 msgstr ""
+"到目前为止，我们从扁平结构的建模方法为起点，逐渐在模型里使用Modelica的架构特性。"
+"Let's start to build out our system from the top down using an architectural approach where we define the structure of our system first and then add specific subsystem implementations after that."
+"让我们开始从上往下用一种架构方法，我们首先定义我们的系统的结构，然后以后添加特定的子系统实现打造出了我们的系统。"
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:13
 msgid "Interfaces"
