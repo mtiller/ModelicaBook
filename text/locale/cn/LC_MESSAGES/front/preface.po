@@ -14,6 +14,7 @@ msgstr ""
 #: ../../source/front/preface.rst:4
 msgid "Preface"
 msgstr ""
+"前言"
 
 #: ../../source/front/preface.rst:6
 msgid ""
@@ -25,6 +26,11 @@ msgid ""
 "may not always translate well into a print medium format.  But every attempt"
 " has been made to provide a quality result in all supported formats."
 msgstr ""
+"本书的组织结构有一点特殊。主要是因为，当时预期大部分读者会阅读本书的HTML版本。"
+"因此，本书大量使用了超级链接以方便读者查找他们最需要的内容。大多数情"
+"况下，链接方便了本书电子版本的阅读。尽管我们已经尽了最大的努力保证所有版本格式的质量，但是，"
+"对于出版的纸质版本，链接并没有起到应用的作用。"
+
 
 #: ../../source/front/preface.rst:15
 msgid ""
@@ -41,6 +47,13 @@ msgid ""
 " additional language features).  Hopefully, this approach enhances the "
 "reading experience without disorienting the user."
 msgstr ""
+"本书的价值在于提供了两条不同的学习 \"路径\" 。纵观全书，本书试图通"
+"过目录中的章节递进关系有逻辑的展现示例材料。即本书前几章主要专注于描述不同元件类型的数学"
+"特性，在后面章节中更多的讨论如何搭建模型的结构（例如，包、组件模型、子系统 *等* ）。"
+"其次，当阅读本书的电子版本时，对于描述的示例，提供了相关的链接可以绕开正常的章节顺序，读者可以"
+"方便的在后续章节中继续阅读当前示例的更多细节（后续章节提供了示例扩展的Modelica语言特性）。"
+"我们衷心的希望这种编排方法可以提高阅读体验而不会迷惑读者。"
+
 
 #: ../../source/front/preface.rst:29
 msgid ""
@@ -53,3 +66,7 @@ msgid ""
 "topics and a summary of any details not found in the examples to provide "
 "thorough coverage of the topics."
 msgstr ""
+"本书大部分章节分为三个部分。第一部分介绍本章节将要讨论的主题。第二部分通过广泛的例子展示"
+"说明第一部分中介绍的Modelica语言相关特性。注意，通常每个示例只涉及一个相关主题，所以最好查看"
+"所有示例以获取所有主题的完整描述。第三部分中，主要对讲述的主题和示例中未展示的细节进行了回"
+"顾和总结，以此深入描述讨论的主题。"

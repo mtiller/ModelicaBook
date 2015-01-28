@@ -14,6 +14,7 @@ msgstr ""
 #: ../../source/front/ack.rst:2
 msgid "Acknowledgments"
 msgstr ""
+"致谢"
 
 #: ../../source/front/ack.rst:4
 msgid ""
@@ -23,10 +24,13 @@ msgid ""
 "people I've failed to mention here and I apologize in advance to anyone who "
 "feels they've been overlooked."
 msgstr ""
+"本书是许多讲座、书籍、讨论、会议 *等* 的结晶,因此，也就不可能完全统计对本书作出贡献的"
+"所有人员。毫无疑问，这其中肯定会有未提及的人，首先我要对那些被忽略的同仁致以诚挚的歉意。"
 
 #: ../../source/front/ack.rst:11
 msgid "Technical"
 msgstr ""
+"技术方面"
 
 #: ../../source/front/ack.rst:13
 msgid ""
@@ -37,6 +41,9 @@ msgid ""
 "as an open standard.  Hilding is the undisputed \"father of Modelica\" and "
 "he deserves considerable credit for all that Modelica has become."
 msgstr ""
+"谈及Modelica时，首先要特别感谢Hilding Elmqvist，不仅因为他的技术远见，发现了符号处理技术可以"
+"解决工程问题的潜在应用价值，而且得益于他的领导能力推动Modelica技术朝着开放的标准发展。"
+"Hilding是毫无疑问的 \"Modelica之父\" ，对于Modelica技术取得的一切成果,他都受之无愧。"
 
 #: ../../source/front/ack.rst:21
 msgid ""
@@ -50,6 +57,11 @@ msgid ""
 "along.  I'd like to thank Martin for all his hard work in making the "
 "Modelica Association what it is today."
 msgstr ""
+"仅次于Hilding的是Martin Otter，他为推动Modelica技术的发展不辞辛劳。"
+"我可以很坦诚的说Martin比我知道的任何人都努力。他不仅对Modelica技术的发展做出了不朽的"
+"贡献，而且他还承担着管理Modelica协会的工作任务，虽然这种工作通常情况下是费力不讨好的。"
+"我们需要记住的一点是，有伟大的技术想法并不等同于成功的秘诀，还需要一些人一起将这些想法实现。"
+"我要感谢Martin的努力工作才成就了今天的Modelica协会。"
 
 #: ../../source/front/ack.rst:32
 msgid ""
@@ -59,6 +71,9 @@ msgid ""
 "an organization committed to open standards that support engineering and I'd"
 " like to thank all the members for their hard work in this regard."
 msgstr ""
+"当然，并不是Martin一个人在管理Modelica协会。Modelica委员会和其成员同样在促进"
+"Modelica技术推广方面起到了极其重要的作用。最后，我要重申一下，Modelica协会是一个致力于支持工程应用的"
+"开放标准组织。我要感谢所有成员为此做出的努力。"
 
 #: ../../source/front/ack.rst:39
 msgid ""
@@ -69,10 +84,14 @@ msgid ""
 "like to thank all those people who've participated in the development of the"
 " Modelica Language and the Modelica Standard Library."
 msgstr ""
+"Modelica协会并不是常设机构，但一直会有一个Modelica语言研发团队。这些人会在一年中"
+"开几次研讨会，以促进Modelia语言的发展。为此，他们无私的贡献了"
+"大量的时间和精力。我要感谢所有参与开发Modelica语言和Modelica标准库的同仁，感谢他们的辛勤付出。"
 
 #: ../../source/front/ack.rst:48
 msgid "Personal"
 msgstr ""
+"个人方面"
 
 #: ../../source/front/ack.rst:50
 msgid ""
@@ -82,6 +101,9 @@ msgid ""
 "my interests in these topics so I owe all the energy and time I'm able to "
 "apply to projects like this one to them."
 msgstr ""
+"就我个人而言，我要感谢我的母亲、父亲、妻子、孩子和我的岳父岳母，感谢他们"
+"对我的坚定支持，才使得我在科学、工程应用和数学等领域能够全心投入。他们富有责任感的培养以及对我个人兴趣的坚定支持，"
+"才使我获得了充足的精力和时间参与到目前的项目中。"
 
 #: ../../source/front/ack.rst:57
 msgid ""
@@ -94,6 +116,11 @@ msgid ""
 "Doctorow and Lessig and how their ideas could be applied to the creation of "
 "more accessible content for the Modelica world."
 msgstr ""
+"对某些人来说，获得一本免费书的想法似乎更新颖一些。这个项目能有这样的想法，是通过接触Cory Doctorow"
+"和Lawrence Lessig的工作而受到的启发。我要感谢他们关于知识共享方面的想法，"
+"开阔了我的眼界。我还要感谢Dietmar Winkler与我多次讨论可替换模型的发布形式。"
+"我们经常会讨论Doctorow和Lessig的想法，以及如何将他们的想法应用在Modelica领域，"
+"创建更易于访问的内容。"
 
 #: ../../source/front/ack.rst:67
 msgid ""
@@ -115,10 +142,21 @@ msgid ""
 " also like to thank Martin Malmheden, Dag Brück and Sandrine Loembe for all "
 "the good times during my excellent year in Paris."
 msgstr ""
+"回顾过去，我感到非常幸运,工作过的几家公司都非常支持我参与Modelica项目。我第一次参与Modelica项目"
+"是在福特汽车公司工作期间，很感谢他们愿意赞助我参加各种与Modelica相关的活动。"
+"在福特之后，我进入了Emmeskay（后来被LMS收购）工作。在Emmeskay公司工作期间我获益良多。"
+"我要特别感谢我的合作伙伴Swami Gopalswamy和Shiva Shivashankar给我加入Emmeskay的机会，"
+"并有幸与他们成为好朋友。在Emmeskay期间，我很荣幸能与Michael Sasena和John Batteh"
+"在多个Modelica相关的项目中共事。Emmeskay是一个伟大的公司，这可以从工作在那里的"
+"团队成员反映出来。最后，我要感谢达索系统公司（Dassault Systèmes）给予了我与"
+"其他优秀人士一起工作的机会。尤其是我要感谢Hilding Elmqvist和Marc Frouin"
+"鼓励我到那里工作。我还要感谢Martin Malmheden、Dag Brück和Sandrine Loembe与我"
+"在巴黎度过的所有美好时光。
 
 #: ../../source/front/ack.rst:88
 msgid "Contributors"
 msgstr ""
+"贡献者"
 
 #: ../../source/front/ack.rst:90
 msgid ""
@@ -129,6 +167,9 @@ msgid ""
 " Kickstarter project.  In particular, I'd like the thank the following "
 "people for their exceptionally generous contributions:"
 msgstr ""
+"这个项目严格意义上讲是一次实验，以验证能否通过众筹的方法在技术领域，例如Modelica，寻找"
+"商机进行出版。我惊喜的看到这是可行的，这个项目有足够的资金支持。鉴于此，我要感谢"
+"众筹项目的支持者。我要特别感谢以下人员极其慷慨的捐助："
 
 #: ../../source/front/ack.rst:99
 msgid "Robert Norris"
@@ -217,10 +258,12 @@ msgstr ""
 #: ../../source/front/ack.rst:121
 msgid "I'd also like to thank the corporate sponsors:"
 msgstr ""
+"我还要感谢赞助商："
 
 #: ../../source/front/ack.rst:123
 msgid "Gold Sponsors"
 msgstr ""
+"金牌赞助商"
 
 #: ../../source/front/ack.rst:125
 msgid "CyDesign"
@@ -245,6 +288,7 @@ msgstr ""
 #: ../../source/front/ack.rst:131
 msgid "Silver Sponsors"
 msgstr ""
+"银牌赞助商"
 
 #: ../../source/front/ack.rst:133
 msgid "Ricardo Software"
@@ -269,6 +313,7 @@ msgstr ""
 #: ../../source/front/ack.rst:139
 msgid "Bronze"
 msgstr ""
+"铜牌赞助商"
 
 #: ../../source/front/ack.rst:141
 msgid "Suzhou Tongyuan"
@@ -300,6 +345,8 @@ msgid ""
 "creating more quality educational material around Modelica. Literally, this "
 "project could not have happened without them."
 msgstr ""
+"本项目所有参与人和赞助商都在为开发出更高质量的Modelica教材这一共同目标不懈努力。"
+"换句话说，没有他们就不会有这个项目。"
 
 #: ../../source/front/ack.rst:152
 msgid ""
@@ -312,6 +359,11 @@ msgid ""
 "feedback on the book content.  Dietmar has also helped me test publishing "
 "issues related to supporting ePub and PDF formats."
 msgstr ""
+"众筹项目的资金使我可以在这个项目上投入更多的时间，但是仍然有很多人在这个项目上帮助过我。"
+"首先，我要再一次感谢我的父亲对本书的初稿进行了校对。校对是一项无聊的工作，但却是必不可少的步骤。"
+"所以，我认为他值得为这项工作所作出的牺牲而获得赞扬。此外，我还要感谢"
+"Dietmar Winkler和Michael O’Keefe对本书内容提供的反馈。Dietmar还帮助我测试了"
+"本书电子版和PDF格式出版的问题。"
 
 #: ../../source/front/ack.rst:162
 msgid ""
@@ -320,16 +372,20 @@ msgid ""
 "this book to make sure that the layout and graphical design lived up to "
 "sponsors' expectations."
 msgstr ""
+"我要感谢Jeff Waters作为 \"赞助商代表\" 所付出的努力。在编写本书期间，我与Jeff有过多次富有成效的"
+"讨论，以确保本书章节布局和图形设计满足赞助商的预期。"
 
 #: ../../source/front/ack.rst:168
 msgid "Tools"
 msgstr ""
+"工具"
 
 #: ../../source/front/ack.rst:170
 msgid ""
 "Building a book like this requires a lot of different tools.  My "
 "productivity was amplified enormously by the use of these tools."
 msgstr ""
+"编写本书需要很多不同的工具。通过使用这些工具极大的提高了我的工作效率。"
 
 #: ../../source/front/ack.rst:173
 msgid ""
@@ -337,6 +393,8 @@ msgid ""
 "supports multiple outputs.  Sphinx allows me to focus on the content of the "
 "book and takes care of generating the book in multiple formats."
 msgstr ""
+"本书使用Sphinx编写。Sphinx是一个文档生成工具，支持多种格式的文件输出。"
+"通过使用Sphinx工具，使得我可以把工作的重点放在本书的内容上，而不必过多的考虑本书的编写格式。"
 
 #: ../../source/front/ack.rst:196
 msgid ""
@@ -349,6 +407,10 @@ msgid ""
 "thank Dietmar Winkler for enlightening me about many different features in "
 "Git."
 msgstr ""
+"本书的编写使用了Git作为版本控制系统，托管给 `GitHub <http://github.com>`_ 进行管理。"
+"大多数人认为版本控制系统是一套非常神秘的备份系统，其实版本控制系统是合作的核心。"
+"我非常希望能看到它在工程上被广泛的应用。对于本书来说，GitHub的 \"pull request\" 系统"
+"在整合审阅者的评审意见上非常有用。我要再次感谢Dietmar Winkler提醒我关于Git的许多不同功能。"
 
 #: ../../source/front/ack.rst:205
 msgid ""
@@ -358,6 +420,9 @@ msgid ""
 "It seems to support just about every type of file I need to edit out of the "
 "box."
 msgstr ""
+"我还使用了Emacs编辑器编写本书。虽然有许多优秀的编辑器支持各种语言和平台，"
+"Emacs依然是我许多项目开发过程中的好帮手。它自带的功能几乎可以支持我需要"
+"的所有文件类型。"
 
 #: ../../source/front/ack.rst:211
 msgid ""
@@ -368,12 +433,17 @@ msgid ""
 "Research and ITI for giving me access to Dymola, MapleSim, SystemModeler and"
 " SimulationX, respectively."
 msgstr ""
+"在本书的编写过程中，好几个供应商给我提供了他们的专有工具。我没有太多的使用"
+"这些工具，在此我想感谢他们慷慨的为我提供了临时许可文件。具体来说，我要感谢"
+"Dassault Systèmes、Maplesoft、Wolfram Research和ITI，他们分别给我提供了Dymola、"
+"MapleSim、SystemModeler和SimulationX的使用权。"
 
 #: ../../source/front/ack.rst:236
 msgid ""
 "The style of the book owes a fair amount to the `Semantic UI <http://www"
 ".semantic-ui.com>`_ CSS framework."
 msgstr ""
+"本书的风格借鉴了大量CSS框架的 `用户界面语义 <http://www.semantic-ui.com>`_ 。"
 
 #: ../../source/front/ack.rst:98
 msgid "Hilding Elmqvist"
@@ -390,6 +460,11 @@ msgid ""
 "times I would see Martin on Skype late at night (Sweden time) and he was "
 "gracious enough to help me out."
 msgstr ""
+"为了编写本书，我需要一种方法来测试出现在本书中的模型，绘制生成的仿真结果"
+"以及生成相应的JavaScript代码，以实现本书在浏览器HTML中的集成仿真功能。OpenModelica支持"
+"所有上述功能。除此之外，我还欠Martin Sjölund和OpenModelica团队一个大大的 \"人情\" ，"
+"因为在编写本书期间他们能快速的响应我的各种问题。很多时候我会在深夜（瑞典时间）"
+"与Martin通过Skype见面，而他都会非常谦和的帮助我。"
 
 #: ../../source/front/ack.rst:188
 msgid ""
@@ -402,6 +477,11 @@ msgid ""
 "OpenModelica and Emscripten.  The browser integrated simulation capabilities"
 " were greatly enabled by his work in this area."
 msgstr ""
+"本书的HTML版本通过Emscripten工具可以实现浏览器的集成仿真功能。"
+"Emscripten允许将C和C++语言的通用代码通过LLVM编译成JavaScript。虽然我知道这是"
+"可能的方法，但是直到我看到 `Tom Short <https://github.com/tshort/openmodelica-javascript>`_ "
+" 整合了OpenModelica和Emscripten的工作之后，才认为这种方式是可行的。"
+"正是他在这方面的工作才使得浏览器具有了集成仿真功能。"
 
 #: ../../source/front/ack.rst:218
 msgid ""
@@ -416,6 +496,12 @@ msgid ""
 "significant adjustments.  The power and portability of the MacBook Air gave "
 "my entire work process a big boost."
 msgstr ""
+"本书的大部分内容是在MacBook Air上编写的。我的第一台电脑是 Apple //e。"
+"从那以后，我主要使用PC机和Unix工作站工作。最近，我在Linux机器上做了大量的"
+"开发工作。我经常会放弃使用Macs电脑，因为确信它不能支持我经常使用的那种命令行"
+"模式的开发工作。我不得不说我错的太离谱了。MacOSX（苹果操作系统）的生态系统"
+"几乎与我在Linux环境下使用的完全相同。我可以很容易的在MacOSX和Linux环境之间切换"
+"而不需要任何大的调整。MacBook Air的电池续航能力和便携性让我的整个工作效率有了很大的提高。"
 
 #: ../../source/front/ack.rst:230
 msgid ""
@@ -425,3 +511,6 @@ msgid ""
 "the Mozilla Foundation and Google for creating such wonderful, standards "
 "compliant browsers."
 msgstr ""
+"本书的编写涉及到许多HTML布局、样式和嵌入JavaScript的测试和调试工作。这项工作"
+"主要使用Firefox来完成，偶尔也使用Chrome。我要感谢Mozilla基金会和Google开发了如此"
+"卓越和标准兼容的浏览器。"

@@ -14,6 +14,7 @@ msgstr ""
 #: ../../source/front/intro.rst:2
 msgid "Introduction"
 msgstr ""
+"前言"
 
 #: ../../source/front/intro.rst:4
 msgid ""
@@ -22,10 +23,13 @@ msgid ""
 "Let me attempt to address these questions in the hope that they will "
 "intrigue you and cause you to dig deeper."
 msgstr ""
+"出于某些原因，你非常偶然的看到本书，而你又没有任何Modelica方面的知识，对于Modelica语言你"
+"可能会有一些疑惑。我试着列出这些问题，希望可以引起你的兴趣并让你深入的探索。"
 
 #: ../../source/front/intro.rst:10
 msgid "What is Modelica?"
 msgstr ""
+"什么是Modelica？"
 
 #: ../../source/front/intro.rst:12
 msgid ""
@@ -35,10 +39,14 @@ msgid ""
 "(*e.g.,* springs, resistors, clutches, *etc.*).  These components can then "
 "be combined into subsystems, systems or even architectures."
 msgstr ""
+"Modelica是一种高级声明性语言用于描述事物的数学特性。它通常应用于工程领域，可以"
+"轻松的描述不同类型工程组件（ *例如,* 弹簧，电阻，离合器 *等* ）的工作特性。此外，这些组件又可以方便的组"
+"合成子系统、系统，甚至架构。"
 
 #: ../../source/front/intro.rst:20
 msgid "Why Modelica?"
 msgstr ""
+"为什么是Modelica？"
 
 #: ../../source/front/intro.rst:22
 msgid ""
@@ -50,6 +58,10 @@ msgid ""
 " topics like differential-algebraic equations, symbolic manipulation, "
 "numeric solvers, code generation, post-processing, *etc.*."
 msgstr ""
+"Modelica语言令人信服的原因主要有以下几点。第一也是最重要的是它的技术实力。Modelica编译器在后台"
+"运行复杂的算法，使得工程师可以将工作重点放在组件特性的数学描述上，以获得"
+"高性能的仿真速度。而不需要工程师具备相关领域的高深知识，例如微分代数方程组、符号运算、"
+"数值求解、代码生成、后处理 *等* 。"
 
 #: ../../source/front/intro.rst:31
 msgid ""
@@ -60,6 +72,9 @@ msgid ""
 " design) and acausal (often used in creating schematic oriented physical "
 "designs) approaches *within the same model*."
 msgstr ""
+"Modelica语言在技术实现上能成功的关键是它支持广泛的建模形式，即Modelica语言支持在混合微分代数方程组中"
+"同时描述连续和离散特性。Modelica语言支持在 *同一模型* 中同时使用因果（通常用于控制系统"
+"设计）和非因果（通常用于创建面向原理的物理模型设计）的建模方法。"
 
 #: ../../source/front/intro.rst:39
 msgid ""
@@ -68,10 +83,13 @@ msgid ""
 "available and tool vendors are encouraged to support the import and export "
 "of Modelica (without being compelled to pay any royalty of any kind)."
 msgstr ""
+"最后，Modelica语言另一个引人注目的事实是：它从一开始就是以开放的语言标准设计的。Modelica语言规范的"
+"免费获得，大大激励了工具供应商支持Modelica模型导入、导出的热情（因为不需要强制支付任何形式的版税。）"
 
 #: ../../source/front/intro.rst:46
 msgid "What Modelica allows me to do"
 msgstr ""
+"Modelica允许我做什么？"
 
 #: ../../source/front/intro.rst:48
 msgid ""
@@ -83,3 +101,6 @@ msgid ""
 "that it provides a complete set of capabilities for building lumped system "
 "models of nearly any engineering system."
 msgstr ""
+"Modelica真的是一种理想的建模语言，几乎可用于所有工程领域的系统特性建模。只使用Modelica语言，"
+"就可以完美的支持物理模型设计和控制模型设计。同时，Modelica语言也是多领域的，因此它不会引入任何边界来限制其"
+"应用的工程领域或系统。综上所述，Modelica语言提供了一整套用于建立集总参数模型的方法，几乎涉及所有的工程应用系统。"
