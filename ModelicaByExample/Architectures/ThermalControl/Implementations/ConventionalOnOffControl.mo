@@ -21,16 +21,13 @@ public
 equation
   connect(temperature, greater.u1) annotation (Line(
       points={{120,0},{0,0},{0,-30},{18,-30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(setpoint_signal.y, greater.u2) annotation (Line(
       points={{-9,-38},{18,-38}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(greater.y, command) annotation (Line(
       points={{41,-30},{60,-30},{60,-80},{-40,-80},{-40,0},{-60,0}},
-      color={255,0,255},
-      smooth=Smooth.None));
+      color={255,0,255}));
   annotation (Diagram(graphics={Text(
           extent={{-100,20},{-60,-20}},
           lineColor={255,0,0},

@@ -15,28 +15,23 @@ equation
   connect(torque.flange, shaft) annotation (Line(
       points={{50,0},{100,0}},
       color={0,0,0},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(torque.support, housing) annotation (Line(
       points={{40,-10},{40,-60},{100,-60}},
       color={0,0,0},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(limiter.y, torque.tau) annotation (Line(
       points={{3,0},{28,0}},
       color={0,0,127},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(lag.u, tau) annotation (Line(
       points={{-72,0},{-120,0}},
       color={0,0,127},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(lag.y, limiter.u) annotation (Line(
       points={{-49,0},{-20,0}},
       color={0,0,127},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   annotation (Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},

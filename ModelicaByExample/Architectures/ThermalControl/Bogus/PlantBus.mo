@@ -11,21 +11,17 @@ connector PlantBus "An example of a simple bus connector for the plant"
         Line(
           points={{40,-40},{40,40}},
           color={0,0,0},
-          smooth=Smooth.None,
           thickness=0.5),
         Line(
           points={{-40,40},{-40,-40}},
           color={0,0,0},
-          smooth=Smooth.None,
           thickness=0.5),
         Polygon(
           points={{-40,-40},{-48,-20},{-32,-20},{-40,-40}},
           lineColor={0,0,0},
-          smooth=Smooth.None,
           fillPattern=FillPattern.Solid),
         Polygon(
           points={{40,40},{30,20},{50,20},{40,40}},
           lineColor={0,0,0},
-          smooth=Smooth.None,
           fillPattern=FillPattern.Solid)}));
 end PlantBus;

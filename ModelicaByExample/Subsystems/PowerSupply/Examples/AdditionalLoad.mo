@@ -15,18 +15,14 @@ model AdditionalLoad "A circuit with an additional transient load"
 equation
   connect(switch1.n, add_load.p) annotation (Line(
       points={{80,20},{90,20},{90,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(switch1.p, load.p) annotation (Line(
       points={{60,20},{50,20},{50,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(add_load.n, load.n) annotation (Line(
       points={{90,-10},{90,-10},{90,-20},{50,-20},{50,-10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(load_step.y, switch1.control) annotation (Line(
       points={{61,50},{70,50},{70,27}},
-      color={255,0,255},
-      smooth=Smooth.None));
+      color={255,0,255}));
 end AdditionalLoad;

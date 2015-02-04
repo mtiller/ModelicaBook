@@ -19,16 +19,13 @@ equation
           fillPattern=FillPattern.Solid),
         Line(
           points={{-46,-16},{-20,-16}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Line(
           points={{-42,-12},{-24,-12}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Line(
           points={{-40,-8},{-28,-8}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Ellipse(
           extent={{80,-50},{-20,50}},
           lineColor={0,0,0},
@@ -36,7 +33,6 @@ equation
           fillPattern=FillPattern.Solid),
         Polygon(
           points={{-12,34},{28,2},{-16,-32},{-22,8},{-12,34}},
-          smooth=Smooth.None,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           pattern=LinePattern.None)}));

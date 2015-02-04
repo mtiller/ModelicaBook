@@ -42,72 +42,55 @@ protected
 equation
   connect(zone1.port, furnace) annotation (Line(
       points={{-60,-40},{-80,-40},{-80,0},{-100,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(zone1.port, cond13.port_a) annotation (Line(
       points={{-60,-40},{-60,-80},{-10,-80}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(cond13.port_b, zone3.port) annotation (Line(
       points={{10,-80},{60,-80},{60,-40}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(zone1.port, cond12.port_a) annotation (Line(
       points={{-60,-40},{-40,-40}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(cond12.port_b, zone2.port) annotation (Line(
       points={{-20,-40},{0,-40}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(zone2.port, cond23.port_a) annotation (Line(
       points={{0,-40},{20,-40}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(cond23.port_b, zone3.port) annotation (Line(
       points={{40,-40},{60,-40}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(zone3.port, room) annotation (Line(
       points={{60,-40},{80,-40},{80,0},{100,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(ambient.port, convection2.fluid) annotation (Line(
       points={{-70,80},{28,80},{28,70}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(convection1.fluid, ambient.port) annotation (Line(
       points={{-10,50},{-10,80},{-70,80}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(convection.fluid, ambient.port) annotation (Line(
       points={{-50,30},{-50,80},{-70,80}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(const.y, convection.Gc) annotation (Line(
       points={{-79,40},{-70,40},{-70,20},{-60,20}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(const.y, convection1.Gc) annotation (Line(
       points={{-79,40},{-20,40}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(const.y, convection2.Gc) annotation (Line(
       points={{-79,40},{-40,40},{-40,60},{18,60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(convection.solid, zone1.port) annotation (Line(
       points={{-50,10},{-50,-40},{-60,-40},{-60,-40}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(convection1.solid, zone2.port) annotation (Line(
       points={{-10,30},{-10,-40},{0,-40}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(convection2.solid, zone3.port) annotation (Line(
       points={{28,50},{30,50},{30,-20},{48,-20},{48,-40},{60,-40}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   annotation ( Icon(graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0}),
         Ellipse(
@@ -127,22 +110,17 @@ equation
           fillColor={170,213,255}),
         Line(
           points={{-40,0},{-20,0}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Line(
           points={{20,0},{40,0}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Line(
           points={{-80,0},{-90,0}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Line(
           points={{80,0},{90,0}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          color={0,0,0}),
         Line(
           points={{-60,-20},{-60,-40},{60,-40},{60,-20}},
-          color={0,0,0},
-          smooth=Smooth.None)}));
+          color={0,0,0})}));
 end ThreeZonePlantModel;

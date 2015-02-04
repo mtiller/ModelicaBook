@@ -10,6 +10,5 @@ model CoolingToAmbient "A model using convection to an ambient condition"
 equation
   connect(cap.node, conv.port_a) annotation (Line(
       points={{-20,0},{20,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
 end CoolingToAmbient;

@@ -13,7 +13,6 @@ equation
               66,70},{60,80},{-72,80},{-20,0},{-72,-80},{60,-80},{66,-70},{56,
               -64}},
           lineColor={0,0,0},
-          smooth=Smooth.None,
           fillPattern=FillPattern.Solid,
           fillColor={0,0,0})}));
 end Sum;

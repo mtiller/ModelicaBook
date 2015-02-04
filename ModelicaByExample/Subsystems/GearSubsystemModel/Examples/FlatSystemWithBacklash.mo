@@ -34,53 +34,43 @@ equation
   connect(fixed.flange, torque.support) annotation (Line(
       points={{-60,-50},{-60,-10}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(load.flange_a, fixed.flange) annotation (Line(
       points={{-20,-40},{-60,-40},{-60,-50}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(inertia.flange_b, load.flange_b) annotation (Line(
       points={{100,0},{100,-40},{0,-40}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(trapezoid.y, torque.tau) annotation (Line(
       points={{-79,0},{-72,0}},
       color={0,0,127},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(inertia_b.flange_b, inertia.flange_a) annotation (Line(
       points={{70,0},{80,0}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(idealGear.flange_b, inertia_b.flange_a) annotation (Line(
       points={{40,0},{50,0}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(inertia_a.flange_a, torque.flange) annotation (Line(
       points={{-40,0},{-50,0}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(inertia_a.flange_b, backlash.flange_a) annotation (Line(
       points={{-20,0},{-10,0}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(backlash.flange_b, idealGear.flange_a) annotation (Line(
       points={{10,0},{20,0}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(idealGear.support, fixed.flange) annotation (Line(
       points={{30,-10},{30,-30},{-60,-30},{-60,-50}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   annotation (Diagram(graphics={Rectangle(
           extent={{-44,26},{76,-26}},
           fillColor={205,230,255},

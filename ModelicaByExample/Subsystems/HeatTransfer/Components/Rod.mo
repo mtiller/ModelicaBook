@@ -110,8 +110,7 @@ equation
         Line(
           points={{-80,20},{-80,22},{-78,26},{-4,26},{0,34},{4,26},{78,26},{80,22},
               {80,20}},
-          pattern=LinePattern.None,
-          smooth=Smooth.None),
+          pattern=LinePattern.None),
         Text(
           extent={{-60,80},{60,40}},
           pattern=LinePattern.None,

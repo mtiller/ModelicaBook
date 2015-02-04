@@ -19,14 +19,12 @@ equation
           points={{-10,80},{-10,-40},{-20,-40},{0,-80},{20,-40},{10,-40},{10,80},
               {-10,80}},
           lineColor={135,135,135},
-          smooth=Smooth.None,
           fillColor={255,170,170},
           fillPattern=FillPattern.Solid),
         Polygon(
           points={{50,80},{50,-40},{40,-40},{60,-80},{80,-40},{70,-40},{70,80},
               {50,80}},
           lineColor={135,135,135},
-          smooth=Smooth.None,
           fillColor={255,170,170},
           fillPattern=FillPattern.Solid),
         Text(

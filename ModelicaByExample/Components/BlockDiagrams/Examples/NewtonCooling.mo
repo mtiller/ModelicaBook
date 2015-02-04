@@ -18,18 +18,17 @@ model NewtonCooling "Newton cooling system modeled with blocks"
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
 equation
   connect(T.y, gain.u) annotation (Line(
-      points={{-9,0},{9,0}}, color={0,0,255},
-      smooth=Smooth.None));
+      points={{-9,0},{9,0}}, color={0,0,255}));
   connect(sum.y, gain1.u) annotation (Line(
       points={{73,-10},{80,-10},{80,60},{-80,60},{-80,0},{-71,0}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(gain.y, sum.u[2]) annotation (Line(
       points={{31,0},{40,0},{40,-9.5},{51,-9.5}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(ambient.y, sum.u[1]) annotation (Line(
       points={{31,-30},{40,-30},{40,-10.5},{51,-10.5}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(gain1.y, T.u) annotation (Line(
       points={{-49,0},{-31,0}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
 end NewtonCooling;

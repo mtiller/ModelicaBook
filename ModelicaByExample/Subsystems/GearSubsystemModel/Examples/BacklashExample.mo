@@ -27,34 +27,27 @@ equation
   connect(torque.flange, gearWithBacklash.flange_a) annotation (Line(
       points={{-10,0},{10,0}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(gearWithBacklash.flange_b, inertia.flange_a) annotation (Line(
       points={{30,0},{50,0}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(inertia.flange_b, load.flange_b) annotation (Line(
       points={{70,0},{80,0},{80,-20},{52,-20}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(torque.support, fixed.flange) annotation (Line(
       points={{-20,-10},{-20,-30}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(load.flange_a, fixed.flange) annotation (Line(
       points={{32,-20},{-20,-20},{-20,-30}},
       color={0,0,0},
-      pattern=LinePattern.Solid,
-      smooth=Smooth.None));
+      pattern=LinePattern.Solid));
   connect(gearWithBacklash.support, fixed.flange) annotation (Line(
       points={{20,-10},{20,-20},{-20,-20},{-20,-30}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(torque_profile.y, torque.tau) annotation (Line(
       points={{-59,0},{-32,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
 end BacklashExample;

@@ -6,10 +6,8 @@ model SMD_WithBacklash "The spring-mass-damper system with backlash"
 equation
   connect(inertia1.flange_b, backlash.flange_a) annotation (Line(
       points={{-70,0},{-50,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(backlash.flange_b, inertia2.flange_a) annotation (Line(
       points={{-30,0},{-10,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
 end SMD_WithBacklash;

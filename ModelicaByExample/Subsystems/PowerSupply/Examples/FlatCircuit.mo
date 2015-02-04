@@ -46,52 +46,52 @@ model FlatCircuit "A model with power source, AC-DC conversion and load in one d
 equation
   connect(switch.p, wall_voltage.p) annotation (Line(
       points={{-80,40},{-90,40},{-90,10}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(switch.n, transformer.p1) annotation (Line(
       points={{-60,40},{-50,40},{-50,15}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(step.y, switch.control) annotation (Line(
       points={{-79,60},{-70,60},{-70,47}},
-      color={255,0,255}, smooth=Smooth.None));
+      color={255,0,255}));
   connect(D3.n, D4.p) annotation (Line(
       points={{-4.92893,-7.07107},{-2.46446,-7.07107},{-2.46446,-7.07107},{
           1.09406e-006,-7.07107},{1.09406e-006,-7.07107},{4.92893,-7.07107}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(D1.n, D2.p) annotation (Line(
       points={{-4.92893,27.0711},{2.18813e-006,28},{4.92893,28},{4.92893, 27.0711}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(D1.p, D3.p) annotation (Line(
       points={{-19.0711,12.9289},{-20,10},{-19.0711,7.07107}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(D2.n, D4.n) annotation (Line(
       points={{19.0711,12.9289},{19.0711,11.4644},{19.0711,11.4644},{19.0711,10},
           {19.0711,7.07107},{19.0711,7.07107}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(transformer.p2, D1.n) annotation (Line(
       points={{-30,15},{-30,34},{0,34},{0,27.0711},{-4.92893,27.0711}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(D4.p, transformer.n2) annotation (Line(
       points={{4.92893,-7.07107},{0,-7.07107},{0,-20},{-30,-20},{-30,5}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(wall_voltage.n, transformer.n1) annotation (Line(
       points={{-90,-10},{-90,-20},{-50,-20},{-50,5}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(wall_voltage.n, ground1.p) annotation (Line(
       points={{-90,-10},{-90,-32}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(transformer.n2, ground1.p) annotation (Line(
       points={{-30,5},{-30,-32},{-90,-32}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(load.p, D2.n) annotation (Line(
       points={{100,0},{100,12},{20,12},{20,12.9289},{19.0711,12.9289}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(load.p, capacitor.p) annotation (Line(
       points={{100,0},{100,12},{60,12},{60,0}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(D1.p, capacitor.n) annotation (Line(
       points={{-19.0711,12.9289},{-24,12.9289},{-24,-32},{60,-32},{60,-20}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
   connect(load.n, capacitor.n) annotation (Line(
       points={{100,-20},{100,-32},{60,-32},{60,-20}},
-      color={0,0,255}, smooth=Smooth.None));
+      color={0,0,255}));
 end FlatCircuit;

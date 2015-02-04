@@ -10,10 +10,8 @@ model Cooling "A model using generic convection to ambient conditions"
 equation
   connect(convection.port_a, cap.node) annotation (Line(
       points={{10,0},{-20,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(amb.node, convection.port_b) annotation (Line(
       points={{60,0},{30,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
 end Cooling;

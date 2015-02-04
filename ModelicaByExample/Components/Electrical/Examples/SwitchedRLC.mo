@@ -20,26 +20,20 @@ model SwitchedRLC "Recreation of the switched RLC circuit"
 equation
   connect(inductor.n, resistor.n) annotation (Line(
       points={{10,20},{60,20},{60,12}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(capacitor.n, inductor.n) annotation (Line(
       points={{30,10},{30,20},{10,20}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(inductor.p, Vs.p) annotation (Line(
       points={{-10,20},{-40,20},{-40,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(capacitor.p, ground.ground) annotation (Line(
       points={{30,-10},{30,-20},{0,-20}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(resistor.p, ground.ground) annotation (Line(
       points={{60,-8},{60,-20},{0,-20}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(Vs.n, ground.ground) annotation (Line(
       points={{-40,-10},{-40,-20},{0,-20}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
 end SwitchedRLC;

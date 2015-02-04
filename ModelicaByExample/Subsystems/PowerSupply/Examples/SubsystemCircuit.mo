@@ -25,30 +25,23 @@ model SubsystemCircuit "Example using BasicPowerSupply subsystem"
 equation
   connect(switch.p,wall_voltage. p) annotation (Line(
       points={{-70,40},{-80,40},{-80,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(step.y,switch. control) annotation (Line(
       points={{-69,70},{-60,70},{-60,47}},
-      color={255,0,255},
-      smooth=Smooth.None));
+      color={255,0,255}));
   connect(wall_voltage.n, ground1.p) annotation (Line(
       points={{-80,-10},{-80,-40}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(wall_voltage.n, power_supply.gnd)     annotation (Line(
       points={{-80,-10},{-80,-40},{-26,-40},{-26,-6},{-10,-6}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(switch.n, power_supply.p)     annotation (Line(
       points={{-50,40},{-26,40},{-26,6},{-10,6}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(load.p, power_supply.p_load)     annotation (Line(
       points={{50,10},{50,20},{20,20},{20,6},{10,6}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(load.n, power_supply.n_load)     annotation (Line(
       points={{50,-10},{50,-20},{20,-20},{20,-6},{10,-6}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
 end SubsystemCircuit;

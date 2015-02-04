@@ -31,34 +31,26 @@ model RotSMD
 equation
   connect(J2.flange_b, spring2.flange_a) annotation (Line(
       points={{0,0},{10,0},{10,20},{20,20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(spring2.flange_b, ground.flange) annotation (Line(
       points={{40,20},{50,20},{50,0},{60,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper2.flange_a, J2.flange_b) annotation (Line(
       points={{20,-20},{10,-20},{10,0},{0,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper2.flange_b, ground.flange) annotation (Line(
       points={{40,-20},{50,-20},{50,0},{60,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(J2.flange_a, spring1.flange_b) annotation (Line(
       points={{-20,0},{-26,0},{-26,20},{-30,20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(J1.flange_b, spring1.flange_a) annotation (Line(
       points={{-60,0},{-56,0},{-56,20},{-50,20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper1.flange_b, J2.flange_a) annotation (Line(
       points={{-30,-20},{-26,-20},{-26,0},{-20,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper1.flange_a, J1.flange_b) annotation (Line(
       points={{-50,-20},{-56,-20},{-56,0},{-60,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
 end RotSMD;

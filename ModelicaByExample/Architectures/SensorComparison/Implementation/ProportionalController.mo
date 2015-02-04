@@ -24,18 +24,16 @@ protected
 equation
   connect(feedback.y, gain.u) annotation (Line(
       points={{-9,0},{2,0},{2,0},{-38,0}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   connect(feedback.u1, setpoint) annotation (Line(
       points={{8,0},{40,0},{40,60},{0,60},{0,120}},
-      color={0,0,127}, pattern=LinePattern.None,
-      smooth=Smooth.None));
+      color={0,0,127}, pattern=LinePattern.None));
   connect(gain.y, command) annotation (Line(
       points={{-61,0},{-80.5,0},{-80.5,0},{-110,0}},
-      color={0,0,127}, pattern=LinePattern.None,
-      smooth=Smooth.None));
+      color={0,0,127}, pattern=LinePattern.None));
   connect(measured, feedback.u2) annotation (Line(
       points={{100,0},{60,0},{60,-40},{0,-40},{0,-8}},
-      color={0,0,127}, smooth=Smooth.None));
+      color={0,0,127}));
   annotation (Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},

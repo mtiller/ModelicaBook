@@ -40,54 +40,41 @@ model SMD_ConfigurableGear
 equation
   connect(ground.flange_a, damper2.flange_b) annotation (Line(
       points={{70,-40},{60,-40},{60,-20},{50,-20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground.flange_a, spring2.flange_b) annotation (Line(
       points={{70,-40},{60,-40},{60,-60},{48,-60}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper2.flange_a, inertia2.flange_b) annotation (Line(
       points={{30,-20},{20,-20},{20,-40},{10,-40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(spring2.flange_a, inertia2.flange_b) annotation (Line(
       points={{28,-60},{20,-60},{20,-40},{10,-40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground1.flange_a,damper3. flange_b) annotation (Line(
       points={{70,40},{60,40},{60,60},{50,60}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground1.flange_a,spring3. flange_b) annotation (Line(
       points={{70,40},{60,40},{60,20},{48,20}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(damper3.flange_a, inertia3.flange_b) annotation (Line(
       points={{30,60},{20,60},{20,40},{10,40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(spring3.flange_a, inertia3.flange_b) annotation (Line(
       points={{28,20},{20,20},{20,40},{10,40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(ground2.flange_a, housing.housing) annotation (Line(
       points={{-40,16},{-40,30}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(housing.flange_a, inertia4.flange_b) annotation (Line(
       points={{-50,40},{-70,40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(housing.flange_b, inertia3.flange_a) annotation (Line(
       points={{-30,40},{-10,40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(no_housing.flange_a, inertia1.flange_b) annotation (Line(
       points={{-50,-40},{-70,-40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(no_housing.flange_b, inertia2.flange_a) annotation (Line(
       points={{-30,-40},{-20,-40},{-20,-40},{-10,-40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
 end SMD_ConfigurableGear;

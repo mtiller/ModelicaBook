@@ -26,34 +26,26 @@ model BaseRLC
 equation
   connect(source.n, ground.p) annotation (Line(
       points={{-60,-10},{-60,-40},{0,-40}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(switch.n, inductor.p) annotation (Line(
       points={{-30,30},{-10,30}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(switch.p, source.p) annotation (Line(
       points={{-50,30},{-60,30},{-60,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(step.y, switch.control) annotation (Line(
       points={{-59,60},{-40,60},{-40,37}},
-      color={255,0,255},
-      smooth=Smooth.None));
+      color={255,0,255}));
   connect(inductor.n, capacitor.p) annotation (Line(
       points={{10,30},{20,30},{20,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(capacitor.n, ground.p) annotation (Line(
       points={{20,-10},{20,-40},{0,-40}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(inductor.n, resistor.p) annotation (Line(
       points={{10,30},{50,30},{50,10},{50,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(resistor.n, ground.p) annotation (Line(
       points={{50,-10},{50,-40},{0,-40}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
 end BaseRLC;

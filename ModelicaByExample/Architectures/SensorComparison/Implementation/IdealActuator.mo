@@ -14,18 +14,15 @@ equation
   connect(torque.flange, shaft) annotation (Line(
       points={{10,0},{100,0}},
       color={0,0,0},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(torque.support, housing) annotation (Line(
       points={{0,-10},{0,-60},{100,-60}},
       color={0,0,0},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(torque.tau, tau) annotation (Line(
       points={{-12,0},{-120,0}},
       color={0,0,127},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   annotation (Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},

@@ -26,38 +26,29 @@ model ComplexNetwork "A complex heat transfer network"
 equation
   connect(amb2.node, conv3.port_b) annotation (Line(
       points={{90,0},{72,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(conv2.port_b, conv3.port_a) annotation (Line(
       points={{40,0},{52,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(conv4.port_b, amb2.node) annotation (Line(
       points={{54,40},{80,40},{80,0},{90,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(conv4.port_a, cap1.node) annotation (Line(
       points={{34,40},{10,40},{10,0},{-10,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(conv2.port_a, cap1.node) annotation (Line(
       points={{20,0},{-10,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(conv5.port_a, cap1.node) annotation (Line(
       points={{10,-30},{10,0},{-10,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(conv5.port_b, cap2.node) annotation (Line(
       points={{10,-50},{10,-70},{-10,-70}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(conv1.port_b, cap1.node) annotation (Line(
       points={{-30,0},{-10,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
   connect(conv1.port_a, amb1.node) annotation (Line(
       points={{-50,0},{-80,0}},
-      color={191,0,0},
-      smooth=Smooth.None));
+      color={191,0,0}));
 end ComplexNetwork;
