@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "谈及Modelica时，首先要特别感谢Hilding Elmqvist，不仅因为他的技术远见，发现了符号处理技术可以"
 "解决工程问题的潜在应用价值，而且得益于他的领导能力推动Modelica技术朝着开放的标准发展。"
-"Hilding是毫无疑问的 \"Modelica之父\" ，对于Modelica技术取得的一切成果,他都受之无愧。"
+"Hilding毫无疑问是 \"Modelica之父\" ，对于Modelica技术取得的一切成果,他都受之无愧。"
 
 #: ../../source/front/ack.rst:21
 msgid ""
@@ -151,7 +151,7 @@ msgstr ""
 "团队成员反映出来。最后，我要感谢达索系统公司（Dassault Systèmes）给予了我与"
 "其他优秀人士一起工作的机会。尤其是我要感谢Hilding Elmqvist和Marc Frouin"
 "鼓励我到那里工作。我还要感谢Martin Malmheden、Dag Brück和Sandrine Loembe与我"
-"在巴黎度过的所有美好时光。
+"在巴黎度过的所有美好时光。"
 
 #: ../../source/front/ack.rst:88
 msgid "Contributors"
@@ -361,7 +361,7 @@ msgid ""
 msgstr ""
 "众筹项目的资金使我可以在这个项目上投入更多的时间，但是仍然有很多人在这个项目上帮助过我。"
 "首先，我要再一次感谢我的父亲对本书的初稿进行了校对。校对是一项无聊的工作，但却是必不可少的步骤。"
-"所以，我认为他值得为这项工作所作出的牺牲而获得赞扬。此外，我还要感谢"
+"所以，我认为他值得为这项工作所作出的奉献而获得赞扬。此外，我还要感谢"
 "Dietmar Winkler和Michael O’Keefe对本书内容提供的反馈。Dietmar还帮助我测试了"
 "本书电子版和PDF格式出版的问题。"
 

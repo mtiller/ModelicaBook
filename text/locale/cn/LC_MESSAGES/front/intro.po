@@ -39,7 +39,7 @@ msgid ""
 "(*e.g.,* springs, resistors, clutches, *etc.*).  These components can then "
 "be combined into subsystems, systems or even architectures."
 msgstr ""
-"Modelica是一种高级声明性语言用于描述事物的数学特性。它通常应用于工程领域，可以"
+"Modelica是一种高级的陈述式语言用于描述事物的数学特性。它通常应用于工程领域，可以"
 "轻松的描述不同类型工程组件（ *例如,* 弹簧，电阻，离合器 *等* ）的工作特性。此外，这些组件又可以方便的组"
 "合成子系统、系统，甚至架构。"
 
@@ -84,7 +84,7 @@ msgid ""
 "of Modelica (without being compelled to pay any royalty of any kind)."
 msgstr ""
 "最后，Modelica语言另一个引人注目的事实是：它从一开始就是以开放的语言标准设计的。Modelica语言规范的"
-"免费获得，大大激励了工具供应商支持Modelica模型导入、导出的热情（因为不需要强制支付任何形式的版税。）"
+"免费获得，大大激励了工具供应商支持Modelica模型导入、导出的热情（因为不需要强制支付任何形式的版税）。"
 
 #: ../../source/front/intro.rst:46
 msgid "What Modelica allows me to do"
