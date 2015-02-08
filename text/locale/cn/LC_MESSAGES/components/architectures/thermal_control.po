@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/architectures/thermal_control.rst:4
 msgid "Thermal Control"
-msgstr ""
+msgstr "热力控制"
 
 #: ../../source/components/architectures/thermal_control.rst:6
 msgid ""
@@ -23,6 +23,10 @@ msgid ""
 "temperature sense and the actuator will be the furnace in the house.  Using "
 "these models, we will explore a few different control strategies."
 msgstr ""
+"在这一章中，我们将考虑另一个系统。这个系统包括了控制对象、控制器、传感器和执行器。"
+"这个应用场景是分为三区的房子的热控制。"
+"控制对象将是房子本身。传感器为温度传感器。执行器则为房内的火炉。"
+"利用这些模型，我们将探索不同的控制策略。"
 
 #: ../../source/components/architectures/thermal_control.rst:13
 msgid ""
@@ -31,18 +35,20 @@ msgid ""
 "set of interfaces and then, after discussing their limitations, restart "
 "taking a different approach that will provide us with greater flexibility."
 msgstr ""
+"我们也将如同上节一般，遵循架构驱动的方法来构建该系统。"
+"然而，在开始时我们会使用一组接口。然后，在讨论其局限性后，我们重新用不同的方法以更大的灵活性。"
 
 #: ../../source/components/architectures/thermal_control.rst:22
 msgid "Initial Approach"
-msgstr ""
+msgstr "初步方法"
 
 #: ../../source/components/architectures/thermal_control.rst:25
 msgid "Architecture"
-msgstr ""
+msgstr "架构"
 
 #: ../../source/components/architectures/thermal_control.rst:27
 msgid "Let's start with the following architecture:"
-msgstr ""
+msgstr "让我们从下列架构开始："
 
 #: ../../source/components/architectures/thermal_control.rst:34
 msgid ""
@@ -52,6 +58,10 @@ msgid ""
 "into a few subsystems and/or include multiple controllers and control loops."
 "  But many closed loop system control problems have a similar structure."
 msgstr ""
+"我们在这里看到了和上一节同样的基本组件：控制对象模型、传感器、控制器和致动器。"
+"其实，这是一个非常典型的架构。"
+"在某些情况下，人们可以控制对象模型分解成几个子系统和/或加入多个控制器和控制回路。"
+"只是，许多闭环系统的控制问题具有类似的结构。"
 
 #: ../../source/components/architectures/thermal_control.rst:41
 msgid ""
@@ -59,46 +69,53 @@ msgid ""
 "between these parts.  In this case, we can see from the architecture "
 "schematic that our interface definitions are such:"
 msgstr ""
+"各种应用里的不同点一般在于，上述部件之间交换的特定信号有不同。"
+"在本例里，我们可以从上述结构原理图上看出，接口定义如下："
 
 #: ../../source/components/architectures/thermal_control.rst:45
 msgid ""
 "The actuator receives a commanded temperature and then injects heat through "
 "a thermal connection to the plant"
 msgstr ""
+"致动器接收到目标温度，然后通过与控制对象的热连接注入热"
 
 #: ../../source/components/architectures/thermal_control.rst:48
 msgid ""
 "The sensor model also has a thermal connector (to the plant) and an output "
 "signal containing the measured temperature."
 msgstr ""
+"传感器模型也带有热连接器（和控制对象相连）。而且它还包含了测量温度的输出信号。"
 
 #: ../../source/components/architectures/thermal_control.rst:51
 msgid ""
 "The plant has two thermal connections.  One represents where the furnace "
 "heat is added to the system and the other is where the sensor is located."
 msgstr ""
+"控制对象有两个热连接。"
+"一个热连接代表炉子热量和控制对象的连接。另一个是传感器的位置。"
 
 #: ../../source/components/architectures/thermal_control.rst:55
 msgid ""
 "The controller takes the measured temperature (from the sensor) as an input "
 "and outputs a commanded heat output (to the actuator)"
 msgstr ""
+"控制器以（从传感器）测得的温度作为输入，并输出一个指定热输出（到致动器）"
 
 #: ../../source/components/architectures/thermal_control.rst:59
 msgid "The Modelica code for this base system looks like this:"
-msgstr ""
+msgstr "此基本系统的Modelica代码如下："
 
 #: ../../source/components/architectures/thermal_control.rst:65
 msgid "Initial Implementations"
-msgstr ""
+msgstr "初始实现"
 
 #: ../../source/components/architectures/thermal_control.rst:68
 msgid "Plant"
-msgstr ""
+msgstr "控制对象"
 
 #: ../../source/components/architectures/thermal_control.rst:70
 msgid "Our plant model looks like this:"
-msgstr ""
+msgstr "控制对象的模型如下："
 
 #: ../../source/components/architectures/thermal_control.rst:77
 msgid ""
@@ -106,36 +123,42 @@ msgid ""
 "the zone where the temperature is measured by a third zone.  Our furnace "
 "model is a simple heat source:"
 msgstr ""
+"我们在这里可以看到，其中暖炉加热的区域与测温的第三区是分隔开的。"
+"暖炉模型是一个简单的热源："
 
 #: ../../source/components/architectures/thermal_control.rst:86
 msgid ""
 "This actuator takes a commanded heat level as an input and then injects that"
 " amount of heat into the system."
 msgstr ""
+"致动器以指令热量水平作为输入，然后注入相应的热量到系统里。"
 
 #: ../../source/components/architectures/thermal_control.rst:89
 msgid "The sensor is similarly simple:"
-msgstr ""
+msgstr "类似地，传感器也很简单："
 
 #: ../../source/components/architectures/thermal_control.rst:96
 msgid ""
 "This sensor doesn't introduce any artifact.  Instead, it provides the exact "
 "temperature as a continuous signal."
 msgstr ""
+"这种传感器不引入任何误差。"
+"相反，这个传感器提供精确温度作为连续信号。"
 
 #: ../../source/components/architectures/thermal_control.rst:99
 msgid "We will use the following PI controller to control the temperature:"
-msgstr ""
+msgstr "我们将使用以下PI控制器来控制温度："
 
 #: ../../source/components/architectures/thermal_control.rst:107
 msgid "Initial Results"
-msgstr ""
+msgstr "初步结果"
 
 #: ../../source/components/architectures/thermal_control.rst:109
 msgid ""
 "Populating our architecture with these implementations, our model now looks "
 "like this:"
 msgstr ""
+"将上述实现填充入架构，模型看起来如下："
 
 #: ../../source/components/architectures/thermal_control.rst:117
 msgid ""
@@ -143,20 +166,25 @@ msgid ""
 " when we perform a ``redeclare``, the icon for the new type associated with "
 "that subsystem is used.  The Modelica code for this system is:"
 msgstr ""
+"请注意各个子系统的图标已经改变了。"
+"这是因为当我们进行了\ ``redeclare``\ 后，子系统便会使用相关联的新类型的图标。"
+"这个系统的Modelica语言代码是："
 
 #: ../../source/components/architectures/thermal_control.rst:125
 msgid "If we simulate this system, we get the following results:"
-msgstr ""
+msgstr "如果我们对系统进行仿真，会得到以下的结果："
 
 #: ../../source/components/architectures/thermal_control.rst:130
 msgid ""
 "As we can see, this approach works very well.  The furnace heat required to "
 "achieve this degree of control looks like this:"
 msgstr ""
+"我们可以看到，这种方法效果非常好。"
+"实现这种程度控制所需的暖炉热量如下："
 
 #: ../../source/components/architectures/thermal_control.rst:137
 msgid "Bang Bang Control"
-msgstr ""
+msgstr "开关控制"
 
 #: ../../source/components/architectures/thermal_control.rst:139
 msgid ""
@@ -165,6 +193,9 @@ msgid ""
 "controllers or even plant models.  The control system we've developed seems "
 "to do a fairly good job of controlling our plant."
 msgstr ""
+"到目前为止，这种做法好像已经相当成功。"
+"我们有一个很好的架构，我们可以用其来考虑不同的执行器、传感器、控制器甚至控制对象模型。"
+"我们开发的控制系统在这种情况性能似乎不错。"
 
 #: ../../source/components/architectures/thermal_control.rst:145
 msgid ""
@@ -173,6 +204,9 @@ msgid ""
 "of control strategy.  Instead, they tend to use something called \"bang-"
 "bang\" control where the furnace is either \"off\" or \"on\"."
 msgstr ""
+"但有一点值得注意的是，在这种情况下暖炉热量必须为连续。"
+"不过，家庭取暖系统通常不采用这种类型的控制策略。"
+"相反，这类系统倾向于使用所谓的开关控制。在这种控制策略里，暖炉是非“开”即“关”。"
 
 #: ../../source/components/architectures/thermal_control.rst:151
 msgid ""
@@ -182,6 +216,9 @@ msgid ""
 "be on or off.  However, if we start this process, we quickly run into the "
 "following problem:"
 msgstr ""
+"我们有这个灵活的架构。为了解决这个问题，我们也许应该创建控制器和执行器模型的实现。"
+"其中控制器命令是一个布尔值，去指示是否暖炉的开启或关闭。"
+"但是，如果我们开始这么做的话，很快就会遇到以下问题："
 
 #: ../../source/components/architectures/thermal_control.rst:162
 msgid ""
@@ -189,6 +226,8 @@ msgid ""
 "commanded ``heat`` signal from our ``ControlSystem`` interface requires a "
 "``Real`` value.  We have the same problem on the actuator side:"
 msgstr ""
+"需要注意的是，从我们的控制器输出\ ``Boolean``\ 值，但我们的\ ``ControlSystem``\ 接口里的命令信号\ ``heat``\ 却为\ ``Real``\ 值。"
+"我们在执行器处也有同样的问题："
 
 #: ../../source/components/architectures/thermal_control.rst:171
 msgid ""
@@ -196,16 +235,19 @@ msgid ""
 " that if our furnace expects an \"on\" or \"off\" command, we have a "
 "mismatch."
 msgstr ""
+"该接口提供\ ``Real``\ 值的执行机构。但我们再一次看到，如果暖炉要求“开启”或“关闭”命令时，我们就有不匹配。"
 
 #: ../../source/components/architectures/thermal_control.rst:175
 msgid ""
 "So the question then becomes, **how can we handle situations where choosing "
 "different subsystems requires us to have different interfaces**?"
 msgstr ""
+"So the question then becomes, **how can we handle situations where choosing different subsystems requires us to have different interfaces**?"
+"所以，问题就变成：\ **如何处理不同子系统要求不同接口这种情况**\ ？"
 
 #: ../../source/components/architectures/thermal_control.rst:182
 msgid "Expandable Approach"
-msgstr ""
+msgstr "可扩展方法"
 
 #: ../../source/components/architectures/thermal_control.rst:187
 msgid ""
@@ -214,6 +256,9 @@ msgid ""
 "whether the control strategy generates a ``Boolean`` or ``Real``.  What "
 "changes is the contents of the connector instances."
 msgstr ""
+"\ ``expandable``\ 连接器定义解决了这个问题。"
+"通过这种方法，不论控制策略输出\ ``Boolean``\ 或\ ``Real``\ ，我们的子系统接口都不会改变。"
+"在这种情况下，改变的是连接器实例中的内容。"
 
 #: ../../source/components/architectures/thermal_control.rst:192
 msgid ""
@@ -221,10 +266,11 @@ msgid ""
 "our architecture to include ``expandable`` connectors and then see how these"
 " can be used for both continuous and \"bang-bang\" approaches."
 msgstr ""
+"要了解这些\ ``expandable``\ 连接器是如何工作的，我们将重新设计架构模型。新架构包括\ ``expandable``\ 连接器，然后我们会考虑架构模型如何可用于连续以及“开关”的控制策略。"
 
 #: ../../source/components/architectures/thermal_control.rst:198
 msgid "Expandable Connectors"
-msgstr ""
+msgstr "可扩展连接器"
 
 #: ../../source/components/architectures/thermal_control.rst:200
 msgid ""
@@ -232,6 +278,9 @@ msgid ""
 "``expandable connector``.  For example, previously we defined the "
 "``Actuator`` interface as:"
 msgstr ""
+"让我们可以构造更灵活架构模型的关键功能是\ ``expandable connector``\ 。"
+"For example, previously we defined the ``Actuator`` interface as:"
+"举个例子，先前我们定义了如下的\ ``Actuator``\ 接口："
 
 #: ../../source/components/architectures/thermal_control.rst:207
 msgid ""
@@ -244,6 +293,11 @@ msgid ""
 " control that required a ``Boolean`` signal.  To address this, we'll use the"
 " following interface definition for our actuators:"
 msgstr ""
+"此接口包含两个连接器， \ ``heat``\ 连接器和\ ``furnace``\ 连接器。"
+"\ ``furnace``\ 连接器为热连接器，它使暖炉与控制对象产生热相互作用。"
+"\ ``heat``\ 连接器为来自控制器的\ ``Real``\ 值输入信号。该信号指定所需的热量输出大小。"
+"事实上，在我们切换到需要\ ``Boolean``\ 信号的控制方法时，接口模型的上述信号为\ ``Real``\ 值这点正是问题所在。"
+"为了解决这个问题，我们将使用下面的接口定义执行器："
 
 #: ../../source/components/architectures/thermal_control.rst:220
 msgid ""
@@ -252,6 +306,10 @@ msgid ""
 "instance, ``bus``, of type ``ExpandableBus``.  The connector definition for "
 "``ExpandableBus`` is:"
 msgstr ""
+"这里我们看到\ ``furnace``\ 连接器仍然存在。"
+"但是\ ``heat``\ 连接器已经不见了。"
+"相反，它已被替换为新的连接器实例：类型为\ ``ExpandableBus``\ 的\ ``bus``\ 。"
+"\ ``ExpandableBus``\ 连接器的定义是："
 
 #: ../../source/components/architectures/thermal_control.rst:229
 msgid ""
@@ -263,6 +321,11 @@ msgid ""
 "information to be carried on the bus.  But the bus can be **expanded** to "
 "include additional information."
 msgstr ""
+"换句话说， **它是空的** 。"
+"但重要的是\ ``expandable``\ 限定词的存在。"
+"如果总线总是需要某些特定信号，这些信号就应该列在其连接器的定义之内。"
+"而事实上，\ ``ExpandableBus``\ 类没有任何变量或子连接器。这意味着总线内的信息量没有最低要求。"
+"不过总线可以通过\ **扩展**\ 来包含更多的信息。"
 
 #: ../../source/components/architectures/thermal_control.rst:237
 msgid ""
@@ -271,6 +334,10 @@ msgid ""
 "interface definition.  So creating richer connectors via inheritance doesn't"
 " really help."
 msgstr ""
+"当然，我们可以使用继承来添加新信号。"
+"但是，继承会引入了一个新类型。"
+"而接口定义中使用的类型规定了连接器的类型。"
+"所以，通过继承并不能真正有效创造更复杂的接口。"
 
 #: ../../source/components/architectures/thermal_control.rst:244
 msgid ""
@@ -278,6 +345,8 @@ msgid ""
 "is often used in such contexts to connote a connector that is carrying "
 "multiple pieces of information."
 msgstr ""
+"注意，Modelica内并有一个没有正式的“总线”定义。"
+"这个术语经常用于上述情况去表示携带多条信息的连接器。"
 
 #: ../../source/components/architectures/thermal_control.rst:248
 msgid ""
@@ -289,6 +358,11 @@ msgid ""
 "details about this process once we get to the point where we have some "
 "implementation models to discuss."
 msgstr ""
+"可扩展连接器的功能比较特殊。"
+"可扩展总线的信号\ **由其上的连接决定**\ 。"
+"通过向可扩展总线添加连接，信号便会隐含地添加在连接器上。"
+"这时的Modelica编译会观察与上述连接器相连的所有连接器，并将这些连接器全部扩展。这样一来，所有的连接器才可以互相匹配。"
+"稍后，我们将进一步介绍上述过程。但在这之前，我们需要首先有讨论的实际模型。"
 
 #: ../../source/components/architectures/thermal_control.rst:256
 msgid ""
@@ -296,6 +370,7 @@ msgid ""
 " connectors, but the interfaces for the sensor and controller are as "
 "follows:"
 msgstr ""
+"控制对象模型的接口没有受使用\ ``expandable``\ 连接器的影响。但传感器和控制器的接口如下："
 
 #: ../../source/components/architectures/thermal_control.rst:266
 msgid ""
@@ -307,27 +382,35 @@ msgid ""
 "representative of the physical partitioning or to avoid confusion.  Here we "
 "will use a single connector simply to demonstrate that this is now possible."
 msgstr ""
+"请注意控制器接口变得多么简单。"
+"这是因为通过使用\ ``expandable``\ 连接器，我们可以把从传感器接收到的温度测量以及发送到致动器的热量命令放在\ **在同一总线上**\ 。"
+"因此，我们只需要一个接口。"
+"开发人员仍可以直接使用多个总线去组织信号，使信号更好地反映物理存在或避免混乱。"
+"在此，我们使用单一连接器的目的纯粹是为了告诉读者这样做是可能的。"
 
 #: ../../source/components/architectures/thermal_control.rst:275
 msgid ""
 "Using expandable connectors, we can create the following revised "
 "architecture:"
 msgstr ""
+"使用可扩展的连接器，我们可以创建以下改进版的架构："
 
 #: ../../source/components/architectures/thermal_control.rst:284
 msgid "Expandable Implementations"
-msgstr ""
+msgstr "可扩展实现"
 
 #: ../../source/components/architectures/thermal_control.rst:286
 msgid ""
 "With this more flexible architecture, let's first recreate our original "
 "configuration with the continuous control system:"
 msgstr ""
+"有了这个更灵活的架构，让我们先重建原有的连续控制系统配置："
 
 #: ../../source/components/architectures/thermal_control.rst:294
 msgid ""
 "If we plot the results from this system, we get the following response:"
 msgstr ""
+"若我们绘制这个系统的仿真结果，会得到如下的响应："
 
 #: ../../source/components/architectures/thermal_control.rst:300
 msgid ""
@@ -338,14 +421,19 @@ msgid ""
 "get on the connector.  The answer lies in the implementation of the sensor "
 "model.  The diagram for the sensor model looks like this:"
 msgstr ""
+"请注意，所测温度对应于信号\ ``controller.bus.temp``\ 。其中\ ``bus``\ 是可扩展的连接器的一个实例。"
+"进一步回忆的\ ``ExpandableBus``\ 定义\ **不含有**\ 一个叫\ ``temperature``\ 的信号。"
+"所以现在的问题是，该信号是怎么去到连接器上的？"
+"问题就出在传感器模型的实现。"
+"传感器模型的框图如下："
 
 #: ../../source/components/architectures/thermal_control.rst:313
 msgid "The corresponding Modelica code is:"
-msgstr ""
+msgstr "对应的Modelica代码是："
 
 #: ../../source/components/architectures/thermal_control.rst:320
 msgid "Of particular importance is the highlighted line."
-msgstr ""
+msgstr "重要的是高亮显示的那行。"
 
 #: ../../source/components/architectures/thermal_control.rst:322
 msgid ""
@@ -357,6 +445,12 @@ msgid ""
 "``ExpandableBus``. Instead, **it is created by the** ``connect`` **statement"
 " itself**!  This is precisely what the ``expandable`` qualifier allows."
 msgstr ""
+"在该图中，我们可以看到，温度传感器组件的输出信号连接在总线上。"
+"但是，我们观察\ ``connect``\ 声明可以看出，信号不仅仅是连接到总线上。"
+"It is connected to something named ``temperature`` inside the bus."
+"此信号连接在总线上一个名为\ ``temperature``\ 的量上。"
+"\ ``temperature``\ 连接器并不存在于\ ``ExpandableBus``\ 的定义里。"
+"相反，\ **它是由** \ ``connect``\  **语句本身创建的**\ ！这也恰恰是\ ``expandable``\ 限定词所允许的。"
 
 #: ../../source/components/architectures/thermal_control.rst:333
 msgid ""
@@ -368,10 +462,15 @@ msgid ""
 "accidentally creating an unintended signal (*e.g.,* as a result of a typing "
 "error) becomes a possibility that would otherwise be caught by the compiler."
 msgstr ""
+"一般情况下，我们不希望所有连接器均为\ ``expandable``\  。"
+"若我们\ *先验地*\ 知道所有信号的的名称和类型，那么就应该明确的列出。"
+"这样做会允许Modelica语言的编译器进行一些重要的检查，以确保模型的正确性。"
+"值得注意的是，添加所述\ ``expandable``\ 限定词到连接器会使不小心创建无用信号成为可能（\ *例如*\ 由于打错字）。"
+"这种错误在没有添加限定词的时候，本来可以由编译器找出。"
 
 #: ../../source/components/architectures/thermal_control.rst:343
 msgid "Reconfiguration"
-msgstr ""
+msgstr "重配置"
 
 #: ../../source/components/architectures/thermal_control.rst:345
 msgid ""
@@ -379,6 +478,7 @@ msgid ""
 "continuous control version of our system, let's return our attention to the "
 "\"bang-bang\" version."
 msgstr ""
+"现在，我们已经演示了如何使用可扩展的方法对系统的连续控制版本进行建模。现在，让我们重新关注到“开关”版本。"
 
 #: ../../source/components/architectures/thermal_control.rst:349
 msgid ""
@@ -386,12 +486,16 @@ msgid ""
 "the expandable connector.  What remains is the controller and actuator "
 "models.  The actuator model diagram looks like this:"
 msgstr ""
+"我们已经看到如何配置可扩展连接器版的温度传感器子系统。"
+"剩下的就是控制器和致动器的模型。"
+"执行器模型框图如下所示："
 
 #: ../../source/components/architectures/thermal_control.rst:358
 msgid ""
 "Again, looking at the Modelica code is important to see how the signals on "
 "the ``bus`` connector are referenced:"
 msgstr ""
+"同样，看Modelica的代码时要注意对\ ``bus``\ 连接器信号的引用："
 
 #: ../../source/components/architectures/thermal_control.rst:366
 msgid ""
@@ -400,6 +504,9 @@ msgid ""
 " in the definition of ``ExpandableBus``, but it is implicitly created simply"
 " because it is referenced in the highlighted ``connect`` statement."
 msgstr ""
+"再次，注意强调的那行。"
+"该行引用\ ``bus``\ 连接器的名为\ ``heat_command``\ 的元素。"
+"和上面一样，该信号不存在于\ ``ExpandableBus``\ 的定义内。该信号是隐式创建的。因为它在上述高亮显示\ ``connect``\ 语句中被引用了。"
 
 #: ../../source/components/architectures/thermal_control.rst:372
 msgid ""
@@ -410,6 +517,10 @@ msgid ""
 "should expect to see both of these signals used by the controller model.  "
 "The diagram for the controller looks like this:"
 msgstr ""
+"由传感器模型我们可以看到，测得的温度输出到\ ``bus``\ 连接器的一个名为\ ``temperature``\ 的\ ``Real``\ 信号里。"
+"由致动器模型我们则看到，致动器需要的控制器命令来自一个名为\ ``heat_command``\ 的\ ``Boolean``\ 信号。"
+"因此，我们应该会看到控制器模型使用这两个信号。"
+"控制器的框图如下："
 
 #: ../../source/components/architectures/thermal_control.rst:385
 msgid ""
@@ -417,6 +528,8 @@ msgid ""
 "of the signals being referenced on the ``bus`` connector.  For that, we need"
 " to look at the actual source code:"
 msgstr ""
+"但图内不包含足够的细节去让我们得知所引用\ ``bus``\ 连接器信号的准确名称。"
+"为此，我们需要看实际的源代码："
 
 #: ../../source/components/architectures/thermal_control.rst:394
 msgid ""
@@ -425,22 +538,26 @@ msgid ""
 "``bus`` connector, **those names match** the names that the sensor and "
 "actuator models expect."
 msgstr ""
+"再次，注意高亮行。"
+"这些\ ``connect``\ 语句不仅隐式将\ ``temperature``\ 和\ ``heat_command``\ 信号加入\ ``bus``\ 连接器，而且\ **这两个名称**\ 传感器和执行器模型所需的信号\ **相匹配**\ 。"
 
 #: ../../source/components/architectures/thermal_control.rst:399
 msgid ""
 "Pulling all of these subsystems together, we get the following diagram for "
 "our system:"
 msgstr ""
+"将所有子系统组合起来，我们得到系统的框图如下："
 
 #: ../../source/components/architectures/thermal_control.rst:407
 msgid "The source code for our system model is quite simple:"
-msgstr ""
+msgstr "系统模型的源代码甚为简单："
 
 #: ../../source/components/architectures/thermal_control.rst:415
 msgid ""
 "However, there is still one remaining issue with these models and it can be "
 "seen more clearly if we look at the duty cycle of the furnace:"
 msgstr ""
+"然而，这些模型仍有一个问题。若我们观察暖炉的负载循环，就可以更清楚地看出这个问题："
 
 #: ../../source/components/architectures/thermal_control.rst:421
 msgid ""
@@ -449,6 +566,9 @@ msgid ""
 " any hysteresis that we see the furnace constantly turning on and off.  If "
 "we add hysteresis, our controller model becomes:"
 msgstr ""
+"这正是我们在前面小节\ :ref:`hysteresis`\ 中展示的相同问题."
+"正因为控制策略缺乏任何迟滞，我们才所看到的暖炉不断打开和关闭。"
+"如果再加上迟滞，控制器模型就变为："
 
 #: ../../source/components/architectures/thermal_control.rst:432
 msgid ""
@@ -459,20 +579,25 @@ msgid ""
 "can see, these configuration management features in Modelica do a nice job "
 "of conveying that in our system level model:"
 msgstr ""
+"其余部分均保持不变。"
+"我们将使用相同的传感器和执行器模型。我们仍然使用相同的总线信号，因为这仍然是一个开关控制器。"
+"所以，系统级模型的唯一变化（相对于\ ``OnOffVariant``\ 模型）就是所使用的不同控制器模型。"
+"我们可以看到，Modelica的这些配置管理功能可以很好地在系统模型内表述这点："
 
 #: ../../source/components/architectures/thermal_control.rst:443
 msgid "Using hysteresis control, our simulation results look like this:"
-msgstr ""
+msgstr "使用迟滞控制，我们的模拟结果如下："
 
 #: ../../source/components/architectures/thermal_control.rst:448
 msgid ""
 "But the most important difference is the fact that the hysteresis doesn't "
 "lead to the kind of chattering we saw in our previous bang-bang controller:"
 msgstr ""
+"但最重要的区别是，滞后不会导致之前在开关控制器中看到的抖振："
 
 #: ../../source/components/architectures/thermal_control.rst:456
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/components/architectures/thermal_control.rst:458
 msgid ""
@@ -484,6 +609,9 @@ msgid ""
 "designs for each subsystem or to consider more or less detail in any given "
 "subsystem as necessary for any given engineering analysis."
 msgstr ""
+"这是我们能够使用Modelica配置管理功能，采取基于架构的方法来建立系统模型的第二个例子。"
+"当存在基于相同架构有很多变体需要分析时，架构方法非常有用。"
+"使用\ ``redeclare``\ 特性，能够容易地替换子系统的不同设计，或者对应不同的工程分析使用具有所需细节度的子系统。"
 
 #: ../../source/components/architectures/thermal_control.rst:467
 msgid ""
@@ -492,6 +620,9 @@ msgid ""
 "comes with some risk because the type checking normally done by the Modelica"
 " compiler is less rigorous."
 msgstr ""
+"在本例中，我们看到了对比标准连接器而言\ ``expandable``\ 连接器如何提供了更大的灵活性。"
+"However, it also comes with some risk because the type checking normally done by the Modelica compiler is less rigorous."
+"不过，这也带有一定的风险。原因是，通常由Modelica语言编译器进行的类型检查不那么严格了。"
 
 #: ../../source/components/architectures/thermal_control.rst:184
 msgid "expandable connectors"
