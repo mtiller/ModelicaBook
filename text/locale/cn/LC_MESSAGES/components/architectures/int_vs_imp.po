@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../source/components/architectures/int_vs_imp.rst:2
 msgid "Interfaces and Implementations"
-msgstr ""
+msgstr "接口和实现"
 
 #: ../../source/components/architectures/int_vs_imp.rst:5
 msgid "Conceptual Definitions"
-msgstr ""
+msgstr "概念定义"
 
 #: ../../source/components/architectures/int_vs_imp.rst:7
 msgid ""
@@ -29,6 +29,12 @@ msgid ""
 "can think of an interface as a \"shell\" without any internal details.  For "
 "this reason, interface models are almost always marked as ``partial``."
 msgstr ""
+"我们在本章提出的两个例子里，接口定义用作架构定义过程的一部分。"
+"术语“接口”并非来自Modelica。这个词是计算机语言中的一个常用术语。"
+"在Modelica里，我们可以认为接口是定义了所有\ **外部可见**\ 细节的模型。"
+"你也可以把一个接口当作没有任何内部细节的“壳”。"
+"For this reason, interface models are almost always marked as ``partial``."
+"出于这个原因，接口模型几乎总是带有\ ``partial``\ 标记。"
 
 #: ../../source/components/architectures/int_vs_imp.rst:16
 msgid ""
@@ -44,10 +50,17 @@ msgid ""
 " a ``partial`` model).  But most of the time, these implementations will be "
 "complete (non-``partial``) models for a particular subsystem."
 msgstr ""
+"另一个重要的概念就是“实现”。"
+"这是从计算机语言世界借来的另一个词。"
+"接口用于简单地描述模型外部可见的部分。而实现除此以外还包括了内部细节。"
+"实现包括真正实现该接口所需的信息。"
+"某些情况下，该模型可能只是接口的部分实现（这种情况下，它也应该标记为\ ``partial``\ ）。"
+"而在另一些情况下，该模型可以代表特定子系统的架构。其中的进一步实现细节则在推迟到模型层级另一级（这是\ ``partial``\ 模型的另一种情况）。"
+"不过大部分的时间，这些实现将是特定子系统的完整（非\ ``partial``\ ）模型。"
 
 #: ../../source/components/architectures/int_vs_imp.rst:32
 msgid "Plug-Compatibility"
-msgstr ""
+msgstr "插件兼容性"
 
 #: ../../source/components/architectures/int_vs_imp.rst:34
 msgid ""
@@ -64,6 +77,11 @@ msgid ""
 "compatible with ``Y``, this **does not** imply that ``Y`` is plug-compatible"
 " with ``X`` (as we will see in a moment)."
 msgstr ""
+"当我们谈论接口和实现所要考虑的重中之重就是\ **插件兼容性**\ 的概念。"
+"我们在\ :ref:`sensor-comparison`\ 例子已经讨论过，模型\ ``X``\ 插件兼容于模型\ ``Y``\ ，当每个\ ``Y``\ 的\ **公共**\ 变量都能在\ ``X``\ 具有相同名称的对应公共变量。"
+"此外，每个\ ``X``\ 的上述变量本身必须是插件兼容于其在\ ``Y``\ 内的对应变量。"
+"这可以确保如果你将\ ``Y``\ 类型的组件更换为\ ``X``\ 类型的组件，你需要的一切（参数，连接器等）将依然存在、并仍将兼容。"
+"\ **不过**\ ，请注意如果\ ``X``\ 插件兼容于\ ``Y``\ ，这\ **不**\ 意味着\ ``Y``\ 插件兼容于\ ``X``\ （我们稍后会看到）。"
 
 #: ../../source/components/architectures/int_vs_imp.rst:48
 msgid ""
@@ -75,10 +93,13 @@ msgid ""
 "process by which configuration management is performed is centered around "
 "plug-compatibility."
 msgstr ""
+"一般来说，大多数情况我们关注的插件兼容性问题是围绕着给定的实施是否插件兼容于给定的接口。"
+"正如我们在这些例子里看到的一样（我们也马上会回顾），Modelica的配置管理功能依赖于接口和实现间的关系。"
+"而配置管理的流程则是着围绕插件的兼容性为中心的。"
 
 #: ../../source/components/architectures/int_vs_imp.rst:57
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/components/architectures/int_vs_imp.rst:59
 msgid ""
@@ -87,3 +108,6 @@ msgid ""
 "define interfaces and distinguish them from implementations, since these "
 "will be very useful when creating architecture driven models."
 msgstr ""
+"必须要知道，我们不但应该以接口与实现模型为基础进行思考，"
+"而且也要正式创建接口模型，并且要区分接口模型与具体实现。"
+"因为创建架构驱动的模型时，上述思路都非常有用。"
