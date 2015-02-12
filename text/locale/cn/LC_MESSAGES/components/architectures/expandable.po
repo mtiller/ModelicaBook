@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../source/components/architectures/expandable.rst:2
 msgid "Expandable Connectors"
-msgstr ""
+msgstr "可扩展连接器"
 
 #: ../../source/components/architectures/expandable.rst:5
 msgid "Definition"
-msgstr ""
+msgstr "定义"
 
 #: ../../source/components/architectures/expandable.rst:7
 msgid ""
@@ -26,6 +26,8 @@ msgid ""
 "covers all important configurations.  One option, in this case, is to use "
 "``expandable`` connectors."
 msgstr ""
+"正如我们在本章\ :ref:`thermal-control`\ 例子里看到的，要建构一个架构模型时很难定义一个接口去涵盖所有重要配置。"
+"在这种情况下，一种解决方法就是用\ ``expandable``\ 连接器。"
 
 #: ../../source/components/architectures/expandable.rst:12
 msgid ""
@@ -34,6 +36,7 @@ msgid ""
 "exception that the ``expandable`` qualifier is added before the definition, "
 "*e.g.,*"
 msgstr ""
+"可扩展连接器使用与正常连接器定义完全相同的语法（见前面\ :ref:`connector-def`\ 的讨论）。唯一不同之处在于定义前加入了\ ``expandable``\ 限定词，\ *如：*\ "
 
 #: ../../source/components/architectures/expandable.rst:23
 msgid ""
@@ -42,6 +45,8 @@ msgid ""
 "use such a connector as a normal connector will provide the correct number "
 "of equations such that any component models are :ref:`balanced-components`."
 msgstr ""
+"倘若我们希望的话，就可以忽略\ ``expandable``\ 限定词而把这个连接器当成一个正常的连接器来使用。"
+"上述使用所依赖的假设是，将可扩展连接器作为正常连接器来使用的组件其方程数目正确，使得任何组件模型均为\ :ref:`balanced-components`\ 。"
 
 #: ../../source/components/architectures/expandable.rst:29
 msgid ""
@@ -52,6 +57,9 @@ msgid ""
 " be added to any other connector instances in the :ref:`connection set "
 "<connection-sets>` as well."
 msgstr ""
+"但是，如果用户将信号连接到某个有特定名称的元素，而该元素\ **不是**\ 连接定义内的一部分，那么该新元素将添加到连接器的该实例里。"
+"此新元素的类型将和与其相连的连接器相同的。"
+"最终，该元素将被添加到\ :ref:`\ 连接集\ <connection-sets>`\ 内任何其他连接器的实例上。"
 
 #: ../../source/components/architectures/expandable.rst:36
 msgid ""
@@ -63,6 +71,9 @@ msgid ""
 "very useful when the interface can vary significantly depending on the "
 "choice of subsystems."
 msgstr ""
+"这样，\ ``expandable``\ 连接器定义便可以“增长”出原来没有的附加信号。"
+"这样，可扩展连接器的任何接口定义就具有灵活性，可以在初始连接器定义的基础上交换更多的信息。"
+"As we saw in the :ref:`thermal-control` example, this can be very useful when the interface can vary significantly depending on the choice of subsystems."
 
 #: ../../source/components/architectures/expandable.rst:44
 msgid ""
@@ -74,6 +85,10 @@ msgid ""
 "phasing will require a commanded cam angle from the controller.  But an "
 "engine without this feature will not."
 msgstr ""
+"到目前为止，可扩展连接器最常用的用例是用向连接器添加额外\ ``input``\ 和\ ``output``\ 信号。"
+"这通常出现在传感器、执行器这些子系统的实现细节改变时。因为控制器与上述部件配对所需信息会因此而改变。"
+"例如，凸轮相位控制的内燃机将需要来自控制器的凸轮角指令值。"
+"但是，如果发动机没有这个功能则没有这样的必要。"
 
 #: ../../source/components/architectures/expandable.rst:53
 msgid ""
@@ -83,10 +98,13 @@ msgid ""
 "while another one does.  The one that does could include a thermal acausal "
 "connector to allow other subsystems to interact thermally with it."
 msgstr ""
+"不过， \ ``expandable``\ 连接器也可以连接非因果的子连接器，以此为子系统附加新的物理相互作用。"
+"例如，某些子系统可能不包含热效应，但另一些则包含。"
+"包含热效应的子系统可以加入非因果连接器，从而允许其它子系统与之进行热交换。"
 
 #: ../../source/components/architectures/expandable.rst:61
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/components/architectures/expandable.rst:63
 msgid ""
@@ -99,3 +117,7 @@ msgid ""
 "interface definitions to define a minimum interface within an architecture "
 "that can be expanded by the choice of implementations."
 msgstr ""
+"可扩展接口定义规定了连接器所拥有变量的\ *最小*\ 集。"
+"使用可扩展接口的前提是，所有元件模型必须让连接器内定义变量数目与方程数目相平衡。"
+"此外，附加的变量可以随时添加至\ ``expandable``\ 连接器内。为此，整个系统模型仍要平衡。"
+"可扩展连接器一般用于与接口定义共同使用。这样就可以定义架构模型所需最小接口，以便通过选择子系统的不同实现来实现扩展。"
