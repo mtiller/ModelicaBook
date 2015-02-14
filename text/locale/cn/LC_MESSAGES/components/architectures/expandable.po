@@ -73,7 +73,7 @@ msgid ""
 msgstr ""
 "这样，\ ``expandable``\ 连接器定义便可以“增长”出原来没有的附加信号。"
 "这样，可扩展连接器的任何接口定义就具有灵活性，可以在初始连接器定义的基础上交换更多的信息。"
-"As we saw in the :ref:`thermal-control` example, this can be very useful when the interface can vary significantly depending on the choice of subsystems."
+"正如我们在\ :ref:`thermal-control`\ 例子里看到的一样，这个功能在当接口因应控制器的不同而显著改变时非常有用。"
 
 #: ../../source/components/architectures/expandable.rst:44
 msgid ""
