@@ -53,7 +53,7 @@ msgid ""
 "have to be declared**.  It is also worth noting that these variables only "
 "exists within the scope of the ``for`` loop (not before or after the loop)."
 msgstr ""
-"注意，循环索引变量（\ *如*\ 这里的\ ``i``\ ）\ **并不需要被声明** 。"
+"注意，循环索引变量（如这里的\ ``i``\ ）\ **并不需要被声明** 。"
 "还要注意这些变量仅仅在\ ``for``\ 循环的范围内存在（而在循环的前后均不存在）。"
 
 #: ../../source/behavior/arrays/looping.rst:36

@@ -82,7 +82,7 @@ msgid ""
 "possible to assign an alternative name for the alias)."
 msgstr ""
 "上述导入会创建和\ ``Modelica.SIunits``\ 内总定义数目相等的别名。"
-"别名名称的唯一可能性就是和所导入包内定义的原名相同（\ *即*\ 不可能为别名分配替代名称）。"
+"别名名称的唯一可能性就是和所导入包内定义的原名相同（即不可能为别名分配替代名称）。"
 
 #: ../../source/components/packages/importing.rst:0
 msgid "Wildcards considered harmful"

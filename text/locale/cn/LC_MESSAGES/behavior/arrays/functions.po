@@ -205,7 +205,7 @@ msgid ""
 "with only two dimensions)."
 msgstr ""
 "其中\ ``A``\ 为一任意维数的数组，且只有两个大小大于\ :math:`1`\ 的维度。"
-"\ ``matrix``\ 函数将数组的内容返回为一个矩阵（\ *即*\ 只有两个维度的数组）。"
+"\ ``matrix``\ 函数将数组的内容返回为一个矩阵（即只有两个维度的数组）。"
 
 #: ../../source/behavior/arrays/functions.rst:282
 msgid "Mathematical Operations"
@@ -587,8 +587,8 @@ msgstr ""
 "和\ :ref:`array-multiplication`\ 以及\ :ref:`array-division`\ 一样，指数操作符也有两种形式。"
 "第一种是标准的指数操作符\ ``^``\ 。"  
 "此标准版有两种不同的使用方式。"
-"第一种使用方法是两个标量的乘方运算（*即*\ :math:`a` ``^`` :math:`b`\ ）。"
-"另外一种则是求方阵的标量次乘方（*即*\ :math:`a_{ij}` ``^`` :math:`b`\ ）。"
+"第一种使用方法是两个标量的乘方运算（即\ :math:`a` ``^`` :math:`b`\ ）。"
+"另外一种则是求方阵的标量次乘方（即\ :math:`a_{ij}` ``^`` :math:`b`\ ）。"
 
 #: ../../source/behavior/arrays/functions.rst:434
 msgid ""
@@ -1177,8 +1177,8 @@ msgid ""
 msgstr ""
 "其中\ ``A``\ 为有任意维数的数组，前提是仅有一个维度的大小大于\ :math:`1`\ 。"
 "在\ ``vector``\ 函数将数组内容返回为一个矢量"
-"（\ *即*\ 仅有单个维度的数组）。"
-"因此，若我们传入列矩阵或行矩阵，\ *如*\ ："
+"（即仅有单个维度的数组）。"
+"因此，若我们传入列矩阵或行矩阵，如："
 
 #: ../../source/behavior/arrays/functions.rst:252
 msgid "or"

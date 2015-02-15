@@ -75,7 +75,7 @@ msgid ""
 "While it is possible to use the ``{}`` notation to construct arrays of any "
 "dimension, *e.g.,*"
 msgstr ""
-"尽管可以使用\ ``{}``\ 表示法来构建任何维度的数组，\ *如*\ "
+"尽管可以使用\ ``{}``\ 表示法来构建任何维度的数组，如"
 
 #: ../../source/behavior/arrays/construction.rst:55
 msgid "Range Notation"

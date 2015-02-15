@@ -62,7 +62,6 @@ msgid ""
 ":math:`A` as a result of that reaction.  Each term in these balance "
 "equations is derived in a similar fashion."
 msgstr ""
-"where 
 "其中\ :math:`k_1`\ 、\ :math:`k_2`\ 、\ :math:`k_3`\ 分别是第一、二、三个反应的反应系数。"
 "这些方程是通过在考虑每种物质的变化，以及涉及该物质的每个反应后所推导得到的。"
 "因此，例如第一个反应\ :math:`A + B \\rightarrow X`\ 是把\ :math:`A`\ 分子和\ :math:`B`\ 分子转化为\ :math:`X`\ 分子。"
@@ -139,8 +138,8 @@ msgid ""
 "which index (*e.g.,* ``1``, ``2``, or ``3``) corresponds to which species "
 "(*e.g.,* :math:`A`, :math:`B`, or :math:`X`)."
 msgstr ""
-"这种方法的问题是，我们必须时刻留意各个索引（\ *如*\ ``1``\  、\ ``2``\ 或\ ``3``\ ）"
-"分别对应哪种物质（\ *如*\ :math:`A`\  、\ :math:`B`\ 及\ :math:`X`\ ）。"
+"这种方法的问题是，我们必须时刻留意各个索引（如\ ``1``\  、\ ``2``\ 或\ ``3``\ ）"
+"分别对应哪种物质（如\ :math:`A`\  、\ :math:`B`\ 及\ :math:`X`\ ）。"
 
 #: ../../source/behavior/arrays/chem.rst:130
 msgid "Using Enumerations"
