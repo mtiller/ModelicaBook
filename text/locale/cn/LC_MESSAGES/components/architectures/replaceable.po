@@ -581,7 +581,7 @@ msgstr ""
 "在本节中，我们讨论了Modelica的配置管理功能。"
 "本功能与Modelica其他的方面有着相同目标：促进重用，提高生产效率，并确保正确性。"
 "Modelica的包括许多功能强大的选项去进行组件重声明以及类型重定义。"
-"将这点与\ ``choicesAllMatching``\ 注解结合，模型可以一些明确的选项去支持大量的配置。"
+"将这点与\ ``choicesAllMatching``\ 注解结合，模型可以用一些明确的选项去支持大量的配置。"
 
 #: ../../source/components/architectures/replaceable.rst:184
 msgid "modifications"
