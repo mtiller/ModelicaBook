@@ -13,15 +13,15 @@ msgstr ""
 
 #: ../../source/components/connectors.rst:4
 msgid "Connectors"
-msgstr ""
+msgstr "连接器"
 
 #: ../../source/components/connectors.rst:9
 msgid "Introduction"
-msgstr ""
+msgstr "简介"
 
 #: ../../source/components/connectors.rst:12
 msgid "Component-Oriented Modeling"
-msgstr ""
+msgstr "基于组件的建模"
 
 #: ../../source/components/connectors.rst:14
 msgid ""
@@ -30,6 +30,9 @@ msgid ""
 "the mathematical basis for their formulations. We'll cover these points "
 "first before proceeding."
 msgstr ""
+"一些实例中之前，读者需要了解一些必要的背景知识，"
+"以了解什么是Modelica的\ ``connector``\ ，为什么要使用\ ``connector``\ 以及其组成的数学基础。"
+"我们将在继续前首先介绍上述要点。"
 
 #: ../../source/components/connectors.rst:19
 msgid ""
@@ -40,6 +43,10 @@ msgid ""
 "we'll instead add an instance of a **resistor** component model to our "
 "system."
 msgstr ""
+"到目前为止，我们的讨论主要关于对行为的建模。"
+"我们至此看到的大多是由方程代码所组成的模型。"
+"但从现在开始，我们将探讨如何创建可重用的组件模型。"
+"因此，我们将不再在每次模拟电阻都写出欧姆定律。相对地，我们将把\ **电阻**\ 组件模型的实例添加到系统里。"
 
 #: ../../source/components/connectors.rst:26
 msgid ""
@@ -48,6 +55,11 @@ msgid ""
 "represented by textual equations.  But this approach does not scale well.  "
 "What we really want is the ability to create reusable component models."
 msgstr ""
+"Until now, the models that we've shown have all been self contained."
+"到现在为止，我们看到的模型全部都是完整的。"
+"整个系统的所有行为均囊括在单个模型内，且通过方程代码来表示。"
+"但这种方法不能很好地扩展开。"
+"我们真正想要的是创建可重用组件模型的能力。"
 
 #: ../../source/components/connectors.rst:32
 msgid ""
@@ -57,6 +69,10 @@ msgid ""
 "by a ``model`` definition.  What sets them apart from the models we have "
 "seen so far is that they will feature **connectors**."
 msgstr ""
+"但在研究我们如何可以创建这些部件之前，我们需要先讨论如何将部件连接在一起。"
+"我们在本书的其余部分也会继续讨论组件模型。"
+"这些组件模型也仍将表示为\ ``model``\ 定义。"
+"与迄今所见模型的不同点是，他们将带有\ **连接器**\ 。"
 
 #: ../../source/components/connectors.rst:39
 msgid ""
@@ -65,10 +81,13 @@ msgid ""
 "this information and this chapter will focus on explaining the various "
 "semantics that can be used to describe connectors in Modelica."
 msgstr ""
+"\ ``connector``\ 是一种让模型与模型交换信息的方法。"
+"我们将看到其他来交换这些信息的方法。"
+"这一章将重点讲解在Modelica中用来描述连接器的各种不同语义。"
 
 #: ../../source/components/connectors.rst:48
 msgid "Acausal Connections"
-msgstr ""
+msgstr "非因果连接"
 
 #: ../../source/components/connectors.rst:50
 msgid ""
@@ -77,6 +96,8 @@ msgid ""
 "physical systems.  An acausal approach to physical modeling identifies two "
 "distinct classes of variables."
 msgstr ""
+"为了明白一类特定接口的语义，首先要了解物理系统的非因果表示方式。"
+"非因果物理建模方法区分了两类不同的变量。"
 
 #: ../../source/components/connectors.rst:55
 msgid ""
@@ -87,6 +108,10 @@ msgid ""
 "are temperature, voltage and pressure. Differences in these quantities "
 "typically lead to dynamic behavior in the system."
 msgstr ""
+"我们将讨论的第一类变量是“横跨”变量（也称为\ *势*\ 或\ *功用变量*\ ）。"
+"横跨变量跨越部件时的增减值就是让部件运动的原因。"
+"横跨变量的典型例子有温度、电压和压力。我们将马上对这些变量进行讨论。"
+"这些量的差异值通常会导致在系统的动态行为。"
 
 #: ../../source/components/connectors.rst:63
 msgid ""
@@ -100,10 +125,15 @@ msgid ""
 "different types of relationships between the through and across variables "
 "(Ohm's law being just one of many)."
 msgstr ""
+"我们将讨论的第二类变量是“穿越”变量（也称为\ *流*\ 变量）。"
+"流变量通常代表了一些保守量，如质量、动量、能量、电荷等等。"
+"这些流通常是横跨变量在跨越部件时有差值的结果。"
+"例如，通过电阻的电流流动是由于电阻两侧的电压差。"
+"正如我们将在许多例子中看到的一样，穿越变量与横跨变量间有很多种不同的关系（欧姆定律仅是冰山一角） 。"
 
 #: ../../source/components/connectors.rst:0
 msgid "Sign Conventions"
-msgstr ""
+msgstr "正负号规则"
 
 #: ../../source/components/connectors.rst:76
 msgid ""
@@ -113,17 +143,20 @@ msgid ""
 "later in the book (especially once we begin our discussion of how to build "
 "models of :ref:`components`)."
 msgstr ""
+"一定一定要知道Modelica遵从如下的正负号规则：穿越变量的正值表示守恒量在流\ **入**\ 某个组件。"
+"我们将在本书后面多次重复这个规则（特别是在我们开始讨论如何构建\ :ref:`components`\ 模型的时候）。"
 
 #: ../../source/components/connectors.rst:83
 msgid ""
 "The next section will define through and across variables for a number of "
 "basic engineering domains."
 msgstr ""
+"下一节将为一些基本工程领域分别定义穿越变量和横跨变量。"
 
 #: ../../source/components/connectors.rst:87
 msgid "Examples"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/components/connectors.rst:100
 msgid "Review"
-msgstr ""
+msgstr "复习"
