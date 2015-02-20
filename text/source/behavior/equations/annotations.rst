@@ -200,8 +200,8 @@ underscores, *e.g.,*
                AcmeEquipment(PartNumber="A23335-992"),
                experiment(StartTime=0,StopTime=8));
 
-Intepretation
-^^^^^^^^^^^^^
+Interpretation
+^^^^^^^^^^^^^^
 
 Remember that annotation data is arbitrary.  This allows arbitrary
 data to be associated with the model.  The **meaning** of that data
