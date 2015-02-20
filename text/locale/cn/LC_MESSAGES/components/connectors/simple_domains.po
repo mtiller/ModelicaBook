@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/connectors/simple_domains.rst:4
 msgid "Simple Domains"
-msgstr ""
+msgstr "简单的领域"
 
 #: ../../source/components/connectors/simple_domains.rst:6
 msgid ""
@@ -22,6 +22,9 @@ msgid ""
 "variable.  Conceptually, this means that only one conserved quantity is "
 "involved with that connector."
 msgstr ""
+"本节中，我们将讨论一些比较简单的工程领域。"
+"这里指的是其\ ``connector``\ 仅带有一个穿越变量以及一个横跨变量的工程领域。"
+"概念上，这意味着该连接器仅涉及一个保守量。"
 
 #: ../../source/components/connectors/simple_domains.rst:11
 msgid ""
@@ -29,70 +32,72 @@ msgid ""
 "domain, we see the choice of through and across variables that we will be "
 "using along with the SI units for those quantities."
 msgstr ""
+"下表涵盖了四种不同的工程领域。"
+"在每个领域中会分别看到所用到的穿越变量、横跨变量以及这些量相应的国际单位。"
 
 #: ../../source/components/connectors/simple_domains.rst:16
 msgid "Domain"
-msgstr ""
+msgstr "领域"
 
 #: ../../source/components/connectors/simple_domains.rst:16
 msgid "Through Variable"
-msgstr ""
+msgstr "穿越变量"
 
 #: ../../source/components/connectors/simple_domains.rst:16
 msgid "Across Variable"
-msgstr ""
+msgstr "横跨变量"
 
 #: ../../source/components/connectors/simple_domains.rst:18
 #: ../../source/components/connectors/simple_domains.rst:52
 msgid "Electrical"
-msgstr ""
+msgstr "电气"
 
 #: ../../source/components/connectors/simple_domains.rst:18
 msgid "Current [A]"
-msgstr ""
+msgstr "电流[A]"
 
 #: ../../source/components/connectors/simple_domains.rst:18
 msgid "Voltage [V]"
-msgstr ""
+msgstr "电压[V]"
 
 #: ../../source/components/connectors/simple_domains.rst:19
 #: ../../source/components/connectors/simple_domains.rst:84
 msgid "Thermal"
-msgstr ""
+msgstr "热学"
 
 #: ../../source/components/connectors/simple_domains.rst:19
 msgid "Heat [W]"
-msgstr ""
+msgstr "热[W]"
 
 #: ../../source/components/connectors/simple_domains.rst:19
 msgid "Temperature [K]"
-msgstr ""
+msgstr "温度[K]"
 
 #: ../../source/components/connectors/simple_domains.rst:20
 #: ../../source/components/connectors/simple_domains.rst:111
 msgid "Translational"
-msgstr ""
+msgstr "平移"
 
 #: ../../source/components/connectors/simple_domains.rst:20
 msgid "Force [N]"
-msgstr ""
+msgstr "力[N]"
 
 #: ../../source/components/connectors/simple_domains.rst:20
 msgid "Position [m]"
-msgstr ""
+msgstr "位置[m]"
 
 #: ../../source/components/connectors/simple_domains.rst:21
 #: ../../source/components/connectors/simple_domains.rst:135
 msgid "Rotational"
-msgstr ""
+msgstr "旋转"
 
 #: ../../source/components/connectors/simple_domains.rst:21
 msgid "Torque [N.m]"
-msgstr ""
+msgstr "力矩[N.m]"
 
 #: ../../source/components/connectors/simple_domains.rst:21
 msgid "Angle [rad]"
-msgstr ""
+msgstr "角[rad]"
 
 #: ../../source/components/connectors/simple_domains.rst:24
 msgid ""
@@ -101,6 +106,9 @@ msgid ""
 "across variable for translational motion. The choices above are guided by "
 "two constraints."
 msgstr ""
+"你可能在之前就看过了类似的表格，不过其选择的变量却有所不同。"
+"举个例子，你会有时会看到速度（单位为\ :math:`m/s`\ ）作为平移运动的横跨变量"
+"以上选择受制于两个约束条件。"
 
 #: ../../source/components/connectors/simple_domains.rst:29
 msgid ""
@@ -110,6 +118,9 @@ msgid ""
 " equations in our system.  As such, it is essential that the through "
 "variables be conserved quantities."
 msgstr ""
+"第一个约束条件要求穿越变量应为某个守恒量的时间导数。"
+"这样做的原因是穿越变量会被用于建立系统的广义守恒方程。"
+"因此，穿越变量为守恒量的导数便至关重要。"
 
 #: ../../source/components/connectors/simple_domains.rst:35
 msgid ""
@@ -126,20 +137,27 @@ msgid ""
 "This is why we want to work with across variables that have not been overly "
 "differentiated."
 msgstr ""
+"第二个约束条件则要求横跨变量应为领域内所有本构方程和经验公式内的最低阶导数。"
+"因此，举个例子，在平移运动时我们选择位置作为横跨变量，因为位置会用于描述弹簧的行为（即胡克定律）。"
+"如果我们选择了速度（位置的时间导数），那么我们就会一直处于试图用速度而非位置来描述弹簧行为的尴尬局面。"
+"这里有一点很重要的：\ **微分是有损的**\ 。"
+"如果知道位置，我们可以很容易地表达速度。"
+"但倘若只知道速度而没有额外的积分常数，我们就不能计算位置。"
+"这就是为什么我们希望使用没有经过太多次微分的横跨变量。"
 
 #: ../../source/components/connectors/simple_domains.rst:49
 msgid "Now let's look at each domain individually."
-msgstr ""
+msgstr "现在让我们分别来看看每个领域。"
 
 #: ../../source/components/connectors/simple_domains.rst:54
-msgid "We can define a ``connector`` for the electrical domain as follows:"
-msgstr ""
+msgstr "我们可以定义电气领域的\ ``connector``\ ，如下："
 
 #: ../../source/components/connectors/simple_domains.rst:60
 msgid ""
 "Here we see that the variable ``v`` in this connector represents the voltage"
 " and the variable ``i`` represents the current."
 msgstr ""
+"在这里我们看到，连接器内的变量\ ``v``\ 代表电压，而变量\ ``i``\ 则代表电流。"
 
 #: ../../source/components/connectors/simple_domains.rst:65
 msgid ""
@@ -151,6 +169,10 @@ msgid ""
 " since ``Current`` is the time derivative of charge (and charge is a "
 "conserved quantity)."
 msgstr ""
+"请注意电流\ ``i``\ 声明里的\ ``flow``\ 限定词。"
+"\ ``flow``\ 限定词告诉了Modelica编译器，\ ``i``\ 是穿越变量。"
+"回忆我们对\ :ref:`acausal-connections`\ 的讨论：\ ``flow``\ 变量应该是守恒量的时间导数。"
+"我们可以看到，该连接器遵循了上述规则。\ ``Current``\ 的确为电荷的导数（而电荷为守恒量） 。"
 
 #: ../../source/components/connectors/simple_domains.rst:73
 msgid ""
@@ -160,6 +182,9 @@ msgid ""
 "(including the various qualifiers that can applied to them) later in this "
 "chapter."
 msgstr ""
+"注意电压\ ``v``\ 的声明里并无限定词。"
+"没有任何限定词的变量可以认为是\ ``across``\ 变量。"
+"在本章后面，你会见到对\ :ref:`connector-vars`\ （包括对其可用的各种限定词）的进一步讨论。"
 
 #: ../../source/components/connectors/simple_domains.rst:79
 msgid ""
@@ -167,12 +192,14 @@ msgid ""
 ":`electrical-components` to see how we build on the connector definition to "
 "create electrical circuit components."
 msgstr ""
+"有兴趣的读者不妨跳到关于\ :ref:`electrical-components`\ 的章节，去看看我们是如何使用连接器定义来创建电路元件的。"
 
 #: ../../source/components/connectors/simple_domains.rst:86
 msgid ""
 "A connector for modeling lumped heat transfer isn't much different from an "
 "electrical connector:"
 msgstr ""
+"用于建模集总传热的连接器和电气领域的连接器没有太大不同："
 
 #: ../../source/components/connectors/simple_domains.rst:93
 msgid ""
@@ -185,6 +212,10 @@ msgid ""
 "qualifier, ``HeatFlowRate``, is the time derivative of a conserved quantity,"
 " energy."
 msgstr ""
+"对应\ ``Voltage``\ 和\ ``Current``\ ，该连接器包括了\ ``Temperature``\ 和\ ``HeatFlowRate``\  。"
+"虽然名称不同，整体结构是基本相同的。"
+"\ ``connector``\ 包括一个穿越变量（带有\ ``flow``\ 限定词的\ ``q``\ ）和一个横跨变量（没有限定词的\ ``T``\ ）。"
+"再一次，我们看到带有\ ``flow``\ 限定词的变量\ ``HeatFlowRate``\ 是守恒量能量的时间导数。"
 
 #: ../../source/components/connectors/simple_domains.rst:102
 msgid ""
@@ -195,10 +226,14 @@ msgid ""
 " idea to read the :ref:`connector-review` section of the :ref:`connectors` "
 "chapter at some point."
 msgstr ""
+"在建模集总传热网路时，上述连接器可以用于建立部件模型。"
+"具体例子可以在下面关于\ :ref:`heat-transfer-components`\ 的讨论里找到。"
+"如果你觉得对此\ ``connector``\ 的定义没有疑问，请尽管跳到该章节。"
+"但我仍然建议之后回过头来读读\ :ref:`connectors`\ 章的\ :ref:`connector-review`\ 一节。"
 
 #: ../../source/components/connectors/simple_domains.rst:113
 msgid "To model translational motion, we would define a connector as follows:"
-msgstr ""
+msgstr "为了对平移运动进行建模，我们将定义如下的连接器："
 
 #: ../../source/components/connectors/simple_domains.rst:119
 msgid ""
@@ -208,6 +243,9 @@ msgid ""
 "are specific to translational motion and distinct from the physical types "
 "used from the :ref:`rotational-connector` case to be presented next."
 msgstr ""
+"再一次，我们看到和之前相同的基本结构。"
+"\ ``connector``\ 包括一个穿越变量\ ``f``\ 和一个横跨变量\ ``x``\ 。"
+"需要注意的是，虽然这是个一维的力学连接器，但其物理类型特定于平移运动，不同于下面提到的\ :ref:`rotational-connector`\ 的物理类型。"
 
 #: ../../source/components/connectors/simple_domains.rst:126
 msgid ""
@@ -217,12 +255,15 @@ msgid ""
 "variable, ``f``, is a force and force is the time derivative of (linear) "
 "momentum and momentum is a conserved quantity."
 msgstr ""
+"对于力学连接器大家经常忽视了一个重要的事实，\ ``flow``\ 变量\ **确系**\ 某个守恒量的时间导数。"
+"例如，在平移运动的情况下，\ ``flow``\ 变量\ ``f``\ 是力。力则是（线）动量的时间导数。而动量就正正是个守恒量。"
 
 #: ../../source/components/connectors/simple_domains.rst:137
 msgid ""
 "For systems whose motion is constrained to be rotational, the following "
 "Modelica ``connector`` definition should be used:"
 msgstr ""
+"只能进行转动运动的系统应使用下列的Modelica \ ``connector``\ 定义："
 
 #: ../../source/components/connectors/simple_domains.rst:144
 msgid ""
@@ -231,6 +272,9 @@ msgid ""
 "examples, the ``flow`` variable is the time derivative of a conserved "
 "quantity.  In this case, that conserved quantity is angular momentum."
 msgstr ""
+"这里我们看到，横跨变量是\ ``phi``\ （代表角位移），而穿越变量则为\ ``torque``\  。"
+"与所有前述例子一样，\ ``flow``\ 变量是守恒量的时间导数。"
+"在本例里，守恒量为角动量。"
 
 #: ../../source/components/connectors/simple_domains.rst:151
 msgid "``SimpleDomains``"
@@ -241,6 +285,7 @@ msgid ""
 "All the connectors defined in this section are grouped, for future "
 "reference, into a single package:"
 msgstr ""
+"为便于参考，所有在本节中定义的接口组成一个单一的包："
 
 #: ../../source/components/connectors/simple_domains.rst:63
 msgid "flow"
