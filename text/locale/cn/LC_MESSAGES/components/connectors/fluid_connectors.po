@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/connectors/fluid_connectors.rst:4
 msgid "Fluid Connectors"
-msgstr ""
+msgstr "流体连接器"
 
 #: ../../source/components/connectors/fluid_connectors.rst:6
 msgid ""
@@ -26,10 +26,15 @@ msgid ""
 "connector might involve the flow of mass, momentum, energy and/or species.  "
 "Such cases require the definition of rich connectors types."
 msgstr ""
+"其中一个广泛使用Modelica的领域是各种类型流体系统的建模。"
+" 我们在上一节看到了如何为各种\ :ref:`simple-domains`\ 创建连接器。"
+"但是，Modelica在流体系统建模里如此引人注目是事出有因的。那就是其创建同时涉及多个守恒量的复杂连接器的能力。"
+"这样复杂连接器在建模流体系统时必不可少。在这样的一个连接器内可能涉及到质量、动量、能量和/或介质类型的流动。"
+"这样的情况下连接器定义需要支持很多的功能。"
 
 #: ../../source/components/connectors/fluid_connectors.rst:25
 msgid "Incompressible Fluids"
-msgstr ""
+msgstr "不可压缩流体"
 
 #: ../../source/components/connectors/fluid_connectors.rst:27
 msgid ""
@@ -38,10 +43,12 @@ msgid ""
 "presenting a simple connector that can be used to model incompressible "
 "systems, but with some important caveats."
 msgstr ""
+"不可压缩流体的建模在许多工程应用相当常用的。其中最值得注意的是液压致动系统。"
+"我们首先会介绍可用于模拟不可压缩系统的简单的连接器，以及一些重要的注意事项。"
 
 #: ../../source/components/connectors/fluid_connectors.rst:32
 msgid "Consider the following connector definition:"
-msgstr ""
+msgstr "请考虑以下连接器定义"
 
 #: ../../source/components/connectors/fluid_connectors.rst:38
 msgid ""
@@ -53,12 +60,17 @@ msgid ""
 "derivative of a conserved quantity, since volume is not a conserved "
 "quantity."
 msgstr ""
+"正如我们在讨论\ :ref:`simple-domains`\ 时看到的一样，这个连接器也符合由一个穿越变量和一个横跨变量组成这一定式。"
+"在这种情况下，横空变量是\ ``p``\ （压力），而穿越变量则为\ ``q``\ （体积流率）。"
+"但是，该连接器和所有前述例子不同。\ ``flow``\ 变量并\ **不是**\ 一个保守量的时间导数，因为体积不是一个保守量。"
 
 #: ../../source/components/connectors/fluid_connectors.rst:46
 msgid ""
 "This connector works **as long as the fluid being modeled is "
 "incompressible**.  To understand why, consider the following equation:"
 msgstr ""
+"\ **只要流体被建模是不可压缩**\ ，该连接器就有效。"
+"要理解为什么，请考虑以下的公式："
 
 #: ../../source/components/connectors/fluid_connectors.rst:53
 msgid ""
@@ -69,6 +81,9 @@ msgid ""
 "of these flows is an incompressible fluid, then we can multiply the entire "
 "equation by the density of that incompressible fluid, *i.e.,*"
 msgstr ""
+"其中\ :math:`q_1`\ 、\ :math:`q_2`\ 、\ :math:`q_3`\ 、\ :math:`q_1`\ 代表体积流率量（即其单位均为\ :math:`m^3/s`\ ）。"
+"一般而言，这个方程没有资格作为一个守恒方程。因为体积（再次强调，是一般情况下）是不保守的。"
+"但是，如果我们知道这些流内是不可压缩的流体，那么我们就可以在方程的左右两边乘以此不可压缩流体的密度，即："
 
 #: ../../source/components/connectors/fluid_connectors.rst:65
 msgid ""
@@ -77,6 +92,9 @@ msgid ""
 "connector definition with a fluid that has any significant degree of "
 "compressibility, you will get the wrong answer.**"
 msgstr ""
+"现在这些量单位均为\ :math:`kg/s`\ 。"
+"这是一个守恒方程，因为质量是守恒量。"
+"不过，\ **如果将此连接器定义用在任何能显著压缩的流体上，你就会得到错误的答案。**\ "
 
 #: ../../source/components/connectors/fluid_connectors.rst:71
 msgid ""
@@ -86,16 +104,19 @@ msgid ""
 "  However, this kind of approach is inherently limiting so it should only be"
 " used in situations where it solves more problems than it creates."
 msgstr ""
+"这样的连接器定义对比较简单的不可压缩流体网络颇为有用。因为此定义总可以在不必指定（或知道）工作流体的密度的前提下描述系统的行为。"
+"不过，这种方法本质上是有限制的。所以，此定义应该仅在其解决的问题比创建的更多的前提下使用。"
 
 #: ../../source/components/connectors/fluid_connectors.rst:79
 msgid "Compressible Fluids"
-msgstr ""
+msgstr "可压缩流体"
 
 #: ../../source/components/connectors/fluid_connectors.rst:81
 msgid ""
 "While the previous connector definition should be strictly used for :ref"
 ":`incompressible-fluids`, the following connector is more general:"
 msgstr ""
+"前述接口定义仅可应用于\ :ref:`incompressible-fluids`\ ，而下面的连接器更为普适："
 
 #: ../../source/components/connectors/fluid_connectors.rst:88
 msgid ""
@@ -109,6 +130,11 @@ msgid ""
 "is why it can be used to model fluid flow of both compressible and "
 "incompressible fluids."
 msgstr ""
+"此连接器\ **同时可用于**\ 不可压缩流体及可压缩流体。"
+"这是因为其对流体的可压缩性没有任何固有的假设。"
+"请注意，横跨变量仍然是压力\ ``p``\ ，但是穿越变量变为质量流率\ ``m_dot``\ 。"
+"这样，该穿越变量便符合之前的惯例，即穿越变量应该是一个保守量（在这里是质量）的时间导数。"
+"因此，该连接器定义中没有隐含假设。这也就是为什么它可以同时用来模拟可压缩和不可压缩流体组成的流。"
 
 #: ../../source/components/connectors/fluid_connectors.rst:98
 msgid ""
@@ -116,10 +142,12 @@ msgid ""
 "associated with :ref:`simple-domains`, but it appears in this section "
 "because it is a stepping stone to the next example."
 msgstr ""
+"此连接器并非真的从根本上与\ :ref:`simple-domains`\ 相关的连接器有所不同。"
+"不过此连接器之所以出现在这一节，因为它是下个例子的铺垫。"
 
 #: ../../source/components/connectors/fluid_connectors.rst:103
 msgid "Thermo-Fluid Modeling"
-msgstr ""
+msgstr "热流体建模"
 
 #: ../../source/components/connectors/fluid_connectors.rst:105
 msgid ""
@@ -129,6 +157,9 @@ msgid ""
 "considered was mass.  Nowhere in these previous connectors is there any "
 "reference to or allowance for modeling the **temperature** of the fluid."
 msgstr ""
+"到目前为止，在本节中，我们已经提出了一个连接器\ ``Incompressible``\ 用于不可压缩流体系统，以及更普适的连接器\ ``GenericFluid``\ 。"
+"但在这两种情况下，唯一考虑了的守恒量是质量。"
+"前述的连接器并没有任何提到或允许对液体的\ **温度**\ 的建模。"
 
 #: ../../source/components/connectors/fluid_connectors.rst:112
 msgid ""
@@ -142,6 +173,11 @@ msgid ""
 "where the temperature of the working fluid had any significant impact on the"
 " system behavior."
 msgstr ""
+"在许多应用里，工作流体的温度是非常重要的。"
+"某些情况下，温度变化会改变工作流体的密度。"
+"而在其他情况下，温度可以触发相变（例如从液体到气体） 。"
+"温度也可以影响像流体粘性等其它关键性质，这对例如润滑系统等的性能有显著的影响，。"
+"所以，前述的连接器定义，将不足以用于建模任何对工作流体温度敏感的系统。"
 
 #: ../../source/components/connectors/fluid_connectors.rst:123
 msgid ""
@@ -151,6 +187,9 @@ msgid ""
 "mass, as a conserved quantity that flows through the connector.  The "
 "following connector definition does just that:"
 msgstr ""
+"为了预测工作流体的温度，有必要跟踪流体流过网络时的能量。"
+"要做到这一点，连接器定义除了质量外还要必须包括能源这个流经连接器的守恒量。"
+"下面的连接器正定义了这一点："
 
 #: ../../source/components/connectors/fluid_connectors.rst:134
 msgid ""
@@ -161,6 +200,11 @@ msgid ""
 "previous connectors in this section.  The other across variable, ``T``, is "
 "the temperature of the working fluid."
 msgstr ""
+"注意，此连接器包括\ **两个**\ 有\ ``flow``\ 限定词的变量\ ``m_dot``\ 和\ ``q``\ 。"
+"这分别代表了质量流和能量流。"
+"每个变量都分别搭配一个横跨变量。"
+"正如我们在本节前面的连接器看到的一样，其中一个横跨变量是压力\ ``p``\ 。"
+"另一个横跨变量\ ``T``\ 是工作流体的温度。"
 
 #: ../../source/components/connectors/fluid_connectors.rst:16
 msgid ""
@@ -170,3 +214,5 @@ msgid ""
 " it describes a connector that involves the conservation of both mass and "
 "energy."
 msgstr ""
+"本节开始时，我们会介绍一个非常类似前面\ :ref:`simple-domains`\ 讨论里的基本连接器。"
+"但是，我们在结束时的连接器会前面的例子有着根本的不同。因为它同时描述了涉及到质量和能量守恒。"
