@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../source/components/connectors/graphics.rst:4
 msgid "Graphical Connectors"
-msgstr ""
+msgstr "图形连接器"
 
 #: ../../source/components/connectors/graphics.rst:7
 msgid "Text vs. Graphics"
-msgstr ""
+msgstr "代码vs.图形"
 
 #: ../../source/components/connectors/graphics.rst:9
 msgid ""
@@ -26,6 +26,9 @@ msgid ""
 "this point on, graphics will play a greater and greater role in the way we "
 "visualize complex Modelica models."
 msgstr ""
+"到目前为止，我们讨论过的Modelica是一个纯粹的文本语言。"
+"不过实际情况是， Modelica建模一般是\ **图形化**\ 的。"
+"从这个角度上，图形界面会在显示更复杂的Modelica模型时发挥更大的作用。"
 
 #: ../../source/components/connectors/graphics.rst:14
 msgid ""
@@ -36,6 +39,10 @@ msgid ""
 "can be used to associate a graphical appearance with many different entities"
 " in Modelica."
 msgstr ""
+"首先我们从连接器的可视化开始。"
+"Modelica模型的文本组件将始终存在。"
+"变量和方程式将总会像之前一样，用代码形式来表示。"
+"不过，我们不断在后面看到Modelica的\ ``annotation``\ 特性是如何将图形化的外观不同的Modelica实体关联在一起。"
 
 #: ../../source/components/connectors/graphics.rst:21
 msgid ""
@@ -46,10 +53,13 @@ msgid ""
 " a diagram (something we'll discuss in greater detail when we discuss "
 ":ref:`components`)."
 msgstr ""
+"第一种介绍的图形关联是和\ ``connector``\ 相关的图形。"
+"具体而言，我们会介绍如何将图形与\ ``connector``\ 的定义联系起来。"
+"这些图形将出现在连接器实例化了的每个图中（在讨论\ :ref:`components`\ 时我们将进一步详细阐述） 。"
 
 #: ../../source/components/connectors/graphics.rst:29
 msgid "Icon Annotations"
-msgstr ""
+msgstr "图标注解"
 
 #: ../../source/components/connectors/graphics.rst:34
 msgid ""
@@ -59,6 +69,10 @@ msgid ""
 "To demonstrate this, consider the following electrical pin connector "
 "definitions:"
 msgstr ""
+"当我们的将注解和定义相关联时，我们其实是将其放置在定义内。"
+"但注解不会和定义内的任何声明以及其他实体想关联。"
+"相反，它是定义其中的一个元素。"
+"为了证明这一点，考虑下面的电气针脚接口的定义："
 
 #: ../../source/components/connectors/graphics.rst:43
 msgid ""
@@ -68,6 +82,9 @@ msgid ""
 "identical to the ``Electrical`` connector definition presented in the "
 "discussion on :ref:`simple-domains`."
 msgstr ""
+"请注意这些定义各自的长度。"
+"占了几乎全部长度的就是这些定义里的注释。"
+"除了注释外，\ ``PositivePin``\ 和\ ``NegativePin``\ 定义是与\ :ref:`simple-domains`\ 里讨论了\ ``Electrical``\ 接口定义相同。"
 
 #: ../../source/components/connectors/graphics.rst:49
 msgid ""
@@ -75,16 +92,19 @@ msgid ""
 "they can be made graphically distinct.  An instance of the ``PositivePin`` "
 "connector looks like:"
 msgstr ""
+"我们之所以定义两个电插针连接器的原因是，这样可以其制成不同的图形。"
+"\ ``PositivePin``\ 连接器的实例如下："
 
 #: ../../source/components/connectors/graphics.rst:55
 msgid "while an instance of ``NegativePin`` looks like:"
-msgstr ""
+msgstr "而\ ``NegativePin``\ 的实例如下："
 
 #: ../../source/components/connectors/graphics.rst:59
 msgid ""
 "Let's look in greater detail at the ``Icon`` annotation in the "
 "``PositivePin`` definition:"
 msgstr ""
+"让我们更详细地看看在\ ``PositivePin``\ 定义的\ ``Icon``\ 注解："
 
 #: ../../source/components/connectors/graphics.rst:66
 msgid ""
@@ -100,6 +120,15 @@ msgid ""
 "will be filled in with the instance name whenever a variable is declared "
 "with the type ``PositivePin``. So, for example, the following declarations:"
 msgstr ""
+"我们很快将要讨论\ :ref:`graphical-annos`\ 。"
+"但是，让我们快速浏览下这些定义是怎么回事。"
+"我们可以看到，\ ``Icon``\ 注释包含另一个变量\ ``graphics``\ 。"
+"\ ``graphics``\ 变量的赋值是一系列图形元素组成的向量。"
+"我们看到，这些矢量图形元素包括\ ``Ellipse``\ （用于呈现在图标的圆圈），两个\ ``Rectangle``\ 元素（用于渲染“+”号）和\ ``Text``\ 元素。"
+"注意，\ ``Text``\ 内的元素\ ``textString``\ 包含了\ ``\"%name\"``\ 代码。"
+"图形注释中能填入不同的替换字符串。"
+"上述的替换字符串则指代\ ``PositivePin``\ 类型声明变量的实例名称。"
+"因此，例如下面的声明："
 
 #: ../../source/components/connectors/graphics.rst:83
 msgid ""
@@ -107,6 +136,8 @@ msgid ""
 "way, the textual names assigned to connectors in a diagram always match the "
 "name of the underlying connector declarations in a model."
 msgstr ""
+"在图形界面里\ ``%name``\ 会表示为\ ``p``\ 。"
+"这样，在图表层中连接器显示的文本名称总是匹配于模型里相应连接器声明的名称。"
 
 #: ../../source/components/connectors/graphics.rst:87
 msgid ""
@@ -115,6 +146,8 @@ msgid ""
 "representations of models to implementations that incorporate graphical "
 "rendering as well."
 msgstr ""
+"本章后面会复习关于\ :ref:`graphical-annos`\ 的内容。"
+"而我们也会更多地看到使用图形注解的模型。因为我们会从纯代码模型过渡为包含图形渲染的实现。"
 
 #: ../../source/components/connectors/graphics.rst:31
 msgid "annotations"
