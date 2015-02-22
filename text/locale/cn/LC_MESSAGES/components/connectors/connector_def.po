@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../source/components/connectors/connector_def.rst:4
 msgid "Connector Definitions"
-msgstr ""
+msgstr "连接器定义"
 
 #: ../../source/components/connectors/connector_def.rst:7
 msgid "Syntax"
-msgstr ""
+msgstr "语法"
 
 #: ../../source/components/connectors/connector_def.rst:11
 msgid ""
@@ -25,10 +25,12 @@ msgid ""
 "considerable amount of syntactic similarity.  This is just as true with "
 "``connector`` definitions."
 msgstr ""
+"正如我们已经多次看到的一样，Modelica定义有着相当的句法相似性。"
+"这也对\ ``connector``\ 定义成立。"
 
 #: ../../source/components/connectors/connector_def.rst:15
 msgid "The general syntax for a connector definition is:"
-msgstr ""
+msgstr "为连接器定义的一般语法是："
 
 #: ../../source/components/connectors/connector_def.rst:23
 msgid ""
@@ -36,14 +38,16 @@ msgid ""
 "include any behavior.  So there can never be an ``equation`` or "
 "``algorithm`` section present in a ``connector``."
 msgstr ""
+"不同于\ ``model``\ 或\ ``function``\ ，\ ``connector``\ 不得包含任何行为。"
+"所以在\ ``connector``\ 内永远不会出现\ ``equation``\ 或\ ``algorithm``\ 部分。"
 
 #: ../../source/components/connectors/connector_def.rst:30
 msgid "Variables"
-msgstr ""
+msgstr "变量"
 
 #: ../../source/components/connectors/connector_def.rst:33
 msgid "Causal Variables"
-msgstr ""
+msgstr "因果性变量"
 
 #: ../../source/components/connectors/connector_def.rst:35
 msgid ""
@@ -55,10 +59,13 @@ msgid ""
 "then transmitted to other components), it should have the ``output`` "
 "qualifier associated with it."
 msgstr ""
+"在之前对\ :ref:`block-connectors`\ 的讨论里，我们介绍了Modelica的\ ``connector``\ 定义内的变量可以和因果关系联系起来。"
+"如果信号应在部件外计算出来，则变量就应该加上\ ``input``\ 限定词。"
+"另一方面，若信号应在部件内计算出来（然后再传输到其他部件），则变量就应该加上\ ``input``\ 限定词。"
 
 #: ../../source/components/connectors/connector_def.rst:47
 msgid "Acausal Variables"
-msgstr ""
+msgstr "非因果变量"
 
 #: ../../source/components/connectors/connector_def.rst:49
 msgid ""
@@ -68,6 +75,12 @@ msgid ""
 "through variable being prefixed by the ``flow`` qualifier while the across "
 "variable had not qualifier associated with it."
 msgstr ""
+"在我们对\ :ref:`simple-domains`\ 以及\ :ref:`fluid-connectors`\ 的讨论里，"
+"我们看到包括许多穿越变量和横跨变量的\ ``connector``\ 定义。"
+"这些变量总是成对出现的。"
+"穿越变量带有\ ``flow``\ 限定词。"
+"横跨变量则没有限定词。"
+
 
 #: ../../source/components/connectors/connector_def.rst:56
 msgid ""
@@ -78,6 +91,9 @@ msgid ""
 "energy, charge, species and so on to flow **bi-directionally** through a "
 "network."
 msgstr ""
+"我们将在接下来的章节中看到，这样的连接器在定义物理系统建模时非常方便。"
+"因为这些连接器帮助Modelica语言编译器自动生成组件网络的守恒方程。"
+"此外，连接器允许数量等、质量、动量、能量、电荷、介质种类等\ **双向地**\ 流过网络。"
 
 #: ../../source/components/connectors/connector_def.rst:64
 msgid "Parameters"
@@ -92,10 +108,14 @@ msgid ""
 "frequently used in connector definitions to indicate the size of an array "
 "contained in the connector."
 msgstr ""
+"\ ``connector``\ 定义的变量也可以加入\ ``parameter``\ 限定词。"
+"这个限定词和我们第一次讨论\ :ref:`parameters`\ 时意思一样。"
+"也就是说，该变量的值在模拟过程中不能改变。"
+"\ ``parameter``\ 变量在连接器定义里经常用于指示连接器内数组的大小。"
 
 #: ../../source/components/connectors/connector_def.rst:78
 msgid "Final Remarks"
-msgstr ""
+msgstr "结语"
 
 #: ../../source/components/connectors/connector_def.rst:80
 msgid ""
@@ -106,6 +126,9 @@ msgid ""
 "of interactions and choose, on a variable by variable basis, the semantics "
 "that make the most sense for each potential interaction."
 msgstr ""
+"应该指出的是，单个\ ``connector``\ 定义可以都在同一个连接器内混合因果、非因果和参数变量。"
+"事实上，连接器的变量\ **本身可以也是一个连接器**\ 。"
+"Modelica的丰富表现力允许用户模拟一系列不同类型的相互作用，以及为每个变量选择对潜在相互作用最有意义的语义。"
 
 #: ../../source/components/connectors/connector_def.rst:9
 msgid "connector"
