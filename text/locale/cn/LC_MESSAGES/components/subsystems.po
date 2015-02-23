@@ -13,12 +13,12 @@ msgstr ""
 
 #: ../../source/components/subsystems.rst:4
 msgid "Subsystems"
-msgstr ""
+msgstr "子系统"
 
 #: ../../source/components/subsystems.rst:7
 msgid "Examples"
-msgstr ""
+msgstr "例子"
 
 #: ../../source/components/subsystems.rst:19
 msgid "Review"
-msgstr ""
+msgstr "复习"
