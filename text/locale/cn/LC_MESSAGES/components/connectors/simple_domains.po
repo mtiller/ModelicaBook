@@ -150,7 +150,8 @@ msgid "Now let's look at each domain individually."
 msgstr "现在让我们分别来看看每个领域。"
 
 #: ../../source/components/connectors/simple_domains.rst:54
-msgstr "我们可以定义电气领域的\ ``connector``\ ，如下："
+msgid "We can define a ``connector`` for the electrical domain as follows:"
+msgstr "我们可以定义电气领域的\\ ``connector``\\ ，如下："
 
 #: ../../source/components/connectors/simple_domains.rst:60
 msgid ""
