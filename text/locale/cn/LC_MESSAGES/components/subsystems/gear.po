@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/gear.rst:2
 msgid "Gear Assembly"
-msgstr ""
+msgstr "齿轮总成"
 
 #: ../../source/components/subsystems/gear.rst:4
 msgid ""
@@ -25,6 +25,10 @@ msgid ""
 "flat model can be refactored into a reusable subsystem model that can be "
 "used across a wide ranging of applications."
 msgstr ""
+"在本节中，我们将仔细观察对简单齿轮的建模。"
+"我们会考虑一系列因素，例如每个齿轮元件的惯性、齿之间存在的间隙等。最重要的当然还有两个旋转轴间的运动学关系了。"
+"我们将首先介绍一个如何创建上述总成的无层级模型的例子。"
+"然后，我们会讨论如何把上述无层级模型重构成能在不同场景下重用的子系统模型。"
 
 #: ../../source/components/subsystems/gear.rst:13
 msgid ""
@@ -41,10 +45,19 @@ msgid ""
 "Furthermore, we will show how parameters used to describe the components can"
 " be \"wired up\" to parameters of the subsystem."
 msgstr ""
+"到现在为止，我们在创建组件模型时仅对一个物理作用进行建模，如惯性、柔顺性、阻性、对流等。"
+"正如已经多次提到的这样，这一般是值得提倡的。"
+"前提是在组件级建模。"
+"但许多现实世界的子系统综合了所有这些影响。"
+"在Modelica里，我们解决这个问题的方法就是建立可重复使用的子系统模型。"
+"当然，我们不会推倒重来，一个个地加入所有影响子系统模型的方程。"
+"相反，我们会重用已经开发了的组件模型。"
+"最终，子系统模型不过是预先存在的组件模型的特定组合而已。"
+"此外，我们会展示部件参数是如何连接到子系统参数上的。"
 
 #: ../../source/components/subsystems/gear.rst:28
 msgid "Flat Version"
-msgstr ""
+msgstr "无层级版本"
 
 #: ../../source/components/subsystems/gear.rst:30
 msgid ""
@@ -52,6 +65,7 @@ msgid ""
 "in Modelica, we might start by building a Modelica model that looked like "
 "this one:"
 msgstr ""
+"如果对Modelica里创建可重用子系统模型的能力不甚熟悉的话，我们在开始时建立的Modelica模型可能看起来会是这样的："
 
 #: ../../source/components/subsystems/gear.rst:39
 msgid ""
@@ -64,10 +78,16 @@ msgid ""
 "performing.  This includes a torque profile to be applied to the gear and "
 "the downstream load that is being driven by the gear."
 msgstr ""
+"该模型包括两个基本部件。"
+"虚线内的一部分模型表示齿轮本身的模型。"
+"它包括每个齿轮元件的惯性、两轮间的齿隙以及两轴之间的运动学关系。"
+"每个上述零部件均表示为一个单独的组件模型。"
+"虚线以外的另一部分模型表示我们正在运行的特定情景或实验。"
+"这包括一个以施加到齿轮上的扭矩曲线，以及被该齿轮驱动的下游负载。"
 
 #: ../../source/components/subsystems/gear.rst:49
 msgid "If we simulate this system, we get the following response:"
-msgstr ""
+msgstr "如果我们对这个系统进行仿真，那么会得到如下响应："
 
 #: ../../source/components/subsystems/gear.rst:54
 msgid ""
@@ -76,10 +96,12 @@ msgid ""
 "gear related application.  In fact, they may be repeated multiple times in a"
 " model of something like an automotive transmission model."
 msgstr ""
+"对这个系统必须要明白一点：虚线内的组件可能会任何齿轮相关的应用里重复出现。"
+"事实上，例如在汽车变速器模型里上述组件模型就可能会多次重复出现。"
 
 #: ../../source/components/subsystems/gear.rst:62
 msgid "Hierarchical Version"
-msgstr ""
+msgstr "有层级版本"
 
 #: ../../source/components/subsystems/gear.rst:63
 msgid ""
@@ -88,6 +110,8 @@ msgid ""
 "within the dashed line.  In such a case, our schematic diagram would then "
 "look something like this:"
 msgstr ""
+"因此，为了避免冗余（至于为何要避免前面已经讨论过了），我们应该将虚线内的组件创建为可重复使用的子系统模型。"
+"在这种情况下，我们的示意图将如下所示："
 
 #: ../../source/components/subsystems/gear.rst:73
 msgid ""
@@ -96,12 +120,15 @@ msgid ""
 "because all the component models that make up the gear model have been "
 "assembled into the following subsystem model:"
 msgstr ""
+"在这种情况下，一系列用于表示齿轮的组件被替换为简图层内的单个实例。"
+"这是得益于，所有构成齿轮模型的部件模型组装为了以下子系统模型："
 
 #: ../../source/components/subsystems/gear.rst:82
 msgid ""
 "When rendered, we see the diagram for the ``GearWithBacklash`` model looks "
 "like this:"
 msgstr ""
+"渲染后的\ ``GearWithBacklash``\ 模型简图如下所示："
 
 #: ../../source/components/subsystems/gear.rst:90
 msgid ""
@@ -109,6 +136,9 @@ msgid ""
 "the ``useSupport`` parameter.  This is used to determine whether to include "
 "the :ref:`optional-ground-connector` we discussed in the previous chapter."
 msgstr ""
+"本模型做了不少的事情。"
+"首先，请注意这里有\ ``useSupport``\ 参数。"
+"我们在前面的章节中讨论过，此参数用以确定是否包括\ :ref:`optional-ground-connector`\ 。"
 
 #: ../../source/components/subsystems/gear.rst:95
 msgid ""
@@ -123,6 +153,12 @@ msgid ""
 "details (which the user should not require any knowledge of anyway) were to "
 "change."
 msgstr ""
+"注意，所有的子组件（\ ``inertia_a``\ 、\ ``inertia_b``\ 、 \ ``backlash``\ 和\ ``idealGear``\ ）是\ ``protected``\ 。"
+"只有连接器（\ ``flange_a``\ 、 \ ``flange_b``\ 和\ ``support``\  ）和参数（\ ``J_a``\ 、 \ ``J_b``\ 、 \ ``c``\ 、 \ ``d``\ 、 \ ``b``\ 、 \ ``ratio``\ ）是\ ``public``\ 。"
+"这里的考虑是，用户唯一需要知道的是（或者说，应只能访问）连接器和参数。"
+"其他的一切是实现细节。"
+"模型的\ ``protected``\ 元素不能从外部引用。"
+"这可以防止模型在（用户不应该知道的）内部细节改变时不再有效。"
 
 #: ../../source/components/subsystems/gear.rst:106
 msgid ""
@@ -134,16 +170,20 @@ msgid ""
 "subsystem level).  This is called :ref:`propagation` and we will be "
 "discussing it in greater detail later in the chapter."
 msgstr ""
+"还要注意有多少的参数，如\ ``c``\ ，是在子系统级别中指定的。之后，这些参数会通过层级结构传值给深层的参数（通常结合\ ``final``\ 限定词）。"
+"这样，组件的参数可以集中在子系统级别。而该模型的用户可以在一个地方（在子系统级别）看到所有相关参数。"
+"这就是所谓的\ :ref:`propagation`\ 。本章后面，我们会对其进行更详细的讨论。"
 
 #: ../../source/components/subsystems/gear.rst:115
 msgid ""
 "As we can see in the following plot, the results are identical when compared"
 " to the \"flat\" version presented previously:"
 msgstr ""
+"从下图中能看出，结果与此前无层级的版本别无二致："
 
 #: ../../source/components/subsystems/gear.rst:122
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/components/subsystems/gear.rst:124
 msgid ""
@@ -156,3 +196,8 @@ msgid ""
 "parameterize them such that the assembly can be used over and over again "
 "where the only changes required are parametric."
 msgstr ""
+"我们已经看到了如何利用组件模型可把方程化为可重用的组件。"
+"这避免了一次次手工输入方程这一繁琐、耗时且容易出错的过程。"
+"而当我们发现自己在不停将同样一系列模型放入类似的总成里时，同样的原则也适用。"
+"我们可以利用这个子系统模型的方法来创建可重用组件总成。"
+"将总成模型内部参数设定得令模型可以一次次的重用，而且重用时只需要改变参数。
