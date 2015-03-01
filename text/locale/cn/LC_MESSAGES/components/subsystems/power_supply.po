@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/power_supply.rst:2
 msgid "DC Power Supply"
-msgstr ""
+msgstr "直流电源"
 
 #: ../../source/components/subsystems/power_supply.rst:4
 msgid ""
@@ -21,20 +21,23 @@ msgid ""
 "implemented in Modelica.  We'll show, once again, how a flat system model "
 "can be refactored to make use of a reusable subsystem model."
 msgstr ""
+"在这一节中，我们将考虑如何在Modelica实现直流电源模型。"
+"我们将再一次展示，怎么重构无层级的系统模型，使得可重用的子系统模型能得到利用。"
 
 #: ../../source/components/subsystems/power_supply.rst:9
 msgid "Flat Power Supply Model"
-msgstr ""
+msgstr "无层级电源模型"
 
 #: ../../source/components/subsystems/power_supply.rst:11
 msgid ""
 "In this case, our flat system model will be the DC power supply circuit "
 "shown here:"
 msgstr ""
+"在这里，我们的无层级系统模型是如下的直流电源电路："
 
 #: ../../source/components/subsystems/power_supply.rst:19
 msgid "Implemented in Modelica, this model looks like this:"
-msgstr ""
+msgstr "模型的Modelica实现则如下："
 
 #: ../../source/components/subsystems/power_supply.rst:24
 msgid ""
@@ -43,6 +46,8 @@ msgid ""
 "simulate this model, we see the following voltage across the ``load`` "
 "resistor:"
 msgstr ""
+"电源把交流输入电压（120V，60Hz）经过整流后传入低通滤波器。"
+"对模型进行仿真后，我们可以看到\ ``load``\ 电阻上的电压如下："
 
 #: ../../source/components/subsystems/power_supply.rst:32
 msgid ""
@@ -53,10 +58,14 @@ msgid ""
 "when the switch is closed and current begins to flow through the load (the "
 "resistor named ``load``), we start to see some artifact."
 msgstr ""
+"请注意，我们这里的目标是12伏的输出电压。"
+"但是，输出信号的质量会随着电源负载的增大而变差，。"
+"在这个模拟里，负载最初为零（由于连接到电源的负载开关为开路） 。"
+"但是，当开关闭合，电流开始流过负载（名为\ ``load``\ 的电阻）时，我们会开始看到一些错误。"
 
 #: ../../source/components/subsystems/power_supply.rst:41
 msgid "Hierarchical Power Supply"
-msgstr ""
+msgstr "有层级电源"
 
 #: ../../source/components/subsystems/power_supply.rst:43
 msgid ""
@@ -64,16 +73,21 @@ msgid ""
 " collection of components and organizing them into a subsystem model.  Our "
 "system level circuit then becomes:"
 msgstr ""
+"再一次，我们以无层级版本为基础将一部分组件收集、整理成子系统模型，以改善系统。"
+"我们的系统级电路就变成了："
 
 #: ../../source/components/subsystems/power_supply.rst:52
 msgid ""
 "This model uses the ``BasicPowerSupply`` model whose diagram is shown here:"
 msgstr ""
+"上述系统模型采用了\ ``BasicPowerSupply``\ 模型。"
+"此子模型的简图如下所示："
 
 #: ../../source/components/subsystems/power_supply.rst:59
 msgid ""
 "The Modelica source code for this reusable power supply subsystem model is:"
 msgstr ""
+"此可重用电源子系统模型的Modelica源代码为："
 
 #: ../../source/components/subsystems/power_supply.rst:65
 msgid ""
@@ -87,40 +101,51 @@ msgid ""
 "parameter to selectively expose the ``Lm1`` parameter only in the cases "
 "where ``considerMagnetization`` is true."
 msgstr ""
+"There are a couple of interesting things to note about this model."
+"模型里有几个有趣的事情需要注意。"
+"首先，我们看到与先前相同的组织结构。参数和接口均为\ ``public``\ ，而内部组件则为\ ``protected``\ 。"
+"我们也看到用\ :ref:`dialog-anno`\ 注解来将参数组织为不同的组（这里是\ ``\"General\"``\ 和\ ``\"Transformer\"``\ ）。"
+"我们还看到\ ``enable``\ 注解上使用了\ ``considerMagnetization``\ 参数。"
+"只有\ ``considerMagnetization``\ 为真的情况下，\ ``Lm1``\ 参数才会选择性地有效。"
 
 #: ../../source/components/subsystems/power_supply.rst:75
 msgid ""
 "Using our hierarchical system model we get, as expected, exactly the same "
 "results as we got for the flat version:"
 msgstr ""
+"使用有层级系统模型，我们不出所料地得到与无层级版本相同的结果："
 
 #: ../../source/components/subsystems/power_supply.rst:81
 msgid ""
 "We can augment our system model to include an additional load (that comes "
 "online after some delay):"
 msgstr ""
+"我们可以扩展系统模型，去包括额外的负载（会在一些延迟后有效）："
 
 #: ../../source/components/subsystems/power_supply.rst:89
 msgid ""
 "In that case, if we simulate the model we can see the impact that additional"
 " load will have on the quality of power supply output:"
 msgstr ""
+"在这种情况下，如果我们模拟模型就可以看到额外负载将会对电源输出质量的影响："
 
 #: ../../source/components/subsystems/power_supply.rst:95
 msgid ""
 "By increasing the capacitance in the power supply, we can reduce the "
 "amplitude of the voltage fluctuations, *e.g.,*"
 msgstr ""
+"通过增大电源内的电容就可以减少的电压波动的幅度，例如："
 
 #: ../../source/components/subsystems/power_supply.rst:101
 msgid ""
 "However, if we increase the capacitance level too much, we will find that "
 "the power supply output is very slow to respond to load changes, *e.g.,*"
 msgstr ""
+"但是，如果我们增加的电容容量过多，我们会发现电源输出对负载变化的响应变得非常慢，如："
 
 #: ../../source/components/subsystems/power_supply.rst:109
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/components/subsystems/power_supply.rst:111
 msgid ""
@@ -130,3 +155,5 @@ msgid ""
 "the resulting subsystem model while keeping the internal components in the "
 "``protected`` section."
 msgstr ""
+"这个例子再次说明了组件的集合如何能组织成可重复使用的子系统模型。"
+"这个例子遵从了放置参数的最佳实践。而连接器在所得子系统模型的\ ``public``\ 段落。同时，内部组件则留在\ ``protected``\ 段落内。"
