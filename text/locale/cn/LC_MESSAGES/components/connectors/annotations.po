@@ -268,7 +268,7 @@ msgid ""
 msgstr ""
 "这里我们看到了与\ ``PositivePin``\ 定义相关联的\ ``annotation``\ 是个模型注解。"
 "此外，我们可以看到这个注释内\ ``Icon``\ 元素包含一系列的图形物体。"
-"第一个图形物体是\ :ref:`ellipse-anno`\ 注释"
+"第一个图形物体是\ :ref:`ellipse-anno`\ 注释。"
 "紧接着的是两个\ :ref:`rect-anno`\ 注解。最后是\ :ref:`text-anno`\ （这里使用了前面所讨论的\ :ref:`substitutions`\ ）。"
 
 #: ../../source/components/connectors/annotations.rst:298
