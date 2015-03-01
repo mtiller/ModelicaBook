@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/population.rst:2
 msgid "Lotka-Volterra with Migration"
-msgstr ""
+msgstr "带迁移的掠食者猎物方程"
 
 #: ../../source/components/subsystems/population.rst:4
 msgid ""
@@ -24,10 +24,13 @@ msgid ""
 "population dynamics) and then connect those geographical regions together "
 "with migration models."
 msgstr ""
+"在这一节中，我们将再次重温掠食者猎物模型。目的是了解在前面关于可重用组件模型的工作基础上，这个模型有什么变化。"
+"现在，我们将采取下一步行动，去创建各个地理区域的可重用（一般种群动力学）模型。"
+"然后，我们再用迁移模型将这些地域连接在一起。"
 
 #: ../../source/components/subsystems/population.rst:12
 msgid "Two Species Region"
-msgstr ""
+msgstr "双种群的地区"
 
 #: ../../source/components/subsystems/population.rst:14
 msgid ""
@@ -36,30 +39,37 @@ msgid ""
 "other foxes, with the usual Lotka-Volterra population dynamics.  The "
 "Modelica source code for the model is:"
 msgstr ""
+"The models in this section will all make use of the following model that represents a region consisting of two populations, one of rabbits and the other foxes, with the usual Lotka-Volterra population dynamics."
+"所有在本节中的模型都会使用以下包括兔、狐狸种群的模型。"
+"而模型使用通常的掠食者猎物人口动态。"
+"其Modelica源代码为："
 
 #: ../../source/components/subsystems/population.rst:23
 msgid "The diagram for this component is rendered as:"
-msgstr ""
+msgstr "图表此组件呈现为："
 
 #: ../../source/components/subsystems/population.rst:30
 msgid ""
 "This model will be used as the basis for the regional population dynamics in"
 " subsequent models presented in this section."
 msgstr ""
+"此模型将作为本节随后区域人口动态模型的基础。"
 
 #: ../../source/components/subsystems/population.rst:34
 msgid "Unconnected Regions"
-msgstr ""
+msgstr "未连接区域"
 
 #: ../../source/components/subsystems/population.rst:36
 msgid ""
 "We'll start by building a model that consists of four unconnected regions.  "
 "The Modelica source code for such a model is quite simple:"
 msgstr ""
+"我们先会建立一个模型。模型由四个不相连的地域组成。"
+"对这样的模型其Modelica源代码很简单："
 
 #: ../../source/components/subsystems/population.rst:42
 msgid "The diagram for this model is equally simple:"
-msgstr ""
+msgstr "此模型的简图也同样简单"
 
 #: ../../source/components/subsystems/population.rst:49
 msgid ""
@@ -67,6 +77,8 @@ msgid ""
 " since their initial conditions are identical.  The following plot shows "
 "that this is, in fact, the case:"
 msgstr ""
+"如果我们对该模型进行仿真，每个种群应遵循同一轨迹，因为它们的初始条件是相同的。"
+"下面的图显示了这确实如此："
 
 #: ../../source/components/subsystems/population.rst:56
 msgid ""
@@ -76,16 +88,20 @@ msgid ""
 "initial conditions of the ``UnconnectedPopulations`` model to introduce some"
 " regional variation:"
 msgstr ""
+"稍后我们将观察迁移的影响。"
+"但为了完全鉴别迁移的效果，我们需要对不同地域的发展趋势引进一定差异。"
+"所以，让我们修改\ ``UnconnectedPopulations``\ 模型的初始条件以期引进一些区域性的差异："
 
 #: ../../source/components/subsystems/population.rst:65
 msgid ""
 "Simulating this model, we see that each region has a slightly different "
 "population dynamic:"
 msgstr ""
+"如果我们对该模型进行仿真，会看到各区域的种群动态有些许的差异。"
 
 #: ../../source/components/subsystems/population.rst:72
 msgid "Migration"
-msgstr ""
+msgstr "迁移"
 
 #: ../../source/components/subsystems/population.rst:74
 msgid ""
@@ -93,10 +109,11 @@ msgid ""
 "regions, it would be interesting to note the impact that migration might "
 "have on these dynamics."
 msgstr ""
+"现在我们已经模拟\ **非相连**\ 区域里种群动态。下一步要研究的是迁移对这些动态可能造成的影响。"
 
 #: ../../source/components/subsystems/population.rst:78
 msgid "Consider the following Modelica model for migration:"
-msgstr ""
+msgstr "请考虑以下的Modelica迁移模型"
 
 #: ../../source/components/subsystems/population.rst:83
 msgid ""
@@ -110,16 +127,22 @@ msgid ""
 "additional effects, on top of those implemented in each region, to change "
 "the population dynamics between regions."
 msgstr ""
+"此模型利用两个连接区域内兔子和狐狸各自种群大小的区域差去求解迁移的速率。"
+"迁移的速率与各自种群大小在区域间之差成正比。"
+"换句话说，如果某区域内兔子数比另一区的多，兔子将从人口较多的区域移动到人口较少的区。"
+"这实际上是一个“扩散”迁移模型，不一定有生态学上的基础。"
+"引入模型的目的是提供一个例子去说明，要如何在各区域现有动态的基础上引入新的效应以影响区域间的种群动态。"
 
 #: ../../source/components/subsystems/population.rst:94
 msgid ""
 "If we connect our previously unconnected regions with migration paths, "
 "*e.g.,*"
 msgstr ""
+"如果我们将先前未连接地区用迁移路径连接起来，如："
 
 #: ../../source/components/subsystems/population.rst:100
 msgid "the resulting system diagram becomes:"
-msgstr ""
+msgstr "系统简图变为："
 
 #: ../../source/components/subsystems/population.rst:107
 msgid ""
@@ -127,10 +150,11 @@ msgid ""
 " regions start off out of sync, but eventually stabilize into repeating "
 "patterns:"
 msgstr ""
+"模拟这个系统后，我们可以看到不同区域内的人口动态开始并不同步，但最终稳定成重复的行为模式："
 
 #: ../../source/components/subsystems/population.rst:115
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/components/subsystems/population.rst:117
 msgid ""
@@ -141,3 +165,6 @@ msgid ""
 "together into a hierarchical system model that also captured the effects of "
 "migration between these distinct regions."
 msgstr ""
+"此前，我们把掠食者猎物方程化为代表捕食、饥饿和繁殖的组件。"
+"在本节中，我们能使用这些组件模型建立子系统模型，以表示在特定区域内的种群动态。"
+"在此基础上，我们将这些子系统连接为带层级的系统模型，以捕捉在这些不同的区域之间迁移的影响。"
