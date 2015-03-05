@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/pendulums.rst:4
 msgid "Harmonic Motion of Pendulums"
-msgstr ""
+msgstr "钟摆的间谐运动"
 
 #: ../../source/components/subsystems/pendulums.rst:6
 msgid ""
@@ -24,6 +24,10 @@ msgid ""
 "remove any energy dissipation from the system, they will eventually all "
 "\"reunite\" at their initial position."
 msgstr ""
+"在这一节中，我们将重新创建一个涉及摆的有趣实验\ [Berg]_\ 。"
+"如果我们创建了具有不同固有频率的一系列摆，并让其在相同的位置开始运动。"
+"我们将看到它们会在不同的频率产生振荡。"
+"但是，如果我们从系统中删除所有能量耗散，所有的摆最终将在其最初的位置“团聚”。"
 
 #: ../../source/components/subsystems/pendulums.rst:13
 msgid ""
@@ -32,10 +36,12 @@ msgid ""
 "the lengths of the pendulums to achieve a specific period between these "
 "\"reunions\"."
 msgstr ""
+"一般来说，这些“团聚”事件间的周期为是系统中所有摆周期的最小公倍数。"
+"我们可以通过选择摆的长度来实现一个特定的“团圆”周期。"
 
 #: ../../source/components/subsystems/pendulums.rst:19
 msgid "Pendulum Model"
-msgstr ""
+msgstr "钟摆模式"
 
 #: ../../source/components/subsystems/pendulums.rst:21
 msgid ""
@@ -44,14 +50,16 @@ msgid ""
 " before we can create an array of pendulums, we need to first have a model "
 "of a single pendulum."
 msgstr ""
+"在本节中，我们可以像\ :ref:`distributed-heat-transfer`\ 的例子一样用组件阵列来建立子系统模型。"
+"但在创建摆的数组之前，我们需要先有一个单摆的模型。"
 
 #: ../../source/components/subsystems/pendulums.rst:32
 msgid "The components of the pendulum can be rendered as follows:"
-msgstr ""
+msgstr "摆的组件显示如下："
 
 #: ../../source/components/subsystems/pendulums.rst:40
 msgid "System Model"
-msgstr ""
+msgstr "系统模型"
 
 #: ../../source/components/subsystems/pendulums.rst:44
 msgid ""
@@ -60,6 +68,9 @@ msgid ""
 "a complete cycle of the system is :math:`T` seconds, we compute the length "
 "of the :math:`i^{th}` pendulum as:"
 msgstr ""
+"现在，有了单独的摆模型，我们就可以建立钟摆组成的系统。"
+"如果我们想要一个有\ :math:`n`\ 个摆的系统，而系统的完整周期为\ :math:`T`\ 秒。"
+"而第\ :math:`i`\ 个摆的长度可以用如下方式计算："
 
 #: ../../source/components/subsystems/pendulums.rst:53
 msgid ""
@@ -68,14 +79,18 @@ msgid ""
 "and :math:`X` is the number of oscillations of the longest pendulum over "
 ":math:`T` seconds."
 msgstr ""
+"其中\ :math:`g_n`\ 是地球的引力常数。"
+"\ :math:`n`\ 是钟摆的数量。"
+"\ :math:`T`\ 是该系统完整循环的周期。"
+"而\ :math:`X`\ 是最长的摆锤在\ :math:`T`\ 秒的振荡次数。"
 
 #: ../../source/components/subsystems/pendulums.rst:58
 msgid "In Modelica, we could build such a system as follows:"
-msgstr ""
+msgstr "Modelica里我们可以建立上述系统，如下："
 
 #: ../../source/components/subsystems/pendulums.rst:64
 msgid "The following declaration is particularly interesting:"
-msgstr ""
+msgstr "以下声明特别值得关注："
 
 #: ../../source/components/subsystems/pendulums.rst:70
 msgid ""
@@ -92,22 +107,31 @@ msgid ""
 "more complete discussion on how to apply modifications to arrays of "
 "components :ref:`later in this chapter <sub-modifications>`."
 msgstr ""
+"因为\ ``pendulum``\ 是有\ ``n``\ 个分量的数组，将有\ ``n``\ 个\ ``x``\ 、 \ ``m``\ 、 \ ``phi``\ 和\ ``L``\ 这些与摆相关的参数。"
+"举个例子，如果\ ``N = 3``\ ，那么模型的\ ``x``\ 将有3个值：\ ``pendulum[1].x``\ 、\ ``pendulum[ 2 ].x``\ 和\ ``pendulum[3].x``\ 。"
+"在\ ``pendulum``\ 声明里，我们以不同方式对不同参数进行处理。"
+"对于\ ``m``\ ，我们使用\ ``each m=1``\ 为每个钟摆赋相同的值。"
+"然而，对于\ ``L``\ （和\ ``x``\ ），我们提供数组以进行赋值。"
+"而\ ``lengths``\ 数组中的值使用前面介绍的钟摆长度公式来计算。"
+"我们将在\ :ref:`\ 本章后面\ <sub-modifications>`\ 更完整地讨论如何将修改应用到组件数组。"
 
 #: ../../source/components/subsystems/pendulums.rst:85
 msgid ""
 "If we simulate this system, we get the following solution for the trajectory"
 " of each of the pendulums:"
 msgstr ""
+"如果对上述系统进行仿真，我们可以得到各摆轨迹的解。其如下所示："
 
 #: ../../source/components/subsystems/pendulums.rst:93
 msgid ""
 "As we can see from this plot, every 54 seconds all the pendulums return to "
 "their initial position."
 msgstr ""
+"我们可以从这个图看出，所有摆在每过54秒后都会回到初始位置。"
 
 #: ../../source/components/subsystems/pendulums.rst:110
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/components/subsystems/pendulums.rst:112
 msgid ""
@@ -117,6 +141,9 @@ msgid ""
 "peculiar behavior observed when we choose their lengths according to the "
 "equation specified earlier."
 msgstr ""
+"本节中，我们看到了如何才能使用、声明和修改组件阵列。"
+"在本节的例子里，这允许我们指定系统内摆的数目并进行仿真。"
+"目的是观察这些摆在应用由前述方程式指定的不同长度时的特别行为。"
 
 #: ../../source/components/subsystems/pendulums.rst:118
 msgid ""
