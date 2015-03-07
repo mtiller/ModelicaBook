@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/modifications.rst:4
 msgid "Modifications"
-msgstr ""
+msgstr "修改"
 
 #: ../../source/components/subsystems/modifications.rst:6
 msgid ""
@@ -21,12 +21,15 @@ msgid ""
 "some cases, these modifications are applied to :ref:`attributes` of built-in"
 " types, *e.g.,*"
 msgstr ""
+"此前，我们看到了应用在变量上的修改语句的例子。"
+"在某些情况下，这些修改应用在内建类型的\ :ref:`attributes`\ 上, 如："
 
 #: ../../source/components/subsystems/modifications.rst:14
 msgid ""
 "In other cases, they have been applied to ``model`` instances to change the "
 "values of parameters for that particular instance, *e.g.,*"
 msgstr ""
+"在另一些情况下，修改语句则应用在\ ``model``\ 实例上，用以改变该特定实例参数的值，例如："
 
 #: ../../source/components/subsystems/modifications.rst:21
 msgid ""
@@ -36,12 +39,17 @@ msgid ""
 "made a modification to the ``min`` attribute associated with the ``Vf`` "
 "parameter in the ``Vs`` instance of the ``StepVoltage`` model as follows:"
 msgstr ""
+"但需要指出，这样的修改语句可以向下修改不止一个层级。"
+"例如，考虑前面涉及\ ``StepVoltage``\ 组件的例子。"
+"我们也可以修改\ ``StepVoltage``\ 模型的\ ``Vs``\ 实例内与\ ``Vf``\ 参数相关联的\ ``min``\ 属性，如下："
 
 #: ../../source/components/subsystems/modifications.rst:32
 msgid ""
 "But what if we wanted to change an attribute of the ``Vf`` parameter **and**"
 " give it a value?  The syntax for such a modification is:"
 msgstr ""
+"但是，如果我们想同时改变\ ``Vf``\ 参数的属性\ **并且**\ 赋值呢？"
+"这种修改的语法为："
 
 #: ../../source/components/subsystems/modifications.rst:39
 msgid ""
@@ -49,6 +57,8 @@ msgid ""
 "modifications are performed on **arrays** of components.  Imagine we had an "
 "array of ``StepVoltage`` components declared as follows:"
 msgstr ""
+"一个值得讨论的重要情况是，怎么如何对组件\ **数组**\ 的执行修改。"
+"想象一下，我们声明了\ ``StepVoltage``\ 组件的如下数组："
 
 #: ../../source/components/subsystems/modifications.rst:47
 msgid ""
@@ -58,6 +68,11 @@ msgid ""
 "value, we have two choices.  The first is to specify an array of values, "
 "*e.g.,*"
 msgstr ""
+"正如我们在对\ :ref:`arrays-of-components` 的讨论中看到的一样，这不合法的Modelica代码。"
+"但这些语句可以用于表示子系统内组件的集合。"
+"如果想给参数\ ``Vf``\ 赋值，我们有两个选择。"
+"The first is to specify an array of values, *e.g.,*"
+"第一是指定值的数组，例如："
 
 #: ../../source/components/subsystems/modifications.rst:57
 msgid ""
@@ -66,12 +81,16 @@ msgid ""
 "The other choice we have is to give the same value to every element in the "
 "array.  We could use this same array initialization syntax, *e.g.,*"
 msgstr ""
+"这将向量\ ``{24,26,28,30,32}``\ 的值分别赋给了\ ``VS [1].Vf``\  、\ ``VS [ 2 ].Vf``\  、\ ``VS [ 3 ].Vf``\  、\ ``VS [ 4 ].Vf``\ 和\ ``VS [ 5 ]  .Vf``\ 。"
+"另一个选择是给予该数组中的每个元素相同的值。"
+"我们可以使用和上面相同的数组初始化语法，如："
 
 #: ../../source/components/subsystems/modifications.rst:67
 msgid ""
 "The problem comes when the number of elements in an array is defined by a "
 "``parameter``, *e.g.,*"
 msgstr ""
+"但若的数组大小取决于\ ``parameter``\ 的话，问题就来了，如："
 
 #: ../../source/components/subsystems/modifications.rst:84
 msgid ""
@@ -79,6 +98,8 @@ msgid ""
 " value of ``Vf`` and the ``min`` attribute inside ``Vf``? We'd end up with "
 "something like this:"
 msgstr ""
+"这是个可以接受的方案。"
+"但想象一下，如果我们同时希望修改\ ``Vf``\ 的值以及\ ``Vf``\ 内的\ ``min``\ 属性呢？我们最终会得到这样的语句："
 
 #: ../../source/components/subsystems/modifications.rst:93
 msgid ""
@@ -87,6 +108,9 @@ msgid ""
 "placing the ``each`` keyword in front of a modification, that modification "
 "is applied to every instance, *e.g.,*"
 msgstr ""
+"一个个的嵌套修改会让这些定义会很快变得十分复杂。"
+"好在Modelica的包括一个处理这种情况的特性。"
+"通过在修改语句前添加\ ``each``\ 关键字，可以让修改语句影响每一个实例，例如："
 
 #: ../../source/components/subsystems/modifications.rst:103
 msgid ""
@@ -95,6 +119,9 @@ msgid ""
 " the examples in this section, Modelica provides many features to make "
 "applying modifications to hierarchies simple and powerful."
 msgstr ""
+"修改语句是建模的重要部分。因为这些语句能让我们通过层级向下修改参数值。"
+"正如你在本节中的例子中所看到的一样，Modelica语言提供了许多相关特性。"
+"这些特性能让应用在层次结构里的修改语句变得简单而功能强大。"
 
 #: ../../source/components/subsystems/modifications.rst:75
 msgid ""
@@ -102,3 +129,5 @@ msgid ""
 "``{24,24,24}``, then it won't adapt to changes in ``n``.  To address this "
 "situation, we could use the :ref:`fill-function` function:"
 msgstr ""
+"如果我们试图用文字数组（如：\ ``{24,24,24}``\ ），那么这些代码就不会自动适应不同的\ ``n``\  。"
+"为了解决这个问题，我们可以使用\ :ref:`fill-function`\ 函数："
