@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/propagation.rst:4
 msgid "Propagation"
-msgstr ""
+msgstr "传值"
 
 #: ../../source/components/subsystems/propagation.rst:6
 msgid ""
@@ -22,6 +22,9 @@ msgid ""
 "components.  For example, consider the following system model used in our "
 "discussion of :ref:`rotational-components`:"
 msgstr ""
+"在建立子系统模型时，子系统很经常会包含一些会传递到其自身部件的参数。"
+"例如，考虑我们在对\ :ref:`rotational-components`:\ 的讨论中使用的以下系统模型："
+
 
 #: ../../source/components/subsystems/propagation.rst:31
 msgid ""
@@ -30,6 +33,9 @@ msgid ""
 "parameter at the subsystem level and then propagate it down into the "
 "hierarchy using a modification.  The result would look something like this:"
 msgstr ""
+"有时候，我们会想在不同的上下文中使用这个模型，并改变一些部件参数的值，例如\ ``d``\ 。"
+"我们可以让\ ``d``\ 成为子系统级别的参数，然后利用修改语句将值通过层次结构传递。"
+"结果应是如此："
 
 #: ../../source/components/subsystems/propagation.rst:48
 msgid ""
@@ -39,6 +45,10 @@ msgid ""
 "``damper2.d`` parameter from getting out of sync (having different values), "
 "we can permanently bind them using the ``final`` qualifier:"
 msgstr ""
+"这里有一个问题。"
+"用户可能会去下层改变\ ``damper2.d``\ 的值，而不在\ ``SMD``\ 模型修改\ ``d``\ 参数。"
+"要避免\ ``d``\ 参数和\ ``damper2.d``\ 参数的不同步（具有不同的值），"
+"我们可以使用\ ``final``\ 限定词将其永久绑定起来："
 
 #: ../../source/components/subsystems/propagation.rst:64
 msgid ""
@@ -46,12 +56,15 @@ msgid ""
 "possible to modify the value of ``damper2.d``.  Any modifications must be "
 "made to ``d`` only."
 msgstr ""
+"通过添加\ ``final``\ 限定词，我们表明参数\ ``damper2.d``\ 的值不可以再修改。"
+"任何修改必须指向\ ``d``\ 。"
 
 #: ../../source/components/subsystems/propagation.rst:68
 msgid ""
 "Giving all of the \"hard-wired\" numerical values in the ``SMD`` model the "
 "same treatment, we would end up with a highly reusable model like this:"
 msgstr ""
+"用相同方式代替在\ ``SMD``\ 模型里所有在代码里固定的数值，如下模型会得到很高的可重用性："
 
 #: ../../source/components/subsystems/propagation.rst:101
 msgid ""
@@ -59,6 +72,8 @@ msgid ""
 "one of two ways.  One way would be to extend the parameterized model above "
 "and include a modification in the ``extends`` statement, *e.g.,*"
 msgstr ""
+"如果我们想用某组特定的参数值，有两种可行的方法。"
+"一种方法是扩展上述的参数化模型，并在\ ``extends``\ 声明包括修改语句，如："
 
 #: ../../source/components/subsystems/propagation.rst:113
 msgid ""
@@ -72,6 +87,11 @@ msgid ""
 "the default value.  If that default value is not reasonable or typical, then"
 " you will silently introduce an unreasonable value into your model."
 msgstr ""
+"需要注意的是，我们并不需要为\ ``phi2_init``\ 、\ ``w1_init``\ 、\ ``w2_init``\ 添加修改语句，因为这些参数在声明都带有默认值。"
+"一般情况下，\ **只有在参数的默认值适用于绝大部分情况时，才应该设定**\ 。"
+"这样做的原因在于如果参数没有默认值，大多数的Modelica编译器会生成警告，以提醒你必须进行赋值。"
+"但是，如果存在默认值，编译器会默默地使用默认值。"
+"如果默认值不合理或不典型，那么你会默默地在模型里引入一个不合理的值。"
 
 #: ../../source/components/subsystems/propagation.rst:124
 msgid ""
@@ -79,12 +99,15 @@ msgid ""
 "used would be to instantiate an instance of the ``SMD`` model and use "
 "modifications on the declared variable to specify parameter values, *e.g.,*"
 msgstr ""
+"另一方面，我们回到关于传值的主题。"
+"另一个可用的方法将是实例化\ ``SMD``\ 模型，并在声明的变量使用修改语句去指定参数值，如："
 
 #: ../../source/components/subsystems/propagation.rst:135
 msgid ""
 "We'll defer the discussion on which of these approaches is better until the "
 "upcoming chapter on :ref:`architectures`."
 msgstr ""
+"在下章\ :ref:`architectures`\ 之前，我们暂时不会讨论哪种方法更好。"
 
 #: ../../source/components/subsystems/propagation.rst:46
 msgid "final"
