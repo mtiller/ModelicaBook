@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/modifications.rst:4
 msgid "Modifications"
-msgstr "修改"
+msgstr "修改语句"
 
 #: ../../source/components/subsystems/modifications.rst:6
 msgid ""
