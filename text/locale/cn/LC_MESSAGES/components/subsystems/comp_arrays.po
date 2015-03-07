@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/comp_arrays.rst:4
 msgid "Arrays of Component"
-msgstr ""
+msgstr "组件的阵列"
 
 #: ../../source/components/subsystems/comp_arrays.rst:8
 msgid ""
@@ -22,6 +22,10 @@ msgid ""
 "components used using a parameter (as we saw in our discussions of both :ref"
 ":`distributed-heat-transfer` and :ref:`harmonic-motion`)."
 msgstr ""
+"本章中的数个示例使用了组件数组。"
+"组件数组在某些情况下很有用。"
+"例如，当用户可能希望使用参数来\ “扩展”\ 所使用部件的数量（正如我们在\ :ref:`distributed-heat-transfer`\ \ :ref:`harmonic-motion`\ 的讨论里看到的一样）。"
+
 
 #: ../../source/components/subsystems/comp_arrays.rst:22
 msgid ""
@@ -29,6 +33,8 @@ msgid ""
 "used for other types.  All that is required is to follow the name of the "
 "variable being declared by a set of dimensions."
 msgstr ""
+"创建组件阵列的语法和用于其它类型的语法相同。"
+"要做的仅仅是声明的变量名称后加上维度。"
 
 #: ../../source/components/subsystems/comp_arrays.rst:26
 msgid ""
@@ -42,6 +48,12 @@ msgid ""
 ":`configuration-management` features.  But for now we will simply point out "
 "that it is not possible to ``redeclare`` only one element in an array."
 msgstr ""
+"然而，和标量不同，部件内会有其他声明。"
+"因此，在创建分量的数组时，数组中每个组件的结构都会被复制。"
+"Modelica要求数组中的每一个元素都必须为相同的类型。"
+"这似乎是显而易见的。但这一定程度上是因为我们还没有讨论过\ ``replaceable``\ 部件。"
+"我们会了解更多关于\ ``replaceable``\ 组件在下一章当我们谈论的Modelica的\ :ref:`configuration-management`\ 特性。"
+"不过现在，我们只会简单地指出，只\ ``redeclare``\ 数组中的一个元素是不可能的。"
 
 #: ../../source/components/subsystems/comp_arrays.rst:39
 msgid ""
@@ -50,6 +62,8 @@ msgid ""
 "inside the component is implicitly treated as an array.  For example, "
 "consider the following ``record`` definition:"
 msgstr ""
+"正如在\ :ref:`harmonic-motion`\ 讨论里简要地谈到的一样，我们在对组件阵列进行\ :ref:`sub-modifications`\ 的时候，该组件中每个变量均被隐式地视为一个数组。"
+"举个例子，考虑下面的\ ``record``\ 定义："
 
 #: ../../source/components/subsystems/comp_arrays.rst:52
 msgid ""
@@ -64,10 +78,17 @@ msgid ""
 "indices in the range.  All of this holds even for arrays of components "
 "containing arrays of components and so on."
 msgstr ""
+"假设我们声明\ ``Point``\ 组件的数组，如\ ``Point p[5]``\ 。"
+"那么，任何对\ ``p.x``\ 的引用都会被视为有5个\ ``Real``\ 变量的数组，即\ ``p[1].x``\  、\ ``p[2].x``\  、\ ``p[3].x``\  、\ ``p[4].x``\ 以及\ ``p[5].x``\ 。"
+"这就是所谓的\ *切片*\ 。"
+"最重要的一点是，如果我们省略下标（如\ ``p.x``\ ），那么下标就对应所有的元素（在技术上说，下标维持在“未限定”状态。而随后则可以“限定”下标）。"
+"此外，如果提供的下标为一个范围（例如\ ``：``\ 、\ ``1:end``\ 、\ ``2:3``\ ），"
+"那么表达式则会解析为对应于该范围内所有索引的数组子集。"
+"上述内容对于含有组件阵列的组件阵列也一样成立。"
 
 #: ../../source/components/subsystems/comp_arrays.rst:64
 msgid "The following example, demonstrates some of the more common cases:"
-msgstr ""
+msgstr "下面的例子，说明了一些比较常见的情况："
 
 #: ../../source/components/subsystems/comp_arrays.rst:6
 msgid "arrays"
@@ -87,3 +108,5 @@ msgid ""
 "array of scalar variables like we did in our previous discussion on :ref"
 ":`vectors-and-arrays`.  As we can see in this example,"
 msgstr ""
+"创建组件数组和我们前面在\ :ref:`vectors-and-arrays`\ 一节里讨论的标量数组创建实在没有任何不同。"
+"正如我们在这个例子中看到，"
