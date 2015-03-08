@@ -22,9 +22,9 @@ msgid ""
 "components used using a parameter (as we saw in our discussions of both :ref"
 ":`distributed-heat-transfer` and :ref:`harmonic-motion`)."
 msgstr ""
-"本章中的数个示例使用了组件数组。"
+"本章中有数个示例使用了组件数组。"
 "组件数组在某些情况下很有用。"
-"例如，当用户可能希望使用参数来\ “扩展”\ 所使用部件的数量（正如我们在\ :ref:`distributed-heat-transfer`\ \ :ref:`harmonic-motion`\ 的讨论里看到的一样）。"
+"例如，当用户可能希望使用参数来\ “扩展”\ 所使用部件的数量（正如我们在\ :ref:`distributed-heat-transfer`\ 以及\ :ref:`harmonic-motion`\ 的讨论里看到的一样）。"
 
 
 #: ../../source/components/subsystems/comp_arrays.rst:22
