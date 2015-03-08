@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/components.rst:4
 msgid "Components"
-msgstr ""
+msgstr "组件"
 
 #: ../../source/components/components.rst:6
 msgid ""
@@ -21,6 +21,8 @@ msgid ""
 "approach that it enables.  As such, how to build such component models is "
 "probably the single most important topic to cover in this book."
 msgstr ""
+"大多数人眼里的Modelica是一种可以使用面向组件方法的语言。"
+"因此，如何建立组件模型就大概是本书所涵盖的最重要的课题了。" 
 
 #: ../../source/components/components.rst:11
 msgid ""
@@ -31,11 +33,15 @@ msgid ""
 "tested, the same code can be used over and over.  This kind of reuse saves "
 "development time, avoids errors and simplifies maintenance."
 msgstr ""
+"到现在为止，我们主要专注于如何描述（连续和离散的）数学行为。"
+"现在是时候了解这种行为怎样可以包装成可重用的组件模型。"
+"事实上，这些组件模型可重用意味着，同样的代码在编写和测试后就可以反复使用。"
+"这种重用可节省开发时间，避免编程错误，也简化了维护。"
 
 #: ../../source/components/components.rst:20
 msgid "Examples"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/components/components.rst:35
 msgid "Review"
-msgstr ""
+msgstr "复习"
