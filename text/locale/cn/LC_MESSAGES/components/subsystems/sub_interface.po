@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/sub_interface.rst:2
 msgid "Subsystem Interface"
-msgstr ""
+msgstr "子系统接口"
 
 #: ../../source/components/subsystems/sub_interface.rst:4
 msgid ""
@@ -22,10 +22,13 @@ msgid ""
 "there is a common pattern that emerges.  Let's review various aspects of "
 "subsystem models to understand this pattern better."
 msgstr ""
+"本章的重点是组件模型可以如何被组织成可重用的子系统。"
+"正如我们在本章中许多例子里看到的，这例子总会出现一个常见的模式。"
+"为了进一步了解这种模式，让我们回顾子系统模型的各个方面。"
 
 #: ../../source/components/subsystems/sub_interface.rst:10
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/components/subsystems/sub_interface.rst:15
 msgid ""
@@ -35,6 +38,11 @@ msgid ""
 "possible to declare something as public by adding the ``public`` keyword and"
 " placing the declarations after it.  In other words:"
 msgstr ""
+"一般而言，子系统的参数应为\ ``public``\ 。"
+"通常情况下，除非\ ``model``\ 或\ ``block``\ 内定义的声明前带有\ ``protected``\ 关键字，"
+"否则所有声明都是共有的。
+"在这种情况下，如果想通过在声明前添加\ ``public``\ 关键字去表明其为公共的话，也是可以的。"
+"换句话说："
 
 #: ../../source/components/subsystems/sub_interface.rst:36
 msgid ""
@@ -42,6 +50,7 @@ msgid ""
 "either at the start of the definition (where they are ``public`` by default)"
 " or in a collection of declarations explicitly marked ``public``."
 msgstr ""
+"在本章中的例子中，经常可以见到参数定义要不是在定义的开始（这里参数默认为\ ``public``\ ）就是在一系列明确标记\ ``\ public``\ 的声明里。"
 
 #: ../../source/components/subsystems/sub_interface.rst:40
 msgid ""
@@ -52,10 +61,13 @@ msgid ""
 "is to recognize that parameter declarations are part of the subsystem "
 "pattern."
 msgstr ""
+"很显然，参数定义为公有，让子系统的用户可以进行访问。"
+"我们很快就会在对\ :ref:`sub-modifications`\ 以及\ :ref:`propagation`\ 的讨论里看到，应如何将参数传值给较低级别的组件。"
+"但就目前而言，最主要的一点是要认识到参数声明是子系统设计模式的一部分。"
 
 #: ../../source/components/subsystems/sub_interface.rst:48
 msgid "Connectors"
-msgstr ""
+msgstr "连接器"
 
 #: ../../source/components/subsystems/sub_interface.rst:50
 msgid ""
@@ -69,10 +81,15 @@ msgid ""
 "chapter, because these connectors are meant to be connected to, they should "
 "be ``public``."
 msgstr ""
+"从某种意义上说，子系统模型和系统模型的区别就在于连接器。"
+"系统模型完整且可以立刻进行模拟。正因为如此，系统模型不希望外界任何元素影响，亦即不会有连接器。"
+"子系统可以封装组件的复杂层级结构（最小的单元为公式）。"
+"但是，由于子系统模型包括连接器，其实模型是作为较大系统的一部分来使用的。"
+"此外，正如我们在本章所看到的例子一样，由于连接器需要在连接到，他们应该是\ ``public``\ 。"
 
 #: ../../source/components/subsystems/sub_interface.rst:61
 msgid "Hierarchical Connections"
-msgstr ""
+msgstr "分层连接"
 
 #: ../../source/components/subsystems/sub_interface.rst:63
 msgid ""
@@ -83,6 +100,10 @@ msgid ""
 " act as \"proxies\" for internal connectors.  A simple example of this can "
 "be seen in the ``GearWithBacklash`` model:"
 msgstr ""
+"由于子系统通常只会由组件或其他子系统组成，该子系统与外界的物理相互作用通常会重定向到内部的组件或子系统内。"
+"子系统边界的连接器实际上充当的是内部连接器的“代理”。"
+"我们在这一章已经多次看到这种模式。"
+"在\ ``GearWithBacklash``\ 模型里可以看到一个简单的例子："
 
 #: ../../source/components/subsystems/sub_interface.rst:74
 msgid ""
@@ -96,10 +117,14 @@ msgid ""
 "will have a \"``.``\" for both of the named connectors in the ``connect`` "
 "statement, *e.g.,*"
 msgstr ""
+"请注意，\ ``connect``\ 语句将子系统连接器实例\ ``flange_a``\ 与子部件\ ``inertia_a``\ 的连接器实例\ ``inertia_a.flange_a``\ 。"
+"这是子系统模型的通用设计模式。"
+"而这个模式很容易识别。因为\ ``connect``\ 语句提到的连接器中的一个会包含“\ ``.``\ ”，而另一个则没有“\ ``.``\ ”。"
+"对于所有连接两个内部部件的“内部”连接，其\ ``connect``\ 语句提到的两个连接器里均会带有“\ ``.``\ ”。例如："
 
 #: ../../source/components/subsystems/sub_interface.rst:90
 msgid "Equation Generation for Hierarchical Connections"
-msgstr ""
+msgstr "分层连接公式生成"
 
 #: ../../source/components/subsystems/sub_interface.rst:92
 msgid ""
@@ -110,6 +135,9 @@ msgid ""
 "out that :ref:`system-connections` generate equations that sum all the "
 "corresponding ``flow`` variables in the connection set to zero."
 msgstr ""
+"本书已多次提到\ ``flow``\ 变量的正负号规则（例如在我们对\ :ref:`acausal-connections`\ 的讨论里）。"
+"\ ``flow``\ 变量为正值表示该流在进入组件或子系统。"
+"同时，我们也指出，\ :ref:`system-connections`\ 生成方程式，使得连接对应的所有\ ``flow``\ 变量的和为零。"
 
 #: ../../source/components/subsystems/sub_interface.rst:100
 msgid ""
@@ -123,24 +151,30 @@ msgid ""
 "belonging to internal components will have the opposite sign as ``flow`` "
 "variables on connectors belonging to the subsystem itself."
 msgstr ""
+"但是，处理分层子系统定义时，此规则有一个点不同。"
+"对于子系统， \ ``flow``\ 正负号约定保持不变。"
+"所以，在连接器的\ ``flow``\ 变量正值还是代表流守恒量到该组件。"
+"连接集内所有\ ``flow``\ 变量会产生一个守恒方程这点也仍然成立。"
+"然而，在守恒方程中，内部组件连接器的\ ``flow``\ 变量将会与子系统连接器的\ ``flow``\ 变量具有相反的符号。"
 
 #: ../../source/components/subsystems/sub_interface.rst:111
 msgid ""
 "To understand the implications of this, let us consider the following two "
 "``connect`` statements from the ``GearWithBacklash`` model:"
 msgstr ""
+"要理解这意味着什么，让我们考虑以下\ ``GearWithBacklash``\ 模型的两个\ ``connect``\ 语句："
 
 #: ../../source/components/subsystems/sub_interface.rst:118
 msgid "From these equations, we get the following two connection sets:"
-msgstr ""
+msgstr "从这些方程里，我们得到以下两个连接集："
 
 #: ../../source/components/subsystems/sub_interface.rst:120
 msgid "**Connection Set #1**: `flange_a`, `inertia_a.flange_a`"
-msgstr ""
+msgstr "**\ 连接集#1**: `flange_a`, `inertia_a.flange_a`"
 
 #: ../../source/components/subsystems/sub_interface.rst:121
 msgid "**Connection Set #2**: `idealGear.flange_b`, `inertia_b.flange_a`"
-msgstr ""
+msgstr "**\ 连接集#2**: `idealGear.flange_b`, `inertia_b.flange_a`"
 
 #: ../../source/components/subsystems/sub_interface.rst:123
 msgid ""
@@ -149,6 +183,9 @@ msgid ""
 " expect the following two equations to be generated for the ``flow`` "
 "variables on these connectors:"
 msgstr ""
+"In each of these connection sets, there is a ``flow`` variable, ``tau``."
+"在每个连接集内都有一个\ ``flow``\ 变量，\ ``tau``\  。"
+"使用前述的\ :ref:`system-connections`\ 规则，我们可能会预期\ ``flow``\ 变量将产生以下两个等式："
 
 #: ../../source/components/subsystems/sub_interface.rst:133
 msgid ""
@@ -160,6 +197,10 @@ msgid ""
 "sign difference for contributions at different levels.  Taking that into "
 "account, **the actual equations that will be generated** will be:"
 msgstr ""
+"然而，在我们以往对\ :ref:`system-connections`\ 的讨论里，所有组件都是在同一层次的（即作为\ `idealGear.flange_b`\ 和\ ` inertia_b.flange_a`\ 是） 。"
+"但并不是所有子系统模型都是如此。"
+"而且，如上所述，若连接穿过不同层级，我们需要对不同层级内的连接器引入不同的符号。"
+"考虑到这一点，\ **实际将产生的公式**\ 会是："
 
 #: ../../source/components/subsystems/sub_interface.rst:147
 msgid ""
@@ -168,6 +209,9 @@ msgid ""
 "If that is the case, then by changing the sign of ``flange_a.tau``, the "
 "first equation above can be transformed into:"
 msgstr ""
+"请注意\ ``flange_a.tau``\ 前面的减号。"
+"记住\ ``flange_a``\ 充当\ ``inertia_a.flange_a``\ 的代理。"
+"以此为前提，则通过改变\ ``flange_a.tau``\ 的符号，上述的第一个方程可以转化为："
 
 #: ../../source/components/subsystems/sub_interface.rst:157
 msgid ""
@@ -176,10 +220,12 @@ msgid ""
 "``inertia_a.flange_a``, which is exactly what we expect from this kind of "
 "\"proxy\" relationship."
 msgstr ""
+"换句话说，通过改变\ ``flange_a.tau``\ 符号，任何流过\ ``flange_a``\ 守恒量\ **也**\ 会流过\ ``inertia_a.flange_a``\ 。"
+"而这正是我们在这种“代理”关系时所期望的行为。"
 
 #: ../../source/components/subsystems/sub_interface.rst:163
 msgid "Implementation"
-msgstr ""
+msgstr "实现"
 
 #: ../../source/components/subsystems/sub_interface.rst:165
 msgid ""
@@ -188,6 +234,9 @@ msgid ""
 "connectors exposed by the subsystem are ``public`` because that is how users"
 " of the subsystem will interact with it."
 msgstr ""
+"子系统模型通常只封装了某个组件集合。"
+"正如我们在本节已经讨论过的，子系统暴露的参数和连接器均为\ ``public``\ 。"
+"子系统的用户将只能与这些公有部件进行交互。"
 
 #: ../../source/components/subsystems/sub_interface.rst:170
 msgid ""
@@ -196,6 +245,9 @@ msgid ""
 " and other subsystems that are connected together with one or more of the "
 "their connectors connected to the subsystem's connectors."
 msgstr ""
+"子系统的实际内部细节为子系统的实现。"
+"对于子系统，实现通常由组件和其他子系统的集合组成。"
+"子系统实现里各个组件和子系统相互连接，且它们至少有一个连接器与子系统连接器相连。"
 
 #: ../../source/components/subsystems/sub_interface.rst:176
 msgid ""
@@ -213,6 +265,14 @@ msgid ""
 "them.  As a result, if they change in the future it will break the end "
 "user's models."
 msgstr ""
+"正常情况下，最好不要让子系统的最终用户看到这些实现细节。"
+"要做到这一点，子系统中的所有非\ ``parameter``\ 声明通常会标记为\ ``protected``\ 。"
+"这样做主要有两个原因。"
+"首先，这对子系统模型的用户隐藏了实现细节。"
+"作用是将接口简化为只有参数和连接器，避免了将用户真正需知道的内容与其不需要知道（甚至不应知道）的内容混在一起。"
+"将实现细节设定为\ ``protected``\ 另一个原因在于，这让开发者在之后能够灵活地提高或重构实现细节。"
+"若允许用户引用实现细节里的部件，这意味着用户就会（\ **可能甚至是无意地**\ ）依赖于实现细节。"
+"其结果是，如果实现细节在以后发生改变，最终用户的模型就无法工作了。"
 
 #: ../../source/components/subsystems/sub_interface.rst:12
 msgid "public"
