@@ -21,7 +21,7 @@ differential equations in the following form:
 
 In this form, :math:`x` represents the states in the system, :math:`u`
 represents any externally specified inputs to the system and :math:`y`
-represents the outputs of the system (*i.e.,* variables that are not
+represents the outputs of the system (*i.e.,* variables that may not be
 states, but can ultimately be computed from the values of the states
 and inputs).
 

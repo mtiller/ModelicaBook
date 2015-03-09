@@ -105,7 +105,7 @@ defined in terms of integer quantities which allow exact comparison.
 This means that when executing a simulation, we can know for certain
 that these two clocks will trigger simultaneously.
 
-If we wanted to create a clock that was exactly two times slower than
+If we wanted to create a clock that was exactly half as slow as  
 ``x``, we can use the ``subSample`` operator to accomplish this.  We
 see this in the definition of ``z``:
 
@@ -128,8 +128,8 @@ But by defining ``z`` using the ``subSample`` operator and defining it
 with respect to ``x`` we ensure that ``z`` is always triggering at
 half the frequency of ``x`` regardless of how ``x`` is defined.
 
-In a similar way, we can define another clock, ``w`` that triggers 3 times more
-frequently than ``x`` by using the ``superSample`` operator:
+In a similar way, we can define another clock, ``w`` that triggers 3 times as
+frequently as ``x`` by using the ``superSample`` operator:
 
 .. literalinclude:: /ModelicaByExample/DiscreteBehavior/SynchronousSystems/SamplingWithClocks.mo
    :language: modelica
@@ -142,7 +142,7 @@ Again, we could have defined ``w`` directly using ``sample`` with:
   w = sample(time, Clock(1,30));
 
 But by using ``superSample``, we can ensure that ``w`` is always
-sampling three times faster than ``x`` and six times faster than ``z``
+sampling three times as fast as ``x`` and six times as fast as ``z``
 (since ``z`` is also defined with respect to ``x``).
 
 The synchronous clock features in Modelica are relatively new.  As

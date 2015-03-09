@@ -151,7 +151,7 @@ Function                 Description
 ``Clock(i,r)``           A clock that fires every :math:`\frac{i}{r}` seconds where ``i`` and ``r`` are both of type ``Integer``
 ``Clock(dt)``            A clock that fires every :math:`dt` seconds where ``dt`` is a ``Real``
 ``subSample(u,s)``       A clock that samples ``s`` times slower than the clock used to sample ``u`` where ``s`` is an ``Integer``
-``superSample(u,s)``     A clock that samples ``s`` times faster than the clock used to sample ``u`` where ``s`` is an ``Integer``
+``superSample(u,s)``     A clock that samples ``s`` times as fast as the clock used to sample ``u`` where ``s`` is an ``Integer``
 ======================  ========================================================
 
 Note that the ``Clock`` constructor function is overloaded (*i.e.,*
