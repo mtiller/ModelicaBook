@@ -49,12 +49,10 @@ equation
   connect(inertia1.flange_b, flange_b) annotation (Line(
       points={{40,0},{100,0}},
       color={0,0,0},
-      pattern=LinePattern.None,
       smooth=Smooth.None));
   connect(inertia.flange_a, flange_a) annotation (Line(
       points={{-40,0},{-100,0}},
       color={0,0,0},
-      pattern=LinePattern.None,
       smooth=Smooth.None));
   connect(fixed.flange, housing) annotation (Line(
       points={{0,-70},{0,-60},{-100,-60}},

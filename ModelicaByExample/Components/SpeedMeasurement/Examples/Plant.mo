@@ -7,6 +7,6 @@ model Plant "The basic plant model"
 equation
   connect(idealSensor.flange, inertia1.flange_a) annotation (Line(
       points={{-20,20},{-20,0},{-10,0}}, color={0,0,0},
-      pattern=LinePattern.None, smooth=Smooth.None));
+      smooth=Smooth.None));
   annotation(experiment(StopTime=10, Tolerance=1e-006));
 end Plant;

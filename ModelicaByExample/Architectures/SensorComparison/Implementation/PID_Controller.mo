@@ -12,15 +12,15 @@ protected
 equation
   connect(setpoint, PID.u_s) annotation (Line(
       points={{0,120},{0,60},{40,60},{40,0},{12,0}},
-      color={0,0,127}, pattern=LinePattern.None,
+      color={0,0,127},
       smooth=Smooth.None));
   connect(measured, PID.u_m) annotation (Line(
       points={{100,0},{60,0},{60,-40},{0,-40},{0,-12}},
-      color={0,0,127}, pattern=LinePattern.None,
+      color={0,0,127},
       smooth=Smooth.None));
   connect(PID.y, command) annotation (Line(
       points={{-11,0},{-110,0}},
-      color={0,0,127}, pattern=LinePattern.None,
+      color={0,0,127},
       smooth=Smooth.None));
   annotation (Icon(graphics={
         Rectangle(

@@ -78,6 +78,6 @@ equation
       color={191,0,0}, smooth=Smooth.None));
   connect(C2.port, wall2.port_b) annotation (Line(
       points={{0,-8},{0,-19},{0,-30},{0,-30}},
-      color={191,0,0}, pattern=LinePattern.None,
+      color={191,0,0},
       smooth=Smooth.None));
 end FlatRod;

@@ -47,17 +47,17 @@ equation
       smooth=Smooth.None));
   connect(sensor.y, feedback.u2) annotation (Line(
       points={{0,21},{0,24.5},{0,24.5},{0,29}},
-      color={0,0,255}, pattern=LinePattern.None,
+      color={0,0,255},
       smooth=Smooth.None));
   connect(heatSource.node, cap.node) annotation (Line(
       points={{-40,-20},{-20,-20}}, color={191,0,0},
-      pattern=LinePattern.None, smooth=Smooth.None));
+      smooth=Smooth.None));
   connect(controller_gain.y, heatSource.u) annotation (Line(
       points={{41,40},{50,40},{50,60},{-70,60},{-70,-20},{-61,-20}},
-      color={0,0,255}, pattern=LinePattern.None,
+      color={0,0,255},
       smooth=Smooth.None));
   connect(sensor.node, cap.node) annotation (Line(
       points={{0,0},{0,0},{0,-20},{-20,-20}},
-      color={191,0,0}, pattern=LinePattern.None,
+      color={191,0,0},
       smooth=Smooth.None));
 end MultiDomainControl;
