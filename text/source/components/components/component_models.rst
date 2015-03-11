@@ -136,7 +136,7 @@ qualifier.  In the case of the ``Rotational`` connector, the across
 variable is ``phi``, the angular position, and the through variable is
 ``tau``, the torque.
 
-Sign Convections
+Sign Conventions
 ++++++++++++++++
 
 Also recall from our previous discussion that Modelica models should

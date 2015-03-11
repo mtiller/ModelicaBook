@@ -383,7 +383,7 @@ using `pip` (*e.g.,* `pip install sphinx-intl`).
 ### Updating `po` files
 
 ```
-% make update
+% make update_all
 ```
 
 ### Building the `mo` files:
@@ -398,5 +398,13 @@ using `pip` (*e.g.,* `pip install sphinx-intl`).
 % make dirhtml_<X>
 ```
 
-Currently supported languages are: `cn`, `es`, `fr` and `de` (*e.g.,* `make html_es`)
+Currently supported languages are: `cn`, `es`, `fr` and `de` (*e.g.,* `make dirhtml_es`)
+
+### Run the Python HTTP server in language <X>
+
+```
+% make server_<X>
+```
+Currently supported languages are: `cn`, `es`, `fr` and `de` (*e.g.,* `make server_es`)
+
 

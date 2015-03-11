@@ -33,7 +33,7 @@ the types we've just defined, it can be refactored to look as follows:
    :lines: 13-25
 
 Notice how all the parameters and variables now have a specific type
-(and not just the ordinary ``Real``) type.  Instead, we are able to
+(and not just the ordinary ``Real`` type).  Instead, we are able to
 associate additional information above and beyond the fact that these
 are continuous variables.  For example, we can specify that these
 values should not be negative by adding the ``min=0`` modifier to

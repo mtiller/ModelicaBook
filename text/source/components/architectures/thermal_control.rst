@@ -6,7 +6,7 @@ Thermal Control
 In this chapter, we'll consider another system that includes a plant,
 controller, sensor and actuator.  The application will be thermal
 control of a three zone house.  The plant will be the house itself,
-sensor will be a temperature sense and the actuator will be the furnace
+sensor will be a temperature sensor and the actuator will be the furnace
 in the house.  Using these models, we will explore a few different
 control strategies.
 

@@ -271,7 +271,7 @@ sections is because they interfere with the symbolic manipulation
 performed by the Modelica compiler.  This can result in both poor
 simulation performance and a loss of flexibility in how you compose
 your models.  So it is best to use an ``equation`` section whenever
-possible
+possible.
 
 In our case, there are no significant consequences to using the
 ``algorithm`` section.  Here is an example of how the previous

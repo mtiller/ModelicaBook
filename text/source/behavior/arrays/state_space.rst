@@ -297,7 +297,7 @@ kind.  Instead, we actually declare a variable called ``rlc_comp``
 that is of type ``LTI``.  Once we have finished covering all the
 basics of how to describe different kinds of behavior in Modelica,
 we'll turn our attention to how to organize all these equations into
-reusable :ref:`components`.  But for now, this is just a "sneak peak"
+reusable :ref:`components`.  But for now, this is just a "sneak peek"
 of (big) things to come.
 
 What we see in this `RLC` example is that we now have a variable
