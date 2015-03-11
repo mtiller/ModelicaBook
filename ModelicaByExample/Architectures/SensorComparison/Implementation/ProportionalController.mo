@@ -27,11 +27,11 @@ equation
       color={0,0,127}, smooth=Smooth.None));
   connect(feedback.u1, setpoint) annotation (Line(
       points={{8,0},{40,0},{40,60},{0,60},{0,120}},
-      color={0,0,127}, pattern=LinePattern.None,
+      color={0,0,127},
       smooth=Smooth.None));
   connect(gain.y, command) annotation (Line(
       points={{-61,0},{-80.5,0},{-80.5,0},{-110,0}},
-      color={0,0,127}, pattern=LinePattern.None,
+      color={0,0,127},
       smooth=Smooth.None));
   connect(measured, feedback.u2) annotation (Line(
       points={{100,0},{60,0},{60,-40},{0,-40},{0,-8}},

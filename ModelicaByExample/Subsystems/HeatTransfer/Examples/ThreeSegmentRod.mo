@@ -19,14 +19,14 @@ equation
       color={0,0,127}, smooth=Smooth.None));
   connect(heating.port, rod.port_a) annotation (Line(
       points={{-40,60},{-30,60},{-30,0},{-20,0}},
-      color={191,0,0}, pattern=LinePattern.None,
+      color={191,0,0},
       smooth=Smooth.None));
   connect(rod.ambient, ambient.port) annotation (Line(
       points={{0,-20},{0,-70},{0,-70}},
-      color={191,0,0}, pattern=LinePattern.None,
+      color={191,0,0},
       smooth=Smooth.None));
   connect(rod.port_b, sensor.port) annotation (Line(
       points={{20,0},{80,0}},
-      color={191,0,0}, pattern=LinePattern.None,
+      color={191,0,0},
       smooth=Smooth.None));
 end ThreeSegmentRod;
