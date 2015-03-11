@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/components/block_comps.rst:4
 msgid "Block Diagram Components"
-msgstr ""
+msgstr "框图组件"
 
 #: ../../source/components/components/block_comps.rst:6
 msgid ""
@@ -24,6 +24,10 @@ msgid ""
 "schematically rather than mathematically while also automatically "
 "formulating conservation equations to ensure proper bookkeeping."
 msgstr ""
+"So far, the focus of this chapter has been on acausal modeling."
+"But Modelica also supports causal formalisms."
+"The main reason for the emphasis on acausal modeling is that it lends itself very well to the modeling of physical systems."
+"It enables models of physical systems to be assembled schematically rather than mathematically while also automatically formulating conservation equations to ensure proper bookkeeping."
 
 #: ../../source/components/components/block_comps.rst:14
 msgid ""
@@ -34,6 +38,10 @@ msgid ""
 "introduce a special kind of ``model`` in this section, called a ``block``, "
 "that is restricted to having only ``input`` and ``output`` signals."
 msgstr ""
+"Block diagrams are a different way of approach modeling."
+"The emphasis in block diagram is on creating component models that represent a wide range of mathematical operations."
+"The operations are then performed on (generally time-varying) signals and yield, in turn, other signals."
+"In fact, we will introduce a special kind of ``model`` in this section, called a ``block``, that is restricted to having only ``input`` and ``output`` signals."
 
 #: ../../source/components/components/block_comps.rst:22
 msgid ""
@@ -45,6 +53,12 @@ msgid ""
 "model control systems.  As we'll see, using blocks to construct control "
 "systems is a much more natural fit for the block diagram formalism."
 msgstr ""
+"In this section, we'll first look at how to construct causal blocks representing some basic mathematical operations."
+"We'll then see how those blocks can be used in two different ways."
+"The first way will be to model a simple physical system."
+"We'll include some discussion contrasting the causal and acausal approaches."
+"The second way to use such blocks is to model control systems."
+"As we'll see, using blocks to construct control systems is a much more natural fit for the block diagram formalism."
 
 #: ../../source/components/components/block_comps.rst:31
 msgid ""
@@ -53,6 +67,8 @@ msgid ""
 "Modelica allows the model developer to use whichever approach works best in "
 "a given context."
 msgstr ""
+"Fortunately, Modelica allows both causal and acausal approaches and, as we'll see shortly, even allows them to be mixed."
+"The result is that Modelica allows the model developer to use whichever approach works best in a given context."
 
 #: ../../source/components/components/block_comps.rst:37
 msgid "Blocks"
@@ -60,13 +76,14 @@ msgstr ""
 
 #: ../../source/components/components/block_comps.rst:40
 msgid "Modelica Standard Library"
-msgstr ""
+msgstr "Modelica标准库"
 
 #: ../../source/components/components/block_comps.rst:42
 msgid ""
 "In this section, we will leverage several definitions from the Modelica "
 "Standard Library starting with the connectors:"
 msgstr ""
+"In this section, we will leverage several definitions from the Modelica Standard Library starting with the connectors:"
 
 #: ../../source/components/components/block_comps.rst:50
 msgid ""
@@ -75,10 +92,12 @@ msgid ""
 "in a diagram, the ``RealInput`` connector takes the form of a blue solid "
 "triangle:"
 msgstr ""
+"As the names suggest, ``RealInput`` and ``RealOutput`` are connectors for representing real valued input and output signals respectively."
+"When drawn in a diagram, the ``RealInput`` connector takes the form of a blue solid triangle:"
 
 #: ../../source/components/components/block_comps.rst:59
 msgid "The ``RealOutput`` connector is a blue triangle outline:"
-msgstr ""
+msgstr "\ ``RealOutput``\ 连接器是一个蓝色的三角形边框："
 
 #: ../../source/components/components/block_comps.rst:65
 msgid ""
@@ -86,6 +105,8 @@ msgid ""
 "``partial`` block definitions.  The first ``partial`` definition we'll use "
 "is the ``SO``, or \"single output\", definition:"
 msgstr ""
+"We will leverage the Modelica Standard Library for several different ``partial`` block definitions."
+"The first ``partial`` definition we'll use is the ``SO``, or \"single output\", definition:"
 
 #: ../../source/components/components/block_comps.rst:78
 msgid ""
@@ -93,6 +114,9 @@ msgid ""
 " convention, this output signal is named ``y``.  Another definition we'll "
 "use is the ``SISO`` or \"single input, single output\" block:"
 msgstr ""
+"Obviously, this definition is used for blocks that have a single output."
+"By convention, this output signal is named ``y``."
+"Another definition we'll use is the ``SISO`` or \"single input, single output\" block:"
 
 #: ../../source/components/components/block_comps.rst:94
 msgid ""
@@ -100,11 +124,14 @@ msgid ""
 "``y``.  Finally, for blocks with multiple inputs, the ``MISO`` block defines"
 " the input signal, ``u``, as a vector:"
 msgstr ""
+"This model adds an input signal, ``u``, in addition to the output signal, ``y``."
+"Finally, for blocks with multiple inputs, the ``MISO`` block defines the input signal, ``u``, as a vector:"
 
 #: ../../source/components/components/block_comps.rst:109
 msgid ""
 "The parameter ``nin`` is used to specify the number of inputs to the block."
 msgstr ""
+"The parameter ``nin`` is used to specify the number of inputs to the block."
 
 #: ../../source/components/components/block_comps.rst:112
 msgid ""
@@ -112,6 +139,8 @@ msgid ""
 "also available in the Modelica Standard Library.  But we'll create our own "
 "versions here just to demonstrate how such models can be defined."
 msgstr ""
+"It is worth pointing out that all of the blocks we are about to define are also available in the Modelica Standard Library."
+"But we'll create our own versions here just to demonstrate how such models can be defined."
 
 #: ../../source/components/components/block_comps.rst:118
 msgid "``Constant``"
@@ -123,6 +152,8 @@ msgid ""
 "constant value.  Since this model has a single output, it extends from the "
 "``SO`` block:"
 msgstr ""
+"Probably the simplest block we can imagine is one that simply outputs a constant value."
+"Since this model has a single output, it extends from the ``SO`` block:"
 
 #: ../../source/components/components/block_comps.rst:128
 #: ../../source/components/components/block_comps.rst:148
@@ -131,7 +162,7 @@ msgstr ""
 #: ../../source/components/components/block_comps.rst:211
 #: ../../source/components/components/block_comps.rst:231
 msgid "When rendered, the block looks like this:"
-msgstr ""
+msgstr "模块显示如下："
 
 #: ../../source/components/components/block_comps.rst:137
 msgid "``Gain``"
@@ -144,6 +175,9 @@ msgid ""
 " single input signal and a single output signal.  As such, it extends from "
 "the ``SISO`` model as follows:"
 msgstr ""
+"Another simple ``block`` is a \"gain block\" which multiplies an input signal by a constant to compute its output signal."
+"Such a block will have a single input signal and a single output signal."
+"As such, it extends from the ``SISO`` model as follows:"
 
 #: ../../source/components/components/block_comps.rst:157
 msgid "``Sum``"
@@ -154,12 +188,15 @@ msgid ""
 "The ``Sum`` block can operate on an arbitrary number of input signals.  For "
 "this reason, it extends from the ``MISO`` block:"
 msgstr ""
+"The ``Sum`` block can operate on an arbitrary number of input signals."
+"For this reason, it extends from the ``MISO`` block:"
 
 #: ../../source/components/components/block_comps.rst:166
 msgid ""
 "The ``Sum`` block uses the :ref:`sum-func` function to compute the sum over "
 "the array of input signals, ``u``, to compute the output signal ``y``."
 msgstr ""
+"The ``Sum`` block uses the :ref:`sum-func` function to compute the sum over the array of input signals, ``u``, to compute the output signal ``y``."
 
 #: ../../source/components/components/block_comps.rst:179
 msgid "``Product``"
@@ -170,6 +207,7 @@ msgid ""
 "The ``Product`` block is nearly identical to the ``Sum`` block except that "
 "it uses the :ref:`product-func` function:"
 msgstr ""
+"The ``Product`` block is nearly identical to the ``Sum`` block except that it uses the :ref:`product-func` function:"
 
 #: ../../source/components/components/block_comps.rst:198
 msgid "``Feedback``"
@@ -181,12 +219,15 @@ msgid ""
 "extend from any definitions in the Modelica Standard Library. Instead, it "
 "explicitly declares all of the connectors it uses:"
 msgstr ""
+"The ``Feedback`` block differs from the previous blocks because it doesn't extend from any definitions in the Modelica Standard Library."
+"Instead, it explicitly declares all of the connectors it uses:"
 
 #: ../../source/components/components/block_comps.rst:208
 msgid ""
 "The output of the ``Feedback`` block is the difference between the two "
 "``input`` signals ``u1`` and ``u2``."
 msgstr ""
+"The output of the ``Feedback`` block is the difference between the two ``input`` signals ``u1`` and ``u2``."
 
 #: ../../source/components/components/block_comps.rst:220
 msgid "``Integrator``"
@@ -199,10 +240,12 @@ msgid ""
 "performs an integral, it requires an initial condition which is specified "
 "using the parameter ``y0``:"
 msgstr ""
+"The ``Integrator`` block is another ``SISO`` block that integrates the input signal, ``u``, to compute the output signal, ``y``."
+"Since this ``block`` performs an integral, it requires an initial condition which is specified using the parameter ``y0``:"
 
 #: ../../source/components/components/block_comps.rst:240
 msgid "Systems"
-msgstr ""
+msgstr "系统"
 
 #: ../../source/components/components/block_comps.rst:242
 msgid ""
@@ -211,10 +254,12 @@ msgid ""
 "suitability of causal ``block`` components varies from application to "
 "application."
 msgstr ""
+"Now that we've created this assortment of blocks, we'll explore how they can be used to model a couple of example systems."
+"As we'll see, the suitability of causal ``block`` components varies from application to application."
 
 #: ../../source/components/components/block_comps.rst:248
 msgid "Cooling Example"
-msgstr ""
+msgstr "冷却示例"
 
 #: ../../source/components/components/block_comps.rst:250
 msgid ""
@@ -224,22 +269,26 @@ msgid ""
 "components to build our model, we'll build it up in terms of the "
 "mathematical operations associated with our ``block`` definitions."
 msgstr ""
+"The first system that we will model using our ``block`` definitions is the heat transfer example we presented :ref:`earlier in this chapter <heat-transfer-components>`."
+"However, this time, instead of using acausal components to build our model, we'll build it up in terms of the mathematical operations associated with our ``block`` definitions."
 
 #: ../../source/components/components/block_comps.rst:256
 msgid ""
 "Since these blocks represent mathematical operations, let us first revisit "
 "the equation associated with this example:"
 msgstr ""
+"Since these blocks represent mathematical operations, let us first revisit the equation associated with this example:"
 
 #: ../../source/components/components/block_comps.rst:264
 msgid ""
 "The following block diagram will solve for the temperature profile, "
 ":math:`T`:"
 msgstr ""
+"The following block diagram will solve for the temperature profile, :math:`T`:"
 
 #: ../../source/components/components/block_comps.rst:273
 msgid "The Modelica source code for this example is:"
-msgstr ""
+msgstr "这个例子的Modelica的源代码为："
 
 #: ../../source/components/components/block_comps.rst:278
 msgid ""
@@ -247,12 +296,15 @@ msgid ""
 "``T.y``.  Simulating this system, we get the following solution for the "
 "temperature:"
 msgstr ""
+"The temperature, :math:`T`, is represented in this model by the variable ``T.y``."
+"Simulating this system, we get the following solution for the temperature:"
 
 #: ../../source/components/components/block_comps.rst:285
 msgid ""
 "As we can see, the solution is exactly the same as it has been for all "
 "previous incarnations of this example."
 msgstr ""
+"As we can see, the solution is exactly the same as it has been for all previous incarnations of this example."
 
 #: ../../source/components/components/block_comps.rst:288
 msgid ""
@@ -264,6 +316,11 @@ msgid ""
 "**which ones of these approaches is the most appropriate for this particular"
 " problem?**"
 msgstr ""
+"So far, we've seen this particular problem formulated three different ways."
+"The first formulation described the mathematical structure using a single equation."
+"The second formulation used acausal component models of individual physical effects to represent the same dynamics."
+"Finally, we have this most recent block diagram formulation."
+"But the real question is, **which ones of these approaches is the most appropriate for this particular problem?**"
 
 #: ../../source/components/components/block_comps.rst:296
 msgid ""
@@ -274,6 +331,8 @@ msgid ""
 "choice since the behavior of the entire problem can be expressed by the "
 "single equation:"
 msgstr ""
+"There are really two extreme cases to consider."
+"If we wanted to solve only this one particular configuration of this problem with a single thermal capacitance convecting heat to some infinite ambient reservoir, the :ref:`equation based version <getting-physical>` would probably be the best choice since the behavior of the entire problem can be expressed by the single equation:"
 
 #: ../../source/components/components/block_comps.rst:307
 msgid ""
@@ -281,6 +340,8 @@ msgid ""
 "based versions would require the user to drag, drop and connect component "
 "models which would invariably take longer."
 msgstr ""
+"Such an equation can be typed in very quickly."
+"In contrast, the component based versions would require the user to drag, drop and connect component models which would invariably take longer."
 
 #: ../../source/components/components/block_comps.rst:311
 msgid ""
@@ -290,6 +351,8 @@ msgid ""
 "required to create the component models, they can be reconfigured almost "
 "trivially."
 msgstr ""
+"However, if you intend to create variations of the problem combining different modes of heat transfer, different boundary conditions, etc., then the acausal version is better."
+"This is because while some investment is required to create the component models, they can be reconfigured almost trivially."
 
 #: ../../source/components/components/block_comps.rst:317
 msgid ""
@@ -309,10 +372,17 @@ msgid ""
 " prone work on the part of the model developer and this is precisely why the"
 " acausal approach is preferred."
 msgstr ""
+"One might say the same is true for the block diagram version of the model (*i.e.,* that it can be trivially reconfigured), **but that is not the case**."
+"The block diagram version of the model is a **mathematical** representation of the problem, not a schematic based formulation."
+"If you create variations of this heat transfer problem that specify alternative boundary conditions, add more thermal inertias or include additional modes of heat transfer, the changes to a schematic will be simple."
+"However, for a block diagram formulation **you will need to completely reformulate the block diagram**."
+"This is because the resulting mathematical equations might be very different when expressed in state-space form."
+"One of the big advantages of the acausal, schematic based approach is that the Modelica compiler will translate the textbook equations into state-space form automatically."
+"This saves a great deal of tedious, time-consuming and error prone work on the part of the model developer and this is precisely why the acausal approach is preferred."
 
 #: ../../source/components/components/block_comps.rst:337
 msgid "Thermal Control"
-msgstr ""
+msgstr "热控制"
 
 #: ../../source/components/components/block_comps.rst:339
 msgid ""
@@ -323,11 +393,14 @@ msgid ""
 "components schematically, but allows us to express the control strategy "
 "mathematically."
 msgstr ""
+"For the next example, we'll mix both causal components, the blocks we've developed in this section, with acausal components, the :ref:`heat-transfer-components` developed earlier in this chapter."
+"This will prove to be a powerful combination, since it allows us to represent the physical components schematically, but allows us to express the control strategy mathematically."
 
 #: ../../source/components/components/block_comps.rst:346
 msgid ""
 "Here is a schematic diagram showing how both approaches can be combined:"
 msgstr ""
+"以下是显示这两种方法可以如何组合的示意图："
 
 #: ../../source/components/components/block_comps.rst:354
 msgid ""
@@ -339,6 +412,10 @@ msgid ""
 "this example) and the actuators apply some \"influence\" over the system (in"
 " this case, a heat flux)."
 msgstr ""
+"When modeling a physical system together with a control system, the physical components and effects will use an acausal formulation."
+"The components representing the control strategy will typically use a causal formulation."
+"What bridges the gap between these two approaches are the sensors and actuators."
+"The sensors measure some aspect of the system (temperature in this example) and the actuators apply some \"influence\" over the system (in this case, a heat flux)."
 
 #: ../../source/components/components/block_comps.rst:362
 msgid ""
@@ -349,10 +426,12 @@ msgid ""
 "acausal connectors will be used to \"sense\" some aspect of the physical "
 "system (like a voltage, temperature, *etc.*)."
 msgstr ""
+"The actuator models will generally have signals as inputs combined with an acausal connection to the physical system (through which the \"influence\", like a force or an electric current, will be applied)."
+"This is reversed for the sensor models where the causal connectors will be outputs and the acausal connectors will be used to \"sense\" some aspect of the physical system (like a voltage, temperature, *etc.*)."
 
 #: ../../source/components/components/block_comps.rst:370
 msgid "Our example model can be expressed in Modelica as:"
-msgstr ""
+msgstr "我们的示例模型可以用Modelica的表述为："
 
 #: ../../source/components/components/block_comps.rst:377
 msgid ""
@@ -365,12 +444,17 @@ msgid ""
 "temperature due to the influence of the control system. Simulating this "
 "system, we get the following temperature response:"
 msgstr ""
+"Looking at the model, we can see that the initial temperature is :math:`90\\,^{\\circ}\\mathrm{C}` and the ambient temperature is :math:`25\\,^{\\circ}\\mathrm{C}`."
+"In addition, the setpoint temperature (the desired temperature) is :math:`30\\,^{\\circ}\\mathrm{C}`."
+"So unlike our previous examples where the system temperature eventually came to rest at the ambient temperature, this system should approach the setpoint temperature due to the influence of the control system."
+"Simulating this system, we get the following temperature response:"
 
 #: ../../source/components/components/block_comps.rst:389
 msgid ""
 "We can increase the \"gain\" of the controller, ``k``, and we see a "
 "different response:"
 msgstr ""
+"We can increase the \"gain\" of the controller, ``k``, and we see a different response:"
 
 #: ../../source/components/components/block_comps.rst:395
 msgid ""
@@ -378,6 +462,7 @@ msgid ""
 "required from our actuator in order to achieve the faster response in the "
 "second case:"
 msgstr ""
+"However, we can see from the following plot that much more heat output was required from our actuator in order to achieve the faster response in the second case:"
 
 #: ../../source/components/components/block_comps.rst:402
 msgid ""
@@ -385,10 +470,11 @@ msgid ""
 "control allows model developers to explore how overall system performance is"
 " impacted by both physical and control strategy design."
 msgstr ""
+"This is just a very simple example of how combining physical response with control allows model developers to explore how overall system performance is impacted by both physical and control strategy design."
 
 #: ../../source/components/components/block_comps.rst:407
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/components/components/block_comps.rst:409
 msgid ""
@@ -399,6 +485,6 @@ msgid ""
 "implemented with causal components while physical components use acausal "
 "components."
 msgstr ""
+"In this section, we've seen how to define causal ``block`` components and use them to model both the physical and control related behavior."
+"We've even seen how these causal components can be combined with acausal components to yield a \"best of both worlds\" combination where control features are implemented with causal components while physical components use acausal components."
 
-#~ msgid "https://book-preview.herokuapp.com"
-#~ msgstr ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/components/system_models.rst:4
 msgid "System Models"
-msgstr ""
+msgstr "系统模型"
 
 #: ../../source/components/components/system_models.rst:6
 msgid ""
@@ -21,10 +21,12 @@ msgid ""
 ":ref:`subsystems`.  For now, we'll only discuss the handful of topics "
 "related to subsystems that we've seen so far."
 msgstr ""
+"The next chapter will provide an in-depth discussion about :ref:`subsystems`."
+"For now, we'll only discuss the handful of topics related to subsystems that we've seen so far."
 
 #: ../../source/components/components/system_models.rst:13
 msgid "Connections"
-msgstr ""
+msgstr "连接"
 
 #: ../../source/components/components/system_models.rst:15
 msgid ""
@@ -35,6 +37,9 @@ msgid ""
 "control`.  If we strip away all the annotations (which we will discuss "
 "shortly), we get a model that looks like this:"
 msgstr ""
+"One distinction that we've seen in this chapter between component and subsystem models is that subsystem models include ``connect`` statements."
+"To explore how the ``connect`` statement works, let's revisit the ``MultiDomainControl`` example from the discussion on :ref:`thermal-control`."
+"If we strip away all the annotations (which we will discuss shortly), we get a model that looks like this:"
 
 #: ../../source/components/components/system_models.rst:56
 msgid ""
@@ -44,6 +49,9 @@ msgid ""
 " being connected.  The ``MultiDomainControl`` model is useful because it "
 "isn't restricted to acausal connections."
 msgstr ""
+"During our earlier discussion on :ref:`acausal-modeling`, we talked about equations that are generated for **acausal** variables in a connector."
+"But the impact of a ``connect`` statement depends on the nature of the variables being connected."
+"The ``MultiDomainControl`` model is useful because it isn't restricted to acausal connections."
 
 #: ../../source/components/components/system_models.rst:64
 msgid ""
@@ -52,6 +60,8 @@ msgid ""
 "does.  There are some complex cases that arise, but for the sake of "
 "simplicity and pedagogy, we'll only discuss the basic case here."
 msgstr ""
+"Before we consider the specific connections in the ``MultiDomainControl`` model, let's first elaborate on what the ``connect`` statement actually does."
+"There are some complex cases that arise, but for the sake of simplicity and pedagogy, we'll only discuss the basic case here."
 
 #: ../../source/components/components/system_models.rst:70
 msgid ""
@@ -60,6 +70,9 @@ msgid ""
 "each variable in one connector and pairs it up with the variable of the same"
 " name in the other connector."
 msgstr ""
+"A ``connect`` statement connects exactly two connectors."
+"It then \"pairs up\" variables across each connector **by name**."
+"In other words, it takes each variable in one connector and pairs it up with the variable of the same name in the other connector."
 
 #: ../../source/components/components/system_models.rst:79
 msgid ""
@@ -69,6 +82,9 @@ msgid ""
 "depend on what qualifiers have been applied to the variables.  The following"
 " list covers all the essential cases:"
 msgstr ""
+"For each pair, the compiler first checks to make sure that the two corresponding variables have the same type (*e.g.,* ``Real``, ``Integer``)."
+"But what equations are generated and what additional restrictions exists depend on what qualifiers have been applied to the variables."
+"The following list covers all the essential cases:"
 
 #: ../../source/components/components/system_models.rst:85
 msgid ""
@@ -76,6 +92,8 @@ msgid ""
 " we covered in our previous discussion on :ref:`acausal-modeling`, a "
 "conservation equation is generated for all variables in the connection set."
 msgstr ""
+"**Through variables** - These are variables with the ``flow`` qualifier."
+"As we covered in our previous discussion on :ref:`acausal-modeling`, a conservation equation is generated for all variables in the connection set."
 
 #: ../../source/components/components/system_models.rst:89
 msgid ""
@@ -86,6 +104,9 @@ msgid ""
 " size of arrays in the connector, for example, because it asserts the arrays"
 " are the same size."
 msgstr ""
+"**Parameters** - A variable that includes the ``parameter`` qualifier does not generate any equations."
+"Instead, it generates an ``assert`` call that ensures that the values are identical between the two variables."
+"This is useful when a ``connector`` includes ``Integer`` parameters that specify the size of arrays in the connector, for example, because it asserts the arrays are the same size."
 
 #: ../../source/components/components/system_models.rst:96
 msgid ""
@@ -94,6 +115,8 @@ msgid ""
 "this requirement is met, an equation will be generated simply equating these"
 " two variables."
 msgstr ""
+"**Inputs** - A variable that has the ``input`` qualifier can only be paired with a variable that has an ``input`` or an ``output`` qualifier."
+"Assuming this requirement is met, an equation will be generated simply equating these two variables."
 
 #: ../../source/components/components/system_models.rst:100
 msgid ""
@@ -102,6 +125,8 @@ msgid ""
 " can never be connected).  As with the case for input variables, an equality"
 " relationship is generated for such a connection."
 msgstr ""
+"**Outputs** - A variable that has the ``output`` qualifier can only be paired with a variable that has the ``input`` qualifier (*i.e.,* two outputs can never be connected)."
+"As with the case for input variables, an equality relationship is generated for such a connection."
 
 #: ../../source/components/components/system_models.rst:105
 msgid ""
@@ -110,6 +135,8 @@ msgid ""
 ":`acausal-modeling`, a series of equations will be generated equating all "
 "the across variables in the connection set."
 msgstr ""
+"**Across variables** - These are variables that lack any qualifiers (unlike the previous cases)."
+"As we covered in our previous discussion on :ref:`acausal-modeling`, a series of equations will be generated equating all the across variables in the connection set."
 
 #: ../../source/components/components/system_models.rst:111
 msgid ""
@@ -121,12 +148,18 @@ msgid ""
 "mentioned, there is one additional restriction that, within a connection "
 "set, there can only be one ``output`` signal (for obvious reasons)."
 msgstr ""
+"In our discussion of :ref:`block-components`, we describe the ``input`` and ``output`` qualifiers as \"causal\"."
+"In fact, the ``input`` and ``output`` qualifiers do not actually specify the order in which calculations are performed."
+"As discussed above, they just enforce restrictions on how the variables can be connected."
+"In addition to the restriction already mentioned, there is one additional restriction that, within a connection set, there can only be one ``output`` signal (for obvious reasons)."
 
 #: ../../source/components/components/system_models.rst:120
 msgid ""
 "In our ``MultiDomainControl`` model, we can see several of these cases "
 "covered.  For example,"
 msgstr ""
+"In our ``MultiDomainControl`` model, we can see several of these cases covered."
+"For example,"
 
 #: ../../source/components/components/system_models.rst:127
 msgid ""
@@ -134,12 +167,16 @@ msgid ""
 "signal, ``feedback.u1``.  So this is a connection involving only causal "
 "signals.  On the other hand, we have connections like this:"
 msgstr ""
+"Here, an ``output`` signal, ``setpoint.y``, is connected to an ``input`` signal, ``feedback.u1``."
+"So this is a connection involving only causal signals."
+"On the other hand, we have connections like this:"
 
 #: ../../source/components/components/system_models.rst:136
 msgid ""
 "This will lead to the types of conservations equations :ref:`discussed "
 "earlier <acausal-modeling>`."
 msgstr ""
+"This will lead to the types of conservations equations :ref:`discussed earlier <acausal-modeling>`."
 
 #: ../../source/components/components/system_models.rst:139
 msgid ""
@@ -148,16 +185,18 @@ msgid ""
 "continuity equations) while at the same time checking to make sure that the "
 "connection makes sense (*e.g..,* that the variables have the same type)."
 msgstr ""
+"In summary, a ``connect`` statement is a way to generate equations that automatically manages complex tasks (like generation of conservation and continuity equations) while at the same time checking to make sure that the connection makes sense (*e.g..,* that the variables have the same type)."
 
 #: ../../source/components/components/system_models.rst:148
 msgid "Diagrams"
-msgstr ""
+msgstr "简图"
 
 #: ../../source/components/components/system_models.rst:150
 msgid ""
 "In this chapter, we showed how Modelica subsystem models can be represented "
 "graphically, *e.g.,*"
 msgstr ""
+"In this chapter, we showed how Modelica subsystem models can be represented graphically, *e.g.,*"
 
 #: ../../source/components/components/system_models.rst:158
 msgid ""
@@ -166,6 +205,8 @@ msgid ""
 "Modelica code listings in this chapter, we haven't really discussed what "
 "information is stored and where."
 msgstr ""
+"All the information required to generate such a diagram is contained in the Modelica model."
+"While this information has been visible in some of the Modelica code listings in this chapter, we haven't really discussed what information is stored and where."
 
 #: ../../source/components/components/system_models.rst:163
 msgid "To render a subsystem diagram, three pieces of information are needed:"
@@ -194,6 +235,8 @@ msgid ""
 "details of the ``Icon`` annotation were covered in our previous discussion "
 "of :ref:`graphical-annos`."
 msgstr ""
+"The icon used for each component is simply whatever drawing primitives are included in the ``Icon`` annotation for that component's definition."
+"The details of the ``Icon`` annotation were covered in our previous discussion of :ref:`graphical-annos`."
 
 #: ../../source/components/components/system_models.rst:182
 msgid "Component Placement"
@@ -205,6 +248,9 @@ msgid ""
 "draw it.  This is where the ``Placement`` annotation comes in.  This "
 "annotation appeared in many of the examples in this chapter, *e.g.,*"
 msgstr ""
+"Now that we know what to draw for each component, we need to know where to draw it."
+"This is where the ``Placement`` annotation comes in."
+"This annotation appeared in many of the examples in this chapter, *e.g.,*"
 
 #: ../../source/components/components/system_models.rst:194
 msgid ""
@@ -213,6 +259,8 @@ msgid ""
 ":`graphical-annos`, we can describe the ``Placement`` annotation in terms of"
 " a ``record`` definition:"
 msgstr ""
+"The ``Placement`` annotation simply establishes a rectangular region in which to draw the icon associated with each component."
+"As with other :ref:`graphical-annos`, we can describe the ``Placement`` annotation in terms of a ``record`` definition:"
 
 #: ../../source/components/components/system_models.rst:207
 msgid ""
@@ -220,6 +268,7 @@ msgid ""
 "``GraphicItem`` annotation we discussed earlier, *i.e.,* it is used to "
 "control whether the component is rendered or not."
 msgstr ""
+"The ``visible`` field serves the same purpose as it does in the ``GraphicItem`` annotation we discussed earlier, *i.e.,* it is used to control whether the component is rendered or not."
 
 #: ../../source/components/components/system_models.rst:211
 msgid ""
@@ -229,6 +278,8 @@ msgid ""
 "``iconTransformation`` is only defined for connectors since these are "
 "typically the only components that appear in the icon representation."
 msgstr ""
+"The ``transformation`` field defines how the icon is rendered in a schematic diagram and the ``iconTransformation`` defines how it is rendered if it is considered part of the **subsystem's** icon."
+"Generally, the ``iconTransformation`` is only defined for connectors since these are typically the only components that appear in the icon representation."
 
 #: ../../source/components/components/system_models.rst:218
 msgid "The ``Transformation`` annotation, which is defined as follows:"
@@ -241,6 +292,8 @@ msgid ""
 "this rotation should occur.  Finally, the ``extent`` field indicates the "
 "size of the region the icon will be rendered into."
 msgstr ""
+"The ``rotation`` field indicates how many degrees the component's icon should be rotated and the ``origin`` field indicates the point around which this rotation should occur."
+"Finally, the ``extent`` field indicates the size of the region the icon will be rendered into."
 
 #: ../../source/components/components/system_models.rst:234
 msgid "Connection Rendering"
@@ -254,6 +307,10 @@ msgid ""
 "Consider the following ``connect`` statement from our :ref:`thermal-control`"
 " example:"
 msgstr ""
+"Finally, we have the third topic, rendering the connections."
+"Again, the annotations that govern how connections are rendered have appeared in many examples."
+"Now, finally, we'll explain what that information represents."
+"Consider the following ``connect`` statement from our :ref:`thermal-control` example:"
 
 #: ../../source/components/components/system_models.rst:246
 msgid ""
@@ -262,6 +319,10 @@ msgid ""
 "the :ref:`line-anno`.  The annotation data is the same in this context as it"
 " was then."
 msgstr ""
+"Note that the ``connect`` statement is followed by an annotation."
+"In particular, note that this is a ``Line`` annotation."
+"We already discussed the :ref:`line-anno`."
+"The annotation data is the same in this context as it was then."
 
 #: ../../source/components/components/system_models.rst:62
 #: ../../source/components/components/system_models.rst:75

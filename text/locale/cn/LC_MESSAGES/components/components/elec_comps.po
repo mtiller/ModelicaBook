@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/components/elec_comps.rst:4
 msgid "Electrical Components"
-msgstr ""
+msgstr "电气部件"
 
 #: ../../source/components/components/elec_comps.rst:6
 msgid ""
@@ -22,6 +22,8 @@ msgid ""
 "basic electrical components and then use them to simulate the kinds of "
 "systems we saw in our previous :ref:`electrical example <elec-example>`."
 msgstr ""
+"The previous section discussed how to create component models in the heat transfer domain."
+"Now let's turn our attention to how to construct some basic electrical components and then use them to simulate the kinds of systems we saw in our previous :ref:`electrical example <elec-example>`."
 
 #: ../../source/components/components/elec_comps.rst:12
 msgid ""
@@ -31,6 +33,9 @@ msgid ""
 "can use the inheritance mechanism in Modelica to make our lives a little "
 "easier."
 msgstr ""
+"In this section we will implement the basic electrical component models **twice**."
+"The first time through, we will implement each component without any regard to the others."
+"But the second time through, we'll see how we can use the inheritance mechanism in Modelica to make our lives a little easier."
 
 #: ../../source/components/components/elec_comps.rst:18
 msgid ""
@@ -40,10 +45,14 @@ msgid ""
 "this section will rely on the connector definitions from the Modelica "
 "Standard Library.  Those connector definitions look like this:"
 msgstr ""
+"But in both cases, we'll use the same connector definitions."
+"In our discussion of :ref:`simple-domains`, we saw how to construct an electrical connector."
+"As with the previous section on heat transfer, the examples in this section will rely on the connector definitions from the Modelica Standard Library."
+"Those connector definitions look like this:"
 
 #: ../../source/components/components/elec_comps.rst:38
 msgid "Basic Component Models"
-msgstr ""
+msgstr "基本组件模型"
 
 #: ../../source/components/components/elec_comps.rst:40
 msgid ""
@@ -53,11 +62,15 @@ msgid ""
 "through the resistor using Ohm's law. The following model represents how one"
 " might expect such a resistor model to look:"
 msgstr ""
+"Given these ``connector`` definitions, it is relatively straightforward to construct a resistor model."
+"The goal of a resistor model is to encapsulate the relationship between the voltage across the resistor and the current through the resistor using Ohm's law."
+"The following model represents how one might expect such a resistor model to look:"
 
 #: ../../source/components/components/elec_comps.rst:52
 msgid ""
 "In the same way, we might create inductor and capacitor models as follows:"
 msgstr ""
+"In the same way, we might create inductor and capacitor models as follows:"
 
 #: ../../source/components/components/elec_comps.rst:65
 msgid ""
@@ -69,10 +82,15 @@ msgid ""
 "code needs to be *maintained* as well.  When you repeat code and then find a"
 " mistake in that code, you have to fix it everywhere."
 msgstr ""
+"The important thing to notice about these models is the amount of common code shared between them."
+"In software development, this kind of redundancy is frowned upon."
+"In fact, a common software maxim is \"Redundancy is the root of all evil\"."
+"The reason this redundancy is a problem is partly because you are doing the same work multiple times, but also because this code needs to be *maintained* as well."
+"When you repeat code and then find a mistake in that code, you have to fix it everywhere."
 
 #: ../../source/components/components/elec_comps.rst:77
 msgid "The DRY Principle"
-msgstr ""
+msgstr "DRY原则"
 
 #: ../../source/components/components/elec_comps.rst:79
 msgid ""
@@ -82,6 +100,10 @@ msgid ""
 "principle* where DRY stands for \"Don't Repeat Yourself\".  So our next step"
 " is to make our resistor, capacitor and inductor models DRY."
 msgstr ""
+"This issue of redundancy is an important one."
+"So let's revisit building models of resistors, inductors and capacitors with the goal of reducing the amount of repeated code."
+"In software, there is something called the *DRY principle* where DRY stands for \"Don't Repeat Yourself\"."
+"So our next step is to make our resistor, capacitor and inductor models DRY."
 
 #: ../../source/components/components/elec_comps.rst:88
 msgid ""
@@ -90,6 +112,9 @@ msgid ""
 "from.  We highlighted the common lines previously.  Now we can capture them "
 "in their own model as follows:"
 msgstr ""
+"The key to eliminating redundant code is to identify all the common code between these models and create a ``partial`` model that we can inherit from."
+"We highlighted the common lines previously."
+"Now we can capture them in their own model as follows:"
 
 #: ../../source/components/components/elec_comps.rst:97
 msgid ""
@@ -98,12 +123,16 @@ msgid ""
 "``i``, to represent the current flowing from pin ``p`` to pin ``n``.  "
 "Finally, the conservation of charge equation is also included."
 msgstr ""
+"In summary, we've extracted the declarations for ``p``, ``n`` and ``v`` from the previous models into this model."
+"We've also included a variable, ``i``, to represent the current flowing from pin ``p`` to pin ``n``."
+"Finally, the conservation of charge equation is also included."
 
 #: ../../source/components/components/elec_comps.rst:103
 msgid ""
 "Creating such a model then allows us to create a much more succinct resistor"
 " model as follows:"
 msgstr ""
+"Creating such a model then allows us to create a much more succinct resistor model as follows:"
 
 #: ../../source/components/components/elec_comps.rst:110
 msgid ""
@@ -114,6 +143,10 @@ msgid ""
 "definitions of ``v`` and ``i``, Ohm's law looks just like it would if you "
 "saw it in a text book."
 msgstr ""
+"There are several things to notice about this ``Resistor`` model."
+"The first is how much shorter it is."
+"This is because we inherit the electrical pins, the conservation of charge equation and the variables ``v`` and ``i`` from the ``TwoPin`` model."
+"Another thing to notice is that, by leverage the definitions of ``v`` and ``i``, Ohm's law looks just like it would if you saw it in a text book."
 
 #: ../../source/components/components/elec_comps.rst:117
 msgid "We can give the same treatment to our inductor and capacitor models:"
@@ -125,6 +158,8 @@ msgid ""
 " out common code in this way means that the component models are easier to "
 "write and easier to maintain."
 msgstr ""
+"Again, we see that the models are much more succinct."
+"Ultimately, factoring out common code in this way means that the component models are easier to write and easier to maintain."
 
 #: ../../source/components/components/elec_comps.rst:132
 msgid "Circuit Model"
@@ -136,12 +171,17 @@ msgid ""
 "model we first need to define a few more component models. Specifically, we "
 "need to create a step voltage source model:"
 msgstr ""
+"So far, we've only built component models."
+"In order to create a circuit model we first need to define a few more component models."
+"Specifically, we need to create a step voltage source model:"
 
 #: ../../source/components/components/elec_comps.rst:142
 msgid ""
 "Note how the ``StepVoltage`` model also leverages the ``TwoPin`` model.  We "
 "will also need a ground model which we model as follows:"
 msgstr ""
+"Note how the ``StepVoltage`` model also leverages the ``TwoPin`` model."
+"We will also need a ground model which we model as follows:"
 
 #: ../../source/components/components/elec_comps.rst:149
 msgid ""
@@ -151,12 +191,17 @@ msgid ""
 " serves a very similar purpose.  No matter how much current flows in to or "
 "out of an electrical ground, the voltage remains zero."
 msgstr ""
+"The ``Ground`` model has only one pin so it cannot inherit from ``TwoPin``."
+"Recall how we described the :ref:`amb-cond` model from our discussion on :ref:`heat-transfer-components` an infinite reservoir."
+"The ``Ground`` model serves a very similar purpose."
+"No matter how much current flows in to or out of an electrical ground, the voltage remains zero."
 
 #: ../../source/components/components/elec_comps.rst:156
 msgid ""
 "Having defined all these components, we can now create a circuit model as "
 "follows:"
 msgstr ""
+"Having defined all these components, we can now create a circuit model as follows:"
 
 #: ../../source/components/components/elec_comps.rst:162
 msgid "The schematic diagram for this model is rendered as:"

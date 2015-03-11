@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/components/comp_annos.rst:4
 msgid "Component Model Annotations"
-msgstr ""
+msgstr "组件模型注解"
 
 #: ../../source/components/components/comp_annos.rst:6
 msgid ""
@@ -23,6 +23,8 @@ msgid ""
 "those annotations that have not yet been explained and discuss their "
 "purpose."
 msgstr ""
+"Several of the annotation that appeared in the examples from this chapter have been explained previously (*e.g.,* in our discussions on :ref:`graphical-annos` and :ref:`subsystem-diagrams`)."
+"Here we'll run through those annotations that have not yet been explained and discuss their purpose."
 
 #: ../../source/components/components/comp_annos.rst:13
 msgid "``defaultComponentName``"
@@ -32,6 +34,7 @@ msgstr ""
 #: ../../source/components/components/comp_annos.rst:29
 msgid "**Type: Model Annotation**"
 msgstr ""
+"**Type: Model Annotation**"
 
 #: ../../source/components/components/comp_annos.rst:19
 msgid ""
@@ -40,6 +43,8 @@ msgid ""
 "is used by graphical tools to assign an initial name to components when they"
 " are dragged into a diagram."
 msgstr ""
+"The ``defaultComponentName`` annotation is used within a model definition to define the default name that an instance of that model should have."
+"This is used by graphical tools to assign an initial name to components when they are dragged into a diagram."
 
 #: ../../source/components/components/comp_annos.rst:25
 msgid "``defaultComponentPrefixes``"
@@ -53,6 +58,8 @@ msgid ""
 "declaration of the component.  The value of this annotation should be a "
 "**string** that is a space separated list of the qualifiers."
 msgstr ""
+"Where the ``defaultComponentName`` annotation defines the default name used when a component is dragged into a diagram, the ``defaultComponentPrefixes`` defines any **qualifiers** that should automatically be included in the declaration of the component."
+"The value of this annotation should be a **string** that is a space separated list of the qualifiers."
 
 #: ../../source/components/components/comp_annos.rst:38
 msgid ""
@@ -62,6 +69,8 @@ msgid ""
 " qualifiers listed in that string and immediately add them as qualifiers to "
 "that component's declaration."
 msgstr ""
+"When a component is instantiated, graphical tools will find the definition associated with that component and look to see if a value has been provided for the ``defaultComponentPrefixes`` annotation."
+"If so, it will extract the qualifiers listed in that string and immediately add them as qualifiers to that component's declaration."
 
 #: ../../source/components/components/comp_annos.rst:47
 msgid "``Dialog``"
@@ -72,6 +81,7 @@ msgstr ""
 #: ../../source/components/components/comp_annos.rst:141
 msgid "**Type: Declaration Annotation**"
 msgstr ""
+"**Type: Declaration Annotation**"
 
 #: ../../source/components/components/comp_annos.rst:53
 msgid ""
@@ -80,12 +90,15 @@ msgid ""
 "additional information, beyond what is necessary to compile the model, that "
 "instructs graphical tools what content to include in component dialogs."
 msgstr ""
+"The ``Dialog`` annotation is used to help organize variables (typically ``parameters``) in the context of a graphical user interface."
+"It provides additional information, beyond what is necessary to compile the model, that instructs graphical tools what content to include in component dialogs."
 
 #: ../../source/components/components/comp_annos.rst:59
 msgid ""
 "The structure of a ``Dialog`` annotation can be represented by the following"
 " ``record`` definition:"
 msgstr ""
+"The structure of a ``Dialog`` annotation can be represented by the following ``record`` definition:"
 
 #: ../../source/components/components/comp_annos.rst:73
 msgid ""
@@ -105,6 +118,13 @@ msgid ""
 "annotated parameter in response to any action that impacts the necessary "
 "size of that connector."
 msgstr ""
+"The ``tab`` field is a string that indicates the name of the tab that this variable should be organized under."
+"The ``group`` field specifies the name of a \"group\" **within the specified tab** in which the variable should be placed."
+"The ``enable`` field should be given an expression that indicates when the parameter should be shown."
+"The ``showStartAttribute`` field can be used to incorporate the ``start`` attributes value (for this variable) into the user interface so the user can easily specify the value of the ``start`` attribute."
+"The ``groupImage`` field allows the user to specify an image to associate with the group named by the ``group`` field."
+"Finally, the ``connectorSizing`` is only useful in declarations for integer parameters that are used to specify the size of arrays of connectors."
+"In such circumstances, if the value of the ``connectorSizing`` field is ``true``, the graphical environment **may** update the value of the annotated parameter in response to any action that impacts the necessary size of that connector."
 
 #: ../../source/components/components/comp_annos.rst:91
 msgid "``DynamicSelect``"
@@ -118,6 +138,9 @@ msgid ""
 "to a change in temperature.  The ``DynamicSelect`` has two values associated"
 " with it, *i.e.,*"
 msgstr ""
+"The ``DynamicSelect`` annotation is used to specify how annotation values can depend on a simulated solution."
+"For example, the ``DynamicSelect`` annotation can be used to adjust the color of a component icon in response to a change in temperature."
+"The ``DynamicSelect`` has two values associated with it, *i.e.,*"
 
 #: ../../source/components/components/comp_annos.rst:107
 msgid ""
@@ -128,6 +151,10 @@ msgid ""
 " in the scope in which the annotated declaration appears, which is evaluated"
 " based on simulation results."
 msgstr ""
+"The first is the \"static\" value."
+"This value is used when either no simulation results are available or in the case that the specific tool does not support linking simulation results to annotations."
+"The second value is the \"dynamic\" value."
+"This is an expression, typically involving variables in the scope in which the annotated declaration appears, which is evaluated based on simulation results."
 
 #: ../../source/components/components/comp_annos.rst:116
 msgid "``preferredView``"
@@ -143,6 +170,8 @@ msgid ""
 "\"view\" of a given definition should be shown when that model is selected "
 "within a graphical tool.  Possible values for this annotation are:"
 msgstr ""
+"The ``preferredView`` annotation is used to describe what particular \"view\" of a given definition should be shown when that model is selected within a graphical tool."
+"Possible values for this annotation are:"
 
 #: ../../source/components/components/comp_annos.rst:126
 msgid "\"info\" - Show any documentation associated with this definition."
@@ -164,6 +193,8 @@ msgid ""
 " is set to ``info`` (thus causing the documentation to be shown when the "
 "definition is visited)."
 msgstr ""
+"A common use for the ``preferredView`` annotation is to created a ``package`` specifically for documentation."
+"In this case, the ``package`` includes a ``Documentation`` annotation and the ``preferredView`` annotation is set to ``info`` (thus causing the documentation to be shown when the definition is visited)."
 
 #: ../../source/components/components/comp_annos.rst:137
 msgid "``unassignedMessage``"
@@ -176,6 +207,8 @@ msgid ""
 "the string value given to the ``unassignedMessage`` annotation may be "
 "presented as a diagnostic message by the compiler."
 msgstr ""
+"The value of the ``unassignedMessage`` annotation is a string."
+"If an equation cannot be found to compute a value for the annotated declaration, the string value given to the ``unassignedMessage`` annotation may be presented as a diagnostic message by the compiler."
 
 #: ../../source/components/components/comp_annos.rst:15
 #: ../../source/components/components/comp_annos.rst:27
