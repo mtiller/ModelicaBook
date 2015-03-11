@@ -80,7 +80,7 @@ avoids opportunities to introduce errors.
 Thermal Capacitance
 ~~~~~~~~~~~~~~~~~~~
 
-Our first component model will be a model of lumped thermal capacitance.
+Our first component model will be a model of lumped thermal capacitance
 with uniform temperature distribution.  
 The equation we wish to associate with this
 component model is:
