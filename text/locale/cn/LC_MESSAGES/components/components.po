@@ -44,4 +44,4 @@ msgstr "示例"
 
 #: ../../source/components/components.rst:35
 msgid "Review"
-msgstr "复习"
+msgstr "回顾"
