@@ -25,9 +25,10 @@ msgid ""
 "the equation-based version of the same system presented in the first "
 "chapter."
 msgstr ""
-"In this section, we'll show how to create basic components for modeling one-dimensional rotational systems."
-"We'll build on our discussion of rotational connectors and show how they can be used to define the interfaces for basic rotational components."
-"Finally, we'll show how those rotational components can then be assembled into a system model that replicates the behavior of the equation-based version of the same system presented in the first chapter."
+"在这一节中，我们将介绍如何为一维转动系统创建基本组件。"
+"我们将以此前对旋转连接器的讨论为基础，展示如何将连接器应用于定义基本旋转组件的接口。"
+"最后，我们将展示如何将这些旋转部件可以被组装成系统模型。"
+"这里的系统模型将与第一章内的以方程为基础的旋转系统模型有着相同的行为。"
 
 #: ../../source/components/components/rot_comps_basic.rst:15
 msgid "Component Models"
@@ -42,10 +43,10 @@ msgid ""
 "These will consist of models for an inertia, a spring, a damper and a "
 "mechanical ground."
 msgstr ""
-"In the first chapter, we considered :ref:`mech-example` modeled strictly in terms of equations (*i.e.,* without component models)."
-"In this section, we will start by recreating that system model using components."
-"To do this, we first have to define models for the fundamental components we require."
-"These will consist of models for an inertia, a spring, a damper and a mechanical ground."
+"在第一章中，我们严格地利用方程式（即无组件模型）去建模了\ :ref:`mech-example`\ 。"
+"在本节中，我们将通过使用组件重新开始系统模型。"
+"要做到这一点，我们首先要定义需要的基本组件模型。"
+"这些将包括惯性、弹簧、阻尼器和机械地面的模型。"
 
 #: ../../source/components/components/rot_comps_basic.rst:24
 msgid ""
@@ -54,7 +55,8 @@ msgid ""
 "revisit these definitions and attempt to factor out common code to avoid "
 "repetition across component models."
 msgstr ""
-"As in :ref:`the previous section<electrical-components>`, we will first define the component models using verbose formulations and then we will revisit these definitions and attempt to factor out common code to avoid repetition across component models."
+"正如\ :ref:`\ 上一节\ <electrical-components>`，我们将首先通过累赘的方法定义组件模型。"
+"然后，我们将重新审视这些定义，并尝试将公共代码分解出来，以避免在组件模型里的重复。"
 
 #: ../../source/components/components/rot_comps_basic.rst:30
 msgid "Coordinate Systems"
@@ -68,8 +70,8 @@ msgid ""
 "discuss one of the complexities associated with mechanical systems, "
 "coordinate systems."
 msgstr ""
-"The method for creating these models will be very similar to how we previously created component models in the heat transfer and electrical domains."
-"But before we start building component models, we should first discuss one of the complexities associated with mechanical systems, coordinate systems."
+"创建这些模型的方法与我们在传热和电气域上创建组件模型时的方法非常类似。"
+"但是，在开始建立组件模型之前，我们应该首先讨论与机械系统相关的一个复杂性：坐标系。"
 
 #: ../../source/components/components/rot_comps_basic.rst:38
 msgid ""
@@ -80,9 +82,9 @@ msgid ""
 "consequence of this directionality is that momentum is a signed quantity "
 "(*i.e.,* it can be positive or negative)."
 msgstr ""
-"In the mechanical domain, the conserved quantity we will be tracking is momentum."
-"What makes momentum different from the conserved quantities we've already covered, heat and charge, is that it is directional."
-"Since we are only concerning ourselves with the one dimensional case here, the consequence of this directionality is that momentum is a signed quantity (*i.e.,* it can be positive or negative)."
+"在机械领域，我们研究是守恒量是动量。"
+"与此前介绍了的守恒量热量和电荷不同，动量有方向性。"
+"由于我们在这里仅考虑一维的情况，这个方向性的后果是，动量是一个带符号的量（即动量可正可负） 。"
 
 #: ../../source/components/components/rot_comps_basic.rst:50
 msgid ""
@@ -90,8 +92,8 @@ msgid ""
 "angular position of the inertia is represented by :math:`\\varphi`, then the"
 " angular velocity of the inertia, :math:`\\omega`, is defined as:"
 msgstr ""
-"Consider a rotating mass with a moment of inertia, :math:`J`."
-"If the angular position of the inertia is represented by :math:`\\varphi`, then the angular velocity of the inertia, :math:`\\omega`, is defined as:"
+"考虑一个转动惯量为\ :math:`J`\ 的转动质量元件。"
+"如果在惯量元件的角位置由\ :math:`\\varphi`\ 表示，则惯量的角速度\ :math:`\\omega`\ 就定义为："
 
 #: ../../source/components/components/rot_comps_basic.rst:59
 msgid ""
@@ -99,8 +101,8 @@ msgid ""
 " :math:`\\varphi` over time.  Furthermore, the angular acceleration of the "
 "inertia, :math:`\\alpha`, is defined as:"
 msgstr ""
-"Obviously, a positive value of :math:`\\omega` will result in an increase in :math:`\\varphi` over time."
-"Furthermore, the angular acceleration of the inertia, :math:`\\alpha`, is defined as:"
+"显然，正的\ :math:`\\omega`\ 值将导致\ :math:`\\varphi`\ 随着时间的推移增加。"
+"此外，惯量元件的角加速度\ :math:`\\alpha`\ 定义为："
 
 #: ../../source/components/components/rot_comps_basic.rst:67
 msgid ""
@@ -110,15 +112,16 @@ msgid ""
 "\\omega` and we know from Euler's laws of motion that (assuming J is a "
 "constant):"
 msgstr ""
-"As with the angular velocity, we can see that a positive value for :math:`\\alpha` will result in an increase in the angular velocity."
-"Finally, the angular momentum of this rotating inertia is defined as :math:`J \\omega` and we know from Euler's laws of motion that (assuming J is a constant):"
+"和角速度一样，我们可以看到，正的\ :math:`\\alpha`\ 将导致角速度增加。"
+"最后，惯量元件的角动量被定义为\ :math:`J \\omega`\ 。"
+"我们从欧拉运动定律可以知道（假设J为常数）："
 
 #: ../../source/components/components/rot_comps_basic.rst:77
 msgid ""
 "From this relationship, it is clear that a positive value for the torque, "
 ":math:`\\tau`, will increase the amount of momentum stored in the mass."
 msgstr ""
-"From this relationship, it is clear that a positive value for the torque, :math:`\\tau`, will increase the amount of momentum stored in the mass."
+"显然由此关系可得，正的转矩\ :math:`\\tau`\ 将增加存储在转动质量元件里的动量。"
 
 #: ../../source/components/components/rot_comps_basic.rst:81
 msgid ""
@@ -130,13 +133,14 @@ msgid ""
 "corresponds to a positive velocity, a positive acceleration and a positive "
 "torque**."
 msgstr ""
-"The point of presenting all these relationships is to underscore the sign conventions associated with :math:`\\varphi`, :math:`\\omega`, :math:`\\alpha` and :math:`\\tau`."
-"They are all tied to the fundamental definition of what a positive angular position is.  **Whatever direction causes** :math:`\\varphi` **to increase is the same direction that corresponds to a positive velocity, a positive acceleration and a positive torque**."
+"之所以展示所有这些关系，是为了强调与\ :math:`\\varphi` 、  :math:`\\omega` 、  :math:`\\alpha`\ 以及\ :math:`\\tau`\ 相关的符号规则。"
+"这些规则都与角位移正负的基本定义有关。"
+"\ **让**\ \ :math:`\\varphi`\ \ **增加的方向就是正速度、正加速度、正转矩的方向**\ 。"
 
 #: ../../source/components/components/rot_comps_basic.rst:90
 #: ../../source/components/components/rot_comps_basic.rst:247
 msgid "Rotational Inertia"
-msgstr "转动惯量"
+msgstr "转动惯量元件"
 
 #: ../../source/components/components/rot_comps_basic.rst:92
 msgid ""
@@ -144,8 +148,9 @@ msgid ""
 "the way, we can start creating our component models.  We'll start with the "
 "inertia model:"
 msgstr ""
-"With this discussion about sign conventions and coordinate systems out of the way, we can start creating our component models."
-"We'll start with the inertia model:"
+"我们已经讨论正负号规则以及坐标系。"
+"现在，我们就可以开始创建组件模型。"
+"首先，我们创建惯量模型："
 
 #: ../../source/components/components/rot_comps_basic.rst:100
 msgid ""
@@ -153,23 +158,23 @@ msgid ""
 "significance of these flanges is made clearer from the icon of the "
 "``Inertia`` model:"
 msgstr ""
-"The ``Inertia`` model includes two \"flanges\", one on either end."
-"The significance of these flanges is made clearer from the icon of the ``Inertia`` model:"
+"\ ``Inertia``\ 模型包括两个“法兰”，两端各一个。"
+"这些法兰的意义是可以更清楚地从\ ``Inertia``\ 模型的图标看出："
 
 #: ../../source/components/components/rot_comps_basic.rst:108
 msgid ""
 "In other words, the ``Inertia`` model includes a flange on either end. You "
 "can think of this model as a shaft with connectors on either end."
 msgstr ""
-"In other words, the ``Inertia`` model includes a flange on either end."
-"You can think of this model as a shaft with connectors on either end."
+"换言之，\ ``Inertia``\ 模型在每一端都有一个法兰。"
+"你可以把这个模型看作两端都有接口的轴。"
 
 #: ../../source/components/components/rot_comps_basic.rst:111
 msgid ""
 "Now, the fundamental equation we wish to capture in the ``Inertia`` model "
 "is:"
 msgstr ""
-"Now, the fundamental equation we wish to capture in the ``Inertia`` model is:"
+"现在，\ ``Inertia``\ 模型所需要表示的基本公式为："
 
 #: ../../source/components/components/rot_comps_basic.rst:118
 msgid ""
@@ -183,9 +188,9 @@ msgid ""
 "means that the ``Inertia`` model is symmetric (*i.e.,* it can be flipped "
 "over and it doesn't change the behavior)."
 msgstr ""
-"This is basically expressing the fact that the increase in momentum stored within the inertia is equal to the sum of the torques applied to the inertia."
-"Recall, from our previous discussions on :ref:`acausal-connections`, that the sign convention for flow variables on connectors (``flange_a.tau`` and ``flange_b.tau`` in this case) is that a positive value represents a flow of the conserved quantity into the component model."
-"The fact that ``flange_a`` and ``flange_b`` have the same sign convention means that the ``Inertia`` model is symmetric (*i.e.,* it can be flipped over and it doesn't change the behavior)."
+"这表达的基本事实为，惯量元素内储存的动量增加率等于施加其上的转矩之和。"
+"回想一下，在之前对\ :ref:`acausal-connections`\ 的讨论里，我们所规定的连接器流变量（这里为\ ``flange_a.tau``\ 和\ ``flange_b.tau``\ ）的符号规则：正值表示保守量的流在进入到组件模型。"
+"\ ``flange_a``\ 和\ ``flange_b``\ 有相同的符号约定这一点，意味着\ ``Inertia``\ 模型是对称的（即可以在翻转后保持行为不变）。"
 
 #: ../../source/components/components/rot_comps_basic.rst:129
 msgid ""
@@ -193,7 +198,8 @@ msgid ""
 "represents :math:`\\omega`) and ``tau`` so we need to include declarations "
 "and definitions for those variables as well."
 msgstr ""
-"However, this equation refers to the internal variables ``w`` (which represents :math:`\\omega`) and ``tau`` so we need to include declarations and definitions for those variables as well."
+"不过，这个等式引用了内部变量\ ``w``\ （代表\ :math:`\\omega`\ ）和\ ``tau``\ 。"
+"所以我们也需要包含这些变量的声明和定义。"
 
 #: ../../source/components/components/rot_comps_basic.rst:134
 #: ../../source/components/components/rot_comps_basic.rst:257
@@ -206,7 +212,7 @@ msgstr "接下来，让我们考虑一个弹簧模型的定义："
 
 #: ../../source/components/components/rot_comps_basic.rst:142
 msgid "The icon for our spring model is rendered as:"
-msgstr ""
+msgstr "弹簧模型的图标如下所示："
 
 #: ../../source/components/components/rot_comps_basic.rst:148
 msgid ""
@@ -214,9 +220,9 @@ msgid ""
 "each end.  It also defines many of the same internal variables.  Ultimately,"
 " the behavior of the spring comes down to this equation:"
 msgstr ""
-"Like the ``Inertia`` model, the ``Spring`` model has two connectors, one on each end."
-"It also defines many of the same internal variables."
-"Ultimately, the behavior of the spring comes down to this equation:"
+"和\ ``Inertia``\ 模型一样，\ ``Spring``\ 模型有两个连接器，一端各一个。"
+"模型还定义了许多相同的内部变量。"
+"最终，弹簧的行为可以总结为如下公式："
 
 #: ../../source/components/components/rot_comps_basic.rst:157
 msgid ""
@@ -224,12 +230,12 @@ msgid ""
 "content in the ``Spring`` model is the same as the content in the "
 "``Inertia`` model."
 msgstr ""
-"In fact, apart from this equation and the parameter ``c``, much of the content in the ``Spring`` model is the same as the content in the ``Inertia`` model."
+"事实上，除了上述方程和参数\ ``c``\ 以外，\ ``Spring``\ 模型的内容与\ ``Inertia``\ 模型内容大部分是一样的。"
 
 #: ../../source/components/components/rot_comps_basic.rst:162
 #: ../../source/components/components/rot_comps_basic.rst:267
 msgid "Damper Model"
-msgstr ""
+msgstr "阻尼器模型"
 
 #: ../../source/components/components/rot_comps_basic.rst:164
 msgid ""
@@ -237,12 +243,12 @@ msgid ""
 "the main differences are the parameter (``d`` in this case) and one "
 "equation:"
 msgstr ""
-"The ``Damper`` model is also very similar to the ``Spring`` model."
-"Again, the main differences are the parameter (``d`` in this case) and one equation:"
+"\ ``Damper``\ 模型也和\ ``Spring``\ 模型非常相似。"
+"同样，主要区别是参数（这里是\ ``d``\ ），以及一个方程："
 
 #: ../../source/components/components/rot_comps_basic.rst:173
 msgid "The icon for the ``Damper`` model is rendered as:"
-msgstr ""
+msgstr "\ ``Damper``\ 模型的图标如下所示："
 
 #: ../../source/components/components/rot_comps_basic.rst:182
 msgid "DRY Component Models"
@@ -259,14 +265,15 @@ msgid ""
 "components>`, let's take the time to apply the DRY (Don't Repeat Yourself) "
 "principle."
 msgstr ""
-"We already have models for an inertia, a spring and a damper."
-"The only model we are missing in order to complete our :ref:`dual spring mass damper system<mech-example>` is a model of mechanical ground."
-"But before we complete that model, let's take a moment to revisit the models we've already created with the goal of factoring out the large amount of code shared between these models."
-"As in :ref:`the previous section<electrical-components>`, let's take the time to apply the DRY (Don't Repeat Yourself) principle."
+"我们已经有了惯性元件、弹簧和阻尼器的模型。"
+"要完成此前的\ :ref:`\ 双弹簧质量阻尼系统\ <mech-example>`\ 唯一缺少的模型就是机械地面的模型了。"
+"但在此之前，让我们花一点时间来重新审视这些模型。"
+"我们的目标是抽取出这些模型之间的大量共同代码。"
+"和\ :ref:`\ 上节\ <electrical-components>`\ 一样，让我们慢慢来去实践DRY（不要重复）原则。"
 
 #: ../../source/components/components/rot_comps_basic.rst:194
 msgid "Common Code"
-msgstr ""
+msgstr "共同代码"
 
 #: ../../source/components/components/rot_comps_basic.rst:196
 msgid ""
@@ -278,9 +285,10 @@ msgid ""
 "relevant in this context.  As a result, it's complexity (although necessary)"
 " makes it unsuitable pedagogically."
 msgstr ""
-"It is worth noting that because the Modelica Standard Library has an extensive collection of rotational components, it was forced to deal with this issue of redundant code almost from the start."
-"However, we will not be using the ``partial`` models from the Modelica Standard Library here simply because they are designed to deal with many other cases that are not relevant in this context."
-"As a result, it's complexity (although necessary) makes it unsuitable pedagogically."
+"值得一提的是，由于Modelica的标准库拥有大量的旋转部件，几乎从一开始，标准库就要处理冗余代码的问题。"
+"不过，我们不会在这里使用Modelica标准库的\ ``partial``\ 模型。"
+"原因简单，这些模型都在设计时都考虑了许多与本节讨论不相关的其他情况。"
+"因此，这些（虽然必要的）复杂性使得上述模型不适用于教学。"
 
 #: ../../source/components/components/rot_comps_basic.rst:204
 msgid ""
@@ -289,8 +297,8 @@ msgid ""
 "unlike in our previous discussion of :ref:`electrical-components`, our "
 "rotational component models share different amounts of code with each other."
 msgstr ""
-"But one thing we will preserve from the Modelica Standard Library is the need for multiple ``partial`` models."
-"This need arises from the fact that, unlike in our previous discussion of :ref:`electrical-components`, our rotational component models share different amounts of code with each other."
+"但我们将从Modelica的标准库学习一点。这就是多个\ ``partial``\ 模型的必要性。"
+"这是因为，不像此前讨论的\ :ref:`electrical-components`\ ，我们的转动组件模型彼此间共享不同的代码。"
 
 #: ../../source/components/components/rot_comps_basic.rst:210
 msgid ""
@@ -300,17 +308,17 @@ msgid ""
 "``Damper`` models do not.  As a result, the conservation equations are "
 "different among these components."
 msgstr ""
-"What is common to all of our models is the existence of two flange connectors, ``flange_a`` and ``flange_b``."
-"However, while the ``Inertia`` model has the capacity to store angular momentum, the ``Spring`` and ``Damper`` models do not."
-"As a result, the conservation equations are different among these components."
+"一个相同点在于，所有模型均带有两个法兰连接器\ ``flange_a``\ 和\ ``flange_b``\  。"
+"然而，虽然\ ``Inertia``\ 模型能够存储角动量，但\ ``Spring``\ 和\ ``Damper``\ 模型则不能。"
+"其结果是，这些组件之间有不同的守恒方程。"
 
 #: ../../source/components/components/rot_comps_basic.rst:216
 msgid ""
 "Let's start with the elements that are common to all three models. These are"
 " represented by the following ``TwoFlange`` model:"
 msgstr ""
-"Let's start with the elements that are common to all three models."
-"These are represented by the following ``TwoFlange`` model:"
+"让我们从所有三种模型共有的元素开始。"
+"共有元素由以下的\ ``TwoFlange``\ 模型表示："
 
 #: ../../source/components/components/rot_comps_basic.rst:222
 msgid ""
@@ -319,8 +327,9 @@ msgid ""
 "``phi_rel``.  Of course, this model is also marked as ``partial`` since it "
 "is missing any description of the component's behavior."
 msgstr ""
-"In addition to defining the two flanges, ``flange_a`` and ``flange_b``, this model also defines the relative angle between these flanges, *i.e.,* ``phi_rel``."
+"除了定义的两个法兰\ ``flange_a``\ 和\ ``flange_b``\ 外，这个模型还定义了两法兰间的相对角度，即\ ``phi_rel``\ 。"
 "Of course, this model is also marked as ``partial`` since it is missing any description of the component's behavior."
+"当然，这种模型也被标记为\ ``partial``\ 。因为模型缺少对组件行为的任何描述。"
 
 #: ../../source/components/components/rot_comps_basic.rst:228
 msgid ""
@@ -330,9 +339,10 @@ msgid ""
 " ``TwoFlange`` model to represent compliant models that do not store "
 "momentum:"
 msgstr ""
-"We could have all three models inherit from this model."
-"But then we would still have some redundant equations between our ``Spring`` and ``Damper`` model."
-"So we will instead create a slightly more specialized version of the ``TwoFlange`` model to represent compliant models that do not store momentum:"
+"所有的三种模型都可以继承上述模型。"
+"但是，\ ``Spring``\ 和\ ``Damper``\ 模型之间仍会有一些冗余的方程式。"
+"因此，我们将转而创建\ ``TwoFlange``\ 模型的一个稍为特别的版本。"
+"这个版本表示不存储动量的可压缩模型："
 
 #: ../../source/components/components/rot_comps_basic.rst:237
 msgid ""
@@ -341,7 +351,8 @@ msgid ""
 "``flange_b``) and an equation indicating that no angular momentum is stored "
 "by the component."
 msgstr ""
-"The ``Compliant`` model adds on additional internal variable (to represent the torque that passes through the component from ``flange_a`` to ``flange_b``) and an equation indicating that no angular momentum is stored by the component."
+"\ ``Compliant``\ 模型加上额外的内部变量（以代表从\ ``flange_a``\ 进入该组件然后传递到\ ``flange_b``\ 的转矩）。"
+"另外，模型也加入了方程，以表示组件不会存储任何角动量。"
 
 #: ../../source/components/components/rot_comps_basic.rst:242
 msgid ""
@@ -349,29 +360,29 @@ msgid ""
 "component model definitions to see how much more succinct they can be made "
 "by using inheritance."
 msgstr ""
-"With these base classes defined, let us quickly revisit the various component model definitions to see how much more succinct they can be made by using inheritance."
+"有了这些定义的基类，让我们快速重构各个组件模型的定义。这就可以看出继承能减少多少冗余。"
 
 #: ../../source/components/components/rot_comps_basic.rst:249
 msgid ""
 "Leveraging the ``TwoFlanges`` model, our ``Inertia`` model can be simplified"
 " to:"
 msgstr ""
-"Leveraging the ``TwoFlanges`` model, our ``Inertia`` model can be simplified to:"
+"凭借\ ``TwoFlanges``\ 模型，我们的\ ``Inertia``\ 模型可以简化为："
 
 #: ../../source/components/components/rot_comps_basic.rst:259
 msgid ""
 "In the same way, inheriting from the ``Compliant`` model our ``Spring`` "
 "model can be much more compactly represented as:"
 msgstr ""
-"In the same way, inheriting from the ``Compliant`` model our ``Spring`` model can be much more compactly represented as:"
+"用相同的方式继承了\ ``Compliant``\ 模型后，\ ``Spring``\ 模型可以更紧凑地表示为："
 
 #: ../../source/components/components/rot_comps_basic.rst:269
 msgid "Likewise, the ``Damper`` model is similarly simplified:"
-msgstr ""
+msgstr "同样， \ ``Damper``\ 模型也类似地简化为："
 
 #: ../../source/components/components/rot_comps_basic.rst:276
 msgid "Mechanical Ground"
-msgstr ""
+msgstr "机械地面"
 
 #: ../../source/components/components/rot_comps_basic.rst:278
 msgid ""
@@ -379,12 +390,12 @@ msgid ""
 ":ref:`dual spring mass damper system<mech-example>`.  The mechanical ground "
 "model is defined as follows:"
 msgstr ""
-"Finally, we can complete the one model remaining in order to complete our :ref:`dual spring mass damper system<mech-example>`."
-"The mechanical ground model is defined as follows:"
+"最后，我们可以完成\ :ref:`\ 双弹簧质量阻尼系统\ <mech-example>`\ 里唯一剩余的模型了。"
+"机械地面模型定义如下："
 
 #: ../../source/components/components/rot_comps_basic.rst:287
 msgid "Dual Spring Mass Damper System"
-msgstr ""
+msgstr "双弹簧质量阻尼系统"
 
 #: ../../source/components/components/rot_comps_basic.rst:289
 msgid ""
@@ -393,12 +404,12 @@ msgid ""
 "in this section, the Modelica code for our component based system model "
 "looks like this:"
 msgstr ""
-"Finally, we have all the parts we need in order to reconstruct the example we saw in the first chapter."
-"Using the various components already defined in this section, the Modelica code for our component based system model looks like this:"
+"最后，我们已经得到了重建第一章内例子所需的所有部件。"
+"使用本节中定义的各个组件，我们基于组件的系统模型其Modelica代码如下："
 
 #: ../../source/components/components/rot_comps_basic.rst:297
 msgid "The diagram for this model, when rendered, looks like this:"
-msgstr ""
+msgstr "模型的简图如下所示"
 
 #: ../../source/components/components/rot_comps_basic.rst:307
 msgid ""
@@ -406,5 +417,5 @@ msgid ""
 "quite a bit more to say about rotational components in the next section on "
 ":ref:`adv-rotational-components`."
 msgstr ""
-"This completes our discussion of basic rotational components."
-"But there is quite a bit more to say about rotational components in the next section on :ref:`adv-rotational-components`."
+"以此完成了我们对基本旋转部件的讨论。"
+"但在下一节\ :ref:`adv-rotational-components`\ ，我们还会进一步深入探讨旋转组件。"
