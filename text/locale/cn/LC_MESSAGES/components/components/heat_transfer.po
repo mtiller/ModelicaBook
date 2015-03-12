@@ -477,7 +477,6 @@ msgid ""
 "same fundamental behavior, *i.e.,*"
 msgstr ""
 "这看起来可能没有什么大不了的改善。"
-"Although we went to the trouble to break up the ``ConvectionToAmbient`` model into individual ``Convection`` and ``AmbientTemperature`` models, we still end up with the same fundamental behavior, *i.e.,*"
 "虽然我们费心去将\ ``ConvectionToAmbient``\ 分拆成单独的\ ``Convection``\ 和\ ``AmbientTemperature``\ 模型，我们最终还是得到了相同的基本行为，即："
 
 #: ../../source/components/components/heat_transfer.rst:383
