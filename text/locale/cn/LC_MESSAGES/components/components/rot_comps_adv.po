@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:4
 msgid "Advanced Rotational Components"
-msgstr ""
+msgstr "高级旋转组件"
 
 #: ../../source/components/components/rot_comps_adv.rst:6
 msgid ""
@@ -23,10 +23,13 @@ msgid ""
 "when modeling a backlash.  Furthermore, we'll also show how to use parameter"
 " values to effect the interface of a component."
 msgstr ""
+"在上一节中，我们讨论了\ :ref:`rotational-components`\ 并展示了如何构建基本组件的系统模型。"
+"在这一节中，我们将演示如何加入事件处理。我们将在模拟齿隙时使用到这个功能。"
+"此外，我们还将展示如何使用参数值来实现组件的接口。"
 
 #: ../../source/components/components/rot_comps_adv.rst:13
 msgid "Modeling Backlash"
-msgstr ""
+msgstr "建模齿隙"
 
 #: ../../source/components/components/rot_comps_adv.rst:15
 msgid ""
@@ -34,22 +37,27 @@ msgid ""
 "a rotational backlash element.  The equation for a backlash model is very "
 "simple:"
 msgstr ""
+"让我们从旋转齿隙元素开始对高级旋转组件模型的探索。"
+"齿隙模型的方程非常简单："
 
 #: ../../source/components/components/rot_comps_adv.rst:34
 msgid "In Modelica, this component can be described as follows:"
-msgstr ""
+msgstr "该组件可以用Modelica描述如下："
 
 #: ../../source/components/components/rot_comps_adv.rst:40
 msgid ""
 "We can add an instance of this backlash model into our previous model by "
 "placing it in parallel with the spring and the damper, *i.e.,*"
 msgstr ""
+"我们可以将齿隙模型的实例加入此前的模型里。"
+"将其与弹簧及阻尼器相并联，即："
 
 #: ../../source/components/components/rot_comps_adv.rst:48
 msgid ""
 "If we use the inheritance mechanism in Modelica, the resulting Modelica "
 "model is quite simple:"
 msgstr ""
+"若我们使用的Modelica的继承机制，由此产生的Modelica模型会很简单："
 
 #: ../../source/components/components/rot_comps_adv.rst:55
 msgid ""
@@ -57,12 +65,14 @@ msgid ""
 " more than 0.5 radians (*i.e.,* the value of ``b`` in our backlash "
 "instance), then the torque from the backlash element will be introduced."
 msgstr ""
+"在这种情况下，如果\ ``inertia1``\ 和\ ``inertia2``\ 之间的相对角度超过0.5弧度（即我们的齿隙实例里\ ``b``\ 的值），那么齿隙元件会带来转矩。"
 
 #: ../../source/components/components/rot_comps_adv.rst:60
 msgid ""
 "If we simulate this model, we can see the impact that the backlash's "
 "presence has on the response of the system:"
 msgstr ""
+"如果对该模型进行仿真，我们就可以看到，齿隙的存在对系统的响应的影响："
 
 #: ../../source/components/components/rot_comps_adv.rst:70
 msgid ""
@@ -73,6 +83,9 @@ msgid ""
 "constrains the motion (or lack of motion, in this case) of a point in the "
 "system is called a *kinematic constraint*."
 msgstr ""
+"另一个值得观察的现象是（我们将在下个主题更深入地探讨）是机械地面元件的受力。"
+"从我们的示意图能够明显看出，该机械地面元件的作用是固定系统其中一边的角位移。"
+"用以约束系统内某个点运动（或在这里，无运动）的方程被称为\ *运动学约束*\ 。"
 
 #: ../../source/components/components/rot_comps_adv.rst:77
 msgid ""
@@ -81,16 +94,19 @@ msgid ""
 " the motion of the system.  This is called a reaction force or reaction "
 "torque."
 msgstr ""
+"当一个运动约束施加在系统上时，该施加约束的组件必须产生某种作用力或力矩，以此影响系统的运动。"
+"这就是所谓的反作用力或反作用转矩。"
 
 #: ../../source/components/components/rot_comps_adv.rst:82
 msgid ""
 "The following plot shows the reaction torque that the mechanical ground "
 "element must impose on the system in order to fix the angular position:"
 msgstr ""
+"下面的图显示的反作用转矩，就是该机械地面元件为了固定角位置所必须施加给系统的："
 
 #: ../../source/components/components/rot_comps_adv.rst:90
 msgid "Grounding and Reaction Torques"
-msgstr ""
+msgstr "地面扭矩与反作用扭矩"
 
 #: ../../source/components/components/rot_comps_adv.rst:92
 msgid ""
@@ -99,6 +115,8 @@ msgid ""
 "constrain the motion of the system.  In this section, we will examine this "
 "effect a bit closer."
 msgstr ""
+"正如我们在前面的例子中所看到的，机械地面元件必须对系统施加反作用转矩来约束其运动。"
+"在本节中，我们将稍进一步研究这个效应。"
 
 #: ../../source/components/components/rot_comps_adv.rst:97
 msgid ""
@@ -113,6 +131,13 @@ msgid ""
 "need to lump them into our gear model.  Instead, we will focus only on the "
 "relationship between gear input speed and output speed."
 msgstr ""
+"为了演示运动学约束的某些复杂性，我们需要创建一个机械齿轮模型。"
+"在这个模型中，我们将忽略齿轮元件的惯量、齿轮间的效率损失以及可能在齿轮齿之间存在的任何齿隙。"
+"回想一下我们在本章前面对\ :ref:`digging-deeper`\ 讨论内容，我们提到的组件模型应侧重于单个的物理效应。"
+"同样的原则也适用于这里。"
+"惯性、摩擦和齿隙都可以建模成单独的效应（正如我们在本章所看到的）。"
+"我们没有必要所有效应都放入齿轮模型里。"
+"相反，我们将只专注于齿轮输入速度与输出速度间的关系。"
 
 #: ../../source/components/components/rot_comps_adv.rst:109
 msgid ""
@@ -121,6 +146,8 @@ msgid ""
 "that a gear introduces a relationship between the input speed and the output"
 " speed, *i.e.*,"
 msgstr ""
+"在典型的系统动力学类里，描述齿轮行为的方程推导如下。"
+"首先，我们必须理解，该齿轮引入了输入速度与输出速度间的关系，即："
 
 #: ../../source/components/components/rot_comps_adv.rst:118
 msgid ""
@@ -128,6 +155,9 @@ msgid ""
 "perfectly efficient.  This means that the power going into the gear must "
 "equal the power going out which we can express mathematically as:"
 msgstr ""
+"其中\ :math:`R`\ 是齿轮比。"
+"记得我们假设了齿轮效率为1。"
+"这意味着齿轮的输入功率必须等于输出功率。这可以在数学上表示为："
 
 #: ../../source/components/components/rot_comps_adv.rst:126
 msgid ""
@@ -140,18 +170,24 @@ msgid ""
 "elements and, therefore, no way to store energy or momentum within the gear "
 "model."
 msgstr ""
+"请注意，我们在这使用了Modelica的正负号约定。因此，守恒量的流为正意味着其正在流入组件内。"
+"在这种情况下，\ :math:`\\tau_a \\omega_a`\ 是从\ ``flange_a``\ 流入齿轮的机械功率。"
+"而\ :math:`\\tau_b \\omega_b`\ 则从\ ``flange_b``\ 流出齿轮的机械功率。"
+"因此，两者的总和必须为零。因为，我们的齿轮模型不包括齿轮元件的惯性。其结果就是齿轮模型内不可能储存能量或动力。"
 
 #: ../../source/components/components/rot_comps_adv.rst:135
 msgid ""
 "Given these two facts, we can substitute the relationship between the speeds"
 " into the relationship between the powers and get:"
 msgstr ""
+"鉴于这两个事实，我们可以将速度关系代入到功率关系。由此可以得到："
 
 #: ../../source/components/components/rot_comps_adv.rst:142
 msgid ""
 "This allows us to cancel out :math:`\\omega_b` from the equation and "
 "rearranging terms gives us:"
 msgstr ""
+"这让我们从方程消去了\ :math:`\\omega_b`\ 。重新组织方程我们可以得到："
 
 #: ../../source/components/components/rot_comps_adv.rst:149
 msgid ""
@@ -160,10 +196,13 @@ msgid ""
 "specifically, there is something implicitly assumed that is not necessarily "
 "a reasonable assumption."
 msgstr ""
+"这样的推导对大多数工程师看起来可能会很熟悉。"
+"但是，一定要意识到这里还差了些什么。"
+"更具体而言，推理的一些隐含假定并不一定合理。"
 
 #: ../../source/components/components/rot_comps_adv.rst:154
 msgid "To understand the issue, let's first consider Euler's second law:"
-msgstr ""
+msgstr "要理解这个问题，让我们先考虑欧拉第二定律："
 
 #: ../../source/components/components/rot_comps_adv.rst:160
 msgid ""
@@ -173,12 +212,18 @@ msgid ""
 " no capacity to store energy or angular momentum.  If that is the case the "
 "previous equation simplifies to:"
 msgstr ""
+"换言之，施加在物体上扭矩的总和应等于新累积的角动量。"
+"回想我们的齿轮模型并不包括齿轮元件的惯性。"
+"因此，模型无法以存储能量或角动量。"
+"在这种情况下，先前的方程简化为："
 
 #: ../../source/components/components/rot_comps_adv.rst:170
 msgid ""
 "Our gear has only two external torques, :math:`\\tau_a` and :math:`\\tau_b`."
 "  Using the relationships we derived earlier, we know that their sum is:"
 msgstr ""
+"我们的齿轮只有两个外部扭矩\ :math:`\\tau_a`\ 和\ :math:`\\tau_b`\ 。"
+"应用之前推导出的关系，我们知道其总和为："
 
 #: ../../source/components/components/rot_comps_adv.rst:178
 msgid ""
@@ -187,12 +232,15 @@ msgid ""
 "well) must be zero.  But this cannot be correct if our gear is to function "
 "as a gear."
 msgstr ""
+"这个方程意味着对任何不等于1.0的齿轮比\ :math:`R`\ ，\ ``flange_a``\ 上转矩（以及由此推出转矩\ ``flange_b``\ 也）必须为零。"
+"但是，若我们的齿轮能提供齿轮功能的话，这就不可能是正确的。"
 
 #: ../../source/components/components/rot_comps_adv.rst:183
 msgid ""
 "What this mathematical relationship is showing us about the physical "
 "behavior of the system is more clearly demonstrated in this relationship:"
 msgstr ""
+"为了显示上述数学关系向我们展示了系统的一种怎样的物理特性，我们可以观察从下列等式。该等式更清楚地表明了系统的属性。"
 
 #: ../../source/components/components/rot_comps_adv.rst:191
 msgid ""
@@ -205,6 +253,14 @@ msgid ""
 "imbalance is the result of having forgotten something in our formulation.  "
 "What is missing is the **reaction torque**."
 msgstr ""
+"第一项\ :math:`\\tau_a`\ ，是从\ ``flange_a``\ 进入齿轮的扭矩。"
+"第二项\ :math:`\\tau_b`\ ，是从\ ``flange_b``\ 进入齿轮的扭矩。"
+"这个等式告诉我们，这两个扭矩的总和绝不会为零（对于\ :math:`R \\neq 1`\ ） 。"
+"我们看起来在数学上证明了\ :math:`\\tau_a=0`\ 。"
+"但实际上，我们实际上证明了公式里并\ **不平衡**\ 。"
+"这种不平衡由于我们在列式中忘记一些东西。"
+"What is missing is the **reaction torque**."
+"这里缺少的是\ **反作用扭矩**\ 。"
 
 #: ../../source/components/components/rot_comps_adv.rst:201
 msgid ""
@@ -218,6 +274,12 @@ msgid ""
 " is connected to a mechanical ground, then our equations so far are correct "
 "as we can capture the behavior of such a (grounded) gear as follows:"
 msgstr ""
+"如果你还不熟悉这个问题，你可能会感到困惑。这个反作用扭矩从何而来？"
+"毕竟，我们对齿轮只有两个机械连接。而我们也把这两个点的扭矩表示了出来。"
+"但一直以来，这里有一个隐含的假设，即齿轮的\ **外壳与地面相连**\ 。"
+"在现实中，一个齿轮有三个机械连接。"
+"第三个连接是在齿轮的外壳与齿轮安装的安装位置之间。"
+"如果壳体被连接到机械地面，那么目前为止我们的方程是正确的。因为我们可以用如下方式描述（接地）齿轮的行为："
 
 #: ../../source/components/components/rot_comps_adv.rst:215
 msgid ""
@@ -229,12 +291,16 @@ msgid ""
 "stepper motors) where preserving this relationship between positions, and "
 "not just velocities, could be very important."
 msgstr ""
+"请注意在\ ``GroundedGear``\ 模型使用的关系不再是\ :math:`\\omega_a=R\\omega_b`\ ，而是\ :math:`\\varphi_a=R\\varphi_b`\ 。"
+"这实际上更为准确。因为，在组装后，齿轮的齿确实限制了两轴的角位置。"
+"此外，在一些应用里（例如步进电机）保留位置关系而非仅保留速度关系可能会非常重要。"
 
 #: ../../source/components/components/rot_comps_adv.rst:224
 msgid ""
 "Using the ``GroundedGear`` model, we can then build a system model using "
 "this gear as follows:"
 msgstr ""
+"使用\ ``GroundedGear``\ 模型，我们可以创建如下系统模型："
 
 #: ../../source/components/components/rot_comps_adv.rst:232
 msgid ""
@@ -245,10 +311,15 @@ msgid ""
 "when we simulate this system, we see that ``inertia2`` and ``inertia3`` have"
 " the same response:"
 msgstr ""
+"请注意，此系统有两种实现。"
+"第一种使用我们刚刚开发的齿轮模型。"
+"第二个将齿轮、惯量元件总成替换为单个惯量元件。"
+"这个惯量元件的值特别设定为上述总成的\ *“有效惯量”*\ 。"
+"因此，在我们模拟这个系统时，我们看到\ ``inertia2``\ 和\ ``inertia3``\ 有相同的相应："
 
 #: ../../source/components/components/rot_comps_adv.rst:245
 msgid "Comparison"
-msgstr ""
+msgstr "比较"
 
 #: ../../source/components/components/rot_comps_adv.rst:247
 msgid ""
@@ -261,6 +332,11 @@ msgid ""
 " and then compare its performance, side by side, with gears that are "
 "grounded."
 msgstr ""
+"正如前面所提到的，\ ``GroundedGear``\ 模型的问题在于和地面相连这一隐含假定。"
+"这种假设可能不总是合理的（例如，汽车的变速器中的齿轮通常连接到可形变的支架上）。"
+"我们希望了解连接地面与否会对系统的响应有多大的影响。"
+"因此，我们将首先创建一个不隐含连接地面的更完整的齿轮模型。"
+"然后，将其性能与连接地面的齿轮一并比较。"
 
 #: ../../source/components/components/rot_comps_adv.rst:256
 msgid ""
@@ -268,6 +344,7 @@ msgid ""
 "the kinematic relationship between the two shafts and the housing is more "
 "completely expressed as:"
 msgstr ""
+"没有了齿轮外壳连接地面这一隐含的假设，两个轴和壳体之间的运动学关系能更完整地表示为："
 
 #: ../../source/components/components/rot_comps_adv.rst:264
 msgid ""
@@ -275,6 +352,7 @@ msgid ""
 "following two equations using conservation of energy and conservation of "
 "momentum:"
 msgstr ""
+"虽然这已经超出了本文的讨论范围，我们可以用能量守恒和动量守恒得出以下两个等式："
 
 #: ../../source/components/components/rot_comps_adv.rst:273
 msgid ""
@@ -282,6 +360,7 @@ msgid ""
 "to represent the housing, we get the following Modelica model for an ideal "
 "gear:"
 msgstr ""
+"将这些关系结合在一起，并增加机械连接器去表示壳体后，我们可以得到以下理想齿轮的Modelica模型："
 
 #: ../../source/components/components/rot_comps_adv.rst:281
 msgid ""
@@ -292,6 +371,10 @@ msgid ""
 "ground, but is instead connected through a very stiff mounting system.  The "
 "schematic for our system looks like this when rendered:"
 msgstr ""
+"现在，让我们一起建立是用上述三种不同机制的系统模型。"
+"在各机构齿轮、惯性、弹簧和阻尼器的参数都是相同的。"
+"唯一的区别是，我们是使用隐式连接地面齿轮、显式连接地面齿轮或不直接连接到地面上而是连接在硬支架上的齿轮。"
+"我们的系统示意图如下所示："
 
 #: ../../source/components/components/rot_comps_adv.rst:294
 msgid ""
@@ -300,6 +383,8 @@ msgid ""
 "mechanism with the explicitly grounded gear.  This is verified by the "
 "following plot:"
 msgstr ""
+"我们可以预期的第一件事是，隐式和显示连接地面的齿轮机构造成的响应应该是相同的。"
+"这在以下的图中得到证实："
 
 #: ../../source/components/components/rot_comps_adv.rst:302
 msgid ""
@@ -307,10 +392,14 @@ msgid ""
 "assumed that a gear was implicitly grounded when, in fact, it wasn't?  This "
 "is clearly demonstrated in the following plot:"
 msgstr ""
+"但此前的问题仍然存在。
+如果我们假定齿轮隐式连接，而实际上不是的时候，这会造成多大的差异呢？"
+"This is clearly demonstrated in the following plot:"
+"问题在下图中得到清晰的捷达："
 
 #: ../../source/components/components/rot_comps_adv.rst:314
 msgid "Optional Ground Connector"
-msgstr ""
+msgstr "可选地面连接器"
 
 #: ../../source/components/components/rot_comps_adv.rst:316
 msgid ""
@@ -321,6 +410,11 @@ msgid ""
 " there is a considerable amount of common code between them.  As we've "
 "talked about before, redundancy like this should be avoided."
 msgstr ""
+"到目前为止，在对转动系统的讨论里，我们已经创建了两个不同的齿轮模型。"
+"\ ``GroundedGear``\  为隐式连接地面。"
+"而\ ``UngroundedGear``\ 则包括了壳体的机械连接器。"
+"其实，两个部件的方程式非常相似。其代码中有相当一部分是共同代码。"
+"正如我们之前谈到这样，这样的冗余应该避免。"
 
 #: ../../source/components/components/rot_comps_adv.rst:326
 msgid ""
@@ -331,10 +425,15 @@ msgid ""
 " combine these models by making use of something called a *conditional "
 "declaration*."
 msgstr ""
+"在这种情况下，我们避免冗余的一种方法是组合这两个模型。"
+"这似乎是这是不切实际的。"
+"既然两模型有很不同的基本假设。"
+"更重要的是，它们的\ **接口不同**\ （即带有不同的连接器）。"
+"不过，我们也可以通过利用所谓的\ *有条件声明*\ 去两个模型。"
 
 #: ../../source/components/components/rot_comps_adv.rst:333
 msgid "Consider the following ``ConfigurableGear`` model:"
-msgstr ""
+msgstr "请考虑以下的\ ``ConfigurableGear``\ 模型："
 
 #: ../../source/components/components/rot_comps_adv.rst:339
 msgid ""
@@ -347,6 +446,10 @@ msgid ""
 "``phi=housing_phi`` and ``tau=-flange_a.tau-flange_b.tau``) also disappear "
 "with the declaration."
 msgstr ""
+"特别要注意\ ``housing``\ 声明结尾带有\ ``if no grounded``\ 。"
+"若\ ``if``\ 出现在声明的结尾，则表明该变量只会在\ ``if``\ 后的条件表达式为真时存在。"
+"所以，若\ ``grounded``\ 参数为真，模型中就不存在\ ``housing``\ 连接器。"
+"此外，\ ``housing``\ 声明包括的方程，如修改语句（即\ ``phi=housing_phi``\ 以及\ ``tau=-flange_a.tau-flange_b.tau``\ ），也会随着声明消失。"
 
 #: ../../source/components/components/rot_comps_adv.rst:348
 msgid ""
@@ -356,6 +459,8 @@ msgid ""
 "``housing_phi`` is always present (*i.e.,* there is no ``if`` at the end of "
 "its declaration) so there must be an equation for it."
 msgstr ""
+"同时，\ ``equation``\ 段落中，我们看到\ ``if``\ 语句在模型连接地面时提供了一条额外的方程\ ``housing_phi = 0``\ 。"
+"这是必要的。原因是变量\ ``housing_phi``\ 总是存在（即在其声明的结尾没有\ ``if``\ ）。所以该变量必须对应一条公式。"
 
 #: ../../source/components/components/rot_comps_adv.rst:354
 msgid ""
@@ -364,16 +469,19 @@ msgid ""
 "variables across all the component's connectors + the number of (non-"
 "parameter) variables declared in the model."
 msgstr ""
+"要了解更多的彻底理解是怎么回事，我们要记得一点。"
+"组件模型所需的方程数目等于所有组件内连接器的流变量数目＋在模型中声明的（非参数）变量的数目。"
 
 #: ../../source/components/components/rot_comps_adv.rst:359
 msgid ""
 "The following table summarizes how these things add up for the case where "
 "``grounded`` is true and the case where it isn't:"
 msgstr ""
+"下表总结了分别为\ ``grounded``\ 值的真假两种情况总结了上述量的关系："
 
 #: ../../source/components/components/rot_comps_adv.rst:363
 msgid "Quantity"
-msgstr ""
+msgstr "量"
 
 #: ../../source/components/components/rot_comps_adv.rst:363
 msgid "``grounded==true``"
@@ -385,7 +493,7 @@ msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:365
 msgid "Number of ``flow`` variables"
-msgstr ""
+msgstr "\ ``flow``\ 变量总数"
 
 #: ../../source/components/components/rot_comps_adv.rst:365
 #: ../../source/components/components/rot_comps_adv.rst:373
@@ -399,7 +507,7 @@ msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:367
 msgid "Number of variables"
-msgstr ""
+msgstr "变量数"
 
 #: ../../source/components/components/rot_comps_adv.rst:367
 #: ../../source/components/components/rot_comps_adv.rst:367
@@ -408,7 +516,7 @@ msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:369
 msgid "**Equations required**"
-msgstr ""
+msgstr "\ **所需方程数**\ "
 
 #: ../../source/components/components/rot_comps_adv.rst:369
 #: ../../source/components/components/rot_comps_adv.rst:375
@@ -430,15 +538,15 @@ msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:371
 msgid "2 (from ``housing``)"
-msgstr ""
+msgstr "2 （来自\ ``housing``\ ）"
 
 #: ../../source/components/components/rot_comps_adv.rst:373
 msgid "Equations in ``equation`` section"
-msgstr ""
+msgstr "\ ``equation``\ 段落的方程数"
 
 #: ../../source/components/components/rot_comps_adv.rst:375
 msgid "**Equations provided**"
-msgstr ""
+msgstr "\ **提供的方程数**\ "
 
 #: ../../source/components/components/rot_comps_adv.rst:378
 msgid ""
@@ -448,18 +556,24 @@ msgid ""
 "conditions to concern ourselves with and we can clearly see from this table "
 "that we have met this requirement in both cases."
 msgstr ""
+"当使用条件声明时，非常重要的一点是确保在所有情况下，提供的方程数和所需方程数相等。"
+"在这里，我们只有两个条件需要考虑。"
+"而我们可以清楚地从该表中看到，两种情况下要求均满足。"
 
 #: ../../source/components/components/rot_comps_adv.rst:384
 msgid ""
 "The following model demonstrates how we can now use the ``ConfigurableGear``"
 " models as both an implicitly and explicitly grounded gear:"
 msgstr ""
+"The following model demonstrates how we can now use the ``ConfigurableGear`` models as both an implicitly and explicitly grounded gear:"
+"下面的模型展示了我们如何将\ ``ConfigurableGear``\ 模型用在隐式、显式接地齿轮的情况："
 
 #: ../../source/components/components/rot_comps_adv.rst:394
 msgid ""
 "And, as we would expect, the response for ``inertia1`` and ``inertia4`` are "
 "identical:"
 msgstr ""
+"而且，如我们所料，\ ``inertia1``\ 和\ ``inertia4``\ 的响应相同："
 
 #: ../../source/components/components/rot_comps_adv.rst:66
 msgid "kinematic constraint"
