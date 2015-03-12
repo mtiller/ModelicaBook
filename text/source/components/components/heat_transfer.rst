@@ -80,7 +80,7 @@ avoids opportunities to introduce errors.
 Thermal Capacitance
 ~~~~~~~~~~~~~~~~~~~
 
-Our first component model will be a model of lumped thermal capacitance.
+Our first component model will be a model of lumped thermal capacitance
 with uniform temperature distribution.  
 The equation we wish to associate with this
 component model is:
@@ -175,7 +175,7 @@ model:
    :lines: 9
 
 Note that when ``port_a.T`` is greater than ``T_amb``, the sign of
-``port_a.Q_flow`` is greater than zero.  That means heat is flowing
+``port_a.Q_flow`` is positive.  That means heat is flowing
 **into** this component.  In other words, when ``port_a.T`` is greater
 than ``T_amb``, this component will **take heat away** from
 ``port_a`` (and, conversely, when ``T_amb`` is greater than
