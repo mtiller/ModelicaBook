@@ -392,10 +392,9 @@ msgid ""
 "assumed that a gear was implicitly grounded when, in fact, it wasn't?  This "
 "is clearly demonstrated in the following plot:"
 msgstr ""
-"但此前的问题仍然存在。
-如果我们假定齿轮隐式连接，而实际上不是的时候，这会造成多大的差异呢？"
-"This is clearly demonstrated in the following plot:"
-"问题在下图中得到清晰的捷达："
+"但此前的问题仍然存在。"
+"如果我们假定齿轮和地面隐式连接，而实际上不是的时候，这会造成多大的差异呢？"
+"问题在下图中得到清晰的解答："
 
 #: ../../source/components/components/rot_comps_adv.rst:314
 msgid "Optional Ground Connector"
