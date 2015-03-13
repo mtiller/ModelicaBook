@@ -29,7 +29,7 @@ components or other subsystems.  In other words, it doesn't
 other components.  Typically, these subsystem models are created by
 dragging, dropping and connecting component and other subsystem models
 schematically.  While component models are "flat" (they don't contain
-other components that are subsystems, only equations), subsystem models are
+other components or subsystems, only equations), subsystem models are
 hierarchical.
 
 We'll often refer to a subsystem model as a *system model*.  A system
