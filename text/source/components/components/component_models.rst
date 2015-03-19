@@ -521,7 +521,7 @@ If a candidate solution violates an assertion, then it is
 automatically considered to be inaccurate.  The violated assertion
 will automatically trigger the refinement process in an attempt to
 find a solution that is more accurate and, hopefully, doesn't violate
-the solution.  However, if these refinement processes lead to a
+the assertion.  However, if these refinement processes lead to a
 solution that is sufficiently accurate (*i.e.,* satisfies the accuracy
 requirements to within the acceptable tolerance), but that solution
 still violates any assertions in the system, then the simulation
