@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/components/speed_comps.rst:4
 msgid "Speed Measurement Revisited"
-msgstr ""
+msgstr "再探速度测量"
 
 #: ../../source/components/components/speed_comps.rst:6
 msgid ""
@@ -22,9 +22,9 @@ msgid ""
 "components.  As a result, adding equations associated with the various speed"
 " measurement techniques was awkward."
 msgstr ""
-"Recall our previous discussion on :ref:`speed-measurement`."
-"That discussion took place before we had introduced the idea of building reusable components."
-"As a result, adding equations associated with the various speed measurement techniques was awkward."
+"回想一下我们前面对\ :ref:`speed-measurement`\ 的讨论 "
+"讨论发生在我们引入构建可重用组件方法之前。"
+"这样一来，为不同的速度测量技术相关添加方程颇为麻烦。"
 
 #: ../../source/components/components/speed_comps.rst:11
 msgid ""
@@ -35,9 +35,9 @@ msgid ""
 "different speed estimation algorithms and add them to the plant model as "
 "graphical components."
 msgstr ""
-"In this section, we'll revisit that topic and all of the various speed estimation techniques discussed there."
-"As before, we assume that we have an existing model of the \"plant\" (the system whose speeds we wish to measure)."
-"But this time, we'll create reusable component models for different speed estimation algorithms and add them to the plant model as graphical components."
+"本节中，我们将重新审视该主题，并再次讨论所有不同的速度估测技术。"
+"和之前一样，我们假设“受控对象”模型（我们希望进行测速的系统）已经存在。"
+"但这一次，我们将为不同的速度估测算法创建可重用的组件模型，并将其以图形组件形式添加到受控模型里。"
 
 #: ../../source/components/components/speed_comps.rst:19
 msgid "Plant Model"
@@ -49,12 +49,12 @@ msgid ""
 "system we used in our previous discussion of :ref:`speed-measurement` and "
 "when rendered as a schematic, looks like this:"
 msgstr ""
-"We'll start with our \"plant model\"."
-"It is identical in behavior to the system we used in our previous discussion of :ref:`speed-measurement` and when rendered as a schematic, looks like this:"
+"我们首先处理“受控对象模型”。"
+"模型行为和在此前讨论\ :ref:`speed-measurement`\ 时的版本一致。系统示意图如下："
 
 #: ../../source/components/components/speed_comps.rst:32
 msgid "The source code for the underlying Modelica model is:"
-msgstr ""
+msgstr "相应的Modelica模型源代码为："
 
 #: ../../source/components/components/speed_comps.rst:37
 msgid ""
@@ -62,25 +62,25 @@ msgid ""
 "approximation techniques to measure the speed of the ``inertia1`` component "
 "in our plant model."
 msgstr ""
-"In the remaining sections we will create models that use different approximation techniques to measure the speed of the ``inertia1`` component in our plant model."
+"在本节剩余部分，我们将创建使用不同估算方法的模型，对受控对象模型的\ ``inertia1``\ 组件进行测速。"
 
 #: ../../source/components/components/speed_comps.rst:41
 msgid ""
 "Before we look at the different speed approximation methods, let's have a "
 "look at the actual speed response from our plant model."
 msgstr ""
-"Before we look at the different speed approximation methods, let's have a look at the actual speed response from our plant model."
+"我们在观察不同的速度近似方法前，让我们先看看受控对象模型的实际响应速度。"
 
 #: ../../source/components/components/speed_comps.rst:47
 msgid ""
 "Note that this is exactly the same response we saw when we initially covered"
 " this topic."
 msgstr ""
-"Note that this is exactly the same response we saw when we initially covered this topic."
+"请注意，该响应与我们首次讨论此话题时的一模一样。"
 
 #: ../../source/components/components/speed_comps.rst:53
 msgid "Sample and Hold Sensor"
-msgstr ""
+msgstr "取样保持传感器"
 
 #: ../../source/components/components/speed_comps.rst:55
 msgid ""
@@ -89,9 +89,9 @@ msgid ""
 "approximation in a reusable sensor model.  The following model implements "
 "the \"sample and hold\" approximation to speed measurement:"
 msgstr ""
-"Previously, we discussed the :ref:`sample-and-hold` approach to speed measurement."
-"Here we will revisit this topic, but encapsulate the speed approximation in a reusable sensor model."
-"The following model implements the \"sample and hold\" approximation to speed measurement:"
+"此前，我们讨论了\ :ref:`sample-and-hold`\ 的测速方法。"
+"在这里，我们将再次讨论这个话题。不过，我们会把速度估测封装为可重用的传感器模型。"
+"下面模型实现了速度测量的“采样保持”近似："
 
 #: ../../source/components/components/speed_comps.rst:63
 msgid ""
@@ -100,8 +100,9 @@ msgid ""
 "different this time because we have wrapped that estimation technique in a "
 "reusable component model."
 msgstr ""
-"Behaviorally, there is not difference between this estimation technique and our previous implementation of :ref:`sample-and-hold`."
-"But our approach is different this time because we have wrapped that estimation technique in a reusable component model."
+"在行为上，这里的估测方法和我们此前的\ :ref:`sample-and-hold`\ 实现之间并没有差异。"
+"但是，我们这里的方法有所不同。"
+"不同在于，我们将估测技术放入可重用的组件模型里。"
 
 #: ../../source/components/components/speed_comps.rst:68
 msgid ""
@@ -109,8 +110,9 @@ msgid ""
 "model to represent code that will be common across our various sensor "
 "models.  As we can see from the definition of the ``SpeedSensor`` model:"
 msgstr ""
-"We have once again saved ourselves some trouble by utilizing a ``partial`` model to represent code that will be common across our various sensor models."
-"As we can see from the definition of the ``SpeedSensor`` model:"
+"我们再次用技巧免去一些麻烦。"
+"这里，我们通过利用\ ``partial``\ 模型来表示各种传感器模型内的通用代码。"
+"我们可以从\ ``SpeedSensor``\ 模型的定义里发现："
 
 #: ../../source/components/components/speed_comps.rst:76
 msgid ""
@@ -119,9 +121,9 @@ msgid ""
 "the Modelica Standard Library, ``PartialAbsoluteSensor``.  The "
 "``PartialAbsoluteSensor`` model is defined as:"
 msgstr ""
-"We can see from the ``SpeedSensor`` model that the output signal is named ``w``."
-"But we also see that ``SpeedSensor`` inherits from another model in the Modelica Standard Library, ``PartialAbsoluteSensor``."
-"The ``PartialAbsoluteSensor`` model is defined as:"
+"我们可以从\ ``SpeedSensor``\ 模型中看到，输出信号命名为\ ``w``\ 。"
+"但是，我们也看到\ ``SpeedSensor``\ 是继承自Modelica标准库的另一个模型\ ``PartialAbsoluteSensor``\ 。"
+"\ ``PartialAbsoluteSensor``\ 模型定义为："
 
 #: ../../source/components/components/speed_comps.rst:94
 msgid ""
@@ -131,8 +133,9 @@ msgid ""
 "the system it is sensing) since it applies zero torque at the connection "
 "point."
 msgstr ""
-"In addition to providing a nice icon, the ``PartialAbsoluteSensor`` model features a rotational connector, ``flange``."
-"Furthermore, the model assumes that the sensor model is completely passive (*i.e.,* it has no impact on the system it is sensing) since it applies zero torque at the connection point."
+"除了提供一个很好的图标外，\ ``PartialAbsoluteSensor``\ 模型还带有旋转连接器\ ``flange``\  。"
+"此外，该模型假定传感器模型完全是被动的（即传感器对其所测系统无影响）。"
+"因此，模型对连接点施加零转矩。"
 
 #: ../../source/components/components/speed_comps.rst:100
 msgid ""
@@ -140,29 +143,31 @@ msgid ""
 "instance of the ``SampleHold`` sensor and connect it to the ``inertia``, "
 "*e.g.*,"
 msgstr ""
-"To test this model, we simply extend from our ``Plant`` model, add an instance of the ``SampleHold`` sensor and connect it to the ``inertia``, *e.g.*,"
+"为了测试这个模型，我们只是从\ ``Plant``\ 模型进行扩展，"
+"加上\ ``SampleHold``\ 传感器的实例，"
+"并将传感器连接到\ ``inertia``\ 上，如："
 
 #: ../../source/components/components/speed_comps.rst:107
 msgid "When assembled, our final system looks like this:"
-msgstr ""
+msgstr "组装后，我们最终的系统看起来如下："
 
 #: ../../source/components/components/speed_comps.rst:115
 msgid ""
 "If we simulate this system for 5 seconds, we can compare the actual speed of"
 " the inertia with the signal returned from our sensor:"
 msgstr ""
-"If we simulate this system for 5 seconds, we can compare the actual speed of the inertia with the signal returned from our sensor:"
+"如果我们对此系统仿真5秒钟，我们可以比较传感器返回的信号与惯性元件的实际速度："
 
 #: ../../source/components/components/speed_comps.rst:121
 msgid ""
 "These results are identical to the results from our previous discussion of "
 "the :ref:`sample-and-hold` approach."
 msgstr ""
-"These results are identical to the results from our previous discussion of the :ref:`sample-and-hold` approach."
+"这些结果与我们此前在对\ :ref:`sample-and-hold`\ 方法的讨论里的相一致。"
 
 #: ../../source/components/components/speed_comps.rst:125
 msgid "Interval Measurement"
-msgstr ""
+msgstr "间隔测量"
 
 #: ../../source/components/components/speed_comps.rst:127
 msgid ""
@@ -171,26 +176,26 @@ msgid ""
 "``Sensor`` model.  This time, the implementation will use the time between "
 "teeth to estimate speed:"
 msgstr ""
-"Now let us turn our attention to the :ref:`interval-measurement` technique."
-"Again, we will create a reusable component model by extending from our ``Sensor`` model."
-"This time, the implementation will use the time between teeth to estimate speed:"
+"现在让我们转而关注\ :ref:`interval-measurement`\ 方法。"
+"同样，我们会从\ ``Sensor``\ 模型扩展创建出一个可重用的组件模型。"
+"这次，传感器实现将使用齿间的时间来估算速度："
 
 #: ../../source/components/components/speed_comps.rst:135
 msgid ""
 "Adding this sensor to our plant model is as simple as creating the following"
 " Modelica model:"
 msgstr ""
-"Adding this sensor to our plant model is as simple as creating the following Modelica model:"
+"向受控对象模型添加上述传感器很容易。只要创建以下的Modelica模型："
 
 #: ../../source/components/components/speed_comps.rst:141
 msgid "When assembled, our system model looks like this:"
-msgstr ""
+msgstr "组装后，我们的系统看起来如下："
 
 #: ../../source/components/components/speed_comps.rst:149
 msgid ""
 "Simulating this system, we get the following results for estimated speed:"
 msgstr ""
-"Simulating this system, we get the following results for estimated speed:"
+"对上述系统进行仿真，我们得到估测速度的如下结果："
 
 #: ../../source/components/components/speed_comps.rst:154
 msgid ""
@@ -201,16 +206,16 @@ msgid ""
 "teeth angles, we see that the shaft cannot move very far without triggering "
 "a measurement:"
 msgstr ""
-"As we saw in our previous discussion of the :ref:`interval-measurement` technique, the quality of the estimated signal is severely reduced if we reduce the number of teeth."
-"The previous plot used a sensor with 200 teeth per rotation."
-"If we plot the shaft angle with respect to the bracketing teeth angles, we see that the shaft cannot move very far without triggering a measurement:"
+"正如我们此前在对\ :ref:`interval-measurement`\ 方法中的讨论所看到的一样，估测信号的质量随着齿数减少会严重降低。"
+"上图使用的传感器每圈有200齿。"
+"如果我们绘制轴的转角以及与其相邻的齿角度，我们会看到，轴在不触发测量的前提下不能移动很远："
 
 #: ../../source/components/components/speed_comps.rst:164
 msgid ""
 "On the other hand, if we reduce the number of teeth per rotation down to 20,"
 " we get the following results:"
 msgstr ""
-"On the other hand, if we reduce the number of teeth per rotation down to 20, we get the following results:"
+"另一方面，如果将每圈的齿数降到20，我们会得到以下的结果："
 
 #: ../../source/components/components/speed_comps.rst:170
 msgid ""
@@ -218,7 +223,8 @@ msgid ""
 "crossings are far less frequent, and, as a result the accuracy of the "
 "measurement is greatly reduced:"
 msgstr ""
-"Plotting the teeth angles that bracket the current shaft angle, we see that crossings are far less frequent, and, as a result the accuracy of the measurement is greatly reduced:"
+"绘制轴的转角以及与其相邻的齿角度，我们会看到测量触发的次数变得更少了。"
+"其结果是测量的准确度大幅度降低："
 
 #: ../../source/components/components/speed_comps.rst:177
 msgid ""
@@ -226,11 +232,12 @@ msgid ""
 "noting that these results are identical to the results presented during our "
 "previous discussion of the :ref:`interval-measurement` technique."
 msgstr ""
-"Again, we can validate our component-oriented sensor implementations by noting that these results are identical to the results presented during our previous discussion of the :ref:`interval-measurement` technique."
+"上述结果与此前对\ :ref:`interval-measurement`\ 的讨论内的结果相一致。"
+"因此，我们同样可以验证这些面向组件传感器实现的正确性。"
 
 #: ../../source/components/components/speed_comps.rst:183
 msgid "Pulse Counter"
-msgstr ""
+msgstr "脉冲计数器"
 
 #: ../../source/components/components/speed_comps.rst:185
 msgid ""
@@ -238,23 +245,23 @@ msgid ""
 "technique can be wrapped in a reusable component that extends from the base "
 "``Sensor`` model:"
 msgstr ""
-"Finally, we have the :ref:`pulse-counting` approach."
-"Again, the estimation technique can be wrapped in a reusable component that extends from the base ``Sensor`` model:"
+"最后是\ :ref:`pulse-counting`\ 方法。"
+"同样，我们可将上述估测方法展现为扩展自\ ``Sensor``\ 模型的可重用组件。"
 
 #: ../../source/components/components/speed_comps.rst:192
 msgid "and then added to our overall ``Plant`` model:"
-msgstr ""
+msgstr "然后将其添加到我们的\ ``Plant``\ 总模型："
 
 #: ../../source/components/components/speed_comps.rst:197
 msgid "The resulting system, when rendered, looks like this:"
-msgstr ""
+msgstr "生成的系统显示如下："
 
 #: ../../source/components/components/speed_comps.rst:205
 msgid ""
 "Simulating the system, we see that the results are the same as in our "
 "previous discussion of :ref:`pulse-counting`:"
 msgstr ""
-"Simulating the system, we see that the results are the same as in our previous discussion of :ref:`pulse-counting`:"
+"对上述系统进行仿真，我们看到结果与此前对\ :ref:`pulse-counting`\ 的讨论内的结果相一致："
 
 #: ../../source/components/components/speed_comps.rst:212
 msgid "Conclusion"
@@ -273,7 +280,9 @@ msgid ""
 "of these sensor models into a system and attaching it to the rotating "
 "element whose speed you wish to measure."
 msgstr ""
-"The discussion of :ref:`speed-measurement` earlier in the book went into great detail about the various measurement techniques that can be used to estimate the speed of a rotating shaft."
-"The purpose of this section was not to revisit that discussion but rather to show how the estimation techniques presented earlier can benefit greatly from the component-oriented features in Modelica."
-"As we have seen, all of these techniques can be nicely encapsulated in component models."
-"The result is that utilizing these different estimation techniques is now as easy as dragging and dropping one of these sensor models into a system and attaching it to the rotating element whose speed you wish to measure."
+"本书在此前对\ :ref:`speed-measurement`\ 的讨论里非常详细地描述了用于估测旋转轴速度的各种测量技术。"
+"本节目的不是为了重温这些讨论。"
+"实际上，我们要展示Modelica语言面向组件特性对此前提出的估测技术有着很大的助益。"
+"如我们所见，所有这些方法均可以很好地封装在组件模型内。"
+"其结果是，要使用这些不同的估测技术现在变得很容易。"
+"只需要将这些传感器模型拖放到系统内，并将其连接到要进行测速的旋转元素即可。"
