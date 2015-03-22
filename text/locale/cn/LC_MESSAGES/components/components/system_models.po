@@ -21,8 +21,8 @@ msgid ""
 ":ref:`subsystems`.  For now, we'll only discuss the handful of topics "
 "related to subsystems that we've seen so far."
 msgstr ""
-"The next chapter will provide an in-depth discussion about :ref:`subsystems`."
-"For now, we'll only discuss the handful of topics related to subsystems that we've seen so far."
+"下一章将深入讨论\ :ref:`subsystems`\ 。"
+"现在，我们只讨论到目前为止看到的几个子系统主题。"
 
 #: ../../source/components/components/system_models.rst:13
 msgid "Connections"
@@ -37,9 +37,9 @@ msgid ""
 "control`.  If we strip away all the annotations (which we will discuss "
 "shortly), we get a model that looks like this:"
 msgstr ""
-"One distinction that we've seen in this chapter between component and subsystem models is that subsystem models include ``connect`` statements."
-"To explore how the ``connect`` statement works, let's revisit the ``MultiDomainControl`` example from the discussion on :ref:`thermal-control`."
-"If we strip away all the annotations (which we will discuss shortly), we get a model that looks like this:"
+"我们在本章见到，组件和子系统模型间的一个区别在于，子系统模型包括\ ``connect``\ 语句。"
+"为了探讨\ ``connect``\ 语句的原理，让我们重温在讨论\ :ref:`thermal-control`\ 时出现的\ ``MultiDomainControl``\ 例子。"
+"如果我们去掉所有注解（我们很快就会讨论这个内容），我们会得到一个如下所示的模型，："
 
 #: ../../source/components/components/system_models.rst:56
 msgid ""
@@ -49,9 +49,9 @@ msgid ""
 " being connected.  The ``MultiDomainControl`` model is useful because it "
 "isn't restricted to acausal connections."
 msgstr ""
-"During our earlier discussion on :ref:`acausal-modeling`, we talked about equations that are generated for **acausal** variables in a connector."
-"But the impact of a ``connect`` statement depends on the nature of the variables being connected."
-"The ``MultiDomainControl`` model is useful because it isn't restricted to acausal connections."
+"在我们前面对\ :ref:`acausal-modeling`\ 的讨论里，我们谈论了连接器内的\ **非因果**\ 变量产生的方程式。"
+"但\ ``connect``\ 语句的作用取决于所连接变量的性质。"
+"\ ``MultiDomainControl``\ 模型对我们的讨论很有用，因为该模型不只有非因果连接。"
 
 #: ../../source/components/components/system_models.rst:64
 msgid ""
@@ -60,8 +60,8 @@ msgid ""
 "does.  There are some complex cases that arise, but for the sake of "
 "simplicity and pedagogy, we'll only discuss the basic case here."
 msgstr ""
-"Before we consider the specific connections in the ``MultiDomainControl`` model, let's first elaborate on what the ``connect`` statement actually does."
-"There are some complex cases that arise, but for the sake of simplicity and pedagogy, we'll only discuss the basic case here."
+"在考虑\ ``MultiDomainControl``\ 模型的某条特定连接前，让我们先阐述一下\ ``connect``\ 语句的实际作用。"
+"这里可能有一些复杂的情况。但为了简单和教学需要，在这里我们只讨论基本情况。"
 
 #: ../../source/components/components/system_models.rst:70
 msgid ""
@@ -70,9 +70,9 @@ msgid ""
 "each variable in one connector and pairs it up with the variable of the same"
 " name in the other connector."
 msgstr ""
-"A ``connect`` statement connects exactly two connectors."
-"It then \"pairs up\" variables across each connector **by name**."
-"In other words, it takes each variable in one connector and pairs it up with the variable of the same name in the other connector."
+"\ ``connect``\ 语句连接了正正两个连接器。"
+"然后，语句\ **按名字**\ 将每个连接器的每个相应变量“互相配对”。"
+"换句话说，语句将一个连接器的每个变量和另一连接器内的同名变量配对起来。"
 
 #: ../../source/components/components/system_models.rst:79
 msgid ""
@@ -82,9 +82,9 @@ msgid ""
 "depend on what qualifiers have been applied to the variables.  The following"
 " list covers all the essential cases:"
 msgstr ""
-"For each pair, the compiler first checks to make sure that the two corresponding variables have the same type (*e.g.,* ``Real``, ``Integer``)."
-"But what equations are generated and what additional restrictions exists depend on what qualifiers have been applied to the variables."
-"The following list covers all the essential cases:"
+"对每对变量，编译器首先确保这两个变量具有相同的类型（如\ ``Real``\ 、\ ``Integer``\ ） 。"
+"但是，产生的方程以及额外限制就取决于变量前的限定词了。"
+"下面列表涵盖了所有的基本情况："
 
 #: ../../source/components/components/system_models.rst:85
 msgid ""
@@ -92,8 +92,8 @@ msgid ""
 " we covered in our previous discussion on :ref:`acausal-modeling`, a "
 "conservation equation is generated for all variables in the connection set."
 msgstr ""
-"**Through variables** - These are variables with the ``flow`` qualifier."
-"As we covered in our previous discussion on :ref:`acausal-modeling`, a conservation equation is generated for all variables in the connection set."
+"\ **穿越变量**\ － 这是带有\ ``flow``\ 限定词的变量。"
+"我们在此前对\ :ref:`acausal-modeling`\ 讨论里就提到了，连接集的所有变量会生成一个守恒方程。"
 
 #: ../../source/components/components/system_models.rst:89
 msgid ""
@@ -104,9 +104,9 @@ msgid ""
 " size of arrays in the connector, for example, because it asserts the arrays"
 " are the same size."
 msgstr ""
-"**Parameters** - A variable that includes the ``parameter`` qualifier does not generate any equations."
-"Instead, it generates an ``assert`` call that ensures that the values are identical between the two variables."
-"This is useful when a ``connector`` includes ``Integer`` parameters that specify the size of arrays in the connector, for example, because it asserts the arrays are the same size."
+"\ **参数**\ － 包含\ ``parameter``\ 限定词的变量不会产生任何方程式。"
+"相反，它会生成一个\ ``assert``\ 调用，确保两个变量之间值相同。"
+"这在某些情况下很有用。例如，当\ ``connector``\ 包括指定连接器内数组大小的\ ``Integer``\ 参数时，断言语句会确保阵列大小相同。"
 
 #: ../../source/components/components/system_models.rst:96
 msgid ""
@@ -116,7 +116,8 @@ msgid ""
 " two variables."
 msgstr ""
 "**Inputs** - A variable that has the ``input`` qualifier can only be paired with a variable that has an ``input`` or an ``output`` qualifier."
-"Assuming this requirement is met, an equation will be generated simply equating these two variables."
+"\ **输入**\ － 带有\ ``input``\ 限定词的变量只能搭配带有\ ``input``\ 或\ ``output``\ 限定词的变量。"
+"假定这个要求得到满足，生成的等式会简单地为这两个变量建立相等关系。"
 
 #: ../../source/components/components/system_models.rst:100
 msgid ""
@@ -125,8 +126,8 @@ msgid ""
 " can never be connected).  As with the case for input variables, an equality"
 " relationship is generated for such a connection."
 msgstr ""
-"**Outputs** - A variable that has the ``output`` qualifier can only be paired with a variable that has the ``input`` qualifier (*i.e.,* two outputs can never be connected)."
-"As with the case for input variables, an equality relationship is generated for such a connection."
+"\ **输出**\ － 带有\ ``output``\ 限定词的变量只能与具有\ ``input``\ 限定词的变量配对（即两个输出不能连接）。"
+"与输入变量的情况一样，这样的连接会产生相等关系。"
 
 #: ../../source/components/components/system_models.rst:105
 msgid ""
@@ -135,8 +136,8 @@ msgid ""
 ":`acausal-modeling`, a series of equations will be generated equating all "
 "the across variables in the connection set."
 msgstr ""
-"**Across variables** - These are variables that lack any qualifiers (unlike the previous cases)."
-"As we covered in our previous discussion on :ref:`acausal-modeling`, a series of equations will be generated equating all the across variables in the connection set."
+"\ **横跨变量**\ － 这些变量均没有任何限定词（和此前的情况不同）。"
+"正如我们对\ :ref:`acausal-modeling`\ 所讨论的一样，连接集会产生一系列方程，令有横跨变量相等。"
 
 #: ../../source/components/components/system_models.rst:111
 msgid ""
@@ -148,18 +149,18 @@ msgid ""
 "mentioned, there is one additional restriction that, within a connection "
 "set, there can only be one ``output`` signal (for obvious reasons)."
 msgstr ""
-"In our discussion of :ref:`block-components`, we describe the ``input`` and ``output`` qualifiers as \"causal\"."
-"In fact, the ``input`` and ``output`` qualifiers do not actually specify the order in which calculations are performed."
-"As discussed above, they just enforce restrictions on how the variables can be connected."
-"In addition to the restriction already mentioned, there is one additional restriction that, within a connection set, there can only be one ``output`` signal (for obvious reasons)."
+"在对\ :ref:`block-components`\ 的讨论里，我们将\ ``input``\ 和\ ``output``\ 限定词表述为“因果性的” 。"
+"事实上，\ ``input``\ 和\ ``output``\ 限定词实际上并不指定执行计算的顺序。"
+"正如以上所讨论，这些限定词只是限制变量可以如何连接。"
+"除了以上提到的限制，还有另一个限制：一个连接组内只能有一个\ ``output``\ 信号（原因很明显）。"
 
 #: ../../source/components/components/system_models.rst:120
 msgid ""
 "In our ``MultiDomainControl`` model, we can see several of these cases "
 "covered.  For example,"
 msgstr ""
-"In our ``MultiDomainControl`` model, we can see several of these cases covered."
-"For example,"
+"我们可以看到，在\ ``MultiDomainControl``\ 模型里已经包括了几个这样的例子。"
+"例如，"
 
 #: ../../source/components/components/system_models.rst:127
 msgid ""
@@ -167,16 +168,16 @@ msgid ""
 "signal, ``feedback.u1``.  So this is a connection involving only causal "
 "signals.  On the other hand, we have connections like this:"
 msgstr ""
-"Here, an ``output`` signal, ``setpoint.y``, is connected to an ``input`` signal, ``feedback.u1``."
-"So this is a connection involving only causal signals."
-"On the other hand, we have connections like this:"
+"在这里，\ ``output``\ 信号\ ``setpoint.y``\ 与\ ``input``\ 信号\ ``feedback.u1``\ 相连接。"
+"因此，此连接只涉及因果信号。"
+"但另一方面，我们有以下连接："
 
 #: ../../source/components/components/system_models.rst:136
 msgid ""
 "This will lead to the types of conservations equations :ref:`discussed "
 "earlier <acausal-modeling>`."
 msgstr ""
-"This will lead to the types of conservations equations :ref:`discussed earlier <acausal-modeling>`."
+"由此将得到\ :ref:`\ 此前讨论过\ <acausal-modeling>`\ 的那类守恒方程。"
 
 #: ../../source/components/components/system_models.rst:139
 msgid ""
@@ -185,7 +186,8 @@ msgid ""
 "continuity equations) while at the same time checking to make sure that the "
 "connection makes sense (*e.g..,* that the variables have the same type)."
 msgstr ""
-"In summary, a ``connect`` statement is a way to generate equations that automatically manages complex tasks (like generation of conservation and continuity equations) while at the same time checking to make sure that the connection makes sense (*e.g..,* that the variables have the same type)."
+"总之，使用\ ``connect``\ 语句是一种管理复杂任务（如生成守恒以及连续性方程）并为此生成公式的方法。"
+"而同时，语句也会检查并确保该连接是有意义（例如变量须具有相同的类型）。"
 
 #: ../../source/components/components/system_models.rst:148
 msgid "Diagrams"
@@ -196,7 +198,7 @@ msgid ""
 "In this chapter, we showed how Modelica subsystem models can be represented "
 "graphically, *e.g.,*"
 msgstr ""
-"In this chapter, we showed how Modelica subsystem models can be represented graphically, *e.g.,*"
+"本章中，我们展示了Modelica子系统模型可以如何用图形方式表示，如："
 
 #: ../../source/components/components/system_models.rst:158
 msgid ""
@@ -205,28 +207,29 @@ msgid ""
 "Modelica code listings in this chapter, we haven't really discussed what "
 "information is stored and where."
 msgstr ""
-"All the information required to generate such a diagram is contained in the Modelica model."
-"While this information has been visible in some of the Modelica code listings in this chapter, we haven't really discussed what information is stored and where."
+"产生这样图形所需的所有信息均包含在该Modelica模型里。"
+"虽然，这些信息已在本章中部分Modelica代码列举了出来。"
+"我们还没有真正讨论到底存储了什么信息、这些信息又是存储在了哪里。"
 
 #: ../../source/components/components/system_models.rst:163
 msgid "To render a subsystem diagram, three pieces of information are needed:"
-msgstr ""
+msgstr "渲染子系统简图需要三项信息："
 
 #: ../../source/components/components/system_models.rst:165
 msgid "The icon to use to represent each component."
-msgstr ""
+msgstr "用来表示每个组件的图标。"
 
 #: ../../source/components/components/system_models.rst:166
 msgid "The location of each component."
-msgstr ""
+msgstr "各组件的位置。"
 
 #: ../../source/components/components/system_models.rst:167
 msgid "The path for each connection"
-msgstr ""
+msgstr "每个连接的路径"
 
 #: ../../source/components/components/system_models.rst:170
 msgid "Component Icon"
-msgstr ""
+msgstr "组件图标"
 
 #: ../../source/components/components/system_models.rst:172
 msgid ""
@@ -235,12 +238,12 @@ msgid ""
 "details of the ``Icon`` annotation were covered in our previous discussion "
 "of :ref:`graphical-annos`."
 msgstr ""
-"The icon used for each component is simply whatever drawing primitives are included in the ``Icon`` annotation for that component's definition."
-"The details of the ``Icon`` annotation were covered in our previous discussion of :ref:`graphical-annos`."
+"每个组件的图标就是包含在为该组件定义\ ``Icon``\ 注解内的任何绘图图元。"
+"\ ``Icon``\ 标注的细节在之前对\ :ref:`graphical-annos`\ 的讨论里涵盖了。"
 
 #: ../../source/components/components/system_models.rst:182
 msgid "Component Placement"
-msgstr ""
+msgstr "组件位置"
 
 #: ../../source/components/components/system_models.rst:184
 msgid ""
@@ -248,9 +251,9 @@ msgid ""
 "draw it.  This is where the ``Placement`` annotation comes in.  This "
 "annotation appeared in many of the examples in this chapter, *e.g.,*"
 msgstr ""
-"Now that we know what to draw for each component, we need to know where to draw it."
-"This is where the ``Placement`` annotation comes in."
-"This annotation appeared in many of the examples in this chapter, *e.g.,*"
+"我们知道要组件要怎样呈现。现在，我们需要知道要在哪里对组件进行绘制。"
+"这就需要\ ``Placement``\ 注解了。"
+"这个注解出现在本章中许多例子里，如："
 
 #: ../../source/components/components/system_models.rst:194
 msgid ""
@@ -259,8 +262,8 @@ msgid ""
 ":`graphical-annos`, we can describe the ``Placement`` annotation in terms of"
 " a ``record`` definition:"
 msgstr ""
-"The ``Placement`` annotation simply establishes a rectangular region in which to draw the icon associated with each component."
-"As with other :ref:`graphical-annos`, we can describe the ``Placement`` annotation in terms of a ``record`` definition:"
+"\ ``Placement``\ 注解不过建立了一个矩形区域，用以绘制组件的图标。"
+"与其他的\ :ref:`graphical-annos`\ 相同，我们可以将\ ``Placement``\ 注解用\ ``record``\ 定义表示："
 
 #: ../../source/components/components/system_models.rst:207
 msgid ""
@@ -268,7 +271,7 @@ msgid ""
 "``GraphicItem`` annotation we discussed earlier, *i.e.,* it is used to "
 "control whether the component is rendered or not."
 msgstr ""
-"The ``visible`` field serves the same purpose as it does in the ``GraphicItem`` annotation we discussed earlier, *i.e.,* it is used to control whether the component is rendered or not."
+"\ ``visible``\ 字段与在此前讨论\ ``GraphicItem``\ 注解时的作用一致。也就是说，此项用以控制组件是否被渲染。"
 
 #: ../../source/components/components/system_models.rst:211
 msgid ""
@@ -278,12 +281,12 @@ msgid ""
 "``iconTransformation`` is only defined for connectors since these are "
 "typically the only components that appear in the icon representation."
 msgstr ""
-"The ``transformation`` field defines how the icon is rendered in a schematic diagram and the ``iconTransformation`` defines how it is rendered if it is considered part of the **subsystem's** icon."
-"Generally, the ``iconTransformation`` is only defined for connectors since these are typically the only components that appear in the icon representation."
+"\ ``transformation``\ 字段定义了如何在示意图中呈现图标。若注解被认为是\ **子系统**\ 图标的一部分时，\ ``iconTransformation``\ 则定义了该注解此时的呈现方式。"
+"一般来说， \ ``iconTransformation``\ 仅用于连接器上。因为连接器通常是出现在图标表示里的唯一组件。"
 
 #: ../../source/components/components/system_models.rst:218
 msgid "The ``Transformation`` annotation, which is defined as follows:"
-msgstr ""
+msgstr "\ ``Transformation``\ 注解定义如下："
 
 #: ../../source/components/components/system_models.rst:228
 msgid ""
@@ -292,12 +295,13 @@ msgid ""
 "this rotation should occur.  Finally, the ``extent`` field indicates the "
 "size of the region the icon will be rendered into."
 msgstr ""
-"The ``rotation`` field indicates how many degrees the component's icon should be rotated and the ``origin`` field indicates the point around which this rotation should occur."
-"Finally, the ``extent`` field indicates the size of the region the icon will be rendered into."
+"\ ``rotation``\ 字段表示组件图标应旋转多少度。"
+"而\ ``origin``\ 字段则表明上述旋转所应围绕的位置。"
+"最后，\ ``extent``\ 字段表示图标渲染区域的尺寸。"
 
 #: ../../source/components/components/system_models.rst:234
 msgid "Connection Rendering"
-msgstr ""
+msgstr "连接的显示"
 
 #: ../../source/components/components/system_models.rst:236
 msgid ""
@@ -307,10 +311,10 @@ msgid ""
 "Consider the following ``connect`` statement from our :ref:`thermal-control`"
 " example:"
 msgstr ""
-"Finally, we have the third topic, rendering the connections."
-"Again, the annotations that govern how connections are rendered have appeared in many examples."
-"Now, finally, we'll explain what that information represents."
-"Consider the following ``connect`` statement from our :ref:`thermal-control` example:"
+"最后，我们讨论第三个话题，连接的显示。"
+"同样，决定如何渲染连接的注解已经出现在许多例子中。"
+"现在，我们终于会解释这些信息的意义。"
+"考虑我们\ :ref:`thermal-control`\ 例子中的下列\ ``connect``\ 声明："
 
 #: ../../source/components/components/system_models.rst:246
 msgid ""
@@ -319,10 +323,10 @@ msgid ""
 "the :ref:`line-anno`.  The annotation data is the same in this context as it"
 " was then."
 msgstr ""
-"Note that the ``connect`` statement is followed by an annotation."
-"In particular, note that this is a ``Line`` annotation."
-"We already discussed the :ref:`line-anno`."
-"The annotation data is the same in this context as it was then."
+"注意到\ ``connect``\ 语句后带有注解。"
+"尤其要注意，这是一个\ ``Line``\ 注解。"
+"我们此前已经讨论过\ :ref:`line-anno`\ 。"
+"注解数据是在这里与当时的数据一致。"
 
 #: ../../source/components/components/system_models.rst:62
 #: ../../source/components/components/system_models.rst:75
