@@ -188,7 +188,7 @@ msgstr "注意，这两条标注信息可以并存。可以将标注可视化为
 
 #: ../../source/behavior/equations/annotations.rst:164
 msgid "Namespaces"
-msgstr "名称空间"
+msgstr "命名空间"
 
 #: ../../source/behavior/equations/annotations.rst:166
 msgid ""
@@ -199,6 +199,9 @@ msgid ""
 "for including the part number would be to enclose it in a variable that is "
 "more likely to be unique to your company or application, *e.g.,*:"
 msgstr ""
+"This introduces another principle of annotations which is that it should be possible to have more than one **as long as the names are different**."
+"For this reason, choosing names is very important and they should be chosen to avoid potential conflicts with other names."
+"For example, a better approach for including the part number would be to enclose it in a variable that is more likely to be unique to your company or application, *e.g.,*:"
 
 #: ../../source/behavior/equations/annotations.rst:179
 msgid ""
@@ -208,6 +211,8 @@ msgid ""
 " the same model, they could do that by establishing their own separate "
 "hierarchy in the annotation, *e.g.,*:"
 msgstr ""
+"In this case, the variable ``XogenyIndustries`` can be used to carve out a \"namespace\" for a specific organization or purpose."
+"If another organization came along and wanted to associate a different part number with the same model, they could do that by establishing their own separate hierarchy in the annotation, *e.g.,*:"
 
 #: ../../source/behavior/equations/annotations.rst:191
 msgid ""
@@ -215,6 +220,8 @@ msgid ""
 "(*e.g.,* in the Modelica Standard Library).  By convention, tool vendors use"
 " names that are prefixed by two underscores, *e.g.,*"
 msgstr ""
+"Occasionally, Modelica tool vendors include their own special annotations (*e.g.,* in the Modelica Standard Library)."
+"By convention, tool vendors use names that are prefixed by two underscores, *e.g.,*"
 
 #: ../../source/behavior/equations/annotations.rst:206
 msgid ""
@@ -227,6 +234,11 @@ msgid ""
 "some way (using some Modelica tool, compiler or other Modelica aware "
 "technology) of extracting and interpreting their annotation data."
 msgstr ""
+"请记住，标注数据是任意的。"
+"这使得模型可与任意数据相关联的。"
+"数据的\ **意义**\ 在一般情况下并没有定义在Modelica标准里。"
+"正如我们将马上看到的一样，存在几个“标准”标注（我们会在整本书中描述）。这些标注都记录在标准里。"
+"但是，如果用户添加了标准外的标注，工具会假设用户有一些方法（使用某些Modelica的工具、编译器或其它可以读取Modelica的技术）去提取并解释其标注数据。"
 
 #: ../../source/behavior/equations/annotations.rst:216
 msgid ""
@@ -234,11 +246,12 @@ msgid ""
 "into the model, tools are only required to preserve it and not to interpret "
 "it."
 msgstr ""
+"也就是说，虽然你可以对模型添加（非标准）标注数据，但工具只需要保存该标注，而毋须进行解析。"
 
 #: ../../source/behavior/equations/annotations.rst:221
 #: ../../source/behavior/equations/annotations.rst:248
 msgid "Documentation"
-msgstr ""
+msgstr "记录"
 
 #: ../../source/behavior/equations/annotations.rst:223
 msgid ""
@@ -249,10 +262,14 @@ msgid ""
 "popular and useful that there are proposals to actually make it part of the "
 "language itself in the future."
 msgstr ""
+"记录Modelica注解时常常\ **假设**\ 注解和某个\ :ref:`record-def`\ 相关联。"
+"我们将在下个主题看到这个技巧的几个例子。"
+"强烈建议大家使用这种方法来记录预期的标注数据。"
+"其实，这种技术如此的流行而且实用，以致于有人建议，让其实际上成为语言本身的一部分。"
 
 #: ../../source/behavior/equations/annotations.rst:231
 msgid "Introductory Annotations"
-msgstr ""
+msgstr "简单注解"
 
 #: ../../source/behavior/equations/annotations.rst:233
 msgid ""
@@ -263,6 +280,10 @@ msgid ""
 "annotations are described in the Modelica specification so they can be "
 "interpreted consistently and universally by Modelica tools."
 msgstr ""
+"这部分介绍了Modelica的几个“标准标注”。"
+"这如前面所讨论，标注通常可以包含任意信息。"
+"这些标注不会被工具改变，而且可能会在某些时候得到解析。"
+"标准标注的语法和意义在Modelica标准都有描述。这样，这些标注就能Modelica工具得到一致以及普遍的解析。"
 
 #: ../../source/behavior/equations/annotations.rst:240
 msgid ""
@@ -271,6 +292,8 @@ msgid ""
 "definitions don't formally exist, they are simply a concise way of "
 "expressing the data contained in the annotation."
 msgstr ""
+"我们将（尽可能地）按照\ ``record``\ 定义的方式去描述标准标注。"
+"这些\ ``record``\ 定义不正式存在。它们只是一种表达包含在标注中数据的简明方式。"
 
 #: ../../source/behavior/equations/annotations.rst:246
 msgid "``Documentation``"
@@ -279,7 +302,7 @@ msgstr ""
 #: ../../source/behavior/equations/annotations.rst:250
 #: ../../source/behavior/equations/annotations.rst:291
 msgid "**Type: Model Annotation**"
-msgstr ""
+msgstr "\ **类型**\ ：模型标注"
 
 #: ../../source/behavior/equations/annotations.rst:252
 msgid ""
@@ -289,12 +312,18 @@ msgid ""
 " revision history information.  The structure of the ``Documentation`` "
 "annotation is described by the following record definition:"
 msgstr ""
+"Modelica的\ ``Documentation``\ 标注可用纯文本或HTML表示模型相关文档。"
+"文档是由两部分组成。"
+"第一部分是有关模型的信息。第二部分则是关于模型修订历史的信息。"
+"The structure of the ``Documentation`` annotation is described by the following record definition:"
+"\ ``Documentation``\ 标注的结构可以用下列记录定义表示："
 
 #: ../../source/behavior/equations/annotations.rst:266
 msgid ""
 "When embedding HTML inside an annotation, the HTML code must be surrounded "
 "by ``<html>`` tags, *e.g.,*"
 msgstr ""
+"当在标注里面嵌入HTML是， HTML代码必须由\ ``<html>``\ 标记包围，如："
 
 #: ../../source/behavior/equations/annotations.rst:279
 msgid ""
@@ -302,6 +331,8 @@ msgid ""
 "is wrapped by ``<html>`` tags **and all quotes used to define attributes are"
 " escaped by \\\\\"** to avoid accidentally terminating the ``info`` string."
 msgstr ""
+"这里的\ ``MyWidget``\ 模型包含HTML文档。"
+"文档在\ ``<html>``\ 标记内，**所有用于定义属性的引号都用\ \\\\\"\ 进行转义**\ ，以避免意外地终结\ ``info``\ 字符串。"
 
 #: ../../source/behavior/equations/annotations.rst:158
 #: ../../source/behavior/equations/annotations.rst:287
@@ -314,6 +345,8 @@ msgid ""
 "given model should be simulated.  The annotation data can be represented in "
 "``record`` form as:"
 msgstr ""
+"\ ``experiment``\ 标注用于指定模型仿真方式的信息。"
+"标注数据可以用\ ``record``\ 形式表示如下："
 
 #: ../../source/behavior/equations/annotations.rst:307
 msgid "``Evaluate``"
@@ -321,7 +354,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/annotations.rst:311
 msgid "**Type: Declaration Annotation (applies to parameters)**"
-msgstr ""
+msgstr "\ **类型**\ ：声明标注（适用于参数）"
 
 #: ../../source/behavior/equations/annotations.rst:313
 msgid ""
@@ -331,6 +364,8 @@ msgid ""
 "ability to change the value of the ``parameter`` from one simulation to the "
 "next."
 msgstr ""
+"\ ``Evaluate``\ 标注指示Modelica编译器，指定\ ``parameter``\ 值在编译的时候可以转化为\ ``constant``\ 。"
+"换句话说，标注表示该用户不需要在每次仿真都改变\ ``parameter``\ 的值。"
 
 #: ../../source/behavior/equations/annotations.rst:319
 msgid ""
@@ -341,6 +376,8 @@ msgid ""
 "equations are easier to solve than in the general case where the parameter "
 "could take on a range of values."
 msgstr ""
+"这种标注背后的动机在于，它允许Modelica编译器在编译期间对\ ``parameter``\ 进行一些之前不可能的假设。"
+"这些假设可能限制方程组，让其变得更容易解。因为参数不再会像一般情况那样有一个取值范围。"
 
 #: ../../source/behavior/equations/annotations.rst:326
 msgid ""
@@ -348,6 +385,8 @@ msgid ""
 "indicating that the ``parameter`` value can be transformed into a "
 "``constant``). It is used in an annotation as follows:"
 msgstr ""
+"\ ``Evaluate``\ 标注只是个\ ``Boolean``\ 变量（\ ``True``\ 值表示\ ``parameter``\ 值可以转化为\ ``constant``\ ）。"
+"这在标注可以使用如下："
 
 #: ../../source/behavior/equations/annotations.rst:335
 msgid "``HideResult``"
@@ -355,7 +394,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/annotations.rst:339
 msgid "**Type: Declaration Annotation**"
-msgstr ""
+msgstr "\ **类型**\ ：声明标注"
 
 #: ../../source/behavior/equations/annotations.rst:341
 msgid ""
@@ -366,10 +405,13 @@ msgid ""
 "simulation results that are produced.  This can save both simulation time "
 "and disk space because it avoids writing out data that will never be viewed."
 msgstr ""
+"\ ``HideResult``\ 注解用于表明，分析者并不关心该变量的解。"
+"通过把\ ``HideResult``\ 值设置为\ ``True``\ ，模型开发者告诉Modelica编译器并不需要在任何产生的结果里储存被标注的值。"
+"这可以节省模拟时间和磁盘空间。因为这样避免了写入根本不会被读取的数据。"
 
 #: ../../source/behavior/equations/annotations.rst:349
 msgid "The ``HideResult`` annotation would be used as follows:"
-msgstr ""
+msgstr "\ ``HideResult``\ 标注使用如下："
 
 #: ../../source/behavior/equations/annotations.rst:35
 #: ../../source/behavior/equations/annotations.rst:52
@@ -438,6 +480,3 @@ msgstr ""
 #: ../../source/behavior/equations/annotations.rst:204
 msgid "Interpretation"
 msgstr ""
-
-#~ msgid "Intepretation"
-#~ msgstr ""
