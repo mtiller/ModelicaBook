@@ -13,4 +13,4 @@ msgstr ""
 
 #: ../../source/todo.rst:2
 msgid "List"
-msgstr ""
+msgstr "列表"
