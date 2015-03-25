@@ -29,7 +29,7 @@ msgstr ""
 #: ../../source/front/intro.rst:10
 msgid "What is Modelica?"
 msgstr ""
-"什么是Modelica？"
+"Modelica是什么？"
 
 #: ../../source/front/intro.rst:12
 msgid ""
@@ -40,8 +40,8 @@ msgid ""
 "be combined into subsystems, systems or even architectures."
 msgstr ""
 "Modelica是一种高级的陈述式语言用于描述事物的数学特性。它通常应用于工程领域，可以"
-"轻松的描述不同类型工程组件（ *例如,* 弹簧，电阻，离合器 *等* ）的工作特性。此外，这些组件又可以方便的组"
-"合成子系统、系统，甚至架构。"
+"轻松的描述不同类型工程组件（例如弹簧、电阻、离合器等）的工作特性。此外，这些组件又可以方便的组"
+"合成子系统、系统，甚至架构模型。"
 
 #: ../../source/front/intro.rst:20
 msgid "Why Modelica?"
@@ -58,10 +58,10 @@ msgid ""
 " topics like differential-algebraic equations, symbolic manipulation, "
 "numeric solvers, code generation, post-processing, *etc.*."
 msgstr ""
-"Modelica语言令人信服的原因主要有以下几点。第一也是最重要的是它的技术实力。Modelica编译器在后台"
+"Modelica语言令人信服的原因主要有以下几点。第一，也是最重要的是它的技术实力。Modelica编译器在后台"
 "运行复杂的算法，使得工程师可以将工作重点放在组件特性的数学描述上，以获得"
-"高性能的仿真速度。而不需要工程师具备相关领域的高深知识，例如微分代数方程组、符号运算、"
-"数值求解、代码生成、后处理\ *等*\ 。"
+"高性能的仿真速度。而工程师不需要具备某些相关领域的高深知识，例如微分代数方程组、符号运算、"
+"数值求解、代码生成、后处理等。"
 
 #: ../../source/front/intro.rst:31
 msgid ""
@@ -73,7 +73,7 @@ msgid ""
 "designs) approaches *within the same model*."
 msgstr ""
 "Modelica语言在技术实现上能成功的关键是它支持广泛的建模形式，即Modelica语言支持在混合微分代数方程组中"
-"同时描述连续和离散特性。Modelica语言支持在 *同一模型* 中同时使用因果（通常用于控制系统"
+"同时描述连续和离散特性。Modelica语言支持\ *在同一模型中*\ 同时使用因果（通常用于控制系统"
 "设计）和非因果（通常用于创建面向原理的物理模型设计）的建模方法。"
 
 #: ../../source/front/intro.rst:39
@@ -83,8 +83,8 @@ msgid ""
 "available and tool vendors are encouraged to support the import and export "
 "of Modelica (without being compelled to pay any royalty of any kind)."
 msgstr ""
-"最后，Modelica语言另一个引人注目的事实是：它从一开始就是以开放的语言标准设计的。Modelica语言规范的"
-"免费获得，大大激励了工具供应商支持Modelica模型导入、导出的热情（因为不需要强制支付任何形式的版税）。"
+"最后，Modelica语言另一个引人注目的事实是：Modelica从一开始就是作为开放的语言标准设计的。Modelica语言规范可以"
+"免费获得。这大大激励了工具供应商支持Modelica模型导入、导出的热情（因为不需要强制支付任何形式的版税）。"
 
 #: ../../source/front/intro.rst:46
 msgid "What Modelica allows me to do"
