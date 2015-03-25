@@ -13,19 +13,19 @@ msgstr ""
 
 #: ../../source/index.rst:13
 msgid "Front Matter"
-msgstr ""
+msgstr "正文前信息"
 
 #: ../../source/index.rst:31
 msgid "Describing Behavior"
-msgstr ""
+msgstr "描述行为"
 
 #: ../../source/index.rst:43
 msgid "Object-Oriented Modeling"
-msgstr ""
+msgstr "面向对象建模"
 
 #: ../../source/index.rst:71
 msgid "Indices and tables"
-msgstr ""
+msgstr "索引及表格"
 
 #: ../../source/index.rst:73
 msgid ":ref:`genindex`"
