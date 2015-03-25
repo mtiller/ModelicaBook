@@ -54,8 +54,8 @@ msgstr ""
 
 #: ../../source/components/packages.rst:26
 msgid "Examples"
-msgstr "例子"
+msgstr "示例"
 
 #: ../../source/components/packages.rst:36
 msgid "Review"
-msgstr "复习"
+msgstr "回顾"

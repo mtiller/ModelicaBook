@@ -158,4 +158,4 @@ msgstr "示例"
 
 #: ../../source/components/connectors.rst:100
 msgid "Review"
-msgstr "复习"
+msgstr "回顾"

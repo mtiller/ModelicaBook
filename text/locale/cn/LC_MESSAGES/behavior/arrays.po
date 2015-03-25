@@ -17,8 +17,8 @@ msgstr "向量与数组"
 
 #: ../../source/behavior/arrays.rst:7
 msgid "Examples"
-msgstr "例子"
+msgstr "示例"
 
 #: ../../source/behavior/arrays.rst:17
 msgid "Review"
-msgstr "复习"
+msgstr "回顾"
