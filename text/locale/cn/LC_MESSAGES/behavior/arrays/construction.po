@@ -83,7 +83,9 @@ msgstr "范围表示法"
 
 #: ../../source/behavior/arrays/construction.rst:57
 msgid ""
-"Modelica includes a shorthand notation for constructing vectors of " "sequential numbers or numbers that are evenly spaced.  For example, to " "construct a vector of integers with elements having values from 1 to 5, the "
+"Modelica includes a shorthand notation for constructing vectors of " 
+"sequential numbers or numbers that are evenly spaced.  For example, to " 
+"construct a vector of integers with elements having values from 1 to 5, the "
 "following syntax can be used:"
 msgstr ""
 "Modelica语言包含速记表示法，用以构建有连续或者等差的数列组成的向量。"
