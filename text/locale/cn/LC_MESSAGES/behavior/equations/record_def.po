@@ -31,7 +31,7 @@ msgstr ""
 "虽然目前为止我们还没有看到任何其他的类型，Modelica语言其实还包括\ ``record``\ 类型。"
 "像\ ``model``\ 类型一样，\ ``record``\ 类型可以有自己的变量，但是不允许包含方程。"
 "\ ``record``\ 类型主要用于数据的分组。"
-"但是，在下面的\ :ref:`annotations`\ 章节中你会发现它们在描述与注释相关的数据时也非常有用。"
+"但是，在下面的\ :ref:`annotations`\ 章节中你会发现它们在描述与标注相关的数据时也非常有用。"
 
 #: ../../source/behavior/equations/record_def.rst:16
 msgid "Syntax"

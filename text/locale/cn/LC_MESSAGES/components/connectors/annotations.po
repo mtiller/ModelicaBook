@@ -22,7 +22,7 @@ msgid ""
 "general.  So the information presented here will be a useful reference with "
 "respect to many aspects of Modelica."
 msgstr ""
-"虽然本节出现在\ :ref:`connectors`\ 章内，本话题适用于与一般的模型定义相关的图形注释。"
+"虽然本节出现在\ :ref:`connectors`\ 章内，本话题适用于与一般的模型定义相关的图形标注。"
 "因此，这里提供的信息会对Modelica许多方面提供有益的参考。"
 
 #: ../../source/components/connectors/annotations.rst:12
@@ -94,7 +94,7 @@ msgstr ""
 "在这本书的其余部分，我们将利用\ ``Icon``\ 标注举例介绍图形标注。"
 "这些例子对\ ``Diagram``\ 标注同样有效。"
 "但由于\ ``Icon``\ 标注相对常见，"
-"关于图形注释的进一步例子仅会出现\ ``Icon``\ 标注里。"
+"关于图形标注的进一步例子仅会出现\ ``Icon``\ 标注里。"
 
 #: ../../source/components/connectors/annotations.rst:51
 msgid "Common Graphical Definitions"
@@ -267,8 +267,8 @@ msgid ""
 "also makes use of the :ref:`substitutions` we discussed earlier)."
 msgstr ""
 "这里我们看到了与\ ``PositivePin``\ 定义相关联的\ ``annotation``\ 是个模型标注。"
-"此外，我们可以看到这个注释内\ ``Icon``\ 元素包含一系列的图形物体。"
-"第一个图形物体是\ :ref:`ellipse-anno`\ 注释。"
+"此外，我们可以看到这个标注内\ ``Icon``\ 元素包含一系列的图形物体。"
+"第一个图形物体是\ :ref:`ellipse-anno`\ 标注。"
 "紧接着的是两个\ :ref:`rect-anno`\ 标注。最后是\ :ref:`text-anno`\ （这里使用了前面所讨论的\ :ref:`substitutions`\ ）。"
 
 #: ../../source/components/connectors/annotations.rst:298

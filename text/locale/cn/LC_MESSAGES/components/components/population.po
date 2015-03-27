@@ -163,7 +163,7 @@ msgid ""
 "parameter dialogs."
 msgstr ""
 "另外值得注意的一点是\ ``initial_population``\ 定义内的\ ``Dialog``\ 标注。"
-"该注释允许模型开发者把参数组织成不同的类别。在这种情况下参数在“初始化”类别里。"
+"该标注允许模型开发者把参数组织成不同的类别。在这种情况下参数在“初始化”类别里。"
 "Modelica工具通常会使用这些信息去帮助组织参数对话框。"
 
 #: ../../source/components/components/population.rst:106
@@ -179,7 +179,7 @@ msgid ""
 "talking about for the moment.  This leaves the last declaration, which "
 "happens to be ``protected``:"
 msgstr ""
-"这里我们再次看到了\ :ref:`placement`\ 注释。不过，我们还是暂时不对其进行讨论。"
+"这里我们再次看到了\ :ref:`placement`\ 标注。不过，我们还是暂时不对其进行讨论。"
 "This leaves the last declaration, which happens to be ``protected``:"
 "这样就剩下最后一条声明。这条声明恰好是\ ``protected``\ ："
 

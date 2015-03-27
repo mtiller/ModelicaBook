@@ -144,7 +144,7 @@ msgid ""
 "text can appear.  For example, it may be included after the declaration of a"
 " variable or equation to document them."
 msgstr ""
-"通过上面的例子，我们可以看到，这些描述性的文本也可以放置在模型的其他位置。比如，在变量声明或方程后面添加相应的注释。"
+"通过上面的例子，我们可以看到，这些描述性的文本也可以放置在模型的其他位置。比如，在变量声明或方程后面添加相应的文档。"
 
 #: ../../source/behavior/equations/first_order.rst:110
 msgid "Initialization"
@@ -298,7 +298,7 @@ msgstr ""
 #: ../../source/behavior/equations/first_order.rst:0
 msgid "Annotation Support"
 msgstr ""
-"注释应用"
+"标注应用"
 
 #: ../../source/behavior/equations/first_order.rst:229
 msgid ""
@@ -306,7 +306,7 @@ msgid ""
 "keep in mind that, in general, a tool is free to ignore any or all "
 "annotations."
 msgstr ""
-"虽然\ ``experiment``\ 注释在建立模型时被广泛的应用，但是也要注意到，一般情况下，建模工具是可以忽略任何或者全部注释内容的。"
+"虽然\ ``experiment``\ 标注在建立模型时被广泛的应用，但是也要注意到，一般情况下，建模工具是可以忽略任何或者全部标注内容的。"
 
 #: ../../source/behavior/equations/first_order.rst:19
 msgid "model"

@@ -99,7 +99,7 @@ msgid ""
 "The Modelica model (with the ``Icon`` annotation removed) representing this "
 "equation is quite simple:"
 msgstr ""
-"表示这个公式Modelica模型（去掉了\ ``Icon``\ 注释）很简单："
+"表示这个公式Modelica模型（去掉了\ ``Icon``\ 标注）很简单："
 
 #: ../../source/components/components/heat_transfer.rst:99
 msgid ""
@@ -158,7 +158,7 @@ msgid ""
 "Using the graphical annotations in the model (some of which were left out of"
 " the previous listing) it can be rendered as:"
 msgstr ""
-"模型中使用的图形注释（其中一部分没有在上面列举出来）可以显示为："
+"模型中使用的图形标注（其中一部分没有在上面列举出来）可以显示为："
 
 #: ../../source/components/components/heat_transfer.rst:142
 msgid ""
