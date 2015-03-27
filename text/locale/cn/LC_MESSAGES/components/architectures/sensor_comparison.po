@@ -21,7 +21,7 @@ msgid ""
 "one presented in my previous book [ItPMwM]_.  In it, we will consider the "
 "performance of a control system using several different sensor models."
 msgstr ""
-"我们会以一个例子开始对架构的研究。本例类似于我以前的书\ [ItPMwM ]_\ 里介绍过的另一个例子。"
+"我们会以一个例子开始对架构的研究。本例类似于我以前的书\ [ItPMwM]_\ 里介绍过的另一个例子。"
 "在书里，我们将研究控制系统在使用几种不同的传感器模型时的性能。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:14
