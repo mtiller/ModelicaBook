@@ -458,7 +458,7 @@ msgid ""
 "``housing_phi`` is always present (*i.e.,* there is no ``if`` at the end of "
 "its declaration) so there must be an equation for it."
 msgstr ""
-"同时，\ ``equation``\ 段落中，我们看到\ ``if``\ 语句在模型连接地面时提供了一条额外的方程\ ``housing_phi = 0``\ 。"
+"同时，\ ``equation``\ 区域中，我们看到\ ``if``\ 语句在模型连接地面时提供了一条额外的方程\ ``housing_phi = 0``\ 。"
 "这是必要的。原因是变量\ ``housing_phi``\ 总是存在（即在其声明的结尾没有\ ``if``\ ）。所以该变量必须对应一条公式。"
 
 #: ../../source/components/components/rot_comps_adv.rst:354
@@ -541,7 +541,7 @@ msgstr "2 （来自\ ``housing``\ ）"
 
 #: ../../source/components/components/rot_comps_adv.rst:373
 msgid "Equations in ``equation`` section"
-msgstr "\ ``equation``\ 段落的方程数"
+msgstr "\ ``equation``\ 区域的方程数"
 
 #: ../../source/components/components/rot_comps_adv.rst:375
 msgid "**Equations provided**"

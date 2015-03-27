@@ -71,7 +71,7 @@ msgid ""
 msgstr ""
 "正如在本章中看到的许多例子一样。在一个模型中指定方程用于求解初始状态是可能的。"
 "关于初始化的整个主题将会在下章中详细讨论，标题就是\ :ref:`initialization`\ "
-"目前在本章中要说的是如果方程\ **仅仅**\ 用于求解初始化，\ ``equation``\ 段落必须冠以\ ``initial``\ （初始）关键词。"
+"目前在本章中要说的是如果方程\ **仅仅**\ 用于求解初始化，\ ``equation``\ 区域必须冠以\ ``initial``\ （初始）关键词。"
 
 #: ../../source/behavior/equations/equations.rst:51
 msgid "Conditional Equations"

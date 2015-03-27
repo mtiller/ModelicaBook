@@ -243,7 +243,7 @@ msgstr ""
 msgid ""
 "But what is really remarkable about this model is the equation section:"
 msgstr ""
-"但是，本模型特别的地方在于其方程段落："
+"但是，本模型特别的地方在于其方程区域："
 
 #: ../../source/components/components/heat_transfer.rst:211
 msgid ""
@@ -254,7 +254,7 @@ msgid ""
 "between the two specified connectors, ``cap.node`` and ``conv.port_a``."
 msgstr ""
 "此语句引入Modelica语言最重要的其中一个特性。"
-"请注意语句出现在\ ``equation``\ 段落。"
+"请注意语句出现在\ ``equation``\ 区域。"
 "虽然\ ``connect``\ 操作符看起来像一个函数，其实其功能不止如此。"
 "操作符代表了表述两个指定连接器\ ``cap.node``\ 和\ ``conv.port_a``\ 间相互作用的公式。"
 

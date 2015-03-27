@@ -314,7 +314,7 @@ msgid ""
 "To capture this in our Modelica model, all we need to do is use these "
 "equations in our ``initial equation`` section, like this:"
 msgstr ""
-"为了在Modelica模型中获取上述特征，我们只需在\ ``initial equation``\ 段落增加以下方程，如下所示："
+"为了在Modelica模型中获取上述特征，我们只需在\ ``initial equation``\ 区域增加以下方程，如下所示："
 
 #: ../../source/behavior/equations/population.rst:259
 msgid ""
@@ -573,7 +573,7 @@ msgid ""
 "exactly what the ``extends`` keyword allows us to do.  Consider the "
 "following alternative to the ``QuiescentModelUsingStart`` model:"
 msgstr ""
-"换句话说，唯一的区别是增加了\ ``initial equation``\ 段落（原始的\ ``ClassicModel``\ 模型已经包含了变量\ ``x``\ 和\ ``y``\ 的非零\ ``start``\ 属性值）。"
+"换句话说，唯一的区别是增加了\ ``initial equation``\ 区域（原始的\ ``ClassicModel``\ 模型已经包含了变量\ ``x``\ 和\ ``y``\ 的非零\ ``start``\ 属性值）。"
 "理想情况下，我们可以通过简单的定义一个模型与另外模型间的差异，就可以由此避免任何冗余代码。事实证明，这也正是\ ``extends``\ 关键字的作用。"
 "考虑\ ``QuiescentModelUsingStart``\ 模型的以下版本："
 

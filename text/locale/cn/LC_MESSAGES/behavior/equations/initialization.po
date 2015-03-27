@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "正如我们先前在\ :ref:`steady-state`\ "
 "这节中提到过的，初始化是由一个模型中的两个方程和模型中初始条件给定的状态变量来描述的。在Modelica中，初始条件是通过结合普通方程（在 "
-"\ `equation`\ （方程）段落描述）和初始化方程（在\ `initial equation`\ （初始方程）段落中描述）来计算的。"
+"\ `equation`\ （方程）区域描述）和初始化方程（在\ `initial equation`\ （初始方程）区域中描述）来计算的。"
 
 #: ../../source/behavior/equations/initialization.rst:23
 msgid ""

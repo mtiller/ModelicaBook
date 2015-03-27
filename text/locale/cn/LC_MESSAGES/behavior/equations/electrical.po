@@ -114,7 +114,7 @@ msgid ""
 "section to the model that specifies the equations to use when generating "
 "solutions for this model:"
 msgstr ""
-"现在，所有的变量都已经声明了。我们要在模型中添加\ ``equation``\ 段落，去定义在生成解时使用的方程组。"
+"现在，所有的变量都已经声明了。我们要在模型中添加\ ``equation``\ 区域，去定义在生成解时使用的方程组。"
 
 #: ../../source/behavior/equations/electrical.rst:94
 msgid ""

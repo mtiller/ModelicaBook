@@ -166,7 +166,7 @@ msgid ""
 "initial value of ``x`` in our model to be *2*, we could add an ``initial "
 "equation`` section to our model as follows:"
 msgstr ""
-"因此，Modelica语言也提供用于描述方程组初始化的结构。例如，如果我们想给模型中变量\ ``x``\ 赋初值为\ *2*\ ，可以在模型中增加\ ``initial equation``\ （初始化方程）段落，如下所示："
+"因此，Modelica语言也提供用于描述方程组初始化的结构。例如，如果我们想给模型中变量\ ``x``\ 赋初值为\ *2*\ ，可以在模型中增加\ ``initial equation``\ （初始化方程）区域，如下所示："
 
 #: ../../source/behavior/equations/first_order.rst:129
 msgid ""
@@ -211,7 +211,7 @@ msgid ""
 "initialization.  An ``initial equation`` section can contain more than just "
 "explicit equations for the initial values of the state variables."
 msgstr ""
-"当然了，很多情况下，你也许需要更为复杂的初始化条件。\ ``initial equation``\ 段落不仅仅可以包含显示方程的状态变量初始值。"
+"当然了，很多情况下，你也许需要更为复杂的初始化条件。\ ``initial equation``\ 区域不仅仅可以包含显示方程的状态变量初始值。"
 
 #: ../../source/behavior/equations/first_order.rst:161
 msgid ""

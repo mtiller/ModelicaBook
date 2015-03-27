@@ -89,8 +89,8 @@ msgid ""
 "initialized.  It should be pretty clear that the initial value for ``T`` is "
 "going to be whatever value was given (by us) for the parameter ``T0``."
 msgstr ""
-"接下来，我们看到的是两个\ ``equation``\ 部分。第一个是\ ``initial equation``\ 段落。该部分指定变量\ ``T``\ 如何进行初始化。"
-"从上面\ ``initial equation``\ 段落可以清楚的看到，变量\ ``T``\ 的初始值是由参数\ ``T0``\ 决定的，因此我们可以为它赋任何初值。"
+"接下来，我们看到的是两个\ ``equation``\ 部分。第一个是\ ``initial equation``\ 区域。该部分指定变量\ ``T``\ 如何进行初始化。"
+"从上面\ ``initial equation``\ 区域可以清楚的看到，变量\ ``T``\ 的初始值是由参数\ ``T0``\ 决定的，因此我们可以为它赋任何初值。"
 
 #: ../../source/behavior/equations/physical.rst:53
 msgid ""
@@ -160,8 +160,8 @@ msgid ""
 msgstr ""
 "这里唯一的区别是，关键字\ ``parameter``\ 后面的变量都有了确定值。"
 "一种分析\ ``NewtonCooling``\ 模型不能仿真原因的方法在于，模型总共包含7个变量却只有一个方程"
-"（参考\ :ref:`initialization`\ 以了解\ ``initial equation``\ 段落不能算作方程的原因）。"
-"但是，从概念上讲，\ ``NewtonCoolingWithDefaults``\ 模型包含7个方程（6个方程是对\ ``parameter``\ 中变量的初始化，另一个在方程段落）和7个未知量。"
+"（参考\ :ref:`initialization`\ 以了解\ ``initial equation``\ 区域不能算作方程的原因）。"
+"但是，从概念上讲，\ ``NewtonCoolingWithDefaults``\ 模型包含7个方程（6个方程是对\ ``parameter``\ 中变量的初始化，另一个在方程区域）和7个未知量。"
 
 #: ../../source/behavior/equations/physical.rst:102
 msgid ""

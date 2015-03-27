@@ -236,7 +236,7 @@ msgid ""
 "compactly as:"
 msgstr ""
 "值得一提的是，我们在\\ ``extends``\\ 语句内除了设置参数值，也可以包含等式。因此，我们可以完全避免\\ ``equation``\\ "
-"段落，而将模型简化为："
+"区域，而将模型简化为："
 
 #: ../../source/behavior/arrays/state_space.rst:184
 msgid ""
@@ -245,7 +245,7 @@ msgid ""
 "convenient to include the equation as a modification in the ``extends`` "
 "statement."
 msgstr ""
-"一般来说，加入\\ ``equation``\\ 段落可以使代码有点更具可读性。但也有一些情况下，向\\ ``extends``\\ "
+"一般来说，加入\\ ``equation``\\ 区域可以使代码有点更具可读性。但也有一些情况下，向\\ ``extends``\\ "
 "语句加入等式作为对模型的修改会更为方便。"
 
 #: ../../source/behavior/arrays/state_space.rst:189

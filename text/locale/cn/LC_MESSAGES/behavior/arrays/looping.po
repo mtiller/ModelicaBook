@@ -43,9 +43,9 @@ msgstr ""
 "一般而言，\ ``for``\ 关键字用以表示循环。"
 "但\ ``for``\ 也可以用在很多不同的情景里。"
 "本章中内的数个例子使用了\ \ ``for``\ 来生成方程组。"
-"\ ``for``\ 用在等式段落内时，每个在\ ``for``\ 循环内的方程都会\ **对应每一个循环变量的取值**\ 再生成相应的方程。"
+"\ ``for``\ 用在等式区域内时，每个在\ ``for``\ 循环内的方程都会\ **对应每一个循环变量的取值**\ 再生成相应的方程。"
 "用这种方式，我们可以很容易地生成具有相同总体结构、而仅仅是循环索引变量值不同的一组方程。"
-"\ ``for``\ 循环在等式段落内的一般语法是："
+"\ ``for``\ 循环在等式区域内的一般语法是："
 
 #: ../../source/behavior/arrays/looping.rst:31
 msgid ""
@@ -65,8 +65,8 @@ msgid ""
 "They can also appear in other contexts.  For example, they can appear in "
 "``initial equation`` sections or in :ref:`algorithm-sections`."
 msgstr ""
-"for循环还可以出现在其它段落里。"
-"例如，for循环可以出现在\ ``initial equation``\ 段落里，或者\ :ref:`algorithm-sections`\ 。"
+"for循环还可以出现在其它区域里。"
+"例如，for循环可以出现在\ ``initial equation``\ 区域里，或者\ :ref:`algorithm-sections`\ 。"
 
 #: ../../source/behavior/arrays/looping.rst:50
 msgid ""

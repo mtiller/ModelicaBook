@@ -84,7 +84,7 @@ msgid ""
 msgstr ""
 "请注意，子系统模型\\ *可以*\\ "
 "包括方程式。Modelica并没有规则禁止这样做。但是，大部分时候，模型倾向于或由方程，或由其他部件/子系统组成。避免在包含子组件或子系统的模型里放入方程其实是个好主意。因为这样做意味着在看子系统的示意图时，有关模型的某些信息将“看不见”。规则的其中一个例外是子系统中的\\"
-" ``initial equation``\\ 段落。"
+" ``initial equation``\\ 区域。"
 
 #: ../../source/components/components/component_models.rst:53
 msgid ""
@@ -638,8 +638,8 @@ msgid ""
 "true."
 msgstr ""
 "在创建组件\\ ``model``\\ （或者说任何\\ ``model``\\ ）时，最好直接将公式使用范围添加到模型内。这可以通过添加\\ "
-"``assert``\\ 调用来完成。\\ ``assert``\\ 调用既可以加在\\ ``equation``\\ 段落，也可以\\ "
-"``algorithm``\\ 段落。正如其名称所暗示的一样，这些断言语句要求某些条件必须始终为真。"
+"``assert``\\ 调用来完成。\\ ``assert``\\ 调用既可以加在\\ ``equation``\\ 区域，也可以\\ "
+"``algorithm``\\ 区域。正如其名称所暗示的一样，这些断言语句要求某些条件必须始终为真。"
 
 #: ../../source/components/components/component_models.rst:500
 msgid ""

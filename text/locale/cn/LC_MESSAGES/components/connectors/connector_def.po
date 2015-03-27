@@ -39,7 +39,7 @@ msgid ""
 "``algorithm`` section present in a ``connector``."
 msgstr ""
 "不同于\ ``model``\ 或\ ``function``\ ，\ ``connector``\ 不得包含任何行为。"
-"所以在\ ``connector``\ 内永远不会出现\ ``equation``\ 或\ ``algorithm``\ 部分。"
+"所以在\ ``connector``\ 内永远不会出现\ ``equation``\ 或\ ``algorithm``\ 区域。"
 
 #: ../../source/components/connectors/connector_def.rst:30
 msgid "Variables"

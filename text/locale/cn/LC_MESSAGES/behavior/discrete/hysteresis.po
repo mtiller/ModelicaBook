@@ -102,7 +102,7 @@ msgid ""
 "using an ``algorithm`` section (as previous discussed during our discussion "
 "on :ref:`speed estimation techniques <pulse-counting>`)."
 msgstr ""
-"通过使用\ ``algorithm``\ 段落可以让实现滞回的逻辑变得更显然（正如我们前面在\ :ref:`\ 速度估测方法\ <pulse-counting>`\ 的讨论一样）。"
+"通过使用\ ``algorithm``\ 区域可以让实现滞回的逻辑变得更显然（正如我们前面在\ :ref:`\ 速度估测方法\ <pulse-counting>`\ 的讨论一样）。"
 
 #: ../../source/behavior/discrete/hysteresis.rst:94
 msgid ""
@@ -115,7 +115,7 @@ msgstr ""
 "注意这两个条件表达式是如何被分成两个独立的\ ``when``\ 语句的。"
 "如此这般，热源开闭的缘由也就显而易见了。"
 "由于这两个\ ``when``\ 语句都是对同一个变量\ ``heat``\ 进行赋值，"
-"因此两句都是在\ ``algorithm``\ 段落里定义的。"
+"因此两句都是在\ ``algorithm``\ 区域里定义的。"
 
 
 #: ../../source/behavior/discrete/hysteresis.rst:34

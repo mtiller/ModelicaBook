@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/switching.rst:4
 msgid "Switched RLC Circuit"
-msgstr "开关式RLC电路"
+msgstr "RLC开关电路"
 
 #: ../../source/behavior/discrete/switching.rst:6
 msgid ""
@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/switching.rst:15
 msgid "Our switched RLC circuit model is as follows:"
-msgstr "开关式RLC电路模型如下："
+msgstr "RLC开关电路模型如下："
 
 #: ../../source/behavior/discrete/switching.rst:21
 msgid ""
