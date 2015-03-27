@@ -25,6 +25,27 @@ msgid ""
 "differential equations in the following form:"
 msgstr "回顾前面关于\\ :ref:`odes`\\ 的讨论，我们可将微分方程表述为如下形式："
 
+#: ../../source/behavior/arrays/state_space.rst:22
+msgid ""
+"In this form, :math:`x` represents the states in the system, :math:`u` "
+"represents any externally specified inputs to the system and :math:`y` "
+"represents the outputs of the system (*i.e.,* variables that may not be "
+"states, but can ultimately be computed from the values of the states and "
+"inputs)."
+msgstr ""
+"在这种形式下，\\ :math:`x`\\ 表示系统中的状态，\\ :math:`u`\\ 表示系统的任何外部指定的输入，而\\ :math:`y`\\"
+" 表示该系统的输出（亦即可能并非状态的变量，但这些变量可通过状态和输入的值求得。）"
+
+#: ../../source/behavior/arrays/state_space.rst:28
+msgid ""
+"There is a particularly interesting special case of these equations when the"
+" functions :math:`\\vec{f}` and :math:`\\vec{g}` depend linearly on "
+":math:`\\vec{x}` and :math:`\\vec{u}`.  In this case, the equations can be "
+"rewritten as:"
+msgstr ""
+"这些方程有一个有趣的特例。这个特例发生在是当函数\\ :math:`\\vec{f}`\\ 以及\\ :math:`\\vec{g}`\\ 和向量\\ "
+":math:`\\vec{x}`\\ 还有\\ :math:`\\vec{u}`\\ 线性相关时。在这种情况下，方程可以改写为："
+
 #: ../../source/behavior/arrays/state_space.rst:38
 msgid ""
 "The matrices in this problem are the so-called \"ABCD\" matrices.  This ABCD"
@@ -36,7 +57,7 @@ msgid ""
 "observability and controllability)."
 msgstr ""
 "此问题中的矩阵是所谓“ABCD”矩阵。“ABCD”形式是很有用的，因为如果系统用这种形式表达的，那么我们就可以在系统上进行一些有趣的计算。例如，我们可以使用\\"
-" :math:`A`\\ 矩阵计算系统的自然频率。而使用这些矩阵的不同组合，我们可以确定对系统控制相关的几个极其重要的性质（\\ *例如*\\ "
+" :math:`A`\\ 矩阵计算系统的自然频率。而使用这些矩阵的不同组合，我们可以确定对系统控制相关的几个极其重要的性质（例如"
 "可观察性和可控性）。"
 
 #: ../../source/behavior/arrays/state_space.rst:47
@@ -72,8 +93,7 @@ msgid ""
 "If someone gave us a model in LTI form, how would we express that in "
 "Modelica?  Here is one way we might choose to do it:"
 msgstr ""
-"If someone gave us a model in LTI form, how would we express that in "
-"Modelica如果有人提供了我们一个LTI形式的模型，我们要如何用Modelica描述它呢？这是其中一种可能的方法："
+"如果有人提供了我们一个LTI形式的模型，我们要如何用Modelica描述它呢？这是其中一种可能的方法："
 
 #: ../../source/behavior/arrays/state_space.rst:80
 msgid ""
@@ -89,9 +109,9 @@ msgid ""
 "they each have only a single dimension."
 msgstr ""
 "第一步，是在模型里声明\\ ``nx``\\ 、\\ ``nu``\\ 、\\ ``ny``\\ "
-"等参数。这些参数分别代表了状态、输入和输出的数量。然后，我们定义矩阵\\ ``A``\\ 、 \\ ``B``\\ 、 \\ ``C``\\  以及 "
+"等参数。这些参数分别代表了状态、输入和输出的数量。然后，我们定义矩阵\\ ``A``\\ 、 \\ ``B``\\ 、 \\ ``C``\\ 以及"
 "\\ ``D``\\ 。因为我们正在创建一个线性时不变表示下的模型，所以所有这些矩阵都可以被定义为参数。由于矩阵\\ ``A``\\ 、 \\ "
-"``B``\\ 、 \\ ``C``\\  和 \\ ``D``\\ 的定义紧接着\\ ``[``\\ 以及\\ ``]``\\ "
+"``B``\\ 、 \\ ``C``\\  和 \\ ``D``\\ 的定义紧接着 \\ ``[``\\  以及 \\ ``]``\\  "
 "，因此我们知道它们均是数组。而由于\\ ``[]``\\ 内有标示了两个维度，我们知道以上的数组均是矩阵。最后，我们看到\\ ``x0``\\ 、\\ "
 "``x``、\\ ``u``\\ 以及\\ ``y``\\ 的变量声明。这些变量也都是数组。不过，由于这些变量仅有一维，因此它们都是向量。"
 
@@ -175,8 +195,8 @@ msgid ""
 " we will again use inheritance (via the ``extends`` keyword) to reuse the "
 "code in the ``LTI`` model."
 msgstr ""
-"考虑到这一点的所有，让我们重新审视我们几个以前的例子，看看他们如何能在长期激励形式表示使用我们的`` "
-"LTI``模型。讨论了上述的内容，让我们重新检视前述的数个例子，看看它们可以如何被用我们的\\ ``LTI``\\ "
+"考虑到这一点的所有，让我们重新审视我们几个以前的例子，看看他们如何能在长期激励形式表示使用我们的\ ``"
+"LTI``\ 模型。讨论了上述的内容后，让我们重新检视前述的数个例子。目的是看看这些可以如何使用\\ ``LTI``\\ "
 "模型表示为LTI形式。注意，我们会再次使用继承（通过使用\\ ``extends``\\ 关键词）以重用\\ ``LTI``\\ 模型的代码。"
 
 #: ../../source/behavior/arrays/state_space.rst:145
@@ -206,7 +226,7 @@ msgid ""
 "separated list of expressions, *e.g.,*"
 msgstr ""
 "表达式\\ ``{1}``\\ 是一个向量源代码文本。这表示，我们其元素组成的列表来构建向量。在这里，向量仅有一个元素\\ ``1``\\ "
-"。但我们建立一个用逗号分隔开的表达式列表去创建较长的向量，\\ *例如：*\\ "
+"。但我们建立一个用逗号分隔开的表达式列表去创建较长的向量，例如：\\ "
 
 #: ../../source/behavior/arrays/state_space.rst:175
 msgid ""
@@ -233,7 +253,7 @@ msgid ""
 "Now let's turn our attention to the :ref:`cooling <getting-physical>` we "
 "also discussed earlier.  In LTI form, we could have written the model as:"
 msgstr ""
-"现在，让我们来关注也是前面讨论过的\\ :ref:`cooling <getting-physical>`\\ 。我们可以把模型用LTI形式改写如下："
+"现在，让我们来关注也是前面讨论过的\\ :ref:`\ 冷却模型\ <getting-physical>`\\ 。我们可以把模型用LTI形式改写如下："
 
 #: ../../source/behavior/arrays/state_space.rst:264
 msgid ""
@@ -304,21 +324,18 @@ msgstr ""
 msgid "FMI"
 msgstr ""
 
-#: ../../source/behavior/arrays/state_space.rst:28
-msgid ""
-"There is a particularly interesting special case of these equations when the"
-" functions :math:`\\vec{f}` and :math:`\\vec{g}` depend linearly on "
-":math:`\\vec{x}` and :math:`\\vec{u}`.  In this case, the equations can be "
-"rewritten as:"
-msgstr ""
-"这些方程有一个有趣的特例。这个特例发生在是当函数\\ :math:`\\vec{f}`\\ 以及\\ :math:`\\vec{g}`\\ 和向量\\ "
-":math:`\\vec{x}`\\ 还有\\ :math:`\\vec{u}`\\ 线性相关时。在这种情况下，方程可以改写为："
-
 #: ../../source/behavior/arrays/state_space.rst:203
 msgid ""
 "We can take a similar approach in reformulating our previous "
 ":ref:`mechanical example <mech-example>` into LTI form:"
-msgstr "我们可以采取类似的做法把前面的\\ :ref:`mechanical example <mech-example>`\\ 改写为LTI形式。"
+msgstr "我们可以采取类似的做法把前面的\\ :ref:`\ 机械示例\ <mech-example>`\\ 改写为LTI形式。"
+
+#: ../../source/behavior/arrays/state_space.rst:210
+msgid ""
+"Again, we compute ``A`` from physical parameters.  One thing to note about "
+"this example is the construction of ``A``.  Mathematically, the :math:`A` "
+"matrix is defined as:"
+msgstr "同样，我们从物理参数得到\ ``A``\ 的值。在本例里要注意\\ ``A``\\ 的构造。数学上，矩阵\\ :math:`A`\\ 被定义为："
 
 #: ../../source/behavior/arrays/state_space.rst:227
 msgid ""
@@ -328,7 +345,7 @@ msgid ""
 "set of sub-matrices, *i.e.,*"
 msgstr ""
 "在构造\\ :math:`A`\\ "
-"时，我们可以注意到其前两列可以更容易表示为一个零矩阵以及一个单位矩阵的组合。换句话说，将矩阵表示为子矩阵的组合可能更为清晰，\\ *即：*"
+"时，我们可以注意到其前两列可以更容易表示为一个零矩阵以及一个单位矩阵的组合。换句话说，将矩阵表示为子矩阵的组合可能更为清晰，即："
 
 #: ../../source/behavior/arrays/state_space.rst:197
 msgid ""
@@ -354,21 +371,3 @@ msgstr ""
 "本节里，我们并没有把Lotka-Volterra方程表示为LTI形式。Lotka-"
 "Volterra方程虽然是时不变系统，但是同时却是非线性的。值得一提的是，Modelica并没有在\\ ``LTI``\\ "
 "模型内执行对线性和时不变这两个属性的约束。因此，用上述方法其实可以描述非线性或者时变的模型。但倘若如此就会引起一定的混乱，因为LTI这个术语意味这方程是线性时不变的。"
-
-#: ../../source/behavior/arrays/state_space.rst:210
-msgid ""
-"Again, we compute ``A`` from physical parameters.  One thing to note about "
-"this example is the construction of ``A``.  Mathematically, the :math:`A` "
-"matrix is defined as:"
-msgstr "同样，我们从物理参数得到\\ ``A`\\ 的值。在本例里要注意\\ ``A``\\ 的构造。数学上，矩阵\\ :math:`A`\\ 被定义为："
-
-#: ../../source/behavior/arrays/state_space.rst:22
-msgid ""
-"In this form, :math:`x` represents the states in the system, :math:`u` "
-"represents any externally specified inputs to the system and :math:`y` "
-"represents the outputs of the system (*i.e.,* variables that may not be "
-"states, but can ultimately be computed from the values of the states and "
-"inputs)."
-msgstr ""
-"在这种形式下，\\ :math:`x`\\ 表示系统中的状态，\\ :math:`u`\\ 表示系统的任何外部指定的输入，而\\ :math:`y`\\"
-" 表示该系统的输出（\ *亦即*\ 可能并非状态的变量，但这些变量可通过状态和输入的值求得。）"

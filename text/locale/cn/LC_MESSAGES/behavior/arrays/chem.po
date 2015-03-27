@@ -104,8 +104,8 @@ msgid ""
 msgstr ""
 "另一种对化学系统进行建模的方法是使用向量。"
 "用这种方法，我们将化学物质\ :math:`A`\ 、\ :math:`B`\ 、\ :math:`X`\ 分别用索引\ :math:`1`\ 、\ :math:`2`\ 、\ :math:`3`\ 标记。"
-"浓度则被映射到向量变量\ ``C`` \ 。"
-"我们同时也将反应系数储存在反应系数向量\ ``k`` \ 里。"
+"浓度则被映射到向量变量\ ``C``\ 。"
+"我们同时也将反应系数储存在反应系数向量\ ``k``\ 里。"
 
 #: ../../source/behavior/arrays/chem.rst:77
 msgid ""
@@ -138,8 +138,8 @@ msgid ""
 "which index (*e.g.,* ``1``, ``2``, or ``3``) corresponds to which species "
 "(*e.g.,* :math:`A`, :math:`B`, or :math:`X`)."
 msgstr ""
-"这种方法的问题是，我们必须时刻留意各个索引（如\ ``1``\  、\ ``2``\ 或\ ``3``\ ）"
-"分别对应哪种物质（如\ :math:`A`\  、\ :math:`B`\ 及\ :math:`X`\ ）。"
+"这种方法的问题是，我们必须时刻留意各个索引（如\ ``1``\ 、\ ``2``\ 或\ ``3``\ ）"
+"分别对应哪种物质（如\ :math:`A`\ 、\ :math:`B`\ 及\ :math:`X`\ ）。"
 
 #: ../../source/behavior/arrays/chem.rst:130
 msgid "Using Enumerations"
@@ -190,7 +190,7 @@ msgid ""
 "dimensions in the declaration."
 msgstr ""
 "在这一章中，我们介绍了如何在使用以及不使用数组的前提下描述一组化学方程式。"
-"我们还演示了如何在数组中使用\ ``enumeration``\ 类型以用名称代替数字索引，从而让产生的方程式更具可读性。"
+"我们还演示了如何在数组中使用\ ``enumeration``\ 类型。这样用名称代替数字索引，可以让产生的方程式更具可读性。"
 "此外，本节还表明了\ ``enumeration``\ 类型可以不仅用于索引数组，也能在变量声明中定义一个或多个维度。"
 
 #: ../../source/behavior/arrays/chem.rst:150
@@ -201,7 +201,7 @@ msgid ""
 "``C[Species.X]``."
 msgstr ""
 "由于\ ``Species``\ 类型只有三种可能的值，这意味着矢量\ ``C``\ 恰好有三个分量。"
-"然后，我们可以分别使用\ ``C[Species.A]``\  、\ ``C[Species.B]``\  、\ ``C[Species.X]``\ 去指代\ ``C``\ 的分量。"
+"然后，我们可以分别使用\ ``C[Species.A]``\ 、\ ``C[Species.B]``\ 、\ ``C[Species.X]``\ 去指代\ ``C``\ 的分量。"
 
 #: ../../source/behavior/arrays/chem.rst:155
 msgid ""

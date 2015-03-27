@@ -27,12 +27,12 @@ msgstr ""
 
 #: ../../source/behavior/arrays/construction.rst:12
 msgid "Literals"
-msgstr ""
+msgstr "常值符"
 
 #: ../../source/behavior/arrays/construction.rst:15
 #: ../../source/behavior/arrays/construction.rst:0
 msgid "Vectors"
-msgstr ""
+msgstr "向量"
 
 #: ../../source/behavior/arrays/construction.rst:17
 msgid ""
@@ -51,7 +51,7 @@ msgid ""
 "vector, we could do so as follows:"
 msgstr ""
 "我们在此使用“向量”这个术语时，其指代的是仅有一个维度下标的数组。"
-"如果我们想要为向量赋值，我们可以这样做："
+"如果想要为向量赋值，我们可以这样做："
 
 #: ../../source/behavior/arrays/construction.rst:33
 msgid ""
@@ -63,7 +63,7 @@ msgid ""
 " a comma separated list of expressions to build vectors of any size we wish,"
 " *e.g.,*"
 msgstr ""
-"显然，变量\ ``x``是（被声明为）有三个实值分量的向量。"
+"显然，变量\ ``x``\ 是（被声明为）有三个实值分量的向量。"
 "为了保持一致性，等式的右侧也必须是具有三个实值分量的向量。"
 "幸运的是，它确实是。"
 "表达式\ ``{1.0, 0.0, -1.0}``\ 是Modelica里用于创建向量的一种特殊语法。"
@@ -83,12 +83,10 @@ msgstr "范围表示法"
 
 #: ../../source/behavior/arrays/construction.rst:57
 msgid ""
-"Modelica includes a shorthand notation for constructing vectors of "
-"sequential numbers or numbers that are evenly spaced.  For example, to "
-"construct a vector of integers with elements having values from 1 to 5, the "
+"Modelica includes a shorthand notation for constructing vectors of " "sequential numbers or numbers that are evenly spaced.  For example, to " "construct a vector of integers with elements having values from 1 to 5, the "
 "following syntax can be used:"
 msgstr ""
-"Modelica语言包含速记表示法用以构建有连续或者等差的数列组成的向量。"
+"Modelica语言包含速记表示法，用以构建有连续或者等差的数列组成的向量。"
 "例如，为了构建一个由1到5之间整数组成的向量，可以使用如下的语法："
 
 #: ../../source/behavior/arrays/construction.rst:66
@@ -103,7 +101,7 @@ msgid ""
 " not 1 by adding the \"stride\" between the first and last values.  For "
 "example, all odd numbers between 3 and 9 can be represented as:"
 msgstr ""
-"此外，也可以通过在初始值以及终值之间加入“步长”值以构建一个元素间间隔不为1的范围值。"
+"此外，也可以通过在初始值以及终值之间加入“步长”值，以构建一个元素间间隔不为1的范围值。"
 "例如，3和9之间的所有奇数可以表示为："
 
 #: ../../source/behavior/arrays/construction.rst:92
@@ -145,7 +143,7 @@ msgid ""
 "commas **and semicolons** are used as delimiters.  The semicolons are used "
 "to separate rows and the commas are used to separate the columns."
 msgstr ""
-"正如我们在Modelica代码里以及更数学的表示形式里知道的一样，矩阵\ ``B``\ 有两行三列。"
+"正如我们可以从Modelica代码里或其更数学的表示形式里得知，矩阵\ ``B``\ 有两行三列。"
 "使用这种方式构建矩阵的语法比仅仅构建向量时更为复杂。"
 "从表面上我们看到，向量的两旁是\ ``{} ``\ ，而矩阵两旁则为\ ``[]``\ 。"
 "但更重要的是，逗号\ **和分号**\ 混在一起用作分隔符。"
@@ -173,7 +171,6 @@ msgid ""
 "To demonstrate how this embedding is done, consider the case where we wished"
 " to construct the following matrix:"
 msgstr ""
-"To demonstrate how this embedding is done, consider the case where we wished to construct the following matrix:"
 "为了演示嵌入的流程，可以考虑在这里我们希望构建以下矩阵的情况："
 
 #: ../../source/behavior/arrays/construction.rst:204

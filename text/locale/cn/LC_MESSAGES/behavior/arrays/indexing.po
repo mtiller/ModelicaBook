@@ -77,7 +77,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/indexing.rst:50
 msgid "In Modelica, such an array would be declared as follows:"
-msgstr "在Modelica语言，这样的阵列将被声明如下："
+msgstr "在Modelica语言，这样的数组将被声明如下："
 
 #: ../../source/behavior/arrays/indexing.rst:56
 msgid "Imagine we wish to extract a submatrix of ``B`` as follows:"
@@ -96,7 +96,7 @@ msgid ""
 "  This is where :ref:`range-notation` can be very useful. The same submatrix"
 " extraction could also be represented as:"
 msgstr ""
-"通过使用向量下标，我们可以提取或构造任意子阵列。"
+"通过使用向量下标，我们可以提取或构造任意子数组。"
 "这就是\ :ref:`range-notation`\ 派上用场的时候了。"
 "同一个提取方法也可以用以下方法表示："
 
@@ -112,7 +112,7 @@ msgid ""
 "an ``enumeration`` like the following:"
 msgstr ""
 "在前面的\ :ref:`chemical-system`\ 例子里，我们看到了如何用枚举类来指定数组的维度。"
-"然后，我们看到了如何通过一个\ ``enumeration``\ 类型的值来索引阵列。"
+"然后，我们看到了如何通过一个\ ``enumeration``\ 类型的值来索引数组。"
 "一般来说，对于一个如下的\ ``enumeration``\ 值："
 
 #: ../../source/behavior/arrays/indexing.rst:89
@@ -163,7 +163,7 @@ msgid ""
 msgstr ""
 "当指定数组下标时，在下标表达式里使用\ ``end``\ 是合法使用的。"
 "在这种情况下，\ ``end``\ 对应数组维度的最大可能值。"
-"在表达式中\ ``end``\ 允许用数组元素指代最后一个而不是第一个元素。"
+"在表达式中，\ ``end``\ 允许用最后一个而不是第一个元素为基准进行索引。"
 "例如，要指代向量中的倒数第二个元素，那么可以用\ ``end-1``\ 表达式作为下标。"
 
 #: ../../source/behavior/arrays/indexing.rst:135
@@ -190,4 +190,4 @@ msgid ""
 msgstr ""
 "Modelica语言中有另一种复杂的数组索引方式。"
 "但现在没有讨论的必要。"
-"在我们稍后讨论\ :ref:`arrays-of-components`\ 的时候，便会看到这个效果。"
+"在我们稍后讨论\ :ref:`arrays-of-components`\ 的时候，便会看到这个功能。"

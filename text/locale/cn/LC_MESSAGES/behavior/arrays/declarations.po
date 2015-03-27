@@ -57,7 +57,7 @@ msgid ""
 "the size of an array, *e.g.,*"
 msgstr ""
 "在这种情况下，\ ``x``\ 是实数型数组。而这个数组仅有大小为5的一个维度。"
-"使用参数或常量去指定数组大小也是可以的，\ *如：*\ "
+"使用参数或常量去指定数组大小也是可以的，如："
 
 #: ../../source/behavior/arrays/declarations.rst:42
 msgid "Linked Dimensions"
@@ -104,7 +104,7 @@ msgid ""
 msgstr ""
 "我们定义了一个二维数组。"
 "第一维的大小没有被定义。"
-"而第二维的大小明确被指定为2 。"
+"而第二维的大小明确被指定为2。"
 "实际上，我们已经声明了\ ``A``\ 为一个行数不详而有两列的矩阵。"
 
 #: ../../source/behavior/arrays/declarations.rst:85
@@ -137,7 +137,7 @@ msgid ""
 "It is also possible to declare an array where a dimension is specified as "
 "``Boolean``, *e.g.,*"
 msgstr ""
-"我们还可以将其中一个维度声明为\ ``Boolean``\ ， \ *例如：*"
+"我们还可以将其中一个维度声明为\ ``Boolean``\ ，\ *例如：*"
 
 #: ../../source/behavior/arrays/declarations.rst:54
 msgid ""

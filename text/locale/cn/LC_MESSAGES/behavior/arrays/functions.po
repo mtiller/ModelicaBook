@@ -114,10 +114,17 @@ msgid ""
 " takes a single integer argument.  This argument determines the number of "
 "rows and columns in the resulting matrix. So, invoking ``identity`` as:"
 msgstr ""
+"另一个常见的需求是方便地建立单位矩阵。单位矩阵的对角线元素都是\ :math:`1`\ ，而所有其他元素均为\ :math:`0`\ 。"
+"This can be done very easily with the ``identity``."
+"通过\ ``identity``\ 函数，这可以很容易完成的。"
+"单位矩阵函数需要一个整数参数。"
+"这个参数确定在生成矩阵的行数和列数。"
+"So, invoking ``identity`` as:"
+"因此，调用\ ``identity``\ 如下："
 
 #: ../../source/behavior/arrays/functions.rst:123
 msgid "would produce the following matrix:"
-msgstr "会声称下列矩阵："
+msgstr "会得到下列矩阵："
 
 #: ../../source/behavior/arrays/functions.rst:139
 msgid "``diagonal``"
@@ -130,6 +137,9 @@ msgid ""
 "containing the values of the diagonal elements.   So, to create the "
 "following diagonal matrix:"
 msgstr ""
+"\ ``diagonal``\ 函数用来创建一个所有的非对角元素是\ :math:`0`\ 的矩阵。"
+"对角函数的唯一参数是包含一个对角线元素值的数组。"
+"所以，要创建以下对角矩阵"
 
 #: ../../source/behavior/arrays/functions.rst:160
 msgid "one could use the following Modelica code:"
@@ -359,7 +369,7 @@ msgid ""
 "behavior of the ``*`` operator is summarized in the following table:"
 msgstr ""
 "乘法运算符分为两种类型。"
-"第一种是正常的乘法运算符\ ``*``\ 。此运算符遵从线性代数里的一般数学定义，如矩阵向量积，\ *等等*\ 。"
+"第一种是正常的乘法运算符\ ``*``\ 。此运算符遵从线性代数里的一般数学定义，如矩阵向量积等等。"
 "\ ``*``\ 操作符的行为如下表所示："
 
 #: ../../source/behavior/arrays/functions.rst:358

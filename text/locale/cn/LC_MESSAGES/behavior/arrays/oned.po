@@ -150,7 +150,7 @@ msgid ""
 "(since this is the only quantity that actually varies along the length of "
 "the rod):"
 msgstr ""
-"最后，这个问题唯一数组是各部分的温度"
+"最后，这个问题里唯一的数组是各部分的温度"
 "（因为实际上这是唯一沿杆长而改变的量）："
 
 #: ../../source/behavior/arrays/oned.rst:164
@@ -232,7 +232,7 @@ msgstr ""
 "其中，\ ``<range>``\ 是一个含有不同值的向量。"
 "而一种方便的产生数列的方式是使用范围操作符\ ``：``\ 。"
 "范围操作符前的值是数列的初值，而在操作符后的值则是数列的终值。"
-"因此，以表达式\ ``5:10``\ 例，表达式会生成一个由``5``\ 、\ ``6``\ 、\ ``7``\ 、\ ``8``\ 、\ ``9``\ 、\ ``10``组成的向量。"
+"因此，以表达式\ ``5:10``\ 例，表达式会生成一个由\ ``5``\ 、\ ``6``\ 、\ ``7``\ 、\ ``8``\ 、\ ``9``\ 、\ ``10``\ 组成的向量。"
 "注意，生成的向量\ **包括了**\ 用于指定范围的两个值。"
 
 #: ../../source/behavior/arrays/oned.rst:218
@@ -242,7 +242,7 @@ msgid ""
 "  So in our case, we will generate :math:`n-2` equations corresponding to "
 "values of ``i`` between ``2`` and ``n-1``."
 msgstr ""
-"当\ ``for``\ 循环用在等式段落时，循环内的每个方程都会在for循环的每次迭代时产生一个新的方程。"
+"当\ ``for``\ 循环用在等式段落时，循环内每个方程都会在for循环每次迭代时产生一个新的方程。"
 "因此，在本例对应每个在\ ``2``\ 和\ ``n-1``\ 之间的\ ``i``\ ，我们会一共生成\ :math:`n-2`\ 个方程。"
 
 #: ../../source/behavior/arrays/oned.rst:223
@@ -270,7 +270,7 @@ msgid ""
 "specified in our ``initial equation`` section)."
 msgstr ""
 "注意温度在开始是如何线性分布的"
-"（正如我们在``initial equation``\ 段落所指定的一样）。"
+"（正如我们在\ ``initial equation``\ 段落所指定的一样）。"
 
 #: ../../source/behavior/arrays/oned.rst:245
 msgid "Alternatives"
@@ -287,7 +287,7 @@ msgstr ""
 "实际上，有好几种方法可以生成我们需要的方程。"
 "而每种方法在不同的情景下有其优点与缺点。"
 "我们将在下面一一介绍这些可能的方法。"
-"而选择哪种方法可以让方程感觉上最容易理解则是取决于模型开发者自己。"
+"而选择哪种方法可以让方程感觉上最容易理解，则是取决于模型开发者自己。"
 
 #: ../../source/behavior/arrays/oned.rst:255
 msgid ""
@@ -334,7 +334,7 @@ msgid ""
 "to be a range.  For example, ``T[{2,5,9}]`` is equivalent to ``{T[2], T[5], "
 "T[9]}``."
 msgstr ""
-"注意，倘若大家使用一定范围的下表去存取向量变量如\ ``T``\ ，那么结果就会得到包含这些下标所对应的元素的向量。"
+"注意，倘若大家使用一定范围的下标去存取向量变量，如\ ``T``\ ，那么结果就会得到这些下标对应元素所组成的向量。"
 "例如，表达式\ ``T[2:4]``\ 等价于\ ``{T[2], T[3], T[4]}``\ 。"
 "下标表达式并不需要是一个范围表达式。"
 "例如，表达式\ ``T[{2,5,9}]``\ 等价于\ ``{T[2], T[5], T[9]}``\ 。"
@@ -365,10 +365,6 @@ msgstr ""
 #: ../../source/behavior/arrays/oned.rst:316
 msgid "Conclusion"
 msgstr "结论"
-
-#: ../../source/behavior/arrays/oned.rst:253
-msgid "array comprehensions"
-msgstr ""
 
 #: ../../source/behavior/arrays/oned.rst:42
 msgid ""
@@ -416,4 +412,8 @@ msgid ""
 msgstr ""
 "在本节中，我们看到了使用向量变量以及向量方程式来表示一维传热的多种方法。"
 "当然，这些向量的相关功能可用于类型广泛的不同问题。"
-"本节的目的是为大家介绍几种特性，以演示开发者在使用向量时拥有的不同选项。"
+"本节目的是为大家介绍几种特性，以演示开发者在使用向量时拥有的不同选项。"
+
+#: ../../source/behavior/arrays/oned.rst:253
+msgid "array comprehensions"
+msgstr ""
