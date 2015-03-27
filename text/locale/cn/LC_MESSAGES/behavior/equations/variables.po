@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:5
 msgid "Variables"
-msgstr ""
+msgstr "变量"
 
 #: ../../source/behavior/equations/variables.rst:7
 msgid ""
@@ -24,25 +24,28 @@ msgid ""
 "*e.g.*,"
 msgstr ""
 "正如我们在前一节中所提到的，模型定义的特征之一就是包含变量声明。"
-"变量声明的基本语法就是在变量的 \"type\" （类型）（将在章节: ref:`builtin-types`"
-"中简短的讨论）之后紧随变量的名称，"
+"变量声明的基本语法就是在变量的“类型”（将在\ : ref:`builtin-types`\ 章节"
+"中简短讨论）之后紧随变量的名称，"
+
 #: ../../source/behavior/equations/variables.rst:17
 msgid ""
 "Variables sharing the same type can be grouped together using the following "
 "syntax:"
 msgstr ""
 "相同类型的变量可以组合在一起使用下面的语法："
+
 #: ../../source/behavior/equations/variables.rst:24
 msgid "A declaration can also be followed by a description, e.g.:"
 msgstr ""
 "变量声明也可以跟随在描述的后面。"
+
 #: ../../source/behavior/equations/variables.rst:33
 msgid "Variability"
-msgstr ""
+msgstr "可变性"
 
 #: ../../source/behavior/equations/variables.rst:40
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/behavior/equations/variables.rst:42
 msgid ""
@@ -54,12 +57,13 @@ msgid ""
 "variable is known *a priori*.  You can think of a parameter as \"input "
 "data\" to the model that is constant with respect to time."
 msgstr ""
-"默认将模型中的变量声明假定为连续型变量（连续型变量的解通常是连续的，但是也可能包含间断点）。"
-"然而，正如在 :ref:`getting-physical` 那节中提到的，能够在变量声明前加入 ``parameter`` （参数）限定符，以表明该变量是 *先验* 已知的。"
-"可以认为这个参数作为模型的 \"输入数据\" ，是不随时间变化的常数。"
+"模型中的变量声明默认假定为连续变量（连续型变量的解通常是连续的，但是也可能包含间断点）。"
+"然而，正如在\ :ref:`getting-physical`\ 那节中提到的，能够在变量声明前加入\ ``parameter``\ （参数）限定词，以表明该变量是先验已知的。"
+"我们可以认为这个参数作为模型的“输入数据”，是不随时间变化的常数。"
+
 #: ../../source/behavior/equations/variables.rst:54
 msgid "Constants"
-msgstr ""
+msgstr "常数"
 
 #: ../../source/behavior/equations/variables.rst:56
 msgid ""
@@ -75,14 +79,15 @@ msgid ""
 ":math:`\\pi` or the Earth's gravitational acceleration, which can be assumed"
 " constant for most engineering simulations."
 msgstr ""
-"与 ``parameter`` （参数）限定符关系密切的是 ``constant`` （常数）限定符。"
-"当被置于变量声明前， ``constant`` （常数）限定符意味着变量的值是 *先验* 已知的，是常数且不随时间变化。"
-"这两者之间的区别在于一旦模型被编译， ``parameter`` （参数）限定符的值是可以随着模拟改变而改变的，但是 ``constant`` （常数）限定符的值是不会改变的。"
-"对于模型开发者来说， ``constant`` （常数）限定符的应用是保证终端用户者不能更改 ``constant`` （常数）。"
-" ``constant`` （常数）限定符经常被用于代表物理常数，比如像数学中的： `\\pi` 或者重力加速度这样在大多数工程仿真中被假定为常数的量。"
+"与\ ``parameter``\ （参数）限定符关系密切的是\ ``constant``\ （常数）限定词。"
+"当被置于变量声明前，\ ``constant``\ （常数）限定符意味着变量的值是先验已知的常数，且不随时间变化。"
+"这两者之间的区别在于一旦模型被编译，\ ``parameter``\ 限定词的值是可以随着模拟改变而改变的，但是\ ``constant``\ 限定词的值是不会改变的。"
+"对于模型开发者来说，\ ``constant``\ 限定词的应用是保证终端用户者不能更改该\ ``constant``\ 。"
+"\ ``constant``\ 限定词经常被用于代表物理常数。比如像数学中的\ `\\pi`\ 或者重力加速度这样在大多数工程仿真中被假定为常数的量。"
+
 #: ../../source/behavior/equations/variables.rst:70
 msgid "Discrete Variables"
-msgstr ""
+msgstr "离散变量"
 
 #: ../../source/behavior/equations/variables.rst:74
 msgid ""
@@ -91,12 +96,13 @@ msgid ""
 "``discrete`` qualifier would be relevant.  However, it is included now for "
 "completeness since it is the last remaining variability qualifier."
 msgstr ""
-"另外一种可以放在变量声明前的限定符是 ``discrete`` （离散）限定符。"
-"目前还没有相关的例子可以展示 ``discrete`` （离散）限定符。"
-"但是就完整性而言它是最后一个可变限定符。"
+"另外一种可以放在变量声明前的限定词是\ ``discrete``\ （离散）限定词。"
+"目前还没有相关的例子可以演示\ ``discrete``\ 限定词的作用。"
+"但为了完整起见，它作为最后一个可变性限定词也列举在这里。"
+
 #: ../../source/behavior/equations/variables.rst:83
 msgid "Built-In Types"
-msgstr ""
+msgstr "内建类型"
 
 #: ../../source/behavior/equations/variables.rst:87
 msgid ""
@@ -106,9 +112,10 @@ msgid ""
 "representations by a Modelica compiler).  However, ``Real`` is just one of "
 "the four built-in types in Modelica."
 msgstr ""
-"目前为止，很多例子声明变量的时候引用 ``Real`` （实数）类型。"
-"顾名思义， ``Real`` （实数）用于代表实数变量（实数变量在Modelica编译器中通常被编译为浮点数）。"
-"然而， ``Real`` （实数）仅仅是Modelica语言的四大内置类型之一。"
+"目前为止，很多例子声明变量的时候引用\ ``Real``\ （实数）类型。"
+"顾名思义，\ ``Real``\ 用于代表实数变量（实数变量在Modelica编译器中通常被编译为浮点数）。"
+"然而，\ ``Real``\ 仅仅是Modelica语言的四大内置类型之一。"
+
 #: ../../source/behavior/equations/variables.rst:97
 msgid ""
 "Another of the built-in types is the ``Integer`` type.  This type is used to"
@@ -116,15 +123,17 @@ msgid ""
 "representing the size of arrays (this use case will be discussed shortly in "
 "an upcoming section on :ref:`vectors-and-arrays`)."
 msgstr ""
-"另外一种内置类型是 ``Integer`` （整数）类型。这种类型用于代表整数值。"
-" ``Integer`` 整数变量有许多用途，包括代表数组的大小（这种用途的例子将在 :ref:`vectors-and-arrays` 这节中讨论）。"
+"另外一种内置类型是\ ``Integer``\ （整数）类型。这种类型用于代表整数值。"
+"\ ``Integer``\ 变量有许多用途，包括代表数组的大小（这种用途的例子将在\ :ref:`vectors-and-arrays`\ 这节中讨论）。"
+
 #: ../../source/behavior/equations/variables.rst:103
 msgid ""
 "The remaining built-in types are ``Boolean`` (used to represent values that "
 "can be either ``true`` or ``false``) and ``String`` (used for representing "
 "character strings)."
 msgstr ""
-"其他内置类型是 ``Boolean`` （布尔运算）（用于代表值的 ``true`` （是）或 ``false`` （否））和 ``String`` （用于代表字符串）。"
+"其他内置类型是\ ``Boolean``\ （布尔值）（用于代表值的\ ``true``\ （真）或\ ``false``\ （假））和\ ``String``\ （用于代表字符串）。"
+
 #: ../../source/behavior/equations/variables.rst:107
 msgid ""
 "Each of the built-in types restricts the possible values that a variable can"
@@ -133,10 +142,11 @@ msgid ""
 "have the value ``\"Hello\"``."
 msgstr ""
 "每一个内置类型都限定了变量值的可能值。"
-"显然， ``Integer`` （整数）变量不能是 ``2.5`` ， ``Boolean`` （布尔运算）或者 ``String`` （字符）不能是 ``7`` ， ``Real`` （实数）变量不能是 ``\"Hello\"`` 。"
+"显然，\ ``Integer``\ 变量不能是\ ``2.5``\ 。\ ``Boolean``\ 或者\ ``String``\ （字符）不能是\ ``7``\ 。\ ``Real``\ 变量不能是\ ``\"Hello\"``\ 。"
+
 #: ../../source/behavior/equations/variables.rst:115
 msgid "Derived Types"
-msgstr ""
+msgstr "派生类型"
 
 #: ../../source/behavior/equations/variables.rst:119
 msgid ""
@@ -145,19 +155,21 @@ msgid ""
 "mainly to modify the values associated with :ref:`attributes` like ``unit``."
 "  The general syntax for creating derived types is:"
 msgstr ""
-"正如前面介绍 :ref:`physical-types` 的例子一样， \"特殊化\" 内置类型是可能的。"
-"这个特征主要是用于修改与 `属性` 比如 ``单位`` 相关的值。用于创建派生类型的语法是："
+"正如前面介绍\ :ref:`physical-types`\ 的例子一样，内置类型可以进行“特殊化”。"
+"这个特性主要是用于修改与\ :ref:`attributes`\ 相关的值，比如\ ``unit``\ 。用于创建派生类型的语法是："
+
 #: ../../source/behavior/equations/variables.rst:131
 msgid ""
 "Frequently, the ``BaseTypeName`` will be one of the built-in types (*e.g.*, "
 "``Real``).  But it can also be another derived type.  This means that "
 "multiple levels of specialization can be supported, *e.g.*,"
 msgstr ""
-"通常， ``BaseTypeName`` （基本类型名称）应该是内置类型的一种（ *比如* ``Real`` （实数））。但是它也可以是另外一种派生类型。"
-"这意味着支持多层次的限定。 *例如*  ，"
+"\ ``BaseTypeName``\ （基本类型名称）一般为内置类型（比如\ ``Real``\ （实数））。但是它也可以是另外一种派生类型。"
+"这意味着多层次的限定也是支持的。例如："
+
 #: ../../source/behavior/equations/variables.rst:143
 msgid "Enumerations"
-msgstr ""
+msgstr "枚举类型"
 
 #: ../../source/behavior/equations/variables.rst:147
 msgid ""
@@ -168,31 +180,35 @@ msgid ""
 "integers.  However, the ``enumeration`` type is safer and more readable than"
 " an ``Integer``."
 msgstr ""
-" ``enumeration`` （枚举）型和 ``Integer`` （整数）型非常类似。"
-" ``enumeration`` （枚举）型通常用于定义一组有限的特定值。"
-"事实上，计数在语言上不是必须的。"
-" ``enumeration`` （枚举）型的值总是可以用整数替代。但是 ``enumeration`` （枚举）型却比 ``Integer`` （整数）型更安全和合理。"
+"\ ``enumeration``\ （枚举）类型和\ ``Integer``\ 类型非常类似。"
+"\ ``enumeration``\ 类型通常用于定义一组有限的特定值。"
+"事实上，枚举类型在语言上不是必须的。"
+"\ ``enumeration``\ 类型的值总是可以用整数替代。但是\ ``enumeration``\ 类型却比\ ``Integer``\ 类型更安全和合理。"
+
 #: ../../source/behavior/equations/variables.rst:154
 msgid ""
 "There are two built-in enumeration types.  The first of these is "
 "``AssertionLevel`` and it is defined as follows:"
 msgstr ""
-"在Modelica中有两种内置的枚举型。第一种是 ``AssertionLevel`` （决断型），它的定义如下："
+"在Modelica中有两种内置的枚举类型。第一种是\ ``AssertionLevel``\ （断言级别）。其定义如下："
+
 #: ../../source/behavior/equations/variables.rst:164
 msgid ""
 "The significance of these values will be discussed in a forthcoming section "
 "on :ref:`assertions`."
 msgstr ""
-"这些值的重要性将在接下来的 :ref:`assertions` 这节中讨论。"
+"这些值的用处将在接下来的\ :ref:`assertions`\ 这节中讨论。"
+
 #: ../../source/behavior/equations/variables.rst:167
 msgid ""
 "The other built-in enumeration is ``StateSelect`` and it is defined as "
 "follows:"
 msgstr ""
-"另外一种内置计数型是 ``StateSelect`` （状态选择），它的定义如下："
+"另外一种内置枚举类型是\ ``StateSelect``\ （状态选择），其定义如下："
+
 #: ../../source/behavior/equations/variables.rst:177
 msgid "Attributes"
-msgstr ""
+msgstr "属性"
 
 #: ../../source/behavior/equations/variables.rst:181
 msgid ""
@@ -204,13 +220,14 @@ msgid ""
 "type of value can be given for that attribute), which types they can be "
 "associated with and finally a brief description of the attribute:"
 msgstr ""
-"在本章中到目前为止，已经提到了属性( *例如* , ``unit`` （单位）)，但是还没有详细讨论过。"
-"例如，一个既定的变量应该呈现 *何种* 属性主要依赖于变量的类型（它是基于内置型还是派生型的）。"
-"下面的表格列举了所有可能表明它们类型的属性（ *例如* ,一个属性可以赋什么类型的值）以及它们可以关联哪种类型，"
-"最后做了属性的简短描述。"
+"在本章中到目前为止，已经提到了属性(例如\ ``unit``\ （单位）)。但是还没有详细讨论过。"
+"例如，一个既定的变量应该呈现\ *何种*\ 属性？这主要依赖于变量的类型（以及它所基于的基于内置类型或派生类型）。"
+"下面的表格列举了所有可能的属性以及与其类型（例如属性可以赋什么类型的值）以及其可以关联的类型，"
+"最后表格则简短描述属性的作用。"
+
 #: ../../source/behavior/equations/variables.rst:203
 msgid "Attributes of ``Real``"
-msgstr ""
+msgstr "\ ``Real``\ 的属性"
 
 #: ../../source/behavior/equations/variables.rst:210
 #: ../../source/behavior/equations/variables.rst:340
@@ -225,7 +242,8 @@ msgstr ""
 #: ../../source/behavior/equations/variables.rst:421
 msgid "A textual description of what the variable represents"
 msgstr ""
-"可以用一个文本来描述这个变量所代表的含义。"
+"用以来描述这个变量所代表含义的文本。"
+
 #: ../../source/behavior/equations/variables.rst:208
 #: ../../source/behavior/equations/variables.rst:306
 #: ../../source/behavior/equations/variables.rst:338
@@ -243,7 +261,7 @@ msgstr ""
 #: ../../source/behavior/equations/variables.rst:425
 #: ../../source/behavior/equations/variables.rst:437
 msgid "**Type**: ``String``"
-msgstr ""
+msgstr "\ **类型**\ ：\ ``String``\ "
 
 #: ../../source/behavior/equations/variables.rst:227
 #: ../../source/behavior/equations/variables.rst:354
@@ -259,28 +277,31 @@ msgid ""
 " is to provide \"fallback\" initial conditions for state variables (see "
 "``fixed`` attribute for more details)."
 msgstr ""
-" ``start`` （起始）这个属性有很多用途。"
-" ``start`` （起始）属性的主要目的是（正如在 :ref:`initialization` 那节里广泛讨论过的）为状态变量提供 \"fallback\" （备用）的初始状态。"
-"（参见 ``fixed`` (固定)属性获取更多的细节）"
+"\ ``start``\ （初值）这个属性有很多用途。"
+"\ ``start``\ 属性的主要目的是（正如在\ :ref:`initialization`\ 那节里广泛讨论过的）为状态变量提供“备用”的初始状态。"
+"（参见\ ``fixed``\ 属性以获取进一步的细节）"
+
 #: ../../source/behavior/equations/variables.rst:218
 msgid ""
 "The ``start`` attribute may also be used as an initial guess if the variable"
 " has been chosen as an iteration variable."
 msgstr ""
-" ``start`` （起始）属性的也可以用于变量，是迭代变量时的初始假想值。"
+"\ ``start``\ 属性的也可以用于变量，是迭代变量时的初始假想值。"
+
 #: ../../source/behavior/equations/variables.rst:221
 msgid ""
 "Finally, if a ``parameter`` doesn't have an explicit value specified, the "
 "value of the ``start`` attribute will be used as the default value for the "
 "``parameter``."
 msgstr ""
-"最后，如果一个 ``parameter`` （参数）没有明确指定的值，那么 ``start`` (起始)属性的值可以作为 ``parameter`` （参数）的默认值。"
+"最后，如果一个\ ``parameter``\ 没有明确指定的值，那么\ ``start``\ 属性的值可以作为\ ``parameter``\ 的默认值。"
+
 #: ../../source/behavior/equations/variables.rst:225
 #: ../../source/behavior/equations/variables.rst:316
 #: ../../source/behavior/equations/variables.rst:352
 #: ../../source/behavior/equations/variables.rst:405
 msgid "**Default**: ``0.0``"
-msgstr ""
+msgstr "\ **默认值**\ ：\ ``0.0``\ "
 
 #: ../../source/behavior/equations/variables.rst:227
 #: ../../source/behavior/equations/variables.rst:252
@@ -288,7 +309,7 @@ msgstr ""
 #: ../../source/behavior/equations/variables.rst:272
 #: ../../source/behavior/equations/variables.rst:318
 msgid "**Type**: ``Real``"
-msgstr ""
+msgstr "\ **类型**\ ：\ ``Real``\ "
 
 #: ../../source/behavior/equations/variables.rst:252
 #: ../../source/behavior/equations/variables.rst:362
@@ -307,10 +328,11 @@ msgid ""
 "as an explicit ``initial equation`` (*i.e.,* it is no longer used as a "
 "fallback, but instead treated as a strict initial condition)."
 msgstr ""
-" ``fixed`` （固定）属性改变了 ``start`` （起始）属性用于初始值的方式。"
-"正常来讲， ``start`` （起始）属性被认为是 \"fallback\" （备用）的初始状态，仅仅用于当 ``initial equation`` （初始方程）中没有指定足够的初始状态时。"
-"然而，如果 ``fixed`` （固定）属性被设为 ``true`` （真），那么 ``start`` （开始）属性就被明确地用于 ``initial equation`` （初始方程）。"
+"\ ``fixed``\ （固定）属性改变了\ ``start``\ 属性用于初始值的方式。"
+"正常来讲，\ ``start``\ 属性被认为是“备用”的初始状态。这仅仅会在\ ``initial equation``\ 中没有指定足够的初始状态时使用。"
+"然而，如果\ ``fixed``\ 属性被设为\ ``true``\ ，那么\ ``start``\ 属性就被明确地用于\ ``initial equation``\ 。"
 "（ *例如* ，它不再被看作是备用的，而是作为严格的初始条件）。"
+
 #: ../../source/behavior/equations/variables.rst:241
 msgid ""
 "Another, more obscure, use of the ``fixed`` attribute is for \"computed "
@@ -320,9 +342,10 @@ msgid ""
 "initialized in this way, the ``fixed`` attribute for the parameter variable "
 "must be set to ``false``."
 msgstr ""
-"此外，更晦涩的是 ``fixed`` （固定）属性用于 \"computed parameters\" （计算参数）。"
-"在某些罕见的情况下，一个 ``parameter`` （参数）不能显式初始化，因此需要提供一个通用方程作为参数的 ``initial equation`` （初始方程）。"
-"如果 ``parameter`` （参数）一旦通过这种方式初始化，那么参数变量的 ``fixed`` （固定）属性必须设置为 ``false`` （否）。"
+"此外，一种\ ``fixed``\ 属性的晦涩用法是用在“算出的参数”。"
+"在某些罕见的情况下，一个\ ``parameter``\ 不能显式初始化。因此，参数的需要得到一个通用方程作为其\ ``initial equation``\ 。"
+"如果\ ``parameter``\ 一旦通过这种方式初始化，那么参数变量的\ ``fixed``\ 属性必须设置为\ ``false``\ 。"
+
 #: ../../source/behavior/equations/variables.rst:249
 #: ../../source/behavior/equations/variables.rst:359
 #: ../../source/behavior/equations/variables.rst:412
@@ -330,6 +353,7 @@ msgid ""
 "**Default**: ``false`` (except for ``parameter`` variables, where it is "
 "``true`` by default)"
 msgstr ""
+"\ **默认**\ ：\ ``false``\ （除了\ ``parameter``\ 变量，这里的默认值为\ ``True``\ ）"
 
 #: ../../source/behavior/equations/variables.rst:262
 #: ../../source/behavior/equations/variables.rst:372
@@ -344,12 +368,13 @@ msgid ""
 "ways to inform users or developers about potentially invalid input data or "
 "solutions."
 msgstr ""
-" ``min`` （最小）属性用来指定变量允许的最小值。"
+"\ ``min``\ （最小）属性用来指定变量允许的最小值。"
 "这个属性可以通过各种方式被编辑器或者编译器使用，以通知使用者或者开发者关于潜在的无效输入或者解。"
+
 #: ../../source/behavior/equations/variables.rst:260
 #: ../../source/behavior/equations/variables.rst:370
 msgid "**Default**: -:math:`\\infty`"
-msgstr ""
+msgstr "\ **默认值**\ ：\ -:math:`\\infty`\ "
 
 #: ../../source/behavior/equations/variables.rst:272
 #: ../../source/behavior/equations/variables.rst:383
@@ -364,12 +389,14 @@ msgid ""
 "ways to inform users or developers about potentially invalid input data or "
 "solutions."
 msgstr ""
-" ``max`` （最大）属性用于指定变量允许的最大值。"
-"这个属性可以通过各种方式被编辑器或者编译器使用，以通知使用者或者开发者关于潜在的无效输入或者解。"
+"\ ``max``\ （最大）属性用于指定变量允许的最大值。"
+"这个属性可以通过各种方式被编辑器或者编译器使用，"
+"去在出现可能是无效输入或者解时提醒使用者或者开发者。"
+
 #: ../../source/behavior/equations/variables.rst:270
 #: ../../source/behavior/equations/variables.rst:380
 msgid "**Default**: :math:`\\infty`"
-msgstr ""
+msgstr "\ **默认值**\ ：\ :math:`\\infty`\ "
 
 #: ../../source/behavior/equations/variables.rst:290
 msgid "``unit``"
@@ -388,15 +415,16 @@ msgid ""
 "quantity is dimensionless (has not units) while the latter indicates that "
 "the quantity may have physical units but they are left unspecified."
 msgstr ""
-"正如在本章中广泛谈到的那样，变量是可以拥有与它们相关的物理单位的。"
-"这些单位的表示是有规则的。"
-"但是最后的结果是使用 ``unit`` （单位）属性可以检查模型，确保方程的物理一致性。"
-" ``\"1\"`` 代表值没有物理单位。另一方面 ``\"\"`` （默认没有给定值）表明物理单位不确定。"
-" ``\"1\"`` 和 ``\"\"`` 之间的区别在于前者明确指出量是无量纲（无单位），而后者指出量可能是有物理单位的，"
-"但是他们没有明确指出。"
+"正如在本章中广泛谈到的那样，变量是可以拥有与其相关的物理单位。"
+"这些单位的表示有其规则。"
+"而最终结果是\ ``unit``\ （单位）属性可以用于检查模型，确保方程的物理一致性。"
+"\ ``\"1\"``\ 代表值没有物理单位。另一方面\ ``\"\"``\ （默认没有给定值）表明物理单位不确定。"
+"\ ``\"1\"``\ 和\ ``\"\"``\ 之间的区别在于前者明确指出量是无量纲（无单位）。"
+"而后者指出量可能是有物理单位的，只是没有明确指出。"
+
 #: ../../source/behavior/equations/variables.rst:288
 msgid "**Default**: ``\"\"`` (*i.e.,* no physical units specified)"
-msgstr ""
+msgstr "\ **默认值**\ ：\ ``\"\"``\ （即没有指定物理单位）"
 
 #: ../../source/behavior/equations/variables.rst:308
 msgid "``displayUnit``"
@@ -411,8 +439,9 @@ msgid ""
 "standard atmospheric pressure is 101,325 *Pascals*.  When entering, "
 "displaying or plotting pressures it may be more convenient to use *bars*."
 msgstr ""
-"当 ``unit`` （单位）属性描述了与变量相关的值的物理单位时， ``displayUnit`` （单位显示）属性表达了当展示变量的值时偏向使用何种单位。"
-"例如，压力的单位是 *Pascals* （帕斯卡）。标准大气压是101.325 *Pascals* （帕斯卡）。当输入的时候，显示或者绘制压力的单位用 *bars* （巴）更方便。"
+"\ ``unit``\ 属性描述了与变量相关值的物理单位。\ ``displayUnit``\ （显示单位）属性表达了当展示变量的值时偏向使用何种单位。"
+"例如，压力的国际单位是\ *帕斯卡*\ 。标准大气压是101,325\ *帕斯卡*\ 。当输入、显示或者绘制压力的时候，单位用\ *巴*\ 更方便。"
+
 #: ../../source/behavior/equations/variables.rst:301
 msgid ""
 "The ``displayUnit`` attribute doesn't affect the value of a variable or the "
@@ -420,8 +449,9 @@ msgid ""
 "those values by potentially transforming them into more convenient units for"
 " display."
 msgstr ""
-" ``displayUnit`` （单位显示）属性不影响变量的值或者模拟模型的方程"
-"它仅仅影响把它们转换成更方便的单位显示的那些值的 *rendering* （翻译）。"
+"\ ``displayUnit``\ 属性不影响变量的值或者模拟模型的方程"
+"它仅仅影响把它们转换成更方便的单位显示的那些值的\ *显示*\ 。"
+
 #: ../../source/behavior/equations/variables.rst:318
 msgid "``nominal``"
 msgstr ""
@@ -432,8 +462,9 @@ msgid ""
 "  This nominal value is generally used in numerical calculations to perform "
 "various types of scaling used to avoid round-off or truncation error."
 msgstr ""
-" ``nominal`` （名义）属性用于指定变量的名义值。"
-"这个名义值一般用于在数字计算中执行各种类型的扩展，以避免四舍五入或者截断误差。"
+"\ ``nominal``\ （额定）属性用于指定变量的额定值。"
+"额定值一般用于在数字计算中执行各种类型的扩展，以避免四舍五入或者截断误差。"
+
 #: ../../source/behavior/equations/variables.rst:330
 msgid "``stateSelect``"
 msgstr ""
@@ -446,19 +477,20 @@ msgid ""
 ":ref:`enumerations`, the possible values for this attribute are ``never``, "
 "``avoid``, ``default``, ``prefer`` and ``always``."
 msgstr ""
-" ``stateSelect`` （状态选择）属性用于为Modeliac编译器提供一个线索，一个既定的变量是否应该被选为状态量（在这种情况下有一个选择）。"
-"在上节 :ref:`enumerations` 中讨论讨论的，对于这个属性，可能的值是： ``never`` （从不）， ``avoid`` （避免）， ``default`` （默认）， ``prefer`` （喜欢）， ``always`` （总是）"
+" ``stateSelect`` （状态选择）属性用于为Modeliac编译器提供一个线索。一个既定的变量是否应该被选为状态量（在需要选择的情况）。"
+"在上节\ :ref:`enumerations`\ 中讨论过，这个属性可能值是：\ ``never``\ （从不）、\ ``avoid``\ （避免）、\ ``default``\ （默认）、\ ``prefer``\ （偏向）、\ ``always``\ （总是）"
+
 #: ../../source/behavior/equations/variables.rst:328
 msgid "**Default**: ``default``"
-msgstr ""
+msgstr "\ **默认值**\ ：\ ``default``\ "
 
 #: ../../source/behavior/equations/variables.rst:330
-msgid "**Type**: ``StateSelect`` (enumeration, see :ref:`enumerations`)"
-msgstr ""
+msgid "**Type**: ``StateSelect`` (enumeration, see )"
+msgstr "\ **类型**\ ：\ ``StateSelect``\ （枚举类型，请参阅\ :ref:`enumerations`\ ）"
 
 #: ../../source/behavior/equations/variables.rst:333
 msgid "Attributes of ``Integer``"
-msgstr ""
+msgstr "\ ``Integer``\ 的属性"
 
 #: ../../source/behavior/equations/variables.rst:343
 msgid ""
@@ -467,35 +499,38 @@ msgid ""
 "``start`` attribute may be used by a compiler in the same was as it is for "
 "``Real`` variables (*see previous discussion of* :ref:`fixed-attribute`)"
 msgstr ""
-"值得注意的是， ``Integer`` （整数）变量可以用来表示状态变量或者迭代变量。"
-"在这种情况下， ``start`` （起始）属性就可以被编译器应用，就如它在 ``Real`` （实数）变量中的应用一样（ *见前面讨论的* :ref:`fixed-attribute` ）。"
+"值得注意的是，\ ``Integer``\ 变量可以用来表示状态变量或者迭代变量。"
+"在这种情况下，编译器就可以应用\ ``start``\ 属性。其用法和\ ``Real``\ 变量的情况一样（\ *见前面讨论的*\ :ref:`fixed-attribute`\ ）。"
+
 #: ../../source/behavior/equations/variables.rst:349
 #: ../../source/behavior/equations/variables.rst:402
 msgid ""
 "In the case of a ``parameter``, the ``start`` attribute will (as usual) be "
 "used as the default value for the ``parameter``."
 msgstr ""
-"在一个 ``parameter`` （参数）的情况下， ``start`` （起始）属性将（通常）作为 ``parameter`` （参数）默认值。"
+"对于\ ``parameter``\ ，\ ``start``\ 属性（通常）会作为\ ``parameter``\ 的默认值。"
+
 #: ../../source/behavior/equations/variables.rst:354
 #: ../../source/behavior/equations/variables.rst:372
 #: ../../source/behavior/equations/variables.rst:382
 msgid "**Type**: ``Integer``"
-msgstr ""
+msgstr "\ **类型**\ ：\ ``Integer``\ "
 
 #: ../../source/behavior/equations/variables.rst:357
 #: ../../source/behavior/equations/variables.rst:410
 msgid "*see previous discussion of* :ref:`fixed-attribute`"
 msgstr ""
-" *见前节讨论* :ref:`fixed-attribute` 。"
+"\ *参见前节对*\ :ref:`fixed-attribute`\ *的讨论*\ 。"
+
 #: ../../source/behavior/equations/variables.rst:362
 #: ../../source/behavior/equations/variables.rst:407
 #: ../../source/behavior/equations/variables.rst:415
 msgid "**Type**: ``Boolean``"
-msgstr ""
+msgstr "\ **类型**\ ：\ ``Boolean``\ "
 
 #: ../../source/behavior/equations/variables.rst:386
 msgid "Attributes of ``Boolean``"
-msgstr ""
+msgstr "\ ``Boolean``\ 的属性"
 
 #: ../../source/behavior/equations/variables.rst:396
 msgid ""
@@ -504,11 +539,12 @@ msgid ""
 "``start`` attribute may be used by a compiler in the same was as it is for "
 "``Real`` variables (*see previous discussion of* :ref:`fixed-attribute`)"
 msgstr ""
-"值得注意的是， ``Boolean`` （布尔）变量可以用来表示状态变量或者迭代变量。"
-"在这种情况下， ``start`` （起始）属性就可以被编译器使用，就如它在 ``Real`` （实数）变量中的应用一样（ *见前面讨论* 的 :ref:`fixed-attribute` ）。"
+"值得注意的是，\ ``Boolean``\ 变量可以用来表示状态变量或者迭代变量。"
+"在这种情况下，\ ``start``\ 属性就可以被编译器使用，就如它在\ ``Real``\ 变量中的应用一样（\ *见前面讨论*\ 的\ :ref:`fixed-attribute`\ ）。"
+
 #: ../../source/behavior/equations/variables.rst:418
 msgid "Attributes of ``String``"
-msgstr ""
+msgstr "\ ``String``\ 的属性"
 
 #: ../../source/behavior/equations/variables.rst:428
 msgid ""
@@ -518,8 +554,9 @@ msgid ""
 " value of a ``parameter`` (that happens to have the type of ``String``) if "
 "no explicit value for the parameter is given."
 msgstr ""
-"从技术上讲，一串 ``String`` （字符串）可以作为一个状态变量（甚至迭代变量），但事实上不可以。"
-"因此对于 ``String`` （字符串）变量， ``start`` （开始）属性的唯一实际应用是定义 ``parameter`` （参数）的值（当然得有 ``String`` （字符串）类型），如果参数没有给定明确的值。"
+"从技术上讲，一串\ ``String``\ （字符串）可以作为一个状态变量（甚至迭代变量）。但事实上从没有这种情况。"
+"因此对于\ ``String``\ 变量，\ ``start``\ 属性的唯一实际应用是定义（恰好是\ ``String``\ 类型的）\ ``parameter``\ 的值。前提是参数没有给定明确的值。"
+
 #: ../../source/behavior/equations/variables.rst:439
 msgid ""
 "It is worth noting that :ref:`derived-types` retain the attributes of the "
@@ -529,19 +566,21 @@ msgid ""
 "attributes cannot themselves have attributes.  In other words, the ``start``"
 " attribute doesn't have a ``start`` attribute."
 msgstr ""
-"值得注意的是 :ref:`derived-types` 保留了它们来源的内置类型的属性。"
-"例如，实数变量中的 ``min`` （最小）属性拥有 ``Real`` （实数）类型，但是必须明确指出，属性自己不能拥有属性。"
-"换句话说， ``start`` （起始）属性不能拥有 ``start`` （起始）属性。"
+"值得注意的是\ :ref:`derived-types`\ 保留了其来源的内置类型的属性。"
+"例如，实数变量中的\ ``min``\ 属性拥有\ ``Real``\ 类型。但是必须明确指出，属性自己不能拥有属性。"
+"换句话说，\ ``start``\ 属性不能拥有\ ``start``\ 属性。"
+
 #: ../../source/behavior/equations/variables.rst:450
 msgid "Modifications"
-msgstr ""
+msgstr "修改语句"
 
 #: ../../source/behavior/equations/variables.rst:454
 msgid ""
 "So far, we've seen two types of modifications.  The first is when we change "
 "the value of an attribute, *e.g.,*"
 msgstr ""
-"目前为止，只有两种修改类型。第一种是修改了属性的值， *例如,* ："
+"目前为止，本书只介绍了有两种修改语句类型。第一种是用于修改属性值，例如："
+
 #: ../../source/behavior/equations/variables.rst:464
 msgid ""
 "In this case, we are creating a variable ``x`` of type ``Real``.  But rather"
@@ -551,17 +590,19 @@ msgid ""
 " make our modification.  But as we will see in our next example, it is "
 "possible to make modifications at arbitrary depths."
 msgstr ""
-"在这个例子中，创建了一个实数类型的变量 ``x`` 。"
-"但是对 ``x`` 做了一个修改，它就不是它了。"
-"尤其是修改 ``x`` 的内置类型的起始属性。"
-"这仅仅只是进入 ``x`` 的第一层做修改，在接下来的例子中，可以在任意深度对 ``x`` 做修改。"
+"在这个例子中，创建了一个实数类型的变量\ ``x``\ 。"
+"但是我们不打算直接使用这个变量。我们对\ ``x``\ 加入修改语句。"
+"在这里，我们修改\ ``x``\ 的\ ``start``\ 属性。"
+"这仅仅只是进入\ ``x``\ 的第一层做修改。在接下来的例子中，我们会在任意深度对\ ``x``\ 做修改。"
+
 #: ../../source/behavior/equations/variables.rst:472
 msgid ""
 "The other case where we have seen modifications was in the section on :ref"
 ":`avoiding-repetition`.  There we saw modification used in conjunction with "
 "``extends`` clauses, *e.g.,*"
 msgstr ""
-"另一种修改是在 `避免重复` 那节中。修改是和 ``扩展`` 条款连接在一起的。  *例如,* "
+"另一种修改是在\ :ref:`avoiding-repetition`\ 那节中。此时修改语句是和\ ``扩展``\ 条款连接在一起的。例如："
+
 #: ../../source/behavior/equations/variables.rst:482
 msgid ""
 "Here, the modification is applied to elements that were inherited from the "
@@ -570,8 +611,9 @@ msgid ""
 " parentheses and inside those parentheses we specify the modifications we "
 "wish to make."
 msgstr ""
-"在这里，修改是之间作用在继承自模型的元件上的。"
-"相对于修改属性，这里是元件被修改。在元件后面的括号中指定了希望做出的修改。"
+"在这里，修改语句作用在继承自\ ``QuiescentModelWithInheritance``\ 模型的部件上。"
+"和修改属性时一样，受修改的（模型）元件后带有括号。而所希望的修改则正正在括号中。"
+
 #: ../../source/behavior/equations/variables.rst:490
 msgid ""
 "It is worth noting that modifications can be nested arbitrarily deep. For "
@@ -579,9 +621,10 @@ msgid ""
 "variable ``x`` inherited from the ``QuiescentModelWithInheritance`` model.  "
 "In Modelica, such a modification would be made as follows:"
 msgstr ""
-"值得注意的是，修改可以任意嵌套。"
-"例如，想要修改来自于模型 ``QuiescentModelWithInheritance`` 的变量 ``x`` 中的 ``start`` （开始）属性，"
-"在Modelica中，这种修改可以按下面的实现："
+"值得注意的是，修改语句可以任意嵌套。"
+"例如，我们可以修改来自于模型\ ``QuiescentModelWithInheritance``\ 变量\ ``x``\ 中的\ ``start``\ 属性，"
+"在Modelica中，这种修改语句如下："
+
 #: ../../source/behavior/equations/variables.rst:500
 msgid ""
 "Here we first \"reach inside\" the ``QuiescentModelWithInheritance`` model "
@@ -589,7 +632,8 @@ msgid ""
 "then we \"reach inside\" ``x`` to modify the value of the ``start`` "
 "attribute."
 msgstr ""
-"在这里，首先 \"进入\" 模型 ``QuiescentModelWithInheritance`` 修改（从 ``x`` 中 \"继承\" 的）内容，然后 \"进入\" ``x`` 修改 ``start`` （起始）属性的值。"
+"在这里，首先“进入”模型\ ``QuiescentModelWithInheritance``\ 修改（从\ ``x``\ 中“继承”的）内容。然后，再“进入”\ ``x``\ 修改\ ``start``\ 属性的值。"
+
 #: ../../source/behavior/equations/variables.rst:505
 msgid ""
 "One of the central themes of Modelica is support for reuse and avoiding the "
@@ -597,9 +641,10 @@ msgid ""
 "features in Modelica that support reuse.  We'll learn about others in future"
 " sections."
 msgstr ""
-"Modelica的核心主题之一是支持重用而避免 \"复制和粘贴\" 代码。"
-"而修改就是Modeliaca中支持重用的基本特征。"
-"在后面的章节中将会学习其他的支持重用的特征。"
+"Modelica的核心主题之一是支持重用而避免“复制和粘贴”代码。"
+"而修改语句就是Modeliaca中支持重用的基本特性。"
+"在后面的章节中将会学习其他支持重用的特性。"
+
 #: ../../source/behavior/equations/variables.rst:35
 msgid "parameter"
 msgstr ""

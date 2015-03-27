@@ -20,7 +20,7 @@ msgid ""
 "If you are more familiar with mechanical systems, this example might help "
 "reinforce some of the concepts we've covered so far.  The system we wish to "
 "model is the one shown in the following figure:"
-msgstr "如果你对机械系统比较熟悉，这个例子可能有助于你理解前面所介绍的一些概念。我们期望所建模的系统如下图所示："
+msgstr "如果你对机械系统比较熟悉，这个例子可能有助于你理解前面所介绍的一些概念。我们期望建模的系统如下图所示："
 
 #: ../../source/behavior/equations/mechanical.rst:16
 msgid ""
@@ -33,8 +33,8 @@ msgid ""
 "the book on :ref:`components`) where **models will be built in this "
 "schematic form from the beginning**."
 msgstr ""
-"值得指出的是以示意图的形式表达模型的意图是多么容易。假设通过适当的图示表达，专家就可以很快的理解系统的组成并对系统可能具有的特性有一定的了解。虽然现在我们专注于方程和变量的定义，我们最终将转换工作方式（在本书后续章节"
-" :ref:`components` 将会讲解）， **在开始建模的时候就以系统示意图的形式来搭建** ."
+"值得指出的是以示意图的形式表达模型的意图是多么容易。假设通过适当的图示表达，专家就可以很快的理解系统的组成并对系统可能具有的特性有一定的了解。"
+"虽然现在我们专注于方程和变量的定义，我们最终将转换工作方式（在本书后续章节\ :ref:`components`\ 将会讲解），\ **在开始建模的时候就以系统示意图的形式来搭建**\ ."
 
 #: ../../source/behavior/equations/mechanical.rst:26
 msgid ""
@@ -44,9 +44,9 @@ msgid ""
 ":math:`\\omega = \\dot{\\varphi}`.  For each inertia, the balance of angular"
 " momentum for the inertia can be expressed as:"
 msgstr ""
-"现在，我们依然将重点放在如何用方程来表示这个简单的机械系统。每个与惯量相关的角位移 :math:`\\varphi` ，及角速度 "
-":math:`\\omega` 之间有这样的关系式： :math:`\\omega = \\dot{\\varphi}` "
-"。对于每个惯量，根据角动量守恒可以得到如下表达式："
+"现在，我们依然将重点放在如何用方程来表示这个简单的机械系统。"
+"每个与惯量相关的角位移\ :math:`\\varphi`\ ，及角速度\ :math:`\\omega`\ 之间有这样的关系式：\ :math:`\\omega = \\dot{\\varphi}`\ 。"
+"对于每个惯量，根据角动量守恒可以得到如下表达式："
 
 #: ../../source/behavior/equations/mechanical.rst:34
 msgid ""
@@ -54,8 +54,8 @@ msgid ""
 "inertia should be equal to the product of the moment of inertia, :math:`J`, "
 "and the angular acceleration, :math:`\\dot{\\omega}`."
 msgstr ""
-"换句话说，即施加在惯量上的扭矩 :math:`\\tau` 总和等于转动惯量 :math:`J` 和角加速度 "
-":math:`\\dot{\\omega}` 的乘积。"
+"换句话说，即施加在惯量元素上的扭矩\ :math:`\\tau`\ 总和等于转动惯量\ :math:`J`\ 和角加速度"
+"\ :math:`\\dot{\\omega}`\ 的乘积。"
 
 #: ../../source/behavior/equations/mechanical.rst:40
 msgid ""
@@ -64,8 +64,8 @@ msgid ""
 "dampers.  For the springs, we can use Hooke's law to express the "
 "relationship between torque and angular displacement as follows:"
 msgstr ""
-"在上述方程中，我们唯一缺少的是扭矩值 :math:`\\tau_i` "
-"。从上面的示意图上我们可以看到，上述机械系统包含两个弹簧和两个阻尼器。对于弹簧，我们可以根据胡克定律来表示扭矩和角位移之间的关系，如下所示："
+"在上述方程中，我们唯一缺少的是扭矩值\ :math:`\\tau_i`\ 。"
+"从上面的示意图上我们可以看到，上述机械系统包含两个弹簧和两个阻尼器。对于弹簧，我们可以根据胡克定律来表示扭矩和角位移之间的关系，如下所示："
 
 #: ../../source/behavior/equations/mechanical.rst:48
 msgid ""
@@ -88,7 +88,7 @@ msgid ""
 "These initial conditions essentially mean that the system starts in a state "
 "where neither inertia is actually moving (*i.e.*, :math:`\\omega=0`), but "
 "there is a non-zero deflection across both springs."
-msgstr "这些初始化条件意味着系统的开始状态没有惯量转动 ( *即* , :math:`\\omega=0`) ，但是在两个弹簧之间有一个非零的偏转。"
+msgstr "这些初始化条件意味着系统的开始状态惯量元素没有转动(即\ :math:`\\omega=0`\ ) ，但是在两个弹簧之间有一个非零的偏转。"
 
 #: ../../source/behavior/equations/mechanical.rst:78
 msgid ""
@@ -100,7 +100,7 @@ msgstr "将上述所有变量和方程放在一起，我们就可以用Modelica�
 msgid ""
 "As we did with the low-pass filter example, ``RLC1``, let's walk through "
 "this line by line."
-msgstr "像我们在低通滤波器  ``RLC1`` 例子中讲解的那样，让我们一步步的来讲解上述模型。"
+msgstr "像我们在低通滤波器\ ``RLC1``\ 例子中讲解的那样，让我们一步步的来讲解上述模型。"
 
 #: ../../source/behavior/equations/mechanical.rst:88
 msgid "As usual, we start with the name of the model:"
@@ -122,13 +122,13 @@ msgstr "然后，我们定义表示系统不同物理特性的各种参数："
 msgid ""
 "For this system, there are four non-``parameter`` variables.  These are "
 "defined as follows:"
-msgstr "对于这个系统，有四个 non-``parameter`` 变量（非参数变量）。定义如下："
+msgstr "对于这个系统，有四个非\ ``parameter``\ 变量。定义如下："
 
 #: ../../source/behavior/equations/mechanical.rst:113
 msgid ""
 "The initial conditions (which we will revisit shortly) are then defined "
 "with:"
-msgstr "然后定义初始条件："
+msgstr "然后定义初始条件（我们很快会重温这一知识点）："
 
 #: ../../source/behavior/equations/mechanical.rst:119
 msgid "Then come the equations describing the dynamic response of our system:"
@@ -147,16 +147,17 @@ msgid ""
 "<getting-physical>`, by defining ``parameter`` variables to represent the "
 "initial conditions as follows:"
 msgstr ""
-"这个模型的唯一缺点是我们所有的初始化条件已经被 \"hard-coded\" "
-"（硬编码）到模型中。这也意味着，我们将不能指定任何其他组调用该模型的初始条件。我们可以克服这个问题，就像在 :ref:`Newton cooling "
-"examples <getting-physical>` 例子中通过定义 ``parameter`` 变量来表示初始条件，如下所示："
+"这个模型的唯一缺点是我们所有的初始化条件已经被"
+"“硬编码”到模型中。这也意味着，我们将不能指定任何其他组调用该模型的初始条件。"
+"我们可以克服这个问题，就像在\ :ref:`Newton cooling examples <getting-physical>`\ 例子中通过定义\ ``parameter``\ 变量来表示初始条件，如下所示："
 
 #: ../../source/behavior/equations/mechanical.rst:146
 msgid ""
 "In this way, the parameter values can be changed either in the simulation "
 "environment (where parameters are typically editable by the user) or, as we "
 "will see shortly, via so-called \"modifications\"."
-msgstr "通过这种方式，该参数值即可以在仿真环境中变化（其中，参数值通常被用户编辑），也可以通过所谓的 \"modifications\" （修改）来改变"
+msgstr "通过这种方式，该参数值即可以在仿真环境中更改（参数值通常会被用户编辑）。"
+"另外，我们也可以通过所谓的修改语句（modifications）来改变参数。"
 
 #: ../../source/behavior/equations/mechanical.rst:150
 msgid ""
@@ -168,19 +169,25 @@ msgid ""
 "``SecondOrderSystemInitParams`` model as is, we get the following solution "
 "for the angular positions and velocities:"
 msgstr ""
-"在这个最新版本的模型中你会看到，新设置的参数和之前硬编码参数的的数值是一样的。因此，默认的初始条件和之前的完全一样。但是现在，我们有充分的自由去探索其他初始化条件的方法。例如，我们仿真"
-" ``SecondOrderSystemInitParams`` 模型，可以得到角位移及角速度的根轨迹，如下图："
+"在这个最新版本的模型中你会看到，新设置的参数和之前硬编码参数的数值是一样的。因此，默认的初始条件和之前的完全一样。但是现在，我们有充分的自由去探索其他初始化条件的方法。例如，我们仿真"
+"\ ``SecondOrderSystemInitParams``\ 模型，可以得到角位移及角速度解的轨迹，如下图："
 
 #: ../../source/behavior/equations/mechanical.rst:0
 msgid "Expanding on this mechanical example"
 msgstr "机械示例的扩展"
+
+#: ../../source/behavior/equations/mechanical.rst:161
+msgid ""
+"However, if we modify the ``phi1_init`` parameter to be *1* at the start of "
+"our simulation, we get this solution instead:"
+msgstr "但是，如果将参数\ ``phi1_init``\ 的值修改为1，可以得到以下的仿真结果："
 
 #: ../../source/behavior/equations/mechanical.rst:168
 msgid ""
 "If you would like to see this example further developed, you may wish to "
 "jump to the set of examples involving rotational systems found in the "
 "section on :ref:`speed-measurement`."
-msgstr "如果你想了解本实例更深的扩展，可以直接跳到包含旋转系统实例集部分 :ref:`speed-measurement` 。"
+msgstr "如果你想了解本实例更深的扩展，可以直接跳到包含更多旋转系统实例的\ :ref:`speed-measurement`\ 一节里。"
 
 #: ../../source/behavior/equations/mechanical.rst:172
 msgid ""
@@ -194,15 +201,5 @@ msgstr "胡克定律"
 
 #: ../../source/behavior/equations/mechanical.rst:131
 msgid "modifications"
-msgstr "修改"
+msgstr "修改语句："
 
-#: ../../source/behavior/equations/mechanical.rst:161
-msgid ""
-"However, if we modify the ``phi1_init`` parameter to be *1* at the start of "
-"our simulation, we get this solution instead:"
-msgstr ""
-
-#~ msgid ""
-#~ "However, if modify the ``phi1_init`` parameter to be *1* at the start of our"
-#~ " simulation, we get this solution instead:"
-#~ msgstr "但是，如果修改参数 ``phi1_init`` 的值为1，可以得到以下的仿真结果："

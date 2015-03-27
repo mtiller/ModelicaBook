@@ -11,20 +11,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+
 #: ../../source/behavior/equations/electrical.rst:4
 msgid "An Electrical Example"
 msgstr ""
 "电气方面的实例"
+
 #: ../../source/behavior/equations/electrical.rst:6
 msgid ""
 "Let us return now to an engineering context.  For readers who are more "
 "familiar with electrical systems, consider the following circuit:"
 msgstr ""
 "现在，让我们回到工程应用方面。那些对电气系统比较熟悉的读者，考虑下面的回路："
+
 #: ../../source/behavior/equations/electrical.rst:17
 msgid "Low-Pass RLC Filter"
 msgstr ""
 "低通RLC滤波器"
+
 #: ../../source/behavior/equations/electrical.rst:19
 msgid ""
 "Suppose we want to solve for: :math:`V`, :math:`i_L`, :math:`i_R` and "
@@ -32,18 +36,21 @@ msgid ""
 " :math:`i_C`, we can use the equations associated with inductors, resistors "
 "and capacitors, respectively:"
 msgstr ""
-"假设我们要求解以下变量： :math:`V` , :math:`i_L` , :math:`i_R` 以及 :math:`i_C` 。"
-"我们可以使用下面与电感、电容以及电阻有关的方程来求解各个电流值 :math:`i_L` , :math:`i_R` 及 :math:`i_C` 。"
+"假设我们要去求解以下变量：\ :math:`V`\ 、\ :math:`i_L`\ 、\ :math:`i_R`\ 以及\ :math:`i_C`\ 。"
+"我们可以使用下面与电感、电容以及电阻有关的方程来求解各个电流值\ :math:`i_L`\ 、\ :math:`i_R`\ 及\ :math:`i_C`\ 。"
+
 #: ../../source/behavior/equations/electrical.rst:29
 msgid "where :math:`V_b` is the battery voltage."
 msgstr ""
-"其中， :math:`V_b` 表示电池电压。"
+"其中，\ :math:`V_b`\ 表示电池电压。"
+
 #: ../../source/behavior/equations/electrical.rst:31
 msgid ""
 "Since we have only 3 equations, but 4 variables, we need one additional "
 "equation.  That additional equation is going to be Kirchoff's current law:"
 msgstr ""
-"因为我们只有3个方程，却要求解4个变量，因此我们需要一个附加的方程。附加的方程根据基尔霍夫电流定律来得到，如下所示："
+"因为我们只有3个方程，却要求解4个变量，因此我们需要一个附加的方程。附加方程根据基尔霍夫电流定律来得到，如下所示："
+
 #: ../../source/behavior/equations/electrical.rst:37
 msgid ""
 "Now that we have determined the equations and variables for this problem, we"
@@ -53,21 +60,25 @@ msgid ""
 " how to create models by dragging, dropping and connecting models that "
 "really look like the circuit components in our :ref:`low-pass-rlc`."
 msgstr ""
-"现在，我们已经确定了求解这个问题所需的方程和变量，我们将采用直接把这些方程转换为Modelica语言的方式来创建一个基本的模型（包括物理类型）。"
-"但是，在后面的章节 :ref:`electrical-components` 中，我们还会回到这个电路，并且演示如何通过拖动、删除以及连接类似于 :ref:`low-pass-rlc` 中回路的基本电路组件"
-"来创建模型。"
+"我们已经确定了求解这个问题所需的方程和变量。现在，我们直接把这些方程转换为Modelica语言，以此创建一个基本模型（模型包括物理类型）。"
+"但是，在后面的章节\ :ref:`electrical-components`\ 中，我们还会回到这个电路。"
+"到时我们会演示如何通过拖放以及连接模型来创建电路。"
+"最后，我们会得出外观上类似于\ :ref:`low-pass-rlc`\ 的电路模型。"
+
 #: ../../source/behavior/equations/electrical.rst:45
 msgid ""
 "But for now, we will build a model composed simply of variables and "
 "equations.  Such a model could be written as follows:"
 msgstr ""
-"但是现在，我们将建立一个由简单变量和方程组成的模型。可以表示为如下形式："
+"但是现在，我们将建立一个由简单变量和方程组成的模型。这可以表示为如下形式："
+
 #: ../../source/behavior/equations/electrical.rst:52
 msgid ""
 "Let's go through this example bit by bit and reinforce the meaning of the "
 "various statements.  Let's start at the top:"
 msgstr ""
-"让我们一点点的来检查这个例子，并且加强理解各种语句的含义。从模型定义部分开始："
+"让我们一点点的来检查这个例子，并且加强理解各种语句的含义。让我们从模型定义部分开始："
+
 #: ../../source/behavior/equations/electrical.rst:59
 msgid ""
 "Here we see that the name of the model is ``RLC1``.  Furthermore, a "
@@ -75,16 +86,18 @@ msgid ""
 "capacitor circuit model\"``.  Next, we introduce a few physical types that "
 "we will need:"
 msgstr ""
-"我们可以看到，模型的名字是 ``RLC1`` 。此外，还包含关于这个模型的描述，即 ``\"A resistor-inductor-capacitor circuit model\"`` 。"
+"我们可以看到，模型的名字是\ ``RLC1``\ 。此外，它还包含关于这个模型的描述，即\ ``\"A resistor-inductor-capacitor circuit model\"``\ 。"
 "接下来，我们定义了需要用到的几个物理类型："
+
 #: ../../source/behavior/equations/electrical.rst:68
 msgid ""
 "Each of these lines introduces a physical type that specializes the built-in"
 " ``Real`` type by associating it with a particular physical unit.  Then, we "
 "declare all of the ``parameter`` variables in our problem:"
 msgstr ""
-"每一行都通过关联特定的物理单位定义了一种指定了嵌入的 ``Real`` 类型的物理类型。"
-"然后，我们声明所有的 ``parameter`` 变量："
+"每一行都通过关联特定的物理单位定义了一种指定了嵌入的\ ``Real``\ 类型的物理类型。"
+"然后，我们声明所有的\ ``parameter``\ 变量："
+
 #: ../../source/behavior/equations/electrical.rst:77
 msgid ""
 "These ``parameter`` variables represent various physical characteristics (in"
@@ -92,21 +105,24 @@ msgid ""
 "  The last variables we need to define are the ones we wish to solve for, "
 "*i.e.*,"
 msgstr ""
-"这些 ``parameter`` 变量分别代表了不同的物理特性（这里分别表示电压，电感，电阻和电容）。"
-"最后定义我们想要求解的变量，如："
+"这些\ ``parameter``\ 变量分别代表了不同的物理特性（这里分别表示电压、电感、电阻和电容）。"
+"最后定义我们想要求解的变量，即："
+
 #: ../../source/behavior/equations/electrical.rst:86
 msgid ""
 "Now that all the variables have been declared, we add an ``equation`` "
 "section to the model that specifies the equations to use when generating "
 "solutions for this model:"
 msgstr ""
-"现在，所有的变量都已经声明完成了，我们要在模型中添加 ``equation`` 部分定义在生成解决方案时使用的方程组。"
+"现在，所有的变量都已经声明了。我们要在模型中添加\ ``equation``\ 段落，去定义在生成解时使用的方程组。"
+
 #: ../../source/behavior/equations/electrical.rst:94
 msgid ""
 "Finally, we close the model by creating an ``end`` statement that includes "
 "the ``model`` name (*i.e.*, ``RLC1`` in this case):"
 msgstr ""
-"最后，我们通过创建包含 ``model`` 名字的 ``end`` 语句关闭模型 ( *例如* , 本例中模型名为 ``RLC1`` ):"
+"最后，我们通过创建包含\ ``model``\ 名字的\ ``end``\ 语句去结束模型（例如，本例中模型名为\ ``RLC1``\ ）："
+
 #: ../../source/behavior/equations/electrical.rst:103
 msgid ""
 "One thing that distinguishes this example from the previous examples is the "
@@ -116,8 +132,9 @@ msgid ""
 "the derivative of a variable) and others that are simply algebraic "
 "equations."
 msgstr ""
-"本实例和前面实例的区别是：包含更多的方程。在 ``NewtonCooling`` 例子中，有些方程左右两边都有表达式。"
+"本实例和前面实例的区别在于，本实例包含更多的方程。在\ ``NewtonCooling``\ 例子中，有些方程左右两边都有表达式。"
 "其中还有一个微分方程（包含一个变量的微分）和简单的代数方程的混合方程。"
+
 #: ../../source/behavior/equations/electrical.rst:110
 msgid ""
 "This further emphasizes the point that in Modelica it is not necessary to "
@@ -125,8 +142,9 @@ msgid ""
 " required in some modeling environments.  We could, of course, rearrange the"
 " equations into a more explicit form like this:"
 msgstr ""
-"这也进一步强调了，在Modelica中不同于其他的建模环境，完全没有必要把方程变成所谓的 \"显性状态空间形式\" 。"
+"这也进一步强调了，Modelica不同于其他的建模环境。我们完全没有必要把方程变成所谓的“显式状态空间形式”。"
 "当然，我们可以把方程组重新整理成更加明确的形式，如下所示："
+
 #: ../../source/behavior/equations/electrical.rst:120
 msgid ""
 "But the important point is that with Modelica, we do not need to perform "
@@ -134,6 +152,7 @@ msgid ""
 " form we chose."
 msgstr ""
 "重要的是，在Modelica中我们没有必要进行这样的操作。相反的，我们可以自由的将方程组写成任何想要的形式。"
+
 #: ../../source/behavior/equations/electrical.rst:124
 msgid ""
 "Ultimately, these equations will probably need to be manipulated into a form"
@@ -143,8 +162,9 @@ msgid ""
 " model developer to deal with this tedious, time consuming and error prone "
 "task."
 msgstr ""
-"最终，这些方程可能需要转换成类似显性状态空间的形式。但是，如果这样的转换是必须的，那么，这将是Modelcia语言编译器的工作，而需要模型开发者去做。"
-"这也省去了模型开发者处理这些繁琐、费时且容易出错的任务的必要性。"
+"最终，这些方程可能需要转换成类似显式状态空间的形式。但是，如果这样的转换是必须的，那么，这将是Modelcia语言编译器的工作，而不需要模型开发者去做。"
+"这让模型开发者不再有必要去处理这些繁琐、费时且容易出错的任务。"
+
 #: ../../source/behavior/equations/electrical.rst:131
 msgid ""
 "The ability to keep equations in their \"textbook form\" is important "
@@ -156,18 +176,21 @@ msgid ""
 " model development faster and easier, but it dramatically improves the "
 "**reusability** of the models."
 msgstr ""
-"将方程保存成其自有的 \"textbook form\" 的功能是非常重要的。在我们后续章节中将会介绍到，"
-"这些方程将会被各个组件模型 \"captured\" （调用）。"
-"在这些情况下，我们无法明确的知道（当我们创建组件模型时）用于求解每个方程所使用的变量。"
-"Modelica语言编译器所执行的这些操作不仅使模型开发更快、更容易，而且也显著提高了模型的 **可重用性** 。"
+"将方程保存成其自有“教科书形式”这一功能非常重要。在我们后续章节中将会介绍到，"
+"这些方程将会“包含在”各个组件模型内。"
+"在这些情况下，我们（在创建组件模型时）无法明确知道用于求解每个方程所使用的变量。"
+"Modelica语言编译器所执行的这些操作不仅使模型开发更快、更容易，而且也显著提高了模型的\ **可重用性**\ 。"
+
 #: ../../source/behavior/equations/electrical.rst:141
 msgid "The following figure shows the dynamic response of the ``RLC1`` model:"
 msgstr ""
-"下图显示了模型 ``RLC1`` 的动态响应结果："
+"下图显示了模型\ ``RLC1``\ 的动态响应："
+
 #: ../../source/behavior/equations/electrical.rst:0
 msgid "Expanding on these electrical examples"
 msgstr ""
-"电气方面实例的扩展"
+"电气实例的扩展"
+
 #: ../../source/behavior/equations/electrical.rst:148
 msgid ""
 "As mentioned in the :ref:`preface`, the structure of this book allows us to "
@@ -178,10 +201,11 @@ msgid ""
 "example extended to include more complex behavior, you may want to skip "
 "ahead to the :ref:`switched-rlc` example."
 msgstr ""
-"如序言中所述 :ref:`preface` ，这本书的结构基于超媒体的浏览方法，可以使读者更方便的处理与他们的目标和兴趣相一致的材料"
+"如\ :ref:`preface`\ 所述，这本书的结构基于超媒体的浏览方法。这可以使读者更方便地处理与其目标、兴趣相一致的材料"
 "下一章将展示机械方面的模型，模型内的方程是基于机械系统原理获得的。"
-"如果你希望看到包含更复杂的电气系统特性的实例而不是本实例，你可以直接跳到下面的实例中 :ref:`switched-rlc` 。"
+"但如果你希望看到包含更复杂的电气系统特性的实例，你可以直接跳到下面的\ :ref:`switched-rlc`\ 实例中。"
+
 #: ../../source/behavior/equations/electrical.rst:101
 msgid "state-space form"
 msgstr ""
-"状态方程形式"
+"状态空间形式"
