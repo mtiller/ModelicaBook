@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "我们在本章见到，组件和子系统模型间的一个区别在于，子系统模型包括\ ``connect``\ 语句。"
 "为了探讨\ ``connect``\ 语句的原理，让我们重温在讨论\ :ref:`thermal-control`\ 时出现的\ ``MultiDomainControl``\ 例子。"
-"如果我们去掉所有注解（我们很快就会讨论这个内容），我们会得到一个如下所示的模型，："
+"如果我们去掉所有标注（我们很快就会讨论这个内容），我们会得到一个如下所示的模型，："
 
 #: ../../source/components/components/system_models.rst:56
 msgid ""
@@ -238,7 +238,7 @@ msgid ""
 "details of the ``Icon`` annotation were covered in our previous discussion "
 "of :ref:`graphical-annos`."
 msgstr ""
-"每个组件的图标就是包含在为该组件定义\ ``Icon``\ 注解内的任何绘图图元。"
+"每个组件的图标就是包含在为该组件定义\ ``Icon``\ 标注内的任何绘图图元。"
 "\ ``Icon``\ 标注的细节在之前对\ :ref:`graphical-annos`\ 的讨论里涵盖了。"
 
 #: ../../source/components/components/system_models.rst:182
@@ -252,8 +252,8 @@ msgid ""
 "annotation appeared in many of the examples in this chapter, *e.g.,*"
 msgstr ""
 "我们知道要组件要怎样呈现。现在，我们需要知道要在哪里对组件进行绘制。"
-"这就需要\ ``Placement``\ 注解了。"
-"这个注解出现在本章中许多例子里，如："
+"这就需要\ ``Placement``\ 标注了。"
+"这个标注出现在本章中许多例子里，如："
 
 #: ../../source/components/components/system_models.rst:194
 msgid ""
@@ -262,8 +262,8 @@ msgid ""
 ":`graphical-annos`, we can describe the ``Placement`` annotation in terms of"
 " a ``record`` definition:"
 msgstr ""
-"\ ``Placement``\ 注解不过建立了一个矩形区域，用以绘制组件的图标。"
-"与其他的\ :ref:`graphical-annos`\ 相同，我们可以将\ ``Placement``\ 注解用\ ``record``\ 定义表示："
+"\ ``Placement``\ 标注不过建立了一个矩形区域，用以绘制组件的图标。"
+"与其他的\ :ref:`graphical-annos`\ 相同，我们可以将\ ``Placement``\ 标注用\ ``record``\ 定义表示："
 
 #: ../../source/components/components/system_models.rst:207
 msgid ""
@@ -271,7 +271,7 @@ msgid ""
 "``GraphicItem`` annotation we discussed earlier, *i.e.,* it is used to "
 "control whether the component is rendered or not."
 msgstr ""
-"\ ``visible``\ 字段与在此前讨论\ ``GraphicItem``\ 注解时的作用一致。也就是说，此项用以控制组件是否被渲染。"
+"\ ``visible``\ 字段与在此前讨论\ ``GraphicItem``\ 标注时的作用一致。也就是说，此项用以控制组件是否被渲染。"
 
 #: ../../source/components/components/system_models.rst:211
 msgid ""
@@ -281,12 +281,12 @@ msgid ""
 "``iconTransformation`` is only defined for connectors since these are "
 "typically the only components that appear in the icon representation."
 msgstr ""
-"\ ``transformation``\ 字段定义了如何在示意图中呈现图标。若注解被认为是\ **子系统**\ 图标的一部分时，\ ``iconTransformation``\ 则定义了该注解此时的呈现方式。"
+"\ ``transformation``\ 字段定义了如何在示意图中呈现图标。若标注被认为是\ **子系统**\ 图标的一部分时，\ ``iconTransformation``\ 则定义了该标注此时的呈现方式。"
 "一般来说， \ ``iconTransformation``\ 仅用于连接器上。因为连接器通常是出现在图标表示里的唯一组件。"
 
 #: ../../source/components/components/system_models.rst:218
 msgid "The ``Transformation`` annotation, which is defined as follows:"
-msgstr "\ ``Transformation``\ 注解定义如下："
+msgstr "\ ``Transformation``\ 标注定义如下："
 
 #: ../../source/components/components/system_models.rst:228
 msgid ""
@@ -312,7 +312,7 @@ msgid ""
 " example:"
 msgstr ""
 "最后，我们讨论第三个话题，连接的显示。"
-"同样，决定如何渲染连接的注解已经出现在许多例子中。"
+"同样，决定如何渲染连接的标注已经出现在许多例子中。"
 "现在，我们终于会解释这些信息的意义。"
 "考虑我们\ :ref:`thermal-control`\ 例子中的下列\ ``connect``\ 声明："
 
@@ -323,10 +323,10 @@ msgid ""
 "the :ref:`line-anno`.  The annotation data is the same in this context as it"
 " was then."
 msgstr ""
-"注意到\ ``connect``\ 语句后带有注解。"
-"尤其要注意，这是一个\ ``Line``\ 注解。"
+"注意到\ ``connect``\ 语句后带有标注。"
+"尤其要注意，这是一个\ ``Line``\ 标注。"
 "我们此前已经讨论过\ :ref:`line-anno`\ 。"
-"注解数据是在这里与当时的数据一致。"
+"标注数据是在这里与当时的数据一致。"
 
 #: ../../source/components/components/system_models.rst:62
 #: ../../source/components/components/system_models.rst:75

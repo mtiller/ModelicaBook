@@ -180,7 +180,7 @@ msgid ""
 "follows:"
 msgstr ""
 "要快速添加热传递，我们可以定义另一个组件模型，去表示到与环境温度的传热。"
-"这样的模型可以在Modelica表示（再次，去掉了\ ``Icon``\ 注解）如下："
+"这样的模型可以在Modelica表示（再次，去掉了\ ``Icon``\ 标注）如下："
 
 #: ../../source/components/components/heat_transfer.rst:161
 msgid ""

@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/connectors/annotations.rst:4
 msgid "Graphical Annotations"
-msgstr "图形注解"
+msgstr "图形标注"
 
 #: ../../source/components/connectors/annotations.rst:6
 msgid ""
@@ -65,8 +65,8 @@ msgid ""
 "of these are annotations that appear directly in the definition and are not "
 "associated with existing elements like declarations or ``extends`` clauses."
 msgstr ""
-"一个定义在“icon”层所展现的外观是由\ ``Icon``\ 注解指定的（在之前对\ :ref:`graphical-connectors`\ 讨论里有简要介绍）。"
-"毫无疑问，定义在“diagram”层所展现的外观则是由\ ``Diagram``\ 注解指定的。"
+"一个定义在“icon”层所展现的外观是由\ ``Icon``\ 标注指定的（在之前对\ :ref:`graphical-connectors`\ 讨论里有简要介绍）。"
+"毫无疑问，定义在“diagram”层所展现的外观则是由\ ``Diagram``\ 标注指定的。"
 "两者均是直接出现在定义里，不和声明或者\ ``extends``\ 条款等现有元素相关联。"
 
 #: ../../source/components/connectors/annotations.rst:36
@@ -91,10 +91,10 @@ msgid ""
 "more common, all further examples regarding graphical annotations will "
 "appear exclusively in the context of the ``Icon`` annotation."
 msgstr ""
-"在这本书的其余部分，我们将利用\ ``Icon``\ 注解举例介绍图形注解。"
-"这些例子对\ ``Diagram``\ 注解同样有效。"
-"但由于\ ``Icon``\ 注解相对常见，"
-"关于图形注释的进一步例子仅会出现\ ``Icon``\ 注解里。"
+"在这本书的其余部分，我们将利用\ ``Icon``\ 标注举例介绍图形标注。"
+"这些例子对\ ``Diagram``\ 标注同样有效。"
+"但由于\ ``Icon``\ 标注相对常见，"
+"关于图形注释的进一步例子仅会出现\ ``Icon``\ 标注里。"
 
 #: ../../source/components/connectors/annotations.rst:51
 msgid "Common Graphical Definitions"
@@ -109,7 +109,7 @@ msgid ""
 "In addition, many of the annotations we will be discussing include a set of "
 "common elements represented by the following ``record`` definition:"
 msgstr ""
-"另外，很多我们马上会讨论到的注解包括一组在以下\ ``record``\ 定义里的共同元素："
+"另外，很多我们马上会讨论到的标注包括一组在以下\ ``record``\ 定义里的共同元素："
 
 #: ../../source/components/connectors/annotations.rst:94
 msgid ""
@@ -117,11 +117,11 @@ msgid ""
 "``GraphicItem`` to make the presence of these common elements explicitly "
 "clear."
 msgstr ""
-"为了明晰地介绍表示图形元素的常用注解，我们会以\ ``GraphicItem``\ 为基础扩展出其他模型。"
+"为了明晰地介绍表示图形元素的常用标注，我们会以\ ``GraphicItem``\ 为基础扩展出其他模型。"
 
 #: ../../source/components/connectors/annotations.rst:99
 msgid "``Icon`` and ``Diagram`` Annotations"
-msgstr "\ ``Icon``\ 和\ ``Diagram``\ 注解"
+msgstr "\ ``Icon``\ 和\ ``Diagram``\ 标注"
 
 #: ../../source/components/connectors/annotations.rst:101
 msgid ""
@@ -141,10 +141,10 @@ msgid ""
 " also includes a list of graphical items stored in ``graphics``.  The "
 "definition of the ``Diagram`` annotation is identical:"
 msgstr ""
-"换言之，该\ ``Icon``\ 注解包括了\ ``coordinateSystem``\ 定义内的坐标系信息。"
-"而且，注解还包括了\ ``graphics``\ 内的图形物件数组。"
+"换言之，该\ ``Icon``\ 标注包括了\ ``coordinateSystem``\ 定义内的坐标系信息。"
+"而且，标注还包括了\ ``graphics``\ 内的图形物件数组。"
 "The definition of the ``Diagram`` annotation is identical:"
-"\ ``Diagram``\ 注解的定义也是一样："
+"\ ``Diagram``\ 标注的定义也是一样："
 
 #: ../../source/components/connectors/annotations.rst:135
 msgid "Graphical Items"
@@ -157,7 +157,7 @@ msgid ""
 "associated with either the ``Icon`` or ``Diagram`` annotations.  Their "
 "definitions are presented here for reference."
 msgstr ""
-"Modelica标准里有许多不同的图形物件可以放入\ ``Icon``\ 或\ ``Diagram``\ 注解内的\ ``graphics``\ 矢量。"
+"Modelica标准里有许多不同的图形物件可以放入\ ``Icon``\ 或\ ``Diagram``\ 标注内的\ ``graphics``\ 矢量。"
 "其定义在这里列出以供参考。"
 
 #: ../../source/components/connectors/annotations.rst:145
@@ -186,7 +186,7 @@ msgstr ""
 
 #: ../../source/components/connectors/annotations.rst:238
 msgid "Inheriting Graphical Annotations"
-msgstr "继承图形注解"
+msgstr "继承图形标注"
 
 #: ../../source/components/connectors/annotations.rst:240
 msgid ""
@@ -195,8 +195,8 @@ msgid ""
 "annotating the ``extends`` clause with the following data (for the icon and "
 "diagram layers, respectively):"
 msgstr ""
-"当一个模型定义从另一个定义继承时，图形注解在默认情况下也会继承。"
-"不过，这种行为可以通过对\ ``extends``\ 子句添加以下注解来控制（分别对应图标层和简图层）："
+"当一个模型定义从另一个定义继承时，图形标注在默认情况下也会继承。"
+"不过，这种行为可以通过对\ ``extends``\ 子句添加以下标注来控制（分别对应图标层和简图层）："
 
 #: ../../source/components/connectors/annotations.rst:257
 msgid ""
@@ -219,7 +219,7 @@ msgid ""
 "supported:"
 msgstr ""
 "\ :ref:`text-anno`\ 标注内的\ ``textString``\ 字段可以包含替换模式。"
-"注解支持以下的替换模式："
+"标注支持以下的替换模式："
 
 #: ../../source/components/connectors/annotations.rst:271
 msgid ""
@@ -266,10 +266,10 @@ msgid ""
 " by two :ref:`rect-anno` annotations and finally a :ref:`text-anno` (which "
 "also makes use of the :ref:`substitutions` we discussed earlier)."
 msgstr ""
-"这里我们看到了与\ ``PositivePin``\ 定义相关联的\ ``annotation``\ 是个模型注解。"
+"这里我们看到了与\ ``PositivePin``\ 定义相关联的\ ``annotation``\ 是个模型标注。"
 "此外，我们可以看到这个注释内\ ``Icon``\ 元素包含一系列的图形物体。"
 "第一个图形物体是\ :ref:`ellipse-anno`\ 注释。"
-"紧接着的是两个\ :ref:`rect-anno`\ 注解。最后是\ :ref:`text-anno`\ （这里使用了前面所讨论的\ :ref:`substitutions`\ ）。"
+"紧接着的是两个\ :ref:`rect-anno`\ 标注。最后是\ :ref:`text-anno`\ （这里使用了前面所讨论的\ :ref:`substitutions`\ ）。"
 
 #: ../../source/components/connectors/annotations.rst:298
 msgid ""

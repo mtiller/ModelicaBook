@@ -262,14 +262,14 @@ msgid ""
 "popular and useful that there are proposals to actually make it part of the "
 "language itself in the future."
 msgstr ""
-"记录Modelica注解时常常\ **假设**\ 注解和某个\ :ref:`record-def`\ 相关联。"
+"记录Modelica标注时常常\ **假设**\ 标注和某个\ :ref:`record-def`\ 相关联。"
 "我们将在下个主题看到这个技巧的几个例子。"
 "强烈建议大家使用这种方法来记录预期的标注数据。"
 "其实，这种技术如此的流行而且实用，以致于有人建议，让其实际上成为语言本身的一部分。"
 
 #: ../../source/behavior/equations/annotations.rst:231
 msgid "Introductory Annotations"
-msgstr "简单注解"
+msgstr "简单标注"
 
 #: ../../source/behavior/equations/annotations.rst:233
 msgid ""
@@ -405,7 +405,7 @@ msgid ""
 "simulation results that are produced.  This can save both simulation time "
 "and disk space because it avoids writing out data that will never be viewed."
 msgstr ""
-"\ ``HideResult``\ 注解用于表明，分析者并不关心该变量的解。"
+"\ ``HideResult``\ 标注用于表明，分析者并不关心该变量的解。"
 "通过把\ ``HideResult``\ 值设置为\ ``True``\ ，模型开发者告诉Modelica编译器并不需要在任何产生的结果里储存被标注的值。"
 "这可以节省模拟时间和磁盘空间。因为这样避免了写入根本不会被读取的数据。"
 

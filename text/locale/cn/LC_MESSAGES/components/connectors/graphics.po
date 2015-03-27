@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../../source/components/connectors/graphics.rst:29
 msgid "Icon Annotations"
-msgstr "图标注解"
+msgstr "图标标注"
 
 #: ../../source/components/connectors/graphics.rst:34
 msgid ""
@@ -69,8 +69,8 @@ msgid ""
 "To demonstrate this, consider the following electrical pin connector "
 "definitions:"
 msgstr ""
-"当我们的将注解和定义相关联时，我们其实是将其放置在定义内。"
-"但注解不会和定义内的任何声明以及其他实体想关联。"
+"当我们的将标注和定义相关联时，我们其实是将其放置在定义内。"
+"但标注不会和定义内的任何声明以及其他实体想关联。"
 "相反，它是定义其中的一个元素。"
 "为了证明这一点，考虑下面的电气针脚接口的定义："
 
@@ -104,7 +104,7 @@ msgid ""
 "Let's look in greater detail at the ``Icon`` annotation in the "
 "``PositivePin`` definition:"
 msgstr ""
-"让我们更详细地看看在\ ``PositivePin``\ 定义的\ ``Icon``\ 注解："
+"让我们更详细地看看在\ ``PositivePin``\ 定义的\ ``Icon``\ 标注："
 
 #: ../../source/components/connectors/graphics.rst:66
 msgid ""
@@ -147,7 +147,7 @@ msgid ""
 "rendering as well."
 msgstr ""
 "本章后面会复习关于\ :ref:`graphical-annos`\ 的内容。"
-"而我们也会更多地看到使用图形注解的模型。因为我们会从纯代码模型过渡为包含图形渲染的实现。"
+"而我们也会更多地看到使用图形标注的模型。因为我们会从纯代码模型过渡为包含图形渲染的实现。"
 
 #: ../../source/components/connectors/graphics.rst:31
 msgid "annotations"

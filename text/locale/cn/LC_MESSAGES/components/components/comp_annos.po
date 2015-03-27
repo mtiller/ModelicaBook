@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/components/comp_annos.rst:4
 msgid "Component Model Annotations"
-msgstr "组件模型注解"
+msgstr "组件模型标注"
 
 #: ../../source/components/components/comp_annos.rst:6
 msgid ""
@@ -23,8 +23,8 @@ msgid ""
 "those annotations that have not yet been explained and discuss their "
 "purpose."
 msgstr ""
-"本章例子中出现的几个注解先前已经介绍过了（例如在对\ :ref:`graphical-annos`\ 以及\ :ref:`subsystem-diagrams`\ 的讨论里）。"
-"这里我们将介绍那些尚未介绍的注解，并讨论它们的作用。"
+"本章例子中出现的几个标注先前已经介绍过了（例如在对\ :ref:`graphical-annos`\ 以及\ :ref:`subsystem-diagrams`\ 的讨论里）。"
+"这里我们将介绍那些尚未介绍的标注，并讨论它们的作用。"
 
 #: ../../source/components/components/comp_annos.rst:13
 msgid "``defaultComponentName``"
@@ -34,7 +34,7 @@ msgstr ""
 #: ../../source/components/components/comp_annos.rst:29
 msgid "**Type: Model Annotation**"
 msgstr ""
-"\ **类型：模型注解**\ "
+"\ **类型：模型标注**\ "
 
 #: ../../source/components/components/comp_annos.rst:19
 msgid ""
@@ -43,7 +43,7 @@ msgid ""
 "is used by graphical tools to assign an initial name to components when they"
 " are dragged into a diagram."
 msgstr ""
-"\ ``defaultComponentName``\ 注解用于模型定义中。其作用是定义该模型的实例应有的默认名称。"
+"\ ``defaultComponentName``\ 标注用于模型定义中。其作用是定义该模型的实例应有的默认名称。"
 "图形工具会在将模型拖入简图时以此为其分配一个初始名称。"
 
 #: ../../source/components/components/comp_annos.rst:25
@@ -58,9 +58,9 @@ msgid ""
 "declaration of the component.  The value of this annotation should be a "
 "**string** that is a space separated list of the qualifiers."
 msgstr ""
-"\ ``defaultComponentName``\ 注解定义将组件拖入图时使用的默认名称。"
+"\ ``defaultComponentName``\ 标注定义将组件拖入图时使用的默认名称。"
 "而\ ``defaultComponentPrefixes``\ 则定义任何应自动纳入组件声明的\ **限定词**\ 。"
-"此注解的值应该是一个\ **字符串**\ ，字符串内容则是由空格分隔开的限定词列表。"
+"此标注的值应该是一个\ **字符串**\ ，字符串内容则是由空格分隔开的限定词列表。"
 
 #: ../../source/components/components/comp_annos.rst:38
 msgid ""
@@ -70,7 +70,7 @@ msgid ""
 " qualifiers listed in that string and immediately add them as qualifiers to "
 "that component's declaration."
 msgstr ""
-"组件在实例化时，图形化工具会去查找该组件相关的定义。目的是\ ``defaultComponentPrefixes``\ 注解是否有赋值。"
+"组件在实例化时，图形化工具会去查找该组件相关的定义。目的是\ ``defaultComponentPrefixes``\ 标注是否有赋值。"
 "如果有，工具会提取该字符串列出的限定词，并立即将其添加为组件声明的限定词。"
 
 #: ../../source/components/components/comp_annos.rst:47
@@ -91,8 +91,8 @@ msgid ""
 "additional information, beyond what is necessary to compile the model, that "
 "instructs graphical tools what content to include in component dialogs."
 msgstr ""
-"\ ``Dialog``\ 注解用于在图形用户界面下帮助组织变量（一般而言用于\ ``parameters``\ ）。"
-"此注解提供了超出编译模型所需的额外信息。"
+"\ ``Dialog``\ 标注用于在图形用户界面下帮助组织变量（一般而言用于\ ``parameters``\ ）。"
+"此标注提供了超出编译模型所需的额外信息。"
 "这指示了图形工具在组件对话框中应包含哪些内容。"
 
 #: ../../source/components/components/comp_annos.rst:59
@@ -100,7 +100,7 @@ msgid ""
 "The structure of a ``Dialog`` annotation can be represented by the following"
 " ``record`` definition:"
 msgstr ""
-"\ ``Dialog``\ 注解的结构可以用以下\ ``record``\ 定义来表示："
+"\ ``Dialog``\ 标注的结构可以用以下\ ``record``\ 定义来表示："
 
 #: ../../source/components/components/comp_annos.rst:73
 msgid ""
@@ -127,7 +127,7 @@ msgstr ""
 "这样，用户就能够容易地指定\ ``start``\ 属性的值。"
 "该\ ``groupImage``\ 字段允许用户指定与\ ``group``\ 字段的组相关联的图像。"
 "最后，\ ``connectorSizing``\ 仅用于声明指定连接器数组大小的整数参数。"
-"在这种情况下，如果\ ``connectorSizing``\ 字段值为\ ``True``\ ，那么在影响该连接器所需大小的行为发生后，图形界面\ **可以选择**\ 去更新注解参数的值。"
+"在这种情况下，如果\ ``connectorSizing``\ 字段值为\ ``True``\ ，那么在影响该连接器所需大小的行为发生后，图形界面\ **可以选择**\ 去更新标注参数的值。"
 
 #: ../../source/components/components/comp_annos.rst:91
 msgid "``DynamicSelect``"
@@ -141,8 +141,8 @@ msgid ""
 "to a change in temperature.  The ``DynamicSelect`` has two values associated"
 " with it, *i.e.,*"
 msgstr ""
-"\ ``DynamicSelect``\ 注解用于指定注解值可以如何依赖于仿真的解。"
-"例如，\ ``DynamicSelect``\ 注解可以用来基于温度变化调整组件图标的颜色。"
+"\ ``DynamicSelect``\ 标注用于指定标注值可以如何依赖于仿真的解。"
+"例如，\ ``DynamicSelect``\ 标注可以用来基于温度变化调整组件图标的颜色。"
 "\ ``DynamicSelect``\ 有两个值与其相关联，即："
 
 #: ../../source/components/components/comp_annos.rst:107
@@ -155,9 +155,9 @@ msgid ""
 " based on simulation results."
 msgstr ""
 "第一个是“static”值。"
-"该值时会在没有可用模拟结果或者当特定工具不支持链接模拟结果到注解时是用。"
+"该值时会在没有可用模拟结果或者当特定工具不支持链接模拟结果到标注时是用。"
 "第二个值是“dynamic”值。"
-"这是一个表达式。它一般涉及注解声明所在作用域内的变量。该变量则可以从模拟结果得到。"
+"这是一个表达式。它一般涉及标注声明所在作用域内的变量。该变量则可以从模拟结果得到。"
 
 #: ../../source/components/components/comp_annos.rst:116
 msgid "``preferredView``"
@@ -165,7 +165,7 @@ msgstr ""
 
 #: ../../source/components/components/comp_annos.rst:120
 msgid "**Type: Definition Annotation**"
-msgstr "\ **类型：定义注解**\ "
+msgstr "\ **类型：定义标注**\ "
 
 #: ../../source/components/components/comp_annos.rst:122
 msgid ""
@@ -173,8 +173,8 @@ msgid ""
 "\"view\" of a given definition should be shown when that model is selected "
 "within a graphical tool.  Possible values for this annotation are:"
 msgstr ""
-"\ ``preferredView``\ 注解用于指定该定义在图形化的工具被选中时所应显示的“视图”。"
-"注解的可能取值为："
+"\ ``preferredView``\ 标注用于指定该定义在图形化的工具被选中时所应显示的“视图”。"
+"标注的可能取值为："
 
 #: ../../source/components/components/comp_annos.rst:126
 msgid "\"info\" - Show any documentation associated with this definition."
@@ -196,8 +196,8 @@ msgid ""
 " is set to ``info`` (thus causing the documentation to be shown when the "
 "definition is visited)."
 msgstr ""
-"\ ``preferredView``\ 注解的一个常见用途是用于创建某个特定\ ``package``\ 的文档。"
-"在这种情况下，\ ``package``\ 包括\ ``Documentation``\ 注解。而其\ ``preferredView``\ 注解则设置为\ ``info``\  （从而令访问定义直接显示文档）。"
+"\ ``preferredView``\ 标注的一个常见用途是用于创建某个特定\ ``package``\ 的文档。"
+"在这种情况下，\ ``package``\ 包括\ ``Documentation``\ 标注。而其\ ``preferredView``\ 标注则设置为\ ``info``\  （从而令访问定义直接显示文档）。"
 
 #: ../../source/components/components/comp_annos.rst:137
 msgid "``unassignedMessage``"
@@ -210,8 +210,8 @@ msgid ""
 "the string value given to the ``unassignedMessage`` annotation may be "
 "presented as a diagnostic message by the compiler."
 msgstr ""
-"\ ``unassignedMessage``\ 注解的值为字符串。"
-"注解了的声明没有找到相应方程以计算其值，\ ``unassignedMessage``\ 注解的字符串值就可以作为编译器的诊断信息。"
+"\ ``unassignedMessage``\ 标注的值为字符串。"
+"标注了的声明没有找到相应方程以计算其值，\ ``unassignedMessage``\ 标注的字符串值就可以作为编译器的诊断信息。"
 
 #: ../../source/components/components/comp_annos.rst:15
 #: ../../source/components/components/comp_annos.rst:27

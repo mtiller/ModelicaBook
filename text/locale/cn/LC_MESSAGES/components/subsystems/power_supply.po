@@ -104,8 +104,8 @@ msgstr ""
 "There are a couple of interesting things to note about this model."
 "模型里有几个有趣的事情需要注意。"
 "首先，我们看到与先前相同的组织结构。参数和接口均为\ ``public``\ ，而内部组件则为\ ``protected``\ 。"
-"我们也看到用\ :ref:`dialog-anno`\ 注解来将参数组织为不同的组（这里是\ ``\"General\"``\ 和\ ``\"Transformer\"``\ ）。"
-"我们还看到\ ``enable``\ 注解上使用了\ ``considerMagnetization``\ 参数。"
+"我们也看到用\ :ref:`dialog-anno`\ 标注来将参数组织为不同的组（这里是\ ``\"General\"``\ 和\ ``\"Transformer\"``\ ）。"
+"我们还看到\ ``enable``\ 标注上使用了\ ``considerMagnetization``\ 参数。"
 "只有\ ``considerMagnetization``\ 为真的情况下，\ ``Lm1``\ 参数才会选择性地有效。"
 
 #: ../../source/components/subsystems/power_supply.rst:75
