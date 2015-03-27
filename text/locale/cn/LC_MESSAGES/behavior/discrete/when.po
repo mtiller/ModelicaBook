@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/when.rst:4
 msgid "When"
-msgstr ""
+msgstr "When语句"
 
 #: ../../source/behavior/discrete/when.rst:8
 msgid ""
@@ -28,7 +28,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/when.rst:22
 msgid "``if`` vs. ``when``"
-msgstr "对比\ ``if``\ 和\ ``when``"
+msgstr "对比\ ``if``\ 和\ ``when``\ "
 
 #: ../../source/behavior/discrete/when.rst:24
 msgid ""
@@ -44,8 +44,8 @@ msgstr ""
 "在前面对\ :ref:`hysteresis`\ 的讨论里，我们简要地讨论了\ ``if``\ 语句和\ ``when``\ 语句之间的区别。"
 "在\ ``when``\ 语句内的代码仅会在触发条件表达式为真的一瞬间被激活。"
 "在所有其它的时候，\ ``when``\ 语句不会有任何影响。"
-"而\ ``if`` 陈述或\ ``if``\ 表达式只要在条件表达式为真时，它们就有效。"
-"倘若\ ``if`` 陈述或\ ``if``\ 表达式包含了\ ``else``\ 子句，那么总会有一个分支有效。"
+"而\ ``if``\ 陈述或\ ``if``\ 表达式只要在条件表达式为真时，它们就有效。"
+"倘若\ ``if``\ 陈述或\ ``if``\ 表达式包含了\ ``else``\ 子句，那么总会有一个分支有效。"
 
 #: ../../source/behavior/discrete/when.rst:34
 msgid "Expressions"
@@ -90,7 +90,7 @@ msgid ""
 "new values can be assigned in one of two ways.  The first is by introducing "
 "an equation of the form:"
 msgstr ""
-"\ `` when``语句的作用是为变量定义新的取值。"
+"\ ``when``\ 语句的作用是为变量定义新的取值。"
 "我们可以用两种方法定义新的取值。"
 "第一种方法是通过将具有以下形式的公式："
 
@@ -105,7 +105,7 @@ msgid ""
 "simulation."
 msgstr ""
 "在这种情况下，\ ``var``\ 将会等于\ ``expr``\ 的取值。"
-"而 ``expr``\ 里的\ ``pre``\ 操作符用于指代变量在事件前的取值。"
+"而\ ``expr``\ 里的\ ``pre``\ 操作符用于指代变量在事件前的取值。"
 "任何以这种方式赋值的变量均为离散变量。"
 "这意味着，这些变量的值仅在事件进行时发生变化。"
 "换句话说，变量将是分段常数函数。"
@@ -120,7 +120,7 @@ msgid ""
 "must be determined within a ``when`` statement."
 msgstr ""
 "虽然严格而言并非必须，但如果你想明确地将变量标记为离散，你可以用\ ``discrete``\ 限定词作为其前缀"
-"（ 正如我们在本章前面的\ :ref:`sample-and-hold`\ 所看到的例子一样）。"
+"（正如我们在本章前面的\ :ref:`sample-and-hold`\ 所看到的例子一样）。"
 "添加\ ``discrete``\ 限定词可以确保该变量的值必须由\ ``when``\ 语句来确定。"
 
 #: ../../source/behavior/discrete/when.rst:79

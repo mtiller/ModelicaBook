@@ -12,7 +12,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/if.rst:4
 msgid "If"
-msgstr ""
+msgstr "If语句及if表达式"
 
 #: ../../source/behavior/discrete/if.rst:8
 msgid ""
@@ -33,8 +33,8 @@ msgid ""
 "will have if ``cexpr`` evaluates to ``false``."
 msgstr ""
 "其中\ ``cexpr``\ 是条件表达式（其结果是一个\ ``Boolean``\ 值。）。"
-"\ ``expr1`` 则是\ ``if``\ 表达式在\ ``cexpr``\ 结果为\ ``true``\ 的取值。"
-"相对地，\ ``expr2`` 则是\ ``if``\ 表达式在\ ``cexpr``\ 结果为\ ``false``\ 的取值。"
+"\ ``expr1``\ 则是\ ``if``\ 表达式在\ ``cexpr``\ 结果为\ ``true``\ 的取值。"
+"相对地，\ ``expr2``\ 则是\ ``if``\ 表达式在\ ``cexpr``\ 结果为\ ``false``\ 的取值。"
 
 #: ../../source/behavior/discrete/if.rst:22
 msgid "An ``if`` statement has the general syntax:"

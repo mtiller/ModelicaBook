@@ -23,7 +23,7 @@ msgid ""
 "version 3.3 and show how these new features help address them."
 msgstr ""
 "Modelica语言3.3版引入了一个新功能以解决有关非确定性离散行为的问题\\ [Elmqvist]_ \\ "
-"。本节将先介绍这些问题在3.3版本之前的表现。然后，我们将用例子展示新功能如何能帮助解决这类问题。"
+"。本节将先介绍这些问题在3.3版本之前的表现。然后，我们将用例子展示这些新特性能如何帮助解决这类问题。"
 
 #: ../../source/behavior/discrete/sampling.rst:12
 msgid "To start, consider the following model:"
@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "倘若你仔细观察，你会发现\\ ``x``\\ 和\\ ``y``\\ "
 "都在离散的时间点上被计算。此外，两变量的采样时点都是在仿真开始时以及之后的每0.1秒。但问题是，它们真的一样吗？为了更容易解决这个问题，我们加入变量\\"
-" ``e``\\ 以计算两者间的差。 "
+" ``e``\\ 以计算两者间的差。"
 
 #: ../../source/behavior/discrete/sampling.rst:28
 msgid ""
@@ -47,7 +47,7 @@ msgid ""
 "``y``.  Of course, they look identical.  But in order to really determine if"
 " there are any differences between them, let's plot the error value, ``e``:"
 msgstr ""
-"对模型进行仿真，我们会得到如下的\\ ``x``\\ 、\\ ``y``\\ 轨迹。当然，两个轨迹看上去是一样的。 "
+"对模型进行仿真，我们会得到如下的\\ ``x``\\ 、\\ ``y``\\ 轨迹。当然，两个轨迹看上去是一样的。"
 "但要真正确定它们之间是否存在任何不同，我们绘制了误差值\\ ``e``\\ ："
 
 #: ../../source/behavior/discrete/sampling.rst:36
@@ -72,7 +72,7 @@ msgid ""
 "than another, but you know that at certain times they should be sampled "
 "together?  Consider the following example:"
 msgstr ""
-"在这样的做法里，每个信号都是基于一个共同的“节拍”（或时钟） "
+"在这样的做法里，每个信号都是基于一个共同的“节拍”（或时钟）"
 "进行取样的。这是一个很好的避免确定性问题的方式。但是，如果你有两个不同频率的信号，且已知在特定的时点两者会被同时取样，那么情况又是如何呢？请考虑如下例子："
 
 #: ../../source/behavior/discrete/sampling.rst:60
@@ -109,9 +109,8 @@ msgid ""
 "tell us when to evaluate it.  Let's work through these lines one by one and "
 "discuss them.  First we have:"
 msgstr ""
-"Now, instead of relying on a ``when`` statement, we use an enhanced version "
-"of the ``sample`` functio现在，我们使用一个增强版的\\ ``sample``\\ （取样）函数，不再用\\ "
-"``when``\\ 语句。这个\\ ``sample``\\ "
+"现在我们不再使用用\\ ``when``\\ 语句。相反，我们会使用一个增强版的\\ ``sample``\\ （取样）函数。"
+"这个\\ ``sample``\\ "
 "函数的首个参数是待取样的表达式，第二个参数则是取样的时间间隔。让我们逐行阅读并讨论下面的代码。首先，我们有："
 
 #: ../../source/behavior/discrete/sampling.rst:153
