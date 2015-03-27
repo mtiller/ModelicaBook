@@ -61,9 +61,9 @@ msgstr ""
 "答案涉及到Modelica的“名称查找”。"
 "Modelica的名称查找涉及指定定义的搜索。"
 "Modelica的类型名称一般为限定（虽然不一定为\ **完全**\ 限定）名称。"
-"这意味着名称中可能包含了\ ``.``\ ，如\ ``Modelica.SIunits.Voltage``\  。"
-"为了找到与一个名称相匹配的定义， Modelica的编译器开始由限定名称中寻找\ **第一项**\ 名称，如``Modelica``\  。"
-"编译器按以下顺序搜索匹配的定义： "
+"这意味着名称中可能包含了\ ``.``\ 。例如\ ``Modelica.SIunits.Voltage``\ 。"
+"为了找到与一个名称相匹配的定义，Modelica的编译器开始由限定名称中寻找\ **第一项**\ 名称，如\ ``Modelica``\ 。"
+"编译器按以下顺序搜索匹配的定义："
 
 #: ../../source/components/packages/lookup.rst:42
 msgid "Look for a matching name among builtin types"

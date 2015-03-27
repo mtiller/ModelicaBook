@@ -26,8 +26,12 @@ msgid ""
 "library includes definitions that are generally useful to scientists and "
 "engineers."
 msgstr ""
-"Modelica包的功用是将常用的类型、模型、函数\\ *等\\ "
-"组织成包，并直接通过对其的引用来实现重用（而不是重新建模）。但倘若每个用户都需要建立对常用定义制作模型包，那么重复建模的问题仍将存在。因此，Modelica协会维护着一个Modelica标准库的模型包。这个库包括了对科学家和工程师有用的定义。"
+"Modelica包的功用是将常用的类型、模型、函数等组织成包，"
+"并直接通过对其的引用来实现重用（而不是重新建模）。"
+"但倘若每个用户都需要建立对常用定义制作模型包，"
+"那么重复建模的问题仍将存在。"
+"因此，Modelica协会维护着一个Modelica标准库的模型包。"
+"这个库包括了对科学家和工程师有用的定义。"
 
 #: ../../source/components/packages/msl.rst:15
 msgid ""
@@ -46,7 +50,7 @@ msgstr ""
 
 #: ../../source/components/packages/msl.rst:26
 msgid "Constants"
-msgstr "常数（Constants）"
+msgstr "常数"
 
 #: ../../source/components/packages/msl.rst:28
 msgid ""
@@ -90,7 +94,7 @@ msgstr "最后，\ ``eps``\ 是一个计算机相关的常数，代表一个为�
 
 #: ../../source/components/packages/msl.rst:100
 msgid "SI Units"
-msgstr "SI Units （国际单位）"
+msgstr "国际单位"
 
 #: ../../source/components/packages/msl.rst:102
 msgid ""
@@ -100,7 +104,9 @@ msgid ""
 "compiler.  For this reason it is very useful to associate physical types "
 "with parameters and variables whenever possible."
 msgstr ""
-"正如上述讨论的一样，为参数与变量标示单位不仅可以让提高代码可读性，而且Modelica编译器可以由此测试变量量纲是否匹配。出于这个原因，尽量在参数和变量里使用物理类型是相当有益的。"
+"正如上述讨论的一样，为参数与变量标示单位不仅可以让提高代码可读性，"
+"而且Modelica编译器可以由此测试变量量纲是否匹配。"
+"出于这个原因，尽量在参数和变量里使用物理类型是相当有益的。"
 
 #: ../../source/components/packages/msl.rst:145
 msgid "Models"
@@ -115,7 +121,7 @@ msgstr "Modelica标准库包含了很多描述不同特定领域的模型库。�
 
 #: ../../source/components/packages/msl.rst:152
 msgid "Blocks"
-msgstr "框图（Blocks）"
+msgstr "框图"
 
 #: ../../source/components/packages/msl.rst:154
 msgid ""
@@ -160,11 +166,11 @@ msgid ""
 "The ``Blocks`` package contains a wide variety of blocks for performing "
 "operations on signals.  Such blocks are typically used for describing the "
 "function of control systems and strategies."
-msgstr "``Blocks``\\ 包里包含了相当多种对信号进行操作的模块。这样的模块常用于描述控制系统和控制策略内的功能模块。"
+msgstr "\ ``Blocks``\\ 包里包含了相当多种对信号进行操作的模块。这样的模块常用于描述控制系统和控制策略内的功能模块。"
 
 #: ../../source/components/packages/msl.rst:172
 msgid "Electrical"
-msgstr "电气（Electrical）"
+msgstr "电气"
 
 #: ../../source/components/packages/msl.rst:174
 msgid ""
@@ -218,7 +224,7 @@ msgstr "Spice3模型"
 
 #: ../../source/components/packages/msl.rst:191
 msgid "Mechanical"
-msgstr "机械部件（Mechanical）"
+msgstr "机械"
 
 #: ../../source/components/packages/msl.rst:193
 msgid "The ``Modelica.Mechanics`` library contains three main libraries."
@@ -280,7 +286,7 @@ msgstr "传感器和执行器"
 
 #: ../../source/components/packages/msl.rst:221
 msgid "``MultiBody``"
-msgstr "多体（\ ``MultiBody``\\ ）"
+msgstr "\ ``MultiBody``\\ （多体）"
 
 #: ../../source/components/packages/msl.rst:223
 msgid ""
@@ -306,7 +312,7 @@ msgid ""
 "modeling fluid systems.  The first is ``Modelica.Media`` which is a library "
 "of property models for various media like:"
 msgstr ""
-"Modelica标准库中有两个包与流体系统建模有关。 "
+"Modelica标准库中有两个包与流体系统建模有关。"
 "首先是\\ ``Modelica.Media``\\ 。此库包括各种介质的属性模型，如："
 
 #: ../../source/components/packages/msl.rst:238
@@ -609,7 +615,7 @@ msgstr "\\ ``command``\\  - 让操作系统来执行一个命令。"
 
 #: ../../source/components/packages/msl.rst:366
 msgid "``exit`` - Terminate execution."
-msgstr "\\ ``exit``\\  - 终止执行。 "
+msgstr "\\ ``exit``\\  - 终止执行。"
 
 #: ../../source/components/packages/msl.rst:109
 msgid ""
@@ -624,7 +630,3 @@ msgstr ""
 #: ../../source/components/packages/msl.rst:335
 msgid "``print`` - Writes data to either the terminal or a file."
 msgstr "\\ ``print``\\  - 向终端或文件写入数据。 "
-
-#~ msgid ""
-#~ "``print`` - Writes data to either the terminal or a file.``print`` - Writes "
-#~ "data to either the terminal or a file."

@@ -52,7 +52,7 @@ msgid ""
 "introduce an alternative name for the alias, *e.g.,*"
 msgstr ""
 "在某些情况下，我们希望别名与被导入名称的最后一个元素不同。"
-"这种情况下，我们可以明确地引入一个替代名称。\ *例如：*\ "
+"这种情况下，我们可以明确地引入一个替代名称。例如："
 
 #: ../../source/components/packages/importing.rst:34
 msgid ""
@@ -61,7 +61,7 @@ msgid ""
 "collisions or simply makes the model more readable."
 msgstr ""
 "在上述的导入后，我们就可以使用别名\ ``DegK``\ 指代\ ``Modelica.SIunits.Temperature``\ 。"
-"提供替代名称可避免命名冲突或者只是为了让模型更具可读性。"
+"提供替代名称可避免命名冲突，或者只是为了让模型更具可读性。"
 
 #: ../../source/components/packages/importing.rst:38
 msgid ""
@@ -86,7 +86,7 @@ msgstr ""
 
 #: ../../source/components/packages/importing.rst:0
 msgid "Wildcards considered harmful"
-msgstr "通配符有害处"
+msgstr "通配符有害"
 
 #: ../../source/components/packages/importing.rst:57
 msgid ""
@@ -98,7 +98,7 @@ msgid ""
 "difficult because it is not clear what types are imported from what "
 "packages."
 msgstr ""
-"这种通配符导入很危险。其原因如上所述，因为用户不能对类型进行重命名。"
+"这种通配符导入很危险。其原因如上所述。用户不能对类型进行重命名。"
 "这样的结果是，在一个模型内进行两次或多次通配符导入可能产生命名冲突。"
 "再者，明确的导入（或直接使用全限定的类型）使得对于类型所关联定义的回溯与定位变得更为容易。"
-"而使用通配符则使这变得非常困难，原因是使用通配符后，导入类型和所在包的关系便不再清晰。"
+"而使用通配符则使这变得非常困难。原因是使用通配符后，导入类型和所在包的关系便不再清晰。"

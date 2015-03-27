@@ -100,12 +100,12 @@ msgid ""
 msgstr ""
 "这里的语法有点不同。"
 "在这种情况下，我们正在导入的类型是\ ``Modelica.SIunits.CoefficientOfHeatTransfer``\ 。"
-"但是，相对于直接用全限定名最后一项的名称，即``CoefficientOfHeatTransfer``\ ，"
+"但是，相对于直接用全限定名最后一项的名称，即\ ``CoefficientOfHeatTransfer``\ ，"
 "我们将此类型的本地名称指定为\ ``ConvectionCoefficient``\ 。"
 "在这里，改变名称允许我们使用在最初几个例子中定义的名称。"
 "通过这种方式，我们能够避免重构任何使用了旧名称的代码。"
 "另一个指定替代名称（而非Modelica编译器通常指派的默认名称）的原因是为了避免命名冲突。"
-"试想，我们希望从两个不同的包导入两种类型，\ *如：*\ "
+"试想，我们希望从两个不同的包导入两种类型，如："
 
 #: ../../source/components/packages/nimport.rst:73
 msgid ""
@@ -149,7 +149,7 @@ msgstr ""
 msgid ""
 "We could replace these type definitions with import statements, *e.g.*,"
 msgstr ""
-"我们可以用导入语句替换这些类型定义，\ *如：*\ "
+"我们可以用导入语句替换这些类型定义，如："
 
 #: ../../source/components/packages/nimport.rst:112
 msgid ""
