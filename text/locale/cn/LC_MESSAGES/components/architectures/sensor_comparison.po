@@ -444,7 +444,7 @@ msgid ""
 msgstr ""
 "但是，当我们观察\ ``InitialSystem``\ 模型的源代码后，我们看到了\ ``sample_rate``\ 参数从未使用过。"
 "因此，并不存在真正的理由阻止类型转换。"
-"处于这个原因，Modelica包括\ *约束类型*\ 这个概念。"
+"出于这个原因，Modelica包括\ *约束类型*\ 这个概念。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:386
 msgid ""
