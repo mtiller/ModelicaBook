@@ -201,5 +201,5 @@ msgstr "胡克定律"
 
 #: ../../source/behavior/equations/mechanical.rst:131
 msgid "modifications"
-msgstr "修改语句："
+msgstr "修改语句"
 

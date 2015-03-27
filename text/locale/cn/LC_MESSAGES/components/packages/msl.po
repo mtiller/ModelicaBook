@@ -46,7 +46,7 @@ msgstr ""
 
 #: ../../source/components/packages/msl.rst:26
 msgid "Constants"
-msgstr "Constants （常数）"
+msgstr "常数（Constants）"
 
 #: ../../source/components/packages/msl.rst:28
 msgid ""
@@ -115,7 +115,7 @@ msgstr "Modelica标准库包含了很多描述不同特定领域的模型库。�
 
 #: ../../source/components/packages/msl.rst:152
 msgid "Blocks"
-msgstr "Blocks （框图）"
+msgstr "框图（Blocks）"
 
 #: ../../source/components/packages/msl.rst:154
 msgid ""
@@ -164,7 +164,7 @@ msgstr "``Blocks``\\ 包里包含了相当多种对信号进行操作的模块�
 
 #: ../../source/components/packages/msl.rst:172
 msgid "Electrical"
-msgstr "Electrical （电气）"
+msgstr "电气（Electrical）"
 
 #: ../../source/components/packages/msl.rst:174
 msgid ""
@@ -280,7 +280,7 @@ msgstr "传感器和执行器"
 
 #: ../../source/components/packages/msl.rst:221
 msgid "``MultiBody``"
-msgstr "``MultiBody``\\ （多体）"
+msgstr "多体（\ ``MultiBody``\\ ）"
 
 #: ../../source/components/packages/msl.rst:223
 msgid ""
@@ -623,9 +623,8 @@ msgstr ""
 
 #: ../../source/components/packages/msl.rst:335
 msgid "``print`` - Writes data to either the terminal or a file."
-msgstr ""
+msgstr "\\ ``print``\\  - 向终端或文件写入数据。 "
 
 #~ msgid ""
 #~ "``print`` - Writes data to either the terminal or a file.``print`` - Writes "
 #~ "data to either the terminal or a file."
-#~ msgstr "\\ ``print``\\  - 向终端或文件写入数据。 "
