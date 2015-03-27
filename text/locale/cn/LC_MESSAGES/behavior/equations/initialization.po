@@ -13,11 +13,11 @@ msgstr ""
 
 #: ../../source/behavior/equations/initialization.rst:5
 msgid "Initialization"
-msgstr ""
+msgstr "初始化"
 
 #: ../../source/behavior/equations/initialization.rst:8
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../source/behavior/equations/initialization.rst:12
 msgid ""
