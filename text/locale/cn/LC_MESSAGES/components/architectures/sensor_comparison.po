@@ -132,7 +132,7 @@ msgid ""
 "ultimately be required for the control system itself."
 msgstr ""
 "在这里，我们想稍进一步探索上述性能问题，"
-"以一方面了解传感器的特性（\ *如：*\ ``sample_rate``\ ）会如何影响系统性能。"
+"以一方面了解传感器的特性（如：``sample_rate``\ ）会如何影响系统性能。"
 "另一方面，我们也希望进一步考虑对于控制系统本身的改进。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:96
@@ -384,7 +384,7 @@ msgstr ""
 "还要注意的是，重新声明是\ ``extends``\ 子句的一部分。"
 "具体地讲，重声明语句如同其他所有修改一样，是一个在扩展子句内的更改。"
 "如果我们想既重声明\ ``sensor``\ 组件又要改变我们工作点的\ ``startTime``\ 参数，则两者均为\ ``extends``\ 子句内的更改，"
-"\ *如：*\ "
+"如："
 
 #: ../../source/components/architectures/sensor_comparison.rst:321
 msgid "Constraining Types"

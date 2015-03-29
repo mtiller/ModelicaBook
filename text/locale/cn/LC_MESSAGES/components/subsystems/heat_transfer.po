@@ -129,7 +129,7 @@ msgid ""
 "modifications to arrays of components later in this chapter in the section "
 "on :ref:`sub-modifications`."
 msgstr ""
-"需要注意的是，如果我们想对组件数组的每个组件进行修改，如加入\ ``G = G_rod``\ ，我们可以在修改上使用\ ``each``\ 限定词。"
+"需要注意的是，如果我们想对组件数组的每个组件进行修改，如加入\ ``G=G_rod``\ ，我们可以在修改上使用\ ``each``\ 限定词。"
 "我们将在本章节后面\ :ref:`sub-modifications`\ 一节里讨论\ ``each``\ 限定词以及如何让修改应用于元件阵列。"
 
 #: ../../source/components/subsystems/heat_transfer.rst:91
@@ -170,7 +170,7 @@ msgstr ""
 
 #: ../../source/components/subsystems/heat_transfer.rst:118
 msgid "We'll start by considering a model where ``n=3``, *i.e.,*"
-msgstr "首先，我们会通过考虑一个\ ``n = 3``\ 的模型，即："
+msgstr "首先，我们会通过考虑一个\ ``n=3``\ 的模型，即："
 
 #: ../../source/components/subsystems/heat_transfer.rst:124
 msgid ""
@@ -187,7 +187,7 @@ msgid ""
 "superfluous components:"
 msgstr ""
 "如果我们模拟所有这些情况，我们会看到随着\ ``n``\ 变大，结果似乎收敛到一个共同的解"
-"\ ``n = 10``\ 似乎提供了足够精确的解，而不需要引进太多多余的组件："
+"\ ``n=10``\ 似乎提供了足够精确的解，而不需要引进太多多余的组件："
 
 #: ../../source/components/subsystems/heat_transfer.rst:153
 msgid "Conclusion"

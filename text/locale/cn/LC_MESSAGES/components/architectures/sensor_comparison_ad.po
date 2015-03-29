@@ -292,7 +292,7 @@ msgid ""
 "If we wish to create a variation of the ``BaseSystem`` model, we can use "
 "inheritance and modifiers to create them, *e.g.,*"
 msgstr ""
-"如果我们希望创建\ ``BaseSystem``\ 模型的变体，可以用继承和修饰词来创建它们，\ *如：*\ "
+"如果我们希望创建\ ``BaseSystem``\ 模型的变体，可以用继承和修饰词来创建它们，如："
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:238
 msgid ""

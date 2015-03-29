@@ -84,7 +84,7 @@ msgid ""
 "The next constant, ``g_n``, is a physical constant representing the "
 "gravitational constant on earth (for computing things like potential energy,"
 " *i.e.,* :math:`m g h`)."
-msgstr "紧接的常数，\\ ``g_n``\\ 是代表地球的重力加速度（可用于计算势能\\ *如*\\ :math:`m g h`\\ ）。"
+msgstr "紧接的常数，\\ ``g_n``\\ 是代表地球的重力加速度（可用于计算势能如:math:`m g h`\\ ）。"
 
 #: ../../source/components/packages/msl.rst:96
 msgid ""
@@ -216,7 +216,7 @@ msgstr "同步电机与异步电机"
 
 #: ../../source/components/packages/msl.rst:187
 msgid "Motor models (DC, permanent magnet, *etc.*)"
-msgstr "电机模型（直流电机、永磁电机\\ *等*\\ ）"
+msgstr "电机模型（直流电机、永磁电机等）"
 
 #: ../../source/components/packages/msl.rst:188
 msgid "Spice3 models"
@@ -300,7 +300,7 @@ msgstr "物体（包括相关的惯性张量和3D CAD几何结构） "
 
 #: ../../source/components/packages/msl.rst:228
 msgid "Joints (*e.g.,* prismatic, revolute, universal)"
-msgstr "关节（\\ *如*\\ 棱形关节、回转关节、万向关节）"
+msgstr "关节（如棱形关节、回转关节、万向关节）"
 
 #: ../../source/components/packages/msl.rst:232
 msgid "Fluids and Media"

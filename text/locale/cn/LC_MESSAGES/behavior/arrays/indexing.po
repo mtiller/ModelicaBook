@@ -145,7 +145,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/indexing.rst:116
 msgid "We can then use boolean values to index that dimension, *e.g.,*"
-msgstr "然后我们可以使用布尔值索引该维度，\ *如：*\ "
+msgstr "然后我们可以使用布尔值索引该维度，如："
 
 #: ../../source/behavior/arrays/indexing.rst:125
 msgid "``end``"

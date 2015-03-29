@@ -137,7 +137,7 @@ msgid ""
 "It is also possible to declare an array where a dimension is specified as "
 "``Boolean``, *e.g.,*"
 msgstr ""
-"我们还可以将其中一个维度声明为\ ``Boolean``\ ，\ *例如：*"
+"我们还可以将其中一个维度声明为\ ``Boolean``\ ，例如："
 
 #: ../../source/behavior/arrays/declarations.rst:54
 msgid ""

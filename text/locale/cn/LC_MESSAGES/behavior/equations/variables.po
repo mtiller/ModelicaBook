@@ -331,7 +331,7 @@ msgstr ""
 "\ ``fixed``\ （固定）属性改变了\ ``start``\ 属性用于初始值的方式。"
 "正常来讲，\ ``start``\ 属性被认为是“备用”的初始状态。这仅仅会在\ ``initial equation``\ 中没有指定足够的初始状态时使用。"
 "然而，如果\ ``fixed``\ 属性被设为\ ``true``\ ，那么\ ``start``\ 属性就被明确地用于\ ``initial equation``\ 。"
-"（ *例如* ，它不再被看作是备用的，而是作为严格的初始条件）。"
+"（即属性不再作为备用，而是作为严格的初始条件）。"
 
 #: ../../source/behavior/equations/variables.rst:241
 msgid ""

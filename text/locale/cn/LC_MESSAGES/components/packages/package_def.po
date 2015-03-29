@@ -40,7 +40,7 @@ msgstr ""
 
 #: ../../source/components/packages/package_def.rst:25
 msgid "Packages can also be nested, *e.g.,*"
-msgstr "如果必要包也可以进行嵌套\ *例如：*\ "
+msgstr "如果必要包也可以进行嵌套例如："
 
 #: ../../source/components/packages/package_def.rst:36
 msgid ""
@@ -158,7 +158,7 @@ msgid ""
 "here as well."
 msgstr ""
 "这里的\ ``within``\ 子句和\ ``NestedPackageAsDir``\ 的包内的一致。"
-"不过，由于我们将本包存为单独的文件，常量、模型、包、函数\ *等*\ 的嵌套定义均是允许的。"
+"不过，由于我们将本包存为单独的文件，常量、模型、包、函数等的嵌套定义均是允许的。"
 
 #: ../../source/components/packages/package_def.rst:130
 msgid "Ordering for Directories"
