@@ -27,7 +27,7 @@ msgstr ""
 "到目前为止，所有前述的连接器均为非因果性的。"
 "这意味着它们均是由穿越变量以及横跨变量组成的。"
 "这样的连接器是建模物理相互作用（组件之间进行守恒量交换）的基础。"
-"Modelica也可以建模其他类型的相互作用以及是用其他建模方式。"
+"Modelica也可以建模其他类型的相互作用，以及使用其他的建模方式。"
 
 #: ../../source/components/connectors/block_connectors.rst:13
 msgid ""
@@ -40,16 +40,16 @@ msgid ""
 "signals as \"input signals\" and \"output signals\"."
 msgstr ""
 "框图连接器用于建模系统的信息流。"
-"在这里，我们不关心例如电流这种流向有时正向有时反向的物理量。"
-"这里，我们将考虑如何对信号进行建模。"
-"信号就是系统中的一些组件会产生的信息，然后其他一些部件会消费这些信息（然后会反过来产生其它信息）。"
-"在这种情况下，我们一般把这样的信号称为“输入信号”以及“输出信号”。"
+"在这里，我们不关心例如电流这种流向有时正向、有时反向的物理量。"
+"相反，我们只会考虑如何对信号进行建模。"
+"信号就是系统中的一些组件会产生的信息。然后，另外一些部件则会消费这些信息（并反过来产生其它信息）。"
+"在这种情况下，我们一般分别吧这样的信号称为“输入信号”以及“输出信号”。"
 
 #: ../../source/components/connectors/block_connectors.rst:22
 msgid ""
 "To model such interactions, we can use connector definitions like these:"
 msgstr ""
-"为了模拟这种相互作用，我们就可以使用这样的接口定义："
+"为了模拟这种相互作用，我们可以使用如下的接口定义："
 
 #: ../../source/components/connectors/block_connectors.rst:28
 msgid ""
@@ -57,7 +57,7 @@ msgid ""
 "``BooleanInput`` connector is used to identify a ``Boolean`` input signal "
 "and ``RealOutput`` identifies a ``Real`` output signal."
 msgstr ""
-"很显然， \ ``BooleanInput``\ 连接器表明输入信号为\ ``Boolean``\ 。"
+"很显然，\ ``BooleanInput``\ 连接器表明输入信号为\ ``Boolean``\ 。"
 "\ ``RealOutput``\ 则标示\ ``Real``\ 输出信号。"
 
 #: ../../source/components/connectors/block_connectors.rst:32

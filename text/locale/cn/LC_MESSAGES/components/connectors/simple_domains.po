@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/connectors/simple_domains.rst:4
 msgid "Simple Domains"
-msgstr "简单的领域"
+msgstr "简单领域"
 
 #: ../../source/components/connectors/simple_domains.rst:6
 msgid ""
@@ -33,7 +33,7 @@ msgid ""
 "using along with the SI units for those quantities."
 msgstr ""
 "下表涵盖了四种不同的工程领域。"
-"在每个领域中会分别看到所用到的穿越变量、横跨变量以及这些量相应的国际单位。"
+"在每个领域中会分别看到所用到的穿越变量、横跨变量以及这些量相对应的国际单位。"
 
 #: ../../source/components/connectors/simple_domains.rst:16
 msgid "Domain"
@@ -139,11 +139,12 @@ msgid ""
 msgstr ""
 "第二个约束条件则要求横跨变量应为领域内所有本构方程和经验公式内的最低阶导数。"
 "因此，举个例子，在平移运动时我们选择位置作为横跨变量，因为位置会用于描述弹簧的行为（即胡克定律）。"
-"如果我们选择了速度（位置的时间导数），那么我们就会一直处于试图用速度而非位置来描述弹簧行为的尴尬局面。"
+"如果我们选择了速度（位置的时间导数），那么我们就会一直处于一种尴尬局面。"
+"对比起位置，我们必须试图用速度去描述弹簧行为。"
 "这里有一点很重要的：\ **微分是有损的**\ 。"
 "如果知道位置，我们可以很容易地表达速度。"
-"但倘若只知道速度而没有额外的积分常数，我们就不能计算位置。"
-"这就是为什么我们希望使用没有经过太多次微分的横跨变量。"
+"但倘若只知道速度，而没有额外的积分常数，我们就不能计算位置。"
+"这就是为什么我们希望横跨变量不要经过太多次微分。"
 
 #: ../../source/components/connectors/simple_domains.rst:49
 msgid "Now let's look at each domain individually."
@@ -173,7 +174,7 @@ msgstr ""
 "请注意电流\ ``i``\ 声明里的\ ``flow``\ 限定词。"
 "\ ``flow``\ 限定词告诉了Modelica编译器，\ ``i``\ 是穿越变量。"
 "回忆我们对\ :ref:`acausal-connections`\ 的讨论：\ ``flow``\ 变量应该是守恒量的时间导数。"
-"我们可以看到，该连接器遵循了上述规则。\ ``Current``\ 的确为电荷的导数（而电荷为守恒量） 。"
+"我们可以看到，该连接器遵循了上述规则。\ ``Current``\ 的确为电荷的导数（而电荷为守恒量）。"
 
 #: ../../source/components/connectors/simple_domains.rst:73
 msgid ""
@@ -213,10 +214,10 @@ msgid ""
 "qualifier, ``HeatFlowRate``, is the time derivative of a conserved quantity,"
 " energy."
 msgstr ""
-"对应\ ``Voltage``\ 和\ ``Current``\ ，该连接器包括了\ ``Temperature``\ 和\ ``HeatFlowRate``\  。"
-"虽然名称不同，整体结构是基本相同的。"
+"该连接器包括了\ ``Temperature``\ 和\ ``HeatFlowRate``\，分别对应\ ``Voltage``\ 和\ ``Current``\ 。"
+"虽然变量名称名称不同，两个连接器的整体结构基本相同。"
 "\ ``connector``\ 包括一个穿越变量（带有\ ``flow``\ 限定词的\ ``q``\ ）和一个横跨变量（没有限定词的\ ``T``\ ）。"
-"再一次，我们看到带有\ ``flow``\ 限定词的变量\ ``HeatFlowRate``\ 是守恒量能量的时间导数。"
+"我们再一次看到，带有\ ``flow``\ 限定词的变量\ ``HeatFlowRate``\ 是守恒量能量的时间导数。"
 
 #: ../../source/components/connectors/simple_domains.rst:102
 msgid ""
@@ -273,7 +274,7 @@ msgid ""
 "examples, the ``flow`` variable is the time derivative of a conserved "
 "quantity.  In this case, that conserved quantity is angular momentum."
 msgstr ""
-"这里我们看到，横跨变量是\ ``phi``\ （代表角位移），而穿越变量则为\ ``torque``\  。"
+"这里我们看到，横跨变量是\ ``phi``\ （代表角位移），而穿越变量则为\ ``torque``\ 。"
 "与所有前述例子一样，\ ``flow``\ 变量是守恒量的时间导数。"
 "在本例里，守恒量为角动量。"
 

@@ -23,7 +23,7 @@ msgid ""
 "respect to many aspects of Modelica."
 msgstr ""
 "虽然本节出现在\ :ref:`connectors`\ 章内，本话题适用于与一般的模型定义相关的图形标注。"
-"因此，这里提供的信息会对Modelica许多方面提供有益的参考。"
+"因此，这里提供的信息可以对Modelica的许多方面提供有益的参考。"
 
 #: ../../source/components/connectors/annotations.rst:12
 msgid "Graphical Layers"
@@ -65,8 +65,8 @@ msgid ""
 "of these are annotations that appear directly in the definition and are not "
 "associated with existing elements like declarations or ``extends`` clauses."
 msgstr ""
-"一个定义在“icon”层所展现的外观是由\ ``Icon``\ 标注指定的（在之前对\ :ref:`graphical-connectors`\ 讨论里有简要介绍）。"
-"毫无疑问，定义在“diagram”层所展现的外观则是由\ ``Diagram``\ 标注指定的。"
+"一个定义在“图标”层所展现的外观是由\ ``Icon``\ 标注指定的（在之前对\ :ref:`graphical-connectors`\ 讨论里有简要介绍）。"
+"毫无疑问，定义在“简图”层所展现的外观则是由\ ``Diagram``\ 标注指定的。"
 "两者均是直接出现在定义里，不和声明或者\ ``extends``\ 条款等现有元素相关联。"
 
 #: ../../source/components/connectors/annotations.rst:36
@@ -143,7 +143,6 @@ msgid ""
 msgstr ""
 "换言之，该\ ``Icon``\ 标注包括了\ ``coordinateSystem``\ 定义内的坐标系信息。"
 "而且，标注还包括了\ ``graphics``\ 内的图形物件数组。"
-"The definition of the ``Diagram`` annotation is identical:"
 "\ ``Diagram``\ 标注的定义也是一样："
 
 #: ../../source/components/connectors/annotations.rst:135
@@ -204,9 +203,8 @@ msgid ""
 "graphical elements to be adjusted.  Setting ``primitivesVisible`` to "
 "``false`` will suppress the rendering of inherited graphical elements."
 msgstr ""
-"In both cases, the ``extent`` data allows the location of the inherited graphical elements to be adjusted."
 "在这两种情况下， \ ``extent``\ 数据允许继承图形元素的位置进行调整。"
-"Setting ``primitivesVisible`` to ``false`` will suppress the rendering of inherited graphical elements."
+"将\ ``primitivesVisible``\ 设置为\ ``false``\ 则会隐藏所继承的图形元素。"
 
 #: ../../source/components/connectors/annotations.rst:265
 msgid "Substitutions"
@@ -226,13 +224,13 @@ msgid ""
 "``%name`` - This pattern will be replaced by the name of the instance of the"
 " given definition."
 msgstr ""
-"\ ``%name``\ - 这个字符串模式会被给定定义的实例名称所取代。"
+"\ ``%name``\  － 这个字符串模式会被给定定义的实例名称所取代。"
 
 #: ../../source/components/connectors/annotations.rst:273
 msgid ""
 "``%class`` - This pattern will be replaced by the name of this definition."
 msgstr ""
-"\ ``%class``\ - 这个字符串模式会被这个定义的名称所取代。"
+"\ ``%class``\  － 这个字符串模式会被这个定义的名称所取代。"
 
 #: ../../source/components/connectors/annotations.rst:275
 msgid ""
@@ -243,7 +241,7 @@ msgstr ""
 
 #: ../../source/components/connectors/annotations.rst:277
 msgid "``%%`` - This pattern will be replaced by ``%``."
-msgstr "\ ``%%``\ - 这个模式会被替换为\ ``%``\ 。"
+msgstr "\ ``%%``\  － 这个模式会被替换为\ ``%``\ 。"
 
 #: ../../source/components/connectors/annotations.rst:280
 msgid "Putting It All Together"
@@ -255,7 +253,7 @@ msgid ""
 "the icon definitions presented during our discussion of :ref:`graphical-"
 "connectors`."
 msgstr ""
-"在讨论了图形标注的这些方面后，让我们回顾在对\ :ref:`graphical-connectors`\ 的讨论中提出的图标定义"
+"在讨论了图形标注的这些方面后，让我们回顾在对\ :ref:`graphical-connectors`\ 的讨论中提出的图标定义。"
 
 #: ../../source/components/connectors/annotations.rst:290
 msgid ""

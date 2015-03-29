@@ -25,12 +25,12 @@ msgid ""
 "considerable amount of syntactic similarity.  This is just as true with "
 "``connector`` definitions."
 msgstr ""
-"正如我们已经多次看到的一样，Modelica定义有着相当的句法相似性。"
+"正如我们已经多次看到的一样，Modelica定义之间有着相当的句法相似性。"
 "这也对\ ``connector``\ 定义成立。"
 
 #: ../../source/components/connectors/connector_def.rst:15
 msgid "The general syntax for a connector definition is:"
-msgstr "为连接器定义的一般语法是："
+msgstr "连接器定义的一般语法是："
 
 #: ../../source/components/connectors/connector_def.rst:23
 msgid ""
@@ -97,7 +97,7 @@ msgstr ""
 
 #: ../../source/components/connectors/connector_def.rst:64
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/components/connectors/connector_def.rst:66
 msgid ""
