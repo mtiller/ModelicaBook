@@ -84,7 +84,8 @@ msgid ""
 msgstr ""
 "在机械领域，我们研究是守恒量是动量。"
 "与此前介绍了的守恒量热量和电荷不同，动量有方向性。"
-"由于我们在这里仅考虑一维的情况，这个方向性的后果是，动量是一个带符号的量（即动量可正可负） 。"
+"我们在这里仅考虑一维的情况。"
+"因此，这个方向性的后果是，动量是一个带符号的量（即动量可正可负）。"
 
 #: ../../source/components/components/rot_comps_basic.rst:50
 msgid ""
@@ -133,7 +134,7 @@ msgid ""
 "corresponds to a positive velocity, a positive acceleration and a positive "
 "torque**."
 msgstr ""
-"之所以展示所有这些关系，是为了强调与\ :math:`\\varphi` 、  :math:`\\omega` 、  :math:`\\alpha`\ 以及\ :math:`\\tau`\ 相关的符号规则。"
+"之所以展示所有这些关系，是为了强调与\ :math:`\\varphi`\ 、\ :math:`\\omega`\ 、\ :math:`\\alpha`\ 以及\ :math:`\\tau`\ 相关的符号规则。"
 "这些规则都与角位移正负的基本定义有关。"
 "\ **让**\ \ :math:`\\varphi`\ \ **增加的方向就是正速度、正加速度、正转矩的方向**\ 。"
 
@@ -328,8 +329,8 @@ msgid ""
 "is missing any description of the component's behavior."
 msgstr ""
 "除了定义的两个法兰\ ``flange_a``\ 和\ ``flange_b``\ 外，这个模型还定义了两法兰间的相对角度，即\ ``phi_rel``\ 。"
-"Of course, this model is also marked as ``partial`` since it is missing any description of the component's behavior."
-"当然，这种模型也被标记为\ ``partial``\ 。因为模型缺少对组件行为的任何描述。"
+"当然，这种模型也被标记为\ ``partial``\ 。"
+"因为模型缺少对组件行为的任何描述。"
 
 #: ../../source/components/components/rot_comps_basic.rst:228
 msgid ""
@@ -378,7 +379,7 @@ msgstr ""
 
 #: ../../source/components/components/rot_comps_basic.rst:269
 msgid "Likewise, the ``Damper`` model is similarly simplified:"
-msgstr "同样， \ ``Damper``\ 模型也类似地简化为："
+msgstr "同样，\ ``Damper``\ 模型也类似地简化为："
 
 #: ../../source/components/components/rot_comps_basic.rst:276
 msgid "Mechanical Ground"

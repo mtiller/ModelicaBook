@@ -154,10 +154,10 @@ msgid ""
 " in the scope in which the annotated declaration appears, which is evaluated"
 " based on simulation results."
 msgstr ""
-"第一个是“static”值。"
+"第一个是“静态”值。"
 "该值时会在没有可用模拟结果或者当特定工具不支持链接模拟结果到标注时是用。"
-"第二个值是“dynamic”值。"
-"这是一个表达式。它一般涉及标注声明所在作用域内的变量。该变量则可以从模拟结果得到。"
+"第二个值是“动态”值。"
+"这是一个表达式。表达式一般涉及标注声明所在作用域内的变量。该变量则可以从模拟结果得到。"
 
 #: ../../source/components/components/comp_annos.rst:116
 msgid "``preferredView``"
@@ -186,7 +186,7 @@ msgstr "“文本” － 显示与此定义关联的Modelica代码。"
 
 #: ../../source/components/components/comp_annos.rst:128
 msgid "\"diagram\" - Show the schematic diagram associated with this definition."
-msgstr ""
+msgstr "“简图” － 显示与此定义关联的示意图。"
 
 #: ../../source/components/components/comp_annos.rst:130
 msgid ""
@@ -197,7 +197,7 @@ msgid ""
 "definition is visited)."
 msgstr ""
 "\ ``preferredView``\ 标注的一个常见用途是用于创建某个特定\ ``package``\ 的文档。"
-"在这种情况下，\ ``package``\ 包括\ ``Documentation``\ 标注。而其\ ``preferredView``\ 标注则设置为\ ``info``\  （从而令访问定义直接显示文档）。"
+"在这种情况下，\ ``package``\ 包括\ ``Documentation``\ 标注。而其\ ``preferredView``\ 标注则设置为\ ``info``\ （从而令工具在访问定义直接显示文档）。"
 
 #: ../../source/components/components/comp_annos.rst:137
 msgid "``unassignedMessage``"

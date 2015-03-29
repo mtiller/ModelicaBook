@@ -52,7 +52,7 @@ msgid ""
 "``HeatPort`` model.  The only difference is that ``HeatPort_a`` and "
 "``HeatPort_b`` have distinguishing graphical icons."
 msgstr ""
-"仔细检查这些接口的定义表明， \ ``HeatPort_a``\ 和\ ``HeatPort_b``\ 在其内容上是与\ ``HeatPort``\ 模型是相同。"
+"仔细检查这些接口的定义表明，\ ``HeatPort_a``\ 和\ ``HeatPort_b``\ 在其内容上与\ ``HeatPort``\ 模型是相同的。"
 "唯一的区别在于，\ ``HeatPort_a``\ 和\ ``HeatPort_b``\ 的图标有所不同。"
 
 #: ../../source/components/components/heat_transfer.rst:64
@@ -514,4 +514,5 @@ msgstr ""
 
 #: ../../source/components/components/heat_transfer.rst:336
 msgid "infinite reservoir"
+
 msgstr ""

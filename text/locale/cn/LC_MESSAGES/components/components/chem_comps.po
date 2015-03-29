@@ -27,7 +27,7 @@ msgid ""
 " effects and show how connections in Modelica automatically ensure "
 "conservation of species."
 msgstr ""
-"在最后一个基于组件建模的例子里，我们又回到在\ :ref:`vectors-and-arrays`\ 章节内介绍的\ :ref:`chemical-system`\ 。"
+"在最后一个基于组件建模的例子里，我们会再次回顾在\ :ref:`vectors-and-arrays`\ 章节内介绍的\ :ref:`chemical-system`\ 。"
 "不过，这次我们将创建各种效应的组件模型，并演示Modelica内的连接是如何自动确保种类的守恒。"
 
 #: ../../source/components/components/chem_comps.rst:13
@@ -79,7 +79,7 @@ msgid ""
 ":`array-enum-dim` can be used in this way."
 msgstr ""
 "请注意，连接器里的\ ``C``\ 和\ ``R``\ 均为数组。而其下标由\ ``enumeration``\ 类型给出。"
-"我们之前看到\ :ref:`array-enum-dim`\ 的这种用法。"
+"我们之前就看到过\ :ref:`array-enum-dim`\ 的这种用法。"
 
 #: ../../source/components/components/chem_comps.rst:47
 msgid "``Solution``"
@@ -133,8 +133,10 @@ msgid ""
 " write contributions from individual reactions using an intuitive "
 "terminology)."
 msgstr ""
-"We see that each reaction has a reaction coefficient, ``k``, and a ``Mixture`` connector, ``mixture``, that ultimately connects it to the ``Solution`` where the reaction is to take place."
-"The internal vector variables ``consumed`` and ``produced`` play a role that is similar to the ``decline`` and ``growth`` variables in the ``SinkOrSource`` :ref:`discussed earlier in this chapter <reproduction-component>` (*i.e.,* they allow us to write contributions from individual reactions using an intuitive terminology)."
+"我们看到，每个反应有反应系数\ ``k``\ 和\ ``Mixture``\ 类型的连接器\ ``mixture``\ 。而\ ``mixture``\ 连接器则连接到反应发生的\ ``Solution``\ 部件中。"
+"内部向量值变量\ ``consumed``\ 和\ ``produced``\ 起到的作用类似于在"
+"\ :ref:`\ 本章前面部分介绍过的\ <reproduction-component>`\ \ ``SinkOrSource``\ 内的\ ``decline``\ 和\ ``growth``\ 变量"
+"（即使用这些变量，我们就可以将每个反应的作用以一种直观的方法描述出来。）"
 
 #: ../../source/components/components/chem_comps.rst:87
 msgid "``A+B->X``"
@@ -208,7 +210,7 @@ msgid ""
 msgstr ""
 "我们不追踪\ ``R``\ 和\ ``S``\ 物质的浓度。"
 "因为，它们不过是副产物，不参与任何其它反应。"
-"本模型与前述模型同样遵循我们熟悉的模式。不同点在于，\ ``A``\ 类物质是不参与反应。"
+"本模型与前述模型同样遵循我们熟悉的模式。不同点在于，\ ``A``\ 类物质不参与反应。"
 
 #: ../../source/components/components/chem_comps.rst:165
 msgid "System"

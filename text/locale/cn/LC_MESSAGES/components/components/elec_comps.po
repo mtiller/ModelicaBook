@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "前一节中讨论了如何在传热领域中创建组件模型。"
 "现在让我们将注意力转移到如何构建一些基本的电气元件。"
-"然后，我们会用这些模型来建立此前在\ :ref:`electrical example <elec-example>`\ 所看到的系统。"
+"然后，我们会用这些模型来建立所看到的\ :ref:`\ 电气系统\ <elec-example>`\ 。"
 
 #: ../../source/components/components/elec_comps.rst:12
 msgid ""
@@ -71,7 +71,6 @@ msgstr ""
 msgid ""
 "In the same way, we might create inductor and capacitor models as follows:"
 msgstr ""
-"In the same way, we might create inductor and capacitor models as follows:"
 "以同样的方式，我们可以创建电感和电容的模型，如下："
 
 #: ../../source/components/components/elec_comps.rst:65
@@ -85,9 +84,9 @@ msgid ""
 " mistake in that code, you have to fix it everywhere."
 msgstr ""
 "要注意的这些模型之间共同代码。"
-"在软件开发中，这种程度的冗余时会被人鄙视。"
+"在软件开发中，这种程度的冗余时常会被人鄙视。"
 "事实上，有条常用的软件工程格言说：“冗余是万恶根源”。"
-"这种冗余之所以是一个问题，一方面是由于你将同样的工作重复多次，另一方面也因为代码也是需要\ *维护*\ 的。"
+"这种冗余之所以是一个问题，一方面是由于你将同样的工作重复了多次，另一方面也因为代码也是需要\ *维护*\ 的。"
 "若你在重复代码内找到错误，你就要在每一处进行修复。"
 
 #: ../../source/components/components/elec_comps.rst:77

@@ -42,7 +42,9 @@ msgstr ""
 "框图则是另一种建模方法。"
 "框图需要重点创建代表大量数学运算的组件模型。"
 "然后，上述数学运算作用在（通常随时间变化）的信号，然后返回而其他信号。"
-"事实上，我们将在本节介绍一种特殊的\ ``model``\  ，称为\ ``block``\  。\ ``block``\ 仅有\ ``input``\ 和\ ``output``\ 的信号。"
+"事实上，我们将在本节介绍一种特殊的\ ``model``\ 。"
+"这种模型名为\ ``block``\ 。"
+"\ ``block``\ 仅有\ ``input``\ 和\ ``output``\ 的信号。"
 
 #: ../../source/components/components/block_comps.rst:22
 msgid ""
@@ -126,7 +128,7 @@ msgid ""
 "``y``.  Finally, for blocks with multiple inputs, the ``MISO`` block defines"
 " the input signal, ``u``, as a vector:"
 msgstr ""
-"此模型除了输出信号\ ``y``\  ，还多了一个输入信号\ ``u``\ 。"
+"此模型除了输出信号\ ``y``\ ，还多了一个输入信号\ ``u``\ 。"
 "最后，对于具有多个输入的模块，\ ``MISO``\ 模块可以将输入信号\ ``u``\ 定义为向量："
 
 #: ../../source/components/components/block_comps.rst:109
@@ -209,8 +211,7 @@ msgid ""
 "The ``Product`` block is nearly identical to the ``Sum`` block except that "
 "it uses the :ref:`product-func` function:"
 msgstr ""
-"The ``Product`` block is nearly identical to the ``Sum`` block except that it uses the :ref:`product-func` function:"
-"\ ``Product``\ 模块几乎等同于\ ``Sum``\ 模块。不同点在于它采用了\ :ref:`product-func`\ 函数："
+"\ ``Product``\ 模块与\ ``Sum``\ 模块几乎相同。不同点在于它采用了\ :ref:`product-func`\ 函数："
 
 #: ../../source/components/components/block_comps.rst:198
 msgid "``Feedback``"

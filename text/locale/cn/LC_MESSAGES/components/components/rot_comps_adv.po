@@ -255,7 +255,7 @@ msgid ""
 msgstr ""
 "第一项\ :math:`\\tau_a`\ ，是从\ ``flange_a``\ 进入齿轮的扭矩。"
 "第二项\ :math:`\\tau_b`\ ，是从\ ``flange_b``\ 进入齿轮的扭矩。"
-"这个等式告诉我们，这两个扭矩的总和绝不会为零（对于\ :math:`R \\neq 1`\ ） 。"
+"这个等式告诉我们，这两个扭矩的总和绝不会为零（对于\ :math:`R \\neq 1`\ ）。"
 "我们看起来在数学上证明了\ :math:`\\tau_a=0`\ 。"
 "但实际上，我们实际上证明了公式里并\ **不平衡**\ 。"
 "这种不平衡由于我们在列式中忘记一些东西。"
@@ -511,7 +511,7 @@ msgstr "变量数"
 #: ../../source/components/components/rot_comps_adv.rst:367
 #: ../../source/components/components/rot_comps_adv.rst:367
 msgid "1 (``housing_phi``)"
-msgstr ""
+msgstr "1（\ ``housing_phi`\ ）"
 
 #: ../../source/components/components/rot_comps_adv.rst:369
 msgid "**Equations required**"
@@ -529,7 +529,7 @@ msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:371
 msgid "Equations in declarations"
-msgstr ""
+msgstr "声明内的方程数"
 
 #: ../../source/components/components/rot_comps_adv.rst:371
 msgid "0"
@@ -537,7 +537,7 @@ msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:371
 msgid "2 (from ``housing``)"
-msgstr "2 （来自\ ``housing``\ ）"
+msgstr "2（\ ``housing``\ 内）"
 
 #: ../../source/components/components/rot_comps_adv.rst:373
 msgid "Equations in ``equation`` section"
@@ -564,7 +564,6 @@ msgid ""
 "The following model demonstrates how we can now use the ``ConfigurableGear``"
 " models as both an implicitly and explicitly grounded gear:"
 msgstr ""
-"The following model demonstrates how we can now use the ``ConfigurableGear`` models as both an implicitly and explicitly grounded gear:"
 "下面的模型展示了我们如何将\ ``ConfigurableGear``\ 模型用在隐式、显式接地齿轮的情况："
 
 #: ../../source/components/components/rot_comps_adv.rst:394
