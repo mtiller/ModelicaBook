@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "一般而言，子系统的参数应为\ ``public``\ 。"
 "通常情况下，除非\ ``model``\ 或\ ``block``\ 内定义的声明前带有\ ``protected``\ 关键字，"
-"否则所有声明都是共有的。
+"否则所有声明都是公有的。"
 "在这种情况下，如果想通过在声明前添加\ ``public``\ 关键字去表明其为公共的话，也是可以的。"
 "换句话说："
 
@@ -170,11 +170,11 @@ msgstr "从这些方程里，我们得到以下两个连接集："
 
 #: ../../source/components/subsystems/sub_interface.rst:120
 msgid "**Connection Set #1**: `flange_a`, `inertia_a.flange_a`"
-msgstr "**\ 连接集#1**: `flange_a`, `inertia_a.flange_a`"
+msgstr "\ **连接集＃1**\ ：\ `flange_a`, `inertia_a.flange_a`"
 
 #: ../../source/components/subsystems/sub_interface.rst:121
-msgid "**Connection Set #2**: `idealGear.flange_b`, `inertia_b.flange_a`"
-msgstr "**\ 连接集#2**: `idealGear.flange_b`, `inertia_b.flange_a`"
+msgid "**Connection Set #2**: `idealGear.flange_b`\ 、\ `inertia_b.flange_a`\ "
+msgstr "\ **连接集＃2**\ ：\ `idealGear.flange_b`\ 、\ `inertia_b.flange_a`\ "
 
 #: ../../source/components/subsystems/sub_interface.rst:123
 msgid ""
@@ -184,7 +184,7 @@ msgid ""
 "variables on these connectors:"
 msgstr ""
 "In each of these connection sets, there is a ``flow`` variable, ``tau``."
-"在每个连接集内都有一个\ ``flow``\ 变量，\ ``tau``\  。"
+"在每个连接集内都有一个\ ``flow``\ 变量\ ``tau``\ 。"
 "使用前述的\ :ref:`system-connections`\ 规则，我们可能会预期\ ``flow``\ 变量将产生以下两个等式："
 
 #: ../../source/components/subsystems/sub_interface.rst:133
@@ -197,7 +197,7 @@ msgid ""
 "sign difference for contributions at different levels.  Taking that into "
 "account, **the actual equations that will be generated** will be:"
 msgstr ""
-"然而，在我们以往对\ :ref:`system-connections`\ 的讨论里，所有组件都是在同一层次的（即作为\ `idealGear.flange_b`\ 和\ ` inertia_b.flange_a`\ 是） 。"
+"然而，在我们以往对\ :ref:`system-connections`\ 的讨论里，所有组件都是在同一层次的（例如\ `idealGear.flange_b`\ 和\ `inertia_b.flange_a`\ 这样的）。"
 "但并不是所有子系统模型都是如此。"
 "而且，如上所述，若连接穿过不同层级，我们需要对不同层级内的连接器引入不同的符号。"
 "考虑到这一点，\ **实际将产生的公式**\ 会是："
