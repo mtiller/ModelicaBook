@@ -30,7 +30,7 @@ msgstr "单层模型"
 
 #: ../../source/components/architectures/sensor_comparison.rst:16
 msgid "Our system schematic is structured as follows:"
-msgstr "我们的系统结构如下： "
+msgstr "我们的系统结构如下："
 
 #: ../../source/components/architectures/sensor_comparison.rst:25
 msgid ""
@@ -51,7 +51,7 @@ msgstr ""
 "绿框标示系统中的传感器。"
 "该传感器用于测量其中一个旋转轴的速度。"
 "类似地，紫框表示执行器。"
-"执行器对另一条轴（其速度没有测定的那条）施加扭矩 。"
+"执行器对另一条轴（其速度没有测定的那条）施加扭矩。"
 "最后，蓝框内的所有组件代表了控制系统。该系统试图使所测速度尽可能地接近信号发生器在图的顶部所提供的设定值。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:37
@@ -66,7 +66,7 @@ msgid ""
 "reports the exact solution trajectory.  In other words, it does not "
 "introduce any kind of measurement artifact."
 msgstr ""
-"请注意，在这个特定模型里， \ ``sensor``\ 组件是\ ``Modelica.Mechanics.Rotational.Sensors``\ 内的\ ``SpeedSensor``\ 模型的一个实例。"
+"请注意，在这个特定模型里，\ ``sensor``\ 组件是\ ``Modelica.Mechanics.Rotational.Sensors``\ 包内\ ``SpeedSensor``\ 模型的一个实例。"
 "这是个报告精确解轨迹的“理想”传感器。"
 "换句话说，该传感器不引入任何一种测量误差。"
 
@@ -76,7 +76,7 @@ msgid ""
 "measurements, the control system is still not quite able to follow the speed"
 " trace:"
 msgstr ""
-"事实是在模拟后我们看到，即便使用精确的速度测量，控制系统仍不太能够跟踪给定的速度轨迹： "
+"事实是在模拟后我们看到，即便使用精确的速度测量，控制系统仍不太能够跟踪给定的速度轨迹："
 
 #: ../../source/components/architectures/sensor_comparison.rst:55
 msgid ""
@@ -131,10 +131,9 @@ msgid ""
 "impact performance and potentially what kinds of improvements might "
 "ultimately be required for the control system itself."
 msgstr ""
-"At this point, we'd like to explore this performance issue a bit more to understand how characteristics of the sensor (*e.g.,* ``sample_rate``) impact performance and potentially what kinds of improvements might ultimately be required for the control system itself."
 "在这里，我们想稍进一步探索上述性能问题，"
-"以一方面了解传感器的特性（\ *如：*\ ``sample_rate``\ ）会如何影响系统性能，"
-"另一方面进一步考虑对于控制系统本身的改进。"
+"以一方面了解传感器的特性（\ *如：*\ ``sample_rate``\ ）会如何影响系统性能。"
+"另一方面，我们也希望进一步考虑对于控制系统本身的改进。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:96
 msgid ""
@@ -143,7 +142,7 @@ msgid ""
 " we end up with the following system model:"
 msgstr ""
 "如果我们要更换传感器、执行器和控制策略，那么第一步应该是将这些子系统组织为模型。"
-"如此，我们最终会得到了以下系统模型： "
+"如此，我们最终会得到了以下系统模型："
 
 #: ../../source/components/architectures/sensor_comparison.rst:105
 msgid ""
@@ -176,7 +175,7 @@ msgid ""
 "But switching our sensor model to a sample and hold version still involves "
 "editing the text of our model, *i.e.,*"
 msgstr ""
-"但是，我们在将传感器切换为采样保持版本后，仍然需要更改模型的文本\ *即：*\ "
+"但是，我们在将传感器切换为采样保持版本后，仍然需要更改模型的文本，即："
 
 #: ../../source/components/architectures/sensor_comparison.rst:130
 msgid ""
@@ -225,7 +224,7 @@ msgid ""
 "another model and then change *parameters*, *e.g.,*"
 msgstr ""
 "在前面，我们通过继承处理冗余。"
-"我们当然可以使用继承来将\ ``HierarchicalSystem``\ 内的子系统转移到另一个模型，然后改变此模型的\ *参数*\ ，\ *如：*\ "
+"我们当然可以使用继承来将\ ``HierarchicalSystem``\ 内的子系统转移到另一个模型，然后改变此模型的\ *参数*\ ，如："
 
 #: ../../source/components/architectures/sensor_comparison.rst:166
 msgid ""
@@ -234,7 +233,7 @@ msgid ""
 "this:"
 msgstr ""
 "但我们并不希望改变参数，要改变的是\ **类型**\ 。"
-"假设我们能以某种方式“覆盖”以前的选择，这样就可以做到如下的事情： "
+"假设我们能以某种方式“覆盖”以前的选择，这样就可以做到如下的事情："
 
 #: ../../source/components/architectures/sensor_comparison.rst:178
 msgid ""
@@ -305,7 +304,7 @@ msgstr ""
 "此时，我们会说这两种传感器型号不是\ **插件兼容的**\ 。"
 "当对于\ ``Y``\ 的每个\ **公有**\ 变量\ ``X``\ 都有一个具有相同的名字的对应变量，模型\ ``X``\ 插件兼容于\ ``Y``\ 模型。"
 "此外，在\ ``X``\ 内每个这样的变量本身必须是插件兼容它在\ ``Y``\ 内的对应变量。"
-"这样可以确保如果你将\ ``Y``\ 类型的组件到变更为类型\ ` X``\ ，你需要的一切（参数，连接器等）都将继续存在，并仍将是兼容的。"
+"这样可以确保如果你将\ ``Y``\ 类型的组件到变更为类型\ ``X``\ ，你需要的一切（参数，连接器等）都将继续存在，并仍将是兼容的。"
 "\ **不过，请注意**\ ，倘若\ ``X``\ 是插件兼容于\ ``Y``\ ，这\ **不**\ 意味着\ ``Y``\ 插件兼容于\ ``X``\ （我们将马上看到这样的例子）。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:229
@@ -396,7 +395,7 @@ msgid ""
 "Recall, from earlier in this section, that the public interface for the "
 "``SampleHoldSensor`` model included:"
 msgstr ""
-"回想一下，在本节的前面，\ ``SampleHoldSensor``\ 模型的公有接口包括： "
+"回想一下，在本节的前面，\ ``SampleHoldSensor``\ 模型的公有接口包括："
 
 #: ../../source/components/architectures/sensor_comparison.rst:332
 msgid "and that the ``IdealSensor`` public interface contained only:"
@@ -410,14 +409,14 @@ msgid ""
 "``SampleHoldSensor`` sensor, *i.e.,*"
 msgstr ""
 "如果重声明受限于新类型和原始类型的插件兼容性，那么我们可能会遇到下面的问题。"
-"万一我们在系统初始模型中使用了\ ``SampleHoldSensor``\ 传感器，\ *即：*\ "
+"万一我们在系统初始模型中使用了\ ``SampleHoldSensor``\ 传感器，即："
 
 #: ../../source/components/architectures/sensor_comparison.rst:360
 msgid ""
 "Imagine further that we then wanted to redeclare the ``sensor`` component to"
 " be an ``IdealSensor``, *e.g.,*"
 msgstr ""
-"进一步试想，我们想将\ ``sensor``\ 组件重定义为\ ``dealSensor``\ ，\ *如：*\ "
+"进一步试想，我们想将\ ``sensor``\ 组件重定义为\ ``dealSensor``\ ，如："
 
 #: ../../source/components/architectures/sensor_comparison.rst:372
 msgid ""
@@ -428,12 +427,11 @@ msgid ""
 "``SampleHoldSensor`` model because it is missing something, ``sample_rate``,"
 " that the original model, ``SampleHoldSensor``, had."
 msgstr ""
-"Now we have a problem."
 "现在我们有一个问题。"
 "原来的\ ``sensor``\ 组件有个名为\ ``sample_rate``\ 的参数。"
 "但是，我们试图把该组件替代没有这个参数的类型。"
 "换句话说，\ ``IdealSensor``\ 模型\ **不**\ 插件兼容于\ ``SampleHoldSensor``\ 模型。"
-"因为此新模型缺少一些原模型\ ``SampleHoldSensor``\ 具有的内容： \ ``sample_rate``\ 。"
+"因为此新模型缺少一些原模型\ ``SampleHoldSensor``\ 具有的内容：\ ``sample_rate``\ 。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:381
 msgid ""
@@ -464,7 +462,7 @@ msgstr ""
 "这第二个类型被称为约束类型。"
 "因为只要任何重声明的类型插件兼容于约束类型，该模型应该仍然工作。"
 "这第二类叫做约束类型，因为只要任何重新声明是插件兼容约束类型，模型应该仍能正常工作。"
-"因此，上述的\ ``InitialSystem``\ 模型内原声明的类型是\ ``SampleHoldSensor``\  。"
+"因此，上述的\ ``InitialSystem``\ 模型内原声明的类型是\ ``SampleHoldSensor``\ 。"
 "但只要新类型的插件兼容\ ``IdealSensor``\ ，该模型仍然能工作。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:397
@@ -472,7 +470,7 @@ msgid ""
 "When we indicate that a component is ``replaceable``, we can indicate the "
 "constraining type by adding a ``constrainedby`` clause at the end, *e.g.*,"
 msgstr ""
-"当我们表明一个组件是\ ``replaceable``\ 时，我们可以在最末加入\ ``constrainedby``\ 去指示约束型，\ *如：*\ ，"
+"当我们表明一个组件是\ ``replaceable``\ 时，我们可以在最末加入\ ``constrainedby``\ 去指示约束型，如：，"
 
 #: ../../source/components/architectures/sensor_comparison.rst:408
 msgid ""
@@ -484,8 +482,7 @@ msgid ""
 msgstr ""
 "上述声明的意思是\ ``sensor``\ 组件可以通过任何的插件兼容于\ ``IdealSensor``\ 的模型来重声明。"
 "\ **但是**\ 如果不进行重声明，那么\ **默认**\ 会声明为\ ``SampleHoldSensor``\ 传感器。"
-"For this reason, the original type used in the declaration, ``SampleHoldSensor``, is called the **default type**."
-"出于这个原因，在申报， \ ``SampleHoldSensor``\ 使用的原始类型，被称为**默认类型** 。"
+"出于这个原因，声明\ ``SampleHoldSensor``\ 时使用的原始类型被称为\ **默认类型**\ 。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:415
 msgid ""
@@ -495,7 +492,7 @@ msgid ""
 "initial type."
 msgstr ""
 "注意，我们原来的\ ``InitialSystem``\ 模型的定义并没有指定约束类型。"
-"模型只指定了初始类型。 在这种情况下，默认类型和约束类型被假定为初始类型。"
+"模型只指定了初始类型。在这种情况下，默认类型和约束类型被假定为初始类型。"
 
 #: ../../source/components/architectures/sensor_comparison.rst:420
 msgid ""

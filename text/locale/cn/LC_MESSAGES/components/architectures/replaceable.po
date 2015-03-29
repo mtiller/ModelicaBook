@@ -185,6 +185,15 @@ msgstr ""
 "\ ``redeclare``\ 语句的语法和正常的声明真的几乎完全一样。唯一不同之处在于语句前面的\ ``redeclare``\ 关键字。"
 "很明显，重新声明的任何变量必须事先曾被声明（即你不能使用此语法来声明一个变量，只能\ *重声明*\ 它）。"
 
+#: ../../source/components/architectures/replaceable.rst:129
+msgid ""
+"It is **very important** to understand that when you redeclare a component, "
+"the new redeclaration supersedes the previous one.  For example, after the "
+"following redeclaration:"
+msgstr ""
+"你重定义一个组件时，新的重声明会取代前面的重声明。这点\ **非常重要**\ 。"
+"例如，下面的重声明之后："
+
 #: ../../source/components/architectures/replaceable.rst:137
 msgid ""
 "the ``sensor`` component **is no longer replaceable**.  This is because the "
@@ -270,13 +279,25 @@ msgstr ""
 msgid "But let's consider another case:"
 msgstr "然而，让我们考虑另外一种情况："
 
+#: ../../source/components/architectures/replaceable.rst:211
+msgid ""
+"Now imagine we had another resistor model, ``SensitiveResistor`` that was "
+"plug-compatible with ``Resistor`` (*i.e.,* it had a ``parameter`` called "
+"``R``) but included an additional parameter, ``dRdT``, indicating the "
+"(linear) sensitivity of the resistance to temperature. We might want to do "
+"something like this:"
+msgstr ""
+"现在想象我们有另外一个电阻器模型\ ``SensitiveResistor``\ 。"
+"而这个模型插件兼容于\ ``Resistor``\ （即它有一个名为\ ``R``\ 的\ ``parameter``\ ）。"
+"但模型也包括一个额外的参数\ ``dRdT``\ ，以指示电阻的（线性）温度敏感度。"
+"我们可能想要做这样的事情："
+
 #: ../../source/components/architectures/replaceable.rst:221
 msgid ""
 "What happens to ``R`` in this case?  In this case, we would actually like to"
 " preserve the value of ``R`` so it persists across the redeclaration.  "
 "Otherwise, we'd need to restate it all the time, *i.e.,*"
 msgstr ""
-"What happens to ``R`` in this case?  In this case, we would actually like to preserve the value of ``R`` so it persists across the redeclaration."
 "\ ``R``\ 在这种情况下会如何呢？"
 "在这里，我们实际上希望保持\ ``R``\ 的值，让其在整个重声明仍然存在。"
 "否则，我们就需要不断重申这点，即："
@@ -330,7 +351,7 @@ msgstr ""
 
 #: ../../source/components/architectures/replaceable.rst:262
 msgid "the ``R=100`` modification will automatically be applied here as well."
-msgstr "\ ``R = 100``\ 修改也会自动应用于此"
+msgstr "\ ``R=100``\ 修改也会自动应用于此"
 
 #: ../../source/components/architectures/replaceable.rst:264
 msgid ""
@@ -419,7 +440,7 @@ msgid ""
 msgstr ""
 "所有的电阻元件类型仍为\ ``ResistorModel``\ ，我们没有必要重声明任何一个元素。"
 "通过将\ ``ResistorModel``\ 类型定义改变为\ ``SensitiveResistor(dRdT=0.1)``\ ，我们\ **做到了**\ 重新定义什么是\ ``ResistorModel``\ 。"
-"注意，\ ``dRdT = 0.1``\ 这一更改将应用到类型为\ ``ResistorModel``\ 的所有组件。"
+"注意，\ ``dRdT=0.1``\ 这一更改将应用到类型为\ ``ResistorModel``\ 的所有组件。"
 "从技术上讲，这不是组件类型的重声明，而是一个类型的重定义。"
 "但是，我们再次使用了\ ``redeclare``\ 关键字。"
 
@@ -590,24 +611,3 @@ msgstr ""
 #: ../../source/components/architectures/replaceable.rst:184
 msgid "in the context of redeclarations"
 msgstr ""
-
-#: ../../source/components/architectures/replaceable.rst:129
-msgid ""
-"It is **very important** to understand that when you redeclare a component, "
-"the new redeclaration supersedes the previous one.  For example, after the "
-"following redeclaration:"
-msgstr ""
-"你重定义一个组件时，新的重声明会取代前面的重声明。这点\ **非常重要**\ 。"
-"例如，下面的重声明之后："
-
-#: ../../source/components/architectures/replaceable.rst:211
-msgid ""
-"Now imagine we had another resistor model, ``SensitiveResistor`` that was "
-"plug-compatible with ``Resistor`` (*i.e.,* it had a ``parameter`` called "
-"``R``) but included an additional parameter, ``dRdT``, indicating the "
-"(linear) sensitivity of the resistance to temperature. We might want to do "
-"something like this:"
-msgstr ""
-"现在想象我们有另外一个电阻器模型 \ ``SensitiveResistor``\ 。"
-"而这个模型插件兼容于\ ``Resistor``\ （即它有一个名为\ ``R``\ 的\ ``parameter``\  ），但包括一个额外的参数 \ ``dRdT``\ ，以指示电阻的（线性）温度敏感度。"
-"我们可能想要做这样的事情："

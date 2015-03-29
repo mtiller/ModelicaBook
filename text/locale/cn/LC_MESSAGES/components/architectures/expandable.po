@@ -36,7 +36,7 @@ msgid ""
 "exception that the ``expandable`` qualifier is added before the definition, "
 "*e.g.,*"
 msgstr ""
-"可扩展连接器使用与正常连接器定义完全相同的语法（见前面\ :ref:`connector-def`\ 的讨论）。唯一不同之处在于定义前加入了\ ``expandable``\ 限定词，\ *如：*\ "
+"可扩展连接器使用与正常连接器定义完全相同的语法（见前面\ :ref:`connector-def`\ 的讨论）。唯一不同之处在于定义前加入了\ ``expandable``\ 限定词，如："
 
 #: ../../source/components/architectures/expandable.rst:23
 msgid ""
