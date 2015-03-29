@@ -23,9 +23,9 @@ msgid ""
 "temperature sense and the actuator will be the furnace in the house.  Using "
 "these models, we will explore a few different control strategies."
 msgstr ""
-"在这一章中，我们将考虑另一个系统。这个系统包括了控制对象、控制器、传感器和执行器。"
+"在这一章中，我们将考虑另一个系统。这个系统包括了受控对象、控制器、传感器和执行器。"
 "这个应用场景是分为三区的房子的热控制。"
-"控制对象将是房子本身。传感器为温度传感器。执行器则为房内的火炉。"
+"受控对象将是房子本身。传感器为温度传感器。执行器则为房内的火炉。"
 "利用这些模型，我们将探索不同的控制策略。"
 
 #: ../../source/components/architectures/thermal_control.rst:13
@@ -58,9 +58,9 @@ msgid ""
 "into a few subsystems and/or include multiple controllers and control loops."
 "  But many closed loop system control problems have a similar structure."
 msgstr ""
-"我们在这里看到了和上一节同样的基本组件：控制对象模型、传感器、控制器和致动器。"
+"我们在这里看到了和上一节同样的基本组件：受控对象模型、传感器、控制器和致动器。"
 "其实，这是一个非常典型的架构。"
-"在某些情况下，人们可以控制对象模型分解成几个子系统和/或加入多个控制器和控制回路。"
+"在某些情况下，人们可以受控对象模型分解成几个子系统和/或加入多个控制器和控制回路。"
 "只是，许多闭环系统的控制问题具有类似的结构。"
 
 #: ../../source/components/architectures/thermal_control.rst:41
@@ -77,22 +77,22 @@ msgid ""
 "The actuator receives a commanded temperature and then injects heat through "
 "a thermal connection to the plant"
 msgstr ""
-"致动器接收到目标温度，然后通过与控制对象的热连接注入热"
+"致动器接收到目标温度，然后通过与受控对象的热连接注入热"
 
 #: ../../source/components/architectures/thermal_control.rst:48
 msgid ""
 "The sensor model also has a thermal connector (to the plant) and an output "
 "signal containing the measured temperature."
 msgstr ""
-"传感器模型也带有热连接器（和控制对象相连）。而且它还包含了测量温度的输出信号。"
+"传感器模型也带有热连接器（和受控对象相连）。而且它还包含了测量温度的输出信号。"
 
 #: ../../source/components/architectures/thermal_control.rst:51
 msgid ""
 "The plant has two thermal connections.  One represents where the furnace "
 "heat is added to the system and the other is where the sensor is located."
 msgstr ""
-"控制对象有两个热连接。"
-"一个热连接代表炉子热量和控制对象的连接。另一个是传感器的位置。"
+"受控对象有两个热连接。"
+"一个热连接代表炉子热量和受控对象的连接。另一个是传感器的位置。"
 
 #: ../../source/components/architectures/thermal_control.rst:55
 msgid ""
@@ -111,11 +111,11 @@ msgstr "初始实现"
 
 #: ../../source/components/architectures/thermal_control.rst:68
 msgid "Plant"
-msgstr "控制对象"
+msgstr "受控对象"
 
 #: ../../source/components/architectures/thermal_control.rst:70
 msgid "Our plant model looks like this:"
-msgstr "控制对象的模型如下："
+msgstr "受控对象的模型如下："
 
 #: ../../source/components/architectures/thermal_control.rst:77
 msgid ""
@@ -194,7 +194,7 @@ msgid ""
 "to do a fairly good job of controlling our plant."
 msgstr ""
 "到目前为止，这种做法好像已经相当成功。"
-"我们有一个很好的架构，我们可以用其来考虑不同的执行器、传感器、控制器甚至控制对象模型。"
+"我们有一个很好的架构，我们可以用其来考虑不同的执行器、传感器、控制器甚至受控对象模型。"
 "我们开发的控制系统在这种情况性能似乎不错。"
 
 #: ../../source/components/architectures/thermal_control.rst:145
@@ -294,7 +294,7 @@ msgid ""
 " following interface definition for our actuators:"
 msgstr ""
 "此接口包含两个连接器， \ ``heat``\ 连接器和\ ``furnace``\ 连接器。"
-"\ ``furnace``\ 连接器为热连接器，它使暖炉与控制对象产生热相互作用。"
+"\ ``furnace``\ 连接器为热连接器，它使暖炉与受控对象产生热相互作用。"
 "\ ``heat``\ 连接器为来自控制器的\ ``Real``\ 值输入信号。该信号指定所需的热量输出大小。"
 "事实上，在我们切换到需要\ ``Boolean``\ 信号的控制方法时，接口模型的上述信号为\ ``Real``\ 值这点正是问题所在。"
 "为了解决这个问题，我们将使用下面的接口定义执行器："
@@ -370,7 +370,7 @@ msgid ""
 " connectors, but the interfaces for the sensor and controller are as "
 "follows:"
 msgstr ""
-"控制对象模型的接口没有受使用\ ``expandable``\ 连接器的影响。但传感器和控制器的接口如下："
+"受控对象模型的接口没有受使用\ ``expandable``\ 连接器的影响。但传感器和控制器的接口如下："
 
 #: ../../source/components/architectures/thermal_control.rst:266
 msgid ""

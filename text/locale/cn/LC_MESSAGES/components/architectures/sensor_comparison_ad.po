@@ -228,7 +228,7 @@ msgstr ""
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:160
 msgid "Plant Models"
-msgstr "控制对象模型"
+msgstr "受控对象模型"
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:167
 msgid "Actuator Models"
