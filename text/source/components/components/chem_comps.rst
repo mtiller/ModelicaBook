@@ -1,4 +1,4 @@
-o.. _chem-components:
+.. _chem-components:
 
 Chemical Components
 -------------------
