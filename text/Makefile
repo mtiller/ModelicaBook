@@ -30,7 +30,7 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
-.PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results
+.PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results uploadCIdeps
 
 # This builds the material necessary to create the book
 book: specs results dirhtml server
@@ -405,3 +405,8 @@ PDFs:=	$(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(dir)/*.s
 
 # Make a rule to build the PDFs
 images: $(PDFs)
+
+# upload the most time consuming deps so they can be used by CI build
+uploadCIdeps: specs results images
+	tar cJf build/CIdeps.tar.xz results plots docs-dir
+	($(S3PUT) build/CIdeps.tar.xz s3://files.xogeny.com/ModelicaByExample/)
