@@ -197,7 +197,7 @@ msgid ""
 "determine that ``T0`` and ``T_inf`` must also be temperatures."
 msgstr ""
 "正如你猜测的那样，变量\ ``T``\ 表示温度，在与变量相关的描述性文本中已经明确进行了表述。"
-"此外，不需要对我们以前的模型进行很深的分析，大家也可以确定变量\ ``T0``\ 和\ ``T_inf``\ 均必须是温度。"
+"此外，即使不对此前的模型进行很深入的分析，大家也可以确定变量\ ``T0``\ 和\ ``T_inf``\ 均须是温度。"
 
 #: ../../source/behavior/equations/physical.rst:126
 msgid ""
@@ -207,7 +207,7 @@ msgid ""
 "equations have the same physical units (*e.g.*, temperature, mass, power)."
 msgstr ""
 "但是对于其他变量，比如变量\ ``h``\ 或\ ``A``\ ，它们表示什么？"
-"更重要的是，这些方程是否\ **具有物理一致性**\ ？ "
+"更重要的是，这些方程是否\ **具有物理一致性**\ ？"
 "物理一致性表述的是方程等式两边是否具有相同的物理单位（即温度、质量、功率等）。"
 
 #: ../../source/behavior/equations/physical.rst:132
