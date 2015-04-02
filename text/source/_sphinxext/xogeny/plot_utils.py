@@ -21,6 +21,8 @@ import os
 # for label in legend.get_lines():
 #     label.set_linewidth(1.5)  # the legend line width
 # plt.show()
+from matplotlib import rcParams
+rcParams['font.family'] = 'Droid Sans Fallback'
 
 def render_twoup_plot(name, spec1, spec2):
     pass
