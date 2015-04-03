@@ -249,7 +249,7 @@ Attributes of ``Real``
     **Default**: ``false`` (except for ``parameter`` variables, where
     it is ``true`` by default)
 
-    **Type**: ``Real``
+    **Type**: ``Boolean``
 
 ``min``
     The ``min`` attribute is used to specify the minimum allowed value
