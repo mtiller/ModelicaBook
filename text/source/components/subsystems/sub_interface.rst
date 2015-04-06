@@ -117,8 +117,8 @@ two ``connect`` statements from the ``GearWithBacklash`` model:
 
 From these equations, we get the following two connection sets:
 
-   * **Connection Set #1**: `flange_a`, `inertia_a.flange_a`
-   * **Connection Set #2**: `idealGear.flange_b`, `inertia_b.flange_a`
+   * **Connection Set #1**: ``flange_a``, ``inertia_a.flange_a``
+   * **Connection Set #2**: ``idealGear.flange_b``, ``inertia_b.flange_a``
 
 In each of these connection sets, there is a ``flow`` variable,
 ``tau``.  Using the rules for :ref:`system-connections` described
@@ -132,7 +132,7 @@ generated for the ``flow`` variables on these connectors:
 
 However, in our previous discussion on :ref:`system-connections`, all
 the components were at the same hierarchical level (*i.e.,* as
-`idealGear.flange_b` and `inertia_b.flange_a` are).  But with
+``idealGear.flange_b`` and ``inertia_b.flange_a`` are).  But with
 subsystem models, this isn't always the case.  And, as described a
 moment ago, for cases where the connections are at different levels,
 we need to introduce a sign difference for contributions at different
