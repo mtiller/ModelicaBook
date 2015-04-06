@@ -295,7 +295,6 @@ msgid "**Default**: ``0.0``"
 msgstr "\\ **默认值**\\ ：\\ ``0.0``\\ "
 
 #: ../../source/behavior/equations/variables.rst:227
-#: ../../source/behavior/equations/variables.rst:252
 #: ../../source/behavior/equations/variables.rst:262
 #: ../../source/behavior/equations/variables.rst:272
 #: ../../source/behavior/equations/variables.rst:318
@@ -507,6 +506,7 @@ msgstr "\\ **类型**\\ ：\\ ``Integer``\\ "
 msgid "*see previous discussion of* :ref:`fixed-attribute`"
 msgstr "\\ *参见前节对*\\ :ref:`fixed-attribute`\\ *的讨论*\\ 。"
 
+#: ../../source/behavior/equations/variables.rst:252
 #: ../../source/behavior/equations/variables.rst:362
 #: ../../source/behavior/equations/variables.rst:407
 #: ../../source/behavior/equations/variables.rst:415

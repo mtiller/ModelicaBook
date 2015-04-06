@@ -11,10 +11,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/components/components/chem_comps.rst:1
-msgid "o.. _chem-components:"
-msgstr ""
-
 #: ../../source/components/components/chem_comps.rst:4
 msgid "Chemical Components"
 msgstr "化学组件"
