@@ -57,7 +57,7 @@ add_case(["SecondOrderSystemInitParams"], stopTime=5, res="SOSIP")
 add_simple_plot(plot="SOSIP", vars=sosvars, title=_("Mechanical System Response"))
 
 add_case(["SecondOrderSystemInitParams"], stopTime=5, res="SOSIP1",
-         mods={_("phi1_init"): 1.0})
+         mods={"phi1_init": 1.0})
 add_simple_plot(plot="SOSIP1", vars=sosvars, title=_("Mechanical Response specifying phi1(0)"))
 
 ## LotkaVolterra
@@ -166,7 +166,7 @@ add_simple_plot(plot="IntervalMeasure", vars=mvars,
                 legloc="upper right")
 
 add_case(["DiscreteBehavior", "IntervalMeasure"], stopTime=5,
-         res="IntervalMeasure_Coarse", tol=1e-3, mods={_("teeth"): 20})
+         res="IntervalMeasure_Coarse", tol=1e-3, mods={"teeth": 20})
 add_simple_plot(plot="IntervalMeasure_Coarse", vars=mvars,
                 title=_("Speed Estimation Using Fewer Teeth"),
                 legloc="upper right")
@@ -429,7 +429,7 @@ add_simple_plot(plot="PwIM_gaps", res="PwIM",
                       Var("intervalMeasure.prev_phi", legend=_("Next backward angle"))],
                 title=_("Comparison of actual speed with approximation by interval measurement"));
 add_case(["PlantWithIntervalMeasure"], stopTime=5, res="PwIMf", tol=1e-6,
-         mods={_("intervalMeasure.teeth"): 20});
+         mods={"intervalMeasure.teeth": 20});
 add_simple_plot(plot="PwIMf", vars=[Var("inertia1.w", legend=_("Actual speed (inertia1.w)")),
                                     Var("intervalMeasure.w",
                                         legend=_("Measured speed (intervalMeasure.w)"))],
@@ -453,7 +453,7 @@ add_case(["BlockDiagrams", "MultiDomainControl"], stopTime=0.35, res="MDC", tol=
 add_simple_plot(plot="MDC", vars=[Var("sensor.y", legend=_("Temperature (sensor.y)"))],
                 title=_("Closed loop temperature response"));
 add_case(["BlockDiagrams", "MultiDomainControl"], stopTime=0.35, res="MDC_hg",
-         mods={_("k"): 10.0}, tol=1e-3);
+         mods={"k": 10.0}, tol=1e-3);
 add_simple_plot(plot="MDC_hg", vars=[Var("sensor.y", legend=_("Temperature (sensor.y)"))],
                 title=_("Closed loop temperature response with high gain"));
 
@@ -475,7 +475,7 @@ abxvars = [Var("solution.C[ModelicaByExample.Components.ChemicalReactions.ABX.Sp
 # Subsystem models
 add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB", tol=1e-3);
 add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB_nolash", tol=1e-3,
-         mods={_("backlash.b"): 0});
+         mods={"backlash.b": 0});
 
 fswb_vars = [Var("inertia_a.w"), Var("inertia_b.w")]
 add_compare_plot(plot="FSWB_comp", legloc="upper right",
@@ -532,12 +532,12 @@ add_simple_plot(plot="SSC_AL", vars=sscvars, legloc="lower right",
                 title=_("Power supply component with additional load"))
 
 add_case(["AdditionalLoad"], stopTime=1.0, res="SSC_ALC", tol=1e-6,
-         mods={_("power_supply.C"): 1e-1});
+         mods={"power_supply.C": 1e-1});
 add_simple_plot(plot="SSC_ALC", vars=sscvars, legloc="lower right",
                 title=_("Power supply component with additional load"))
 
 add_case(["AdditionalLoad"], stopTime=1.0, res="SSC_ALC2", tol=1e-6,
-         mods={_("power_supply.C"): 100});
+         mods={"power_supply.C": 100});
 add_simple_plot(plot="SSC_ALC2", vars=sscvars, legloc="lower right",
                 title=_("Effect of very large capacitance"))
 
