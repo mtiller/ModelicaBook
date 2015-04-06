@@ -3,15 +3,10 @@ import sys
 
 sys.path.append(os.path.join(".", "source", "_sphinxext"))
 
-import gettext
-try:
-    language = os.environ['BOOK_LANG']
-    t = gettext.translation('specs', os.path.abspath('./locale'), [language])
-    _ = t.ugettext
-except Exception as err:
-    _ = lambda x: x
 
 from xogeny.gen_utils import *
+from xogeny.locales import create_gettext
+_ = create_gettext('specs')
 
 ## Simple Examples
 fovars = [Var("x", legend=_("x"))]

@@ -21,8 +21,8 @@ import os
 # for label in legend.get_lines():
 #     label.set_linewidth(1.5)  # the legend line width
 # plt.show()
-from matplotlib import rcParams
-rcParams['font.family'] = 'Droid Sans Fallback'
+import xogeny.locales as xlocales
+_ = xlocales.create_gettext('plot_utils')
 
 def render_twoup_plot(name, spec1, spec2):
     pass
@@ -30,6 +30,7 @@ def render_twoup_plot(name, spec1, spec2):
 def render_comp_plot(name1, vars1, name2, vars2, title, legloc, ylabel):
     import matplotlib.pyplot as plt
     import math
+    xlocales.set_matplotlib()
 
     if len(vars1)!=len(vars2):
         raise BaseException("Mismatch in variable arrays, %d vs %s" % (len(vars1), len(vars2)))
@@ -78,7 +79,7 @@ def render_comp_plot(name1, vars1, name2, vars2, title, legloc, ylabel):
         title = name1.replace("_", ".")
     plt.title(title)
     plt.ylabel(ylabel)
-    plt.xlabel('Time [s]')
+    plt.xlabel(_('Time [s]'))
 
     plt.show()
 
@@ -86,6 +87,7 @@ def render_comp_plot(name1, vars1, name2, vars2, title, legloc, ylabel):
 def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymin=None, ymax=None):
     import matplotlib.pyplot as plt
     import math
+    xlocales.set_matplotlib()
 
     # Location of results (relative to extention directory)
     resdir = os.path.abspath(os.path.join(os.path.dirname(__file__),
@@ -135,7 +137,7 @@ def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymin=None, ym
         title = name.replace("_", ".")
     plt.title(title)
     plt.ylabel(ylabel)
-    plt.xlabel('Time [s]')
+    plt.xlabel(_('Time [s]'))
     if ymax!=None:
         plt.axis(ymax=ymax)
     if ymin!=None:

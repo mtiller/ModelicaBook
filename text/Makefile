@@ -30,6 +30,9 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
+# Language definition
+SET_BOOK_LANG_CN = BOOK_LANG=cn
+
 .PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results uploadCIdeps
 
 # This builds the material necessary to create the book
@@ -47,7 +50,7 @@ specs_cn: specs.py
 	-mkdir -p results/js
 	-mkdir -p plots
 	-rm -f plots/*
-	BOOK_LANG=cn python specs.py
+	$(SET_BOOK_LANG_CN) python specs.py
 
 # This target builds all the simulation results
 results:
@@ -340,6 +343,7 @@ info:
 gettext:
 	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) locale/pot
 	pygettext -d specs -p locale/pot specs.py
+	pygettext -d plot_utils -p locale/pot source/_sphinxext/xogeny/plot_utils.py
 	@echo
 	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
 
@@ -368,7 +372,8 @@ buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
 
 dirhtml_cn: specs_cn update_cn buildmo
-	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
+	$(SET_BOOK_LANG_CN) $(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
+	cat locale/cn/cn.css >> build/dirhtml_cn/_static/xogeny.css
 
 dirhtml_kr: update_kr buildmo
 	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=kr source build/dirhtml_kr
