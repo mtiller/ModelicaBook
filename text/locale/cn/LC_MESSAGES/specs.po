@@ -558,7 +558,7 @@ msgstr "热（高增益情况）"
 
 #: specs.py:465
 msgid "Comparison of required actuator heat output"
-msgstr "所需致动器散热量的比较"
+msgstr "所需执行器散热量的比较"
 
 #: specs.py:483
 msgid "inertia_a.w (with lash)"

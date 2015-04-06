@@ -107,9 +107,9 @@ msgid ""
 " for the rotor and the latter would be the connector for the stator.  "
 "Otherwise, it is very similar to our ``Sensor`` definition:"
 msgstr ""
-"而致动器模型的接口定义唯一不同之处在于，它包括了两个旋转连接器。"
+"而执行器模型的接口定义唯一不同之处在于，它包括了两个旋转连接器。"
 "其中一个用以施加指令转矩，另一个则用以处理反作用转矩。"
-"倘若例如我们的致动器模型为电动马达，前者就是在转子的连接器，而后者是定子的连接器。"
+"倘若例如我们的执行器模型为电动马达，前者就是在转子的连接器，而后者是定子的连接器。"
 "除此以外，此模型非常类似于我们\ ``Sensor``\ 定义："
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:74
@@ -120,7 +120,7 @@ msgid ""
 "the \"support\" side (so it can be \"mounted\" to something):"
 msgstr ""
 "\ ``Plant``\ 接口有三个旋转连接器。"
-"一个在“输入”侧（与致动器相连接）。"
+"一个在“输入”侧（与执行器相连接）。"
 "一个在“输出”侧（与传感器相连接）。"
 "而最后一个用于“支持”侧（用以“固定”在其他物体上）："
 
@@ -139,7 +139,7 @@ msgstr ""
 "无论控制器是如何实现的（如比例控制， PID控制），"
 "\ ``Controller``\ 必须有目标值\ ``setpoint``\ 的输入连接器、"
 "另一个用于测速的输入连接器\ ``measured``\ 和"
-"用以发送指令转矩\ ``command``\ 到致动器的输出连接器。"
+"用以发送指令转矩\ ``command``\ 到执行器的输出连接器。"
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:105
 msgid "Architecture"
@@ -231,7 +231,7 @@ msgstr "受控对象模型"
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:167
 msgid "Actuator Models"
-msgstr "致动器模型"
+msgstr "执行器模型"
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:178
 msgid "Controller Models"
@@ -366,5 +366,5 @@ msgid ""
 msgstr ""
 "请注意，即使装有性能足够的传感器，在\ ``Variant1``\ 配置里控制器似乎收敛到了错误的稳态速度。"
 "这是因为我们只使用了比例增益控制器。"
-"但是，如果我们扩展\ ``Variant1``\ 模型，并添加一个PID控制器和一个更真实的、最大提供转矩量有限的致动器，即："
+"但是，如果我们扩展\ ``Variant1``\ 模型，并添加一个PID控制器和一个更真实的、最大提供转矩量有限的执行器，即："
 
