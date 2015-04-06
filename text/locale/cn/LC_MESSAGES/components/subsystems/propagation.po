@@ -23,7 +23,7 @@ msgid ""
 "discussion of :ref:`rotational-components`:"
 msgstr ""
 "在建立子系统模型时，子系统很经常会包含一些会传递到其自身部件的参数。"
-"例如，考虑我们在对\ :ref:`rotational-components`:\ 的讨论中使用的以下系统模型："
+"例如，考虑我们在对\ :ref:`rotational-components`\ 的讨论中使用的以下系统模型："
 
 
 #: ../../source/components/subsystems/propagation.rst:31
