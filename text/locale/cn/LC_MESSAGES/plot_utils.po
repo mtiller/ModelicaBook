@@ -14,4 +14,4 @@ msgstr ""
 #: source/_sphinxext/xogeny/plot_utils.py:82
 #: source/_sphinxext/xogeny/plot_utils.py:140
 msgid "Time [s]"
-msgstr ""
+msgstr "时间[s]"
