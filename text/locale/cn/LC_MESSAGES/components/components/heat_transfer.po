@@ -87,9 +87,9 @@ msgstr "热容"
 
 #: ../../source/components/components/heat_transfer.rst:83
 msgid ""
-"Our first component model will be a model of lumped thermal capacitance. "
-"with uniform temperature distribution. The equation we wish to associate "
-"with this component model is:"
+"Our first component model will be a model of lumped thermal capacitance with"
+" uniform temperature distribution. The equation we wish to associate with "
+"this component model is:"
 msgstr ""
 "我们的首个组件模型是温度分布均匀的集总热容模型。"
 "我们希望与此组件模型相关联的公式是："
