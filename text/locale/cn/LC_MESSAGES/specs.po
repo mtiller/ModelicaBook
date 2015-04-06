@@ -17,7 +17,7 @@ msgstr ""
 
 #: specs.py:19
 msgid "Simulation of FirstOrder"
-msgstr ""
+msgstr "FirstOrder模型的仿真"
 
 #: specs.py:21
 msgid "x (FirstOrder)"
@@ -29,11 +29,11 @@ msgstr ""
 
 #: specs.py:27
 msgid "Specifying (non-zero) Initial Conditions"
-msgstr ""
+msgstr "指定（非零）初始条件"
 
 #: specs.py:30
 msgid "Simulation Using Experiment Annotation"
-msgstr ""
+msgstr "使用Experiment标注进行仿真"
 
 #: specs.py:32
 msgid "x (FirstOrderSteady)"
@@ -41,91 +41,87 @@ msgstr ""
 
 #: specs.py:37
 msgid "Steady State Solution (vs. Dynamic Response)"
-msgstr ""
+msgstr "稳态解（对比动态响应）"
 
 #: specs.py:41
 msgid "Cooling to Ambient"
-msgstr ""
+msgstr "在环境内进行冷却"
 
 #: specs.py:42 specs.py:78
 msgid "Temperature"
-msgstr ""
+msgstr "温度"
 
 #: specs.py:46
 msgid "Output Voltage (V)"
-msgstr ""
+msgstr "输出电压（V）"
 
 #: specs.py:47
 msgid "Battery Voltage (Vb)"
-msgstr ""
+msgstr "电池电压（Vb）"
 
 #: specs.py:48
 msgid "Voltage [V]"
-msgstr ""
+msgstr "电压[V]"
 
 #: specs.py:49
 msgid "Circuit Response"
-msgstr ""
+msgstr "电路响应"
 
 #: specs.py:52 specs.py:357 specs.py:378 specs.py:384 specs.py:391
 msgid "Position of inertia 1 [rad]"
-msgstr ""
+msgstr "inertia 1的位置[rad]"
 
 #: specs.py:53 specs.py:358 specs.py:371
 msgid "Position of inertia 2 [rad]"
-msgstr ""
+msgstr "inertia 2的位置[rad]"
 
 #: specs.py:54 specs.py:359 specs.py:380 specs.py:386 specs.py:393
 msgid "Velocity of inertia 1 [rad/s]"
-msgstr ""
+msgstr "inertia 1的速度[rad/s]"
 
 #: specs.py:55 specs.py:360 specs.py:373
 msgid "Velocity of inertia 2 [rad/s]"
-msgstr ""
+msgstr "inertia 2的速度[rad/s]"
 
 #: specs.py:57
 msgid "Mechanical System Response"
-msgstr ""
-
-#: specs.py:60
-msgid "phi1_init"
-msgstr ""
+msgstr "机械系统响应"
 
 #: specs.py:61
 msgid "Mechanical Response specifying phi1(0)"
-msgstr ""
+msgstr "指定phi1(0)后的机械系统响应"
 
 #: specs.py:64
 msgid "Prey population"
-msgstr ""
+msgstr "猎物种群大小"
 
 #: specs.py:65
 msgid "Predator population"
-msgstr ""
+msgstr "猎食者种群大小"
 
 #: specs.py:68
 msgid "Classic Lotka-Volterra"
-msgstr ""
+msgstr "经典猎食者猎物模型"
 
 #: specs.py:71
 msgid "Quiescent Model (trivial solution)"
-msgstr ""
+msgstr "静态模型（平凡解）"
 
 #: specs.py:75
 msgid "Quiescent Model (using start values)"
-msgstr ""
+msgstr "静态模型（使用初始值）"
 
 #: specs.py:79
 msgid "Ambient Temperature"
-msgstr ""
+msgstr "环境温度"
 
 #: specs.py:82
 msgid "Cooling to Time-Varying Ambient"
-msgstr ""
+msgstr "在时变环境内进行冷却"
 
 #: specs.py:83 specs.py:88
 msgid "Temperature [K]"
-msgstr ""
+msgstr "温度[K]"
 
 #: specs.py:86
 msgid "NCSTD"
@@ -133,163 +129,159 @@ msgstr ""
 
 #: specs.py:87
 msgid "Equilibrium Initialization"
-msgstr ""
+msgstr "均衡初始化"
 
 #: specs.py:91
 msgid "Height"
-msgstr ""
+msgstr "高度"
 
 #: specs.py:94
 msgid "Simple Bouncing Ball Model"
-msgstr ""
+msgstr "简单的弹跳球模型"
 
 #: specs.py:95 specs.py:99
 msgid "Height [m]"
-msgstr ""
+msgstr "高度[m]"
 
 #: specs.py:98
 msgid "Consequences of Numerical Event Detection"
-msgstr ""
+msgstr "数值事件检测的作用"
 
 #: specs.py:102
 msgid "Decay with Numerical Noise"
-msgstr ""
+msgstr "带数字噪音的衰减模型"
 
 #: specs.py:106
 msgid "Decay with Guard Condition"
-msgstr ""
+msgstr "带保护条件语句的衰减模型"
 
 #: specs.py:110
 msgid "Decay without Issue"
-msgstr ""
+msgstr "没有问题的衰减模型"
 
 #: specs.py:113 specs.py:117
 msgid "CPU Time"
-msgstr ""
+msgstr "CPU时间"
 
 #: specs.py:114
 msgid "Chattering"
-msgstr ""
+msgstr "抖动"
 
 #: specs.py:118
 msgid "No Chattering"
-msgstr ""
+msgstr "无抖动"
 
 #: specs.py:122
 msgid "Integrated value"
-msgstr ""
+msgstr "积分值"
 
 #: specs.py:123
 msgid "Reference value"
-msgstr ""
+msgstr "参考值"
 
 #: specs.py:130
 msgid "Integration with Events"
-msgstr ""
+msgstr "带有事件的积分"
 
 #: specs.py:133
 msgid "Integration with Events (Higher Frequency)"
-msgstr ""
+msgstr "带有事件的积分（高频率）"
 
 #: specs.py:136
 msgid "Integration without Events"
-msgstr ""
+msgstr "不带有事件的积分"
 
 #: specs.py:139
 msgid "Integration without Events (Higher Frequency)"
-msgstr ""
+msgstr "不带有事件的积分（高频率）"
 
 #: specs.py:143
 msgid "Source Voltage, Vs [V]"
-msgstr ""
+msgstr "源电压Vs [V]"
 
 #: specs.py:144
 msgid "Response Voltage, V [V]"
-msgstr ""
+msgstr "响应电压V [V]"
 
 #: specs.py:145
 msgid "Resistor Current [A]"
-msgstr ""
+msgstr "电阻电流[A]"
 
 #: specs.py:146
 msgid "Capacitor Current [A]"
-msgstr ""
+msgstr "电容电流[A]"
 
 #: specs.py:147
 msgid "Inductor Current [A]"
-msgstr ""
+msgstr "电感电流[A]"
 
 #: specs.py:150
 msgid "Switched RLC Voltage Response"
-msgstr ""
+msgstr "RLC开关电路的电压响应"
 
 #: specs.py:153
 msgid "Switched RLC Current Response"
-msgstr ""
+msgstr "RLC开关电路的电流响应"
 
 #: specs.py:160
 msgid "Sample and Hold Speed Measurement"
-msgstr ""
+msgstr "采样保持下的测速结果"
 
 #: specs.py:165
 msgid "Speed Estimation by Interval Measurement"
-msgstr ""
-
-#: specs.py:169
-msgid "teeth"
-msgstr ""
+msgstr "间隔测量下的测速结果"
 
 #: specs.py:171
 msgid "Speed Estimation Using Fewer Teeth"
-msgstr ""
+msgstr "齿数更少时的速度估计"
 
 #: specs.py:175
 msgid "Angle vs. Teeth Angles"
-msgstr ""
+msgstr "转动角度与齿角"
 
 #: specs.py:181 specs.py:184
 msgid "Speed Estimation by Counting"
-msgstr ""
+msgstr "使用计数器的速度估测"
 
 #: specs.py:191
 msgid "Temperature Control with Chattering"
-msgstr ""
+msgstr "带抖动的温度控制"
 
 #: specs.py:194
 msgid "Heater Output"
-msgstr ""
+msgstr "加热器输出"
 
 #: specs.py:199 specs.py:207
 msgid "Temperature Control with Hysteresis"
-msgstr ""
+msgstr "带滞回的温度控制"
 
 #: specs.py:202 specs.py:210
 msgid "Heater Output with Hysteresis"
-msgstr ""
+msgstr "带有滞回控制的加热器输出"
 
 #: specs.py:216
 msgid "Independently Sampled Signals"
-msgstr ""
+msgstr "独立采样的信号"
 
 #: specs.py:219
 msgid "Error of Independently Sampled Signals"
-msgstr ""
+msgstr "独立采样信号的误差"
 
 #: specs.py:224
 msgid "Synchronously Sampled Signals"
-msgstr ""
+msgstr "同步采样信号"
 
 #: specs.py:229
 msgid "Synchronized Sampling and Subsampling"
-msgstr ""
+msgstr "同步采样以及同步二次采样"
 
 #: specs.py:235
 msgid "First Order Example in LTI Form"
-msgstr ""
+msgstr "LTI形式下的一阶系统模型示例"
 
 #: specs.py:240
 msgid "Cooling Example in LTI Form"
-msgstr ""
+msgstr "LTI形式下的冷却模型示例"
 
 #: specs.py:244 specs.py:249 specs.py:254 specs.py:259
 msgid "x[2]"
@@ -297,15 +289,15 @@ msgstr ""
 
 #: specs.py:245
 msgid "RLC Circuit Example in LTI Form"
-msgstr ""
+msgstr "LTI形式下的RLC电路模型示例"
 
 #: specs.py:250 specs.py:255
 msgid "Rotational Example in LTI Form"
-msgstr ""
+msgstr "LTI形式下的转动模型示例"
 
 #: specs.py:260
 msgid "Lotka-Volterra Example in LTI Form"
-msgstr ""
+msgstr "LTI形式下的猎食者猎物模型示例"
 
 #: specs.py:264 specs.py:280
 msgid "]"
@@ -313,7 +305,7 @@ msgstr ""
 
 #: specs.py:267
 msgid "One Dimensional Heat Transfer Response"
-msgstr ""
+msgstr "一维传热响应"
 
 #: specs.py:271
 msgid "cX*50"
@@ -321,11 +313,11 @@ msgstr ""
 
 #: specs.py:272
 msgid "Simulation of Chemical System without Arrays"
-msgstr ""
+msgstr "不使用数组的化学系统仿真结果"
 
 #: specs.py:277
 msgid "Simulation of Chemical System with Arrays"
-msgstr ""
+msgstr "使用数组的化学系统仿真结果"
 
 #: specs.py:280
 msgid ""
@@ -358,323 +350,307 @@ msgstr ""
 
 #: specs.py:288 specs.py:298
 msgid "Simulation of Chemical System using Enumerations"
-msgstr ""
+msgstr "使用枚举类型的化学系统仿真结果"
 
 #: specs.py:306
 msgid "Polynomial Evaluation"
-msgstr ""
+msgstr "多项式计算"
 
 #: specs.py:310
 msgid "Polynomial and Derivative Evaluation"
-msgstr ""
+msgstr "多项式计算以及微分计算"
 
 #: specs.py:315 specs.py:321
 msgid "y - interpolated data"
-msgstr ""
+msgstr "y - 插值数据"
 
 #: specs.py:316 specs.py:322
 msgid "z - integral of y"
-msgstr ""
+msgstr "z - y的积分"
 
 #: specs.py:317
 msgid "Integration of Interpolated Function"
-msgstr ""
+msgstr "插值函数的积分"
 
 #: specs.py:323
 msgid "Integration of Interpolated Function using External Data"
-msgstr ""
+msgstr "使用外置数据的插值函数积分"
 
 #: specs.py:328
 msgid "Embedded Hysteresis Control"
-msgstr ""
+msgstr "嵌入式滞回控制"
 
 #: specs.py:333
 msgid "Evaluation of a Quadratic Polynomial"
-msgstr ""
+msgstr "二次多项式的计算"
 
 #: specs.py:337
 msgid "Inversion of a Quadratic Polynomial"
-msgstr ""
+msgstr "二次多项式的反函数"
 
 #: specs.py:342
 msgid "Thermal capacitance with no heat transfer"
-msgstr ""
+msgstr "无传热的热容"
 
 #: specs.py:346 specs.py:350
 msgid "Thermal capacitance with convection"
-msgstr ""
+msgstr "带有对流的热容"
 
 #: specs.py:354
 msgid "Thermal warmup of cap1 and cap2"
-msgstr ""
+msgstr "cap1和cap2的加热"
 
 #: specs.py:363 specs.py:374
 msgid "Dual mass spring-mass-damper model"
-msgstr ""
+msgstr "带有双质量元素的弹簧-质量-阻尼器模型"
 
 #: specs.py:366
 msgid "Spring-mass-damper model including backlash"
-msgstr ""
+msgstr "包括齿隙的弹簧-质量-阻尼器模型"
 
 #: specs.py:368
 msgid "Reaction torque at mechanical ground"
-msgstr ""
+msgstr "作用在机械地面上的反作用扭矩"
 
 #: specs.py:370 specs.py:377
 msgid "Position of inertia 3 [rad]"
-msgstr ""
+msgstr "inertia 3的位置[rad]"
 
 #: specs.py:372 specs.py:379
 msgid "Velocity of inertia 3 [rad/s]"
-msgstr ""
+msgstr "inertia 3的速度[rad/s]"
 
 #: specs.py:381
 msgid "Comparing explicitly and implicitly grounded gears"
-msgstr ""
+msgstr "明确连接地面以及隐含连接地面的齿轮模型之间的对比"
 
 #: specs.py:385
 msgid "Position of inertia 5 [rad]"
-msgstr ""
+msgstr "inertia 5的位置[rad]"
 
 #: specs.py:387
 msgid "Velocity of inertia 5 [rad/s]"
-msgstr ""
+msgstr "inertia 5的速度[rad/s]"
 
 #: specs.py:388
 msgid "Comparing grounded and ungrounded gears"
-msgstr ""
+msgstr "连接地面以及不连接地面的齿轮之间的对比"
 
 #: specs.py:390
 msgid "Position of inertia 4 [rad]"
-msgstr ""
+msgstr "inertia 4的位置[rad]"
 
 #: specs.py:392
 msgid "Velocity of inertia 4 [rad/s]"
-msgstr ""
+msgstr "inertia 4的速度[rad/s]"
 
 #: specs.py:394
 msgid "Implicitly and explicitly grounded ConfigurableGear"
-msgstr ""
+msgstr "明确连接地面以及隐含连接地面的ConfigurableGear模型"
 
 #: specs.py:398 specs.py:402 specs.py:407
 msgid "Rabbit Population"
-msgstr ""
+msgstr "兔子种群大小"
 
 #: specs.py:399 specs.py:403 specs.py:408
 msgid "Fox Population"
-msgstr ""
+msgstr "狐狸种群大小"
 
 #: specs.py:400
 msgid "Component-Oriented Lotka-Volterra"
-msgstr ""
+msgstr "面向部件的猎食者猎物模型"
 
 #: specs.py:404 specs.py:409
 msgid "Wolf Population"
-msgstr ""
+msgstr "狼种群大小"
 
 #: specs.py:405
 msgid "Interactions between rabbits, foxes and wolves"
-msgstr ""
+msgstr "兔子、狐狸、狼之间的相互作用"
 
 #: specs.py:410
 msgid "Equilibriums for rabbits, foxes and wolves"
-msgstr ""
+msgstr "兔子、狐狸、狼三者的平衡态"
 
 #: specs.py:414
 msgid "Actual speed"
-msgstr ""
+msgstr "实际速度"
 
 #: specs.py:415
 msgid "Baseline plant response"
-msgstr ""
+msgstr "受控对象的基线响应"
 
 #: specs.py:417 specs.py:422 specs.py:433
 msgid "Actual speed (inertia1.w)"
-msgstr ""
+msgstr "实际速度（inertia1.w）"
 
 #: specs.py:418
 msgid "Measured speed (sampleHold.w)"
-msgstr ""
+msgstr "测量速度（sampleHold.w）"
 
 #: specs.py:419
 msgid "Comparison of actual speed with sampled speed"
-msgstr ""
+msgstr "实际速度与采样速度的对比"
 
 #: specs.py:424 specs.py:435
 msgid "Measured speed (intervalMeasure.w)"
-msgstr ""
+msgstr "测量速度（intervalMeasure.w）"
 
 #: specs.py:425 specs.py:430 specs.py:436 specs.py:441
 msgid "Comparison of actual speed with approximation by interval measurement"
-msgstr ""
+msgstr "实际速度与间隔法估测结果间的比较"
 
 #: specs.py:427
 msgid "Inertia position (inertia1.phi)"
-msgstr ""
+msgstr "惯性元件的位置（inertia1.phi）"
 
 #: specs.py:428 specs.py:439
 msgid "Next forward angle"
-msgstr ""
+msgstr "触发下次前进的角度"
 
 #: specs.py:429 specs.py:440
 msgid "Next backward angle"
-msgstr ""
-
-#: specs.py:432
-msgid "intervalMeasure.teeth"
-msgstr ""
+msgstr "触发下次后退的角度"
 
 #: specs.py:438
 msgid "Inertia position (intertia1.phi)"
-msgstr ""
+msgstr "惯性元件的位置（inertia1.phi）"
 
 #: specs.py:443
 msgid "Actual speed (inertia.w)"
-msgstr ""
+msgstr "实际速度（inertia.w）"
 
 #: specs.py:445
 msgid "Measured speed (pulseCounter.w)"
-msgstr ""
+msgstr "测量速度（pulseCounter.w）"
 
 #: specs.py:446
 msgid "Comparison of actual speed with approximation by pulse counting"
-msgstr ""
+msgstr "实际速度与脉冲计数法估测结果间的比较"
 
 #: specs.py:450
 msgid "Temperature (T.y)"
-msgstr ""
+msgstr "温度（T.y）"
 
 #: specs.py:451
 msgid "Temperature solution"
-msgstr ""
+msgstr "温度的解"
 
 #: specs.py:453 specs.py:457
 msgid "Temperature (sensor.y)"
-msgstr ""
+msgstr "温度（sensor.y）"
 
 #: specs.py:454
 msgid "Closed loop temperature response"
-msgstr ""
-
-#: specs.py:456
-msgid "k"
-msgstr ""
+msgstr "闭环温度响应"
 
 #: specs.py:458
 msgid "Closed loop temperature response with high gain"
-msgstr ""
+msgstr "高增益下的闭环温度响应"
 
 #: specs.py:462
 msgid "Heat (low-gain scenario)"
-msgstr ""
+msgstr "热（低增益情况）"
 
 #: specs.py:464
 msgid "Heat (high-gain scenario)"
-msgstr ""
+msgstr "热（高增益情况）"
 
 #: specs.py:465
 msgid "Comparison of required actuator heat output"
-msgstr ""
-
-#: specs.py:478
-msgid "backlash.b"
-msgstr ""
+msgstr "所需致动器散热量的比较"
 
 #: specs.py:483
 msgid "inertia_a.w (with lash)"
-msgstr ""
+msgstr "inertia_a.w （含齿隙）"
 
 #: specs.py:484
 msgid "inertia_b.w (with lash)"
-msgstr ""
+msgstr "inertia_b.w （含齿隙）"
 
 #: specs.py:486
 msgid "inertia_a.w (without lash)"
-msgstr ""
+msgstr "inertia_a.w （无齿隙）"
 
 #: specs.py:487
 msgid "inertia_b.w (without lash)"
-msgstr ""
+msgstr "inertia_b.w （无齿隙）"
 
 #: specs.py:488
 msgid "Gear response, with and without backlash"
-msgstr ""
+msgstr "带间隙以及无间隙下的齿轮响应"
 
 #: specs.py:491
 msgid "System schematic of gear system with backlash"
-msgstr ""
+msgstr "有齿隙的齿轮系统的原理图"
 
 #: specs.py:497
 msgid "Response of hierarchical gear system with backlash"
-msgstr ""
+msgstr "有齿隙的层级齿轮系统的响应"
 
 #: specs.py:500
 msgid "Rabbits in A"
-msgstr ""
+msgstr "A内的兔子"
 
 #: specs.py:501
 msgid "Rabbits in B"
-msgstr ""
+msgstr "B内的兔子"
 
 #: specs.py:502
 msgid "Rabbits in C"
-msgstr ""
+msgstr "C内的兔子"
 
 #: specs.py:503
 msgid "Rabbits in D"
-msgstr ""
+msgstr "D内的兔子"
 
 #: specs.py:504
 msgid "Foxes in A"
-msgstr ""
+msgstr "A内的狐狸"
 
 #: specs.py:505
 msgid "Foxes in B"
-msgstr ""
+msgstr "B内的狐狸"
 
 #: specs.py:506
 msgid "Foxes in C"
-msgstr ""
+msgstr "C内的狐狸"
 
 #: specs.py:507
 msgid "Foxes in D"
-msgstr ""
+msgstr "D内的狐狸"
 
 #: specs.py:510
 msgid "Comparison of regional populations"
-msgstr ""
+msgstr "各地区种群大小的比较"
 
 #: specs.py:514
 msgid "Effect of different initial populations"
-msgstr ""
+msgstr "不同初始种群大小的效应"
 
 #: specs.py:518
 msgid "Effect of migration on regional populations"
-msgstr ""
+msgstr "迁移对各区域种群大小的影响"
 
 #: specs.py:523
 msgid "Flat power supply circuit"
-msgstr ""
+msgstr "无层级供电电路"
 
 #: specs.py:528
 msgid "System with power supply component"
-msgstr ""
+msgstr "带有电源组件的系统"
 
 #: specs.py:532 specs.py:537
 msgid "Power supply component with additional load"
-msgstr ""
-
-#: specs.py:535 specs.py:540
-msgid "power_supply.C"
-msgstr ""
+msgstr "添加了额外负载的电源组件"
 
 #: specs.py:542
 msgid "Effect of very large capacitance"
-msgstr ""
+msgstr "非常大电容的效应"
 
 #: specs.py:546
 msgid "Sensor measurement"
-msgstr ""
+msgstr "传感器测量值"
 
 #: specs.py:550
 msgid "sensor.T, n=3"
@@ -698,88 +674,88 @@ msgstr ""
 
 #: specs.py:555
 msgid "Comparison of segmentation"
-msgstr ""
+msgstr "不同分段数的比较"
 
 #: specs.py:565 specs.py:574
 msgid "Shaft speed"
-msgstr ""
+msgstr "轴转速"
 
 #: specs.py:566 specs.py:575
 msgid "Measured speed"
-msgstr ""
+msgstr "测得速度"
 
 #: specs.py:567 specs.py:576
 msgid "Desired speed"
-msgstr ""
+msgstr "期望转速"
 
 #: specs.py:569
 msgid "Response using ideal sensor"
-msgstr ""
+msgstr "使用理想传感器时的响应"
 
 #: specs.py:572
 msgid "Response using a sample and hold sensor"
-msgstr ""
+msgstr "使用采样保持传感器时的响应"
 
 #: specs.py:579
 msgid "Response with hold time of 0.01"
-msgstr ""
+msgstr "保持时间为0.1时的响应"
 
 #: specs.py:582
 msgid "Response with hold time of 0.036"
-msgstr ""
+msgstr "保持时间为0.036时的响应"
 
 #: specs.py:585
 msgid "Response using PID control"
-msgstr ""
+msgstr "使用PID控制器时的响应"
 
 #: specs.py:588
 msgid "Response using a tuned PID controller"
-msgstr ""
+msgstr "使用调校过的PID控制器时的响应"
 
 #: specs.py:592
 msgid "Room Temperature"
-msgstr ""
+msgstr "室温"
 
 #: specs.py:593
 msgid "Measured Temperature"
-msgstr ""
+msgstr "测得温度"
 
 #: specs.py:594 specs.py:598 specs.py:612
 msgid "Desired Temperature"
-msgstr ""
+msgstr "期望温度"
 
 #: specs.py:596 specs.py:610
 msgid "Room Temperature (sensor.room.T)"
-msgstr ""
+msgstr "室温（sensor.room.T）"
 
 #: specs.py:597 specs.py:611
 msgid "Measured Temperature (controller.bus.temp)"
-msgstr ""
+msgstr "测得温度（controller.bus.temp）"
 
 #: specs.py:602
 msgid "Response using PI controller"
-msgstr ""
+msgstr "使用PI控制器时的响应"
 
 #: specs.py:604
 msgid "Furnace heat using PI controller"
-msgstr ""
+msgstr "使用PI控制器时的炉热"
 
 #: specs.py:608
 msgid "Response using PI controller in expandable architecture"
-msgstr ""
+msgstr "在可扩展架构模型内使用PI控制器时的响应"
 
 #: specs.py:616
 msgid "Response using PI bang-bang control"
-msgstr ""
+msgstr "使用PI开关控制器时的响应"
 
 #: specs.py:620
 msgid "Actuator duty cycle using bang-bang control"
-msgstr ""
+msgstr "使用开关控制时执行器的负载循环"
 
 #: specs.py:624
 msgid "Response using PI bang-bang control with hysteresis"
-msgstr ""
+msgstr "使用带滞回的PI开关控制器时的响应"
 
 #: specs.py:628
 msgid "Actuator duty cycle using bang-bang control with hysteresis"
-msgstr ""
+msgstr "使用带滞回的开关控制时执行器的负载循环"
