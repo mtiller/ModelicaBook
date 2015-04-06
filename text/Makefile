@@ -42,6 +42,13 @@ specs: specs.py
 	-rm -f plots/*
 	python specs.py
 
+specs_cn: specs.py
+	-mkdir -p results/json
+	-mkdir -p results/js
+	-mkdir -p plots
+	-rm -f plots/*
+	BOOK_LANG=cn python specs.py
+
 # This target builds all the simulation results
 results:
 	@echo "Generate results"
@@ -332,6 +339,7 @@ info:
 
 gettext:
 	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) locale/pot
+	pygettext -d specs -p locale/pot specs.py
 	@echo
 	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
 
@@ -359,7 +367,7 @@ update_it: gettext
 buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
 
-dirhtml_cn: update_cn buildmo
+dirhtml_cn: specs_cn update_cn buildmo
 	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
 
 dirhtml_kr: update_kr buildmo
