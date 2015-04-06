@@ -248,7 +248,7 @@ msgid ""
 "the angles associated with the adjacent teeth, ``next_phi`` and "
 "``prev_phi``."
 msgstr ""
-"为何测量信号如此地不准确呢？为了明白这一点，大家可以观察下列图表，对比变量\\ ``phi1``\\ 和下列与齿轮相邻齿相关的角度\\ "
+"为何测量信号如此地不准确呢？为了明白这一点，大家可以观察下列图表，对比变量\\ ``phi1``\\ 和下列相邻齿的角位置\\ "
 "``next_phi``\\ 以及\\ ``prev_phi``\\ 。"
 
 #: ../../source/behavior/discrete/measuring.rst:198
@@ -256,7 +256,7 @@ msgid ""
 "In this plot, we can clearly see how relatively low speeds and speed "
 "reversals create irregular events that introduce significant estimation "
 "error."
-msgstr "在这个图里，我们可以清楚地看到相对低的转速以及转速反向会产生不规则的事件，从而就是引入显著估计误差。"
+msgstr "在这个图里，我们可以清楚地看到，较低的转速以及反转都会产生不规则的事件。这会从而引入显著估计误差。"
 
 #: ../../source/behavior/discrete/measuring.rst:205
 msgid "Pulse Counting"
