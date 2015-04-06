@@ -160,7 +160,7 @@ msgstr "从这些方程里，我们得到以下两个连接集："
 
 #: ../../source/components/subsystems/sub_interface.rst:120
 msgid "**Connection Set #1**: `flange_a`, `inertia_a.flange_a`"
-msgstr "\\ **连接集＃1**\\ ：\\ `flange_a`, `inertia_a.flange_a`"
+msgstr "\\ **连接集＃1**\\ ：\\ ``flange_a``\ 、\ ``inertia_a.flange_a``"
 
 #: ../../source/components/subsystems/sub_interface.rst:123
 msgid ""
@@ -169,8 +169,7 @@ msgid ""
 " expect the following two equations to be generated for the ``flow`` "
 "variables on these connectors:"
 msgstr ""
-"In each of these connection sets, there is a ``flow`` variable, "
-"``tau``.在每个连接集内都有一个\\ ``flow``\\ 变量\\ ``tau``\\ 。使用前述的\\ :ref:`system-"
+"在每个连接集内都有一个\\ ``flow``\\ 变量\\ ``tau``\\ 。使用前述的\\ :ref:`system-"
 "connections`\\ 规则，我们可能会预期\\ ``flow``\\ 变量将产生以下两个等式："
 
 #: ../../source/components/subsystems/sub_interface.rst:133
@@ -184,7 +183,7 @@ msgid ""
 "account, **the actual equations that will be generated** will be:"
 msgstr ""
 "然而，在我们以往对\\ :ref:`system-connections`\\ 的讨论里，所有组件都是在同一层次的（例如\\ "
-"`idealGear.flange_b`\\ 和\\ `inertia_b.flange_a`\\ "
+"``idealGear.flange_b``\\ 和\\ ``inertia_b.flange_a``\\ "
 "这样的）。但并不是所有子系统模型都是如此。而且，如上所述，若连接穿过不同层级，我们需要对不同层级内的连接器引入不同的符号。考虑到这一点，\\ "
 "**实际将产生的公式**\\ 会是："
 
@@ -264,7 +263,6 @@ msgstr ""
 
 #: ../../source/components/subsystems/sub_interface.rst:121
 msgid "**Connection Set #2**: `idealGear.flange_b`, `inertia_b.flange_a`"
-msgstr ""
+msgstr "\\ **连接集＃2**\\ ：\\ ``idealGear.flange_b``\\ 、\\ ``inertia_b.flange_a``\\ "
 
 #~ msgid "**Connection Set #2**: `idealGear.flange_b`\\ 、\\ `inertia_b.flange_a`\\ "
-#~ msgstr "\\ **连接集＃2**\\ ：\\ `idealGear.flange_b`\\ 、\\ `inertia_b.flange_a`\\ "
