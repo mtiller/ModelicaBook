@@ -259,8 +259,7 @@ msgstr ""
 "我们看起来在数学上证明了\ :math:`\\tau_a=0`\ 。"
 "但实际上，我们实际上证明了公式里并\ **不平衡**\ 。"
 "这种不平衡由于我们在列式中忘记一些东西。"
-"What is missing is the **reaction torque**."
-"这里缺少的是\ **反作用扭矩**\ 。"
+"这里缺少了\ **反作用扭矩**\ 。"
 
 #: ../../source/components/components/rot_comps_adv.rst:201
 msgid ""
