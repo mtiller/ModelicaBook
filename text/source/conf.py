@@ -226,8 +226,8 @@ latex_use_parts = True
 # If true, show page references after internal links.
 latex_show_pagerefs = True
 
-# If true, show URL addresses after external links.
-latex_show_urls = 'inline'
+# How to display URL addresses: 'footnote', 'no', or 'inline'.
+latex_show_urls = 'footnote'
 
 # Documents to append as an appendix to all manuals.
 #latex_appendices = []
