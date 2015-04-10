@@ -326,7 +326,7 @@ msgstr ""
 #: ../../source/behavior/functions/polynomial.rst:0
 msgid "Annotations"
 msgstr ""
-"注解语句"
+"标注语句"
 
 #: ../../source/behavior/functions/polynomial.rst:228
 msgid ""
@@ -339,10 +339,10 @@ msgid ""
 "standard annotations so that they are interpreted consistently across "
 "Modelica tools."
 msgstr ""
-"注解语句（annotation）是一段元数据，它不直接描述函数的行为（例如它不影响函数的"
-"返回值）。然而，Modelica编译器会使用注解语句以给它们一些“提示”，使其知道如何处理"
-"某些确定的情况。注解语句通常是“可选择”的信息，这就意味着即使提供了注解语句，工具"
-"也不会被强制要求使用这些信息。Modelica语义定义了许多标准的注解语句，因此它们可"
+"标注语句（annotation）是一段元数据，它不直接描述函数的行为（例如它不影响函数的"
+"返回值）。然而，Modelica编译器会使用标注语句以给它们一些“提示”，使其知道如何处理"
+"某些确定的情况。标注语句通常是“可选择”的信息，这就意味着即使提供了标注语句，工具"
+"也不会被强制要求使用这些信息。Modelica语义定义了许多标准的标注语句，因此它们可"
 "通过Modelica工具被直接解释。"
 
 #: ../../source/behavior/functions/polynomial.rst:238
@@ -352,7 +352,7 @@ msgid ""
 "evaluate the derivative of our function.  To do this, we define a new "
 "evaluation function, ``PolynomialWithDerivative``, as follows:"
 msgstr ""
-"在这个例子中，我们需要一个\ ``derivative``\ 注解语句，因为它可以使我们与Modelica编译器"
+"在这个例子中，我们需要一个\ ``derivative``\ 标注语句，因为它可以使我们与Modelica编译器"
 "进行如何计算函数的导数的信息沟通。为了实现这一点，我们定义了一个新的计算函数，"
 "\ ``PolynomialWithDerivative``\ ，如下所示："
 
@@ -431,7 +431,7 @@ msgid ""
 "that takes the same arguments as :math:`df`.  In our case, that function, "
 "``PolynomialFirstDerivative`` would be defined as follows:"
 msgstr ""
-"为此，\ ``derivative``\ 注解必须指定一个与\ :math:`df`\ 参数相同的函数。在我们的例子中，"
+"为此，\ ``derivative``\ 标注必须指定一个与\ :math:`df`\ 参数相同的函数。在我们的例子中，"
 "函数\ ``PolynomialFirstDerivative``\ 将被定义为如下形式："
 
 #: ../../source/behavior/functions/polynomial.rst:334
