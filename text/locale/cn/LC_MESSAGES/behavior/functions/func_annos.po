@@ -25,7 +25,7 @@ msgid ""
 "general categories of annotations for functions and provide some discussion "
 "of why you need them and how to use them."
 msgstr ""
-"在 :ref:`annotations` 章节中，我们已经对标注进行了讨论。Modelica语言包括一些专门用于函数连接功能的标准标注。"
+"在\ :ref:`annotations`\ 章节中，我们已经对标注进行了讨论。Modelica语言包括一些专门用于函数连接功能的标准标注。"
 "这就意味着，这些标注是在Modelica规范中正式定义的。在本节中，我们将讨论与函数相关的三大类标注，并讨论这些标注的必要性以及"
 "如何使用这些标注。"
 
@@ -43,13 +43,12 @@ msgid ""
 "not possible.  However, using the annotations in this section allows us to "
 "augment the function definition with such information."
 msgstr ""
-"第一大类标注的主要功能是为数学函数提供一些额外的信息。因为这些数学函数的功能都是在 ``algorithm`` 部分实现的，因此"
+"第一大类标注的主要功能是为数学函数提供一些额外的信息。因为这些数学函数的功能都是在\ ``algorithm``\ 部分实现的，因此"
 "通常情况下，不能根据Modelica语言的符号操作得出上述函数方程的功能。但是，可以使用本节中的标注来增加函数定义的相关信息。"
 
 #: ../../source/behavior/functions/func_annos.rst:26
 msgid "``derivative``"
 msgstr ""
-"导数"
 
 #: ../../source/behavior/functions/func_annos.rst:30
 msgid ""
@@ -58,8 +57,8 @@ msgid ""
 "compute the derivative of a given function.  This is done by adding the "
 "``derivative`` annotation in the function."
 msgstr ""
-"正如我们在 :ref:`polynomial-evaluation` 示例中讨论的那样，有些情况下，我们需告诉Modelica编译器如何计算给定函数的"
-"导数。上述功能主要是通过在函数定义时添加 ``derivative`` 标注来实现的。"
+"正如我们在\ :ref:`polynomial-evaluation`\ 示例中讨论的那样，有些情况下，我们需告诉Modelica编译器如何计算给定函数的"
+"导数。上述功能主要是通过在函数定义时添加\ ``derivative``\ 标注来实现的。"
 
 #: ../../source/behavior/functions/func_annos.rst:36
 msgid "Simple First Derivative"
@@ -72,7 +71,7 @@ msgid ""
 "another Modelica function that computes the first derivative of the function"
 " being annotated.  For example:"
 msgstr ""
-" ``derivative`` 标注的基本用途是为了指定另一个Modelica函数的名称，用来计算被标注函数的一阶导数。例如："
+"\ ``derivative``\ 标注的基本用途是为了指定另一个Modelica函数的名称，用来计算被标注函数的一阶导数。例如："
 
 #: ../../source/behavior/functions/func_annos.rst:63
 msgid ""
@@ -84,7 +83,7 @@ msgid ""
 "sounds complicated, but hopefully the same code conveys how simple the "
 "construction really is."
 msgstr ""
-"通过上述例子可以看到，在这种情况下，导数函数的第一个参数 ``df`` 与原始函数的 ``f`` 具有相同的功能。"
+"通过上述例子可以看到，在这种情况下，导数函数的第一个参数\ ``df``\ 与原始函数的\ ``f``\ 具有相同的功能。"
 "然后，紧随这些参数后面的是不同版本的输入变量。最后，导数函数的输出变量等同于不同版本下的原始函数的输出变量。"
 "听上去上述过程非常复杂，实际上，通过相同功能的代码构建的上述结构是非常简单的。"
 
@@ -93,7 +92,7 @@ msgid ""
 "Given such a Modelica function, the Modelica compiler can use such a "
 "function to compute various derivatives, *e.g.*,"
 msgstr ""
-"给出如下的Modelica函数，Modelica编译器就可以使用下述函数来计算各种函数的导数， *即*, "
+"给出如下的Modelica函数，Modelica编译器就可以使用下述函数来计算各种函数的导数，即："
 
 #: ../../source/behavior/functions/func_annos.rst:80
 msgid "Insensitivity to Some Arguments"
@@ -111,7 +110,7 @@ msgid ""
 " will have no impact.  In other words, there are many calculations that "
 "could be skipped because they won't have any impact on the result."
 msgstr ""
-"考虑这样一种情况，当表达式 :math:`\\frac{\\partial y}{\\partial v}` 等于0时，导数函数将会传递这个零值（或零值数组，当参数为数组时）。"
+"考虑这样一种情况，当表达式\ :math:`\\frac{\\partial y}{\\partial v}`\ 等于0时，导数函数将会传递这个零值（或零值数组，当参数为数组时）。"
 "上述零值会在导数函数内部被调用几次，其中大多数（如果不是全部）将调用零值做乘法，因此计算的结果也将为零。最终，这些计算结果将会"
 "与其他结果相加，但是对函数的最终输出没有任何影响。换句话说，这种情况下，有很多计算可以跳过，因为它们对结果不会有任何影响。"
 
@@ -126,13 +125,13 @@ msgid ""
 " following annotation:"
 msgstr ""
 "在这种情况下，Modelica语言提供了一种避免上述冗余计算的方法。如果Modelica编译器能 *预先* 知道参数的微分为0，它就"
-"可以检查（在 ``derivative`` 标注部分）是否有函数计算导数。这些情况是通过在 ``derivative`` 标注部分使用 ``zeroDerivative`` 参数"
-"进行指定的。因此，对于上述示例中的函数 ``f`` ，我们增加了如下标注内容："
+"可以检查（在\ ``derivative``\ 标注部分）是否有函数计算导数。这些情况是通过在\ ``derivative``\ 标注部分使用\ ``zeroDerivative``\ 参数"
+"进行指定的。因此，对于上述示例中的函数\ ``f``\ ，我们增加了如下标注内容："
 
 #: ../../source/behavior/functions/func_annos.rst:111
 msgid "where ``df_onlyx`` would then be defined as:"
 msgstr ""
-"其中， ``df_onlyx`` 函数被定义为如下形式："
+"其中，\ ``df_onlyx``\ 函数被定义为如下形式："
 ""
 #: ../../source/behavior/functions/func_annos.rst:124
 msgid ""
@@ -141,8 +140,8 @@ msgid ""
 "in the arguments, this function includes only those calculations involving "
 "``dx``."
 msgstr ""
-"通过比较可以看到，此函数不包括 ``dy`` 项，因此，只适用于 ``dy`` 为0的情况。因为，参数不包括 ``dy`` 项，该函数只包括"
-"那些涉及参数 ``dx`` 的计算方程。"
+"通过比较可以看到，此函数不包括\ ``dy``\ 项，因此，只适用于\ ``dy``\ 为0的情况。因为，参数不包括\ ``dy``\ 项，该函数只包括"
+"那些涉及参数\ ``dx``\ 的计算方程。"
 
 #: ../../source/behavior/functions/func_annos.rst:130
 msgid "Second Derivatives"
@@ -156,15 +155,16 @@ msgid ""
 "adding an ``order`` argument.  Note that a function can have multiple "
 "``derivative`` annotations, *e.g.,*"
 msgstr ""
-"对于二阶导数，这里有一些变化需要说明一下。首先，需要定义什么是函数的 **二阶** 导数。这主要是通过添加一个 ``order`` 变量"
-"来实现的。需要注意的是，函数可以包括多个 ``derivative`` 标注， *即,* "
+"对于二阶导数，这里有一些变化需要说明一下。首先，需要定义什么是函数的\ **二阶**\ 导数。这主要是通过添加一个\ ``order``\ 变量"
+"来实现的。需要注意的是，函数可以包括多个\ ``derivative``\ 标注，即："
+
 #: ../../source/behavior/functions/func_annos.rst:165
 msgid ""
 "Hopefully there are no real surprises here.  In order to compute the second "
 "derivative, it is necessary to add an additional annotation ``derivative`` "
 "annotation to the original function, *i.e.,*"
 msgstr ""
-"希望你对上述内容并不陌生。为了实现二阶导数的计算，需要在原函数内添加额外的 ``derivative`` 标注部分， *即,* "
+"希望你对上述内容并不陌生。为了实现二阶导数的计算，需要在原函数内添加额外的\ ``derivative``\ 标注部分，即："
 
 #: ../../source/behavior/functions/func_annos.rst:173
 msgid ""
@@ -295,7 +295,7 @@ msgstr ""
 #: ../../source/behavior/functions/func_annos.rst:333
 msgid "``LateInline``"
 msgstr ""
-" ``LateInline`` "
+
 #: ../../source/behavior/functions/func_annos.rst:317
 msgid ""
 "Much like the :ref:`inline-anno` annotation, the ``LateInline`` function "
@@ -308,9 +308,9 @@ msgid ""
 "interactions between inlining and other symbolic manipulations is beyond the"
 " scope of this book."
 msgstr ""
-"与 :ref:`inline-anno` 标注一样， ``LateInline`` 标注的功能是告诉Modelica编译器采用内嵌函数的方式将更有效。"
-" ``LateInline`` 标注也会分配一个 ``布尔`` 值用以指定是否应采用内嵌函数的方式。 ``Inline`` 和 ``LateInline`` 标注"
-"的区别是， ``LateInline`` 标注表明应在符号运算完成后执行内嵌功能。关于函数内嵌以及符号运算之间的交互关系超出了"
+"与\ :ref:`inline-anno`\ 标注一样，\ ``LateInline``\ 标注的功能是告诉Modelica编译器采用内嵌函数的方式将更有效。"
+"\ ``LateInline``\ 标注也会分配一个\ ``布尔``\ 值用以指定是否应采用内嵌函数的方式。\ ``Inline``\ 和\ ``LateInline``\ 标注"
+"的区别是，\ ``LateInline``\ 标注表明应在符号运算完成后执行内嵌功能。关于函数内嵌以及符号运算之间的交互关系超出了"
 "本书的讨论范围。"
 
 #: ../../source/behavior/functions/func_annos.rst:328
@@ -318,40 +318,41 @@ msgid ""
 "It should be noted that the ``LateInline`` annotation takes precedence over "
 "the ``Inline`` annotation if they are both applied to a function, *i.e.,*"
 msgstr ""
-"还有一点需要注意，当一个函数内同时应用了 ``Inline`` 和 ``LateInline`` 标注时， ``LateInline`` 标注的优先级要高于 ``Inline`` 标注，"
-" *即,* "
+"还有一点需要注意，当一个函数内同时应用了\ ``Inline``\ 和\ ``LateInline``\ 标注时，\ ``LateInline``\ 标注的优先级要高于\ ``Inline``\ 标注，"
+"即："
 
 #: ../../source/behavior/functions/func_annos.rst:333
 msgid "Interpretation"
 msgstr ""
 "说明"
+
 #: ../../source/behavior/functions/func_annos.rst:335
 #: ../../source/behavior/functions/func_annos.rst:335
 #: ../../source/behavior/functions/func_annos.rst:336
 #: ../../source/behavior/functions/func_annos.rst:337
 msgid "``false``"
 msgstr ""
-" ``false`` "
+
 #: ../../source/behavior/functions/func_annos.rst:335
 msgid "``Inline=false``"
 msgstr ""
-" ``Inline=false`` "
+
 #: ../../source/behavior/functions/func_annos.rst:336
 #: ../../source/behavior/functions/func_annos.rst:337
 #: ../../source/behavior/functions/func_annos.rst:338
 #: ../../source/behavior/functions/func_annos.rst:338
 msgid "``true``"
 msgstr ""
-" ``true`` "
+
 #: ../../source/behavior/functions/func_annos.rst:336
 msgid "``Inline=true``"
 msgstr ""
-" ``Inline=true`` "
+
 #: ../../source/behavior/functions/func_annos.rst:337
 #: ../../source/behavior/functions/func_annos.rst:338
 msgid "``LateInline=true``"
 msgstr ""
-" ``LateInline=true`` "
+
 #: ../../source/behavior/functions/func_annos.rst:344
 msgid "External Functions"
 msgstr ""
@@ -364,13 +365,13 @@ msgid ""
 "libraries.  These annotations inform the Modelica compiler of these "
 "dependencies and where to locate them."
 msgstr ""
-"最后一大类标注是与定义的 ``external`` 函数相关的。这些外部函数的定义通常都依靠外部文件或库，"
+"最后一大类标注是与定义的\ ``external``\ 函数相关的。这些外部函数的定义通常都依靠外部文件或库，"
 "使用这类标注就是为了通知Modelica编译器这些依赖关系以及如何定位这些外部函数。"
 
 #: ../../source/behavior/functions/func_annos.rst:354
 msgid "``Include``"
 msgstr ""
-" ``Include`` 标注"
+
 #: ../../source/behavior/functions/func_annos.rst:358
 msgid ""
 "The ``Include`` annotations is used whenever the code generated by a "
@@ -379,20 +380,19 @@ msgid ""
 " annotation should be the string that should be inserted into the generated "
 "code, *e.g.,*"
 msgstr ""
-"通常情况下，Modelica编译器生成代码过程中如果参考了相应的外部库，需添加相应的 ``Include`` 标注用于声明include需求。"
-" ``Include`` 标注的值是一个字符串并且应嵌入到生成的代码文件中， *即,* "
+"通常情况下，Modelica编译器生成代码过程中如果参考了相应的外部库，需添加相应的\ ``Include``\ 标注用于声明include需求。"
+"\ ``Include``\ 标注的值是一个字符串并且应嵌入到生成的代码文件中，即："
 
 #: ../../source/behavior/functions/func_annos.rst:370
 msgid ""
 "The value of the ``Include`` annotation is a string.  If it included "
 "embedded strings, they need to be escaped."
 msgstr ""
-" ``Include`` 标注的值是一个字符串，如果它包含嵌入的字符串，需进行相应的转义。"
+"\ ``Include``\ 标注的值是一个字符串，如果它包含嵌入的字符串，需进行相应的转义。"
 
 #: ../../source/behavior/functions/func_annos.rst:376
 msgid "``IncludeDirectory``"
 msgstr ""
-" ``IncludeDirectory`` "
 
 #: ../../source/behavior/functions/func_annos.rst:380
 msgid ""
@@ -410,17 +410,16 @@ msgid ""
 "directory or it can be a URL.  For example, the default value for the "
 "``IncludeDirectory`` annotation is:"
 msgstr ""
-"该标注的值是一个字符串，字符串可以是一个目录或者URL。例如， ``IncludeDirectory`` 标注的默认值如下所示："
-""
+"该标注的值是一个字符串，字符串可以是一个目录或者URL。例如，\ ``IncludeDirectory``\ 标注的默认值如下所示："
+
 #: ../../source/behavior/functions/func_annos.rst:394
 msgid "We'll explain the meaning of these :ref:`modelica-urls` shortly."
 msgstr ""
-"稍后，我们将对 :ref:`modelica-urls` 的含义进行解释。"
+"稍后，我们将对\ :ref:`modelica-urls`\ 的含义进行解释。"
 
 #: ../../source/behavior/functions/func_annos.rst:397
 msgid "``Library``"
 msgstr ""
-" ``Library`` "
 
 #: ../../source/behavior/functions/func_annos.rst:401
 msgid ""
@@ -429,23 +428,24 @@ msgid ""
 "string, representing the name of the library, or an array of such strings, "
 "*i.e.,*"
 msgstr ""
-" ``Library`` 标注主要用于指定函数可能依赖的所有编译库，该标注的值可以是一个表示库名字的字符串，也可以是"
-"上述字符串组成的数组， *即,* "
+"\ ``Library``\ 标注主要用于指定函数可能依赖的所有编译库，该标注的值可以是一个表示库名字的字符串，也可以是"
+"上述字符串组成的数组，即："
+
 #: ../../source/behavior/functions/func_annos.rst:410
 msgid "or"
 msgstr ""
 "或者"
+
 #: ../../source/behavior/functions/func_annos.rst:416
 msgid ""
 "The Modelica compiler will then use this information during the \"linking\" "
 "of the generated code."
 msgstr ""
-"Modelica编译器在生成代码 \"连接\" 时将使用这些信息。"
+"Modelica编译器在“链接”生成代码时将使用这些信息。"
 
 #: ../../source/behavior/functions/func_annos.rst:420
 msgid "``LibraryDirectory``"
 msgstr ""
-" ``LibraryDirectory`` "
 
 #: ../../source/behavior/functions/func_annos.rst:424
 msgid ""
@@ -456,9 +456,9 @@ msgid ""
 "``IncludeDirectory`` annotation, it can also be a URL.  It's default value "
 "is:"
 msgstr ""
-"对于 ``Library`` 和 ``Include`` 标注，我们有同样的问题。 ``Library`` 标注告诉我们需要添加那些库文件，但却没有告诉我们去"
-"哪里查找。另外， ``LibraryDirectory`` 与 :ref:`include-directory-anno` 标注具有相同的作用，如同 ``IncludeDirectory`` 标注，"
-" ``LibraryDirectory`` 标注的值也可以是一个URL，其默认值如下所示："
+"对于\ ``Library``\ 和\ ``Include``\ 标注，我们有同样的问题。\ ``Library``\ 标注告诉我们需要添加那些库文件，但却没有告诉我们去"
+"哪里查找。另外，\ ``LibraryDirectory``\ 与\ :ref:`include-directory-anno`\ 标注具有相同的作用，如同\ ``IncludeDirectory``\ 标注，"
+"\ ``LibraryDirectory``\ 标注的值也可以是一个URL，其默认值如下所示："
 
 #: ../../source/behavior/functions/func_annos.rst:28
 #: ../../source/behavior/functions/func_annos.rst:225
