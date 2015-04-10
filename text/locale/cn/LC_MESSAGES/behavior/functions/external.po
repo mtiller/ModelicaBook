@@ -14,11 +14,11 @@ msgstr ""
 #: ../../source/behavior/functions/external.rst:4
 msgid "External Functions"
 msgstr ""
-
+"外部函数"
 #: ../../source/behavior/functions/external.rst:7
 msgid "``external``"
 msgstr ""
-
+"外部"
 #: ../../source/behavior/functions/external.rst:11
 msgid ""
 "As we saw with the ``InterpolateExternalVector`` function in our "
@@ -29,12 +29,17 @@ msgid ""
 " information about the external function and how to pass information to and "
 "from the function."
 msgstr ""
+"在 :ref:`interpolation` 章节，我们讨论了 ``InterpolateExternalVector`` 函数相关的例子，并了解到可以通过"
+"Modelica语言来调用由其他语言定义的函数。通常，这些函数都是用C或Fortran语言来定义的。"
+"使用非Modelica语言定义的函数不包含 ``algorithm`` 部分。相反的，它应该包括 ``external`` 部分用以提供外部函数"
+"以及如何实现外部函数传递的信息。"
 
 #: ../../source/behavior/functions/external.rst:19
 msgid ""
 "The minimal requirement for an externally implemented function is to include"
 " just the ``external`` keyword, *e.g.,*"
 msgstr ""
+"对于外部函数的最低要求是需包含关键字 ``external`` ， *即,*" "
 
 #: ../../source/behavior/functions/external.rst:26
 msgid ""
@@ -43,12 +48,15 @@ msgid ""
 "and that the arguments are passed in the same order as the ``input`` "
 "arguments to the Modelica function."
 msgstr ""
+"在这种情况下，假设外部函数是由C语言定义的，函数的名称需与Modelica语言的 \"wrapper\" 函数相匹配，"
+"并且函数的参数必须以相同的顺序传递给Modelica函数的 ``input`` 参数。"
 
 #: ../../source/behavior/functions/external.rst:31
 msgid ""
 "Let's consider a slightly more complex case like the one found in our "
 "``VectorTable`` type shown in the :ref:`interpolation` examples:"
 msgstr ""
+"让我们考虑一个稍微复杂的情况，例如在 :ref:`interpolation` 例子中展示的 ``VectorTable`` 类型："
 
 #: ../../source/behavior/functions/external.rst:38
 msgid ""
@@ -57,6 +65,8 @@ msgid ""
 "the implementation language, ``\"FORTRAN 77\"`` and ``\"builtin\"``. The use"
 " of ``\"builtin\"`` is mainly of interest to Modelica tool vendors."
 msgstr ""
+"我们可以看到，此函数定义的语言被明确的指定为 ``\"C\"`` 。还有另外两种可以实现上述功能的语言： ``\"FORTRAN 77\"`` 和 ``\"builtin\"`` 。"
+"对 ``\"builtin\"`` 使用感兴趣的主要是一些Modelica工具厂商。"
 
 #: ../../source/behavior/functions/external.rst:44
 msgid ""
@@ -65,7 +75,8 @@ msgid ""
 "``destroyVectorTable(table)`` specifies what data should be passed to the "
 "external function and in what order."
 msgstr ""
-
+"我们看到，上述函数的名称已经被明确指定。 ``external`` 语句通过读取 ``destroyVectorTable(table)`` 并"
+"明确指定了与外部函数进行传递的参数及其顺序。"
 #: ../../source/behavior/functions/external.rst:49
 msgid ""
 "In some cases, it may be necessary to specify some of the values passed to "
@@ -73,7 +84,8 @@ msgid ""
 "map to the output variables.  We can see this kind of information in the "
 "following ``function``:"
 msgstr ""
-
+"有些情况下，还需明确定义传递给外部函数的参数值及输出变量和函数调用结果之间的映射关系。"
+"我们可以在下述 ``function`` 定义中，看到上述信息："
 #: ../../source/behavior/functions/external.rst:58
 msgid ""
 "Here, the external function needs to know the size of the ``ybar`` array "
@@ -86,57 +98,61 @@ msgid ""
 "cases pointers are used so that the external function can assign values to "
 "these variables."
 msgstr ""
-
+"在这个例子中，外部函数需要获取 ``ybar`` 数组的大小，因为这些信息没有直接的传递给外部函数。"
+"此外，上述函数还声明了通过 ``createVectorTable`` 计算的结果应该分配给 ``output`` 变量 ``table`` 。"
+"很明显，我们可以看到C函数的返回值就是Modelica语言定义的函数返回值。但是，有些情况下， ``output`` 变量"
+"应该作为参数传递给函数。接下来我们就会看到，在这种情况下，外部函数可以使用指针完成相应变量的赋值。"
 #: ../../source/behavior/functions/external.rst:69
 msgid "Data Mapping"
 msgstr ""
-
+"数据映射"
 #: ../../source/behavior/functions/external.rst:72
 #: ../../source/behavior/functions/external.rst:104
 msgid "C"
 msgstr ""
-
+"C语言"
 #: ../../source/behavior/functions/external.rst:74
 msgid ""
 "The following table shows how Modelica types map into native C types when "
 "passing data **into** external functions."
 msgstr ""
+"下面这张表展示了将参数 **传递** 给外部函数时，Modelica语言与C语言数据类型之间的映射关系。"
 
 #: ../../source/behavior/functions/external.rst:78
 #: ../../source/behavior/functions/external.rst:104
 #: ../../source/behavior/functions/external.rst:125
 msgid "Modelica"
 msgstr ""
-
+"Modelica语言"
 #: ../../source/behavior/functions/external.rst:78
 msgid "C (input arguments)"
 msgstr ""
-
+"C语言（输入变量）"
 #: ../../source/behavior/functions/external.rst:78
 msgid "C (output arguments)"
 msgstr ""
-
+"C语言（输出变量）"
 #: ../../source/behavior/functions/external.rst:80
 #: ../../source/behavior/functions/external.rst:106
 #: ../../source/behavior/functions/external.rst:127
 msgid "``Real``"
 msgstr ""
-
+" ``Real`` "
 #: ../../source/behavior/functions/external.rst:80
 #: ../../source/behavior/functions/external.rst:106
 msgid "``double``"
 msgstr ""
-
+" ``double`` "
 #: ../../source/behavior/functions/external.rst:80
 msgid "``double *``"
 msgstr ""
-
+" ``double *`` "
 #: ../../source/behavior/functions/external.rst:81
 #: ../../source/behavior/functions/external.rst:107
 #: ../../source/behavior/functions/external.rst:128
 msgid "``Integer``"
 msgstr ""
-
+" ``Integer`` "
 #: ../../source/behavior/functions/external.rst:81
 #: ../../source/behavior/functions/external.rst:82
 #: ../../source/behavior/functions/external.rst:88
@@ -145,100 +161,100 @@ msgstr ""
 #: ../../source/behavior/functions/external.rst:114
 msgid "``int``"
 msgstr ""
-
+" ``int`` "
 #: ../../source/behavior/functions/external.rst:81
 #: ../../source/behavior/functions/external.rst:82
 #: ../../source/behavior/functions/external.rst:88
 msgid "``int *``"
 msgstr ""
-
+" ``int *`` "
 #: ../../source/behavior/functions/external.rst:82
 #: ../../source/behavior/functions/external.rst:108
 #: ../../source/behavior/functions/external.rst:129
 msgid "``Boolean``"
 msgstr ""
-
+" ``Boolean`` "
 #: ../../source/behavior/functions/external.rst:83
 #: ../../source/behavior/functions/external.rst:109
 msgid "``String``"
 msgstr ""
-
+" ``String`` "
 #: ../../source/behavior/functions/external.rst:83
 #: ../../source/behavior/functions/external.rst:109
 msgid "``const char *``"
 msgstr ""
-
+" ``const char *`` "
 #: ../../source/behavior/functions/external.rst:83
 msgid "``const char **``"
 msgstr ""
-
+" ``const char **`` "
 #: ../../source/behavior/functions/external.rst:84
 #: ../../source/behavior/functions/external.rst:110
 #: ../../source/behavior/functions/external.rst:130
 msgid "``T[d1]``"
 msgstr ""
-
+" ``T[d1]`` "
 #: ../../source/behavior/functions/external.rst:84
 #: ../../source/behavior/functions/external.rst:84
 msgid "``T' *``, ``size_t d1``"
 msgstr ""
-
+" ``T' *``, ``size_t d1`` "
 #: ../../source/behavior/functions/external.rst:85
 #: ../../source/behavior/functions/external.rst:111
 #: ../../source/behavior/functions/external.rst:131
 msgid "``T[d1,d2]``"
 msgstr ""
-
+" ``T[d1,d2]`` "
 #: ../../source/behavior/functions/external.rst:85
 #: ../../source/behavior/functions/external.rst:85
 #: ../../source/behavior/functions/external.rst:111
 msgid "``T' *``, ``size_t d1``, ``size_t d2``"
 msgstr ""
-
+" ``T' *``, ``size_t d1``, ``size_t d2`` "
 #: ../../source/behavior/functions/external.rst:86
 #: ../../source/behavior/functions/external.rst:112
 #: ../../source/behavior/functions/external.rst:132
 msgid "``T[d1,...,dn]``"
 msgstr ""
-
+" ``T[d1,...,dn]`` "
 #: ../../source/behavior/functions/external.rst:86
 #: ../../source/behavior/functions/external.rst:86
 #: ../../source/behavior/functions/external.rst:112
 msgid "``T' *``, ``size_t d1``, ..., ``size_t dn``"
 msgstr ""
-
+" ``T' *``, ``size_t d1``, ..., ``size_t dn`` "
 #: ../../source/behavior/functions/external.rst:87
 #: ../../source/behavior/functions/external.rst:113
 #: ../../source/behavior/functions/external.rst:133
 msgid "``size(...)``"
 msgstr ""
-
+" ``size(...)`` "
 #: ../../source/behavior/functions/external.rst:87
 #: ../../source/behavior/functions/external.rst:113
 msgid "``size_t``"
 msgstr ""
-
+" ``size_t`` "
 #: ../../source/behavior/functions/external.rst:87
 msgid "N/A"
 msgstr ""
-
+"N/A"
 #: ../../source/behavior/functions/external.rst:88
 #: ../../source/behavior/functions/external.rst:114
 #: ../../source/behavior/functions/external.rst:134
 msgid "``enumeration``"
 msgstr ""
-
+" ``enumeration`` "
 #: ../../source/behavior/functions/external.rst:89
 #: ../../source/behavior/functions/external.rst:115
 msgid "``record``"
 msgstr ""
-
+" ``record`` "
 #: ../../source/behavior/functions/external.rst:89
 #: ../../source/behavior/functions/external.rst:89
 #: ../../source/behavior/functions/external.rst:115
 msgid "``struct *``"
 msgstr ""
-
+" ``struct *`` "
 #: ../../source/behavior/functions/external.rst:92
 msgid ""
 "A few additional comments about this table.  First, it is assumed that all "
@@ -250,52 +266,58 @@ msgid ""
 "using the second column of this table (*i.e.,* as if they were input "
 "arguments)."
 msgstr ""
+"对于上述表格，简单解释一下。首先，它假设所有的字符串都是以空字符 （ ``\\0`` ） 终止的。"
+"另外，对于数组类型 ``T'`` ，C语言与Modelica语言可以相互映射（使用相同的表）。"
+"最后，Modelica语言的 ``record`` 类型映射C语言的 ``struct`` 类型，并且 ``struct`` 类型与 ``record`` 类型的数据成员顺序"
+"一致。 ``record`` 成员的数据类型使用该表格第二列的映射关系（ *即,* 把它们当做输入参数）。"
 
 #: ../../source/behavior/functions/external.rst:101
 msgid "For data returned by a C function, the following mapping applies:"
 msgstr ""
+"对于C函数的返回值类型，采用下表的类型映射关系："
 
 #: ../../source/behavior/functions/external.rst:110
 msgid "``T' *``, ``size_t``"
 msgstr ""
-
+" ``T' *``, ``size_t`` "
 #: ../../source/behavior/functions/external.rst:119
 #: ../../source/behavior/functions/external.rst:125
 msgid "Fortran"
 msgstr ""
-
+"Fortran语言"
 #: ../../source/behavior/functions/external.rst:121
 msgid ""
 "If you need to work with Fortran functions or subroutines, the following "
 "type mappings apply:"
 msgstr ""
+"如果你需要调用Fortran语言定义的函数或子程序，采用下表定义的类型映射关系："
 
 #: ../../source/behavior/functions/external.rst:127
 msgid "``DOUBLE PRECISION``"
 msgstr ""
-
+" ``DOUBLE PRECISION`` "
 #: ../../source/behavior/functions/external.rst:128
 #: ../../source/behavior/functions/external.rst:133
 #: ../../source/behavior/functions/external.rst:134
 msgid "``INTEGER``"
 msgstr ""
-
+" ``INTEGER`` "
 #: ../../source/behavior/functions/external.rst:129
 msgid "``LOGICAL``"
 msgstr ""
-
+" ``LOGICAL`` "
 #: ../../source/behavior/functions/external.rst:130
 msgid "``T'``, ``INTEGER``"
 msgstr ""
-
+" ``T'``, ``INTEGER`` "
 #: ../../source/behavior/functions/external.rst:131
 msgid "``T'``, ``INTEGER d1``, ``INTEGER d2``"
 msgstr ""
-
+" ``T'``, ``INTEGER d1``, ``INTEGER d2`` "
 #: ../../source/behavior/functions/external.rst:132
 msgid "``T'``, ``INTEGER d1``, ..., ``INTEGER dn``"
 msgstr ""
-
+" ``T'``, ``INTEGER d1``, ..., ``INTEGER dn`` "
 #: ../../source/behavior/functions/external.rst:137
 msgid ""
 "Two important things to note about this table.  First, there is no mapping "
@@ -304,11 +326,14 @@ msgid ""
 "to be pointers.  For this reason, there is no distinction made whether the "
 "variable is an input or an output of the Modelica function."
 msgstr ""
+"对于上述表格，有两点需特别注意。首先，strings 和 records类型没有相应的映射关系。其次，Fortran语言"
+"主要通过引用传递语法，所有输入、输出这些函数的变量都被假定为指针。出于这个原因，Fortran函数不会区分获取的"
+"变量是Modelica函数的输入还是输出。"
 
 #: ../../source/behavior/functions/external.rst:145
 msgid "Special Functions"
 msgstr ""
-
+"特殊函数"
 #: ../../source/behavior/functions/external.rst:147
 msgid ""
 "There are a number of functions that can be called **from** external "
@@ -316,20 +341,25 @@ msgid ""
 "name of the function, its prototype and an explanation of the functions "
 "purpose are described."
 msgstr ""
+"在与Modelica交互运行时，有许多特殊函数可以 **从** 外部函数进行调用。下面对这些函数的名称、原型以及"
+"开发的目的进行详细的介绍。"
 
 #: ../../source/behavior/functions/external.rst:153
 msgid "``ModelicaVFormatMessage``"
 msgstr ""
+" ``ModelicaVFormatMessage`` "
 
 #: ../../source/behavior/functions/external.rst:159
 msgid ""
 "Output the message under the same format control as the C-function "
 "``vprintf``."
 msgstr ""
+"此函数的输出与C函数 ``vprintf`` 相同格式的消息。"
 
 #: ../../source/behavior/functions/external.rst:165
 msgid "``ModelicaError``"
 msgstr ""
+" ``ModelicaError`` "
 
 #: ../../source/behavior/functions/external.rst:171
 msgid ""
@@ -337,10 +367,12 @@ msgid ""
 "returns to the calling function, but handles the error similarly to an "
 "assert in the Modelica code."
 msgstr ""
+"此函数主要处理类似Modelica代码的声明错误，输出错误信息的字符串（无输出格式控制），对于调用函数无返回值。"
 
 #: ../../source/behavior/functions/external.rst:176
 msgid "``ModelicaFormatError``"
 msgstr ""
+" ``ModelicaFormatError`` "
 
 #: ../../source/behavior/functions/external.rst:182
 msgid ""
@@ -348,21 +380,24 @@ msgid ""
 "``printf``. This function never returns to the calling function, but handles"
 " the error similarly to an assert in the Modelica code."
 msgstr ""
+"此函数主要处理类似Modelica代码的声明错误，输出与C函数 ``printf`` 相同格式的错误信息，对于调用函数无返回值。"
 
 #: ../../source/behavior/functions/external.rst:190
 msgid "``ModelicaVFormatError``"
 msgstr ""
-
+" ``ModelicaVFormatError`` "
 #: ../../source/behavior/functions/external.rst:196
 msgid ""
 "Output the error message under the same format control as the C-function "
 "``vprintf``. This function never returns to the calling function, but "
 "handles the error similarly to an assert in the Modelica code."
 msgstr ""
+"此函数主要处理类似Modelica代码的声明错误，输出与C函数 ``vprintf`` 相同格式的错误信息，对于调用函数无返回值。"
 
 #: ../../source/behavior/functions/external.rst:204
 msgid "``ModelicaAllocateString``"
 msgstr ""
+" ``ModelicaAllocateString`` "
 
 #: ../../source/behavior/functions/external.rst:210
 msgid ""
@@ -372,10 +407,12 @@ msgid ""
 "any other array. If an error occurs, this function does not return, but "
 "calls :ref:`modelica-error`."
 msgstr ""
-
+"此函数主要用于为外部Modelica函数的返回参数分配内存。需注意的是，该字符串数组的存储（即指针字符串数组）仍然由"
+"被调用函数提供。当出现错误时，该函数不返回主函数，而是调用 :ref:`modelica-error` 函数输出错误信息。"
 #: ../../source/behavior/functions/external.rst:217
 msgid "``ModelicaAllocateStringWithErrorReturn``"
 msgstr ""
+" ``ModelicaAllocateStringWithErrorReturn`` "
 
 #: ../../source/behavior/functions/external.rst:223
 msgid ""
@@ -384,7 +421,8 @@ msgid ""
 "free other open resources in case of error. After cleaning up resources, use"
 " :ref:`modelica-error` or :ref:`modelica-format-error` to signal the error."
 msgstr ""
-
+"该函数功能如同 :ref:`modelica-allocate-string` 函数，只是在出现错误时，会返回0值。当出现错误时，此功能允许外部函数关闭"
+"文件并开放其他的资源。完成资源清理以后，调用 :ref:`modelica-error` 函数和 :ref:`modelica-format-error` 函数输出错误信息。"
 #: ../../source/behavior/functions/external.rst:9
 msgid "external"
 msgstr ""

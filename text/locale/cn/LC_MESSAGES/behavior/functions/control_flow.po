@@ -14,7 +14,7 @@ msgstr ""
 #: ../../source/behavior/functions/control_flow.rst:4
 msgid "Control Flow"
 msgstr ""
-
+"控制流程"
 #: ../../source/behavior/functions/control_flow.rst:6
 msgid ""
 "In some cases, a function is simply a fixed set of step by step "
@@ -22,11 +22,13 @@ msgid ""
 "required.  In this section, we'll cover the different control structures "
 "that are allowed within a function definition."
 msgstr ""
+"某些情况下，函数只是按照固定的流程一步一步的进行计算。但是在其他情况下，某种循环或迭代也是必需的。"
+"本部分，我们将讨论不同控制结构下所允许的函数定义方法。"
 
 #: ../../source/behavior/functions/control_flow.rst:12
 msgid "Branching"
 msgstr ""
-
+"分支结构"
 #: ../../source/behavior/functions/control_flow.rst:14
 msgid ""
 "We've already seen use cases involving ``if`` statements and expressions.  "
@@ -36,11 +38,13 @@ msgid ""
 "same number of equations.  But that restriction does not apply in an "
 "``algorithm`` section (*e.g.,* in a function definition)."
 msgstr ""
-
+"在前面章节，我们已经看到了涉及 ``if`` 语句和其表达式的例子。这些功能在函数内部也是可以实现的。"
+"实际上，在 ``equation`` 部分对 ``if`` 语句有一定的限制，即 ``if`` 语句的每一个分支（ *即,* 在所有的条件下）"
+"必须生成相同数量的方程。但是，上述限制对 ``algorithm`` 部分并不适用（ *比如,* 在函数定义时）。"
 #: ../../source/behavior/functions/control_flow.rst:23
 msgid "Looping"
 msgstr ""
-
+"循环"
 #: ../../source/behavior/functions/control_flow.rst:28
 msgid ""
 "In an ``equation`` section, looping is (just like with branching) restricted"
@@ -49,6 +53,8 @@ msgid ""
 "allowed in an ``equation`` section (and, therefore, the only one we have "
 "discussed up until now) is the ``for`` loop."
 msgstr ""
+"在 ``equation`` 部分，为了确保在任意系统状态下生成相同数量的方程，循环是被禁止的（就像分支）使用的。"
+"出于这个原因， ``equation`` 部分（目前为止，我们唯一讨论过的部分）唯一允许使用的循环结构是 ``for`` 循环。"
 
 #: ../../source/behavior/functions/control_flow.rst:34
 msgid ""
@@ -56,6 +62,8 @@ msgid ""
 " context.  It identifies an iteration variable and then assigns that "
 "iteration variable a set of values contained in a vector, *e.g.,*"
 msgstr ""
+"在函数定义中， ``for`` 循环的语法与其他地方定义完全一样。首先，确定迭代变量，然后将"
+"数组中包含的数值分配给迭代变量， *即,* "
 
 #: ../../source/behavior/functions/control_flow.rst:45
 msgid ""
@@ -65,6 +73,8 @@ msgid ""
 "equations, there are no concerns about generating a specified number of "
 "equations when using ``if`` or ``for``."
 msgstr ""
+" ``equation`` 部分与 ``algorithm`` 部分有两个主要的区别，分别是： ``algorithm`` 部分使用显示赋值语句"
+"而不使用方程；因此在使用 ``if`` 语句或 ``for`` 语句时就不需要考虑生成特定数量的方程。"
 
 #: ../../source/behavior/functions/control_flow.rst:54
 msgid ""
@@ -75,12 +85,15 @@ msgid ""
 " an ``equation`` section) is unpredictable. But this unpredictability is not"
 " an issue in an ``algorithm`` section."
 msgstr ""
-
+"此外， ``algorithm`` 部分在允许 ``while`` 循环的使用上也具有很大的灵活性。"
+"因为迭代本质上生成的方程数量（即，``equation`` 部分生成的方程数量）是不可预测的，因此 ``equation`` 部分不允许使用 ``while`` 循环。"
+"但是，这种不可预见性对于 ``algorithm`` 部分并没有什么影响。"
 #: ../../source/behavior/functions/control_flow.rst:61
 msgid ""
 "As we already saw in the ``InterpolateVector`` function from our previous "
 "discussion of :ref:`Interpolation`, the syntax for a ``while`` loop is:"
 msgstr ""
+"在前面章节 :ref:`Interpolation` 中，我们已经讨论了 ``InterpolateVector`` 函数，其包含的 ``while`` 循环的语法如下所示："
 
 #: ../../source/behavior/functions/control_flow.rst:69
 msgid ""
@@ -88,11 +101,12 @@ msgid ""
 "determines whether to continue looping and the statements within the "
 "``while`` loop."
 msgstr ""
+" ``while`` 循环的主要元素是一些条件表达式用以决定是否继续循环，并执行 ``while`` 循环内的语句。"
 
 #: ../../source/behavior/functions/control_flow.rst:74
 msgid "``break`` and ``return``"
 msgstr ""
-
+" ``break`` 以及 ``return`` "
 #: ../../source/behavior/functions/control_flow.rst:78
 msgid ""
 "When iterating, it is sometimes necessary to terminate the iterations "
@@ -103,6 +117,9 @@ msgid ""
 "loop that indicates when to terminate.  In these cases, a ``break`` "
 "statement can be used to terminate the innermost loop."
 msgstr ""
+"当进行迭代时，有的时候需要提前结束迭代过程。例如，在 ``for`` 循环中，迭代的次数通常是由迭代数组的个数来决定的。"
+"但在某些情况下，后续的迭代过程是没有必要的。同样的，在 ``while`` 循环中，它可以方便的检查 ``while`` 循环何时终止。"
+"在这类情况下，可以使用 ``break`` 语句终止迭代的最内层循环。"
 
 #: ../../source/behavior/functions/control_flow.rst:89
 msgid ""
@@ -117,6 +134,10 @@ msgid ""
 "encountered, whatever values are currently associated with the ``output`` "
 "variables are the ones that will be returned."
 msgstr ""
+"控制流程的另一个问题是何时终止并从 ``algorithm`` 部分本身退出。在很多情况下，所有的 ``output`` 变量都被分配了它们的最终值。"
+"很多情况下，可以使用 ``if`` 和 ``else`` 语句禁止变量的进一步计算和赋值，并且这种方式可以更加简单清晰的表明上述需求。"
+"在这种情况下，可以在函数的 ``algorithm`` 部分使用 ``return`` 语句终止所有方程的进一步运算。当 ``return`` 语句执行时，"
+" ``output`` 变量将返回当前时刻与之相关联的变量值。"
 
 #: ../../source/behavior/functions/control_flow.rst:25
 #: ../../source/behavior/functions/control_flow.rst:26
