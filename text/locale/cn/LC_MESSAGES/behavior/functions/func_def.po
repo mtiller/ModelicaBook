@@ -15,6 +15,7 @@ msgstr ""
 msgid "Function Definitions"
 msgstr ""
 "函数定义"
+
 #: ../../source/behavior/functions/func_def.rst:6
 msgid ""
 "As we've already seen, Modelica includes many useful functions for "
@@ -217,7 +218,7 @@ msgid ""
 "variables to be assigned to (or equated to, in the case of an ``equation`` "
 "section) wrapped by a pair of parentheses."
 msgstr ""
-"换句话说，等号左边括号内用逗号分隔开的参数值是由函数的相应返回值进行赋值的（或等同于函数内部的\ ``equation``\ 部分）。"
+"换句话说，等号左边括号内用逗号分隔开的参数值是由函数的相应返回值进行赋值的（或等同于函数内部的\ ``equation``\ 区域）。"
 
 #: ../../source/behavior/functions/func_def.rst:189
 msgid ""
@@ -257,7 +258,7 @@ msgid ""
 "No equations or when statements - A function can have no more than one "
 "``algorithm`` section and it cannot contain ``when`` statements."
 msgstr ""
-"不允许存在多个方程或when语句-函数中只允许包含一个\ ``algorithm``\ 部分，并且不能包含\ ``when``\ 语句。"
+"不允许存在多个方程或when语句-函数中只允许包含一个\ ``algorithm``\ 区域，并且不能包含\ ``when``\ 语句。"
 
 #: ../../source/behavior/functions/func_def.rst:207
 msgid ""

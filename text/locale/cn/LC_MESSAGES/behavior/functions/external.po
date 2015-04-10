@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "在\ :ref:`interpolation`\ 章节，我们讨论了\ ``InterpolateExternalVector``\ 函数相关的例子，并了解到可以通过"
 "Modelica语言来调用由其他语言定义的函数。通常，这些函数都是用C或Fortran语言来定义的。"
-"使用非Modelica语言定义的函数不包含\ ``algorithm``\ 部分。相反的，它应该包括\ ``external``\ 部分用以提供外部函数"
+"使用非Modelica语言定义的函数不包含\ ``algorithm``\ 区域。相反的，它应该包括\ ``external``\ 语句用以提供外部函数"
 "以及如何实现外部函数传递的信息。"
 
 #: ../../source/behavior/functions/external.rst:19
@@ -49,7 +49,7 @@ msgid ""
 "and that the arguments are passed in the same order as the ``input`` "
 "arguments to the Modelica function."
 msgstr ""
-"在这种情况下，假设外部函数是由C语言定义的，函数的名称需与Modelica语言的 \"wrapper\" 函数相匹配，"
+"在这种情况下，假设外部函数是由C语言定义的，函数的名称需与Modelica语言的“封装”函数相匹配，"
 "并且函数的参数必须以相同的顺序传递给Modelica函数的\ ``input``\ 参数。"
 
 #: ../../source/behavior/functions/external.rst:31

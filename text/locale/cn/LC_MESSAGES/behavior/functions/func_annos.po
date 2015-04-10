@@ -43,7 +43,7 @@ msgid ""
 "not possible.  However, using the annotations in this section allows us to "
 "augment the function definition with such information."
 msgstr ""
-"第一大类标注的主要功能是为数学函数提供一些额外的信息。因为这些数学函数的功能都是在\ ``algorithm``\ 部分实现的，因此"
+"第一大类标注的主要功能是为数学函数提供一些额外的信息。因为这些数学函数的功能都是在\ ``algorithm``\ 区域实现的，因此"
 "通常情况下，不能根据Modelica语言的符号操作得出上述函数方程的功能。但是，可以使用本节中的标注来增加函数定义的相关信息。"
 
 #: ../../source/behavior/functions/func_annos.rst:26
@@ -125,7 +125,7 @@ msgid ""
 " following annotation:"
 msgstr ""
 "在这种情况下，Modelica语言提供了一种避免上述冗余计算的方法。如果Modelica编译器能 *预先* 知道参数的微分为0，它就"
-"可以检查（在\ ``derivative``\ 标注部分）是否有函数计算导数。这些情况是通过在\ ``derivative``\ 标注部分使用\ ``zeroDerivative``\ 参数"
+"可以检查（在\ ``derivative``\ 标注）是否有函数计算导数。这些情况是通过在\ ``derivative``\ 标注使用\ ``zeroDerivative``\ 参数"
 "进行指定的。因此，对于上述示例中的函数\ ``f``\ ，我们增加了如下标注内容："
 
 #: ../../source/behavior/functions/func_annos.rst:111
@@ -164,7 +164,7 @@ msgid ""
 "derivative, it is necessary to add an additional annotation ``derivative`` "
 "annotation to the original function, *i.e.,*"
 msgstr ""
-"希望你对上述内容并不陌生。为了实现二阶导数的计算，需要在原函数内添加额外的\ ``derivative``\ 标注部分，即："
+"希望你对上述内容并不陌生。为了实现二阶导数的计算，需要在原函数内添加额外的\ ``derivative``\ 标注，即："
 
 #: ../../source/behavior/functions/func_annos.rst:173
 msgid ""
@@ -401,8 +401,8 @@ msgid ""
 "annotation specifies what directory should be searched to find the content "
 "specified with the ``Include`` annotation."
 msgstr ""
-"在 :ref:`include-anno` 标注部分，我们已经讨论了该标注允许在生成的代码内插入路径。"
-" ``IncludeDirectory`` 标注指定了 ``Include`` 标注声明的内容应在哪个目录下搜索。"
+"在\ :ref:`include-anno`\ 标注，我们已经讨论了该标注允许在生成的代码内插入路径。"
+"\ ``IncludeDirectory``\ 标注指定了\ ``Include``\ 标注声明的内容应在哪个目录下搜索。"
 
 #: ../../source/behavior/functions/func_annos.rst:386
 msgid ""
