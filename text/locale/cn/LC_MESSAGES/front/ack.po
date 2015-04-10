@@ -41,9 +41,9 @@ msgid ""
 "as an open standard.  Hilding is the undisputed \"father of Modelica\" and "
 "he deserves considerable credit for all that Modelica has become."
 msgstr ""
-"谈及Modelica时，首先要特别感谢Hilding Elmqvist。不仅因为他的技术远见，发现了符号处理技术可以"
-"解决工程问题的潜在应用价值，而且得益于他的领导能力推动Modelica技术朝着开放的标准发展。"
-"Hilding毫无疑问是“Modelica之父”，对于Modelica技术取得的一切成果,他都受之无愧。"
+"谈及Modelica时，首先要特别感谢Hilding Elmqvist。这不仅是因为他的技术远见，发现了符号处理技术可以"
+"解决工程问题的潜在应用价值。而且，得益于他的领导能力，Modelica技术朝着开放的标准发展。"
+"Hilding毫无疑问是“Modelica之父”，对于Modelica技术取得的一切成果，他都受之无愧。"
 
 #: ../../source/front/ack.rst:21
 msgid ""
