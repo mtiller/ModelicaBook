@@ -159,7 +159,7 @@ msgid "From these equations, we get the following two connection sets:"
 msgstr "从这些方程里，我们得到以下两个连接集："
 
 #: ../../source/components/subsystems/sub_interface.rst:120
-msgid "**Connection Set #1**: `flange_a`, `inertia_a.flange_a`"
+msgid "**Connection Set #1**: ``flange_a``, ``inertia_a.flange_a``"
 msgstr "\\ **连接集＃1**\\ ：\\ ``flange_a``\ 、\ ``inertia_a.flange_a``"
 
 #: ../../source/components/subsystems/sub_interface.rst:123
@@ -176,7 +176,7 @@ msgstr ""
 msgid ""
 "However, in our previous discussion on :ref:`system-connections`, all the "
 "components were at the same hierarchical level (*i.e.,* as "
-"`idealGear.flange_b` and `inertia_b.flange_a` are).  But with subsystem "
+"``idealGear.flange_b`` and ``inertia_b.flange_a`` are).  But with subsystem "
 "models, this isn't always the case.  And, as described a moment ago, for "
 "cases where the connections are at different levels, we need to introduce a "
 "sign difference for contributions at different levels.  Taking that into "
@@ -262,7 +262,6 @@ msgid "protected"
 msgstr ""
 
 #: ../../source/components/subsystems/sub_interface.rst:121
-msgid "**Connection Set #2**: `idealGear.flange_b`, `inertia_b.flange_a`"
+msgid "**Connection Set #2**: ``idealGear.flange_b``, ``inertia_b.flange_a``"
 msgstr "\\ **连接集＃2**\\ ：\\ ``idealGear.flange_b``\\ 、\\ ``inertia_b.flange_a``\\ "
 
-#~ msgid "**Connection Set #2**: `idealGear.flange_b`\\ 、\\ `inertia_b.flange_a`\\ "
