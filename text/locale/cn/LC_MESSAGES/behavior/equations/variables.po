@@ -23,7 +23,7 @@ msgid ""
 "section on :ref:`builtin-types`) followed by the name of the variable, "
 "*e.g.*,"
 msgstr ""
-"正如我们在前一节中所提到的，模型定义的特征之一就是包含变量声明。变量声明的基本语法就是在变量的“类型”（将在\\ : ref:`builtin-"
+"正如我们在前一节中所提到的，模型定义的特征之一就是包含变量声明。变量声明的基本语法就是在变量的“类型”（将在\\ :ref:`builtin-"
 "types`\\ 章节中简短讨论）之后紧随变量的名称，"
 
 #: ../../source/behavior/equations/variables.rst:17
