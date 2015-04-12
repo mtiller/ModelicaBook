@@ -35,6 +35,15 @@ SET_BOOK_LANG_CN = BOOK_LANG=cn
 
 .PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results uploadCIdeps
 
+# For CI we don't want to rebuild the whole dependencies each time.
+# To enable the CI build do, e.g., `make CI_BUILD=1 pdf`
+CI_BUILD=0
+ifeq ($(CI_BUILD),1)
+SPHINXDEPS =
+else
+SPHINXDEPS = specs results images
+endif
+
 # This builds the material necessary to create the book
 book: specs results dirhtml server
 
@@ -256,7 +265,7 @@ devhelp:
 	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/ModelicaByExample"
 	@echo "# devhelp"
 
-epub:	specs results images
+epub:	$(SPHINXDEPS)
 	$(SPHINXBUILD) -b epub -t epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
@@ -270,7 +279,7 @@ ebook:  epub mobi
 
 latex: latex-letter latex-a4
 
-latex-letter: specs results images
+latex-letter: $(SPHINXDEPS)
 	@echo
 	@echo "Applying horrible LaTeX hack..."
 	-mkdir -p build
@@ -287,7 +296,7 @@ latex-letter: specs results images
 	      "(use \`make latexpdf' here to do that automatically)."
 
 
-latex-a4: specs results images
+latex-a4: $(SPHINXDEPS)
 	@echo
 	@echo "Applying horrible LaTeX hack..."
 	-mkdir -p build
@@ -418,6 +427,6 @@ PDFs:=	$(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(dir)/*.s
 images: $(PDFs)
 
 # upload the most time consuming deps so they can be used by CI build
-uploadCIdeps: specs results images
+uploadCIdeps: $(SPHINXDEPS)
 	tar cJf build/CIdeps.tar.xz results plots docs-dir
 	($(S3PUT) build/CIdeps.tar.xz s3://files.xogeny.com/ModelicaByExample/)
