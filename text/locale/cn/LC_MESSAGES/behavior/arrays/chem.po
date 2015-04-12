@@ -164,7 +164,7 @@ msgid ""
 "**as a dimension in an array** as follows:"
 msgstr ""
 "上述语句定义了一个特殊的类型叫做\ ``Species``\ ，而这个类型有三个可能值：\ ``A``\ 、\ ``B``\ 及\ ``X``\ 。"
-"然后，我们可以使用这个枚举**作为数组的一个维度**，如下："
+"然后，我们可以使用这个枚举\ **作为数组的一个维度**\ ，如下："
 
 #: ../../source/behavior/arrays/chem.rst:164
 msgid ""
