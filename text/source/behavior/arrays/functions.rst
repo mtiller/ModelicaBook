@@ -520,7 +520,7 @@ transposed from above the diagonal.  In other words,
 
 .. math::
 
-   b_{ij} = \mathtt{transpose(a)} = \left\{
+   b_{ij} = \mathtt{symmetric(a)} = \left\{
    \begin{array}{c}
    a_{ij}\ \  \mathrm{if}\ i<=j \\
    a_{ji}\ \  \mathrm{otherwise}
