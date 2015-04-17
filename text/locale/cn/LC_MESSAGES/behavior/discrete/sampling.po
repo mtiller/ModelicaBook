@@ -109,7 +109,7 @@ msgid ""
 "tell us when to evaluate it.  Let's work through these lines one by one and "
 "discuss them.  First we have:"
 msgstr ""
-"现在我们不再使用用\\ ``when``\\ 语句。相反，我们会使用一个增强版的\\ ``sample``\\ （取样）函数。"
+"现在我们不再使用\\ ``when``\\ 语句。相反，我们会使用一个增强版的\\ ``sample``\\ （取样）函数。"
 "这个\\ ``sample``\\ "
 "函数的首个参数是待取样的表达式，第二个参数则是取样的时间间隔。让我们逐行阅读并讨论下面的代码。首先，我们有："
 
