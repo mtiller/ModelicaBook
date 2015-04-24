@@ -76,8 +76,8 @@ interpolateVectorTable(void *object, double x) {
     ModelicaFormatError("Requested value of x=%g is above the upper bound of %g\n",
 			x, table->x[table->npoints-1]);
 
-  while(x>=table->x[i+1]) i = i + 1;
-  while(x<table->x[i]) i = i - 1;
+  while(i<table->npoints-1&&x>table->x[i+1]) i++;
+  while(i>0&&x<table->x[i]) i--;
 
   p = (x-table->x[i])/(table->x[i+1]-table->x[i]);
   table->lastIndex = i;
