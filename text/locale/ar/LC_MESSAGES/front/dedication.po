@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/front/dedication.rst:2
 msgid "Dedication"
-msgstr "تقديم"
+msgstr "إهداء"
 
 #: ../../source/front/dedication.rst:18
 msgid ""
