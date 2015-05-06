@@ -345,7 +345,7 @@ gettext:
 	@echo "Build finished. The message catalogs are in $(BUILDDIR)/locale."
 
 update_all: gettext
-	sphinx-intl update -l cn -l kr -l de -l es -l fr -l it -d locale/ -p locale/pot
+	sphinx-intl update -l cn -l kr -l de -l es -l fr -l it -l ar -d locale/ -p locale/pot
 
 update_cn: gettext
 	sphinx-intl update -l cn -d locale/ -p locale/pot
@@ -364,6 +364,9 @@ update_fr: gettext
 
 update_it: gettext
 	sphinx-intl update -l it -d locale/ -p locale/pot
+
+update_ar: gettext
+	sphinx-intl update -l ar -d locale/ -p locale/pot
 
 buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
@@ -385,6 +388,9 @@ dirhtml_fr: update_fr buildmo
 
 dirhtml_it: update_it buildmo
 	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=it source build/dirhtml_it
+
+dirhtml_ar: update_ar buildmo
+	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=ar source build/dirhtml_ar
 
 changes:
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
