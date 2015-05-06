@@ -1,0 +1,171 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-06 08:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/discrete/sampling.rst:4
+msgid "Synchronous Systems"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:6
+msgid ""
+"In Modelica version 3.3, new features were introduced to address concerns "
+"about non-deterministic discrete behavior [Elmqvist]_.  In this section, "
+"we'll present some examples of how these issues presented themselves before "
+"version 3.3 and show how these new features help address them."
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:12
+msgid "To start, consider the following model:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:18
+msgid ""
+"If you look carefully, you will see that ``x`` and ``y`` are both computed "
+"at discrete times.  Furthermore, they are both sampled initially at the "
+"start of the simulation and then again every 0.1 seconds.  But the question "
+"is, are they really identical?  To help address this question, we include "
+"the variable ``e`` which measures the difference between them."
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:28
+msgid ""
+"Simulating this model, we get the following trajectories for ``x`` and "
+"``y``.  Of course, they look identical.  But in order to really determine if"
+" there are any differences between them, let's plot the error value, ``e``:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:36
+msgid "Now, let's consider the following model:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:42
+msgid ""
+"Here, we set up a common signal that triggers the assignment to both "
+"variables.  In this way, we can be sure that when the ``tick`` signal "
+"becomes true, both ``x`` and ``y`` will be assigned a value.  Sure enough, "
+"if we run this model, we see that the error is always zero:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:50
+msgid ""
+"This kind of approach, where each signal is sampled based on a common "
+"\"tick\" (or clock), is a good way to avoid determinism issues.  However, "
+"what about cases where you have one signal that samples at a higher rate "
+"than another, but you know that at certain times they should be sampled "
+"together?  Consider the following example:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:60
+msgid ""
+"In this case, the variable ``tick`` is a counter.  Every time it changes, we"
+" update the values of ``x`` and ``y``.  So this much is identical to the "
+"previous models.  However, we added a third signal, ``z``, that is sampled "
+"only when the value of ``tick`` is odd.  So ``x`` and ``y`` are sampled "
+"twice as often.  But every time ``z`` is updated, we can be sure that ``x`` "
+"and ``y`` are updated at exactly the same time.  Simulating this model gives"
+" us:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:71
+msgid ""
+"This is the approach taken in Modelica prior to version 3.3.  But version "
+"3.3 introduced some new features that allow us to more easily express these "
+"situations."
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:75
+msgid "Consider the following model:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:81
+msgid ""
+"Now, instead of relying on a ``when`` statement, we use an enhanced version "
+"of the ``sample`` function where the first argument is an expression to "
+"evaluate to determine the sampled value and the second argument is used to "
+"tell us when to evaluate it.  Let's work through these lines one by one and "
+"discuss them.  First we have:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:91
+msgid ""
+"Note that we have done away with the ``0.1``.  We no longer see any mention "
+"of the clock interval as a real number.  Instead, we use the ``Clock`` "
+"operator to the define clock interval for ``x`` as a rational number.  This "
+"is important because it allows us to do exact comparisons between clocks.  "
+"This brings us to the next line:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:101
+msgid ""
+"Again, we see the rational representation of the clock.  What this means, in"
+" practice, is that the Modelica compiler can know for certain that these two"
+" clocks, ``x`` and ``y``, are identical because they are defined in terms of"
+" integer quantities which allow exact comparison. This means that when "
+"executing a simulation, we can know for certain that these two clocks will "
+"trigger simultaneously."
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:108
+msgid ""
+"If we wanted to create a clock that was exactly half as slow as ``x``, we "
+"can use the ``subSample`` operator to accomplish this.  We see this in the "
+"definition of ``z``:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:116
+msgid ""
+"Behind the scenes, the Modelica compiler can reason about these clocks.  It "
+"knows that the ``x`` clock triggers every :math:`\\frac{1}{10}` of a second."
+"  Using the information provided by the ``subSample`` operator the Modelica "
+"compiler can therefore deduce that ``z`` triggers every "
+":math:`\\frac{2}{10}` of a second. Conceptually, this means that ``z`` could"
+" also have been defined as:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:127
+msgid ""
+"But by defining ``z`` using the ``subSample`` operator and defining it with "
+"respect to ``x`` we ensure that ``z`` is always triggering at half the "
+"frequency of ``x`` regardless of how ``x`` is defined."
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:131
+msgid ""
+"In a similar way, we can define another clock, ``w`` that triggers 3 times "
+"as frequently as ``x`` by using the ``superSample`` operator:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:138
+msgid "Again, we could have defined ``w`` directly using ``sample`` with:"
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:144
+msgid ""
+"But by using ``superSample``, we can ensure that ``w`` is always sampling "
+"three times as fast as ``x`` and six times as fast as ``z`` (since ``z`` is "
+"also defined with respect to ``x``)."
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:148
+msgid ""
+"The synchronous clock features in Modelica are relatively new.  As such, "
+"they are not yet supported by all Modelica compilers.  To learn more about "
+"these synchronous features and their applications see [Elmqvist]_ and/or the"
+" Modelica Specification, version 3.3 or later."
+msgstr ""
+
+#: ../../source/behavior/discrete/sampling.rst:153
+msgid ""
+"\"Fundamentals of Synchronous Control in Modelica\", Hilding Elmqvist, "
+"Martin Otter and Sven-Erik Mattsson "
+"http://www.ep.liu.se/ecp/076/001/ecp12076001.pdf"
+msgstr ""
