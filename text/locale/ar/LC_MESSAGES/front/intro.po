@@ -57,9 +57,10 @@ msgid ""
 " topics like differential-algebraic equations, symbolic manipulation, "
 "numeric solvers, code generation, post-processing, *etc.*."
 msgstr ""
-"يعتبر استخدام المودليكا أمرا مقنعا لعدة أسباب. الأول والأهم أنها ذات قدرة عالية جدا من الناحية الفنية."
+"يعتبر استخدام المودليكا أمرا مقنعا لعدة أسباب. الأول والأهم أنها ذات قدرة عالية جدا من الناحية التقنية."
 "فعن طريق استخدام مجموعة معقدة من الخوارزميات خلف الستار يتيح مترجم المودليكا للمهندسين التركيز على الوصف الرياضي"
-"عالي المستوى لسلوك المكونات الهندسية للحصول على قدرة محاكاة عالية الأداء بدون ضرورة للمعرفة المعمقة  عن المواضيع المعقدة مثل"
+"عالي المستوى لسلوك المكونات الهندسية للحصول على قدرة محاكاة عالية الأداء بدون  حاجة ضرورية "
+"للمعرفة الكبيرة بموضوعات معقدة مثل"
 "المعادلات التفاضلية الجبرية والتعامل مع الرموز والحل العددي وتوليد كود البرامج وما بعد المعالجة ..إلخ."
 
 #: ../../source/front/intro.rst:31
@@ -71,7 +72,7 @@ msgid ""
 " design) and acausal (often used in creating schematic oriented physical "
 "designs) approaches *within the same model*."
 msgstr ""
-
+"إن مفتاح النجاح التقني للمودليكا هو أنها تدعم نطاقا واسعا 
 #: ../../source/front/intro.rst:39
 msgid ""
 "Finally, another compelling aspect of Modelica is the fact that it was "
