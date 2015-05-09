@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/front/intro.rst:2
 msgid "Introduction"
-msgstr ""
+msgstr "المقدمة"
 
 #: ../../source/front/intro.rst:4
 msgid ""
@@ -22,10 +22,14 @@ msgid ""
 "Let me attempt to address these questions in the hope that they will "
 "intrigue you and cause you to dig deeper."
 msgstr ""
+"إذا كنت لسبب ما تقرأ هذا الكتاب بدون أي معرفة مسبقة بالمودليكا\n"
+"Modelica\n"
+"فستكون لديك بعض الأسئلة. دعني أحاول تحديد هذه الأسئلة على أمل أن يجعلك ذلك قادرا "
+"على التعمق في هذا الكتاب."
 
 #: ../../source/front/intro.rst:10
 msgid "What is Modelica?"
-msgstr ""
+msgstr "ما هي المودليكا؟"
 
 #: ../../source/front/intro.rst:12
 msgid ""
@@ -35,10 +39,13 @@ msgid ""
 "(*e.g.,* springs, resistors, clutches, *etc.*).  These components can then "
 "be combined into subsystems, systems or even architectures."
 msgstr ""
+"المودليكا لغة تعريفية عالية المستوى تقوم بوصف السلوك الرياضي. عادة يتم تطبيقها على الأنظمة الهندسية"
+"ويمكن استخدامها بسهولة لوصف المكونات الهندسية (مثل: الزنبركات والمقاومات والقابضات ..إلخ)."
+"هذه المكونات قد يتم تجميعها في أنظمة جزئية وأنظمة وكذلك منشئات هندسية."
 
 #: ../../source/front/intro.rst:20
 msgid "Why Modelica?"
-msgstr ""
+msgstr "لماذا نستخدم المودليكا؟"
 
 #: ../../source/front/intro.rst:22
 msgid ""
@@ -50,6 +57,10 @@ msgid ""
 " topics like differential-algebraic equations, symbolic manipulation, "
 "numeric solvers, code generation, post-processing, *etc.*."
 msgstr ""
+"يعتبر استخدام المودليكا أمرا مقنعا لعدة أسباب. الأول والأهم أنها ذات قدرة عالية جدا من الناحية الفنية."
+"باستخدام مجموعة معقدة من الخوارزميات خلف الستار يسمح مترجم المودليكا للمهندسين بالتركيز على الوصف الرياضي"
+"عالي المستوى لسلوك المكونات للحصول على قدرة محاكاة عالية الأداء بدون ضرورة للمعرفة المعمقة  عن المواضيع المعقدة مثل"
+"المعادلات التفاضلية الجبرية والتعامل مع الرموز والحل العددي وتوليد كود البرامج وما بعد المعالجة ..إلخ."
 
 #: ../../source/front/intro.rst:31
 msgid ""
