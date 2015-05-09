@@ -72,7 +72,12 @@ msgid ""
 " design) and acausal (often used in creating schematic oriented physical "
 "designs) approaches *within the same model*."
 msgstr ""
-"إن مفتاح النجاح التقني للمودليكا هو أنها تدعم نطاقا واسعا 
+"إن مفتاح النجاح التقني للمودليكا هو أنها تدعم نطاقا واسعا من تشكيلات النمذجة\n"
+"modeling\n"
+"وهذا يتيح وصف السلوك المستمر والسلوك المتقطع للأنظمة الهندسية وذلك عن طريق المعادلات التفاضلية الجبرية."
+"لغة المودليكا تدعم أيضا النهج السببي والذي يستخدم عادة في تصميم أنظمة التحكم والنهج اللاسببي "
+"والذي يستخدم عادة في تصميم النماذج الفيزيائية المعتمدة على الرسم التخطيطي"
+"وهي تدعم كلا النهجين السببي واللاسببي في نفس النموذج."
 #: ../../source/front/intro.rst:39
 msgid ""
 "Finally, another compelling aspect of Modelica is the fact that it was "
