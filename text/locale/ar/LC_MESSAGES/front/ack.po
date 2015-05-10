@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/front/ack.rst:2
 msgid "Acknowledgments"
-msgstr ""
+msgstr "شكر وتقدير"
 
 #: ../../source/front/ack.rst:4
 msgid ""
@@ -23,10 +23,13 @@ msgid ""
 "people I've failed to mention here and I apologize in advance to anyone who "
 "feels they've been overlooked."
 msgstr ""
+"هذا الكتاب هو ثمرة لكثير من المحاضرات والكتب والمناقشات والمؤتمرات وما إلى ذلك."
+"ومن المستحيل تقديم بيان كامل بكل الناس الذين كان لهم أثر على هذا الكتاب. بلا شك،"
+"هناك الكثيرون لم أذكرهم هنا وأنا أعتذر مسبقا لكل الذين يشعرون أني قد أهملتهم."
 
 #: ../../source/front/ack.rst:11
 msgid "Technical"
-msgstr ""
+msgstr "تقنيا وفنيا"
 
 #: ../../source/front/ack.rst:13
 msgid ""
@@ -37,6 +40,11 @@ msgid ""
 "as an open standard.  Hilding is the undisputed \"father of Modelica\" and "
 "he deserves considerable credit for all that Modelica has become."
 msgstr ""
+"عندما نتكلم عن المودليكا، فالشكر والتقدير الرئيسي هو لهيلدنج المكفست. ليس فقط ﻷنه صاحب رؤية"
+"تقنية وفنية أدرك من خلالها الأثر الكبير لتقنيات التعامل مع الرموز على  حل المسائل الهندسية"
+"ولكنه كان رائدا ودفع هذه الرؤية للأمام لتصبح فيما بعد نموذجا قياسيا مفتوح المصدر. هيلدنج هو بلا منازع"
+"\" أبو المودليكا \""
+"وهو يستحق نصيبا كبيرا من الثناء لكل ما وصلت إليه المودليكا."
 
 #: ../../source/front/ack.rst:21
 msgid ""
