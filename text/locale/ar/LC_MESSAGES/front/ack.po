@@ -343,6 +343,8 @@ msgid ""
 "creating more quality educational material around Modelica. Literally, this "
 "project could not have happened without them."
 msgstr ""
+"لقد أظهر هذا المشروع قوة التعاون المجتمعي لتحقيق هدف مشترك هو إنشاء مادة تعليمية أفضل عن المودليكا."
+"هذا المشروع حصل بفضل تعاونهم."
 
 #: ../../source/front/ack.rst:152
 msgid ""
@@ -355,7 +357,12 @@ msgid ""
 "feedback on the book content.  Dietmar has also helped me test publishing "
 "issues related to supporting ePub and PDF formats."
 msgstr ""
-
+"إن الدعم والتمويل الذان قدمتهما كيكستارتر لي سمحا لي بتوفير الوقت لهذا المشروع، ولكني حصلت أيضا على مساعدة الكثيرين"
+"في هذا المشروع. أولا وقبل كل شيء أود أن أشكر أبي الذي ساعدني بالقراءة والتحقيق للنسخة الأولية لهذا الكتاب."
+"عمل القراءة والتحقيق يعتبر عملا ضروريا ولكنه ممل ولذلك أظن أن أبي يستحق رصيدا كبيرا من الثناء على قيامه بهذه التضحية"
+"وبالمثل, أود أن أشكر ديتمار وينكلر ومايكل أوكيف لتقديم مقترحات إضافية عن محتوى الكتاب. ديتمار ساعدني أيضا "
+"في اختبار الإصدارات التي تدعم نوعيات الملفات"
+"PDF و ePUB."
 #: ../../source/front/ack.rst:162
 msgid ""
 "I'd like to thank Jeff Waters for being the \"voice of the sponsor\".  I had"
