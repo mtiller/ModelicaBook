@@ -362,7 +362,7 @@ msgstr ""
 "عمل القراءة والتحقيق يعتبر عملا ضروريا ولكنه ممل ولذلك أظن أن أبي يستحق رصيدا كبيرا من الثناء على قيامه بهذه التضحية "
 "وبالمثل, أود أن أشكر ديتمار وينكلر ومايكل أوكيف لتقديم مقترحات إضافية عن محتوى الكتاب. ديتمار ساعدني أيضا "
 "في اختبار الإصدارات التي تدعم نوعيات الملفات\n"
-"PDF و ePUB."
+"PDF و ePUB"
 #: ../../source/front/ack.rst:162
 msgid ""
 "I'd like to thank Jeff Waters for being the \"voice of the sponsor\".  I had"
@@ -370,10 +370,11 @@ msgid ""
 "this book to make sure that the layout and graphical design lived up to "
 "sponsors' expectations."
 msgstr ""
-
+"أود أن أشكر جيف واترز ﻷنه كان يمثل \" صوت المساهمين \". لقد كانت لي مناقشات عديدة بناءة مع جيف "
+"أثناء الدورة التدريبية على كتابة هذا الكتاب للتأكد من أن تصميم الشكل والرسوميات سوف يرقى إلى مستوى توقعات المساهمين."
 #: ../../source/front/ack.rst:168
 msgid "Tools"
-msgstr ""
+msgstr "الأدوات"
 
 #: ../../source/front/ack.rst:170
 msgid ""
