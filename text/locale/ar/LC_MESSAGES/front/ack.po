@@ -263,79 +263,79 @@ msgstr "وأود أيضا أن أشكر الشركات المساهمة:"
 
 #: ../../source/front/ack.rst:123
 msgid "Gold Sponsors"
-msgstr ""
+msgstr "المساهمات الذهبية"
 
 #: ../../source/front/ack.rst:125
 msgid "CyDesign"
-msgstr ""
+msgstr "سايديزاين"
 
 #: ../../source/front/ack.rst:126
 msgid "Wolfram Research"
-msgstr ""
+msgstr "وولفرام للأبحاث"
 
 #: ../../source/front/ack.rst:127
 msgid "Modelon"
-msgstr ""
+msgstr "موديلون"
 
 #: ../../source/front/ack.rst:128
 msgid "Maplesoft"
-msgstr ""
+msgstr "مابلسوفت"
 
 #: ../../source/front/ack.rst:129
 msgid "Dassault Systèmes"
-msgstr ""
+msgstr "أنظمة داسو"
 
 #: ../../source/front/ack.rst:131
 msgid "Silver Sponsors"
-msgstr ""
+msgstr "المساهمات الفضية"
 
 #: ../../source/front/ack.rst:133
 msgid "Ricardo Software"
-msgstr ""
+msgstr "ريكاردو للبرمجيات"
 
 #: ../../source/front/ack.rst:134
 msgid "ITI"
-msgstr ""
+msgstr "ITI"
 
 #: ../../source/front/ack.rst:135
 msgid "Modelica Association"
-msgstr ""
+msgstr "جمعية المودليكا"
 
 #: ../../source/front/ack.rst:136
 msgid "Global Crown Technology"
-msgstr ""
+msgstr "كراون العالمية للتقنية"
 
 #: ../../source/front/ack.rst:137
 msgid "Siemens"
-msgstr ""
+msgstr "سيمنز"
 
 #: ../../source/front/ack.rst:139
 msgid "Bronze"
-msgstr ""
+msgstr "المساهمات البرونزية"
 
 #: ../../source/front/ack.rst:141
 msgid "Suzhou Tongyuan"
-msgstr ""
+msgstr "سوجو تونجيان"
 
 #: ../../source/front/ack.rst:142
 msgid "Open Source Modelica Consortium"
-msgstr ""
+msgstr "المجموعة المتحدة للمودليكا مفتوحة المصدر"
 
 #: ../../source/front/ack.rst:143
 msgid "DOFWare"
-msgstr ""
+msgstr "دوفوار"
 
 #: ../../source/front/ack.rst:144
 msgid "Bausch-Gall GmbH"
-msgstr ""
+msgstr "بوش-جال GmbH"
 
 #: ../../source/front/ack.rst:145
 msgid "Technische Universität Hamburg/Harburg"
-msgstr ""
+msgstr "جامعة هامبورج\هاربورج للتقنية"
 
 #: ../../source/front/ack.rst:146
 msgid "Schlegel Simulation GmbH"
-msgstr ""
+msgstr "شليجيل للمحاكاة GmbH"
 
 #: ../../source/front/ack.rst:148
 msgid ""
