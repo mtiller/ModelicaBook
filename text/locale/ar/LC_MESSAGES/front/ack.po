@@ -147,7 +147,7 @@ msgstr ""
 "في البداية عملت على المودليكا في شركة فورد موتور وكنت محظوظا أن الشركة كانت تدعم مشاركتي في العديد من اللقاءات"
 "والمحاضرات المختلفة حول المودليكا. بعد شركة فورد، ذهبت للعمل في إميسكاي (وهي الآن مملوكة ل\n"
 "LMS).\n"
-"لقد استفدت بشكل كبير جدا من التعامل مع عائلة شركة إميسكاي. بشكل خاص أود أن أشكر الوالد سوامي جوبالسواي"
+"لقد استفدت بشكل كبير جدا من التعامل مع عائلة شركة إميسكاي. بشكل خاص أود أن أشكر الوالد سوامي جوبالسوامي"
 "والوالد شيفا شيفاشانكار على إتاحة الفرصة لي لأكون جزءا من إميسكاي وعلى أنهما كانا من أفضل الأصدقاء."
 "بينما كنت في إميسكاي، شرفت بالعمل مع مايكل سازينا وجون باته على عدة مشاريع متعلقة بالمودليكا."
 "إميسكاي كانت شركة رائعة وهذا أيضا إنطباعي الداخلي عن الناس الذين عملت معهم هناك. وأخيرا أود أن أشكر شركة أنظمة داسو"
@@ -166,99 +166,100 @@ msgid ""
 " Kickstarter project.  In particular, I'd like the thank the following "
 "people for their exceptionally generous contributions:"
 msgstr ""
-" 
-
+" يعتبر هذا المشروع تجربة يعرف المرء من خلالها ما إذا كان نهج كيكستارتر في النشر يمكن تطبيقه على مجال تقني متخصص مثل المودليكا."
+"لقد كنت مسرورا ومتفاجئا من أن هذا المشروع يمكن أن يحظى وقد حظي بالفعل بالدعم والتمويل الكافي. ولذلك أود أن أشكر الذين"
+"دعموني في مشروع كيكستارتر. وخاصة أولئك الذين قدموا مساهمات سخية للغاية:
 #: ../../source/front/ack.rst:98
 msgid "Hilding Elmqvist"
-msgstr ""
+msgstr "هيلدنج المكفست"
 
 #: ../../source/front/ack.rst:99
 msgid "Robert Norris"
-msgstr ""
+msgstr "روبرت نوريس"
 
 #: ../../source/front/ack.rst:100
 msgid "Matthis Thorade"
-msgstr ""
+msgstr "ماتيس توراد"
 
 #: ../../source/front/ack.rst:101
 msgid "Henning Francke"
-msgstr ""
+msgstr "هيننج فرانك"
 
 #: ../../source/front/ack.rst:102
 msgid "Yang Ji"
-msgstr ""
+msgstr "يانج جي"
 
 #: ../../source/front/ack.rst:103
 msgid "Christoph Höger"
-msgstr ""
+msgstr "كريستوف هوجر"
 
 #: ../../source/front/ack.rst:104
 msgid "Philipp Mossmann"
-msgstr ""
+msgstr "فيليب موسمان"
 
 #: ../../source/front/ack.rst:105
 msgid "John Batteh"
-msgstr ""
+msgstr "جون باته"
 
 #: ../../source/front/ack.rst:106
 msgid "Dirk Zimmer"
-msgstr ""
+msgstr "ديرك زيمر"
 
 #: ../../source/front/ack.rst:107
 msgid "Jan Brugård"
-msgstr ""
+msgstr "جان بروجارد"
 
 #: ../../source/front/ack.rst:108
 msgid "Swami Gopalswamy"
-msgstr ""
+msgstr "سوامي جوبالسوامي"
 
 #: ../../source/front/ack.rst:109
 msgid "Peter Aronsson"
-msgstr ""
+msgstr "بيتر أرونسون"
 
 #: ../../source/front/ack.rst:110
 msgid "Michael P. Case"
-msgstr ""
+msgstr "مايكل ب. كاز"
 
 #: ../../source/front/ack.rst:111
 msgid "Markus Groetsch"
-msgstr ""
+msgstr "ماركوس جروتش"
 
 #: ../../source/front/ack.rst:112
 msgid "Vicente Ramírez Perea"
-msgstr ""
+msgstr "فيسنت راميريز بيري"
 
 #: ../../source/front/ack.rst:113
 msgid "Tisha Villanueva"
-msgstr ""
+msgstr "تيشا فيلانوفا"
 
 #: ../../source/front/ack.rst:114
 msgid "Adrian Pop"
-msgstr ""
+msgstr "أدريان بوب"
 
 #: ../../source/front/ack.rst:115
 msgid "Nimalendiran Kailasanathan"
-msgstr ""
+msgstr "نيمالينديران كايلازاناثان"
 
 #: ../../source/front/ack.rst:116
 msgid "Kevin Davies"
-msgstr ""
+msgstr "كيفن ديفيز"
 
 #: ../../source/front/ack.rst:117
 msgid "Peter Harman"
-msgstr ""
+msgstr "بيتر هارمان"
 
 #: ../../source/front/ack.rst:118
 msgid "Dietmar Winkler"
-msgstr ""
+msgstr "ديتمار وينكلر"
 
 #: ../../source/front/ack.rst:119
 msgid "Johan Rhodin"
-msgstr ""
+msgstr "جوهان رودين"
 
 #: ../../source/front/ack.rst:121
 msgid "I'd also like to thank the corporate sponsors:"
-msgstr ""
+msgstr "وأود أيضا أن أشكر الشركات المساهمة:"
 
 #: ../../source/front/ack.rst:123
 msgid "Gold Sponsors"
