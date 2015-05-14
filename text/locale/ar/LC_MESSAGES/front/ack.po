@@ -381,13 +381,18 @@ msgid ""
 "Building a book like this requires a lot of different tools.  My "
 "productivity was amplified enormously by the use of these tools."
 msgstr ""
-
+"عمل مثل هذا الكتاب يحتاج إلى العديد من الأدوات المختلفة. لقد زادت "
+"إنتاجيتي كثيرا من خلال استخدام هذه الأدوات."
 #: ../../source/front/ack.rst:173
 msgid ""
 "This book was written using Sphinx, a documentation generation tool that "
 "supports multiple outputs.  Sphinx allows me to focus on the content of the "
 "book and takes care of generating the book in multiple formats."
 msgstr ""
+"لقد كتب هذا الكتاب باستخدام سفنكس\n"
+"Sphinx\n"
+"وهي أداة لبناء الوثائق وهي تدعم أنواع مختلفة من ملفات الخرج. سفنكس سمحت لي بالتركيز "
+"على محتوى الكتاب والاعتناء ببناء الكتاب بأنواع مختلفة من الملفات."
 
 #: ../../source/front/ack.rst:178
 msgid ""
@@ -400,6 +405,11 @@ msgid ""
 "times I would see Martin on Skype late at night (Sweden time) and he was "
 "gracious enough to help me out."
 msgstr ""
+" أثناء بناء هذا الكتاب، احتجت إلى طريقة لاختبار النماذج التي سوف تظهر في هذا الكتاب، "
+"وعمل محاكاة لنتائج الرسم وبناء كود الجافاسكريبت والذي يتيح لمتصفح الإنترنت أن يظهر قدرات المحاكاة المتكاملة"
+"في نسخة الكتاب من النوع \n"
+"HTML.\n"
+
 
 #: ../../source/front/ack.rst:188
 msgid ""
