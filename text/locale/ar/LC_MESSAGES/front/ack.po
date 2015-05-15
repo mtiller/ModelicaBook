@@ -436,7 +436,7 @@ msgstr ""
 "`عمل توم القصير "
 "<https://github.com/tshort/openmodelica-javascript>`_ "
 "وكيفية التكامل بين المودليكا مفتوحة المصدر وإمسكربتن "
-"إمكانيات المحاكاة المتكاملة للمتصفح "
+"لقد تم تفعيل إمكانيات المحاكاة المتكاملة للمتصفح بشكل كبير عن طريق هذا العمل وفي هذه المساحة. "
 
 #: ../../source/front/ack.rst:196
 msgid ""
@@ -449,7 +449,15 @@ msgid ""
 "thank Dietmar Winkler for enlightening me about many different features in "
 "Git."
 msgstr ""
-
+"تمت كتابة الكتاب باستخدام جيت\n"
+"Git\n"
+"كنظام تحكم لإصدار النسخة وجيت هب\n"
+"`GitHub <http://github.com>`_ \n"
+"لاستضافتها. معظم الناس يظنون أن نظام التحكم لإصدار النسخة هو نظام نسخ إحتياطي غامض. "
+"ولكن نظم التحكم لإصدار النسخة هي قلب التعاون وأرجو أن أراها مستخدمة بشكل واسع في الهندسة. "
+"في هذا الكتاب نظام \"سحب الطلب\" من جيت هب كان مفيدا جدا في دمج مقترحات وردود المشاركين والمراجعين."
+"وأود أن أشكر ديتمار وينكلر ثانية على إخباري يالإمكانيات المختلفة لجيت\n"
+"Git."
 #: ../../source/front/ack.rst:205
 msgid ""
 "I used the Emacs editor for this book.  Despite the proliferation of really "
@@ -458,7 +466,8 @@ msgid ""
 "It seems to support just about every type of file I need to edit out of the "
 "box."
 msgstr ""
-
+"استخدمت محرر إيماكس لتحرير هذا الكتاب. على الرغم من انتشار محررات ممتازة تدعم مجموعة واسعة من اللغات والمنصات،"
+"ظل إيماكس حصان العمل لعملية التطوير لمعظم مشاريعي. يبدو أنه يدعم كل أنواع الملفات تقريبا التي احتجتها خارج الصندوق."
 #: ../../source/front/ack.rst:211
 msgid ""
 "During the production of this book several tool vendors gave me access to "
@@ -468,6 +477,9 @@ msgid ""
 "Research and ITI for giving me access to Dymola, MapleSim, SystemModeler and"
 " SimulationX, respectively."
 msgstr ""
+"أثناء إنتاج هذا الكتاب العديد من بائعي الأدوات أعطوني تصريحا للدخول لأدواتهم المملوكة لهم. "
+"لم أستخدم ذلك كثيرا، ولكني أردت أن أشكرهم لكرمهم بإعطائي رخصا مؤقتة. وعلى وجه التحديد أشكر أنظمة داسو "
+"ومابلسوفت ووولفرام 
 
 #: ../../source/front/ack.rst:218
 msgid ""
