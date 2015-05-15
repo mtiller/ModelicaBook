@@ -432,7 +432,12 @@ msgstr ""
 "C و C++\n"
 "لكي يتم ترجمتها عن طريق\n"
 "LLVM\n"
-"إلى جافاسكريبت. "
+"إلى جافاسكريبت. على الرغم من أني كنت أعرف مسبقا أن هذا ممكن إلا أني لم أظن أن هذه الطريقة موجودة حتى رأيت "
+"`عمل توم القصير "
+"<https://github.com/tshort/openmodelica-javascript>`_ "
+"وكيفية التكامل بين المودليكا مفتوحة المصدر وإمسكربتن "
+"إمكانيات المحاكاة المتكاملة للمتصفح "
+
 #: ../../source/front/ack.rst:196
 msgid ""
 "This book was written using Git as the version control system and `GitHub "
