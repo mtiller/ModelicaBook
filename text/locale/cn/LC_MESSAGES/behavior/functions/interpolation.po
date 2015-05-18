@@ -106,7 +106,7 @@ msgid ""
 " are interested in, our function should return an interpolated value for "
 ":math:`y`.  Such a function could be implemented in Modelica as follows:"
 msgstr ""
-"将我们感兴趣的特定的数据和值给自变量 :math:`x` ，我们的函数应该返回一个内插值给 :math:`y` 。"
+"将我们感兴趣的特定的数据和值给自变量\ :math:`x`\ ，我们的函数应该返回一个内插值给\ :math:`y`\ 。"
 "这样的函数在Modelica中实现如下："
 
 #: ../../source/behavior/functions/interpolation.rst:42
@@ -124,8 +124,8 @@ msgid ""
 "argument ``y`` represents the interpolated value.  The next part of the "
 "function contains:"
 msgstr ""
-" ``input`` 变量 ``x`` 表示插值函数期望求解的独立变量值，变量 ``ybar`` 表示插值数据， ``output`` "
-"变量 ``y`` 表示利用插值函数求得的插入值。函数包含的下一部分内容如下所示："
+"\ ``input``\ 变量\ ``x``\ 表示插值函数期望求解的独立变量值，变量\ ``ybar``\ 表示插值数据，\ ``output``\ "
+"变量\ ``y``\ 表示利用插值函数求得的插入值。函数包含的下一部分内容如下所示："
 
 #: ../../source/behavior/functions/interpolation.rst:59
 msgid ""
@@ -136,8 +136,8 @@ msgid ""
 "number of data points in our interpolation data and ``p`` represents a "
 "weight used in our interpolation scheme."
 msgstr ""
-"在上述函数定义中也包含了各种 ``protected`` 变量的声明。在 :ref:`多项式计算` 示例中可以看到，函数内部"
-"使用了很多有效的中间变量。上述例子中，变量 ``i`` 表示索引变量，变量 ``n`` 表示插值数据点的个数，变量 ``p`` 表示"
+"在上述函数定义中也包含了各种\ ``protected``\ 变量的声明。在\ :ref:`polynomial-evaluation`\ 示例中可以看到，函数内部"
+"使用了很多有效的中间变量。上述例子中，变量\ ``i``\ 表示索引变量，变量\ ``n``\ 表示插值数据点的个数，变量\ ``p``\ 表示"
 "插值函数使用的权重系数。"
 
 #: ../../source/behavior/functions/interpolation.rst:67
@@ -153,7 +153,7 @@ msgid ""
 "value of ``x`` is within the interval :math:`[x_1, x_n]`.  If not, an error "
 "message will be generated explaining why the interpolation failed."
 msgstr ""
-"上述部分的前两个语句为 ``assert`` 声明，用于验证变量 ``x`` 的值是否在插值区间 :math:`[x_1, x_n]` 范围内。"
+"上述部分的前两个语句为\ ``assert``\ 声明，用于验证变量\ ``x``\ 的值是否在插值区间\ :math:`[x_1, x_n]`\ 范围内。"
 "如果不在上述区间，则生成相应的错误信息。"
 
 #: ../../source/behavior/functions/interpolation.rst:79
@@ -162,8 +162,8 @@ msgid ""
 ":math:`x_i<=x<x_{i+1}`.  Once that value of ``i`` has been identified, the "
 "interpolated value is computed as simply:"
 msgstr ""
-"函数的其余部分则用于查找满足表达式 :math:`x_i<=x<x_{i+1}` 的 ``i`` 值。当变量 ``i`` 的值确定后，"
-"变量 ``x`` 对应的数值可以通过下述插值表达式进行计算："
+"函数的其余部分则用于查找满足表达式\ :math:`x_i<=x<x_{i+1}`\ 的\ ``i``\ 值。当变量\ ``i``\ 的值确定后，"
+"变量\ ``x``\ 对应的数值可以通过下述插值表达式进行计算："
 
 #: ../../source/behavior/functions/interpolation.rst:87
 msgid "where"
@@ -188,11 +188,11 @@ msgstr ""
 #: ../../source/behavior/functions/interpolation.rst:102
 msgid ":math:`x`"
 msgstr ""
-" :math:`x` "
+
 #: ../../source/behavior/functions/interpolation.rst:102
 msgid ":math:`y`"
 msgstr ""
-" :math:`y` "
+
 #: ../../source/behavior/functions/interpolation.rst:104
 #: ../../source/behavior/functions/interpolation.rst:104
 #: ../../source/behavior/functions/interpolation.rst:105
@@ -200,24 +200,24 @@ msgstr ""
 #: ../../source/behavior/functions/interpolation.rst:108
 msgid "0"
 msgstr ""
-"0"
+
 #: ../../source/behavior/functions/interpolation.rst:105
 #: ../../source/behavior/functions/interpolation.rst:106
 msgid "2"
 msgstr ""
-"2"
+
 #: ../../source/behavior/functions/interpolation.rst:106
 msgid "4"
 msgstr ""
-"4"
+
 #: ../../source/behavior/functions/interpolation.rst:107
 msgid "6"
 msgstr ""
-"6"
+
 #: ../../source/behavior/functions/interpolation.rst:108
 msgid "8"
 msgstr ""
-"8"
+
 #: ../../source/behavior/functions/interpolation.rst:111
 msgid ""
 "If we plot this data, we see that our interpolated function looks like this:"
@@ -230,8 +230,8 @@ msgid ""
 "``time``.  The sample data is then used to interpolate a value for the "
 "variable ``y``.  The value of ``y`` is then integrated to compute ``z``."
 msgstr ""
-"在下述测试模型中，设置独立变量 ``x`` 等于变量 ``time`` 。插值函数根据样本数据计算输出变量 ``y`` 的值，"
-"通过积分 ``y`` 值计算得到变量 ``z`` 的值。"
+"在下述测试模型中，设置独立变量\ ``x``\ 等于变量\ ``time``\ 。插值函数根据样本数据计算输出变量\ ``y``\ 的值，"
+"通过积分\ ``y``\ 值计算得到变量\ ``z``\ 的值。"
 
 #: ../../source/behavior/functions/interpolation.rst:134
 msgid ""
@@ -252,12 +252,12 @@ msgid ""
 msgstr ""
 "上述插值方法有几个缺点。首先，需要将数据传递到函数所有需求的地方。另外，对于多维插值函数，所需求"
 "的数据可能会非常复杂（例如不规则网格）和庞大。因此，以Modelica源代码的方式进行数据存储将会非常不方便，"
-"可以采用其他方式进行数据存储，例如使用外部文件。但是，如果使用外部文件进行插值数据的填充，需使用 ``ExternalObject`` 类型。"
+"可以采用其他方式进行数据存储，例如使用外部文件。但是，如果使用外部文件进行插值数据的填充，需使用\ ``ExternalObject``\ 类型。"
 
 #: ../../source/behavior/functions/interpolation.rst:150
 msgid "Using an ``ExternalObject``"
 msgstr ""
-"使用 ``ExternalObject`` 类型"
+"使用\ ``ExternalObject``\ 类型"
 
 #: ../../source/behavior/functions/interpolation.rst:154
 msgid ""
@@ -268,7 +268,7 @@ msgid ""
 "data, as we will see in a moment, or it might represent some other software "
 "system that maintains its own state."
 msgstr ""
-" ``ExternalObject`` 类型主要是指定未（必须）通过Modelica源代码体现的信息，主要用于指定"
+"\ ``ExternalObject``\ 类型主要是指定未（或不必）通过Modelica源代码体现的信息，主要用于指定"
 "Modelica源代码以外的数据或状态。这些信息可以是插值函数所用的数据，也可以是其他软件的相关状态。"
 
 #: ../../source/behavior/functions/interpolation.rst:165
@@ -277,7 +277,7 @@ msgid ""
 "This will provide some useful context about how an ``ExternalObject`` is "
 "used.  The Modelica source code for our test case is:"
 msgstr ""
-"在下述例子中，将围绕上面的测试用例进行讲述。在上述应用背景下，可以更清晰的展示如何使用 ``ExternalObject`` 类型。"
+"在下述例子中，将围绕上面的测试用例进行讲述。在上述应用背景下，可以更清晰的展示如何使用\ ``ExternalObject``\ 类型。"
 "测试用例的Modelica源代码如下所示："
 
 #: ../../source/behavior/functions/interpolation.rst:174
@@ -294,9 +294,9 @@ msgid ""
 "interpolation data."
 msgstr ""
 "上述测试用例与之前测试用例的主要区别在于：插值数据并不是直接传递给插值函数的，而是"
-"在模型中创建了一个 ``VectorTable`` 类型的变量 ``vector`` 进行数据传递的。对于 ``VectorTable`` 类型，暂且把它们看作"
-"插值数据，在后面的章节中，我们将对其进行详细讨论。除了使用 ``InterpolateExternalVector`` 函数调用插值函数以及"
-"创建 ``vector`` 变量替代之前的原始插值数据进行参数传递以外，上述模型的其他部分与之前的测试模型基本是相同的。"
+"在模型中创建了一个\ ``VectorTable``\ 类型的变量\ ``vector``\ 进行数据传递的。对于\ ``VectorTable``\ 类型，暂且把它们看作"
+"插值数据，在后面的章节中，我们将对其进行详细讨论。除了使用\ ``InterpolateExternalVector``\ 函数调用插值函数以及"
+"创建\ ``vector``\ 变量替代之前的原始插值数据进行参数传递以外，上述模型的其他部分与之前的测试模型基本是相同的。"
 
 #: ../../source/behavior/functions/interpolation.rst:185
 msgid ""
@@ -308,7 +308,7 @@ msgstr ""
 #: ../../source/behavior/functions/interpolation.rst:192
 msgid "Defining an ``ExternalObject``"
 msgstr ""
-" ``ExternalObject`` 类型定义"
+"\ ``ExternalObject``\ 类型定义"
 
 #: ../../source/behavior/functions/interpolation.rst:194
 msgid ""
@@ -319,14 +319,14 @@ msgid ""
 "pointer.  This means that the ``ExternalObject`` represents some data that "
 "is not directly accessible (from Modelica)."
 msgstr ""
-"对于上述模型的实现过程，我们首先需要了解如何定义 ``VectorTable`` 类型。如前所述， ``VectorTable`` "
-"是 ``ExternalObject`` 类型的一种。在Modelica语言中，它是一种特殊的类型通常被称为 \"opaque（隐形）\" 的指针。"
-"这也就意味着， ``ExternalObject`` 类型主要表示那些不能直接（通过Modelica）访问的数据。"
+"对于上述模型的实现过程，我们首先需要了解如何定义\ ``VectorTable``\ 类型。如前所述，\ ``VectorTable``\ "
+"是\ ``ExternalObject``\ 类型的一种。在Modelica语言中，它是一种特殊的类型通常被称为“opaque（隐形）”的指针。"
+"这也就意味着，\ ``ExternalObject``\ 类型主要表示那些不能直接（通过Modelica）访问的数据。"
 
 #: ../../source/behavior/functions/interpolation.rst:201
 msgid "In our case, we implement our ``VectorTable`` type as:"
 msgstr ""
-"在上述测试用例中，我们通过下述方式定义 ``VectorTable`` 类型："
+"在上述测试用例中，我们通过下述方式定义\ ``VectorTable``\ 类型："
 
 #: ../../source/behavior/functions/interpolation.rst:207
 msgid ""
@@ -335,8 +335,8 @@ msgid ""
 "definition, the ``constructor`` function and the ``destructor`` function.  "
 "Both of these functions are seen here."
 msgstr ""
-"注意， ``VectorTable`` 类型与 ``ExternalObject`` 类型是继承关系。在 ``ExternalObject`` 类型定义时，可以同时包含"
-"两个特殊的函数： ``constructor`` 函数（构造函数）和 ``destructor`` 函数（析构函数）。下面将对其进行详细讲述。"
+"注意，\ ``VectorTable``\ 类型与\ ``ExternalObject``\ 类型是继承关系。在\ ``ExternalObject``\ 类型定义时，可以同时包含"
+"两个特殊的函数：\ ``constructor``\ 函数（构造函数）和\ ``destructor``\ 函数（析构函数）。下面将对其进行详细讲述。"
 
 #: ../../source/behavior/functions/interpolation.rst:213
 msgid "Constructor"
@@ -353,9 +353,9 @@ msgid ""
 "function.  That same data should be present during instantiation (*.e.g,* "
 "the ``data`` argument in our declaration of the ``vector`` variable)."
 msgstr ""
-"当创建 ``VectorTable`` 类型时，将调用 ``constructor`` 函数（ *例如,* 在上述测试用例中，声明了 ``vector`` 变量）。"
-"此时， ``constructor`` 函数主要用于初始化模型中定义的隐形指针。初始化过程中的所有数据都应以参数的形式传递给 ``constructor`` 函数。"
-"在实例化过程中，相同的数据将会呈现出来（ *例如,* ``vector`` 变量声明时定义的 ``data`` 参数）。"
+"当创建\ ``VectorTable``\ 类型时，将调用\ ``constructor``\ 函数（\ *例如,*\ 在上述测试用例中，声明了\ ``vector``\ 变量）。"
+"此时，\ ``constructor``\ 函数主要用于初始化模型中定义的隐形指针。初始化过程中的所有数据都应以参数的形式传递给\ ``constructor``\ 函数。"
+"在实例化过程中，相同的数据将会呈现出来（例如\ ``vector``\ 变量声明时定义的\ ``data``\ 参数）。"
 
 #: ../../source/behavior/functions/interpolation.rst:224
 msgid ""
@@ -370,10 +370,10 @@ msgid ""
 "the opaque pointer) is returned by a C function named ``createVectorTable`` "
 "which is passed the contents and size of the ``ybar`` variable."
 msgstr ""
-"不同于之前的示例， ``constructor`` 函数的定义有些特殊，因为不包括 ``algorithm`` 部分。通常， ``algorithm`` 部分"
-"是用来计算函数返回值的。相反， ``constructor`` 函数包含一个 ``external`` 声明，用以表明所定义的函数是通过Modelica以外的语言"
-"实现的。在上述示例中，实现的语言是 C（ 在 ``external`` 关键字后以 ``\"C\"`` 标明），并且 ``table`` 变量（函数的 ``output`` 并且"
-"表示定义的隐形指针）的返回值（变量 ``ybar`` 的值及其数组长度）是通过C语言定义的 ``createVectorTable`` 函数实现的。"
+"不同于之前的示例，\ ``constructor``\ 函数的定义有些特殊，因为不包括\ ``algorithm``\ 部分。通常，\ ``algorithm``\ 部分"
+"是用来计算函数返回值的。相反，\ ``constructor``\ 函数包含一个\ ``external``\ 声明，用以表明所定义的函数是通过Modelica以外的语言"
+"实现的。在上述示例中，实现的语言是C（ 在\ ``external``\ 关键字后以\ ``\"C\"``\ 标明），并且\ ``table``\ 变量（函数的\ ``output``\ 并且"
+"表示定义的隐形指针）的返回值（变量\ ``ybar``\ 的值及其数组长度）是通过C语言定义的\ ``createVectorTable``\ 函数实现的。"
 
 #: ../../source/behavior/functions/interpolation.rst:236
 msgid ""
@@ -381,8 +381,8 @@ msgid ""
 "annotation tells the Modelica compiler where to find the source code for "
 "this external C function."
 msgstr ""
-"紧随 ``createVectorTable`` 函数其后的是 ``annotation`` 部分。此部分的功能是告诉Modelica编译器在哪里可以找到"
-"外部 C 函数的源代码。"
+"紧随\ ``createVectorTable``\ 函数其后的是\ ``annotation``\ 部分。此部分的功能是告诉Modelica编译器在哪里可以找到"
+"外部C函数的源代码。"
 
 #: ../../source/behavior/functions/interpolation.rst:240
 msgid ""
@@ -393,9 +393,9 @@ msgid ""
 "as we shall see in a minute, that are also implemented in C and which do "
 "know how to access the data represented by the ``VectorTable``."
 msgstr ""
-"至关重要的一点是，从Modelica编译器的角度来看， ``VectorTable`` 变量只是 ``createVectorTable`` 函数返回的一个隐形指针。"
-"通过 Modelica ，不能访问这些 指针指向的数据。在下面的例子中，我们可以看到，这些指针可以传递给其他由 C 语言实现的函数，"
-"并且可以访问变量 ``VectorTable`` 所代表的数据。"
+"至关重要的一点是，从Modelica编译器的角度来看，\ ``VectorTable``\ 变量只是\ ``createVectorTable``\ 函数返回的一个隐形指针。"
+"通过Modelica ，不能访问这些 指针指向的数据。在下面的例子中，我们可以看到，这些指针可以传递给其他由C语言实现的函数，"
+"并且可以访问变量\ ``VectorTable``\ 所代表的数据。"
 
 #: ../../source/behavior/functions/interpolation.rst:249
 msgid "Destructor"
@@ -413,9 +413,9 @@ msgid ""
 "evaluation.  For that reason, it is important to make sure that any memory "
 "allocated by the ``ExternalObject`` is released."
 msgstr ""
-"当 ``ExternalObject`` 类型不再需要时，将调用 ``destructor`` 函数。这使得 Modelica 编译器可以清除 ``ExternalObject`` 类型"
-"运行所占用的内存。模型内 ``ExternalObject`` 类型的实例化通常会一直持续到仿真结束。但是，在函数定义时，如果 ``ExternalObject`` 类型被"
-"声明为 ``protected`` 变量，则可以在单个表达式的求值过程中创建和销毁。出于上述原因，需确保由 ``ExternalObject`` 类型分配的"
+"当\ ``ExternalObject``\ 类型不再需要时，将调用\ ``destructor``\ 函数。这使得Modelica编译器可以清除\ ``ExternalObject``\ 类型"
+"运行所占用的内存。模型内\ ``ExternalObject``\ 类型的实例化通常会一直持续到仿真结束。但是，在函数定义时，如果\ ``ExternalObject``\ 类型被"
+"声明为\ ``protected``\ 变量，则可以在单个表达式的求值过程中创建和销毁。出于上述原因，需确保由\ ``ExternalObject``\ 类型分配的"
 "任何内存在仿真结束后都被释放。"
 
 #: ../../source/behavior/functions/interpolation.rst:261
@@ -429,19 +429,19 @@ msgid ""
 "compiler where to find the source code for the ``destoryVectorTable`` "
 "function."
 msgstr ""
-"一般来说， ``destructor`` 函数也是作为外部函数来实现的。在这种情况下，可以通过 Modelica 调用 C 语言定义的 ``destructor`` 函数"
-" ``destroyVectorTable`` ，上述函数将 ``VectorTable`` 作为传递参数。当调用 ``destructor`` 函数时，所有与 ``VectorTable`` 实例化"
-"相关的内存都将被释放。同样的，与构造函数相同的注释用以通知 Modelica 编译器在哪里可以找到 ``destoryVectorTable`` 函数的源代码。"
+"一般来说，\ ``destructor``\ 函数也是作为外部函数来实现的。在这种情况下，可以通过Modelica调用C语言定义的\ ``destructor``\ 函数"
+"\ ``destroyVectorTable``\ ，上述函数将\ ``VectorTable``\ 作为传递参数。当调用\ ``destructor``\ 函数时，所有与\ ``VectorTable``\ 实例化"
+"相关的内存都将被释放。同样的，与构造函数相同的注释用以通知Modelica编译器在哪里可以找到\ ``destoryVectorTable``\ 函数的源代码。"
 
 #: ../../source/behavior/functions/interpolation.rst:271
 msgid "External C Code"
 msgstr ""
-"外部 C 代码"
+"外部C代码"
 
 #: ../../source/behavior/functions/interpolation.rst:273
 msgid "These external C functions are implemented as follows:"
 msgstr ""
-"这些外部的 C 函数是通过下述方式实现的："
+"这些外部的C函数是通过下述方式实现的："
 
 #: ../../source/behavior/functions/interpolation.rst:278
 msgid ""
@@ -449,7 +449,7 @@ msgid ""
 "this code and exactly how it functions is beyond the scope of the book.  But"
 " we can summarize the contents of this file as follows."
 msgstr ""
-"这不是一本关于 C 语言编程的书，因此对于这段代码将不再详细讨论其语法及所实现的功能。但是，我们可以对本文件的内容做如下总结。"
+"这不是一本关于C语言编程的书，因此对于这段代码将不再详细讨论其语法及所实现的功能。但是，我们可以对本文件的内容做如下总结。"
 
 #: ../../source/behavior/functions/interpolation.rst:283
 msgid ""
@@ -459,8 +459,8 @@ msgid ""
 "data points, ``npoints``, and a cached value for the last used index, "
 "``lastIndex``."
 msgstr ""
-"首先，定义的 ``struct`` 类型调用 ``VectorTable`` 变量以实现数据传递。这个结构体数组中不仅仅包括插值数据"
-"（变量 ``x`` 对应变量 ``y`` 的形式），还包括数据点的个数 ``npoints`` 以及用于存储最后使用索引的缓存值 ``lastIndex`` 。"
+"首先，定义的\ ``struct``\ 类型调用\ ``VectorTable``\ 变量以实现数据传递。这个结构体数组中不仅仅包括插值数据"
+"（变量\ ``x``\ 对应变量\ ``y``\ 的形式），还包括数据点的个数\ ``npoints``\ 以及用于存储最后使用索引的缓存值\ ``lastIndex``\ 。"
 
 #: ../../source/behavior/functions/interpolation.rst:289
 msgid ""
@@ -471,8 +471,8 @@ msgid ""
 "``destroyVectorTable`` which effectively undoes what was done by "
 "``createVectorTable``."
 msgstr ""
-"其次，可以看到 ``createVectorTable`` 函数对 ``VectorTable`` 的结构进行了分配并对所有的数据进行了初始化。上述实例化过程完成后"
-"返回到 Modelica 中运行。 ``createVectorTable`` 函数定义完成后，紧接着又对 ``destroyVectorTable`` 进行了定义，对 ``createVectorTable`` "
+"其次，可以看到\ ``createVectorTable``\ 函数对\ ``VectorTable``\ 的结构进行了分配并对所有的数据进行了初始化。上述实例化过程完成后"
+"返回到Modelica中运行。\ ``createVectorTable``\ 函数定义完成后，紧接着又对\ ``destroyVectorTable``\ 进行了定义，对\ ``createVectorTable``\ "
 "函数定义的功能进行了有效的撤销。"
 
 #: ../../source/behavior/functions/interpolation.rst:296
@@ -490,10 +490,10 @@ msgid ""
 "starts from the value of ``i`` found in the last call to "
 "``interpolateVectorTable``."
 msgstr ""
-"最后，对 ``interpolateVectorTable`` 函数进行了定义。此函数是用 C 语言定义的，将 ``VectorTable`` 结构体及所需插值的独立变量进行"
-"参数传递，函数的返回值为利用插值算法计算的插入值。此函数实现的功能与之前定义的 ``InterpolateVector`` 函数所实现的功能几乎完全"
-"相同。在 Modelica 运行时，会执行 ``ModelicaFormatError`` 函数，以便报告 C 代码运行过程中出现的错误。对于 ``interpolateVectorTable`` "
-"函数，主要用于实现前面 ``InterpolateVector`` 函数中的 ``assert`` 功能。对于变量 ``i`` 的查找确认，在 ``interpolateVectorTable`` "
+"最后，对\ ``interpolateVectorTable``\ 函数进行了定义。此函数是用C语言定义的，将\ ``VectorTable``\ 结构体及所需插值的独立变量进行"
+"参数传递，函数的返回值为利用插值算法计算的插入值。此函数实现的功能与之前定义的\ ``InterpolateVector``\ 函数所实现的功能几乎完全"
+"相同。在 Modelica 运行时，会执行\ ``ModelicaFormatError``\ 函数，以便报告 C 代码运行过程中出现的错误。对于\ ``interpolateVectorTable``\ "
+"函数，主要用于实现前面\ ``InterpolateVector``\ 函数中的\ ``assert``\ 功能。对于变量\ ``i``\ 的查找确认，在\ ``interpolateVectorTable``\ "
 "函数中，是从上次调用的数字开始而不是每次都从1开始查找，其余的功能基本相同。"
 
 #: ../../source/behavior/functions/interpolation.rst:312
@@ -504,8 +504,8 @@ msgid ""
 "the interpolation data.  To invoke ``interpolateVectorTable`` from Modelica,"
 " we simple need to define a Modelica function as follows:"
 msgstr ""
-"我们已经了解了如何定义 ``interpolateVectorTable`` 函数，但是目前为止，还不知道在什么地方调用了它。前面我们已经提到，除了使用"
-" ``VectorTable`` 对象进行插值数据传递以外，其他的运行机理与 ``InterpolateVector`` 函数相同。在 Modelica 中调用 ``interpolateVectorTable`` 函数"
+"我们已经了解了如何定义\ ``interpolateVectorTable``\ 函数，但是目前为止，还不知道在什么地方调用了它。前面我们已经提到，除了使用"
+"\ ``VectorTable``\ 对象进行插值数据传递以外，其他的运行机理与\ ``InterpolateVector``\ 函数相同。在 Modelica 中调用\ ``interpolateVectorTable``\ 函数"
 "需定义一个简单的 Modelica 函数，如下所示："
 
 #: ../../source/behavior/functions/interpolation.rst:323
@@ -516,8 +516,8 @@ msgid ""
 "``interpolateVectorTable`` which **can** access the interpolation data and, "
 "therefore, perform the interpolation."
 msgstr ""
-"在前面已经提到了， ``VectorTable`` 表示隐形指针，并且 Modelica 代码不能访问 ``VectorTable`` 变量包含的数据。但是，在 Modelica 中定义"
-"的 ``InterpolateExternalVector`` 函数可以调用 C 语言定义的 ``interpolateVectorTable`` 函数，从而 **可以** 获取插值数据，根据"
+"在前面已经提到了，\ ``VectorTable``\ 表示隐形指针，并且 Modelica 代码不能访问\ ``VectorTable``\ 变量包含的数据。但是，在 Modelica 中定义"
+"的\ ``InterpolateExternalVector``\ 函数可以调用C语言定义的\ ``interpolateVectorTable``\ 函数，从而\ **可以**\ 获取插值数据，根据"
 "插值算法计算相应的插入值。"
 
 #: ../../source/behavior/functions/interpolation.rst:330
@@ -531,7 +531,7 @@ msgid ""
 "to pass around large amounts of unwieldy data.  By implementing the "
 "``VectorTable``, we were able to represent that data by a single variable."
 msgstr ""
-"如前所述，最初的插值方法需要传递大量复杂的插值数据，但是，通过定义 ``VectorTable`` 变量，可以非常方便的用一个变量表示上述插值数据。"
+"如前所述，最初的插值方法需要传递大量复杂的插值数据，但是，通过定义\ ``VectorTable``\ 变量，可以非常方便的用一个变量表示上述插值数据。"
 
 #: ../../source/behavior/functions/interpolation.rst:337
 msgid ""
@@ -546,10 +546,10 @@ msgid ""
 " cases, this approach not only makes managing the data easier, but "
 "leveraging C allows more complex (new or existing) algorithms to be used."
 msgstr ""
-"关于 ``ExternalObject`` 插值方法，虽然在上述示例中并没有充分的展开讨论，但是需要特别注意的是，通过 Modelica 源代码可以完全的"
-"初始化外部数据。简便起见，在上述示例中展示的代码中，通过定义数组的方式对 ``VectorTable`` 变量进行了初始化。"
-" **但是，它也可以简单的通过文件名** 完成上述初始化工作。 ``createVectorTable`` 函数通过读取相应的文件，将文件中对应的数据"
-"进行 ``VectorTable`` 结构体赋值，完成数据的初始化工作。很多情况下，这种方法不仅可以更方便的管理数据，而且可以利用 C 语言"
+"关于\ ``ExternalObject``\ 插值方法，虽然在上述示例中并没有充分的展开讨论，但是需要特别注意的是，通过Modelica源代码可以完全的"
+"初始化外部数据。简便起见，在上述示例中展示的代码中，通过定义数组的方式对\ ``VectorTable``\ 变量进行了初始化。"
+"\ **但是，它也可以简单的通过文件名**\ 完成上述初始化工作。\ ``createVectorTable``\ 函数通过读取相应的文件，将文件中对应的数据"
+"进行\ ``VectorTable``\ 结构体赋值，完成数据的初始化工作。很多情况下，这种方法不仅可以更方便的管理数据，而且可以利用C语言"
 "实现更加复杂的算法（新的或已有的）。"
 
 #: ../../source/behavior/functions/interpolation.rst:350
@@ -557,7 +557,7 @@ msgid ""
 "The :ref:`next section <sil-controller>` includes another example of how "
 "external C code can be called from Modelica."
 msgstr ""
-"在章节 :ref:`下一章 <sil-controller>` 中，包含了另一个通过 Modelica 调用外部 C 代码的例子。"
+"在章节\ :ref:`下一章 <sil-controller>`\ 中，包含了另一个通过Modelica调用外部C代码的例子。"
 
 #: ../../source/behavior/functions/interpolation.rst:152
 msgid "ExternalObject"
@@ -567,3 +567,4 @@ msgstr ""
 msgid ""
 "For this example, we assume that we interpolate data in the following form:"
 msgstr ""
+"在这个例子中，我们假定插值数据的格式如下："

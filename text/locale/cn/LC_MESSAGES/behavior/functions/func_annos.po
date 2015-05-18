@@ -133,6 +133,7 @@ msgid "where ``df_onlyx`` would then be defined as:"
 msgstr ""
 "其中，\ ``df_onlyx``\ 函数被定义为如下形式："
 ""
+
 #: ../../source/behavior/functions/func_annos.rst:124
 msgid ""
 "Note that the ``dy`` term is not included here.  This function is "
@@ -171,7 +172,7 @@ msgid ""
 "This additional annotation has an additional argument ``order`` which "
 "indicates which derivative that function computes."
 msgstr ""
-"这些额外的标注增加了一个 ``order`` 变量用于表明函数求解的是哪阶导数。"
+"这些额外的标注增加了一个\ ``order``\ 变量用于表明函数求解的是哪阶导数。"
 
 #: ../../source/behavior/functions/func_annos.rst:177
 msgid "Non-Real Arguments"
@@ -183,7 +184,7 @@ msgid ""
 "There is one additional complication to discuss.  What if the function has "
 "arguments that don't represent real numbers, *e.g.*,"
 msgstr ""
-"此外，对于其他一些复杂情况还需讨论，例如，函数内包含一些非实数的参数， *即*, "
+"此外，对于其他一些复杂情况还需讨论，例如，函数内包含一些非实数的参数，即："
 
 #: ../../source/behavior/functions/func_annos.rst:192
 msgid ""
@@ -192,7 +193,7 @@ msgid ""
 "be ignored when formulating the derivative.  So, if we wished to compute the"
 " derivative of this function, we would do it as follows:"
 msgstr ""
-"对于上述函数，可以看到参数 ``y`` 的数据类型是整型，因此计算它的导数就没有什么意义了。对于任何非实数的参数，可以忽略其导数求解。"
+"对于上述函数，可以看到参数\ ``y``\ 的数据类型是整型，因此计算它的导数就没有什么意义了。对于任何非实数的参数，可以忽略其导数求解。"
 "因此，如果我们希望计算上述函数的导数，可以采用下述方式："
 
 #: ../../source/behavior/functions/func_annos.rst:218
@@ -217,8 +218,8 @@ msgid ""
 " input and output variables of the current function, but used in conjunction"
 " with another function to explicitly compute one of the input arguments."
 msgstr ""
-"在 :ref:`nonlinearities` 章节中，我们讨论了使用 ``inverse`` 标注“告诉”Modelica编译器如何计算相应函数的逆函数。"
-"逆函数的求解目标是得到输入参数关于输出变量之间确定的关系表达式。因此， ``inverse`` 标注包含一个涉及当前函数输入、输出"
+"在\ :ref:`nonlinearities`\ 章节中，我们讨论了使用\ ``inverse``\ 标注“告诉”Modelica编译器如何计算相应函数的逆函数。"
+"逆函数的求解目标是得到输入参数关于输出变量之间确定的关系表达式。因此，\ ``inverse``\ 标注包含一个涉及当前函数输入、输出"
 "变量的显示方程，与另一个方程联合求解输入变量的表达式。"
 
 #: ../../source/behavior/functions/func_annos.rst:236
@@ -231,12 +232,14 @@ msgid ""
 "we see that ``b`` can be computed by passing ``a`` and ``c`` as arguments to"
 " the function ``h_inv_b`` which would be defined as follows:"
 msgstr ""
-"根据上述代码，我们可以看到，通过在函数 ``h_inv_b`` 中传递输入变量 ``a`` 和 ``c`` ，就可以计算得到参数 ``b`` 的表达式，"
+"根据上述代码，我们可以看到，通过在函数\ ``h_inv_b``\ 中传递输入变量\ ``a``\ 和\ ``c``\ ，就可以计算得到参数\ ``b``\ 的表达式，"
 "如下所示："
+
 #: ../../source/behavior/functions/func_annos.rst:265
 msgid "Code Generation"
 msgstr ""
 "代码生成"
+
 #: ../../source/behavior/functions/func_annos.rst:267
 msgid ""
 "The next class of annotations are related to how function definitions are "
@@ -251,7 +254,7 @@ msgstr ""
 #: ../../source/behavior/functions/func_annos.rst:333
 msgid "``Inline``"
 msgstr ""
-" ``Inline`` "
+
 #: ../../source/behavior/functions/func_annos.rst:279
 msgid ""
 "The ``Inline`` annotation is a hint to the Modelica compiler that the "
@@ -260,8 +263,8 @@ msgid ""
 "value (if no ``Inline`` annotation is present) is ``false``. The following "
 "is a function that uses the ``Inline`` annotation:"
 msgstr ""
-" ``Inline`` 标注用于提示Modelica编译器函数中的声明语句应执行 \"内嵌\" 功能。此标注的值用于提示是否应执行内嵌功能，"
-"其默认值为 ``false`` （如果函数定义中没有出现 ``Inline`` 标注）。下面是使用 ``Inline`` 标注定义的函数示例："
+"\ ``Inline``\ 标注用于提示Modelica编译器函数中的声明语句应执行“内嵌”功能。此标注的值用于提示是否应执行内嵌功能，"
+"其默认值为\ ``false``\ （如果函数定义中没有出现\ ``Inline``\ 标注）。下面是使用\ ``Inline``\ 标注定义的函数示例："
 
 #: ../../source/behavior/functions/func_annos.rst:296
 msgid ""
@@ -275,9 +278,9 @@ msgid ""
 "the function call can be eliminated while still preserving the purpose of "
 "the function."
 msgstr ""
-"在上述例子中，我们可以看到， ``Inline`` 标注表明Modelica编译器应内嵌上述定义的 ``SimpleCalculation`` 函数。"
+"在上述例子中，我们可以看到，\ ``Inline``\ 标注表明Modelica编译器应内嵌上述定义的\ ``SimpleCalculation``\ 函数。"
 "函数的内嵌是通过调用计算输出变量的函数进行替换的。这对于执行非常简单计算功能的函数是非常有用的。这些情况下，"
-"调用该函数的 \"成本\" （计算机CPU的计算时间）与函数执行的成本基本是一个数量级的。通过内嵌函数，调用函数的成本"
+"调用该函数的“成本”（计算机CPU的计算时间）与函数执行的成本基本是一个数量级的。通过内嵌函数，调用函数的成本"
 "可以大大消除，同时依然能实现函数的功能。"
 
 #: ../../source/behavior/functions/func_annos.rst:306
@@ -288,7 +291,7 @@ msgid ""
 "function.  It is not necessary possible (or even desirable) to inline a "
 "function in general."
 msgstr ""
-" ``Inline`` 标注的功能只是用于提示Modelica编译器，编译器不会自动关联内嵌函数。此外，编译器内嵌函数的能力取决于"
+"\ ``Inline``\ 标注的功能只是用于提示Modelica编译器，编译器不会自动关联内嵌函数。此外，编译器内嵌函数的能力取决于"
 "函数的复杂程度。通常情况下，编译器没有必要（或者期望）去内嵌函数。"
 
 #: ../../source/behavior/functions/func_annos.rst:313
@@ -380,8 +383,8 @@ msgid ""
 " annotation should be the string that should be inserted into the generated "
 "code, *e.g.,*"
 msgstr ""
-"通常情况下，Modelica编译器生成代码过程中如果参考了相应的外部库，需添加相应的\ ``Include``\ 标注用于声明include需求。"
-"\ ``Include``\ 标注的值是一个字符串并且应嵌入到生成的代码文件中，即："
+"通常情况下，Modelica编译器生成代码过程中如果参考了相应的外部库，需添加相应的\ ``Include``\ 标注用于标示包含语句。"
+"\ ``Include``\ 标注的值是一个字符串，并且会嵌入到生成的代码文件中，即："
 
 #: ../../source/behavior/functions/func_annos.rst:370
 msgid ""

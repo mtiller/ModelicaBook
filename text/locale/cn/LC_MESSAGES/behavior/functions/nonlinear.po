@@ -43,12 +43,12 @@ msgid ""
 "where the ``Quadratic`` function, which we will discuss shortly, evaluates a"
 " quadratic polynomial."
 msgstr ""
-"其中， ``Quadratic`` 函数用于实现二次多项式的计算，后续会对其进行简单的讨论。"
+"其中，\ ``Quadratic``\ 函数用于实现二次多项式的计算，后续会对其进行简单的讨论。"
 
 #: ../../source/behavior/functions/nonlinear.rst:26
 msgid "Simulating this model gives the following solution for ``y``:"
 msgstr ""
-"仿真上述模型，变量 ``y`` 的仿真结果如下图所示："
+"仿真上述模型，变量\ ``y``\ 的仿真结果如下图所示："
 
 #: ../../source/behavior/functions/nonlinear.rst:31
 msgid ""
@@ -57,7 +57,7 @@ msgid ""
 "``Quadratic`` isn't likely to hold too many surprises.  However, let's make "
 "things a little more complicated. Consider the following model:"
 msgstr ""
-"目前为止，所有的一切似乎都很合理，基于前面章节 :ref:`多项式计算` 中的讨论， ``Quadratic`` 功能的使用似乎也在"
+"目前为止，所有的一切似乎都很合理，基于前面章节\ :ref:`polynomial-evaluation`\ 中的讨论，\ ``Quadratic``\ 功能的使用似乎也在"
 "意料之中。但是，对于更加复杂的模型，如下所示："
 
 #: ../../source/behavior/functions/nonlinear.rst:41
@@ -72,7 +72,7 @@ msgid ""
 "words, instead of evaluating a quadratic polynomial, like we were doing in "
 "the previous example, now we have to solve a quadratic equation."
 msgstr ""
-"明显的区别在于，上述模型中等式左边是已知的，我们需要计算满足方程的 :math:`y` 值。换言之，不同于前面示例中计算二次多项式的值，"
+"明显的区别在于，上述模型中等式左边是已知的，我们需要计算满足方程的\ :math:`y`\ 值。换言之，不同于前面示例中计算二次多项式的值，"
 "上述模型需对二次多项式进行求解。"
 
 #: ../../source/behavior/functions/nonlinear.rst:53
@@ -92,8 +92,8 @@ msgid ""
 "actually need to solve a non-linear system**.  Although we couldn't know "
 "this until we saw how the ``Quadratic`` function is implemented:"
 msgstr ""
-"但是，事实上，上述情况下 **Modelica编译器并不需要求解一个非线性系统** 。"
-"直到我们了解了 ``Quadratic`` 功能是如何实现的，才能清楚的了解上述情况，如下所示："
+"但是，事实上，上述情况下\ **Modelica编译器并不需要求解一个非线性系统**\ 。"
+"直到我们了解了\ ``Quadratic``\ 功能是如何实现的，才能清楚的了解上述情况，如下所示："
 
 #: ../../source/behavior/functions/nonlinear.rst:69
 msgid ""
@@ -103,13 +103,13 @@ msgid ""
 "annotation, we are also indicating that the ``InverseQuadratic`` function "
 "should be used to compute ``x`` in terms of ``y``."
 msgstr ""
-"特别的，需重点注意上述代码中的 ``inverse`` 注释。对于上述函数的定义，不仅告诉Modelica编译器如何求解 ``Quadratic`` 方程，而且"
-"通过 ``inverse`` 注释利用 ``InverseQuadratic`` 功能可以计算得到变量 ``x`` 和变量 ``y`` 的关系。"
+"特别的，需重点注意上述代码中的\ ``inverse``\ 注释。对于上述函数的定义，不仅告诉Modelica编译器如何求解\ ``Quadratic``\ 方程，而且"
+"通过\ ``inverse``\ 注释利用\ ``InverseQuadratic``\ 功能可以计算得到变量\ ``x``\ 和变量\ ``y``\ 的关系。"
 
 #: ../../source/behavior/functions/nonlinear.rst:76
 msgid "The ``InverseQuadratic`` function is defined as follows:"
 msgstr ""
-" ``InverseQuadratic`` 功能的定义如下所示："
+"\ ``InverseQuadratic``\ 功能的定义如下所示："
 
 #: ../../source/behavior/functions/nonlinear.rst:84
 msgid ""
@@ -119,7 +119,7 @@ msgid ""
 "solutions when we invert the quadratic relationship.  However, if the "
 "negative root happens to be the one you want, this can be a problem."
 msgstr ""
-"通过上述代码，可以看到 ``InverseQuadratic`` 功能只能计算二次方程的正根。对我们来说，这个结果可好可坏。"
+"通过上述代码，可以看到\ ``InverseQuadratic``\ 功能只能计算二次方程的正根。对我们来说，这个结果可好可坏。"
 "只计算一个根，在转换二次函数关系时，可以避免使用多个解决方案。但是，如果你恰巧需要负根，可能会产生相应的问题。"
 
 #: ../../source/behavior/functions/nonlinear.rst:91
@@ -129,26 +129,26 @@ msgid ""
 "initially had, ignoring the coefficient arguments for the moment, the "
 "following equation to solve:"
 msgstr ""
-"在上述 ``ImplicitEvaluation`` 模型中，Modelica编译器可以替代上述逆函数方程。因此，忽略当前方程的参数，需要求解的方程如下所示："
+"在上述\ ``ImplicitEvaluation``\ 模型中，Modelica编译器可以替代上述逆函数方程。因此，忽略当前方程的参数，需要求解的方程如下所示："
 
 #: ../../source/behavior/functions/nonlinear.rst:100
 msgid ""
 "which must be solved as an implicit equation for :math:`y`, we can now solve"
 " the following **explicit** equation:"
 msgstr ""
-"其中，必须求解变量 :math:`y` 的隐式方程，可以得到如下所示 **显示** 方程："
+"其中，必须求解变量\ :math:`y`\ 的隐式方程，可以得到如下所示\ **显式**\ 方程："
 
 #: ../../source/behavior/functions/nonlinear.rst:107
 msgid "by using the ``InverseQuadratic`` function as the inverse function."
 msgstr ""
-"通过使用 ``InverseQuadratic`` 功能求解函数的反函数。"
+"通过使用\ ``InverseQuadratic``\ 功能求解函数的反函数。"
 
 #: ../../source/behavior/functions/nonlinear.rst:109
 msgid ""
 "Simulating the ``ImplicitEvaluation`` model we get the following solution "
 "for ``y``:"
 msgstr ""
-"仿真上述 ``ImplicitEvaluation`` 模型，可以得到变量 ``y`` 仿真结果，如下图所示："
+"仿真上述\ ``ImplicitEvaluation``\ 模型，可以得到变量\ ``y``\ 仿真结果，如下图所示："
 
 #: ../../source/behavior/functions/nonlinear.rst:115
 msgid ""
@@ -157,4 +157,4 @@ msgid ""
 " otherwise result from our ``ImplicitEvaluation`` model."
 msgstr ""
 "通过观察上图，可以发现，模型计算得到了正确的结果。但是，一般情况下不需要求解非线性系统，否则，"
-"通过 ``ImplicitEvaluation`` 模型可能会得到其他的结果。"
+"通过\ ``ImplicitEvaluation``\ 模型可能会得到其他的结果。"
