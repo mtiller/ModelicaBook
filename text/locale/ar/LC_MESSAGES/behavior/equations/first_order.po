@@ -13,18 +13,20 @@ msgstr ""
 
 #: ../../source/behavior/equations/first_order.rst:4
 msgid "Simple First Order System"
-msgstr ""
+msgstr "نظام بسيط من الرتبة الأولى"
 
 #: ../../source/behavior/equations/first_order.rst:6
 msgid "Let us consider an extremely simple differential equation:"
-msgstr ""
+msgstr "دعنا نتناول معادلة تفاضلية غاية في البساطة"
 
 #: ../../source/behavior/equations/first_order.rst:10
 msgid ""
 "Looking at this equation, we see there is only one variable, :math:`x`.  "
 "This equation can be represented in Modelica as follows:"
 msgstr ""
-
+"بالنظر إلى هذه المعادلة، نرى أنه يوجد بها متغير واحد هو \n"
+":math:`x`\n"
+"وهذه المعادلة يمكن تمثيلها في المودليكا كالتالي:"
 #: ../../source/behavior/equations/first_order.rst:23
 msgid ""
 "This code starts with the keyword ``model`` which is used to indicate the "
@@ -32,7 +34,13 @@ msgid ""
 "model name, ``FirstOrder``.  This, in turn, is followed by a declaration of "
 "all the variables we are interested in."
 msgstr ""
-
+"يبدأ الكود البرمجي بالكلمة الأساسية \n"
+"``model`` \n"
+"والتي تستخدم لتبين أنني سأبدأ بتعريف نموذج. ويأتي بعد كلمة\n"
+"``model`` \n"
+"اسم النموذج وليكن\n"
+" ``FirstOrder``\n"
+"وهذا بدوره، يليه تعريف كل المتغيرات التي تهمنا."
 #: ../../source/behavior/equations/first_order.rst:28
 msgid ""
 "Since the variable :math:`x` in our equation is clearly meant to be a "
