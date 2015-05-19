@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations.rst:4
 msgid "Basic Equations"
-msgstr ""
+msgstr "المعادلات الأساسية"
 
 #: ../../source/behavior/equations.rst:6
 msgid ""
