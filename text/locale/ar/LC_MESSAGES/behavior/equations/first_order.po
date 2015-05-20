@@ -73,7 +73,7 @@ msgstr ""
 "وهذا يعني أن"
 #: ../../source/behavior/equations/first_order.rst:43
 msgid "is equivalent to:"
-msgstr "تناظر"
+msgstr "هو مناظر ل:"
 
 #: ../../source/behavior/equations/first_order.rst:47
 msgid ""
@@ -103,7 +103,7 @@ msgstr ""
 "سوف يقوم به بشكل آلي مترجم المودليكا**."
 #: ../../source/behavior/equations/first_order.rst:68
 msgid "Adding Some Documentation"
-msgstr "إضافة بعض التعليقات"
+msgstr "إضافة بعض التفاصيل"
 
 #: ../../source/behavior/equations/first_order.rst:70
 msgid ""
@@ -154,7 +154,7 @@ msgid ""
 "this kind of documentation is very useful for anybody reading the model."
 msgstr ""
 "كما سنرى لاحقا، فإن هذا النوع من التفاصيل يمكن استخدامه عن طريق الأدوات وذلك بعدة طرق. "
-"على سبيل المثال، عند البحث عن النماذج، الأداة يمكنها استخدام سلاسل الحروف الوصفية لتحديد مدى التطابق. "
+"على سبيل المثال، عند البحث عن النماذج، أداة البحث يمكنها استخدام سلاسل الحروف الوصفية لتحديد مدى التطابق. "
 "هذا الكتاب قد يكون متعلقا أيضا بالتمثيل الرسومي للنماذج. "
 "وبالتأكيد ستكون هذه التفاصيل مفيدة للغاية لكل من يقرأ النموذج. "
 
