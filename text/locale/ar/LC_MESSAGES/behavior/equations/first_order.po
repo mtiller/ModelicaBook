@@ -128,10 +128,10 @@ msgid ""
 msgstr ""
 "من المهم أن نفهم أن النصوص التي بداخل أقواس الاقتباس تسمى في علوم الحاسب سلاسل حروف\n"
 "\"strings\"\n"
-"ولا تسمى تعليقات. وهي سلاسل حروف وصفية\n"
+"ولا تسمى تعليقات. فهي سلاسل حروف وصفية\n"
 "\"descriptive strings\"\n"
 "وبخلاف التعليقات، لا يمكن وضعها في أي مكان اختياري. وبدلا من ذلك، يمكن فقط إدخالها في أماكن محددة "
-"لإعطاء تفاصيل إضافية عن عناصر النموذج التي تتعلق بها."
+"لإعطاء تفاصيل إضافية عن عناصر النموذج الذي تتعلق به."
 
 #: ../../source/behavior/equations/first_order.rst:90
 msgid ""
@@ -140,10 +140,10 @@ msgid ""
 "of the model.  If you wish to include such documentation about the model, it"
 " must appear immediately after the model name as shown."
 msgstr ""
-"على سبيل المثال، السلسة الأولى\n"
+"على سبيل المثال، السلسلة الأولى\n"
 "\"A simple first order differential equation\"\n"
-"تستخدم لوصف ماهية هذا النموذج وعن ماذا هو. لاحظ أنها تأتي بعد اسم النموذج."
-"إذا كنت تر
+"تستخدم لوصف ماهية هذا النموذج وعن ماذا هو. لاحظ أنها تأتي بعد اسم النموذج. "
+"إذا كنت تريد أن تضيف هذه التفاصيل عن النموذج، فيجب أن تكون مكتوبة بعد اسم النموذج مباشرة كما هو مبين."
 
 #: ../../source/behavior/equations/first_order.rst:96
 msgid ""
@@ -153,6 +153,10 @@ msgid ""
 "associated with a graphical representation of the models.  And, of course, "
 "this kind of documentation is very useful for anybody reading the model."
 msgstr ""
+"كما سنرى لاحقا، فإن هذا النوع من التفاصيل يمكن استخدامه عن طريق الأدوات وذلك بعدة طرق. "
+"على سبيل المثال، عند البحث عن النماذج، الأداة يمكنها استخدام سلاسل الحروف الوصفية لتحديد مدى التطابق. "
+"هذا الكتاب قد يكون متعلقا أيضا بالتمثيل الرسومي للنماذج. "
+"وبالتأكيد ستكون هذه التفاصيل مفيدة للغاية لكل من يقرأ النموذج. "
 
 #: ../../source/behavior/equations/first_order.rst:103
 msgid ""
