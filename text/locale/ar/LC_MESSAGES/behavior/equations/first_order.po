@@ -126,6 +126,12 @@ msgid ""
 "provide additional documentation about the elements of the model they are "
 "associated with."
 msgstr ""
+"من المهم أن نفهم أن النصوص التي بداخل أقواس الاقتباس تسمى في علوم الحاسب سلاسل حروف\n"
+"\"strings\"\n"
+"ولا تسمى تعليقات. وهي سلاسل حروف وصفية\n"
+"\"descriptive strings\"\n"
+"وبخلاف التعليقات، لا يمكن وضعها في أي مكان اختياري. وبدلا من ذلك، يمكن فقط إدخالها في أماكن محددة "
+"لإعطاء تفاصيل إضافية عن عناصر النموذج التي تتعلق بها."
 
 #: ../../source/behavior/equations/first_order.rst:90
 msgid ""
@@ -134,6 +140,10 @@ msgid ""
 "of the model.  If you wish to include such documentation about the model, it"
 " must appear immediately after the model name as shown."
 msgstr ""
+"على سبيل المثال، السلسة الأولى\n"
+"\"A simple first order differential equation\"\n"
+"تستخدم لوصف ماهية هذا النموذج وعن ماذا هو. لاحظ أنها تأتي بعد اسم النموذج."
+"إذا كنت تر
 
 #: ../../source/behavior/equations/first_order.rst:96
 msgid ""
