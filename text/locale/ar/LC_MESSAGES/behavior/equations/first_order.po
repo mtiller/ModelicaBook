@@ -169,7 +169,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/first_order.rst:110
 msgid "Initialization"
-msgstr ""
+msgstr "الابتداء"
 
 #: ../../source/behavior/equations/first_order.rst:112
 msgid ""
@@ -177,7 +177,9 @@ msgid ""
 "terms of differential equations.  But the initial conditions we choose are "
 "just as important as the equations."
 msgstr ""
-
+"كما رأينا للتو، المودليكا تسمح بوصف السلوك الرياضي للنموذج عن طريق المعادلات التفاضلية. "
+"ولكن بقدر أهمية المعادلات بقدر أهمية الحالات الابتدائية التي نختارها\n"
+"initial conditions."
 #: ../../source/behavior/equations/first_order.rst:116
 msgid ""
 "For this reason, Modelica also provides constructs for describing the "
@@ -185,7 +187,13 @@ msgid ""
 "initial value of ``x`` in our model to be *2*, we could add an ``initial "
 "equation`` section to our model as follows:"
 msgstr ""
-
+"ولهذا السبب، المودليكا تعطينا إنشاءات وعبارات لوصف الابتداء لنظام المعادلات. "
+"على سبيل المثال، إذا أردنا أن نعطي للمتغير\n"
+ "``x``\n"
+ "قيمة ابتدائية في النموذج مقدارها *2*، فيجب أن نضيف قسم المعادلة الابتدائية\n"
+ "``initial equation``\n"
+ "للنموذج كما يلي:"
+ 
 #: ../../source/behavior/equations/first_order.rst:129
 msgid ""
 "Note that the only difference between this model and the previous one, "
@@ -200,6 +208,12 @@ msgid ""
 " ``initial equation`` section, we are explicitly specifying the initial "
 "condition for ``x``."
 msgstr ""
+"لاحظ أن الاختلاف الوحيد بين هذا النموذج والنموذج السابق الذي قدمناه في قسم\n"
+":ref:`first-order-doc`\n"
+"هو إضافة قسم المعادلة الابتدائية\n"
+"``initial equation``\n"
+"والذي يحتوي على المعادلة\n"
+"``x = 2``.\n"
 
 #: ../../source/behavior/equations/first_order.rst:142
 msgid ""
