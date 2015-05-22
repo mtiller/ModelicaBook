@@ -230,6 +230,7 @@ msgid ""
 "As a result, the solution trajectory is quite different as we can see in the"
 " following figure:"
 msgstr ""
+"وكنتيجة لذلك، فإن منحنى الحل أصبح مختلفا قليلا كما نرى في الشكل المبين:"
 
 #: ../../source/behavior/equations/first_order.rst:147
 msgid ""
