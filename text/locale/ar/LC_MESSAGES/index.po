@@ -29,8 +29,8 @@ msgstr "الملاحق والجداول"
 
 #: ../../source/index.rst:73
 msgid ":ref:`genindex`"
-msgstr ":ref:`genindex`"
+msgstr "دليل الكلمات :ref:`genindex`"
 
 #: ../../source/index.rst:74
 msgid ":ref:`search`"
-msgstr ":ref:`search`"
+msgstr "البحث :ref:`search`"
