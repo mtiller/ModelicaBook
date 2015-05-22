@@ -25,4 +25,4 @@ msgstr "التعامل مع الرموز"
 
 #: ../../source/advanced.rst:8
 msgid "state selection (add forward reference in :ref:`enumerations`)"
-msgstr "اختيار الحالة (add forward reference in :ref:`enumerations`)"
+msgstr "اختيار الحالة (إضافة مرجعية في السرد :ref:`enumerations`)"
