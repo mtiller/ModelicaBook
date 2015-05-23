@@ -254,6 +254,10 @@ msgid ""
 "initialization.  An ``initial equation`` section can contain more than just "
 "explicit equations for the initial values of the state variables."
 msgstr ""
+"ولكن في كثير من الأوقات ستحتاج فيها نوعا أكثر تعقيدا من الابتداء. "
+"وقسم\n"
+"``initial equation``\n"
+"قد يحتوي على على ما هو أكثر من المعادلات الصريحة لتبيين"
 
 #: ../../source/behavior/equations/first_order.rst:161
 msgid ""
