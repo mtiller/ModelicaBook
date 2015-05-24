@@ -257,7 +257,7 @@ msgstr ""
 "ولكن في كثير من الأوقات ستحتاج فيها نوعا أكثر تعقيدا من الابتداء. "
 "وقسم\n"
 "``initial equation``\n"
-"قد يحتوي على على ما هو أكثر من المعادلات الصريحة لتبيين"
+"قد يحتوي على ما هو أكثر من المعادلات الصريحة لتبيين القيم الابتدائية لمتغيرات الحالة."
 
 #: ../../source/behavior/equations/first_order.rst:161
 msgid ""
@@ -270,7 +270,7 @@ msgid ""
 " it is possible to express the constraint that :math:`\\dot{x}(0)=0` "
 "directly in Modelica as follows:"
 msgstr ""
-
+"
 #: ../../source/behavior/equations/first_order.rst:176
 msgid "Simulating this system gives the following solution:"
 msgstr ""
