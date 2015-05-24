@@ -289,7 +289,10 @@ msgid ""
 " the start of the simulation and remains zero because there are no external "
 "influences acting on this system that would disrupt this equilibrium."
 msgstr ""
-"وكما نرى في المثال"
+"وكما نرى في المثال فإن تفاضل\n"
+":math:`x`\n"
+"يساوي الصفر عند بداية المحاكاة ويظل ضفرا لأنه لا يجد مؤثرات خارجية ثؤثر على النظام "
+"بحيث تغير هذا الاتزان."
 
 #: ../../source/behavior/equations/first_order.rst:185
 msgid ""
@@ -297,10 +300,13 @@ msgid ""
 "complete coverage of the initialization topic can be found in the "
 ":ref:`initialization` section later in this chapter."
 msgstr ""
+"هذا يعطينا نظرة عن إمكانيات الابتداء في المودليكا. ويمكنك إيجاد تغطية أكمل عن الابتداء لاحقا في قسم الابتداء في "
+"هذا الفصل\n"
+":ref:`initialization`."
 
 #: ../../source/behavior/equations/first_order.rst:192
 msgid "Experimental Conditions"
-msgstr ""
+msgstr "أحوال التجربة"
 
 #: ../../source/behavior/equations/first_order.rst:197
 msgid ""
