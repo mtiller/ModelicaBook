@@ -270,10 +270,18 @@ msgid ""
 " it is possible to express the constraint that :math:`\\dot{x}(0)=0` "
 "directly in Modelica as follows:"
 msgstr ""
-"
+"على سبيل المثال، قد نريد أن تكون الظروف الابتدائية هي أن التفاضل بالنسبة للزمن ل\n"
+":math:`x`\n"
+"يكون صفر عند بداية المحاكاة. في هذه الحالة، نحتاج فقط إلى بعض الجبر البسيط لنعلم أن هذا سيجعل\n"
+":math:`x(0)=1`\n"
+"كظرف ابتداء. ولكن في الأنظمة الأكثر تعقيدا سيكون الأمر بعيدا عن البساطة فيما يتعلق بتحديد "
+"قيم الحالة الابتدائية التي تلبي هذا الشرط. في هذه الحالات، من الممكن التعبير عن الشرط ب\n"
+":math:`\\dot{x}(0)=0` \n"
+"مباشرة في المودليكا كالتالي:"
+
 #: ../../source/behavior/equations/first_order.rst:176
 msgid "Simulating this system gives the following solution:"
-msgstr ""
+msgstr "ومحاكاة هذا النظام تعطينا الحل التالي:"
 
 #: ../../source/behavior/equations/first_order.rst:180
 msgid ""
@@ -281,6 +289,7 @@ msgid ""
 " the start of the simulation and remains zero because there are no external "
 "influences acting on this system that would disrupt this equilibrium."
 msgstr ""
+"وكما نرى في المثال"
 
 #: ../../source/behavior/equations/first_order.rst:185
 msgid ""
