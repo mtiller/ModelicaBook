@@ -25,8 +25,8 @@ msgid ""
 "general categories of annotations for functions and provide some discussion "
 "of why you need them and how to use them."
 msgstr ""
-"在\ :ref:`annotations`\ 章节中，我们已经对标注进行了讨论。Modelica语言包括一些专门用于函数连接功能的标准标注。"
-"这就意味着，这些标注是在Modelica规范中正式定义的。在本节中，我们将讨论与函数相关的三大类标注，并讨论这些标注的必要性以及"
+"在\ :ref:`annotations`\ 章节中，我们已经对标注进行了讨论。Modelica语言包括一些专门用于函数的标准标注。"
+"这些标注的含义正式定义在Modelica规范中。在本节中，我们将讨论与函数相关的三大类标注，并讨论这些标注的必要性以及"
 "如何使用这些标注。"
 
 #: ../../source/behavior/functions/func_annos.rst:15
@@ -44,7 +44,8 @@ msgid ""
 "augment the function definition with such information."
 msgstr ""
 "第一大类标注的主要功能是为数学函数提供一些额外的信息。因为这些数学函数的功能都是在\ ``algorithm``\ 区域实现的，因此"
-"通常情况下，不能根据Modelica语言的符号操作得出上述函数方程的功能。但是，可以使用本节中的标注来增加函数定义的相关信息。"
+"通常情况下，编译器不能根据Modelica语言内的符号操作得出上述函数方程的行为。"
+"但是，本节中的标注可以用来为函数定义补充相关数学信息。"
 
 #: ../../source/behavior/functions/func_annos.rst:26
 msgid "``derivative``"
@@ -83,16 +84,16 @@ msgid ""
 "sounds complicated, but hopefully the same code conveys how simple the "
 "construction really is."
 msgstr ""
-"通过上述例子可以看到，在这种情况下，导数函数的第一个参数\ ``df``\ 与原始函数的\ ``f``\ 具有相同的功能。"
-"然后，紧随这些参数后面的是不同版本的输入变量。最后，导数函数的输出变量等同于不同版本下的原始函数的输出变量。"
-"听上去上述过程非常复杂，实际上，通过相同功能的代码构建的上述结构是非常简单的。"
+"通过上述例子可以看到，在这种情况下，导数函数的第一个参数\ ``df``\ 与原始函数\ ``f``\ 的第一个参数相同。"
+"然后，紧随此参数后面的是原函数输入变量的微分形式。最后，导数函数的输出变量等同于原始函数输出变量的微分。"
+"听上去上述过程非常复杂，但读者应该能从上述代码中发现，要构造这样的函数其实是非常简单的。"
 
 #: ../../source/behavior/functions/func_annos.rst:71
 msgid ""
 "Given such a Modelica function, the Modelica compiler can use such a "
 "function to compute various derivatives, *e.g.*,"
 msgstr ""
-"给出如下的Modelica函数，Modelica编译器就可以使用下述函数来计算各种函数的导数，即："
+"给定如下的Modelica函数，Modelica编译器就可以使用下列函数来计算函数的一系列导数，例如："
 
 #: ../../source/behavior/functions/func_annos.rst:80
 msgid "Insensitivity to Some Arguments"
@@ -110,9 +111,9 @@ msgid ""
 " will have no impact.  In other words, there are many calculations that "
 "could be skipped because they won't have any impact on the result."
 msgstr ""
-"考虑这样一种情况，当表达式\ :math:`\\frac{\\partial y}{\\partial v}`\ 等于0时，导数函数将会传递这个零值（或零值数组，当参数为数组时）。"
-"上述零值会在导数函数内部被调用几次，其中大多数（如果不是全部）将调用零值做乘法，因此计算的结果也将为零。最终，这些计算结果将会"
-"与其他结果相加，但是对函数的最终输出没有任何影响。换句话说，这种情况下，有很多计算可以跳过，因为它们对结果不会有任何影响。"
+"我们考虑这样一种情况，表达式\ :math:`\\frac{\\partial y}{\\partial v}`\ 等于0。导数函数将会输出这个零值（或零值数组，若参数为数组）。"
+"上述零值会在导数函数内部被数次调用，其中大多数（如果不是全部）将调用零值进行乘法运所。此时计算的结果也将为零。最终，这些计算结果将会"
+"与其他结果相加，但是对函数的最终输出没有任何影响。换句话说，这种情况下，有很多计算其实可以跳过，因为它们对结果不会有任何影响。"
 
 #: ../../source/behavior/functions/func_annos.rst:92
 msgid ""
@@ -124,8 +125,8 @@ msgid ""
 "annotation.  So, in the case of our example function ``f``, we could add the"
 " following annotation:"
 msgstr ""
-"在这种情况下，Modelica语言提供了一种避免上述冗余计算的方法。如果Modelica编译器能 *预先* 知道参数的微分为0，它就"
-"可以检查（在\ ``derivative``\ 标注）是否有函数计算导数。这些情况是通过在\ ``derivative``\ 标注使用\ ``zeroDerivative``\ 参数"
+"在这种情况下，Modelica语言提供了一种避免上述冗余计算的方法。如果Modelica编译器能\ *预先*\ 知道参数的微分为0，它就"
+"可以（在\ ``derivative``\ 标注内）检查是否有函数计算导数。这些情况是通过在\ ``derivative``\ 标注使用\ ``zeroDerivative``\ 参数"
 "进行指定的。因此，对于上述示例中的函数\ ``f``\ ，我们增加了如下标注内容："
 
 #: ../../source/behavior/functions/func_annos.rst:111
@@ -141,7 +142,7 @@ msgid ""
 "in the arguments, this function includes only those calculations involving "
 "``dx``."
 msgstr ""
-"通过比较可以看到，此函数不包括\ ``dy``\ 项，因此，只适用于\ ``dy``\ 为0的情况。因为，参数不包括\ ``dy``\ 项，该函数只包括"
+"通过比较可以看到，此函数不包括\ ``dy``\ 项。因此，函数只适用于\ ``dy``\ 为0的情况。而且，因为参数不包括\ ``dy``\ 项，该函数只包括"
 "那些涉及参数\ ``dx``\ 的计算方程。"
 
 #: ../../source/behavior/functions/func_annos.rst:130
@@ -156,8 +157,9 @@ msgid ""
 "adding an ``order`` argument.  Note that a function can have multiple "
 "``derivative`` annotations, *e.g.,*"
 msgstr ""
-"对于二阶导数，这里有一些变化需要说明一下。首先，需要定义什么是函数的\ **二阶**\ 导数。这主要是通过添加一个\ ``order``\ 变量"
-"来实现的。需要注意的是，函数可以包括多个\ ``derivative``\ 标注，即："
+"对于二阶导数，这里有一些变化需要说明一下。首先要知道应如何指定函数的\ **二阶**\ 导数。"
+"这主要是通过添加一个\ ``order``\ 变量"
+"来实现的。需要注意的是，函数可以包括多个\ ``derivative``\ 标注，例如："
 
 #: ../../source/behavior/functions/func_annos.rst:165
 msgid ""
@@ -172,7 +174,7 @@ msgid ""
 "This additional annotation has an additional argument ``order`` which "
 "indicates which derivative that function computes."
 msgstr ""
-"这些额外的标注增加了一个\ ``order``\ 变量用于表明函数求解的是哪阶导数。"
+"这些额外的标注增加了一个\ ``order``\ 变量用于表明函数求解的是第几阶的导数。"
 
 #: ../../source/behavior/functions/func_annos.rst:177
 msgid "Non-Real Arguments"
@@ -184,7 +186,7 @@ msgid ""
 "There is one additional complication to discuss.  What if the function has "
 "arguments that don't represent real numbers, *e.g.*,"
 msgstr ""
-"此外，对于其他一些复杂情况还需讨论，例如，函数内包含一些非实数的参数，即："
+"此外，对于其他一些复杂情况还需讨论。例如，函数内有时会包含一些非实数的参数，即："
 
 #: ../../source/behavior/functions/func_annos.rst:192
 msgid ""
@@ -193,7 +195,8 @@ msgid ""
 "be ignored when formulating the derivative.  So, if we wished to compute the"
 " derivative of this function, we would do it as follows:"
 msgstr ""
-"对于上述函数，可以看到参数\ ``y``\ 的数据类型是整型，因此计算它的导数就没有什么意义了。对于任何非实数的参数，可以忽略其导数求解。"
+"要计算上述函数对参数\ ``y``\ 的导数就没有什么意义了，因为参数\ ``y``\ 的数据类型是整型。"
+"在求解函数导数时，我们可以忽略任何非实数的参数。"
 "因此，如果我们希望计算上述函数的导数，可以采用下述方式："
 
 #: ../../source/behavior/functions/func_annos.rst:218
@@ -201,12 +204,12 @@ msgid ""
 "In other words, the differential arguments only apply to arguments that are "
 "real."
 msgstr ""
-"换句话说，我们只对那些参数类型为实数的进行微分计算。"
+"换句话说，我们只对那些类型为实数的参数进行微分计算。"
 
 #: ../../source/behavior/functions/func_annos.rst:223
 msgid "``inverse``"
 msgstr ""
-"逆函数"
+"\ ``inverse``\ （反函数）"
 
 #: ../../source/behavior/functions/func_annos.rst:227
 msgid ""
@@ -218,21 +221,21 @@ msgid ""
 " input and output variables of the current function, but used in conjunction"
 " with another function to explicitly compute one of the input arguments."
 msgstr ""
-"在\ :ref:`nonlinearities`\ 章节中，我们讨论了使用\ ``inverse``\ 标注“告诉”Modelica编译器如何计算相应函数的逆函数。"
-"逆函数的求解目标是得到输入参数关于输出变量之间确定的关系表达式。因此，\ ``inverse``\ 标注包含一个涉及当前函数输入、输出"
-"变量的显示方程，与另一个方程联合求解输入变量的表达式。"
+"在\ :ref:`nonlinearities`\ 章节中，我们讨论了使用\ ``inverse``\ 标注。该标注为Modelica编译器提供了如何计算相应函数反函数的信息。"
+"逆函数作用在于它能显式地求解函数的某个输入变量。因此，\ ``inverse``\ 标注包含一个涉及当前函数输入、输出"
+"变量的显式方程。这样，标注可利用另一个函数去直接求解其中一个输入变量。"
 
 #: ../../source/behavior/functions/func_annos.rst:236
 msgid "For example, for a Modelica function defined as follows:"
 msgstr ""
-"例如，对于一个Modelica函数定义如下："
+"例如，对于一个定义如下的Modelica函数："
 
 #: ../../source/behavior/functions/func_annos.rst:249
 msgid ""
 "we see that ``b`` can be computed by passing ``a`` and ``c`` as arguments to"
 " the function ``h_inv_b`` which would be defined as follows:"
 msgstr ""
-"根据上述代码，我们可以看到，通过在函数\ ``h_inv_b``\ 中传递输入变量\ ``a``\ 和\ ``c``\ ，就可以计算得到参数\ ``b``\ 的表达式，"
+"我们可以在根据上述代码里看到，通过向函数\ ``h_inv_b``\ 中输入变量\ ``a``\ 和\ ``c``\ ，就可以计算得到参数\ ``b``\ 的表达式，"
 "如下所示："
 
 #: ../../source/behavior/functions/func_annos.rst:265
@@ -247,8 +250,8 @@ msgid ""
 "developer to provide hints to the Modelica compiler on how the code "
 "generation process should be done."
 msgstr ""
-"另一大类标注是关于如何将定义的函数翻译成仿真用的代码。这些标注允许模型开发者在Modelica编译器生成代码的过程提供"
-"相应的暗示。"
+"另一大类标注是关于如何将定义的函数转换为仿真用的代码。这些标注允许模型开发者在Modelica编译器生成代码的过程提供"
+"一定的帮助。"
 
 #: ../../source/behavior/functions/func_annos.rst:275
 #: ../../source/behavior/functions/func_annos.rst:333
@@ -263,8 +266,9 @@ msgid ""
 "value (if no ``Inline`` annotation is present) is ``false``. The following "
 "is a function that uses the ``Inline`` annotation:"
 msgstr ""
-"\ ``Inline``\ 标注用于提示Modelica编译器函数中的声明语句应执行“内嵌”功能。此标注的值用于提示是否应执行内嵌功能，"
-"其默认值为\ ``false``\ （如果函数定义中没有出现\ ``Inline``\ 标注）。下面是使用\ ``Inline``\ 标注定义的函数示例："
+"\ ``Inline``\ 标注用于提示Modelica编译器，函数中的语句是否应被“内联”。"
+"此标注的取值用于决定了执行内联与否。"
+"标注的默认值为\ ``false``\ （如果函数定义中没有出现\ ``Inline``\ 标注）。下面是使用\ ``Inline``\ 标注定义的函数示例："
 
 #: ../../source/behavior/functions/func_annos.rst:296
 msgid ""
@@ -312,7 +316,7 @@ msgid ""
 " scope of this book."
 msgstr ""
 "与\ :ref:`inline-anno`\ 标注一样，\ ``LateInline``\ 标注的功能是告诉Modelica编译器采用内嵌函数的方式将更有效。"
-"\ ``LateInline``\ 标注也会分配一个\ ``布尔``\ 值用以指定是否应采用内嵌函数的方式。\ ``Inline``\ 和\ ``LateInline``\ 标注"
+"\ ``LateInline``\ 标注也会分配一个\ ``Boolean``\ 值用以指定是否应采用内嵌函数的方式。\ ``Inline``\ 和\ ``LateInline``\ 标注"
 "的区别是，\ ``LateInline``\ 标注表明应在符号运算完成后执行内嵌功能。关于函数内嵌以及符号运算之间的交互关系超出了"
 "本书的讨论范围。"
 
@@ -368,7 +372,7 @@ msgid ""
 "libraries.  These annotations inform the Modelica compiler of these "
 "dependencies and where to locate them."
 msgstr ""
-"最后一大类标注是与定义的\ ``external``\ 函数相关的。这些外部函数的定义通常都依靠外部文件或库，"
+"最后一大类标注是与定义的\ ``external``\ 函数相关的。这些外部函数的定义通常都依靠外部文件或库。"
 "使用这类标注就是为了通知Modelica编译器这些依赖关系以及如何定位这些外部函数。"
 
 #: ../../source/behavior/functions/func_annos.rst:354
@@ -383,8 +387,8 @@ msgid ""
 " annotation should be the string that should be inserted into the generated "
 "code, *e.g.,*"
 msgstr ""
-"通常情况下，Modelica编译器生成代码过程中如果参考了相应的外部库，需添加相应的\ ``Include``\ 标注用于标示包含语句。"
-"\ ``Include``\ 标注的值是一个字符串，并且会嵌入到生成的代码文件中，即："
+"通常情况下，Modelica编译器生成代码过程中如果使用了某个外部库，需添加相应的\ ``Include``\ 标注，以此标示包含语句。"
+"\ ``Include``\ 标注的值是字符串，并且会嵌入到生成的代码文件中，例如："
 
 #: ../../source/behavior/functions/func_annos.rst:370
 msgid ""
@@ -413,7 +417,7 @@ msgid ""
 "directory or it can be a URL.  For example, the default value for the "
 "``IncludeDirectory`` annotation is:"
 msgstr ""
-"该标注的值是一个字符串，字符串可以是一个目录或者URL。例如，\ ``IncludeDirectory``\ 标注的默认值如下所示："
+"该标注的值是一个字符串。字符串可以是一个目录或者URL。例如，\ ``IncludeDirectory``\ 标注的默认值如下所示："
 
 #: ../../source/behavior/functions/func_annos.rst:394
 msgid "We'll explain the meaning of these :ref:`modelica-urls` shortly."

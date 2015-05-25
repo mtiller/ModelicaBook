@@ -23,8 +23,8 @@ msgid ""
 "create new functions for specific purposes.  Defining such functions is "
 "similar, syntactically, to a :ref:`model-definition`."
 msgstr ""
-"如前所述，Modelica语言已经包含了很多有用的函数可以方便的描述物体的数学特性。但是，不可避免的，有必要"
-"创建用于特殊目的的新函数。定义这些新函数的方法与语法与\ :ref:`model-definition`\ 相似。"
+"如前所述，Modelica语言已经包含了很多有用的函数，可以方便地描述物体的数学特性。但不可避免地，有时候有必要"
+"创建用于特殊目的的新函数。定义这些新函数的方式及语法与\ :ref:`model-definition`\ 相似。"
 
 #: ../../source/behavior/functions/func_def.rst:12
 msgid "Basic Syntax"
@@ -40,9 +40,9 @@ msgid ""
 " example, consider the following simple function that squares its input "
 "argument:"
 msgstr ""
-"基本的Modelica函数都包含一个或多个参数，一个函数返回值以及根据参数计算函数返回值的相应\ ``algorithm``\ 。"
-"函数的输入参数以限定词\ ``input``\ 进行声明，函数的返回值以限定词\ ``output``\ 进行声明。"
-"例如，以下述简单函数为例，计算输入参数的平方值："
+"基本的Modelica函数都包含一个或多个参数、一个函数返回值以及根据参数计算函数返回值的\ ``algorithm``\ 。"
+"函数的输入参数以限定词\ ``input``\ 进行声明。函数的返回值以限定词\ ``output``\ 进行声明。"
+"例如，以下述简单函数为例，函数计算输入参数的平方值："
 
 #: ../../source/behavior/functions/func_def.rst:30
 msgid ""
@@ -51,8 +51,8 @@ msgid ""
 "scalars or arrays (or even records, although we won't introduce records "
 "until :ref:`later <components>`)."
 msgstr ""
-"在上述例子中，输入变量\ ``x``\ 的类型为\ ``Real``\ ，输出变量\ ``y``\ 同样也是\ ``Real``\ 类型。"
-"函数的参数和返回值可以是标量或数组（甚至是记录类型，将在\ :ref:`later <components>`\ 章节中记录类型进行讲述）。"
+"在上述例子中，输入变量\ ``x``\ 的类型为\ ``Real``\ 。输出变量\ ``y``\ 同样也是\ ``Real``\ 类型。"
+"函数的参数和返回值可以是标量或数组（甚至是记录类型，\ :ref:`later <components>`\ 章节才介绍记录类型）。"
 
 #: ../../source/behavior/functions/func_def.rst:36
 msgid "Intermediate Variables"
@@ -73,14 +73,14 @@ msgstr ""
 "对于复杂的计算过程，通过定义变量保存中间结果将会非常有帮助。这些变量必须与函数的参数和返回值明确的区分。"
 "为了声明这些中间变量，我们以限定词\ ``protected``\ 进行声明。以\ ``protected``\ 形式声明这些变量是为了"
 "告诉Modelica编译器这些变量既不是函数的参数也不是函数的返回值，而是函数计算过程中内部使用的变量。"
-"例如，如果我们希望编写一个函数来计算圆的周长，可能需要一个中间变量来储存圆的直径，即："
+"例如，如果我们希望编写一个函数来计算圆的周长，那就可能需要一个中间变量来储存圆的直径，即："
 
 #: ../../source/behavior/functions/func_def.rst:59
 msgid ""
 "Here we see how some intermediate result or common sub-expression can be "
 "associated with an internal variable."
 msgstr ""
-"在上述例子中，我们可以看到一些中间结果或公共子表达式可以与一个中间变量相关联。"
+"在上述例子中，我们可以看到中间结果或公用子表达式可以与某个中间变量相关联。"
 
 #: ../../source/behavior/functions/func_def.rst:63
 msgid "Default Input Arguments"
@@ -94,8 +94,8 @@ msgid ""
 " declaration of the input variable.  Consider the following function to "
 "compute the potential energy of a mass in a gravitational field:"
 msgstr ""
-"在某些情况下，一些输入参数具有特定的含义。这种情况下，在输入参数声明时，"
-"可能就已经包含了默认值。考虑如下计算物体势能的函数："
+"在某些情况下，有必要为某些输入参数设置默认值。这种情况下，在声明输入参数时"
+"就可以包含了默认值。考虑如下计算物体势能的函数："
 
 #: ../../source/behavior/functions/func_def.rst:82
 msgid ""
@@ -105,7 +105,7 @@ msgid ""
 "given argument and it should never be used if you want to force users to "
 "provide a value."
 msgstr ""
-"通过为参数\ ``g``\ 设定默认值，用户调用此函数时就不必每次都为\ ``g``\ 赋值了。"
+"为参数\ ``g``\ 设定默认值后，用户调用此函数时就不必每次都为\ ``g``\ 赋值了。"
 "当然，这种情况只适用于给定参数具有合理默认值的情况。如果你期望用户为参数提供数值的话，此种方法不适用。"
 
 #: ../../source/behavior/functions/func_def.rst:88
@@ -113,20 +113,21 @@ msgid ""
 "These default values have some important effects when :ref:`calling-"
 "functions` that we shall discuss shortly."
 msgstr ""
-"在\ :ref:`calling-functions`\ 时，这些具有默认值的参数将产生重要的影响，我们将稍后讨论。"
+"在\ :ref:`calling-functions`\ 时，这些具有默认值的参数将产生重要的影响。我们将稍后讨论这点。"
 
 #: ../../source/behavior/functions/func_def.rst:92
 msgid "Multiple Return Values"
 msgstr ""
-"多个函数返回值"
+"多个返回值"
+
 #: ../../source/behavior/functions/func_def.rst:94
 msgid ""
 "Note that a function can have multiple return values (*i.e.,* multiple "
 "declarations with the ``output`` qualifier).  For example, to consider a "
 "function that computes both the circumference and area of a circle:"
 msgstr ""
-"其实，一个函数可以有多个返回值（即多个以\ ``output``\ 限定词声明的参数）。"
-"例如，利用一个函数同时计算圆的周长和面积："
+"其实，一个函数可以有多个返回值（即多个带有\ ``output``\ 限定词的变量声明）。"
+"例如，我们可以利用一个函数同时计算圆的周长和面积："
 
 #: ../../source/behavior/functions/func_def.rst:111
 msgid ""
@@ -148,7 +149,7 @@ msgid ""
 "mathematicians and programmers, *e.g.,*"
 msgstr ""
 "目前为止，我们已经介绍了如何去定义一个新的函数。接下来，我们将讨论各种调用函数的方法。"
-"一般的，函数调用的方式应该同时满足数学家和程序人员的需求，例如："
+"一般的，函数调用的方式应该同时满足数学工作者和程序员的需求，例如："
 
 #: ../../source/behavior/functions/func_def.rst:128
 msgid ""
@@ -156,7 +157,7 @@ msgid ""
 " separated list of arguments surrounded by parentheses.  But there are "
 "several interesting cases to discuss."
 msgstr ""
-"如上，我们可以看到，符合典型语法的函数命名方法，即在括号里面用逗号将参数列表进行分隔。"
+"如上，我们可以看到典型语法函数调用语法：函数名称后带有括号，而里面的参数列表则由逗号进行分隔。"
 "但是，也有一些有趣的个例需要讨论。"
 
 #: ../../source/behavior/functions/func_def.rst:132
@@ -167,7 +168,7 @@ msgid ""
 "named arguments.  Consider the following function for computing the volume "
 "of a cube:"
 msgstr ""
-"上述语法需注意的是“参数位置”，即调用此函数进行参数赋值时，要按照参数顺序。"
+"上述语法需注意的是“参数位置”。这意味着，在调用此函数进行参数赋值时，要注意参数顺序。"
 "由于Modelica语言定义了函数的参数名称，因此也可以通过参数名调用函数。例如，参考下面"
 "计算立方体体积的函数："
 
@@ -197,8 +198,8 @@ msgid ""
 "selectively override values for those arguments by referring to them by "
 "name."
 msgstr ""
-"对于具有默认参数值的函数，可以使用参数名称实现函数调用最重要的原因是：对于具有多个默认参数值的函数，"
-"你可以通过这些参数的名称选择性的覆盖其默认值。"
+"之所以对于具有默认参数值的函数，应使用参数名称实现函数调用，最重要的原因是：对于具有多个默认参数值的函数，"
+"你可以通过指定这些参数的名称以选择性地覆盖其默认值。"
 
 #: ../../source/behavior/functions/func_def.rst:174
 msgid ""
@@ -218,7 +219,7 @@ msgid ""
 "variables to be assigned to (or equated to, in the case of an ``equation`` "
 "section) wrapped by a pair of parentheses."
 msgstr ""
-"换句话说，等号左边括号内用逗号分隔开的参数值是由函数的相应返回值进行赋值的（或等同于函数内部的\ ``equation``\ 区域）。"
+"换句话说，等号左边括号内用逗号分隔开的参数值是由函数的相应返回值进行赋值的（或在函数内部使用了\ ``equation``\ 区域时，等于相应值）。"
 
 #: ../../source/behavior/functions/func_def.rst:189
 msgid ""
@@ -244,7 +245,7 @@ msgid ""
 "Input arguments are read only - You are not allowed to assign a value to a "
 "variable which is an input argument to the function."
 msgstr ""
-"输入变量都是只读的-不可以将函数的输入变量为别的参数进行赋值。"
+"输入变量都是只读的——不可以对函数的输入变量进行赋值。"
 
 #: ../../source/behavior/functions/func_def.rst:201
 msgid ""
@@ -258,7 +259,7 @@ msgid ""
 "No equations or when statements - A function can have no more than one "
 "``algorithm`` section and it cannot contain ``when`` statements."
 msgstr ""
-"不允许存在多个方程或when语句-函数中只允许包含一个\ ``algorithm``\ 区域，并且不能包含\ ``when``\ 语句。"
+"不允许存在多个方程或when语句——函数中只允许包含一个\ ``algorithm``\ 区域，并且不能包含\ ``when``\ 语句。"
 
 #: ../../source/behavior/functions/func_def.rst:207
 msgid ""
@@ -284,7 +285,7 @@ msgid ""
 "sizes specified in terms of constants or in relation to the sizes of input "
 "arguments."
 msgstr ""
-"数组的大小是受限的-参数是数组类型的可不指定其维数（请参考\ :ref:`unspecd-dim`\ 部分）并且其"
+"数组的大小受限——参数是数组类型的可不指定其维数（请参考\ :ref:`unspecd-dim`\ 部分）并且其"
 "大小由引用它的函数隐性确定。函数返回值是数组类型的，其大小必须由常数或与其相关联的输入参数的大小来定义。"
 
 #: ../../source/behavior/functions/func_def.rst:221
@@ -292,7 +293,7 @@ msgid ""
 "One important thing to note is that functions are **not** restricted in "
 "terms of recursion (*i.e.,* a function **is** allowed to call itself)."
 msgstr ""
-"需要非常注意的一点是，函数在实现递归运算时\\ **不受** 限制（ 即函数\ **是**\ 允许调用自身的）。"
+"需要非常注意的一点是，函数能\ **不受**\ 限制地实现递归运算（ 即函数\ **允许**\ 调用自身）。"
 
 #: ../../source/behavior/functions/func_def.rst:247
 msgid "Side Effects"
@@ -308,16 +309,16 @@ msgid ""
 " ``impure`` keyword.  This tells the Modelica compiler that these functions "
 "cannot be treated as purely mathematical functions."
 msgstr ""
-"在\ :ref:`sil-controller`\ 例子中，我们对外部函数的副作用进行了介绍，即函数的返回值并不是函数严格意义上的参数。"
+"在\ :ref:`sil-controller`\ 例子中，我们对外部函数的副作用进行了介绍。也就是说，函数的返回值并不是其参数在严格意义上的函数。"
 "像这类函数就具有所谓的“副作用”。具有副作用的函数应该以关键字\ ``impure``\ 进行声明。"
-"用以告诉Modelica编译器这些函数不能被视为纯粹的数学函数。"
+"这就告诉Modelica编译器，这些函数不能被视为纯粹的数学函数。"
 
 #: ../../source/behavior/functions/func_def.rst:257
 msgid ""
 "The use of ``impure`` functions is restricted.  They can only be invoked "
 "from within a ``when`` statement or another ``impure`` function."
 msgstr ""
-"这些以关键字\ ``impure``\ 声明的函数在使用时是有限制的。它们只能被其他\ ``impure``\ 函数调用或在\ ``when``\ 语句中使用。"
+"这些以\ ``impure``\ 函数在使用时有其限制。它们只能被其他\ ``impure``\ 函数调用或在\ ``when``\ 语句中使用。"
 
 #: ../../source/behavior/functions/func_def.rst:262
 msgid "Function Template"
