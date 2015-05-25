@@ -285,8 +285,8 @@ msgid ""
 "demonstrates how such a polynomial might come to be differentiated in a "
 "model:"
 msgstr ""
-"这个多项式所计算的量完全可能最终被Modelica编译器求微分。
-""下面的例子虽然有些牵强，但是它展示了一个多项式在什么情况下会"
+"这个多项式所计算的量完全可能最终被Modelica编译器求微分。"
+"下面的例子虽然有些牵强，但是它展示了一个多项式在什么情况下会"
 "在一个模型中被微分："
 
 #: ../../source/behavior/functions/polynomial.rst:203
