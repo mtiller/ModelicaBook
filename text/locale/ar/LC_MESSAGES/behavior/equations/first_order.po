@@ -315,6 +315,7 @@ msgid ""
 "called an ``annotation``.  An annotation includes information that is not "
 "directly related to the behavior of the model."
 msgstr ""
+"عند بناء النموذج، قد يحتاج مطور النموذج إلى تحديد "
 
 #: ../../source/behavior/equations/first_order.rst:202
 msgid ""
