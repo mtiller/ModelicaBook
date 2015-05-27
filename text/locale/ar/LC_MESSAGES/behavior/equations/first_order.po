@@ -315,7 +315,10 @@ msgid ""
 "called an ``annotation``.  An annotation includes information that is not "
 "directly related to the behavior of the model."
 msgstr ""
-"عند بناء النموذج، قد يحتاج مطور النموذج إلى تحديد "
+"عند بناء النموذج، قد يحتاج مطور النموذج إلى تحديد أحوال التجربة للنموذج. "
+"وهذا يمكن عمله عن طريق ما يسمى معلومة\n"
+"``annotation``\n"
+"وتتضمن معلومات لا تتعلق مباشرة بالسلوك الرياضي للنظام."
 
 #: ../../source/behavior/equations/first_order.rst:202
 msgid ""
@@ -326,6 +329,8 @@ msgid ""
 "conditions are stored in a model using a specific annotation called the "
 "``experiment`` annotation."
 msgstr ""
+"على سبيل المثال، أحوال التجربة تصف معلومات مثل وقت ابتداء المحاكاة، ووقت انتهائها وقدر الخطأ المسموح به في الحل وغيرها. "
+"
 
 #: ../../source/behavior/equations/first_order.rst:209
 msgid ""
