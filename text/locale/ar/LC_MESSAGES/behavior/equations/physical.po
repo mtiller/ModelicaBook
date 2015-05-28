@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/physical.rst:4
 msgid "Getting Physical"
-msgstr ""
+msgstr "التعامل مع النظام المادي"
 
 #: ../../source/behavior/equations/physical.rst:6
 msgid ""
@@ -25,7 +25,8 @@ msgid ""
 " engineering domains, but, as we shall see, they can even help us avoid "
 "mistakes."
 msgstr ""
-
+"على الرغم من أن القسم السابق قد أخذنا في البداية مع تمثيل السلوك الرياضي، إلا أنه لم يكن له أي صلة بالسلوك المادي."
+"في هذا القسم، سوف نستكشف كيفية بناء نماذج 
 #: ../../source/behavior/equations/physical.rst:14
 msgid "Let's start with the following example:"
 msgstr ""
