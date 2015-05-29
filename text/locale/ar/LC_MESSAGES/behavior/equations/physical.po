@@ -55,7 +55,11 @@ msgid ""
 ":ref:`variability`.  But for now, we can think of a ``parameter`` as a "
 "variable whose value we must provide."
 msgstr ""
-"على الرغم من ذلك هذه المرة سوف نرى عالم المعاملات"
+"ولكن هذه المرة سوف نرى كلمة معامل\n"
+"``parameter``\n"
+"للمرة الأول. وبشكل عام، كلمة معامل يستخدم ليعبر عن المتغيرات التي يطلق عليها\n"
+"*a priori* \n"
+"(أي ما قبل المحاكاة)."
 
 #: ../../source/behavior/equations/physical.rst:35
 msgid ""
