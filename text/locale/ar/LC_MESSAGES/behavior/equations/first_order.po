@@ -66,7 +66,7 @@ msgid ""
 " the ``der`` operator to represent the time derivative of ``x``.  Thus,"
 msgstr ""
 "بعد تعريف كل المتغيرات، يمكننا البدء في كتابة المعادلات التي تصف السلوك الرياضي للنموذج. "
-"في هذه الحالة، يمكننا استخدام معامل\n"
+"في هذه الحالة، يمكننا استخدام مؤثر\n"
 "``der``\n"
 "لتمثيل التفاضل بالنسبة للزمن ل\n"
 " ``x``.\n"
@@ -99,7 +99,7 @@ msgid ""
 msgstr ""
 "وهذا يعطينا نبذة عن أحد الجوانب التنافسية لاستخدام لغة المودليكا لوصف السلوك الرياضي. "
 "نحن لا نحتاج إلى وصف كيفية حل هذه المعادلات التفاضلية. وتركيزنا الأساسي سينصب على السوك الرياضي."
-"أثناء عملنا خلال طريقنا نحو أمثلة أكثر تعقيدا، سوف نرى أن **الكثير من العمل الممل مثل عملية حل المعادلات "
+"أثناء عملنا وخلال طريقنا نحو أمثلة أكثر تعقيدا، سوف نرى أن **الكثير من العمل الممل مثل عملية حل المعادلات "
 "سوف يقوم به بشكل آلي مترجم المودليكا.**"
 #: ../../source/behavior/equations/first_order.rst:68
 msgid "Adding Some Documentation"
@@ -316,7 +316,7 @@ msgid ""
 "directly related to the behavior of the model."
 msgstr ""
 "عند بناء النموذج، قد يحتاج مطور النموذج إلى تحديد أحوال التجربة للنموذج. "
-"وهذا يمكن عمله عن طريق ما يسمى معلومة\n"
+"وهذا يمكن عمله عن طريق ما يسمى ملاحظة\n"
 "``annotation``\n"
 "وتتضمن معلومات لا تتعلق مباشرة بالسلوك الرياضي للنظام."
 
@@ -331,7 +331,7 @@ msgid ""
 msgstr ""
 "على سبيل المثال، أحوال التجربة تصف معلومات مثل وقت ابتداء المحاكاة، ووقت انتهائها والسماحية وغيرها. "
 "هذه ليست معلومات عن سلوك النموذج نفسه، ولكنها معلومات عن كيفية الوصول إلى محاكاة هذا السلوك. "
-"أحوال التجربة يتم تخزينها في النموذج باستخدام معلومة محددة تسمى معلومة التجربة \n"
+"أحوال التجربة يتم تخزينها في النموذج باستخدام ملاحظة محددة تسمى ملاحظة التجربة\n"
 "``experiment`` annotation."
 
 #: ../../source/behavior/equations/first_order.rst:209
@@ -340,8 +340,8 @@ msgid ""
 "annotation.  All of them are optional.  The following is a model of our "
 "first order system that includes an experiment annotation:"
 msgstr ""
-"هناك أربعة معلومات يمكن تحديدها عن طريق معلومة التجربة. والنموذج التالي هو نموذجنا "
-"عن النظام ذو الرتبة الأولى ولكنه يتضمن معلومة التجربة. "
+"هناك أربعة معلومات يمكن تحديدها عن طريق ملاحظة التجربة. والنموذج التالي هو نموذجنا "
+"عن النظام ذو الرتبة الأولى ولكنه يتضمن ملاحظة التجربة:"
 
 #: ../../source/behavior/equations/first_order.rst:219
 msgid ""
@@ -354,10 +354,10 @@ msgid ""
 "The trajectory terminates at 8 seconds because the simulator used the "
 "``experiment`` annotation to determine how long to run the simulation."
 msgstr ""
-"المنحنى ينتهي عند 8 ثوان ﻷن أداة المحاكاة استخدمت معلومة التجربة لتحديد كم من الوقت سيتم فيه تنفيذ المحاكاة.
+"المنحنى ينتهي عند 8 ثوان ﻷن أداة المحاكاة استخدمت ملاحظة التجربة لتحديد كم من الوقت سيتم فيه تنفيذ المحاكاة."
 #: ../../source/behavior/equations/first_order.rst:0
 msgid "Annotation Support"
-msgstr "دعم المعلومة"
+msgstr "دعم الملاحظات"
 
 #: ../../source/behavior/equations/first_order.rst:229
 msgid ""
@@ -365,8 +365,8 @@ msgid ""
 "keep in mind that, in general, a tool is free to ignore any or all "
 "annotations."
 msgstr ""
-"معلومة التجربة مدعومة بشكل واسع. ولكن من المهم أن نضع في الحسبان أنه ، بشكل عام، يمكن للأداة تجاهل "
-"بعض أو كل معلومات التجربة"
+"ملاحظة التجربة مدعومة بشكل واسع. ولكن من المهم أن نضع في الحسبان أنه ، بشكل عام، يمكن للأداة المستخدمة تجاهل "
+"بعض أو كل ملاحظات التجربة"
 
 #: ../../source/behavior/equations/first_order.rst:19
 msgid "model"
@@ -391,7 +391,7 @@ msgstr "معادلة الابتداء"
 #: ../../source/behavior/equations/first_order.rst:194
 #: ../../source/behavior/equations/first_order.rst:195
 msgid "annotation"
-msgstr "معلومة"
+msgstr "ملاحظة"
 
 #: ../../source/behavior/equations/first_order.rst:195
 msgid "experiment"
