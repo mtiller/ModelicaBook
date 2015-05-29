@@ -564,7 +564,7 @@ msgid ""
 " any hysteresis that we see the furnace constantly turning on and off.  If "
 "we add hysteresis, our controller model becomes:"
 msgstr ""
-"这正是我们在前面小节\ :ref:`hysteresis`\ 中展示的相同问题."
+"这正是我们在前面小节\ :ref:`hysteresis`\ 中展示的相同问题。"
 "正因为控制策略缺乏任何迟滞，我们才所看到的暖炉不断打开和关闭。"
 "如果再加上迟滞，控制器模型就变为："
 

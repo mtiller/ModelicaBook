@@ -272,7 +272,7 @@ msgid ""
 "``experiment`` annotation."
 msgstr ""
 "例如，试验条件的描述包括仿真开始时间、结束时间以及容差范围等，这些信息并不描述模型的特性，只是提供进行模拟仿真的条件。"
-"试验条件通过特定的\ ``experiment``\ 标注保存在模型中."
+"试验条件通过特定的\ ``experiment``\ 标注保存在模型中。"
 
 #: ../../source/behavior/equations/first_order.rst:209
 msgid ""
