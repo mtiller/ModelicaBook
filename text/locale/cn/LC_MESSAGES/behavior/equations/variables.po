@@ -465,9 +465,9 @@ msgid ""
 ":ref:`enumerations`, the possible values for this attribute are ``never``, "
 "``avoid``, ``default``, ``prefer`` and ``always``."
 msgstr ""
-" ``stateSelect`` "
-"（状态选择）属性用于为Modeliac编译器提供一个线索。一个既定的变量是否应该被选为状态量（在需要选择的情况）。在上节\\ "
-":ref:`enumerations`\\ 中讨论过，这个属性可能值是：\\ ``never``\\ （从不）、\\ ``avoid``\\ "
+"\ ``stateSelect``\ "
+"（状态选择）属性用于为Modeliac编译器提供线索，去确定某个既定的变量是否应该被选为状态量（在需要选择的情况）。在上节\\ "
+":ref:`enumerations`\\ 中我们讨论过，这个属性可能值是：\\ ``never``\\ （从不）、\\ ``avoid``\\ "
 "（避免）、\\ ``default``\\ （默认）、\\ ``prefer``\\ （偏向）、\\ ``always``\\ （总是）"
 
 #: ../../source/behavior/equations/variables.rst:328
