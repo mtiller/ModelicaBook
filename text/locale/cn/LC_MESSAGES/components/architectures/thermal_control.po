@@ -242,7 +242,6 @@ msgid ""
 "So the question then becomes, **how can we handle situations where choosing "
 "different subsystems requires us to have different interfaces**?"
 msgstr ""
-"So the question then becomes, **how can we handle situations where choosing different subsystems requires us to have different interfaces**?"
 "所以，问题就变成：\ **如何处理不同子系统要求不同接口这种情况**\ ？"
 
 #: ../../source/components/architectures/thermal_control.rst:182

@@ -121,7 +121,7 @@ msgid ""
 "dimension, *e.g.,*"
 msgstr ""
 "然后声明一个用\ ``enumeration``\ 指代维数的数组，"
-"\ *即：*\ "
+"即："
 
 #: ../../source/behavior/arrays/indexing.rst:96
 msgid ""

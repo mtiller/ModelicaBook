@@ -107,7 +107,7 @@ msgstr ""
 "\ ``DefaultType``\ 代表\ ``variableName``\ 类型。"
 "\ ``ConstrainingType``\ 表示约束类型。"
 "如前所述，\ ``variableName``\ 变量使用的任何新类型必须插件兼容于约束类型。"
-"另外，当然\ ``DefaultType``即\ **也**\ 必须插件兼容于约束类型了。"
+"另外，当然\ ``DefaultType``\ **也**\ 必须插件兼容于约束类型了。"
 
 #: ../../source/components/architectures/replaceable.rst:0
 msgid "``constrainedby`` vs. ``extends``"
