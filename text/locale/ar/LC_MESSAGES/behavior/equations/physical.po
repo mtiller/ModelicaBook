@@ -26,10 +26,12 @@ msgid ""
 "mistakes."
 msgstr ""
 "على الرغم من أن القسم السابق قد أخذنا في البداية مع تمثيل السلوك الرياضي، إلا أنه لم يكن له أي صلة بالسلوك المادي."
-"في هذا القسم، سوف نستكشف كيفية بناء نماذج 
+"في هذا القسم، سوف نستكشف كيفية بناء نماذج تمثل سلوك النظام المادي. وعلى طول الطريق، سوف نسلط الضوء على بعض مميزات اللغة "
+"والتي يمكننا الاستفادة منها ليس فقط من أجل ربط النماذج بالنظام المادي والمجالات الهندسية ولكن أيضا من أجل تجنب الأخطاء."
+
 #: ../../source/behavior/equations/physical.rst:14
 msgid "Let's start with the following example:"
-msgstr ""
+msgstr "دعونا نبدأ بهذا المثال"
 
 #: ../../source/behavior/equations/physical.rst:22
 msgid ""
@@ -37,6 +39,11 @@ msgid ""
 "previous example consists of a ``model`` definition that includes variables "
 "and equations."
 msgstr ""
+"كما رأينا في مناقشاتنا السابقة عن نظام الرتبة الأولى\n"
+":ref:`first-order`\n"
+"المثال السابق يتكون من تعريف نموذج\n"
+"``model``\n"
+"والذي يتضمن المتغيرات والمعادلات."
 
 #: ../../source/behavior/equations/physical.rst:26
 msgid ""
@@ -48,6 +55,7 @@ msgid ""
 ":ref:`variability`.  But for now, we can think of a ``parameter`` as a "
 "variable whose value we must provide."
 msgstr ""
+"على الرغم من ذلك هذه المرة سوف نرى عالم المعاملات"
 
 #: ../../source/behavior/equations/physical.rst:35
 msgid ""
