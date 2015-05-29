@@ -47,7 +47,7 @@ msgid ""
 "of a single pendulum."
 msgstr ""
 "在本节中，我们可以像\\ :ref:`distributed-heat-transfer`\\ "
-"的例子一样用组件阵列来建立子系统模型。但在创建摆的数组之前，我们需要先有一个单摆的模型。"
+"的例子一样用组件数组来建立子系统模型。但在创建摆的数组之前，我们需要先有一个单摆的模型。"
 
 #: ../../source/components/subsystems/pendulums.rst:32
 msgid "The components of the pendulum can be rendered as follows:"
@@ -132,7 +132,7 @@ msgid ""
 "peculiar behavior observed when we choose their lengths according to the "
 "equation specified earlier."
 msgstr ""
-"本节中，我们看到了如何才能使用、声明和修改组件阵列。在本节的例子里，这允许我们指定系统内摆的数目并进行仿真。目的是观察这些摆在应用由前述方程式指定的不同长度时的特别行为。"
+"本节中，我们看到了如何才能使用、声明和修改组件数组。在本节的例子里，这允许我们指定系统内摆的数目并进行仿真。目的是观察这些摆在应用由前述方程式指定的不同长度时的特别行为。"
 
 #: ../../source/components/subsystems/pendulums.rst:118
 msgid ""

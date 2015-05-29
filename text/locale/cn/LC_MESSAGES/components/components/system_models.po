@@ -106,7 +106,7 @@ msgid ""
 msgstr ""
 "\ **参数**\ － 包含\ ``parameter``\ 限定词的变量不会产生任何方程式。"
 "相反，它会生成一个\ ``assert``\ 调用，确保两个变量之间值相同。"
-"这在某些情况下很有用。例如，当\ ``connector``\ 包括指定连接器内数组大小的\ ``Integer``\ 参数时，断言语句会确保阵列大小相同。"
+"这在某些情况下很有用。例如，当\ ``connector``\ 包括指定连接器内数组大小的\ ``Integer``\ 参数时，断言语句会确保数组大小相同。"
 
 #: ../../source/components/components/system_models.rst:96
 msgid ""

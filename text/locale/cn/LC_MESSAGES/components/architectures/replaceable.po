@@ -246,7 +246,7 @@ msgid ""
 "But the important point is that the redeclaration affects every element of "
 "the ``sensors`` array.  There is no way to redeclare only one element."
 msgstr ""
-"但要注意，重新声明影响\ ``sensors``\ 阵列中的每个元素。"
+"但要注意，重新声明影响\ ``sensors``\ 数组中的每个元素。"
 "仅仅重新定义一个元素是不可能的。"
 
 #: ../../source/components/architectures/replaceable.rst:182

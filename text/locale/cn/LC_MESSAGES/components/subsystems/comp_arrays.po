@@ -41,7 +41,7 @@ msgid ""
 "used for other types.  All that is required is to follow the name of the "
 "variable being declared by a set of dimensions."
 msgstr ""
-"创建组件阵列的语法和用于其它类型的语法相同。"
+"创建组件数组的语法和用于其它类型的语法相同。"
 "要做的仅仅是声明的变量名称后加上维度。"
 
 #: ../../source/components/subsystems/comp_arrays.rst:26
@@ -70,7 +70,7 @@ msgid ""
 "inside the component is implicitly treated as an array.  For example, "
 "consider the following ``record`` definition:"
 msgstr ""
-"正如在\ :ref:`harmonic-motion`\ 讨论里简要地谈到的一样，我们在对组件阵列进行\ :ref:`sub-modifications`\ 的时候，该组件中每个变量均被隐式地视为一个数组。"
+"正如在\ :ref:`harmonic-motion`\ 讨论里简要地谈到的一样，我们在对组件数组进行\ :ref:`sub-modifications`\ 的时候，该组件中每个变量均被隐式地视为一个数组。"
 "举个例子，考虑下面的\ ``record``\ 定义："
 
 #: ../../source/components/subsystems/comp_arrays.rst:52
@@ -92,7 +92,7 @@ msgstr ""
 "最重要的一点是，如果我们省略下标（如\ ``p.x``\ ），那么下标就对应所有的元素（在技术上说，下标维持在“未限定”状态。而随后则可以“限定”下标）。"
 "此外，如果提供的下标为一个范围（例如\ ``：``\ 、\ ``1:end``\ 、\ ``2:3``\ ），"
 "那么表达式则会解析为对应于该范围内所有索引的数组子集。"
-"上述内容对于含有组件阵列的组件阵列也一样成立。"
+"上述内容对于含有组件数组的组件数组也一样成立。"
 
 #: ../../source/components/subsystems/comp_arrays.rst:64
 msgid "The following example, demonstrates some of the more common cases:"

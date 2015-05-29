@@ -200,7 +200,7 @@ msgid ""
 "The ``Sum`` block uses the :ref:`sum-func` function to compute the sum over "
 "the array of input signals, ``u``, to compute the output signal ``y``."
 msgstr ""
-"\ ``Sum``\ 模块使用\ :ref:`sum-func`\ 函数来计算输入信号阵列\ ``u``\ 的总和，以此得到输出信号\ ``y``\ 。"
+"\ ``Sum``\ 模块使用\ :ref:`sum-func`\ 函数来计算输入信号数组\ ``u``\ 的总和，以此得到输出信号\ ``y``\ 。"
 
 #: ../../source/components/components/block_comps.rst:179
 msgid "``Product``"

@@ -130,7 +130,7 @@ msgid ""
 "on :ref:`sub-modifications`."
 msgstr ""
 "需要注意的是，如果我们想对组件数组的每个组件进行修改，如加入\ ``G=G_rod``\ ，我们可以在修改上使用\ ``each``\ 限定词。"
-"我们将在本章节后面\ :ref:`sub-modifications`\ 一节里讨论\ ``each``\ 限定词以及如何让修改应用于元件阵列。"
+"我们将在本章节后面\ :ref:`sub-modifications`\ 一节里讨论\ ``each``\ 限定词以及如何让修改应用于元件数组。"
 
 #: ../../source/components/subsystems/heat_transfer.rst:91
 msgid ""
@@ -138,7 +138,7 @@ msgid ""
 "capacitances and conductances using ``for`` loops in an ``equation`` "
 "section:"
 msgstr ""
-"现在，我们已经声明了组件阵列。然后，我们就可以使用\ ``for``\ 循环在\ ``equation``\ 断咯把的电容和电导连接起来："
+"现在，我们已经声明了组件数组。然后，我们就可以使用\ ``for``\ 循环在\ ``equation``\ 断咯把的电容和电导连接起来："
 
 #: ../../source/components/subsystems/heat_transfer.rst:99
 msgid ""
@@ -198,4 +198,4 @@ msgid ""
 "In this section, we've seen how we can build assemblies of arbitrary size "
 "using arrays of components and ``for`` loops to connect them together."
 msgstr ""
-"在这一节中，我们已经看到了要如何使用组件阵列建立任意大小的组件，并使用\ ``for``\ 循环将其连接在一起。"
+"在这一节中，我们已经看到了要如何使用组件数组建立任意大小的组件，并使用\ ``for``\ 循环将其连接在一起。"
