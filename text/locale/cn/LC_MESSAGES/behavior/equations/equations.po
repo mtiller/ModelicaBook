@@ -141,7 +141,7 @@ msgid ""
 "be useful?  Again, we are getting ahead of ourselves here, but one use case "
 "would be the conditional application of initial equations, *e.g.,*"
 msgstr ""
-"关于这个问题，你一定会质疑，这种不平衡的情况有用吗？再次提前指出，其中一种应用是在带条件的初始方程, 例如："
+"关于这个问题，你一定会质疑，这种不平衡的情况有用吗？再次提前指出，其中一种应用是在带条件的初始方程，例如："
 
 #: ../../source/behavior/equations/equations.rst:112
 msgid ""
