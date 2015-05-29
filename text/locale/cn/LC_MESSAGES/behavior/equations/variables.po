@@ -214,7 +214,7 @@ msgid ""
 "type of value can be given for that attribute), which types they can be "
 "associated with and finally a brief description of the attribute:"
 msgstr ""
-"在本章中到目前为止，已经提到了属性(例如\\ ``unit``\\ （单位）)。但是还没有详细讨论过。例如，一个既定的变量应该呈现\\ *何种*\\ "
+"在本章中到目前为止，已经提到了属性（例如\\ ``unit``\\ （单位））。但是还没有详细讨论过，例如，一个既定的变量应该有\\ *何种*\\ "
 "属性？这主要依赖于变量的类型（以及它所基于的基于内置类型或派生类型）。下面的表格列举了所有可能的属性以及与其类型（例如属性可以赋什么类型的值）以及其可以关联的类型，最后表格则简短描述属性的作用。"
 
 #: ../../source/behavior/equations/variables.rst:203

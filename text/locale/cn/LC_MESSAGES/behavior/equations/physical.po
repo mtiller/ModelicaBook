@@ -239,7 +239,7 @@ msgid ""
 "fact, one might even argue it is worse because \"Temperature\" is more "
 "descriptive than just a single letter like \"K\"."
 msgstr ""
-"初看起来，似乎不是很明白，指定变量的物理单位属性( 比如\ ``(unit=\"K\")``\ )还不如简单在变量声明的后面添加描述性字符串\ ``\"Temperature\"``\ 。"
+"初看起来，似乎不是很明白，指定变量的物理单位属性（比如\ ``(unit=\"K\")``\ ）还不如简单在变量声明的后面添加描述性字符串\ ``\"Temperature\"``\ 。"
 "事实上，人们甚至可以说指定变量的物理属性更糟糕。因为\"Temperature\"比单一的字母\"K\"更具有描述性。"
 
 #: ../../source/behavior/equations/physical.rst:156
@@ -251,7 +251,7 @@ msgid ""
 "composed of other base units (*e.g.*, ``N``)."
 msgstr ""
 "然而，设置\ ``unit``\ （单位）属性实际上有两个原因。"
-"第一个原因是，Modelica语言规范定义了所有标准国际单位属性之间的关系(例如\ ``K``\ 、\ ``kg``\ 、\ ``m``\ )。"
+"第一个原因是，Modelica语言规范定义了所有标准国际单位属性之间的关系（例如\ ``K``\ 、\ ``kg``\ 、\ ``m``\ ）。"
 "这包括由其他基本单位构成的复杂单位类型 (例如\ ``N``\ ) 。"
 
 #: ../../source/behavior/equations/physical.rst:162

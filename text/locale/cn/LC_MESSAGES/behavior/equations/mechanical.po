@@ -88,7 +88,7 @@ msgid ""
 "These initial conditions essentially mean that the system starts in a state "
 "where neither inertia is actually moving (*i.e.*, :math:`\\omega=0`), but "
 "there is a non-zero deflection across both springs."
-msgstr "这些初始化条件意味着系统的开始状态惯量元素没有转动(即\ :math:`\\omega=0`\ ) ，但是在两个弹簧之间有一个非零的偏转。"
+msgstr "这些初始化条件意味着系统的开始状态惯量元素没有转动（即\ :math:`\\omega=0`\ ），但是在两个弹簧之间有一个非零的偏转。"
 
 #: ../../source/behavior/equations/mechanical.rst:78
 msgid ""
