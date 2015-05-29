@@ -320,8 +320,8 @@ msgstr ""
 
 #: ../../source/behavior/equations/annotations.rst:266
 msgid ""
-"When embedding HTML inside an annotation, the HTML code must be surrounded "
-"by ``<html>`` tags, *e.g.,*"
+"When embedding HTML inside an annotation, the HTML code must be "
+"surrounded by ``<html>`` tags, *e.g.,*"
 msgstr ""
 "当在标注里面嵌入HTML是， HTML代码必须由\ ``<html>``\ 标记包围，如："
 

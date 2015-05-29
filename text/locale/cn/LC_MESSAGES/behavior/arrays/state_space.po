@@ -274,7 +274,7 @@ msgid ""
 ":ref:`electrical examples <elec-example>` in LTI form.  But this time, we'll"
 " create a named instance of the ``LTI`` model:"
 msgstr ""
-"在至今所有的例子中，我们已经（通过``extends``）用继承来重用\\ ``LTI``\\ 模型的公式。一般而言，\\ **把方程作为子组件**\\"
+"在至今所有的例子中，我们已经（通过\ ``extends``\ ）用继承来重用\\ ``LTI``\\ 模型的公式。一般而言，\\ **把方程作为子组件**\\"
 " 是一个相比之下\\ **好得多**\\ 的代码复用方法。为了说明这种方法，我们将前面讨论过的\\ :ref:`electrical examples "
 "<elec-example>`\\ 重写为LTI形式。不过这次，我们会建立为\\ ``LTI``\\ 模型创建一个命名实例。"
 

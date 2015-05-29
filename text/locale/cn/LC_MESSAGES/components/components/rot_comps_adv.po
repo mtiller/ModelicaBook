@@ -510,7 +510,7 @@ msgstr "变量数"
 #: ../../source/components/components/rot_comps_adv.rst:367
 #: ../../source/components/components/rot_comps_adv.rst:367
 msgid "1 (``housing_phi``)"
-msgstr "1（\ ``housing_phi`\ ）"
+msgstr "1（\ ``housing_phi``\ ）"
 
 #: ../../source/components/components/rot_comps_adv.rst:369
 msgid "**Equations required**"
