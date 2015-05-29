@@ -199,9 +199,12 @@ msgid ""
 "for including the part number would be to enclose it in a variable that is "
 "more likely to be unique to your company or application, *e.g.,*:"
 msgstr ""
-"This introduces another principle of annotations which is that it should be possible to have more than one **as long as the names are different**."
-"For this reason, choosing names is very important and they should be chosen to avoid potential conflicts with other names."
-"For example, a better approach for including the part number would be to enclose it in a variable that is more likely to be unique to your company or application, *e.g.,*:"
+"这就引入另一个关于标注的原则。"
+"\ **只要标注的名称不同**\ ，我们就可以一次加入多个。"
+"由于这个原因，名称的选取很重要。"
+"我们应避免与其他名称的潜在冲突。"
+"例如，在加入零件号时，最好要将其放一个特别的变量内。"
+"这个变量最好应该和你的公司或者应用情况相关，而且足够特别。例如："
 
 #: ../../source/behavior/equations/annotations.rst:179
 msgid ""
@@ -211,8 +214,8 @@ msgid ""
 " the same model, they could do that by establishing their own separate "
 "hierarchy in the annotation, *e.g.,*:"
 msgstr ""
-"In this case, the variable ``XogenyIndustries`` can be used to carve out a \"namespace\" for a specific organization or purpose."
-"If another organization came along and wanted to associate a different part number with the same model, they could do that by establishing their own separate hierarchy in the annotation, *e.g.,*:"
+"在本例里，变量\ ``XogenyIndustries``\ 可以为某个特定组织或目的创建出一个“命名空间”。"
+"如果其他组织想要一个不同的部件号与同一个模型相关联，他们就能通过在自己的标注中的层次中做到这一点，如："
 
 #: ../../source/behavior/equations/annotations.rst:191
 msgid ""
@@ -220,8 +223,12 @@ msgid ""
 "(*e.g.,* in the Modelica Standard Library).  By convention, tool vendors use"
 " names that are prefixed by two underscores, *e.g.,*"
 msgstr ""
-"Occasionally, Modelica tool vendors include their own special annotations (*e.g.,* in the Modelica Standard Library)."
-"By convention, tool vendors use names that are prefixed by two underscores, *e.g.,*"
+"有时候，Modelica的工具供应商会加入他们自己的特殊标注（如在Modelica的标准库中）。"
+"按照惯例，工具供应商使用以两个下划线为前缀的名字，如："
+
+#: ../../source/behavior/equations/annotations.rst:204
+msgid "Interpretation"
+msgstr "解释"
 
 #: ../../source/behavior/equations/annotations.rst:206
 msgid ""
@@ -475,8 +482,4 @@ msgstr ""
 
 #: ../../source/behavior/equations/annotations.rst:161
 msgid "``StopTime=8``"
-msgstr ""
-
-#: ../../source/behavior/equations/annotations.rst:204
-msgid "Interpretation"
 msgstr ""
