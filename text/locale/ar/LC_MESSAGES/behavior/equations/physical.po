@@ -89,6 +89,13 @@ msgid ""
 "``Real``).  Since this variable doesn't have the ``parameter`` qualifier, "
 "its value is determined by the equations in the model."
 msgstr ""
+"دعونا نجرب بقية هذا النموذج. المتغير التالي هو\n"
+"``T``\n"
+"وهذا أيضا من النوع\n"
+"``Real``\n"
+"ولأن هذا المتغير ليس له مميز\n"
+"``parameter``\n"
+"فإن قيمته ستتحدد عن طريق المعادلات في النموذج."
 
 #: ../../source/behavior/equations/physical.rst:47
 msgid ""
@@ -99,6 +106,8 @@ msgid ""
 msgstr ""
 "دعونا نرى قسمي المعادلة. القسم الأول هو المعادلة الابتدائية\n"
 "``initial equation``\n"
+"والذي يحدد كيفية ابتداء المتغير\n"
+"``T``.\n"
 
 #: ../../source/behavior/equations/physical.rst:53
 msgid ""
