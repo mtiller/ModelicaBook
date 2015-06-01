@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/physical.rst:4
 msgid "Getting Physical"
-msgstr "التعامل مع النظام المادي"
+msgstr "التحول إلى النظام المادي"
 
 #: ../../source/behavior/equations/physical.rst:6
 msgid ""
@@ -93,7 +93,7 @@ msgstr ""
 "``T``\n"
 "وهذا أيضا من النوع\n"
 "``Real``\n"
-"ولأن هذا المتغير ليس له مميز\n"
+"ولأن هذا المتغير ليس له مميِّز\n"
 "``parameter``\n"
 "فإن قيمته ستتحدد عن طريق المعادلات في النموذج."
 
