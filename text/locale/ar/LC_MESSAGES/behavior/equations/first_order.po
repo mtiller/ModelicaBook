@@ -53,7 +53,7 @@ msgstr ""
 ":math:`x` \n"
 "في معادلتنا هو متغير ذو قيمة حقيقية ومستمرة فإن تعريفه على المودليكا يكون على الصورة\n"
 "``Real x;``.\n"
-"إن النوع\n"
+"إن النوع عدد حقيقي\n"
 "``Real``\n"
 "هو نوع واحد من الأنواع التي يمكن استخدامها ( وسوف نناقش الإمكانات الأخرى المختلفة بشكل أكثر كمال "
 "في قسم قادم عن المتغيرات\n"
@@ -66,7 +66,7 @@ msgid ""
 " the ``der`` operator to represent the time derivative of ``x``.  Thus,"
 msgstr ""
 "بعد تعريف كل المتغيرات، يمكننا البدء في كتابة المعادلات التي تصف السلوك الرياضي للنموذج. "
-"في هذه الحالة، يمكننا استخدام مؤثر\n"
+"في هذه الحالة، يمكننا استخدام مؤثر التفاضل\n"
 "``der``\n"
 "لتمثيل التفاضل بالنسبة للزمن ل\n"
 " ``x``.\n"
@@ -374,11 +374,11 @@ msgstr "نموذج"
 
 #: ../../source/behavior/equations/first_order.rst:20
 msgid "der"
-msgstr "der"
+msgstr "تفاضل"
 
 #: ../../source/behavior/equations/first_order.rst:21
 msgid "Real"
-msgstr "Real"
+msgstr "عدد حقيقي"
 
 #: ../../source/behavior/equations/first_order.rst:80
 msgid "descriptive strings"
