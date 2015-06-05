@@ -145,6 +145,11 @@ msgid ""
 "the equals sign.  It is the compiler's job to determine how to use these "
 "equations to solve for the variables contained in the equations."
 msgstr ""
+"أحد الأمور التي ليس لها أي أهمية هو أن المعادلة في مثالنا\n"
+"``NewtonCooling``\n"
+"تتضمن التعبير عن المعادلة في القسم الأيسر. في المودليكا **ليس** ضروريا أن تكون كل معادلة هي معادلة صريحة "
+"لمتغير واحد. أي معادلة قد تتضمن تعبيرات رياضية في أي طرف من طرفي المعادلة حول علامة يساوي. "
+
 
 #: ../../source/behavior/equations/physical.rst:75
 msgid ""
