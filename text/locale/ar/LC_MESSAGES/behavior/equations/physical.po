@@ -104,26 +104,37 @@ msgid ""
 "initialized.  It should be pretty clear that the initial value for ``T`` is "
 "going to be whatever value was given (by us) for the parameter ``T0``."
 msgstr ""
-"دعونا نرى قسمي المعادلة. القسم الأول هو المعادلة الابتدائية\n"
+"دعونا ننظر إلى قسمي المعادلة. القسم الأول هو المعادلة الابتدائية\n"
 "``initial equation``\n"
 "والذي يحدد كيفية ابتداء المتغير\n"
 "``T``.\n"
+"يجب أن يكون واضحا أن القيمة الابتدائية ل\n"
+"``T``\n"
+"ستحدد قيمتها حسب القيمة التي سنعطيها للمعامل\n"
+"``T0``."
 
 #: ../../source/behavior/equations/physical.rst:53
 msgid ""
 "The other equation is the differential equation that governs the behavior of"
 " ``T``.  Mathematically, we could express this equation as:"
 msgstr ""
+"والمعادلة الأخرى هي المعادلة التفاضلية التي ستحدد سلوك\n"
+" ``T``. \n"
+"ورياضيا يمكن تمثيل هذه المعادلة كالتالي:"
 
 #: ../../source/behavior/equations/physical.rst:58
 msgid "but in Modelica, we write it as:"
-msgstr ""
+msgstr "ولكن في المودليكا، نحن نكتبها على الصورة التالية:"
 
 #: ../../source/behavior/equations/physical.rst:64
 msgid ""
 "Note that this is really no different from the equation we saw in our "
 "``FirstOrder`` model from the :ref:`first-order` example."
 msgstr ""
+"لاحظ أنه لايوجد اختلاف حقيقي بين المعادلة التي رأيناها في نموذج نظام الرتبة الأولى\n"
+"``FirstOrder``\n"
+"في المثال الذي ذكرناه في قسم\n"
+":ref:`first-order`"
 
 #: ../../source/behavior/equations/physical.rst:67
 msgid ""
