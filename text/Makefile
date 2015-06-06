@@ -312,6 +312,23 @@ latex-a4: $(SPHINXDEPS)
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
+latex-a4-cn: specs_cn results images
+	@echo
+	@echo "Applying horrible LaTeX hack..."
+	-mkdir -p build
+	git checkout $(SOURCEDIR)/index.rst # make sure we have pristine index.rst
+	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
+	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
+	@echo
+	$(SET_BOOK_LANG_CN) $(SPHINXBUILD) -b latex -t latex -t a4 -D language=cn $(ALLSPHINXOPTS) $(BUILDDIR)/xelatex
+
+	@echo "Reverting horrible LaTeX hack..."
+	git checkout $(SOURCEDIR)/index.rst # revert back to pristine index.rst
+	@echo
+	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/xelatex."
+	@echo "Run \`make' in that directory to run these through (pdf)latex" \
+	      "(use \`make latexpdf' here to do that automatically)."
+
 pdf:	pdf-letter pdf-a4
 
 pdf-letter: latex-letter
@@ -323,6 +340,15 @@ pdf-a4:	latex-a4
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex-a4 all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex-a4."
+
+pdf-cn: latex-a4-cn
+	@echo "Running LaTeX files through xelatex..." 
+	(cp locale/cn/mycjk.sty $(BUILDDIR)/xelatex; ) 
+	(cd $(BUILDDIR)/xelatex; sed -i '/\usepackage\[utf8\]{inputenc}/d' ModelicaByExample.tex) 
+	(cd $(BUILDDIR)/xelatex; sed -i '/.DeclareUnicodeCharacter.*/d' ModelicaByExample.tex) 
+	(cd $(BUILDDIR)/xelatex; sed -i 's/{babel}/{mycjk}/' ModelicaByExample.tex) 
+	(cd $(BUILDDIR)/xelatex; xelatex ModelicaByExample.tex) 
+	(cd $(BUILDDIR)/xelatex; xelatex ModelicaByExample.tex) 
 
 latexpdf: pdf
 
@@ -383,8 +409,8 @@ update_ar: gettext
 buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
 
-dirhtml_cn: update_cn buildmo
-	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
+dirhtml_cn: specs_cn update_cn buildmo
+	$(SET_BOOK_LANG_CN) $(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
 	cat locale/cn/cn.css >> build/dirhtml_cn/_static/xogeny.css
 
 dirhtml_kr: update_kr buildmo
