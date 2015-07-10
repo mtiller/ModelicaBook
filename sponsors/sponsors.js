@@ -59,7 +59,7 @@ var Sponsors = {
     "Siemens": {
 	"name": "Siemens PLM Software",
 	"profile": "Siemens PLM Software is a world-leading provider of product lifecycle management (PLM) software and services with nine million licensed seats and 77,000 customers worldwide. Part of the portfolio of the LMS business segment within Siemens PLM Software, LMS Imagine.Lab Amesim is the de facto tool for physical simulation of mechatronic systems.",
-	"link": "http://www.lmsintl.com/LMS-Imagine-Lab-AMESim",
+	"link": "http://www.plm.automation.siemens.com/en_us/products/lms/imagine-lab/amesim/platform/modelica.shtml",
 	"logo": "logo.png"
     },
     "TUHH": {
