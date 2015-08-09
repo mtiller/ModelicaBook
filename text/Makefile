@@ -347,8 +347,8 @@ pdf-cn: latex-a4-cn
 	(cd $(BUILDDIR)/xelatex; sed -i '/\usepackage\[utf8\]{inputenc}/d' ModelicaByExample.tex) 
 	(cd $(BUILDDIR)/xelatex; sed -i '/.DeclareUnicodeCharacter.*/d' ModelicaByExample.tex) 
 	(cd $(BUILDDIR)/xelatex; sed -i 's/{babel}/{mycjk}/' ModelicaByExample.tex) 
-	(cd $(BUILDDIR)/xelatex; xelatex ModelicaByExample.tex) 
-	(cd $(BUILDDIR)/xelatex; xelatex ModelicaByExample.tex) 
+	(cd $(BUILDDIR)/xelatex; xelatex -shell-escape -interaction=batchmode  ModelicaByExample.tex; echo 'first pass') 
+	(cd $(BUILDDIR)/xelatex; xelatex  -shell-escape -interaction=batchmode ModelicaByExample.tex; echo 'second pass') 
 
 latexpdf: pdf
 
