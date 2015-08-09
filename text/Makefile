@@ -345,6 +345,10 @@ pdf-cn: latex-a4-cn
 	@echo "Running LaTeX files through xelatex..."
 	(cp locale/cn/mycjk.sty $(BUILDDIR)/xelatex; )
 	(cd $(BUILDDIR)/xelatex; sed -i '/\usepackage\[utf8\]{inputenc}/d' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/xelatex; sed -i 's/\\author{.*}/\\author{\\authorandtranslators}/' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/xelatex; sed -i 's/\\title{.*}/\\title{Modelica实例教程}/' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/xelatex; sed -i '/\\release{.*}/d' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/xelatex; sed -i '/\\date{.*}/d' ModelicaByExample.tex)
 	(cd $(BUILDDIR)/xelatex; sed -i '/.DeclareUnicodeCharacter.*/d' ModelicaByExample.tex)
 	(cd $(BUILDDIR)/xelatex; sed -i 's/{babel}/{mycjk}/' ModelicaByExample.tex)
 	(cd $(BUILDDIR)/xelatex; xelatex -shell-escape -interaction=batchmode  ModelicaByExample.tex; echo 'first pass')
