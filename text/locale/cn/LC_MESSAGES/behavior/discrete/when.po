@@ -179,7 +179,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/when.rst:6
 msgid "when"
-msgstr ""
+msgstr "when"
 
 #: ../../source/behavior/discrete/when.rst:77
 msgid "reinit"

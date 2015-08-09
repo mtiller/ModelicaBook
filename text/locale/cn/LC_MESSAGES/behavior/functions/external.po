@@ -435,4 +435,4 @@ msgstr ""
 
 #: ../../source/behavior/functions/external.rst:9
 msgid "external"
-msgstr ""
+msgstr "external语句"

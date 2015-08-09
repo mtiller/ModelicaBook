@@ -657,15 +657,15 @@ msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:117
 msgid "derived types"
-msgstr ""
+msgstr "派生类型"
 
 #: ../../source/behavior/equations/variables.rst:125
 msgid "type"
-msgstr ""
+msgstr "类型"
 
 #: ../../source/behavior/equations/variables.rst:145
 msgid "enumeration"
-msgstr ""
+msgstr "枚举类型"
 
 #: ../../source/behavior/equations/variables.rst:157
 msgid "AssertionLevel"
@@ -673,70 +673,70 @@ msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:158
 msgid "assertion levels"
-msgstr ""
+msgstr "断言级别"
 
 #: ../../source/behavior/equations/variables.rst:179
 msgid "attributes"
-msgstr ""
+msgstr "属性"
 
 #: ../../source/behavior/equations/variables.rst:190
 msgid "quantity attribute"
-msgstr ""
+msgstr "quantity属性"
 
 #: ../../source/behavior/equations/variables.rst:191
 msgid "start attribute"
-msgstr ""
+msgstr "属性"
 
 #: ../../source/behavior/equations/variables.rst:192
 msgid "fixed attribute"
-msgstr ""
+msgstr "属性"
 
 #: ../../source/behavior/equations/variables.rst:193
 msgid "min attribute"
-msgstr ""
+msgstr "min属性"
 
 #: ../../source/behavior/equations/variables.rst:194
 msgid "max attribute"
-msgstr ""
+msgstr "max属性"
 
 #: ../../source/behavior/equations/variables.rst:195
 msgid "unit attribute"
-msgstr ""
+msgstr "unit属性"
 
 #: ../../source/behavior/equations/variables.rst:196
 msgid "displayUnit attribute"
-msgstr ""
+msgstr "displayUnit属性"
 
 #: ../../source/behavior/equations/variables.rst:197
 msgid "nominal attribute"
-msgstr ""
+msgstr "nominal属性"
 
 #: ../../source/behavior/equations/variables.rst:198
 msgid "stateSelect attribute"
-msgstr ""
+msgstr "stateSelect属性"
 
 #: ../../source/behavior/equations/variables.rst:452
 msgid "modifications"
-msgstr ""
+msgstr "修改语句"
 
 #: ../../source/behavior/equations/variables.rst:457
 #: ../../source/behavior/equations/variables.rst:476
 #: ../../source/behavior/equations/variables.rst:488
 msgid "modification"
-msgstr ""
+msgstr "修改语句"
 
 #: ../../source/behavior/equations/variables.rst:457
 msgid "attribute"
-msgstr ""
+msgstr "属性"
 
 #: ../../source/behavior/equations/variables.rst:458
 msgid "attribute modification"
-msgstr ""
+msgstr "属性值修改"
 
 #: ../../source/behavior/equations/variables.rst:476
 msgid "extends"
-msgstr ""
+msgstr "扩展"
 
 #: ../../source/behavior/equations/variables.rst:488
 msgid "hierarchical"
-msgstr ""
+msgstr "带层级的"

@@ -427,7 +427,7 @@ msgstr ""
 "这似乎是这是不切实际的。"
 "既然两模型有很不同的基本假设。"
 "更重要的是，它们的\ **接口不同**\ （即带有不同的连接器）。"
-"不过，我们也可以通过利用所谓的\ *有条件声明*\ 去两个模型。"
+"不过，我们也可以通过利用所谓的\ *有条件声明*\ 去统一两个模型。"
 
 #: ../../source/components/components/rot_comps_adv.rst:333
 msgid "Consider the following ``ConfigurableGear`` model:"
@@ -574,12 +574,12 @@ msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:66
 msgid "kinematic constraint"
-msgstr ""
+msgstr "动力学约束"
 
 #: ../../source/components/components/rot_comps_adv.rst:68
 msgid "reaction torque"
-msgstr ""
+msgstr "反作用力矩"
 
 #: ../../source/components/components/rot_comps_adv.rst:324
 msgid "conditional declaration"
-msgstr ""
+msgstr "带条件声明"

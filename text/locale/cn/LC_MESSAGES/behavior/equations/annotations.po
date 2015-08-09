@@ -431,40 +431,40 @@ msgstr "\ ``HideResult``\ 标注使用如下："
 #: ../../source/behavior/equations/annotations.rst:309
 #: ../../source/behavior/equations/annotations.rst:337
 msgid "annotation"
-msgstr ""
+msgstr "注解"
 
 #: ../../source/behavior/equations/annotations.rst:35
 msgid "associated with; declarations"
-msgstr ""
+msgstr "和声明相关"
 
 #: ../../source/behavior/equations/annotations.rst:52
 msgid "associated with; equation"
-msgstr ""
+msgstr "和方程相关"
 
 #: ../../source/behavior/equations/annotations.rst:67
 msgid "associated with; extends"
-msgstr ""
+msgstr "和扩展语句相关"
 
 #: ../../source/behavior/equations/annotations.rst:84
 msgid "associated with; models"
-msgstr ""
+msgstr "和模型相关"
 
 #: ../../source/behavior/equations/annotations.rst:85
 msgid "associated with; definitions"
-msgstr ""
+msgstr "和定义相关"
 
 #: ../../source/behavior/equations/annotations.rst:284
 #: ../../source/behavior/equations/annotations.rst:289
 msgid "experiment"
-msgstr ""
+msgstr "试验"
 
 #: ../../source/behavior/equations/annotations.rst:309
 msgid "Evaluate"
-msgstr ""
+msgstr "Evaluate标注"
 
 #: ../../source/behavior/equations/annotations.rst:337
 msgid "HideResult"
-msgstr ""
+msgstr "HideResult标注"
 
 #: ../../source/behavior/equations/annotations.rst:61
 msgid ""

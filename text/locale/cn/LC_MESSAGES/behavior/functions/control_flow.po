@@ -148,22 +148,22 @@ msgstr ""
 #: ../../source/behavior/functions/control_flow.rst:25
 #: ../../source/behavior/functions/control_flow.rst:26
 msgid "for"
-msgstr ""
+msgstr "for循环"
 
 #: ../../source/behavior/functions/control_flow.rst:26
 #: ../../source/behavior/functions/control_flow.rst:52
 msgid "functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../source/behavior/functions/control_flow.rst:51
 #: ../../source/behavior/functions/control_flow.rst:52
 msgid "while"
-msgstr ""
+msgstr "while循环"
 
 #: ../../source/behavior/functions/control_flow.rst:76
 msgid "break"
-msgstr ""
+msgstr "break语句"
 
 #: ../../source/behavior/functions/control_flow.rst:87
 msgid "return"
-msgstr ""
+msgstr "return语句"

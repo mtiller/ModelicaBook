@@ -310,35 +310,35 @@ msgstr ""
 
 #: ../../source/behavior/equations/first_order.rst:19
 msgid "model"
-msgstr ""
+msgstr "model关键字"
 
 
 #: ../../source/behavior/equations/first_order.rst:20
 msgid "der"
-msgstr ""
+msgstr "der运算符"
 
 
 #: ../../source/behavior/equations/first_order.rst:21
 msgid "Real"
-msgstr ""
+msgstr "Real类型"
 
 
 #: ../../source/behavior/equations/first_order.rst:80
 msgid "descriptive strings"
-msgstr ""
+msgstr "描述性字符串"
 
 
 #: ../../source/behavior/equations/first_order.rst:121
 msgid "initial equation"
-msgstr ""
+msgstr "初始化方程"
 
 
 #: ../../source/behavior/equations/first_order.rst:194
 #: ../../source/behavior/equations/first_order.rst:195
 msgid "annotation"
-msgstr ""
+msgstr "标注"
 
 
 #: ../../source/behavior/equations/first_order.rst:195
 msgid "experiment"
-msgstr ""
+msgstr "experiment标注"

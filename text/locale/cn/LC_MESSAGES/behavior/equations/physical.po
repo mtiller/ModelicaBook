@@ -324,20 +324,3 @@ msgstr ""
 "，这会是一件极其乏味的事情。但是如果模型有这方面需要的华，还必须这样做。不过不用担心。我们会在后面关于\\ "
 ":ref:`importing_physical_types`\\ 的章节中讨论一个简单的解决方案。"
 
-#~ msgid "parameter"
-#~ msgstr ""
-
-#~ msgid "attributes"
-#~ msgstr ""
-
-#~ msgid "unit attribute"
-#~ msgstr ""
-
-#~ msgid "derived types"
-#~ msgstr ""
-
-#~ msgid "min attribute"
-#~ msgstr ""
-
-#~ msgid "type"
-#~ msgstr ""

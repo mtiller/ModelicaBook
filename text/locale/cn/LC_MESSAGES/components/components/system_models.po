@@ -332,7 +332,7 @@ msgstr ""
 #: ../../source/components/components/system_models.rst:76
 #: ../../source/components/components/system_models.rst:77
 msgid "connect"
-msgstr ""
+msgstr "connect语句"
 
 #: ../../source/components/components/system_models.rst:75
 msgid "input"
@@ -352,4 +352,4 @@ msgstr ""
 
 #: ../../source/components/components/system_models.rst:177
 msgid "Placement"
-msgstr ""
+msgstr "Placement标注"

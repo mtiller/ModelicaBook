@@ -176,7 +176,7 @@ msgid ""
 "angular position, and the through variable is ``tau``, the torque."
 msgstr ""
 "正如我们前面所讨论的，一个非因果连接器包括两种不同类型的变量：横跨变量及穿越变量。"
-"穿越变量前带有\ ``flow``\ 限定符。"
+"穿越变量前带有\ ``flow``\ 限定词。"
 "对于\ ``Rotational``\ 连接器而言，横跨变量是角位置\ ``phi``\ ，而穿越变量则是扭矩\ ``tau``\ 。"
 
 #: ../../source/components/components/component_models.rst:140
@@ -727,51 +727,51 @@ msgstr ""
 
 #: ../../source/components/components/component_models.rst:108
 msgid "connect"
-msgstr ""
+msgstr "connect语句"
 
 #: ../../source/components/components/component_models.rst:108
 msgid "flow"
-msgstr ""
+msgstr "flow限定词"
 
 #: ../../source/components/components/component_models.rst:151
 msgid "connection set"
-msgstr ""
+msgstr "连接集"
 
 #: ../../source/components/components/component_models.rst:348
 msgid "balanced models"
-msgstr ""
+msgstr "平衡的模型"
 
 #: ../../source/components/components/component_models.rst:349
 #: ../../source/components/components/component_models.rst:350
 msgid "models"
-msgstr ""
+msgstr "模型"
 
 #: ../../source/components/components/component_models.rst:349
 msgid "balanced"
-msgstr ""
+msgstr "平衡的模"
 
 #: ../../source/components/components/component_models.rst:350
 msgid "equations; number"
-msgstr ""
+msgstr "方程数目"
 
 #: ../../source/components/components/component_models.rst:425
 msgid "block"
-msgstr ""
+msgstr "框图"
 
 #: ../../source/components/components/component_models.rst:463
 #: ../../source/components/components/component_models.rst:490
 msgid "assert"
-msgstr ""
+msgstr "assert语句"
 
 #: ../../source/components/components/component_models.rst:489
 msgid "model limitations"
-msgstr ""
+msgstr "模型"
 
 #: ../../source/components/components/component_models.rst:491
 msgid "assertions"
-msgstr ""
+msgstr "断言"
 
 #: ../../source/components/components/component_models.rst:508
 msgid "candidate solutions"
-msgstr ""
+msgstr "候选解"
 

@@ -166,4 +166,4 @@ msgstr ""
 
 #: ../../source/components/packages/lookup.rst:31
 msgid "encapsulated"
-msgstr ""
+msgstr "encapsulated限定词"

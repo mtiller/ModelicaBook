@@ -465,36 +465,36 @@ msgstr ""
 
 #: ../../source/behavior/functions/polynomial.rst:60
 msgid "input"
-msgstr ""
+msgstr "input限定词"
 
 #: ../../source/behavior/functions/polynomial.rst:61
 msgid "function arguments"
-msgstr ""
+msgstr "函数输入"
 
 #: ../../source/behavior/functions/polynomial.rst:62
 msgid "algorithm"
-msgstr ""
+msgstr "algorithm区域"
 
 #: ../../source/behavior/functions/polynomial.rst:62
 msgid "in a function"
-msgstr ""
+msgstr "（函数内的）"
 
 #: ../../source/behavior/functions/polynomial.rst:216
 #: ../../source/behavior/functions/polynomial.rst:217
 msgid "annotation"
-msgstr ""
+msgstr "标注"
 
 #: ../../source/behavior/functions/polynomial.rst:217
 msgid "derivative"
-msgstr ""
+msgstr "derivative标注"
 
 #: ../../source/behavior/functions/polynomial.rst:218
 msgid "functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../source/behavior/functions/polynomial.rst:218
 msgid "differentiating"
-msgstr ""
+msgstr "微分"
 
 #: ../../source/behavior/functions/polynomial.rst:305
 msgid ""

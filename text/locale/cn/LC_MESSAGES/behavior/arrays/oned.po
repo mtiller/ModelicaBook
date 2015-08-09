@@ -416,4 +416,4 @@ msgstr ""
 
 #: ../../source/behavior/arrays/oned.rst:253
 msgid "array comprehensions"
-msgstr ""
+msgstr "数组解析"

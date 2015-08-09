@@ -111,4 +111,4 @@ msgstr ""
 
 #: ../../source/components/subsystems/propagation.rst:46
 msgid "final"
-msgstr ""
+msgstr "final限定词"

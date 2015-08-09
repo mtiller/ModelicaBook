@@ -624,11 +624,11 @@ msgstr ""
 
 #: ../../source/components/architectures/thermal_control.rst:184
 msgid "expandable connectors"
-msgstr ""
+msgstr "可扩展连接器"
 
 #: ../../source/components/architectures/thermal_control.rst:185
 msgid "connectors"
-msgstr ""
+msgstr "连接器"
 
 #: ../../source/components/architectures/thermal_control.rst:185
 #: ../../source/components/architectures/thermal_control.rst:331
@@ -637,8 +637,8 @@ msgstr ""
 
 #: ../../source/components/architectures/thermal_control.rst:242
 msgid "bus"
-msgstr ""
+msgstr "总线"
 
 #: ../../source/components/architectures/thermal_control.rst:331
 msgid "caveats"
-msgstr ""
+msgstr "警告"

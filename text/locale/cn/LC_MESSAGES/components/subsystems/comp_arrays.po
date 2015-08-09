@@ -100,11 +100,11 @@ msgstr "下面的例子，说明了一些比较常见的情况："
 
 #: ../../source/components/subsystems/comp_arrays.rst:6
 msgid "arrays"
-msgstr ""
+msgstr "数组"
 
 #: ../../source/components/subsystems/comp_arrays.rst:6
 msgid "of components"
-msgstr ""
+msgstr "（组件的）"
 
 #: ../../source/components/subsystems/comp_arrays.rst:37
 msgid "slicing"

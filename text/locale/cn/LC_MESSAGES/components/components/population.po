@@ -553,12 +553,12 @@ msgstr ""
 
 #: ../../source/components/components/population.rst:55
 msgid "encapsulated"
-msgstr ""
+msgstr "encapsulated限定词"
 
 #: ../../source/components/components/population.rst:56
 msgid "enumeration"
-msgstr ""
+msgstr "枚举类"
 
 #: ../../source/components/components/population.rst:159
 msgid "assert"
-msgstr ""
+msgstr "assert语句"

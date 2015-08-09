@@ -210,4 +210,4 @@ msgstr "该模型的示意图显示如下："
 
 #: ../../source/components/components/elec_comps.rst:86
 msgid "partial"
-msgstr ""
+msgstr "partial限定词"

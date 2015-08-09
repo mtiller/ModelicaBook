@@ -104,8 +104,8 @@ msgstr ""
 
 #: ../../source/behavior/equations/record_def.rst:1
 msgid "record"
-msgstr ""
+msgstr "record类型"
 
 #: ../../source/behavior/equations/record_def.rst:50
 msgid "record constructor"
-msgstr ""
+msgstr "record类型的构造函数"

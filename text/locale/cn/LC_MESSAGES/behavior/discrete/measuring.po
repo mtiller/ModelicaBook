@@ -380,7 +380,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/measuring.rst:246
 msgid "algorithm section"
-msgstr ""
+msgstr "algorithm段落"
 
 #: ../../source/behavior/discrete/measuring.rst:262
 msgid ""

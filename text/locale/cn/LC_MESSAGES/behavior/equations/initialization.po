@@ -256,13 +256,13 @@ msgstr "这是Modelica所擅长的领域。Modelica内初始化拥有第一等�
 
 #: ../../source/behavior/equations/initialization.rst:10
 msgid "initial equation"
-msgstr ""
+msgstr "初始化方程"
 
 #: ../../source/behavior/equations/initialization.rst:20
 #: ../../source/behavior/equations/initialization.rst:21
 msgid "states"
-msgstr ""
+msgstr "状态"
 
 #: ../../source/behavior/equations/initialization.rst:21
 msgid "initialization"
-msgstr ""
+msgstr "初始化"

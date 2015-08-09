@@ -606,8 +606,8 @@ msgstr ""
 
 #: ../../source/components/architectures/replaceable.rst:184
 msgid "modifications"
-msgstr ""
+msgstr "修改语句"
 
 #: ../../source/components/architectures/replaceable.rst:184
 msgid "in the context of redeclarations"
-msgstr ""
+msgstr "在重声明情况下"

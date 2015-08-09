@@ -318,7 +318,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays/state_space.rst:11
 msgid "ABCD"
-msgstr ""
+msgstr "ABCD形式"
 
 #: ../../source/behavior/arrays/state_space.rst:56
 msgid "FMI"

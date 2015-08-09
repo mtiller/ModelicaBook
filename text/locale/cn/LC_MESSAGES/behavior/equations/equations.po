@@ -164,4 +164,4 @@ msgstr ""
 
 #: ../../source/behavior/equations/equations.rst:78
 msgid "parametric variability"
-msgstr "参数级别的可变性（parametric variability）"
+msgstr "参数级别的可变性"

@@ -104,16 +104,16 @@ msgstr "在后面的章节中，我们会展示上述语法如何用来定义除
 
 #: ../../source/behavior/equations/model_def.rst:15
 msgid "model"
-msgstr ""
+msgstr "模型"
 
 #: ../../source/behavior/equations/model_def.rst:23
 msgid "camel case"
-msgstr ""
+msgstr "驼峰命名法"
 
 #: ../../source/behavior/equations/model_def.rst:54
 msgid "inheritance"
-msgstr ""
+msgstr "继承"
 
 #: ../../source/behavior/equations/model_def.rst:55
 msgid "extends"
-msgstr ""
+msgstr "扩展"

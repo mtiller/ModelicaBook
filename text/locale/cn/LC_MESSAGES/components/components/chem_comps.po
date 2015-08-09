@@ -236,11 +236,11 @@ msgid ""
 "Simulating this system for 10 seconds yields the following concentration "
 "trajectories:"
 msgstr ""
-"系统在10秒仿真后产生以下的浓度轨迹："
+" "
 
 #: ../../source/components/components/chem_comps.rst:185
 msgid "#.. plot:: ../plots/ABX.py #   :include-source: no"
-msgstr ""
+msgstr " "
 
 #: ../../source/components/components/chem_comps.rst:189
 msgid "Conclusion"
@@ -274,4 +274,4 @@ msgstr ""
 
 #: ../../source/components/components/chem_comps.rst:15
 msgid "enumeration"
-msgstr ""
+msgstr "枚举类型"

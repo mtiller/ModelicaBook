@@ -151,16 +151,16 @@ msgstr ""
 
 #: ../../source/components/connectors/graphics.rst:31
 msgid "annotations"
-msgstr ""
+msgstr "标注"
 
 #: ../../source/components/connectors/graphics.rst:31
 msgid "Icon"
-msgstr ""
+msgstr "Icon标注"
 
 #: ../../source/components/connectors/graphics.rst:32
 msgid "icons"
-msgstr ""
+msgstr "图标"
 
 #: ../../source/components/connectors/graphics.rst:32
 msgid "associating with definitions"
-msgstr ""
+msgstr "和定义相关联"

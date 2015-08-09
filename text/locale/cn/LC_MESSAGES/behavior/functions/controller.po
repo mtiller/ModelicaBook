@@ -217,4 +217,4 @@ msgstr ""
 
 #: ../../source/behavior/functions/controller.rst:83
 msgid "side effects"
-msgstr ""
+msgstr "副作用"

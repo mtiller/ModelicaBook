@@ -132,4 +132,4 @@ msgstr ""
 
 #: ../../source/components/connectors/connector_def.rst:9
 msgid "connector"
-msgstr ""
+msgstr "连接器"

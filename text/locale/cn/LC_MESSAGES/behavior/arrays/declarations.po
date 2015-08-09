@@ -113,7 +113,7 @@ msgstr "非整数维度"
 
 #: ../../source/behavior/arrays/declarations.rst:90
 msgid "Enumerations"
-msgstr "枚举"
+msgstr "枚举类"
 
 #: ../../source/behavior/arrays/declarations.rst:92
 msgid ""

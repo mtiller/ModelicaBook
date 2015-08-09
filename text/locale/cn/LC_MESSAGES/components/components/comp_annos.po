@@ -220,28 +220,28 @@ msgstr ""
 #: ../../source/components/components/comp_annos.rst:118
 #: ../../source/components/components/comp_annos.rst:139
 msgid "annotation"
-msgstr ""
+msgstr "标注"
 
 #: ../../source/components/components/comp_annos.rst:15
 msgid "defaultComponentName"
-msgstr ""
+msgstr "defaultComponentName标注"
 
 #: ../../source/components/components/comp_annos.rst:27
 msgid "defaultComponentPrefixes"
-msgstr ""
+msgstr "defaultComponentPrefixes标注"
 
 #: ../../source/components/components/comp_annos.rst:49
 msgid "Dialog"
-msgstr ""
+msgstr "Dialog标注"
 
 #: ../../source/components/components/comp_annos.rst:93
 msgid "DynamicSelect"
-msgstr ""
+msgstr "DynamicSelect标注"
 
 #: ../../source/components/components/comp_annos.rst:118
 msgid "preferredView"
-msgstr ""
+msgstr "preferredView标注"
 
 #: ../../source/components/components/comp_annos.rst:139
 msgid "unassignedMessage"
-msgstr ""
+msgstr "unassignedMessage标注"

@@ -510,9 +510,8 @@ msgstr ""
 
 #: ../../source/components/components/heat_transfer.rst:306
 msgid "number of equations required"
-msgstr ""
+msgstr "所需方程数"
 
 #: ../../source/components/components/heat_transfer.rst:336
 msgid "infinite reservoir"
-
-msgstr ""
+msgstr "无限大容器"

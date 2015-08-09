@@ -476,36 +476,36 @@ msgstr ""
 #: ../../source/behavior/functions/func_annos.rst:399
 #: ../../source/behavior/functions/func_annos.rst:422
 msgid "annotations"
-msgstr ""
+msgstr "标注"
 
 #: ../../source/behavior/functions/func_annos.rst:28
 msgid "standard annotations; derivative"
-msgstr ""
+msgstr "标准标注; derivative"
 
 #: ../../source/behavior/functions/func_annos.rst:225
 msgid "standard annotations; inverse"
-msgstr ""
+msgstr "标准标注; inverse"
 
 #: ../../source/behavior/functions/func_annos.rst:277
 msgid "standard annotations; Inline"
-msgstr ""
+msgstr "标准标注; Inline"
 
 #: ../../source/behavior/functions/func_annos.rst:315
 msgid "standard annotations; LateInline"
-msgstr ""
+msgstr "标准标注; LateInline"
 
 #: ../../source/behavior/functions/func_annos.rst:356
 msgid "standard annotations; Include"
-msgstr ""
+msgstr "标准标注; Include"
 
 #: ../../source/behavior/functions/func_annos.rst:378
 msgid "standard annotations; IncludeDirectory"
-msgstr ""
+msgstr "标准标注; IncludeDirectory"
 
 #: ../../source/behavior/functions/func_annos.rst:399
 msgid "standard annotations; Library"
-msgstr ""
+msgstr "标准标注; Library"
 
 #: ../../source/behavior/functions/func_annos.rst:422
 msgid "standard annotations; LibraryDirectory"
-msgstr ""
+msgstr "标准标注; LibraryDirectory"

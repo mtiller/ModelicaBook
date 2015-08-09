@@ -328,11 +328,11 @@ msgstr ""
 
 #: ../../source/components/packages/package_def.rst:132
 msgid "packages"
-msgstr ""
+msgstr "包"
 
 #: ../../source/components/packages/package_def.rst:132
 msgid "ordering within"
-msgstr ""
+msgstr "（其排序）"
 
 #: ../../source/components/packages/package_def.rst:176
 msgid "MODELICAPATH"

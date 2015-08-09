@@ -511,16 +511,16 @@ msgstr ""
 
 #: ../../source/components/architectures/sensor_comparison.rst:197
 msgid "replaceable"
-msgstr ""
+msgstr "replaceable，可替换"
 
 #: ../../source/components/architectures/sensor_comparison.rst:290
 msgid "redeclare"
-msgstr ""
+msgstr "redeclare，重声明"
 
 #: ../../source/components/architectures/sensor_comparison.rst:379
 msgid "constraining types"
-msgstr ""
+msgstr "约束类型"
 
 #: ../../source/components/architectures/sensor_comparison.rst:406
 msgid "default type"
-msgstr ""
+msgstr "默认类型"

@@ -255,11 +255,11 @@ msgstr ""
 
 #: ../../source/components/subsystems/sub_interface.rst:12
 msgid "public"
-msgstr ""
+msgstr "public关键字"
 
 #: ../../source/components/subsystems/sub_interface.rst:13
 msgid "protected"
-msgstr ""
+msgstr "protected关键字"
 
 #: ../../source/components/subsystems/sub_interface.rst:121
 msgid "**Connection Set #2**: ``idealGear.flange_b``, ``inertia_b.flange_a``"
