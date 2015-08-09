@@ -236,11 +236,11 @@ msgid ""
 "Simulating this system for 10 seconds yields the following concentration "
 "trajectories:"
 msgstr ""
-" "
+"　"
 
 #: ../../source/components/components/chem_comps.rst:185
 msgid "#.. plot:: ../plots/ABX.py #   :include-source: no"
-msgstr " "
+msgstr "　"
 
 #: ../../source/components/components/chem_comps.rst:189
 msgid "Conclusion"
