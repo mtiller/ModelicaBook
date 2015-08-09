@@ -342,13 +342,13 @@ pdf-a4:	latex-a4
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex-a4."
 
 pdf-cn: latex-a4-cn
-	@echo "Running LaTeX files through xelatex..." 
-	(cp locale/cn/mycjk.sty $(BUILDDIR)/xelatex; ) 
-	(cd $(BUILDDIR)/xelatex; sed -i '/\usepackage\[utf8\]{inputenc}/d' ModelicaByExample.tex) 
-	(cd $(BUILDDIR)/xelatex; sed -i '/.DeclareUnicodeCharacter.*/d' ModelicaByExample.tex) 
-	(cd $(BUILDDIR)/xelatex; sed -i 's/{babel}/{mycjk}/' ModelicaByExample.tex) 
-	(cd $(BUILDDIR)/xelatex; xelatex -shell-escape -interaction=batchmode  ModelicaByExample.tex; echo 'first pass') 
-	(cd $(BUILDDIR)/xelatex; xelatex  -shell-escape -interaction=batchmode ModelicaByExample.tex; echo 'second pass') 
+	@echo "Running LaTeX files through xelatex..."
+	(cp locale/cn/mycjk.sty $(BUILDDIR)/xelatex; )
+	(cd $(BUILDDIR)/xelatex; sed -i '/\usepackage\[utf8\]{inputenc}/d' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/xelatex; sed -i '/.DeclareUnicodeCharacter.*/d' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/xelatex; sed -i 's/{babel}/{mycjk}/' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/xelatex; xelatex -shell-escape -interaction=batchmode  ModelicaByExample.tex; echo 'first pass')
+	(cd $(BUILDDIR)/xelatex; xelatex  -shell-escape -interaction=batchmode ModelicaByExample.tex; echo 'second pass')
 
 latexpdf: pdf
 
