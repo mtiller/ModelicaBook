@@ -61,22 +61,43 @@ is constructed piecewise.  For example,
 
 .. code-block:: modelica
 
-    x = if (x<0) then 0 else x^2;
+    x = if (x<0) then 0 else x^3;
 
 It is hard for a Modelica compiler to reliably determine that such a
-function is continuous or whether it has continuous derivatives.  For
+function is continuous and has continuous derivatives.  For
 this reason, Modelica includes the ``smooth`` operator to explicitly
 express such conditions.  For example, using the ``smooth`` operator
 as follows:
 
 .. code-block:: modelica
 
-    x = smooth(if (x<0) then 0 else x^2, 2);
+    x = smooth(if (x<0) then 0 else x^3, 2);
 
 indicates that the expression is continuous as is and will remain
-continuous if differentiated up to 2 times.  Of course, in this case
-the expression is continuous regardless of the number of
-differentiations.  But the ``smooth`` operator requires an upper bound
+continuous if differentiated up to 2 times because
+
+.. math::
+
+   x' & =
+     \begin{cases}
+       0,        & \text{for } x < 0, \\
+       3 \, x^2, & \text{otherwise,}
+     \end{cases} \\
+   x'' & =
+     \begin{cases}
+       0,        & \text{for } x < 0, \\
+       6 \, x, \phantom{^2} & \text{otherwise,}
+     \end{cases} \\
+   x''' & =
+     \begin{cases}
+       0,        & \text{for } x < 0, \\
+       6, \phantom{6 \, ^2}& \text{otherwise.}
+     \end{cases}
+
+Hence, the function, its first and second derivatives are continuous
+at :math:`x=0`, but the third derivative is discontinuous.
+
+Note that the ``smooth`` operator requires an upper bound
 to be specified.
 
 Events and Functions

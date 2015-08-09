@@ -125,7 +125,7 @@ integration of the control strategy:
 In particular, note that ``computeHeat`` is invoked only within the
 ``when`` statement and not as part of a "continuous" equation.  As a
 result, we can be certain that ``computeHeat`` will only be invoked in
-response to an event and in evaluating candidate solutions for the
+response to an event but not when evaluating candidate solutions for the
 continuous variables.
 
 Results

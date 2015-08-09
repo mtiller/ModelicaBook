@@ -1,0 +1,422 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-06 08:12-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/equations/annotations.rst:4
+msgid "Annotations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:6
+msgid ""
+"Recall in the discussion on :ref:`experimental-conditions` we included "
+"information about the simulation start and stop time using an "
+"``annotation``.  An ``annotation`` is a way to include information that is "
+"not related to the behavior of the model.  In the case of experimental "
+"conditions, we injected information about how a particular model should be "
+"simulated.  But annotations are used extensively in Modelica to provide all "
+"kinds of additional information about models.  For example, as we'll see "
+":ref:`later in the book <graphical-annos>`, annotations are used to describe"
+" the graphical appearance of components and connectors.  For now, the "
+"important thing is to understand that annotations are additional data, above"
+" and beyond behavior, that can be \"attached\" to different elements in "
+"Modelica."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:20
+msgid ""
+"In this section, we will first cover where an ``annotation`` can appear in a"
+" Modelica model.  Next, we'll explain how we can use :ref:`record-def` to "
+"describe the contents of an annotation.  Finally, we'll describe a few of "
+"the many \"standard\" annotations that are included as part of the Modelica "
+"specification."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:27
+msgid "Annotation Locations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:29
+msgid ""
+"Annotations can appear in many different places in Modelica.  We will "
+"discuss each potential location and demonstrate the syntax for each case."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:33
+msgid "Declaration Annotations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:37
+msgid ""
+"A declaration annotation comes at the end of a declaration, right before the"
+" ``;``.  Here is a simple declaration that includes an annotation:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:45
+msgid ""
+"Note that the ``annotation`` comes after the descriptive string and before "
+"the ``;``.  Also, the ``...`` is simply a place holder for the :ref"
+":`annotation-data`, which will be discussed shortly."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:50
+msgid "Statement and Equation Annotations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:54
+msgid ""
+"It is also possible to associate annotations with equations, for example:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:61
+msgid ""
+"In declarations and equations, the ``annotation`` is always at the very end "
+"and comes immediately before the ``;``."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:65
+msgid "Inheritance Annotations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:69
+msgid ""
+"We briefly discussed the ``extends`` keyword when we talked about "
+":ref:`modifications` and :ref:`avoiding-repetition`.  It is possible to "
+"associate an ``annotation`` with an ``extends`` clause as follows:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:77
+msgid ""
+"As we've observed in each previous case, the ``annotation`` immediately "
+"precedes the ``;``."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:82
+msgid "Model Annotations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:87
+msgid ""
+"A model annotation associates annotation data directly with the model "
+"definition itself.  This is exactly the kind of annotation we saw when "
+"describing :ref:`experimental-conditions`, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:97
+msgid ""
+"Note how, unlike all the previous annotation locations we've described, this"
+" annotation isn't really \"attached\" to anything.  This indicates that it "
+"is annotating the model itself."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:104
+msgid "Annotation Data"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:107
+msgid "General Syntax"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:109
+msgid ""
+"The syntax of an annotation is the same syntax used for "
+":ref:`modifications`.  This means the annotation will include either an "
+"assignment to a variable in the annotation, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:117
+msgid ""
+"or it will include a modification to something **inside** a variable in the "
+"annotation, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:125
+msgid "User Annotations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:127
+msgid ""
+"Annotations were designed to allow model developers to attach **arbitrary "
+"data** to their models.  For example, if a user wanted to associate a part "
+"number with a given model definition, they might introduce a model "
+"annotation like this:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:136
+msgid ""
+"A general principle of annotation data is that if a tool reads in a model, "
+"**it must preserve the annotation information** when it writes it back out."
+"  The tool does not (and, in general, will not) have to understand the data."
+"  But the data must be preserved."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:142
+msgid "Multiple Annotations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:144
+msgid ""
+"Imagine a user wanted to specify **both** a part number and an experiment "
+"annotation.  Then they might end up with an annotation like this one:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:153
+msgid ""
+"Note how these two pieces of information can exist side by side.  One way to"
+" think about annotations is to visualize them as a tree like this:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:157
+msgid "``PartNumber=\"FF78-E4B879\"``"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:158
+#: ../../source/behavior/equations/annotations.rst:287
+msgid "``experiment``"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:160
+msgid "``StartTime=0``"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:161
+msgid "``StopTime=8``"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:164
+msgid "Namespaces"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:166
+msgid ""
+"This introduces another principle of annotations which is that it should be "
+"possible to have more than one **as long as the names are different**.  For "
+"this reason, choosing names is very important and they should be chosen to "
+"avoid potential conflicts with other names. For example, a better approach "
+"for including the part number would be to enclose it in a variable that is "
+"more likely to be unique to your company or application, *e.g.,*:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:179
+msgid ""
+"In this case, the variable ``XogenyIndustries`` can be used to carve out a "
+"\"namespace\" for a specific organization or purpose.  If another "
+"organization came along and wanted to associate a different part number with"
+" the same model, they could do that by establishing their own separate "
+"hierarchy in the annotation, *e.g.,*:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:191
+msgid ""
+"Occasionally, Modelica tool vendors include their own special annotations "
+"(*e.g.,* in the Modelica Standard Library).  By convention, tool vendors use"
+" names that are prefixed by two underscores, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:204
+msgid "Interpretation"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:206
+msgid ""
+"Remember that annotation data is arbitrary.  This allows arbitrary data to "
+"be associated with the model.  The **meaning** of that data is, in general, "
+"not defined in the Modelica specification.  As we will see shortly, there "
+"are a few \"standard\" annotations (they will be described throughout this "
+"book) and they are documented in the specification.  But when users add "
+"annotations beyond the standard annotations it is assumed that they have "
+"some way (using some Modelica tool, compiler or other Modelica aware "
+"technology) of extracting and interpreting their annotation data."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:216
+msgid ""
+"The bottom line is that while you can inject (non-standard) annotation data "
+"into the model, tools are only required to preserve it and not to interpret "
+"it."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:221
+#: ../../source/behavior/equations/annotations.rst:248
+msgid "Documentation"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:223
+msgid ""
+"It is very common to document Modelica annotations **as if** they had :ref"
+":`record-def` associated with them.  We'll see several examples of this "
+"technique in our next topic.  Using this approach to document expected "
+"annotation data are strongly encouraged.  In fact, this technique is so "
+"popular and useful that there are proposals to actually make it part of the "
+"language itself in the future."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:231
+msgid "Introductory Annotations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:233
+msgid ""
+"This section introduces just a few of the \"standard annotations\" in "
+"Modelica.  As discussed previously, annotations are generally allowed to "
+"include arbitrary data that is preserved by tools and, presumably, "
+"interpreted at some point.  The syntax and meaning of the standard "
+"annotations are described in the Modelica specification so they can be "
+"interpreted consistently and universally by Modelica tools."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:240
+msgid ""
+"We will follow a convention (whenever possible) of describing standard "
+"annotations in terms of ``record`` definitions.  These ``record`` "
+"definitions don't formally exist, they are simply a concise way of "
+"expressing the data contained in the annotation."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:246
+msgid "``Documentation``"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:250
+#: ../../source/behavior/equations/annotations.rst:291
+msgid "**Type: Model Annotation**"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:252
+msgid ""
+"The ``Documentation`` annotation in Modelica allows raw text or HTML to be "
+"associated with a model as documentation.  This documentation is composed of"
+" two components.  The first is information about the model and the second is"
+" revision history information.  The structure of the ``Documentation`` "
+"annotation is described by the following record definition:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:266
+msgid ""
+"When embedding HTML inside an annotation, the HTML code must be surrounded "
+"by ``<html>`` tags, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:279
+msgid ""
+"Here the model ``MyWidget`` contains HTML documentation.  The documentation "
+"is wrapped by ``<html>`` tags **and all quotes used to define attributes are"
+" escaped by \\\\\"** to avoid accidentally terminating the ``info`` string."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:293
+msgid ""
+"The ``experiment`` annotation is used to specify information about how a "
+"given model should be simulated.  The annotation data can be represented in "
+"``record`` form as:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:307
+msgid "``Evaluate``"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:311
+msgid "**Type: Declaration Annotation (applies to parameters)**"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:313
+msgid ""
+"The ``Evaluate`` annotation indicates to a Modelica compiler that the value "
+"of a given ``parameter`` can be transformed into a ``constant`` at compile "
+"time.  In other words, it indicates that the user does not require the "
+"ability to change the value of the ``parameter`` from one simulation to the "
+"next."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:319
+msgid ""
+"The motivation behind having such an annotation is that it allows the "
+"Modelica compiler to assume many things about the ``parameter`` during model"
+" compilation that it otherwise couldn't.  These assumptions might restrict "
+"the system of equations in such a way that the underlying systems of "
+"equations are easier to solve than in the general case where the parameter "
+"could take on a range of values."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:326
+msgid ""
+"The ``Evaluate`` annotation is simply a ``Boolean`` variable (``true`` "
+"indicating that the ``parameter`` value can be transformed into a "
+"``constant``). It is used in an annotation as follows:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:335
+msgid "``HideResult``"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:339
+msgid "**Type: Declaration Annotation**"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:341
+msgid ""
+"The ``HideResult`` annotation is used to indicate that the solution for a "
+"given variable is not of interest to the analyst.  By setting the value of "
+"``HideResult`` to ``true``, the model developer is indicating to the "
+"Modelica compiler that it need not store the annotated variable in any "
+"simulation results that are produced.  This can save both simulation time "
+"and disk space because it avoids writing out data that will never be viewed."
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:349
+msgid "The ``HideResult`` annotation would be used as follows:"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:35
+#: ../../source/behavior/equations/annotations.rst:52
+#: ../../source/behavior/equations/annotations.rst:67
+#: ../../source/behavior/equations/annotations.rst:84
+#: ../../source/behavior/equations/annotations.rst:85
+#: ../../source/behavior/equations/annotations.rst:248
+#: ../../source/behavior/equations/annotations.rst:284
+#: ../../source/behavior/equations/annotations.rst:289
+#: ../../source/behavior/equations/annotations.rst:309
+#: ../../source/behavior/equations/annotations.rst:337
+msgid "annotation"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:35
+msgid "associated with; declarations"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:52
+msgid "associated with; equation"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:67
+msgid "associated with; extends"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:84
+msgid "associated with; models"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:85
+msgid "associated with; definitions"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:284
+#: ../../source/behavior/equations/annotations.rst:289
+msgid "experiment"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:309
+msgid "Evaluate"
+msgstr ""
+
+#: ../../source/behavior/equations/annotations.rst:337
+msgid "HideResult"
+msgstr ""
