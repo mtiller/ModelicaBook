@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../source/behavior/discrete/sample.rst:7
 msgid "new sample"
-msgstr ""
+msgstr "新取样"
 
 #: ../../source/behavior/discrete/sample.rst:8
 msgid "subSample"

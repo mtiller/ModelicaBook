@@ -1,0 +1,58 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{mycjk}
+  [2015/05/30 v0.01 LaTeX package for the cjk support]
+
+
+\RequirePackage[slantfont,boldfont,CJKnumber,fallback]{xeCJK}
+\setCJKmainfont[ItalicFont={AR PL KaitiM GB}, BoldFont={Droid Sans Fallback}]{AR PL SungtiL GB}
+\setCJKfamilyfont{song}{AR PL SungtiL GB}
+\setCJKfamilyfont{hei}{Droid Sans Fallback}
+\setCJKfamilyfont{kai}{AR PL KaitiM GB}
+\RequirePackage{indentfirst}%段落首行缩进
+\setlength{\parindent}{2em}%缩进两个字符
+\RequirePackage[titles]{tocloft}
+
+\setlength{\cftchapnumwidth}{3.5em}
+\setlength{\cftsecnumwidth}{4em}
+\setlength{\cftsubsecnumwidth}{5em}
+
+\renewcommand{\contentsname}{目~录~}
+\renewcommand{\listfigurename}{插图目录}
+\renewcommand{\listtablename}{表格目录}
+\renewcommand\bibname{参考文献}
+\renewcommand{\abstractname}{摘~要~}
+\renewcommand{\indexname}{索~引~}
+\renewcommand{\tablename}{表}
+\renewcommand{\figurename}{图}
+\renewcommand\appendixname{附~录~}
+\renewcommand\today{\number\year年\number\month月\number\day日}
+\renewcommand{\partname}{}
+\renewcommand{\thepart}{第\CJKnumber{\arabic{part}}部分}
+\renewcommand{\thepage}{第\arabic{page}页}
+\renewcommand{\chaptername}{}
+\renewcommand{\thechapter}{第\CJKnumber{\arabic{chapter}}章}
+\renewcommand{\thesection}{第\arabic{chapter}.\arabic{section}节}
+\renewcommand{\thesubsection}{第\arabic{chapter}.\arabic{section}.\arabic{subsection}节}
+
+\renewcommand{\pageautorefname}{}
+\makeatletter
+\newcommand*{\@ORGautopageref}{}%
+\let\@ORGautopageref\autopageref%
+\renewcommand*{\autopageref}{\@ifstar\@autopagerefStar
+\@autopagerefNoStar}%
+\newcommand*{\@autopagerefStar}[1]{第\!\@ORGautopageref*{#1}页}%
+\newcommand*{\@autopagerefNoStar}[1]{第\!\@ORGautopageref{#1}页}%
+\makeatother
+
+
+\newcommand{\authorandtranslators}{ 
+    \begin{minipage}[t]{0.5\textwidth}
+        \begin{tabular}{l l}
+            作者：&Dr. Michael M. Tiller\\
+            译者：&谢东平\\
+                  &　及\\
+                  &\includegraphics[width=1em]{../../../sponsors/GlobalCrown/logo.jpg}世冠科技
+        \end{tabular}
+    \end{minipage}
+}

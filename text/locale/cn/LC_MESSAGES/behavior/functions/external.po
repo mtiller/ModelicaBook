@@ -14,6 +14,7 @@ msgstr ""
 #: ../../source/behavior/functions/external.rst:4
 msgid "External Functions"
 msgstr ""
+"外部函数"
 
 #: ../../source/behavior/functions/external.rst:7
 msgid "``external``"
@@ -29,12 +30,17 @@ msgid ""
 " information about the external function and how to pass information to and "
 "from the function."
 msgstr ""
+"在\ :ref:`interpolation`\ 章节，我们讨论了\ ``InterpolateExternalVector``\ 函数相关的例子。我们了解到可以通过"
+"Modelica语言来调用由其他语言定义的函数。通常，这些函数都是用C或Fortran语言来定义的。"
+"使用Modelica之外的语言所定义的函数不包含\ ``algorithm``\ 区域。"
+"相反的，函数应该包括\ ``external``\ 语句，以提供外部函数的信息以及如何实现与外部函数的信息传递。"
 
 #: ../../source/behavior/functions/external.rst:19
 msgid ""
 "The minimal requirement for an externally implemented function is to include"
 " just the ``external`` keyword, *e.g.,*"
 msgstr ""
+"对于外部函数的最低要求是需包含关键字\ ``external``\ ，即："
 
 #: ../../source/behavior/functions/external.rst:26
 msgid ""
@@ -43,12 +49,15 @@ msgid ""
 "and that the arguments are passed in the same order as the ``input`` "
 "arguments to the Modelica function."
 msgstr ""
+"在这里，我们假设外部函数是由C语言定义的。而且，函数的名称需与Modelica语言的“包装”函数相匹配。"
+"最后，函数的参数必须以相同的顺序传递给Modelica函数的\ ``input``\ 参数。"
 
 #: ../../source/behavior/functions/external.rst:31
 msgid ""
 "Let's consider a slightly more complex case like the one found in our "
 "``VectorTable`` type shown in the :ref:`interpolation` examples:"
 msgstr ""
+"让我们考虑一个稍微复杂的情况，例如在\ :ref:`interpolation`\ 例子中展示的\ ``VectorTable``\ 类型："
 
 #: ../../source/behavior/functions/external.rst:38
 msgid ""
@@ -57,6 +66,8 @@ msgid ""
 "the implementation language, ``\"FORTRAN 77\"`` and ``\"builtin\"``. The use"
 " of ``\"builtin\"`` is mainly of interest to Modelica tool vendors."
 msgstr ""
+"我们可以看到，此函数定义的语言被明确的指定为\ ``\"C\"``\ 。还有另外两种可以实现上述功能的语言：\ ``\"FORTRAN 77\"``\ 和\ ``\"builtin\"``\ 。"
+"对\ ``\"builtin\"``\ 使用感兴趣的主要是一些Modelica工具厂商。"
 
 #: ../../source/behavior/functions/external.rst:44
 msgid ""
@@ -65,6 +76,9 @@ msgid ""
 "``destroyVectorTable(table)`` specifies what data should be passed to the "
 "external function and in what order."
 msgstr ""
+"我们看到，上述语句已经明确指定函数的名称。"
+"\ ``external``\ 语句内的\ ``destroyVectorTable(table)``\ 这部分"
+"明确指定了与外部函数传递的参数及其顺序。"
 
 #: ../../source/behavior/functions/external.rst:49
 msgid ""
@@ -73,6 +87,8 @@ msgid ""
 "map to the output variables.  We can see this kind of information in the "
 "following ``function``:"
 msgstr ""
+"有些情况下，还需明确定义传递给外部函数的参数值及输出变量和函数调用结果之间的映射关系。"
+"我们可以在下述\ ``function``\ 定义中，看到上述信息："
 
 #: ../../source/behavior/functions/external.rst:58
 msgid ""
@@ -86,35 +102,45 @@ msgid ""
 "cases pointers are used so that the external function can assign values to "
 "these variables."
 msgstr ""
+"在这个例子中，外部函数需要获取\ ``ybar``\ 数组的大小。因为这项信息没有直接地传递给外部函数。"
+"此外，上述函数还声明了\ ``createVectorTable``\ 的计算结果应该分配给\ ``output``\ 变量\ ``table``\ 。"
+"很明显，我们可以看到C函数的返回值就是Modelica语言定义的函数返回值。但是，有些情况下，\ ``output``\ 变量"
+"应该作为参数传递给函数。接下来我们就会看到，在这种情况下，外部函数可以使用指针完成相应变量的赋值。"
 
 #: ../../source/behavior/functions/external.rst:69
 msgid "Data Mapping"
 msgstr ""
+"数据映射"
 
 #: ../../source/behavior/functions/external.rst:72
 #: ../../source/behavior/functions/external.rst:104
 msgid "C"
 msgstr ""
+"C语言"
 
 #: ../../source/behavior/functions/external.rst:74
 msgid ""
 "The following table shows how Modelica types map into native C types when "
 "passing data **into** external functions."
 msgstr ""
+"下面这张表展示了将参数\ **传递**\ 给外部函数时，Modelica语言与C语言数据类型之间的映射关系。"
 
 #: ../../source/behavior/functions/external.rst:78
 #: ../../source/behavior/functions/external.rst:104
 #: ../../source/behavior/functions/external.rst:125
 msgid "Modelica"
 msgstr ""
+"Modelica语言"
 
 #: ../../source/behavior/functions/external.rst:78
 msgid "C (input arguments)"
 msgstr ""
+"C语言（输入变量）"
 
 #: ../../source/behavior/functions/external.rst:78
 msgid "C (output arguments)"
 msgstr ""
+"C语言（输出变量）"
 
 #: ../../source/behavior/functions/external.rst:80
 #: ../../source/behavior/functions/external.rst:106
@@ -250,10 +276,15 @@ msgid ""
 "using the second column of this table (*i.e.,* as if they were input "
 "arguments)."
 msgstr ""
+"我们简单解释一下上述表格。首先，它假设所有的字符串都是以空字符（\ ``\\0``\ ）终止的。"
+"另外，数组类型\ ``T'``\ 在C语言与Modelica语言间可以相互映射（使用相同的表）。"
+"最后，Modelica语言的\ ``record``\ 类型对应C语言的\ ``struct``\ 类型。而且\ ``struct``\ 类型与\ ``record``\ 类型的数据成员顺序"
+"一致。\ ``record``\ 成员的数据类型使用该表格第二列的映射关系（即把它们当做输入参数）。"
 
 #: ../../source/behavior/functions/external.rst:101
 msgid "For data returned by a C function, the following mapping applies:"
 msgstr ""
+"对于C函数的返回值类型，采用下表的类型映射关系："
 
 #: ../../source/behavior/functions/external.rst:110
 msgid "``T' *``, ``size_t``"
@@ -263,12 +294,14 @@ msgstr ""
 #: ../../source/behavior/functions/external.rst:125
 msgid "Fortran"
 msgstr ""
+"Fortran语言"
 
 #: ../../source/behavior/functions/external.rst:121
 msgid ""
 "If you need to work with Fortran functions or subroutines, the following "
 "type mappings apply:"
 msgstr ""
+"如果你需要调用Fortran语言定义的函数或子程序，采用下表定义的类型映射关系："
 
 #: ../../source/behavior/functions/external.rst:127
 msgid "``DOUBLE PRECISION``"
@@ -304,10 +337,14 @@ msgid ""
 "to be pointers.  For this reason, there is no distinction made whether the "
 "variable is an input or an output of the Modelica function."
 msgstr ""
+"对于上述表格，有两点需特别注意。首先，字符串和记录类型没有相应的映射关系。其次，Fortran语言语法"
+"是传递引用，所有输入、输出这些函数的变量都被假定为指针。出于这个原因，Fortran函数不会区分获取的"
+"变量是Modelica函数的输入还是输出。"
 
 #: ../../source/behavior/functions/external.rst:145
 msgid "Special Functions"
 msgstr ""
+"特殊函数"
 
 #: ../../source/behavior/functions/external.rst:147
 msgid ""
@@ -316,6 +353,8 @@ msgid ""
 "name of the function, its prototype and an explanation of the functions "
 "purpose are described."
 msgstr ""
+"在与Modelica交互运行时，有许多特殊函数可以\ **从**\ 外部函数进行调用。下面对这些函数的名称、原型以及"
+"开发的目的进行详细的介绍。"
 
 #: ../../source/behavior/functions/external.rst:153
 msgid "``ModelicaVFormatMessage``"
@@ -326,6 +365,7 @@ msgid ""
 "Output the message under the same format control as the C-function "
 "``vprintf``."
 msgstr ""
+"此函数的输出与C函数\ ``vprintf``\ 相同格式的消息。"
 
 #: ../../source/behavior/functions/external.rst:165
 msgid "``ModelicaError``"
@@ -337,10 +377,12 @@ msgid ""
 "returns to the calling function, but handles the error similarly to an "
 "assert in the Modelica code."
 msgstr ""
+"此函数主要处理类似Modelica代码的声明错误，输出错误信息的字符串（无输出格式控制），对于调用函数无返回值。"
 
 #: ../../source/behavior/functions/external.rst:176
 msgid "``ModelicaFormatError``"
 msgstr ""
+" ``ModelicaFormatError`` "
 
 #: ../../source/behavior/functions/external.rst:182
 msgid ""
@@ -348,6 +390,7 @@ msgid ""
 "``printf``. This function never returns to the calling function, but handles"
 " the error similarly to an assert in the Modelica code."
 msgstr ""
+"此函数主要处理类似Modelica代码的声明错误，输出与C函数\ ``printf``\ 相同格式的错误信息，对于调用函数无返回值。"
 
 #: ../../source/behavior/functions/external.rst:190
 msgid "``ModelicaVFormatError``"
@@ -359,6 +402,7 @@ msgid ""
 "``vprintf``. This function never returns to the calling function, but "
 "handles the error similarly to an assert in the Modelica code."
 msgstr ""
+"此函数主要处理类似Modelica代码的声明错误，输出与C函数\ ``vprintf``\ 相同格式的错误信息，对于调用函数无返回值。"
 
 #: ../../source/behavior/functions/external.rst:204
 msgid "``ModelicaAllocateString``"
@@ -372,6 +416,8 @@ msgid ""
 "any other array. If an error occurs, this function does not return, but "
 "calls :ref:`modelica-error`."
 msgstr ""
+"此函数主要用于为外部Modelica函数的返回参数分配内存。需注意的是，该字符串数组的存储空间（即指向字符串数组的指针）仍然由"
+"被调用函数提供。当出现错误时，该函数不返回主函数，而是调用\ :ref:`modelica-error`\ 函数输出错误信息。"
 
 #: ../../source/behavior/functions/external.rst:217
 msgid "``ModelicaAllocateStringWithErrorReturn``"
@@ -384,7 +430,9 @@ msgid ""
 "free other open resources in case of error. After cleaning up resources, use"
 " :ref:`modelica-error` or :ref:`modelica-format-error` to signal the error."
 msgstr ""
+"该函数功能和\ :ref:`modelica-allocate-string`\ 函数几乎一样。不同点只是在出现错误时，函数会返回0值。当出现错误时，此功能允许外部函数关闭"
+"文件并清空其他的资源。完成资源清理以后，调用\ :ref:`modelica-error`\ 函数和\ :ref:`modelica-format-error`\ 函数输出错误信息。"
 
 #: ../../source/behavior/functions/external.rst:9
 msgid "external"
-msgstr ""
+msgstr "external语句"

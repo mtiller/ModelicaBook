@@ -111,13 +111,6 @@ msgid ""
 " are conditional expressions, like ``h<0`` from our current example."
 msgstr ""
 
-#: ../../source/behavior/discrete/bouncing.rst:108
-msgid ""
-"The implications become clear if we simulation our bouncing ball a bit "
-"longer.  In that case, most Modelica tools will provide a solution like "
-"this:"
-msgstr ""
-
 #: ../../source/behavior/discrete/bouncing.rst:115
 msgid ""
 "It should be immediately obvious when looking at this trajectory that "
@@ -270,6 +263,18 @@ msgid ""
 "example in :ref:`previous cooling examples <cooling-revisited>`) is the fact"
 " that this conditional expression references variables other than ``time``."
 msgstr ""
+
+#: ../../source/behavior/discrete/bouncing.rst:108
+msgid ""
+"The implications become clear if we simulate our bouncing ball a bit longer."
+"  In that case, most Modelica tools will provide a solution like this:"
+msgstr ""
+
+#~ msgid ""
+#~ "The implications become clear if we simulation our bouncing ball a bit "
+#~ "longer.  In that case, most Modelica tools will provide a solution like "
+#~ "this:"
+#~ msgstr ""
 
 #~ msgid ""
 #~ "To see a state even in action, let us consider the behavior of a bouncing "

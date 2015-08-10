@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations.rst:4
 msgid "Basic Equations"
-msgstr ""
+msgstr "基本方程"
 
 #: ../../source/behavior/equations.rst:6
 msgid ""
@@ -21,14 +21,16 @@ msgid ""
 "understanding how to represent basic behavior.  In this chapter, our focus "
 "will be on demonstrating how to write basic equations."
 msgstr ""
+"正如\ :ref:`preface`\ 提到的，我们会以理解基本行为来开始我们对Modelica的探索。"
+"本章中，我们的重点在于展示如何编写基本方程。"
 
 #: ../../source/behavior/equations.rst:11
 msgid "Examples"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/behavior/equations.rst:24
 msgid "Review"
-msgstr ""
+msgstr "回顾"
 
 #: ../../source/behavior/equations.rst:26
 msgid ""
@@ -36,3 +38,5 @@ msgid ""
 "examples.  This part will review the various features and concepts and "
 "provide a more complete discussion of each topic."
 msgstr ""
+"本章第一部分通过实例介绍了一些语言特性。"
+"而这部分会回顾各种特性和概念，并对每一个主题提供更完整的讨论。"

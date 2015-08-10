@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/functions.rst:4
 msgid "Functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../source/behavior/functions.rst:6
 msgid ""
@@ -24,6 +24,10 @@ msgid ""
 "functions.  The process of defining functions is the central topic of this "
 "chapter."
 msgstr ""
+"到现在为止，我们已经在前面的例子中使用了Modelica语言的许多内置函数。"
+"尤其是在我们对\ :ref:`array-functions`\ 的讨论里。"
+"虽然Modelica对于很多常见运算包含了广泛一系列函数，但用户仍然需要有办法去自定义函数。"
+"本章的中心议题是定义函数所需的流程。"
 
 #: ../../source/behavior/functions.rst:13
 msgid ""
@@ -31,11 +35,13 @@ msgid ""
 "defined functions.  Then we'll review the important elements of user defined"
 " functions in Modelica."
 msgstr ""
+"和往常一样，我们开始时将讨论几个例子。其目的是让用户明白，我们为何需要自定义函数。"
+"然后，我们会回顾Modelica用户自定义函数的重要组成部分。"
 
 #: ../../source/behavior/functions.rst:18
 msgid "Examples"
-msgstr ""
+msgstr "示例"
 
 #: ../../source/behavior/functions.rst:29
 msgid "Review"
-msgstr ""
+msgstr "回顾"

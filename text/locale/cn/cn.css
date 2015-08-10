@@ -1,0 +1,13 @@
+/*
+Cross-platform, smooth, nice-looking KaiTi-style TrueType fonts.
++ WenQuanYi Micro Hei: used on Haiku OS, https://www.haiku-os.org/
++ Ukai: Many Linux distros, including Debian and Ubuntu Linux
++ STKaiti: Variants of Apple Mac OS X Safari
++ KaiTi: Many Linux distros and Microsoft Windows
+Copy of Free and Open Source TrueType fonts pffy uses available here:
+https://github.com/pffy/ttf
+*/ 
+em {
+    font-family: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, "TW\-Kai", serif;
+    font-style: normal;
+}

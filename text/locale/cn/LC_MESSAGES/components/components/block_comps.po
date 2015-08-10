@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/components/components/block_comps.rst:4
 msgid "Block Diagram Components"
-msgstr ""
+msgstr "框图组件"
 
 #: ../../source/components/components/block_comps.rst:6
 msgid ""
@@ -24,6 +24,11 @@ msgid ""
 "schematically rather than mathematically while also automatically "
 "formulating conservation equations to ensure proper bookkeeping."
 msgstr ""
+"到目前为止，本章的重点一直放在非因果建模里。"
+"但Modelica同时还支持因果形式的建模。"
+"我们强调非因果建模的主要原因在于，非因果方法非常适用于物理系统的建模。"
+"这使得组装物理系统可以使用示意图进行组合，开发者无须进行数学推导。"
+"组合后的系统会自动生成守恒方程，以确保模型运行正确。"
 
 #: ../../source/components/components/block_comps.rst:14
 msgid ""
@@ -34,6 +39,12 @@ msgid ""
 "introduce a special kind of ``model`` in this section, called a ``block``, "
 "that is restricted to having only ``input`` and ``output`` signals."
 msgstr ""
+"框图则是另一种建模方法。"
+"框图需要重点创建代表大量数学运算的组件模型。"
+"然后，上述数学运算作用在（通常随时间变化）的信号，然后返回而其他信号。"
+"事实上，我们将在本节介绍一种特殊的\ ``model``\ 。"
+"这种模型名为\ ``block``\ 。"
+"\ ``block``\ 仅有\ ``input``\ 和\ ``output``\ 的信号。"
 
 #: ../../source/components/components/block_comps.rst:22
 msgid ""
@@ -45,6 +56,12 @@ msgid ""
 "model control systems.  As we'll see, using blocks to construct control "
 "systems is a much more natural fit for the block diagram formalism."
 msgstr ""
+"本节中，我们会先看看如何构建代表基本数学运算的因果模块。"
+"然后，我们会看到如何用两种不同的方式使用这些模块。"
+"第一种使用方式是对一个简单的物理系统进行建模。"
+"我们将讨论并对比因果方法以及非因果方法。"
+"第二种使用方式是将模块用于建模控制系统。"
+"如我们所见，使用模块来构建控制系统更符合框图模型的形式。"
 
 #: ../../source/components/components/block_comps.rst:31
 msgid ""
@@ -53,20 +70,24 @@ msgid ""
 "Modelica allows the model developer to use whichever approach works best in "
 "a given context."
 msgstr ""
+"好在Modelica同时允许因果和非因果的方法。而我们会马上看到，两种建模方法也可以混合在一起。"
+"这样一来，Modelica可以让模型开发者选择在特定情况下效果最好的方法。"
 
 #: ../../source/components/components/block_comps.rst:37
 msgid "Blocks"
-msgstr ""
+msgstr "模块"
 
 #: ../../source/components/components/block_comps.rst:40
 msgid "Modelica Standard Library"
-msgstr ""
+msgstr "Modelica标准库"
 
 #: ../../source/components/components/block_comps.rst:42
 msgid ""
 "In this section, we will leverage several definitions from the Modelica "
 "Standard Library starting with the connectors:"
 msgstr ""
+"本节中，我们会充分利用Modelica标准库里的定义。"
+"首先是连接器的几个定义："
 
 #: ../../source/components/components/block_comps.rst:50
 msgid ""
@@ -75,10 +96,12 @@ msgid ""
 "in a diagram, the ``RealInput`` connector takes the form of a blue solid "
 "triangle:"
 msgstr ""
+"如其名称所示，\ ``RealInput``\ 和\ ``RealOutput``\ 分别代表实值的输入和输出信号连接器。"
+"在简图视图里，\ ``RealInput``\ 连接器显示为蓝色的实心三角："
 
 #: ../../source/components/components/block_comps.rst:59
 msgid "The ``RealOutput`` connector is a blue triangle outline:"
-msgstr ""
+msgstr "\ ``RealOutput``\ 连接器是一个蓝色的三角形边框："
 
 #: ../../source/components/components/block_comps.rst:65
 msgid ""
@@ -86,6 +109,8 @@ msgid ""
 "``partial`` block definitions.  The first ``partial`` definition we'll use "
 "is the ``SO``, or \"single output\", definition:"
 msgstr ""
+"我们将充分利用Modelica标准库内的几个不同\ ``partial``\ 模块定义。"
+"第一个使用的\ ``partial``\ 定义是\ ``SO``\ ，或者说“单输出”（single output）的定义："
 
 #: ../../source/components/components/block_comps.rst:78
 msgid ""
@@ -93,6 +118,9 @@ msgid ""
 " convention, this output signal is named ``y``.  Another definition we'll "
 "use is the ``SISO`` or \"single input, single output\" block:"
 msgstr ""
+"显然，这个定义用于拥有单个输出的模块。"
+"按照惯例，该输出信号命名为\ ``y``\ 。"
+"我们使用的另一个定义是\ ``SISO``\ ，或者说“单输入、单输出”（single input, single output）的模块："
 
 #: ../../source/components/components/block_comps.rst:94
 msgid ""
@@ -100,11 +128,14 @@ msgid ""
 "``y``.  Finally, for blocks with multiple inputs, the ``MISO`` block defines"
 " the input signal, ``u``, as a vector:"
 msgstr ""
+"此模型除了输出信号\ ``y``\ ，还多了一个输入信号\ ``u``\ 。"
+"最后，对于具有多个输入的模块，\ ``MISO``\ 模块可以将输入信号\ ``u``\ 定义为向量："
 
 #: ../../source/components/components/block_comps.rst:109
 msgid ""
 "The parameter ``nin`` is used to specify the number of inputs to the block."
 msgstr ""
+"\ ``nin``\ 参数用于指定模块输入的数目。"
 
 #: ../../source/components/components/block_comps.rst:112
 msgid ""
@@ -112,6 +143,8 @@ msgid ""
 "also available in the Modelica Standard Library.  But we'll create our own "
 "versions here just to demonstrate how such models can be defined."
 msgstr ""
+"值得指出的是，我们即将定义的所有模块都可以在Modelica标准库中找到。"
+"但我们会在这里创建自己的版本。这样做的目的是去展示可以如何定义这样的模型。"
 
 #: ../../source/components/components/block_comps.rst:118
 msgid "``Constant``"
@@ -123,6 +156,8 @@ msgid ""
 "constant value.  Since this model has a single output, it extends from the "
 "``SO`` block:"
 msgstr ""
+"我们能想象的最简单的模块应该是简单的恒定值输出了。"
+"因为这种模型只有一个输出，模型扩展自\ ``SO``\ 模块"
 
 #: ../../source/components/components/block_comps.rst:128
 #: ../../source/components/components/block_comps.rst:148
@@ -131,7 +166,7 @@ msgstr ""
 #: ../../source/components/components/block_comps.rst:211
 #: ../../source/components/components/block_comps.rst:231
 msgid "When rendered, the block looks like this:"
-msgstr ""
+msgstr "模块显示如下："
 
 #: ../../source/components/components/block_comps.rst:137
 msgid "``Gain``"
@@ -144,6 +179,9 @@ msgid ""
 " single input signal and a single output signal.  As such, it extends from "
 "the ``SISO`` model as follows:"
 msgstr ""
+"另一个简单的\ ``block``\ 是“增益模块”。其输出信号为输入信号乘以一个常数的结果。"
+"这样的模块将有一个输入信号和一个输出信号。"
+"因此，它可从\ ``SISO``\ 模型扩展如下："
 
 #: ../../source/components/components/block_comps.rst:157
 msgid "``Sum``"
@@ -154,12 +192,15 @@ msgid ""
 "The ``Sum`` block can operate on an arbitrary number of input signals.  For "
 "this reason, it extends from the ``MISO`` block:"
 msgstr ""
+"\ ``Sum``\ 模块可以使用任意数量的输入信号。"
+"此次，它扩展自\ ``MISO``\ 模块："
 
 #: ../../source/components/components/block_comps.rst:166
 msgid ""
 "The ``Sum`` block uses the :ref:`sum-func` function to compute the sum over "
 "the array of input signals, ``u``, to compute the output signal ``y``."
 msgstr ""
+"\ ``Sum``\ 模块使用\ :ref:`sum-func`\ 函数来计算输入信号数组\ ``u``\ 的总和，以此得到输出信号\ ``y``\ 。"
 
 #: ../../source/components/components/block_comps.rst:179
 msgid "``Product``"
@@ -170,6 +211,7 @@ msgid ""
 "The ``Product`` block is nearly identical to the ``Sum`` block except that "
 "it uses the :ref:`product-func` function:"
 msgstr ""
+"\ ``Product``\ 模块与\ ``Sum``\ 模块几乎相同。不同点在于它采用了\ :ref:`product-func`\ 函数："
 
 #: ../../source/components/components/block_comps.rst:198
 msgid "``Feedback``"
@@ -181,12 +223,15 @@ msgid ""
 "extend from any definitions in the Modelica Standard Library. Instead, it "
 "explicitly declares all of the connectors it uses:"
 msgstr ""
+"与先前模块不同，\ ``Feedback``\ 模块并没有扩展自Modelica标准库中的任何定义。"
+"相反，该模块明确声明了它使用的所有连接器："
 
 #: ../../source/components/components/block_comps.rst:208
 msgid ""
 "The output of the ``Feedback`` block is the difference between the two "
 "``input`` signals ``u1`` and ``u2``."
 msgstr ""
+"\ ``Feedback``\ 模块的输出是两个\ ``input``\ 信号\ ``u1``\ 和\ ``u2``\ 之间的差。"
 
 #: ../../source/components/components/block_comps.rst:220
 msgid "``Integrator``"
@@ -199,10 +244,14 @@ msgid ""
 "performs an integral, it requires an initial condition which is specified "
 "using the parameter ``y0``:"
 msgstr ""
+"\ ``Integrator``\ 模块是又一个\ ``SISO``\ 模块。"
+"模块对输入信号\ ``u``\ 进行积分，以此计算输出信号\ ``y``\ 。"
+"由于此\ ``block``\ 执行积分，它需要一个初始条件。"
+"参数\ ``y0``\ 用以指定初始条件："
 
 #: ../../source/components/components/block_comps.rst:240
 msgid "Systems"
-msgstr ""
+msgstr "系统"
 
 #: ../../source/components/components/block_comps.rst:242
 msgid ""
@@ -211,10 +260,13 @@ msgid ""
 "suitability of causal ``block`` components varies from application to "
 "application."
 msgstr ""
+"我们已经创建了一系列模块。"
+"现在我们将在一些例子里探讨，如何用上述模块来对系统进行建模。"
+"我们将看到，因果性的\ ``block``\ 组件的适用性因应用而异。"
 
 #: ../../source/components/components/block_comps.rst:248
 msgid "Cooling Example"
-msgstr ""
+msgstr "冷却示例"
 
 #: ../../source/components/components/block_comps.rst:250
 msgid ""
@@ -224,22 +276,26 @@ msgid ""
 "components to build our model, we'll build it up in terms of the "
 "mathematical operations associated with our ``block`` definitions."
 msgstr ""
+"我们用\ ``block``\ 定义建模的首个系统是\ :ref:`\ 本章前面部分\ <heat-transfer-components>`\ 提到的传热示例。"
+"不过，这次我们不会使用非因果组件来构建模型。相反，我们将使用与\ ``block``\ 定义相关的数学运算方面来进行建模。"
 
 #: ../../source/components/components/block_comps.rst:256
 msgid ""
 "Since these blocks represent mathematical operations, let us first revisit "
 "the equation associated with this example:"
 msgstr ""
+"由于这些模块均代表了数学运算，那让我们先重温这个例子相关的方程："
 
 #: ../../source/components/components/block_comps.rst:264
 msgid ""
 "The following block diagram will solve for the temperature profile, "
 ":math:`T`:"
 msgstr ""
+"以下框图可以解出温度曲线\ :math:`T`\ ："
 
 #: ../../source/components/components/block_comps.rst:273
 msgid "The Modelica source code for this example is:"
-msgstr ""
+msgstr "这个例子的Modelica的源代码为："
 
 #: ../../source/components/components/block_comps.rst:278
 msgid ""
@@ -247,12 +303,15 @@ msgid ""
 "``T.y``.  Simulating this system, we get the following solution for the "
 "temperature:"
 msgstr ""
+"温度\ :math:`T`\ 是在该模型中由变量\ ``T.y``\ 表示。"
+"对上述系统进行仿真，我们会得到温度的以下解："
 
 #: ../../source/components/components/block_comps.rst:285
 msgid ""
 "As we can see, the solution is exactly the same as it has been for all "
 "previous incarnations of this example."
 msgstr ""
+"我们可以看到，该解与该例此前所有形式内所得的解完全一样。"
 
 #: ../../source/components/components/block_comps.rst:288
 msgid ""
@@ -264,6 +323,11 @@ msgid ""
 "**which ones of these approaches is the most appropriate for this particular"
 " problem?**"
 msgstr ""
+"到目前为止，我们用三种方式表述了上述问题。"
+"第一种描述是使用了单个公式的数学结构。"
+"第二种方式是使用非因果的单个物理效应元件模型来表示相同的动力学。"
+"最后，我们有了上述最新的框图表述。"
+"但真正的问题是，\ **哪种方法最适合于这个特定问题？**\ "
 
 #: ../../source/components/components/block_comps.rst:296
 msgid ""
@@ -274,6 +338,11 @@ msgid ""
 "choice since the behavior of the entire problem can be expressed by the "
 "single equation:"
 msgstr ""
+"实际上，需要考虑两种极端的情况。"
+"如果，我们仅仅想解决问题的这一个特定的配置。"
+"也就是说，我们仅仅考虑单热容与一些环境无限热容进行对流。"
+"这样的话，\ :ref:`\ 基于等式的版本\ <getting-physical>`\ 很可能是最好的选择。"
+"因为整个问题的行为，可以通过单一的公式来表示："
 
 #: ../../source/components/components/block_comps.rst:307
 msgid ""
@@ -281,6 +350,8 @@ msgid ""
 "based versions would require the user to drag, drop and connect component "
 "models which would invariably take longer."
 msgstr ""
+"这样的公式可以非常迅速地键入。"
+"相比之下，基于组件的版本会要求用户拖拽、放入然后连接组件模型。这样总是会需要更长时间。"
 
 #: ../../source/components/components/block_comps.rst:311
 msgid ""
@@ -290,6 +361,8 @@ msgid ""
 "required to create the component models, they can be reconfigured almost "
 "trivially."
 msgstr ""
+"但是，如果你要创建问题的变种，例如结合不同模式的热传递、不同的边界条件等，那么非因果版本就更好了。"
+"这是因为虽然创建组件模型需要一些投入，但要重新配置部件模型就几乎毫不费力了。"
 
 #: ../../source/components/components/block_comps.rst:317
 msgid ""
@@ -309,10 +382,17 @@ msgid ""
 " prone work on the part of the model developer and this is precisely why the"
 " acausal approach is preferred."
 msgstr ""
+"有些人可能说框图版本的模型也是一样的（即可以毫不费力对其重新配置），\ **但事实并非如此**\ 。"
+"框图版模型是问题的一个\ **数学**\ 表述，而不是基于原理的表述。"
+"如果你要设定不同的边界条件、添加热容、加入不同模式的热传递等，那么更改原理图甚为简单。"
+"然而，对于框图表述，\ **你将需要彻底重新制定框图**\ 。"
+"这是因为，所得的状态空间形式数学方程可能非常不同。"
+"非因果、以原理为基础的方法其中一大优势在于，Modelica编译器会自动将教科书里的方程翻译为状态空间形式。"
+"这节省了模型开发要做的大量繁琐、耗时且容易出错的工作。这也正是何以非因果方法是首选方法。"
 
 #: ../../source/components/components/block_comps.rst:337
 msgid "Thermal Control"
-msgstr ""
+msgstr "热控制"
 
 #: ../../source/components/components/block_comps.rst:339
 msgid ""
@@ -323,11 +403,15 @@ msgid ""
 "components schematically, but allows us to express the control strategy "
 "mathematically."
 msgstr ""
+"在接下来的例子中，我们将两者在本节中开发的因果组件与本章前面开发的\ :ref:`heat-transfer-components`\ 这些非因果成分组合在一起。"
+"我们会看到这是一个强大的组合。"
+"因为这使我们能够用原理表示物理组件。但这同时可以让我们用数学表述控制策略。"
 
 #: ../../source/components/components/block_comps.rst:346
 msgid ""
 "Here is a schematic diagram showing how both approaches can be combined:"
 msgstr ""
+"以下是显示这两种方法可以如何组合的示意图："
 
 #: ../../source/components/components/block_comps.rst:354
 msgid ""
@@ -339,6 +423,11 @@ msgid ""
 "this example) and the actuators apply some \"influence\" over the system (in"
 " this case, a heat flux)."
 msgstr ""
+"在与控制系统一起建模的物理系统中，物理组件和效果将使用非因果表述。"
+"代表控制策略的组件则通常会使用因果表述。"
+"将两种方法连接在一起的是传感器和执行器。"
+"该传感器测量系统的某些方面（本例为温度）"
+"与执行器对系统施加一定的“影响”（这里为热通量）。"
 
 #: ../../source/components/components/block_comps.rst:362
 msgid ""
@@ -349,10 +438,13 @@ msgid ""
 "acausal connectors will be used to \"sense\" some aspect of the physical "
 "system (like a voltage, temperature, *etc.*)."
 msgstr ""
+"执行器的模型通常具有信号输入以及到物理系统的非因果连接（“影响”，如力或电流，将通过其应用在物理系统上）。"
+"传感器模型与之正正相反。"
+"这时，因果连接器为输出，而非因果连接器将被用于“感应”物理系统的某些方面（如电压、温度等）。"
 
 #: ../../source/components/components/block_comps.rst:370
 msgid "Our example model can be expressed in Modelica as:"
-msgstr ""
+msgstr "我们的示例模型可以用Modelica的表述为："
 
 #: ../../source/components/components/block_comps.rst:377
 msgid ""
@@ -365,12 +457,19 @@ msgid ""
 "temperature due to the influence of the control system. Simulating this "
 "system, we get the following temperature response:"
 msgstr ""
+"观察模型，我们可以看到，初始温度为\ :math:`90\\,^{\\circ}\\mathrm{C}`\ 。"
+"而环境温度则为\ :math:`25\\,^{\\circ}\\mathrm{C}`\ 。"
+"此外，该设定点温度（所需温度）为\ :math:`30\\,^{\\circ}\\mathrm{C}`\ 。"
+"我们先前的例子里，系统温度最终变为环境温度。"
+"与之不同，此系统由于控制系统的影响，其温度应接近设定点温度。"
+"对上述系统进行仿真，我们可以得到以下温度响应："
 
 #: ../../source/components/components/block_comps.rst:389
 msgid ""
 "We can increase the \"gain\" of the controller, ``k``, and we see a "
 "different response:"
 msgstr ""
+"我们可以增加控制器的“增益”\ ``k``\ 。这时，我们看到了不同的响应："
 
 #: ../../source/components/components/block_comps.rst:395
 msgid ""
@@ -378,6 +477,8 @@ msgid ""
 "required from our actuator in order to achieve the faster response in the "
 "second case:"
 msgstr ""
+"不过，我们可以从以下图中看到，我们的执行机构需要更大的热量输出。"
+"这是为了在第二种情况能得到更快的响应："
 
 #: ../../source/components/components/block_comps.rst:402
 msgid ""
@@ -385,10 +486,11 @@ msgid ""
 "control allows model developers to explore how overall system performance is"
 " impacted by both physical and control strategy design."
 msgstr ""
+"这仅仅是一个很简单的例子。但这演示了包含控制以及物理响应的系统可以如何让模型开发者允许探索两者对系统整体性能的影响。"
 
 #: ../../source/components/components/block_comps.rst:407
 msgid "Conclusion"
-msgstr ""
+msgstr "结论"
 
 #: ../../source/components/components/block_comps.rst:409
 msgid ""
@@ -399,6 +501,7 @@ msgid ""
 "implemented with causal components while physical components use acausal "
 "components."
 msgstr ""
+"本节中，我们已经看到了如何定义因果性的\ ``block``\ 组件。而且，我们将其用在模拟物理系统以及与控制相关的行为。"
+"我们甚至看到了这些因果部件可以与非因果部件相结合，以产生一个“两全其美”的组合。"
+"这样一来，控制功能使用了因果部件来实现。而物理部件则使用非因果的部件。"
 
-#~ msgid "https://book-preview.herokuapp.com"
-#~ msgstr ""
