@@ -269,7 +269,7 @@ msgid ""
 "mentioned previously, ``K`` isn't nearly as descriptive as \"Temperature\"."
 msgstr ""
 "但是，实际上在\\ ``NewtonCoolingWithUnits``\\ 实例中有一个缺陷，即我们必须对每个变量的\\ ``unit``\\ "
-"属性重复定义。另外，如前所述，\"Temperature\"比单一字母\\ ``K``\\ 更具有描述性。"
+"属性重复定义。另外，如前所述，“Temperature”比单一字母\\ ``K``\\ 更具有描述性。"
 
 #: ../../source/behavior/equations/physical.rst:183
 msgid ""
@@ -282,7 +282,7 @@ msgid ""
 "consider the following example:"
 msgstr ""
 "幸运的是，对上述问题我们有一个简单的解决方法，即Modelica语言允许我们定义\\ *derived types*\\ "
-"（派生类型）。到目前为止，我们所声明的变量类型只有\\ ``Real``\\ （实型）。\\ ``Real``\\ 类型的问题是它可以是任何东西 "
+"（派生类型）。到目前为止，我们所声明的变量类型只有\\ ``Real``\\ （实型）。\\ ``Real``\\ 类型的问题是它可以是任何东西"
 "(例如：电压、电流、温度)。我们想做的是如何稍微限制一下变量类型。这也就是派生类型产生的原因。要了解如何定义和声明派生类型，考虑下面的例子："
 
 #: ../../source/behavior/equations/physical.rst:199
@@ -293,7 +293,7 @@ msgid ""
 "minimum possible value of ``0``\"."
 msgstr ""
 "你可以看到关于类型的定义\\ ``type Temperature=Real(unit=\"K\", min=0);``\\ "
-"。其意思是“\"让我们定义一个新类型\\ ``Temperature``\\ 。这是内置\\ ``Real``\\ 类型的一个特例。其物理单位为开尔文 "
+"。其意思是“让我们定义一个新类型\\ ``Temperature``\\ 。这是内置\\ ``Real``\\ 类型的一个特例。其物理单位为开尔文 "
 "(\\ ``K``\\ )。最小可能值则为\\ ``0``\\ ”。"
 
 #: ../../source/behavior/equations/physical.rst:204
