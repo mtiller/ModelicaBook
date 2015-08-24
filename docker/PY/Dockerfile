@@ -21,6 +21,14 @@ RUN apt-get install -y s3cmd
 
 # Install Sphinx internationalization stuff
 RUN pip install sphinx-intl
+RUN apt-get install -y fonts-droid
+
+# Install internationalization packages needed for the book
+RUN apt-get install -y latex-cjk-common
+RUN apt-get install -y texlive-xetex 
+RUN apt-get install -y texlive-generic-extra
+RUN apt-get install -y fonts-arphic-gkai00mp fonts-arphic-ukai fonts-arphic-uming \
+                       fonts-arphic-bkai00mp fonts-arphic-bsmi00lp fonts-arphic-gbsn00lp 
 
 # Finally, upgrade Pygments to the latest Modelica syntax rules
 RUN pip install --upgrade https://bitbucket.org/dietmarw/pygments-main/get/default.tar.gz
