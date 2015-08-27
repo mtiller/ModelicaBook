@@ -53,7 +53,7 @@ intermediate variable to store the diameter:
     protected
       Real diameter := radius*2;
     algorithm
-      circumference := 3.1415*diameter;
+      circumference := 3.14159*diameter;
     end Circumference;
 
 Here we see how some intermediate result or common sub-expression can
@@ -104,8 +104,8 @@ a function that computes both the circumference and area of a circle:
     protected
       Real diameter := radius*2;
     algorithm
-      circumference := 3.1415*diameter;
-      area := 3.1415*radius^2;
+      circumference := 3.14159*diameter;
+      area := 3.14159*radius^2;
     end CircleProperties;
 
 Our upcoming discussion on :ref:`calling-functions` will cover how to
@@ -142,7 +142,7 @@ the volume of a cube:
       input Real length;
       output Real volume;
     algorithm
-      volume = 3.1415*radius^2*length;
+      volume = 3.14159*radius^2*length;
     end CylinderVolume;
 
 When calling this function, it is important not to confuse the radius
