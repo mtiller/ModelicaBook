@@ -60,7 +60,7 @@ implements the "sample and hold" approximation to speed measurement:
 .. literalinclude:: /ModelicaByExample/Components/SpeedMeasurement/Components/SampleHold.mo
    :language: modelica
 
-Behaviorally, there is not difference between this estimation
+Behaviorally, there is no difference between this estimation
 technique and our previous implementation of :ref:`sample-and-hold`.
 But our approach is different this time because we have wrapped that
 estimation technique in a reusable component model.

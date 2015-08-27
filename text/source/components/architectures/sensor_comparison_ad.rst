@@ -268,7 +268,7 @@ we will get the following simulation results:
 .. plot:: ../plots/SV2.py
    :class: interactive
 
-Furthermore, if take some time to tune the gains in the PID
+Furthermore, if we take some time to tune the gains in the PID
 controller, *i.e.,*
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Examples/Variant2_tuned.mo

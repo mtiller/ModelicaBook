@@ -22,13 +22,13 @@ Our system schematic is structured as follows:
 
 .. todo:: the purple box is showing as magenta
 
-All the components within the purple box represent the plant model.
+All the components within the magenta box represent the plant model.
 In this case, it is a simple rotational system involving two rotating
 inertias connected via a spring and a damper.  One of the inertias is
 connected to a rotational ground by an additional damper.  The green
 box identifies the sensor in the system.  The sensor is used to
 measure the speed of one of the rotating shafts.  Similarly, the
-purple box identifies the actuator.  The actuator applies a torque to
+magenta box identifies the actuator.  The actuator applies a torque to
 the other shaft (the one whose speed is not measured).  Finally, all
 the components in the blue box represent the control system, which
 tries to keep the measured speed as close as possible to the setpoint
@@ -150,7 +150,7 @@ model:
 .. todo:: sentence is missing some text at the end
 
 Now, we want to create a variation of this model where the ``sensor``
-component
+component can assume different types.
 
 Previously, we dealt with redundancy by using inheritance.  We can
 certainly use inheritance to pull the subsystems from
@@ -248,9 +248,9 @@ The public interface of this component consists only of the two
 connectors ``w`` and ``shaft``.  Looking at the ``SampleHoldSensor``
 model:
 
-.. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealSensor.mo
-   :language: modelica
-   :lines: 1-11
+
+
+
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/SampleHoldSensor.mo
    :language: modelica

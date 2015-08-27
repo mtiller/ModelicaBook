@@ -55,7 +55,7 @@ The important thing to understand about this system is that the
 particular assembly of components inside the dashed line are likely to
 repeated in any gear related application.  In fact, they may be
 repeated multiple times in a model of something like an automotive
-transmission model.
+transmission.
 
 
 Hierarchical Version
