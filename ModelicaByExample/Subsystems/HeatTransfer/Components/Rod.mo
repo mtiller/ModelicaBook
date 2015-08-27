@@ -15,7 +15,7 @@ model Rod "Modeling discretized rod"
   parameter Modelica.SIunits.ThermalConductance G_wall
     "Thermal conductivity of wall";
   parameter Modelica.SIunits.ThermalConductance G_rod
-    "Thermal conductivie of rod";
+    "Thermal conductivity of rod";
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a ambient
     "Thermal connector for rod end 'a'"
     annotation (Placement(transformation(extent={{-10,-110},{10,-90}})));

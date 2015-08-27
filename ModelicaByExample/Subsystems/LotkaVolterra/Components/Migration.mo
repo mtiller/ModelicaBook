@@ -18,7 +18,7 @@ equation
   rabbit_a.rate = (rabbit_a.population-rabbit_b.population)*rabbit_migration;
   rabbit_a.rate + rabbit_b.rate = 0 "Conservation of rabbits";
   fox_a.rate = (fox_a.population-fox_b.population)*fox_migration;
-  fox_a.rate + fox_b.rate = 0 "Conservation of rabbits";
+  fox_a.rate + fox_b.rate = 0 "Conservation of foxes";
   annotation ( Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},

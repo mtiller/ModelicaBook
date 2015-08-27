@@ -71,7 +71,7 @@ Another thing worth looking at (which we will delve into much more in
 the next topic) is the force felt by the mechanical ground element.
 Looking at our schematic, it is clear that the role of the mechanical
 ground element is to fix the angular position on one side of our
-system.  An equation to constrains the motion (or lack of motion, in
+system.  An equation to constrain the motion (or lack of motion, in
 this case) of a point in the system is called a *kinematic constraint*.
 
 When a kinematic constraint is imposed on a system, the component

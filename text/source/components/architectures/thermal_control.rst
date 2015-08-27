@@ -31,9 +31,9 @@ Let's start with the following architecture:
    :align: center
    :alt: Initial architecture
 
-Here we see the same basic pieces was saw in the previous section, a
+Here we see the same basic pieces we saw in the previous section, a
 plant model, a sensor, a controller and an actuator.  In fact, this is
-a pretty typical architecture.  On some cases, people may break down
+a pretty typical architecture.  In some cases, people may break down
 the plant model into a few subsystems and/or include multiple
 controllers and control loops.  But many closed loop system control
 problems have a similar structure.
