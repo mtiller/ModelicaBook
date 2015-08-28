@@ -171,7 +171,7 @@ definition.  As usual, the ``Icon`` annotation is not included in the
 source listing.  But when this component model is rendered within a
 system model, its icon will look like this:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.*
+.. image:: ../../_static/Icons/ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.*
    :height: 200px
    :align: center
 
@@ -228,7 +228,7 @@ can have equations written in a way that make their behavior more intuitive,
 Although not shown, the ``Icon`` for the ``Reproduction`` model is
 rendered as:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Reproduction.*
+.. image:: ../../_static/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Reproduction.*
    :height: 200px
    :align: center
 
@@ -290,7 +290,7 @@ also proportional the product of the predator and prey populations
 Although not shown, the ``Icon`` for the ``Predation`` model is
 rendered as:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Predation.*
+.. image:: ../../_static/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Predation.*
    :height: 200px
    :align: center
 

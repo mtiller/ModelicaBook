@@ -50,11 +50,11 @@ The reason we've chosen to define two electrical pin connectors is so
 that they can be made graphically distinct.  An instance of the
 ``PositivePin`` connector looks like:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Connectors.Graphics.PositivePin.*
+.. image:: ../../_static/Icons/ModelicaByExample.Connectors.Graphics.PositivePin.*
 
 while an instance of ``NegativePin`` looks like:
 
-.. image:: ../../../docs-dir/Icons/ModelicaByExample.Connectors.Graphics.NegativePin.*
+.. image:: ../../_static/Icons/ModelicaByExample.Connectors.Graphics.NegativePin.*
 
 Let's look in greater detail at the ``Icon`` annotation in the
 ``PositivePin`` definition:

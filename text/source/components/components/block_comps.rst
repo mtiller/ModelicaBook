@@ -52,13 +52,13 @@ for representing real valued input and output signals respectively.
 When drawn in a diagram, the ``RealInput`` connector takes the form of
 a blue solid triangle:
 
-.. image:: ../../../docs-dir/Icons/Modelica.Blocks.Interfaces.RealInput.*
+.. image:: ../../_static/Icons/Modelica.Blocks.Interfaces.RealInput.*
    :height: 200px
    :align: center
 
 The ``RealOutput`` connector is a blue triangle outline:
 
-.. image:: ../../../docs-dir/Icons/Modelica.Blocks.Interfaces.RealOutput.*
+.. image:: ../../_static/Icons/Modelica.Blocks.Interfaces.RealOutput.*
    :height: 200px
    :align: center
 
