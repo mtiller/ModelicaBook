@@ -139,8 +139,3 @@ msgid ""
 "Richard E. Berg, \"Pendulum waves: A demonstration of wave motion using "
 "pendula\" http://dx.doi.org/10.1119/1.16608"
 msgstr ""
-
-#~ msgid ""
-#~ "   The results are even more impressive when visualized in three   "
-#~ "dimensions:"
-#~ msgstr "   上述结果的三维动画就更引人注目了："

@@ -13,8 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/functions/controller.rst:4
 msgid "Software-in-the-Loop Controller"
-msgstr ""
-"软件在环（SiL）控制器"
+msgstr "软件在环（SiL）控制器"
 
 #: ../../source/behavior/functions/controller.rst:6
 msgid ""
@@ -23,8 +22,8 @@ msgid ""
 "explore how to integrate C code for an embedded controller into a Modelica "
 "model."
 msgstr ""
-"前面章节\ :ref:`interpolation`\ 的示例里我们介绍了利用外部C函数去对数据进行管理和插值。本章节"
-"将继续探索如何在Modelica模型中集成用C代码编写的嵌入式控制器。"
+"前面章节\\ :ref:`interpolation`\\ "
+"的示例里我们介绍了利用外部C函数去对数据进行管理和插值。本章节将继续探索如何在Modelica模型中集成用C代码编写的嵌入式控制器。"
 
 #: ../../source/behavior/functions/controller.rst:11
 msgid ""
@@ -38,17 +37,13 @@ msgid ""
 "it demonstrates all the essential steps necessary to integrate external "
 "control strategies."
 msgstr ""
-"当利用Modelica搭建物理系统的数学模型时，有些时候，将（外部）控制策略与物理模型进行集成会非常有用。很多情况下，"
-"上述控制策略的存在形式均是用于嵌入式控制器的自动生成C代码。下面展示的例子将会回顾前面示例\ :ref:`hysteresis`\ 。"
-"在此的基础上，例子里包含了一些有趣的转折。"
-"我们将使用外部C函数来实现磁滞特性，而非在Modelica中通过离散状态来实现。"
-"虽然这个示例非常简单，"
-"但是它包含了集成外部控制策略所需的所有步骤。"
+"当利用Modelica搭建物理系统的数学模型时，有些时候，将（外部）控制策略与物理模型进行集成会非常有用。很多情况下，上述控制策略的存在形式均是用于嵌入式控制器的自动生成C代码。下面展示的例子将会回顾前面示例\\"
+" :ref:`hysteresis`\\ "
+"。在此的基础上，例子里包含了一些有趣的转折。我们将使用外部C函数来实现磁滞特性，而非在Modelica中通过离散状态来实现。虽然这个示例非常简单，但是它包含了集成外部控制策略所需的所有步骤。"
 
 #: ../../source/behavior/functions/controller.rst:22
 msgid "Physical Model"
-msgstr ""
-"物理模型"
+msgstr "物理模型"
 
 #: ../../source/behavior/functions/controller.rst:24
 msgid ""
@@ -57,13 +52,12 @@ msgid ""
 "during our discussion on :ref:`hysteresis`.  Our revised implementation "
 "looks like this:"
 msgstr ""
-"首先，我们从此前的“物理模型”开始。在这个示例中，上述物理模型本质上与前面章节\ :ref:`hysteresis`\ 中"
-"所搭建的模型基本相同。修改后的物理模型如下所示："
+"首先，我们从此前的“物理模型”开始。在这个示例中，上述物理模型本质上与前面章节\\ :ref:`hysteresis`\\ "
+"中所搭建的模型基本相同。修改后的物理模型如下所示："
 
 #: ../../source/behavior/functions/controller.rst:33
 msgid "Let's take a closer look at the ``equation`` section:"
-msgstr ""
-"对于上述模型的\ ``equation``\ 区域，如下所示："
+msgstr "对于上述模型的\\ ``equation``\\ 区域，如下所示："
 
 #: ../../source/behavior/functions/controller.rst:39
 msgid ""
@@ -78,22 +72,20 @@ msgid ""
 "normally called a \"scheduler\" which decides when different control "
 "strategies are executed."
 msgstr ""
-"\ ``computeHeat``\ 函数每隔10毫秒计算一次所需的热量。我们马上将可以看到在控制器中实现了开关控制策略。"
-"即系统在无热量产生和全功率热量产生之间进行切换。正如在前面章节\ :ref:`hysteresis`\ 中所述，上述方法可能会导致系统“抖振”。"
-"出于上述原因，我们在\ ``when``\ 语句中每10毫秒计算一次\ ``Q``\ 变量的值。这10毫秒间隔实质上是为了实现所谓的“调度”功能，用以"
-"决定执行哪种控制策略。"
+"\\ ``computeHeat``\\ "
+"函数每隔10毫秒计算一次所需的热量。我们马上将可以看到在控制器中实现了开关控制策略。即系统在无热量产生和全功率热量产生之间进行切换。正如在前面章节\\ "
+":ref:`hysteresis`\\ 中所述，上述方法可能会导致系统“抖振”。出于上述原因，我们在\\ ``when``\\ "
+"语句中每10毫秒计算一次\\ ``Q``\\ 变量的值。这10毫秒间隔实质上是为了实现所谓的“调度”功能，用以决定执行哪种控制策略。"
 
 #: ../../source/behavior/functions/controller.rst:51
 msgid "Embedded Control Strategy"
-msgstr ""
-"嵌入式控制策略"
+msgstr "嵌入式控制策略"
 
 #: ../../source/behavior/functions/controller.rst:53
 msgid ""
 "The Modelica function ``computeHeat`` used to determine how much heat should"
 " be applied to the system at any given time is implemented as:"
-msgstr ""
-"在Modelica中定义的\ ``computeHeat``\ 函数用于计算任意给定时间内传递给物理系统的热量。函数定义如下所示："
+msgstr "在Modelica中定义的\\ ``computeHeat``\\ 函数用于计算任意给定时间内传递给物理系统的热量。函数定义如下所示："
 
 #: ../../source/behavior/functions/controller.rst:60
 msgid ""
@@ -103,8 +95,8 @@ msgid ""
 " and arguments as its Modelica counterpart. Looking at the source code for "
 "the C function, we see that is the case:"
 msgstr ""
-"注意，在上述代码中同样也出现了\ ``external``\ 关键字。而与前面示例不同的是，\ ``external``\ 关键字后面没有相应C函数的名称。"
-"这就意味着，外部C函数与Modelica定义的函数有着完全相同的名字和参数。阅读上述C函数的源代码，我们会发现确实如此："
+"注意，在上述代码中同样也出现了\\ ``external``\\ 关键字。而与前面示例不同的是，\\ ``external``\\ "
+"关键字后面没有相应C函数的名称。这就意味着，外部C函数与Modelica定义的函数有着完全相同的名字和参数。阅读上述C函数的源代码，我们会发现确实如此："
 
 #: ../../source/behavior/functions/controller.rst:70
 msgid ""
@@ -113,8 +105,7 @@ msgid ""
 "underlying C function by defining them in such a way that no mapping is "
 "truly necessary."
 msgstr ""
-"换言之，如果按上述方式定义外部C函数，在Modelica中定义的函数与C语言定义的函数之间就无需建立参数的映射关系，这样就"
-"可以省掉很多编程麻烦。"
+"换言之，如果按上述方式定义外部C函数，在Modelica中定义的函数与C语言定义的函数之间就无需建立参数的映射关系，这样就可以省掉很多编程麻烦。"
 
 #: ../../source/behavior/functions/controller.rst:75
 msgid ""
@@ -126,9 +117,9 @@ msgid ""
 "information from one invocation of the scheduler to the next (*e.g.,* to "
 "implement hysteresis control, as we see here)."
 msgstr ""
-"由上述代码可以看到，\ ``computeHeat``\ 函数中定义了\ ``static``\ 类型的变量\ ``state``\ 。\ ``static``\ 关键字的使用表明变量\ ``state``\ "
-"的值可以通过\ ``computeHeat``\ 函数在别的地方引用。这种类型的变量在嵌入式控制策略里非常普遍，因为需要将相应信息在不同调度函数内"
-"进行传递（例如在上述磁滞控制示例中）。"
+"由上述代码可以看到，\\ ``computeHeat``\\ 函数中定义了\\ ``static``\\ 类型的变量\\ ``state``\\ 。\\"
+" ``static``\\ 关键字的使用表明变量\\ ``state``\\ 的值可以通过\\ ``computeHeat``\\ "
+"函数在别的地方引用。这种类型的变量在嵌入式控制策略里非常普遍，因为需要将相应信息在不同调度函数内进行传递（例如在上述磁滞控制示例中）。"
 
 #: ../../source/behavior/functions/controller.rst:85
 msgid ""
@@ -140,9 +131,9 @@ msgid ""
 "  This means that each invocation of the function changes some internal "
 "memory or variable which affects that value returned by the function."
 msgstr ""
-"\ ``static``\ 类型变量的出现会引起潜在的问题，因为它意味着\ ``computeHeat``\ 函数\ **对于相同的输入参数具有不同的返回值**\ 。"
-"从数学上来讲，这不是一个纯粹的数学函数。因为数学函数只依赖于其输入参数。在计算机科学领域，一般称上述函数为“非纯”函数。"
-"这也就意味着，每次调用上述函数其内存或变量都会产生相应的变化，从而影响函数的返回值。"
+"\\ ``static``\\ 类型变量的出现会引起潜在的问题，因为它意味着\\ ``computeHeat``\\ 函数\\ "
+"**对于相同的输入参数具有不同的返回值**\\ "
+"。从数学上来讲，这不是一个纯粹的数学函数。因为数学函数只依赖于其输入参数。在计算机科学领域，一般称上述函数为“非纯”函数。这也就意味着，每次调用上述函数其内存或变量都会产生相应的变化，从而影响函数的返回值。"
 
 #: ../../source/behavior/functions/controller.rst:94
 msgid ""
@@ -153,9 +144,8 @@ msgid ""
 "presence of impurity or side effects can result in very inefficient "
 "simulations, at best, or completely erroneous results, at worst."
 msgstr ""
-"在嵌入式控制策略\ **设计阶段**\ 会遇到上述问题，在面向数学的环境中，例如Modelica环境，调用上述函数时需特别小心。"
-"因为，Modelica编译器默认所有的函数都是纯函数或者说无副作用的。如果出现了非纯函数或者说副作用，在仿真中就会出现问题。最好的"
-"结果是仿真效率非常低，最坏的结果是仿真结果完全不正确。"
+"在嵌入式控制策略\\ **设计阶段**\\ "
+"会遇到上述问题，在面向数学的环境中，例如Modelica环境，调用上述函数时需特别小心。因为，Modelica编译器默认所有的函数都是纯函数或者说无副作用的。如果出现了非纯函数或者说副作用，在仿真中就会出现问题。最好的结果是仿真效率非常低，最坏的结果是仿真结果完全不正确。"
 
 #: ../../source/behavior/functions/controller.rst:102
 msgid ""
@@ -165,15 +155,13 @@ msgid ""
 "side effects, the solver will be unable to anticipate the effects triggered "
 "by the changes to variables it is not aware of."
 msgstr ""
-"这种问题的出现，原因在于底层求解器在找到“正确”解前必须计算很多的“备选”解。如果生成的备选解需要求解器"
-"调用具有副作用的函数时，求解器将无法预测变量变更所造成的影响。"
+"这种问题的出现，原因在于底层求解器在找到“正确”解前必须计算很多的“备选”解。如果生成的备选解需要求解器调用具有副作用的函数时，求解器将无法预测变量变更所造成的影响。"
 
 #: ../../source/behavior/functions/controller.rst:108
 msgid ""
 "It is for precisely this reason that the ``impure`` qualifier is applied to "
 "the definition of ``computeHeat``:"
-msgstr ""
-"出于上述原因，\ ``computeHeat``\ 函数在定义时添加了\ ``impure``\ 限定词，如下所示："
+msgstr "出于上述原因，\\ ``computeHeat``\\ 函数在定义时添加了\\ ``impure``\\ 限定词，如下所示："
 
 #: ../../source/behavior/functions/controller.rst:115
 msgid ""
@@ -183,38 +171,35 @@ msgid ""
 " this seems like it would completely prohibit calling the function, but that"
 " isn't the case.  Recall our integration of the control strategy:"
 msgstr ""
-"以上述方式通知Modelica编译器这个函数\ **具有副作用或返回值不仅仅依赖输入参数**\ ，而且当生成备选解时\ **不能**\ 调用此函数。"
-"这样看起来会完全禁止其他函数调用上述函数。但其实并非如此。回顾上述要集成的控制策略："
+"以上述方式通知Modelica编译器这个函数\\ **具有副作用或返回值不仅仅依赖输入参数**\\ ，而且当生成备选解时\\ **不能**\\ "
+"调用此函数。这样看起来会完全禁止其他函数调用上述函数。但其实并非如此。回顾上述要集成的控制策略："
+
+#: ../../source/behavior/functions/controller.rst:132
+msgid "Results"
+msgstr "仿真结果"
+
+#: ../../source/behavior/functions/controller.rst:134
+msgid ""
+"In the C function ``computeHeat``, we see that these two statements "
+"implement a +/- 2 degree deadband around the setpoint:"
+msgstr "在C语言定义的\\ ``computeHeat``\\ 函数中，实现了在设定点附近浮动+/-2度的算法，如下所示："
+
+#: ../../source/behavior/functions/controller.rst:141
+msgid ""
+"It is this functionality that prevents chattering and which can be clearly "
+"observed in the simulated results for our example:"
+msgstr "上述功能正正能有效地消除系统抖振。仿真结果中可以清晰的看到这点，如下图所示："
 
 #: ../../source/behavior/functions/controller.rst:125
 msgid ""
 "In particular, note that ``computeHeat`` is invoked only within the ``when``"
 " statement and not as part of a \"continuous\" equation.  As a result, we "
 "can be certain that ``computeHeat`` will only be invoked in response to an "
-"event and in evaluating candidate solutions for the continuous variables."
+"event but not when evaluating candidate solutions for the continuous "
+"variables."
 msgstr ""
-"特别的，需要注意的是\ ``computeHeat``\ 函数只在\ ``when``\ 语句中调用了。该函数并不是作为某个“连续”方程的一部分。"
-"因此，我们可以肯定的是\ ``computeHeat``\ 函数只会在响应事件时被调用，而在不会计算连续变量备选解时被调用。"
-
-#: ../../source/behavior/functions/controller.rst:132
-msgid "Results"
-msgstr ""
-"仿真结果"
-
-#: ../../source/behavior/functions/controller.rst:134
-msgid ""
-"In the C function ``computeHeat``, we see that these two statements "
-"implement a +/- 2 degree deadband around the setpoint:"
-msgstr ""
-"在C语言定义的\ ``computeHeat``\ 函数中，实现了在设定点附近浮动+/-2度的算法，如下所示："
-
-#: ../../source/behavior/functions/controller.rst:141
-msgid ""
-"It is this functionality that prevents chattering and which can be clearly "
-"observed in the simulated results for our example:"
-msgstr ""
-"上述功能正正能有效地消除系统抖振。仿真结果中可以清晰的看到这点，如下图所示："
-
-#: ../../source/behavior/functions/controller.rst:83
-msgid "side effects"
-msgstr "副作用"
+"特别的，需要注意的是\\ ``computeHeat``\\ 函数只在\\ ``when``\\ "
+"语句中调用了。"
+"该函数并不是作为某个“连续”方程的一部分。"
+"因此，我们可以肯定的是\\ ``computeHeat``\\ 函数只会在响应事件时被调用，"
+"而在不会计算连续变量备选解时被调用。"
