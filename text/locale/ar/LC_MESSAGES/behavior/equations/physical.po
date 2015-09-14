@@ -220,7 +220,8 @@ msgstr "الوحدات الفيزيائية المادية"
 #: ../../source/behavior/equations/physical.rst:113
 msgid ""
 "As mentioned already in this section, these examples are a bit more physical"
-" because they include individual physical parameters that correspond to "
+" because they include individual physical parameters that
+ correspond to "
 "individual properties of our real world system. However, we are still "
 "missing something.  Although these variables represent physical quantities "
 "like temperature, mass, *etc.*, we haven't explicitly given them any "
