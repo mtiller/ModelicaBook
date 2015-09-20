@@ -14,16 +14,20 @@ msgstr ""
 #: ../../source/behavior/equations/electrical.rst:4
 msgid "An Electrical Example"
 msgstr ""
+"Un ejemplo eléctrico"
 
 #: ../../source/behavior/equations/electrical.rst:6
 msgid ""
 "Let us return now to an engineering context.  For readers who are more "
 "familiar with electrical systems, consider the following circuit:"
 msgstr ""
+"Volvamos ahora al contexto de la ingeniería. Para lectores a los que les resulten más "
+"familiares los sistemas eléctricos, consideremos el siguiente circuito:"
 
 #: ../../source/behavior/equations/electrical.rst:17
 msgid "Low-Pass RLC Filter"
 msgstr ""
+"Filtro pasabajo RLC"
 
 #: ../../source/behavior/equations/electrical.rst:19
 msgid ""
@@ -32,16 +36,23 @@ msgid ""
 " :math:`i_C`, we can use the equations associated with inductors, resistors "
 "and capacitors, respectively:"
 msgstr ""
+"Supongamos que queremos solucionarlo para: :math:`V`, :math:`i_L`, :math:`i_R` y "
+":math:`i_C`. Para solucionar cada una de las corrientes :math:`i_L`, :math:`i_R` y"
+" :math:`i_C`, podemos utilizar las ecuaciones asociadas con induciones, resistencias "
+"y condensadores, respectivamente:"
 
 #: ../../source/behavior/equations/electrical.rst:29
 msgid "where :math:`V_b` is the battery voltage."
 msgstr ""
+"donde :math:`V_b` es el voltage de la batería."
 
 #: ../../source/behavior/equations/electrical.rst:31
 msgid ""
 "Since we have only 3 equations, but 4 variables, we need one additional "
 "equation.  That additional equation is going to be Kirchoff's current law:"
 msgstr ""
+"Como tenemos solamente 3 ecuaciones, pero 4 variables, necesitamos una ecuación "
+"adicional. Esta ecuación adicional será la ley de la corriente de Kirchoff:"
 
 #: ../../source/behavior/equations/electrical.rst:37
 msgid ""
@@ -52,18 +63,28 @@ msgid ""
 " how to create models by dragging, dropping and connecting models that "
 "really look like the circuit components in our :ref:`low-pass-rlc`."
 msgstr ""
+"Ahora que ya hemos determinado las ecuaciones y variables de este problema, crearemos"
+"un modelo básico (incluyendo tipos físicos) trasladando las "
+"ecuaciones directamente a Modelica. Pero en una sección posterior en :ref"
+":`electrical-components` volveremos a este mismo circuito y demostraremos"
+" cómo crear modelos arrastrando, soltando y conectando modelos que "
+"realmente tienen el mismo aspecto que los componentes del circuito de nuestro :ref:`low-pass-rlc`."
 
 #: ../../source/behavior/equations/electrical.rst:45
 msgid ""
 "But for now, we will build a model composed simply of variables and "
 "equations.  Such a model could be written as follows:"
 msgstr ""
+"Pero por ahora, construiremos un modelo compuesto simplemente por variables y "
+"ecuaciones. Este modelo puede escribirse como sigue:"
 
 #: ../../source/behavior/equations/electrical.rst:52
 msgid ""
 "Let's go through this example bit by bit and reinforce the meaning of the "
 "various statements.  Let's start at the top:"
 msgstr ""
+"Sigamos con este ejemplo poco a poco y reforzando el significado de las "
+"diferentes sentencias. Empecemos por la parte superior:"
 
 #: ../../source/behavior/equations/electrical.rst:59
 msgid ""
@@ -72,6 +93,10 @@ msgid ""
 "capacitor circuit model\"``.  Next, we introduce a few physical types that "
 "we will need:"
 msgstr ""
+"Aquí vemos que el nombre del modelo es ``RLC1``. Además, "
+"se ha incluido una descripción de este modelo, a saber ``\"A resistor-inductor-"
+"capacitor circuit model\"``. Después, introducimos unos pocos tipos físicos que "
+"necesitaremos:"
 
 #: ../../source/behavior/equations/electrical.rst:68
 msgid ""
@@ -79,6 +104,9 @@ msgid ""
 " ``Real`` type by associating it with a particular physical unit.  Then, we "
 "declare all of the ``parameter`` variables in our problem:"
 msgstr ""
+"Cada una de estas líneas introduce un tipo físico que especializa el tipo predefinido"
+" ``Real`` asociandolo con una unidad física particular. Después, "
+"declaramos todas las variables ``parameter`` en nuestro problema:"
 
 #: ../../source/behavior/equations/electrical.rst:77
 msgid ""
@@ -87,6 +115,10 @@ msgid ""
 "  The last variables we need to define are the ones we wish to solve for, "
 "*i.e.*,"
 msgstr ""
+"Estas variables ``parameter`` representan diferentes características físicas (en"
+" este caso, voltaje, inductancia, resistencia y capacitancia, respectivamente).
+" Las últimas variables que necesitamos definir son aquellas que queremos solucionar, "
+"*es decir*,"
 
 #: ../../source/behavior/equations/electrical.rst:86
 msgid ""
@@ -94,12 +126,17 @@ msgid ""
 "section to the model that specifies the equations to use when generating "
 "solutions for this model:"
 msgstr ""
+"Ahora que todas las variables se han declarado, añadimos una sección ``equation`` "
+"al modelo que especifica las ecuaciones a usar cuando se generen "
+"soluciones a este modelo:"
 
 #: ../../source/behavior/equations/electrical.rst:94
 msgid ""
 "Finally, we close the model by creating an ``end`` statement that includes "
 "the ``model`` name (*i.e.*, ``RLC1`` in this case):"
 msgstr ""
+"Finalmente, cerramos el modelo creando una sentencia ``end`` que incluye "
+"el nombre del ``modelo`` (*es decir*, ``RLC1`` en este caso):"
 
 #: ../../source/behavior/equations/electrical.rst:103
 msgid ""
@@ -110,6 +147,11 @@ msgid ""
 "the derivative of a variable) and others that are simply algebraic "
 "equations."
 msgstr ""
+"Una cosa que distingue este ejemplo de los ejemplos anteriores es el "
+"hecho de que contiene más ecuaciones. Como con el ejemplo ``NewtonCooling``, "
+"tenemos algunas ecuaciones con expresiones en ambos lados el derecho y el izquierdo. "
+"Tenemos también una mezcla de ecuaciones diferenciales (unas que incluyen "
+"la derivada de una variable) y otras que son simplemente ecuaciones algebraicas."
 
 #: ../../source/behavior/equations/electrical.rst:110
 msgid ""
@@ -118,6 +160,10 @@ msgid ""
 " required in some modeling environments.  We could, of course, rearrange the"
 " equations into a more explicit form like this:"
 msgstr ""
+"Esto enfatiza más el hecho de que en Modelica no es necesario "
+"poner el sistema de ecuaciones en la llamada \"forma de espacio-estado explicita\" "
+"requerida en algunos entornos de modelado. Podemos, por supuesto, reorganizar las"
+" ecuaciones en una forma más explícita como esta:"
 
 #: ../../source/behavior/equations/electrical.rst:120
 msgid ""
@@ -125,6 +171,9 @@ msgid ""
 "such manipulations.  Instead, we are free to write the equations in whatever"
 " form we chose."
 msgstr ""
+"Pero el tema importante es que con Modelica, no necesitamos llevar a cabo "
+"estas manipulaciones. En cambio, somos libres de escribir las ecuaciones en cualquier"
+" forma que escojamos."
 
 #: ../../source/behavior/equations/electrical.rst:124
 msgid ""
@@ -135,6 +184,12 @@ msgid ""
 " model developer to deal with this tedious, time consuming and error prone "
 "task."
 msgstr ""
+"Finalmente, es probable que sea necesario manipular estas ecuaciones para obtener una forma"
+" explícita como el espacio-estado. Pero si estas manipulaciones son necesarias, "
+"será responsabilidad del compilador de Modelica, no del desarrollador "
+"del modelo, hacer estas manipulaciones. Esto elimina la necesidad del"
+" desarrollador del modelo de tratar con esta tarea tediosa, larga y propensa a "
+"errores."
 
 #: ../../source/behavior/equations/electrical.rst:131
 msgid ""
@@ -147,14 +202,24 @@ msgid ""
 " model development faster and easier, but it dramatically improves the "
 "**reusability** of the models."
 msgstr ""
+"La habilidad para mantener las ecuaciones en su \"formato de libro de texto\" es importante "
+"porque, como mostraremos en secciones posteriores, finalmente queremos llegar al "
+"punto en el que estas ecuaciones serán \"capturadas\" en modelos de componentes "
+"individuales. En estos casos, no sabremos (cuando creemos el modelo de componente) "
+"exactamente qué ecuación se usará para resolver cada variable. Haciendo que estas "
+"manipulaciones sean responsabilidad del compilador de Modelica no solo hace que el "
+"desarrollo de modelos sea más rápido y sencillo, sino que mejora drásticamente la "
+"**reusabilidad** de los modelos."
 
 #: ../../source/behavior/equations/electrical.rst:141
 msgid "The following figure shows the dynamic response of the ``RLC1`` model:"
 msgstr ""
+"La siguiente figura muestra la respuesta dinámica del modelo ``RLC1``:"
 
 #: ../../source/behavior/equations/electrical.rst:0
 msgid "Expanding on these electrical examples"
 msgstr ""
+"Ampliando estos ejemplos eléctricos"
 
 #: ../../source/behavior/equations/electrical.rst:148
 msgid ""
@@ -166,7 +231,15 @@ msgid ""
 "example extended to include more complex behavior, you may want to skip "
 "ahead to the :ref:`switched-rlc` example."
 msgstr ""
+"Como se menciona en el :ref:`preface`, la estructura de este libro nos permite "
+"explorar un enfoce más basado en hipermedia en el que se anima los lectores y lectoras a "
+"procesar el material que está más alineado con sus objetivos e intereses. "
+"El próximo capítulo presentará un modelo cuyas ecuaciones se derivan de un "
+"sistema mecánico. Si en su lugar se prefiere ver este ejemplo "
+"eléctrico extendido incluyendo comportamiento más complejo, es posible que "
+"desee pasar directamente al ejemplo :ref:`switched-rlc`."
 
 #: ../../source/behavior/equations/electrical.rst:101
 msgid "state-space form"
 msgstr ""
+"forma espacio-estado"
