@@ -5,7 +5,7 @@ model Rod "Modeling discretized rod"
   parameter Integer n(start=2,min=2) "Number of rod segments";
   parameter Modelica.SIunits.Temperature T0 "Initial rod temperature";
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a port_a
-    "Thermal connector for rod end 'a'"
+    "Thermal connector to ambient"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b port_b
     "Thermal connector for rod end 'b'"
