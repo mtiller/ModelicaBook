@@ -2,7 +2,9 @@
 
 Importing
 ---------
-
+.. index::
+   single: import
+   
 As we saw previously, there are basically three forms of importing.
 In all cases, the ``import`` statement creates an "alias" within the
 definition that refers to a type defined elsewhere.
