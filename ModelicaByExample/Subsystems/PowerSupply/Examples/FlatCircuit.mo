@@ -9,7 +9,7 @@ model FlatCircuit "A model with power source, AC-DC conversion and load in one d
     annotation (Placement(transformation(extent={{-80,30},{-60,50}})));
   Analog.Ideal.IdealTransformer transformer(Lm1=1, n=10, considerMagnetization=false)
     annotation (Placement(transformation(extent={{-50,0},{-30,20}})));
-  Analog.Ideal.IdealDiode D1(Vknee=0)
+  Analog.Ideal.IdealDiode D1(Vknee=0, Ron=1e-5, Goff=1e-5)
     annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
@@ -26,17 +26,17 @@ model FlatCircuit "A model with power source, AC-DC conversion and load in one d
         rotation=270, origin={100,-10})));
   Modelica.Blocks.Sources.BooleanStep step(startTime=0.25)
     annotation (Placement(transformation(extent={{-100,50},{-80,70}})));
-  Analog.Ideal.IdealDiode D2(Vknee=0)
+  Analog.Ideal.IdealDiode D2(Vknee=0, Ron=1e-5, Goff=1e-5)
     annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=-45, origin={12,20})));
-  Analog.Ideal.IdealDiode D3(Vknee=0)
+  Analog.Ideal.IdealDiode D3(Vknee=0, Ron=1e-5, Goff=1e-5)
     annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=-45, origin={-12,0})));
-  Analog.Ideal.IdealDiode D4(Vknee=0)
+  Analog.Ideal.IdealDiode D4(Vknee=0, Ron=1e-5, Goff=1e-5)
     annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
