@@ -62,3 +62,11 @@ alias).
     associated with a given type.  Wildcards make this very difficult
     because it is not clear what types are imported from what
     packages.
+
+
+   If you want to import multiple entries from the same package you can use a special syntax.
+   This avoids the repetition of multiple imports while avoiding the problems of wildcards.
+
+.. code-block:: modelica
+
+    import Modelica.SIunits.{Temperature, Length};
