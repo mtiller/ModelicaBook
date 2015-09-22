@@ -238,8 +238,8 @@ be automatically generated:
 
     // Connection Set #1
     //   Equality Equations:
-    ground.flange_a.phi = damper2.flange_b;
-    damper2.flange_b.phi = spring2.flange_b;
+    ground.flange_a.phi = damper2.flange_b.phi;
+    damper2.flange_b.phi = spring2.flange_b.phi;
     //   Conservation Equation:
     ground.flange_a.tau + damper2.flange_b.tau + spring2.flange_b.tau = 0;
 
@@ -307,8 +307,8 @@ have the following equations:
 
 .. code-block:: modelica
 
-    ground.flange_a.phi = damper2.flange_b;
-    damper2.flange_b.phi = spring2.flange_b;
+    ground.flange_a.phi = damper2.flange_b.phi;
+    damper2.flange_b.phi = spring2.flange_b.phi;
     ground.flange_a.tau + damper2.flange_b.tau + spring2.flange_b.tau = 0;
 
 If we multiply the last equation by ``der(ground.flange_a.phi)``, the
