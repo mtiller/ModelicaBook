@@ -66,6 +66,7 @@ alias).
 
    If you want to import multiple entries from the same package you can use a special syntax.
    This avoids the repetition of multiple imports while avoiding the problems of wildcards.
+   Note that this feature was in Modelica Language Specification Version 3.3.
 
 .. code-block:: modelica
 
