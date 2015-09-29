@@ -18,6 +18,7 @@ volunteering to coordinate the translation into that language:
   * **Spanish** - [Susana López](mailto:susana.lopez@tekniker.es)
   * **Chinese** - [Lionel Belmon](mailto:lionel.belmon@globalcrown.com.cn) [Discussion](https://github.com/xogeny/ModelicaBook/wiki/Convention-for-Chinese-Translation)
   * **Italian** - [Marco Romanoni](mailto:marco.romanoni@dofware.com)
+  * **Portuguese** - [Julião Cicero](mailto:juliaojunior@gmail.com)
 
 ## Explanation
 
