@@ -1,0 +1,126 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-29 16:40-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/arrays/declarations.rst:4
+msgid "Array Declarations"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:7
+msgid "Syntax"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:9
+msgid ""
+"Array declaration syntax is very simple.  The syntax is the same as for a "
+"normal variable declaration except the variable name should be followed by "
+"subscripts to specify the size of each dimension of the array.  The general "
+"form for an array declaration would be:"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:18
+msgid ""
+"where ``VariableType`` is a Modelica type like ``Real`` or ``Integer``, "
+"``varName`` is the name of the variable."
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:22
+msgid "Integer Sizes"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:24
+msgid ""
+"Normally, the dimension specifications are simply integers that indicate the"
+" size of that dimension.  For example:"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:31
+msgid ""
+"In this case, ``x`` is an array of real valued numbers with only one "
+"dimension of size 5.  It is possible to use parameters or constants specify "
+"the size of an array, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:42
+msgid "Linked Dimensions"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:44
+msgid ""
+"As we will see shortly when we discuss the various :ref:`array-functions` in"
+" Modelica, we can even use the ``size`` function to specify the size of one "
+"array in terms of another array. Consider the following:"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:54
+msgid ""
+"In this case, ``y`` will have one dimension of size 5.  The use of the "
+"function ``size(x,1)`` will return the size of dimension 1 of the array "
+"``x``.  There are many applications where it is useful to express that the "
+"dimensions of different arrays are related in this way (*e.g.*, ensuring "
+"that arrays are sized such that operations like matrix multiplication are "
+"possible)."
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:64
+msgid "Unspecified Dimensions"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:66
+msgid ""
+"There are some circumstances where we can leave the size of an array "
+"unspecified so that it can be specified by some later context.  For example,"
+" we will see examples of this later when we discuss :ref:`functions` that "
+"have arguments which are arrays."
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:71
+msgid ""
+"To indicate that the size of a given array dimension is not (yet) known, we "
+"can use the `:` symbol as the dimension.  So in a declaration like this:"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:79
+msgid ""
+"we are declaring an array with two dimensions.  The size of the first "
+"dimension is not specified.  However, the size of the second dimension is "
+"definitively specified as 2.  In effect, we have declared that ``A`` is a "
+"matrix with an unspecified number of rows and two columns."
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:85
+msgid "Non-Integer Dimensions"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:90
+msgid "Enumerations"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:92
+msgid ""
+"As we saw in our :ref:`chemical-system` examples, another way to specify the"
+" dimension for an array is with an enumeration.  If an enumeration is used "
+"to specify a dimension, then the size of that dimension will be equal to the"
+" number of possible values for that enumeration.  In our forthcoming "
+"discussion on :ref:`array-indexing`, we'll see how to properly index an "
+"array that uses enumerations as dimensions."
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:101
+msgid "Booleans"
+msgstr ""
+
+#: ../../source/behavior/arrays/declarations.rst:103
+msgid ""
+"It is also possible to declare an array where a dimension is specified as "
+"``Boolean``, *e.g.,*"
+msgstr ""

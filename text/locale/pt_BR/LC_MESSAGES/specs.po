@@ -1,0 +1,761 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-09-29 16:40+EDT\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: specs.py:12
+msgid "x"
+msgstr ""
+
+#: specs.py:14
+msgid "Simulation of FirstOrder"
+msgstr ""
+
+#: specs.py:16
+msgid "x (FirstOrder)"
+msgstr ""
+
+#: specs.py:17
+msgid "x (FirstOrderInitial)"
+msgstr ""
+
+#: specs.py:22
+msgid "Specifying (non-zero) Initial Conditions"
+msgstr ""
+
+#: specs.py:25
+msgid "Simulation Using Experiment Annotation"
+msgstr ""
+
+#: specs.py:27
+msgid "x (FirstOrderSteady)"
+msgstr ""
+
+#: specs.py:32
+msgid "Steady State Solution (vs. Dynamic Response)"
+msgstr ""
+
+#: specs.py:36
+msgid "Cooling to Ambient"
+msgstr ""
+
+#: specs.py:37 specs.py:73
+msgid "Temperature"
+msgstr ""
+
+#: specs.py:41
+msgid "Output Voltage (V)"
+msgstr ""
+
+#: specs.py:42
+msgid "Battery Voltage (Vb)"
+msgstr ""
+
+#: specs.py:43
+msgid "Voltage [V]"
+msgstr ""
+
+#: specs.py:44
+msgid "Circuit Response"
+msgstr ""
+
+#: specs.py:47 specs.py:352 specs.py:373 specs.py:379 specs.py:386
+msgid "Position of inertia 1 [rad]"
+msgstr ""
+
+#: specs.py:48 specs.py:353 specs.py:366
+msgid "Position of inertia 2 [rad]"
+msgstr ""
+
+#: specs.py:49 specs.py:354 specs.py:375 specs.py:381 specs.py:388
+msgid "Velocity of inertia 1 [rad/s]"
+msgstr ""
+
+#: specs.py:50 specs.py:355 specs.py:368
+msgid "Velocity of inertia 2 [rad/s]"
+msgstr ""
+
+#: specs.py:52
+msgid "Mechanical System Response"
+msgstr ""
+
+#: specs.py:56
+msgid "Mechanical Response specifying phi1(0)"
+msgstr ""
+
+#: specs.py:59
+msgid "Prey population"
+msgstr ""
+
+#: specs.py:60
+msgid "Predator population"
+msgstr ""
+
+#: specs.py:63
+msgid "Classic Lotka-Volterra"
+msgstr ""
+
+#: specs.py:66
+msgid "Quiescent Model (trivial solution)"
+msgstr ""
+
+#: specs.py:70
+msgid "Quiescent Model (using start values)"
+msgstr ""
+
+#: specs.py:74
+msgid "Ambient Temperature"
+msgstr ""
+
+#: specs.py:77
+msgid "Cooling to Time-Varying Ambient"
+msgstr ""
+
+#: specs.py:78 specs.py:83
+msgid "Temperature [K]"
+msgstr ""
+
+#: specs.py:81
+msgid "NCSTD"
+msgstr ""
+
+#: specs.py:82
+msgid "Equilibrium Initialization"
+msgstr ""
+
+#: specs.py:86
+msgid "Height"
+msgstr ""
+
+#: specs.py:89
+msgid "Simple Bouncing Ball Model"
+msgstr ""
+
+#: specs.py:90 specs.py:94
+msgid "Height [m]"
+msgstr ""
+
+#: specs.py:93
+msgid "Consequences of Numerical Event Detection"
+msgstr ""
+
+#: specs.py:97
+msgid "Decay with Numerical Noise"
+msgstr ""
+
+#: specs.py:101
+msgid "Decay with Guard Condition"
+msgstr ""
+
+#: specs.py:105
+msgid "Decay without Issue"
+msgstr ""
+
+#: specs.py:108 specs.py:112
+msgid "CPU Time"
+msgstr ""
+
+#: specs.py:109
+msgid "Chattering"
+msgstr ""
+
+#: specs.py:113
+msgid "No Chattering"
+msgstr ""
+
+#: specs.py:117
+msgid "Integrated value"
+msgstr ""
+
+#: specs.py:118
+msgid "Reference value"
+msgstr ""
+
+#: specs.py:125
+msgid "Integration with Events"
+msgstr ""
+
+#: specs.py:128
+msgid "Integration with Events (Higher Frequency)"
+msgstr ""
+
+#: specs.py:131
+msgid "Integration without Events"
+msgstr ""
+
+#: specs.py:134
+msgid "Integration without Events (Higher Frequency)"
+msgstr ""
+
+#: specs.py:138
+msgid "Source Voltage, Vs [V]"
+msgstr ""
+
+#: specs.py:139
+msgid "Response Voltage, V [V]"
+msgstr ""
+
+#: specs.py:140
+msgid "Resistor Current [A]"
+msgstr ""
+
+#: specs.py:141
+msgid "Capacitor Current [A]"
+msgstr ""
+
+#: specs.py:142
+msgid "Inductor Current [A]"
+msgstr ""
+
+#: specs.py:145
+msgid "Switched RLC Voltage Response"
+msgstr ""
+
+#: specs.py:148
+msgid "Switched RLC Current Response"
+msgstr ""
+
+#: specs.py:155
+msgid "Sample and Hold Speed Measurement"
+msgstr ""
+
+#: specs.py:160
+msgid "Speed Estimation by Interval Measurement"
+msgstr ""
+
+#: specs.py:166
+msgid "Speed Estimation Using Fewer Teeth"
+msgstr ""
+
+#: specs.py:170
+msgid "Angle vs. Teeth Angles"
+msgstr ""
+
+#: specs.py:176 specs.py:179
+msgid "Speed Estimation by Counting"
+msgstr ""
+
+#: specs.py:186
+msgid "Temperature Control with Chattering"
+msgstr ""
+
+#: specs.py:189
+msgid "Heater Output"
+msgstr ""
+
+#: specs.py:194 specs.py:202
+msgid "Temperature Control with Hysteresis"
+msgstr ""
+
+#: specs.py:197 specs.py:205
+msgid "Heater Output with Hysteresis"
+msgstr ""
+
+#: specs.py:211
+msgid "Independently Sampled Signals"
+msgstr ""
+
+#: specs.py:214
+msgid "Error of Independently Sampled Signals"
+msgstr ""
+
+#: specs.py:219
+msgid "Synchronously Sampled Signals"
+msgstr ""
+
+#: specs.py:224
+msgid "Synchronized Sampling and Subsampling"
+msgstr ""
+
+#: specs.py:230
+msgid "First Order Example in LTI Form"
+msgstr ""
+
+#: specs.py:235
+msgid "Cooling Example in LTI Form"
+msgstr ""
+
+#: specs.py:239 specs.py:244 specs.py:249 specs.py:254
+msgid "x[2]"
+msgstr ""
+
+#: specs.py:240
+msgid "RLC Circuit Example in LTI Form"
+msgstr ""
+
+#: specs.py:245 specs.py:250
+msgid "Rotational Example in LTI Form"
+msgstr ""
+
+#: specs.py:255
+msgid "Lotka-Volterra Example in LTI Form"
+msgstr ""
+
+#: specs.py:259 specs.py:275
+msgid "]"
+msgstr ""
+
+#: specs.py:262
+msgid "One Dimensional Heat Transfer Response"
+msgstr ""
+
+#: specs.py:266
+msgid "cX*50"
+msgstr ""
+
+#: specs.py:267
+msgid "Simulation of Chemical System without Arrays"
+msgstr ""
+
+#: specs.py:272
+msgid "Simulation of Chemical System with Arrays"
+msgstr ""
+
+#: specs.py:275
+msgid ""
+"C[ModelicaByExample.ArrayEquations.ChemicalReactions.Reactions_Enum.Species."
+msgstr ""
+
+#: specs.py:279 specs.py:289
+msgid "A"
+msgstr ""
+
+#: specs.py:279 specs.py:289
+msgid "C[A]"
+msgstr ""
+
+#: specs.py:280 specs.py:290
+msgid "B"
+msgstr ""
+
+#: specs.py:280 specs.py:290
+msgid "C[B]"
+msgstr ""
+
+#: specs.py:281 specs.py:291
+msgid "C[X]*50"
+msgstr ""
+
+#: specs.py:281 specs.py:291 specs.py:464
+msgid "X"
+msgstr ""
+
+#: specs.py:283 specs.py:293
+msgid "Simulation of Chemical System using Enumerations"
+msgstr ""
+
+#: specs.py:301
+msgid "Polynomial Evaluation"
+msgstr ""
+
+#: specs.py:305
+msgid "Polynomial and Derivative Evaluation"
+msgstr ""
+
+#: specs.py:310 specs.py:316
+msgid "y - interpolated data"
+msgstr ""
+
+#: specs.py:311 specs.py:317
+msgid "z - integral of y"
+msgstr ""
+
+#: specs.py:312
+msgid "Integration of Interpolated Function"
+msgstr ""
+
+#: specs.py:318
+msgid "Integration of Interpolated Function using External Data"
+msgstr ""
+
+#: specs.py:323
+msgid "Embedded Hysteresis Control"
+msgstr ""
+
+#: specs.py:328
+msgid "Evaluation of a Quadratic Polynomial"
+msgstr ""
+
+#: specs.py:332
+msgid "Inversion of a Quadratic Polynomial"
+msgstr ""
+
+#: specs.py:337
+msgid "Thermal capacitance with no heat transfer"
+msgstr ""
+
+#: specs.py:341 specs.py:345
+msgid "Thermal capacitance with convection"
+msgstr ""
+
+#: specs.py:349
+msgid "Thermal warmup of cap1 and cap2"
+msgstr ""
+
+#: specs.py:358 specs.py:369
+msgid "Dual mass spring-mass-damper model"
+msgstr ""
+
+#: specs.py:361
+msgid "Spring-mass-damper model including backlash"
+msgstr ""
+
+#: specs.py:363
+msgid "Reaction torque at mechanical ground"
+msgstr ""
+
+#: specs.py:365 specs.py:372
+msgid "Position of inertia 3 [rad]"
+msgstr ""
+
+#: specs.py:367 specs.py:374
+msgid "Velocity of inertia 3 [rad/s]"
+msgstr ""
+
+#: specs.py:376
+msgid "Comparing explicitly and implicitly grounded gears"
+msgstr ""
+
+#: specs.py:380
+msgid "Position of inertia 5 [rad]"
+msgstr ""
+
+#: specs.py:382
+msgid "Velocity of inertia 5 [rad/s]"
+msgstr ""
+
+#: specs.py:383
+msgid "Comparing grounded and ungrounded gears"
+msgstr ""
+
+#: specs.py:385
+msgid "Position of inertia 4 [rad]"
+msgstr ""
+
+#: specs.py:387
+msgid "Velocity of inertia 4 [rad/s]"
+msgstr ""
+
+#: specs.py:389
+msgid "Implicitly and explicitly grounded ConfigurableGear"
+msgstr ""
+
+#: specs.py:393 specs.py:397 specs.py:402
+msgid "Rabbit Population"
+msgstr ""
+
+#: specs.py:394 specs.py:398 specs.py:403
+msgid "Fox Population"
+msgstr ""
+
+#: specs.py:395
+msgid "Component-Oriented Lotka-Volterra"
+msgstr ""
+
+#: specs.py:399 specs.py:404
+msgid "Wolf Population"
+msgstr ""
+
+#: specs.py:400
+msgid "Interactions between rabbits, foxes and wolves"
+msgstr ""
+
+#: specs.py:405
+msgid "Equilibriums for rabbits, foxes and wolves"
+msgstr ""
+
+#: specs.py:409
+msgid "Actual speed"
+msgstr ""
+
+#: specs.py:410
+msgid "Baseline plant response"
+msgstr ""
+
+#: specs.py:412 specs.py:417 specs.py:428
+msgid "Actual speed (inertia1.w)"
+msgstr ""
+
+#: specs.py:413
+msgid "Measured speed (sampleHold.w)"
+msgstr ""
+
+#: specs.py:414
+msgid "Comparison of actual speed with sampled speed"
+msgstr ""
+
+#: specs.py:419 specs.py:430
+msgid "Measured speed (intervalMeasure.w)"
+msgstr ""
+
+#: specs.py:420 specs.py:425 specs.py:431 specs.py:436
+msgid "Comparison of actual speed with approximation by interval measurement"
+msgstr ""
+
+#: specs.py:422
+msgid "Inertia position (inertia1.phi)"
+msgstr ""
+
+#: specs.py:423 specs.py:434
+msgid "Next forward angle"
+msgstr ""
+
+#: specs.py:424 specs.py:435
+msgid "Next backward angle"
+msgstr ""
+
+#: specs.py:433
+msgid "Inertia position (intertia1.phi)"
+msgstr ""
+
+#: specs.py:438
+msgid "Actual speed (inertia.w)"
+msgstr ""
+
+#: specs.py:440
+msgid "Measured speed (pulseCounter.w)"
+msgstr ""
+
+#: specs.py:441
+msgid "Comparison of actual speed with approximation by pulse counting"
+msgstr ""
+
+#: specs.py:445
+msgid "Temperature (T.y)"
+msgstr ""
+
+#: specs.py:446
+msgid "Temperature solution"
+msgstr ""
+
+#: specs.py:448 specs.py:452
+msgid "Temperature (sensor.y)"
+msgstr ""
+
+#: specs.py:449
+msgid "Closed loop temperature response"
+msgstr ""
+
+#: specs.py:453
+msgid "Closed loop temperature response with high gain"
+msgstr ""
+
+#: specs.py:457
+msgid "Heat (low-gain scenario)"
+msgstr ""
+
+#: specs.py:459
+msgid "Heat (high-gain scenario)"
+msgstr ""
+
+#: specs.py:460
+msgid "Comparison of required actuator heat output"
+msgstr ""
+
+#: specs.py:478
+msgid "inertia_a.w (with lash)"
+msgstr ""
+
+#: specs.py:479
+msgid "inertia_b.w (with lash)"
+msgstr ""
+
+#: specs.py:481
+msgid "inertia_a.w (without lash)"
+msgstr ""
+
+#: specs.py:482
+msgid "inertia_b.w (without lash)"
+msgstr ""
+
+#: specs.py:483
+msgid "Gear response, with and without backlash"
+msgstr ""
+
+#: specs.py:486
+msgid "System schematic of gear system with backlash"
+msgstr ""
+
+#: specs.py:492
+msgid "Response of hierarchical gear system with backlash"
+msgstr ""
+
+#: specs.py:495
+msgid "Rabbits in A"
+msgstr ""
+
+#: specs.py:496
+msgid "Rabbits in B"
+msgstr ""
+
+#: specs.py:497
+msgid "Rabbits in C"
+msgstr ""
+
+#: specs.py:498
+msgid "Rabbits in D"
+msgstr ""
+
+#: specs.py:499
+msgid "Foxes in A"
+msgstr ""
+
+#: specs.py:500
+msgid "Foxes in B"
+msgstr ""
+
+#: specs.py:501
+msgid "Foxes in C"
+msgstr ""
+
+#: specs.py:502
+msgid "Foxes in D"
+msgstr ""
+
+#: specs.py:505
+msgid "Comparison of regional populations"
+msgstr ""
+
+#: specs.py:509
+msgid "Effect of different initial populations"
+msgstr ""
+
+#: specs.py:513
+msgid "Effect of migration on regional populations"
+msgstr ""
+
+#: specs.py:518
+msgid "Flat power supply circuit"
+msgstr ""
+
+#: specs.py:523
+msgid "System with power supply component"
+msgstr ""
+
+#: specs.py:527 specs.py:532
+msgid "Power supply component with additional load"
+msgstr ""
+
+#: specs.py:537
+msgid "Effect of very large capacitance"
+msgstr ""
+
+#: specs.py:541
+msgid "Sensor measurement"
+msgstr ""
+
+#: specs.py:545
+msgid "sensor.T, n=3"
+msgstr ""
+
+#: specs.py:546
+msgid "sensor.T, n=6"
+msgstr ""
+
+#: specs.py:547
+msgid "sensor.T, n=10"
+msgstr ""
+
+#: specs.py:548
+msgid "sensor.T, n=100"
+msgstr ""
+
+#: specs.py:549
+msgid "sensor.T, n=200"
+msgstr ""
+
+#: specs.py:550
+msgid "Comparison of segmentation"
+msgstr ""
+
+#: specs.py:560 specs.py:569
+msgid "Shaft speed"
+msgstr ""
+
+#: specs.py:561 specs.py:570
+msgid "Measured speed"
+msgstr ""
+
+#: specs.py:562 specs.py:571
+msgid "Desired speed"
+msgstr ""
+
+#: specs.py:564
+msgid "Response using ideal sensor"
+msgstr ""
+
+#: specs.py:567
+msgid "Response using a sample and hold sensor"
+msgstr ""
+
+#: specs.py:574
+msgid "Response with hold time of 0.01"
+msgstr ""
+
+#: specs.py:577
+msgid "Response with hold time of 0.036"
+msgstr ""
+
+#: specs.py:580
+msgid "Response using PID control"
+msgstr ""
+
+#: specs.py:583
+msgid "Response using a tuned PID controller"
+msgstr ""
+
+#: specs.py:587
+msgid "Room Temperature"
+msgstr ""
+
+#: specs.py:588
+msgid "Measured Temperature"
+msgstr ""
+
+#: specs.py:589 specs.py:593 specs.py:607
+msgid "Desired Temperature"
+msgstr ""
+
+#: specs.py:591 specs.py:605
+msgid "Room Temperature (sensor.room.T)"
+msgstr ""
+
+#: specs.py:592 specs.py:606
+msgid "Measured Temperature (controller.bus.temp)"
+msgstr ""
+
+#: specs.py:597
+msgid "Response using PI controller"
+msgstr ""
+
+#: specs.py:599
+msgid "Furnace heat using PI controller"
+msgstr ""
+
+#: specs.py:603
+msgid "Response using PI controller in expandable architecture"
+msgstr ""
+
+#: specs.py:611
+msgid "Response using PI bang-bang control"
+msgstr ""
+
+#: specs.py:615
+msgid "Actuator duty cycle using bang-bang control"
+msgstr ""
+
+#: specs.py:619
+msgid "Response using PI bang-bang control with hysteresis"
+msgstr ""
+
+#: specs.py:623
+msgid "Actuator duty cycle using bang-bang control with hysteresis"
+msgstr ""

@@ -1,0 +1,270 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-29 16:40-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/packages/package_def.rst:4
+msgid "Package Definitions"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:7
+msgid "Basic Syntax"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:9
+msgid ""
+"As we learned in this chapter, a ``package`` is a Modelica entity that "
+"allows us to organize definitions (including definitions of other packages)."
+"  The syntax definition of a ``package`` has a lot in common with other "
+"Modelica definitions.  The general syntax for a package is:"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:21
+msgid ""
+"A package definition can be prefixed by the ``encapsulated`` qualifier.  "
+"We'll discuss that more when we examine Modelica's :ref:`lookup-rules`."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:25
+msgid "Packages can also be nested, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:36
+msgid ""
+"In fact, nesting of packages is very common and allows us to represent "
+"complex taxonomies."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:40
+msgid "Directory Storage"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:42
+msgid ""
+"Although it is possible to build an entire library of Modelica definitions "
+"in a single file as a series of nested packages, this is undesirable for at "
+"least two reasons.  The first is that the resulting file would be quite hard"
+" to read based on its length and the degree of indenting that would be "
+"required.  The second is that from the standpoint of version control, it is "
+"much better to break things into smaller files to help avoid any merge "
+"conflicts."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:51
+msgid "Stored in a Single File"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:53
+msgid ""
+"There are several ways that Modelica source code can be mapped to a file "
+"system.  The simplest way is to store everything in a file.  Such a file "
+"should have a .mo suffix.  Such a file might contain only a single model "
+"definition or it might contain a deeply nested hierarchy of packages or "
+"anything in between."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:60
+msgid "Stored as a Directory"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:62
+msgid ""
+"As we already discussed, storing everything in one file is usually not a "
+"good idea.  The alternative is to map Modelica definitions into a directory "
+"structure.  A package can be stored as a directory by creating a directory "
+"**with the same name as the package**.  Then, inside that directory, there "
+"must be a file called ``package.mo`` that stores the definition of the "
+"package, **but not any nested definitions**.  The nested definitions can be "
+"stored either as single files (as described above) or as directories "
+"representing packages (as described in this paragraph).  The following "
+"diagram attempts to visualize a sample directory layout::"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:79
+msgid ""
+"The ``package.mo`` file associated with the package named ``RootPackage`` "
+"would look something like this:"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:89
+msgid ""
+"There are two important things to note here.  First, the ``within`` clause "
+"should be present, but empty.  This indicates that this package is not "
+"contained in any other packages.  In addition, the definitions of "
+"``NestedPackageAsFile`` and ``NestedPackageAsDir`` are not (and cannot be) "
+"present.  Those must be stored outside the ``package.mo`` file."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:96
+msgid ""
+"Similarly, the ``package.mo`` file associated with the "
+"``NestedPackageAsDir`` package would look like this:"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:106
+msgid ""
+"Again, there should be no definitions contained in this package, only "
+"annotations.  The ``within`` clause is slightly different, reflecting the "
+"fact that ``NestedPackageAsDir`` belongs to the ``RootPackage`` package."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:111
+msgid ""
+"Finally, the ``NestedPackageAsFile.mo`` file would look something like this:"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:124
+msgid ""
+"The ``within`` clause is the same as for the ``NestedPackageAsDir`` package "
+"definition, but since we are storing this package as a single file, nested "
+"definitions for constants, models, packages, functions, *etc.* are allowed "
+"here as well."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:130
+msgid "Ordering for Directories"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:134
+msgid ""
+"When all definitions are stored within a single file, the order they appear "
+"in the file indicates the order they should appear when visualized (*e.g.,* "
+"in a package browser).  But when they are stored on the file system, there "
+"is no implied ordering.  For this reason, an optional ``package.order`` file"
+" can be included alongside the package.mo file to specify an ordering.  The "
+"file is simply a list of the names for nested entities, one per line.  So, "
+"for example, if we wanted to impose an ordering on this sample package "
+"structure, the file system would be populated as follows::"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:152
+msgid ""
+"In the absence of a ``package.order`` file, a Modelica tool would probably "
+"simply sort packages alphabetically.  But if we wanted to order the contents"
+" of the ``RootPackage`` in reverse alphabetical order, the ``package.order``"
+" file in the ``RootPackage`` directory would look like this::"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:161
+msgid ""
+"This would specify to the Modelica tool that ``NestedPackageAsFile`` should "
+"come before ``NestedPackageAsDir``."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:165
+msgid "Versioning"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:174
+msgid "``MODELICAPATH``"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:178
+msgid ""
+"Most Modelica tools allow the user to open a file either by specifying the "
+"full path name of the file or by using a file selection dialog to open it.  "
+"But it can be tedious to find and load lots of different files each time you"
+" use a tool.  For this reason, the Modelica specification defines a special "
+"environment variable called ``MODELICAPATH`` that the user can use to "
+"specify the location of the source code they want the tool to be able to "
+"automatically locate."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:186
+msgid ""
+"The ``MODELICAPATH`` environment variable should contain a list of "
+"directories to search.  On Windows, that list should be separated by a ``;``"
+" and under Unix it should be separated by a ``:``.  When the Modelica "
+"compiler comes across a package it has not already loaded, it will search "
+"the directories listed by the ``MODELICAPATH`` environment variable looking "
+"for either a matching file or directory.  For example, if the "
+"``MODELICAPATH`` was defined as (assuming Unix conventions)::"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:196
+msgid ""
+"and the compiler was looking for a package called ``MyLib``, it would first "
+"look in ``/home/mtiller/Dir1`` for either a package named ``MyLib.mo`` "
+"(stored as a single file) or a directory named ``MyLib`` that contained a "
+"``package.mo`` file that defined a package named ``MyLib``.  If neither of "
+"those could be found, it would then search the ``/home/mtiller/Dir2`` "
+"directory (for the same things)."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:206
+msgid "``modelica://`` URLs"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:208
+msgid ""
+"In many cases, it is useful to include non-Modelica files along with a "
+"Modelica package.  These non-Modelica files might contain data, scripts, "
+"images, etc.  We call these non-Modelica files \"resources\". Now that we've"
+" covered how Modelica definitions are mapped to a file system, we can "
+"introduce an extremely useful feature in Modelica which is the use of URLs "
+"to refer to the location of these resources."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:215
+msgid ""
+"For example, when we discussed :ref:`ext-functions`, we introduced several "
+"annotations that specified the location of such resources. Specifically, the"
+" ``IncludeDirectory`` and ``LibraryDirectory`` annotations specified where "
+"the Modelica compiler should look for include and library files, "
+"respectively.  As was briefly mentioned then, the default values for these "
+"annotations started with ``modelica:://LibraryName/Resources``.  Such a URL "
+"allows us to define the location of resources **relative to a given Modelica"
+" definition on the file system**.  Let us revisit the directory structure we"
+" discussed earlier, but with some resource files added::"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:237
+msgid ""
+"If we have a model that needs the data contained in ``NestedPackageAsDir``, "
+"we can use the following URL to reference it::"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:242
+msgid ""
+"Such a URL starts with ``modelica://``.  This is our way of indicating that "
+"the resource being referenced is with respect to a Modelica model and not, "
+"for example, something to be fetched over the network.  The ``//`` is then "
+"followed by the fully qualified name of a Modelica definition except that "
+"each component is separated by a ``/`` instead of a ``.``.  The Modelica "
+"compiler will interpret this as the name of the directory that contains that"
+" definition.  Finally, the last element in the URL names the file to be "
+"used."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:251
+msgid ""
+"As another example, if we wished to reference the ``logo.jpg`` file in the "
+"``Resources`` package, we would use the following URL::"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:256
+msgid ""
+"It is a common convention to store resources related to a library in a "
+"nested package named ``Resources`` (hence the default values for "
+"``IncludeDirectory`` and ``LibraryDirectory``)."
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:132
+msgid "packages"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:132
+msgid "ordering within"
+msgstr ""
+
+#: ../../source/components/packages/package_def.rst:176
+msgid "MODELICAPATH"
+msgstr ""

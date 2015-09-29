@@ -1,0 +1,462 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-29 16:40-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/functions/interpolation.rst:4
+#: ../../source/behavior/functions/interpolation.rst:310
+msgid "Interpolation"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:6
+msgid ""
+"In this chapter, we will example different ways of implementing a simple one"
+" dimension interpolation scheme.  We'll start with an approach that is "
+"written completely in Modelica and then show an alternative implementation "
+"that combines Modelica with C.  The advantages and disadvantages of each "
+"approach will then be discussed."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:13
+msgid "Modelica Implementation"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:16
+msgid "Function Definition"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:18
+msgid ""
+"For this example, we assume that we interpolate data in the following form:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:22
+msgid "Independent Variable, :math:`x`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:22
+msgid "Dependent Variable, :math:`y`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:24
+msgid ":math:`x_1`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:24
+msgid ":math:`y_1`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:25
+msgid ":math:`x_2`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:25
+msgid ":math:`y_2`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:26
+msgid ":math:`x_3`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:26
+msgid ":math:`y_3`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:27
+#: ../../source/behavior/functions/interpolation.rst:27
+msgid "..."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:28
+msgid ":math:`x_n`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:28
+msgid ":math:`y_n`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:31
+msgid "where we assume that :math:`x_i<x_{i+1}`."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:33
+msgid ""
+"Given this data and the value for the independent variable :math:`x` that we"
+" are interested in, our function should return an interpolated value for "
+":math:`y`.  Such a function could be implemented in Modelica as follows:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:42
+msgid ""
+"Let's go through this function piece by piece to understand what is going "
+"on.  We'll start with the argument declarations:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:49
+msgid ""
+"The ``input`` argument ``x`` represents the value of the independent "
+"variable we wish to use for interpolating our function, the ``input`` "
+"argument ``ybar`` represents the interpolation data and the ``output`` "
+"argument ``y`` represents the interpolated value.  The next part of the "
+"function contains:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:59
+msgid ""
+"The part of our function includes the declaration of various ``protected`` "
+"variables.  As we saw in our :ref:`polynomial-evaluation` example, these are"
+" effectively intermediate variables used internally by the function.  In "
+"this case, ``i`` is going to be used as an index variable, ``n`` is the "
+"number of data points in our interpolation data and ``p`` represents a "
+"weight used in our interpolation scheme."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:67
+msgid ""
+"With all the variable declarations out of the way, we can now implement the "
+"``algorithm`` section of our function:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:74
+msgid ""
+"The first two statements are ``assert`` statements that verify that the "
+"value of ``x`` is within the interval :math:`[x_1, x_n]`.  If not, an error "
+"message will be generated explaining why the interpolation failed."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:79
+msgid ""
+"The rest of the function searches for the value of ``i`` such that "
+":math:`x_i<=x<x_{i+1}`.  Once that value of ``i`` has been identified, the "
+"interpolated value is computed as simply:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:87
+msgid "where"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:94
+#: ../../source/behavior/functions/interpolation.rst:163
+msgid "Test Case"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:96
+msgid ""
+"Now, let's test this function by using it from within a model.  As a simple "
+"test case, let's integrate the value returned by the interpolation function."
+"  We'll use the following data as the basis for our function:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:102
+msgid ":math:`x`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:102
+msgid ":math:`y`"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:104
+#: ../../source/behavior/functions/interpolation.rst:104
+#: ../../source/behavior/functions/interpolation.rst:105
+#: ../../source/behavior/functions/interpolation.rst:107
+#: ../../source/behavior/functions/interpolation.rst:108
+msgid "0"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:105
+#: ../../source/behavior/functions/interpolation.rst:106
+msgid "2"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:106
+msgid "4"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:107
+msgid "6"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:108
+msgid "8"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:111
+msgid ""
+"If we plot this data, we see that our interpolated function looks like this:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:125
+msgid ""
+"In the following model, the independent variable ``x`` is set equal to "
+"``time``.  The sample data is then used to interpolate a value for the "
+"variable ``y``.  The value of ``y`` is then integrated to compute ``z``."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:134
+msgid ""
+"We can see the simulated results from this model in the following plot:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:139
+msgid ""
+"There are a couple of drawbacks to this approach.  The first is that the "
+"data needs to be passed around anywhere the function is used. Also, for "
+"higher dimensional interpolation schemes, the data required can be both "
+"complex (for irregular grids) and large.  So it is not necessarily "
+"convenient to store the data in the Modelica source code. For example, it "
+"might be preferable to store the data in an external file.  However, to "
+"populate the interpolation data from a source other than the Modelica source"
+" code, we will need to use an ``ExternalObject``."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:150
+msgid "Using an ``ExternalObject``"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:154
+msgid ""
+"The ``ExternalObject`` type is a special type used to refer to information "
+"that is not (necessarily) represented in the Modelica source code.  The main"
+" use of the ``ExternalObject`` type is to represent data or state that is "
+"maintained outside the Modelica source code.  This might be interpolation "
+"data, as we will see in a moment, or it might represent some other software "
+"system that maintains its own state."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:165
+msgid ""
+"For this example, we will flip things around and start with the test case.  "
+"This will provide some useful context about how an ``ExternalObject`` is "
+"used.  The Modelica source code for our test case is:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:174
+msgid ""
+"Here the main difference between this and our previous test case is the fact"
+" that we don't pass our data directly into the interpolation function.  "
+"Instead, we create a special variable ``vector`` whose type is "
+"``VectorTable``.  We'll discuss exactly what a ``VectorTable`` is in a "
+"moment.  But for now think of it as something that represents (only) our "
+"interpolation data.  Other than the creation of the ``vector`` object, the "
+"rest of the model is virtually identical to the previous case except that we"
+" use the ``InterpolateExternalVector`` function to perform our interpolation"
+" and we pass the ``vector`` variable into that function in place of our raw "
+"interpolation data."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:185
+msgid ""
+"Simulating this model, we see that the results are exactly what we would "
+"expect when compared to our previous test case:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:192
+msgid "Defining an ``ExternalObject``"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:194
+msgid ""
+"To see how this most recent test case is implemented, we'll first look at "
+"how the ``VectorTable`` type is implemented.  As mentioned previously, the "
+"``VectorTable`` is an ``ExternalObject`` type.  This is a special type in "
+"Modelica that is used to represent what is often called an \"opaque\" "
+"pointer.  This means that the ``ExternalObject`` represents some data that "
+"is not directly accessible (from Modelica)."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:201
+msgid "In our case, we implement our ``VectorTable`` type as:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:207
+msgid ""
+"Note that the ``VectorTable`` inherits from the ``ExternalObject`` type.  An"
+" ``ExternalObject`` can have two special functions implemented inside its "
+"definition, the ``constructor`` function and the ``destructor`` function.  "
+"Both of these functions are seen here."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:213
+msgid "Constructor"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:215
+msgid ""
+"The ``constructor`` function is invoked when an instance of a "
+"``VectorTable`` is created (*e.g.,* the declaration of the ``vector`` "
+"variable in our test case).  This ``constructor`` function is used to "
+"initialize our opaque pointer.  Whatever data is required as part of that "
+"initialization process should be passed as argument to the ``constructor`` "
+"function.  That same data should be present during instantiation (*.e.g,* "
+"the ``data`` argument in our declaration of the ``vector`` variable)."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:224
+msgid ""
+"The definition of the ``constructor`` function is unusual because, unlike "
+"our previous examples, it does not include an ``algorithm`` section.  The "
+"``algorithm`` section is normally used to compute the return value of the "
+"function.  Instead, the ``constructor`` function has an ``external`` clause."
+"  This indicates that the function is implemented in some other language "
+"besides Modelica.  In this case, that other language is C (as indicated by "
+"the ``\"C\"`` following the ``external`` keyword).  This tells use that the "
+"``table`` variable (which is the ``output`` of this function and represents "
+"the opaque pointer) is returned by a C function named ``createVectorTable`` "
+"which is passed the contents and size of the ``ybar`` variable."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:236
+msgid ""
+"Following the call to ``createVectorTable`` is an ``annotation``. This "
+"annotation tells the Modelica compiler where to find the source code for "
+"this external C function."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:240
+msgid ""
+"The essential point here is that from the point of view of the Modelica "
+"compiler, a ``VectorTable`` is just an opaque pointer returned by "
+"``createVectorTable``.  It is not possible to access the data behind this "
+"pointer from Modelica.  But this pointer can be passed to other functions, "
+"as we shall see in a minute, that are also implemented in C and which do "
+"know how to access the data represented by the ``VectorTable``."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:249
+msgid "Destructor"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:251
+msgid ""
+"The ``destructor`` function is invoked whenever the ``ExternalObject`` is no"
+" longer needed.  This allows the Modelica runtime to clean up any memory "
+"consumed by the ``ExternalObject``.  An ``ExternalObject`` instantiated in a"
+" model will generally persist until the end of the simulation.  But an "
+"``ExternalObject`` declared as a ``protected`` variable in a function, for "
+"example, may be created and destroyed in the course of a single expression "
+"evaluation.  For that reason, it is important to make sure that any memory "
+"allocated by the ``ExternalObject`` is released."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:261
+msgid ""
+"In general, the ``destructor`` function is also implemented as an external "
+"function.  In this case, calling the ``destructor`` function from Modelica "
+"invokes the C function ``destroyVectorTable`` which is passed a "
+"``VectorTable`` instance as an argument.  Any memory associated with that "
+"``VectorTable`` instance should be freed by the call to ``destructor``.  "
+"Again, we see the same types of annotations used to inform the Modelica "
+"compiler where to find the source code for the ``destoryVectorTable`` "
+"function."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:271
+msgid "External C Code"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:273
+msgid "These external C functions are implemented as follows:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:278
+msgid ""
+"This is not a book on the C programming language so an exhaustive review of "
+"this code and exactly how it functions is beyond the scope of the book.  But"
+" we can summarize the contents of this file as follows."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:283
+msgid ""
+"First, the ``struct`` called ``VectorTable`` is the data associated wit the "
+"``VectorTable`` type in Modelica.  This includes not just the interpolation "
+"data (in the form of the ``x`` and ``y`` members), but also the number of "
+"data points, ``npoints``, and a cached value for the last used index, "
+"``lastIndex``."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:289
+msgid ""
+"Next, we see the ``createVectorTable`` function which allocates an instance "
+"of the ``VectorTable`` structure and initializes all the data inside it.  "
+"That instance is then returned to the Modelica runtime. Following the "
+"definition of ``createVectorTable`` is the definition of "
+"``destroyVectorTable`` which effectively undoes what was done by "
+"``createVectorTable``."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:296
+msgid ""
+"Finally, we see the function ``interpolateVectorTable``.  This is a C "
+"function that is passed an instance of the ``VectorTable`` structure and a "
+"value for the independent variable and returns the interpolated value for "
+"the dependent variable.  This function performs almost exactly the same "
+"function as the ``InterpolateVector`` function presented earlier.  The "
+"Modelica runtime provides functions like ``ModelicaFormatError`` so that "
+"external C code can report errors.  In the case of "
+"``interpolateVectorTable``, these functions are used to implement the "
+"assertions we saw previously in ``InterpolateVector``. The lookup of ``i`` "
+"is basically the same except that instead of starting from 1 each time, it "
+"starts from the value of ``i`` found in the last call to "
+"``interpolateVectorTable``."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:312
+msgid ""
+"We've seen how ``interpolateVectorTable`` is defined, but so far we haven't "
+"seen where it is used.  We mentioned that performs very much the same role "
+"as ``InterpolateVector``, but using a ``VectorTable`` object to represent "
+"the interpolation data.  To invoke ``interpolateVectorTable`` from Modelica,"
+" we simple need to define a Modelica function as follows:"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:323
+msgid ""
+"We mentioned previously that ``VectorTable`` is opaque and that Modelica "
+"code cannot access the data contained in the ``VectorTable``.  The Modelica "
+"function ``InterpolateExternalVector`` invokes its C counterpart "
+"``interpolateVectorTable`` which **can** access the interpolation data and, "
+"therefore, perform the interpolation."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:330
+msgid "Discussion"
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:332
+msgid ""
+"As was discussed previously, the initial interpolation approach required us "
+"to pass around large amounts of unwieldy data.  By implementing the "
+"``VectorTable``, we were able to represent that data by a single variable."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:337
+msgid ""
+"An important thing to note about the ``ExternalObject`` approach, which "
+"isn't adequately explored in our example, is that the initialization data "
+"can be completely external to the Modelica source code.  For simplicity, the"
+" example code shown in this section initializes the ``VectorTable`` using an"
+" array of data.  **But it could just as easily have passed a file name** to "
+"the initialization code.  That file could then have been read by the "
+"``createVectorTable`` function and the contents of the ``VectorTable`` "
+"structure could have been initialized using the data from that file. In many"
+" cases, this approach not only makes managing the data easier, but "
+"leveraging C allows more complex (new or existing) algorithms to be used."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:350
+msgid ""
+"The :ref:`next section <sil-controller>` includes another example of how "
+"external C code can be called from Modelica."
+msgstr ""
+
+#: ../../source/behavior/functions/interpolation.rst:152
+msgid "ExternalObject"
+msgstr ""

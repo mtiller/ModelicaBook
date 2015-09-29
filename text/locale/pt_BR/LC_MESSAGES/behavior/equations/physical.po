@@ -1,0 +1,286 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-29 16:40-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/equations/physical.rst:4
+msgid "Getting Physical"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:6
+msgid ""
+"Although the previous section got us started with representing mathematical "
+"behavior, it doesn't convey any connection to *physical* behavior.  In this "
+"section, we'll explore how to build models that represent the modeling of "
+"physical behavior.  Along the way, we will highlight some of the language "
+"features we can leverage that will not only tie these models to physical and"
+" engineering domains, but, as we shall see, they can even help us avoid "
+"mistakes."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:14
+msgid "Let's start with the following example:"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:22
+msgid ""
+"As we saw in the examples in our discussion of :ref:`first-order`, the "
+"previous example consists of a ``model`` definition that includes variables "
+"and equations."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:26
+msgid ""
+"However, this time we see the word ``parameter`` for the first time. "
+"Generally speaking, the ``parameter`` keyword is used to indicate variables "
+"whose value is known *a priori* (*i.e.*, prior to the simulation).  More "
+"precisely, ``parameter`` is a keyword that specifies the *variability* of a "
+"variable.  This will be discussed more thoroughly in the section on "
+":ref:`variability`.  But for now, we can think of a ``parameter`` as a "
+"variable whose value we must provide."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:35
+msgid ""
+"Looking at our ``NewtonCooling`` example, we see there are five parameters: "
+"``T_inf``, ``T0``, ``h``, ``A``, ``m`` and ``c_p``.  We don't need to bother"
+" explaining what these variables are because the model itself includes a "
+"descriptive string for each one.  At the moment, there are no values for "
+"these parameters, but we will return to that topic shortly.  As with all the"
+" variables we have seen so far, these are all of type ``Real``."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:43
+msgid ""
+"Let's examine the rest of this model.  The next variable is ``T`` (also a "
+"``Real``).  Since this variable doesn't have the ``parameter`` qualifier, "
+"its value is determined by the equations in the model."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:47
+msgid ""
+"Next we see the two ``equation`` sections.  The first is an ``initial "
+"equation`` section which specifies how the variable ``T`` should be "
+"initialized.  It should be pretty clear that the initial value for ``T`` is "
+"going to be whatever value was given (by us) for the parameter ``T0``."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:53
+msgid ""
+"The other equation is the differential equation that governs the behavior of"
+" ``T``.  Mathematically, we could express this equation as:"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:58
+msgid "but in Modelica, we write it as:"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:64
+msgid ""
+"Note that this is really no different from the equation we saw in our "
+"``FirstOrder`` model from the :ref:`first-order` example."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:67
+msgid ""
+"One thing worth noting is that the equation in our ``NewtonCooling`` example"
+" contains an **expression** on the left hand side.  In Modelica, it is "
+"**not** necessary for each equation to be an explicit equation for a single "
+"variable.  An equation can contain arbitrary expressions on either side of "
+"the equals sign.  It is the compiler's job to determine how to use these "
+"equations to solve for the variables contained in the equations."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:75
+msgid ""
+"Another thing that distinguishes our ``NewtonCooling`` example from the "
+"``FirstOrder`` model is that we can independently adjust the different "
+"parameter values.  Furthermore, these parameter values are tied to physical,"
+" measurable properties of the materials or environmental conditions.  In "
+"other words, this version is slightly more physical than the simple "
+"mathematical relationship used in the ``FirstOrder`` model because it is "
+"related to physical properties."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:83
+msgid ""
+"Now, we can't really run the ``NewtonCooling`` model as is because it lacks "
+"*values* for the six parameters.  In order to create a model that is ready "
+"to be simulated, we need to provide those values, *e.g.*,"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:92
+msgid ""
+"The only real difference here is that each of the ``parameter`` variables "
+"now has a value specified.  One way to think about the ``NewtonCooling`` "
+"model is that we could not simulate it because it had 7 variables (total) "
+"and only one equation (see the section on :ref:`initialization` for an "
+"explanation of why the ``initial equation`` doesn't really count).  However,"
+" the ``NewtonCoolingWithDefaults`` model has, conceptually speaking, 7 "
+"equations (6 of them coming from specifying the values of the ``parameter`` "
+"variables + one in the equation section) and 7 unknowns."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:102
+msgid ""
+"If we simulate the ``NewtonCoolingWithDefaults`` model, we get the following"
+" solution for ``T``."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:111
+msgid "Physical Units"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:113
+msgid ""
+"As mentioned already in this section, these examples are a bit more physical"
+" because they include individual physical parameters that correspond to "
+"individual properties of our real world system. However, we are still "
+"missing something.  Although these variables represent physical quantities "
+"like temperature, mass, *etc.*, we haven't explicitly given them any "
+"physical types."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:120
+msgid ""
+"As you may have already guessed, the variable ``T`` is a temperature. This "
+"is made clear in the descriptive text associated with the variable.  "
+"Furthermore, it doesn't take a very deep analysis of our previous model to "
+"determine that ``T0`` and ``T_inf`` must also be temperatures."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:126
+msgid ""
+"But what about the other variables like ``h`` or ``A``?  What do they "
+"represent?  Even more important, are the equations **physically "
+"consistent**?  By physically consistent, we mean that both sides of the "
+"equations have the same physical units (*e.g.*, temperature, mass, power)."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:132
+msgid ""
+"We could convey the physical units of the different variables more "
+"rigorously by actually including them in the variable declarations, like so:"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:142
+msgid ""
+"Note that each of the variable declarations now includes the text "
+"``(unit=\"...\")`` to associate a physical unit with the variable.  What "
+"this additional text does is specify a value for the ``unit`` attribute "
+"associated with the variable.  Attributes are special properties that each "
+"variable has.  The set of attributes a variable can have depends on the type"
+" of the variable (this is discussed in more detail in the upcoming section "
+"on :ref:`variables`)."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:150
+msgid ""
+"At first glance, it may not seem obvious why specifying the unit attribute "
+"(*e.g.*, ``(unit=\"K\")``) is any better than simply adding "
+"``\"Temperature\"`` to the descriptive string following the variable. In "
+"fact, one might even argue it is worse because \"Temperature\" is more "
+"descriptive than just a single letter like \"K\"."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:156
+msgid ""
+"However, setting the ``unit`` attribute is actually a more formal approach "
+"for two reasons.  The first reason is that the Modelica specification "
+"defines relationships for all the standard SI unit attributes (*e.g.*, "
+"``K``, ``kg``, ``m``).  This includes complex unit types that can be "
+"composed of other base units (*e.g.*, ``N``)."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:162
+msgid ""
+"The other reason is that the Modelica specification also defines rules for "
+"how to compute the units of complex mathematical expressions.  In this way, "
+"the Modelica specification defines everything that is necessary to **unit "
+"check** Modelica models for errors or physical inconsistencies.  This is a "
+"big win for model developers because adding units not only makes the models "
+"clearer, it provides better diagnostics in the case of errors."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:173
+msgid "Physical Types"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:175
+msgid ""
+"But truth be told, there is one drawback of the code for our "
+"``NewtonCoolingWithUnits`` example and that is that we have to repeat the "
+"``unit`` attribute specification for every variable.  Furthermore, as "
+"mentioned previously, ``K`` isn't nearly as descriptive as \"Temperature\"."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:183
+msgid ""
+"Fortunately, we have a simple solution to both problems because Modelica "
+"allows us to define *derived types*.  So far, all the variables we have "
+"declared have been of type ``Real``.  The problem with ``Real`` is that it "
+"could be anything (*e.g.*, a voltage, a current, a temperature).  What we'd "
+"like to do is narrow things down a bit.  This is where derived types come "
+"in.  To see how to define derived types and then use them in declarations, "
+"consider the following example:"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:199
+msgid ""
+"You can read the definition ``type Temperature=Real(unit=\"K\", min=0);`` as"
+" \"Let us define a new type, ``Temperature``, that is a specialization of "
+"the built-in type ``Real`` with physical units of Kelvin (``K``) and a "
+"minimum possible value of ``0``\"."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:204
+msgid ""
+"From this example, we can see that once we define a physical type like "
+"``Temperature``, we can use it to declare multiple variables (*e.g.*, ``T``,"
+" ``T_inf`` and ``T0``) without having to specify the ``unit`` or ``min`` "
+"attribute for each variable.  Also, we get to use the familiar name "
+"``Temperature`` instead of the SI unit, ``K``.  You might be wondering what "
+"other attributes are available when creating derived types.  For further "
+"discussion, see the section on :ref:`builtin-types`."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:213
+msgid ""
+"At this point, you might find the idea of defining ``Temperature``, "
+"``ConvectionCoefficient``, ``SpecificHeat`` and ``Mass`` in every model "
+"extremely tedious.  It would be, if it were truly necessary. But don't "
+"worry, there is an easy solution to this as you will see in a later section "
+"where we discuss :ref:`importing_physical_types`."
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:20
+msgid "parameter"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:140
+msgid "attributes"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:140
+msgid "unit attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:181
+msgid "derived types"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:196
+msgid "min attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/physical.rst:197
+msgid "type"
+msgstr ""

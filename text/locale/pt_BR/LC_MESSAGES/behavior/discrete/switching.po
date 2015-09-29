@@ -1,0 +1,59 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-29 16:40-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/discrete/switching.rst:4
+msgid "Switched RLC Circuit"
+msgstr ""
+
+#: ../../source/behavior/discrete/switching.rst:6
+msgid ""
+"In this section, we'll present another model, like the heat transfer model "
+"presented :ref:`earlier in this chapter <cooling-revisited>`, that contains "
+"time events.  In this case, we'll show how we can simulate the behavior of a"
+" switch in the context of an RLC circuit like :ref:`the one presented in the"
+" first chapter <elec-example>`. From the examples presented so far, nothing "
+"in this model should come as a surprise.  The main motivation for this "
+"example is simply to present time events in the context of an electrical "
+"model."
+msgstr ""
+
+#: ../../source/behavior/discrete/switching.rst:15
+msgid "Our switched RLC circuit model is as follows:"
+msgstr ""
+
+#: ../../source/behavior/discrete/switching.rst:21
+msgid ""
+"The time event in this model is introduced via an ``if`` expression. The "
+"fact that the only time-varying variable in the conditional expression is "
+"``time`` means that this will trigger a time event and that the underlying "
+"numerical solver will be able to determine *a priori* when the event will "
+"occur while integrating the underlying equations."
+msgstr ""
+
+#: ../../source/behavior/discrete/switching.rst:28
+msgid ""
+"We can see the voltage response of this model to the switched supply voltage"
+" in the following plot:"
+msgstr ""
+
+#: ../../source/behavior/discrete/switching.rst:34
+msgid ""
+"Furthermore, we can see the current response for inductor, resistor and "
+"capacitor components in this plot:"
+msgstr ""
+
+#: ../../source/behavior/discrete/switching.rst:40
+msgid ""
+"Hopefully by this point, the basic mechanisms for generating events and "
+"disturbances seem intuitive and familiar."
+msgstr ""

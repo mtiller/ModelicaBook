@@ -1,0 +1,662 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-29 16:40-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/behavior/equations/variables.rst:5
+msgid "Variables"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:7
+msgid ""
+"As we saw in the previous section, a model definition typically contains "
+"variable declarations.  The basic syntax for a variable declaration is "
+"simply the \"type\" of the variable (which will be discussed shortly in the "
+"section on :ref:`builtin-types`) followed by the name of the variable, "
+"*e.g.*,"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:17
+msgid ""
+"Variables sharing the same type can be grouped together using the following "
+"syntax:"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:24
+msgid "A declaration can also be followed by a description, e.g.:"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:33
+msgid "Variability"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:40
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:42
+msgid ""
+"By default, variables declared inside a model are assumed to be continuous "
+"variables (variables whose solution is generally smooth, but which may also "
+"include discontinuities).  However, as we first saw in the section titled "
+":ref:`getting-physical`, it is also possible to add the ``parameter`` "
+"qualifier in front of a variable declaration and to indicate that the "
+"variable is known *a priori*.  You can think of a parameter as \"input "
+"data\" to the model that is constant with respect to time."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:54
+msgid "Constants"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:56
+msgid ""
+"Closely related to the ``parameter`` qualifier is the ``constant`` "
+"qualifier.  When placed in front of a variable declaration, the ``constant``"
+" qualifier also implies that the value of the variable is known *a priori* "
+"and is constant with respect to time.  The distinction between the two lies "
+"in the fact that a ``parameter`` value can be changed from one simulation to"
+" the next whereas the value of a ``constant`` cannot be changed once the "
+"model is compiled.  The use of ``constant`` by a model developer ensures "
+"that end users are not given the option to make changes to the ``constant``."
+"  A ``constant`` is frequently used to represent physical quantities like "
+":math:`\\pi` or the Earth's gravitational acceleration, which can be assumed"
+" constant for most engineering simulations."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:70
+msgid "Discrete Variables"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:74
+msgid ""
+"Another qualifier that can be placed in front of a variable declaration is "
+"the ``discrete`` qualifier.  We have not yet shown any example where the "
+"``discrete`` qualifier would be relevant.  However, it is included now for "
+"completeness since it is the last remaining variability qualifier."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:83
+msgid "Built-In Types"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:87
+msgid ""
+"Many of the examples so far referenced the ``Real`` type when declaring "
+"variables.  As the name suggests, ``Real`` is used to represent real valued "
+"variables (which will generally be translated into floating point "
+"representations by a Modelica compiler).  However, ``Real`` is just one of "
+"the four built-in types in Modelica."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:97
+msgid ""
+"Another of the built-in types is the ``Integer`` type.  This type is used to"
+" represent integer values.  ``Integer`` variables have many uses including "
+"representing the size of arrays (this use case will be discussed shortly in "
+"an upcoming section on :ref:`vectors-and-arrays`)."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:103
+msgid ""
+"The remaining built-in types are ``Boolean`` (used to represent values that "
+"can be either ``true`` or ``false``) and ``String`` (used for representing "
+"character strings)."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:107
+msgid ""
+"Each of the built-in types restricts the possible values that a variable can"
+" have.  Obviously, an ``Integer`` variable cannot have the value ``2.5``, a "
+"``Boolean`` or ``String`` cannot be ``7`` and a ``Real`` variable cannot "
+"have the value ``\"Hello\"``."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:115
+msgid "Derived Types"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:119
+msgid ""
+"As we saw in the previous examples that introduced :ref:`physical-types`, it"
+" is possible to \"specialize\" the built-in types.  This feature is used "
+"mainly to modify the values associated with :ref:`attributes` like ``unit``."
+"  The general syntax for creating derived types is:"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:131
+msgid ""
+"Frequently, the ``BaseTypeName`` will be one of the built-in types (*e.g.*, "
+"``Real``).  But it can also be another derived type.  This means that "
+"multiple levels of specialization can be supported, *e.g.*,"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:143
+msgid "Enumerations"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:147
+msgid ""
+"An ``enumeration`` type is very similar to the ``Integer`` type.  An "
+"``enumeration`` is typically used to define a type that can take on only a "
+"limited set of specific values.  In fact, enumerations are not strictly "
+"necessary in the language.  Their values can always be represented by "
+"integers.  However, the ``enumeration`` type is safer and more readable than"
+" an ``Integer``."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:154
+msgid ""
+"There are two built-in enumeration types.  The first of these is "
+"``AssertionLevel`` and it is defined as follows:"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:164
+msgid ""
+"The significance of these values will be discussed in a forthcoming section "
+"on :ref:`assertions`."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:167
+msgid ""
+"The other built-in enumeration is ``StateSelect`` and it is defined as "
+"follows:"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:177
+msgid "Attributes"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:181
+msgid ""
+"So far in this chapter we have mentioned attributes (*e.g.*, ``unit``), but "
+"we haven't discussed them in detail. For example, *which* attributes are "
+"present on a given variable?  This depends on the type of the variable (and "
+"which built-in and derived types it is based on).  The following table "
+"introduces all the possible attributes indicating their types (*i.e.*, what "
+"type of value can be given for that attribute), which types they can be "
+"associated with and finally a brief description of the attribute:"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:203
+msgid "Attributes of ``Real``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:210
+#: ../../source/behavior/equations/variables.rst:340
+#: ../../source/behavior/equations/variables.rst:393
+#: ../../source/behavior/equations/variables.rst:425
+msgid "``quantity``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:206
+#: ../../source/behavior/equations/variables.rst:336
+#: ../../source/behavior/equations/variables.rst:389
+#: ../../source/behavior/equations/variables.rst:421
+msgid "A textual description of what the variable represents"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:208
+#: ../../source/behavior/equations/variables.rst:306
+#: ../../source/behavior/equations/variables.rst:338
+#: ../../source/behavior/equations/variables.rst:391
+#: ../../source/behavior/equations/variables.rst:423
+#: ../../source/behavior/equations/variables.rst:435
+msgid "**Default**: ``\"\"``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:210
+#: ../../source/behavior/equations/variables.rst:290
+#: ../../source/behavior/equations/variables.rst:308
+#: ../../source/behavior/equations/variables.rst:340
+#: ../../source/behavior/equations/variables.rst:393
+#: ../../source/behavior/equations/variables.rst:425
+#: ../../source/behavior/equations/variables.rst:437
+msgid "**Type**: ``String``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:227
+#: ../../source/behavior/equations/variables.rst:354
+#: ../../source/behavior/equations/variables.rst:407
+#: ../../source/behavior/equations/variables.rst:437
+msgid "``start``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:213
+msgid ""
+"The ``start`` attribute has many uses.  The main purpose of the ``start`` "
+"attribute (as discussed extensively in the section on :ref:`initialization`)"
+" is to provide \"fallback\" initial conditions for state variables (see "
+"``fixed`` attribute for more details)."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:218
+msgid ""
+"The ``start`` attribute may also be used as an initial guess if the variable"
+" has been chosen as an iteration variable."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:221
+msgid ""
+"Finally, if a ``parameter`` doesn't have an explicit value specified, the "
+"value of the ``start`` attribute will be used as the default value for the "
+"``parameter``."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:225
+#: ../../source/behavior/equations/variables.rst:316
+#: ../../source/behavior/equations/variables.rst:352
+#: ../../source/behavior/equations/variables.rst:405
+msgid "**Default**: ``0.0``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:227
+#: ../../source/behavior/equations/variables.rst:262
+#: ../../source/behavior/equations/variables.rst:272
+#: ../../source/behavior/equations/variables.rst:318
+msgid "**Type**: ``Real``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:252
+#: ../../source/behavior/equations/variables.rst:362
+#: ../../source/behavior/equations/variables.rst:415
+msgid "``fixed``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:230
+msgid ""
+"The ``fixed`` attribute changes the way the ``start`` attribute is used when"
+" the ``start`` attribute is used as an initial condition.  Normally, the "
+"``start`` attribute is considered a \"fallback\" initial condition and only "
+"used if there are insufficient initial conditions explicitly specified in "
+"the ``initial equation`` sections.  However, if the ``fixed`` attribute is "
+"set to ``true``, then the ``start`` attribute is treated as if it was used "
+"as an explicit ``initial equation`` (*i.e.,* it is no longer used as a "
+"fallback, but instead treated as a strict initial condition)."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:241
+msgid ""
+"Another, more obscure, use of the ``fixed`` attribute is for \"computed "
+"parameters\".  In rare cases where a ``parameter`` cannot be initialized "
+"explicitly, it is possible to provide a general equation for the parameter "
+"in an ``initial equation`` section. But in cases where the ``parameter`` is "
+"initialized in this way, the ``fixed`` attribute for the parameter variable "
+"must be set to ``false``."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:249
+#: ../../source/behavior/equations/variables.rst:359
+#: ../../source/behavior/equations/variables.rst:412
+msgid ""
+"**Default**: ``false`` (except for ``parameter`` variables, where it is "
+"``true`` by default)"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:252
+#: ../../source/behavior/equations/variables.rst:362
+#: ../../source/behavior/equations/variables.rst:407
+#: ../../source/behavior/equations/variables.rst:415
+msgid "**Type**: ``Boolean``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:262
+#: ../../source/behavior/equations/variables.rst:372
+msgid "``min``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:255
+#: ../../source/behavior/equations/variables.rst:365
+msgid ""
+"The ``min`` attribute is used to specify the minimum allowed value for a "
+"variable.  This attribute can be used by editors and compilers in various "
+"ways to inform users or developers about potentially invalid input data or "
+"solutions."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:260
+#: ../../source/behavior/equations/variables.rst:370
+msgid "**Default**: -:math:`\\infty`"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:272
+#: ../../source/behavior/equations/variables.rst:383
+msgid "``max``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:265
+#: ../../source/behavior/equations/variables.rst:375
+msgid ""
+"The ``max`` attribute is used to specify the maximum allowed value for a "
+"variable.  This attribute can be used by editors and compilers in various "
+"ways to inform users or developers about potentially invalid input data or "
+"solutions."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:270
+#: ../../source/behavior/equations/variables.rst:380
+msgid "**Default**: :math:`\\infty`"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:290
+msgid "``unit``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:275
+msgid ""
+"As discussed extensively in this chapter, variables can have physical units "
+"associated with them.  There are rules about how these units are expressed, "
+"but the net result is that by using the ``unit`` attribute it is possible "
+"check models to make sure that equations are physically consistent.  A value"
+" of ``\"1\"`` indicates the value has no physical units.  On the other hand,"
+" a value of ``\"\"`` (the default value if no value is given) indicates that"
+" the physical units are simply unspecified.  The difference between "
+"``\"1\"`` and ``\"\"`` is that the former is an explicit statement that the "
+"quantity is dimensionless (has not units) while the latter indicates that "
+"the quantity may have physical units but they are left unspecified."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:288
+msgid "**Default**: ``\"\"`` (*i.e.,* no physical units specified)"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:308
+msgid "``displayUnit``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:293
+msgid ""
+"While the ``unit`` attribute describes what physical units should be "
+"associated with the value of a variable, the ``displayUnit`` expresses a "
+"preference for what units should be used when displaying the value of a "
+"variable.  For example, the SI unit for pressure is *Pascals*.  However, "
+"standard atmospheric pressure is 101,325 *Pascals*.  When entering, "
+"displaying or plotting pressures it may be more convenient to use *bars*."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:301
+msgid ""
+"The ``displayUnit`` attribute doesn't affect the value of a variable or the "
+"equations used to simulate a model.  It only affects the *rendering* of "
+"those values by potentially transforming them into more convenient units for"
+" display."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:318
+msgid "``nominal``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:311
+msgid ""
+"The ``nominal`` attribute is used to specify a nominal value for a variable."
+"  This nominal value is generally used in numerical calculations to perform "
+"various types of scaling used to avoid round-off or truncation error."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:330
+msgid "``stateSelect``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:321
+msgid ""
+"The ``stateSelect`` attribute is used as a hint to Modelica compilers about "
+"whether a given variable should be chosen as a state (in cases where there "
+"is a choice to be made).  As discussed previously in the section on "
+":ref:`enumerations`, the possible values for this attribute are ``never``, "
+"``avoid``, ``default``, ``prefer`` and ``always``."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:328
+msgid "**Default**: ``default``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:330
+msgid "**Type**: ``StateSelect`` (enumeration, see :ref:`enumerations`)"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:333
+msgid "Attributes of ``Integer``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:343
+msgid ""
+"It is worth noting that an ``Integer`` variable can be chosen as a state "
+"variable or as an iteration variable.  Under these circumstances, the "
+"``start`` attribute may be used by a compiler in the same was as it is for "
+"``Real`` variables (*see previous discussion of* :ref:`fixed-attribute`)"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:349
+#: ../../source/behavior/equations/variables.rst:402
+msgid ""
+"In the case of a ``parameter``, the ``start`` attribute will (as usual) be "
+"used as the default value for the ``parameter``."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:354
+#: ../../source/behavior/equations/variables.rst:372
+#: ../../source/behavior/equations/variables.rst:382
+msgid "**Type**: ``Integer``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:357
+#: ../../source/behavior/equations/variables.rst:410
+msgid "*see previous discussion of* :ref:`fixed-attribute`"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:386
+msgid "Attributes of ``Boolean``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:396
+msgid ""
+"It is worth noting that an ``Boolean`` variable can be chosen as a state "
+"variable or as an iteration variable.  Under these circumstances, the "
+"``start`` attribute may be used by a compiler in the same was as it is for "
+"``Real`` variables (*see previous discussion of* :ref:`fixed-attribute`)"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:418
+msgid "Attributes of ``String``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:428
+msgid ""
+"Technically, a ``String`` could be chosen as a state variable (or even an "
+"iteration variable), but in practice this never happens. So for a ``String``"
+" variable the only practical use of the ``start`` attribute is to define the"
+" value of a ``parameter`` (that happens to have the type of ``String``) if "
+"no explicit value for the parameter is given."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:439
+msgid ""
+"It is worth noting that :ref:`derived-types` retain the attributes of the "
+"built-in type that they are ultimately derived from.  Also, although the "
+"type of, for example, the ``min`` attribute on a ``Real`` variable is listed"
+" having the type ``Real`` it should be pointed out explicitly that "
+"attributes cannot themselves have attributes.  In other words, the ``start``"
+" attribute doesn't have a ``start`` attribute."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:450
+msgid "Modifications"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:454
+msgid ""
+"So far, we've seen two types of modifications.  The first is when we change "
+"the value of an attribute, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:464
+msgid ""
+"In this case, we are creating a variable ``x`` of type ``Real``.  But rather"
+" than leaving it \"as is\", we then apply a modification to ``x``.  "
+"Specifically, we \"reach inside\" of ``x`` and change the ``start`` "
+"attribute value.  In this example, we are only going one level into ``x`` to"
+" make our modification.  But as we will see in our next example, it is "
+"possible to make modifications at arbitrary depths."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:472
+msgid ""
+"The other case where we have seen modifications was in the section on :ref"
+":`avoiding-repetition`.  There we saw modification used in conjunction with "
+"``extends`` clauses, *e.g.,*"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:482
+msgid ""
+"Here, the modification is applied to elements that were inherited from the "
+"``QuiescentModelWithInheritance`` model.  As with modifications to "
+"attributes, the element being modified (a model in this case) is followed by"
+" parentheses and inside those parentheses we specify the modifications we "
+"wish to make."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:490
+msgid ""
+"It is worth noting that modifications can be nested arbitrarily deep. For "
+"example, imagine we wanted to modify the ``start`` attribute for the "
+"variable ``x`` inherited from the ``QuiescentModelWithInheritance`` model.  "
+"In Modelica, such a modification would be made as follows:"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:500
+msgid ""
+"Here we first \"reach inside\" the ``QuiescentModelWithInheritance`` model "
+"to modify the contents that we \"inherit\" from it (``x`` in this case) and "
+"then we \"reach inside\" ``x`` to modify the value of the ``start`` "
+"attribute."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:505
+msgid ""
+"One of the central themes of Modelica is support for reuse and avoiding the "
+"need to \"copy and paste\" code.  Modifications are one of the essential "
+"features in Modelica that support reuse.  We'll learn about others in future"
+" sections."
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:35
+msgid "parameter"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:51
+msgid "constant"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:72
+msgid "discrete"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:85
+msgid "Real"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:93
+msgid "Integer"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:94
+msgid "Boolean"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:95
+msgid "String"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:117
+msgid "derived types"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:125
+msgid "type"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:145
+msgid "enumeration"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:157
+msgid "AssertionLevel"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:158
+msgid "assertion levels"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:179
+msgid "attributes"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:190
+msgid "quantity attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:191
+msgid "start attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:192
+msgid "fixed attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:193
+msgid "min attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:194
+msgid "max attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:195
+msgid "unit attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:196
+msgid "displayUnit attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:197
+msgid "nominal attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:198
+msgid "stateSelect attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:452
+msgid "modifications"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:457
+#: ../../source/behavior/equations/variables.rst:476
+#: ../../source/behavior/equations/variables.rst:488
+msgid "modification"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:457
+msgid "attribute"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:458
+msgid "attribute modification"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:476
+msgid "extends"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:488
+msgid "hierarchical"
+msgstr ""

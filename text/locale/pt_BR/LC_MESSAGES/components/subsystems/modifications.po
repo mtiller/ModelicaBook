@@ -1,0 +1,104 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Modelica by Example v0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-29 16:40-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/components/subsystems/modifications.rst:4
+msgid "Modifications"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:6
+msgid ""
+"Previously, we've seen examples of modifications applied to variables.  In "
+"some cases, these modifications are applied to :ref:`attributes` of built-in"
+" types, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:14
+msgid ""
+"In other cases, they have been applied to ``model`` instances to change the "
+"values of parameters for that particular instance, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:21
+msgid ""
+"But it is also worth pointing out that such modifications can reach down "
+"deeper into the hierarchy than simply one level.  For example, consider the "
+"previous example involving a ``StepVoltage`` component. We could also have "
+"made a modification to the ``min`` attribute associated with the ``Vf`` "
+"parameter in the ``Vs`` instance of the ``StepVoltage`` model as follows:"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:32
+msgid ""
+"But what if we wanted to change an attribute of the ``Vf`` parameter **and**"
+" give it a value?  The syntax for such a modification is:"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:39
+msgid ""
+"An important case worth discussion, with regards to modifications, is how "
+"modifications are performed on **arrays** of components.  Imagine we had an "
+"array of ``StepVoltage`` components declared as follows:"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:47
+msgid ""
+"As we saw in our discussion of :ref:`arrays-of-components`, this is not only"
+" legal Modelica, but it can be useful to represent a collection of "
+"components within a subsystem.  If we want to give the parameter ``Vf`` a "
+"value, we have two choices.  The first is to specify an array of values, "
+"*e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:57
+msgid ""
+"This assigns the values in the vector ``{24,26,28,30,32}`` to ``Vs[1].Vf``, "
+"``Vs[2].Vf``, ``Vs[3].Vf``, ``Vs[4].Vf`` and ``Vs[5].Vf``, respectively.  "
+"The other choice we have is to give the same value to every element in the "
+"array.  We could use this same array initialization syntax, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:67
+msgid ""
+"The problem comes when the number of elements in an array is defined by a "
+"``parameter``, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:75
+msgid ""
+"If we tried to initialize ``Vf`` with a literal array (*e.g.,* "
+"``{24,24,24}``), then it won't adapt to changes in ``n``.  To address this "
+"situation, we could use the :ref:`fill-function` function:"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:84
+msgid ""
+"This is an acceptable solution.  But imagine if we wanted to modify both the"
+" value of ``Vf`` and the ``min`` attribute inside ``Vf``? We'd end up with "
+"something like this:"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:93
+msgid ""
+"With nested modifications, this kind of thing can get complicated quickly.  "
+"Fortunately, Modelica includes a feature to deal with such situations.  By "
+"placing the ``each`` keyword in front of a modification, that modification "
+"is applied to every instance, *e.g.,*"
+msgstr ""
+
+#: ../../source/components/subsystems/modifications.rst:103
+msgid ""
+"Modifications are an essential part of modeling because they allow us to "
+"modify the parameter values down through the hierarchy.  As you can see from"
+" the examples in this section, Modelica provides many features to make "
+"applying modifications to hierarchies simple and powerful."
+msgstr ""
