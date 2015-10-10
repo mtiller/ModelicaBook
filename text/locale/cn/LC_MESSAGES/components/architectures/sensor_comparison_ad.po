@@ -324,6 +324,5 @@ msgstr ""
 msgid ""
 "Furthermore, if we take some time to tune the gains in the PID controller, "
 "*i.e.,*"
-msgstr ""
 msgstr "此外，如果用一段时间来调整PID调节器的增益，即："
 
