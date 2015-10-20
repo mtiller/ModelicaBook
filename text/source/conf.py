@@ -57,7 +57,7 @@ copyright = u'2013, Michael M. Tiller'
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 
-git_dsc = os.popen("git describe HEAD").read().strip()
+git_dsc = os.popen("git describe --long HEAD").read().strip()
 git_tag = re.split('-', git_dsc)
 
 # The short X.Y version.
