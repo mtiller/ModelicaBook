@@ -91,7 +91,7 @@ Modelica            C (input arguments)                           C (output argu
 
 A few additional comments about this table.  First, it is assumed that
 all strings are null (``\0``) terminated.  Also, in the case of arrays
-the type ``T'`` indicate the C type that the Modelica type ``T`` would
+the type ``T'`` indicates the C type that the Modelica type ``T`` would
 be mapped to (using this same table).  Finally, a ``record`` is mapped
 to a ``struct`` in C where the members of the C structure correspond
 in order to the members of the Modelica ``record``.  Types of members
