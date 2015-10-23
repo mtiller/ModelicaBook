@@ -14,6 +14,8 @@ msgstr ""
 #: ../../source/front/ack.rst:2
 msgid "Acknowledgments"
 msgstr ""
+"Agradecimentos"
+
 
 #: ../../source/front/ack.rst:4
 msgid ""
@@ -23,10 +25,17 @@ msgid ""
 "people I've failed to mention here and I apologize in advance to anyone who "
 "feels they've been overlooked."
 msgstr ""
+"Este livro é o ponto alto de muitas palestras, livros, discussões,"
+"conferências *etc.* que é impossível fornecer uma lista completa com "
+"todas as pessoas que tiveram alguma contribuição para o livro. Sem dúvida, há "
+"pessoas que eu não mencionei aqui e peço desculpas antecipadamente para quem "
+"sentir que foi ignorado."
+
 
 #: ../../source/front/ack.rst:11
 msgid "Technical"
 msgstr ""
+"Técnico"
 
 #: ../../source/front/ack.rst:13
 msgid ""
@@ -37,6 +46,7 @@ msgid ""
 "as an open standard.  Hilding is the undisputed \"father of Modelica\" and "
 "he deserves considerable credit for all that Modelica has become."
 msgstr ""
+
 
 #: ../../source/front/ack.rst:21
 msgid ""
