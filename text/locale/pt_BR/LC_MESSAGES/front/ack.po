@@ -196,6 +196,12 @@ msgid ""
 " Kickstarter project.  In particular, I'd like the thank the following "
 "people for their exceptionally generous contributions:"
 msgstr ""
+"Este projeto foi realmente uma experiência para ver se a abordagem do Kickstarter para "
+"publicação poderia ser aplicada a um nicho de domínio técnico como Modelica. Eu fiquei "
+"agradavelmente surpreendido ao ver que ele podia e que este projecto teve o suficiente "
+"apoio financeiro. Por isso, eu gostaria de agradecer aos apoiadores do "
+"Projeto Kickstarter. Em particular, eu gostaria de agradecer às seguintes "
+"pessoas por suas contribuições excepcionalmente generosas:"
 
 #: ../../source/front/ack.rst:98
 msgid "Hilding Elmqvist"
