@@ -46,6 +46,12 @@ msgid ""
 "as an open standard.  Hilding is the undisputed \"father of Modelica\" and "
 "he deserves considerable credit for all that Modelica has become."
 msgstr ""
+"Referente à Modelica, o reconhecimento primário deve ser para Hilding "
+"Elmqvist não apenas pela visão técnica para reconhecer o impacto "
+"potencial que as técnicas simbólicas de manipulação podem ter na resolução de "
+"problemas de engenharia, mas também pela liderança em levar essa visão adiante "
+"como um padrão aberto. Hilding é indiscutívelmente o \"pai da Modelica\" e "
+"ele merece um grande crédito por tudo o que Modelica se tornou."
 
 
 #: ../../source/front/ack.rst:21
