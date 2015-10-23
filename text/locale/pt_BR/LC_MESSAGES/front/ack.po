@@ -84,6 +84,11 @@ msgid ""
 "an organization committed to open standards that support engineering and I'd"
 " like to thank all the members for their hard work in this regard."
 msgstr ""
+"É claro, Martin não está sozinho na dia-a-dia da Modelica Association. A "
+"Modelica Association Board e os seus membros também são extremamente importantes para "
+"sensibilização sobre Modelica. Por fim, a Modelica Association é "
+"uma organização comprometida com os padrões abertos que oferecem suporte de engenharia e eu "
+"gostaria de agradecer a todos os membros pelo seu trabalho árduo nesta direção."
 
 #: ../../source/front/ack.rst:39
 msgid ""
@@ -94,10 +99,17 @@ msgid ""
 "like to thank all those people who've participated in the development of the"
 " Modelica Language and the Modelica Standard Library."
 msgstr ""
+"A Modelica Association não esteve sempre conosco, mas havia sempre um Modelica "
+"Design Group. Este grupo é formado por pessoas que se reúnem várias vezes por ano "
+"e trabalham em melhorar continuamente a linguagem Modelica. É espantoso "
+"quanto tempo e energia tais pessoas oferecem para este esforço. Eu também "
+"gostaria de agradecer a todas as pessoas que participaram no desenvolvimento da "
+"linguagem Modelica e da Biblioteca Padrão Modelica (Modelica Standard Library)."
 
 #: ../../source/front/ack.rst:48
 msgid "Personal"
 msgstr ""
+"Pessoal"
 
 #: ../../source/front/ack.rst:50
 msgid ""
@@ -107,6 +119,11 @@ msgid ""
 "my interests in these topics so I owe all the energy and time I'm able to "
 "apply to projects like this one to them."
 msgstr ""
+"Pessoalmente, sou eternamente grato à minha mãe, meu pai, minha esposa, "
+" meus filhos e  meus sogros pelo seu apoio sem fim em minha paixão pela ciência, "
+"engenharia e matemática. Eles são responsáveis por cultivar e sustentar "
+"meus interesses nestes tópicos, então eu devo a eles toda a energia e tempo que sou capaz de "
+"aplicar a projectos como este."
 
 #: ../../source/front/ack.rst:57
 msgid ""
