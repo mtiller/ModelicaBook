@@ -131,7 +131,7 @@ msgstr ""
 #: ../../source/front/dedication.rst:71
 msgid ""
 "\"Aaron dead. World wanderers, we have lost a wise elder. Hackers for right,"
-" we are one down. Parents all, we have lost a child. Let us weep.\""
+" we are one down. Parents all, we have lost a child. Let us weep.\"" 
 msgstr ""
 "\" Aaron morreu. Prodígios mundiais, perdemos um sábio ancião. Hackers pelo certo, "
 "nós somos um a menos. Pais, nós perdemos um filho. Vamos chorar. \" "
