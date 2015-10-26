@@ -29,8 +29,7 @@ defined as follows:
 
 .. math::
 
-    y(x, x_0, y_0, x_1, y_1) = x\frac{y_1-y_0}{x_1-x_0}
-    -\frac{x_1+x_0}{2(x_1-x_0)}\frac{y_1-y_0}{2}+\frac{y_1+y_0}{2}
+    y(x, x_0, y_0, x_1, y_1) = \frac{y_1-y_0}{x_1-x_0}(x-x_0)+y_0
 
 To reduce the number of arguments, let's assume that combine
 :math:`x_0` and :math:`y_0` into a single point represented by the
@@ -80,9 +79,9 @@ the function and its arguments.  Also note how the points use arrays
 to represent a two-dimensional vector and how those arrays are indexed
 in this example.
 
-One troubling aspect of the ``Line`` model is the length of the
-expression used to compute ``y``.  It would be nice if we could break
-that expression down.  
+One troubling aspect of the ``Line`` model is the length and
+complexity of the expression used to compute ``y``.  It would be nice
+if we could break that expression down.
 
 Intermediate Variables
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +98,7 @@ internally by the function.  Here is an example that uses
 
 .. literalinclude:: /ModelicaByExample/Functions/Polynomials/LineWithProtected.mo
    :language: modelica
-   :emphasize-lines: 7-8
+   :emphasize-lines: 7-10
    :lines: 2-
 
 This model introduces two new variables.  One variable, ``m``,
