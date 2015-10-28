@@ -16,12 +16,16 @@ IMAGEDIRS      = source/_static/Icons source/_static/img $(shell find $(SOURCEDI
 SVG2PDF       = rsvg-convert
 SVG2PDF_FLAGS =
 
+# The following commands seemed to have problems but are kept for reference
 S3CMD = s3cmd $(S3FLAGS)
-
 SYNC = $(S3CMD) sync -P -F
 S3GET = $(S3CMD) get
 S3PUT = $(S3CMD) put -P
 S3BUCKET = book.xogeny.com
+
+# for the copying of the print versions we use awscli
+S3CP = aws s3 cp
+S3ACCESS= --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -96,13 +100,12 @@ deploy_js: local_js
 
 # This target builds the PDF and the epub version and pushes them
 # out to an S3 bucket
+deploy_print:
+	($(S3CP) build/latex/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/ $(S3ACCESS))
+	($(S3CP) build/latex-a4/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/ModelicaByExample-a4.pdf $(S3ACCESS))
 
-deploy_print: pdf ebook
-	($(S3PUT) build/latex/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/)
-	($(S3PUT) build/latex-a4/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/ModelicaByExample-a4.pdf)
-
-	($(S3PUT) build/epub/ModelicabyExample.epub s3://files.xogeny.com/ModelicaByExample/ModelicaByExample.epub)
-	($(S3PUT) build/epub/ModelicaByExample.mobi s3://files.xogeny.com/ModelicaByExample/)
+	($(S3CP) build/epub/ModelicabyExample.epub s3://files.xogeny.com/ModelicaByExample/ModelicaByExample.epub $(S3ACCESS))
+	($(S3CP) build/epub/ModelicaByExample.mobi s3://files.xogeny.com/ModelicaByExample/ $(S3ACCESS))
 
 
 
