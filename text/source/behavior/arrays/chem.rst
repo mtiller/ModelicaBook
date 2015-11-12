@@ -10,7 +10,7 @@ behavior using vectors.  Finally, we'll implement the same model
 again using enumerations.
 
 In all of our examples, we'll be building a model for `the following
-system of reactions <http://library.wolfram.com/examples/chemicalkinetics/>`_:
+system of reactions <http://library.wolfram.com/infocenter/TechNotes/390/>`_:
 
 .. math::
 
@@ -176,7 +176,7 @@ Conclusion
 ^^^^^^^^^^
 
 In this chapter, we showed how a set of chemical equations could be
-represented with and without arrays. We also  
+represented with and without arrays. We also
 demonstrated how the ``enumeration`` type can
 be used in conjunction with arrays to make the resulting equations
 more readable by replacing numeric indices with names.
