@@ -23,7 +23,7 @@ msgid ""
 "intrigue you and cause you to dig deeper."
 msgstr ""
 " إذا كنت لسبب ما تقرأ هذا الكتاب بدون أي معرفة مسبقة بلغة مودليكا فستكون لديك"
-" بعض الأسئلة.”
+" بعض الأسئلة."
 " دعني أحاول تحديد هذه الأسئلة على أمل أن يجعلك ذلك قادرا على التعمق في هذا الكتاب."
 
 #: ../../source/front/intro.rst:10
@@ -38,9 +38,9 @@ msgid ""
 "(*e.g.,* springs, resistors, clutches, *etc.*).  These components can then "
 "be combined into subsystems, systems or even architectures."
 msgstr ""
-" مودليكا هي لغة تعريفية عالية المستوى تقوم بوصف السلوك الرياضي.”
+" مودليكا هي لغة تعريفية عالية المستوى تقوم بوصف السلوك الرياضي."
 " عادة يتم تطبيقها على الأنظمة الهندسية ويمكن استخدامها بسهولة لوصف المكونات الهندسية"
-“ (مثل: الزنبَرَكات والمقاومات والقابضات ..إلخ)."
+" (مثل: الزنبَرَكات والمقاومات والقابضات ..إلخ)."
 " هذه المكونات قد يتم تجميعها في أنظمة جزئية وأنظمة وكذلك منشئات."
 
 #: ../../source/front/intro.rst:20
@@ -57,7 +57,7 @@ msgid ""
 " topics like differential-algebraic equations, symbolic manipulation, "
 "numeric solvers, code generation, post-processing, *etc.*."
 msgstr ""
-" يعتبر استخدام لغة مودليكا أمرا مقنعا لعدة أسباب.”
+" يعتبر استخدام لغة مودليكا أمرا مقنعا لعدة أسباب."
 " الأول والأهم أنها ذات قدرة عالية جدا من الناحية التقنية."
 " فعن طريق استخدام مجموعة معقدة من الخوارزميات خلف الستار يتيح مترجم مودليكا"
 " للمهندسين التركيز على الوصف الرياضي عالي المستوى لسلوك المكونات الهندسية."
@@ -112,31 +112,31 @@ msgstr ""
 " الهندسي أو النظام الهندسي."
 " والنتيجة هي تقديم مجموعة كاملة من الإمكانات لبناء نماذج قوية ومتماسكة لأي نظام"
 " هندسي تقريبا."
-"\n”
-"\n”
-“- Used Terms المصطلحات المستخدمة - \n”
-"\n”
-"Modelica مودليكا\n”
-“high-level عالية المستوى\n“
-“declarative تعريفية\n”
-"Describing Mathematical Behavior وصف السلوك الرياضي\n”
-“engineering components مكونات هندسية\n”
-“springs زنبَرَكات\n”
-“resistors المقاومات\n”
-“clutches القابضات\n”
-“subsystems أنظمة جزئية\n”
-“systems أنظمة\n”
-“architectures منشئات\n”
-"algorithms خوارزميات\n”
-“differential-algebraic equations المعادلات التفاضلية الجبرية \n”
-“symbolic manipulation التعامل مع الرموز\n”
-“numeric solving الحل العددي \n”
-“code generation توليد أكواد البرامج \n”
-“post-processing ما بعد المعالجة \n “
-"modeling نمذجة\n”
-"continuous مستمر\n”
-"discrete متقطع\n”
-"causal approach النهج السببي\n”
-"acausal approach النهج اللاسببي\n”
-"physical design تصميم النظام المادي\n”
-"control design تصميم نظام التحكم\n”
+"\n"
+"\n"
+"- Used Terms المصطلحات المستخدمة - \n"
+"\n"
+"Modelica مودليكا\n"
+"high-level عالية المستوى\n"
+"declarative تعريفية\n"
+"Describing Mathematical Behavior وصف السلوك الرياضي\n"
+"engineering components مكونات هندسية\n"
+"springs زنبَرَكات\n"
+"resistors المقاومات\n"
+"clutches القابضات\n"
+"subsystems أنظمة جزئية\n"
+"systems أنظمة\n"
+"architectures منشئات\n"
+"algorithms خوارزميات\n"
+"differential-algebraic equations المعادلات التفاضلية الجبرية \n"
+"symbolic manipulation التعامل مع الرموز\n"
+"numeric solving الحل العددي \n"
+"code generation توليد أكواد البرامج \n"
+"post-processing ما بعد المعالجة \n "
+"modeling نمذجة\n"
+"continuous مستمر\n"
+"discrete متقطع\n"
+"causal approach النهج السببي\n"
+"acausal approach النهج اللاسببي\n"
+"physical design تصميم النظام المادي\n"
+"control design تصميم نظام التحكم\n"
