@@ -21,7 +21,7 @@ msgstr "وصف السلوك الرياضي"
 
 #: ../../source/index.rst:43
 msgid "Object-Oriented Modeling"
-msgstr "النمذجة الشيئية الموجهة"
+msgstr "النمذجة الموجهة الشيئية"
 
 #: ../../source/index.rst:71
 msgid "Indices and tables"
