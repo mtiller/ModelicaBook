@@ -313,7 +313,6 @@ msgid ""
 "descriptive than just a single letter like \"K\"."
 msgstr ""
 " للوهلة الأولى، قد لا يبدو بدهيا السبب الذي من أجله نقوم بتحديد تمييز الوحدة"
-" 
 #: ../../source/behavior/equations/physical.rst:156
 msgid ""
 "However, setting the ``unit`` attribute is actually a more formal approach "
