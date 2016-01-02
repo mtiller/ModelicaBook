@@ -411,7 +411,7 @@ msgstr "أنواع مشتقة"
 
 #: ../../source/behavior/equations/physical.rst:196
 msgid "min attribute"
-msgstr ""
+msgstr "تمييز القيمة الصغرى"
 
 #: ../../source/behavior/equations/physical.rst:197
 msgid "type"
