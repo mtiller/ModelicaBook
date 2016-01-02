@@ -312,7 +312,8 @@ msgid ""
 "fact, one might even argue it is worse because \"Temperature\" is more "
 "descriptive than just a single letter like \"K\"."
 msgstr ""
-
+" للوهلة الأولى، قد لا يبدو بدهيا السبب الذي من أجله نقوم بتحديد تمييز الوحدة"
+" 
 #: ../../source/behavior/equations/physical.rst:156
 msgid ""
 "However, setting the ``unit`` attribute is actually a more formal approach "
@@ -393,11 +394,11 @@ msgstr "تمييزات"
 
 #: ../../source/behavior/equations/physical.rst:140
 msgid "unit attribute"
-msgstr "تمييزات الوحدات"
+msgstr "تمييز الوحدة"
 
 #: ../../source/behavior/equations/physical.rst:181
 msgid "derived types"
-msgstr ""
+msgstr "أنواع مشتقة"
 
 #: ../../source/behavior/equations/physical.rst:196
 msgid "min attribute"
@@ -405,4 +406,4 @@ msgstr ""
 
 #: ../../source/behavior/equations/physical.rst:197
 msgid "type"
-msgstr ""
+msgstr "نوع"
