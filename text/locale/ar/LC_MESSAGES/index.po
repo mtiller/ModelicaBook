@@ -13,24 +13,24 @@ msgstr ""
 
 #: ../../source/index.rst:13
 msgid "Front Matter"
-msgstr ""
+msgstr "المادة التقديمية"
 
 #: ../../source/index.rst:31
 msgid "Describing Behavior"
-msgstr ""
+msgstr "وصف السلوك الرياضي"
 
 #: ../../source/index.rst:43
 msgid "Object-Oriented Modeling"
-msgstr ""
+msgstr "النمذجة الموجهة الشيئية"
 
 #: ../../source/index.rst:71
 msgid "Indices and tables"
-msgstr ""
+msgstr "الملاحق والجداول"
 
 #: ../../source/index.rst:73
 msgid ":ref:`genindex`"
-msgstr ""
+msgstr "دليل الكلمات :ref:`genindex`"
 
 #: ../../source/index.rst:74
 msgid ":ref:`search`"
-msgstr ""
+msgstr "البحث :ref:`search`"

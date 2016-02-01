@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations.rst:4
 msgid "Basic Equations"
-msgstr ""
+msgstr "المعادلات الأساسية"
 
 #: ../../source/behavior/equations.rst:6
 msgid ""
@@ -21,14 +21,18 @@ msgid ""
 "understanding how to represent basic behavior.  In this chapter, our focus "
 "will be on demonstrating how to write basic equations."
 msgstr ""
+" كما ذكرنا سابقا في التقديم\n"
+" :ref:`preface`\n"
+" فإن رحلتنا الاستكشافية عن لغة مودليكا ستبدأ بفهم كيفية تمثيل السلوك الرياضي الأساسي."
+" في هذا الفصل، سوف نركز على شرح كيفية كتابة المعادلات الأساسية"
 
 #: ../../source/behavior/equations.rst:11
 msgid "Examples"
-msgstr ""
+msgstr "الأمثلة"
 
 #: ../../source/behavior/equations.rst:24
 msgid "Review"
-msgstr ""
+msgstr "مراجعة"
 
 #: ../../source/behavior/equations.rst:26
 msgid ""
@@ -36,3 +40,5 @@ msgid ""
 "examples.  This part will review the various features and concepts and "
 "provide a more complete discussion of each topic."
 msgstr ""
+" الجزء الأول من هذا الفصل قدّم ميزات اللغة عن طريق الأمثلة."
+" أما هذا الجزء فسوف يراجع المفاهيم والميزات المختلفة ويقدم مناقشة أكثر كمالا لكل موضوع."

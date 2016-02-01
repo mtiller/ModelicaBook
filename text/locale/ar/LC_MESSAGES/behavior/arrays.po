@@ -13,12 +13,12 @@ msgstr ""
 
 #: ../../source/behavior/arrays.rst:4
 msgid "Vectors and Arrays"
-msgstr ""
+msgstr "المتجهات والمصفوفات"
 
 #: ../../source/behavior/arrays.rst:7
 msgid "Examples"
-msgstr ""
+msgstr "الأمثلة"
 
 #: ../../source/behavior/arrays.rst:17
 msgid "Review"
-msgstr ""
+msgstr "مراجعة"
