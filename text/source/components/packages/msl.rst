@@ -17,7 +17,7 @@ Library so readers are aware of what they can expect to find and
 utilize from this library.  This is not an exhaustive tour and because
 the Modelica Standard Library is constantly being updated and improved,
 it may not reflect the latest version of the library.  But it covers
-the basics and hopefully providers readers with an understanding of
+the basics and hopefully provides readers with an understanding of
 how to locate useful definitions.
 
 .. _constants:
