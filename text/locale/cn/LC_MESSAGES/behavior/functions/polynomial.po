@@ -122,12 +122,12 @@ msgstr ""
 
 #: ../../source/behavior/functions/polynomial.rst:83
 msgid ""
-"One troubling aspect of the ``Line`` model is the length of the expression "
+"One troubling aspect of the ``Line`` model is the length and complexity of the expression "
 "used to compute ``y``.  It would be nice if we could break that expression "
 "down."
 msgstr ""
-"\ ``Line``\ 模型唯一不足之处在于计算\ ``y``\ 表达式的长度。如果我们可以拆分表达式，"
-"则就能改善这种不足。"
+"\ ``Line``\ 模型唯一不足之处在于计算\ ``y``\ 表达式的长度以及复杂性。"
+"如果我们可以拆分表达式，就能改善这种不足。"
 
 #: ../../source/behavior/functions/polynomial.rst:88
 msgid "Intermediate Variables"
