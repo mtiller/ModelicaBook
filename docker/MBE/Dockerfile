@@ -1,7 +1,7 @@
 # This is a Dockerfile that creates a docker image with all the necessary
 # dependencies for building the book.
 
-FROM mtiller/book-py
+FROM xiedongping/book-py
 
 # Create a directory for all the book related stuff
 RUN mkdir /opt/MBE

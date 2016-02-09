@@ -1,7 +1,7 @@
 # This is a Dockerfile that creates a docker image with all the necessary
 # dependencies for building the book.
 
-FROM mtiller/book-om
+FROM xiedongping/book-om
 
 RUN apt-get update
 

@@ -1,0 +1,8 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - cd docker && sh build_with_docker.sh
