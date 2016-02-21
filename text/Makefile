@@ -21,7 +21,7 @@ S3CMD = s3cmd $(S3FLAGS)
 SYNC = $(S3CMD) sync -P -F
 S3GET = $(S3CMD) get
 S3PUT = $(S3CMD) put -P
-S3BUCKET = book.xogeny.com
+S3BUCKET ?= book.xogeny.com
 
 # for the copying of the print versions we use awscli
 S3CP = aws s3 cp
