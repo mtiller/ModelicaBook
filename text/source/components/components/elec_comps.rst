@@ -137,7 +137,7 @@ Specifically, we need to create a step voltage source model:
 
 .. literalinclude:: /ModelicaByExample/Components/Electrical/DryApproach/StepVoltage.mo
    :language: modelica
-   :lines: 1-6,25
+   :lines: 1-8,39
 
 Note how the ``StepVoltage`` model also leverages the ``TwoPin``
 model.  We will also need a ground model which we model as follows:
@@ -165,4 +165,3 @@ The schematic diagram for this model is rendered as:
    :width: 100%
    :align: center
    :alt: Modeling the step response of an RLC circuit
-
