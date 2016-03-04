@@ -449,10 +449,10 @@ configuration management.  Consider the following example:
     replaceable IdealSensor sensor constrainedby Sensor
       annotation(
         choices(
-          choice=redeclare SampleHoldSensor sensor
-                 "Sample and hold sensor",
-          choice=redeclare IdealSensor sensor
-                 "An ideal sensor"));
+          choice(redeclare SampleHoldSensor sensor
+                 "Sample and hold sensor"),
+          choice(redeclare IdealSensor sensor
+                 "An ideal sensor")));
 
 Again, the model developer is embedding a set of possible
 modifications along with the declaration.  These ``choice`` values can
