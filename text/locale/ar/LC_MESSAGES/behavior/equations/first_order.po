@@ -414,7 +414,7 @@ msgstr ""
 "comment تعليق\n"
 "graphical representation التمثيل الرسومي\n"
 "initial conditions الظروف الابتدائية\n"
-"tolerance تفاوت\n"
+"tolerance  التفاوت المسموح به\n"
 
 #: ../../source/behavior/equations/first_order.rst:19
 msgid "model"
