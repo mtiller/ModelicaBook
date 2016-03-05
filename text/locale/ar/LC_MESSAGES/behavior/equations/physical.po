@@ -392,7 +392,18 @@ msgid ""
 "worry, there is an easy solution to this as you will see in a later section "
 "where we discuss :ref:`importing_physical_types`."
 msgstr ""
-
+"\n"
+"\n"
+"- Used Terms المصطلحات المستخدمة - \n"
+"\n"
+"qualifier مميّز\n"
+"section قسم\n"
+"expression تعبير رياضي\n"
+"physical فيزيائي مادي\n"
+"variable متغير\n"
+"specifications مواصفات\n"
+"standard SI Unit attributes\n"
+"تمييزات الوحدات القياسية الدولية\n"
 
 
 #: ../../source/behavior/equations/physical.rst:20
