@@ -16,7 +16,7 @@ One distinction that we've seen in this chapter between component and
 subsystem models is that subsystem models include ``connect``
 statements.  To explore how the ``connect`` statement works, let's
 revisit the ``MultiDomainControl`` example from the discussion on
-:ref:`thermal-control`.  If we strip away all the annotations (which
+:ref:`thermal-control-example`.  If we strip away all the annotations (which
 we will discuss shortly), we get a model that looks like this:
 
 .. code-block:: modelica
@@ -202,7 +202,7 @@ annotation in terms of a ``record`` definition:
       Boolean visible = true;
       Transformation transformation "Placement in the diagram layer";
       Transformation iconTransformation "Placement in the icon layer";
-    end Placement; 
+    end Placement;
 
 The ``visible`` field serves the same purpose as it does in the
 ``GraphicItem`` annotation we discussed earlier, *i.e.,* it is used to
@@ -223,7 +223,7 @@ The ``Transformation`` annotation, which is defined as follows:
       Point origin = {0, 0};
       Extent extent;
       Real rotation(quantity="angle", unit="deg")=0;
-    end Transformation; 
+    end Transformation;
 
 The ``rotation`` field indicates how many degrees the component's icon
 should be rotated and the ``origin`` field indicates the point around
@@ -237,7 +237,7 @@ Finally, we have the third topic, rendering the connections.  Again,
 the annotations that govern how connections are rendered have appeared
 in many examples.  Now, finally, we'll explain what that information
 represents.  Consider the following ``connect`` statement from our
-:ref:`thermal-control` example:
+:ref:`thermal-control-example` example:
 
 .. literalinclude:: /ModelicaByExample/Components/BlockDiagrams/Examples/MultiDomainControl.mo
    :language: modelica
