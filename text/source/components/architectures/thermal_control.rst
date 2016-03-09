@@ -392,7 +392,7 @@ that, we need to look at the actual source code:
    :emphasize-lines: 24,27
 
 Again, note the highlighted lines.  Not only do these ``connect``
-statements implicitly add the ``heat_command`` and ``temperature``
+statements implicitly add the ``heat`` and ``temperature``
 signals to the ``bus`` connector, **those names match** the names that
 the sensor and actuator models expect.
 
