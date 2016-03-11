@@ -100,7 +100,7 @@ msgstr ""
 " وهذا أيضا من النوع عدد حقيقي\n"
 " ``Real``\n"
 " ولأن هذا المتغير ليس له مميِّز يبين أنه معامل\n"
-" ``parameter`` qualifier\n"
+" ``parameter``\n"
 " فإن قيمته ستتحدد عن طريق المعادلات في النموذج."
 
 #: ../../source/behavior/equations/physical.rst:47
@@ -329,9 +329,15 @@ msgid ""
 "``K``, ``kg``, ``m``).  This includes complex unit types that can be "
 "composed of other base units (*e.g.*, ``N``)."
 msgstr ""
-" ولكن في الحقيقة تمييز الوحدة هو الأفضل لسببين."
-" لأن مواصفات لغة مودليكا تعرّف العلاقات بين تمييزات الوحدات القياسية في النظام الدولي\n"
+" ولكن في الحقيقة ضبط تمييز الوحدة هو الأفضل لسببين."
+" الأول هوأن مواصفات لغة مودليكا تعرّف العلاقات بين تمييزات الوحدات القياسية في النظام الدولي\n"
 " SI Units\n"
+" وذلك مثل:\n"
+" (``K``, ``kg``, ``m``)."
+" وذلك يتضمن الوحدات المركبة مثل:"
+"(``N``)."
+
+
 #: ../../source/behavior/equations/physical.rst:162
 msgid ""
 "The other reason is that the Modelica specification also defines rules for "
