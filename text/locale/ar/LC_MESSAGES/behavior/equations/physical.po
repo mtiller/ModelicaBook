@@ -334,8 +334,8 @@ msgstr ""
 " SI Units\n"
 " وذلك مثل:\n"
 " (``K``, ``kg``, ``m``)."
-" وذلك يتضمن الوحدات المركبة مثل:"
-"(``N``)."
+" وذلك يتضمن الوحدات المركّبة مثل:"
+" (``N``)."
 
 
 #: ../../source/behavior/equations/physical.rst:162
@@ -347,7 +347,9 @@ msgid ""
 "big win for model developers because adding units not only makes the models "
 "clearer, it provides better diagnostics in the case of errors."
 msgstr ""
-
+" والسبب الآخر هو أن مواصفات لغة مودليكا تعرّف أيضا القوانين والتعبيرات الرياضية التي تبيّن كيفية حساب "
+" الوحدات المركّبة. وبهذه الطريقة تعرّف مواصفات لغة مودليكا كل ما هو مطلوب لاختبار الوحدات في نماذج مودليكا"
+" واكتشاف الأخطاء أو عدم اتساق الوحدات الفيزيائية مع بعضها."
 #: ../../source/behavior/equations/physical.rst:173
 msgid "Physical Types"
 msgstr ""
