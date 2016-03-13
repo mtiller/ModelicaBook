@@ -349,11 +349,11 @@ msgid ""
 msgstr ""
 " والسبب الآخر هو أن مواصفات لغة مودليكا تعرّف أيضا القوانين والتعبيرات الرياضية التي تبيّن كيفية حساب "
 " الوحدات المركّبة. وبهذه الطريقة تعرّف مواصفات لغة مودليكا كل ما هو مطلوب لاختبار الوحدات في نماذج مودليكا"
-" واكتشاف الأخطاء أو عدم اتساق الوحدات الفيزيائية مع بعضها. وهذا يعتبر ميزة كبيرة لمطوّري النماذج لأن إضافة"
-" الوحدات لا تجعل النماذج أوضح وحسب ولكن"
+" واكتشاف الأخطاء أو عدم اتساق الوحدات الفيزيائية المادية مع بعضها. وهذا يعتبر ميزة كبيرة لمطوّري النماذج لأن إضافة"
+" الوحدات لا تجعل النماذج أوضح وحسب ولكنهاأيضا تجعل اكتشاف الأخطاء اكثر سهولة."
 #: ../../source/behavior/equations/physical.rst:173
 msgid "Physical Types"
-msgstr ""
+msgstr "الأنواع الفيزيائية المادية"
 
 #: ../../source/behavior/equations/physical.rst:175
 msgid ""
@@ -362,6 +362,8 @@ msgid ""
 "``unit`` attribute specification for every variable.  Furthermore, as "
 "mentioned previously, ``K`` isn't nearly as descriptive as \"Temperature\"."
 msgstr ""
+"ولكن في الحقيقة ، هناك عيب في الكود البرمجي لمثالنا\n"
+"``NewtonCoolingWithUnits``\n"
 
 #: ../../source/behavior/equations/physical.rst:183
 msgid ""
