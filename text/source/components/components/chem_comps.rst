@@ -177,13 +177,12 @@ modifications to each of the reaction components.  Finally, each of
 the reaction components is attached to the ``solution.mixture``
 connector.
 
-Simulating this system for 10 seconds yields the following
-concentration trajectories:
-
 .. todo:: Fix the model that should generate the following plot
+  Simulating this system for 10 seconds yields the following
+  Concentration trajectories:
 
-#.. plot:: ../plots/ABX.py
-#   :include-source: no
+  #.. plot:: ../plots/ABX.py
+  #   :include-source: no
 
 Conclusion
 ^^^^^^^^^^
