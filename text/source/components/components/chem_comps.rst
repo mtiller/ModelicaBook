@@ -179,7 +179,7 @@ connector.
 
 .. todo:: Fix the model that should generate the following plot
   Simulating this system for 10 seconds yields the following
-  Concentration trajectories:
+  concentration trajectories:
 
   #.. plot:: ../plots/ABX.py
   #   :include-source: no
