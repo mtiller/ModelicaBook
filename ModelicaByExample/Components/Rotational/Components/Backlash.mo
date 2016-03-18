@@ -1,6 +1,6 @@
 within ModelicaByExample.Components.Rotational.Components;
 model Backlash "A rotational backlash model"
-  parameter Modelica.SIunits.RotationalSpringConstant c;
+  parameter Modelica.SIunits.RotationalSpringConstant c "Torsional stiffness";
   parameter Modelica.SIunits.Angle b(final min=0) "Total lash";
   extends ModelicaByExample.Components.Rotational.Interfaces.Compliant;
 equation
