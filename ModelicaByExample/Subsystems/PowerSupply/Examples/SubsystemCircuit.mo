@@ -1,10 +1,6 @@
 within ModelicaByExample.Subsystems.PowerSupply.Examples;
 model SubsystemCircuit "Example using BasicPowerSupply subsystem"
-  Components.BasicPowerSupply power_supply(
-    C=1e-2,
-    n=10,
-    considerMagnetization=false,
-    Lm1=1e-2)
+  Components.BasicPowerSupply power_supply
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Electrical.Analog.Sources.SineVoltage wall_voltage(V=120, freqHz=60)
     annotation (Placement(transformation(

@@ -1,22 +1,22 @@
 within ModelicaByExample.Subsystems.PowerSupply.Components;
 model BasicPowerSupply "Power supply with transformer and rectifier"
   import Modelica.Electrical.Analog;
-  parameter Modelica.SIunits.Capacitance C
+  parameter Modelica.SIunits.Capacitance C=1e-2
     "Filter capacitance"
     annotation(Dialog(group="General"));
-  parameter Modelica.SIunits.Conductance Goff=1.E-5
+  parameter Modelica.SIunits.Conductance Goff=1e-5
     "Backward state-off conductance (opened diode conductance)"
     annotation(Dialog(group="General"));
-  parameter Modelica.SIunits.Resistance Ron=1.E-5
+  parameter Modelica.SIunits.Resistance Ron=1e-5
     "Forward state-on differential resistance (closed diode resistance)"
     annotation(Dialog(group="General"));
-  parameter Real n
+  parameter Real n=10
     "Turns ratio primary:secondary voltage"
     annotation(Dialog(group="Transformer"));
   parameter Boolean considerMagnetization=false
     "Choice of considering magnetization"
     annotation(Dialog(group="Transformer"));
-  parameter Modelica.SIunits.Inductance Lm1
+  parameter Modelica.SIunits.Inductance Lm1=1e-2
     "Magnetization inductance w.r.t. primary side"
     annotation(Dialog(group="Transformer", enable=considerMagnetization));
 
