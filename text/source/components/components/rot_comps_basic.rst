@@ -281,9 +281,9 @@ Finally, we can complete the one model remaining in order to complete
 our :ref:`dual spring mass damper system<mech-example>`.  The
 mechanical ground model is defined as follows:
 
-.. literalinclude:: /ModelicaByExample/Components/Rotational/Components/Damper.mo
+.. literalinclude:: /ModelicaByExample/Components/Rotational/Components/Ground.mo
    :language: modelica
-   :lines: 1-7,61
+   :lines: 1-6,60
 
 Dual Spring Mass Damper System
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
