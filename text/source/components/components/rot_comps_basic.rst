@@ -95,6 +95,7 @@ with the inertia model:
 
 .. literalinclude:: /ModelicaByExample/Components/Rotational/VerboseApproach/Inertia.mo
    :language: modelica
+   :emphasize-lines: 18-19
    :lines: 1-23,46
 
 The ``Inertia`` model includes two "flanges", one on either end.  The
@@ -113,7 +114,7 @@ is:
 
 .. literalinclude:: /ModelicaByExample/Components/Rotational/VerboseApproach/Inertia.mo
    :language: modelica
-   :lines: 19-20
+   :lines: 19
 
 This is basically expressing the fact that the increase in momentum
 stored within the inertia is equal to the sum of the torques applied
@@ -137,6 +138,7 @@ Next, let us consider the definition of a spring model:
 
 .. literalinclude:: /ModelicaByExample/Components/Rotational/VerboseApproach/Spring.mo
    :language: modelica
+   :emphasize-lines: 19-20
    :lines: 1-20,41
 
 The icon for our spring model is rendered as:
@@ -152,7 +154,7 @@ equation:
 
 .. literalinclude:: /ModelicaByExample/Components/Rotational/VerboseApproach/Spring.mo
    :language: modelica
-   :lines: 19-20,41
+   :lines: 20
 
 In fact, apart from this equation and the parameter ``c``, much of the
 content in the ``Spring`` model is the same as the content in the
@@ -279,9 +281,9 @@ Finally, we can complete the one model remaining in order to complete
 our :ref:`dual spring mass damper system<mech-example>`.  The
 mechanical ground model is defined as follows:
 
-.. literalinclude:: /ModelicaByExample/Components/Rotational/Components/Damper.mo
+.. literalinclude:: /ModelicaByExample/Components/Rotational/Components/Ground.mo
    :language: modelica
-   :lines: 1-7,61
+   :lines: 1-6,60
 
 Dual Spring Mass Damper System
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

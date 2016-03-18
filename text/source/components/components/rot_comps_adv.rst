@@ -31,11 +31,14 @@ model is very simple:
 
    Include a torque-deflection diagram here.
 
-In Modelica, this component can be described as follows:
+In Modelica (where :math:`\Delta \varphi` is ``phi_rel``), this component can be described as follows:
 
 .. literalinclude:: /ModelicaByExample/Components/Rotational/Components/Backlash.mo
    :language: modelica
    :lines: 1-13,37
+
+
+
 
 We can add an instance of this backlash model into our previous model
 by placing it in parallel with the spring and the damper, *i.e.,*
@@ -43,7 +46,7 @@ by placing it in parallel with the spring and the damper, *i.e.,*
 .. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithBacklash.*
    :width: 100%
    :align: center
-   :alt: 
+   :alt:
 
 If we use the inheritance mechanism in Modelica, the resulting
 Modelica model is quite simple:
@@ -227,7 +230,7 @@ using this gear as follows:
 .. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithGroundedGear.*
    :width: 100%
    :align: center
-   :alt: 
+   :alt:
 
 Note this system has two parallel mechanisms.  The first one uses the
 gear model we just developed.  The second one replaces the assembly of
@@ -235,8 +238,6 @@ the gear and inertias with a single inertia.  This single inertia was
 specifically chosen to have the *"effective inertia"* of the
 assembly.  As a result, when we simulate this system, we see that
 ``inertia2`` and ``inertia3`` have the same response:
-
-.. todo:: Fix this plot
 
 .. plot:: ../plots/SMD_GG.py
    :class: interactive
@@ -289,7 +290,7 @@ when rendered:
 .. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_GearComparison.*
    :width: 100%
    :align: center
-   :alt: 
+   :alt:
 
 The first thing we would expect is that the response of the mechanism
 with the implicitly grounded gear should be identical to the response
