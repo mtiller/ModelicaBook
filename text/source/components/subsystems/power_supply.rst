@@ -32,7 +32,7 @@ If we simulate this model, we see the following voltage across the
 Note that our target here is an output voltage of 12 volts.  However,
 the greater the load on the power supply, the lower the quality of the
 output signal will be.  In this particular simulation, the load is
-initially zero (because the load connecting the switch to the power
+initially zero (because the switch to the power
 supply is open).  But when the switch is closed and current begins to
 flow through the load (the resistor named ``load``), we start to see
 some artifact.
