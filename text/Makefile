@@ -21,7 +21,10 @@ S3CMD = s3cmd $(S3FLAGS)
 SYNC = $(S3CMD) sync -P -F
 S3GET = $(S3CMD) get
 S3PUT = $(S3CMD) put -P
+S3MODIFY = $(S3CMD) modify
+
 S3BUCKET ?= book.xogeny.com
+S3BUCKET_FILES ?= files.xogeny.com
 
 # for the copying of the print versions we use awscli
 S3CP = aws s3 cp
@@ -101,11 +104,11 @@ deploy_js: local_js
 # This target builds the PDF and the epub version and pushes them
 # out to an S3 bucket
 deploy_print:
-	($(S3CP) build/latex/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/ $(S3ACCESS))
-	($(S3CP) build/latex-a4/ModelicaByExample.pdf s3://files.xogeny.com/ModelicaByExample/ModelicaByExample-a4.pdf $(S3ACCESS))
+	($(S3CP) build/latex/ModelicaByExample.pdf s3://$(S3BUCKET_FILES)/ModelicaByExample/ $(S3ACCESS))
+	($(S3CP) build/latex-a4/ModelicaByExample.pdf s3://$(S3BUCKET_FILES)/ModelicaByExample/ModelicaByExample-a4.pdf $(S3ACCESS))
 
-	($(S3CP) build/epub/ModelicabyExample.epub s3://files.xogeny.com/ModelicaByExample/ModelicaByExample.epub $(S3ACCESS))
-	($(S3CP) build/epub/ModelicaByExample.mobi s3://files.xogeny.com/ModelicaByExample/ $(S3ACCESS))
+	($(S3CP) build/epub/ModelicabyExample.epub s3://$(S3BUCKET_FILES)/ModelicaByExample/ModelicaByExample.epub $(S3ACCESS))
+	($(S3CP) build/epub/ModelicaByExample.mobi s3://$(S3BUCKET_FILES)/ModelicaByExample/ $(S3ACCESS))
 
 
 
@@ -159,24 +162,31 @@ server_kr: dirhtml_kr build_links_kr
 
 web: dirhtml build_links
 	(cd build/dirhtml; $(SYNC) * s3://$(S3BUCKET)/)
+	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/_static/*.css
 
 web_cn: dirhtml_cn build_links_cn
 	(cd build/dirhtml_cn; $(SYNC) * s3://$(S3BUCKET)/cn/)
+	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/cn/_static/*.css
 
 web_kr: dirhtml_kr build_links_kr
 	(cd build/dirhtml_kr; $(SYNC) * s3://$(S3BUCKET)/kr/)
+	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/kr/_static/*.css
 
 #web_de: dirhtml_de build_links
 #	(cd build/dirhtml_de; $(SYNC) * s3://$(S3BUCKET)/de/)
+#	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/de/_static/*.css
 
 #web_es: dirhtml_es build_links
 #	(cd build/dirhtml_es; $(SYNC) * s3://$(S3BUCKET)/es/)
+#	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/es/_static/*.css
 
 #web_fr: dirhtml_fr build_links
 #	(cd build/dirhtml_fr; $(SYNC) * s3://$(S3BUCKET)/fr/)
+#	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/fr/_static/*.css
 
 #web_it: dirhtml_it build_links
 #	(cd build/dirhtml_it; $(SYNC) * s3://$(S3BUCKET)/it/)
+#	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/it/_static/*.css
 
 node: dirhtml build_links
 	-rm -rf build/node
@@ -480,4 +490,4 @@ images: $(PDFs)
 # upload the most time consuming deps so they can be used by CI build
 uploadCIdeps: $(SPHINXDEPS)
 	tar cJf build/CIdeps.tar.xz results plots docs-dir
-	($(S3PUT) build/CIdeps.tar.xz s3://files.xogeny.com/ModelicaByExample/)
+	($(S3PUT) build/CIdeps.tar.xz s3://$(S3BUCKET_FILES)/ModelicaByExample/)
