@@ -39,3 +39,6 @@ RUN pip install --upgrade https://bitbucket.org/dietmarw/pygments-main/get/defau
 
 # Now install Git and grab the book
 RUN apt-get install -y git
+
+# Workaround: use an older version of sphinx-intl to workaround a bug in upstream
+RUN pip install --upgrade 'sphinx-intl==0.9.6'
