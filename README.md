@@ -1,5 +1,7 @@
 # Getting Started
 
+[![Circleci](https://circleci.com/gh/modelica-projects/ModelicaBook.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/modelica-projects/ModelicaBook)
+
 ## Location on the Web
 
 This book is currently published at http://book.xogeny.com.  This
