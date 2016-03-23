@@ -4,8 +4,8 @@ model RLC "An RLC circuit referencing types from the Modelica Standard Library"
   parameter Modelica.SIunits.Inductance L = 1;
   parameter Modelica.SIunits.Resistance R = 100;
   parameter Modelica.SIunits.Capacitance C = 1e-3;
-  Modelica.SIunits.Voltage V;
-  Modelica.SIunits.Current i_L;
+  Modelica.SIunits.Voltage V(fixed=true, start=0);
+  Modelica.SIunits.Current i_L(fixed=true, start=0);
   Modelica.SIunits.Current i_R;
   Modelica.SIunits.Current i_C;
 equation

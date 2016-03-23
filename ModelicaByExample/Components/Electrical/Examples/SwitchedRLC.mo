@@ -5,9 +5,10 @@ model SwitchedRLC "Recreation of the switched RLC circuit"
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-40,0})));
-  DryApproach.Inductor inductor(L=1)
+  DryApproach.Inductor inductor(L=1, i(fixed=true, start=0))
     annotation (Placement(transformation(extent={{-10,10},{10,30}})));
-  DryApproach.Capacitor capacitor(C=1e-3) annotation (Placement(transformation(
+  DryApproach.Capacitor capacitor(C=1e-3, v(fixed=true, start=0))
+    annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={30,0})));
