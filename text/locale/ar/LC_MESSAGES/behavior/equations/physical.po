@@ -435,6 +435,11 @@ msgid ""
 "worry, there is an easy solution to this as you will see in a later section "
 "where we discuss :ref:`importing_physical_types`."
 msgstr ""
+" عند هذه النقطة، قد تجد أن فكرة تعريف درجة الحرارة ومعامل الحمل الحراري والسعة الحرارية والكتلة\n"
+" ``Temperature`` و ``ConvectionCoefficient`` و ``SpecificHeat`` و ``Mass``\n"
+" في كل نموذج عملية شاقة للغاية. وقد تكون كذلك فعلا إذا كانت ضرورية ولازمة. ولكن لا تقلق، فهناك"
+" حل بسيط لهذا كما كما سنرى لاحقا في مناقشة قسم استيراد الأنواع الفيزيائية\n"
+" :ref:`importing_physical_types`."
 "\n"
 "\n"
 "- Used Terms المصطلحات المستخدمة - \n"
@@ -452,7 +457,7 @@ msgstr ""
 "complex units وحدات مركّبة\n"
 "built-in types الأنواع المبنية ضمن لغة مودليكا\n"
 "unknown مجهول\n"
-
+"importing استيراد\n"
 
 
 #: ../../source/behavior/equations/physical.rst:20
