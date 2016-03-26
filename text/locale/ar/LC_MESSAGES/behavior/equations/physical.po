@@ -412,6 +412,20 @@ msgid ""
 "other attributes are available when creating derived types.  For further "
 "discussion, see the section on :ref:`builtin-types`."
 msgstr ""
+" من هذا المثال، يمكننا أن نرى انه بمجرد تعريف نوع فيزيائي مثل درجة الحرارة\n"
+" ``Temperature``\n"
+" يمكننا استخدام هذا النوع للإعلان عن العديد من المتغيرات مثل:\n"
+" ``T`` و ``T_inf`` و ``T0``\n"
+" بدون الحاجة إلى تحديد تمييز الوحدة الفيزيائية أو القيمة الصغرى\n"
+" ``unit`` أو ``min``\n"
+" لكل متغيّر. وأيضا لدينا الآن اسم مألوف هو درجة حرارة\n"
+"``Temperature``\n"
+" بدلا من من الوحدة القياسية الدولية\n"
+" ``K``.\n"
+" قد تتساءل عن التمييزات الأخرى المتاحة عند نشاء الأنواع المشتقة."
+" للمزيد من المناقشات حول هذا الموضوع يكنك الاتجاه إلى قسم الأنواع المبنية ضمن لغة مودليكا\n"
+" :ref:`builtin-types`."
+
 
 #: ../../source/behavior/equations/physical.rst:213
 msgid ""
@@ -436,6 +450,7 @@ msgstr ""
 "standard SI Unit attributes\n"
 "تمييزات الوحدات القياسية الدولية\n"
 "complex units وحدات مركّبة\n"
+"built-in types الأنواع المبنية ضمن لغة مودليكا\n"
 "unknown مجهول\n"
 
 
