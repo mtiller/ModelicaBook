@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/electrical.rst:4
 msgid "An Electrical Example"
-msgstr ""
+msgstr "مثال كهربي"
 
 #: ../../source/behavior/equations/electrical.rst:6
 msgid ""
