@@ -149,10 +149,10 @@ msgid ""
 "of the model.  If you wish to include such documentation about the model, it"
 " must appear immediately after the model name as shown."
 msgstr ""
-" على سبيل المثال، السلسلة الأولى\n"
+" على سبيل المثال، سلسلة الحروف الأولى\n"
 " \"A simple first order differential equation\"\n"
 " تستخدم لوصف ماهية هذا النموذج وعن ماذا هو. لاحظ أنها تأتي بعد اسم النموذج."
-" إذا كنت تريد أن تضيف هذه التفاصيل عن النموذج، فيجب أن تكون مكتوبة بعد"
+" إذا كنت تريد أن تضيف تلك التفاصيل عن النموذج، فيجب أن تكون مكتوبة بعد"
 " اسم النموذج مباشرة كما هو مبين."
 
 #: ../../source/behavior/equations/first_order.rst:96
