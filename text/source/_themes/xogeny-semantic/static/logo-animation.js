@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // These are the sponsors
     var groups = ["CyDesign", "Wolfram", "Modelon", "Maplesoft", "DS",
-		  "Ricardo", "ITI", "GlobalCrown", "Siemens",
+		  "Ricardo", "ITI", "MA", "GlobalCrown", "Siemens",
 		  "ST", "OSMC", "dofware", "BauschGall", "TUHH", "Schlegel"];
 
     // This is the order we will show them in (for this page load)
