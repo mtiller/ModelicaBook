@@ -1,6 +1,6 @@
 var Sponsors = {
     "Gold": ["CyDesign", "Wolfram", "Modelon", "Maplesoft"],
-    "Silver": ["Ricardo", "ITI", "GlobalCrown", "Siemens"],
+    "Silver": ["Ricardo", "ITI", "MA", "GlobalCrown", "Siemens"],
     "Bronze": ["ST", "OSMC", "dofware", "BauschGall", "TUHH", "Schlegel"],
     "BauschGall": {
 	"name": "Bausch-Gall GmbH",
@@ -30,6 +30,12 @@ var Sponsors = {
 	"name": "Maplesoft",
 	"profile": "Maplesoft provides high-performance software tools for engineering, science, and mathematics. Its products reduce errors, shorten design times, lower costs, and improve results.",
 	"link": "http://www.maplesoft.com",
+	"logo": "logo.png"
+    },
+    "MA": {
+	"name": "Modelica Association",
+	"profile": "Modelica® is a non-proprietary, object-oriented, equation based language to conveniently model complex physical systems containing, e.g., mechanical, electrical, electronic, hydraulic, thermal, control, electric power or process-oriented subcomponents.",
+	"link": "http://www.modelica.org",
 	"logo": "logo.png"
     },
     "Modelon": {
