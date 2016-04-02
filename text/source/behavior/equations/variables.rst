@@ -313,7 +313,7 @@ Attributes of ``Real``
     calculations to perform various types of scaling used to avoid
     round-off or truncation error.
 
-    **Default**: ``0.0``
+    **Default**:
 
     **Type**: ``Real``
 
