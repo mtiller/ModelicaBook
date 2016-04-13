@@ -13,17 +13,17 @@ msgstr ""
 
 #: ../../source/behavior/equations/electrical.rst:4
 msgid "An Electrical Example"
-msgstr ""
+msgstr "مثال كهربي"
 
 #: ../../source/behavior/equations/electrical.rst:6
 msgid ""
 "Let us return now to an engineering context.  For readers who are more "
 "familiar with electrical systems, consider the following circuit:"
 msgstr ""
-
+" دعونا الآن نعد إلى الحديث عن مجال الهندسة. لأولئك الذين يألفون النظم الكهربية، لينظروا إلى الدائرة  الكهربية التالية:"
 #: ../../source/behavior/equations/electrical.rst:17
 msgid "Low-Pass RLC Filter"
-msgstr ""
+msgstr "مرشح تمرير الترددات المنخفضة RLC"
 
 #: ../../source/behavior/equations/electrical.rst:19
 msgid ""
@@ -32,17 +32,23 @@ msgid ""
 " :math:`i_C`, we can use the equations associated with inductors, resistors "
 "and capacitors, respectively:"
 msgstr ""
+" فلنفرض أننا نريد حل هذه المسألة بالنسبة إلى:\n"
+" :math:`V` و :math:`i_L` و :math:`i_R` و :math:`i_C`.\n"
+" لحل المسألة بالنسبة إلى التيارات الكهربية\n"
+" math:`i_L` و :math:`i_R` و :math:`i_C`\n"
+" يمكننا استخدام المعادلات الخاصة بملفات الحث والمقاومات والمكثفات:"
 
 #: ../../source/behavior/equations/electrical.rst:29
 msgid "where :math:`V_b` is the battery voltage."
-msgstr ""
+msgstr "حيث جهد البطارية هو :math:`V_b`"
 
 #: ../../source/behavior/equations/electrical.rst:31
 msgid ""
 "Since we have only 3 equations, but 4 variables, we need one additional "
 "equation.  That additional equation is going to be Kirchoff's current law:"
 msgstr ""
-
+" لدينا فقط 3 معادلات في حين أن لدينا 4 متغيرات ولذلك فإننا نحتاج إلى معادلة واحدة أخرى."
+" والمعادلة الإضافية تأتي من قانون كيرشوف للتيار الكهربي:"
 #: ../../source/behavior/equations/electrical.rst:37
 msgid ""
 "Now that we have determined the equations and variables for this problem, we"
@@ -52,7 +58,14 @@ msgid ""
 " how to create models by dragging, dropping and connecting models that "
 "really look like the circuit components in our :ref:`low-pass-rlc`."
 msgstr ""
-
+" والآن نحن قد حددنا المعادلات والمتغيرات لهذه المسألة، وسنبدأ في إنشاء النموذج الأساسي"
+" - والذي يتضمن الأنواع الفيزيائية - عن طريق ترجمة المعادلات إلى لغة مودليكامباشرة."
+" ولكن في قسم لاحق بعنوان المكونات الكهربية\n"
+" :ref:`electrical-components`\n"
+" سوف نعود إلى نفس الدائرة لنبين كيفية إنشاء النماذج بواسطة السحب والترك والتوصيل بين نماذج"
+" تشبه تماما مكونات الدائرة في مرشح تمرير الترددات المنخفضة\n"
+" :ref:`low-pass-rlc`\n"
+" الذي لدينا."
 #: ../../source/behavior/equations/electrical.rst:45
 msgid ""
 "But for now, we will build a model composed simply of variables and "
