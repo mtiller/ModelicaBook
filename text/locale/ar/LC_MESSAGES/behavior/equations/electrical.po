@@ -71,13 +71,14 @@ msgid ""
 "But for now, we will build a model composed simply of variables and "
 "equations.  Such a model could be written as follows:"
 msgstr ""
-
+" ولكن حاليا، سنبني نموذج يتكون ببساطة من متغيرات ومعادلات. ويمكن كتابة مثل هذا النموذج كما يلي:"
 #: ../../source/behavior/equations/electrical.rst:52
 msgid ""
 "Let's go through this example bit by bit and reinforce the meaning of the "
 "various statements.  Let's start at the top:"
 msgstr ""
-
+" دعونا نمشي خلال هذا المثال خطوة خطوة لنؤكّد على معاني الجمل المختلفة."
+" فلنبدأ من الأعلى:"
 #: ../../source/behavior/equations/electrical.rst:59
 msgid ""
 "Here we see that the name of the model is ``RLC1``.  Furthermore, a "
@@ -85,14 +86,18 @@ msgid ""
 "capacitor circuit model\"``.  Next, we introduce a few physical types that "
 "we will need:"
 msgstr ""
-
+" نرى هنا أن اسم النموذج هو\n"
+" ``RLC1``.\n"
+" علاوة على ذلك، وصف هذا النموذج تم إدراجه باسم\n"
+" ``\"A resistor-inductor-capacitor circuit model\"``.\n"
+" بعدها، قدّمنا بعض الأنواع الفيزيائية التي نحتاجها"
 #: ../../source/behavior/equations/electrical.rst:68
 msgid ""
 "Each of these lines introduces a physical type that specializes the built-in"
 " ``Real`` type by associating it with a particular physical unit.  Then, we "
 "declare all of the ``parameter`` variables in our problem:"
 msgstr ""
-
+" كل واحد من هذه السطور يقدّم نوعا فيزيائيا"
 #: ../../source/behavior/equations/electrical.rst:77
 msgid ""
 "These ``parameter`` variables represent various physical characteristics (in"
