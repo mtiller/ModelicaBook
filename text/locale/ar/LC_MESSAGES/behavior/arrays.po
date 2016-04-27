@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/arrays.rst:4
 msgid "Vectors and Arrays"
-msgstr "المتجهات والمصفوفات"
+msgstr "المتجهات ومصفوفات البيانات"
 
 #: ../../source/behavior/arrays.rst:7
 msgid "Examples"
