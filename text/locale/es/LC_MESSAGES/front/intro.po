@@ -14,6 +14,7 @@ msgstr ""
 #: ../../source/front/intro.rst:2
 msgid "Introduction"
 msgstr ""
+"Introducción"
 
 #: ../../source/front/intro.rst:4
 msgid ""
@@ -22,10 +23,15 @@ msgid ""
 "Let me attempt to address these questions in the hope that they will "
 "intrigue you and cause you to dig deeper."
 msgstr ""
+"Si, por alguna razón, te has encontrado con este libro sin ningún conocimiento "
+"previo sobre Modelica, probablemente tengas algunas preguntas. "
+"Permíteme tratar de abordar estas preguntas con la esperanza de que te "
+"intrigarán y provocarán que indagues más."
 
 #: ../../source/front/intro.rst:10
 msgid "What is Modelica?"
 msgstr ""
+"¿Qué es Modelica?"
 
 #: ../../source/front/intro.rst:12
 msgid ""
@@ -35,10 +41,16 @@ msgid ""
 "(*e.g.,* springs, resistors, clutches, *etc.*).  These components can then "
 "be combined into subsystems, systems or even architectures."
 msgstr ""
+"Modelica es un lenguaje declarativo de alto nivel para describir comportamiento "
+"matemático. Se aplica típicamente a sistemas de ingeniería y puede usarse para"
+" describir fácilmente el comportamiento de diferentes tipos de componentes de ingeniería "
+"(*p.ej.,* muelles, resistencias, embragues, *etc.*). Estos componentes pueden así ser "
+"combinados en subsistemas, sistemas o incluso arquitecturas."
 
 #: ../../source/front/intro.rst:20
 msgid "Why Modelica?"
 msgstr ""
+"¿Por qué Modelica?"
 
 #: ../../source/front/intro.rst:22
 msgid ""
@@ -50,6 +62,13 @@ msgid ""
 " topics like differential-algebraic equations, symbolic manipulation, "
 "numeric solvers, code generation, post-processing, *etc.*."
 msgstr ""
+"Modelica es apasionante por muchas razones. Ante todo, es "
+"técnicamente muy capaz. Utilizando complejos algoritmos de forma transparente al usuario, "
+"los compiladores de Modelica permiten a los ingenieros concentrarse en la "
+"descripción matemática a alto nivel del comportamiento de los componentes y lograr así "
+"capacidad de simulación de altas prestaciones sin tener que ser grandes entendidos en temas "
+"complejos como ecuaciones algebraico diferenciales, manipulación simbólica, "
+"solvers numéricos, generación de código, post-procesado, *etc.*."
 
 #: ../../source/front/intro.rst:31
 msgid ""
@@ -60,6 +79,12 @@ msgid ""
 " design) and acausal (often used in creating schematic oriented physical "
 "designs) approaches *within the same model*."
 msgstr ""
+"La clave del éxito técnico de Modelica es que soporta un amplio rango de "
+"formalismos de modelado que permiten la descripción de comportamiento tanto continuo "
+"como discreto en un contexto de ecuaciones híbridas algebraico diferenciales. "
+"El lenguaje soporta aproximaciones causales (habitualmente usadas en diseño de sistemas"
+" de control) y acausales (habitualmente usadas para crear diseños físicos "
+"esquemáticos) *en el mismo modelo*."
 
 #: ../../source/front/intro.rst:39
 msgid ""
@@ -68,10 +93,15 @@ msgid ""
 "available and tool vendors are encouraged to support the import and export "
 "of Modelica (without being compelled to pay any royalty of any kind)."
 msgstr ""
+"Finalmente, otro aspecto cautivador de Modelica es el hecho de que fuera "
+"diseñado desde el inicio como un lenguaje abierto. La especificación es de libre "
+"disposición y se anima a los proveedores de herramientas a que éstas soporten la importación y "
+"exportación de Modelica (sin estar obligados a pagar derechos de autor de ningún tipo)."
 
 #: ../../source/front/intro.rst:46
 msgid "What Modelica allows me to do"
 msgstr ""
+"¿Qué me permite hacer Modelica?"
 
 #: ../../source/front/intro.rst:48
 msgid ""
@@ -83,3 +113,10 @@ msgid ""
 "that it provides a complete set of capabilities for building lumped system "
 "models of nearly any engineering system."
 msgstr ""
+"Modelica es realmente un lenguaje ideal para modelar el comportamiento de "
+"sistemas en casi cualquier dominio de la ingeniería. Soporta "
+"perfectamente diseño físico y de control en un único lenguaje. Es también"
+" multi-dominio por lo que no impone ningún límite artificial que "
+"restrinja su uso a determinados dominios o sistemas de la ingeniería. El resultado es "
+"que ofrece un completo conjunto de capacidades para construir modelos de sistemas concentrados "
+"de casi cualquier sistema en ingeniería."

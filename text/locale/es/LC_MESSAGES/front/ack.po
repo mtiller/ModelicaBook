@@ -14,6 +14,7 @@ msgstr ""
 #: ../../source/front/ack.rst:2
 msgid "Acknowledgments"
 msgstr ""
+"Agradecimientos"
 
 #: ../../source/front/ack.rst:4
 msgid ""
@@ -23,10 +24,16 @@ msgid ""
 "people I've failed to mention here and I apologize in advance to anyone who "
 "feels they've been overlooked."
 msgstr ""
+"Este libro es la culminación de tantas conferencias, libros, debates, "
+"congresos, *etc.* que es imposible enumerar a "
+"todas las personas que han tenido repercusión en él. Sin lugar a dudas, hay "
+"gente a la que he olvidado mencionar aquí y pido disculpas de antemano a cualquiera que "
+"sienta que ha sido pasado por alto."
 
 #: ../../source/front/ack.rst:11
 msgid "Technical"
 msgstr ""
+"Técnico"
 
 #: ../../source/front/ack.rst:13
 msgid ""
@@ -37,6 +44,12 @@ msgid ""
 "as an open standard.  Hilding is the undisputed \"father of Modelica\" and "
 "he deserves considerable credit for all that Modelica has become."
 msgstr ""
+"En el tema de Modelica, el agradecimiento principal debe ser para Hilding "
+"Elmqvist, no solo por tener la visión técnica para identificar la potencialidad"
+" que las técnicas de manipulación simbólica podían tener en la resolución de "
+"problemas de ingeniería, sino por tener el liderazgo para impulsar esa visión "
+"como un estándar abierto. Hilding es el indiscutible \"padre de Modelica\" y "
+"merece un gran reconocimiento por todo aquello en lo que Modelica se ha convertido."
 
 #: ../../source/front/ack.rst:21
 msgid ""
@@ -50,6 +63,15 @@ msgid ""
 "along.  I'd like to thank Martin for all his hard work in making the "
 "Modelica Association what it is today."
 msgstr ""
+"El segundo lugar tras Hilding lo ocupa Martin Otter, un hombre que ha trabajado incansablemente para "
+"el progreso de Modelica. Honestamente puedo decir que Martin trabaja más duro "
+"que nadie que yo conozca. No solamente ha hecho incontables contribuciones técnicas "
+"a Modelica, sino que también ha asumido la poco envidiable y generalmente "
+"ingrata tarea de gestionar la Modelica Association. Es importante "
+"recordar que tener ideas técnicas magníficas no es de ninguna manera una receta para el "
+"éxito. Alguien tiene que estar ahí para empujar y empujar y empujar esas ideas. "
+"Me gustaría agradecer a Martin todo el duro trabajo por hacer "
+"de la Modelica Association lo que es hoy."
 
 #: ../../source/front/ack.rst:32
 msgid ""
@@ -59,6 +81,11 @@ msgid ""
 "an organization committed to open standards that support engineering and I'd"
 " like to thank all the members for their hard work in this regard."
 msgstr ""
+"Por supuesto, Martin no está solo haciendo funcionar la Modelica Association. La "
+"Junta de la Modelica Association y los Miembros también son extremadamente importantes para "
+"ampliar el conocimiento sobre Modelica. Al fin y al cabo, la Modelica Association es "
+"una organización comprometida con estándares abiertos que apoyan la ingeniería y me"
+" gustaría agradecer a todos los miembros su duro trabajo a este respecto."
 
 #: ../../source/front/ack.rst:39
 msgid ""
@@ -69,10 +96,17 @@ msgid ""
 "like to thank all those people who've participated in the development of the"
 " Modelica Language and the Modelica Standard Library."
 msgstr ""
+"La Modelica Association no ha existido siempre, pero siempre existió el Modelica "
+"Design Group. Esta es la gente que se reúne varias veces al año "
+"y trabaja continuamente por mejorar el lenguaje Modelica. Es asombroso "
+"cuánto tiempo y energía ha invertido voluntariamente la gente con este objetivo. Me "
+"gustaría agradecer a todas esas personas que han participado en el desarrollo del"
+" lenguaje Modelica y la Modelica Standard Library."
 
 #: ../../source/front/ack.rst:48
 msgid "Personal"
 msgstr ""
+"Personal"
 
 #: ../../source/front/ack.rst:50
 msgid ""
@@ -82,6 +116,11 @@ msgid ""
 "my interests in these topics so I owe all the energy and time I'm able to "
 "apply to projects like this one to them."
 msgstr ""
+"En el aspecto personal, estoy en deuda para siempre con mi madre, mi padre, mi esposa, "
+"mis hijos y mi familia política por su apoyo infinito a mi pasión por la ciencia, "
+"la ingeniería y las matemáticas. Ellos son responsables de cultivar y mantener "
+"mi interés por estos temas de manera que les debo a ellos toda la energía y tiempo que soy capaz "
+"de dedicar a proyectos como este."
 
 #: ../../source/front/ack.rst:57
 msgid ""
@@ -94,6 +133,14 @@ msgid ""
 "Doctorow and Lessig and how their ideas could be applied to the creation of "
 "more accessible content for the Modelica world."
 msgstr ""
+"La idea misma de un libro accesible de forma gratuita puede parecer radical a "
+"algunos. La premisa básica de este proyecto fue inspirada en gran parte al escuchar "
+"y leer los trabajos de Cory Doctorow y Lawrence Lessig. Me gustaría agradecerles "
+"que me abrieran los ojos a la idea de licenciar bajo Creative Commons. "
+"Me gustaría agradecerle también a Dietmar Winkler las múltiples discusiones que tuvimos sobre "
+"modelos de publicación alternativos. Solíamos discutir frecuentemente las ideas de "
+"Doctorow y Lessig y cómo sus ideas podían ser aplicadas a la creación de "
+"contenidos más accesibles para el mundo de Modelica."
 
 #: ../../source/front/ack.rst:67
 msgid ""
@@ -115,10 +162,28 @@ msgid ""
 " also like to thank Martin Malmheden, Dag Brück and Sandrine Loembe for all "
 "the good times during my excellent year in Paris."
 msgstr ""
+"Mirando hacia atrás, me siento muy  afortunado por haber trabajado para varias compañías "
+"que apoyaron mi participación en Modelica. Me involucré en Modelica por primera vez "
+"mientras trabajaba en Ford Motor Company y tuve la fortuna de que "
+"estuvieran dispuestos a patrocinar mi participación en muchos eventos diferentes "
+"relacionados con Modelica. Tras Ford, fui a trabajar a Emmeskay (finalmente adquirida por "
+"LMS). Saqué un beneficio enorme de las interacciones que tuve con mi "
+"familia en Emmeskay. En particular, me gustaría agradecer a mis compañeros, Swami "
+"Gopalswamy y Shiva Shivashankar por darme la oportunidad de ser parte "
+"de Emmeskay y por ser grandes amigos. Mientras estuve en Emmeskay, fue un "
+"privilegio trabajar con Michael Sasena y John Batteh en muchos proyectos "
+"relacionados con Modelica. Emmeskay era una compañía increíble y esto era "
+"reflejo del estupendo grupo de gente que trabajaba allí. Finalmente, me gustaría "
+"agradecer también a Dassault Systèmes por darme la oportunidad de trabajar con "
+"la excelente gente de allí. En particular, me gustaría agradecer "
+"a Hilding Elmqvist y Marc Frouin por animarme a ir a trabajar allí. Me gustaría "
+"también dar las gracias a Martin Malmheden, Dag Brück y Sandrine Loembe por todos "
+"los buenos ratos durante mi excelente año en París."
 
 #: ../../source/front/ack.rst:88
 msgid "Contributors"
 msgstr ""
+"Colaboradores"
 
 #: ../../source/front/ack.rst:90
 msgid ""
@@ -129,170 +194,217 @@ msgid ""
 " Kickstarter project.  In particular, I'd like the thank the following "
 "people for their exceptionally generous contributions:"
 msgstr ""
+"Este proyecto era realmente un experimento para ver si la aproximación Kickstarter para "
+"publicar podía ser aplicada a un nicho técnico como Modelica. Me sorprendí "
+"agradablemente de ver que sí se podía y de que este proyecto tenía suficiente "
+"apoyo para ser financiado. Por esa razón, me gustaría agradecer a los que apoyaron el "
+"proyecto Kickstarter. En particular, me gustaría dar las gracias a las siguientes "
+"personas por sus contribuciones excepcionalmente generosas: "
 
 #: ../../source/front/ack.rst:99
 msgid "Robert Norris"
 msgstr ""
+"Robert Norris"
 
 #: ../../source/front/ack.rst:100
 msgid "Matthis Thorade"
 msgstr ""
+"Matthis Thorade"
 
 #: ../../source/front/ack.rst:101
 msgid "Henning Francke"
 msgstr ""
+"Henning Francke"
 
 #: ../../source/front/ack.rst:102
 msgid "Yang Ji"
 msgstr ""
+"Yang Ji"
 
 #: ../../source/front/ack.rst:103
 msgid "Christoph Höger"
 msgstr ""
+"Christoph Höger"
 
 #: ../../source/front/ack.rst:104
 msgid "Philipp Mossmann"
 msgstr ""
+"Philipp Mossmann"
 
 #: ../../source/front/ack.rst:105
 msgid "John Batteh"
 msgstr ""
+"John Batteh"
 
 #: ../../source/front/ack.rst:106
 msgid "Dirk Zimmer"
 msgstr ""
+"Dirk Zimmer"
 
 #: ../../source/front/ack.rst:107
 msgid "Jan Brugård"
 msgstr ""
+"Jan Brugård"
 
 #: ../../source/front/ack.rst:108
 msgid "Swami Gopalswamy"
 msgstr ""
+"Swami Gopalswamy"
 
 #: ../../source/front/ack.rst:109
 msgid "Peter Aronsson"
 msgstr ""
+"Peter Aronsson"
 
 #: ../../source/front/ack.rst:110
 msgid "Michael P. Case"
 msgstr ""
+"Michael P. Case"
 
 #: ../../source/front/ack.rst:111
 msgid "Markus Groetsch"
 msgstr ""
+"Markus Groetsch"
 
 #: ../../source/front/ack.rst:112
 msgid "Vicente Ramírez Perea"
 msgstr ""
+"Vicente Ramírez Perea"
 
 #: ../../source/front/ack.rst:113
 msgid "Tisha Villanueva"
 msgstr ""
+"Tisha Villanueva"
 
 #: ../../source/front/ack.rst:114
 msgid "Adrian Pop"
 msgstr ""
+"Adrian Pop"
 
 #: ../../source/front/ack.rst:115
 msgid "Nimalendiran Kailasanathan"
 msgstr ""
+"Nimalendiran Kailasanathan"
 
 #: ../../source/front/ack.rst:116
 msgid "Kevin Davies"
 msgstr ""
+"Kevin Davies"
 
 #: ../../source/front/ack.rst:117
 msgid "Peter Harman"
 msgstr ""
+"Peter Harman"
 
 #: ../../source/front/ack.rst:118
 msgid "Dietmar Winkler"
 msgstr ""
+"Dietmar Winkler"
 
 #: ../../source/front/ack.rst:119
 msgid "Johan Rhodin"
 msgstr ""
+"Johan Rhodin"
 
 #: ../../source/front/ack.rst:121
 msgid "I'd also like to thank the corporate sponsors:"
 msgstr ""
+"Me gustaría también dar las gracias a las empresas patrocinadoras:"
 
 #: ../../source/front/ack.rst:123
 msgid "Gold Sponsors"
 msgstr ""
+"Patrocinadores Oro"
 
 #: ../../source/front/ack.rst:125
 msgid "CyDesign"
 msgstr ""
+"CyDesign"
 
 #: ../../source/front/ack.rst:126
 msgid "Wolfram Research"
 msgstr ""
+"Wolfram Research"
 
 #: ../../source/front/ack.rst:127
 msgid "Modelon"
 msgstr ""
+"Modelon"
 
 #: ../../source/front/ack.rst:128
 msgid "Maplesoft"
 msgstr ""
+"Maplesoft"
 
 #: ../../source/front/ack.rst:129
 msgid "Dassault Systèmes"
 msgstr ""
+"Dassault Systèmes"
 
 #: ../../source/front/ack.rst:131
 msgid "Silver Sponsors"
 msgstr ""
+"Patrocinadores Plata"
 
 #: ../../source/front/ack.rst:133
 msgid "Ricardo Software"
 msgstr ""
+"Ricardo Software"
 
 #: ../../source/front/ack.rst:134
 msgid "ITI"
 msgstr ""
+"ITI"
 
 #: ../../source/front/ack.rst:135
 msgid "Modelica Association"
 msgstr ""
+"Modelica Association"
 
 #: ../../source/front/ack.rst:136
 msgid "Global Crown Technology"
 msgstr ""
+"Global Crown Technology"
 
 #: ../../source/front/ack.rst:137
 msgid "Siemens"
 msgstr ""
+"Siemens"
 
 #: ../../source/front/ack.rst:139
 msgid "Bronze"
 msgstr ""
+"Patrocinadores Bronce"
 
 #: ../../source/front/ack.rst:141
 msgid "Suzhou Tongyuan"
 msgstr ""
+"Suzhou Tongyuan"
 
 #: ../../source/front/ack.rst:142
 msgid "Open Source Modelica Consortium"
 msgstr ""
+"Open Source Modelica Consortium"
 
 #: ../../source/front/ack.rst:143
 msgid "DOFWare"
 msgstr ""
+"DOFWare"
 
 #: ../../source/front/ack.rst:144
 msgid "Bausch-Gall GmbH"
 msgstr ""
+"Bausch-Gall GmbH"
 
 #: ../../source/front/ack.rst:145
 msgid "Technische Universität Hamburg/Harburg"
 msgstr ""
+"Technische Universität Hamburg/Harburg"
 
 #: ../../source/front/ack.rst:146
 msgid "Schlegel Simulation GmbH"
 msgstr ""
+"Schlegel Simulation GmbH"
 
 #: ../../source/front/ack.rst:148
 msgid ""
@@ -300,6 +412,9 @@ msgid ""
 "creating more quality educational material around Modelica. Literally, this "
 "project could not have happened without them."
 msgstr ""
+"Este proyecto muestra el poder de una comunidad para alcanzar el objetivo común de "
+"crear material educativo de mayor calidad en torno a Modelica. Literalmente, este "
+"proyecto no habría existido sin ellos."
 
 #: ../../source/front/ack.rst:152
 msgid ""
@@ -312,6 +427,14 @@ msgid ""
 "feedback on the book content.  Dietmar has also helped me test publishing "
 "issues related to supporting ePub and PDF formats."
 msgstr ""
+"La financiación Kickstarter me permitió dedicar tiempo a este proyecto, pero "
+"también tuve varias personas ayudándome en el mismo. En primer lugar y principalmente, me gustaría"
+" agradecer una vez más a mi padre que ayudó a revisar el borrador inicial "
+"de este libro. La revisión es un trabajo necesario pero bastante aburrido por lo que pienso "
+"que merece reconocimiento extra por hacer ese sacrificio. De la misma forma, me gustaría "
+"agradecer a Dietmar Winkler y Michael O'Keefe por aportar comentarios adicionales "
+"sobre el contenido del libro. Dietmar me ha ayudado también a probar aspectos "
+"de publicación relacionados con el  soporte de formatos ePub y PDF."
 
 #: ../../source/front/ack.rst:162
 msgid ""
@@ -320,16 +443,23 @@ msgid ""
 "this book to make sure that the layout and graphical design lived up to "
 "sponsors' expectations."
 msgstr ""
+"Me gustaría agradecer a Jeff Waters por ser \"la voz del patrocinador\". He tenido"
+" varias discusiones muy productivas con Jeff en el transcurso de la redacción "
+"de este libro para asegurar que la disposición y el diseño gráfico estuviesen a la altura de "
+"las expectativas de los patrocinadores."
 
 #: ../../source/front/ack.rst:168
 msgid "Tools"
 msgstr ""
+"Herramientas"
 
 #: ../../source/front/ack.rst:170
 msgid ""
 "Building a book like this requires a lot of different tools.  My "
 "productivity was amplified enormously by the use of these tools."
 msgstr ""
+"Hacer un libro como este requiere muchas herramientas diferentes. Mi "
+"productividad se amplió enormemente por el uso de estas herramientas."
 
 #: ../../source/front/ack.rst:173
 msgid ""
@@ -337,6 +467,49 @@ msgid ""
 "supports multiple outputs.  Sphinx allows me to focus on the content of the "
 "book and takes care of generating the book in multiple formats."
 msgstr ""
+"Este libro fue escrito usando Sphinx, una herramienta de generación de documentación que"
+" admite múltiples salidas. Sphinx me permite concentrarme en el contenido del "
+"libro y se encarga de generar el libro en múltiples formatos."
+
+#: ../../source/front/ack.rst:178
+msgid ""
+"In creating this book, I needed a way to test the models that appear in the "
+"book, generate simulation results for plots and generated Javascript code "
+"that allows the browser integrated simulation capabilities in the HTML book."
+"  OpenModelica supported all of these use cases.  But beyond that, I owe a "
+"big \"Thank You\" to Martin Sjölund and the OpenModelica team for quickly "
+"responding to various issues I had during the creation of the book.  Many "
+"times I would see Martin on Skype late at night (Sweden time) and he was "
+"gracious enough to help me out."
+msgstr ""
+"Al hacer este libro, necesitaba una manera de probar los modelos que aparecen en "
+"él , generar resultados de simulación para las gráficas y generar código Javascript "
+"que dotase al navegador de capacidad de simulación integrada en el libro HTML. "
+"OpenModelica admitía todos estos casos de uso. Pero más allá de eso, le debo un "
+"gran \"Muchas gracias\" a Martin Sjölund y al grupo de OpenModelica por responder "
+"rápidamente a cuestiones variadas que tuve durante la creación del libro. Solía "
+"ver muchas veces a Martin por Skype a altas horas de la noche (hora sueca) y él fue "
+"tan amable de ayudarme."
+
+#: ../../source/front/ack.rst:188
+msgid ""
+"The browser integrated simulation capabilities in the HTML version of the "
+"book are only possible because of a tool called Emscripten which allows "
+"ordinary code in languages like C and C++ to be cross-compiled (via LLVM) "
+"into Javascript.  Although I knew this was possible, I didn't really think "
+"this avenue was viable until I saw `the work of Tom Short "
+"<https://github.com/tshort/openmodelica-javascript>`_ integrating "
+"OpenModelica and Emscripten.  The browser integrated simulation capabilities"
+" were greatly enabled by his work in this area."
+msgstr ""
+"Las capacidades de simulación integradas en el explorador para la versión HTML del "
+"libro son posibles solamente gracias a una herramienta llamada Emscripten que permite "
+"compilar (vía LLVM) a Javascript código escrito en lenguajes como C y C++. "
+"Aunque sabía que esto era posible, realmente no pensaba "
+"que este camino fuera viable hasta que vi `el trabajo de Tom Short "
+"<https://github.com/tshort/openmodelica-javascript>`_ integrando "
+"OpenModelica y Emscripten.  Las capacidades de simulación integradas en el explorador "
+"fueron posibles en gran medida por su trabajo en este área."
 
 #: ../../source/front/ack.rst:196
 msgid ""
@@ -349,6 +522,14 @@ msgid ""
 "thank Dietmar Winkler for enlightening me about many different features in "
 "Git."
 msgstr ""
+"Este libro fue escrito usando Git como sistema de control de versiones y `GitHub "
+"<http://github.com>`_ para alojarlo. La mayor parte de la gente piensa en el control de versiones "
+"como un sistema de copia de seguridad esotérico. Pero los sistemas de control de versiones están en "
+"el corazón de la colaboración y me gustaría verlos utilizados más ampliamente en "
+"la ingeniería. Para este libro, el sistema \"pull request\" de GitHub fue "
+"muy útil para incorporar los comentariosde los revisores. Me gustaría "
+"dar las gracias de nuevo a Dietmar Winkler por iluminarme sobre muchas características diferentes en "
+"Git."
 
 #: ../../source/front/ack.rst:205
 msgid ""
@@ -358,6 +539,10 @@ msgid ""
 "It seems to support just about every type of file I need to edit out of the "
 "box."
 msgstr ""
+"Utilicé el editor Emacs para este libro. A pesar de la proliferación de editores "
+"realmente excelentes que soportan una amplia variedad de lenguajes y plataformas, "
+"Emacs sigue siendo el caballo de batalla en mi proceso de desarrollo de la mayoría de proyectos. "
+"Parece soportar casi cualquier tipo de archivo fuera de lo común que necesite editar."
 
 #: ../../source/front/ack.rst:211
 msgid ""
@@ -368,6 +553,12 @@ msgid ""
 "Research and ITI for giving me access to Dymola, MapleSim, SystemModeler and"
 " SimulationX, respectively."
 msgstr ""
+"Durante la producción de este libro varios proveedores de herramientas me dieron acceso a "
+"sus herramientas propietarias. No las utilicé mucho, pero quería "
+"agradecer su generosidad al proporcionarme licencias temporales. "
+"Concretamente, me gustaría dar las gracias a Dassault Systèmes, Maplesoft, Wolfram "
+"Research e ITI por darme acceso a Dymola, MapleSim, SystemModeler y"
+" SimulationX, respectivamente."
 
 #: ../../source/front/ack.rst:236
 msgid ""
@@ -392,6 +583,16 @@ msgid ""
 "significant adjustments.  The power and portability of the MacBook Air gave "
 "my entire work process a big boost."
 msgstr ""
+"Gran parte de este libro fue escrito en un MacBook Air. Mi primer ordenador fue "
+"un Apple //e. Pero desde entonces he trabajado principalmente con PCs y estaciones de trabajo "
+"Unix. Más recientemente, he hecho mucho desarrollo en máquinas Linux."
+" Siempre descarté usar Macs porque estaba convencido de que "
+"no podían soportar el desarrollo orientado a línea de comandos que "
+"normalmente hago. No podía estar más equivocado. El eco-systems para MacOSX"
+" es casi idéntico al que estaba acostumbrado en el mundo Linux. Puedo"
+" hacer sin problemas la transición entre los entornos MacOSX y Linux sin necesidad "
+"de ajustes significativos. El poder y la portabilidad del MacBook Air dieron "
+"a todo mi proceso de trabajo un gran impulso."
 
 #: ../../source/front/ack.rst:178
 msgid ""
@@ -425,46 +626,16 @@ msgid ""
 "the Mozilla Foundation and Google for creating such wonderful, standards "
 "compliant browsers."
 msgstr ""
+"Desarrollar este libro supuso gran cantidad de pruebas y depuración del diseño HTML,"
+" el estilo y el Javascript incrustado. La mayoría de este trabajo fue realizado usando Firefox "
+"pero también he utilizado Chrome de vez en cuando. Me gustaría agradecer a "
+" Mozilla Foundation y Google por crear estos navegadores maravillosos "
+"compatibles con los estándares."
 
-#~ msgid ""
-#~ "In creating this book, I needed a way to test the models that appear in the "
-#~ "book, generate simulation results for plots and generated Javascript code "
-#~ "that allows the browser integrated simulation capabilities in the HTML book."
-#~ "  OpenModelica supported all of these use cases.  But beyond that, I owe a "
-#~ "big \"Thank You\" to Martin Sjölund and the OpenModelica team for quickly "
-#~ "responding to various issues I had during the creation of the book.  Many "
-#~ "times I would see Martin on Skype late at night (Sweden time) and he was "
-#~ "gracious enough to help me out."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The browser integrated simulation capabilities in the HTML version of the "
-#~ "book are only possible because of a tool called Emscripten which allows "
-#~ "ordinary code in languages like C and C++ to be cross-compiled (via LLVM) "
-#~ "into Javascript.  Although I knew this was possible, I didn't really think "
-#~ "this avenue was viable until I saw `the work of Tom Short "
-#~ "<https://github.com/tshort/openmodelica-javascript>`_ integrating "
-#~ "OpenModelica and Emscripten.  The browser integrated simulation capabilities"
-#~ " were greatly enabled by his work in this area."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Developing this book involved a lot of testing and debugging of HTML layout,"
-#~ " styling and embedded Javascript.  Most of this work was done using Firefox "
-#~ "but I've also used Chrome from time to time as well. I'd like to thank both "
-#~ "the Mozilla Foundation and Google for creating such wonderful, standards "
-#~ "compliant browsers."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Much of this book was written on a MacBook Air.  My very first computer was "
-#~ "an Apple //e.  But since that time, I've worked mainly with PCs and Unix "
-#~ "workstations.  Most recently, I've done a great deal of development on Linux"
-#~ " machines.  I always dismissed using Macs because I was convinced they could"
-#~ " support the kind of command-line oriented development work I typically do."
-#~ "  I could not have been more wrong.  The eco-systems for MacOSX is almost "
-#~ "identical to the one I was used to in the Linux world.  I am able to "
-#~ "seamlessly transition between MacOSX and Linux environments without any "
-#~ "significant adjustments.  The power and portability of the MacBook Air gave "
-#~ "my entire work process a big boost."
-#~ msgstr ""
+#: ../../source/front/ack.rst:239
+msgid ""
+"The style of the book owes a fair amount to the `Semantic UI <http://www"
+".semantic-ui.com>`_ CSS framework."
+msgstr ""
+"El estilo del libro le debe mucho al entorno `Semantic UI <http://www"
+".semantic-ui.com>`_ CSS."

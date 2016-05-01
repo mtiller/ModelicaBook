@@ -14,6 +14,7 @@ msgstr ""
 #: ../../source/behavior/equations/mechanical.rst:4
 msgid "A Mechanical Example"
 msgstr ""
+"Un ejemplo mecánico"
 
 #: ../../source/behavior/equations/mechanical.rst:6
 msgid ""
@@ -21,6 +22,9 @@ msgid ""
 "reinforce some of the concepts we've covered so far.  The system we wish to "
 "model is the one shown in the following figure:"
 msgstr ""
+"Si se está más familiarizado con los sistemas mecánicos, este ejemplo podría ayudar "
+"a reforzar algunos de los conceptos que hemos tratado hasta ahora. El sistema que queremos "
+"modelar es el que se muestra en la siguiente figura:"
 
 #: ../../source/behavior/equations/mechanical.rst:16
 msgid ""
@@ -33,6 +37,14 @@ msgid ""
 "the book on :ref:`components`) where **models will be built in this "
 "schematic form from the beginning**."
 msgstr ""
+"Merece la pena señalar lo fácil que es transmitir la intención de un "
+"modelo presentándolo de forma esquemática. Suponiendo que se utilizan representaciones "
+"gráficas adecuadas, los expertos pueden entender rápidamente la "
+"composición del sistema y desarrollar una intuición sobre la forma en que es probable que "
+"se comporte. Aunque en estos momentos nos estamos centrando en ecuaciones y variables, "
+"trabajaremos finalmente nos iremos abriendo cambino hasta un enfoque (en la siguiente sección del "
+"libro :ref:`components`) en el que **los modelos se construirán de esta "
+"forma esquemática desde el principio**."
 
 #: ../../source/behavior/equations/mechanical.rst:26
 msgid ""
@@ -42,6 +54,11 @@ msgid ""
 ":math:`\\omega = \\dot{\\varphi}`.  For each inertia, the balance of angular"
 " momentum for the inertia can be expressed as:"
 msgstr ""
+"Por ahora, sin embargo, nos centraremos en cómo expresar las ecuaciones asociadas "
+"a este simple sistema mecánico. Cada inercia tiene una posición angular, "
+":math:`\\varphi`, una velocidad angular, :math:`\\omega` donde "
+":math:`\\omega = \\dot{\\varphi}`. Por cada inercia su balance de momentos "
+"angulares puede expresarse como:"
 
 #: ../../source/behavior/equations/mechanical.rst:34
 msgid ""
@@ -49,6 +66,9 @@ msgid ""
 "inertia should be equal to the product of the moment of inertia, :math:`J`, "
 "and the angular acceleration, :math:`\\dot{\\omega}`."
 msgstr ""
+"En otras palabras, la suma de momentos, :math:`\\tau`, aplicada a la "
+"inercia debe ser igual al producto del momento de inercia, :math:`J`, "
+"y la aceleración angular, :math:`\\dot{\\omega}`."
 
 #: ../../source/behavior/equations/mechanical.rst:40
 msgid ""
@@ -57,22 +77,31 @@ msgid ""
 "dampers.  For the springs, we can use Hooke's law to express the "
 "relationship between torque and angular displacement as follows:"
 msgstr ""
+"En este punto, todo lo que nos falta son los valores de los pares, :math:`\\tau_i`. "
+"En la figura anterior, podemos ver que hay dos muelles y dos "
+"amortiguadores. Para los muelles, podemos usar la ley de Hooke para expresar la "
+"relación entre el par y el desplazamiento angular de la siguiente manera:"
 
 #: ../../source/behavior/equations/mechanical.rst:48
 msgid ""
 "For each damper, we express the relationship between torque and relative "
 "angular velocity as:"
 msgstr ""
+"Para cada amortiguador, expresamos la relación ente el par y la velocidad "
+"angular relativa como:"
 
 #: ../../source/behavior/equations/mechanical.rst:53
 msgid ""
 "If we pull together all of these relations, we get the following system of "
 "equations:"
 msgstr ""
+"Si unimos todas estas relaciones, obtenemos el siguiente sistema de "
+"ecuaciones:"
 
 #: ../../source/behavior/equations/mechanical.rst:63
 msgid "Let's assume our system has the following initial conditions as well:"
 msgstr ""
+"Asumamos también que nuestro sistema tiene las siguientes condiciones iniciales:"
 
 #: ../../source/behavior/equations/mechanical.rst:73
 msgid ""
@@ -80,54 +109,72 @@ msgid ""
 "where neither inertia is actually moving (*i.e.*, :math:`\\omega=0`), but "
 "there is a non-zero deflection across both springs."
 msgstr ""
+"Estas condiciones iniciales significan esencialmente que el sistema empieza en un estado "
+"en el que ninguna de las inercias se está moviento realmente (*es decir*, :math:`\\omega=0`), pero "
+"hay una deformación distinta de cero en los dos muelles."
 
 #: ../../source/behavior/equations/mechanical.rst:78
 msgid ""
 "Pulling all of these variables and equations together, we can express this "
 "problem in Modelica as follows:"
 msgstr ""
+"Uniendo todas estas variables y ecuaciones juntas, podemos expresar este "
+"problema en Modelica de la siguiente manera:"
 
 #: ../../source/behavior/equations/mechanical.rst:85
 msgid ""
 "As we did with the low-pass filter example, ``RLC1``, let's walk through "
 "this line by line."
 msgstr ""
+"Como hicimos con el ejemplo del filtro pasa bajo, ``RLC1``, vamos a recorrerlo "
+"linea a linea."
 
 #: ../../source/behavior/equations/mechanical.rst:88
 msgid "As usual, we start with the name of the model:"
 msgstr ""
+"Como de costumbre, comenzamos con el nombre del modelo:"
 
 #: ../../source/behavior/equations/mechanical.rst:94
 msgid ""
 "Next, we introduce physical types for a rotational mechanical system, "
 "namely:"
 msgstr ""
+"A continuación, introducimos tipos físicos para un sistema mecánico rotacional, "
+"a saber:"
 
 #: ../../source/behavior/equations/mechanical.rst:100
 msgid ""
 "Then we define the various parameters used to represent the different "
 "physical characteristics of our system:"
 msgstr ""
+"Despues definimos los diversos parámetros usados para representar las diferentes "
+"características físicas de nuestro sistema:"
 
 #: ../../source/behavior/equations/mechanical.rst:107
 msgid ""
 "For this system, there are four non-``parameter`` variables.  These are "
 "defined as follows:"
 msgstr ""
+"Para este sistema, hay cuatro variables que no son ``parameter``. Estas se "
+"definen de la siguiente manera:"
 
 #: ../../source/behavior/equations/mechanical.rst:113
 msgid ""
 "The initial conditions (which we will revisit shortly) are then defined "
 "with:"
 msgstr ""
+"Las condiciones iniciales (que vamos a revisar en breve) se definen "
+"con:"
 
 #: ../../source/behavior/equations/mechanical.rst:119
 msgid "Then come the equations describing the dynamic response of our system:"
 msgstr ""
+"Luego vienen las ecuaciones que describen la respuesta dinámica de nuestro sistema:"
 
 #: ../../source/behavior/equations/mechanical.rst:125
 msgid "And finally, we have the closing of our model definition."
 msgstr ""
+"Y finalmente, tenemos el cierre de la definición de nuestro modelo."
 
 #: ../../source/behavior/equations/mechanical.rst:133
 msgid ""
@@ -138,6 +185,12 @@ msgid ""
 "<getting-physical>`, by defining ``parameter`` variables to represent the "
 "initial conditions as follows:"
 msgstr ""
+"El único inconveniente de este modelo es que todas nuestras condiciones iniciales se "
+"han \"incrustado directamente\" en el modelo. Esto significa que no seremos capaces de "
+"especificar un conjunto alternativo de condiciones iniciales para este modelo. Podemos "
+"salvar esta cuestión, como hicimos con nuestros :ref:`Newton cooling examples "
+"<getting-physical>`, definiendo variables ``parameter`` para representar las "
+"condiciones iniciales de la siguiente manera:"
 
 #: ../../source/behavior/equations/mechanical.rst:146
 msgid ""
@@ -145,6 +198,9 @@ msgid ""
 "environment (where parameters are typically editable by the user) or, as we "
 "will see shortly, via so-called \"modifications\"."
 msgstr ""
+"De esta manera, los valores de los parámetros pueden modificarse o bien en el entorno de "
+"simulación (donde típicamente los parámetros son editables por el usuario) o, como "
+"veremos en breve, a través de las llamadas \"modificaciones\"."
 
 #: ../../source/behavior/equations/mechanical.rst:150
 msgid ""
@@ -156,16 +212,26 @@ msgid ""
 "``SecondOrderSystemInitParams`` model as is, we get the following solution "
 "for the angular positions and velocities:"
 msgstr ""
+"Vereis en esta última versión del modelo que los valores de los "
+"parámetros recien introducidos son los mismos que los valores incrustados utilizados "
+"anteriormente. Como resultado, las condiciones iniciales por defecto serán exactamente las "
+"mismas que eran antes. Pero ahora, tenemos la libertad de explorar también otras "
+"condiciones iniciales. Por ejemplo, si simulamos el modelo "
+"`SecondOrderSystemInitParams`` tal como es, obtenemos la siguiente solución "
+"para las posiciones y velocidades angulares:"
 
 #: ../../source/behavior/equations/mechanical.rst:161
 msgid ""
 "However, if modify the ``phi1_init`` parameter to be *1* at the start of our"
 " simulation, we get this solution instead:"
 msgstr ""
+"Sin embargo, si modificamos el parámetro ``phi1_init`` para que sea *1* al inicio de nuestra "
+"simulación, obtenemos esta solución:"
 
 #: ../../source/behavior/equations/mechanical.rst:0
 msgid "Expanding on this mechanical example"
 msgstr ""
+"Ampliando este ejemplo mecánico"
 
 #: ../../source/behavior/equations/mechanical.rst:168
 msgid ""
@@ -173,17 +239,24 @@ msgid ""
 "jump to the set of examples involving rotational systems found in the "
 "section on :ref:`speed-measurement`."
 msgstr ""
+"Si se quiere ver este ejemplo más desarrollado, es posible que desee "
+"saltar al conjunto de ejemplos que incluyen sistemas rotacionales que se encuentran en la "
+"sección :ref:`speed-measurement`."
 
 #: ../../source/behavior/equations/mechanical.rst:172
 msgid ""
 "Otherwise, you can continue to the next set of examples which involve "
 "population dynamics."
 msgstr ""
+"De lo contrario, puede continuar con el siguiente conjunto de ejemplos que involucran "
+"la dinámica poblacional."
 
 #: ../../source/behavior/equations/mechanical.rst:38
 msgid "Hooke's law"
 msgstr ""
+"Ley de Hooke"
 
 #: ../../source/behavior/equations/mechanical.rst:131
 msgid "modifications"
 msgstr ""
+"modificaciones"

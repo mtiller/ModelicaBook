@@ -14,16 +14,20 @@ msgstr ""
 #: ../../source/behavior/equations/first_order.rst:4
 msgid "Simple First Order System"
 msgstr ""
+"Sistema de primer orden simple"
 
 #: ../../source/behavior/equations/first_order.rst:6
 msgid "Let us consider an extremely simple differential equation:"
 msgstr ""
+"Consideremos una ecuación diferencial extremadamente simple:"
 
 #: ../../source/behavior/equations/first_order.rst:10
 msgid ""
 "Looking at this equation, we see there is only one variable, :math:`x`.  "
 "This equation can be represented in Modelica as follows:"
 msgstr ""
+"Mirando a esta ecuación, podemos ver que solamente hay una variable, :math:`x`. "
+"Esta ecuación puede representarse en Modelica de la siguiente manera:"
 
 #: ../../source/behavior/equations/first_order.rst:23
 msgid ""
@@ -32,6 +36,10 @@ msgid ""
 "model name, ``FirstOrder``.  This, in turn, is followed by a declaration of "
 "all the variables we are interested in."
 msgstr ""
+"Este código comienza con la palabra clave ``model`` que se usa para indicar el "
+"inicio de la definición del modelo. A la palabra clave ``model`` le sigue el "
+"nombre del modelo, ``FirstOrder``. A éste, a su vez, le sigue la declaración de "
+"todas las variables en las que estamos interesados."
 
 #: ../../source/behavior/equations/first_order.rst:28
 msgid ""
@@ -41,6 +49,11 @@ msgid ""
 "complete description of the various possibilities will be discussed in the "
 "upcoming section on :ref:`variables`)."
 msgstr ""
+"Como la variable :math:`x` en nuestra ecuación se entiende claramente que es "
+"una variable continua real, su declaración en Modelica toma la forma "
+"``Real x;``.  El tipo ``Real`` es solamente uno de los tipos que podemos usar (una descripción más"
+" completa de las diferentes posibilidades se tratará en la "
+"siguiente sección sobre :ref:`variables`)."
 
 #: ../../source/behavior/equations/first_order.rst:34
 msgid ""
@@ -48,10 +61,14 @@ msgid ""
 "equations that describe the behavior of our model.  In this case, we can use"
 " the ``der`` operator to represent the time derivative of ``x``.  Thus,"
 msgstr ""
+"Una vez se han declarado todas las variables, podemos comenzar incluyendo las "
+"ecuaciones que describen el comportamiento de nuestro modelo. En este caso, podemos usar"
+" el operador ``der`` para representar la derivada temporal de ``x``. Así,"
 
 #: ../../source/behavior/equations/first_order.rst:43
 msgid "is equivalent to:"
 msgstr ""
+"es equivalente a:"
 
 #: ../../source/behavior/equations/first_order.rst:47
 msgid ""
@@ -62,6 +79,12 @@ msgid ""
 " amounts to solving (usually numerically) the equation and providing a "
 "solution trajectory like this:"
 msgstr ""
+"A diferencia de la mayoría de lenguajes de programación, no avordamos un código como este como un "
+"\"programa\" que puede ser interpretado como un conjunto de instrucciones para ser ejecutadas "
+"una tras otra. En su lugar, nosotros usamos un compilador de Modelica para transformar este "
+"modelo en algo que podamos simular. Este paso de simulación esencialmente "
+"equivale a resolver la ecuación (por lo general numéricamente) y proporcionar una "
+"trayectoria solución como ésta:"
 
 #: ../../source/behavior/equations/first_order.rst:57
 msgid ""
@@ -72,10 +95,17 @@ msgid ""
 "will see that **much of the tedious work involving the solution process is "
 "handled automatically by the Modelica compiler**."
 msgstr ""
+"Esto os da el primer incidio sobre uno de los aspectos convincentes sobre "
+"el uso de un lenguaje de modelado para describir comportamientos matemáticos. No "
+"necesitamos describir cómo resolver esta ecuación diferencial. La atención se centra "
+"exclusivamente en el comportamiento. A medida que avancemos en nuestro camino a través de los ejemplos más complejos "
+"veremos que **mucho del tedioso trabajo que implica el proceso de resolución es "
+"manejado automáticamente por el compilador de Modelica**."
 
 #: ../../source/behavior/equations/first_order.rst:68
 msgid "Adding Some Documentation"
 msgstr ""
+"Añadiendo algo de documentación"
 
 #: ../../source/behavior/equations/first_order.rst:70
 msgid ""
@@ -83,10 +113,14 @@ msgid ""
 "attention briefly to how we can make the model a bit more readable.  "
 "Consider the following model:"
 msgstr ""
+"Ahora que hemos resuelto esta simple ecuación matemática, vamos a centrar nuestra "
+"atención brevemente sobre cómo podemos hacer el modelo un poco más legible. "
+"Consideremos el siguiente modelo:"
 
 #: ../../source/behavior/equations/first_order.rst:82
 msgid "Note the quoted text in this model."
 msgstr ""
+"Atención al texto entrecomillado en este modelo."
 
 #: ../../source/behavior/equations/first_order.rst:84
 msgid ""
@@ -97,6 +131,12 @@ msgid ""
 "provide additional documentation about the elements of the model they are "
 "associated with."
 msgstr ""
+"Es importante entender que los bloques de texto entre comillas, llamados "
+"\"strings\" en  informática, **no** son comentarios. Son "
+"\"strings descriptivos\" y, a diferencia de los comentarios, no pueden ser añadidos en "
+"lugares arbitrarios. En vez de eso, sólo se pueden insertar en lugares específicos para "
+"proporcionar documentación adicional sobre los elementos del modelo a los que "
+"están asociados."
 
 #: ../../source/behavior/equations/first_order.rst:90
 msgid ""
@@ -105,6 +145,10 @@ msgid ""
 "of the model.  If you wish to include such documentation about the model, it"
 " must appear immediately after the model name as shown."
 msgstr ""
+"Por ejemplo, el primer string \"A simple first order differential equation\" "
+"se usa para describir qué es este modelo. Observa cómo sigue al nombre "
+"del modelo. Si quieres incluir esta documentación sobre el modelo, "
+"debe aparecer inmediantamente tras el nombre del modelo tal como se muestra." 
 
 #: ../../source/behavior/equations/first_order.rst:96
 msgid ""
@@ -114,6 +158,11 @@ msgid ""
 "associated with a graphical representation of the models.  And, of course, "
 "this kind of documentation is very useful for anybody reading the model."
 msgstr ""
+"Como veremos más tarde, este tipo de documentación puede ser usada por las herramientas de "
+"muchas formas. Por ejemplo, cuando se buscan modelos, la herramienta puede utilizar estas "
+"cadenas descriptivas para identificar coincidencias. Este texto también puede ser "
+"asociado con una representación gráfica de los modelos. Y, por supuesto, "
+"este tipo de documentación es muy útil para cualquiera que lea el modelo."
 
 #: ../../source/behavior/equations/first_order.rst:103
 msgid ""
@@ -121,10 +170,14 @@ msgid ""
 "text can appear.  For example, it may be included after the declaration of a"
 " variable or equation to document them."
 msgstr ""
+"Como demuestra este ejemplo, hay otros sitios en los que puede aparecer el "
+"texto descriptivo. Por ejemplo, puede ser incluido tras la declaración de una "
+"variable o ecuación para documentarlas."
 
 #: ../../source/behavior/equations/first_order.rst:110
 msgid "Initialization"
 msgstr ""
+"Inicialización"
 
 #: ../../source/behavior/equations/first_order.rst:112
 msgid ""
@@ -132,6 +185,9 @@ msgid ""
 "terms of differential equations.  But the initial conditions we choose are "
 "just as important as the equations."
 msgstr ""
+"Como ya hemos visto, Modelica nos permite describir el comportamiento de un modelo en "
+"forma de ecuaciones diferenciales. Pero las condiciones iniciales que escogemos son "
+"tan importantes como las ecuaciones."
 
 #: ../../source/behavior/equations/first_order.rst:116
 msgid ""
@@ -140,6 +196,10 @@ msgid ""
 "initial value of ``x`` in our model to be *2*, we could add an ``initial "
 "equation`` section to our model as follows:"
 msgstr ""
+"Por esta razón, Modelica también proporciona construcciones para describir la "
+"inicialización de nuestro sistema de ecuaciones. Por ejemplo, si queremos que el "
+"valor inicial de ``x`` en nuestro modelo sea *2*, podemos añadir una sección ``initial "
+"equation`` a nuestro modelo de la siguiente manera:"
 
 #: ../../source/behavior/equations/first_order.rst:129
 msgid ""
@@ -155,12 +215,25 @@ msgid ""
 " ``initial equation`` section, we are explicitly specifying the initial "
 "condition for ``x``."
 msgstr ""
+"Observa que la única diferencia entre este modelo y el anterior, "
+"presentado en la sección en :ref:`first-order-doc`, es la incorporación de la "
+"sección ``initial equation`` que contiene la ecuación ``x = 2``. En el "
+"ejemplo anterior, el valor inicial de ``x`` al comienzo de la simulación "
+"estaba sin especificar. En términos generales, esto significa que el valor inicial para "
+"``x`` será el valor de su atributo ``start`` (que es cero por "
+"defecto). No obstante, como cada herramienta usa sus algoritmos específicos para "
+"formular el sistema de ecuaciones final, siempre es mejor establecer explícitamente "
+"las condiciones iniciales, como hemos hecho aquí. Añadiendo esta ecuación a la "
+"sección ``initial equation``, estamos especificando explícitamente el valor "
+"inicial para ``x``."
 
 #: ../../source/behavior/equations/first_order.rst:142
 msgid ""
 "As a result, the solution trajectory is quite different as we can see in the"
 " following figure:"
 msgstr ""
+"Como resultado, la trayectoria solución es bastante diferente como podemos ver en la "
+"siguiente figura:"
 
 #: ../../source/behavior/equations/first_order.rst:147
 msgid ""
@@ -170,6 +243,11 @@ msgid ""
 "specification for how the initial conditions are determined. Our "
 "``FirstOrderInitial`` model would be represented mathematically as:"
 msgstr ""
+"El modelo ``FirstOrderInitial`` muestra una manera típica de inicializar un sistema "
+"proporcionando valores inciales explícitos para los estados del sistema. De "
+"hecho, un sistema de ecuaciones diferenciales está incompleto sin una "
+"especificación sobre cómo se determinan las condiciones iniciales. Nuestro "
+"modelo ``FirstOrderInitial`` se representaría matemáticamente como:" 
 
 #: ../../source/behavior/equations/first_order.rst:156
 msgid ""
@@ -177,6 +255,9 @@ msgid ""
 "initialization.  An ``initial equation`` section can contain more than just "
 "explicit equations for the initial values of the state variables."
 msgstr ""
+"Sin embargo, hay muchos casos en los que querremos un tipo de inicialización más "
+"sofisticado. Una sección ``initial equation`` puede contener más que solamente "
+"ecuaciones explícitas para los valores iniciales de las variables de estado."
 
 #: ../../source/behavior/equations/first_order.rst:161
 msgid ""
@@ -189,10 +270,19 @@ msgid ""
 " it is possible to express the constraint that :math:`\\dot{x}(0)=0` "
 "directly in Modelica as follows:"
 msgstr ""
+"Por ejemplo, podemos querer que nuestras condiciones iniciales sean tal que "
+"la derivada de :math:`x` sea cero al inicio de la simulación. En este "
+"caso, solo se requiere un poco de álgebra trivial para darse cuenta de que puede "
+"lograrse especificando como condición inicial :math:`x(0)=1`. "
+"No obstante, para sistemas más complejos, determinar los valores del estado inicial "
+"que satisfagan el requisito está lejos de ser trivial. En estos casos, "
+"es posible expresar la restricción :math:`\\dot{x}(0)=0` "
+"directamente en Modelica como sigue:"
 
 #: ../../source/behavior/equations/first_order.rst:176
 msgid "Simulating this system gives the following solution:"
 msgstr ""
+"Simular este sistema proporciona la siguiente solución:"
 
 #: ../../source/behavior/equations/first_order.rst:180
 msgid ""
@@ -200,6 +290,9 @@ msgid ""
 " the start of the simulation and remains zero because there are no external "
 "influences acting on this system that would disrupt this equilibrium."
 msgstr ""
+"Como vemos en estos resultados, la derivada de :math:`x` es cero al "
+"inicio de la simulación y se mantiene a cero porque no hay influencias "
+"externas actuando en este sistema que puedan interrumpir este equilibrio."
 
 #: ../../source/behavior/equations/first_order.rst:185
 msgid ""
@@ -207,10 +300,14 @@ msgid ""
 "complete coverage of the initialization topic can be found in the "
 ":ref:`initialization` section later in this chapter."
 msgstr ""
+"Esto proporciona una vistazo de las capacidades de inicialización en Modelica. Una "
+"cobertura más completa del tema de la inicialización puede encontrarse en la "
+"sección :ref:`initialization` más adelante en este capítulo."
 
 #: ../../source/behavior/equations/first_order.rst:192
 msgid "Experimental Conditions"
 msgstr ""
+"Condiciones experimentales"
 
 #: ../../source/behavior/equations/first_order.rst:197
 msgid ""
@@ -219,6 +316,10 @@ msgid ""
 "called an ``annotation``.  An annotation includes information that is not "
 "directly related to the behavior of the model."
 msgstr ""
+"Cuando se construye un modelo, el desarrollador puede querer asociar "
+"condiciones experimentales específicas con el modelo. Esto puede hacerse usando algo "
+"llamado ``annotation`` (anotación). Una anotación incluye información que no está "
+"relacionada directamente con el comportamiento del modelo."
 
 #: ../../source/behavior/equations/first_order.rst:202
 msgid ""
@@ -229,6 +330,12 @@ msgid ""
 "conditions are stored in a model using a specific annotation called the "
 "``experiment`` annotation."
 msgstr ""
+"Por ejemplo, las condiciones experimentales describen información como el instante inicial "
+"de la simulación, el instante final, la toleracia de la solución y otros. Esta "
+"no es información sobre el comportamiento del modelo, sino más bien "
+"información sobre cómo abordar la simulación de ese comportamiento. Las condiciones "
+"experimentales se almacenan en un modelo usando una anotación específica llamada "
+"``experiment``."
 
 #: ../../source/behavior/equations/first_order.rst:209
 msgid ""
@@ -236,21 +343,28 @@ msgid ""
 "annotation.  All of them are optional.  The following is a model of our "
 "first order system that includes an experiment annotation:"
 msgstr ""
+"Hay cuatro partes de información que pueden ser especificadas en una anotación "
+"experiment. Todas ellas son opcionales. Lo siguiente es un modelo de nuestro "
+"sistema de primer orden que incluye una anotación experiment:"
 
 #: ../../source/behavior/equations/first_order.rst:219
 msgid ""
 "The following trajectory was simulated using these experimental conditions:"
 msgstr ""
+"La siguiente trayectoria fue simulada usando esas condiciones experimentales:"
 
 #: ../../source/behavior/equations/first_order.rst:224
 msgid ""
 "The trajectory terminates at 8 seconds because the simulator used the "
 "``experiment`` annotation to determine how long to run the simulation."
 msgstr ""
+"La trayectoria termina a los 8 segundos porque el simulador ha usado la "
+"anotación ``experiment`` para determinar durante cuanto tiempo ejecutar la simulación."
 
 #: ../../source/behavior/equations/first_order.rst:0
 msgid "Annotation Support"
 msgstr ""
+"Soporte a anotaciones"
 
 #: ../../source/behavior/equations/first_order.rst:229
 msgid ""
@@ -258,32 +372,42 @@ msgid ""
 "keep in mind that, in general, a tool is free to ignore any or all "
 "annotations."
 msgstr ""
+"La anotación ``experiment`` es ampliamente soportada. Pero es importante "
+"tener en mente que, en general, una herramienta es libre de ignorar cualquiera o todas "
+"las anotaciones."
 
 #: ../../source/behavior/equations/first_order.rst:19
 msgid "model"
 msgstr ""
+"modelo"
 
 #: ../../source/behavior/equations/first_order.rst:20
 msgid "der"
 msgstr ""
+"der"
 
 #: ../../source/behavior/equations/first_order.rst:21
 msgid "Real"
 msgstr ""
+"Real"
 
 #: ../../source/behavior/equations/first_order.rst:80
 msgid "descriptive strings"
 msgstr ""
+"string descriptivo"
 
 #: ../../source/behavior/equations/first_order.rst:121
 msgid "initial equation"
 msgstr ""
+"ecuación inicial"
 
 #: ../../source/behavior/equations/first_order.rst:194
 #: ../../source/behavior/equations/first_order.rst:195
 msgid "annotation"
 msgstr ""
+"anotación"
 
 #: ../../source/behavior/equations/first_order.rst:195
 msgid "experiment"
 msgstr ""
+"experimento"

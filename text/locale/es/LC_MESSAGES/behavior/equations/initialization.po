@@ -14,10 +14,12 @@ msgstr ""
 #: ../../source/behavior/equations/initialization.rst:5
 msgid "Initialization"
 msgstr ""
+"Inicialización"
 
 #: ../../source/behavior/equations/initialization.rst:8
 msgid "Overview"
 msgstr ""
+"Resumen"
 
 #: ../../source/behavior/equations/initialization.rst:12
 msgid ""
@@ -28,6 +30,12 @@ msgid ""
 "equations (present in `equation` sections) with any initial equations "
 "(present in `initial equation` sections)."
 msgstr ""
+"Como hemos ya hemos tratado en nuestra discusión previa sobre :ref:`steady-"
+"state`, el comportamiento se representa por las ecuaciones contenidas en un modelo "
+"así como por las condiciones iniciales dadas a las variables de estado del modelo."
+" En Modelica, las condiciones iniciales se calculan combinando las ecuaciones "
+"normales (existentes en las secciones `equation`) con cualquier ecuación inicial "
+"(existente en las secciones `initial equation`)."
 
 #: ../../source/behavior/equations/initialization.rst:23
 msgid ""
@@ -41,6 +49,15 @@ msgid ""
 "problem is well-posed, but we cannot solve a problem where we have too many "
 "initial equations."
 msgstr ""
+"Una de las primeras fuentes de confusión para los nuevos usuarios es entender "
+"cómo se requieren muchas condiciones iniciales. La respuesta a esta cuestión es "
+"simple. Para obtener un problema de inicialización bien definido (uno en el que "
+"no tengamos demasiadas o pocas ecuaciones iniciales), necesitamos tener el mismo "
+"número de ecuaciones en las secciones `initial equation` como estados tenemos en "
+"nuestro sistema. **Notese**, podemos salvar el problema de tener pocas, porque las herramientas "
+"pueden aumentar las condiciones iniciales que hemos proporcionado con otras adicionales hasta que "
+"el problema esté bien definido, pero no podemos resolver un problema en el que tenemos demasiadas "
+"ecuaciones iniciales."
 
 #: ../../source/behavior/equations/initialization.rst:33
 msgid ""
@@ -52,10 +69,18 @@ msgid ""
 "operator.  In other words, every variable that we differentiated in those "
 "examples is a state."
 msgstr ""
+"Por supuesto, diciendo que el numero de ecuaciones iniciales tiene que ser igual al "
+"número de estados respondemos una pregunta, pero rápidamente se crea otra, *es decir,* "
+"*¿cómo determinamos cuantos estados hay?* Para los modelos que hemos visto "
+"en este capítulo, la respuesta es muy simple. Los estados en cada uno de nuestros "
+"ejemplos hasta ahora son las variables que aparecen dentro del operador "
+"``der(...)``. En otras palabras, cada variable que derivamos en estos "
+"ejemplos es un estado."
 
 #: ../../source/behavior/equations/initialization.rst:44
 msgid "Ordinary Differential Equations"
 msgstr ""
+"Ecuaciones Diferenciales Ordinarias"
 
 #: ../../source/behavior/equations/initialization.rst:46
 msgid ""
@@ -69,6 +94,15 @@ msgid ""
 "  In those cases, only *some* of the differentiated variables can be "
 "considered states."
 msgstr ""
+"Es importante notar que **no se dará siempre el caso** de que todas "
+"las variables que derivamos son un estado. En este capítulo, todos los "
+"modelos que hemos vistos hasta ahora son ecuaciones diferenciales ordinarias (ODEs). Cuando"
+" tratamos con ODEs, todas las variables derivadas son un estado, que "
+"significa que necesitamos una ecuación inicial para cada una de esas "
+"variables diferenciadas. Pero en los siguientes capítulos finalmente trataremos "
+"ejemplos que serán las llamadas ecuaciones diferenciales algebraicas (DAEs)."
+" En estos casos, solamente *algunas* de las variables diferenciadas pueden ser "
+"consideradas estados."
 
 #: ../../source/behavior/equations/initialization.rst:56
 msgid ""
@@ -81,6 +115,14 @@ msgid ""
 "problem contained in our Modelica code into this relatively easy to explain "
 "ODE form."
 msgstr ""
+"Resulta que entender la inicialización realmente no requiere que "
+"entremos en una discusión detallada sobre las DAEs. En la práctica, todas las herramientas Modelica "
+"realizan algo llamado \"reducción de índice\". Mientras que los algorítmos de "
+"reducción de índice son bastante complicados (por lo que no vamos a entrar en ellos "
+"ahora), el efecto es muy simple. La reducción de índice transforma las DAEs en "
+"ODEs. En otras palabras, los compiladores de Modelica transformarán cualquier problema DAE "
+"contenido en nuestro código Modelica en esta forma de ODE que es relativamente "
+"fácil de explicar."
 
 #: ../../source/behavior/equations/initialization.rst:65
 msgid ""
@@ -90,6 +132,11 @@ msgid ""
 "understand is that initialization is required for all states in the model "
 "and that our model will have the following general ODE form:"
 msgstr ""
+"Entonces vamos a dejar a un lado la discusión sobre las DAEs y la reducción de índice y solamente "
+"retomar nuestra discusión sobre la inicialización asumiendo que nuestro problema se ha reducido "
+"ya a un ODE. En este caso, la única cosa que relamente necesitamos entender "
+"es que la inicialización se requiere para todos los estados del modelo "
+"y que nuestro modelo tendrá la siguiente forma general de ODE:"
 
 #: ../../source/behavior/equations/initialization.rst:78
 msgid ""
@@ -97,6 +144,9 @@ msgid ""
 "values of the states in our system at time :math:`t`, :math:`\\vec{u}(t)` "
 "are the values of any external inputs to our system at time :math:`t`."
 msgstr ""
+"donde :math:`t` es el tiempo de simulación actual, :math:`\\vec{x}(t)` son los "
+"valores de los estados en el tiempo :math:`t`, :math:`\\vec{u}(t)` "
+"son los valores de cualquier entrada externa a nuestro sistema en el tiempo :math:`t`."
 
 #: ../../source/behavior/equations/initialization.rst:83
 msgid ""
@@ -107,6 +157,12 @@ msgid ""
 "note about this system is that neither function, :math:`\\vec{f}` nor "
 ":math:`\\vec{g}`, depends on :math:`\\vec{y}`."
 msgstr ""
+"Observad que la flecha sobre una variable simplemente significa que ésta es un vector, "
+"no un escalar. También hay que observar que la única variable que aparece derivada "
+"en este problema es :math:`\\vec{x}`. Así es como sabemos que "
+":math:`\\vec{x}` representa los estados del sistema. Una cosa final a notar "
+"sobre este sistema es que ninguna función, ni :math:`\\vec{f}`, ni "
+":math:`\\vec{g}`, dependen de :math:`\\vec{y}`."
 
 #: ../../source/behavior/equations/initialization.rst:90
 msgid ""
@@ -117,6 +173,12 @@ msgid ""
 ":math:`\\dot{\\vec{x}}(t)` and :math:`\\vec{y}(t)` (which, in turn, are the "
 "only things we need to compute in order to arrive at a solution)."
 msgstr ""
+"Si pensais sobre ello, ambos :math:`t` y :math:`\\vec{u}(t)` son externos "
+"a nuestro sistema. No las calculamos o controlamos. La razon por la que "
+"llamamos a :math:`\\vec{x}` los estados de nuestro sistema es que es la única "
+"información (de nuestro sistema) que necesitamos para calcular "
+":math:`\\dot{\\vec{x}}(t)` y :math:`\\vec{y}(t)` (que, a su vez, son las "
+"únicas cosas que necesitamos calcular para llegar a una solución)."
 
 #: ../../source/behavior/equations/initialization.rst:97
 msgid ""
@@ -124,6 +186,9 @@ msgid ""
 "will solve for :math:`\\vec{x}(t)` by integrating :math:`\\dot{\\vec{x}}(t)`"
 " to compute :math:`\\vec{x}(t)`.  In other words:"
 msgstr ""
+"Volviendo al tema de la inicialización, durante un paso de tiempo normal "
+"resolveremos para :math:`\\vec{x}(t)` integrando :math:`\\dot{\\vec{x}}(t)`"
+" para calcular :math:`\\vec{x}(t)`. En otras palabras:"
 
 #: ../../source/behavior/equations/initialization.rst:106
 msgid ""
@@ -132,12 +197,18 @@ msgid ""
 " into our equations has to be the very first value of :math:`\\vec{x}` in "
 "our simulation.  In other words, our initial conditions."
 msgstr ""
+"Todo esto funciona siempre que **exista** un instante de tiempo previo. Cuando no "
+"hay un instante de tiempo anterior, entonces el valor de  :math:`\\vec{x}` que introducimos "
+"en nuestras ecuaciones tiene que ser el primer valor de :math:`\\vec{x}` en "
+"nuestra simulación. En otras palabras, nuestras condiciones iniciales."
 
 #: ../../source/behavior/equations/initialization.rst:112
 msgid ""
 "One might imagine that we would specify our initial conditions by adding an "
 "equation like this:"
 msgstr ""
+"Uno puede imaginar que queremos especificar nuestras condiciones iniciales añadiendo una "
+"ecuación como esta:"
 
 #: ../../source/behavior/equations/initialization.rst:119
 msgid ""
@@ -150,16 +221,27 @@ msgid ""
 "values for :math:`\\dot{\\vec{x}}(t_0)`.  So how can we capture both of "
 "these cases?"
 msgstr ""
+"donde :math:`t_0` es el tiempo inicial de nuestra simulación y :math:`\\vec{x}_0` "
+"es una especificación explícita de los valores iniciales. Proporcionar explicitamente "
+"valores para los estados es un caso muy común cuando se especifican condiciones iniciales."
+" Por ello definitivamente necesitamos ser capaces de manejar este caso. Pero esta aproximación "
+"no funcionará para los casos que mostramos en :ref:`steady-state`. Alli no proporcionamos "
+"valores inciales explícitos para los estados. En su lugar, proporcionamos valores "
+"iniciales para :math:`\\dot{\\vec{x}}(t_0)`. Entonces, ¿cómo podemos capturar ambos"
+" casos?"
 
 #: ../../source/behavior/equations/initialization.rst:130
 msgid "Initial Equations"
 msgstr ""
+"Ecuaciones iniciales"
 
 #: ../../source/behavior/equations/initialization.rst:132
 msgid ""
 "The answer is to assume that at the start of our simulation we need to solve"
 " a problem that looks like this:"
 msgstr ""
+"La respuesta es asumir que al inicio de nuestra simulación necesitamos resolver"
+" un problema que tiene el siguiente aspecto:"
 
 #: ../../source/behavior/equations/initialization.rst:141
 msgid ""
@@ -170,12 +252,20 @@ msgid ""
 "range of initial conditions.  To define explicit initial values for states, "
 "we could define :math:`\\vec{h}` as:"
 msgstr ""
+"Observad la introducción de una nueva función, :math:`\\vec{h}`. Esta nueva "
+"función representa cualquier ecuación que hayamos incluido en las secciones "
+"`initial equation`. El hecho de que :math:`\\vec{h}` tenga ambos :math:`\\vec{x}` "
+"**y** :math:`\\dot{\\vec{x}}` como argumentos nos permite expresar un amplio "
+"rango de condiciones iniciales. Para definir valores iniciales explícitos para los estados, "
+"podemos definir :math:`\\vec{h}` como:"
 
 #: ../../source/behavior/equations/initialization.rst:152
 msgid ""
 "But we could also express our desire to start with a steady state solution "
 "by defining :math:`\\vec{h}` as:"
 msgstr ""
+"Pero también podemos expresar nuestro deseo de comenzar con una solución en estado estacionario "
+"definiendo :math:`\\vec{h}` como:"
 
 #: ../../source/behavior/equations/initialization.rst:159
 msgid ""
@@ -185,10 +275,16 @@ msgid ""
 "need to be of the general form shown above and that you cannot have more of "
 "them than you have states in your system."
 msgstr ""
+"Y, por supuesto, podemos mezclar estas formas diferentes o usar un amplio rango de "
+"otras formas estado por estado para describir nuestras condiciones iniciales. Por lo que "
+"cuando escribirmos ecuaciones iniciales, todo lo que necesitamos tener en mente es que deben "
+"ser de la forma general mostrada más arriba y que no podemos tener más ecuaciones "
+"que estados tenemos en nuestro sistema."
 
 #: ../../source/behavior/equations/initialization.rst:166
 msgid "Conclusion"
 msgstr ""
+"Conclusión"
 
 #: ../../source/behavior/equations/initialization.rst:168
 msgid ""
@@ -198,6 +294,11 @@ msgid ""
 "system.  But we are given tremendous latitude in describing exactly how "
 "those values will be computed."
 msgstr ""
+"Como hemos demostrado en este capítulo, en Modelica el constructor `initial equation` "
+"nos permite expresar muchas maneras de inicializar nuestro sistema. Al final, "
+"todas ellas calcularán los valores iniciales para los estados de nuestro "
+"sistema. Pero se nos da mucha libertad para describir exactamente cómo "
+"se calcularán estos valores."
 
 #: ../../source/behavior/equations/initialization.rst:174
 msgid ""
@@ -205,16 +306,22 @@ msgid ""
 "treatment in Modelica and this flexibility pays off in many real world "
 "applications."
 msgstr ""
+"Esta es un área en la que Modelica sobresale. En Modelica se le da un tratamiento de primera clase"
+" a la inicialización y su flexibilidad vale la pena en muchas aplicaciones "
+"del mundo real."
 
 #: ../../source/behavior/equations/initialization.rst:10
 msgid "initial equation"
 msgstr ""
+"ecuación inicial"
 
 #: ../../source/behavior/equations/initialization.rst:20
 #: ../../source/behavior/equations/initialization.rst:21
 msgid "states"
 msgstr ""
+"estados"
 
 #: ../../source/behavior/equations/initialization.rst:21
 msgid "initialization"
 msgstr ""
+"inicialización"
