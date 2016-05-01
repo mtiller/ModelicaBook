@@ -14,6 +14,7 @@ msgstr ""
 #: ../../source/behavior/equations.rst:4
 msgid "Basic Equations"
 msgstr ""
+"Ecuaciones básicas"
 
 #: ../../source/behavior/equations.rst:6
 msgid ""
@@ -21,14 +22,19 @@ msgid ""
 "understanding how to represent basic behavior.  In this chapter, our focus "
 "will be on demonstrating how to write basic equations."
 msgstr ""
+"Como se menciona en el :ref:`preface`, nuestra exploración de Modelica empieza "
+"entendiendo cómo representar comportamientos básicos. En este capítulo, nos centraremos "
+"en demostrar cómo escribir ecuaciones básicas."
 
 #: ../../source/behavior/equations.rst:11
 msgid "Examples"
 msgstr ""
+"Ejemplos"
 
 #: ../../source/behavior/equations.rst:24
 msgid "Review"
 msgstr ""
+"Revisión"
 
 #: ../../source/behavior/equations.rst:26
 msgid ""
@@ -36,3 +42,6 @@ msgid ""
 "examples.  This part will review the various features and concepts and "
 "provide a more complete discussion of each topic."
 msgstr ""
+"La primera parte de este capítulo ha introducido características del lenguaje a través de "
+"ejemplos. Esta parte revisará las diversas características y conceptos y "
+"expondrá cada tema de forma más completa."

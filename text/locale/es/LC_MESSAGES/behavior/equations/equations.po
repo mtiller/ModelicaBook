@@ -14,16 +14,20 @@ msgstr ""
 #: ../../source/behavior/equations/equations.rst:2
 msgid "Equations"
 msgstr ""
+"Ecuaciones"
 
 #: ../../source/behavior/equations/equations.rst:4
 msgid ""
 "Although equations are probably the single most important mathematical "
 "aspect of Modelica, they are also the simplest to explain."
 msgstr ""
+"Aunque las ecuaciones son problablemente el aspecto matemático "
+"más importante de Modelica, son también el más fácil de explicar."
 
 #: ../../source/behavior/equations/equations.rst:8
 msgid "Basic Equations"
 msgstr ""
+"Ecuaciones básicas"
 
 #: ../../source/behavior/equations/equations.rst:10
 msgid ""
@@ -31,6 +35,9 @@ msgid ""
 "equations are composed of a left hand expression and a right hand expression"
 " separated by an equals sign, *i.e.,*"
 msgstr ""
+"Realmente no hay semantica complicada que explicar sobre las ecuaciones. Todas "
+"las ecuaciones están compuestas de una expresión a la izquierda y otra expresión a la derecha "
+"separadas por el signo de igualdad, *es decir,*"
 
 #: ../../source/behavior/equations/equations.rst:18
 msgid ""
@@ -39,6 +46,10 @@ msgid ""
 "deviation from the syntax shown above is the case where a description of the"
 " equation is included as well, *e.g.,*"
 msgstr ""
+"A través de los ejemplos presentados en este capítulo, el lector ha sido expuesto "
+"a esta pauta una y otra vez en cada ejemplo. La única desviación real "
+"respecto a la sintaxis mostrada arriba es el caso en el que se incluye también "
+"una descripción de la ecuación, *p.ej*,"
 
 #: ../../source/behavior/equations/equations.rst:28
 msgid ""
@@ -47,10 +58,15 @@ msgid ""
 "in contrast to most programming languages), the left hand side does **not** "
 "have to be a variable (as we can see in the case of Newton's law above)."
 msgstr ""
+"Como se ha señalado previamente, los lados izquiero y derecho de una "
+"ecuación en Modelica son expresiones, no asignaciones. En otras palabras (y "
+"a diferencia de la mayoría de lenguajes de programación), el lado derecho **no** "
+"tiene que ser una variable (como podemos ver en el caso de la ley de Newton arriba)."
 
 #: ../../source/behavior/equations/equations.rst:35
 msgid "Initial Equations"
 msgstr ""
+"Ecuaciones iniciales"
 
 #: ../../source/behavior/equations/equations.rst:37
 msgid ""
@@ -62,10 +78,18 @@ msgid ""
 "conditions, the ``equation`` section must be qualified by the ``initial`` "
 "keyword as follows:"
 msgstr ""
+"Como hemos visto en muchos ejemplos en este capítulo, es posible especificar"
+" ecuaciones en un modelo para ser usadas al solucionar las condiciones iniciales. Este "
+"tema de la inicialización completo se discutirá en detalle en la siguiente "
+"sección, titulado :ref:`initialization`. Por ahora, todo lo que diremos sobre este "
+"tema es que si una ecuación debe aplicarse *solamente* para solucionar las condiciones "
+"iniciales, la sección ``equation`` debe ser calificado por la palabra clave "
+"``initial`` tal como sigue:"
 
 #: ../../source/behavior/equations/equations.rst:51
 msgid "Conditional Equations"
 msgstr ""
+"Ecuaciones condicionales"
 
 #: ../../source/behavior/equations/equations.rst:53
 msgid ""
@@ -74,6 +98,10 @@ msgid ""
 "to point out that equations can be conditional.  There are really two forms "
 "of conditional equations. The first is the balanced form, *e.g.,*"
 msgstr ""
+"En el siguiente capítulo, discutiremos sobre cómo usar las sentencias ``if`` para representar "
+"comportamiento condicional. Merece la pena adelantarnos a nosotros mismos un poco "
+"para señalar que las ecuaciones pueden ser condicionales. Hay realmente dos formas "
+"de ecuaciones condicionales. La primera es la forma equilibrada, *p.ej.*"
 
 #: ../../source/behavior/equations/equations.rst:67
 msgid ""
@@ -83,6 +111,11 @@ msgid ""
 "of equations and the number of equations must be fixed during the "
 "simulation."
 msgstr ""
+"En el caso equilibrado, el número de ecuaciones es siempre el mismo (1 en el "
+"código anterior), pero *cuyas* ecuaciones pueden cambiar. Esto es importante porque para "
+"simular un modelo en Modelica, el número de variables debe ser igual al número "
+"de ecuaciones y el número de ecuaciones debe ser fijo durante la "
+"simulación."
 
 #: ../../source/behavior/equations/equations.rst:73
 msgid ""
@@ -91,6 +124,10 @@ msgid ""
 "``if`` side may not be equal to the number of equations on the ``else`` side"
 " (like it was in the balanced case, previously)."
 msgstr ""
+"El otro tipo de ecuaciones condicionales son aquellas en las que el número de "
+"ecuaciones está desequilibrado. Esto significa que el número de ecuaciones en el "
+"lado del ``if`` puede no ser igual al número de ecuaciones  el el lado del ``else`` "
+"(como lo era anteriormente en el caso balanceado)."
 
 #: ../../source/behavior/equations/equations.rst:80
 msgid ""
@@ -102,6 +139,13 @@ msgid ""
 "necessary that all variables in the conditional expression have so-called "
 "*parametric variability*."
 msgstr ""
+"Pero hay que recordar que  el número de ecuaciones no puede cambiar durante una simulación. "
+"¿Entonces cómo puede ser que el número de ecuaciones pueda ser diferente en "
+"el lado del ``if`` respecto al lado del ``else``? Solamente puede suceder si **el valor de la "
+"expresión condicional no puede cambiar durante la simulación**. Para poder "
+"asegurar que la expresión condicional no puede cambiar nunca, es "
+"necesario que todas las variables en la expresión condicional tengan la llamada "
+"*variabilidad paramétrica*."
 
 #: ../../source/behavior/equations/equations.rst:89
 msgid ""
@@ -112,6 +156,12 @@ msgid ""
 " the entire expression must also have parametric variability (*i.e.,* the "
 "value of the expression cannot change during a simulation)."
 msgstr ""
+"¿Recordais de nuestra discusión sobre :ref:`variability` el hecho de que las variables "
+"con el calificador ``parameter`` no pueden cambiar durante una simulación? Si una "
+"variable con el calificador ``parameter`` no puede cambiar durante una simulación "
+"y todas las variables en una expresión tienen esta variabilidad paramétrica entonces "
+"la expresión entera tiene que tener también variabilidad paramétrica (*es decir,* el "
+"valor de la expresión no puede cambiar durante la simulación)."
 
 #: ../../source/behavior/equations/equations.rst:97
 msgid ""
@@ -119,6 +169,9 @@ msgid ""
 "be useful?  Again, we are getting ahead of ourselves here, but one use case "
 "would be the conditional application of initial equations, *e.g.,*"
 msgstr ""
+"En este punto, puede que os esteis preguntando a vosotros mismoa para qué puede ser útil "
+"este caso desbalanceado. De nuevo, nos estamos adelantando, pero un caso de uso "
+"puede ser la aplicación condicional de ecuaciones iniciales, *por ejemplo,*"
 
 #: ../../source/behavior/equations/equations.rst:112
 msgid ""
@@ -128,6 +181,11 @@ msgid ""
 "because the expression contains only a variable and that variable is a "
 "parameter."
 msgstr ""
+"En otras palabras, si el parámetro booleano ``steady_state`` es verdadero, entonces las "
+"condiciones iniciales se fuerzan. Pero si el parámetro es falso, no lo son."
+" Aquí la expresión condicional tiene variabilidad parametrica "
+"porque la expresión contiene solamente una variable y esa variable es un "
+"parametro."
 
 #: ../../source/behavior/equations/equations.rst:118
 msgid ""
@@ -135,7 +193,11 @@ msgid ""
 "behavior will be discussed in detail in the :ref:`next chapter <discrete-"
 "behavior>`."
 msgstr ""
+"Esto es todo lo que diremos sobre este tema por ahora, ya que el comportamiento condicional "
+"y discreto se tratará en detalle en el próximo capítulo :ref:`next chapter <discrete-"
+"behavior>`."
 
 #: ../../source/behavior/equations/equations.rst:78
 msgid "parametric variability"
 msgstr ""
+"variabilidad paramétrica"
