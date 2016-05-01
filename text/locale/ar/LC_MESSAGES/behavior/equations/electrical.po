@@ -196,14 +196,21 @@ msgid ""
 " model development faster and easier, but it dramatically improves the "
 "**reusability** of the models."
 msgstr ""
+" إن قدرة لغة مودليكا على الحفاظ على المعادلات مكتوبة \"بصيغة الكتاب الدراسي\" هي شيء مهم"
+" لأنه كما سنريكم في الأقسام التالية، فنحن نريد أن نصل إلى النقطة التي تم التقاط الصورة لهذه المعادلات"
+" في داخل نماذج المكونات المُفرَدَة وفي تلك الحالات نحن لا ندري متى قمنا بإنشاء نموذج لأحد المكونات"
+" ولا ما هو بالضبط متغيّر كل معادلة نستخدمها للحل. وإجراء مثل هذه التعاملات الرياضية هو مسئولية"
+" مترجم مودليكا وهذا لا يجعل تطوير النماذج أسهل وأسرع فحسب ولكن يحسّن أيضا بشكل دراماتيكي **إعادة استخدام**"
+" النماذج."
 
 #: ../../source/behavior/equations/electrical.rst:141
 msgid "The following figure shows the dynamic response of the ``RLC1`` model:"
-msgstr ""
+msgstr "الشكل المقابل يظهر الاستجابة الديناميكية لنموذج\n"
+"``RLC1``:\n"
 
 #: ../../source/behavior/equations/electrical.rst:0
 msgid "Expanding on these electrical examples"
-msgstr ""
+msgstr "للاطلاع على المزيد من الأمثلة الكهربية"
 
 #: ../../source/behavior/equations/electrical.rst:148
 msgid ""
@@ -215,6 +222,15 @@ msgid ""
 "example extended to include more complex behavior, you may want to skip "
 "ahead to the :ref:`switched-rlc` example."
 msgstr ""
+" كما ذكرنا في التقديم\n"
+" :ref:`preface`\n"
+" فبناء هذا الكتاب يسمح لنا باستكشافه بنهج مبني على الروابط التشعبية والذي يتم تشجيع القرّاء من خلاله"
+" على التعامل مع هذه المادة بما يناسب أهداف واهتمامات كل منهم."
+" الفصل التالي سيقدّم نموذجا معادلاته مستنبطة من نظام ميكانيكي."
+" إذا كنت تفضّل بدلا من ذلك أن ترى امتدادا لهذا المثال الكهربي يكون فيه سلوك أكثر تعقيدا،"
+" فيمكنك الذهاب مباشرة إلى المثال\n"
+" :ref:`switched-rlc`"
+
 
 #: ../../source/behavior/equations/electrical.rst:101
 msgid "state-space form"
