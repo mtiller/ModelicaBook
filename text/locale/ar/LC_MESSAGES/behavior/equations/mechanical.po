@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/mechanical.rst:4
 msgid "A Mechanical Example"
-msgstr ""
+msgstr "مثال ميكانيكي"
 
 #: ../../source/behavior/equations/mechanical.rst:6
 msgid ""
@@ -21,6 +21,8 @@ msgid ""
 "reinforce some of the concepts we've covered so far.  The system we wish to "
 "model is the one shown in the following figure:"
 msgstr ""
+" إذا كنت متآلفا أكثر مع النظم الميكانيكية ، قد يساعدك هذا المثال على تقوية وتأكيد بعض المفاهيم التي غطّيناها"
+" حتى الآن. النظام الذي نريد أن نقوم بعمل نمذجة له هو النظام المبيّن في الشكل التالي:"
 
 #: ../../source/behavior/equations/mechanical.rst:16
 msgid ""
