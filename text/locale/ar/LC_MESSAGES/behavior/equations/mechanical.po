@@ -35,6 +35,7 @@ msgid ""
 "the book on :ref:`components`) where **models will be built in this "
 "schematic form from the beginning**."
 msgstr ""
+" وتجدر الإشارة هنا إلى مدى سهولة إيصال الهدف من النموذج عن طريق عرضه في شكل تخطيطي."
 
 #: ../../source/behavior/equations/mechanical.rst:26
 msgid ""
