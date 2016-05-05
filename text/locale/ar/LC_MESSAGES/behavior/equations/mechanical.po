@@ -232,8 +232,8 @@ msgstr ""
 
 #: ../../source/behavior/equations/mechanical.rst:38
 msgid "Hooke's law"
-msgstr ""
+msgstr "قانون هوك"
 
 #: ../../source/behavior/equations/mechanical.rst:131
 msgid "modifications"
-msgstr ""
+msgstr "تعديلات"
