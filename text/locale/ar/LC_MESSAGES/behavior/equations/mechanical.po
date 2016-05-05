@@ -51,6 +51,14 @@ msgid ""
 ":math:`\\omega = \\dot{\\varphi}`.  For each inertia, the balance of angular"
 " momentum for the inertia can be expressed as:"
 msgstr ""
+" أما الآن، فإننا سنركز على كيفية التعبير الرياضي عن المعادلات المتعلقة بنظام ميكانيكي بسيط."
+" كل قصور ذاتي لعزم الدوران للكتلة يكون له موضع زاوي دوراني\n"
+" :math:`\\varphi`\n"
+" وله سرعة دورانية\n"
+" :math:`\\omega`\n"
+" حيث\n"
+" :math:`\\omega = \\dot{\\varphi}`.\n"
+" ولكل قصور ذاتي، هناك اتزان لعزم الدوران للقصور الذاتي يمكن التعبير عنه كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:34
 msgid ""
@@ -58,6 +66,12 @@ msgid ""
 "inertia should be equal to the product of the moment of inertia, :math:`J`, "
 "and the angular acceleration, :math:`\\dot{\\omega}`."
 msgstr ""
+" وبعبارة أخرى، فإن مجموع العزوم،\n"
+" :math:`\\tau`\n"
+" المؤثرة على القصور الذاتي يجب أن تساوي حاصل ضرب عزم القصور الدوراني للكتلة\n"
+" :math:`J`\n"
+" والتسارع الزاوي أو العجلة الزاويّة\n"
+" :math:`\\dot{\\omega}`."
 
 #: ../../source/behavior/equations/mechanical.rst:40
 msgid ""
@@ -66,22 +80,28 @@ msgid ""
 "dampers.  For the springs, we can use Hooke's law to express the "
 "relationship between torque and angular displacement as follows:"
 msgstr ""
+" عند هذه النقطة، كل ما ينقصنا هو قيم العزوم\n"
+" :math:`\\tau_i`.\n"
+" ومن الشكل السابق، يمكننا أن نرى أن هناك زنبَرَكين ومخمدين . بالنسبة للزنبَرَكين، يمكننا استخدام"
+" قانون هوك للتعبير عن العلاقة بين العزم الدوراني والإزاحة الزاويّة كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:48
 msgid ""
 "For each damper, we express the relationship between torque and relative "
 "angular velocity as:"
 msgstr ""
+" لكل مخمّد، يمكننا التعبير عن العلاقة بين العزم والسرعة الدورانية النسبيّة كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:53
 msgid ""
 "If we pull together all of these relations, we get the following system of "
 "equations:"
 msgstr ""
+" إذا قمنا بسحب كل تلك العلاقات مع بعضها البعض، فسوف يكون لدينا هذه المنظومة من المعادلات:"
 
 #: ../../source/behavior/equations/mechanical.rst:63
 msgid "Let's assume our system has the following initial conditions as well:"
-msgstr ""
+msgstr "دعونا نفترض أن نظامنا له هذه المعادلات الابتدائية كذلك:"
 
 #: ../../source/behavior/equations/mechanical.rst:73
 msgid ""
@@ -89,12 +109,17 @@ msgid ""
 "where neither inertia is actually moving (*i.e.*, :math:`\\omega=0`), but "
 "there is a non-zero deflection across both springs."
 msgstr ""
+" هذه الظروف الابتدائية تعني أساسا أن النظام يبدأ في حالة حيث لا يتحرك أي من القصور الذاتي الأول أو الثاني"
+" - أي: \n"
+" :math:`\\omega=0`-\n"
+" ولكن هناك انحرافا لا يساوي الصفر بين كلا الزنبَرَكين."
 
 #: ../../source/behavior/equations/mechanical.rst:78
 msgid ""
 "Pulling all of these variables and equations together, we can express this "
 "problem in Modelica as follows:"
 msgstr ""
+" وبسحب كل هذه المتغيرات والمعادلات معا، يمكننا التعبير عن المسألة بلغة مودليكا كالتالي:"
 
 #: ../../source/behavior/equations/mechanical.rst:85
 msgid ""
