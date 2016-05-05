@@ -206,16 +206,25 @@ msgid ""
 "``SecondOrderSystemInitParams`` model as is, we get the following solution "
 "for the angular positions and velocities:"
 msgstr ""
+" سترى في النسخة الأحدث من النموذج أن قيم المعاملات التي تم تقديمها حديثا هي نفس"
+" القيم التي كنا نكتب الكود البرمجي لها بصعوبة سابقا."
+" وكنتيجة لذلك، الظروف الابتدائية الافتراضية سوف تكون لها نفس القيم السابقة بالضبط"
+" ولكن، لدينا الحرية لاستكشاف ظروف ابتدائية أخرى أيضا. فمثلا، إذا قمنا بمحاكاة النموذج\n"
+"``SecondOrderSystemInitParams``\n"
+" كما هو، سيكون لدينا الحل التالي للمواضع الزاويّة والسرعات الزاويّة:"
 
 #: ../../source/behavior/equations/mechanical.rst:161
 msgid ""
 "However, if we modify the ``phi1_init`` parameter to be *1* at the start of "
 "our simulation, we get this solution instead:"
 msgstr ""
+" ولكن، إذا قمنا بتعديل المعامل\n"
+" ``phi1_init``\n"
+"ليصبح *1* في بداية المحاكاة ، سيكون لدينا هذا الحل بدلا عن الحل السابق:"
 
 #: ../../source/behavior/equations/mechanical.rst:0
 msgid "Expanding on this mechanical example"
-msgstr ""
+msgstr "المزيد عن هذا المثال الميكانيكي"
 
 #: ../../source/behavior/equations/mechanical.rst:168
 msgid ""
@@ -223,12 +232,17 @@ msgid ""
 "jump to the set of examples involving rotational systems found in the "
 "section on :ref:`speed-measurement`."
 msgstr ""
+" إذا كنت تحب أن ترى المزيد عن تطوير مثل هذا المثال، قد ترغب في القفز إلى مجموعة من الأمثلة"
+" التي تتضمن أنظمة دورانية والتي تجدها في قسم قياس السرعة\n"
+":ref:`speed-measurement`."
 
 #: ../../source/behavior/equations/mechanical.rst:172
 msgid ""
 "Otherwise, you can continue to the next set of examples which involve "
 "population dynamics."
 msgstr ""
+" وأما إذا لم ترغب، فيمكنك الاستمرار في القراءة لتصل"
+" إلى المجموعة القادمة من الأمثلة والتي تتضمن الحديث عن الديناميكا السكانية الحيوية."
 
 #: ../../source/behavior/equations/mechanical.rst:38
 msgid "Hooke's law"
