@@ -126,42 +126,47 @@ msgid ""
 "As we did with the low-pass filter example, ``RLC1``, let's walk through "
 "this line by line."
 msgstr ""
-
+" وكما فعلنا في مثال مرشح تمرير الترددات المنخفضة\n"
+" ``RLC1``\n"
+" هيا بنا نسير خلال هذا المثال سطرا سطرا."
 #: ../../source/behavior/equations/mechanical.rst:88
 msgid "As usual, we start with the name of the model:"
-msgstr ""
+msgstr "وكالمعتاد، نبدأ باسم النموذج:"
 
 #: ../../source/behavior/equations/mechanical.rst:94
 msgid ""
 "Next, we introduce physical types for a rotational mechanical system, "
 "namely:"
 msgstr ""
-
+" وبعدها نقدّم الأنواع الفيزيائية الخاصة بنظام ميكانيكي دوراني، والمسماة:"
 #: ../../source/behavior/equations/mechanical.rst:100
 msgid ""
 "Then we define the various parameters used to represent the different "
 "physical characteristics of our system:"
 msgstr ""
+" وبعدها نقوم بتعريف المعاملات المختلفة المستخدمة للتعبير عن الخواص الفيزيائية في نظامنا:"
 
 #: ../../source/behavior/equations/mechanical.rst:107
 msgid ""
 "For this system, there are four non-``parameter`` variables.  These are "
 "defined as follows:"
 msgstr ""
+" ولهذا النظام، هناك أربعة متغيرات لا تمثل معاملات. ويمكن تعريفها كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:113
 msgid ""
 "The initial conditions (which we will revisit shortly) are then defined "
 "with:"
 msgstr ""
+" الظروف الابتدائية - التي سوف نعود لزيارتها قريبا - يمكن تعريفها هكذا:"
 
 #: ../../source/behavior/equations/mechanical.rst:119
 msgid "Then come the equations describing the dynamic response of our system:"
-msgstr ""
+msgstr "وبعدها تأتي المعادلات التي تصف الاستجابة الديناميكية لنظامنا:"
 
 #: ../../source/behavior/equations/mechanical.rst:125
 msgid "And finally, we have the closing of our model definition."
-msgstr ""
+msgstr "وفي النهاية، لدينا إغلاق هذا التعريف لنموذجنا."
 
 #: ../../source/behavior/equations/mechanical.rst:133
 msgid ""
@@ -172,6 +177,11 @@ msgid ""
 "<getting-physical>`, by defining ``parameter`` variables to represent the "
 "initial conditions as follows:"
 msgstr ""
+" العيب الوحيد لهذا النموذج هو أن كل الظروف الابتدائية تم كتابتها بصعوبة في الكود البرمجي للنموذج."
+" وهذا يعني أننا لن نكون قادرين على تحديد أي مجموعة بديلة من الظروف الابتدائية في هذا النموذج."
+" ويمكننا التغلب على هذه المشكلة كما فعلنا في المثال السابق\n"
+" :ref:`Newton cooling examples <getting-physical>`\n"
+" عن طريق تعريف متغيرات المعاملات التي تصف الظروف الابتدائية كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:146
 msgid ""
@@ -179,6 +189,10 @@ msgid ""
 "environment (where parameters are typically editable by the user) or, as we "
 "will see shortly, via so-called \"modifications\"."
 msgstr ""
+" وبهذه الطريقة، قيم المعاملات يمكن تغييرها سواء من خلال البيئة البرمجية للمحاكاة"
+" - والتي يكون فيها المعاملات قابلة للتعديل عادة عن طريق المستخدم - أو كما "
+" سنرى قريبا عن طريق ما يسمى التعديلات\n"
+"\"modifications\"."
 
 #: ../../source/behavior/equations/mechanical.rst:150
 msgid ""
