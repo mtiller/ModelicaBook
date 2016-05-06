@@ -13,3 +13,13 @@ make dirhtml_cn && \
 make web_cn && \
 make clean && \
 make pdf-cn 
+make clean && \
+make specs  && \
+make results && \
+make dirhtml_ar && \
+make web_ar && \
+make clean && \
+make specs  && \
+make results && \
+make dirhtml_es && \
+make web_es
