@@ -142,6 +142,9 @@ build_links_cn:
 server: dirhtml build_links
 	(cd build/dirhtml; python -m SimpleHTTPServer)
 
+server_ar: dirhtml_ar build_links
+	(cd build/dirhtml_ar; python -m SimpleHTTPServer)
+
 server_cn: dirhtml_cn build_links_cn
 	(cd build/dirhtml_cn; python -m SimpleHTTPServer)
 
@@ -151,8 +154,8 @@ server_kr: dirhtml_kr build_links_kr
 #server_de: dirhtml_de build_links
 #	(cd build/dirhtml_de; python -m SimpleHTTPServer)
 
-#server_es: dirhtml_es build_links
-#	(cd build/dirhtml_es; python -m SimpleHTTPServer)
+server_es: dirhtml_es build_links
+	(cd build/dirhtml_es; python -m SimpleHTTPServer)
 
 #server_fr: dirhtml_fr build_links
 #	(cd build/dirhtml_fr; python -m SimpleHTTPServer)
@@ -163,6 +166,10 @@ server_kr: dirhtml_kr build_links_kr
 web: dirhtml build_links
 	(cd build/dirhtml; $(SYNC) * s3://$(S3BUCKET)/)
 	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/_static/*.css
+
+web_ar: dirhtml_ar build_links
+	(cd build/dirhtml_ar; $(SYNC) * s3://$(S3BUCKET)/ar/)
+	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/ar/_static/*.css
 
 web_cn: dirhtml_cn build_links_cn
 	(cd build/dirhtml_cn; $(SYNC) * s3://$(S3BUCKET)/cn/)
@@ -176,9 +183,9 @@ web_kr: dirhtml_kr build_links_kr
 #	(cd build/dirhtml_de; $(SYNC) * s3://$(S3BUCKET)/de/)
 #	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/de/_static/*.css
 
-#web_es: dirhtml_es build_links
-#	(cd build/dirhtml_es; $(SYNC) * s3://$(S3BUCKET)/es/)
-#	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/es/_static/*.css
+web_es: dirhtml_es build_links
+	(cd build/dirhtml_es; $(SYNC) * s3://$(S3BUCKET)/es/)
+	$(S3MODIFY)  -m text/css  s3://$(S3BUCKET)/es/_static/*.css
 
 #web_fr: dirhtml_fr build_links
 #	(cd build/dirhtml_fr; $(SYNC) * s3://$(S3BUCKET)/fr/)
