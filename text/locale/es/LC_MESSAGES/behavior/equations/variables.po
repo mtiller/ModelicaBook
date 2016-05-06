@@ -233,7 +233,7 @@ msgid ""
 "on :ref:`assertions`."
 msgstr ""
 "El significado de estos valores será tratado en la sección posterior "
-:ref:`assertions`."
+":ref:`assertions`."
 
 #: ../../source/behavior/equations/variables.rst:167
 msgid ""
