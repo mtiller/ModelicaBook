@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/mechanical.rst:4
 msgid "A Mechanical Example"
-msgstr ""
+msgstr "مثال ميكانيكي"
 
 #: ../../source/behavior/equations/mechanical.rst:6
 msgid ""
@@ -21,6 +21,8 @@ msgid ""
 "reinforce some of the concepts we've covered so far.  The system we wish to "
 "model is the one shown in the following figure:"
 msgstr ""
+" إذا كنت متآلفًا أكثر مع النظم الميكانيكية ، قد يساعدك هذا المثال على تقوية وتأكيد بعض المفاهيم التي غطّيناها"
+" حتى الآن. النظام الذي نريد أن نقوم بعمل نمذجة له هو النظام المبيّن في الشكل التالي:"
 
 #: ../../source/behavior/equations/mechanical.rst:16
 msgid ""
@@ -33,6 +35,13 @@ msgid ""
 "the book on :ref:`components`) where **models will be built in this "
 "schematic form from the beginning**."
 msgstr ""
+" وتجدر الإشارة هنا إلى مدى السهولة في إيصال الهدف المقصود من النموذج عن طريق عرضه في  رسم تخطيطي."
+" فلنفرض أننا استخدمنا التمثيلات الرسومية المناسبة، عندها يستطيع الخبراء فهم تركيب النظام بمنتهى السرعة،"
+" بل ويستطيعون الحدس والتوقع عن كيفية سلوك هذا النظام."
+" وبينما نحن حاليا نركز على المعادلات والمتغيرات، فإننا أخيرا سوف نصل إلى نهج آخر - في قسم لاحق"
+" في الكتاب بعنوان المكونات\n"
+" :ref:`components`-\n"
+" وعند ذلك **سيتم بناء النماذج بواسطة هذه الرسوم التخطيطية من البداية**."
 
 #: ../../source/behavior/equations/mechanical.rst:26
 msgid ""
@@ -42,6 +51,14 @@ msgid ""
 ":math:`\\omega = \\dot{\\varphi}`.  For each inertia, the balance of angular"
 " momentum for the inertia can be expressed as:"
 msgstr ""
+" أما الآن، فإننا سنركز على كيفية التعبير الرياضي عن المعادلات المتعلقة بنظام ميكانيكي بسيط."
+" كل قصور ذاتي - لعزم الدوران للكتلة -يكون له موضع زاوي دوراني\n"
+" :math:`\\varphi`\n"
+" وله سرعة زاويّة دورانية\n"
+" :math:`\\omega`\n"
+" حيث\n"
+" :math:`\\omega = \\dot{\\varphi}`.\n"
+" ولكل قصور ذاتي، هناك اتزان لعزم الدوران للقصور الذاتي يمكن التعبير عنه كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:34
 msgid ""
@@ -49,6 +66,12 @@ msgid ""
 "inertia should be equal to the product of the moment of inertia, :math:`J`, "
 "and the angular acceleration, :math:`\\dot{\\omega}`."
 msgstr ""
+" وبعبارة أخرى، فإن مجموع العزوم،\n"
+" :math:`\\tau`\n"
+" المؤثرة على القصور الذاتي يجب أن تساوي حاصل ضرب عزم القصور الدوراني للكتلة\n"
+" :math:`J`\n"
+" والتسارع الزاوي أو العجلة الزاويّة\n"
+" :math:`\\dot{\\omega}`."
 
 #: ../../source/behavior/equations/mechanical.rst:40
 msgid ""
@@ -57,22 +80,30 @@ msgid ""
 "dampers.  For the springs, we can use Hooke's law to express the "
 "relationship between torque and angular displacement as follows:"
 msgstr ""
+" عند هذه النقطة، كل ما ينقصنا هو قيم العزوم\n"
+" :math:`\\tau_i`.\n"
+" ومن الشكل السابق، يمكننا أن نرى أن هناك زنبَرَكين ومخمّدين. بالنسبة للزنبَرَكين، يمكننا استخدام"
+" قانون هوك\n"
+" Hooke's law\n"
+" للتعبير عن العلاقة بين العزم الدوراني والإزاحة الزاويّة كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:48
 msgid ""
 "For each damper, we express the relationship between torque and relative "
 "angular velocity as:"
 msgstr ""
+" لكل مخمّد، يمكننا التعبير عن العلاقة بين العزم والسرعة الزاويّة الدورانية النسبيّة كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:53
 msgid ""
 "If we pull together all of these relations, we get the following system of "
 "equations:"
 msgstr ""
+" إذا قمنا بسحب كل تلك العلاقات مع بعضها البعض، فسوف يكون لدينا هذه المنظومة من المعادلات:"
 
 #: ../../source/behavior/equations/mechanical.rst:63
 msgid "Let's assume our system has the following initial conditions as well:"
-msgstr ""
+msgstr "دعونا نفترض أن نظامنا له هذه المعادلات الابتدائية كذلك:"
 
 #: ../../source/behavior/equations/mechanical.rst:73
 msgid ""
@@ -80,54 +111,64 @@ msgid ""
 "where neither inertia is actually moving (*i.e.*, :math:`\\omega=0`), but "
 "there is a non-zero deflection across both springs."
 msgstr ""
+" هذه الظروف الابتدائية تعني أساسا أن النظام يبدأ في حالة حيث لا يتحرك أي من القصور الذاتي الأول أو الثاني"
+" - أي أن: \n"
+" :math:`\\omega=0`-\n"
+" ولكن هناك انحرافا لا يساوي الصفر بين كلا الزنبَرَكين."
 
 #: ../../source/behavior/equations/mechanical.rst:78
 msgid ""
 "Pulling all of these variables and equations together, we can express this "
 "problem in Modelica as follows:"
 msgstr ""
+" وبسحب كل هذه المتغيرات والمعادلات معا، يمكننا التعبير عن المسألة بلغة مودليكا كالتالي:"
 
 #: ../../source/behavior/equations/mechanical.rst:85
 msgid ""
 "As we did with the low-pass filter example, ``RLC1``, let's walk through "
 "this line by line."
 msgstr ""
-
+" وكما فعلنا في مثال مرشّح تمرير الترددات المنخفضة\n"
+" ``RLC1``\n"
+" هيا بنا نسير خلال هذا المثال سطرا سطرا."
 #: ../../source/behavior/equations/mechanical.rst:88
 msgid "As usual, we start with the name of the model:"
-msgstr ""
+msgstr "وكالمعتاد، نبدأ باسم النموذج:"
 
 #: ../../source/behavior/equations/mechanical.rst:94
 msgid ""
 "Next, we introduce physical types for a rotational mechanical system, "
 "namely:"
 msgstr ""
-
+" وبعدها نقدّم الأنواع الفيزيائية الخاصة بنظام ميكانيكي دوراني، والمسماة:"
 #: ../../source/behavior/equations/mechanical.rst:100
 msgid ""
 "Then we define the various parameters used to represent the different "
 "physical characteristics of our system:"
 msgstr ""
+" وبعدها نقوم بتعريف المعاملات المختلفة المستخدمة للتعبير عن الخواص الفيزيائية في نظامنا:"
 
 #: ../../source/behavior/equations/mechanical.rst:107
 msgid ""
 "For this system, there are four non-``parameter`` variables.  These are "
 "defined as follows:"
 msgstr ""
+" ولهذا النظام، هناك أربعة متغيرات لا تمثل معاملات. ويمكن تعريفها كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:113
 msgid ""
 "The initial conditions (which we will revisit shortly) are then defined "
 "with:"
 msgstr ""
+" الظروف الابتدائية - التي سوف نعود لزيارتها قريبا - يمكن تعريفها هكذا:"
 
 #: ../../source/behavior/equations/mechanical.rst:119
 msgid "Then come the equations describing the dynamic response of our system:"
-msgstr ""
+msgstr "وبعدها تأتي المعادلات التي تصف الاستجابة الديناميكية لنظامنا:"
 
 #: ../../source/behavior/equations/mechanical.rst:125
 msgid "And finally, we have the closing of our model definition."
-msgstr ""
+msgstr "وفي النهاية، لدينا إغلاق هذا التعريف لنموذجنا."
 
 #: ../../source/behavior/equations/mechanical.rst:133
 msgid ""
@@ -138,6 +179,11 @@ msgid ""
 "<getting-physical>`, by defining ``parameter`` variables to represent the "
 "initial conditions as follows:"
 msgstr ""
+" العيب الوحيد لهذا النموذج هو أن كل الظروف الابتدائية تمت كتابتها بصعوبة في الكود البرمجي للنموذج."
+" وهذا يعني أننا لن نكون قادرين على تحديد أي مجموعة بديلة من الظروف الابتدائية في هذا النموذج."
+" ويمكننا التغلب على هذه المشكلة كما فعلنا في المثال السابق\n"
+" :ref:`Newton cooling examples <getting-physical>`\n"
+" عن طريق تعريف متغيرات المعاملات التي تصف الظروف الابتدائية كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:146
 msgid ""
@@ -145,6 +191,10 @@ msgid ""
 "environment (where parameters are typically editable by the user) or, as we "
 "will see shortly, via so-called \"modifications\"."
 msgstr ""
+" وبهذه الطريقة، قيم المعاملات يمكن تغييرها سواء من خلال البيئة البرمجية للمحاكاة"
+" - والتي يكون فيها المعاملات قابلة للتعديل عادة عن طريق المستخدم - أو كما "
+" سنرى قريبا عن طريق ما يسمى التعديلات\n"
+"\"modifications\"."
 
 #: ../../source/behavior/equations/mechanical.rst:150
 msgid ""
@@ -156,16 +206,25 @@ msgid ""
 "``SecondOrderSystemInitParams`` model as is, we get the following solution "
 "for the angular positions and velocities:"
 msgstr ""
+" سترى في النسخة الأحدث من النموذج أن قيم المعاملات التي تم تقديمها منذ قليل هي نفس"
+" القيم التي كنا نكتب الكود البرمجي لها بصعوبة سابقا."
+" وكنتيجة لذلك، الظروف الابتدائية الافتراضية سوف تكون لها نفس القيم السابقة بالضبط"
+" ولكن، لدينا الحرية لاستكشاف ظروف ابتدائية أخرى أيضا. فمثلا، إذا قمنا بمحاكاة النموذج\n"
+"``SecondOrderSystemInitParams``\n"
+" كما هو، سيكون لدينا الحل التالي للمواضع الزاويّة والسرعات الزاويّة:"
 
 #: ../../source/behavior/equations/mechanical.rst:161
 msgid ""
 "However, if we modify the ``phi1_init`` parameter to be *1* at the start of "
 "our simulation, we get this solution instead:"
 msgstr ""
+" ولكن، إذا قمنا بتعديل المعامل\n"
+" ``phi1_init``\n"
+"ليصبح *1* في بداية المحاكاة ، سيكون لدينا هذا الحل بدلا عن الحل السابق:"
 
 #: ../../source/behavior/equations/mechanical.rst:0
 msgid "Expanding on this mechanical example"
-msgstr ""
+msgstr "المزيد عن هذا المثال الميكانيكي"
 
 #: ../../source/behavior/equations/mechanical.rst:168
 msgid ""
@@ -173,17 +232,43 @@ msgid ""
 "jump to the set of examples involving rotational systems found in the "
 "section on :ref:`speed-measurement`."
 msgstr ""
+" إذا كنت تحب أن ترى المزيد عن تطوير مثل هذا المثال، قد ترغب في القفز إلى مجموعة من الأمثلة"
+" التي تتضمن أنظمة دورانية والتي تجدها في قسم قياس السرعة\n"
+":ref:`speed-measurement`."
 
 #: ../../source/behavior/equations/mechanical.rst:172
 msgid ""
 "Otherwise, you can continue to the next set of examples which involve "
 "population dynamics."
 msgstr ""
-
+" وأما إذا لم ترغب، فيمكنك الاستمرار في القراءة لتصل"
+" إلى المجموعة القادمة من الأمثلة والتي تتضمن الحديث عن الديناميكا السكّانية الحيوية."
+"\n"
+"\n"
+"- Used Terms المصطلحات المستخدمة - \n"
+"\n"
+"\n"
+"mechanical ميكانيكي\n"
+"schematic form رسم تخطيطي\n"
+"graphical representation تمثيل رسومي\n"
+"set مجموعة\n"
+"inertia قصور ذاتي\n"
+"torque عزم دوراني\n"
+"angular acceleration التسارع الزاوي أو العجلة الزاويّة\n"
+"angular velocity السرعة الزاوية الدورانية\n"
+"relative angular velovity السرعة الزاويّة الدورانية النسبيّة\n"
+"السرعة الزاويّة الدورانية النسبيّيّة تساوي الفرق بين سرعتين زاويّتين\n"
+"angular position الموضع الزاوي\n"
+"angular displacement الإزاحة الزاويّة\n"
+"الإزاحة الزاويّة تساوي الفرق بين موضعين زاويّين\n"
+"spring زنبَرَك\n"
+"زنبَرَك للنظام الدوراني وزنبُرُك للنظام الانتقالي\n"
+"damper مخمّد\n"
+"
 #: ../../source/behavior/equations/mechanical.rst:38
 msgid "Hooke's law"
-msgstr ""
+msgstr "قانون هوك"
 
 #: ../../source/behavior/equations/mechanical.rst:131
 msgid "modifications"
-msgstr ""
+msgstr "التعديلات"
