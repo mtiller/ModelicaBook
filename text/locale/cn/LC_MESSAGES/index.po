@@ -35,11 +35,3 @@ msgstr ""
 msgid ":ref:`search`"
 msgstr ""
 
-#~ msgid "Advanced Topics"
-#~ msgstr ""
-
-#~ msgid "TODO List"
-#~ msgstr ""
-
-#~ msgid ":ref:`modindex`"
-#~ msgstr ""
