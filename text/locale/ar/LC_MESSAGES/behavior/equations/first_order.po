@@ -71,7 +71,7 @@ msgstr ""
 "``der``\n"
 "لتمثيل التفاضل بالنسبة للزمن ل\n"
 "``x``.\n"
-" وهذا يعني أن"
+"وهذا يعني أن"
 #: ../../source/behavior/equations/first_order.rst:43
 msgid "is equivalent to:"
 msgstr "هو مناظر ل:"
