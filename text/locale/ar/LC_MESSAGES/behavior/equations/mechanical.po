@@ -267,7 +267,7 @@ msgstr ""
 "spring زنبَرَك\n"
 "زنبَرَك للنظام الدوراني وزنبُرُك للنظام الانتقالي\n"
 "damper مخمّد\n"
-"population dynamics الديناميكا السكانية الحيوية\n"
+"population dynamics الديناميكا السكّانية الحيوية\n"
 
 #: ../../source/behavior/equations/mechanical.rst:38
 msgid "Hooke's law"
