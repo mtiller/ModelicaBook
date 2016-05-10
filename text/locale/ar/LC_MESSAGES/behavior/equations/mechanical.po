@@ -128,9 +128,10 @@ msgid ""
 "As we did with the low-pass filter example, ``RLC1``, let's walk through "
 "this line by line."
 msgstr ""
-"وكما فعلنا في مثال مرشّح تمرير الترددات المنخفضة\n"
-" ``RLC1``\n"
-"هيا بنا نسير خلال هذا المثال سطرا سطرا."
+"وكما فعلنا في مثال مرشّح تمرير الترددات المنخفضة"
+" ``RLC1``"
+" هيا بنا نسير خلال هذا المثال سطرا سطرا."
+
 #: ../../source/behavior/equations/mechanical.rst:88
 msgid "As usual, we start with the name of the model:"
 msgstr "وكالمعتاد، نبدأ باسم النموذج:"
@@ -234,7 +235,7 @@ msgid ""
 "section on :ref:`speed-measurement`."
 msgstr ""
 "إذا كنت تحب أن ترى المزيد عن تطوير مثل هذا المثال، قد ترغب في القفز إلى مجموعة من الأمثلة"
-" التي تتضمن أنظمة دورانية والتي تجدها في قسم قياس السرعة\n"
+" التي تتضمن أنظمة دورانية والتي تجدها في قسم قياس السرعة"
 " :ref:`speed-measurement`."
 
 #: ../../source/behavior/equations/mechanical.rst:172
