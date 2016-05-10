@@ -57,7 +57,7 @@ msgstr ""
 " وله سرعة زاويّة دورانية"
 " :math:`\\omega`"
 " حيث"
-":math:`\\omega = \\dot{\\varphi}`."
+" :math:`\\omega = \\dot{\\varphi}`."
 " ولكل قصور ذاتي، هناك اتزان لعزم الدوران للقصور الذاتي يمكن التعبير عنه كما يلي:"
 
 #: ../../source/behavior/equations/mechanical.rst:34
@@ -267,6 +267,7 @@ msgstr ""
 "spring زنبَرَك\n"
 "زنبَرَك للنظام الدوراني وزنبُرُك للنظام الانتقالي\n"
 "damper مخمّد\n"
+"population dynamics الديناميكا السكانية الحيوية\n"
 
 #: ../../source/behavior/equations/mechanical.rst:38
 msgid "Hooke's law"
