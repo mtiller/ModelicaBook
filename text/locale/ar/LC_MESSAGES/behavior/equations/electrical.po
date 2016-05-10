@@ -49,6 +49,7 @@ msgid ""
 msgstr ""
 "لدينا فقط 3 معادلات في حين أن لدينا 4 متغيرات ولذلك فإننا نحتاج إلى معادلة واحدة أخرى."
 " والمعادلة الإضافية تأتي من قانون كيرشوف للتيار الكهربي:"
+
 #: ../../source/behavior/equations/electrical.rst:37
 msgid ""
 "Now that we have determined the equations and variables for this problem, we"
@@ -67,12 +68,14 @@ msgstr ""
 " قد تشبه تماما مكونات الدائرة في مرشح تمرير الترددات المنخفضة"
 " :ref:`low-pass-rlc`"
 " الذي لدينا."
+
 #: ../../source/behavior/equations/electrical.rst:45
 msgid ""
 "But for now, we will build a model composed simply of variables and "
 "equations.  Such a model could be written as follows:"
 msgstr ""
 "ولكن حاليا، سنبني نموذج يتكون ببساطة من متغيرات ومعادلات. ويمكن كتابة مثل هذا النموذج كما يلي:"
+
 #: ../../source/behavior/equations/electrical.rst:52
 msgid ""
 "Let's go through this example bit by bit and reinforce the meaning of the "
@@ -80,6 +83,7 @@ msgid ""
 msgstr ""
 "دعونا نمشي خلال هذا المثال خطوة خطوة لنؤكّد على معاني العبارات المختلفة."
 " فلنبدأ من الأعلى:"
+
 #: ../../source/behavior/equations/electrical.rst:59
 msgid ""
 "Here we see that the name of the model is ``RLC1``.  Furthermore, a "
@@ -92,6 +96,7 @@ msgstr ""
 " علاوة على ذلك، وصف هذا النموذج تم إدراجه باسم"
 " ``\"A resistor-inductor-capacitor circuit model\"``."
 " بعدها، قدّمنا بعض الأنواع الفيزيائية التي نحتاجها"
+
 #: ../../source/behavior/equations/electrical.rst:68
 msgid ""
 "Each of these lines introduces a physical type that specializes the built-in"
@@ -146,8 +151,8 @@ msgid ""
 "equations."
 msgstr ""
 "أحد الأشياء التي تميز هذا المثال عن الأمثلة السابقة هو حقيقة أنه يحتوى على معادلات أكثر."
-" وكما في مثال\n"
-" ``NewtonCooling``\n"
+" وكما في مثال"
+" ``NewtonCooling``"
 " لدينا هنا أيضا بعض المعادلات التي بها تعبيرات رياضية في الطرفين الأيمن والأيسر."
 " ونحن أيضا لدينا تشكيلة من المعادلات التفاضلية  - والتي تحتوى على تفاضل لمتغير -"
 " ومعادلات أخرى هي ببساطة معادلات جبرية."
