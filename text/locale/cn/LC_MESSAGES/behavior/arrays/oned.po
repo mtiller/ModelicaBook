@@ -360,7 +360,6 @@ msgstr ""
 "本节目的是为大家介绍几种特性，以演示开发者在使用向量时拥有的不同选项。\\ "
 
 #: ../../source/behavior/arrays/oned.rst:42
-#, fuzzy
 msgid ""
 "where :math:`\\rho` is the material density and :math:`V_i` is the volume of"
 " the :math:`i^{th}` section.  Finally, we can express the volume of the "

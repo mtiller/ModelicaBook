@@ -173,7 +173,6 @@ msgid ""
 msgstr "由于每次在物质名称前加入\\ ``Species``\\ 颇为不便，\\ 为方便起见，我们可以定义以下常量："
 
 #: ../../source/behavior/arrays/chem.rst:12
-#, fuzzy
 msgid ""
 "In all of our examples, we'll be building a model for `the following system "
 "of reactions <http://library.wolfram.com/infocenter/TechNotes/390/>`_:"
@@ -182,7 +181,6 @@ msgstr ""
 "<http://library.wolfram.com/examples/chemicalkinetics/>`_\\ ："
 
 #: ../../source/behavior/arrays/chem.rst:37
-#, fuzzy
 msgid ""
 "where :math:`k_1`, :math:`k_2` and :math:`k_3` are the reaction coefficients"
 " for the first, second and third reactions, respectively. These equations "

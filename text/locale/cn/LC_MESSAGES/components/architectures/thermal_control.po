@@ -639,7 +639,6 @@ msgstr ""
 "只是，许多闭环系统的控制问题具有类似的结构。\ "
 
 #: ../../source/components/architectures/thermal_control.rst:394
-#, fuzzy
 msgid ""
 "Again, note the highlighted lines.  Not only do these ``connect`` statements"
 " implicitly add the ``heat`` and ``temperature`` signals to the ``bus`` "

@@ -138,7 +138,6 @@ msgstr ""
 "同时，内部组件则留在\ ``protected``\ 区域内。\ "
 
 #: ../../source/components/subsystems/power_supply.rst:32
-#, fuzzy
 msgid ""
 "Note that our target here is an output voltage of 12 volts.  However, the "
 "greater the load on the power supply, the lower the quality of the output "

@@ -324,7 +324,6 @@ msgstr "当在标注里面嵌入HTML是， HTML代码必须由\\ ``<html>``\\ �
 
 #: ../../source/behavior/equations/annotations.rst:158
 #: ../../source/behavior/equations/annotations.rst:287
-#, fuzzy
 msgid "``experiment``"
 msgstr "试验"
 
@@ -336,7 +335,6 @@ msgid ""
 msgstr "\\ ``experiment``\\ 标注用于指定模型仿真方式的信息。\\ 标注数据可以用\\ ``record``\\ 形式表示如下："
 
 #: ../../source/behavior/equations/annotations.rst:307
-#, fuzzy
 msgid "``Evaluate``"
 msgstr "Evaluate标注"
 
@@ -377,7 +375,6 @@ msgstr ""
 "``parameter``\\ 值可以转化为\\ ``constant``\\ ）。\\ 这在标注可以使用如下："
 
 #: ../../source/behavior/equations/annotations.rst:335
-#, fuzzy
 msgid "``HideResult``"
 msgstr "HideResult标注"
 
@@ -421,7 +418,6 @@ msgid "``StopTime=8``"
 msgstr ""
 
 #: ../../source/behavior/equations/annotations.rst:279
-#, fuzzy
 msgid ""
 "Here the model ``MyWidget`` contains HTML documentation.  The documentation "
 "is wrapped by ``<html>`` tags **and all quotes used to define attributes are"

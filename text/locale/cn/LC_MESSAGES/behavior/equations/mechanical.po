@@ -180,7 +180,6 @@ msgid ""
 msgstr "否则，你可以继续下面涉及种群动力学方面的实例。\\ "
 
 #: ../../source/behavior/equations/mechanical.rst:34
-#, fuzzy
 msgid ""
 "In other words, the sum of the torques, :math:`\\tau`, applied to the "
 "inertia should be equal to the product of the moment of inertia, :math:`J`, "
@@ -190,7 +189,6 @@ msgstr ""
 ":math:`\\dot{\\omega}`\\ 的乘积。\\ "
 
 #: ../../source/behavior/equations/mechanical.rst:40
-#, fuzzy
 msgid ""
 "At this point, all we are missing are the torque values, :math:`\\tau_i`.  "
 "From the previous figure, we can see that there are two springs and two "
