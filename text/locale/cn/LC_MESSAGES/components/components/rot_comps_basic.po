@@ -369,14 +369,12 @@ msgstr ""
 "，我们还会进一步深入探讨旋转组件。\\ "
 
 #: ../../source/components/components/rot_comps_basic.rst:77
-#, fuzzy
 msgid ""
 "From this relationship, it is clear that a positive value for the torque, "
 ":math:`\\tau`, will increase the amount of momentum stored in the mass."
 msgstr "显然由此关系可得，正的转矩\\ :math:`\tau`\\ 将增加存储在转动质量元件里的动量。\\ "
 
 #: ../../source/components/components/rot_comps_basic.rst:81
-#, fuzzy
 msgid ""
 "The point of presenting all these relationships is to underscore the sign "
 "conventions associated with :math:`\\varphi`, :math:`\\omega`, "

@@ -326,7 +326,6 @@ msgstr ""
 "标注数据是在这里与当时的数据一致。\ "
 
 #: ../../source/components/components/system_models.rst:15
-#, fuzzy
 msgid ""
 "One distinction that we've seen in this chapter between component and "
 "subsystem models is that subsystem models include ``connect`` statements.  "
@@ -342,7 +341,6 @@ msgstr ""
 "如果我们去掉所有标注（我们很快就会讨论这个内容），我们会得到一个如下所示的模型，："
 
 #: ../../source/components/components/system_models.rst:236
-#, fuzzy
 msgid ""
 "Finally, we have the third topic, rendering the connections.  Again, the "
 "annotations that govern how connections are rendered have appeared in many "

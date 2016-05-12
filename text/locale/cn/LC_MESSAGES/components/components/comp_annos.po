@@ -28,7 +28,6 @@ msgstr ""
 "这里我们将介绍那些尚未介绍的标注，并讨论它们的作用。\ "
 
 #: ../../source/components/components/comp_annos.rst:13
-#, fuzzy
 msgid "``defaultComponentName``"
 msgstr "defaultComponentName标注"
 
@@ -50,7 +49,6 @@ msgstr ""
 "图形工具会在将模型拖入简图时以此为其分配一个初始名称。\ "
 
 #: ../../source/components/components/comp_annos.rst:25
-#, fuzzy
 msgid "``defaultComponentPrefixes``"
 msgstr "defaultComponentPrefixes标注"
 
@@ -142,7 +140,6 @@ msgstr ""
 "字段值为\\ ``True``\\ ，那么在影响该连接器所需大小的行为发生后，图形界面\\ **可以选择**\\ 去更新标注参数的值。\ "
 
 #: ../../source/components/components/comp_annos.rst:91
-#, fuzzy
 msgid "``DynamicSelect``"
 msgstr "DynamicSelect标注"
 
@@ -176,7 +173,6 @@ msgstr ""
 "该变量则可以从模拟结果得到。\ "
 
 #: ../../source/components/components/comp_annos.rst:116
-#, fuzzy
 msgid "``preferredView``"
 msgstr "preferredView标注"
 
@@ -218,7 +214,6 @@ msgstr ""
 "``info``\\ （从而令工具在访问定义直接显示文档）。\ "
 
 #: ../../source/components/components/comp_annos.rst:137
-#, fuzzy
 msgid "``unassignedMessage``"
 msgstr "unassignedMessage标注"
 

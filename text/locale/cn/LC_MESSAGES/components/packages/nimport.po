@@ -176,7 +176,7 @@ msgid ""
 "Before using wildcard imports, be sure to read :ref:`this caveat <wildcards-"
 "harmful>`."
 msgstr ""
-"在使用通配符进口之前，请务必阅读\ :ref:`\ 这条警告\ <wildcards-harmful>`\ 。\ "
+"在使用通配符导入之前，请务必阅读\ :ref:`\ 这条警告\ <wildcards-harmful>`\ 。\ "
 
 #: ../../source/components/packages/nimport.rst:128
 msgid ""

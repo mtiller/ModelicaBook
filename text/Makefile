@@ -388,7 +388,6 @@ pdf-cn: latex-a4-cn
 	(cd $(BUILDDIR)/xelatex; sed -i '/\usepackage\[utf8\]{inputenc}/d' ModelicaByExample.tex)
 	(cd $(BUILDDIR)/xelatex; sed -i 's/\\author{.*}/\\author{\\authorandtranslators}/' ModelicaByExample.tex)
 	(cd $(BUILDDIR)/xelatex; sed -i 's/\\title{.*}/\\title{Modelica实例教程}/' ModelicaByExample.tex)
-	(cd $(BUILDDIR)/xelatex; sed -i '/\\release{.*}/d' ModelicaByExample.tex)
 	(cd $(BUILDDIR)/xelatex; sed -i '/\\date{.*}/d' ModelicaByExample.tex)
 	(cd $(BUILDDIR)/xelatex; sed -i '/.DeclareUnicodeCharacter.*/d' ModelicaByExample.tex)
 	(cd $(BUILDDIR)/xelatex; sed -i 's/{babel}/{mycjk}/' ModelicaByExample.tex)
