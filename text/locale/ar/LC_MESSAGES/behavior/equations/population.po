@@ -47,7 +47,8 @@ msgstr ""
 " <http://en.wikipedia.org/wiki/Lotka-Volterra_equation>`_"
 " يتضمن فصيلتين. أحدهما هي فصيلة \"الفريسة\". وفي هذا القسم، الزيادة السكانيّة في أعداد الفرائس سوف يتم تمثيلها ب"
 " :math:`x`."
-
+" والفصيلة الأخرى هي فصيلة \" المفترس \". والزيادة السكانية لها سوف يتم تمثيلها ب"
+" :math:`y`."
 
 #: ../../source/behavior/equations/population.rst:25
 msgid ""
@@ -60,6 +61,8 @@ msgid ""
 "potential mates are present in the environment, the more likely reproduction"
 " is to occur.  We can represent this mathematically as:"
 msgstr ""
+"هناك ثلاثة تأثيرات مهمة في نظام لوتكا-فولتيرا. الأول هو توالد فصيلة الفريسة. وسوف يتم اعتبار أن التوالد"
+" يتناسب طرديا مع الزيادة السكانية في أعداد الفرائس. إذا كنت متآلفا مع التفاعلات الكيميائية "
 
 #: ../../source/behavior/equations/population.rst:37
 msgid ""
