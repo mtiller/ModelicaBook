@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/behavior/equations/population.rst:4
 msgid "Lotka-Volterra Systems"
-msgstr ""
+msgstr "أنظمة لوتكا-فولتيرا"
 
 #: ../../source/behavior/equations/population.rst:6
 msgid ""
@@ -24,10 +24,16 @@ msgid ""
 "relationship between predator and prey species. The equations we will be "
 "using are the [Lotka]_-[Volterra]_ equations."
 msgstr ""
+"حتى الآن، رأينا الأمثلة الحرارية والكهربية والميكانيكية. في الواقع، كل تلك الأمثلة كانت أمثلة هندسية."
+" ومع ذلك، لغة مودليكا ليست مقتصرة على الفروع الهندسية."
+" ولتأكيد هذه النقطة، هذا القسم سيقدّم نموذج لديناميكا نظام بيئي مبني على العلاقة"
+" بين فصائل المفترسات وفصائل الفرائس. المعادلات التي سنستخدمها هي"
+" معادلات لوتكا-فولتيرا"
+" [Lotka]_-[Volterra]_ equations."
 
 #: ../../source/behavior/equations/population.rst:16
 msgid "Classic Lotka-Volterra"
-msgstr ""
+msgstr "نموذج لوتكا-فولتيرا الكلاسيكي"
 
 #: ../../source/behavior/equations/population.rst:18
 msgid ""
@@ -37,6 +43,12 @@ msgid ""
 "represented by :math:`x`.  The other species is the \"predator\" species "
 "whose population will be represented by :math:`y`."
 msgstr ""
+"إن `نموذج لوتكا-فولتيرا الكلاسيكي"
+" <http://en.wikipedia.org/wiki/Lotka-Volterra_equation>`_"
+" يتضمن فصيلتين. أحدهما هي فصيلة \"الفريسة\". وفي هذا القسم، الزيادة السكانيّة في أعداد الفرائس سوف يتم تمثيلها ب"
+" :math:`x`."
+" والفصيلة الأخرى هي فصيلة \" المفترس \". والزيادة السكانية لها سوف يتم تمثيلها ب"
+" :math:`y`."
 
 #: ../../source/behavior/equations/population.rst:25
 msgid ""
@@ -49,6 +61,14 @@ msgid ""
 "potential mates are present in the environment, the more likely reproduction"
 " is to occur.  We can represent this mathematically as:"
 msgstr ""
+"هناك ثلاثة تأثيرات مهمة في نظام لوتكا-فولتيرا. الأول هو توالد فصيلة الفريسة. وسوف يتم اعتبار أن التوالد"
+" يتناسب طرديا مع الزيادة السكانية في أعداد الفرائس. إذا كنت متآلفا مع التفاعلات الكيميائية، فإنك ستجد نفس"
+" المفهوم في"
+" `قانون فاعلية الكتلة لجولدبرج "
+"<https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D9%81%D8%A7%D8%B9%D9%84%D9%8A%D8%A9_%D8%A7%D9%84%D9%83%D8%AA%D9%84%D8%A9>`_"
+" [Guldberg]_."
+" وإذا لم تكن متآلفا مع قانون فاعلية الكتلة، اعتبر فقط أن الزيادة في أعداد الرفقاء الموجودين في البيئة،"
+" يزداد معها احتمال حدوث التوالد. ويمكننا التعبير عن ذلك رياضيا كالتالي:"
 
 #: ../../source/behavior/equations/population.rst:37
 msgid ""
@@ -57,6 +77,14 @@ msgid ""
 "proportionality constant capturing the likelihood of successful "
 "reproduction."
 msgstr ""
+"حيث"
+" :math:`x`"
+" هي الزيادة السكّانية للفرائس،"
+" و"
+" :math:`\\dot{x}_r`"
+" هي معدّل الزيادة السكّانية في أعداد الفرائس *بسبب التوالد* و"
+" :math:`\\alpha`"
+" هي ثابت التناسب الذي يمثل احتمال نجاح التوالد."
 
 #: ../../source/behavior/equations/population.rst:42
 msgid ""
@@ -68,7 +96,11 @@ msgid ""
 " around the more likely starvation is.  This is expressed mathematically in "
 "much the same way as reproduction:"
 msgstr ""
-
+"التأثير التالي الذي يجب أن نضعه في الاعتبار هو موت المفترسات بسبب الجوع. إذا لم يكن هناك فرائس كافية للأكل،"
+" الفصائل المفترسة ستموت. وعند نمذجة هذا الأمر يعني الموت جوعا يجب أن نضع في الاعتبار تأثير التنافس."
+" وهنا أيضا لدينا علاقة تناسب، ولكن هذه المرة التناسب عكسي، ﻷنه بعكس توالد الفرائس، كلما ازدادت أعداد المفترسات"
+" في الجوار كلما ازداد احتمال الموت جوعا. ويمكننا التعبير عن ذلك رياضيا بنفس الطريقة تقريبا التي عبّرنا بها"
+" عن التوالد."
 #: ../../source/behavior/equations/population.rst:53
 msgid ""
 "where :math:`y` is the predator population, :math:`\\dot{y}_s` is the change"
