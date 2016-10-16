@@ -4,7 +4,7 @@ Sensor Comparison
 -----------------
 
 Let us start our study of architectures with an example that is
-similar to one presented in my previous book [ItPMwM]_.  In it, we
+similar to one presented in my previous book [Tiller2001]_.  In it, we
 will consider the performance of a control system using several
 different sensor models.
 
@@ -421,6 +421,6 @@ We will continue using this same system architecture in the next
 section when we discuss how to develop such a system model using a
 top-down, :ref:`arch-driven-approach`.
 
-.. [ItPMwM] Michael M. Tiller, "Introduction to Physical Modeling with
+.. [Tiller2001] Michael M. Tiller, "Introduction to Physical Modeling with
 	    Modelica"
 	    http://www.amazon.com/Introduction-Physical-Modeling-International-Engineering/dp/0792373677
