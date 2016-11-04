@@ -462,10 +462,10 @@ add_compare_plot(plot="MDC_heat", legloc="upper right",
 # Chemical components
 abxvars = [Var("solution.C[ModelicaByExample.Components.ChemicalReactions.ABX.Species.X]",
                legend=_("X"))]
-#add_case(["ABX_System"], stopTime=10.0, res="ABX", tol=1e-3);
-#add_simple_plot(plot="ABX",
-#                vars=abxvars,
-#                title=_("Concentrations of A, B and X"));
+add_case(["ABX_System"], stopTime=10.0, res="ABX", tol=1e-3);
+add_simple_plot(plot="ABX",
+                vars=abxvars,
+                title=_("Concentrations of A, B and X"));
 
 # Subsystem models
 add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB", tol=1e-3);
