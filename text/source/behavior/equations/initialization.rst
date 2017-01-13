@@ -27,8 +27,8 @@ where we don't have too many or too few initial equations), we need to
 have the same number of equations in the `initial equation` sections
 as we have states in our system.  **Note**, we can get away with
 having too few, because tools can augment the initial equations we
-provide with additional ones until the problem is well-posed, but we
-cannot solve a problem where we have too many initial equations.
+provide with additional ones until the problem is well-posed. However,
+the simulation may diverge in that case from the expected results.
 
 Of course, saying the number of initial equations has to be equal to
 the number of states answers one question, but quickly creates another,
