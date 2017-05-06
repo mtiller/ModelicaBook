@@ -17,11 +17,11 @@ msgstr "المادة التقديمية"
 
 #: ../../source/index.rst:31
 msgid "Describing Behavior"
-msgstr "وصف السلوك الرياضي"
+msgstr "وصف السلوك"
 
 #: ../../source/index.rst:43
 msgid "Object-Oriented Modeling"
-msgstr "النمذجة الموجهة الشيئية"
+msgstr "النمذجة كائنية التوجّه (الشيئية)"
 
 #: ../../source/index.rst:71
 msgid "Indices and tables"
