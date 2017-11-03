@@ -1,7 +1,8 @@
 # This is a Dockerfile that creates a docker image with all the necessary
 # dependencies for building the book.
+# This successfully builds using Ubuntu 14.04 (as of 11/2/2017)
 
-FROM ubuntu
+FROM ubuntu:14.04
 
 # Update index
 RUN apt-get update
