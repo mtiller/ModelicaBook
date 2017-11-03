@@ -18,7 +18,9 @@ USER builder
 
 WORKDIR /opt/MBE
 
-RUN git clone https://github.com/xogeny/ModelicaBook.git
+#RUN git clone https://github.com/xogeny/ModelicaBook.git
+# Instead of checking this out from Git (because then we can
+# only build *master*, we'll mount the repo as a volume)
 
 # The default commands when run as a container
 WORKDIR /opt/MBE/ModelicaBook/text
