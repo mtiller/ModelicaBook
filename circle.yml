@@ -10,9 +10,10 @@ dependencies:
 checkout:
   post:
     - git fetch --tags && git tag
-    
+
 test:
   override:
+    - git fetch --unshallow
     - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make specs
     - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make results
     - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make dirhtml
