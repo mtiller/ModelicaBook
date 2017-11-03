@@ -29,7 +29,7 @@ RUN apt-get install -y latex-cjk-common
 RUN apt-get install -y texlive-xetex
 RUN apt-get install -y texlive-generic-extra
 RUN apt-get install -y fonts-arphic-gkai00mp fonts-arphic-ukai fonts-arphic-uming \
-                       fonts-arphic-bkai00mp fonts-arphic-bsmi00lp fonts-arphic-gbsn00lp
+    fonts-arphic-bkai00mp fonts-arphic-bsmi00lp fonts-arphic-gbsn00lp
 
 # Temporary: use the newest s3cmd
 RUN pip install --upgrade s3cmd
@@ -40,3 +40,6 @@ RUN apt-get install -y git
 # Workaround: use an older version of sphinx-intl to workaround a bug in upstream
 RUN pip install --upgrade 'sphinx-intl==0.9.6'
 RUN pip install --upgrade 'sphinx==1.3'
+
+# Because I was running into this: https://github.com/sphinx-doc/sphinx/issues/3212
+RUN pip install docutils==0.12
