@@ -7,10 +7,6 @@ dependencies:
     - docker info
     - docker pull mtiller/book-builder
 
-checkout:
-  post:
-    - git fetch --tags && git tag
-
 test:
   override:
     - git fetch --unshallow
