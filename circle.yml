@@ -9,6 +9,6 @@ dependencies:
 
 test:
   override:
-    - docker run -v .:/opt/MBE/ModelicaBook -i -t mtiller/book-builder:om-1.12.0 make specs
-    - docker run -v .:/opt/MBE/ModelicaBook -i -t mtiller/book-builder:om-1.12.0 make results
-    - docker run -v .:/opt/MBE/ModelicaBook -i -t mtiller/book-builder:om-1.12.0 make dirhtml
+    - docker run -v .:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make specs
+    - docker run -v .:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make results
+    - docker run -v .:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make dirhtml
