@@ -7,6 +7,10 @@ dependencies:
     - docker info
     - docker pull mtiller/book-builder
 
+checkout:
+  post:
+    - git fetch --tags && git tag
+    
 test:
   override:
     - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make specs
