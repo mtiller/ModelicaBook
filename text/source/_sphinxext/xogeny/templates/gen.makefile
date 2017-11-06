@@ -7,7 +7,7 @@ js_files: {%- for res in results %} js/{{res}}.js js/{{res}}.js.gz {% endfor %}
 json_files: {%- for res in results %} json/{{res}}.json json/{{res}}.json.gz {% endfor %}
 
 {% for res in results %}
-{{res}}_res.mat {{res}}_init.xml: {{results[res]["path"]}}
+{{res}}_res.mat {{res}}_init.xml {{res}}: {{results[res]["path"]}}
 	omc {{res}}.mos
 
 json/{{res}}.json: {{res}}_init.xml ../tojson.py
@@ -31,6 +31,9 @@ js/{{res}}.js.gz: js/{{res}}.js
 	-(cd js; gzip -fk {{res}}_info.xml)
 
 {% endfor %}
+
+exes.tar.gz: {%- for res in results %} {{res}} {{res}}_init.xml json/{{res}}.json {% endfor %}
+	tar zcf exes.tar.gz {%- for res in results %} {{res}} {{res}}_init.xml json/{{res}}.json {% endfor %}
 
 tidy:
 	-rm -f *.o *.c *.h *.libs *.log *.makefile
