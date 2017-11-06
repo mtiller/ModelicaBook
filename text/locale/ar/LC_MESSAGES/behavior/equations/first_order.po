@@ -439,7 +439,7 @@ msgstr "عدد حقيقي"
 
 #: ../../source/behavior/equations/first_order.rst:80
 msgid "descriptive strings"
-msgstr "مقاطع (سلاسل محارف وصفية)"
+msgstr "مقاطع وصفية (سلاسل محارف وصفية)"
 
 #: ../../source/behavior/equations/first_order.rst:121
 msgid "initial equation"
