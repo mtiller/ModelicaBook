@@ -10,8 +10,12 @@ test:
   override:
     - git fetch --unshallow
     - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make specs
-    - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make results exes.tar.gz
+    - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make results
     - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make dirhtml
     - mkdir api/models
     - tar zxf text/results/exes.tar.gz --directory api/models
     - (cd api; yarn install && npm run image)
+machine:
+  node:
+    version: 6.2.2
+
