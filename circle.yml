@@ -16,6 +16,8 @@ test:
     - tar zxf text/results/exes.tar.gz --directory api/models
     - (cd api; yarn install && npm run image)
 machine:
+  services:
+    - docker
   node:
     version: 6.2.2
 
