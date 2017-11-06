@@ -6,7 +6,6 @@ dependencies:
   override:
     - docker info
     - docker pull mtiller/book-builder
-
 test:
   override:
     - git fetch --unshallow
@@ -15,4 +14,4 @@ test:
     - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make dirhtml
     - mkdir api/models
     - tar zxf text/results/exes.tar.gz --directory api/models
-    - (cd api; npm run image)
+    - (cd api; yarn install && npm run image)
