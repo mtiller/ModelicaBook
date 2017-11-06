@@ -71,7 +71,7 @@ specs_cn: specs.py
 # This target builds all the simulation results
 results:
 	@echo "Generate results"
-	(cd results; make results_files tidy)
+	(cd results; make results_files tidy exes.tar.gz)
 
 # This builds all the JS and JSON files.  Use this if your development
 # environment is setup to compile the JS files
