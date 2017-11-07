@@ -3,6 +3,7 @@ dependencies:
     - docker info
     - docker pull mtiller/book-builder
     - docker pull node:6.2.2
+
 test:
   override:
     - git fetch --unshallow
@@ -12,6 +13,14 @@ test:
     - mkdir api/models
     - tar zxf text/results/exes.tar.gz --directory api/models
     - (cd api; npm install -g dockergen && npm run image)
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push mtiller/book-server
+
 machine:
   services:
     - docker
