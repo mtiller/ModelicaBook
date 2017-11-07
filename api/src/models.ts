@@ -15,6 +15,7 @@ export function modelGet(details: Details, model: string) {
     return (req: express.Request, res: express.Response) => {
         sendSiren(res, {
             title: details.desc.description,
+            properties: details,
             actions: [
                 {
                     name: "run",
