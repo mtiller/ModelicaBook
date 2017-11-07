@@ -4,10 +4,12 @@ import { getModels, getDetails } from './details';
 import { rootGet, rootPost } from './root';
 import { modelGet, modelPost } from './models';
 import * as cors from 'cors';
+import * as compression from 'compression';
 
 const app = express();
 app.use(express.json());
 app.use(cors({}));
+app.use(compression());
 
 let models = getModels();
 let detailsMap = getDetails(models);

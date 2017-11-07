@@ -25,7 +25,9 @@
     "typescript": "2.5.3"
   },
   "dependencies": {
+    "@types/compression": "^0.0.34",
     "@xogeny/mat-parser": "^0.2.6",
+    "compression": "^1.7.1",
     "cors": "^2.8.4",
     "debug": "^3.1.0",
     "express": "^4.16.2",
