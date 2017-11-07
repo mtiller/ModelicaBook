@@ -3,9 +3,11 @@ import { rootUrl, modelUrl, runUrl } from './urls';
 import { getModels, getDetails } from './details';
 import { rootGet, rootPost } from './root';
 import { modelGet, modelPost } from './models';
+import * as cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors({}));
 
 let models = getModels();
 let detailsMap = getDetails(models);
