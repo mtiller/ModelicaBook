@@ -5,7 +5,7 @@
   "main": "lib/src/index.js",
   "scripts": {
     "compile": "tsc",
-    "image": "dockergen build --name mtiller/mbe-api",
+    "image": "dockergen build --name mtiller/book-server",
     "start": "npm run compile && npm run server",
     "server": "node lib/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
