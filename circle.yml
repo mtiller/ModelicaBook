@@ -2,7 +2,7 @@ dependencies:
   override:
     - docker info
     - docker pull mtiller/book-builder
-    - docker pull node:6.2.2
+    - docker pull node:6
 
 test:
   override:
