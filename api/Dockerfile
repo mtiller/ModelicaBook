@@ -1,5 +1,5 @@
 # Base image
-FROM node:6.2.2
+FROM node:6
 
 # Install yarn
 # N.B. - We don't use the preferred method because it has to be implemented 
