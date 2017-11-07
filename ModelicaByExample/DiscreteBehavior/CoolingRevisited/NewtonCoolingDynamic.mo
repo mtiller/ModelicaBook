@@ -24,7 +24,7 @@ equation
   if time<=0.5 then
     T_inf = 298.15 "Constant temperature when time<=0.5";
   else
-    T_inf = 298.15-20*(time-0.5) "Otherwise, increasing";
+    T_inf = 298.15-20*(time-0.5) "Otherwise, decreasing";
   end if;
   m*c_p*der(T) = h*A*(T_inf-T) "Newton's law of cooling";
 end NewtonCoolingDynamic;
