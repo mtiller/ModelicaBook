@@ -49,17 +49,18 @@ export interface Details {
 
 export type DetailsMap = { [model: string]: Details };
 
-export function getModels() {
+function getModels() {
     return fs.readdirSync(path.join(".", "models", "json"))
         // Consider only files that end with .json
-        .filter((f) => f.endsWith(".json"))
+        .filter((f) => f.endsWith("-case.json"))
         // Strip the suffix
-        .map((f) => f.slice(0, f.length - 5))
+        .map((f) => f.slice(0, f.length - 10))
         // Ensure that we have an _init.xml file and executable for each one
         .filter((f) => fs.existsSync(path.join(".", "models", `${f}_init.xml`)) && fs.existsSync(path.join(".", "models", `${f}`)));
 }
 
-export function getDetails(models: string[]): DetailsMap {
+export function getDetails(): DetailsMap {
+    let models = getModels();
     let details: DetailsMap = {};
 
     models.forEach((model) => {
@@ -69,14 +70,18 @@ export function getDetails(models: string[]): DetailsMap {
         let cfile = path.join(".", "models", "json", `${model}-case.json`);
         try {
             if (fs.existsSync(cfile)) {
-                let cdata = fs.readFileSync(cfile);
-                let cobj = JSON.parse(cdata.toString()) as CaseData;
-                dobj.casedata = cobj;
+                let cdata = fs.readFileSync(cfile).toString();
+                if (cdata !== "") {
+                    let cobj = JSON.parse(cdata) as CaseData;
+                    dobj.casedata = cobj;
+                    details[model] = dobj;
+                }
+            } else {
+                console.warn("No case data for " + model);
             }
         } catch (e) {
-            console.warn("Error parsing case data: ", e);
+            console.warn("Error parsing case data for " + model + ": ", e);
         }
-        details[model] = dobj;
     });
 
     return details;

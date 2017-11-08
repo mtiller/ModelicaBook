@@ -65,33 +65,43 @@ export function modelPost(details: Details, model: string, testing: boolean) {
 
             // Run exectuable
             // docker run -v `pwd`:/opt/RUN -w /opt/RUN -i -t mtiller/book-builder ./FO
-            if (testing) {
-                let output = await exec("docker", ["run", "-v", `${dir}:/opt/RUN`, "-w", "/opt/RUN", "-i", "mtiller/book-builder", `/opt/RUN/${model}`, `-override=${oflag}`]);
-                runDebug("Simulation output:");
-                runDebug(output);
-            } else {
-                let output = await exec(`${model}`, [], {
+            let output = testing
+                ? await exec("docker", ["run", "-v", `${dir}:/opt/RUN`, "-w", "/opt/RUN", "-i", "mtiller/book-builder", `/opt/RUN/${model}`, `-override=${oflag}`])
+                : await exec(`${model}`, [`-override=${oflag}`], {
                     env: {
                         "LD_LIBRARY_PATH": ldir,
                     },
                     cwd: dir,
                 });
-                runDebug("Simulation output:");
-                runDebug(output);
-            }
-            // Parse simulation results
-            let obs = blobReader(rfile);
-            let file = new MatFile(obs);
-            let handler = new DymolaResultsExtractor((name: string) => true, (name: string) => false);
-            await file.parse(handler);
+            runDebug("Simulation output:");
+            runDebug(output);
 
-            // Collect required results
-            sendSiren(res, {
-                title: "Result of simulating " + details.desc.description,
-                properties: {
-                    trajectories: handler.trajectories,
-                }
-            });
+            if (!output.success) {
+                // Collect required results
+                sendSiren(res, {
+                    title: "Error simulating " + details.desc.description,
+                    class: ["error"],
+                    properties: {
+                        ...output,
+                    }
+                });
+            } else {
+                // Parse simulation results
+                let obs = blobReader(rfile);
+                let file = new MatFile(obs);
+                let handler = new DymolaResultsExtractor((name: string) => true, (name: string) => false);
+                await file.parse(handler);
+
+                // Collect required results
+                sendSiren(res, {
+                    title: "Result of simulating " + details.desc.description,
+                    class: ["result"],
+                    properties: {
+                        ...output,
+                        trajectories: handler.trajectories,
+                    }
+                });
+            }
         } catch (e) {
             console.error("Error running simulation: ", e);
             res.status(500).send(e.message);
