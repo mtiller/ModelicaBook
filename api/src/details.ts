@@ -1,6 +1,27 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+export interface CaseData {
+    mods: {},
+    vars: Array<{
+        style: string,
+        scale: number,
+        name: string,
+        legend: string,
+    }>;
+    ncols: number,
+    title: string,
+    legloc: "upper right" | "upper left" | "lower right" | "lower left",
+    res: string,
+    ncp: number,
+    stopTime: number,
+    tol: number,
+    ylabel: string,
+    ymin: number | null,
+    type: string,
+    ymax: number | null,
+};
+
 export interface Details {
     categories: {
         discrete?: string[];
@@ -23,6 +44,7 @@ export interface Details {
             name: string;
         }
     };
+    casedata?: CaseData;
 };
 
 export type DetailsMap = { [model: string]: Details };
@@ -41,9 +63,16 @@ export function getDetails(models: string[]): DetailsMap {
     let details: DetailsMap = {};
 
     models.forEach((model) => {
-        let data = fs.readFileSync(path.join(".", "models", "json", `${model}.json`));
-        let obj = JSON.parse(data.toString()) as Details;
-        details[model] = obj;
+        let dfile = path.join(".", "models", "json", `${model}.json`);
+        let ddata = fs.readFileSync(dfile);
+        let dobj = JSON.parse(ddata.toString()) as Details;
+        let cfile = path.join(".", "models", "json", `${model}-case.json`);
+        if (fs.existsSync(cfile)) {
+            let cdata = fs.readFileSync(cfile);
+            let cobj = JSON.parse(cdata.toString()) as CaseData;
+            dobj.casedata = cobj;
+        }
+        details[model] = dobj;
     });
 
     return details;

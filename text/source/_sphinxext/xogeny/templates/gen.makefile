@@ -33,7 +33,7 @@ js/{{res}}.js.gz: js/{{res}}.js
 {% endfor %}
 
 exes.tar.gz: {%- for res in results %} {{res}} {{res}}_init.xml json/{{res}}.json {% endfor %}
-	tar zcf exes.tar.gz {%- for res in results %} {{res}} {{res}}_init.xml json/{{res}}.json {% endfor %}
+	tar zcf exes.tar.gz {%- for res in results %} {{res}} {{res}}_init.xml json/{{res}}.json {% endfor %} json/*-case.json 
 
 tidy:
 	-rm -f *.o *.c *.h *.libs *.log *.makefile
