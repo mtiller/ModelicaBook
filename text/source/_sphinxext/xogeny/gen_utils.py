@@ -136,9 +136,9 @@ def add_compare_plot(plot, res1, v1, res2, v2, title, legloc="lower right", ylab
 def _generate_casedata():
     for plot in plots:
         pdata = plots[plot]
-        with open(os.path.join(path, "text", "results",
+        if pdata["type"]=="simple":
+            with open(os.path.join(path, "text", "results",
                                "json", plot+"-case.json"), "w+") as ofp:
-            if pdata["type"]=="simple":
                 res = results[pdata["res"]]
                 obj = dict(pdata)
                 obj["vars"] = map(lambda x: x.dict(), pdata["vars"])
@@ -146,7 +146,7 @@ def _generate_casedata():
                 obj["ncp"] = res["ncp"]
                 obj["tol"] = res["tol"]
                 obj["mods"] = res["mods"]
-                json.dump(obj, ofp, indent=2);
+                json.dump(obj, ofp, indent=2)
 
 def _generate_plots():
     for plot in plots:
