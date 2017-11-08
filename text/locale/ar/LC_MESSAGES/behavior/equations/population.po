@@ -133,6 +133,8 @@ msgid ""
 "to be involved, this mathematical relationship has a slightly different "
 "structure than reproduction and starvation, *i.e.,*"
 msgstr ""
+"وفي النهاية، التأثير الأخير الذي نحتاج أن نضعه في الاعتبار هو \"الافتراس\"، *أي* ، الاستهلاك لفصائل الفرائس"
+" عن طريق فصائل المفترسات."
 
 #: ../../source/behavior/equations/population.rst:79
 msgid ""
