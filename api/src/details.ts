@@ -67,10 +67,14 @@ export function getDetails(models: string[]): DetailsMap {
         let ddata = fs.readFileSync(dfile);
         let dobj = JSON.parse(ddata.toString()) as Details;
         let cfile = path.join(".", "models", "json", `${model}-case.json`);
-        if (fs.existsSync(cfile)) {
-            let cdata = fs.readFileSync(cfile);
-            let cobj = JSON.parse(cdata.toString()) as CaseData;
-            dobj.casedata = cobj;
+        try {
+            if (fs.existsSync(cfile)) {
+                let cdata = fs.readFileSync(cfile);
+                let cobj = JSON.parse(cdata.toString()) as CaseData;
+                dobj.casedata = cobj;
+            }
+        } catch (e) {
+            console.warn("Error parsing case data: ", e);
         }
         details[model] = dobj;
     });
