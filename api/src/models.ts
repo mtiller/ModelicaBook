@@ -52,7 +52,13 @@ export function modelPost(details: Details, model: string, testing: boolean) {
             // Parse body
             runDebug("Parameters given in body: %o", req.body);
             let overrides = Object.keys(req.body || {}).filter((name) => (details.categories.parameter || []).indexOf(name) >= 0);
-            let oflag = overrides.map((name) => `${name}=${req.body[name]}`).join(",");
+            let params: { [param: string]: string } = {};
+            let oflags: string[] = [];
+            overrides.forEach((name) => {
+                params[name] = req.body[name];
+                oflags.push(`${name}=${req.body[name]}`)
+            })
+            let oflag = oflags.join(",");
             runDebug("Override flags = %s", oflag);
 
             // Copy executable to temporary directory
@@ -83,6 +89,7 @@ export function modelPost(details: Details, model: string, testing: boolean) {
                     class: ["error"],
                     properties: {
                         ...output,
+                        params: params,
                     }
                 });
             } else {
@@ -98,6 +105,7 @@ export function modelPost(details: Details, model: string, testing: boolean) {
                     class: ["result"],
                     properties: {
                         ...output,
+                        params: params,
                         trajectories: handler.trajectories,
                     }
                 });

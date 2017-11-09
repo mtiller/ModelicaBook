@@ -1,0 +1,3 @@
+[submodule "apps"]
+	path = apps
+	url = git@github.com:xogeny/book-apps.git
