@@ -26,6 +26,7 @@ deployment:
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push mtiller/book-server
+      - docker run -v `pwd`:/opt/MBE/ModelicaBook -e "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY" -e "AWS_SECRET_KEY=$AWS_SECRET_KEY" -e "S3BUCKET=beta.book.xogeny.com" -i -t mtiller/book-builder make web
 
 machine:
   services:
