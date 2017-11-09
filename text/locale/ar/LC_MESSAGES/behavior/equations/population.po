@@ -101,6 +101,7 @@ msgstr ""
 " وهنا أيضا لدينا علاقة تناسب، ولكن هذه المرة التناسب عكسي، ﻷنه بعكس تكاثر الفرائس، كلما ازدادت أعداد المفترسات"
 " في الجوار كلما ازداد احتمال الموت جوعا. ويمكننا التعبير عن ذلك رياضيا بنفس الطريقة تقريبا التي عبّرنا بها"
 " عن التكاثر."
+
 #: ../../source/behavior/equations/population.rst:53
 msgid ""
 "where :math:`y` is the predator population, :math:`\\dot{y}_s` is the change"
@@ -146,6 +147,7 @@ msgid ""
 "proportionality constant representing the likelihood that the predator will "
 "have sufficient extra nutrition to support reproduction."
 msgstr ""
+
 
 #: ../../source/behavior/equations/population.rst:86
 msgid ""
