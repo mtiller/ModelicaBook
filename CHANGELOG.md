@@ -18,6 +18,9 @@ Lots of attention after too long.
     in the browser.  The new approach has a minimal browser footprint so should lead
     to faster load times, faster simulations and availability across all platforms.
 
+  * A root level Makefile was added that allows the entire book to be built requiring
+    only Docker and Node to be installed.
+
 ### Version 0.3.6
 
 #### Enhancements

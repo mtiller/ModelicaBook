@@ -10,11 +10,11 @@
 BUILDER_IMAGE = mtiller/book-builder
 S3BUCKET = beta.book.xogeny.com
 
-.PHONY: all deploy specs results dirhtml apps api publish_server publish_web
+.PHONY: all deploy specs results dirhtml apps api publish_server publish_web serve
 
-all: specs results dirhtml api apps
+all: specs results dirhtml apps
 
-deploy: publish_server publish_web
+deploy: api publish_server publish_web
 
 deps:
 	docker pull $(BUILDER_IMAGE)
@@ -31,14 +31,21 @@ dirhtml: deps
 apps: deps
 	(cd apps; git pull && yarn install && yarn build && yarn run deploy -- ../text/build/dirhtml/_static/interact-bundle.js)
 
+serve:
+	(cd text/build/dirhtml; serve)
+
+# Note, this step will fail if you haven't set the NPM_TOKEN environment variable
 api:
-	mkdir api/models
+	- rm -rf api/models
+	- mkdir api/models
 	tar zxf text/results/exes.tar.gz --directory api/models
 	(cd api; npm install -g dockergen && npm run image)
 
+# This target requires the DOCKER_* environment variables to be set
 publish_server:
 	docker login -e $(DOCKER_EMAIL) -u $(DOCKER_USER) -p $(DOCKER_PASS)
 	docker push $(BUILDER_IMAGE)
 
+# This target requires the AWS_*_KEY environment variables to be set
 publish_web:
 	docker run -v `pwd`:/opt/MBE/ModelicaBook -e "AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY)" -e "AWS_SECRET_KEY=$(AWS_SECRET_KEY)" -e "S3BUCKET=$(S3BUCKET)" -i -t $(BUILDER_IMAGE) make web
