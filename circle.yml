@@ -12,21 +12,18 @@ dependencies:
 test:
   override:
     - git fetch --unshallow
-    - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make specs
-    - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make results
-    - docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t mtiller/book-builder make dirhtml
-    - (cd apps; yarn install && yarn build && yarn run deploy -- ../text/build/dirhtml/_static/interact-bundle.js)
-    - mkdir api/models
-    - tar zxf text/results/exes.tar.gz --directory api/models
-    - (cd api; npm install -g dockergen && npm run image)
+    - make specs
+    - make results
+    - make dirhtml
+    - make apps
+    - make api
 
 deployment:
   hub:
     branch: master
     commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push mtiller/book-server
-      - docker run -v `pwd`:/opt/MBE/ModelicaBook -e "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY" -e "AWS_SECRET_KEY=$AWS_SECRET_KEY" -e "S3BUCKET=beta.book.xogeny.com" -i -t mtiller/book-builder make web
+      - make publish_server
+      - make publish_web
 
 machine:
   services:

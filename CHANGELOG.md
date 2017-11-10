@@ -1,5 +1,23 @@
 This file collects the significant changes to the book since its initial public release.
 
+### Version 0.5.0
+
+Lots of attention after too long.
+
+  * Book now builds automatically via CircleCI.  This is a big improvement because it means
+    that commits and pull requests can be automatically built and deployed.  In practice,
+    I may not redeploy on every commit, but at least the tool chain is now solid enough
+    that we can be sure lots of manual updates to tools won't be required.
+
+  * Removal of client-side simulations.  In 2014, I was optimistic that the tools required
+    to produce Javascript for all simulations would stabilize.  Unfortunately, it hasn't.
+    The instability in those tools was impacting the stability of the build process for
+    the book.  As such, I've removed client side simulation.  Although it was pretty 
+    cool, it actually had two problems.  First, it was slower (than the new server-side
+    simulation).  Second, it was an issue on mobile devices because of memory required
+    in the browser.  The new approach has a minimal browser footprint so should lead
+    to faster load times, faster simulations and availability across all platforms.
+
 ### Version 0.3.6
 
 #### Enhancements
