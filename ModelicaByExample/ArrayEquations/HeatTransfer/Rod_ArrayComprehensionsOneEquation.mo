@@ -30,7 +30,7 @@ model Rod_ArrayComprehensionsOneEquation
 initial equation
   T = linspace(200,300,n);
 equation
-  rho*V*C*der(T) = {-h*(T[i]-Tamb)
+  rho*V*C*der(T) = {-(if i==1 or i==n then h*(T[i]-Tamb) else 0)
                     -(if i==1 then 0 else k*A/(L/n)*(T[i]-T[i-1]))
                     -(if i==n then 0 else k*A/(L/n)*(T[i]-T[i+1])) for i in 1:n};
 end Rod_ArrayComprehensionsOneEquation;
