@@ -31,11 +31,12 @@ extensions = ['sphinx.ext.doctest',
               'sphinx.ext.todo',
               'xogeny.sim',
               'matplotlib.sphinxext.plot_directive',
-              'sphinx.ext.pngmath',
+              # 'sphinx.ext.pngmath',
+              'sphinx.ext.mathjax',
               'sphinx.ext.ifconfig']
 
 # As long as we are not generating with the epub tag it is save to use MathJax.
-if 'epub' not in tags: extensions.append('sphinx.ext.mathjax')
+# if 'epub' not in tags: extensions.append('sphinx.ext.mathjax')
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
