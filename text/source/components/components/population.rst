@@ -311,7 +311,7 @@ configuration:
    :width: 100%
    :align: center
    :alt: Component-oriented version of the classic Lotka-Volterra model
-   :figclass: align-center
+   :figclass: align-center diagram
 
 Here we see that the ``Starvation`` model is attached to the ``foxes``
 population while the ``Reproduction`` model is attached to the
@@ -359,7 +359,7 @@ visualized, the schematic for the resulting system is rendered as:
    :align: center
    :alt: The Classic Lotka-Volterra model augmented with an additional
 	 predatory species
-   :figclass: align-center
+   :figclass: align-center diagram
 
 
 Resulting Dynamics

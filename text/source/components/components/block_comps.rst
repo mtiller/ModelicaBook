@@ -131,7 +131,7 @@ When rendered, the block looks like this:
    :width: 100%
    :align: center
    :alt: Gain Block
-   :figclass: align-center
+   :figclass: align-center icon
 
 ``Gain``
 ~~~~~~~~
@@ -151,7 +151,7 @@ When rendered, the block looks like this:
    :width: 100%
    :align: center
    :alt: Gain Block
-   :figclass: align-center
+   :figclass: align-center icon
 
 ``Sum``
 ~~~~~~~
@@ -173,7 +173,7 @@ When rendered, the block looks like this:
    :width: 100%
    :align: center
    :alt: Gain Block
-   :figclass: align-center
+   :figclass: align-center icon
 
 ``Product``
 ~~~~~~~~~~~
@@ -191,7 +191,7 @@ When rendered, the block looks like this:
    :width: 100%
    :align: center
    :alt: Gain Block
-   :figclass: align-center
+   :figclass: align-center icon
 
 
 ``Feedback``
@@ -214,7 +214,7 @@ When rendered, the block looks like this:
    :width: 100%
    :align: center
    :alt: Gain Block
-   :figclass: align-center
+   :figclass: align-center icon
 
 ``Integrator``
 ~~~~~~~~~~~~~~
@@ -234,7 +234,7 @@ When rendered, the block looks like this:
    :width: 100%
    :align: center
    :alt: Gain Block
-   :figclass: align-center
+   :figclass: align-center icon
 
 Systems
 ^^^^^^^
@@ -268,7 +268,7 @@ The following block diagram will solve for the temperature profile,
    :width: 100%
    :align: center
    :alt: Gain Block
-   :figclass: align-center
+   :figclass: align-center diagram
 
 The Modelica source code for this example is:
 
@@ -349,7 +349,7 @@ Here is a schematic diagram showing how both approaches can be combined:
    :width: 100%
    :align: center
    :alt: Gain Block
-   :figclass: align-center
+   :figclass: align-center diagram
 
 When modeling a physical system together with a control system, the
 physical components and effects will use an acausal formulation.  The

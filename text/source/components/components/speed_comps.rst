@@ -27,7 +27,7 @@ this:
    :width: 100%
    :align: center
    :alt: Plant Model Schematic
-   :figclass: align-center
+   :figclass: align-center diagram
 
 The source code for the underlying Modelica model is:
 
@@ -110,7 +110,7 @@ When assembled, our final system looks like this:
    :width: 100%
    :align: center
    :alt: Plant with sample hold sensor
-   :figclass: align-center
+   :figclass: align-center diagram
 
 If we simulate this system for 5 seconds, we can compare the actual
 speed of the inertia with the signal returned from our sensor:
@@ -144,7 +144,7 @@ When assembled, our system model looks like this:
    :width: 100%
    :align: center
    :alt: Plant with interval measure sensor
-   :figclass: align-center
+   :figclass: align-center diagram
 
 Simulating this system, we get the following results for estimated speed:
 
@@ -200,7 +200,7 @@ The resulting system, when rendered, looks like this:
    :width: 100%
    :align: center
    :alt: Plant with pulse counter sensor
-   :figclass: align-center
+   :figclass: align-center diagram
 
 Simulating the system, we see that the results are the same as in our
 previous discussion of :ref:`pulse-counting`:

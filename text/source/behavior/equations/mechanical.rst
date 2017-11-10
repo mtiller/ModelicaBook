@@ -11,7 +11,7 @@ we wish to model is the one shown in the following figure:
    :width: 100%
    :align: center
    :alt: Plant with pulse counter sensor
-   :figclass: align-center
+   :figclass: align-center diagram
 
 It is worth pointing out how much easier it is to convey the intention
 of a model by presenting it in schematic form.  Assuming appropriate

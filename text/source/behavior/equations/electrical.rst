@@ -12,7 +12,7 @@ familiar with electrical systems, consider the following circuit:
     :align: center
     :width: 50%
     :alt: Low-Pass RLC Filter
-    :figclass: align-center
+    :figclass: align-center diagram
 
     Low-Pass RLC Filter
 

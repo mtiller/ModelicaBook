@@ -390,7 +390,7 @@ grounded gear:
    :width: 100%
    :align: center
    :alt: Example using a configurable gear
-   :figclass: align-center
+   :figclass: align-center diagram
 
 And, as we would expect, the response for ``inertia1`` and
 ``inertia4`` are identical:
