@@ -306,7 +306,7 @@ devhelp:
 	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/ModelicaByExample"
 	@echo "# devhelp"
 
-epub:	$(SPHINXDEPS)
+epub:
 	$(SPHINXBUILD) -b epub -t epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
