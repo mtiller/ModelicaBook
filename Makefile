@@ -39,7 +39,7 @@ apps: deps
 	(cd apps; yarn install && yarn build && yarn run deploy -- ../text/build/dirhtml/_static/interact-bundle.js)
 
 serve:
-	(cd text/build/dirhtml; serve)
+	(cd text/build/dirhtml; serve -p 5001)
 
 # Note, this step will fail if you haven't set the NPM_TOKEN environment variable
 api:
