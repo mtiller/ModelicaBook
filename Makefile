@@ -16,16 +16,19 @@ all: specs results dirhtml api apps
 
 deploy: publish_server publish_web
 
-specs:
+deps:
+	docker pull $(BUILDER_IMAGE)
+
+specs: deps
 	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make specs
 
-results:
+results: deps
 	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make results
 
-dirhtml:
+dirhtml: deps
 	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make dirhtml
 
-apps:
+apps: deps
 	(cd apps; git pull && yarn install && yarn build && yarn run deploy -- ../text/build/dirhtml/_static/interact-bundle.js)
 
 api:
