@@ -257,7 +257,8 @@ Attributes of ``Real``
     compilers in various ways to inform users or developers about
     potentially invalid input data or solutions.
 
-    **Default**: -:math:`\infty`
+    **Default**: ``-DBL_MAX`` where ``DBL_MAX`` is the largest floating point
+    value that can be represented for the given platform.
 
     **Type**: ``Real``
 
@@ -267,7 +268,8 @@ Attributes of ``Real``
     compilers in various ways to inform users or developers about
     potentially invalid input data or solutions.
 
-    **Default**: :math:`\infty`
+    **Default**: ``DBL_MAX`` where ``DBL_MAX`` is the largest floating point
+    value that can be represented for the given platform.
 
     **Type**: ``Real``
 
