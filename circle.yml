@@ -7,6 +7,7 @@ dependencies:
   override:
     - docker info
     - docker pull mtiller/book-builder
+    - npm install -g mathjax-node-page@1.4.1
 
 test:
   override:
