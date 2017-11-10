@@ -27,9 +27,16 @@ results: deps
 
 dirhtml: deps
 	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make dirhtml
+	find text/build/dirhtml -name '*.html' -exec ./inline-math.sh {} \;
+
+epub: deps
+	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make epub
+	find text/build/epub -name '*.html' -exec ./inline-math.sh {} \;
+	# This is the bit that does not work.  Need to repackage epub without regenerating source...
+	docker run -v `pwd`:/opt/MBE/ModelicaBook -e "SPHINXDEPS=''" -i -t $(BUILDER_IMAGE) make epub
 
 apps: deps
-	(cd apps; git pull && yarn install && yarn build && yarn run deploy -- ../text/build/dirhtml/_static/interact-bundle.js)
+	(cd apps; yarn install && yarn build && yarn run deploy -- ../text/build/dirhtml/_static/interact-bundle.js)
 
 serve:
 	(cd text/build/dirhtml; serve)
