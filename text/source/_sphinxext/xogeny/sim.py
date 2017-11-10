@@ -6,7 +6,7 @@
 # should be inserted.
 
 from docutils import nodes
-from sphinx.util.compat import Directive
+from docutils.parsers.rst import Directive
 import json
 
 class sim_request(nodes.General, nodes.Element):
@@ -46,5 +46,5 @@ def setup(app):
     # This is the node we'll insert
     app.add_node(sim_request,
                  html=(visit_sim_request, depart_sim_request))
-    
+
     app.add_directive('simulate', SimulateDirective)
