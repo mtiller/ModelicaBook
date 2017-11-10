@@ -1,6 +1,6 @@
 # Getting Started
 
-[![Circleci](https://circleci.com/gh/modelica-projects/ModelicaBook.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/modelica-projects/ModelicaBook)
+[![Circleci](https://circleci.com/gh/xogeny/ModelicaBook.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/xogeny/ModelicaBook)
 
 ## Location on the Web
 
@@ -77,42 +77,21 @@ liked about Sphinx were:
 Sphinx is completely portable so in theory, it should be possible to
 run Sphinx under nearly any operating system.
 
-I wrote most of the book under MacOS, but I'm confident it can be
-compiled without much effort under Linux as well.  For MacOSX, I used
-`brew` (homebrew) to install the various tools required.  For Linux,
-the following commands are necessary in order to install all the tools
-required to build the book:
+Although previous versions required a bunch of tools to build the
+book, the current version only requires that you have Node and
+Docker installed.  I highly recommend the [Docker for Mac](https://www.docker.com/docker-mac)
+and [Docker for Windows](https://www.docker.com/docker-windows) flavors if
+you are on macOS or Windows, respectively.
+
+There is now a root level Makefile.  You should be able to simply run:
 
 ```
-$ apt-get install -y wget
-$ for deb in deb deb-src; do echo "$deb http://build.openmodelica.org/apt `lsb_release -cs` stable"; done | sudo tee /etc/apt/sources.list.d/openmodelica.list
-$ wget -q http://build.openmodelica.org/apt/openmodelica.asc -O- | sudo apt-key add -
-$ apt-get update
-$ apt-get install -y openmodelica
-
-$ apt-get install -y python python-dev python-pip python-virtualenv
-$ apt-get install -y calibre librsvg2-bin texlive-fonts-recommended
-$ apt-get install -y texlive-latex-recommended texlive-latex-extra
-$ apt-get install -y python-matplotlib python-pip python-scipy
-$ apt-get install -y python-sphinx python-jinja2 s3cmd
-
-$ pip install sphinx-intl
+make all
 ```
 
-This corresponds to the `Dockerfile` in the `docker/PY` directory (for
-anybody interested in building the book using a Docker container).
+...which should build the book (if I'm forgetting something, send me a pull request
+for this `README` adding any further instructions).  The source will be generated in
+`./text/build/dirhtml`.
 
-### Building
-
-To build the book in HTML, go to `ModelicaBook/text` and use this command:
-
-    $ make
-
-If that doesn't work for some reason, the following can be used to troubleshoot the problem:
-
-    $ make specs
-    $ make results
-    $ make dirhtml
-    $ make server
-
-Other options for `make` can be found by using `make help`
+The `Dockerfile` used to create the `mtiller/book-builder` image used to build
+the book can be found in the [`book-builder` Repository](https://github.com/xogeny/book-builder)
