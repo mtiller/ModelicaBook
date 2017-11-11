@@ -1,7 +1,7 @@
 within ModelicaByExample.Components.SpeedMeasurement.Examples;
 model PlantWithSampleHold "Comparison between ideal and sample-hold sensor"
   extends Plant;
-  Components.SampleHold sampleHold(sample_rate=0.125)
+  Components.SampleHold sampleHold(sample_time=0.125)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},
                           rotation=90, origin={20,30})));
 equation

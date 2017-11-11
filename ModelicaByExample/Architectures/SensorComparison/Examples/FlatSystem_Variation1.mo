@@ -12,7 +12,7 @@ model FlatSystem_Variation1 "Variation containing a different sensor model"
     annotation (Placement(transformation(extent={{10,-50},{30,-30}})));
   Modelica.Mechanics.Rotational.Components.Damper damper(d=4)
     annotation (Placement(transformation(extent={{40,-80},{60,-60}})));
-  Components.SpeedMeasurement.Components.SampleHold speedSensor(sample_rate=0.036)
+  Components.SpeedMeasurement.Components.SampleHold speedSensor(sample_time=0.036)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}}, rotation=90, origin={70,0})));
   Modelica.Blocks.Math.Feedback feedback annotation (Placement(transformation(

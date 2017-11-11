@@ -189,7 +189,7 @@ understand the issue, consider the following example.
 
 .. code-block:: modelica
 
-    replaceable SampleHoldSensor sensor(sample_rate=0.01)
+    replaceable SampleHoldSensor sensor(sample_time=0.01)
       constrainedby Sensor;
 
 Now, what happens if we were to redeclare the ``sensor`` as follows:
@@ -198,9 +198,9 @@ Now, what happens if we were to redeclare the ``sensor`` as follows:
 
     redeclare IdealSensor sensor;
 
-Is the value for ``sample_rate`` lost?  We would hope so since the
+Is the value for ``sample_time`` lost?  We would hope so since the
 ``IdealSensor`` model probably doesn't have a ``parameter`` called
-``sample_rate`` to set.
+``sample_time`` to set.
 
 But let's consider another case:
 

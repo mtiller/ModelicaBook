@@ -89,7 +89,7 @@ Hierarchical System
 
 At this point, we'd like to explore this performance issue a bit more
 to understand how characteristics of the sensor (*e.g.,*
-``sample_rate``) impact performance and potentially what kinds of
+``sample_time``) impact performance and potentially what kinds of
 improvements might ultimately be required for the control system
 itself.
 
@@ -325,7 +325,7 @@ the ``SampleHoldSensor`` model included:
 
 .. code-block:: modelica
 
-    parameter Modelica.SIunits.Time sample_rate=0.01;
+    parameter Modelica.SIunits.Time sample_time=0.01;
     Modelica.Mechanics.Rotational.Interfaces.Flange_a shaft;
     Modelica.Blocks.Interfaces.RealOutput w;
 
@@ -370,16 +370,16 @@ component to be an ``IdealSensor``, *e.g.,*
     end Variation4;
 
 Now we have a problem.  The problem is that our original ``sensor``
-component has a parameter called ``sample_rate``.  But, we are trying
+component has a parameter called ``sample_time``.  But, we are trying
 to replace it with something that does not have that parameter.  In
 other words, the ``IdealSensor`` model is **not** plug-compatible with
 the ``SampleHoldSensor`` model because it is missing something,
-``sample_rate``, that the original model, ``SampleHoldSensor``, had.
+``sample_time``, that the original model, ``SampleHoldSensor``, had.
 
 .. index:: constraining types
 
 But when we look at source code of the ``InitialSystem`` model, we see
-that the ``sample_rate`` parameter was never used.  So there is no
+that the ``sample_time`` parameter was never used.  So there is no
 real reason why we couldn't switch the type.  For this reason,
 Modelica includes the notion of a *constraining type*.
 
