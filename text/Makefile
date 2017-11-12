@@ -309,11 +309,14 @@ devhelp:
 
 epub:
 	$(SPHINXBUILD) -b epub -t epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+	-rm $(BUILDDIR)/epub/*.epub $(BUILDDIR)/epub/*.mobi
+	find $(BUILDDIR)/epub -name '*.xhtml' -exec ../inline-math.sh {} \;
+#	(cd $(BUILDDIR)/epub; zip -r ModelicaByExample.epub .)
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
 mobi:   epub
-	(cd $(BUILDDIR)/epub; ebook-convert ModelicabyExample.epub ModelicaByExample.mobi)
+	(cd $(BUILDDIR)/epub; ebook-convert ModelicaByExample.epub ModelicaByExample.mobi)
 	@echo
 	@echo "Conversion to mobi finished. The mobi file is in $(BUILDDIR)/epub."
 
