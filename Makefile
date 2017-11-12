@@ -29,6 +29,9 @@ dirhtml: deps
 	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make dirhtml
 	find text/build/dirhtml -name '*.html' -exec ./inline-math.sh {} \;
 
+json: deps
+	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make json
+
 epub: deps
 	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make epub
 	find text/build/epub -name '*.html' -exec ./inline-math.sh {} \;
