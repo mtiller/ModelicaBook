@@ -7,7 +7,6 @@ dependencies:
   override:
     - docker info
     - docker pull mtiller/book-builder
-    - npm install -g mathjax-node-page@1.4.1
 
 test:
   override:
@@ -19,8 +18,13 @@ test:
     - make api
 
 deployment:
-  hub:
+  beta:
     branch: master
+    commands:
+      - make publish_server
+      - make publish_web
+  main:
+    branch: published
     commands:
       - make publish_server
       - make publish_web

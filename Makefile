@@ -9,6 +9,8 @@
 
 BUILDER_IMAGE = mtiller/book-builder
 S3BUCKET = beta.book.xogeny.com
+RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE)
+APPS_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/apps -i -t $(BUILDER_IMAGE)
 
 .PHONY: all deploy specs results dirhtml apps api publish_server publish_web serve
 
@@ -17,34 +19,37 @@ all: specs results dirhtml apps
 deploy: api publish_server publish_web
 
 deps:
-	docker pull $(BUILDER_IMAGE)
+	#docker pull $(BUILDER_IMAGE)
 
 specs: deps
-	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make specs
+	$(RUN) make specs
 
 results: deps
-	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make results
+	$(RUN) make results
 
 dirhtml: deps
-	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make dirhtml
-	find text/build/dirhtml -name '*.html' -exec ./inline-math.sh {} \;
+	$(RUN) make dirhtml
+	$(RUN) ./find-math.sh build/dirhtml
 
 json: deps
-	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make json
+	$(RUN) make json
 
 epub: deps
-	docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE) make epub
-	find text/build/epub -name '*.html' -exec ./inline-math.sh {} \;
-	# This is the bit that does not work.  Need to repackage epub without regenerating source...
-	docker run -v `pwd`:/opt/MBE/ModelicaBook -e "SPHINXDEPS=''" -i -t $(BUILDER_IMAGE) make epub
+	$(RUN) make epub
+	$(RUN) ./find-math.sh build/epub
+	# find text/build/epub -name '*.html' -exec ./inline-math.sh {} \;
+	# TODO: Repackage .epub file with inlined versions...
 
 apps: deps
-	(cd apps; yarn install && yarn build && yarn run deploy -- ../text/build/dirhtml/_static/interact-bundle.js)
+	$(APPS_RUN) yarn install
+	$(APPS_RUN) yarn build
+	$(APPS_RUN) yarn run deploy ../text/build/dirhtml/_static/interact-bundle.js
 
 serve:
 	(cd text/build/dirhtml; serve -p 5001)
 
-# Note, this step will fail if you haven't set the NPM_TOKEN environment variable
+# N.B. - This step can only be run by somebody who has access to the Xogeny private packages required to build the 
+# API.
 api:
 	- rm -rf api/models
 	- mkdir api/models
