@@ -109,21 +109,21 @@ element would be:
 
 .. math::
 
-   \rho A L_i C \frac{\mathrm{d} T_1}{\mathrm{d}t} &=
+   \rho A L_i C \frac{\mathrm{d} T_1}{\mathrm{d}t} =
    -k A \frac{T_1-T_2}{L_i} - h A (T_1-T_{amb})
 
 Similarly, the heat balance for the last element would be:
 
 .. math::
 
-   \rho A L_i C \frac{\mathrm{d} T_n}{\mathrm{d}t} &= -k
+   \rho A L_i C \frac{\mathrm{d} T_n}{\mathrm{d}t} = -k
    A\frac{T_n-T_{n-1}}{L_i} -h A (T_n-T_{amb})
 
 Finally, the heat balance for all other elements would be:
 
 .. math::
 
-   \rho A L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t} &= -k
+   \rho A L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t} = -k
    A\frac{T_i-T_{i-1}}{L_i} -k A\frac{T_i-T_{i+1}}{L_i} -h A (T_i-T_{amb})
 
 Implementation
