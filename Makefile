@@ -36,6 +36,9 @@ json: deps
 epub: deps
 	$(RUN) make epub
 
+pdfs: deps
+	$(RUN) make pdf pdf-a4
+
 apps: deps
 	$(APPS_RUN) yarn install
 	$(APPS_RUN) yarn build
