@@ -1,145 +1,79 @@
-{% set SponsorsData = {
-    "Gold": ["CyDesign", "Wolfram", "Modelon", "Maplesoft", "DS"],
-    "Silver": ["Ricardo", "ITI", "MA", "GlobalCrown", "Siemens"],
-    "Bronze": ["ST", "OSMC", "dofware", "BauschGall", "TUHH", "Schlegel"],
-    "BauschGall": {
-	"name": "Bausch-Gall GmbH",
-	"profile": "Modelica Technology is the base of our engineering projects and training classes. We develop, test and distribute Modelica Libraries.",
-	"link": "http://www.bausch-gall.de/"
-    },
-    "CyDesign": {
-	"name": "CyDesign",
-	"profile": "CyDesign Labs, a subsidiary of ESI Group SA, offers an innovative model-based design optimization platform for advanced product design.",
-	"link": "http://www.cydesign.com/"
-    },
-    "DS": {
-        "name": "Dassault Systèmes",
-        "profile": "Dassault Systèmes provides CATIA and Dymola, leading Modelica and 3D solutions that transform how products are designed, simulated and validated.",
-        "link": "http://3ds.com/modelica"
-    },
-    "GlobalCrown": {
-	"name": "Global Crown Technology",
-	"profile": "Global Crown Technology provides engineering services and tools for Model Based Systems Engineering. We are based in China and serve mainly the aerospace and automotive industries.",
-	"link": "http://www.globalcrown.com.cn/"
-    },
-    "ITI": {
-	"name": "ITI",
-	"profile": "ITI as a leading company for dynamic system simulation develops the powerful modeling platform SimulationX for multiphysics analyses.",
-	"link": "http://www.itisim.com"
-    },
-    "MA": {
-    "name": "Modelica Associtaion",
-    "profile": "The Modelica Association is a non-profit organization that develops the Modelica language and the Modelica Standard Library",
-    "link": "http://www.modelica.org/"
-    },
-    "Maplesoft": {
-	"name": "Maplesoft",
-	"profile": "Maplesoft provides high-performance software tools for engineering, science, and mathematics. Its products reduce errors, shorten design times, lower costs, and improve results.",
-	"link": "http://www.maplesoft.com"
-    },
-    "Modelon": {
-	"name": "Modelon",
-	"profile": "The global experts in Modelica and FMI tools, training, and consulting for manufacturers making the transition to modern Analytical MBSE methods.",
-	"link": "http://www.modelon.com"
-    },
-    "OSMC": {
-	"name": "OpenModelica",
-	"profile": "OpenModelica is a complete open-source Modelica modeling, simulation, and optimization environment; by the Open Source Modelica Consortium.",
-	"link": "http://www.openmodelica.org"
-    },
-    "Ricardo": {
-	"name": "Ricardo Software",
-	"profile": "Vehicle and powertrain CAE solutions that help clients solve engineering challenges and explore new technology.",
-	"link": "http://www.ricardo.com/software"
-    },
-    "Schlegel": {
-	"name": "Schlegel Simulation GmbH",
-	"profile": "Schlegel Simulation provides state of the art expertise in modeling and simulation of mechatronic systems.",
-	"link": "http://www.schlegel-simulation.de/"
-    },
-    "Siemens": {
-	"name": "Siemens PLM Software",
-	"profile": "Siemens PLM Software is a world-leading provider of product lifecycle management (PLM) software and services with 77,000 customers worldwide.",
-	"link": "http://www.plm.automation.siemens.com/en_us/products/lms/imagine-lab/amesim/platform/modelica.shtml"
-    },
-    "TUHH": {
-	"name": "Technische Universität Hamburg/Harburg",
-	"profile": "Technische Universität Hamburg/Harburg",
-	"link": "http://www.tuhh.de"
-    },
-    "Wolfram": {
-	"name": "Wolfram Research",
-	"profile": "Wolfram SystemModeler is the easiest Modelica environment to learn, integrated with Mathematica for the best analysis workflow",
-	"link": "http://wolfram.com/system-modeler/?modelica-by-example"
-    },
-    "dofware": {
-	"name": "DOFWARE",
-	"profile": "",
-	"link": "http://www.dofware.com/"
-    },
-    "ST": {
-	"name": "Suzhou Tongyuan Software & Control Technology Co., Ltd",
-	"profile": "Suzhou Tongyuan offers tools and services for the design of complex industrial systems based on Modelica.",
-	"link": "http://www.tongyuan.cc/"
-    }
-} %}
-
-{%- macro popup(id, level) -%}
+{% set SponsorsData = { "Gold": ["CyDesign", "Wolfram", "Modelon", "Maplesoft", "DS"], "Silver": ["Ricardo", "ITI", "MA",
+"GlobalCrown", "Siemens"], "Bronze": ["ST", "OSMC", "dofware", "BauschGall", "TUHH", "Schlegel"], "BauschGall": { "name":
+"Bausch-Gall GmbH", "profile": "Modelica Technology is the base of our engineering projects and training classes. We develop,
+test and distribute Modelica Libraries.", "link": "http://www.bausch-gall.de/" }, "CyDesign": { "name": "CyDesign", "profile":
+"CyDesign Labs, a subsidiary of ESI Group SA, offers an innovative model-based design optimization platform for advanced
+product design.", "link": "http://www.cydesign.com/" }, "DS": { "name": "Dassault Systèmes", "profile": "Dassault Systèmes
+provides CATIA and Dymola, leading Modelica and 3D solutions that transform how products are designed, simulated and validated.",
+"link": "http://3ds.com/modelica" }, "GlobalCrown": { "name": "Global Crown Technology", "profile": "Global Crown Technology
+provides engineering services and tools for Model Based Systems Engineering. We are based in China and serve mainly the aerospace
+and automotive industries.", "link": "http://www.globalcrown.com.cn/" }, "ITI": { "name": "ITI", "profile": "ITI as a leading
+company for dynamic system simulation develops the powerful modeling platform SimulationX for multiphysics analyses.", "link":
+"http://www.itisim.com" }, "MA": { "name": "Modelica Associtaion", "profile": "The Modelica Association is a non-profit organization
+that develops the Modelica language and the Modelica Standard Library", "link": "http://www.modelica.org/" }, "Maplesoft":
+{ "name": "Maplesoft", "profile": "Maplesoft provides high-performance software tools for engineering, science, and mathematics.
+Its products reduce errors, shorten design times, lower costs, and improve results.", "link": "http://www.maplesoft.com"
+}, "Modelon": { "name": "Modelon", "profile": "The global experts in Modelica and FMI tools, training, and consulting for
+manufacturers making the transition to modern Analytical MBSE methods.", "link": "http://www.modelon.com" }, "OSMC": { "name":
+"OpenModelica", "profile": "OpenModelica is a complete open-source Modelica modeling, simulation, and optimization environment;
+by the Open Source Modelica Consortium.", "link": "http://www.openmodelica.org" }, "Ricardo": { "name": "Ricardo Software",
+"profile": "Vehicle and powertrain CAE solutions that help clients solve engineering challenges and explore new technology.",
+"link": "http://www.ricardo.com/software" }, "Schlegel": { "name": "Schlegel Simulation GmbH", "profile": "Schlegel Simulation
+provides state of the art expertise in modeling and simulation of mechatronic systems.", "link": "http://www.schlegel-simulation.de/"
+}, "Siemens": { "name": "Siemens PLM Software", "profile": "Siemens PLM Software is a world-leading provider of product lifecycle
+management (PLM) software and services with 77,000 customers worldwide.", "link": "http://www.plm.automation.siemens.com/en_us/products/lms/imagine-lab/amesim/platform/modelica.shtml"
+}, "TUHH": { "name": "Technische Universität Hamburg/Harburg", "profile": "Technische Universität Hamburg/Harburg", "link":
+"http://www.tuhh.de" }, "Wolfram": { "name": "Wolfram Research", "profile": "Wolfram SystemModeler is the easiest Modelica
+environment to learn, integrated with Mathematica for the best analysis workflow", "link": "http://wolfram.com/system-modeler/?modelica-by-example"
+}, "dofware": { "name": "DOFWARE", "profile": "", "link": "http://www.dofware.com/" }, "ST": { "name": "Suzhou Tongyuan Software
+& Control Technology Co., Ltd", "profile": "Suzhou Tongyuan offers tools and services for the design of complex industrial
+systems based on Modelica.", "link": "http://www.tongyuan.cc/" } } %} {%- macro popup(id, level) -%}
 <div style="min-width: 250px">
-  <img class="thumbnail ui image floated left" style="padding-top: 20px"
-       src="_static/sponsors/{{id}}/logo.png" width="80">
+  <img class="thumbnail ui image floated left" style="padding-top: 20px" src="_static/sponsors/{{id}}/logo.png" width="80">
   <div class="ui floated right">
     <dl class="sponsorinfo">
-      <dt><b>{{SponsorsData[id].name}}</b>: <i>{{level}}</i></dt>
+      <dt>
+        <b>{{SponsorsData[id].name}}</b>:
+        <i>{{level}}</i>
+      </dt>
       <dd>{{SponsorsData[id].profile}}</dd>
   </div>
 </div>
-{%- endmacro -%}
-
-{% macro thumbnail(id, level) %}
-<div
-   class="active blue item"
-   style="margin-left: 5px; margin-right: 5px">
-  <img class="thumbnail" id="thumbnail-{{id}}"
-       src="_static/sponsors/{{id}}/logo.png" width="40"
-       data-html='{{popup(id,level)}}'>
+{%- endmacro -%} {% macro thumbnail(id, level) %}
+<div class="active blue item" style="margin-left: 5px; margin-right: 5px">
+  <img class="thumbnail" id="thumbnail-{{id}}" src="_static/sponsors/{{id}}/logo.png" width="40" data-html='{{popup(id,level)}}'>
 </div>
-{% endmacro %}
-
-{% macro signup_head() %}
-<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css"
-      rel="stylesheet" type="text/css">
+{% endmacro %} {% macro signup_head() %}
+<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-  #mc_embed_signup{background:#transparent; clear:left; font:14px Helvetica,Arial,sans-serif; }
+  #mc_embed_signup {
+    background: #transparent;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+  }
+
   /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
-{% endmacro %}
-
-{% macro signup_form() %}
+{% endmacro %} {% macro signup_form() %}
 <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
-  <form action="http://xogeny.us3.list-manage.com/subscribe/post?u=3bfc2e5430d32efbe641d6e58&amp;id=f260a85b89" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <form action="http://xogeny.us3.list-manage.com/subscribe/post?u=3bfc2e5430d32efbe641d6e58&amp;id=f260a85b89" method="post"
+    id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <label for="mce-EMAIL">Stay informed about updates to the book</label>
-    <input type="email" value="" name="EMAIL"
-	   class="email" id="mce-EMAIL" placeholder="email address" required>
+    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;">
-      <input type="text" name="b_3bfc2e5430d32efbe641d6e58_f260a85b89"
-	     value="">
+      <input type="text" name="b_3bfc2e5430d32efbe641d6e58_f260a85b89" value="">
     </div>
     <div class="clear">
-      <input type="submit" value="Subscribe" name="subscribe"
-	     id="mc-embedded-subscribe" class="button">
+      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
     </div>
   </form>
 </div>
 
 <!--End mc_embed_signup-->
-{% endmacro %}
-
-
-{%- macro sponsor_entry(id, level) -%}
+{% endmacro %} {%- macro sponsor_entry(id, level) -%}
 <div id="sentry-{{id}}" class="sentry">
   <a class="logo" href="{{SponsorsData[id].link}}">
     <img src="_static/sponsors/{{id}}/logo.png">
@@ -147,126 +81,107 @@
   <dl class="sponsorinfo">
     <dt>
       <a href="{{SponsorsData[id].link}}">
-	{{SponsorsData[id].name}}
+        {{SponsorsData[id].name}}
       </a>
     </dt>
     <dd>
-      <p><b>{{level}} Sponsor</b><p>
-      <p>{{SponsorsData[id].profile}}</p>
+      <p>
+        <b>{{level}} Sponsor</b>
+        <p>
+          <p>{{SponsorsData[id].profile}}</p>
     </dd>
   </dl>
   <br>
   <a href="{{SponsorsData[id].link}}">{{SponsorsData[id].link}}</a>
 </div>
 <div style="clear: both"></div>
-{%- endmacro -%}
-
-{% macro sponsors() %}
+{%- endmacro -%} {% macro sponsors() %}
 <h2>Sponsors</h2>
 
 <div class="ui text menu" style="margin: 3px">
   <span class="blue item level">
     Gold
   </span>
-  {% for g in SponsorsData["Gold"] %}
-  {{ thumbnail(g, "Gold") }}
-  {% endfor %}
+  {% for g in SponsorsData["Gold"] %} {{ thumbnail(g, "Gold") }} {% endfor %}
 </div>
 <div class="ui text menu" style="margin: 3px">
   <span class="blue item level">
     Silver
   </span>
-  {% for g in SponsorsData["Silver"] %}
-  {{ thumbnail(g, "Silver") }}
-  {% endfor %}
+  {% for g in SponsorsData["Silver"] %} {{ thumbnail(g, "Silver") }} {% endfor %}
 </div>
 <div class="ui text menu" style="margin: 3px">
   <span class="blue item level">
     Bronze
   </span>
-  {% for g in SponsorsData["Bronze"] %}
-  {{ thumbnail(g, "Bronze") }}
-  {% endfor %}
+  {% for g in SponsorsData["Bronze"] %} {{ thumbnail(g, "Bronze") }} {% endfor %}
 </div>
 <div class="ui divider"></div>
 <div class="sponsor">
-  {% for g in SponsorsData["Gold"] %}
-  {{ sponsor_entry(g, "Gold") }}
-  {% endfor %}
-  {% for g in SponsorsData["Silver"] %}
-  {{ sponsor_entry(g, "Silver") }}
-  {% endfor %}
-  {% for g in SponsorsData["Bronze"] %}
-  {{ sponsor_entry(g, "Bronze") }}
-  {% endfor %}
+  {% for g in SponsorsData["Gold"] %} {{ sponsor_entry(g, "Gold") }} {% endfor %} {% for g in SponsorsData["Silver"] %} {{
+  sponsor_entry(g, "Silver") }} {% endfor %} {% for g in SponsorsData["Bronze"] %} {{ sponsor_entry(g, "Bronze") }} {% endfor
+  %}
 </div>
 {% endmacro %}
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Standard Meta -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Site Properities -->
-    <meta name="generator" content="Sphinx 1.2" />
-    {{ metatags() }}
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Modelica by Example</title>
+  <!-- Site Properities -->
+  <meta name="generator" content="Sphinx 1.2" /> {{ metatags() }}
 
-    <link rel="icon" href="{{ pathto('_static/images/favicon.ico', 1) }}">
+  <title>Modelica by Example</title>
 
-    {{ fonts() }}
-    {{ css() }}
-    {{ script() }}
-    <script type="text/javascript" src="{{ pathto('_static/sponsors/sponsors.js', 1) }}">
-    </script>
-    <script type="text/javascript" src="{{ pathto('_static/lodash.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/logo-animation.js', 1) }}"></script>
+  <link rel="icon" href="{{ pathto('_static/images/favicon.ico', 1) }}"> {{ fonts() }} {{ css() }} {{ script() }}
+  <script type="text/javascript" src="{{ pathto('_static/sponsors/sponsors.js', 1) }}">
+  </script>
+  <script type="text/javascript" src="{{ pathto('_static/lodash.js', 1) }}"></script>
+  <script type="text/javascript" src="{{ pathto('_static/logo-animation.js', 1) }}"></script> {{ signup_head() }}
 
-    {{ signup_head() }}
+</head>
 
-  </head>
-  <body>
-    <div class="ui two column grid">
-      <div class="column">
-	<div class="centered" style="margin-top: 10px">
-	  <img src="{{ pathto('_static/images/TitleHeading.png', 1) }}">
-	  <p>by Michael M. Tiller, Ph.D.</p>
-	</div>
-
-	<div>
-	  {{ signup_form() }}
-	</div>
-
-	<div style="float: right; text-align: center">
-	  <a class="float: left" href="{{ pathto('_static/buypage.html', 1) }}">
-	    <img src="{{ pathto('_static/images/buybook.png', 1) }}">
-	  </a>
-	  <p>
-	    <a href="http://book.xogeny.com/cn">中文版（Chinese Language Version）</a>
-	    <br>
-	    <a href="http://modelicabyexample.globalcrown.com.cn/">国内镜像（Mirror Site in China）</a>
-	  </p>
-	  <p>
-	    Have a question?
-	    <br>
-	    Send it to <a href="mailto:book@xogeny.com">book@xogeny.com</a>
-	  </p>
-	</div>
-
-	<div>
-	  {% block body %} {% endblock %}
-	</div>
+<body>
+  <div class="ui two column grid">
+    <div class="column">
+      <div class="centered" style="margin-top: 10px">
+        <img src="{{ pathto('_static/images/TitleHeading.png', 1) }}">
+        <p>by Michael M. Tiller, Ph.D.</p>
       </div>
 
-      <div class="column" style="min-width: 460px">
-	<div>
-	  {{ sponsors() }}
-	</div>
+      <div>
+        {{ signup_form() }}
+      </div>
+
+      <div style="float: right; text-align: center">
+        <a class="float: left" href="{{ pathto('_static/buypage.html', 1) }}">
+          <img src="{{ pathto('_static/images/buybook.png', 1) }}">
+        </a>
+        <p>
+          <a href="http://book.xogeny.com/cn">中文版（Chinese Language Version）</a>
+          <br>
+          <a href="http://modelicabyexample.globalcrown.com.cn/">国内镜像（Mirror Site in China）</a>
+        </p>
+        <p>
+          Have a question?
+          <br> Send it to
+          <a href="mailto:book@xogeny.com">book@xogeny.com</a>
+        </p>
+      </div>
+
+      <div>
+        {% block body %} {% endblock %}
       </div>
     </div>
-  </body>
+
+    <div id="sponsors" class="column" style="min-width: 460px">
+    </div>
+  </div>
+</body>
+
 </html>
