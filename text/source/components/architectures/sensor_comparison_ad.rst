@@ -161,18 +161,18 @@ Plant Models
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/BasicPlant.mo
    :language: modelica
-   :lines: 1-62,81
+   :lines: 1-60,79
 
 Actuator Models
 ~~~~~~~~~~~~~~~
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealActuator.mo
    :language: modelica
-   :lines: 1-28,47
+   :lines: 1-25,44
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/LimitedActuator.mo
    :language: modelica
-   :lines: 1-39,58
+   :lines: 1-34,53
 
 Controller Models
 ~~~~~~~~~~~~~~~~~
@@ -183,18 +183,18 @@ Controller Models
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/PID_Controller.mo
    :language: modelica
-   :lines: 1-27,46
+   :lines: 1-24,43
 
 Sensor Models
 ~~~~~~~~~~~~~
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealSensor.mo
    :language: modelica
-   :lines: 1-22,41
+   :lines: 1-20,39
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/SampleHoldSensor.mo
    :language: modelica
-   :lines: 1-23,42
+   :lines: 1-21,40
 
 Variations
 ^^^^^^^^^^

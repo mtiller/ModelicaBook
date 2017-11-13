@@ -442,7 +442,7 @@ keyword allows us to do.  Consider the following alternative to the
 
 .. literalinclude:: /ModelicaByExample/BasicEquations/LotkaVolterra/QuiescentModelWithInheritance.mo
    :language: modelica
-   :emphasize-lines: 9-11
+   :emphasize-lines: 2
    :lines: 2-
 
 Note the presence of the ``extends`` keyword.  Conceptually, this
