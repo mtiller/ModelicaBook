@@ -265,11 +265,13 @@ html:
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml  $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
+	find $(BUILDDIR)/dirhtml -name '*.html' -exec ./inline-math.sh {} \;
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
 singlehtml:
 	$(SPHINXBUILD) -b singlehtml  $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
+	find  $(BUILDDIR)/singlehtml -name '*.html' -exec ./inline-math.sh {} \;
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
@@ -310,8 +312,8 @@ devhelp:
 epub:
 	$(SPHINXBUILD) -b epub -t epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	-rm $(BUILDDIR)/epub/*.epub $(BUILDDIR)/epub/*.mobi
-	find $(BUILDDIR)/epub -name '*.xhtml' -exec ../inline-math.sh {} \;
-#	(cd $(BUILDDIR)/epub; zip -r ModelicaByExample.epub .)
+	find $(BUILDDIR)/epub -name '*.xhtml' -exec ./inline-math.sh {} \;
+	(cd $(BUILDDIR)/epub; zip -r ModelicaByExample.epub .)
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
@@ -320,7 +322,7 @@ mobi:   epub
 	@echo
 	@echo "Conversion to mobi finished. The mobi file is in $(BUILDDIR)/epub."
 
-ebook:  epub mobi
+ebooks: epub mobi
 
 latex: latex-letter latex-a4
 

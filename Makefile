@@ -29,16 +29,12 @@ results: deps
 
 dirhtml: deps
 	$(RUN) make dirhtml
-	$(RUN) ./find-math.sh build/dirhtml
 
 json: deps
 	$(RUN) make json
 
 epub: deps
 	$(RUN) make epub
-	$(RUN) ./find-math.sh build/epub
-	# find text/build/epub -name '*.html' -exec ./inline-math.sh {} \;
-	# TODO: Repackage .epub file with inlined versions...
 
 apps: deps
 	$(APPS_RUN) yarn install
@@ -48,7 +44,7 @@ apps: deps
 serve:
 	(cd text/build/dirhtml; serve -p 5001)
 
-# N.B. - This step can only be run by somebody who has access to the Xogeny private packages required to build the 
+# N.B. - This step can only be run by somebody who has access to the Xogeny private packages required to build the
 # API.
 api:
 	- rm -rf api/models
