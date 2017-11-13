@@ -4,8 +4,7 @@
 <meta property="og:url" content="http://book.xogeny.com/">
 <meta property="og:image" content="http://book.xogeny.com/_static/images/TitleHeading.png">
 
-<meta property="og:description"
-      content="A free HTML version of the book 'Modelica by Example', by Michael Tiller">
+<meta property="og:description" content="A free HTML version of the book 'Modelica by Example', by Michael Tiller">
 <meta property="og:site_name" content="Modelica by Example">
 
 <meta property="article:author" content="http://www.xogeny.com/about/">
@@ -16,13 +15,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:url" content="http://book.xogeny.com/">
 <meta name="twitter:title" content="Modelica by Example">
-<meta name="twitter:description"
-      content="A free HTML version of the book 'Modelica by Example', by Michael Tiller">
-<meta name="twitter:image" content="http://book.xogeny.com/_static/images/TitleHeading.png">
-{% endmacro %}
-
-{%- macro navmenu() %}
-<div class="ui fixed transparent inverted main menu">
+<meta name="twitter:description" content="A free HTML version of the book 'Modelica by Example', by Michael Tiller">
+<meta name="twitter:image" content="http://book.xogeny.com/_static/images/TitleHeading.png"> {% endmacro %} {%- macro navmenu() %}
+<div class="ui top fixed inverted menu">
   <div class="left menu">
     <div id="thumb" class="title item">
       <i class="icon list"></i>
@@ -54,76 +49,53 @@
     {% endif %}
   </div>
 </div>
-{%- endmacro %}
-
-{%- macro sidebar() %}
+{%- endmacro %} {%- macro sidebar() %}
 <div class="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
     <div class="toc">
       <h2>{{ _('Table Of Contents') }}</h2>
       {%- for parent in parents %}
       <ul class="parentul">
-	<li>
-	  <a class="section" href="{{ parent.link|e }}">{{ parent.title }}</a>
-      {%- endfor %}
-	  {{ toc }}
-      {%- for parent in parents %}
-	</li>
+        <li>
+          <a class="section" href="{{ parent.link|e }}">{{ parent.title }}</a>
+          {%- endfor %} {{ toc }} {%- for parent in parents %}
+        </li>
       </ul>
       {%- endfor %}
     </div>
   </div>
 </div>
-{%- endmacro %}
+{%- endmacro %} {%- macro fonts() %}
+<link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> {%- endmacro %} {%- macro script() %}
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-{%- macro fonts() %}
-    <link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700'
-	  rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lato'
-		  rel='stylesheet' type='text/css'>
-{%- endmacro %}
+  ga('create', 'UA-33034217-6', 'xogeny.com');
+  ga('send', 'pageview');
 
-{%- macro script() %}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-33034217-6', 'xogeny.com');
-      ga('send', 'pageview');
-
-    </script>
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '{{ url_root }}',
-        VERSION:     '{{ release|e }}',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
-        HAS_SOURCE:  {{ has_source|lower }}
+</script>
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT: '{{ url_root }}',
+    VERSION: '{{ release|e }}',
+    COLLAPSE_INDEX: false,
+    FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
+    HAS_SOURCE: {{ has_source|lower }}
       };
-    </script>
-    {%- for scriptfile in script_files %}
-    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
-    {%- endfor %}
-    <script type="text/javascript" src="{{ pathto('_static/semantic/semantic.js', 1) }}">
-    </script>
-{%- endmacro %}
-
-{%- macro css() %}
-    <link rel="stylesheet" type="text/css" class="ui"
-	  href="{{ pathto('_static/semantic/semantic.css', 1) }}">
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
-    <link rel="stylesheet" href="{{ pathto('_static/tweaks.css', 1) }}" type="text/css" />
-    {%- for cssfile in css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-    {%- endfor %}
-{%- endmacro %}
-
-{% if title=="Front Matter" %}
-{%- extends "root-page.html" %}
-{% else %}
-{%- extends "normal-page.html" %}
-{% endif %}
+</script> {%- for scriptfile in script_files %}
+<script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script> {%- endfor %}
+<script type="text/javascript" src="{{ pathto('_static/semantic/semantic.js', 1) }}">
+</script> {%- endmacro %} {%- macro css() %}
+<link rel="stylesheet" type="text/css" class="ui" href="{{ pathto('_static/semantic/semantic.css', 1) }}">
+<link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+<link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+<link rel="stylesheet" href="{{ pathto('_static/tweaks.css', 1) }}" type="text/css" /> {%- for cssfile in css_files %}
+<link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" /> {%- endfor %} {%- endmacro %} {% if title=="Front Matter" %} {%- extends "root-page.html" %} {% else %} {%- extends "normal-page.html"
+%} {% endif %}

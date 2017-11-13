@@ -136,6 +136,7 @@ looks like this:
    :width: 100%
    :align: center
    :alt: Top down architecture
+   :figclass: diagram
 
 Implementations
 ^^^^^^^^^^^^^^^
