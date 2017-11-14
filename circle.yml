@@ -16,6 +16,7 @@ test:
     - make dirhtml
     - make apps
     - make api
+    - make site
 
 deployment:
   beta:
