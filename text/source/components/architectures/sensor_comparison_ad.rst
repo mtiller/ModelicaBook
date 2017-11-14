@@ -164,6 +164,12 @@ Plant Models
    :language: modelica
    :lines: 1-60,79
 
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Implementation/BasicPlant.*
+   :width: 80%
+   :align: center
+   :alt: Basic Plant
+   :figclass: align-center diagram
+
 Actuator Models
 ~~~~~~~~~~~~~~~
 
@@ -171,9 +177,21 @@ Actuator Models
    :language: modelica
    :lines: 1-25,44
 
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealActuator.*
+   :width: 80%
+   :align: center
+   :alt: Basic Plant
+   :figclass: align-center diagram
+
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/LimitedActuator.mo
    :language: modelica
    :lines: 1-34,53
+
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Implementation/LimitedActuator.*
+   :width: 80%
+   :align: center
+   :alt: Limited Actuator
+   :figclass: align-center diagram
 
 Controller Models
 ~~~~~~~~~~~~~~~~~
@@ -182,9 +200,21 @@ Controller Models
    :language: modelica
    :lines: 1-38,54
 
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Implementation/ProportionalController.*
+   :width: 80%
+   :align: center
+   :alt: Proportional Controller
+   :figclass: align-center diagram
+
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/PID_Controller.mo
    :language: modelica
    :lines: 1-24,43
+
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Implementation/PID_Controller.*
+   :width: 80%
+   :align: center
+   :alt: PID Controller
+   :figclass: align-center diagram
 
 Sensor Models
 ~~~~~~~~~~~~~
@@ -193,9 +223,21 @@ Sensor Models
    :language: modelica
    :lines: 1-20,39
 
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Implementation/IdealSensor.*
+   :width: 80%
+   :align: center
+   :alt: Ideal Sensor
+   :figclass: align-center diagram
+
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Implementation/SampleHoldSensor.mo
    :language: modelica
    :lines: 1-21,40
+
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Implementation/SampleHoldSensor.*
+   :width: 80%
+   :align: center
+   :alt: Sample Hold Sensor
+   :figclass: align-center diagram
 
 Variations
 ^^^^^^^^^^
