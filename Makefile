@@ -33,8 +33,8 @@ dirhtml: deps
 json: deps
 	$(RUN) make json
 
-epub: deps
-	$(RUN) make epub
+ebooks: deps
+	$(RUN) make ebooks
 
 pdfs: deps
 	$(RUN) make pdf pdf-a4
