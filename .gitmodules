@@ -1,3 +1,6 @@
 [submodule "apps"]
 	path = apps
 	url = git@github.com:xogeny/book-apps.git
+[submodule "generator"]
+	path = generator
+	url = git@github.com:xogeny/book-generator.git
