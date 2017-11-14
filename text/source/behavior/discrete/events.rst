@@ -181,7 +181,3 @@ synchronous clock features in Modelica are relatively new.  As such,
 they are not yet supported by all Modelica compilers.  To learn more
 about these synchronous features and their applications see
 [Elmqvist]_ and/or the Modelica Specification, version 3.3 or later.
-
-.. [Elmqvist] "Fundamentals of Synchronous Control in Modelica",
-	      Hilding Elmqvist, Martin Otter and Sven-Erik Mattsson
-	      http://www.ep.liu.se/ecp/076/001/ecp12076001.pdf

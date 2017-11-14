@@ -31,12 +31,12 @@ extensions = ['sphinx.ext.doctest',
               'sphinx.ext.todo',
               'xogeny.sim',
               'matplotlib.sphinxext.plot_directive',
-              # 'sphinx.ext.pngmath',
-              'sphinx.ext.mathjax',
               'sphinx.ext.ifconfig']
 
-# As long as we are not generating with the epub tag it is save to use MathJax.
-# if 'epub' not in tags: extensions.append('sphinx.ext.mathjax')
+# As long as we are not generating with the mobi tag it is safe to us e MathJax.
+if 'mobi' not in tags: extensions.append('sphinx.ext.mathjax')
+# For mobi we need to use imgmath
+if 'mobi' in tags: extensions.append('sphinx.ext.imgmath')
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -185,7 +185,7 @@ htmlhelp_basename = 'ModelicaByExampledoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
-
+latex_engine = 'xelatex'
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
@@ -201,6 +201,9 @@ latex_elements = {
     pdfauthor = {Michael M. Tiller, Ph.D},
     pdfsubject = {Origin: http://book.xogeny.com},
     pdfkeywords = {Modelica, book, free-online}}''',
+
+# Figure placement within LaTeX paper
+    'figure_align': 'htb',
 }
 
 # If the tag 'a4' is given we switch to a4paper

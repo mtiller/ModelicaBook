@@ -132,11 +132,11 @@ subsystems, we are also specifying the locations of the subsystems and
 the paths of the connections.  When rendered, our system architecture
 looks like this:
 
-.. image:: /ModelicaByExample/Architectures/SensorComparison/Examples/SystemArchitecture.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Examples/SystemArchitecture.*
+   :width: 80%
    :align: center
    :alt: Top down architecture
-   :figclass: diagram
+   :figclass: align-center diagram
 
 Implementations
 ^^^^^^^^^^^^^^^

@@ -51,10 +51,16 @@ that they can be made graphically distinct.  An instance of the
 ``PositivePin`` connector looks like:
 
 .. image:: ../../_static/Icons/ModelicaByExample.Connectors.Graphics.PositivePin.*
+   :height: 200px
+   :align: center
+   :alt: Icon of Positive Pin
 
 while an instance of ``NegativePin`` looks like:
 
 .. image:: ../../_static/Icons/ModelicaByExample.Connectors.Graphics.NegativePin.*
+   :height: 200px
+   :align: center
+   :alt: Icon of Negative Pin
 
 Let's look in greater detail at the ``Icon`` annotation in the
 ``PositivePin`` definition:

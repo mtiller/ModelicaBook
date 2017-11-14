@@ -36,9 +36,10 @@ PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
+LATEXMKOPTS     = "-xelatex"
 
 # Language definition
-SET_BOOK_LANG_CN = BOOK_LANG=cn
+SET_BOOK_LANG_CN = BOOK_LANG=zh_CN
 
 .PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results uploadCIdeps
 
@@ -264,11 +265,13 @@ html:
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml  $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
+	find $(BUILDDIR)/dirhtml -name '*.html' -exec ./inline-math.sh {} \;
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
 singlehtml:
 	$(SPHINXBUILD) -b singlehtml  $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
+	find  $(BUILDDIR)/singlehtml -name '*.html' -exec ./inline-math.sh {} \;
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
@@ -307,16 +310,20 @@ devhelp:
 	@echo "# devhelp"
 
 epub:
-	$(SPHINXBUILD) -b epub -t epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+	-rm $(BUILDDIR)/epub/*.epub
+	find $(BUILDDIR)/epub -name '*.xhtml' -exec ./inline-math.sh {} \;
+	(cd $(BUILDDIR)/epub; zip -r ModelicaByExample.epub .)
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
-mobi:   epub
-	(cd $(BUILDDIR)/epub; ebook-convert ModelicabyExample.epub ModelicaByExample.mobi)
+mobi:
+	$(SPHINXBUILD) -b epub -t mobi $(ALLSPHINXOPTS) $(BUILDDIR)/mobi
+	(cd $(BUILDDIR)/mobi; ebook-convert ModelicabyExample.epub ModelicaByExample.mobi)
 	@echo
-	@echo "Conversion to mobi finished. The mobi file is in $(BUILDDIR)/epub."
+	@echo "Build finished. The mobi file is in $(BUILDDIR)/mobi."
 
-ebook:  epub mobi
+ebooks: epub mobi
 
 latex: latex-letter latex-a4
 
@@ -361,38 +368,40 @@ latex-a4-cn: specs_cn results images
 	cp $(SOURCEDIR)/index.rst $(BUILDDIR)/index.rst.orig
 	(echo "#####\nDUMMY\n#####"; cat $(BUILDDIR)/index.rst.orig) > $(SOURCEDIR)/index.rst
 	@echo
-	$(SET_BOOK_LANG_CN) $(SPHINXBUILD) -b latex -t latex -t a4 -D language=cn $(ALLSPHINXOPTS) $(BUILDDIR)/xelatex
+	$(SET_BOOK_LANG_CN) $(SPHINXBUILD) -b latex -t latex -t a4 -D language=zh_CN $(ALLSPHINXOPTS) $(BUILDDIR)/latex-a4-cn
 
 	@echo "Reverting horrible LaTeX hack..."
 	git checkout $(SOURCEDIR)/index.rst # revert back to pristine index.rst
 	@echo
-	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/xelatex."
+	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex-a4-cn."
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
 pdf:	pdf-letter pdf-a4
 
 pdf-letter: latex-letter
-	@echo "Running LaTeX files through pdflatex..."
+	@echo "Running LaTeX files through xelatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex letter finished; the PDF files are in $(BUILDDIR)/latex."
+	@echo "xelatex letter finished; the PDF files are in $(BUILDDIR)/latex."
 
 pdf-a4:	latex-a4
-	@echo "Running LaTeX files through pdflatex..."
+	@echo "Running LaTeX files through xelatex..."
 	$(MAKE) -C $(BUILDDIR)/latex-a4 all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex-a4."
+	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex-a4."
 
 pdf-cn: latex-a4-cn
 	@echo "Running LaTeX files through xelatex..."
-	(cp locale/cn/mycjk.sty $(BUILDDIR)/xelatex; )
-	(cd $(BUILDDIR)/xelatex; sed -i '/\usepackage\[utf8\]{inputenc}/d' ModelicaByExample.tex)
-	(cd $(BUILDDIR)/xelatex; sed -i 's/\\author{.*}/\\author{\\authorandtranslators}/' ModelicaByExample.tex)
-	(cd $(BUILDDIR)/xelatex; sed -i 's/\\title{.*}/\\title{Modelica实例教程}/' ModelicaByExample.tex)
-	(cd $(BUILDDIR)/xelatex; sed -i '/\\date{.*}/d' ModelicaByExample.tex)
-	(cd $(BUILDDIR)/xelatex; sed -i '/.DeclareUnicodeCharacter.*/d' ModelicaByExample.tex)
-	(cd $(BUILDDIR)/xelatex; sed -i 's/{babel}/{mycjk}/' ModelicaByExample.tex)
-	(cd $(BUILDDIR)/xelatex; xelatex -shell-escape -interaction=batchmode  ModelicaByExample.tex; echo 'first pass')
-	(cd $(BUILDDIR)/xelatex; xelatex  -shell-escape -interaction=batchmode ModelicaByExample.tex; echo 'second pass')
+	(cp locale/cn/mycjk.sty $(BUILDDIR)/latex-a4-cn; )
+#	(cd $(BUILDDIR)/xelatex; sed -i '/\usepackage\[utf8\]{inputenc}/d' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/latex-a4-cn; sed -i 's/\\author{.*}/\\author{\\authorandtranslators}/' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/latex-a4-cn; sed -i 's/\\title{.*}/\\title{Modelica实例教程}/' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/latex-a4-cn; sed -i '/\\date{.*}/d' ModelicaByExample.tex)
+#	(cd $(BUILDDIR)/latex-a4-cn; sed -i '/.DeclareUnicodeCharacter.*/d' ModelicaByExample.tex)
+	(cd $(BUILDDIR)/latex-a4-cn; sed -i 's/{babel}/{mycjk}/' ModelicaByExample.tex)
+	$(MAKE) -C $(BUILDDIR)/latex-a4-cn all-pdf
+	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex-a4."
+#	(cd $(BUILDDIR)/xelatex; xelatex -shell-escape -interaction=batchmode  ModelicaByExample.tex; echo 'first pass')
+#	(cd $(BUILDDIR)/xelatex; xelatex  -shell-escape -interaction=batchmode ModelicaByExample.tex; echo 'second pass')
 
 latexpdf: pdf
 
@@ -465,7 +474,7 @@ buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
 
 dirhtml_cn: specs_cn update_cn buildmo
-	$(SET_BOOK_LANG_CN) $(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=cn source build/dirhtml_cn
+	$(SET_BOOK_LANG_CN) $(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=zh_CN source build/dirhtml_cn
 	cat locale/cn/cn.css >> build/dirhtml_cn/_static/xogeny.css
 
 dirhtml_kr: update_kr buildmo
