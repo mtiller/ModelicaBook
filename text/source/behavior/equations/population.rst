@@ -235,7 +235,7 @@ initial population for both the predator and prey species, we might
 instead chose to initialize the system with some other equations that
 somehow capture the fact that the system is in equilibrium (you may
 remember this trick from the ``FirstOrderSteady`` model :ref:`discussed
-previously <ex_SimpleExample_FirstOrderSteady>`).  Fortunately,
+previously <first-order-init>`). Fortunately,
 Modelica's approach to initialization is rich enough to allow us to
 specify this (and many other) useful types of initial conditions.
 
