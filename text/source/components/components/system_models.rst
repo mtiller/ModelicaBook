@@ -189,7 +189,7 @@ chapter, *e.g.,*
 .. literalinclude:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.mo
    :language: modelica
    :lines: 6-7
-   :emphasize-lines: 7
+   :emphasize-lines: 2
 
 The ``Placement`` annotation simply establishes a rectangular region
 in which to draw the icon associated with each component.  As with

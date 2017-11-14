@@ -45,14 +45,14 @@ taking some collection of components and organizing them into a
 subsystem model.  Our system level circuit then becomes:
 
 .. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/SubsystemCircuit.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Hierarchical power supply model
 
 This model uses the ``BasicPowerSupply`` model whose diagram is shown here:
 
 .. image:: /ModelicaByExample/Subsystems/PowerSupply/Components/BasicPowerSupply.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Reusable power supply subsystem model
 
@@ -82,7 +82,7 @@ We can augment our system model to include an additional load (that
 comes online after some delay):
 
 .. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/AdditionalLoad.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Flat switching power supply model
 

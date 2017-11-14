@@ -10,8 +10,6 @@ Let us consider an extremely simple differential equation:
 Looking at this equation, we see there is only one variable,
 :math:`x`.  This equation can be represented in Modelica as follows:
 
-.. _ex_SimpleExample_FirstOrder:
-
 .. literalinclude:: /ModelicaByExample/BasicEquations/SimpleExample/FirstOrder.mo
    :language: modelica
    :lines: 2-
@@ -71,8 +69,6 @@ Now that we've solved this simple mathematical equation, let's turn
 our attention briefly to how we can make the model a bit more
 readable.  Consider the following model:
 
-.. _ex_SimpleExample_FirstOrderDocumented:
-
 .. literalinclude:: /ModelicaByExample/BasicEquations/SimpleExample/FirstOrderDocumented.mo
    :language: modelica
    :lines: 2-
@@ -120,8 +116,6 @@ the initial value of ``x`` in our model to be *2*, we could add an
 
 .. index:: initial equation
 
-.. _ex_SimpleExample_FirstOrderInitial:
-
 .. literalinclude:: /ModelicaByExample/BasicEquations/SimpleExample/FirstOrderInitial.mo
    :language: modelica
    :lines: 2-
@@ -166,8 +160,6 @@ this could be accomplished by specifying an initial condition of
 trivial to determine the initial state values that would satisfy such
 a requirement.  In those cases, it is possible to express the
 constraint that :math:`\dot{x}(0)=0` directly in Modelica as follows:
-
-.. _ex_SimpleExample_FirstOrderSteady:
 
 .. literalinclude:: /ModelicaByExample/BasicEquations/SimpleExample/FirstOrderSteady.mo
    :language: modelica
