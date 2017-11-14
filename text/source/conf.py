@@ -201,6 +201,9 @@ latex_elements = {
     pdfauthor = {Michael M. Tiller, Ph.D},
     pdfsubject = {Origin: http://book.xogeny.com},
     pdfkeywords = {Modelica, book, free-online}}''',
+
+# Figure placement within LaTeX paper
+    'figure_align': 'htb',
 }
 
 # If the tag 'a4' is given we switch to a4paper
