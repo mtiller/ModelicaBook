@@ -14,6 +14,7 @@ test:
     - make specs
     - make results
     - make dirhtml
+    - make json
     - make apps
     - make api
     - make site
