@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	/* Make the thumb button open and close the TOC */
-	$('#toc-sidebar').sidebar('attach events', '#thumb', 'toggle');
+	// $('#toc-sidebar').sidebar('attach events', '#thumb', 'toggle');
 
 	// Handlebars.registerHelper('varinfo', function (model, varname, attr) {
 	// 	return new Handlebars.SafeString(model.vars[varname][attr]);
