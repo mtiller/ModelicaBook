@@ -203,7 +203,7 @@ latex_elements = {
     pdfkeywords = {Modelica, book, free-online}}''',
 
 # Figure placement within LaTeX paper
-    'figure_align': 'htb',
+    'figure_align': 'H',
 }
 
 # If the tag 'a4' is given we switch to a4paper
