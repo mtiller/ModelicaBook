@@ -71,7 +71,6 @@ Indices and tables
 ##################
 
 * :ref:`genindex`
-* :ref:`search`
 
 .. ifconfig:: todo_include_todos
 
