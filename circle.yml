@@ -19,6 +19,11 @@ test:
     - make api
     - make site
 
+general:
+  artifacts:
+    - "generator/dist"
+    - "text/build"
+
 deployment:
   beta:
     branch: master
