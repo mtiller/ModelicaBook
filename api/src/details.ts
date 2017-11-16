@@ -55,8 +55,8 @@ function getModels() {
         .filter((f) => f.endsWith("-case.json"))
         // Strip the suffix
         .map((f) => f.slice(0, f.length - 10))
-        // Ensure that we have an _init.xml file and executable for each one
-        .filter((f) => fs.existsSync(path.join(".", "models", `${f}_init.xml`)) && fs.existsSync(path.join(".", "models", `${f}`)));
+    // Ensure that we have an _init.xml file and executable for each one
+    //.filter((f) => fs.existsSync(path.join(".", "models", `${f}_init.xml`)) && fs.existsSync(path.join(".", "models", `${f}`)));
 }
 
 export function getDetails(): DetailsMap {
@@ -64,15 +64,16 @@ export function getDetails(): DetailsMap {
     let details: DetailsMap = {};
 
     models.forEach((model) => {
-        let dfile = path.join(".", "models", "json", `${model}.json`);
-        let ddata = fs.readFileSync(dfile);
-        let dobj = JSON.parse(ddata.toString()) as Details;
-        let cfile = path.join(".", "models", "json", `${model}-case.json`);
         try {
+            let cfile = path.join(".", "models", "json", `${model}-case.json`);
             if (fs.existsSync(cfile)) {
                 let cdata = fs.readFileSync(cfile).toString();
                 if (cdata !== "") {
                     let cobj = JSON.parse(cdata) as CaseData;
+                    let res = cobj.res;
+                    let dfile = path.join(".", "models", "json", `${res}.json`);
+                    let ddata = fs.readFileSync(dfile);
+                    let dobj = JSON.parse(ddata.toString()) as Details;
                     dobj.casedata = cobj;
                     details[model] = dobj;
                 }
