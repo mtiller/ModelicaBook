@@ -15,10 +15,11 @@ Flat System
 
 Our system schematic is structured as follows:
 
-.. image:: /ModelicaByExample/Architectures/SensorComparison/Examples/FlatSystem.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Examples/FlatSystem.*
+   :width: 80%
    :align: center
    :alt: Flat system model
+   :figclass: align-center diagram
 
 .. todo:: the purple box is showing as magenta
 
@@ -97,10 +98,11 @@ If we plan on substituting sensors, actuators and control strategies
 our first step should be to organize our system into those subsystems.
 Doing so, we end up with the following system model:
 
-.. image:: /ModelicaByExample/Architectures/SensorComparison/Examples/HierarchicalSystem.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Examples/HierarchicalSystem.*
+   :width: 80%
    :align: center
    :alt: Hierarchical system model
+   :figclass: align-center diagram
 
 Here we see only four subsystems at the system level.  They correspond
 to the subsystems we mentioned a moment ago.  Our Modelica model is
