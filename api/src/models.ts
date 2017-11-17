@@ -33,7 +33,7 @@ export function modelGet(details: Details, model: string) {
     }
 }
 
-export function modelPost(details: Details, model: string, testing: boolean) {
+export function modelPost(details: Details, model2: string, testing: boolean) {
     return async (req: express.Request, res: express.Response) => {
         try {
             // Name various files and directories involve
@@ -43,11 +43,13 @@ export function modelPost(details: Details, model: string, testing: boolean) {
             runDebug("Temporary directory = %s", dir);
             runDebug("  Model directory = %s", mdir);
             runDebug("  Libraries directory = %s", ldir);
-            let sexe = path.join(mdir, model);
-            let sinit = path.join(mdir, `${model}_init.xml`);
-            let dexe = path.join(dir, model);
-            let dinit = path.join(dir, `${model}_init.xml`);
-            let rfile = path.join(dir, `${model}_res.mat`);
+            runDebug("  Case data = %o", details.casedata);
+            let exe = details.casedata.res;
+            let sexe = path.join(mdir, exe);
+            let sinit = path.join(mdir, `${exe}_init.xml`);
+            let dexe = path.join(dir, exe);
+            let dinit = path.join(dir, `${exe}_init.xml`);
+            let rfile = path.join(dir, `${exe}_res.mat`);
 
             // Parse body
             runDebug("Parameters given in body: %o", req.body);
@@ -70,10 +72,12 @@ export function modelPost(details: Details, model: string, testing: boolean) {
             await copyFile(sinit, dinit);
 
             // Run exectuable
-            // docker run -v `pwd`:/opt/RUN -w /opt/RUN -i -t mtiller/book-builder ./FO
+            let exeFile = `/opt/RUN/${exe}`
+            runDebug("Executable path: %s", exeFile);
+            runDebug("Testing mode: %j", testing);
             let output = testing
-                ? await exec("docker", ["run", "-v", `${dir}:/opt/RUN`, "-w", "/opt/RUN", "-i", "mtiller/book-builder", `/opt/RUN/${model}`, `-override=${oflag}`])
-                : await exec(`${model}`, [`-override=${oflag}`], {
+                ? await exec("docker", ["run", "-v", `${dir}:/opt/RUN`, "-w", "/opt/RUN", "-i", "mtiller/book-builder", exeFile, `-override=${oflag}`])
+                : await exec(`${exe}`, [`-override=${oflag}`], {
                     env: {
                         "LD_LIBRARY_PATH": ldir,
                     },

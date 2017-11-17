@@ -44,7 +44,7 @@ export interface Details {
             name: string;
         }
     };
-    casedata?: CaseData;
+    casedata: CaseData;
 };
 
 export type DetailsMap = { [model: string]: Details };
