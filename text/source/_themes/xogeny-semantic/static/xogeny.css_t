@@ -123,6 +123,12 @@ h1, h2, h3, h4, h5 {
     font-weight: normal;
 }
 
+/* Ensures that headers are visible when linked to by a header link */
+div.section > h1, div.section > h2, div.section > h3, div.section > h4, div.section > h5 {
+    margin-top: -40px;
+    padding-top: 60px;
+}
+
 /* This allows highlights to wrap tightly around the text */
 .highlight {
     overflow: hidden;
