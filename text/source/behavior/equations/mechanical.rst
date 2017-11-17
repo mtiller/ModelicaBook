@@ -8,7 +8,7 @@ help reinforce some of the concepts we've covered so far.  The system
 we wish to model is the one shown in the following figure:
 
 .. figure:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithPulseCounter.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Plant with pulse counter sensor
    :figclass: align-center diagram
