@@ -21,7 +21,6 @@ Consider the following model:
 If we simulate this model, we get the following results:
 
 .. plot:: ../plots/CC1.py
-   :class: interactive
 
 However, the simulation that yields these results takes a very long
 time to complete.  The reason for such poor simulation performance can
@@ -29,7 +28,6 @@ be better understood by looking at the heater output during the
 simulation:
 
 .. plot:: ../plots/CC1_Q.py
-   :class: interactive
 
 What you see is that after around 0.2 seconds, the heater is
 constantly turning on and off.  This happens so frequently, in fact,

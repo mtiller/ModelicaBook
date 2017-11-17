@@ -52,6 +52,7 @@ the speed trace:
 
 .. plot:: ../plots/AFS.py
    :include-source: no
+   :class: interactive
 
 We'll discuss why in a moment.  But the problem clearly isn't
 measurement artifact since the measured speed is exactly equal to the
@@ -79,6 +80,7 @@ following performance for the control system:
 
 .. plot:: ../plots/AFS_SH.py
    :include-source: no
+   :class: interactive
 
 In this case, we can see that things are going from bad to worse.
 While we were initially unable to track the desired speed
