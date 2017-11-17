@@ -56,9 +56,9 @@ system of equations:
 .. math::
 
     \omega_1 &= \dot{\varphi}_1 \\
-    J_1 \dot{\omega}_1 &= k_1 (\varphi_2-\varphi_1) + d_1 \frac{\mathrm{d} (\varphi_2-\varphi_1)}{\mathrm{d}t} \\
+    J_1 \dot{\omega}_1 &= c_1 (\varphi_2-\varphi_1) + d_1 \frac{\mathrm{d} (\varphi_2-\varphi_1)}{\mathrm{d}t} \\
     \omega_2 &= \dot{\varphi}_2 \\
-    J_2 \dot{\omega}_2 &= k_1 (\varphi_1-\varphi_2) + d_1 \frac{\mathrm{d} (\varphi_1-\varphi_2)}{\mathrm{d}t} - k_2 \varphi_2 - d_2 \dot{\varphi}_2
+    J_2 \dot{\omega}_2 &= c_1 (\varphi_1-\varphi_2) + d_1 \frac{\mathrm{d} (\varphi_1-\varphi_2)}{\mathrm{d}t} - c_2 \varphi_2 - d_2 \dot{\varphi}_2
 
 Let's assume our system has the following initial conditions as well:
 
