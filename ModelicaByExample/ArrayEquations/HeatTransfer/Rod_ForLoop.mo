@@ -22,16 +22,16 @@ model Rod_ForLoop "Modeling heat conduction in a rod using a for loop"
   parameter SpecificHeat C=10.0;
   parameter Temperature Tamb=300 "Ambient temperature";
 
-  parameter Area A = pi*R^2;
-  parameter Volume V = A*L/n;
+  parameter Area A_c = pi*R^2, A_s = 2*pi*R*L;
+  parameter Volume V = A_c*L/n;
 
   Temperature T[n];
 initial equation
   T = linspace(200,300,n);
 equation
-  rho*V*C*der(T[1]) = -h*(T[1]-Tamb)-k*A*(T[1]-T[2])/(L/n);
+  rho*V*C*der(T[1]) = -h*A_s*(T[1]-Tamb)-k*A_c*(T[1]-T[2])/(L/n);
   for i in 2:(n-1) loop
-    rho*V*C*der(T[i]) = -k*A*(T[i]-T[i-1])/(L/n)-k*A*(T[i]-T[i+1])/(L/n);
+    rho*V*C*der(T[i]) = -h*A_s*(T[i]-Tamb)-k*A_c*(T[i]-T[i-1])/(L/n)-k*A_c*(T[i]-T[i+1])/(L/n);
   end for;
-  rho*V*C*der(T[end]) = -h*(T[end]-Tamb)-k*A*(T[end]-T[end-1])/(L/n);
+  rho*V*C*der(T[end]) = -h*A_s*(T[end]-Tamb)-k*A_c*(T[end]-T[end-1])/(L/n);
 end Rod_ForLoop;

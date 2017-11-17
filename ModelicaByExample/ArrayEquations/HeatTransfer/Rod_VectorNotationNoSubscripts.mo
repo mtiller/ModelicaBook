@@ -24,16 +24,18 @@ model Rod_VectorNotationNoSubscripts
   parameter SpecificHeat C=10.0;
   parameter Temperature Tamb=300 "Ambient temperature";
 
-  parameter Area A = pi*R^2;
-  parameter Volume V = A*L/n;
+  parameter Area A_c = pi*R^2, A_s = 2*pi*R*L;
+  parameter Volume V = A_c*L/n;
 
   Temperature T[n];
+  Heat Qconv[n];
   Heat Qleft[n];
   Heat Qright[n];
 initial equation
   T = linspace(200,300,n);
 equation
-  Qleft = {if i==1 then -h*(T[i]-Tamb) else -k*A*(T[i]-T[i-1])/(L/n) for i in 1:n};
-  Qright = {if i==n then -h*(T[i]-Tamb) else -k*A*(T[i]-T[i+1])/(L/n) for i in 1:n};
-  rho*V*C*der(T) = Qleft+Qright;
+  Qconv = {-h*A_s*(T[i]-Tamb) for i in 1:n};
+  Qleft = {-k*A_c*(T[i]-T[i-1])/(L/n) for i in 1:n};
+  Qright = {-k*A_c*(T[i]-T[i+1])/(L/n) for i in 1:n};
+  rho*V*C*der(T) = Qconv+Qleft+Qright;
 end Rod_VectorNotationNoSubscripts;

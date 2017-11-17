@@ -23,14 +23,14 @@ model Rod_ArrayComprehensionsOneEquation
   parameter SpecificHeat C=10.0;
   parameter Temperature Tamb=300 "Ambient temperature";
 
-  parameter Area A = pi*R^2;
-  parameter Volume V = A*L/n;
+  parameter Area A_c = pi*R^2, A_s = 2*pi*R*L;
+  parameter Volume V = A_c*L/n;
 
   Temperature T[n];
 initial equation
   T = linspace(200,300,n);
 equation
-  rho*V*C*der(T) = {-h*(T[i]-Tamb)
-                    -(if i==1 then 0 else k*A/(L/n)*(T[i]-T[i-1]))
-                    -(if i==n then 0 else k*A/(L/n)*(T[i]-T[i+1])) for i in 1:n};
+  rho*V*C*der(T) = {-h*A_s*(T[i]-Tamb)
+                    -(if i==1 then 0 else k*A_c/(L/n)*(T[i]-T[i-1]))
+                    -(if i==n then 0 else k*A_c/(L/n)*(T[i]-T[i+1])) for i in 1:n};
 end Rod_ArrayComprehensionsOneEquation;

@@ -45,9 +45,9 @@ volume of the :math:`i^{th}` section as:
 
 .. math::
 
-    V_i = A_i L_i
+    V_i = A_c L_i
 
-where :math:`A_i` is the cross-sectional area of the :math:`i^{th}`
+where :math:`A_c` is the cross-sectional area of the :math:`i^{th}`
 section, which is assumed to be uniform, and :math:`L_i` is the length
 of the :math:`i^{th}` section.  For this example, we will assume the
 rod is composed of equal size pieces.  In this case, we can define the
@@ -62,22 +62,22 @@ length of the rod.  As such, the mass of each segment can be given as:
 
 .. math::
 
-    m = \rho A L_i
+    m = \rho A_c L_i
 
 In this case, the thermal capacitance of each section would be:
 
 .. math::
 
-    \rho A L_i C T_i
+    \rho A_c L_i C T_i
 
 This, in turn, means that the net heat gained in that section at any
 time will be:
 
 .. math::
 
-    \rho A L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t}
+    \rho A_c L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t}
 
-where we assume that :math:`A`, :math:`L_i` and :math:`C`
+where we assume that :math:`A_c`, :math:`L_i` and :math:`C`
 don't change with respect to time.
 
 That covers the thermal capacitance.  In addition, we will consider
@@ -88,9 +88,10 @@ from each section as:
 
 .. math::
 
-    q_h = -h A (T_i-T_{amb})
+    q_h = -h {A_s}_i (T_i-T_{amb})
 
-where :math:`h` is the convection coefficient.  The other form of heat
+where :math:`h` is the convection coefficient and :math:`{A_s}_i` is the surface area 
+of the :math:`i^{th}` section.  The other form of heat
 transfer is conduction to neighboring sections.  Here there will be
 two contributions, one lost to the :math:`{i-1}^{th}` section, if it
 exists, and the other lost to the :math:`{i+1}^{th}` section, if it
@@ -98,33 +99,33 @@ exists.  These can be represented, respectively, as:
 
 .. math::
 
-   q_{k_{i \rightarrow {i-1}}} = -k A \frac{T_i-T_{i-1}}{L_i}
+   q_{k_{i \rightarrow {i-1}}} = -k A_c \frac{T_i-T_{i-1}}{L_i}
 
 .. math::
 
-   q_{k_{i \rightarrow {i+1}}} = -k A \frac{T_i-T_{i+1}}{L_i}
+   q_{k_{i \rightarrow {i+1}}} = -k A_c \frac{T_i-T_{i+1}}{L_i}
 
 Using these relations, we know that the heat balance for the first
 element would be:
 
 .. math::
 
-   \rho A L_i C \frac{\mathrm{d} T_1}{\mathrm{d}t} =
-   -k A \frac{T_1-T_2}{L_i} - h A (T_1-T_{amb})
+   \rho A_c L_i C \frac{\mathrm{d} T_1}{\mathrm{d}t} =
+   -k A_c \frac{T_1-T_2}{L_i} - h {A_s}_i (T_1-T_{amb})
 
 Similarly, the heat balance for the last element would be:
 
 .. math::
 
-   \rho A L_i C \frac{\mathrm{d} T_n}{\mathrm{d}t} = -k
-   A\frac{T_n-T_{n-1}}{L_i} -h A (T_n-T_{amb})
+   \rho A_c L_i C \frac{\mathrm{d} T_n}{\mathrm{d}t} = -k
+   A_c \frac{T_n-T_{n-1}}{L_i} -h {A_s}_i (T_n-T_{amb})
 
 Finally, the heat balance for all other elements would be:
 
 .. math::
 
-   \rho A L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t} = -k
-   A\frac{T_i-T_{i-1}}{L_i} -k A\frac{T_i-T_{i+1}}{L_i} -h A (T_i-T_{amb})
+   \rho A_c L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t} = -k
+   A_c \frac{T_i-T_{i-1}}{L_i} -k A_c \frac{T_i-T_{i+1}}{L_i} -h {A_s}_i (T_i-T_{amb})
 
 Implementation
 ^^^^^^^^^^^^^^
@@ -292,25 +293,25 @@ expression doesn't need to be a range.  For example, ``T[{2,5,9}]`` is
 equivalent to ``{T[2], T[5], T[9]}``.
 
 Finally, let us consider one last way of refactoring these equations.
-Imagine we introduced two additional vector variables:
+Imagine we introduced three additional vector variables:
 
 .. literalinclude:: /ModelicaByExample/ArrayEquations/HeatTransfer/Rod_VectorNotationNoSubscripts.mo
    :language: modelica
-   :lines: 31-32
+   :lines: 31-33
 
 Then we can write these two equations (again using vector equations)
-to define the heat lost to the previous and next section in the rod:
+to define the heat lost to the ambient, previous section and next section in the rod:
 
 .. literalinclude:: /ModelicaByExample/ArrayEquations/HeatTransfer/Rod_VectorNotationNoSubscripts.mo
    :language: modelica
-   :lines: 36-37
+   :lines: 37-39
 
 This allows us to express the heat balance for each section using a
 vector equation that doesn't include any subscripts:
 
 .. literalinclude:: /ModelicaByExample/ArrayEquations/HeatTransfer/Rod_VectorNotationNoSubscripts.mo
    :language: modelica
-   :lines: 38-38
+   :lines: 40-40
 
 Conclusion
 ^^^^^^^^^^
