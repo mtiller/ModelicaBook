@@ -43,7 +43,7 @@ two springs and two dampers.  For the springs, we can use Hooke's law
 to express the relationship between torque and angular displacement as
 follows:
 
-.. math:: \tau = k \Delta \varphi
+.. math:: \tau = c \Delta \varphi
 
 For each damper, we express the relationship between torque and
 relative angular velocity as:

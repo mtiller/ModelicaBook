@@ -88,9 +88,9 @@ from each section as:
 
 .. math::
 
-    q_h = -h {A_s}_i (T_i-T_{amb})
+    q_h = -h A_{s_i} (T_i-T_{amb})
 
-where :math:`h` is the convection coefficient and :math:`{A_s}_i` is the surface area 
+where :math:`h` is the convection coefficient and :math:`A_{s_i}` is the surface area 
 of the :math:`i^{th}` section.  The other form of heat
 transfer is conduction to neighboring sections.  Here there will be
 two contributions, one lost to the :math:`{i-1}^{th}` section, if it
@@ -111,21 +111,21 @@ element would be:
 .. math::
 
    \rho A_c L_i C \frac{\mathrm{d} T_1}{\mathrm{d}t} =
-   -k A_c \frac{T_1-T_2}{L_i} - h {A_s}_i (T_1-T_{amb})
+   -k A_c \frac{T_1-T_2}{L_i} - h A_{s_i} (T_1-T_{amb})
 
 Similarly, the heat balance for the last element would be:
 
 .. math::
 
    \rho A_c L_i C \frac{\mathrm{d} T_n}{\mathrm{d}t} = -k
-   A_c \frac{T_n-T_{n-1}}{L_i} -h {A_s}_i (T_n-T_{amb})
+   A_c \frac{T_n-T_{n-1}}{L_i} -h A_{s_i} (T_n-T_{amb})
 
 Finally, the heat balance for all other elements would be:
 
 .. math::
 
    \rho A_c L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t} = -k
-   A_c \frac{T_i-T_{i-1}}{L_i} -k A_c \frac{T_i-T_{i+1}}{L_i} -h {A_s}_i (T_i-T_{amb})
+   A_c \frac{T_i-T_{i-1}}{L_i} -k A_c \frac{T_i-T_{i+1}}{L_i} -h A_{s_i} (T_i-T_{amb})
 
 Implementation
 ^^^^^^^^^^^^^^
