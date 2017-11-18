@@ -111,21 +111,21 @@ element would be:
 .. math::
 
    \rho A_c L_i C \frac{\mathrm{d} T_1}{\mathrm{d}t} =
-   -k A_c \frac{T_1-T_2}{L_i} - h A_{s_i} (T_1-T_{amb})
+    - h A_{s_i} (T_1-T_{amb}) -k A_c \frac{T_1-T_2}{L_i}
 
 Similarly, the heat balance for the last element would be:
 
 .. math::
 
-   \rho A_c L_i C \frac{\mathrm{d} T_n}{\mathrm{d}t} = -k
-   A_c \frac{T_n-T_{n-1}}{L_i} -h A_{s_i} (T_n-T_{amb})
+   \rho A_c L_i C \frac{\mathrm{d} T_n}{\mathrm{d}t} =
+   -h A_{s_n} (T_n-T_{amb}) -k A_c \frac{T_n-T_{n-1}}{L_i} 
 
 Finally, the heat balance for all other elements would be:
 
 .. math::
 
-   \rho A_c L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t} = -k
-   A_c \frac{T_i-T_{i-1}}{L_i} -k A_c \frac{T_i-T_{i+1}}{L_i} -h A_{s_i} (T_i-T_{amb})
+   \rho A_c L_i C \frac{\mathrm{d} T_i}{\mathrm{d}t} = -h A_{s_i}
+   (T_i-T_{amb}) -k A_c \frac{T_i-T_{i-1}}{L_i} -k A_c \frac{T_i-T_{i+1}}{L_i} 
 
 Implementation
 ^^^^^^^^^^^^^^
@@ -146,7 +146,7 @@ simulating:
    :language: modelica
    :lines: 16-23
 
-Given these parameters, we can compute the area and volume for each
+Given these parameters, we can compute the areas and volume for each
 section in terms of the parameters we have already defined using the
 following declarations:
 
