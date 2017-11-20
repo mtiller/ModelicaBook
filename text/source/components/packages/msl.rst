@@ -28,7 +28,7 @@ Constants
 The Modelica Standard Library contains definitions of some common
 physical and machine constants.  The library is small enough that we
 can include the source code for this package directly.  The following
-represents the ``Modelica.Constants`` package from version 3.2.1 of
+represents the ``Modelica.Constants`` package from version 3.2.2 of
 the Modelica Standard Library (with a few cosmetic changes):
 
 .. code-block:: modelica
