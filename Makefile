@@ -15,13 +15,13 @@ SYNC = $(S3CMD) sync -P -F
 S3MODIFY = $(S3CMD) modify
 
 RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE)
-APPS_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/apps -i -t $(BUILDER_IMAGE)
 GEN_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/generator -i -t $(BUILDER_IMAGE)
 GPUB_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/generator/dist -e "AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY)" -e "AWS_SECRET_KEY=$(AWS_SECRET_KEY)" -i -t $(BUILDER_IMAGE)
+EPUB_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/text/build -e "AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY)" -e "AWS_SECRET_KEY=$(AWS_SECRET_KEY)" -i -t $(BUILDER_IMAGE)
 
-.PHONY: all deploy specs results dirhtml apps api publish_server publish_web serve
+.PHONY: all deploy specs results dirhtml ebooks api publish_server publish_web serve
 
-all: specs results dirhtml apps site
+all: specs results dirhtml ebooks site
 
 deploy: api publish_server publish_web
 
@@ -45,11 +45,6 @@ ebooks: deps
 
 pdfs: deps
 	$(RUN) make pdf pdf-a4
-
-apps: deps
-	$(APPS_RUN) yarn install
-	$(APPS_RUN) yarn build
-	$(APPS_RUN) yarn run deploy ../text/build/dirhtml/_static/interact-bundle.js
 
 site: deps
 	$(GEN_RUN) yarn install
@@ -78,4 +73,6 @@ publish_web:
 	$(GPUB_RUN) sh -c '$(S3MODIFY) -m text/css s3://$(S3BUCKET)/_static/*.css'
 	$(GPUB_RUN) sh -c '$(S3MODIFY) -m text/css s3://$(S3BUCKET)/*.css'
 	$(GPUB_RUN) sh -c '$(S3MODIFY) --recursive --add-header="Cache-Control:max-age=60" s3://$(S3BUCKET)/'
-	# docker run -v `pwd`:/opt/MBE/ModelicaBook -e "AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY)" -e "AWS_SECRET_KEY=$(AWS_SECRET_KEY)" -e "S3BUCKET=$(S3BUCKET)" -i -t $(BUILDER_IMAGE) make web
+
+publish_ebooks:
+	#$(EPUB_RUN) sh -c '$(SYNC) * s3://$(S3BUCKET)/'
