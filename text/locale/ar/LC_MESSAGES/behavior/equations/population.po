@@ -592,7 +592,23 @@ msgid ""
 "initial conditions.  But by instead inheriting from "
 "``QuiescentModelWithModifications``, we reuse the content from **two** "
 "different models and avoid repeating ourselves even once."
-msgstr ""
+msgstr 
+
+"\n"
+"\n"
+"-Used Terms المصطلحات المستخدمة-\n"
+"\n"
+" prey فريسة \n"
+" preys فرائس\n"
+" species فصائل\n"
+" predator مفترس\n"
+" predators مفترسات\n"
+" the Law of Mass Action قانون فاعلية الكتلة\n"
+" reproduction تكاثر\n"
+" starvation الموت جوعا\n"
+" attribute تمييز\n"
+" population التعداد السكاني\n"
+
 
 #: ../../source/behavior/equations/population.rst:0
 msgid "More population dynamics"
