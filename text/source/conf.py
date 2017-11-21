@@ -33,10 +33,11 @@ extensions = ['sphinx.ext.doctest',
               'matplotlib.sphinxext.plot_directive',
               'sphinx.ext.ifconfig']
 
-# As long as we are not generating with the mobi tag it is safe to us e MathJax.
-if 'mobi' not in tags: extensions.append('sphinx.ext.mathjax')
 # For mobi we need to use imgmath
-if 'mobi' in tags: extensions.append('sphinx.ext.imgmath')
+if 'mobi' in tags:
+    extensions.append('sphinx.ext.imgmath')
+else:
+    extensions.append('sphinx.ext.mathjax')
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -325,8 +326,8 @@ plot_html_show_source_link = False
 # mobi has no SVG support so use png
 if 'mobi' in tags:
     plot_formats = ["png", "hires.png"]
-# SVG for all the restx
-if not 'mobi' in tags:
+else:
+    # SVG for all the rest
     plot_formats = ["svg", "pdf"]
 
 # Translation related stuff
