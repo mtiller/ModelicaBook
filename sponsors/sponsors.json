@@ -3,7 +3,8 @@
         "ESi",
         "Wolfram",
         "Modelon",
-        "Maplesoft"
+        "Maplesoft",
+        "DS"
     ],
     "silverSponsors": [
         "Ricardo",
@@ -20,6 +21,12 @@
         "Schlegel"
     ],
     "sponsorData": {
+        "DS": {
+            "name": "Dassault Systèmes",
+            "profile": "Dassault Systèmes provides CATIA and Dymola, leading Modelica and 3D solutions that transform how products are designed, simulated and validated.",
+            "link": "http://3ds.com/modelica",
+            "logo": "logo.png"
+        },
         "LTX": {
             "name": "LTX Simulation GmbH",
             "profile": "Modelica Technology is the base of our engineering projects and training classes. We develop, test and distribute Modelica Libraries.",
@@ -58,7 +65,7 @@
         },
         "OSMC": {
             "name": "OpenModelica",
-            "profile": "",
+            "profile": "OpenModelica is a complete open-source Modelica modeling, simulation, and optimization environment; by the Open Source Modelica Consortium.",
             "link": "http://www.openmodelica.org",
             "logo": "logo.png"
         },
@@ -94,7 +101,7 @@
         },
         "dofware": {
             "name": "DOFWARE",
-            "profile": "",
+            "profile": "DOFWARE provides a wide variety of engineering services to numerous customers ranging from automotive, trucks, railway and motorsports.",
             "link": "http://www.dofware.com/",
             "logo": "logo.png"
         },
