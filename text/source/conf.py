@@ -322,12 +322,12 @@ plot_include_source = False
 plot_html_show_formats = False
 plot_html_show_source_link = False
 
-if 'epub' in tags:
-    plot_include_source = False
-    plot_html_show_formats = False
-
-#plot_formats = ["png", "hires.png", "pdf", "svg"]
-plot_formats = ["png", "hires.png", "pdf", "svg"]
+# mobi has no SVG support so use png
+if 'mobi' in tags:
+    plot_formats = ["png", "hires.png"]
+# SVG for all the restx
+if not 'mobi' in tags:
+    plot_formats = ["svg", "pdf"]
 
 # Translation related stuff
 
