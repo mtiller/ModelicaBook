@@ -21,7 +21,7 @@ model MultiDomainControl
   HeatTransfer.ThermalCapacitance cap(C=m*c_p, T0 = from_degC(90))
     "Thermal capacitance component"
     annotation (Placement(transformation(extent={{-30,-30},{-10,-10}})));
-  HeatTransfer.Convection convection2(h=h*A)
+  HeatTransfer.Convection convection2(h=h, A=A)
     annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   HeatTransfer.AmbientCondition
                    amb(T_amb(displayUnit="K") = T_inf)
