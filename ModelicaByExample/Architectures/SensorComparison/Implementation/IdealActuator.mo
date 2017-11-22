@@ -5,7 +5,7 @@ model IdealActuator "An implementation of an ideal actuator"
   Modelica.Mechanics.Rotational.Interfaces.Support housing
     "Connection to housing"
     annotation (Placement(transformation(extent={{90,-70},{110,-50}})));
-Modelica.Blocks.Interfaces.RealInput tau "Input torque command"
+  Modelica.Blocks.Interfaces.RealInput tau "Input torque command"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
 protected
   Modelica.Mechanics.Rotational.Sources.Torque torque(useSupport=true)
