@@ -91,8 +91,6 @@ turns one molecule of ``A`` and one molecule of ``B`` into one
 molecule of ``X``.  Using the ``Reaction`` model, we can model this
 reaction as follows:
 
-.. todo:: Tweak pygments to work with single quoted names
-
 .. code-block:: modelica
 
     model 'A+B->X' "A+B -> X"
@@ -190,13 +188,11 @@ Conclusion
 From our earlier discussion of this chemical system, you may recall
 that the resulting system of equations was:
 
-.. todo:: following is not rendered correctly.
-
 .. math::
 
     \frac{\mathrm{d}[A]}{\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] \\
     \frac{\mathrm{d}[B]}{\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] -k_3 [B] [X] \\
-    \frac{\mathrm{d}[X]}{\mathrm{d}t} &= k_1 [A] [B] - k_2 [X] -k_3 [B] [X]
+    \frac{\mathrm{d}[X]}{\mathrm{d}t} &= \phantom{-}k_1 [A] [B] - k_2 [X] -k_3 [B] [X]
 
 Each equation represents the accumulation of a particular species and
 each term on the right hand side of those equations is computing the

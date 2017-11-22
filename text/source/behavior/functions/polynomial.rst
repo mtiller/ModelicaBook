@@ -349,8 +349,5 @@ We can exercise all of these functions using the following model:
 Simulating this model and comparing results, we see agreement between
 ``yf`` and ``yp`` as well as ``d_yf`` and ``d_yp``:
 
-.. todo:: Yikes, OpenModelica computes the derivative incorrectly!
-
 .. plot:: ../plots/Diff2.py
    :class: interactive
-
