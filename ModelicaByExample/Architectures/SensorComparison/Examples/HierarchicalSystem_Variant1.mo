@@ -4,7 +4,7 @@ model HierarchicalSystem_Variant1 "Changing one subsystem of HierarchicalSystem"
     annotation (Placement(transformation(extent={{-10,-40},{10,-20}})));
   Implementation.IdealActuator actuator
     annotation (Placement(transformation(extent={{-50,-40},{-30,-20}})));
-  Implementation.SampleHoldSensor sensor
+  Implementation.SampleHoldSensor sensor(sample_time=0.01)
     annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
   Implementation.ProportionalController controller
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
