@@ -39,8 +39,6 @@ The components of the pendulum can be rendered as follows:
 System Model
 ^^^^^^^^^^^^
 
-.. todo:: rendering problems follow
-
 Now that we have an individual pendulum model, we can build a system
 of pendulums.  If we want a system of :math:`n` pendulums where the
 period for a complete cycle of the system is :math:`T` seconds, we
