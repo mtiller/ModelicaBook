@@ -23,7 +23,7 @@ initial equation
   end if;
 equation
   der(population) = species.rate;
-  assert(population>=0, "Population must be greater than zero");
+  assert(population>=0, "Population must be greater than or equal to zero");
   annotation (Diagram(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,127,0},
