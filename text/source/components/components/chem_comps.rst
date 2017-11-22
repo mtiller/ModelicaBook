@@ -91,8 +91,6 @@ turns one molecule of ``A`` and one molecule of ``B`` into one
 molecule of ``X``.  Using the ``Reaction`` model, we can model this
 reaction as follows:
 
-.. todo:: Tweak pygments to work with single quoted names
-
 .. code-block:: modelica
 
     model 'A+B->X' "A+B -> X"
