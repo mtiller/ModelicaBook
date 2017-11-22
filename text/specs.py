@@ -550,11 +550,12 @@ add_simple_plot(plot="SegC",
                 title=_("Comparison of segmentation"))
 
 # Pendulum
-#add_case([_("Pendula"), _("System")], stopTime=108, res="Harm", tol=1e-6)
-#add_simple_plot(plot="Harm",
-#                vars=[Var("pendulum[1].revolute.phi"),
-#                      Var("pendulum[1].revolute.phi")],
-#                title=_("Pendulum angles"))
+add_case([_("Pendula"), _("System")], stopTime=108, res="Harm", tol=1e-6)
+add_simple_plot(plot="Harm",
+               vars=[Var("pendulum[1].revolute.phi"),
+                     Var("pendulum[2].revolute.phi"),
+                     Var("pendulum[3].revolute.phi")],
+               title=_("Pendulum angles"))
 
 # Sensor comparison
 scvars = [Var("inertia1.w", legend=_("Shaft speed")),
