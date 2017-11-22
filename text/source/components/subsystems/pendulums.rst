@@ -85,10 +85,8 @@ modifications to arrays of components :ref:`later in this chapter
 If we simulate this system, we get the following solution for the
 trajectory of each of the pendulums:
 
-.. todo::
-
-    I need to add the results here.  Unfortunately, I cannot get OM to
-    simulate this system at the moment.
+.. plot:: ../plots/Harm.py
+   :class: interactive
 
 As we can see from this plot, every 54 seconds all the pendulums
 return to their initial position.
