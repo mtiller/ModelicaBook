@@ -88,7 +88,7 @@ While the previous connector definition should be strictly used for
 This connector can be used for **both** incompressible or compressible
 fluids.  This is because it doesn't make any inherent assumptions
 about the compressibility of the fluid.  Note that the across
-variable, ``p``, is still pressure, but the through variable, ``m_dot``,
+variable, ``p``, is still pressure, but the through variable, ``m_flow``,
 is a mass flow rate.  As such, the through variable conforms to the
 convention that a through variable should be the time derivative of
 a conserved quantity (in this case, mass).  So there are no implicit
@@ -132,7 +132,7 @@ that:
    :lines: 13-18
 
 Note that this connector includes **two** variables that have the
-``flow`` qualifier, ``m_dot`` and ``q``.  These represent the flow of
+``flow`` qualifier, ``m_flow`` and ``q``.  These represent the flow of
 mass and energy, respectively.  Each of these is paired with an across
 variable.  One of those across variables is the pressure, ``p``, just
 as we saw in the previous connectors in this section.  The other

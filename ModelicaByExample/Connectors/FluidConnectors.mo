@@ -7,12 +7,12 @@ package FluidConnectors "Examples of fluid connectors"
 
   connector GenericFluid
     Modelica.SIunits.Pressure p;
-    flow Modelica.SIunits.MassFlowRate m_dot;
+    flow Modelica.SIunits.MassFlowRate m_flow;
   end GenericFluid;
 
   connector ThermoFluid
     Modelica.SIunits.Pressure p;
-    flow Modelica.SIunits.MassFlowRate m_dot;
+    flow Modelica.SIunits.MassFlowRate m_flow;
     Modelica.SIunits.Temperature T;
     flow Modelica.SIunits.HeatFlowRate q;
   end ThermoFluid;
