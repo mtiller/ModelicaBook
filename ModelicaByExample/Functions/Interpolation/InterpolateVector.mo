@@ -8,8 +8,8 @@ protected
   Integer n = size(ybar,1) "Number of interpolation points";
   Real p;
 algorithm
-  assert(x>=ybar[1,1], "Independent variable must be greater than "+String(ybar[1,1]));
-  assert(x<=ybar[n,1], "Independent variable must be less than "+String(ybar[n,1]));
+  assert(x>=ybar[1,1], "Independent variable must be greater than or equal to "+String(ybar[1,1]));
+  assert(x<=ybar[n,1], "Independent variable must be less than or equal to "+String(ybar[n,1]));
   i := 1;
   while x>=ybar[i+1,1] loop
     i := i + 1;
