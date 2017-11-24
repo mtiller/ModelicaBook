@@ -7,7 +7,7 @@ Importing
    
 As we saw previously, there are basically three forms of importing.
 In all cases, the ``import`` statement creates an "alias" within the
-definition that refers to a type defined elsewhere.
+definition that refers to a name defined elsewhere.
 
 The first form simply imports a definition by its fully qualified
 name, e.g.:
