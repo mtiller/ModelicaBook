@@ -84,11 +84,9 @@ If we simulate this system, we get the following solution for the
 trajectory of each of the pendulums:
 
 .. plot:: ../plots/Harm.py
-   :class: interactive
 
 As we can see from this plot, every 54 seconds all the pendulums
 return to their initial position.
-
 
 .. only:: html
 
