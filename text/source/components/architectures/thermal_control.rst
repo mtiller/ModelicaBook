@@ -26,10 +26,11 @@ Architecture
 
 Let's start with the following architecture:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Architectures/BaseArchitecture.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Architectures/BaseArchitecture.*
    :width: 80%
    :align: center
    :alt: Initial architecture
+   :figclass: align-center diagram
 
 Here we see the same basic pieces we saw in the previous section, a
 plant model, a sensor, a controller and an actuator.  In fact, this is
@@ -69,39 +70,44 @@ Plant
 
 Our plant model looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ThreeZonePlantModel.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ThreeZonePlantModel.*
+   :width: 80%
    :align: center
    :alt: Three zone plant model
+   :figclass: align-center diagram
 
 Here we can see that the zone where furnace heat is added is separated
 from the zone where the temperature is measured by a third zone.  Our
 furnace model is a simple heat source:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalActuator.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalActuator.*
+   :width: 80%
    :align: center
    :alt: A conventional actuator
+   :figclass: align-center diagram
 
 This actuator takes a commanded heat level as an input and then
 injects that amount of heat into the system.
 
 The sensor is similarly simple:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalSensor.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalSensor.*
+   :width: 80%
    :align: center
    :alt: A conventional sensor
+   :figclass: align-center diagram
 
 This sensor doesn't introduce any artifact.  Instead, it provides the
 exact temperature as a continuous signal.
 
 We will use the following PI controller to control the temperature:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalPIControl.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalPIControl.*
+   :width: 80%
    :align: center
    :alt: The control system
+   :figclass: align-center diagram
+
 
 Initial Results
 ^^^^^^^^^^^^^^^
@@ -109,10 +115,12 @@ Initial Results
 Populating our architecture with these implementations, our model now
 looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/BaseModel.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Examples/BaseModel.*
    :width: 80%
    :align: center
    :alt: Initial system configuration
+   :figclass: align-center diagram
+
 
 Note how the icons for the various subsystems have changed.  This is
 because when we perform a ``redeclare``, the icon for the new type
@@ -154,19 +162,21 @@ actuator models where the controller command is a boolean indicating
 whether the furnace should be on or off.  However, if we start this
 process, we quickly run into the following problem:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalOnOffControl.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalOnOffControl.*
    :width: 80%
    :align: center
    :alt: A control strategy with on/off control
+   :figclass: align-center diagram
 
 Note that the output from our controller is ``Boolean`` value but the
 commanded ``heat`` signal from our ``ControlSystem`` interface requires a
 ``Real`` value.  We have the same problem on the actuator side:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionOnOffActuator.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionOnOffActuator.*
    :width: 80%
    :align: center
-   :alt:
+   :alt: Convection on/off actuator
+   :figclass: align-center diagram
 
 The interface supplies an actuator that is a ``Real`` value but again
 we see that if our furnace expects an "on" or "off" command, we have a
@@ -275,10 +285,11 @@ demonstrate that this is now possible.
 Using expandable connectors, we can create the following revised
 architecture:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Architectures/ExpandableArchitecture.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Architectures/ExpandableArchitecture.*
    :width: 80%
    :align: center
    :alt: Expandable architecture
+   :figclass: align-center diagram
 
 Expandable Implementations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -286,10 +297,11 @@ Expandable Implementations
 With this more flexible architecture, let's first recreate our
 original configuration with the continuous control system:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/ExpandableModel.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Examples/ExpandableModel.*
    :width: 80%
    :align: center
    :alt: Continuous control using the expandable architecture
+   :figclass: align-center diagram
 
 If we plot the results from this system, we get the following
 response:
@@ -305,10 +317,11 @@ is, how did it get on the connector.  The answer lies in the
 implementation of the sensor model.  The diagram for the sensor model
 looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/TemperatureSensor.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/TemperatureSensor.*
+   :width: 80%
    :align: center
    :alt: Temperature sensor model using expandable bus
+   :figclass: align-center diagram
 
 The corresponding Modelica code is:
 
@@ -350,10 +363,11 @@ We've already seen the temperature sensor subsystem configured to work
 with the expandable connector.  What remains is the controller and
 actuator models.  The actuator model diagram looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffActuator.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffActuator.*
    :width: 80%
    :align: center
    :alt: Actuator attached via expandable connector
+   :figclass: align-center diagram
 
 Again, looking at the Modelica code is important to see how the
 signals on the ``bus`` connector are referenced:
@@ -377,10 +391,11 @@ actuator from the controller is a ``Boolean`` signal named
 signals used by the controller model.  The diagram for the controller
 looks like this:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ExpandablePIControl.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ExpandablePIControl.*
    :width: 80%
    :align: center
    :alt: PI controller connected to expandable bus
+   :figclass: align-center diagram
 
 But the diagram doesn't include sufficient detail to know the precise
 names of the signals being referenced on the ``bus`` connector.  For
@@ -399,10 +414,11 @@ the sensor and actuator models expect.
 Pulling all of these subsystems together, we get the following diagram
 for our system:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Examples/OnOffVariant.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Examples/OnOffVariant.*
    :width: 80%
    :align: center
    :alt: System using bang-bang control
+   :figclass: align-center diagram
 
 The source code for our system model is quite simple:
 
@@ -424,10 +440,11 @@ strategy lacks any hysteresis that we see the furnace constantly
 turning on and off.  If we add hysteresis, our controller model
 becomes:
 
-.. image:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffControl_WithHysteresis.*
+.. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffControl_WithHysteresis.*
    :width: 80%
    :align: center
    :alt: Bang-bang controller with hysteresis
+   :figclass: align-center diagram
 
 Nothing else has changed.  We will use the same sensor and actuator
 models and we still use the same bus signals since this is still a

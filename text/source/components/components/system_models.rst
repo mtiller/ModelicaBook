@@ -150,10 +150,12 @@ Diagrams
 In this chapter, we showed how Modelica subsystem models can be
 represented graphically, *e.g.,*
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.*
-   :height: 200px
+.. figure:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.*
+   :width: 80%
    :align: center
    :alt: Cooling example schematic
+   :figclass: align-center diagram
+
 
 All the information required to generate such a diagram is contained
 in the Modelica model.  While this information has been visible in

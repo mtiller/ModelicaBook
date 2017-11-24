@@ -52,15 +52,19 @@ for representing real valued input and output signals respectively.
 When drawn in a diagram, the ``RealInput`` connector takes the form of
 a blue solid triangle:
 
-.. image:: ../../_static/Icons/Modelica.Blocks.Interfaces.RealInput.*
-   :height: 200px
+.. figure:: ../../_static/Icons/Modelica.Blocks.Interfaces.RealInput.*
+   :width: 30%
    :align: center
+   :alt: Real input
+   :figclass: align-center icon
 
 The ``RealOutput`` connector is a blue triangle outline:
 
-.. image:: ../../_static/Icons/Modelica.Blocks.Interfaces.RealOutput.*
-   :height: 200px
+.. figure:: ../../_static/Icons/Modelica.Blocks.Interfaces.RealOutput.*
+   :width: 30%
    :align: center
+   :alt: Real output
+   :figclass: align-center icon
 
 We will leverage the Modelica Standard Library for several different
 ``partial`` block definitions.  The first ``partial`` definition we'll
@@ -128,7 +132,7 @@ from the ``SO`` block:
 When rendered, the block looks like this:
 
 .. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Constant.*
-   :width: 100%
+   :width: 30%
    :align: center
    :alt: Gain Block
    :figclass: align-center icon
@@ -148,7 +152,7 @@ extends from the ``SISO`` model as follows:
 When rendered, the block looks like this:
 
 .. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Gain.*
-   :width: 100%
+   :width: 30%
    :align: center
    :alt: Gain Block
    :figclass: align-center icon
@@ -170,7 +174,7 @@ over the array of input signals, ``u``, to compute the output signal
 When rendered, the block looks like this:
 
 .. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Sum.*
-   :width: 100%
+   :width: 30%
    :align: center
    :alt: Gain Block
    :figclass: align-center icon
@@ -188,7 +192,7 @@ that it uses the :ref:`product-func` function:
 When rendered, the block looks like this:
 
 .. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Product.*
-   :width: 100%
+   :width: 30%
    :align: center
    :alt: Gain Block
    :figclass: align-center icon
@@ -211,7 +215,7 @@ The output of the ``Feedback`` block is the difference between the two
 When rendered, the block looks like this:
 
 .. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Feedback.*
-   :width: 100%
+   :width: 30%
    :align: center
    :alt: Gain Block
    :figclass: align-center icon
@@ -231,7 +235,7 @@ is specified using the parameter ``y0``:
 When rendered, the block looks like this:
 
 .. figure:: /ModelicaByExample/Components/BlockDiagrams/Components/Integrator.*
-   :width: 100%
+   :width: 30%
    :align: center
    :alt: Gain Block
    :figclass: align-center icon
@@ -262,7 +266,7 @@ The following block diagram will solve for the temperature profile,
 :math:`T`:
 
 .. figure:: /ModelicaByExample/Components/BlockDiagrams/Examples/NewtonCooling.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Gain Block
    :figclass: align-center diagram
@@ -343,7 +347,7 @@ express the control strategy mathematically.
 Here is a schematic diagram showing how both approaches can be combined:
 
 .. figure:: /ModelicaByExample/Components/BlockDiagrams/Examples/MultiDomainControl.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Gain Block
    :figclass: align-center diagram

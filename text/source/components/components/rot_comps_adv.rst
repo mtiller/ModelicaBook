@@ -43,10 +43,11 @@ In Modelica (where :math:`\Delta \varphi` is ``phi_rel``), this component can be
 We can add an instance of this backlash model into our previous model
 by placing it in parallel with the spring and the damper, *i.e.,*
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithBacklash.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithBacklash.*
+   :width: 80%
    :align: center
-   :alt:
+   :alt: SMD with backlash
+   :figclass: align-center diagram
 
 If we use the inheritance mechanism in Modelica, the resulting
 Modelica model is quite simple:
@@ -227,10 +228,12 @@ important.
 Using the ``GroundedGear`` model, we can then build a system model
 using this gear as follows:
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithGroundedGear.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Components/Rotational/Examples/SMD_WithGroundedGear.*
+   :width: 80%
    :align: center
-   :alt:
+   :alt: SMD with grounded gear
+   :figclass: align-center diagram
+
 
 Note this system has two parallel mechanisms.  The first one uses the
 gear model we just developed.  The second one replaces the assembly of
@@ -287,10 +290,11 @@ directly connected to ground, but is instead connected through a very
 stiff mounting system.  The schematic for our system looks like this
 when rendered:
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD_GearComparison.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Components/Rotational/Examples/SMD_GearComparison.*
+   :width: 80%
    :align: center
-   :alt:
+   :alt: SMD gear comparison
+   :figclass: align-center diagram
 
 The first thing we would expect is that the response of the mechanism
 with the implicitly grounded gear should be identical to the response
@@ -387,7 +391,7 @@ The following model demonstrates how we can now use the
 grounded gear:
 
 .. figure:: /ModelicaByExample/Components/Rotational/Examples/SMD_ConfigurableGear.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Example using a configurable gear
    :figclass: align-center diagram

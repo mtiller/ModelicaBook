@@ -102,9 +102,11 @@ The ``Inertia`` model includes two "flanges", one on either end.  The
 significance of these flanges is made clearer from the icon of the
 ``Inertia`` model:
 
-.. image:: ../../_static/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Inertia.*
-   :height: 200px
+.. figure:: ../../_static/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Inertia.*
+   :width: 30%
    :align: center
+   :alt: Inertia
+   :figclass: align-center icon
 
 In other words, the ``Inertia`` model includes a flange on either end.
 You can think of this model as a shaft with connectors on either end.
@@ -143,9 +145,11 @@ Next, let us consider the definition of a spring model:
 
 The icon for our spring model is rendered as:
 
-.. image:: ../../_static/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Spring.*
-   :height: 200px
+.. figuree:: ../../_static/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Spring.*
+   :width: 30%
    :align: center
+   :alt: Spring
+   :figclass: align-center icon
 
 Like the ``Inertia`` model, the ``Spring`` model has two connectors,
 one on each end.  It also defines many of the same internal
@@ -174,9 +178,11 @@ one equation:
 
 The icon for the ``Damper`` model is rendered as:
 
-.. image:: ../../_static/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Damper.*
-   :height: 200px
+.. figure:: ../../_static/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Damper.*
+   :width: 30%
    :align: center
+   :alt: Damper
+   :figclass: align-center icon
 
 .. _dry-components:
 
@@ -298,10 +304,12 @@ based system model looks like this:
 
 The diagram for this model, when rendered, looks like this:
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Components/Rotational/Examples/SMD.*
+   :width: 80%
    :align: center
-   :alt:
+   :alt: Spring mass damper system
+   :figclass: align-center diagram
+
 
 .. plot:: ../plots/SMD.py
    :class: interactive

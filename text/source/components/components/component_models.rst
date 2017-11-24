@@ -160,10 +160,11 @@ compiler, we need to introduce the concept of a *connection set*.  To
 demonstrate what a connection set is, consider the following
 schematic:
 
-.. image:: /ModelicaByExample/Components/Rotational/Examples/SMD.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Components/Rotational/Examples/SMD.*
+   :width: 80%
    :align: center
-   :alt:
+   :alt: Spring mass damper connection set
+   :figclass: align-center diagram
 
 Note that there are 8 connections in this model:
 
