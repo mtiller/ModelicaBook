@@ -6,7 +6,7 @@ import * as fs from 'fs';
 
 import * as debug from 'debug';
 const utilDebug = debug("mbe:utils");
-utilDebug.enabled = true;
+// utilDebug.enabled = true;
 
 temp.track();
 
