@@ -87,15 +87,15 @@ trajectory of each of the pendulums:
 
 .. plot:: ../plots/Harm.py
 
-As we can see from this plot, although the pendulums oscillate 
+As we can see from this plot, although the pendulums oscillate
 at difference frequencies, their positions coincide at regular
 intervals.  In fact, every 54 seconds they all simultaneously
 return to their initial positions.
 
-.. only:: html
+This phenomenon can be more clearly `visualized in three
+dimensions <https://youtu.be/cc7ajqhfLVM>`_.
 
-   This phenomenon can be more clearly visualized in three
-   dimensions:
+.. only:: html
 
     .. raw:: html
 
