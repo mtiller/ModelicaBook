@@ -81,7 +81,7 @@ Thermal Capacitance
 ~~~~~~~~~~~~~~~~~~~
 
 Our first component model will be a model of lumped thermal capacitance
-with uniform temperature distribution.  
+with uniform temperature distribution.
 The equation we wish to associate with this
 component model is:
 
@@ -134,10 +134,11 @@ later section on :ref:`comp-annos`.
 Using the graphical annotations in the model (some of which were left
 out of the previous listing) it can be rendered as:
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Adiabatic.*
-   :height: 200px
+.. figure:: /ModelicaByExample/Components/HeatTransfer/Examples/Adiabatic.*
+   :width: 30%
    :align: center
    :alt: Adiabatic system schematic
+   :figclass: align-center icon
 
 Since no heat enters or leaves the thermal capacitance component,
 ``cap``, the temperature of the capacitance remains constant as shown
@@ -196,10 +197,11 @@ In this model, we see two components have been declared, ``cap`` and
 specified when they are declared.  The following is a schematic for
 the ``CoolingToAmbient`` model:
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.*
-   :height: 200px
+.. figure:: /ModelicaByExample/Components/HeatTransfer/Examples/CoolingToAmbient.*
+   :width: 80%
    :align: center
    :alt: Cooling to ambient schematic
+   :figclass: align-center diagram
 
 But what is really remarkable about this model is the equation
 section:
@@ -367,10 +369,11 @@ the following:
 
 When rendered, the model looks like this:
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.*
-   :height: 200px
+.. figure:: /ModelicaByExample/Components/HeatTransfer/Examples/Cooling.*
+   :width: 80%
    :align: center
-   :alt: Cooling example schematic
+   :alt: Cooling to ambient schematic
+   :figclass: align-center diagram
 
 This may not seem like much of an improvement.  Although we went to
 the trouble to break up the ``ConvectionToAmbient`` model into individual
@@ -387,10 +390,11 @@ example of how the handful of fundamental components we've constructed
 so far can be rearranged to form an entirely new (and more complex)
 model:
 
-.. image:: /ModelicaByExample/Components/HeatTransfer/Examples/ComplexNetwork.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Components/HeatTransfer/Examples/ComplexNetwork.*
+   :width: 80%
    :align: center
    :alt: Complex thermal network schematic
+   :figclass: align-center diagram
 
 .. todo::
 

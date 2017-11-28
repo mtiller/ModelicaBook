@@ -36,10 +36,11 @@ Here is a Modelica definition and icon for that interface:
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Sensor.mo
    :language: modelica
 
-.. image:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Sensor.*
-   :width: 25%
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Sensor.*
+   :width: 30%
    :align: center
    :alt: Sensor interface
+   :figclass: align-center icon
 
 A few things to note about this ``model`` definition.  The first is,
 as we mentioned a moment ago, that this model is ``partial``.  This is
@@ -66,10 +67,11 @@ connector for the stator.  Otherwise, it is very similar to our
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Actuator.mo
    :language: modelica
 
-.. image:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Actuator.*
-   :width: 25%
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Actuator.*
+   :width: 30%
    :align: center
    :alt: Actuator interface
+   :figclass: align-center icon
 
 The ``Plant`` interface has three rotational connectors.  One for the
 "input" side (where the actuator will be connected), one for the
@@ -79,21 +81,22 @@ for the "support" side (so it can be "mounted" to something):
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Plant.mo
    :language: modelica
 
-.. image:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Plant.*
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Plant.*
    :width: 25%
    :align: center
    :alt: Plant interface
+   :figclass: align-center icon
 
 Finally, we have the ``Controller`` interface definition:
 
 .. literalinclude:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Controller.mo
    :language: modelica
 
-.. image:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Controller.*
-   :width: 25%
+.. figure:: /ModelicaByExample/Architectures/SensorComparison/Interfaces/Controller.*
+   :width: 30%
    :align: center
    :alt: Controller interface
-
+   :figclass: align-center icon
 
 Regardless of how it is implemented (*e.g.,* proportional control, PID
 control), the ``Controller`` will require an input connector for the

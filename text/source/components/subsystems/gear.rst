@@ -31,10 +31,11 @@ If we were unfamiliar with the ability to create reusable subsystem
 models in Modelica, we might start by building a Modelica model that
 looked like this one:
 
-.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Examples/FlatSystemWithBacklash.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Subsystems/GearSubsystemModel/Examples/FlatSystemWithBacklash.*
+   :width: 80%
    :align: center
    :alt: Flat system model including backlash
+   :figclass: align-center diagram
 
 This model includes two essential components.  Part of the model,
 inside the dashed line, represents how the gear itself is being
@@ -65,10 +66,11 @@ been discussed), we should create a reusable subsystem model of the
 components within the dashed line.  In such a case, our schematic
 diagram would then look something like this:
 
-.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Examples/BacklashExample.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Subsystems/GearSubsystemModel/Examples/BacklashExample.*
+   :width: 80%
    :align: center
    :alt: System model including gear subsystem
+   :figclass: align-center diagram
 
 In this case, the collection of components used to represent the gear
 are replaced by a single instance in the diagram layer.  This is
@@ -82,10 +84,12 @@ have been assembled into the following subsystem model:
 When rendered, we see the diagram for the ``GearWithBacklash`` model
 looks like this:
 
-.. image:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Subsystems/GearSubsystemModel/Components/GearWithBacklash.*
+   :width: 80%
    :align: center
    :alt: Gear with backlash subsystem model
+   :figclass: align-center diagram
+
 
 There is quite a bit going on in this model.  First, note the presence
 of the ``useSupport`` parameter.  This is used to determine whether to

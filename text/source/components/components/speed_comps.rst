@@ -24,7 +24,7 @@ the system we used in our previous discussion of
 this:
 
 .. figure:: /ModelicaByExample/Components/SpeedMeasurement/Examples/Plant.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Plant Model Schematic
    :figclass: align-center diagram
@@ -107,7 +107,7 @@ instance of the ``SampleHold`` sensor and connect it to the
 When assembled, our final system looks like this:
 
 .. figure:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithSampleHold.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Plant with sample hold sensor
    :figclass: align-center diagram
@@ -141,7 +141,7 @@ following Modelica model:
 When assembled, our system model looks like this:
 
 .. figure:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithIntervalMeasure.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Plant with interval measure sensor
    :figclass: align-center diagram
@@ -197,7 +197,7 @@ and then added to our overall ``Plant`` model:
 The resulting system, when rendered, looks like this:
 
 .. figure:: /ModelicaByExample/Components/SpeedMeasurement/Examples/PlantWithPulseCounter.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Plant with pulse counter sensor
    :figclass: align-center diagram

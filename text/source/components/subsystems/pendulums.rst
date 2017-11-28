@@ -31,10 +31,12 @@ pendulum.
 
 The components of the pendulum can be rendered as follows:
 
-.. image:: /ModelicaByExample/Subsystems/Pendula/Pendulum.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Subsystems/Pendula/Pendulum.*
+   :width: 20%
    :align: center
    :alt: A single pendulum
+   :figclass: align-center icon
+
 
 System Model
 ^^^^^^^^^^^^

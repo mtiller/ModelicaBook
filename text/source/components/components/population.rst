@@ -171,9 +171,11 @@ definition.  As usual, the ``Icon`` annotation is not included in the
 source listing.  But when this component model is rendered within a
 system model, its icon will look like this:
 
-.. image:: ../../_static/Icons/ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.*
-   :height: 200px
+.. figure:: ../../_static/Icons/ModelicaByExample.Components.LotkaVolterra.Components.RegionalPopulation.*
+   :width: 30%
    :align: center
+   :alt: Reginal population
+   :figclass: align-center icon
 
 .. _reproduction-component:
 
@@ -228,9 +230,11 @@ can have equations written in a way that make their behavior more intuitive,
 Although not shown, the ``Icon`` for the ``Reproduction`` model is
 rendered as:
 
-.. image:: ../../_static/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Reproduction.*
-   :height: 200px
+.. figure:: ../../_static/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Reproduction.*
+   :width: 30%
    :align: center
+   :alt: Reproduction
+   :figclass: align-center icon
 
 Starvation
 ~~~~~~~~~~
@@ -290,9 +294,11 @@ also proportional the product of the predator and prey populations
 Although not shown, the ``Icon`` for the ``Predation`` model is
 rendered as:
 
-.. image:: ../../_static/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Predation.*
-   :height: 200px
+.. figure:: ../../_static/Icons/ModelicaByExample.Components.LotkaVolterra.Components.Predation.*
+   :width: 30%
    :align: center
+   :alt: Predation
+   :figclass: align-center icon
 
 Note that the ``Predation`` model is asymmetric.  The ``b`` connector
 should be connected to the predator population and the ``a`` connector
@@ -308,7 +314,7 @@ dragging and dropping the components into the following system
 configuration:
 
 .. figure:: /ModelicaByExample/Components/LotkaVolterra/Examples/ClassicLotkaVolterra.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: Component-oriented version of the classic Lotka-Volterra model
    :figclass: align-center diagram
@@ -355,7 +361,7 @@ by augmenting the existing ``ClassicLotkaVolterra`` model.  When
 visualized, the schematic for the resulting system is rendered as:
 
 .. figure:: /ModelicaByExample/Components/LotkaVolterra/Examples/ThirdSpecies.*
-   :width: 100%
+   :width: 80%
    :align: center
    :alt: The Classic Lotka-Volterra model augmented with an additional
 	 predatory species

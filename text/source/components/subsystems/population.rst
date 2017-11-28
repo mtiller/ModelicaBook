@@ -22,10 +22,12 @@ dynamics.  The Modelica source code for the model is:
 
 The diagram for this component is rendered as:
 
-.. image:: /ModelicaByExample/Subsystems/LotkaVolterra/Components/TwoSpecies.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Subsystems/LotkaVolterra/Components/TwoSpecies.*
+   :width: 80%
    :align: center
    :alt: Region containing rabbits and foxes
+   :figclass: align-center diagram
+
 
 This model will be used as the basis for the regional population
 dynamics in subsequent models presented in this section.
@@ -41,10 +43,12 @@ regions.  The Modelica source code for such a model is quite simple:
 
 The diagram for this model is equally simple:
 
-.. image:: /ModelicaByExample/Subsystems/LotkaVolterra/Examples/UnconnectedPopulations.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Subsystems/LotkaVolterra/Examples/UnconnectedPopulations.*
+   :width: 15%
    :align: center
    :alt: Four unconnected regional populations
+   :figclass: align-center icon
+
 
 If we simulate this model, each population should follow the same
 trajectory since their initial conditions are identical.  The
@@ -99,10 +103,12 @@ If we connect our previously unconnected regions with migration paths,
 
 the resulting system diagram becomes:
 
-.. image:: /ModelicaByExample/Subsystems/LotkaVolterra/Examples/WithMigration.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Subsystems/LotkaVolterra/Examples/WithMigration.*
+   :width: 30%
    :align: center
    :alt: Four regional populations with migration paths
+   :figclass: align-center icon
+
 
 Simulating this system, we see that the population dynamics in the
 different regions start off out of sync, but eventually stabilize into

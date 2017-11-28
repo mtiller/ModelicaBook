@@ -11,10 +11,12 @@ Flat Power Supply Model
 In this case, our flat system model will be the DC power supply
 circuit shown here:
 
-.. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/FlatCircuit.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Subsystems/PowerSupply/Examples/FlatCircuit.*
+   :width: 80%
    :align: center
    :alt: Flat switching power supply model
+   :figclass: align-center diagram
+
 
 Implemented in Modelica, this model looks like this:
 
@@ -44,17 +46,21 @@ Once again, we'll improve upon the flat version of our system by
 taking some collection of components and organizing them into a
 subsystem model.  Our system level circuit then becomes:
 
-.. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/SubsystemCircuit.*
+.. figure:: /ModelicaByExample/Subsystems/PowerSupply/Examples/SubsystemCircuit.*
    :width: 80%
    :align: center
    :alt: Hierarchical power supply model
+   :figclass: align-center diagram
+
 
 This model uses the ``BasicPowerSupply`` model whose diagram is shown here:
 
-.. image:: /ModelicaByExample/Subsystems/PowerSupply/Components/BasicPowerSupply.*
+.. figure:: /ModelicaByExample/Subsystems/PowerSupply/Components/BasicPowerSupply.*
    :width: 80%
    :align: center
    :alt: Reusable power supply subsystem model
+   :figclass: align-center diagram
+
 
 The Modelica source code for this reusable power supply subsystem
 model is:
@@ -81,10 +87,11 @@ same results as we got for the flat version:
 We can augment our system model to include an additional load (that
 comes online after some delay):
 
-.. image:: /ModelicaByExample/Subsystems/PowerSupply/Examples/AdditionalLoad.*
+.. figure:: /ModelicaByExample/Subsystems/PowerSupply/Examples/AdditionalLoad.*
    :width: 80%
    :align: center
    :alt: Flat switching power supply model
+   :figclass: align-center diagram
 
 In that case, if we simulate the model we can see the impact that
 additional load will have on the quality of power supply output:

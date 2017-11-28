@@ -16,10 +16,12 @@ Flat System
 Let's start, as usual, with a flat system level model like the one
 shown below:
 
-.. image:: /ModelicaByExample/Subsystems/HeatTransfer/Examples/FlatRod.*
-   :width: 100%
+.. figure:: /ModelicaByExample/Subsystems/HeatTransfer/Examples/FlatRod.*
+   :width: 80%
    :align: center
    :alt: Flat version of our heat transfer system
+   :figclass: align-center diagram
+
 
 This model consists of a collection of thermal capacitances with
 thermal conductors in between them.  In this case, there are 3 thermal
