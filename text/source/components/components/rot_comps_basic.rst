@@ -145,7 +145,7 @@ Next, let us consider the definition of a spring model:
 
 The icon for our spring model is rendered as:
 
-.. figuree:: ../../_static/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Spring.*
+.. figure:: ../../_static/Icons/ModelicaByExample.Components.Rotational.VerboseApproach.Spring.*
    :width: 30%
    :align: center
    :alt: Spring
