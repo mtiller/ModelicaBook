@@ -223,7 +223,7 @@ msgstr ""
 " ``y0``"
 " وحقيقة أنها تمثل التعدادات السكانية الأصلية."
 " وبناء على الأمثلة السابقة، فقد يتوقع المرء أن"
-" الظروف الابتدائية يتم تمثيلها هكذا:"
+" الظروف الابتدائية سيتم تمثيلها في النموذج هكذا:"
 
 #: ../../source/behavior/equations/population.rst:131
 msgid ""
@@ -232,7 +232,7 @@ msgid ""
 " initial conditions by specifying the value of the ``start`` attribute "
 "directly on the variable."
 msgstr ""
-
+"ولكن
 #: ../../source/behavior/equations/population.rst:136
 msgid ""
 "It is worth noting that this approach has both advantages and disadvantages."
