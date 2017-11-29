@@ -44,6 +44,16 @@ model FlatCircuit "A model with power source, AC-DC conversion and load in one d
   Analog.Basic.Ground ground1
     annotation (Placement(transformation(extent={{-100,-52},{-80,-32}})));
 equation
+  connect(D1.p, D3.p) annotation(
+    Line(points = {{-19, 13}, {-19, 13}, {-19, 7}, {-19, 7}}, color = {0, 0, 255}));
+  connect(load.p, capacitor.p) annotation (Line(
+      points = {{100, 0}, {100, 13}, {60, 13}, {60, 0}},
+      color={0,0,255}));
+  connect(load.p, D2.n) annotation (Line(
+      points = {{100, 0}, {100, 13}, {19, 13}, {19, 12.9289}, {19.0711, 12.9289}},
+      color={0,0,255}));
+  connect(D1.n, D2.p) annotation(
+    Line(points = {{-5, 27}, {5, 27}, {5, 27}, {5, 27}}, color = {0, 0, 255}));
   connect(switch.p, wall_voltage.p) annotation (Line(
       points={{-80,40},{-90,40},{-90,10}},
       color={0,0,255}, smooth=Smooth.None));
@@ -56,12 +66,6 @@ equation
   connect(D3.n, D4.p) annotation (Line(
       points={{-4.92893,-7.07107},{-2.46446,-7.07107},{-2.46446,-7.07107},{
           1.09406e-006,-7.07107},{1.09406e-006,-7.07107},{4.92893,-7.07107}},
-      color={0,0,255}, smooth=Smooth.None));
-  connect(D1.n, D2.p) annotation (Line(
-      points={{-4.92893,27.0711},{2.18813e-006,28},{4.92893,28},{4.92893, 27.0711}},
-      color={0,0,255}, smooth=Smooth.None));
-  connect(D1.p, D3.p) annotation (Line(
-      points={{-19.0711,12.9289},{-20,10},{-19.0711,7.07107}},
       color={0,0,255}, smooth=Smooth.None));
   connect(D2.n, D4.n) annotation (Line(
       points={{19.0711,12.9289},{19.0711,11.4644},{19.0711,11.4644},{19.0711,10},
@@ -81,12 +85,6 @@ equation
       color={0,0,255}, smooth=Smooth.None));
   connect(transformer.n2, ground1.p) annotation (Line(
       points={{-30,5},{-30,-32},{-90,-32}},
-      color={0,0,255}, smooth=Smooth.None));
-  connect(load.p, D2.n) annotation (Line(
-      points={{100,0},{100,12},{20,12},{20,12.9289},{19.0711,12.9289}},
-      color={0,0,255}, smooth=Smooth.None));
-  connect(load.p, capacitor.p) annotation (Line(
-      points={{100,0},{100,12},{60,12},{60,0}},
       color={0,0,255}, smooth=Smooth.None));
   connect(D1.p, capacitor.n) annotation (Line(
       points={{-19.0711,12.9289},{-24,12.9289},{-24,-32},{60,-32},{60,-20}},
