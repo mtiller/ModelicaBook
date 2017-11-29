@@ -217,6 +217,12 @@ msgid ""
 "populations.  Based on previous examples, one might have expected these "
 "initial conditions to be captured in the model as follows:"
 msgstr ""
+"ربما يلاحظ القارئ المنتبه وجود المتغيرات العاملة"
+" ``x0``"
+" و"
+" ``y0``"
+" وحقيقة أنها تمثل التعدادات السكانية الأصلية."
+" وبناء على الأمثلة السابقة، فقد يتوقع المرء أن"
 
 #: ../../source/behavior/equations/population.rst:131
 msgid ""
