@@ -21,9 +21,9 @@ EPUB_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/te
 
 .PHONY: all deploy specs results dirhtml ebooks api publish_server publish_web serve
 
-all: specs results dirhtml ebooks site
+all: specs results dirhtml ebooks pdfs site
 
-deploy: api publish_server publish_web
+deploy: api publish_server publish_web publish_ebooks
 
 deps:
 	#docker pull $(BUILDER_IMAGE)
@@ -75,4 +75,11 @@ publish_web:
 	$(GPUB_RUN) sh -c '$(S3MODIFY) --recursive --add-header="Cache-Control:max-age=60" s3://$(S3BUCKET)/'
 
 publish_ebooks:
-	#$(EPUB_RUN) sh -c '$(SYNC) * s3://$(S3BUCKET)/'
+	$(EPUB_RUN) sh -c '$(SYNC) epub/ModelicaByExample.epub s3://$(S3BUCKET)/eBooks/'
+	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/epub+zip s3://$(S3BUCKET)/eBooks/ModelicaByExample.epub'
+	$(EPUB_RUN) sh -c '$(SYNC) mobi/ModelicaByExample.mobi s3://$(S3BUCKET)/eBooks/'
+	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/x-mobipocket s3://$(S3BUCKET)/eBooks/ModelicaByExample.mobi'
+	$(EPUB_RUN) sh -c '$(SYNC) latex/ModelicaByExample.pdf s3://$(S3BUCKET)/eBooks/ModelicaByExample-Letter.pdf'
+	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/pdf s3://$(S3BUCKET)/eBooks/ModelicaByExample-Letter.pdf'
+	$(EPUB_RUN) sh -c '$(SYNC) latex-a4/ModelicaByExample.pdf s3://$(S3BUCKET)/eBooks/ModelicaByExample-A4.pdf'
+	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/pdf s3://$(S3BUCKET)/eBooks/ModelicaByExample-A4.pdf'

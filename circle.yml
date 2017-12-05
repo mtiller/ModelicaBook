@@ -29,11 +29,13 @@ deployment:
     commands:
       - make publish_server
       - make publish_web
+      - make publish_ebooks
   main:
     branch: published
     commands:
       - make publish_server
-      - make publish_web
+      - S3BUCKET=book.xogeny.com make publish_web
+      - S3BUCKET=book.xogeny.com make publish_ebooks
 
 machine:
   services:
