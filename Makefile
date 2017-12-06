@@ -75,11 +75,12 @@ publish_web:
 	$(GPUB_RUN) sh -c '$(S3MODIFY) --recursive --add-header="Cache-Control:max-age=60" s3://$(S3BUCKET)/'
 
 publish_ebooks:
-	$(EPUB_RUN) sh -c '$(SYNC) epub/ModelicaByExample.epub s3://$(S3BUCKET)/eBooks/'
-	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/epub+zip s3://$(S3BUCKET)/eBooks/ModelicaByExample.epub'
-	$(EPUB_RUN) sh -c '$(SYNC) mobi/ModelicaByExample.mobi s3://$(S3BUCKET)/eBooks/'
-	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/x-mobipocket s3://$(S3BUCKET)/eBooks/ModelicaByExample.mobi'
-	$(EPUB_RUN) sh -c '$(SYNC) latex/ModelicaByExample.pdf s3://$(S3BUCKET)/eBooks/ModelicaByExample-Letter.pdf'
-	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/pdf s3://$(S3BUCKET)/eBooks/ModelicaByExample-Letter.pdf'
-	$(EPUB_RUN) sh -c '$(SYNC) latex-a4/ModelicaByExample.pdf s3://$(S3BUCKET)/eBooks/ModelicaByExample-A4.pdf'
-	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/pdf s3://$(S3BUCKET)/eBooks/ModelicaByExample-A4.pdf'
+	-mkdir text/build/ebooks
+	cp text/build/epub/ModelicaByExample.epub text/build/ebooks/ModelicaByExample-`git hash-object text/build/epub/ModelicaByExample.epub`.epub
+	cp text/build/mobi/ModelicaByExample.mobi text/build/ebooks/ModelicaByExample-`git hash-object text/build/mobi/ModelicaByExample.mobi`.mobi
+	cp text/build/latex/ModelicaByExample.pdf text/build/ebooks/ModelicaByExample-Letter-`git hash-object text/build/latex/ModelicaByExample.pdf`.pdf
+	cp text/build/latex-a4/ModelicaByExample.pdf text/build/ebooks/ModelicaByExample-A4-`git hash-object text/build/latex-a4/ModelicaByExample.pdf`.pdf
+	$(EPUB_RUN) sh -c '$(SYNC) ebooks/* s3://$(S3BUCKET)/eBooks/'
+	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/epub+zip s3://$(S3BUCKET)/eBooks/*.epub'
+	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/x-mobipocket s3://$(S3BUCKET)/eBooks/*.mobi'
+	$(GPUB_RUN) sh -c '$(S3MODIFY) -m application/pdf s3://$(S3BUCKET)/eBooks/*.pdf'
