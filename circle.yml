@@ -36,8 +36,8 @@ deployment:
     branch: published
     commands:
       - make publish_server
-      - S3BUCKET=book.xogeny.com make publish_web
-      - S3BUCKET=book.xogeny.com make publish_ebooks
+      - make publish_web S3BUCKET=book.xogeny.com 
+      - make publish_ebooks S3BUCKET=book.xogeny.com 
 
 machine:
   services:
