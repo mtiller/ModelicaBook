@@ -30,8 +30,8 @@ deployment:
     branch: master
     commands:
       - make publish_server
-      - make publish_web
-      - make publish_ebooks
+      - make publish_web S3BUCKET=beta.book.xogeny.com
+      - make publish_ebooks S3BUCKET=beta.book.xogeny.com
   main:
     branch: published
     commands:
