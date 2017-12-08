@@ -32,12 +32,14 @@ deployment:
       - make publish_server
       - make publish_web S3BUCKET=beta.book.xogeny.com
       - make publish_ebooks S3BUCKET=beta.book.xogeny.com
+      - make set_cache_headers S3BUCKET=beta.book.xogeny.com
   main:
     branch: published
     commands:
       - make publish_server
       - make publish_web S3BUCKET=book.xogeny.com 
       - make publish_ebooks S3BUCKET=book.xogeny.com 
+      - make set_cache_headers S3BUCKET=book.xogeny.com
 
 machine:
   services:
