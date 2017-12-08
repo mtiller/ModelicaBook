@@ -72,6 +72,8 @@ publish_web:
 	$(GPUB_RUN) sh -c '$(S3MODIFY) -m text/css s3://$(S3BUCKET)/_static/semantic/*.css'
 	$(GPUB_RUN) sh -c '$(S3MODIFY) -m text/css s3://$(S3BUCKET)/_static/*.css'
 	$(GPUB_RUN) sh -c '$(S3MODIFY) -m text/css s3://$(S3BUCKET)/*.css'
+
+set_cache_headers:
 	$(GPUB_RUN) sh -c '$(S3MODIFY) --recursive --add-header="Cache-Control:max-age=60" s3://$(S3BUCKET)/'
 
 publish_ebooks:
