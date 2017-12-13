@@ -205,6 +205,8 @@ latex_elements = {
 
 # Figure placement within LaTeX paper
     'figure_align': 'H',
+# Set line highlight background to light yellow
+    'sphinxsetup': 'VerbatimHighlightColor={rgb}{1,1,0.8}',
 }
 
 # If the tag 'a4' is given we switch to a4paper
