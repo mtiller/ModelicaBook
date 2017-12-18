@@ -23,3 +23,12 @@ previously.
 
 The `./libs` directory contains the shared libraries necessary to 
 run the OM generated executables.
+
+# Running
+
+To run the server, make sure the docker image has been built and pushed
+(this should happen during the CI runs) and then run the server with:
+
+```
+$ docker run -d --name book-server --restart=always --log-opt max-size=2m -p 3000:3000 mtiller/book-server
+```

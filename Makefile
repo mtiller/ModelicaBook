@@ -62,6 +62,7 @@ api:
 	(cd api; npm install -g dockergen && npm run image)
 
 # This target requires the DOCKER_* environment variables to be set
+# To see how to actually run the book server, see api/README.md
 publish_server:
 	docker login -e $(DOCKER_EMAIL) -u $(DOCKER_USER) -p $(DOCKER_PASS)
 	docker push $(BUILDER_IMAGE)
