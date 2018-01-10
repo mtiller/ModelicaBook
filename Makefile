@@ -18,6 +18,7 @@ RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE)
 GEN_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/generator -i -t $(BUILDER_IMAGE)
 GPUB_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/generator/dist -e "AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY)" -e "AWS_SECRET_KEY=$(AWS_SECRET_KEY)" -i -t $(BUILDER_IMAGE)
 EPUB_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/text/build -e "AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY)" -e "AWS_SECRET_KEY=$(AWS_SECRET_KEY)" -i -t $(BUILDER_IMAGE)
+SERVE_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/text/build/dirhtml -p 5001:5001 -i -t $(BUILDER_IMAGE)
 
 .PHONY: all deploy specs results dirhtml ebooks api publish_server publish_web serve
 
@@ -50,8 +51,8 @@ site: deps
 	$(GEN_RUN) yarn install
 	$(GEN_RUN) yarn build
 
-serve:
-	(cd text/build/dirhtml; serve -p 5001)
+serve: dirhtml
+	$(SERVE_RUN) serve -p 5001
 
 # N.B. - This step can only be run by somebody who has access to the Xogeny private packages required to build the
 # API.
