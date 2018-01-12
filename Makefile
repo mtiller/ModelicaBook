@@ -21,7 +21,7 @@ EPUB_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/te
 
 .PHONY: all deploy specs results dirhtml ebooks api publish_server publish_web serve
 
-all: specs results dirhtml ebooks pdfs site
+all: specs results dirhtml json ebooks pdfs site
 
 deploy: api publish_server publish_web publish_ebooks
 
