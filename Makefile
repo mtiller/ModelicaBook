@@ -46,7 +46,7 @@ ebooks: deps
 pdfs: deps
 	$(RUN) make pdf pdf-a4
 
-site: deps specs results dirhtml ebooks pdfs json
+site: deps specs results dirhtml json
 	$(GEN_RUN) yarn install
 	$(GEN_RUN) yarn build
 
