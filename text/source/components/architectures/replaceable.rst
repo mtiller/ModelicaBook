@@ -374,7 +374,7 @@ If our ``Circuit`` is defined in this way, we can create the
 
     model SensitiveCircuit
       extends Circuit(
-        redeclare ResistorModel = SensitiveResistor(dRdT=0.1)
+        redeclare model ResistorModel = SensitiveResistor(dRdT=0.1)
       );
     end SensitiveCircuit;
 
