@@ -74,7 +74,7 @@ The ``tab`` field is a string that indicates the name of the tab that
 this variable should be organized under.  The ``group`` field
 specifies the name of a "group" **within the specified tab** in which
 the variable should be placed.  The ``enable`` field should be given
-an expression that indicates when the parameter should be shown.  The
+an expression that indicates when the variable should be shown enabled or disabled.  The
 ``showStartAttribute`` field can be used to incorporate the ``start``
 attributes value (for this variable) into the user interface so the
 user can easily specify the value of the ``start`` attribute.  The
