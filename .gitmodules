@@ -4,3 +4,6 @@
 [submodule "generator"]
 	path = generator
 	url = git@github.com:xogeny/book-generator.git
+[submodule "nextgen"]
+	path = nextgen
+	url = git@github.com:xogeny/book-nextgen.git
