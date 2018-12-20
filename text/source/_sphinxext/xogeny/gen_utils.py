@@ -41,6 +41,7 @@ def findModel(*frags):
 
 def add_case(frags, res, stopTime=None, tol=1e-3, ncp=500, mods={},
              msl=False, ms=False, compfails=False, simfails=False):
+    print "Adding case "+res
     mod = findModel(*frags)
     if res in results:
         raise NameError("Result %s already exists!" % (res,))
@@ -146,7 +147,19 @@ def _generate_casedata():
                 obj["ncp"] = res["ncp"]
                 obj["tol"] = res["tol"]
                 obj["mods"] = res["mods"]
+                obj["name"] = res["name"]
                 json.dump(obj, ofp, indent=2)
+
+def _generate_modellist():
+    models = set()
+    for res in results:
+        print "Working on result "+res
+        print res
+        print results[res]
+        models.add(results[res]["name"])
+    with open(os.path.join(path, "text", "results",
+                               "models.json"), "w+") as ofp:
+        json.dump(list(models), ofp, indent=2)
 
 def _generate_plots():
     for plot in plots:
@@ -246,6 +259,11 @@ def _generate_makefile():
             sfp.write(genjs.render(**context));
 
 def generate():
+    print "Generating Plots"
     _generate_plots()
+    print "Generating Makefile"
     _generate_makefile()
+    print "Generating Case Data"
     _generate_casedata()
+    print "Generating model list"
+    _generate_modellist()
