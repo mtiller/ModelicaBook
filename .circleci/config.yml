@@ -14,7 +14,7 @@ jobs:
             # documented at https://circleci.com/docs/2.0/circleci-images/
             # - image: circleci/mongo:3.4.4
 
-        working_directory: ~/repo/text
+        working_directory: ~/repo
 
         steps:
             - checkout
@@ -27,24 +27,24 @@ jobs:
                   name: Make Results
                   working_directory: ./text
                   command: make results
-                  no_output_timeout: 60m
+                  no_output_timeout: 10m
             - run:
                   name: Make HTML
                   working_directory: ./text
                   command: make dirhtml
-                  no_output_timeout: 60m
+                  no_output_timeout: 10m
             - run:
                   name: Make JSON
                   working_directory: ./text
                   command: make json
-                  no_output_timeout: 60m
+                  no_output_timeout: 10m
             - run:
                   name: Make EBooks
                   working_directory: ./text
                   command: make ebooks
-                  no_output_timeout: 60m
+                  no_output_timeout: 10m
             - run:
                   name: Make PDFs
                   working_directory: ./text
                   command: make pdfs
-                  no_output_timeout: 60m
+                  no_output_timeout: 10m
