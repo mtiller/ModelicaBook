@@ -19,6 +19,6 @@ jobs:
         steps:
             - checkout
             - run:
-                  - command: (cd text; make specs results dirhtml json ebooks pdfs)
+                  - working_directory: ./text
+                  - command: make specs results dirhtml json ebooks pdfs
                   - no_output_timeout: 60m
-            # - run: yarn test
