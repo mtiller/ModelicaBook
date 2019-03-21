@@ -5,6 +5,7 @@
 version: 2
 jobs:
     build:
+        machine: true
         # docker:
         #     # specify the version you desire here
         #     - image: mtiller/book-builder
