@@ -25,7 +25,7 @@ jobs:
                   no_output_timeout: 5m
             - run:
                   name: Make Results
-                  working_directory: ./text
+                  working_directory: .
                   command: make results
                   no_output_timeout: 10m
             - run:
