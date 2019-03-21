@@ -8,7 +8,9 @@ json_files: {%- for res in results %} json/{{res}}.json json/{{res}}.json.gz {% 
 
 {% for res in results %}
 {{res}}_res.mat {{res}}_init.xml {{res}}: {{results[res]["path"]}}
+	echo "Simulating {{res}}..."
 	omc {{res}}.mos
+	echo "...done with {{res}}"
 
 json/{{res}}.json: {{res}}_init.xml ../tojson.py
 	-mkdir json

@@ -19,6 +19,32 @@ jobs:
         steps:
             - checkout
             - run:
+                  name: Make Specs
                   working_directory: ./text
-                  command: make specs results dirhtml json ebooks pdfs
+                  command: make specs
+                  no_output_timeout: 5m
+            - run:
+                  name: Make Results
+                  working_directory: ./text
+                  command: make results
+                  no_output_timeout: 60m
+            - run:
+                  name: Make HTML
+                  working_directory: ./text
+                  command: make dirhtml
+                  no_output_timeout: 60m
+            - run:
+                  name: Make JSON
+                  working_directory: ./text
+                  command: make json
+                  no_output_timeout: 60m
+            - run:
+                  name: Make EBooks
+                  working_directory: ./text
+                  command: make ebooks
+                  no_output_timeout: 60m
+            - run:
+                  name: Make PDFs
+                  working_directory: ./text
+                  command: make pdfs
                   no_output_timeout: 60m
