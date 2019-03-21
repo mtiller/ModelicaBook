@@ -5,14 +5,14 @@
 version: 2
 jobs:
     build:
-        docker:
-            # specify the version you desire here
-            - image: mtiller/book-builder
+        # docker:
+        #     # specify the version you desire here
+        #     - image: mtiller/book-builder
 
-            # Specify service dependencies here if necessary
-            # CircleCI maintains a library of pre-built images
-            # documented at https://circleci.com/docs/2.0/circleci-images/
-            # - image: circleci/mongo:3.4.4
+        #     # Specify service dependencies here if necessary
+        #     # CircleCI maintains a library of pre-built images
+        #     # documented at https://circleci.com/docs/2.0/circleci-images/
+        #     # - image: circleci/mongo:3.4.4
 
         working_directory: ~/repo
 
@@ -20,7 +20,7 @@ jobs:
             - checkout
             - run:
                   name: Make Specs
-                  working_directory: ./text
+                  working_directory: .
                   command: make specs
                   no_output_timeout: 5m
             - run:
@@ -30,21 +30,21 @@ jobs:
                   no_output_timeout: 10m
             - run:
                   name: Make HTML
-                  working_directory: ./text
+                  working_directory: .
                   command: make dirhtml
                   no_output_timeout: 10m
             - run:
                   name: Make JSON
-                  working_directory: ./text
+                  working_directory: .
                   command: make json
                   no_output_timeout: 10m
             - run:
                   name: Make EBooks
-                  working_directory: ./text
+                  working_directory: .
                   command: make ebooks
                   no_output_timeout: 10m
             - run:
                   name: Make PDFs
-                  working_directory: ./text
+                  working_directory: .
                   command: make pdfs
                   no_output_timeout: 10m
