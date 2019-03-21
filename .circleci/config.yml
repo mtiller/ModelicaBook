@@ -19,6 +19,6 @@ jobs:
         steps:
             - checkout
             - run:
-                  - working_directory: ./text
-                  - command: make specs results dirhtml json ebooks pdfs
-                  - no_output_timeout: 60m
+                  working_directory: ./text
+                  command: make specs results dirhtml json ebooks pdfs
+                  no_output_timeout: 60m
