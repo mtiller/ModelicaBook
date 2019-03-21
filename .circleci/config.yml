@@ -5,15 +5,9 @@
 version: 2
 jobs:
     build:
-        machine: true
-        # docker:
-        #     # specify the version you desire here
-        #     - image: mtiller/book-builder
-
-        #     # Specify service dependencies here if necessary
-        #     # CircleCI maintains a library of pre-built images
-        #     # documented at https://circleci.com/docs/2.0/circleci-images/
-        #     # - image: circleci/mongo:3.4.4
+        docker:
+            # specify the version you desire here
+            - image: mtiller/book-builder
 
         working_directory: ~/repo
 
@@ -21,31 +15,31 @@ jobs:
             - checkout
             - run:
                   name: Make Specs
-                  working_directory: .
+                  working_directory: ./text
                   command: make specs
                   no_output_timeout: 5m
             - run:
                   name: Make Results
-                  working_directory: .
+                  working_directory: ./text
                   command: make results
                   no_output_timeout: 10m
             - run:
                   name: Make HTML
-                  working_directory: .
+                  working_directory: ./text
                   command: make dirhtml
                   no_output_timeout: 10m
             - run:
                   name: Make JSON
-                  working_directory: .
+                  working_directory: ./text
                   command: make json
                   no_output_timeout: 10m
             - run:
                   name: Make EBooks
-                  working_directory: .
+                  working_directory: ./text
                   command: make ebooks
                   no_output_timeout: 10m
             - run:
                   name: Make PDFs
-                  working_directory: .
+                  working_directory: ./text
                   command: make pdfs
                   no_output_timeout: 10m
