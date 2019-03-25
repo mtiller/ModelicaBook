@@ -1,0 +1,9 @@
+image: mtiller/book-builder
+
+specs:
+    script:
+        - (cd text; make specs)
+
+results:
+    script:
+        - (cd text; make results)
