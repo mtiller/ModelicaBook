@@ -1,5 +1,10 @@
 image: mtiller/book-builder
 
+cache:
+    paths:
+        - text/results
+        - text/plots
+
 stages:
     - specs
     - results
