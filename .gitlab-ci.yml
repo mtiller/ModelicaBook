@@ -1,9 +1,39 @@
 image: mtiller/book-builder
 
-specs:
+stages:
+  - specs
+  - results
+  - docs_html
+  - docs_json
+  - docs_ebooks
+  - docs_pdf
+
+generate_specs:
+    stage: specs
     script:
         - (cd text; make specs)
 
-results:
+generate_results:
+    stage: results
     script:
         - (cd text; make results)
+
+generate_html:
+    stage: docs_html
+    script:
+        - (cd text; make dirhtml)
+
+generate_html:
+    stage: docs_json
+    script:
+        - (cd text; make json)
+
+generate_html:
+    stage: docs_ebooks
+    script:
+        - (cd text; make ebooks)
+
+generate_html:
+    stage: docs_pdf
+    script:
+        - (cd text; make pdfs)
