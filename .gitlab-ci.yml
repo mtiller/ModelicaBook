@@ -5,10 +5,6 @@ cache:
         - text/results
         - text/plots
 
-artifacts:
-    paths:
-        - text/build
-
 stages:
     - specs
     - results
@@ -31,18 +27,30 @@ generate_html:
     stage: docs_html
     script:
         - (cd text; make dirhtml)
+    artifacts:
+        paths:
+            - text/build/
 
 generate_json:
     stage: docs_json
     script:
         - (cd text; make json)
+    artifacts:
+        paths:
+            - text/build/
 
 generate_ebooks:
     stage: docs_ebooks
     script:
         - (cd text; make ebooks)
+    artifacts:
+        paths:
+            - text/build/
 
 generate_pdfs:
     stage: docs_pdf
     script:
         - (cd text; make pdf pdf-a4)
+    artifacts:
+        paths:
+            - text/build/
