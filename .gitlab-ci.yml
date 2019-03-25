@@ -5,6 +5,10 @@ cache:
         - text/results
         - text/plots
 
+artifacts:
+    paths:
+        - text/build
+
 stages:
     - specs
     - results
@@ -41,4 +45,4 @@ generate_ebooks:
 generate_pdfs:
     stage: docs_pdf
     script:
-        - (cd text; make pdfs)
+        - (cd text; make pdf pdf-a4)
