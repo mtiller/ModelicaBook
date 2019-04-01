@@ -22,6 +22,9 @@ generate_results:
     stage: results
     script:
         - (cd text; make results)
+    artifacts:
+        paths:
+            - text/results/
 
 generate_html:
     stage: docs_html
