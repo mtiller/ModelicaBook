@@ -1,5 +1,6 @@
 build
 demosite
+.bash_history
 *~
 *.pyc
 *.mat

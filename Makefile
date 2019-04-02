@@ -14,7 +14,7 @@ S3CMD = s3cmd $(S3FLAGS)
 SYNC = $(S3CMD) sync -P -F
 S3MODIFY = $(S3CMD) modify
 
-RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE)
+# RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -i -t $(BUILDER_IMAGE)
 GEN_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/generator -i -t $(BUILDER_IMAGE)
 GPUB_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/generator/dist -e "AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY)" -e "AWS_SECRET_KEY=$(AWS_SECRET_KEY)" -i -t $(BUILDER_IMAGE)
 EPUB_RUN = docker run -v `pwd`:/opt/MBE/ModelicaBook -w /opt/MBE/ModelicaBook/text/build -e "AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY)" -e "AWS_SECRET_KEY=$(AWS_SECRET_KEY)" -i -t $(BUILDER_IMAGE)
@@ -29,22 +29,22 @@ deps:
 	#docker pull $(BUILDER_IMAGE)
 
 specs: deps
-	$(RUN) make specs
+	(cd text; make specs)
 
 results: deps
-	$(RUN) make results
+	(cd text; make results)
 
 dirhtml: deps
-	$(RUN) make dirhtml
+	(cd text; make dirhtml)
 
 json: deps
-	$(RUN) make json
+	(cd text; make json)
 
 ebooks: deps
-	$(RUN) make ebooks
+	(cd text; make ebooks)
 
 pdfs: deps
-	$(RUN) make pdf pdf-a4
+	(cd text; make pdf pdf-a4)
 
 site: deps specs results dirhtml json
 	$(GEN_RUN) yarn install
