@@ -38,6 +38,9 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 LATEXMKOPTS     = "-xelatex"
 
+PREV_SPEC_HASH = $(shell cat spec-hash || echo "")
+SPEC_HASH = $(shell git hash-object specs.py)
+
 # Language definition
 SET_BOOK_LANG_CN = BOOK_LANG=zh_CN
 
@@ -56,11 +59,21 @@ endif
 book: specs results dirhtml server
 
 specs: specs.py
+	$(info Checking if custom header is needed)
+ifneq ($(SPEC_HASH), $(PREV_SPEC_HASH))
+	$(info Hashes do not match, regenerating specifications)
+	-rm spec-hash
 	-mkdir -p results/json
 	-mkdir -p results/js
 	-mkdir -p plots
 	-rm -f plots/*
 	python specs.py
+	# Record the content hash of specs.py used to
+	# generate all the files
+	git hash-object specs.py > spec-hash
+else
+	$(info Specification hashes match, skipping)
+endif
 
 specs_cn: specs.py
 	-mkdir -p results/json
@@ -252,6 +265,7 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
 distclean: clean
+	-rm spec-hash
 	-rm -rf results tmp plots
 	$(foreach file, $(PDFs), $(shell rm -f "$(file)"))
 
