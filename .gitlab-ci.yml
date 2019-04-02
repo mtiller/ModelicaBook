@@ -8,10 +8,10 @@ cache:
 stages:
     - specs
     - results
-    - docs_html
     - docs_json
     - docs_ebooks
     - docs_pdf
+    # - docs_html
 
 generate_specs:
     stage: specs
@@ -24,15 +24,8 @@ generate_results:
         - (cd text; make results)
     artifacts:
         paths:
-            - text/results/
-
-generate_html:
-    stage: docs_html
-    script:
-        - (cd text; make dirhtml)
-    artifacts:
-        paths:
-            - text/build/
+            - text/results/exes.tar.gz
+            - text/plots
 
 generate_json:
     stage: docs_json
@@ -54,6 +47,14 @@ generate_pdfs:
     stage: docs_pdf
     script:
         - (cd text; make pdf pdf-a4)
+    artifacts:
+        paths:
+            - text/build/
+
+generate_html:
+    stage: docs_html
+    script:
+        - (cd text; make dirhtml)
     artifacts:
         paths:
             - text/build/

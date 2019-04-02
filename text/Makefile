@@ -40,6 +40,8 @@ LATEXMKOPTS     = "-xelatex"
 
 PREV_SPEC_HASH = $(shell cat spec-hash || echo "")
 SPEC_HASH = $(shell git hash-object specs.py)
+PREV_RES_HASH = $(shell cat results-hash || echo "")
+RES_HASH = $(shell git rev-parse HEAD:ModelicaByExample HEAD:text/specs.py | git hash-object --stdin)
 
 # Language definition
 SET_BOOK_LANG_CN = BOOK_LANG=zh_CN
@@ -59,9 +61,8 @@ endif
 book: specs results dirhtml server
 
 specs: specs.py
-	$(info Checking if custom header is needed)
 ifneq ($(SPEC_HASH), $(PREV_SPEC_HASH))
-	$(info Hashes do not match, regenerating specifications)
+	$(info Specification hashes do not match, regenerating specifications)
 	-rm spec-hash
 	-mkdir -p results/json
 	-mkdir -p results/js
@@ -70,7 +71,7 @@ ifneq ($(SPEC_HASH), $(PREV_SPEC_HASH))
 	python specs.py
 	# Record the content hash of specs.py used to
 	# generate all the files
-	git hash-object specs.py > spec-hash
+	echo $(SPEC_HASH) > spec-hash
 else
 	$(info Specification hashes match, skipping)
 endif
@@ -84,8 +85,14 @@ specs_cn: specs.py
 
 # This target builds all the simulation results
 results:
+ifneq ($(RES_HASH), $(PREV_RES_HASH))
 	@echo "Generate results"
-	(cd results; make results_files tidy exes.tar.gz)
+	$(info Results hashes do not match, regenerating results)
+	(cd results; make results_files exes.tar.gz tidy)
+	echo $(RES_HASH) > results-hash
+else
+	$(info Results hashes match, skipping)
+endif
 
 # This builds all the JS and JSON files.  Use this if your development
 # environment is setup to compile the JS files

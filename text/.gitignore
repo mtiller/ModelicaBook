@@ -3,5 +3,6 @@ tmp
 plots
 node_modules
 docs-dir
-spec-hash
 
+spec-hash
+results-hash
