@@ -11,7 +11,7 @@ stages:
     - docs_json
     - docs_ebooks
     - docs_pdf
-    # - docs_html
+    - docs_html
 
 generate_specs:
     stage: specs
