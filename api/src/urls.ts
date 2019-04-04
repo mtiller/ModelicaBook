@@ -1,5 +1,5 @@
-import * as express from 'express';
-import * as url from 'url';
+import * as express from "express";
+import * as url from "url";
 
 export function runUrl(req: express.Request | null, model: string): string {
     return resolve(req, `/model/${model}/run`);
@@ -7,6 +7,10 @@ export function runUrl(req: express.Request | null, model: string): string {
 
 export function modelUrl(req: express.Request | null, model: string): string {
     return resolve(req, `/model/${model}`);
+}
+
+export function findUrl(req: express.Request | null): string {
+    return resolve(req, `/find`);
 }
 
 export function rootUrl(req: express.Request | null): string {
@@ -32,4 +36,3 @@ function resolve(req: express.Request | null, path: string): string {
     let ret = url.format(base);
     return ret;
 }
-

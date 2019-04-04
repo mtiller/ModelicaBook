@@ -1,54 +1,70 @@
-import { rootUrl } from './urls';
-import * as express from 'express';
-import { Link } from 'siren-types';
-import { DetailsMap } from './details';
-import { modelUrl } from './urls';
-import { sendSiren } from './utils';
+import { rootUrl, findUrl } from "./urls";
+import * as express from "express";
+import { Link } from "siren-types";
+import { DetailsMap } from "./details";
+import { modelUrl } from "./urls";
+import { sendSiren } from "./utils";
+
+import * as debug from "debug";
+
+const log = debug("mbe:root");
 
 export function rootGet(models: string[], details: DetailsMap) {
     return (req: express.Request, res: express.Response) => {
-        let links: Link[] = models.map((model) => {
+        log("Get GET requests at API root");
+        let links: Link[] = models.map(model => {
             return {
-                "rel": ["model"],
-                "title": details[model].desc.description,
-                "href": modelUrl(req, model),
-            }
-        })
+                rel: ["model"],
+                title: details[model].desc.description,
+                href: modelUrl(req, model),
+            };
+        });
         sendSiren(res, {
             properties: {
                 models: models,
             },
-            links: [...links,
-            {
-                "rel": ["self"],
-                href: rootUrl(req),
-            },
-            {
-                "rel": ["template"],
-                href: modelUrl(req, "{model}"),
-            }],
-            actions: [{
-                name: "find",
-                method: "POST",
-                href: rootUrl(req),
-                fields: [{ name: "model", type: "text" }],
-            }]
+            links: [
+                ...links,
+                {
+                    rel: ["self"],
+                    href: rootUrl(req),
+                },
+                {
+                    rel: ["template"],
+                    href: modelUrl(req, "{model}"),
+                },
+            ],
+            actions: [
+                {
+                    name: "find",
+                    method: "POST",
+                    href: findUrl(req),
+                    type: "application/json",
+                    fields: [{ name: "model", type: "text" }],
+                },
+            ],
         });
-    }
+    };
 }
 
 export function rootPost(models: string[]) {
     return (req: express.Request, res: express.Response) => {
+        log("Received POST request at root for %j", req.body);
         if (req.body.hasOwnProperty("model")) {
             let model = req.body["model"];
+
+            log("  Model of interest: %s", model);
             if (models.indexOf(model) == -1) {
                 res.status(400).send("No model named " + model);
             } else {
-                res.setHeader("location", modelUrl(req, model));
-                res.send("Found model " + model);
+                const location = modelUrl(req, model);
+                log("  Location header set to %s", location);
+                res.setHeader("Location", location);
+                res.status(201).send("Found model " + model);
             }
         } else {
+            log("  No model provided");
             res.status(400).send("Required payload field 'model' not found");
         }
-    }
+    };
 }

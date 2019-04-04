@@ -1,9 +1,9 @@
 # Purpose
 
 This directory contains the source for an API that can be invoked to run
-simulations associated with the book.  Orginally, these simulations were
+simulations associated with the book. Orginally, these simulations were
 invoked in the browser by cross-compiling the simulation code into
-Javascript.  While very cool, this was problematic for a couple of
+Javascript. While very cool, this was problematic for a couple of
 reasons:
 
     1. The cross-compilation tool chain is not stable and made
@@ -12,17 +12,29 @@ reasons:
        unreliable because the memory required may not be available.
 
 So, I've decided to move the interactive simulation of the examples out
-of the browser to a publically accessible service.  This adds more 
+of the browser to a publically accessible service. This adds more
 moving parts (because I now have to run code in the cloud instead of
-merely serving static files to everybody).  But basic services like
+merely serving static files to everybody). But basic services like
 this have become a commodity and I think I can integrate them better
-into my CI/CD process than the Javascript code generation I did 
+into my CI/CD process than the Javascript code generation I did
 previously.
 
 # Libraries
 
-The `./libs` directory contains the shared libraries necessary to 
+The `./libs` directory contains the shared libraries necessary to
 run the OM generated executables.
+
+# Development
+
+Building the image every time can fill the disk with lots of uninteresting
+Docker images. So an alternative way to do development is to launch the server
+using `yarn` from _within_ an existing Docker image, _e.g.,_
+
+```
+$ docker run -p 3010:3000 -v `pwd`:/root -w /root -it node:10-jessie /bin/bash
+$ npm config set scripts-prepend-node-path true
+$ DEBUG="mbe:*" yarn start
+```
 
 # Running
 
