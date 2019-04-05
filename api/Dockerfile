@@ -12,8 +12,12 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 ARG NPM_TOKEN
-RUN echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+RUN yarn config set always-auth true
+RUN yarn config set scope @xogeny
+# RUN yarn config set '//registry.npmjs.org/:_authToken' $NPM_TOKEN
 RUN yarn config set registry https://registry.npmjs.org
+RUN echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+# RUN cat ~/.npmrc
 
 COPY . /usr/src/app
 

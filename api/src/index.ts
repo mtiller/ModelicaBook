@@ -19,6 +19,8 @@ app.use(
     }),
 );
 app.use(compression());
+app.set("trust proxy", ["loopback", "linklocal", "uniquelocal"]); // specify multiple subnets as an array
+app.set("trust proxy", "127.0.0.1"); // For when we run behind an nginx reverse proxy
 
 let detailsMap = getDetails();
 let models = Object.keys(detailsMap);
