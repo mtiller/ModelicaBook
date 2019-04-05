@@ -56,6 +56,7 @@ generate_pdfs:
             - text/build/
 
 generate_site:
+    image: node:10-jessie
     stage: docs_site
     script:
         - make ng_site
