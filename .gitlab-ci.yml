@@ -1,5 +1,9 @@
 image: mtiller/book-builder
 
+before_script:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive
+
 cache:
     paths:
         - text/results
