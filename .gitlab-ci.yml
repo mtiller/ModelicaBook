@@ -54,7 +54,7 @@ generate_pdfs:
 
 generate_site:
     stage: docs_site
-    scripts:
+    script:
         - make ng_site
     artifacts:
         paths:
