@@ -1,12 +1,12 @@
-import * as express from 'express';
-import { sendSiren, tempDir, cleanup, exec, copyFile } from './utils';
-import { runUrl } from './urls';
-import { Field } from 'siren-types';
-import { Details } from './details';
-import * as fs from 'fs';
-import * as debug from 'debug';
-import * as path from 'path';
-import { blobReader, MatFile, DymolaResultsExtractor } from '@xogeny/mat-parser';
+import * as express from "express";
+import { sendSiren, tempDir, cleanup, exec, copyFile } from "./utils";
+import { runUrl } from "./urls";
+import { Field } from "siren-types";
+import { Details } from "./details";
+import * as fs from "fs";
+import * as debug from "debug";
+import * as path from "path";
+import { blobReader, MatFile, DymolaResultsExtractor } from "@xogeny/mat-parser";
 
 const runDebug = debug("mbe:run");
 // runDebug.enabled = true;
@@ -20,17 +20,19 @@ export function modelGet(details: Details, model: string) {
                 {
                     name: "run",
                     method: "POST",
+                    type: "application/json",
                     href: runUrl(req, model),
-                    fields: (details.categories.parameter || []).map((param): Field => (
-                        {
+                    fields: (details.categories.parameter || []).map(
+                        (param): Field => ({
                             name: param,
                             type: "number",
                             title: details.vars[param].description,
-                        }))
-                }
-            ]
+                        }),
+                    ),
+                },
+            ],
         });
-    }
+    };
 }
 
 export function modelPost(details: Details, model2: string, testing: boolean) {
@@ -53,13 +55,15 @@ export function modelPost(details: Details, model2: string, testing: boolean) {
 
             // Parse body
             runDebug("Parameters given in body: %o", req.body);
-            let overrides = Object.keys(req.body || {}).filter((name) => (details.categories.parameter || []).indexOf(name) >= 0);
+            let overrides = Object.keys(req.body || {}).filter(
+                name => (details.categories.parameter || []).indexOf(name) >= 0,
+            );
             let params: { [param: string]: string } = {};
             let oflags: string[] = [];
-            overrides.forEach((name) => {
+            overrides.forEach(name => {
                 params[name] = req.body[name];
-                oflags.push(`${name}=${req.body[name]}`)
-            })
+                oflags.push(`${name}=${req.body[name]}`);
+            });
             let oflag = oflags.join(",");
             runDebug("Override flags = %s", oflag);
 
@@ -72,17 +76,27 @@ export function modelPost(details: Details, model2: string, testing: boolean) {
             await copyFile(sinit, dinit);
 
             // Run exectuable
-            let exeFile = `/opt/RUN/${exe}`
+            let exeFile = `/opt/RUN/${exe}`;
             runDebug("Executable path: %s", exeFile);
             runDebug("Testing mode: %j", testing);
             let output = testing
-                ? await exec("docker", ["run", "-v", `${dir}:/opt/RUN`, "-w", "/opt/RUN", "-i", "mtiller/book-builder", exeFile, `-override=${oflag}`])
+                ? await exec("docker", [
+                      "run",
+                      "-v",
+                      `${dir}:/opt/RUN`,
+                      "-w",
+                      "/opt/RUN",
+                      "-i",
+                      "mtiller/book-builder",
+                      exeFile,
+                      `-override=${oflag}`,
+                  ])
                 : await exec(`${exe}`, [`-override=${oflag}`], {
-                    env: {
-                        "LD_LIBRARY_PATH": ldir,
-                    },
-                    cwd: dir,
-                });
+                      env: {
+                          LD_LIBRARY_PATH: ldir,
+                      },
+                      cwd: dir,
+                  });
             runDebug("Simulation output:");
             runDebug(output);
 
@@ -94,7 +108,7 @@ export function modelPost(details: Details, model2: string, testing: boolean) {
                     properties: {
                         ...output,
                         params: params,
-                    }
+                    },
                 });
             } else {
                 // Parse simulation results
@@ -111,7 +125,7 @@ export function modelPost(details: Details, model2: string, testing: boolean) {
                         ...output,
                         params: params,
                         trajectories: handler.trajectories,
-                    }
+                    },
                 });
             }
         } catch (e) {
@@ -122,5 +136,5 @@ export function modelPost(details: Details, model2: string, testing: boolean) {
             cleanup();
             runDebug("  Cleanup completed");
         }
-    }
+    };
 }
