@@ -69,7 +69,7 @@ ng_site:
 	cp -r text/build/json nextgen/
 	mv nextgen/json/_images nextgen/static/
 	cp -r nextgen/json/_static/sponsors nextgen/static/
-	(cd nextgen; yarn install && yarn index && yarn build && yarn export)
+	(cd nextgen; yarn install && yarn index && yarn build && yarn export && yarn upload -t $NOW_TOKEN)
 
 # This target requires the DOCKER_* environment variables to be set
 # To see how to actually run the book server, see api/README.md
