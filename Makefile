@@ -56,10 +56,20 @@ serve:
 # N.B. - This step can only be run by somebody who has access to the Xogeny private packages required to build the
 # API.
 api:
-	- rm -rf api/models
-	- mkdir api/models
+	-rm -rf api/models
+	-mkdir api/models
 	tar zxf text/results/exes.tar.gz --directory api/models
 	(cd api; npm install -g dockergen && npm run image)
+
+ng_site:
+	-rm -rf nextgen/json
+	-rm -rf nextgen/static/_images
+	-rm -rf nextgen/static/sponsors
+	-mkdir nextgen/json
+	cp -r text/build/json nextgen/
+	mv nextgen/json/_images nextgen/static/
+	cp -r nextgen/json/_static/sponsors nextgen/static/
+	(cd nextgen; yarn install && yarn build && yarn export)
 
 # This target requires the DOCKER_* environment variables to be set
 # To see how to actually run the book server, see api/README.md

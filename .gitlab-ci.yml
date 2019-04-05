@@ -11,6 +11,7 @@ stages:
     - docs_json
     - docs_ebooks
     - docs_pdf
+    - docs_site
     - docs_html
 
 generate_specs:
@@ -50,6 +51,14 @@ generate_pdfs:
     artifacts:
         paths:
             - text/build/
+
+generate_site:
+    stage: docs_site
+    scripts:
+        - make ng_site
+    artifacts:
+        paths:
+            - nextgen/out
 
 generate_html:
     stage: docs_html
