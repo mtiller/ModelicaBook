@@ -1,9 +1,9 @@
 [submodule "apps"]
 	path = apps
-	url = git@github.com:xogeny/book-apps.git
+	url = git@github.com:mtiller/book-apps.git
 [submodule "generator"]
 	path = generator
-	url = git@github.com:xogeny/book-generator.git
+	url = git@github.com:mtiller/book-generator.git
 [submodule "nextgen"]
 	path = nextgen
-	url = git@github.com:xogeny/book-nextgen.git
+	url = git@github.com:mtiller/book-nextgen.git
