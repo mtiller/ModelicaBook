@@ -185,28 +185,47 @@ had during the creation of the book.  Many times I would see Martin on
 Skype late at night (Sweden time) and he was gracious enough to help
 me out.
 
-The browser integrated simulation capabilities in the HTML version of
-the book are only possible because of a tool called Emscripten which
-allows ordinary code in languages like C and C++ to be cross-compiled
-(via LLVM) into JavaScript.  Although I knew this was possible, I
-didn't really think this avenue was viable until I saw `the work of Tom Short <https://github.com/tshort/openmodelica-javascript>`_
-integrating OpenModelica and Emscripten.  The browser integrated
-simulation capabilities were greatly enabled by his work in this area.
+The initial version of the book featured browser integrated simulation
+capabilities in the HTML version.  These capabilities were only possible because
+of a tool called Emscripten which allows ordinary code in languages like C and
+C++ to be cross-compiled (via LLVM) into JavaScript.  Although I knew this was
+possible, I didn't really think this avenue was viable until I saw `the work of
+Tom Short <https://github.com/tshort/openmodelica-javascript>`_ integrating
+OpenModelica and Emscripten.  The browser integrated simulation capabilities
+were greatly enabled by his work in this area.  Ultimately, I removed this
+functionality in part to enhance the use of the book on mobile devices (where
+memory constraints were an issue).  But I am optimistic that at some point we
+can re-instate those capabilities.  Nevertheless, I am greatful to those who
+contributed to the development of those capabilities.
 
-This book was written using Git as the version control system and
-`GitHub <http://github.com>`_ for hosting.  Most people think of the
-version control system as some arcane backup system.  But version
-control systems are at the heart of collaboration and I'd like to see
-them used more widely in engineering.  For this book, the "pull
-request" system from GitHub was very useful in incorporating feedback
-from reviewers.  I'd like to again thank Dietmar Winkler for
-enlightening me about many different features in Git.
+This book was written using Git as the version control system and `GitHub
+<http://github.com>`_ for hosting.  Most people think of the version control
+system as some arcane backup system.  But version control systems are at the
+heart of collaboration and I'd like to see them used more widely in engineering.
+For this book, the "pull request" system from GitHub was very useful in
+incorporating feedback from reviewers.  I'd like to again thank Dietmar Winkler
+for enlightening me about many different features in Git.  In addition to
+GitHub, newer versions of the book leverage the Continuous Integration (CI)
+capabilities of Gitlab.  I also leverage Docker to greatly improve the
+portability and repeatability of the build process.
 
-I used the Emacs editor for this book.  Despite the proliferation of
-really excellent editors that support a wide range of languages and
-platforms, Emacs remains the work horse of my development process for
-most projects.  It seems to support just about every type of file I
-need to edit out of the box.
+I used the Emacs editor for this book.  Despite the proliferation of really
+excellent editors that support a wide range of languages and platforms, Emacs
+remains my editor of choice for most writing work.  It seems to support just
+about every type of file I need to edit out of the box.  However, for the code
+developed for this book (*e.g.,* the interactive UI elements, the static page
+generation templates in TypeScript), I used Visual Studio Code which is a truly
+excellent open source editor that is gaining mindshare by leaps and bounds.
+
+While the documention processing was done with Sphinx, the actual HTML
+generation for v0.6.0+ is done using the server side rendering framework
+Next.js.  This framework leverages the excellent React UI framework (which I use
+extensively) to create server rendered HTML (for good SEO) that can include
+dynamic components when rendered client side.  This is truly a best of both
+worlds solution because it makes the book fast to load but provides instant
+interactivity in the browser.  All my React based projects are written in the
+excellent TypeScript language and leverage the TSX functionality in order to
+create reusable and strongly typed UI components.
 
 During the production of this book several tool vendors gave me access
 to their proprietary tools.  I didn't utilize these very much, but I
@@ -221,17 +240,18 @@ with PCs and Unix workstations.  Most recently, I've done a great deal
 of development on Linux machines.  I always dismissed using Macs
 because I was convinced they couldn't support the kind of command-line
 oriented development work I typically do.  I could not have been more
-wrong.  The eco-systems for MacOSX is almost identical to the one I
+wrong.  The eco-systems for MacOS is almost identical to the one I
 was used to in the Linux world.  I am able to seamlessly transition
-between MacOSX and Linux environments without any significant
+between MacOS and Linux environments without any significant
 adjustments.  The power and portability of the MacBook Air gave my
 entire work process a big boost.
 
 Developing this book involved a lot of testing and debugging of HTML
 layout, styling and embedded JavaScript.  Most of this work was done
-using Firefox but I've also used Chrome from time to time as well.
+using Chrome but I've also used Firefox from time to time as well.
 I'd like to thank both the Mozilla Foundation and Google for creating
 such wonderful, standards compliant browsers.
 
-The style of the book owes a fair amount to the `Semantic UI
-<http://www.semantic-ui.com>`_ CSS framework.
+Prior to v0.6.0, the style of the book owes a fair amount to the `Semantic UI
+<http://www.semantic-ui.com>`_ CSS framework.  After v0.6.0, the styling is
+mostly due to BlueprintJS.
