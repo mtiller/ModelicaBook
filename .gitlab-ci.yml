@@ -1,5 +1,7 @@
 image: mtiller/book-builder
 
+# TODO: Use overlay fs driver
+
 variables:
     GIT_SUBMODULE_STRATEGY: normal
 
@@ -8,9 +10,11 @@ cache:
         - text/results
         - text/plots
 
+# TODO: Parallelize these
 stages:
     - specs
     - results
+    - api_image
     - docs_json
     - docs_ebooks
     - docs_pdf
@@ -71,3 +75,9 @@ generate_html:
     artifacts:
         paths:
             - text/build/
+
+build_image:
+    image: node:10-jessie
+    stage: api_image
+    script:
+        - make api

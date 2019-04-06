@@ -59,7 +59,7 @@ api:
 	-rm -rf api/models
 	-mkdir api/models
 	tar zxf text/results/exes.tar.gz --directory api/models
-	(cd api; npm install -g dockergen && npm run image)
+	(cd api; yarn install && yarn image)
 
 ng_site:
 	-rm -rf nextgen/json
