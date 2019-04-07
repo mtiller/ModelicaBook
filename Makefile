@@ -55,12 +55,15 @@ serve:
 
 # N.B. - This step can only be run by somebody who has access to the Xogeny private packages required to build the
 # API.
+
+api_deps:
+	(cd api; yarn install)
+
 api:
 	-rm -rf api/models
 	-mkdir api/models
 	tar zxf text/results/exes.tar.gz --directory api/models
-	echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > api/.npmrc
-	(cd api; yarn install && yarn image)
+	(cd api; docker build -t mtiller/book-server .)
 	rm api/.npmrc
 
 ng_site:

@@ -4,6 +4,7 @@ image: mtiller/book-builder
 
 variables:
     GIT_SUBMODULE_STRATEGY: normal
+    DOCKER_DRIVER: overlay2
 
 cache:
     paths:
@@ -76,8 +77,14 @@ generate_html:
         paths:
             - text/build/
 
-build_image:
+image_deps:
     image: node:10-jessie
+    stage: api_image
+    script:
+        - make api_deps
+
+image:
+    image: docker:stable
     stage: api_image
     script:
         - make api
