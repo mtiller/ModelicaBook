@@ -59,7 +59,9 @@ api:
 	-rm -rf api/models
 	-mkdir api/models
 	tar zxf text/results/exes.tar.gz --directory api/models
+	echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > api/.npmrc
 	(cd api; yarn install && yarn image)
+	rm api/.npmrc
 
 ng_site:
 	-rm -rf nextgen/json
