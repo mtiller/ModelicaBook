@@ -15,7 +15,8 @@ cache:
 stages:
     - specs
     - results
-    - api_image
+    - image_deps
+    - image_build
     - docs_json
     - docs_ebooks
     - docs_pdf
@@ -77,14 +78,14 @@ generate_html:
         paths:
             - text/build/
 
-image_deps:
+fetch_image_deps:
     image: node:10-jessie
-    stage: api_image
+    stage: image_deps
     script:
         - make api_deps
 
-image:
+build_image:
     image: docker:stable
-    stage: api_image
+    stage: image_build
     script:
         - make api
