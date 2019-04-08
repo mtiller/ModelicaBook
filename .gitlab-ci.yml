@@ -20,6 +20,7 @@ stages:
     - results
     - image_deps
     - image_build
+    - image_publish
     - docs_json
     - docs_ebooks
     - docs_pdf
@@ -92,3 +93,8 @@ build_image:
     stage: image_build
     script:
         - (cd api; docker build -t mtiller/book-server .)
+
+publish_image:
+    stage: image_publish
+    script:
+        - make publish_server
