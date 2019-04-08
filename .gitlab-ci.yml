@@ -91,4 +91,4 @@ build_image:
     image: docker:stable
     stage: image_build
     script:
-        - make api
+        - (cd api; docker build -t mtiller/book-server .)

@@ -59,13 +59,12 @@ serve:
 
 api_deps:
 	(cd api; yarn install --ignore-optional)
-
-api:
 	-rm -rf api/models
 	-mkdir api/models
 	tar zxf text/results/exes.tar.gz --directory api/models
+
+api:
 	(cd api; docker build -t mtiller/book-server .)
-	rm api/.npmrc
 
 ng_site:
 	-rm -rf nextgen/json
