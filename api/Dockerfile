@@ -22,7 +22,7 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 # Install dependencies using Yarn
-RUN yarn install 
+RUN yarn install --ignore-optional
 
 # Now get rid of the embedded "secret" used to access private repositories
 RUN rm -f .npmrc
