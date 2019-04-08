@@ -95,6 +95,8 @@ build_image:
         - (cd api; docker build -t mtiller/book-server .)
 
 publish_image:
+    image: docker:stable
     stage: image_publish
     script:
-        - make publish_server
+        - echo $(DOCKER_PASS) | docker login -e $(DOCKER_EMAIL) -u $(DOCKER_USER) --password-stdin
+        - docker push mtiller/book-server
