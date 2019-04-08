@@ -98,5 +98,5 @@ publish_image:
     image: docker:stable
     stage: image_publish
     script:
-        - echo $DOCKER_PASS | docker login -e $DOCKER_EMAIL -u $DOCKER_USER --password-stdin
+        - echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
         - docker push mtiller/book-server
