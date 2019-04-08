@@ -1,7 +1,5 @@
 image: mtiller/book-builder
 
-# TODO: Use overlay fs driver
-
 variables:
     GIT_SUBMODULE_STRATEGY: normal
     DOCKER_DRIVER: overlay2
@@ -10,6 +8,11 @@ cache:
     paths:
         - text/results
         - text/plots
+
+# Needed because we want to run Docker inside our runner? (which is already
+# runninign Docker)
+services:
+    - docker:dind
 
 # TODO: Parallelize these
 stages:

@@ -58,7 +58,7 @@ serve:
 # API.
 
 api_deps:
-	(cd api; yarn install)
+	(cd api; yarn install --ignore-optional)
 
 api:
 	-rm -rf api/models
