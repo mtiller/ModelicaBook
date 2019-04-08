@@ -70,19 +70,22 @@
   dependencies:
     "@types/node" "*"
 
-"@xogeny/mat-parser@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.npmjs.org/@xogeny/mat-parser/-/mat-parser-0.2.6.tgz#bdab3ee953e2e812d90af2a49a61212fe6d90b4b"
+"@xogeny/mat-parser@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/@xogeny/mat-parser/-/mat-parser-0.3.0.tgz#b60ec449a833a9879b24b63dfb0547b2837af7bc"
+  integrity sha512-uE7QHSFkI3qDwVKaMgERhPLqRmqRGV3YA46pVRftEeFdtm7DTV6z9ZPlczr2NDkoZoxnzqdXyssqhez5rjn82w==
   dependencies:
-    "@xogeny/part-collection" "^0.1.6"
     debug "^3.1.0"
     msgpack5 "^3.4.1"
     rxjs "^5.3.0"
     yargs "^7.1.0"
+  optionalDependencies:
+    "@xogeny/part-collection" "^0.1.9"
 
-"@xogeny/part-collection@^0.1.6":
+"@xogeny/part-collection@^0.1.9":
   version "0.1.9"
   resolved "https://registry.npmjs.org/@xogeny/part-collection/-/part-collection-0.1.9.tgz#1fa74bf6cd7bbe9ca69b4991dd7ba43253624b06"
+  integrity sha1-H6dL9s17vpymm0mR3XukMlNiSwY=
   dependencies:
     "@types/debug" "^0.0.29"
     debug "^2.6.8"
