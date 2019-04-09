@@ -83,7 +83,7 @@ generate_epub_and_mobi:
     artifacts:
         paths:
             - text/build/epub/ModelicaByExample*.epub
-            - text/build/epub/ModelicaByExample*.mobi
+            - text/build/mobi/ModelicaByExample*.mobi
 
 generate_pdf:
     stage: generating_ebooks
@@ -92,7 +92,7 @@ generate_pdf:
         - mv text/build/latex/ModelicaByExample.pdf text/build/latex/ModelicaByExample-Letter-`git hash-object text/build/latex/ModelicaByExample.pdf`.pdf
     artifacts:
         paths:
-            - text/build/latex/ModelicaByExample*.pdf
+            - text/build/latex/ModelicaByExample-Letter-*.pdf
 
 generate_pdfa4:
     stage: generating_ebooks
@@ -101,7 +101,7 @@ generate_pdfa4:
         - mv text/build/latex-a4/ModelicaByExample.pdf text/build/latex-a4/ModelicaByExample-A4-`git hash-object text/build/latex-a4/ModelicaByExample.pdf`.pdf
     artifacts:
         paths:
-            - text/build/latex-a4/ModelicaByExample*.pdf
+            - text/build/latex-a4/ModelicaByExample-A4-*.pdf
 
 generate_preview_site:
     image: node:10-jessie
