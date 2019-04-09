@@ -23,6 +23,7 @@ services:
 stages:
     - generating_results
     - installing_image_dependencies
+    - building_image
     - publishing_image
     - generating_json
     - generating_ebooks
@@ -38,17 +39,30 @@ generate_specs:
             - text/results/exes.tar.gz
             - text/plots
 
+# We do this for all branches just to make sure there
+# are no errors.
 install_image_dependencies:
     image: node:10-jessie
     stage: installing_image_dependencies
     script:
         - make api_deps
 
+# We do this for all branches just to make sure there are no errors
+build_image:
+    image: docker:stable
+    stage: publishing_image
+    only:
+        - master
+    script:
+        - (cd api; docker build -t mtiller/book-server .)
+
+# We only do this for the master branch
 publish_image:
     image: docker:stable
     stage: publishing_image
+    only:
+        - master
     script:
-        - (cd api; docker build -t mtiller/book-server .)
         - docker login -u $DOCKER_USER -p $DOCKER_PASS
         - docker push mtiller/book-server
 
@@ -68,9 +82,22 @@ generate_ebooks:
         paths:
             - text/build/
 
-generate_site:
+generate_preview_site:
     image: node:10-jessie
     stage: generating_site
+    except:
+        - master
+    script:
+        - make ng_site
+    artifacts:
+        paths:
+            - nextgen/out
+
+generate_production_site:
+    image: node:10-jessie
+    stage: generating_site
+    only:
+        - master
     script:
         - make ng_site
     artifacts:
