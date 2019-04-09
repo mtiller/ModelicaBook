@@ -74,20 +74,22 @@ generate_json:
         paths:
             - text/build/
 
-generate_epub:
+generate_epub_and_mobi:
     stage: generating_ebooks
     script:
         - (cd text; make ebooks)
-        - cp text/build/epub/ModelicaByExample.epub text/build/ebooks/ModelicaByExample-`git hash-object text/build/epub/ModelicaByExample.epub`.epub
+        - mv text/build/epub/ModelicaByExample.epub text/build/epub/ModelicaByExample-`git hash-object text/build/epub/ModelicaByExample.epub`.epub
+        - mv text/build/mobi/ModelicaByExample.mobi text/build/mobi/ModelicaByExample-`git hash-object text/build/mobi/ModelicaByExample.mobi`.mobi
     artifacts:
         paths:
             - text/build/epub/ModelicaByExample*.epub
+            - text/build/epub/ModelicaByExample*.mobi
 
 generate_pdf:
     stage: generating_ebooks
     script:
         - (cd text; make pdf)
-        - cp text/build/latex/ModelicaByExample.pdf text/build/ebooks/ModelicaByExample-Letter-`git hash-object text/build/latex/ModelicaByExample.pdf`.pdf
+        - mv text/build/latex/ModelicaByExample.pdf text/build/latex/ModelicaByExample-Letter-`git hash-object text/build/latex/ModelicaByExample.pdf`.pdf
     artifacts:
         paths:
             - text/build/latex/ModelicaByExample*.pdf
@@ -96,7 +98,7 @@ generate_pdfa4:
     stage: generating_ebooks
     script:
         - (cd text; make pdf-a4)
-        - cp text/build/latex-a4/ModelicaByExample.pdf text/build/ebooks/ModelicaByExample-A4-`git hash-object text/build/latex-a4/ModelicaByExample.pdf`.pdf
+        - mv text/build/latex-a4/ModelicaByExample.pdf text/build/latex-a4/ModelicaByExample-A4-`git hash-object text/build/latex-a4/ModelicaByExample.pdf`.pdf
     artifacts:
         paths:
             - text/build/latex-a4/ModelicaByExample*.pdf
