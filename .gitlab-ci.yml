@@ -45,7 +45,7 @@ install_image_dependencies:
     image: node:10-jessie
     stage: installing_image_dependencies
     script:
-        - make api_deps
+        - (cd api; make deps)
 
 # We do this for all branches just to make sure there are no errors
 build_image:
@@ -74,13 +74,32 @@ generate_json:
         paths:
             - text/build/
 
-generate_ebooks:
+generate_epub:
     stage: generating_ebooks
     script:
-        - (cd text; make ebooks pdf pdf-a4)
+        - (cd text; make ebooks)
+        - cp text/build/epub/ModelicaByExample.epub text/build/ebooks/ModelicaByExample-`git hash-object text/build/epub/ModelicaByExample.epub`.epub
     artifacts:
         paths:
-            - text/build/
+            - text/build/epub/ModelicaByExample*.epub
+
+generate_pdf:
+    stage: generating_ebooks
+    script:
+        - (cd text; make pdf)
+        - cp text/build/latex/ModelicaByExample.pdf text/build/ebooks/ModelicaByExample-Letter-`git hash-object text/build/latex/ModelicaByExample.pdf`.pdf
+    artifacts:
+        paths:
+            - text/build/latex/ModelicaByExample*.pdf
+
+generate_pdfa4:
+    stage: generating_ebooks
+    script:
+        - (cd text; make pdf-a4)
+        - cp text/build/latex-a4/ModelicaByExample.pdf text/build/ebooks/ModelicaByExample-A4-`git hash-object text/build/latex-a4/ModelicaByExample.pdf`.pdf
+    artifacts:
+        paths:
+            - text/build/latex-a4/ModelicaByExample*.pdf
 
 generate_preview_site:
     image: node:10-jessie
@@ -88,7 +107,7 @@ generate_preview_site:
     except:
         - master
     script:
-        - make ng_site
+        - (cd nextgen; make publish_site)
     artifacts:
         paths:
             - nextgen/out
@@ -99,14 +118,7 @@ generate_production_site:
     only:
         - master
     script:
-        - make ng_site
+        - (cd nextgen; make publish_site)
     artifacts:
         paths:
             - nextgen/out
-# generate_html:
-#     stage: docs_html
-#     script:
-#         - (cd text; make dirhtml)
-#     artifacts:
-#         paths:
-#             - text/build/
