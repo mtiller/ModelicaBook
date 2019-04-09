@@ -77,7 +77,7 @@ generate_json:
 generate_ebooks:
     stage: generating_ebooks
     script:
-        - (cd text; make ebooks make pdf pdf-a4)
+        - (cd text; make ebooks pdf pdf-a4)
     artifacts:
         paths:
             - text/build/
