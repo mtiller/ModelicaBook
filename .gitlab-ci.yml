@@ -109,7 +109,7 @@ generate_preview_site:
     except:
         - master
     script:
-        - (cd nextgen; make publish_site)
+        - (cd nextgen; make publish_site alias_preview)
     artifacts:
         paths:
             - nextgen/out
@@ -120,7 +120,7 @@ generate_production_site:
     only:
         - master
     script:
-        - (cd nextgen; make publish_site)
+        - (cd nextgen; make publish_site alias_release)
     artifacts:
         paths:
             - nextgen/out
