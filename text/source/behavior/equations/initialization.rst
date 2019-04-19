@@ -28,7 +28,9 @@ have the same number of equations in the `initial equation` sections
 as we have states in our system.  **Note**, we can get away with
 having too few, because tools can augment the initial equations we
 provide with additional ones until the problem is well-posed, but we
-cannot solve a problem where we have too many initial equations.
+may not be able to solve a problem where we have too many initial equations
+(since this depends on the tools ability to recognize and eliminate redundant
+equations and different tools provide different levels of support for this).
 
 Of course, saying the number of initial equations has to be equal to
 the number of states answers one question, but quickly creates another,
