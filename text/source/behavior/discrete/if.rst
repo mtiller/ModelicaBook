@@ -46,6 +46,26 @@ exception is the use of ``if`` within :ref:`functions` where, again,
 there is not requirement that the number of equations be the same
 across both branches.
 
+A special case here is when you have an ``if`` statement that looks like this:
+
+.. code-block:: modelica
+
+    if cond then
+      x = y;
+    else
+      x = z;
+    end if;
+
+We can see that in both branches, a value is assigned to ``x``.  As such, an
+equivalent way to write this using an ``if`` expression would be:
+
+.. code-block:: modelica
+
+    x = if cond then y else z;
+
+The advantage of the second formulation is that it may make it easier for a tool
+to optimize the code generation in the case of an ``if`` expression.
+
 .. note::
 
     Note that conditional expressions within both ``if`` statements
