@@ -50,7 +50,8 @@ in ``initial equation`` sections or in :ref:`algorithm-sections`.
 Another case where the ``for`` keyword can be seen is in our
 discussion of :ref:`array-comprehensions`.  In that case, the ``for``
 construct is not used to generate equations or statements, but to
-populate the various elements in an array.
+populate the various elements in an array.  Array comprehensions have the
+advantage that they may be more easily for tools to optimize.
 
 
 ``while``

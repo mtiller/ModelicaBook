@@ -255,10 +255,14 @@ dimensional arrays by enumerating the elements contained in the array.
 As we can see in the case of higher dimensional arrays, these
 constructions can get very complicated.  Fortunately, Modelica
 includes array comprehensions which provide a convenient syntax for
-programmatically constructing arrays.  This approach has two main
-benefits.  The first is that it is a much more compact notation.  The
-second is that it allows us to easily express how the values in the
-array are tied to the various indices.
+programmatically constructing arrays.
+
+The use of array comprehensions has several benefits.  The first is that it is a
+much more compact notation.  The second is that it allows us to easily express
+how the values in the array are tied to the various indices.  The third is that
+it can be done in a context where an expression is required (typically providing
+values for variables).  Finally, some tools may find it easier to optimize array
+comprehensions.
 
 To demonstrate array comprehensions, consider the following
 relationship between elements in an array and the indices of the
@@ -282,3 +286,4 @@ comprehensions, we can construct the :math:`a` array quite easily as:
 
 This code builds an array with 1800 elements with only a few lines of
 Modelica code.
+
