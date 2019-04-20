@@ -51,8 +51,6 @@ install_image_dependencies:
 build_image:
     image: docker:stable
     stage: publishing_image
-    only:
-        - master
     script:
         - (cd api; docker build -t mtiller/book-server .)
 
@@ -60,8 +58,6 @@ build_image:
 publish_image:
     image: docker:stable
     stage: publishing_image
-    only:
-        - master
     script:
         - docker login -u $DOCKER_USER -p $DOCKER_PASS
         - docker push mtiller/book-server
