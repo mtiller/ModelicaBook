@@ -48,17 +48,11 @@ install_image_dependencies:
         - (cd api; make deps)
 
 # We do this for all branches just to make sure there are no errors
-build_image:
-    image: docker:stable
-    stage: publishing_image
-    script:
-        - (cd api; docker build -t mtiller/book-server .)
-
-# We only do this for the master branch
 publish_image:
     image: docker:stable
     stage: publishing_image
     script:
+        - (cd api; docker build -t mtiller/book-server .)
         - docker login -u $DOCKER_USER -p $DOCKER_PASS
         - docker push mtiller/book-server
 
