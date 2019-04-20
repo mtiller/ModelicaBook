@@ -56,8 +56,8 @@ add_case(["SecondOrderSystemInitParams"], stopTime=5, res="SOSIP1",
 add_simple_plot(plot="SOSIP1", vars=sosvars, title=_("Mechanical Response specifying phi1(0)"))
 
 ## LotkaVolterra
-lvvars = [Var("x", legend=_("Prey population")),
-          Var("y", legend=_("Predator population"))]
+lvvars = [Var("x", legend=_("Prey population"), style="-."),
+          Var("y", legend=_("Predator population"), style=".")]
 
 add_case(["ClassicModel$"], stopTime=140, res="LVCM")
 add_simple_plot(plot="LVCM", vars=lvvars, title=_("Classic Lotka-Volterra"))
@@ -207,7 +207,7 @@ add_simple_plot(plot="HystA_Q", vars=[Var("Q")], res="HystA",
 
 # Synchronous Systems
 add_case(["IndependentSampling"], stopTime=1.0, res="SIS", tol=1e-1)
-add_simple_plot(plot="SIS", vars=[Var("x"), Var("y")], res="SIS",
+add_simple_plot(plot="SIS", vars=[Var("x", style="-."), Var("y", style=".")], res="SIS",
                 title=_("Independently Sampled Signals"),
                 legloc="upper right")
 add_simple_plot(plot="SIS_e", vars=[Var("e")], res="SIS",
@@ -220,7 +220,7 @@ add_simple_plot(plot="SSS", vars=[Var("e")],
                 legloc="upper right")
 
 add_case(["SubsamplingWithIntegers"], stopTime=1.0, res="SSI", tol=1e-3)
-add_simple_plot(plot="SSI", vars=[Var("x"), Var("y"), Var("z")],
+add_simple_plot(plot="SSI", vars=[Var("x", style="-."), Var("y", style="."), Var("z")],
                 title=_("Synchronized Sampling and Subsampling"),
                 legloc="upper right")
 
@@ -297,11 +297,11 @@ add_simple_plot(plot="REM",
 add_case(["EvaluationTest1"], stopTime=10.0, res="Eval1")
 add_case(["Differentiation2"], stopTime=10.0, res="Diff2")
 add_simple_plot(plot="Eval1",
-                vars=[Var("yf"), Var("yp")],
+                vars=[Var("yf", style="-."), Var("yp", style=".")],
                 title=_("Polynomial Evaluation"),
                 legloc="lower right")
 add_simple_plot(plot="Diff2", res="Diff2",
-                vars=[Var("yf"), Var("yp"), Var("d_yf"), Var("d_yp")],
+                vars=[Var("yf", style="-."), Var("yp", style="."), Var("d_yf", style="-."), Var("d_yp", style=".")],
                 title=_("Polynomial and Derivative Evaluation"))
 
 # Interpolation
@@ -362,30 +362,30 @@ add_simple_plot(plot="SMD_WB", vars=smdvars,
 add_simple_plot(plot="SMD_WB_RT", vars=[Var("ground.flange_a.tau")], res="SMD_WB",
                 title=_("Reaction torque at mechanical ground"));
 add_case(["Rotational\.Examples", "SMD_WithGroundedGear"], stopTime=5, res="SMD_GG");
-add_simple_plot(plot="SMD_GG", vars=[Var("inertia3.phi", legend=_("Position of inertia 3 [rad]")),
-                                     Var("inertia2.phi", legend=_("Position of inertia 2 [rad]")),
-                                     Var("inertia3.w", legend=_("Velocity of inertia 3 [rad/s]")),
-                                     Var("inertia2.w", legend=_("Velocity of inertia 2 [rad/s]"))],
+add_simple_plot(plot="SMD_GG", vars=[Var("inertia3.phi", legend=_("Position of inertia 3 [rad]"), style="-."),
+                                     Var("inertia2.phi", legend=_("Position of inertia 2 [rad]"), style="."),
+                                     Var("inertia3.w", legend=_("Velocity of inertia 3 [rad/s]"), style="-."),
+                                     Var("inertia2.w", legend=_("Velocity of inertia 2 [rad/s]"), style=".")],
                 title=_("Dual mass spring-mass-damper model"));
 add_case(["Rotational.\Examples", "SMD_GearComparison"], stopTime=2, res="SMD_GC");
 add_simple_plot(plot="SMD_GC_g", res="SMD_GC",
-                vars=[Var("inertia3.phi", legend=_("Position of inertia 3 [rad]")),
-                      Var("inertia1.phi", legend=_("Position of inertia 1 [rad]")),
-                      Var("inertia3.w", legend=_("Velocity of inertia 3 [rad/s]")),
-                      Var("inertia1.w", legend=_("Velocity of inertia 1 [rad/s]"))],
+                vars=[Var("inertia3.phi", legend=_("Position of inertia 3 [rad]"), style="-."),
+                      Var("inertia1.phi", legend=_("Position of inertia 1 [rad]"), style="."),
+                      Var("inertia3.w", legend=_("Velocity of inertia 3 [rad/s]"), style="-."),
+                      Var("inertia1.w", legend=_("Velocity of inertia 1 [rad/s]"), style=".")],
                 title=_("Comparing explicitly and implicitly grounded gears"));
 
 add_simple_plot(plot="SMD_GC_u", res="SMD_GC",
-                vars=[Var("inertia1.phi", legend=_("Position of inertia 1 [rad]")),
-                      Var("inertia5.phi", legend=_("Position of inertia 5 [rad]")),
-                      Var("inertia1.w", legend=_("Velocity of inertia 1 [rad/s]")),
-                      Var("inertia5.w", legend=_("Velocity of inertia 5 [rad/s]"))],
+                vars=[Var("inertia1.phi", legend=_("Position of inertia 1 [rad]"), style="-."),
+                      Var("inertia5.phi", legend=_("Position of inertia 5 [rad]"), style="."),
+                      Var("inertia1.w", legend=_("Velocity of inertia 1 [rad/s]"), style="-."),
+                      Var("inertia5.w", legend=_("Velocity of inertia 5 [rad/s]"), style=".")],
                 title=_("Comparing grounded and ungrounded gears"));
 add_case(["Rotational.\Examples", "SMD_ConfigurableGear"], stopTime=5, res="SMD_CG");
-add_simple_plot(plot="SMD_CG", vars=[Var("inertia4.phi", legend=_("Position of inertia 4 [rad]")),
-                                     Var("inertia1.phi", legend=_("Position of inertia 1 [rad]")),
-                                     Var("inertia4.w", legend=_("Velocity of inertia 4 [rad/s]")),
-                                     Var("inertia1.w", legend=_("Velocity of inertia 1 [rad/s]"))],
+add_simple_plot(plot="SMD_CG", vars=[Var("inertia4.phi", legend=_("Position of inertia 4 [rad]"), style="-."),
+                                     Var("inertia1.phi", legend=_("Position of inertia 1 [rad]"), style="."),
+                                     Var("inertia4.w", legend=_("Velocity of inertia 4 [rad/s]"), style="-."),
+                                     Var("inertia1.w", legend=_("Velocity of inertia 1 [rad/s]"), style=".")],
                 title=_("Implicitly and explicitly grounded ConfigurableGear"));
 
 # Lotka-Volterra (components)
@@ -558,8 +558,8 @@ add_simple_plot(plot="Harm",
                title=_("Pendulum angles"))
 
 # Sensor comparison
-scvars = [Var("inertia1.w", legend=_("Shaft speed")),
-          Var("speedSensor.w", legend=_("Measured speed")),
+scvars = [Var("inertia1.w", legend=_("Shaft speed"), style="-."),
+          Var("speedSensor.w", legend=_("Measured speed"), style="."),
           Var("feedback.u1", legend=_("Desired speed"))]
 add_case(["SensorComparison", "FlatSystem$"], stopTime=5, res="AFS", tol=1e-3)
 add_simple_plot(plot="AFS", vars=scvars, title=_("Response using ideal sensor"))
@@ -567,8 +567,8 @@ add_simple_plot(plot="AFS", vars=scvars, title=_("Response using ideal sensor"))
 add_case(["SensorComparison", "FlatSystem_"], stopTime=5, res="AFS_SH", tol=1e-3)
 add_simple_plot(plot="AFS_SH", vars=scvars, title=_("Response using a sample and hold sensor"))
 
-ascvars = [Var("plant.inertia1.w", legend=_("Shaft speed")),
-           Var("sensor.w", legend=_("Measured speed")),
+ascvars = [Var("plant.inertia1.w", legend=_("Shaft speed"), style="-."),
+           Var("sensor.w", legend=_("Measured speed"), style="."),
            Var("controller.setpoint", legend=_("Desired speed"))]
 
 add_case(["SensorComparison", "[^_]Variant1$"], stopTime=5, res="SV1", tol=1e-6)
@@ -585,12 +585,12 @@ add_simple_plot(plot="SV2T", vars=ascvars, title=_("Response using a tuned PID c
 
 # Thermal Control
 
-tcbvars = [Var("sensor.room.T", legend=_("Room Temperature")),
-           Var("sensor.temperature", legend=_("Measured Temperature")),
+tcbvars = [Var("sensor.room.T", legend=_("Room Temperature"), style="-."),
+           Var("sensor.temperature", legend=_("Measured Temperature", style=".")),
            Var("controller.feedback.u2", legend=_("Desired Temperature"))]
 
-tcevars = [Var("sensor.room.T", legend=_("Room Temperature (sensor.room.T)")),
-           Var("controller.bus.temperature", legend=_("Measured Temperature (controller.bus.temp)")),
+tcevars = [Var("sensor.room.T", legend=_("Room Temperature (sensor.room.T)"), style="-."),
+           Var("controller.bus.temperature", legend=_("Measured Temperature (controller.bus.temp)"), style="."),
            Var("controller.feedback.u2", legend=_("Desired Temperature"))]
 
 add_case(["ThermalControl", "BaseModel"], stopTime=50, res="TCB", tol=1e-3)
