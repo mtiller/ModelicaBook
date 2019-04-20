@@ -586,7 +586,7 @@ add_simple_plot(plot="SV2T", vars=ascvars, title=_("Response using a tuned PID c
 # Thermal Control
 
 tcbvars = [Var("sensor.room.T", legend=_("Room Temperature"), style="-."),
-           Var("sensor.temperature", legend=_("Measured Temperature", style=".")),
+           Var("sensor.temperature", legend=_("Measured Temperature"), style="."),
            Var("controller.feedback.u2", legend=_("Desired Temperature"))]
 
 tcevars = [Var("sensor.room.T", legend=_("Room Temperature (sensor.room.T)"), style="-."),
