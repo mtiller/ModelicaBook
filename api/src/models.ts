@@ -40,7 +40,7 @@ export function modelPost(details: Details, model2: string, testing: boolean) {
         try {
             // Name various files and directories involve
             let dir = await tempDir(testing ? { dir: path.join(__dirname, "./tmp") } : {});
-            let mdir = path.join(".", "models");
+            let mdir = path.resolve(path.join(".", "models"));
             let ldir = path.join(__dirname, "..", "..", "libs");
             runDebug("Temporary directory = %s", dir);
             runDebug("  Model directory = %s", mdir);
@@ -76,7 +76,7 @@ export function modelPost(details: Details, model2: string, testing: boolean) {
             await copyFile(sinit, dinit);
 
             // Run exectuable
-            let exeFile = `/opt/RUN/${exe}`;
+            let exeFile = path.join(dir, exe);
             runDebug("Executable path: %s", exeFile);
             runDebug("Testing mode: %j", testing);
             let output = testing
@@ -91,7 +91,7 @@ export function modelPost(details: Details, model2: string, testing: boolean) {
                       exeFile,
                       `-override=${oflag}`,
                   ])
-                : await exec(`${exe}`, [`-override=${oflag}`], {
+                : await exec(`${dexe}`, [`-override=${oflag}`], {
                       env: {
                           LD_LIBRARY_PATH: ldir,
                       },
