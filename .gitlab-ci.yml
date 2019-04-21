@@ -54,10 +54,13 @@ publish_image:
     script:
         - mkdir api/models
         - mkdir api/models/json
-        - (cd api/models/json; tar tf ../../../text/results/exes.tar.gz)
+        - (cd api/models/json; tar xf ../../../text/results/exes.tar.gz)
         - (cd api; docker build -t mtiller/book-server .)
         - docker login -u $DOCKER_USER -p $DOCKER_PASS
         - docker push mtiller/book-server
+    artifacts:
+        paths:
+            - api
 
 generate_json:
     stage: generating_json
