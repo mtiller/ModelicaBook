@@ -20,7 +20,7 @@ package Components "Component models for chemical reactions"
     consumed[Species.X] = R;
   end 'A+B<-X';
 
-  model 'X+B->R+S' "X+B->R+S"
+  model 'X+B->T+S' "X+B->T+S"
     extends Interfaces.Reaction;
   protected
     Interfaces.ConcentrationRate R = k*C[Species.B]*C[Species.X];
@@ -28,5 +28,5 @@ package Components "Component models for chemical reactions"
     consumed[Species.A] = 0;
     consumed[Species.B] = R;
     consumed[Species.X] = R;
-  end 'X+B->R+S';
+  end 'X+B->T+S';
 end Components;

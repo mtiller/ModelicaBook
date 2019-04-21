@@ -136,15 +136,15 @@ Again, the equations convey clearly which species are reactants
 (*i.e.,* are consumed in the reaction) and which are the products
 (*i.e.,* those species that are produced in the reaction).
 
-``X+B->R+S``
+``X+B->T+S``
 ~~~~~~~~~~~~
 
 Finally, our last reaction converts molecules of ``X`` and ``B`` into
-molecules of ``R`` and ``S``:
+molecules of ``T`` and ``S``:
 
 .. code-block:: modelica
 
-    model 'X+B->R+S' "X+B->R+S"
+    model 'X+B->T+S' "X+B->T+S"
       extends Interfaces.Reaction;
     protected
       Interfaces.ConcentrationRate R = k*C[Species.B]*C[Species.X];
@@ -152,7 +152,7 @@ molecules of ``R`` and ``S``:
       consumed[Species.A] = 0;
       consumed[Species.B] = R;
       consumed[Species.X] = R;
-    end 'X+B->R+S';
+    end 'X+B->T+S';
 
 We do not track the concentration of the ``R`` and ``S`` species since
 they are simply byproducts and do not participate in any other
