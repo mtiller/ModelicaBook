@@ -154,7 +154,7 @@ molecules of ``T`` and ``S``:
       consumed[Species.X] = R;
     end 'X+B->T+S';
 
-We do not track the concentration of the ``R`` and ``S`` species since
+We do not track the concentration of the ``T`` and ``S`` species since
 they are simply byproducts and do not participate in any other
 reactions.  This model follows the same familiar pattern as before
 with the exception that the ``A`` species is not involved.
