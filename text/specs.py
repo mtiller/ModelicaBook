@@ -475,11 +475,11 @@ add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB_nolash", tol=1e-3,
 fswb_vars = [Var("inertia_a.w"), Var("inertia_b.w")]
 add_compare_plot(plot="FSWB_comp", legloc="upper right",
                  res1="FSWB",
-                 v1=[Var("inertia_a.w", legend=_("inertia_a.w (with lash)"), style="-"),
-                     Var("inertia_b.w", legend=_("inertia_b.w (with lash)"), style="-")],
+                 v1=[Var("inertia_a.w", legend=_("inertia_a.w (with lash)"), style="-."),
+                     Var("inertia_b.w", legend=_("inertia_b.w (with lash)"), style="-.")],
                  res2="FSWB_nolash",
-                 v2=[Var("inertia_a.w", legend=_("inertia_a.w (without lash)"), style="-"),
-                     Var("inertia_b.w", legend=_("inertia_b.w (without lash)"), style="-")],
+                 v2=[Var("inertia_a.w", legend=_("inertia_a.w (without lash)"), style="."),
+                     Var("inertia_b.w", legend=_("inertia_b.w (without lash)"), style=".")],
                  title=_("Gear response, with and without backlash"))
 
 add_simple_plot(plot="FSWB", vars=fswb_vars,
