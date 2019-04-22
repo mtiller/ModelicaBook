@@ -90,8 +90,9 @@ export function modelPost(details: Details, model2: string, testing: boolean) {
                       "mtiller/book-builder",
                       exeFile,
                       `-override=${oflag}`,
+                      `-emit_protected`,
                   ])
-                : await exec(`${dexe}`, [`-override=${oflag}`], {
+                : await exec(`${dexe}`, [`-override=${oflag}`, `-emit_protected`], {
                       env: {
                           LD_LIBRARY_PATH: ldir,
                       },
