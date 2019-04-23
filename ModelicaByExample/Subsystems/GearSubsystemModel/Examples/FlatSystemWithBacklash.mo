@@ -23,9 +23,9 @@ protected
   Modelica.Mechanics.Rotational.Components.Inertia inertia_b(final J=0.02)
     annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   Modelica.Mechanics.Rotational.Components.ElastoBacklash backlash(
-    final c=1000,
-    final d=2,
-    final b=0.17453292519943) "Backlash as measured from flange_a"
+    c=1000,
+    d=2,
+    b=0.17453292519943) "Backlash as measured from flange_a"
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Mechanics.Rotational.Components.IdealGear idealGear(ratio=4,
       useSupport=true)
