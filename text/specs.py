@@ -469,8 +469,7 @@ add_simple_plot(plot="ABX",
 
 # Subsystem models
 add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB", tol=1e-3);
-add_case(["FlatSystemWithBacklash"], stopTime=2.0, res="FSWB_nolash", tol=1e-3,
-         mods={"backlash.b": 0});
+add_case(["FlatSystemWithNoLash"], stopTime=2.0, res="FSWB_nolash", tol=1e-3);
 
 fswb_vars = [Var("inertia_a.w"), Var("inertia_b.w")]
 add_compare_plot(plot="FSWB_comp", legloc="upper right",
