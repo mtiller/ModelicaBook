@@ -16,14 +16,14 @@ system of reactions <http://library.wolfram.com/infocenter/TechNotes/390/>`_:
 
       A + B &\underset{1}{\rightarrow} X \\
       A + B &\underset{2}{\leftarrow} X \\
-      X + B &\underset{3}{\rightarrow} R + S
+      X + B &\underset{3}{\rightarrow} T + S
 
 It should be noted that :math:`X` is simply an intermediate result of
 this reaction.  The overall reaction can be expressed as:
 
 .. math::
 
-    A + 2B \rightarrow R + S
+    A + 2B \rightarrow T + S
 
 Using the law of mass action we can transform these chemical equations
 into the following mathematical ones:
