@@ -3,7 +3,7 @@ import sys
 import xml.etree.ElementTree as ET
 import json
 
-if len(sys.argv)!=3:
+if len(sys.argv) != 3:
     print "Usage: "+sys.argv[0]+" xmlfile jsonfile"
 
 tree = ET.parse(sys.argv[1])
@@ -28,13 +28,15 @@ for k in ["startTime", "stopTime", "tolerance"]:
 
 vars = root.iter("ModelVariables").next().iter("ScalarVariable")
 
+
 def add2tree(name, parts, cur):
-    if len(parts)==1:
-        cur[parts[0]] = name;
+    if len(parts) == 1:
+        cur[parts[0]] = name
         return
     if not parts[0] in cur:
         cur[parts[0]] = {}
     add2tree(name, parts[1:], cur[parts[0]])
+
 
 def treename(name):
     if name.startswith("der("):
@@ -43,6 +45,7 @@ def treename(name):
         s[-1] = "der("+s[-1]+")"
         return ".".join(s)
     return name
+
 
 for v in vars:
     t = v[0]
@@ -53,13 +56,19 @@ for v in vars:
     for k in ["name", "valueReference", "variability", "causality",
               "alias", "description"]:
         jv[k] = v.attrib.get(k, "")
-    
+
     jv["units"] = t.attrib.get("unit", "-")
     jv["start"] = t.attrib.get("start", "0")
     for a in ["min", "max"]:
         if a in t.attrib:
             jv[a] = t.attrib[a]
-    j["categories"][vari].append(jv["name"])
+
+    if (vari != "parameter"):
+        j["categories"][vari].append(jv["name"])
+    else:
+        if v.attrib.get("isValueChangeable", "false") == "true":
+            j["categories"][vari].append(jv["name"])
+
     j["vars"][jv["name"]] = jv
     add2tree(jv["name"], treename(jv["name"]).split("."), j["tree"])
 
