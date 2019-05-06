@@ -1,6 +1,6 @@
 import { rootUrl, findUrl } from "./urls";
 import * as express from "express";
-import { Link } from "siren-types";
+import { Link, Siren } from "siren-types";
 import { DetailsMap } from "./details";
 import { modelUrl } from "./urls";
 import { sendSiren } from "./utils";
@@ -19,7 +19,7 @@ export function rootGet(models: string[], details: DetailsMap) {
                 href: modelUrl(req, model),
             };
         });
-        sendSiren(res, {
+        const response: Siren = {
             properties: {
                 models: models,
             },
@@ -43,6 +43,9 @@ export function rootGet(models: string[], details: DetailsMap) {
                     fields: [{ name: "model", type: "text" }],
                 },
             ],
+        };
+        sendSiren(res, response, {
+            maxAge: 600,
         });
     };
 }

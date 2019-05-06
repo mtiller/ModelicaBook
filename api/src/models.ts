@@ -1,7 +1,7 @@
 import * as express from "express";
 import { sendSiren, tempDir, cleanup, exec, copyFile } from "./utils";
 import { runUrl } from "./urls";
-import { Field } from "siren-types";
+import { Field, Siren } from "siren-types";
 import { Details } from "./details";
 import * as fs from "fs";
 import * as debug from "debug";
@@ -13,7 +13,7 @@ const runDebug = debug("mbe:run");
 
 export function modelGet(details: Details, model: string) {
     return (req: express.Request, res: express.Response) => {
-        sendSiren(res, {
+        const response: Siren = {
             title: details.desc.description,
             properties: details,
             actions: [
@@ -31,7 +31,8 @@ export function modelGet(details: Details, model: string) {
                     ),
                 },
             ],
-        });
+        };
+        sendSiren(res, response, { maxAge: 600 });
     };
 }
 
