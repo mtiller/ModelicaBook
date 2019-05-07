@@ -6,7 +6,7 @@ Thermal Control
 In this chapter, we'll consider another system that includes a plant,
 controller, sensor and actuator.  The application will be thermal
 control of a three zone house.  The plant will be the house itself,
-sensor will be a temperature sensor and the actuator will be the furnace
+the sensor will be a temperature sensor and the actuator will be the furnace
 in the house.  Using these models, we will explore a few different
 control strategies.
 
@@ -32,16 +32,16 @@ Let's start with the following architecture:
    :alt: Initial architecture
    :figclass: align-center diagram
 
-Here we see the same basic pieces we saw in the previous section, a
+Here we see the same basic pieces we saw in the previous section, *i.e.,* a
 plant model, a sensor, a controller and an actuator.  In fact, this is
 a pretty typical architecture.  In some cases, people may break down
 the plant model into a few subsystems and/or include multiple
 controllers and control loops.  But many closed loop system control
-problems have a similar structure.
+problems follow this same basic structure.
 
-What tends to change from application are the specific signals
+What tends to change from application to application are the specific signals
 exchanged between these parts.  In this case, we can see from the
-architecture schematic that our interface definitions are such:
+architecture schematic that our interface definitions are defined such that:
 
     * The actuator receives a commanded temperature and then injects
       heat through a thermal connection to the plant
@@ -76,9 +76,10 @@ Our plant model looks like this:
    :alt: Three zone plant model
    :figclass: align-center diagram
 
-Here we can see that the zone where furnace heat is added is separated
-from the zone where the temperature is measured by a third zone.  Our
-furnace model is a simple heat source:
+Here we can see that the furnace heat is added in one zone while the temperature
+is measured in a different zone.  Furthermore, there is an additional zone
+between the actuator and sensor zones.  The furnace model itself
+is a simple heat source:
 
 .. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/ConventionalActuator.*
    :width: 80%
@@ -87,7 +88,7 @@ furnace model is a simple heat source:
    :figclass: align-center diagram
 
 This actuator takes a commanded heat level as an input and then
-injects that amount of heat into the system.
+injects that amount of heat into the zone it is connected to.
 
 The sensor is similarly simple:
 
@@ -98,7 +99,7 @@ The sensor is similarly simple:
    :figclass: align-center diagram
 
 This sensor doesn't introduce any artifact.  Instead, it provides the
-exact temperature as a continuous signal.
+exact temperature in the zone as a continuous output signal.
 
 We will use the following PI controller to control the temperature:
 
@@ -136,7 +137,7 @@ If we simulate this system, we get the following results:
    :class: interactive
 
 As we can see, this approach works very well.  The furnace heat
-required to achieve this degree of control looks like this:
+required to achieve this degree of control is:
 
 .. plot:: ../plots/TCBh.py
    :class: interactive
@@ -197,7 +198,7 @@ Expandable Approach
 The solution to this problem is ``expandable`` connector definitions.
 With this approach, our subsystem interface would be the same
 regardless of whether the control strategy generates a ``Boolean`` or
-``Real``.  What changes is the contents of the connector instances.
+``Real``.  What changes is the contents of the ``connector`` instances.
 
 To understand how these ``expandable`` connectors work, we'll
 reformulate our architecture to include ``expandable`` connectors and
@@ -244,11 +245,6 @@ sub-connectors listed in the ``ExpandableBus`` class means there is no
 minimum requirement for information to be carried on the bus.  But the
 bus can be **expanded** to include additional information.
 
-Of course, we could use inheritance to add new signals.  But that
-introduces a new type.  The types of connectors are fixed by the type
-used in the interface definition.  So creating richer connectors via
-inheritance doesn't really help.
-
 .. index:: bus
 
 Note that there is no formal definition of a "bus" in Modelica.  The
@@ -264,8 +260,9 @@ match.  We'll go into more details about this process once we get to
 the point where we have some implementation models to discuss.
 
 The interface for the plant model is unaffected by the use of
-``expandable`` connectors, but the interfaces for the sensor and
-controller are as follows:
+``expandable`` connectors (since none of these expandable connectors are
+associated with the plant model), but the interfaces for the sensor and
+controller are changed as follows:
 
 .. literalinclude:: /ModelicaByExample/Architectures/ThermalControl/Interfaces/Sensor_WithExpandableBus.mo
    :language: modelica
@@ -313,7 +310,7 @@ Note that the measured temperature corresponds to the signal
 ``controller.bus.temp`` where ``bus`` is an instance of the expandable
 connector.  Further recall that the ``ExpandableBus`` definition
 **didn't contain a signal called** ``temperature``.  So the question
-is, how did it get on the connector.  The answer lies in the
+is, how did it get on the connector?  The answer lies in the
 implementation of the sensor model.  The diagram for the sensor model
 looks like this:
 
@@ -355,12 +352,12 @@ would otherwise be caught by the compiler.
 Reconfiguration
 ^^^^^^^^^^^^^^^
 
-Now that we've shown that we can use the expandable approach to model
-the continuous control version of our system, let's return our
+Now that we've shown how we can use the expandable approach to model
+the continuous control version of our system, let's turn our
 attention to the "bang-bang" version.
 
 We've already seen the temperature sensor subsystem configured to work
-with the expandable connector.  What remains is the controller and
+with the ``expandable`` connector.  What remains is the controller and
 actuator models.  The actuator model diagram looks like this:
 
 .. figure:: /ModelicaByExample/Architectures/ThermalControl/Implementations/OnOffActuator.*
@@ -446,13 +443,12 @@ becomes:
    :alt: Bang-bang controller with hysteresis
    :figclass: align-center diagram
 
-Nothing else has changed.  We will use the same sensor and actuator
-models and we still use the same bus signals since this is still a
-bang-bang controller.  So the only change to our system level model
-(compared to the ``OnOffVariant`` model) is the use of a different
-controller model.  As we can see, these configuration management
-features in Modelica do a nice job of conveying that in our system
-level model:
+Nothing else has changed.  We will use the same sensor and actuator models and
+we still use the same bus signals since this is still a bang-bang controller.
+So the only change to our system level model (compared to the ``OnOffVariant``
+model) is the use of a different controller model.  As we can see, these
+configuration management features in Modelica do a nice job of conveying our
+configuration choices in our system level model:
 
 .. literalinclude:: /ModelicaByExample/Architectures/ThermalControl/Examples/HysteresisVariant.mo
    :language: modelica
