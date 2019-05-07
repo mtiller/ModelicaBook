@@ -1,3 +1,4 @@
 {
-    "restructuredtext.linter.disabled": true
+    "restructuredtext.linter.disabled": true,
+    "restructuredtext.preview.sphinx.disabled": true
 }

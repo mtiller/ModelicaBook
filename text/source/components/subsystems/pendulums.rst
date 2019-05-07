@@ -27,7 +27,11 @@ pendulum.
 .. literalinclude:: /ModelicaByExample/Subsystems/Pendula/Pendulum.mo
    :language: modelica
 
-.. todo:: Need more discussion of the parts here
+This particular model is using the ``Modelica.Mechanics.MultiBody`` library.
+This library not only includes many useful models of parts and joints commonly
+found in mechanisms, but it also includes information about how to render those
+parts.  This allows Modelica tools to transform the simulated results of such a
+model directly into a 3D animation of the system.
 
 The components of the pendulum can be rendered as follows:
 
@@ -61,7 +65,12 @@ In Modelica, we could build such a system as follows:
    :language: modelica
    :lines: 1-16,19
 
-The following declaration is particularly interesting:
+There are two declarations of interest here.  The first is the declaration of
+the ``world`` component.  This is needed to provide a frame of reference for the
+system as well as some key environmental parameters like the gravitational
+constant to use in the system.  In any given model there should only be one
+`world` component in the system.  Another very interesting declaration is the
+``pendulum`` component:
 
 .. literalinclude:: /ModelicaByExample/Subsystems/Pendula/System.mo
    :language: modelica
