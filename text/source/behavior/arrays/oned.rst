@@ -23,9 +23,23 @@ Consider a one-dimensional rod like the one shown below:
 Deriving Equations
 ^^^^^^^^^^^^^^^^^^
 
-Let us consider the heat balance for each discrete section of this
-rod.  First, we have the thermal capacitance of the :math:`i^{th}`
-section.  This can expressed as:
+.. index:: ordinary differential equations
+.. index:: partial differential equations
+.. index:: differential algebraic equations
+
+Before getting into the math, there is an important point worth making. Modelica
+is a language for representing **lumped** systems.  What this means is that the
+behavior must be expressed in terms of ordinary differential equations (ODEs) or
+in some cases differential-algebraic equations (DAEs).  But Modelica does not
+include any means for describing partial differential equations (*i.e.,*
+equations that involve the gradient of variables in spatial directions).  As
+such, in this section we will derive the ordinary differential equations that
+result when we discretize a rod into discrete pieces and then model the behavior
+of each of these discrete (lumped) pieces.
+
+With that out of the way, let us consider the heat balance for each discrete
+section of this rod.  First, we have the thermal capacitance of the
+:math:`i^{th}` section.  This can expressed as:
 
 .. math::
 

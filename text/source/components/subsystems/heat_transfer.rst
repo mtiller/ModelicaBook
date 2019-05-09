@@ -3,12 +3,12 @@
 Spatially Distributed Heat Transfer
 -----------------------------------
 
-Our next example of creating reusable subsystems will introduce a
-slight twist.  In this section we will not only demonstrate how to
-create a reusable subsystem model, as in the previous examples from
-this chapter, but that subsystem model will use an array of
-**component** instances where the size of that array can be used to
-control the spatial resolution of the results.
+Our next example of creating reusable subsystems will introduce a slight twist.
+In this section we will not only demonstrate how to create a reusable subsystem
+model, as in the previous examples from this chapter, but that subsystem model
+will use an array of **component** instances where the size of that array can be
+used to control the spatial resolution of the results.  This is similar to the
+kind of model presented earlier in :ref:`one-dimensional-heat-transfer`.
 
 Flat System
 ^^^^^^^^^^^

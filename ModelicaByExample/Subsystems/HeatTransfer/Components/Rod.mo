@@ -28,7 +28,7 @@ protected
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90, origin={-30,-20})));
-  HTC.ThermalConductor rod_conduction[n-1](each final G=G_rod)
+  HTC.ThermalConductor rod_conduction[n-1](each final G=G_rod*(n-1))
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 equation
   for i in 1:n loop
