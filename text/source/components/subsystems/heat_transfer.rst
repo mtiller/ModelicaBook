@@ -23,12 +23,16 @@ shown below:
    :figclass: align-center diagram
 
 
-This model consists of a collection of thermal capacitances with
-thermal conductors in between them.  In this case, there are 3 thermal
-capacitances and 5 thermal conductors.  On the left side, heat is
-applied to the system and on the right side a temperature sensor
-measures how the temperature of the rightmost thermal capacitance
-changes.
+This model consists of a collection of thermal capacitances with thermal
+conductors in between them.  In practical terms, the thermal capacitances could
+reprsent segments of a metal pipe.  The axial conduction could represent heat
+conduction axially along the length of the rod.  The radial conduction could be
+the heat lost through some insulating material like plastic. In this example,
+there are 3 such thermal capacitances and 5 thermal conductors.  On the left
+side, heat is applied to the system and on the right side a temperature sensor
+measures how the temperature of the rightmost thermal capacitance changes.  So
+the example applies heat at one end and monitors the temperature increase at the
+other end.
 
 When implemented in Modelica, the model looks like this:
 
@@ -84,7 +88,7 @@ specify the number of capacitance and conductance elements in the rod:
    :language: modelica
    :lines: 23-32
 
-Note that if we wish to apply a modification, *e.g.,* ``G=G_rod`` to
+Note that if we wish to apply a modification, *e.g.,* ``G=G_rod/n`` to
 every component in an array of components, we can use the ``each``
 qualifier on the modification.  We'll discuss the ``each`` qualifier
 and how to apply modifications to arrays of components later in this
