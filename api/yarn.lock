@@ -632,9 +632,10 @@ setprototypeof@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
 
-siren-types@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/siren-types/-/siren-types-0.2.3.tgz#90d34bdce900011f8a0d1a3bcd9dea3a8cf0a9dc"
+siren-types@1.0.0-rc6:
+  version "1.0.0-rc6"
+  resolved "https://registry.npmjs.org/siren-types/-/siren-types-1.0.0-rc6.tgz#edfe2c9b5e101dbd582092a998cf10dde4df0ef9"
+  integrity sha512-fgpsdnjDiPmUrAY4YV5UYZVjVMwXXsTfb51syr2rE3otk7I0XtWxr4UTa/BsSnlcNJrobcjWAbWFssJLe3+XCg==
 
 spdx-correct@~1.0.0:
   version "1.0.2"
@@ -702,9 +703,10 @@ type-is@~1.6.15:
     media-typer "0.3.0"
     mime-types "~2.1.15"
 
-typescript@2.5.3:
-  version "2.5.3"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-2.5.3.tgz#df3dcdc38f3beb800d4bc322646b04a3f6ca7f0d"
+typescript@^3.4.5:
+  version "3.4.5"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
+  integrity sha512-YycBxUb49UUhdNMU5aJ7z5Ej2XGmaIBL0x34vZ82fn3hGvD+bgrMrVDpatgz2f7YxUMJxMkbWxJZeAvDxVe7Vw==
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
