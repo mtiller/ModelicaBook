@@ -15,7 +15,7 @@ export function rootGet(models: string[], details: DetailsMap) {
         let links: Link[] = models.map(model => {
             return {
                 rel: ["model"],
-                title: details[model].desc.description,
+                title: details[model].casedata.title,
                 href: modelUrl(req, model),
             };
         });

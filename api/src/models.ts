@@ -14,7 +14,7 @@ const runDebug = debug("mbe:run");
 export function modelGet(details: Details, model: string) {
     return (req: express.Request, res: express.Response) => {
         const response: Siren = {
-            title: details.desc.description,
+            title: details.casedata.title,
             properties: details,
             actions: [
                 {
