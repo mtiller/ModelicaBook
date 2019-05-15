@@ -1,32 +1,32 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from "fs";
+import * as path from "path";
 
 export interface CaseData {
-    mods: {},
+    mods: {};
     vars: Array<{
-        style: string,
-        scale: number,
-        name: string,
-        legend: string,
+        style: string;
+        scale: number;
+        name: string;
+        legend: string;
     }>;
-    ncols: number,
-    title: string,
-    legloc: "upper right" | "upper left" | "lower right" | "lower left",
-    res: string,
-    ncp: number,
-    stopTime: number,
-    tol: number,
-    ylabel: string,
-    ymin: number | null,
-    type: string,
-    ymax: number | null,
-};
+    ncols: number;
+    title: string;
+    legloc: "upper right" | "upper left" | "lower right" | "lower left";
+    res: string;
+    ncp: number;
+    stopTime: number;
+    tol: number;
+    ylabel: string;
+    ymin: number | null;
+    type: string;
+    ymax: number | null;
+}
 
 export interface Details {
     categories: {
-        discrete?: string[];
-        continuous?: string[];
-        parameter?: string[];
+        discrete: string[];
+        continuous: string[];
+        parameter: string[];
     };
     desc: {
         modelName: string;
@@ -42,19 +42,22 @@ export interface Details {
             start?: string;
             causality: string;
             name: string;
-        }
+        };
     };
     casedata: CaseData;
-};
+}
 
 export type DetailsMap = { [model: string]: Details };
 
 function getModels() {
-    return fs.readdirSync(path.join(".", "models", "json"))
-        // Consider only files that end with .json
-        .filter((f) => f.endsWith("-case.json"))
-        // Strip the suffix
-        .map((f) => f.slice(0, f.length - 10))
+    return (
+        fs
+            .readdirSync(path.join(".", "models", "json"))
+            // Consider only files that end with .json
+            .filter(f => f.endsWith("-case.json"))
+            // Strip the suffix
+            .map(f => f.slice(0, f.length - 10))
+    );
     // Ensure that we have an _init.xml file and executable for each one
     //.filter((f) => fs.existsSync(path.join(".", "models", `${f}_init.xml`)) && fs.existsSync(path.join(".", "models", `${f}`)));
 }
@@ -63,7 +66,7 @@ export function getDetails(): DetailsMap {
     let models = getModels();
     let details: DetailsMap = {};
 
-    models.forEach((model) => {
+    models.forEach(model => {
         try {
             let cfile = path.join(".", "models", "json", `${model}-case.json`);
             if (fs.existsSync(cfile)) {
@@ -75,6 +78,9 @@ export function getDetails(): DetailsMap {
                     let ddata = fs.readFileSync(dfile);
                     let dobj = JSON.parse(ddata.toString()) as Details;
                     dobj.casedata = cobj;
+                    dobj.categories.discrete = dobj.categories.discrete || [];
+                    dobj.categories.parameter = dobj.categories.parameter || [];
+                    dobj.categories.continuous = dobj.categories.continuous || [];
                     details[model] = dobj;
                 }
             } else {
