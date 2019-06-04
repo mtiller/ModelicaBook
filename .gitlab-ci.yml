@@ -57,6 +57,7 @@ publish_image:
         - (cd api; docker build -t mtiller/book-server .)
         - docker login -u $DOCKER_USER -p $DOCKER_PASS
         - docker push mtiller/book-server
+    when: manual
     artifacts:
         paths:
             - api
@@ -75,6 +76,7 @@ generate_epub_and_mobi:
         - (cd text; make ebooks)
         - mv text/build/epub/ModelicaByExample.epub text/build/epub/ModelicaByExample-`git hash-object text/build/epub/ModelicaByExample.epub`.epub
         - mv text/build/mobi/ModelicaByExample.mobi text/build/mobi/ModelicaByExample-`git hash-object text/build/mobi/ModelicaByExample.mobi`.mobi
+    when: manual
     artifacts:
         paths:
             - text/build/epub/ModelicaByExample*.epub
@@ -85,6 +87,7 @@ generate_pdf:
     script:
         - (cd text; make pdf)
         - mv text/build/latex/ModelicaByExample.pdf text/build/latex/ModelicaByExample-Letter-`git hash-object text/build/latex/ModelicaByExample.pdf`.pdf
+    when: manual
     artifacts:
         paths:
             - text/build/latex/ModelicaByExample-Letter-*.pdf
@@ -94,6 +97,7 @@ generate_pdfa4:
     script:
         - (cd text; make pdf-a4)
         - mv text/build/latex-a4/ModelicaByExample.pdf text/build/latex-a4/ModelicaByExample-A4-`git hash-object text/build/latex-a4/ModelicaByExample.pdf`.pdf
+    when: manual
     artifacts:
         paths:
             - text/build/latex-a4/ModelicaByExample-A4-*.pdf
