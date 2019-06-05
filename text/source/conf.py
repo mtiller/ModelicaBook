@@ -11,7 +11,9 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys, os, re
+import sys
+import os
+import re
 
 sys.path.append(os.path.abspath('_themes'))
 
@@ -188,14 +190,15 @@ htmlhelp_basename = 'ModelicaByExampledoc'
 # -- Options for LaTeX output --------------------------------------------------
 latex_engine = 'xelatex'
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+    # The paper size ('letterpaper' or 'a4paper').
+    # 'papersize': 'letterpaper',
 
-# The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+    # The font size ('10pt', '11pt' or '12pt').
+    # 'pointsize': '10pt',
 
-# Additional stuff for the LaTeX preamble.
+    # Additional stuff for the LaTeX preamble.
     'preamble': '''\\usepackage[multidot]{grffile}
+                   \\usepackage{bookmark}
                    \\setcounter{tocdepth}{2}
     \\hypersetup{%
     pdftitle = {Modelica by Example},
@@ -203,23 +206,23 @@ latex_elements = {
     pdfsubject = {Origin: http://book.xogeny.com},
     pdfkeywords = {Modelica, book, free-online}}''',
 
-# Figure placement within LaTeX paper
+    # Figure placement within LaTeX paper
     'figure_align': 'H',
-# Set line highlight background to light yellow
+    # Set line highlight background to light yellow
     'sphinxsetup': 'VerbatimHighlightColor={rgb}{1,1,0.8}',
 }
 
 # If the tag 'a4' is given we switch to a4paper
 
 if 'a4' in tags:
-    latex_elements['papersize']= 'a4paper'
+    latex_elements['papersize'] = 'a4paper'
 
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'ModelicaByExample.tex', u'Modelica by Example',
-   u'Michael M. Tiller', 'manual'),
+    ('index', 'ModelicaByExample.tex', u'Modelica by Example',
+     u'Michael M. Tiller', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -263,9 +266,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ModelicaByExample', u'Modelica by Example',
-   u'Michael M. Tiller', 'ModelicaByExample', 'One line description of project.',
-   'Miscellaneous'),
+    ('index', 'ModelicaByExample', u'Modelica by Example',
+     u'Michael M. Tiller', 'ModelicaByExample', 'One line description of project.',
+     'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
