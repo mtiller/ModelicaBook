@@ -198,12 +198,12 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     'preamble': '''\\usepackage[multidot]{grffile}
-                   \\usepackage{bookmark}
+                   \\usepackage[numbered]{bookmark}
                    \\setcounter{tocdepth}{2}
     \\hypersetup{%
     pdftitle = {Modelica by Example},
     pdfauthor = {Michael M. Tiller, Ph.D},
-    pdfsubject = {Origin: http://book.xogeny.com},
+    pdfsubject = {Origin: https://mbe.modelica.university},
     pdfkeywords = {Modelica, book, free-online}}''',
 
     # Figure placement within LaTeX paper
