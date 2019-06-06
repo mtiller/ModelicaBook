@@ -203,7 +203,13 @@ latex_elements = {
     pdftitle = {Modelica by Example},
     pdfauthor = {Michael M. Tiller, Ph.D},
     pdfsubject = {Origin: https://mbe.modelica.university},
-    bookmarks,
+    bookmarksnumbered=true,     
+    bookmarksopen=true,         
+    bookmarksopenlevel=1,       
+    colorlinks=true,            
+    pdfstartview=Fit,           
+    pdfpagemode=UseOutlines,
+    pdfpagelayout=TwoPageRight
     pdfkeywords = {Modelica, book, free-online}}''',
 
     # Figure placement within LaTeX paper
