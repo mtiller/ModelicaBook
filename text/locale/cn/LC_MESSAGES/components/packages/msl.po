@@ -155,7 +155,7 @@ msgid "Integration and differentiation blocks"
 msgstr "积分与微分模块"
 
 #: ../../source/components/packages/msl.rst:163
-msgid "Deadband and hyteresis blocks"
+msgid "Deadband and hysteresis blocks"
 msgstr "死区以及滞回模块"
 
 #: ../../source/components/packages/msl.rst:164

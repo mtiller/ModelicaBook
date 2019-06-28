@@ -131,7 +131,7 @@ msgid "Integration and differentiation blocks"
 msgstr ""
 
 #: ../../source/components/packages/msl.rst:163
-msgid "Deadband and hyteresis blocks"
+msgid "Deadband and hysteresis blocks"
 msgstr ""
 
 #: ../../source/components/packages/msl.rst:164
