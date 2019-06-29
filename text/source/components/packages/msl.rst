@@ -160,7 +160,7 @@ components that can be found in this library include:
   * Output connectors (``Real``, ``Integer`` and ``Boolean``)
   * Gain block, summation blocks, product blocks
   * Integration and differentiation blocks
-  * Deadband and hyteresis blocks
+  * Deadband and hysteresis blocks
   * Logic and relational operation blocks
   * Mux and demux blocks
 
