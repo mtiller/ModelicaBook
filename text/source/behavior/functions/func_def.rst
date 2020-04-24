@@ -164,7 +164,7 @@ earlier.  It can be invoked in several ways:
     PotentialEnergy(m=1.0, h=0.5, g=9.79) // m=1.0, h=0.5, g=9.79
     PotentialEnergy(h=0.5, m=1.0, g=9.79) // m=1.0, h=0.5, g=9.79
     PotentialEnergy(h=0.5, m=1.0)         // m=1.0, h=0.5, g=9.81
-    PotentialEnergy(0.5, 1.0)             // m=1.0, h=0.5, g=9.81
+    PotentialEnergy(0.5, 1.0)             // m=0.5, h=1.0, g=9.81
 
 The reason named arguments are so important for arguments with default
 values is if a function has many arguments with default arguments, you
