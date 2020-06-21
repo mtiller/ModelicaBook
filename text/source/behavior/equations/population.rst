@@ -278,8 +278,8 @@ equations:
 for the initial conditions) this relationship doesn't hold.  So there
 is no "coupling" between :math:`x` and :math:`\dot{x}` in that case
 (nor for :math:`y`: and :math:`\dot{y}`).  In other words, knowing
-:math:`x` or :math:`y` doesn't give you any clue as to how to compute
-:math:`\dot{x}` or :math:`\dot{y}`.  The net result is that for the
+:math:`\dot{x}` or :math:`\dot{y}` doesn't give you any clue as to how to compute
+:math:`x` or :math:`y`.  The net result is that for the
 initialization problem we can think of :math:`x`, :math:`y`,
 :math:`\dot{x}` and :math:`\dot{y}` as four independent variables.
 
