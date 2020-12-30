@@ -218,7 +218,7 @@ Specifically, the ``IncludeDirectory`` and ``LibraryDirectory``
 annotations specified where the Modelica compiler should look for
 include and library files, respectively.  As was briefly mentioned
 then, the default values for these annotations started with
-``modelica:://LibraryName/Resources``.  Such a URL allows us to define
+``modelica://LibraryName/Resources``.  Such a URL allows us to define
 the location of resources **relative to a given Modelica definition on
 the file system**.  Let us revisit the directory structure we
 discussed earlier, but with some resource files added::
