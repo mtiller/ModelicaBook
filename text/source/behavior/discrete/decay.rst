@@ -125,7 +125,7 @@ to interpolate the zero crossing function to find the location, in
 time, of the root of the zero crossing function and this is the point
 in time where the event occurs.  This process is much more efficient
 because the root finding algorithms have more information to help them
-identify to location of the root (information like the derivative of
+identify the location of the root (information like the derivative of
 the zero crossing function) and evaluation is very cheap because it
 doesn't involve taking additional integration steps, only evaluating
 the interpolation functions from the triggering integration step.
