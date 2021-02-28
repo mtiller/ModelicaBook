@@ -1,4 +1,5 @@
 setModelicaPath(getModelicaPath()+":"+"{{path}}");
+setCFlags("-fPIC -O0");
 cf := loadModel(ModelicaByExample);
 compfails := {{compfails}};
 getErrorString();
