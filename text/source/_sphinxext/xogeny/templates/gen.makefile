@@ -1,6 +1,9 @@
 all: results_files js_files json_files
 
-results_files: {%- for res in results %} {{res}}_res.mat {% endfor %}
+results_files: allres {%- for res in results %} {{res}}_res.mat {% endfor %}
+
+allres:
+	omc allres.mos
 
 js_files: {%- for res in results %} js/{{res}}.js js/{{res}}.js.gz {% endfor %}
 

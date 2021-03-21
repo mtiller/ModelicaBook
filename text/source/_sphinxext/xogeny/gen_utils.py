@@ -154,8 +154,8 @@ def _generate_modellist():
     models = set()
     for res in results:
         print "Working on result "+res
-        print res
-        print results[res]
+        # print res
+        # print results[res]
         models.add(results[res]["name"])
     with open(os.path.join(path, "text", "results",
                                "models.json"), "w+") as ofp:
@@ -223,13 +223,15 @@ def _generate_makefile():
     loader = PackageLoader('xogeny')
     env = Environment(loader=loader)
     genres = env.get_template("gen_result.mos")
+    genallres = env.get_template("genall_results.mos")
     genjs = env.get_template("gen_js.mos")
     genmk = env.get_template("gen.makefile")
 
     # Generate Makefile
     with open(os.path.join(path, "text", "results", "Makefile"), "w+") as ofp:
         ofp.write(genmk.render({"results": results}))
-            
+
+    contexts = []
     for res in results:
         data = results[res]
         mods = data["mods"]
@@ -249,14 +251,19 @@ def _generate_makefile():
         context = {"path": path, "compfails": compfails,
                    "simcmd": simcmd, "simfails": simfails,
                    "name": data["name"], "pre": res}
+        contexts.append(context)
 
         # Write out script to generate simulation results
 
         with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
-            sfp.write(genres.render(**context));
+            sfp.write(genres.render(**context))
         # Write out script to generate JavaScript
         with open(os.path.join(path, "text", "results", res+"-js.mos"), "w+") as sfp:
-            sfp.write(genjs.render(**context));
+            sfp.write(genjs.render(**context))
+
+    with open(os.path.join(path, "text", "results", "allres.mos"), "w+") as sfp:
+        sfp.write(genallres.render(contexts=contexts, path=path))
+
 
 def generate():
     print "Generating Plots"

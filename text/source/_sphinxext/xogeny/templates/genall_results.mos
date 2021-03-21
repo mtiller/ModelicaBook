@@ -1,0 +1,20 @@
+setModelicaPath(getModelicaPath()+":"+"{{path}}");
+setCFlags("-fPIC -march=x86-64");
+cf := loadModel(ModelicaByExample);
+getErrorString();
+
+if cf==false then
+  exit(1);
+end if;
+
+{% for context in contexts %}
+rec := {{context.simcmd}};
+getErrorString();
+rfile := rec.resultFile;
+
+// if rfile == "" then
+//   exit(1);
+// else
+//   exit(0);
+// end if;
+{% endfor %}
