@@ -9,7 +9,7 @@
 
 .PHONY: specs results dirhtml ebooks api publish_server publish_web serve
 
-all: specs results deps json ebooks pdfs
+all: specs results json ebooks pdfs
 
 specs:
 	(cd text; make specs)
