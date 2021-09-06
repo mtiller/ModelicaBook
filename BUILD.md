@@ -1,6 +1,24 @@
 # Documentation about the build process
 
+## Docker Images
+
+These steps are designed to be performed by the `mtiller/book-builder` image.
+To run this on an M1 Mac, run:
+
+```sh
+$ docker run -it --platform=linux/amd64 -v `pwd`:/opt/MBE/ModelicaBook mtiller/book-builder
+```
+
 ## Step 1: Build Simulation Specifications
+
+_Dependencies_: `text/specs.py`, `text/spec-hash` and Python
+
+_Image_: `mtiller/book-builder` or `python:2.7.12` + `pip install jinja2`
+
+_Artifacts_: `text/results/Makefile`, `text/results/json/*.json`,
+`text/results/*.mos` and `text/plots/*.py`
+
+_Job_: `make specs`
 
 In this step, we collect information about the different "cases" we need to
 present in the book. The actual cases are outlined in `text/specs.py`. This is
@@ -20,6 +38,14 @@ skipped because the generated files out be identical to a previous run.
 
 ## Step 2: Build Simulation Results
 
+_Dependencies_: Artifacts from running `text/specs.py`, `text/result-hash` and **`omc`**
+
+_Image_: `mtiller/book-builder` (works on M1 if you run over and over) or perhaps `openmodelica/openmodelica:v1.17.0-minimal` (but not on M1)
+
+_Artifacts_: `text/results/{executables,*_info.json,*_init.xml/*_res.mat}`
+
+_Job_: `make results`
+
 This step uses the OpenModelica compiler to build the following files for each
 case defined in step 1.
 
@@ -37,6 +63,18 @@ in the `text/Makefile` to determine if this step can be skipped because the
 generated files out be identical to a previous run.
 
 ## Step 3: Build JSON (used by site generator)
+
+_Dependencies_: 
+
+_Image_: `mtiller/book-builder` or `sphinxdoc/sphinx` + `pip install matplotlib`
+
+_Artifacts_: `text/build/json`
+
+_Job_: `make json`
+
+This generats the JSON output for the book.  This includes HTML embedded in the
+JSON.  These files are required for the next step which is to translate the JSON
+data into the book site.
 
 ## Step 4: Generating Site
 
