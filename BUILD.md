@@ -64,13 +64,13 @@ generated files out be identical to a previous run.
 
 ## Step 3: Build JSON (used by site generator)
 
-_Dependencies_: 
+_Dependencies_: `text/results/*.mos` and `text/plots/*.py` (guess)
 
 _Image_: `mtiller/book-builder` or `sphinxdoc/sphinx` + `pip install matplotlib`
 
 _Artifacts_: `text/build/json`
 
-_Job_: `make json`
+_Job_: `make json` or just `sphinx-build -b json -d build/doctrees  -q source build/json`
 
 This generats the JSON output for the book.  This includes HTML embedded in the
 JSON.  These files are required for the next step which is to translate the JSON
@@ -80,6 +80,14 @@ data into the book site.
 
 ## Step 5: Generate PDFs
 
+_Dependencies_: `text/results/*.mos` and `text/plots/*.py` (guess)
+
+_Image_: `mtiller/book-builder` or `sphinxdoc/sphinx` + `pip install matplotlib`
+
+_Artifacts_: `text/build/latex`
+
+_Job_: `make latex` (?) or just `sphinx-build -b latex -d build/doctrees  -q source build/latex`
+
 ## Step 6: Generate eBooks
 
 ## Step 7: Generate HTML (deprecated, don't need this)
@@ -88,3 +96,18 @@ data into the book site.
 
 I'm using `now` to do the site deployment. Much simpler than all that mucking
 about with AWS S3, IAM, permissions, keys, _etc._
+
+It can also be published as a simple Docker image.  All that is required is to
+generate the files from Next and then wrap them in an NGINX container.
+
+
+
+## Step 9: Build and Deploy API
+
+_Dependencies_: `text/results/exes.tar.gz`
+
+_Image_: `node` and `docker`
+
+_Artifacts_: Docker image
+
+_Job_: (see `.gitlab-ci.yaml`)

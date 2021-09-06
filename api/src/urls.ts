@@ -25,11 +25,16 @@ function baseUrl(req: express.Request | null): url.Url {
         // I shouldn't have to resort to this, but I turned on trusted proxy
         // and I still have trouble figuring out the protocol (see request
         // handling below).
+        //
+        // This is because I should probably be using 
+        // X-Forwarded-Proto (and X-Forwarded-Host)
+        // https://www.google.com/search?client=firefox-b-1-d&q=header+x-forwarded-proto
         const base = process.env["BASE_URL"] as string;
         log("Base URL supplied via environment variable: '%s'", base);
         return url.parse(base);
     }
     if (req) {
+        // TODO: Use X-Forwarded-Host and X-Forwarded-Proto!
         const host = req.hostname;
         const proto = req.protocol;
 

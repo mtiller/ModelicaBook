@@ -10,6 +10,10 @@ import * as debug from "debug";
 const appDebug = debug("mbe:app");
 // appDebug.enabled = true;
 
+// TODO: Add environment variable that, if present, indicates the location
+// of the contents of the models directory and which is downloaded 
+// at startup.
+
 const app = express();
 app.use(express.json());
 app.use(
