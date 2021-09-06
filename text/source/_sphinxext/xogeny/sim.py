@@ -23,7 +23,7 @@ class sim_request(nodes.General, nodes.Element):
                     "experiment": {"start_time": self.start_time}})
 
 def visit_sim_request(self, node):
-    print "Visiting sim request: "+str(node)
+    # print "Visiting sim request: "+str(node)
     pass
 
 def depart_sim_request(self, node):
