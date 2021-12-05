@@ -1,5 +1,15 @@
 # Documentation about the build process
 
+## Source Code
+
+To ensure all submodules are loaded, be sure to run:
+
+```sh
+$ git submodule init
+$ git submodule update
+```
+
+
 ## Docker Images
 
 These steps are designed to be performed by the `mtiller/book-builder` image.
@@ -8,6 +18,14 @@ To run this on an M1 Mac, run:
 ```sh
 $ docker run -it --platform=linux/amd64 -v `pwd`:/opt/MBE/ModelicaBook mtiller/book-builder
 ```
+
+or 
+
+```sh
+$ docker run -it --platform=linux/amd64 -v `pwd`:/opt/MBE/ModelicaBook mtiller/flat-book-builder
+```
+
+...if you get lots of warnings about long file names.
 
 ## Step 1: Build Simulation Specifications
 
