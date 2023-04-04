@@ -1,23 +1,27 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/arrays/declarations.rst:4
 msgid "Array Declarations"
 msgstr ""
+"배열 선언(Array Declarations)"
 
 #: ../../source/behavior/arrays/declarations.rst:7
 msgid "Syntax"
 msgstr ""
+"문법(Syntax)"
 
 #: ../../source/behavior/arrays/declarations.rst:9
 msgid ""
@@ -26,22 +30,31 @@ msgid ""
 "subscripts to specify the size of each dimension of the array.  The general "
 "form for an array declaration would be:"
 msgstr ""
+"배열을 선언하는 구문은 매우 간단합니다. "
+"구문은 배열의 각 차원 크기를 지정하기 위해 변수 이름 뒤에 첨자가 와야 한다는 점을 제외하면 일반 변수 선언과 동일합니다."
+"배열 선언의 일반적인 형식은 다음과 같습니다."
+
 
 #: ../../source/behavior/arrays/declarations.rst:18
 msgid ""
 "where ``VariableType`` is a Modelica type like ``Real`` or ``Integer``, "
 "``varName`` is the name of the variable."
 msgstr ""
+"여기서 ``VariableType`` 은 ``Real`` 또는 ``Integer`` 와 같은 모델리카 자료형이고 ``varName`` 은 변수의 이름입니다."
 
 #: ../../source/behavior/arrays/declarations.rst:22
 msgid "Integer Sizes"
 msgstr ""
+"정수형 크기(Integer Sizes)"
 
 #: ../../source/behavior/arrays/declarations.rst:24
 msgid ""
 "Normally, the dimension specifications are simply integers that indicate the"
 " size of that dimension.  For example:"
 msgstr ""
+"일반적으로 차원의 크기를 나타내기 위해서는 단순히 정수형을 사용합니다."
+"예를 들면 아래와 같습니다. "
+
 
 #: ../../source/behavior/arrays/declarations.rst:31
 msgid ""
@@ -49,10 +62,15 @@ msgid ""
 "dimension of size 5.  It is possible to use parameters or constants specify "
 "the size of an array, *e.g.,*"
 msgstr ""
+"이 경우 ``x`` 는 크기가 5인 한 차원만 있는 실수 값의 배열입니다. "
+"배열의 크기를 지정하는 파라미터 또는 상수를 사용할 수 있습니다."
+"*예* 를 들어 아래와 같습니다. "
+
 
 #: ../../source/behavior/arrays/declarations.rst:42
 msgid "Linked Dimensions"
 msgstr ""
+"연결된 차원(Linked Dimensions)"
 
 #: ../../source/behavior/arrays/declarations.rst:44
 msgid ""
@@ -60,6 +78,10 @@ msgid ""
 " Modelica, we can even use the ``size`` function to specify the size of one "
 "array in terms of another array. Consider the following:"
 msgstr ""
+"모델리카의 다양한 :ref:`배열 함수 <array-functions>` 에 대해 논의할 때 곧 보게 되겠지만 ``size`` 함수를 사용하여 "
+"한 배열의 크기를 다른 배열과 관련하여 지정할 수도 있습니다. "
+"다음을 확인해 보겠습니다."
+
 
 #: ../../source/behavior/arrays/declarations.rst:54
 msgid ""
@@ -70,10 +92,16 @@ msgid ""
 "that arrays are sized such that operations like matrix multiplication are "
 "possible)."
 msgstr ""
+"이 경우 ``y`` 는 크기가 5인 1차원을 갖게 됩니다. "
+"``size(x,1)`` 함수를 사용하면 배열 ``x의 차원 1 크기`` 를 반환합니다."
+"서로 다른 배열의 차원이 이러한 방식으로 관련되어 있음을 표현하는 것이 유용한 많은 응용 프로그램이"
+"있습니다(*예:*, 행렬 곱셈과 같은 연산이 가능하도록 배열의 크기를 지정하는 경우)."
+
 
 #: ../../source/behavior/arrays/declarations.rst:64
 msgid "Unspecified Dimensions"
 msgstr ""
+"지정되지 않은 차원(Unspecified Dimensions)"
 
 #: ../../source/behavior/arrays/declarations.rst:66
 msgid ""
@@ -82,12 +110,17 @@ msgid ""
 " we will see examples of this later when we discuss :ref:`functions` that "
 "have arguments which are arrays."
 msgstr ""
+"나중에 컨텍스트에서 지정할 수 있도록 배열의 크기를 지정하지 않은 상태로 둘 수 있는 상황이 있습니다."
+"예를 들어, 나중에 배열인 인수가 있는 :ref:`함수 <functions>` 에 대해 논의할 때 이에 대한 예를 볼 수 있습니다."
 
 #: ../../source/behavior/arrays/declarations.rst:71
 msgid ""
 "To indicate that the size of a given array dimension is not (yet) known, we "
 "can use the `:` symbol as the dimension.  So in a declaration like this:"
 msgstr ""
+"주어진 배열 차원의 크기가 (아직) 알려지지 않았음을 나타내기 위해 `:` 기호를 차원으로 사용할 수 있습니다."
+"따라서 다음과 같은 선언에서,"
+
 
 #: ../../source/behavior/arrays/declarations.rst:79
 msgid ""
@@ -96,14 +129,21 @@ msgid ""
 "definitively specified as 2.  In effect, we have declared that ``A`` is a "
 "matrix with an unspecified number of rows and two columns."
 msgstr ""
+"2차원 배열을 선언하고 있습니다."
+"첫 번째 차원의 크기는 지정되지 않습니다. "
+"그러나 두 번째 차원의 크기는 2로 결정적으로 지정됩니다. "
+"사실상 ``A`` 는 지정되지 않은 행과 2개의 열을 가진 행렬이라고 선언 한것입니다. "
+
 
 #: ../../source/behavior/arrays/declarations.rst:85
 msgid "Non-Integer Dimensions"
 msgstr ""
+"정수형이 아닌 차원(Non-Integer Dimensions)"
 
 #: ../../source/behavior/arrays/declarations.rst:90
 msgid "Enumerations"
 msgstr ""
+"열거형(Enumerations)"
 
 #: ../../source/behavior/arrays/declarations.rst:92
 msgid ""
@@ -114,13 +154,19 @@ msgid ""
 "discussion on :ref:`array-indexing`, we'll see how to properly index an "
 "array that uses enumerations as dimensions."
 msgstr ""
+"앞서 :ref:`chemical-system` 예제에서 보았듯이 배열의 차원을 지정하는 또 다른 방법은 열거를 사용하는 것입니다. "
+"열거형을 사용하여 차원을 지정하는 경우 해당 차원의 크기는 해당 열거형에 가능한 값의 수와 같습니다."
+"곧 있을 :ref:`array-indexing` 에 대한 논의에서 열거형을 차원으로 사용하는 배열을 통해 올바르게 인덱싱하는 방법을 살펴보겠습니다."
+
 
 #: ../../source/behavior/arrays/declarations.rst:101
 msgid "Booleans"
 msgstr ""
+"불리언(Booleans)"
 
 #: ../../source/behavior/arrays/declarations.rst:103
 msgid ""
 "It is also possible to declare an array where a dimension is specified as "
 "``Boolean``, *e.g.,*"
 msgstr ""
+"차원이 ``Boolean`` 으로 지정된 배열을 선언하는 것도 가능합니다. "

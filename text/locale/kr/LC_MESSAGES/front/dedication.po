@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/front/dedication.rst:2
 msgid "Dedication"
 msgstr ""
+"헌정사(Dedication)"
 
 #: ../../source/front/dedication.rst:18
 msgid ""
@@ -28,6 +31,13 @@ msgid ""
 "circumstances had been different, this book would probably be dedicated to "
 "Cory Doctorow and Lawrence Lessig for inspiring me to take on this project."
 msgstr ""
+"이 책은 킥스타터 프로젝트로 시작되었습니다. "
+"크리에이티브 커먼즈 라이선스 하에 책을 쓰고 무료로 제공한다는 아이디어는 주로 Cory Doctorow와 Lawrence Lessig의 글에서 영감을 받았습니다. "
+"나눔에 대한 그들의 메시지는 저에게 매우 강하게 와 닿았습니다."
+"나는 모델리카에 대한 지식을 활용하여 이득을 취하는데 관심이 없으며, 이 주제에 대해 연구하는 기쁨을 다른 사람들과 공유하고 싶습니다. "
+"다행스럽게도 이 킥스타터(Kickstarter) 프로젝트는 2012년 12월 4일에 성공적으로 자금을 지원받았고, 크리에이티브 커먼스 라이선스 하에서 책 전체를 만들기 위한 여정이 시작되었습니다. "
+"만약 상황이 달랐다면, 아마도 이 프로젝트를 맡도록 영감을 준 Cory Doctorow와 Lawrence Lessig에게 이 책을 바쳤겠지만, 그들이 아니라 Aaron Swarts에게 바칩니다."
+
 
 #: ../../source/front/dedication.rst:30
 msgid ""
@@ -41,6 +51,12 @@ msgid ""
 "had countless qualities that I admire and aspire to.  But on January 11th, "
 "2013, Aaron Swartz took his own life."
 msgstr ""
+"Aaron은 의심할 여지 없이 괴짜였습니다."
+"14세 때 Aaron은 RSS 표준 개발에 참여했으며, Reddit에 합병된 자신의 회사 Infogami를 설립했습니다.  "
+"그 과정에서 CCL 관련한 일을 하며 인터넷 검열에 맞서 싸웠습니다."
+"그는 똑똑하고 성공적이었지만 이타적이었고 기술과 인류의 미래에 대해 깊이 관심을 가졌으며, 내가 존경하고 열망하는 무수한 자질을 가지고 있었습니다. 하지만"
+"2013년 1월 11일, Aaron Swartz는 스스로 목숨을 끊었습니다.     "
+
 
 #: ../../source/front/dedication.rst:41
 msgid ""
@@ -54,6 +70,12 @@ msgid ""
 "heartbreaking that just as this project started, his life ended.  I resolved"
 " then to dedicate this book to him."
 msgstr ""
+"나의 킥스타터 프로젝트의 성공적인 자금 지원을 받은지 불과 한 달 만에 Aaron Swartz는 26세의 나이로 세상을 떠났습니다."
+"Aaron Swartz가 어린 시절에 이룬 성과는 놀랍고 그가 이룬 선한 모든 일들을 생각하면 그의 죽음이 더욱 비극적으로 여겨집니다."
+"Aaron은 나보다 거의 20살이나 어리지만 RSS, 크리에이티브 커먼스, 인터넷 등을 사용한 작업을 통해서"
+"나와 이 책 프로젝트, 그리고 궁극적으로 이 책을 읽는 사람들의 길을 열어주는 데 도움을 주었습니다. "
+"이 프로젝트가 시작되자마자 그의 삶이 끝난 것이 가슴이 아팠으며, 그때 이 책을 그에게 바치기로 결심했습니다."
+
 
 #: ../../source/front/dedication.rst:52
 msgid ""
@@ -68,6 +90,9 @@ msgid ""
 "attorney-carmen-ortiz-office-overreach-case-aaron-swartz/RQNrG1Ck>`_ in "
 "particular) who were determined to make an example of him."
 msgstr ""
+"그의 삶은 `실제로 그를 알고 있는 더 나은 작가들 <http://www.huffingtonpost.com/lawrence-lessig/aaron-swartz-suicide_b_2467079.html>`_ 에 의해 `연대순으로 기록 <http://boingboing.net/2013/01/12/rip-aaron-swartz.html>`_  되었기 때문에 사업가, 연구원 그리고 미국 시민으로서 그의 작품을 진심으로 존경한다는 말 외에는 Aaron의 삶에 대해 자세히 설명하지 않겠습니다만,"
+"그를 본보기 삼기로 결심한 연방 검사들(특히 `CarmenOrtiz <https://petitions.whitehouse.gov/petition/remove-united-states-district-attorney-carmen-ortiz-office-overreach-case-aaron-swartz/RQNrG1Ck>`_ )의 괴롭힘 방식에 대단히 격분하였습니다."
+
 
 #: ../../source/front/dedication.rst:61
 msgid ""
@@ -80,9 +105,22 @@ msgid ""
 "prosecuted and treated like criminals.  They deserve guidance and coaching "
 "on ways to channel their abundant energies and talents to help society."
 msgstr ""
+"이 책은 Aaron Swartz에 대한 기억과 더 중요하게는 그가 지지했던 것들을 지켜내기 위해 Aaron Swartz에게 헌정합니다."
+"그가 세상을 떠난 지 1년이 넘었지만 저는 Aaron Swartz를 잊지 않았으며 이 헌신이 사람들에게 그가 무엇을 지지했는지 상기시켜 주기를 바랍니다. "
+"이 책은  대한 기억을 유지하기 위해, 그리고 더 중요하게는 그가 지지했던 것들에 대해 헌정합니다. "
+
+"이 비극으로부터 배워야 하고, Aaron Swartz와 같은 사람들이 아마도 열정적이고 지나치게 열광적이지만, 정부가 그들을 기소하고 범죄자 취급을 할 자격이 없다는 것을 이해시켜야 합니다."
+"그들은 사회를 돕기 위한 풍부한 에너지와 재능을 전달하는 방법에 대해 지도와 안내를 받을 자격이 있습니다."
+
 
 #: ../../source/front/dedication.rst:71
 msgid ""
 "\"Aaron dead. World wanderers, we have lost a wise elder. Hackers for right,"
 " we are one down. Parents all, we have lost a child. Let us weep.\""
 msgstr ""
+"아론이 죽었습니다. "
+"세계의 방랑자들이여,  현명한 장로를 잃었습니다."
+"해커의 권리를 위하던, 하나의 존재를 놓쳤습니다." 
+"모든 부모들이여, 한 아이를 잃었습니다.  울어야 합니다."
+"— `팀 버너스-리 <https://twitter.com/timberners_lee/status/290140454211698689>`_"
+

@@ -1,91 +1,129 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/subsystems/propagation.rst:4
 msgid "Propagation"
 msgstr ""
+"전파(Propagation)"
 
 #: ../../source/components/subsystems/propagation.rst:6
 msgid ""
-"When building subsystem models, it is extremely common for a subsystem to "
-"contain parameters that it then propagates or cascades down to its "
-"components.  For example, consider the following system model used in our "
-"discussion of :ref:`rotational-components`:"
+"When building subsystem models, it is extremely common for a subsystem to"
+" contain parameters that it then propagates or cascades down to its "
+"components.  For example, consider the following system model used in our"
+" discussion of :ref:`rotational-components`:"
 msgstr ""
+"하위 시스템 모델을 구축할 때 하위 시스템이 파라미터를 포함하는 것이 매우 일반적이며, 이 파라미터는 해당 구성 요소로 전파되거나 종속됩니다."
+"예를 들어, :ref:`rotational-components` 에 대한 논의에서 사용된 다음 시스템 모델을 살펴 보겠습니다."
+
 
 #: ../../source/components/subsystems/propagation.rst:31
 msgid ""
-"If we wanted to use this model in different contexts where the values of the"
-" component parameters, like ``d``, might vary, we could make ``d`` a "
+"If we wanted to use this model in different contexts where the values of "
+"the component parameters, like ``d``, might vary, we could make ``d`` a "
 "parameter at the subsystem level and then propagate it down into the "
-"hierarchy using a modification.  The result would look something like this:"
+"hierarchy using a modification.  The result would look something like "
+"this:"
 msgstr ""
+"``d`` 와 같은 구성 요소 파라미터의 값이 다를 수 있는 다른 컨텍스트에서 이 모델을 사용하려면 ``d`` 를 하위 시스템 수준에서 파라미터로 만든 다음 전파할 수 있으며, "
+"수정을 통해서 각 계층 구조로 내려갑니다."
+"결과는 다음과 같습니다."
+
 
 #: ../../source/components/subsystems/propagation.rst:48
 msgid ""
-"There is one complication here.  It is possible for a user to come along and"
-" change the value of ``damper2.d`` instead of modifying the ``d`` parameter "
-"in the ``SMD`` model.  To avoid having the ``d`` parameter and the "
-"``damper2.d`` parameter from getting out of sync (having different values), "
-"we can permanently bind them using the ``final`` qualifier:"
+"There is one complication here.  It is possible for a user to come along "
+"and change the value of ``damper2.d`` instead of modifying the ``d`` "
+"parameter in the ``SMD`` model.  To avoid having the ``d`` parameter and "
+"the ``damper2.d`` parameter from getting out of sync (having different "
+"values), we can permanently bind them using the ``final`` qualifier:"
 msgstr ""
+"여기에 하나의 종합적인 문제가 있습니다."
+"``SMD`` 모델에서 ``d`` 파라미터를 수정하는 대신 사용자가 와서 ``damper2.d`` 값을 변경할 수 있습니다. "
+"``d`` 파라미터와 ``damper2.d`` 파라미터가 동기화되지 않는 것(다른 값을 가짐)을 방지하기 위해 ``final`` 한정자를 사용하여 영구적으로 바인딩할 수 있습니다."
+
 
 #: ../../source/components/subsystems/propagation.rst:64
 msgid ""
-"By adding the ``final`` qualifier, we are indicating that it is no longer "
-"possible to modify the value of ``damper2.d``.  Any modifications must be "
-"made to ``d`` only."
+"By adding the ``final`` qualifier, we are indicating that it is no longer"
+" possible to modify the value of ``damper2.d``.  Any modifications must "
+"be made to ``d`` only."
 msgstr ""
+"``final`` 한정자를 추가하여 ``damper2.d`` 값을 더 이상 수정할 수 없음을 나타냅니다."
+"모든 수정은 ``d`` 에만 적용되어야 합니다."
+
+
 
 #: ../../source/components/subsystems/propagation.rst:68
 msgid ""
-"Giving all of the \"hard-wired\" numerical values in the ``SMD`` model the "
-"same treatment, we would end up with a highly reusable model like this:"
+"Giving all of the \"hard-wired\" numerical values in the ``SMD`` model "
+"the same treatment, we would end up with a highly reusable model like "
+"this:"
 msgstr ""
+"``SMD`` 모델의 모든 "하드 와이어드(hard-wired)" 숫자 값을 동일하게 처리하면 다음과 같이 재사용 가능성이 높은 모델이 됩니다."
+
 
 #: ../../source/components/subsystems/propagation.rst:101
 msgid ""
-"If we wanted to use a specific set of parameter values, we could do it in "
-"one of two ways.  One way would be to extend the parameterized model above "
-"and include a modification in the ``extends`` statement, *e.g.,*"
+"If we wanted to use a specific set of parameter values, we could do it in"
+" one of two ways.  One way would be to extend the parameterized model "
+"above and include a modification in the ``extends`` statement, *e.g.,*"
 msgstr ""
+"특정 파라미터 값 집합을 사용하려는 경우 두 가지 방법 중 하나로 수행할 수 있습니다."
+"한 가지 방법은 위의 파라미터화된 모델을 확장하고 ``extends`` 문에 수정 사항을 포함하는 것입니다. "
+"*예* 를 들면 아래와 같습니다."
+
+
 
 #: ../../source/components/subsystems/propagation.rst:113
 msgid ""
 "Note that we did not need to include modifications for the values of "
 "``phi2_init``, ``w1_init`` and ``w2_init``, since those parameters were "
-"declared with default values.  In general, **default values for parameters "
-"should only be used when those defaults are reasonable for the vast majority"
-" of cases**.  The reason for this is that if a parameter has no default "
-"value most Modelica compilers will generate a warning alerting you that a "
-"value is required.  But if a default value is there, it will silently use "
-"the default value.  If that default value is not reasonable or typical, then"
-" you will silently introduce an unreasonable value into your model."
+"declared with default values.  In general, **default values for "
+"parameters should only be used when those defaults are reasonable for the"
+" vast majority of cases**.  The reason for this is that if a parameter "
+"has no default value most Modelica compilers will generate a warning "
+"alerting you that a value is required.  But if a default value is there, "
+"it will silently use the default value.  If that default value is not "
+"reasonable or typical, then you will silently introduce an unreasonable "
+"value into your model."
 msgstr ""
+"``phi2_init``, ``w1_init`` 및 ``w2_init`` 값에 대한 수정 사항을 포함할 필요가 없는데, "
+"이러한 파라미터는 기본값으로 선언되었기 때문입니다. "
+"일반적으로 **파라미터의 기본값은 대부분의 경우에 해당 기본값이 합리적인 경우에만 사용해야 합니다**. "
+"그 이유는 파라미터에 기본값이 없으면 대부분의 모델리카 컴파일러가 값이 필요하다는 경고를 생성하기 때문입니다. "
+"그러나 기본값이 있으면 자동으로 기본값을 사용합니다. 해당 기본값이 합리적이거나 일반적이지 않은 경우 모델에 비합리적인 값을 자동으로 적용 합니다."
+
+
 
 #: ../../source/components/subsystems/propagation.rst:124
 msgid ""
-"But returning to the topic of propagation, the other approach that could be "
-"used would be to instantiate an instance of the ``SMD`` model and use "
-"modifications on the declared variable to specify parameter values, *e.g.,*"
+"But returning to the topic of propagation, the other approach that could "
+"be used would be to instantiate an instance of the ``SMD`` model and use "
+"modifications on the declared variable to specify parameter values, "
+"*e.g.,*"
 msgstr ""
+"전파 주제로 돌아가서 사용할 수 있는 다른 접근 방식은 ``SMD`` 모델의 인스턴스를 인스턴스화하고 선언된 변수에 대한 수정을 사용하여 파라미터 값을 지정하는 것입니다. "
 
 #: ../../source/components/subsystems/propagation.rst:135
 msgid ""
-"We'll defer the discussion on which of these approaches is better until the "
-"upcoming chapter on :ref:`architectures`."
+"We'll defer the discussion on which of these approaches is better until "
+"the upcoming chapter on :ref:`architectures`."
 msgstr ""
+"이러한 접근 방식 중 어느 것이 더 나은지에 대한 논의는 :ref:`architectures` 에 대한 다음 장으로 미룰 것입니다."
 
-#: ../../source/components/subsystems/propagation.rst:46
-msgid "final"
-msgstr ""
+#~ msgid "final"
+#~ msgstr ""
+

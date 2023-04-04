@@ -1,42 +1,47 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
 
-#: ../../source/components/components/chem_comps.rst:1
-msgid "o.. _chem-components:"
-msgstr ""
 
 #: ../../source/components/components/chem_comps.rst:4
 msgid "Chemical Components"
 msgstr ""
+"화학적 구성요소(Chemical Components)"
 
 #: ../../source/components/components/chem_comps.rst:6
 msgid ""
 "For our last example of component oriented modeling, we'll return to the "
 ":ref:`chemical-system` we discussed in the chapter on :ref:`vectors-and-"
-"arrays`.  However, this time we will create component models for the various"
-" effects and show how connections in Modelica automatically ensure "
-"conservation of species."
+"arrays`.  However, this time we will create component models for the "
+"various effects and show how connections in Modelica automatically ensure"
+" conservation of species."
 msgstr ""
+"구성 요소 지향 모델링의 마지막 예를 살펴 보기위해 :ref:`vectors-and-arrays` 장에서 논의한 :ref:`chemical-system` 으로 돌아가겠습니다."
+"그러나 이번에는 다양한 효과에 대한 구성 요소 모델을 만들고, 모델리카의 연결이 자동으로 종 보존을 보장하는 방법을 보여줍니다."
+
+
 
 #: ../../source/components/components/chem_comps.rst:13
 msgid "Species"
 msgstr ""
+"종(Species)"
 
 #: ../../source/components/components/chem_comps.rst:17
 msgid ""
 "The species we will be dealing with in this example are defined by the "
 "following ``enumeration``:"
 msgstr ""
+"이 예제에서 다룰 종은 다음 ``enumeration`` 으로 정의합니다."
 
 #: ../../source/components/components/chem_comps.rst:23
 msgid ""
@@ -44,25 +49,33 @@ msgid ""
 "indicates that the component models are designed to work with this three "
 "species system involving ``A``, ``B`` and ``X``."
 msgstr ""
+"이 정의는 ``ABX`` 라는 패키지 내에 존재합니다."
+"이는 구성요소 모델이 ``A``, ``B`` 및 ``X`` 를 포함하는 이 3종 시스템과 함께 작동하도록 설계되었음을 나타냅니다."
+
 
 #: ../../source/components/components/chem_comps.rst:28
 msgid "``Mixture``"
 msgstr ""
+"혼합(``Mixture``)"
 
 #: ../../source/components/components/chem_comps.rst:30
 msgid ""
 "Also contained in the ``ABX`` package is the following ``connector`` "
 "definition (which can be found in the ``Interfaces`` sub-package):"
 msgstr ""
+"또한 ``ABX`` 패키지에는 다음과 같은 ``connector`` 정의가 포함되어 있습니다( ``Interfaces`` 하위 패키지에서 찾을 수 있음):"
 
 #: ../../source/components/components/chem_comps.rst:36
 msgid ""
-"Here we see that our ``Mixture`` connector uses concentrations as the across"
-" variables and a concentration rate as the flow variable. Although the "
-"``flow`` variable in this case is not strictly the flow of a conserved "
-"quantity, it will suffice in this example since all reactions are contained "
-"within the same volume."
+"Here we see that our ``Mixture`` connector uses concentrations as the "
+"across variables and a concentration rate as the flow variable. Although "
+"the ``flow`` variable in this case is not strictly the flow of a "
+"conserved quantity, it will suffice in this example since all reactions "
+"are contained within the same volume."
 msgstr ""
+"여기에서 ``Mixture`` 커넥터가 농도를 교차 변수로 사용하고 농도 비율을 흐름 변수로 사용하는 것을 볼 수 있습니다. "
+"이 경우의 ``flow`` 변수는 엄격하게 보존된 양의 흐름은 아니지만 모든 반응이 동일한 부피 내에 포함되므로 이 예제에서 사용하기에는 충분합니다."
+
 
 #: ../../source/components/components/chem_comps.rst:42
 msgid ""
@@ -70,52 +83,71 @@ msgid ""
 "subscript is given by an ``enumeration`` type.  We saw earlier how :ref"
 ":`array-enum-dim` can be used in this way."
 msgstr ""
+"이 커넥터의 ``C`` 와 ``R`` 은 모두 ``enumeration`` 자료형에 의해 아래 첨자가 제공되는 배열입니다."
+"앞에서 배열 열거형 차원이 어떻게 이런 식으로 사용될 수 있는지 보았습니다."
+
 
 #: ../../source/components/components/chem_comps.rst:47
 msgid "``Solution``"
 msgstr ""
+"해결방법(``Solution``)"
 
 #: ../../source/components/components/chem_comps.rst:49
 msgid ""
-"Our first component model is used to track the concentration of the various "
-"chemical species within a control volume.  As alluded to earlier, since all "
-"reactions occur within the same volume, we don't need to actually specify "
-"the size of the control volume."
+"Our first component model is used to track the concentration of the "
+"various chemical species within a control volume.  As alluded to earlier,"
+" since all reactions occur within the same volume, we don't need to "
+"actually specify the size of the control volume."
 msgstr ""
+"첫 번째 구성 요소 모델은 컨트롤 볼륨 내에서 다양한 화학 종의 농도를 추적하는 데 사용합니다."
+"앞서 언급한 바와 같이 모든 반응은 동일한 볼륨 내에서 발생하므로 제어 볼륨의 크기를 실제로 지정할 필요가 없습니다."
 
 #: ../../source/components/components/chem_comps.rst:54
 msgid ""
 "The ``Solution`` model is quite simple.  Like the ``RegionalPopulation`` "
-"model discussed :ref:`earlier in this chapter <population-components>`, the "
-"rate of change of the across variable associated with its sole connector is "
-"equal to the ``flow`` variable on that same connector:"
+"model discussed :ref:`earlier in this chapter <population-components>`, "
+"the rate of change of the across variable associated with its sole "
+"connector is equal to the ``flow`` variable on that same connector:"
 msgstr ""
+"``solution`` 모델은 매우 간단합니다. "
+":ref:`이 장의 앞부분 <population-components>` 에서 논의한 ``RegionalPopulation`` 모델처럼 유일한 커넥터와 관련된 교차 변수의 변화율은 동일한 항목의 ``flow`` 변수와 동일합니다. "
+
 
 #: ../../source/components/components/chem_comps.rst:64
 msgid "Reactions"
 msgstr ""
+"반응(Reactions)"
 
 #: ../../source/components/components/chem_comps.rst:67
 msgid "``Reaction``"
 msgstr ""
+"반응(``Reaction``)"
 
 #: ../../source/components/components/chem_comps.rst:69
 msgid ""
-"As we saw previously, this system has three reactions.  Each of the specific"
-" reactions we'll examine extend from the following ``partial`` model:"
+"As we saw previously, this system has three reactions.  Each of the "
+"specific reactions we'll examine extend from the following ``partial`` "
+"model:"
 msgstr ""
+"이전에 본 것처럼 이 시스템에는 세 가지 반응이 있습니다. "
+"각 특정 반응은 다음 ``partial`` 모델에서 확장됩니다."
+
 
 #: ../../source/components/components/chem_comps.rst:76
 msgid ""
 "We see that each reaction has a reaction coefficient, ``k``, and a "
 "``Mixture`` connector, ``mixture``, that ultimately connects it to the "
 "``Solution`` where the reaction is to take place.  The internal vector "
-"variables ``consumed`` and ``produced`` play a role that is similar to the "
-"``decline`` and ``growth`` variables in the ``SinkOrSource`` :ref:`discussed"
-" earlier in this chapter <reproduction-component>` (*i.e.,* they allow us to"
-" write contributions from individual reactions using an intuitive "
-"terminology)."
+"variables ``consumed`` and ``produced`` play a role that is similar to "
+"the ``decline`` and ``growth`` variables in the ``SinkOrSource`` "
+":ref:`discussed earlier in this chapter <reproduction-component>` "
+"(*i.e.,* they allow us to write contributions from individual reactions "
+"using an intuitive terminology)."
 msgstr ""
+"각 반응에는 반응 계수인 ``k`` 와 ``Mixture`` 커넥터인 ``mixture`` 가 있어 궁극적으로 반응이 일어나는 ``Solution`` 에 연결됩니다."
+"내부 벡터 변수인 ``consumed`` 와 ``produced`` 는 :ref:`앞에서 설명한 <reproduction-component>`  ``SinkOrSource``   변수와 유사한 역할을 합니다. "
+"(*즉,* 직관적인 용어를 사용하여 개별 반응의 기여를 작성할 수 있습니다)."
+
 
 #: ../../source/components/components/chem_comps.rst:87
 msgid "``A+B->X``"
@@ -123,111 +155,177 @@ msgstr ""
 
 #: ../../source/components/components/chem_comps.rst:89
 msgid ""
-"The first complete reaction model we will consider is the one that turns one"
-" molecule of ``A`` and one molecule of ``B`` into one molecule of ``X``.  "
-"Using the ``Reaction`` model, we can model this reaction as follows:"
+"The first complete reaction model we will consider is the one that turns "
+"one molecule of ``A`` and one molecule of ``B`` into one molecule of "
+"``X``.  Using the ``Reaction`` model, we can model this reaction as "
+"follows:"
 msgstr ""
+"고려할 첫 번째 완전한 반응 모델은 ``A`` 한 분자와 ``B`` 한 분자를 ``X`` 한 분자로 바꾸는 것입니다. "
+"``Reaction`` 모델을 사용하여 이 반응을 다음과 같이 모델링할 수 있습니다."
 
-#: ../../source/components/components/chem_comps.rst:108
+
+
+#: ../../source/components/components/chem_comps.rst:106
 msgid ""
 "The first thing to note about this model is that it is composed of non-"
 "alphanumeric characters.  Specifically, the name of this model contains "
-"``+``, ``-`` and ``>``.  This is permitted in Modelica **as long as the name"
-" is quoted using single quote characters**.  The rate of the reaction, "
-"``R``, is used in conjunction with the ``consumed`` and ``produced`` "
-"variables inherited from the ``Reaction`` model to create equations that "
-"clearly describe both the reactants and the products in this reaction."
+"``+``, ``-`` and ``>``.  This is permitted in Modelica **as long as the "
+"name is quoted using single quote characters**.  The rate of the "
+"reaction, ``R``, is used in conjunction with the ``consumed`` and "
+"``produced`` variables inherited from the ``Reaction`` model to create "
+"equations that clearly describe both the reactants and the products in "
+"this reaction."
 msgstr ""
+"이 모델에 대해 가장 먼저 주목해야 할 점은 영숫자가 아닌 문자로 구성되어 있다는 것입니다. "
+"구체적으로, 이 모델의 이름은 ``+``, ``-`` 및 ``>`` 를 포함합니다. "
+"이것은 **이름이 작은따옴표 문자** 를 사용하여 인용되는 한 모델리카에서 허용됩니다. "
+"반응 속도인 ``R`` 은 ``Reaction`` 모델에서 상속된 ``consumed`` 및 ``produced`` 변수와 함께 사용하여 반응물과 이 반응에서의 생성물 모두를 명확하게 설명하는 방정식을 생성합니다."
 
-#: ../../source/components/components/chem_comps.rst:118
+
+#: ../../source/components/components/chem_comps.rst:116
 msgid "``A+B<-X``"
 msgstr ""
 
-#: ../../source/components/components/chem_comps.rst:120
+#: ../../source/components/components/chem_comps.rst:118
 msgid ""
-"The next reaction we will consider is one that takes one molecule of ``X`` "
-"and transforms it (back) into one molecule of ``A`` and one molecule of "
-"``B``.  This is the reverse of the previous reaction.  The Modelica code for"
-" this reaction would be:"
+"The next reaction we will consider is one that takes one molecule of "
+"``X`` and transforms it (back) into one molecule of ``A`` and one "
+"molecule of ``B``.  This is the reverse of the previous reaction.  The "
+"Modelica code for this reaction would be:"
 msgstr ""
+"고려할 다음 반응은 ``X`` 분자 1개를 취하여 ``A`` 분자 1개와 ``B`` 분자 1개로 변환하는 것입니다. "
+"이것은 이전 반응의 반대입니다. 이 반응에 대한 모델리카 코드는 다음과 같습니다."
 
-#: ../../source/components/components/chem_comps.rst:137
+
+#: ../../source/components/components/chem_comps.rst:135
 msgid ""
-"Again, the equations convey clearly which species are reactants (*i.e.,* are"
-" consumed in the reaction) and which are the products (*i.e.,* those species"
-" that are produced in the reaction)."
+"Again, the equations convey clearly which species are reactants (*i.e.,* "
+"are consumed in the reaction) and which are the products (*i.e.,* those "
+"species that are produced in the reaction)."
+msgstr ""
+"다시 방정식은 어떤 종이 반응물(*즉,* 반응에서 소비됨)이고 어떤 것이 생성물(*즉,* 반응에서 생성된 종)인지 명확하게 전달합니다."
+
+#: ../../source/components/components/chem_comps.rst:140
+msgid "``X+B->T+S``"
 msgstr ""
 
 #: ../../source/components/components/chem_comps.rst:142
-msgid "``X+B->R+S``"
-msgstr ""
-
-#: ../../source/components/components/chem_comps.rst:144
 msgid ""
 "Finally, our last reaction converts molecules of ``X`` and ``B`` into "
-"molecules of ``R`` and ``S``:"
+"molecules of ``T`` and ``S``:"
 msgstr ""
+"마지막으로,  마지막 반응은 ``X`` 와 ``B`` 분자를 ``T`` 와 ``S`` 분자로 변환합니다."
 
-#: ../../source/components/components/chem_comps.rst:159
+#: ../../source/components/components/chem_comps.rst:157
 msgid ""
-"We do not track the concentration of the ``R`` and ``S`` species since they "
-"are simply byproducts and do not participate in any other reactions.  This "
-"model follows the same familiar pattern as before with the exception that "
-"the ``A`` species is not involved."
+"We do not track the concentration of the ``T`` and ``S`` species since "
+"they are simply byproducts and do not participate in any other reactions."
+"  This model follows the same familiar pattern as before with the "
+"exception that the ``A`` species is not involved."
 msgstr ""
+"``T`` 및 ``S`` 종은 단순히 부산물이고 다른 반응에 참여하지 않기 때문에 농도를 추적하지 않습니다."
+"이 모델은 ``A`` 종이 포함되지 않는다는 점을 제외하면 이전과 동일한 익숙한 패턴을 따릅니다."
 
-#: ../../source/components/components/chem_comps.rst:165
+
+#: ../../source/components/components/chem_comps.rst:163
 msgid "System"
 msgstr ""
+"시스템(System)"
 
-#: ../../source/components/components/chem_comps.rst:167
+
+#: ../../source/components/components/chem_comps.rst:165
 msgid ""
-"We can combine the ``Solution`` model along with the various reaction models"
-" as follows:"
+"We can combine the ``Solution`` model along with the various reaction "
+"models as follows:"
 msgstr ""
+"다음과 같이 다양한 반응 모델과 함께 ``Solution`` 모델을 결합할 수 있습니다."
 
-#: ../../source/components/components/chem_comps.rst:173
+#: ../../source/components/components/chem_comps.rst:171
 msgid ""
 "Note how modifications to the ``solution`` component are used to set the "
-"initial concentration of species within the ``solution`` component.  Also, "
-"the reaction coefficients are specified via modifications to each of the "
-"reaction components.  Finally, each of the reaction components is attached "
-"to the ``solution.mixture`` connector."
+"initial concentration of species within the ``solution`` component.  "
+"Also, the reaction coefficients are specified via modifications to each "
+"of the reaction components.  Finally, each of the reaction components is "
+"attached to the ``solution.mixture`` connector."
 msgstr ""
+"``solution`` 구성 요소에 대한 수정이 ``solution`` 구성 요소 내 종의 초기 농도를 설정하는 데 사용하는 방법임에 유의하십시오."
+"또한 반응 계수는 각 반응 구성 요소에 대한 수정을 통해 지정합니다. "
+"마지막으로 각 반응 구성 요소는 ``solution.mixture`` 커넥터에 연결합니다."
 
-#: ../../source/components/components/chem_comps.rst:180
+
+
+#: ../../source/components/components/chem_comps.rst:179
 msgid ""
 "Simulating this system for 10 seconds yields the following concentration "
 "trajectories:"
 msgstr ""
+"이 시스템을 10초 동안 시뮬레이션하면 다음과 같은 농도 궤적을 얻을 수 있습니다."
 
-#: ../../source/components/components/chem_comps.rst:185
-msgid "#.. plot:: ../plots/ABX.py #   :include-source: no"
-msgstr ""
-
-#: ../../source/components/components/chem_comps.rst:189
+#: ../../source/components/components/chem_comps.rst:186
 msgid "Conclusion"
 msgstr ""
+"종합(Conclusion)"
+
+#: ../../source/components/components/chem_comps.rst:188
+msgid ""
+"From our earlier discussion of this chemical system, you may recall that "
+"the resulting system of equations was:"
+msgstr ""
+"이 화학 시스템에 대한 이전 논의에서 방정식의 결과 시스템이 다음과 같다는 것을 기억할 수 있습니다."
 
 #: ../../source/components/components/chem_comps.rst:191
 msgid ""
-"From our earlier discussion of this chemical system, you may recall that the"
-" resulting system of equations was:"
+"\\frac{\\mathrm{d}[A]}{\\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] \\\\ "
+"\\frac{\\mathrm{d}[B]}{\\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] -k_3 [B] "
+"[X] \\\\ \\frac{\\mathrm{d}[X]}{\\mathrm{d}t} &= \\phantom{-}k_1 [A] [B] "
+"- k_2 [X] -k_3 [B] [X]"
 msgstr ""
 
-#: ../../source/components/components/chem_comps.rst:202
+#: ../../source/components/components/chem_comps.rst:197
 msgid ""
-"Each equation represents the accumulation of a particular species and each "
-"term on the right hand side of those equations is computing the net flow of "
-"that particular species into the control volume. Constructing this system by"
-" hand for even a relatively small number of participating species is rife "
-"with opportunities to introduce errors. By using a component oriented "
-"approach instead, we never had to assemble such a system of equations.  As a"
-" result, these equations were generated automatically.  By automating this "
-"process, we can avoid many potential errors and the time required to "
-"identify and fix them."
+"Each equation represents the accumulation of a particular species and "
+"each term on the right hand side of those equations is computing the net "
+"flow of that particular species into the control volume. Constructing "
+"this system by hand for even a relatively small number of participating "
+"species is rife with opportunities to introduce errors. By using a "
+"component oriented approach instead, we never had to assemble such a "
+"system of equations.  As a result, these equations were generated "
+"automatically.  By automating this process, we can avoid many potential "
+"errors and the time required to identify and fix them."
 msgstr ""
+"각 방정식은 특정 종의 누적을 나타내며 해당 방정식의 오른쪽에 있는 각 항은 해당 특정 종의 제어 볼륨으로의 순 흐름을 계산합니다. "
+"상대적으로 적은 수의 참여 종에 대해서도 이 시스템을 수작업으로 구성하면 오류가 발생할 가능성이 많습니다. "
+"대신 구성 요소 중심 접근 방식을 사용함으로써  그러한 방정식 시스템을 조립할 필요가 없었습니다."
+"결과적으로 이러한 방정식이 자동으로 생성되었습니다. "
+"이 프로세스를 자동화함으로써 많은 잠재적 오류와 이를 식별하고 수정하는 데 필요한 시간을 피할 수 있습니다."
 
-#: ../../source/components/components/chem_comps.rst:15
-msgid "enumeration"
-msgstr ""
+
+#~ msgid "o.. _chem-components:"
+#~ msgstr ""
+
+#~ msgid "``X+B->R+S``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Finally, our last reaction converts "
+#~ "molecules of ``X`` and ``B`` into "
+#~ "molecules of ``R`` and ``S``:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We do not track the concentration "
+#~ "of the ``R`` and ``S`` species "
+#~ "since they are simply byproducts and "
+#~ "do not participate in any other "
+#~ "reactions.  This model follows the same"
+#~ " familiar pattern as before with the"
+#~ " exception that the ``A`` species is"
+#~ " not involved."
+#~ msgstr ""
+
+#~ msgid "#.. plot:: ../plots/ABX.py #   :include-source: no"
+#~ msgstr ""
+
+#~ msgid "enumeration"
+#~ msgstr ""
+

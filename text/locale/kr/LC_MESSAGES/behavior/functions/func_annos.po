@@ -1,47 +1,62 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/functions/func_annos.rst:4
 msgid "Function Annotations"
 msgstr ""
+"함수 주석(Function Annotations)"
 
 #: ../../source/behavior/functions/func_annos.rst:6
 msgid ""
-"We've already discussed :ref:`annotations` in general.  Modelica includes a "
-"number of standard annotations that are specifically used in conjunction "
-"with functions.  These meaning of these annotations is formally defined in "
-"the Modelica Specification.  In this section, we'll talk about the three "
-"general categories of annotations for functions and provide some discussion "
-"of why you need them and how to use them."
+"We've already discussed :ref:`annotations` in general.  Modelica includes"
+" a number of standard annotations that are specifically used in "
+"conjunction with functions.  These meaning of these annotations is "
+"formally defined in the Modelica Specification.  In this section, we'll "
+"talk about the three general categories of annotations for functions and "
+"provide some discussion of why you need them and how to use them."
 msgstr ""
+"이미 일반적인 주석에 대해 논의했지만, 함수와 함께 특히 많이 사용하는 여러 표준 주석을 다루어 보겠습니다. "
+"이러한 주석의 의미는 모델리카 사양에 공식적으로 모두 정의되어 있습니다. "
+"하지만, 이 섹션에서는 함수에 대한 주석의 세 가지 일반적인 범주에 대해 이야기를 하고 주석이 필요한 이유와 사용 방법에 대해 설명하고자 합니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:15
 msgid "Mathematical Annotations"
 msgstr ""
+"수치적 주석(Mathematical Annotations)"
 
 #: ../../source/behavior/functions/func_annos.rst:17
 msgid ""
-"The first class of annotations are ones that provide additional mathematical"
-" information about the function.  Because functions are written using "
-"``algorithm`` sections, it is not generally possible to derive equations for"
-" the behavior of the function and many symbolic manipulations are therefore "
-"not possible.  However, using the annotations in this section allows us to "
-"augment the function definition with such information."
+"The first class of annotations are ones that provide additional "
+"mathematical information about the function.  Because functions are "
+"written using ``algorithm`` sections, it is not generally possible to "
+"derive equations for the behavior of the function and many symbolic "
+"manipulations are therefore not possible.  However, using the annotations"
+" in this section allows us to augment the function definition with such "
+"information."
 msgstr ""
+"첫번째로 다루는 것은, 함수에 대한 추가적인 수학적 정보를 주석이 제공한다는 것 입니다."
+"함수는 ``algorithm`` 섹션을 사용하여 작성되기 때문에 일반적으로 함수의 동작에 대한 방정식을 유도하는 것이 불가능하며,"
+"따라서 많은 기호 조작(symbolic manipulations)이 불가능합니다."
+"그러나 이 섹션의 주석을 사용하면 이러한 정보로 함수 정의를 확장할 수 있습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:26
 msgid "``derivative``"
 msgstr ""
+"도함수(``derivative``)"
 
 #: ../../source/behavior/functions/func_annos.rst:30
 msgid ""
@@ -50,122 +65,181 @@ msgid ""
 "compute the derivative of a given function.  This is done by adding the "
 "``derivative`` annotation in the function."
 msgstr ""
+":ref:`polynomial-evaluation` 예제에서 본 것처럼 모델리카 컴파일러에 주어진 함수의 도함수를 계산하는 방법을 알려주고 싶은 상황이 있습니다. "
+"이는 함수에 ``derivative`` 주석을 추가하여 수행됩니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:36
 msgid "Simple First Derivative"
 msgstr ""
+"간단한 1차 도함수(Simple First Derivative)"
 
 #: ../../source/behavior/functions/func_annos.rst:38
 msgid ""
 "The basic use of the ``derivative`` annotation is to specify the name of "
-"another Modelica function that computes the first derivative of the function"
-" being annotated.  For example:"
+"another Modelica function that computes the first derivative of the "
+"function being annotated.  For example:"
 msgstr ""
+"``derivative`` 주석의 기본 용도는 주석이 달린 함수의 1차 도함수를 계산하는 다른 모델리카 함수의 이름을 지정하는 것입니다. "
+"예를 들어 아래와 같습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:63
 msgid ""
-"Note that the first arguments to the derivative function, ``df``, in this "
-"case, are the same as for the original function, ``f``.  Those arguments are"
-" then followed by the differential versions of the input arguments to the "
-"original function.  Finally, the output(s) of the derivative function are "
-"the differential versions of the output(s) of the original function.  It "
-"sounds complicated, but hopefully the same code conveys how simple the "
-"construction really is."
+"Note that the first arguments to the derivative function, ``df``, in this"
+" case, are the same as for the original function, ``f``.  Those arguments"
+" are then followed by the differential versions of the input arguments to"
+" the original function.  Finally, the output(s) of the derivative "
+"function are the differential versions of the output(s) of the original "
+"function.  It sounds complicated, but hopefully the same code conveys how"
+" simple the construction really is."
 msgstr ""
+"이 경우 미분 함수 ``df`` 에 대한 첫 번째 인수는 원래 함수 ``f`` 와 동일하며, 인수 다음에는 원래 함수에 대한 입력 인수의 미분한 버전이 옵니다. "
+"마지막으로 미분 함수의 출력은 원래 함수 출력의 미분 버전입니다. "
+"복잡하게 들리지만 동일한 기능을 코드로 실제 구성 할 때는 정말 간단하다는 사실을 알게 될 것입니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:71
 msgid ""
 "Given such a Modelica function, the Modelica compiler can use such a "
 "function to compute various derivatives, *e.g.*,"
 msgstr ""
+"모델리카 함수가 주어지면 모델리카 컴파일러는 이러한 함수를 사용하여 *예제* 와 같은 다양한 도함수를 계산할 수 있습니다."
+
+#: ../../source/behavior/functions/func_annos.rst:74
+msgid ""
+"\\frac{\\mathrm{d}f}{\\mathrm{d}v}(x,y) = df(x, y, \\frac{\\partial "
+"x}{\\partial v}, \\frac{\\partial y}{\\partial v})"
+msgstr ""
 
 #: ../../source/behavior/functions/func_annos.rst:80
 msgid "Insensitivity to Some Arguments"
 msgstr ""
+"일부 전달 요소(Arguments)의 민감도(Insensitivity to Some Arguments)"
 
 #: ../../source/behavior/functions/func_annos.rst:82
 msgid ""
-"Now consider a case where :math:`\\frac{\\partial y}{\\partial v}` is zero."
-"  The derivative function will be passed this zero value or an array of zero"
-" values, if the argument was an array.  That zero value will then be used in"
-" several calculations inside the derivative function. Most, if not all, of "
-"these will be multiplications and the results of those calculations will "
-"therefore be zeros.  Those zeros will then be added to the final result, but"
-" will have no impact.  In other words, there are many calculations that "
-"could be skipped because they won't have any impact on the result."
+"Now consider a case where :math:`\\frac{\\partial y}{\\partial v}` is "
+"zero.  The derivative function will be passed this zero value or an array"
+" of zero values, if the argument was an array.  That zero value will then"
+" be used in several calculations inside the derivative function. Most, if"
+" not all, of these will be multiplications and the results of those "
+"calculations will therefore be zeros.  Those zeros will then be added to "
+"the final result, but will have no impact.  In other words, there are "
+"many calculations that could be skipped because they won't have any "
+"impact on the result."
 msgstr ""
+"이제 :math:`\frac{\partial y}{\partial v}` 가 0인 경우를 생각해 보겠습니다."
+"미분 함수는 0 값(또는 인수가 배열인 경우 0으로된 배열)을 전달합니다. "
+"그런 다음 이 0 값은 미분 함수 내부의 여러 계산에 사용하는데, 전부는 아니더라도 대부분은 곱셈이므로 계산 결과는 0이 됩니다."
+"그러면 이러한 0이 최종 결과에 추가되지만 영향을 미치지는 않고, 결과에 영향을 주지 않기 때문에 건너뛸 수 있는 계산이 많이 존재합니다."
+
+
 
 #: ../../source/behavior/functions/func_annos.rst:92
 msgid ""
-"In such cases, Modelica offers a way to avoid these calculations.  If the "
-"Modelica compiler knows *a priori* that one of the differentials is zero, it"
-" can check (among the set of ``derivative`` annotations) if there are any "
-"functions that compute the derivative for that case. These cases are "
-"specified using the ``zeroDerivative`` argument to the ``derivative`` "
-"annotation.  So, in the case of our example function ``f``, we could add the"
-" following annotation:"
+"In such cases, Modelica offers a way to avoid these calculations.  If the"
+" Modelica compiler knows *a priori* that one of the differentials is "
+"zero, it can check (among the set of ``derivative`` annotations) if there"
+" are any functions that compute the derivative for that case. These cases"
+" are specified using the ``zeroDerivative`` argument to the "
+"``derivative`` annotation.  So, in the case of our example function "
+"``f``, we could add the following annotation:"
 msgstr ""
+"모델리카는 이러한 계산을 피할 수 있는 방법을 제공합니다."
+"모델리카 컴파일러가 미분 중 하나가 0이라는 것을 *선험적으로* 알고 있는 경우 해당 사례에 대한 미분을 계산하는 함수가 정의되어 있는지 (``derivative`` 주석 집합 중에서) 확인할 수 있는데,"
+"이러한 경우는 ``derivative`` 주석에 ``zeroDerivative`` 인수를 사용하여 지정합니다."
+"예제 함수 ``f`` 의 경우 다음 주석을 추가할 수 있습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:111
 msgid "where ``df_onlyx`` would then be defined as:"
 msgstr ""
+"여기서 ``df_onlyx`` 는 다음과 같이 정의합니다."
 
 #: ../../source/behavior/functions/func_annos.rst:124
 msgid ""
 "Note that the ``dy`` term is not included here.  This function is "
-"specifically for cases where ``dy`` is zero.  Because ``dy`` doesn't appear "
-"in the arguments, this function includes only those calculations involving "
-"``dx``."
+"specifically for cases where ``dy`` is zero.  Because ``dy`` doesn't "
+"appear in the arguments, this function includes only those calculations "
+"involving ``dx``."
 msgstr ""
+"``dy`` 는 이 함수에 포함되어 있지 않습니다. "
+"이 함수는 ``dy`` 가 0인 특별한 경우에 사용하며, ``dy`` 가 인수에 나타나지 않기 때문에 ``dx`` 와 관련된 계산만 포함 합니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:130
 msgid "Second Derivatives"
 msgstr ""
+"2차 도함수(Second Derivatives)"
 
 #: ../../source/behavior/functions/func_annos.rst:132
 msgid ""
-"There are a few more variations worth covering here.  The first is how to "
-"specify what the **second** derivative of a function is.  This is done by "
-"adding an ``order`` argument.  Note that a function can have multiple "
+"There are a few more variations worth covering here.  The first is how to"
+" specify what the **second** derivative of a function is.  This is done "
+"by adding an ``order`` argument.  Note that a function can have multiple "
 "``derivative`` annotations, *e.g.,*"
 msgstr ""
+"여기에서 다룰 가치가 있는 몇 가지 변형된 형태가 더 있습니다. "
+"첫 번째는 함수의 **2차** 도함수를 지정하는 방법이고, ``order`` 인수를 추가하면 됩니다."
+"함수는 여러 ``derivative`` 주석을 가질 수 있습니다. "
+"*예를 들면* 아래와 같습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:165
 msgid ""
-"Hopefully there are no real surprises here.  In order to compute the second "
-"derivative, it is necessary to add an additional annotation ``derivative`` "
-"annotation to the original function, *i.e.,*"
+"Hopefully there are no real surprises here.  In order to compute the "
+"second derivative, it is necessary to add an additional annotation "
+"``derivative`` annotation to the original function, *i.e.,*"
 msgstr ""
+"여기에서 어떻게 해야할 지 당황하지 않았기를 바랍니다.  "
+"2차 도함수를 계산하기 위해서는 원래 함수에 ``derivative`` 주석을 추가해야 합니다. "
+"*즉,* 아래와 같습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:173
 msgid ""
 "This additional annotation has an additional argument ``order`` which "
 "indicates which derivative that function computes."
 msgstr ""
+"이 추가 주석에는 함수가 계산하는 도함수를 나타내는 추가 인수 ``order`` 가 있습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:177
 msgid "Non-Real Arguments"
 msgstr ""
+"Non-Real 전달인자(Non-Real Arguments)"
 
 #: ../../source/behavior/functions/func_annos.rst:179
 msgid ""
-"There is one additional complication to discuss.  What if the function has "
-"arguments that don't represent real numbers, *e.g.*,"
+"There is one additional complication to discuss.  What if the function "
+"has arguments that don't represent real numbers, *e.g.*,"
 msgstr ""
+"논의해야 할 복합적인 문제가 하나 더 있습니다."
+"함수에 실수를 나타내지 않는 인수가 있는 경우 입니다."
+"예를 들면 아래와 같습니다. "
+
 
 #: ../../source/behavior/functions/func_annos.rst:192
 msgid ""
-"Here, it makes no sense to take the derivative of this function with respect"
-" to the ``y`` argument, since it is an integer.  Any non-real argument can "
-"be ignored when formulating the derivative.  So, if we wished to compute the"
-" derivative of this function, we would do it as follows:"
+"Here, it makes no sense to take the derivative of this function with "
+"respect to the ``y`` argument, since it is an integer.  Any non-real "
+"argument can be ignored when formulating the derivative.  So, if we "
+"wished to compute the derivative of this function, we would do it as "
+"follows:"
 msgstr ""
+"여기에서 ``y`` 인수와 관련하여 이 함수의 미분을 취하는 것은 의미가 없습니다. "
+"왜냐하면 그것이 정수이기 때문입니다."
+"도함수를 공식화할 때 모든 비실수 인수는 무시할 수 있습니다. "
+"따라서 이 함수의 도함수를 계산하려면 다음과 같이 하면 됩니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:218
 msgid ""
-"In other words, the differential arguments only apply to arguments that are "
-"real."
+"In other words, the differential arguments only apply to arguments that "
+"are real."
 msgstr ""
+"즉, 미분 인수는 실제 인수에만 적용됩니다."
 
 #: ../../source/behavior/functions/func_annos.rst:223
 msgid "``inverse``"
@@ -175,34 +249,47 @@ msgstr ""
 msgid ""
 "During our discussion on :ref:`nonlinearities`, we showed how the "
 "``inverse`` annotation can be used to tell the Modelica compiler how to "
-"compute the inverse of a function.  The goal of an inverse function is to "
-"solve explicitly for one of the current function's input arguments.  As "
-"such, the ``inverse`` annotation contains an explicit equation involving the"
-" input and output variables of the current function, but used in conjunction"
-" with another function to explicitly compute one of the input arguments."
+"compute the inverse of a function.  The goal of an inverse function is to"
+" solve explicitly for one of the current function's input arguments.  As "
+"such, the ``inverse`` annotation contains an explicit equation involving "
+"the input and output variables of the current function, but used in "
+"conjunction with another function to explicitly compute one of the input "
+"arguments."
 msgstr ""
+":ref:`nonlinearities` 에 대한 토론 중에 ``inverse`` 주석을 사용하여 모델리카 컴파일러에 함수의 역을 계산하는 방법을 알려주는 방법을 다루었습니다."
+"역함수의 목표는 현재 함수의 입력 인수 중 하나에 대해 명시적으로 해결하는 것입니다."
+"이와 같이 ``inverse`` 주석에는 현재 함수의 입력 및 출력 변수를 포함하는 명시적 방정식이 포함되지만 입력 인수 중 하나를 명시적으로 계산하기 위해 다른 함수와 함께 사용합니다."
+
+
 
 #: ../../source/behavior/functions/func_annos.rst:236
 msgid "For example, for a Modelica function defined as follows:"
 msgstr ""
+"예를 들어 다음과 같이 정의된 모델리카 함수의 경우"
+
 
 #: ../../source/behavior/functions/func_annos.rst:249
 msgid ""
-"we see that ``b`` can be computed by passing ``a`` and ``c`` as arguments to"
-" the function ``h_inv_b`` which would be defined as follows:"
+"we see that ``b`` can be computed by passing ``a`` and ``c`` as arguments"
+" to the function ``h_inv_b`` which would be defined as follows:"
 msgstr ""
+"정의되는 ``h_inv_b`` 함수에 ``a`` 와 ``c`` 를 인수로 전달하여 ``b`` 를 계산할 수 있음을 알 수 있습니다."
 
 #: ../../source/behavior/functions/func_annos.rst:265
 msgid "Code Generation"
 msgstr ""
+"코드 생성(Code Generation)"
 
 #: ../../source/behavior/functions/func_annos.rst:267
 msgid ""
-"The next class of annotations are related to how function definitions are "
-"translated into code for simulation.  These annotations allow the model "
+"The next class of annotations are related to how function definitions are"
+" translated into code for simulation.  These annotations allow the model "
 "developer to provide hints to the Modelica compiler on how the code "
 "generation process should be done."
 msgstr ""
+"주석에 대해 다음에 다룰 주제는 함수 정의가 시뮬레이션을 위해 코드로 변환되는 방식과 관련됩니다."
+"이러한 주석을 통해 모델 개발자는 코드 생성 프로세스를 수행하는 방법에 대한 힌트를 모델리카 컴파일러에게 제공할 수 있습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:275
 #: ../../source/behavior/functions/func_annos.rst:333
@@ -213,23 +300,33 @@ msgstr ""
 msgid ""
 "The ``Inline`` annotation is a hint to the Modelica compiler that the "
 "statements in the function should be \"inlined\".  The value of the "
-"annotation is used to suggest whether inlining should be done.  The default "
-"value (if no ``Inline`` annotation is present) is ``false``. The following "
-"is a function that uses the ``Inline`` annotation:"
+"annotation is used to suggest whether inlining should be done.  The "
+"default value (if no ``Inline`` annotation is present) is ``false``. The "
+"following is a function that uses the ``Inline`` annotation:"
 msgstr ""
+"``Inline`` 주석은 함수의 명령문이 "inline" 되어야 한다는 모델리카 컴파일러에게 주는 힌트이며, 주석 값은 인라인을 수행해야 하는지 여부를 제안하는 데 사용합니다. "
+"기본값(``Inline`` 주석이 없는 경우)은 ``false`` 입니다."
+
+"다음은 ``Inline`` 주석을 사용하는 함수입니다:"
+
 
 #: ../../source/behavior/functions/func_annos.rst:296
 msgid ""
 "Here we see that the ``Inline`` annotation suggests that the Modelica "
-"compiler should inline the ``SimpleCalculation`` function.  The function is "
-"inlined by replacing invocations of the function with the statements in the "
-"function that compute the output result. This is useful for functions that "
-"perform very simple calculations. In those cases, the \"cost\" (in CPU time)"
-" of calling the function is on the same order of magnitude as the cost of "
-"the work performed by the function.  By inlining the function, the cost of "
-"the function call can be eliminated while still preserving the purpose of "
-"the function."
+"compiler should inline the ``SimpleCalculation`` function.  The function "
+"is inlined by replacing invocations of the function with the statements "
+"in the function that compute the output result. This is useful for "
+"functions that perform very simple calculations. In those cases, the "
+"\"cost\" (in CPU time) of calling the function is on the same order of "
+"magnitude as the cost of the work performed by the function.  By inlining"
+" the function, the cost of the function call can be eliminated while "
+"still preserving the purpose of the function."
 msgstr ""
+"여기에서 ``Inline`` 주석은 모델리카 컴파일러가 ``SimpleCalculation`` 함수를 인라인해야 함을 시사합니다."
+"함수 호출을 출력 결과를 계산하는 함수의 명령문으로 대체하여 함수가 인라인되며, 매우 간단한 계산을 수행하는 함수에 유용합니다. "
+"함수를 호출하는 "비용"(CPU 시간)은 함수가 수행하는 작업의 비용과 같은 수준인데, 이런경우 함수를 인라인하면 목적을 유지하면서 함수 호출 비용을 제거할 수 있습니다."
+
+
 
 #: ../../source/behavior/functions/func_annos.rst:306
 msgid ""
@@ -239,6 +336,10 @@ msgid ""
 "function.  It is not necessary possible (or even desirable) to inline a "
 "function in general."
 msgstr ""
+"``Inline`` 기능은 모델리카 컴파일러에 대한 힌트일 뿐이며, 컴파일러는 함수를 인라인할 의무가 없습니다. "
+"또한 함수를 인라인하는 컴파일러의 기능은 함수의 복잡성에 따라 달라집니다."
+"일반적으로 함수를 인라인하는 것이 반드시 가능하거나 바람직하지는 않습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:313
 #: ../../source/behavior/functions/func_annos.rst:333
@@ -248,27 +349,34 @@ msgstr ""
 #: ../../source/behavior/functions/func_annos.rst:317
 msgid ""
 "Much like the :ref:`inline-anno` annotation, the ``LateInline`` function "
-"tells the Modelica compiler that it would be more efficient to inline the "
-"function.  The ``LateInline`` annotation is also assigned a ``Boolean`` "
+"tells the Modelica compiler that it would be more efficient to inline the"
+" function.  The ``LateInline`` annotation is also assigned a ``Boolean`` "
 "value to specify whether the function should be inlined or not.  The "
 "difference between the ``Inline`` and ``LateInline`` annotations is that "
-"``LateInline`` indicates that inlining should be performed after symbolic "
-"manipulation has been performed.  A full discussion of the potential "
-"interactions between inlining and other symbolic manipulations is beyond the"
-" scope of this book."
+"``LateInline`` indicates that inlining should be performed after symbolic"
+" manipulation has been performed.  A full discussion of the potential "
+"interactions between inlining and other symbolic manipulations is beyond "
+"the scope of this book."
 msgstr ""
+":ref:`inline-anno` 주석과 마찬가지로 ``LateInline`` 함수는 모델리카 컴파일러에게 함수를 인라인하는 것이 더 효율적일 것이라고 알려줍니다."
+"``LateInline`` 주석에는 함수를 인라인할지 여부를 지정하는 ``Boolean`` 값도 할당합니다."
+"``Inline`` 주석과 ``LateInline`` 주석의 차이점은 ``LateInline`` 은 기호 조작이 수행된 후에 인라인을 수행 해야 함을 나타낸다는 점 입니다."
+"하지만, 인라인과 다른 기호 조작 간의 잠재적인 상호 작용에 대한 자세한 논의는 이 책의 범위를 벗어나므로 다루지 않겠습니다."
+
+
 
 #: ../../source/behavior/functions/func_annos.rst:328
 msgid ""
-"It should be noted that the ``LateInline`` annotation takes precedence over "
-"the ``Inline`` annotation if they are both applied to a function, *i.e.,*"
+"It should be noted that the ``LateInline`` annotation takes precedence "
+"over the ``Inline`` annotation if they are both applied to a function, "
+"*i.e.,*"
 msgstr ""
+"``LateInline`` 주석이 둘 다 함수에 적용되는 경우 ``Inline`` 주석보다 우선한다는 점에 유의해야 합니다. *즉,* 아래와 같습니다."
 
 #: ../../source/behavior/functions/func_annos.rst:333
 msgid "Interpretation"
 msgstr ""
 
-#: ../../source/behavior/functions/func_annos.rst:335
 #: ../../source/behavior/functions/func_annos.rst:335
 #: ../../source/behavior/functions/func_annos.rst:336
 #: ../../source/behavior/functions/func_annos.rst:337
@@ -281,7 +389,6 @@ msgstr ""
 
 #: ../../source/behavior/functions/func_annos.rst:336
 #: ../../source/behavior/functions/func_annos.rst:337
-#: ../../source/behavior/functions/func_annos.rst:338
 #: ../../source/behavior/functions/func_annos.rst:338
 msgid "``true``"
 msgstr ""
@@ -298,14 +405,18 @@ msgstr ""
 #: ../../source/behavior/functions/func_annos.rst:344
 msgid "External Functions"
 msgstr ""
+"외부 함수(External Functions)"
 
 #: ../../source/behavior/functions/func_annos.rst:346
 msgid ""
-"The final class of annotations are related to functions that are defined as "
-"``external``.  Such functions often depend on external include files or "
-"libraries.  These annotations inform the Modelica compiler of these "
+"The final class of annotations are related to functions that are defined "
+"as ``external``.  Such functions often depend on external include files "
+"or libraries.  These annotations inform the Modelica compiler of these "
 "dependencies and where to locate them."
 msgstr ""
+"주석에 대해 마지막으로 알아야 할 것은 ``external`` 로 정의된 함수 입니다."
+"이러한 함수는 외부에 포함된 파일이나 라이브러리에 의존 하는 경우 도 있는데, 이러한 주석은 종속성과 해당 위치를 모델리카 컴파일러에 알려줍니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:354
 msgid "``Include``"
@@ -314,17 +425,24 @@ msgstr ""
 #: ../../source/behavior/functions/func_annos.rst:358
 msgid ""
 "The ``Include`` annotations is used whenever the code generated by a "
-"Modelica compiler requires an include statement.  Typically this is required"
-" when external libraries are being referenced.  The value of the ``Include``"
-" annotation should be the string that should be inserted into the generated "
-"code, *e.g.,*"
+"Modelica compiler requires an include statement.  Typically this is "
+"required when external libraries are being referenced.  The value of the "
+"``Include`` annotation should be the string that should be inserted into "
+"the generated code, *e.g.,*"
 msgstr ""
+"``Include`` 주석은 모델리카 컴파일러에서 생성된 코드에 include 문이 필요할 때마다 사용되며,"
+"일반적으로 이것은 외부 라이브러리를 참조할 때 필요합니다. "
+"``Include`` 주석의 값은 생성된 코드에 삽입되어야 하는 것에 대한 문자열 입니다. "
+
 
 #: ../../source/behavior/functions/func_annos.rst:370
 msgid ""
 "The value of the ``Include`` annotation is a string.  If it included "
 "embedded strings, they need to be escaped."
 msgstr ""
+"``Include`` 주석의 값은 문자열입니다. "
+"만약 여기 문자열이 포함된 경우에는 이스케이프해야 합니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:376
 msgid "``IncludeDirectory``"
@@ -334,9 +452,13 @@ msgstr ""
 msgid ""
 "As already discussed, the :ref:`include-anno` annotation allows include "
 "directives to be inserted into generated code.  The ``IncludeDirectory`` "
-"annotation specifies what directory should be searched to find the content "
-"specified with the ``Include`` annotation."
+"annotation specifies what directory should be searched to find the "
+"content specified with the ``Include`` annotation."
 msgstr ""
+"앞서 살펴본 바와 같이 :ref:`include-anno` 주석을 사용하면 생성된 코드에 삽입할 수 있고,  "
+"``IncludeDirectory`` 주석은 ``Include`` 주석으로 지정된 콘텐츠를 찾기 위해 검색해야 하는 디렉토리를 지정합니다."
+
+
 
 #: ../../source/behavior/functions/func_annos.rst:386
 msgid ""
@@ -344,10 +466,14 @@ msgid ""
 "directory or it can be a URL.  For example, the default value for the "
 "``IncludeDirectory`` annotation is:"
 msgstr ""
+"이 주석의 값은 문자열이며, 디렉토리를 나타내거나 URL을 표현할 수 있습니다. "
+"예를 들어 ``IncludeDirectory`` 주석의 기본값은 다음과 같습니다."
 
 #: ../../source/behavior/functions/func_annos.rst:394
 msgid "We'll explain the meaning of these :ref:`modelica-urls` shortly."
 msgstr ""
+"이러한 :ref:`modelica-urls` 의 의미를 곧 설명하겠습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:397
 msgid "``Library``"
@@ -355,21 +481,27 @@ msgstr ""
 
 #: ../../source/behavior/functions/func_annos.rst:401
 msgid ""
-"The ``Library`` annotation is used to specify any compiled libraries that a "
-"function might depend on.  The value of library can be either a simple "
-"string, representing the name of the library, or an array of such strings, "
-"*i.e.,*"
+"The ``Library`` annotation is used to specify any compiled libraries that"
+" a function might depend on.  The value of library can be either a simple"
+" string, representing the name of the library, or an array of such "
+"strings, *i.e.,*"
 msgstr ""
+"``Library`` 주석은 함수가 의존할 수 있는 컴파일된 라이브러리를 지정하는 데 사용되며, "
+"library의 값은 라이브러리의 이름을 나타내는 간단한 문자열이거나 이러한 문자열의 배열일 수 있습니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:410
 msgid "or"
 msgstr ""
+"혹은 "
 
 #: ../../source/behavior/functions/func_annos.rst:416
 msgid ""
-"The Modelica compiler will then use this information during the \"linking\" "
-"of the generated code."
+"The Modelica compiler will then use this information during the "
+"\"linking\" of the generated code."
 msgstr ""
+"모델리카 컴파일러는 생성된 코드를 "연결"하는 동안 이 정보를 사용합니다."
+
 
 #: ../../source/behavior/functions/func_annos.rst:420
 msgid "``LibraryDirectory``"
@@ -377,53 +509,44 @@ msgstr ""
 
 #: ../../source/behavior/functions/func_annos.rst:424
 msgid ""
-"We have the same issue with ``Library`` that we have with ``Include``. The "
-"``Library`` annotation tells us what we need to add, but not where to find "
-"it.  In this way, the ``LibraryDirectory`` annotation serves the same role "
-"as the :ref:`include-directory-anno` annotation.  Like the "
-"``IncludeDirectory`` annotation, it can also be a URL.  It's default value "
-"is:"
+"We have the same issue with ``Library`` that we have with ``Include``. "
+"The ``Library`` annotation tells us what we need to add, but not where to"
+" find it.  In this way, the ``LibraryDirectory`` annotation serves the "
+"same role as the :ref:`include-directory-anno` annotation.  Like the "
+"``IncludeDirectory`` annotation, it can also be a URL.  It's default "
+"value is:"
 msgstr ""
+"``Include`` 와 같은 문제가 ``Library`` 에도 존재합니다. "
+"``Library`` 주석은 추가해야 할 항목을 알려주지만 찾을 위치는 알려주지 않습니다. "
+"이런 식으로 ``LibraryDirectory`` 주석은 :ref:`include-directory-anno` 주석과 같은 역할을 합니다. "
+"``IncludeDirectory`` 주석과 마찬가지로 URL일 수도 있습니다. "
+"기본값은 다음과 같습니다."
 
-#: ../../source/behavior/functions/func_annos.rst:28
-#: ../../source/behavior/functions/func_annos.rst:225
-#: ../../source/behavior/functions/func_annos.rst:277
-#: ../../source/behavior/functions/func_annos.rst:315
-#: ../../source/behavior/functions/func_annos.rst:356
-#: ../../source/behavior/functions/func_annos.rst:378
-#: ../../source/behavior/functions/func_annos.rst:399
-#: ../../source/behavior/functions/func_annos.rst:422
-msgid "annotations"
-msgstr ""
 
-#: ../../source/behavior/functions/func_annos.rst:28
-msgid "standard annotations; derivative"
-msgstr ""
+#~ msgid "annotations"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/func_annos.rst:225
-msgid "standard annotations; inverse"
-msgstr ""
+#~ msgid "standard annotations; derivative"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/func_annos.rst:277
-msgid "standard annotations; Inline"
-msgstr ""
+#~ msgid "standard annotations; inverse"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/func_annos.rst:315
-msgid "standard annotations; LateInline"
-msgstr ""
+#~ msgid "standard annotations; Inline"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/func_annos.rst:356
-msgid "standard annotations; Include"
-msgstr ""
+#~ msgid "standard annotations; LateInline"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/func_annos.rst:378
-msgid "standard annotations; IncludeDirectory"
-msgstr ""
+#~ msgid "standard annotations; Include"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/func_annos.rst:399
-msgid "standard annotations; Library"
-msgstr ""
+#~ msgid "standard annotations; IncludeDirectory"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/func_annos.rst:422
-msgid "standard annotations; LibraryDirectory"
-msgstr ""
+#~ msgid "standard annotations; Library"
+#~ msgstr ""
+
+#~ msgid "standard annotations; LibraryDirectory"
+#~ msgstr ""
+

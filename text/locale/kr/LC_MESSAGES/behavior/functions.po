@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/functions.rst:4
 msgid "Functions"
 msgstr ""
+"함수(Functions)"
 
 #: ../../source/behavior/functions.rst:6
 msgid ""
@@ -24,6 +27,11 @@ msgid ""
 "functions.  The process of defining functions is the central topic of this "
 "chapter."
 msgstr ""
+"이전 예제(특히 :ref:`array-functions` 에 대한 논의)에서 모델리카의 많은 내장 함수를 사용했습니다."
+"모델리카에는 많은 일반적인 계산을 위한 광범위한 함수 세트가 포함되어 있지만, 여전히 사용자는 자신의 함수를 정의할 수 있는 기능이 필요합니다."
+"그래서 함수 정의 프로세스를 이 섹션에서 다루겠습니다."
+
+
 
 #: ../../source/behavior/functions.rst:13
 msgid ""
@@ -31,11 +39,16 @@ msgid ""
 "defined functions.  Then we'll review the important elements of user defined"
 " functions in Modelica."
 msgstr ""
+"이전의 섹션에서 항상 그랬듯이 사용자 정의 함수의 필요성에 공감하기 위해 몇 가지 예제부터 시작하겠습니다."
+"그런 다음 모델리카에서의 사용자 정의 함수의 중요한 요소를 검토합니다."
+
 
 #: ../../source/behavior/functions.rst:18
 msgid "Examples"
 msgstr ""
+"예제(Examples)"
 
 #: ../../source/behavior/functions.rst:29
 msgid "Review"
 msgstr ""
+"리뷰(Review)"

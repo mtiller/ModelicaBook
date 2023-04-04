@@ -1,406 +1,651 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/architectures/sensor_comparison.rst:4
 msgid "Sensor Comparison"
 msgstr ""
+"센서 비교(Sensor Comparison)"
+
 
 #: ../../source/components/architectures/sensor_comparison.rst:6
 msgid ""
-"Let us start our study of architectures with an example that is similar to "
-"one presented in my previous book [ItPMwM]_.  In it, we will consider the "
-"performance of a control system using several different sensor models."
+"Let us start our study of architectures with an example that is similar "
+"to one presented in my previous book [Tiller2001]_.  In it, we will "
+"consider the performance of a control system using several different "
+"sensor models."
 msgstr ""
+"이전 저서 [Tiller2001]_ 에 제시한 것과 유사한 예제로 아키텍처에 대하 연구를 시작하겠습니다. "
+"여기서는 여러 센서 모델을 사용하는 제어 시스템의 성능을 살펴볼 것 입니다. "
+
 
 #: ../../source/components/architectures/sensor_comparison.rst:14
 msgid "Flat System"
 msgstr ""
+"평형 시스템(Flat System)"
 
 #: ../../source/components/architectures/sensor_comparison.rst:16
 msgid "Our system schematic is structured as follows:"
 msgstr ""
+"시스템 설계도는 다음과 같이 구성되어 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:25
+#: ../../source/components/architectures/sensor_comparison.rst:26
 msgid ""
-"All the components within the purple box represent the plant model. In this "
-"case, it is a simple rotational system involving two rotating inertias "
-"connected via a spring and a damper.  One of the inertias is connected to a "
-"rotational ground by an additional damper.  The green box identifies the "
-"sensor in the system.  The sensor is used to measure the speed of one of the"
-" rotating shafts.  Similarly, the purple box identifies the actuator.  The "
-"actuator applies a torque to the other shaft (the one whose speed is not "
-"measured).  Finally, all the components in the blue box represent the "
-"control system, which tries to keep the measured speed as close as possible "
-"to the setpoint supplied by the signal generator at the top of the diagram."
+"All the components within the magenta box represent the plant model. In "
+"this case, it is a simple rotational system involving two rotating "
+"inertias connected via a spring and a damper.  One of the inertias is "
+"connected to a rotational ground by an additional damper.  The green box "
+"identifies the sensor in the system.  The sensor is used to measure the "
+"speed of one of the rotating shafts.  Similarly, the magenta box "
+"identifies the actuator.  The actuator applies a torque to the other "
+"shaft (the one whose speed is not measured).  Finally, all the components"
+" in the blue box represent the control system, which tries to keep the "
+"measured speed as close as possible to the setpoint supplied by the "
+"signal generator at the top of the diagram."
 msgstr ""
+"보라색 상자 내의 모든 구성 요소는 플랜트 모델을 나타냅니다."
+"이 경우 스프링과 댐퍼를 통해 연결된 두 개의 회전 관성을 포함하는 간단한 회전 시스템이며, 관성 중 하나는 추가 댐퍼에 의해 회전 접지에 연결됩니다."
+"녹색 상자는 시스템의 센서를 식별하는 부분 입니다. "
+"센서는 회전 샤프트 중 하나의 속도를 측정하는 데 사용합니다."
+"자홍색 상자에 있는 액추에이터를 볼 수 있는데, 액추에이터는 다른 샤프트(속도가 측정되지 않은 샤프트)에 토크를 적용합니다."
+"마지막으로 파란색 상자의 모든 구성 요소는 측정된 속도를 다이어그램 상단의 신호 발생기가 제공하는 설정값에 최대한 가깝게 유지하려고 하는 제어 시스템을 나타냅니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:37
+
+
+#: ../../source/components/architectures/sensor_comparison.rst:38
 msgid "We can represent this using the following Modelica code:"
 msgstr ""
+"다음 모델리카 코드를 사용하여 이를 나타낼 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:42
+#: ../../source/components/architectures/sensor_comparison.rst:43
 msgid ""
-"Note that for this particular model, the ``sensor`` component is an instance"
-" of the ``SpeedSensor`` model found in "
-"``Modelica.Mechanics.Rotational.Sensors`` which is an \"ideal\" sensor that "
-"reports the exact solution trajectory.  In other words, it does not "
+"Note that for this particular model, the ``sensor`` component is an "
+"instance of the ``SpeedSensor`` model found in "
+"``Modelica.Mechanics.Rotational.Sensors`` which is an \"ideal\" sensor "
+"that reports the exact solution trajectory.  In other words, it does not "
 "introduce any kind of measurement artifact."
 msgstr ""
+"이 특정 모델의 경우 ``sensor`` 구성 요소는 "이상적인" 센서인 ``Modelica.Mechanics.Rotational.Sensors`` 에 있는 ``SpeedSensor`` 모델의 인스턴스이고, 정확한 해 궤적을 알려줍니다."
+"즉, 어떤 종류의 측정에서의 인위적인 영향(artifact, 아티팩트)도 없습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:48
+
+
+#: ../../source/components/architectures/sensor_comparison.rst:49
 msgid ""
 "In fact, simulating such a system we see that using accurate speed "
-"measurements, the control system is still not quite able to follow the speed"
-" trace:"
+"measurements, the control system is still not quite able to follow the "
+"speed trace:"
 msgstr ""
+"실제로 이러한 시스템을 시뮬레이션하면 정확한 속도 측정을 사용하여 제어 시스템이 여전히 속도 추적을 제대로 따를 수 없다는 것을 알 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:55
+#: ../../source/components/architectures/sensor_comparison.rst:57
 msgid ""
-"We'll discuss why in a moment.  But the problem clearly isn't measurement "
-"artifact since the measured speed is exactly equal to the actual shaft "
+"We'll discuss why in a moment.  But the problem clearly isn't measurement"
+" artifact since the measured speed is exactly equal to the actual shaft "
 "speed."
 msgstr ""
+"그 이유에 대해서는 잠시 후에 논의하겠습니다. "
+"그러나 측정된 속도가 실제 샤프트 속도와 정확히 동일하기 때문에 분명히 측정에서의 인위적인 조작에 의한 문제가 아닙니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:59
+
+#: ../../source/components/architectures/sensor_comparison.rst:61
 msgid ""
-"Now, imagine we wanted to use a more realistic sensor model, like the :ref"
-":`sample-hold-sensor` model developed previously, to see what additional "
-"impact measurement artifact might have on our system performance.  One way "
-"we could do that would be to replace the following lines in the "
-"``FlatSystem`` model:"
+"Now, imagine we wanted to use a more realistic sensor model, like the "
+":ref:`sample-hold-sensor` model developed previously, to see what "
+"additional impact measurement artifact might have on our system "
+"performance.  One way we could do that would be to replace the following "
+"lines in the ``FlatSystem`` model:"
 msgstr ""
+"이제 이전에 개발된 :ref:`sample-hold-sensor` 모델과 같은 보다 현실적인 센서 모델을 사용하여 시스템 성능에 미칠 수 있는 추가적인 측정에서의 인위적인 조작을 확인하고 싶다고 상상해 보십시오."
+"할 수 있는 한 가지 방법은 ``FlatSystem`` 모델에서 다음 줄을"
 
-#: ../../source/components/architectures/sensor_comparison.rst:69
+
+#: ../../source/components/architectures/sensor_comparison.rst:71
 msgid "with these lines:"
 msgstr ""
+"이 다음 줄로 변경하는 것 입니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:75
+
+#: ../../source/components/architectures/sensor_comparison.rst:77
 msgid ""
 "Note that **the only change being made here is the type** of the "
 "``speedSensor`` component.  Simulating this system, we would see the "
 "following performance for the control system:"
 msgstr ""
+"**여기서 변경되는 유일한 사항은** ``speedSensor`` **구성 요소의 자료형** 이라는 점을 기억해야 합니다."
+"이 시스템을 시뮬레이션하면 제어 시스템에 대해 다음과 같은 성능을 볼 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:82
+
+#: ../../source/components/architectures/sensor_comparison.rst:85
 msgid ""
-"In this case, we can see that things are going from bad to worse. While we "
-"were initially unable to track the desired speed closely, now (as a result "
-"of the measurement artifact) our system has become unstable."
+"In this case, we can see that things are going from bad to worse. While "
+"we were initially unable to track the desired speed closely, now (as a "
+"result of the measurement artifact) our system has become unstable."
 msgstr ""
+"이 경우 상황이 악화되고 있음을 알 수 있습니다. "
+"처음에는 원하는 속도를 면밀히 추적할 수 없는 수준이였지만, 이제는 (측정 인위적인 변형의 결과로) 시스템이 불안정해졌습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:88
+
+#: ../../source/components/architectures/sensor_comparison.rst:91
 msgid "Hierarchical System"
 msgstr ""
+"계층적인 시스템(Hierarchical System)"
 
-#: ../../source/components/architectures/sensor_comparison.rst:90
+#: ../../source/components/architectures/sensor_comparison.rst:93
 msgid ""
 "At this point, we'd like to explore this performance issue a bit more to "
-"understand how characteristics of the sensor (*e.g.,* ``sample_rate``) "
+"understand how characteristics of the sensor (*e.g.,* ``sample_time``) "
 "impact performance and potentially what kinds of improvements might "
 "ultimately be required for the control system itself."
 msgstr ""
+"이 시점에서  센서의 특성(*예:* ``sample_time``)이 성능에 어떤 영향을 미치고 잠재적으로 어떤 종류의 개선이 제어 시스템 자체에 궁극적으로 이루어질 수 있는지 이해하기 위해"
+"이 성능 문제를 좀 더 살펴 보겠습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:96
+
+#: ../../source/components/architectures/sensor_comparison.rst:99
 msgid ""
 "If we plan on substituting sensors, actuators and control strategies our "
-"first step should be to organize our system into those subsystems. Doing so,"
-" we end up with the following system model:"
+"first step should be to organize our system into those subsystems. Doing "
+"so, we end up with the following system model:"
 msgstr ""
+"센서, 액추에이터 및 제어 방법을 대체할 계획이라면, 첫 번째 단계는 시스템을 이러한 하위 시스템으로 구성하는 것입니다."
+"이렇게 하면 다음과 같은 시스템 모델이 생성됩니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:105
+
+#: ../../source/components/architectures/sensor_comparison.rst:109
 msgid ""
-"Here we see only four subsystems at the system level.  They correspond to "
-"the subsystems we mentioned a moment ago.  Our Modelica model is now much "
-"simpler because the only declarations we now have are:"
+"Here we see only four subsystems at the system level.  They correspond to"
+" the subsystems we mentioned a moment ago.  Our Modelica model is now "
+"much simpler because the only declarations we now have are:"
 msgstr ""
+"여기에서는 시스템 수준에서 4개의 하위 시스템만 볼 수 있습니다. "
+"그것들은  조금 전에 언급한 하위 시스템에 해당합니다.  모델리카 모델은 이제 가지고 있는 유일한 선언이 다음과 같기 때문에 훨씬 더 간단합니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:113
+
+#: ../../source/components/architectures/sensor_comparison.rst:117
 msgid ""
-"Each subsystem (``plant``, ``actuator``, ``sensor`` and ``controller``) is "
-"implemented by a subsystem in the ``Implementations`` package.  This is an "
-"improvement because it means that if we wanted to change controller models, "
-"we could simply change the type associated with the ``controller`` subsystem"
-" and a different implementation would be used.  This is definitely an "
-"improvement over having to delete the existing controller components, drag "
-"in new ones and then connect everything back up (correctly!)."
+"Each subsystem (``plant``, ``actuator``, ``sensor`` and ``controller``) "
+"is implemented by a subsystem in the ``Implementations`` package.  This "
+"is an improvement because it means that if we wanted to change controller"
+" models, we could simply change the type associated with the "
+"``controller`` subsystem and a different implementation would be used.  "
+"This is definitely an improvement over having to delete the existing "
+"controller components, drag in new ones and then connect everything back "
+"up (correctly!)."
 msgstr ""
+"각 하위 시스템(``plant``, ``actuator``, ``sensor`` 및 ``controller``)은 ``Implementations`` 패키지의 하위 시스템에 의해 구현됩니다. "
+"이는 컨트롤러 모델을 변경하려는 경우 ``controller`` 하위 시스템과 관련된 자료형을 간단히 변경할 수 있고 다른 구현방법을 사용할 수 있다는 것을 의미하기 때문에 기존방식에 비해 개선된 것입니다"
+"기존 컨트롤러 구성 요소를 삭제하고 새 구성 요소를 드래그한 다음 모든 것을 다시 연결해야 하는 것보다 확실히 (올바르게!) 개선된 것입니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:122
+
+
+#: ../../source/components/architectures/sensor_comparison.rst:126
 msgid ""
-"But switching our sensor model to a sample and hold version still involves "
-"editing the text of our model, *i.e.,*"
+"But switching our sensor model to a sample and hold version still "
+"involves editing the text of our model, *i.e.,*"
 msgstr ""
+"그러나 센서 모델을 샘플 앤 홀드 버전으로 전환하려면 여전히 모델의 텍스트를 편집해야 합니다. *즉,* 아래와 같은 방법을 사용해야 합니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:130
+
+#: ../../source/components/architectures/sensor_comparison.rst:134
 msgid ""
-"There are still a couple of issues with this solution.  First, recall that "
-"we changed the implementation to be used by changing the name of the type.  "
-"This raises the question \"What types *can* be used here?\" What if I change"
-" the type of ``sensor`` to ``BasicPlant``?  That wouldn't make any sense.  "
-"But we don't really know that by looking at the model.  But the **bigger** "
-"problem is that to create a model that we end up with two models that are "
-"almost identical.  As we learned :ref:`earlier in the book <dry-"
-"components>`, it is always useful to keep in mind the DRY (Don't Repeat "
-"Yourself) principle.  In these models, we see a lot of redundancy."
+"There are still a couple of issues with this solution.  First, recall "
+"that we changed the implementation to be used by changing the name of the"
+" type.  This raises the question \"What types *can* be used here?\" What "
+"if I change the type of ``sensor`` to ``BasicPlant``?  That wouldn't make"
+" any sense.  But we don't really know that by looking at the model.  But "
+"the **bigger** problem is that to create a model that we end up with two "
+"models that are almost identical.  As we learned :ref:`earlier in the "
+"book <dry-components>`, it is always useful to keep in mind the DRY "
+"(Don't Repeat Yourself) principle.  In these models, we see a lot of "
+"redundancy."
 msgstr ""
+"이 해에는 여전히 몇 가지 문제가 있습니다. 먼저 자료형의 이름을 변경하여 사용할 구현을 변경했습니다. "
+"이것은 사용자에게 "여기서 *어떤* 자료형을 사용할 수 있는가?"라는 질문을 제기하게 합니다. "
+"``sensor`` 자료형을 ``BasicPlant`` 로 변경하면 어떻게 될까요? "
+"사실, 그것은 말이 되지 않지만, 모델만을 보면 이러한 사실에 대해서 실제로 알 수 없습니다. "
+"그러나 **더 큰** 문제는 거의 동일한 두 모델로 끝나는 모델을 만드는 것입니다."
+"이러한 모델에서는 많은 중복성을 찾을 수 있습니다."
+":ref:`책의 앞부분 <dry-components>` 에서 배웠듯이 DRY(Do n't Repeat Yourself) 원칙을 염두에 두는 것이 항상 유용합니다. "
 
-#: ../../source/components/architectures/sensor_comparison.rst:142
+
+#: ../../source/components/architectures/sensor_comparison.rst:146
 msgid "Dealing with Redundancy"
 msgstr ""
+"중복 처리(Dealing with Redundancy)"
 
-#: ../../source/components/architectures/sensor_comparison.rst:144
+#: ../../source/components/architectures/sensor_comparison.rst:148
 msgid ""
 "Imagine we start with our hierarchical model using the ``IdealSensor`` "
 "model:"
 msgstr ""
+"``IdealSensor`` 모델을 사용하여 계층적 모델로 시작한다고 생각해 보겠습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:152
+#: ../../source/components/architectures/sensor_comparison.rst:156
 msgid ""
 "Now, we want to create a variation of this model where the ``sensor`` "
-"component"
+"component can assume different types."
 msgstr ""
+"이제 ``센서`` 구성 요소가 다른 자료형을 가정할 수 있는 이 모델의 변형을 만들려고 할때 어떻게 해야할까요?"
 
-#: ../../source/components/architectures/sensor_comparison.rst:155
-msgid ""
-"Previously, we dealt with redundancy by using inheritance.  We can certainly"
-" use inheritance to pull the subsystems from ``HierarchicalSystem`` into "
-"another model and then change *parameters*, *e.g.,*"
-msgstr ""
 
-#: ../../source/components/architectures/sensor_comparison.rst:166
+#: ../../source/components/architectures/sensor_comparison.rst:159
 msgid ""
-"But we don't want to change parameters, we want to change **types**. If we "
-"could somehow \"overwrite\" previous choices, we could do something like "
-"this:"
+"Previously, we dealt with redundancy by using inheritance.  We can "
+"certainly use inheritance to pull the subsystems from "
+"``HierarchicalSystem`` into another model and then change *parameters*, "
+"*e.g.,*"
 msgstr ""
+"이전에는 상속을 사용하여 중복성을 처리했습니다."
+"확실히 상속을 사용하여 ``HierarchicalSystem`` 의 하위 시스템을 다른 모델로 가져온 다음 *매개변수* 를 예제와 같이 변경할 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:178
-msgid ""
-"This is essentially what we want to do.  But this isn't legal in Modelica "
-"and there are a couple of other problems with this approach.  The first is "
-"that the original model developer might not want to allow such changes.  The"
-" second problem is that we end up with two ``sensor`` components (of "
-"different types, no less).  Even if it truly \"overwrites\" any previous "
-"declaration of the ``sensor`` component, another problem is that we might "
-"type the name wrong for the variable name and end up with two sensors.  "
-"Finally, we still don't have a way to know if it even makes sense to change "
-"``sensor`` into a ``SampleHoldSensor``.  In this case it does, but how do we"
-" ensure that in general?"
-msgstr ""
 
-#: ../../source/components/architectures/sensor_comparison.rst:190
+#: ../../source/components/architectures/sensor_comparison.rst:170
 msgid ""
-"Fortunately, there **is** a way to do almost exactly what we are attempting "
-"here.  But in order to address these other complications, we need to be a "
-"bit more rigorous about it."
+"But we don't want to change parameters, we want to change **types**. If "
+"we could somehow \"overwrite\" previous choices, we could do something "
+"like this:"
 msgstr ""
+"그러나  매개변수를 변경하고 싶지 않고 **자료형** 을 변경하고 싶습니다. "
+"어떻게든 이전 선택을 "덮어쓸" 수 있게 하겠다면 다음과 같이 할 수 있습니다."
+
+
+#: ../../source/components/architectures/sensor_comparison.rst:182
+msgid ""
+"This is essentially what we want to do.  But this isn't legal in Modelica"
+" and there are a couple of other problems with this approach.  The first "
+"is that the original model developer might not want to allow such "
+"changes.  The second problem is that we end up with two ``sensor`` "
+"components (of different types, no less).  Even if it truly "
+"\"overwrites\" any previous declaration of the ``sensor`` component, "
+"another problem is that we might type the name wrong for the variable "
+"name and end up with two sensors.  Finally, we still don't have a way to "
+"know if it even makes sense to change ``sensor`` into a "
+"``SampleHoldSensor``.  In this case it does, but how do we ensure that in"
+" general?"
+msgstr ""
+"이것은 본질적으로  원하는 것입니다."
+"하지만, 이런 접근 방법은 모델리카에서 허용하지 않으며, 이 접근 방식에는 몇 가지 다른 문제가 있습니다. "
+"첫 번째는 원래 모델 개발자가 이러한 변경을 허용하지 않을 수 있다는 것입니다."
+"두 번째 문제는  결국 두 개의 ``센서`` 구성 요소(다른 자료형, 그 이하도 아님)로 끝나게 된다는 것입니다."
+"``sensor`` 구성 요소의 이전 선언을 진정으로 "덮어쓴다"고 해도 또 다른 문제는 변수 이름에 이름을 잘못 입력하여 결국 두 개의 센서로 결론날 수 있다는 것입니다. "
+"마지막으로, ``sensor`` 를 ``SampleHoldSensor`` 로 변경하는 것이 합리적인지 알 수 있는 방법이 아직 없습니다. "
+"(이 경우에는 그렇습니다만 일반적으로 어떻게 보장 할 수 있을까요?)"
+
+
 
 #: ../../source/components/architectures/sensor_comparison.rst:194
+msgid ""
+"Fortunately, there **is** a way to do almost exactly what we are "
+"attempting here.  But in order to address these other complications, we "
+"need to be a bit more rigorous about it."
+msgstr ""
+"다행히 여기에서 시도하고 있는 것과 거의 똑같이 수행할 수 있는 방법이 **있습니다** 만, "
+"다른 중복된 문제를 해결하기 위해 좀 더 엄격하게 적용할 필요는 있습니다."
+
+#: ../../source/components/architectures/sensor_comparison.rst:198
 msgid ""
 "We need to start by indicating that that component is allowed to be "
 "replaced.  We can do this by declaring the ``sensor`` as follows:"
 msgstr ""
+"먼저, 해당 구성 요소를 교체할 수 있음을 나타내는 것으로 시작해야 합니다. "
+"다음과 같이 ``sensor`` 를 선언하여 이를 수행할 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:204
+#: ../../source/components/architectures/sensor_comparison.rst:208
 msgid ""
-"The use of the `replaceable` keyword indicates that when we inherit from the"
-" model, that variable's type can be changed (or, \"redeclared\").  But "
-"remember that this model also has a statement like this one:"
+"The use of the `replaceable` keyword indicates that when we inherit from "
+"the model, that variable's type can be changed (or, \"redeclared\").  But"
+" remember that this model also has a statement like this one:"
 msgstr ""
+"`replaceable` 키워드의 사용은 모델에서 상속할 때 해당 변수의 자료형이 변경(또는 "재선언")될 수 있음을 나타냅니다."
+"그러나, 이 모델에는 다음과 같은 내용도 있음을 기억해야 합니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:214
+
+#: ../../source/components/architectures/sensor_comparison.rst:218
 msgid ""
-"This introduces a complication.  What happens if we replace the ``sensor`` "
-"component with something that **does not have** a ``w`` connector on it?  In"
-" that case, this ``connect`` statement will generate an error.  In this "
-"case, we say that the two sensor models are not **plug-compatible**.  A "
-"model ``X`` is plug-compatible with a model ``Y`` if for every **public** "
-"variable in ``Y``, there is a corresponding public variable in ``X`` with "
-"the same name. Furthermore, every such variable in ``X`` must itself be "
-"plug-compatible with its counterpart in ``Y``.  This ensures that if you "
-"change a component of type ``Y`` into a component of type ``X`` and "
-"everything you need (parameters, connectors, etc) will still be there and "
-"will still be compatible.  **However, please note** that if ``X`` is plug-"
-"compatible with ``Y``, this **does not** imply that ``Y`` is plug-compatible"
-" with ``X`` (as we will see in a moment)."
+"This introduces a complication.  What happens if we replace the "
+"``sensor`` component with something that **does not have** a ``w`` "
+"connector on it?  In that case, this ``connect`` statement will generate "
+"an error.  In this case, we say that the two sensor models are not "
+"**plug-compatible**.  A model ``X`` is plug-compatible with a model ``Y``"
+" if for every **public** variable in ``Y``, there is a corresponding "
+"public variable in ``X`` with the same name. Furthermore, every such "
+"variable in ``X`` must itself be plug-compatible with its counterpart in "
+"``Y``.  This ensures that if you change a component of type ``Y`` into a "
+"component of type ``X`` and everything you need (parameters, connectors, "
+"etc) will still be there and will still be compatible.  **However, please"
+" note** that if ``X`` is plug-compatible with ``Y``, this **does not** "
+"imply that ``Y`` is plug-compatible with ``X`` (as we will see in a "
+"moment)."
 msgstr ""
+"이것은 복합적인 문제를 보여줍니다."
+"``w`` 커넥터가 **없는** 것으로 ``sensor`` 구성 요소를 교체하면 어떻게 될까요? "
+"이 ``connect`` 문은 오류를 생성합니다. 이러한 경우 두 센서 모델이 **플러그 호환** 이 아니라고 표현 합니다."
+"모델 ``X`` 는 ``Y`` 의 모든 **public** 변수에 대해 ``X`` 에 동일한 공용 변수가 있는 경우 모델 ``Y`` 와 플러그 호환됩니다. "
+"게다가, ``X`` 에 있는 모든 변수는 ``Y`` 에 있는 변수와 플러그 호환이 가능해야 합니다. "
+"이렇게 하면 ``Y`` 자료형의 구성 요소를 ``X`` 자료형의 구성 요소로 변경하더라도 필요한 모든 것 (파라미터, 커넥터 등)이 그대로 있고 여전히 호환 가능합니다. "
+"**그러나** 여기서, **주의** 해야할 사항이 있습니다. "
+"``X`` 가 ``Y`` 와 플러그 호환되는 경우 **이것은 ``Y`` 가 ``X`` 와 플러그 호환됨을 의미하지 않습니다** (잠시 후에 보게 되겠지만)."
 
-#: ../../source/components/architectures/sensor_comparison.rst:229
+
+#: ../../source/components/architectures/sensor_comparison.rst:233
 msgid ""
-"Plug compatibility is important because, in general, we want to ensure that "
-"any redeclaration that we make is \"safe\".  The way we do that is to "
-"require that whatever type we decide to change our ``sensor`` component to "
-"is plug compatible with the original type.  In this case, that means that it"
-" has to have a ``w`` connector (and that connector, in turn, must be plug "
-"compatible with the ``w`` that was there before) and it has to have a "
-"``shaft`` connector (which, again, must be plug compatible with the previous"
-" ``shaft``)."
+"Plug compatibility is important because, in general, we want to ensure "
+"that any redeclaration that we make is \"safe\".  The way we do that is "
+"to require that whatever type we decide to change our ``sensor`` "
+"component to is plug compatible with the original type.  In this case, "
+"that means that it has to have a ``w`` connector (and that connector, in "
+"turn, must be plug compatible with the ``w`` that was there before) and "
+"it has to have a ``shaft`` connector (which, again, must be plug "
+"compatible with the previous ``shaft``)."
 msgstr ""
+"플러그 호환성은 일반적으로  만드는 모든 재선언이 "안전"하다는 것을 확인하기를 원하기 때문에 중요합니다."
+"그렇게 하는 방법은 ``센서`` 컴포넌트를 변경하기로 결정한 자료형이 무엇이든 원래 자료형과 호환되는 플러그 이기를 요구하는 것입니다. "
+"이 경우, 그것은 ``shaft`` 커넥터(이전 ``shaft`` 와 호환되는 플러그여야 함) 와 ``w`` 커넥터가 있어야 한다는 것을 의미합니다"
+"(그리고 그 커넥터는 이전에 있던 ``w`` 와 호환되는 플러그여야 합니다). "
 
-#: ../../source/components/architectures/sensor_comparison.rst:238
+
+#: ../../source/components/architectures/sensor_comparison.rst:242
 msgid ""
 "So the question then is, does our ``SampleHoldSensor`` implementation "
 "satisfy this requirement plug compatibility requirement?  Is it plug-"
 "compatible with the ``IdealSensor`` model?  First, let's look at the "
 "``IdealSensor`` model:"
 msgstr ""
+"그렇다면 여기서 가능한 질문은 ``SampleHoldSensor`` 구현이 이 요구 사항 플러그 호환성 요구 사항을 충족시키는가? 하는 것입니다."
+"``IdealSensor`` 모델과 플러그 호환이 될까요?"
+"먼저 ``IdealSensor`` 모델을 살펴보겠습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:247
+
+#: ../../source/components/architectures/sensor_comparison.rst:251
 msgid ""
-"The public interface of this component consists only of the two connectors "
-"``w`` and ``shaft``.  Looking at the ``SampleHoldSensor`` model:"
+"The public interface of this component consists only of the two "
+"connectors ``w`` and ``shaft``.  Looking at the ``SampleHoldSensor`` "
+"model:"
 msgstr ""
+"이 구성 요소의 공용 인터페이스는 ``w`` 및 ``shaft`` 라는 두 개의 커넥터로만 구성됩니다. "
+"``SampleHoldSensor`` 모델을 보면 아래와 같습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:260
+
+#: ../../source/components/architectures/sensor_comparison.rst:264
 msgid ""
 "we see that its public interface also contains the connectors ``w`` and "
-"``shaft``.  Furthermore, they are exactly the same type as the connectors on"
-" the ``IdealSensor`` model.  For this reason, the ``SampleHoldSensor`` model"
-" is plug-compatible with the ``IdealSensor`` model so we should be able to "
-"replace an ``IdealSensor`` instance with a ``SampleHoldSensor`` instance and"
-" our ``connect`` statements will still be valid."
+"``shaft``.  Furthermore, they are exactly the same type as the connectors"
+" on the ``IdealSensor`` model.  For this reason, the ``SampleHoldSensor``"
+" model is plug-compatible with the ``IdealSensor`` model so we should be "
+"able to replace an ``IdealSensor`` instance with a ``SampleHoldSensor`` "
+"instance and our ``connect`` statements will still be valid."
 msgstr ""
+"공용 인터페이스에는 커넥터 ``w`` 및 ``shaft`` 도 포함되어 있습니다. "
+"또한 ``IdealSensor`` 모델의 커넥터와 정확히 동일한 자료형입니다. "
+"이러한 이유로 ``SampleHoldSensor`` 모델은 ``IdealSensor`` 모델과 플러그 호환되므로 ``IdealSensor`` 인스턴스를 ``SampleHoldSensor`` 인스턴스로 대체할 수 있어야 하며 ``connect``"
+"에 대한 내용은 여전히 유효합니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:268
+
+
+#: ../../source/components/architectures/sensor_comparison.rst:272
 msgid "So, if our ``HierarchicalSystem`` model were declared as follows:"
 msgstr ""
+"따라서 ``HierarchicalSystem`` 모델이 다음과 같이 선언된 경우 에는 아래와 같습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:287
+#: ../../source/components/architectures/sensor_comparison.rst:291
 msgid ""
-"Then we can achieve our original goal of creating a variation of this model "
-"without repeating ourselves as follows:"
+"Then we can achieve our original goal of creating a variation of this "
+"model without repeating ourselves as follows:"
 msgstr ""
+"그러면 다음과 같이 반복하지 않고 이 모델의 변형을 만드는 원래 목표를 달성할 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:300
+
+#: ../../source/components/architectures/sensor_comparison.rst:304
 msgid ""
-"There are several things worth noting about this model.  The first is that "
-"the syntax of a redeclaration is just like a normal declaration except it is"
-" preceded by the ``redeclare`` keyword.  Also note that the redeclaration is"
-" part of the ``extends`` clause.  Specifically, it is a modification, like "
-"any other modification, in the extends clause.  If we wanted to both "
-"redeclare the ``sensor`` component and change the ``startTime`` parameter of"
-" our setpoint, they would both be modifications of the ``extends`` clause, "
-"*e.g.,*"
+"There are several things worth noting about this model.  The first is "
+"that the syntax of a redeclaration is just like a normal declaration "
+"except it is preceded by the ``redeclare`` keyword.  Also note that the "
+"redeclaration is part of the ``extends`` clause.  Specifically, it is a "
+"modification, like any other modification, in the extends clause.  If we "
+"wanted to both redeclare the ``sensor`` component and change the "
+"``startTime`` parameter of our setpoint, they would both be modifications"
+" of the ``extends`` clause, *e.g.,*"
 msgstr ""
+"이 모델에 대해 주목할 만한 몇 가지 사항이 있습니다."
+"첫 번째는 재선언의 구문이 ``redeclare`` 키워드가 선행된다는 점을 제외하고 일반 선언과 동일하다는 것입니다."
+"또한 재선언은 ``extends`` 절의 일부라는 점에 유의해야 합니다."
+"특히 다른 수정과 마찬가지로 extends 절의 수정을 생각해야 합니다. "
+"``sensor`` 구성 요소를 다시 선언하고, setpoint의 ``startTime`` 파라미터를 변경하려면 둘 다 ``extends`` 절을 수정해야 합니다. "
 
-#: ../../source/components/architectures/sensor_comparison.rst:321
+
+#: ../../source/components/architectures/sensor_comparison.rst:325
 msgid "Constraining Types"
 msgstr ""
+"구속 자료형(Constraining Types)"
 
-#: ../../source/components/architectures/sensor_comparison.rst:323
+#: ../../source/components/architectures/sensor_comparison.rst:327
 msgid ""
 "Recall, from earlier in this section, that the public interface for the "
 "``SampleHoldSensor`` model included:"
 msgstr ""
+"이 섹션의 앞부분에서 ``SampleHoldSensor`` 모델에 대한 공용 인터페이스에 다음이 포함되어 있음을 다시 생각해보겠습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:332
+#: ../../source/components/architectures/sensor_comparison.rst:336
 msgid "and that the ``IdealSensor`` public interface contained only:"
 msgstr ""
+"그리고 ``IdealSensor`` 공용 인터페이스에는 다음 항목만 포함되어 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:339
+
+#: ../../source/components/architectures/sensor_comparison.rst:343
 msgid ""
-"If redeclarations are restricted in such a way that the redeclared type has "
-"to be plug-compatible with the original type, then we could run into the "
-"following problem.  What if our initial model for our system used the "
-"``SampleHoldSensor`` sensor, *i.e.,*"
+"If redeclarations are restricted in such a way that the redeclared type "
+"has to be plug-compatible with the original type, then we could run into "
+"the following problem.  What if our initial model for our system used the"
+" ``SampleHoldSensor`` sensor, *i.e.,*"
 msgstr ""
+"재선언된 자료형이 원래 자료형과 플러그 호환되어야 하는 방식으로 재선언이 제한되면 다음과 같은 문제가 발생할 수 있습니다."
+"우리 시스템의 초기 모델로 ``SampleHoldSensor`` 센서를 사용했고 가정한다면 *즉,* 아래와 같습니다. "
 
-#: ../../source/components/architectures/sensor_comparison.rst:360
+
+#: ../../source/components/architectures/sensor_comparison.rst:364
 msgid ""
-"Imagine further that we then wanted to redeclare the ``sensor`` component to"
-" be an ``IdealSensor``, *e.g.,*"
+"Imagine further that we then wanted to redeclare the ``sensor`` component"
+" to be an ``IdealSensor``, *e.g.,*"
 msgstr ""
+"``sensor`` 구성 요소를 ``IdealSensor`` 로 재선언하고 싶다고 상상해 보십시오. "
+"*예* 를 들면 아래와 같습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:372
+
+
+#: ../../source/components/architectures/sensor_comparison.rst:376
 msgid ""
 "Now we have a problem.  The problem is that our original ``sensor`` "
-"component has a parameter called ``sample_rate``.  But, we are trying to "
+"component has a parameter called ``sample_time``.  But, we are trying to "
 "replace it with something that does not have that parameter.  In other "
 "words, the ``IdealSensor`` model is **not** plug-compatible with the "
-"``SampleHoldSensor`` model because it is missing something, ``sample_rate``,"
-" that the original model, ``SampleHoldSensor``, had."
+"``SampleHoldSensor`` model because it is missing something, "
+"``sample_time``, that the original model, ``SampleHoldSensor``, had."
 msgstr ""
+"이제 문제가 생겼습니다. "
+"문제는 원래 ``sensor`` 컴포넌트에 ``sample_time`` 이라는 매개변수가 있다는 것입니다."
+"하지만 해당 매개변수가 없는 것으로 대체하려고 합니다."
+"즉, ``IdealSensor`` 모델은 ``SampleHoldSensor`` 모델과 플러그 호환 **되지 않습니다**. "
 
-#: ../../source/components/architectures/sensor_comparison.rst:381
+
+#: ../../source/components/architectures/sensor_comparison.rst:385
 msgid ""
-"But when we look at source code of the ``InitialSystem`` model, we see that "
-"the ``sample_rate`` parameter was never used.  So there is no real reason "
-"why we couldn't switch the type.  For this reason, Modelica includes the "
-"notion of a *constraining type*."
+"But when we look at source code of the ``InitialSystem`` model, we see "
+"that the ``sample_time`` parameter was never used.  So there is no real "
+"reason why we couldn't switch the type.  For this reason, Modelica "
+"includes the notion of a *constraining type*."
 msgstr ""
+"그러나 ``InitialSystem`` 모델의 소스 코드를 보면 ``sample_time`` 매개변수가 사용된 적이 없음을 알 수 있습니다."
+"따라서 자료형을 전환할 수 없는 실제 이유가 없습니다."
+"이러한 이유로 모델리카에는 *제약 자료형* 이라는 개념이 포함되어 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:386
+
+#: ../../source/components/architectures/sensor_comparison.rst:390
 msgid ""
 "The important thing to understand about redeclarations is that there are "
-"really two important types associated with the original declaration.  The "
-"first type is what the type of the original declaration was.  The second "
-"type is what the type *could be* and still work.  This second type is called"
-" the constraining type because as long as any redeclaration is plug-"
-"compatible with the constraining type, the model should still work.  So in "
-"our ``InitialSystem`` model above, the type of the original declaration was "
-"``SampleHoldSensor``. But the model will still work as long as any new type "
-"is plug-compatible with ``IdealSensor``."
+"really two important types associated with the original declaration.  The"
+" first type is what the type of the original declaration was.  The second"
+" type is what the type *could be* and still work.  This second type is "
+"called the constraining type because as long as any redeclaration is "
+"plug-compatible with the constraining type, the model should still work."
+"  So in our ``InitialSystem`` model above, the type of the original "
+"declaration was ``SampleHoldSensor``. But the model will still work as "
+"long as any new type is plug-compatible with ``IdealSensor``."
 msgstr ""
+"재선언에 대해 이해해야 할 중요한 점은 원래 선언과 관련된 두 가지 중요한 자료형이 있다는 것입니다."
+"첫 번째 자료형은 원래 선언의 자료형입니다. "
+"두 번째 자료형은 자료형이 *여전히 작동* 하는 것입니다."
+"이 두 번째 자료형을 "제약 자료형"이라고 합니다. "
+"재선언이 제약 자료형과 플러그 호환되는 한 모델이 계속 작동해야 하기 때문입니다. "
+"따라서 위의 ``InitialSystem`` 모델에서 원래 선언의 자료형은 ``SampleHoldSensor`` 였습니다. "
+"그러나 새로운 자료형이 ``IdealSensor`` 와 플러그 호환되는 한 모델은 여전히 작동합니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:397
+
+#: ../../source/components/architectures/sensor_comparison.rst:401
 msgid ""
-"When we indicate that a component is ``replaceable``, we can indicate the "
-"constraining type by adding a ``constrainedby`` clause at the end, *e.g.*,"
+"When we indicate that a component is ``replaceable``, we can indicate the"
+" constraining type by adding a ``constrainedby`` clause at the end, "
+"*e.g.*,"
 msgstr ""
+"구성 요소가 ``교체 가능`` 임을 나타낼 때 끝에 ``constrainedby`` 절을 추가하여 제약 자료형을 나타낼 수 있습니다. *예를 들면*,"
 
-#: ../../source/components/architectures/sensor_comparison.rst:408
+#: ../../source/components/architectures/sensor_comparison.rst:412
 msgid ""
 "This declaration says that the ``sensor`` component can be redeclared by "
-"anything that is plug-compatible with the ``IdealSensor`` model, **but** if "
-"it isn't redeclared, then **by default** it should be declared as a "
-"``SampleHoldSensor`` sensor.  For this reason, the original type used in the"
-" declaration, ``SampleHoldSensor``, is called the **default type**."
+"anything that is plug-compatible with the ``IdealSensor`` model, **but** "
+"if it isn't redeclared, then **by default** it should be declared as a "
+"``SampleHoldSensor`` sensor.  For this reason, the original type used in "
+"the declaration, ``SampleHoldSensor``, is called the **default type**."
 msgstr ""
+"이 선언은 ``sensor`` 구성 요소가 ``IdealSensor`` 모델과 플러그 호환되는 모든 것에 의해 재선언될 수 있다고 말합니다. "
+"**하지만** 재선언되지 않으면 **기본적으로** ``SampleHoldSensor`` 센서로 선언되어야 합니다. "
+"이러한 이유로 ``SampleHoldSensor`` 선언에 사용된 원래 자료형을 **기본 자료형** 이라고 합니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:415
+
+#: ../../source/components/architectures/sensor_comparison.rst:419
 msgid ""
-"Recall that our original definition of the ``InitialSystem`` model didn't "
-"specify a constraining type.  It only specified the initial type.  In that "
-"case, the default type and the constraining type are assumed to be the "
-"initial type."
+"Recall that our original definition of the ``InitialSystem`` model didn't"
+" specify a constraining type.  It only specified the initial type.  In "
+"that case, the default type and the constraining type are assumed to be "
+"the initial type."
 msgstr ""
+"``InitialSystem`` 모델의 원래 정의가 제약 자료형을 지정하지 않았고, 초기 자료형만 지정했습니다."
+"이 경우에는 기본 자료형과 제한 자료형이 초기 자료형으로 간주됩니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:420
+
+
+#: ../../source/components/architectures/sensor_comparison.rst:424
 msgid ""
 "We will continue using this same system architecture in the next section "
 "when we discuss how to develop such a system model using a top-down, :ref"
 ":`arch-driven-approach`."
 msgstr ""
+"하향식 아키텍처 기반 접근 방식을 사용하여 이러한 시스템 모델을 개발하는 방법을 논의할 때 다음 섹션에서 이 동일한 시스템 아키텍처를 계속 사용할 것입니다."
 
-#: ../../source/components/architectures/sensor_comparison.rst:424
+#: ../../source/components/architectures/sensor_comparison.rst:428
 msgid ""
 "Michael M. Tiller, \"Introduction to Physical Modeling with Modelica\" "
 "http://www.amazon.com/Introduction-Physical-Modeling-International-"
 "Engineering/dp/0792373677"
 msgstr ""
 
-#: ../../source/components/architectures/sensor_comparison.rst:197
-msgid "replaceable"
-msgstr ""
+#~ msgid ""
+#~ "Let us start our study of "
+#~ "architectures with an example that is"
+#~ " similar to one presented in my "
+#~ "previous book [ItPMwM]_.  In it, we "
+#~ "will consider the performance of a "
+#~ "control system using several different "
+#~ "sensor models."
+#~ msgstr ""
 
-#: ../../source/components/architectures/sensor_comparison.rst:290
-msgid "redeclare"
-msgstr ""
+#~ msgid ""
+#~ "All the components within the purple "
+#~ "box represent the plant model. In "
+#~ "this case, it is a simple "
+#~ "rotational system involving two rotating "
+#~ "inertias connected via a spring and "
+#~ "a damper.  One of the inertias is"
+#~ " connected to a rotational ground by"
+#~ " an additional damper.  The green box"
+#~ " identifies the sensor in the system."
+#~ "  The sensor is used to measure "
+#~ "the speed of one of the rotating"
+#~ " shafts.  Similarly, the purple box "
+#~ "identifies the actuator.  The actuator "
+#~ "applies a torque to the other "
+#~ "shaft (the one whose speed is not"
+#~ " measured).  Finally, all the components"
+#~ " in the blue box represent the "
+#~ "control system, which tries to keep "
+#~ "the measured speed as close as "
+#~ "possible to the setpoint supplied by "
+#~ "the signal generator at the top of"
+#~ " the diagram."
+#~ msgstr ""
 
-#: ../../source/components/architectures/sensor_comparison.rst:379
-msgid "constraining types"
-msgstr ""
+#~ msgid ""
+#~ "At this point, we'd like to "
+#~ "explore this performance issue a bit "
+#~ "more to understand how characteristics "
+#~ "of the sensor (*e.g.,* ``sample_rate``) "
+#~ "impact performance and potentially what "
+#~ "kinds of improvements might ultimately "
+#~ "be required for the control system "
+#~ "itself."
+#~ msgstr ""
 
-#: ../../source/components/architectures/sensor_comparison.rst:406
-msgid "default type"
-msgstr ""
+#~ msgid ""
+#~ "Now, we want to create a variation"
+#~ " of this model where the ``sensor``"
+#~ " component"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now we have a problem.  The "
+#~ "problem is that our original ``sensor``"
+#~ " component has a parameter called "
+#~ "``sample_rate``.  But, we are trying to"
+#~ " replace it with something that does"
+#~ " not have that parameter.  In other"
+#~ " words, the ``IdealSensor`` model is "
+#~ "**not** plug-compatible with the "
+#~ "``SampleHoldSensor`` model because it is "
+#~ "missing something, ``sample_rate``, that the"
+#~ " original model, ``SampleHoldSensor``, had."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "But when we look at source code"
+#~ " of the ``InitialSystem`` model, we "
+#~ "see that the ``sample_rate`` parameter "
+#~ "was never used.  So there is no"
+#~ " real reason why we couldn't switch"
+#~ " the type.  For this reason, Modelica"
+#~ " includes the notion of a "
+#~ "*constraining type*."
+#~ msgstr ""
+
+#~ msgid "replaceable"
+#~ msgstr ""
+
+#~ msgid "redeclare"
+#~ msgstr ""
+
+#~ msgid "constraining types"
+#~ msgstr ""
+
+#~ msgid "default type"
+#~ msgstr ""
+

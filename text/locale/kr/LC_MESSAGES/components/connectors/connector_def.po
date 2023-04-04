@@ -1,23 +1,27 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/connectors/connector_def.rst:4
 msgid "Connector Definitions"
 msgstr ""
+"커넥터 정의(Connector Definitions)"
 
 #: ../../source/components/connectors/connector_def.rst:7
 msgid "Syntax"
 msgstr ""
+"문법(Syntax)"
 
 #: ../../source/components/connectors/connector_def.rst:11
 msgid ""
@@ -25,10 +29,15 @@ msgid ""
 "considerable amount of syntactic similarity.  This is just as true with "
 "``connector`` definitions."
 msgstr ""
+"이미 여러 번 보았듯이 모델리카 정의는 상당히 구문에서의 유사성을 보이고 있습니다."
+"이것은 ``connector`` 정의에서도 마찬가지입니다."
+
+
 
 #: ../../source/components/connectors/connector_def.rst:15
 msgid "The general syntax for a connector definition is:"
 msgstr ""
+"커넥터 정의의 일반 적인 구문은 다음과 같습니다."
 
 #: ../../source/components/connectors/connector_def.rst:23
 msgid ""
@@ -36,77 +45,106 @@ msgid ""
 "include any behavior.  So there can never be an ``equation`` or "
 "``algorithm`` section present in a ``connector``."
 msgstr ""
+"``model`` 이나 ``function`` 과 달리 ``connector`` 는 어떤 동작도 포함할 수 없습니다."
+"따라서 ``connector`` 에는 ``equation`` 또는 ``algorithm`` 섹션이 있을 수 없습니다."
+
 
 #: ../../source/components/connectors/connector_def.rst:30
 msgid "Variables"
 msgstr ""
+"변수(Variables)"
 
 #: ../../source/components/connectors/connector_def.rst:33
 msgid "Causal Variables"
 msgstr ""
+"인과적인 변수(Causal Variables)"
 
 #: ../../source/components/connectors/connector_def.rst:35
 msgid ""
 "In our previous discussion of :ref:`block-connectors`, we showed that "
-"variables within a Modelica ``connector`` definition can have a causality "
-"associated with them.  If the signal is expected to be computed externally, "
-"then the variable should have the ``input`` qualifier associated with it.  "
-"If, on the other hand, a signal is expected to be computed internally (and "
-"then transmitted to other components), it should have the ``output`` "
-"qualifier associated with it."
+"variables within a Modelica ``connector`` definition can have a causality"
+" associated with them.  If the signal is expected to be computed "
+"externally, then the variable should have the ``input`` qualifier "
+"associated with it.  If, on the other hand, a signal is expected to be "
+"computed internally (and then transmitted to other components), it should"
+" have the ``output`` qualifier associated with it."
 msgstr ""
+":ref:`block-connectors` 에 대한 이전 논의에서  모델리카 ``connector`` 정의 내의 변수가 인과 관계를 가질 수 있음을 알았습니다. "
+"인과적인 변수로 사용하기 위해 신호가 외부에서 계산될 것으로 예상되는 경우 변수에는 이와 관련된 ``input`` 한정자가 있어야 하고,"
+"반면에 신호가 내부적으로 계산된 다음 다른 구성 요소로 전송될 것으로 예상되는 경우 이와 관련된 ``output`` 한정자가 있어야 합니다."
+
 
 #: ../../source/components/connectors/connector_def.rst:47
 msgid "Acausal Variables"
 msgstr ""
+"비인과적 변수(Acausal Variables)"
 
 #: ../../source/components/connectors/connector_def.rst:49
 msgid ""
-"In our discussion of :ref:`simple-domains` and :ref:`fluid-connectors`, we "
-"saw numerous examples of ``connector`` definitions that included through and"
-" across variables.  These variables always occurred in pairs with the "
-"through variable being prefixed by the ``flow`` qualifier while the across "
-"variable had not qualifier associated with it."
+"In our discussion of :ref:`simple-domains` and :ref:`fluid-connectors`, "
+"we saw numerous examples of ``connector`` definitions that included "
+"through and across variables.  These variables always occurred in pairs "
+"with the through variable being prefixed by the ``flow`` qualifier while "
+"the across variable had not qualifier associated with it."
 msgstr ""
+":ref:`simple-domains` 및 :ref:`fluid-connectors` 에 대한 논의에서 통과 및 교차변수를 포함하는 ``connector`` 정의의 수많은 예를 보았습니다."
+"항상 ``flow`` 한정자가 접두사로 붙는 통과변수와 함께 쌍을 이루는 교차변수에는 관련된 한정자가 없었습니다."
+
 
 #: ../../source/components/connectors/connector_def.rst:56
 msgid ""
-"As we will see in the coming chapters, such connector definitions are very "
-"convenient when modeling physical systems because they enable the Modelica "
-"compiler to automatically generate conservation equations for networks of "
-"components.  Furthermore, they allow quantities like, mass, momentum, "
-"energy, charge, species and so on to flow **bi-directionally** through a "
-"network."
+"As we will see in the coming chapters, such connector definitions are "
+"very convenient when modeling physical systems because they enable the "
+"Modelica compiler to automatically generate conservation equations for "
+"networks of components.  Furthermore, they allow quantities like, mass, "
+"momentum, energy, charge, species and so on to flow **bi-directionally** "
+"through a network."
 msgstr ""
+"다음 장에서 살펴보겠지만 이러한 커넥터 정의는 모델리카 컴파일러가 구성 요소 네트워크에 대한 보존 방정식을 자동으로 생성할 수 있게 해주기 때문에"
+"물리적 시스템을 모델링할 때 매우 편리합니다. "
+"또한 질량, 운동량, 에너지, 전하, 종 등과 같은 양이 네트워크를 통해 **양방향으로** 흐르도록 합니다."
+
 
 #: ../../source/components/connectors/connector_def.rst:64
 msgid "Parameters"
 msgstr ""
+"파라미터(Parameters)"
 
 #: ../../source/components/connectors/connector_def.rst:66
 msgid ""
 "A variable in a ``connector`` definition can also have the ``parameter`` "
-"qualifier associated with it.  This qualifier means the same thing that it "
-"meant when we first discussed :ref:`parameters`, *i.e.,* the value of the "
-"variable cannot change during a simulation. A ``parameter`` variable is "
-"frequently used in connector definitions to indicate the size of an array "
-"contained in the connector."
+"qualifier associated with it.  This qualifier means the same thing that "
+"it meant when we first discussed :ref:`parameters`, *i.e.,* the value of "
+"the variable cannot change during a simulation. A ``parameter`` variable "
+"is frequently used in connector definitions to indicate the size of an "
+"array contained in the connector."
 msgstr ""
+"``connector`` 정의의 변수는 관련된 ``parameter`` 한정자를 가질 수도 있습니다. "
+"이 한정자는  파라미터에 대해 처음 논의했을 때 의미했던 것과 같은 것을 의미합니다."
+"*즉,* 변수의 값은 시뮬레이션 중에 변경될 수 없습니다."
+"``parameter`` 변수는 커넥터에 포함된 배열의 크기를 나타내기 위해 커넥터 정의에서 자주 사용합니다."
+
 
 #: ../../source/components/connectors/connector_def.rst:78
 msgid "Final Remarks"
 msgstr ""
+"끝 맺음 말(Final Remarks)"
 
 #: ../../source/components/connectors/connector_def.rst:80
 msgid ""
-"It should be noted that a ``connector`` definition can mix causal, acausal "
-"and parameter variables all in the same connector.  In fact, a variable in a"
-" connector **can itself be a connector** as well.  This richness of "
-"expressiveness in Modelica allows users to model a range of different types "
-"of interactions and choose, on a variable by variable basis, the semantics "
-"that make the most sense for each potential interaction."
+"It should be noted that a ``connector`` definition can mix causal, "
+"acausal and parameter variables all in the same connector.  In fact, a "
+"variable in a connector **can itself be a connector** as well.  This "
+"richness of expressiveness in Modelica allows users to model a range of "
+"different types of interactions and choose, on a variable by variable "
+"basis, the semantics that make the most sense for each potential "
+"interaction."
 msgstr ""
+"``connector`` 정의는 동일한 커넥터에서 인과관계, 비인과관계 및 파라미터 변수를 모두 혼합할 수 있다는 점을 기억해야 합니다. "
+"실제로 커넥터의 변수는 **그 자체로 커넥터가 될 수 있습니다**. "
+"모델리카의 이러한 풍부한 표현력을 통해 사용자는 다양한 자료형의 상호 작용을 모델링하고, 각 잠재적 상호 작용에 가장 적합한 의미 체계를 변수별로 선택할 수 있습니다."
 
-#: ../../source/components/connectors/connector_def.rst:9
-msgid "connector"
-msgstr ""
+
+#~ msgid "connector"
+#~ msgstr ""
+

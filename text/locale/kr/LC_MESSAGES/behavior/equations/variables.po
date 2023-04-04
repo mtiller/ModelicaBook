@@ -1,372 +1,481 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/equations/variables.rst:5
 msgid "Variables"
 msgstr ""
+"변수(Variables)"
 
 #: ../../source/behavior/equations/variables.rst:7
 msgid ""
 "As we saw in the previous section, a model definition typically contains "
 "variable declarations.  The basic syntax for a variable declaration is "
-"simply the \"type\" of the variable (which will be discussed shortly in the "
-"section on :ref:`builtin-types`) followed by the name of the variable, "
-"*e.g.*,"
+"simply the \"type\" of the variable (which will be discussed shortly in "
+"the section on :ref:`builtin-types`) followed by the name of the "
+"variable, *e.g.*,"
 msgstr ""
+"이전 섹션에서 본 것처럼 모델 정의에는 일반적으로 변수 선언이 포함됩니다. "
+"변수 선언의 기본 구문은 단순히 변수의 "자료형"(:ref:`builtin-types` 섹션에서 곧 설명할 예정임) 뒤에 변수 이름을 선언 하는 것입니다. "
+"예를 들면 아래와 같이 정의 합니다."
+
 
 #: ../../source/behavior/equations/variables.rst:17
 msgid ""
-"Variables sharing the same type can be grouped together using the following "
-"syntax:"
+"Variables sharing the same type can be grouped together using the "
+"following syntax:"
 msgstr ""
+"동일한 자료형을 공유하는 변수는 다음 구문을 사용하여 함께 그룹화할 수 있습니다."
+
 
 #: ../../source/behavior/equations/variables.rst:24
 msgid "A declaration can also be followed by a description, e.g.:"
 msgstr ""
+"선언 뒤에 설명이 올 수도 있습니다. 예를 들면 다음과 같습니다."
 
 #: ../../source/behavior/equations/variables.rst:33
 msgid "Variability"
 msgstr ""
+"가변성(Variability)"
 
 #: ../../source/behavior/equations/variables.rst:40
 msgid "Parameters"
 msgstr ""
+"파라미터(매개변수,Parameters)"
 
 #: ../../source/behavior/equations/variables.rst:42
 msgid ""
-"By default, variables declared inside a model are assumed to be continuous "
-"variables (variables whose solution is generally smooth, but which may also "
-"include discontinuities).  However, as we first saw in the section titled "
-":ref:`getting-physical`, it is also possible to add the ``parameter`` "
-"qualifier in front of a variable declaration and to indicate that the "
-"variable is known *a priori*.  You can think of a parameter as \"input "
-"data\" to the model that is constant with respect to time."
+"By default, variables declared inside a model are assumed to be "
+"continuous variables (variables whose solution is generally smooth, but "
+"which may also include discontinuities).  However, as we first saw in the"
+" section titled :ref:`getting-physical`, it is also possible to add the "
+"``parameter`` qualifier in front of a variable declaration and to "
+"indicate that the variable is known *a priori*.  You can think of a "
+"parameter as \"input data\" to the model that is constant with respect to"
+" time."
 msgstr ""
+"기본적으로 모델 내부에 선언된 변수는 연속 변수(해가 일반적으로 매끄럽지만 불연속성을 포함할 수 있는 변수)로 간주됩니다. "
+"그러나 :ref:`getting-physical` 섹션에서 처음 보았듯이 변수 선언 앞에 ``parameter`` 한정자를 추가하고 변수가 *선험적으로* 알려져 있음을 나타낼 수도 있습니다. "
+"시간에 대해 일정한 모델에 대한 "입력 데이터"로 파라미터를 생각할 수 있습니다."
+
+
 
 #: ../../source/behavior/equations/variables.rst:54
 msgid "Constants"
 msgstr ""
+"상수(Constants)"
 
 #: ../../source/behavior/equations/variables.rst:56
 msgid ""
 "Closely related to the ``parameter`` qualifier is the ``constant`` "
-"qualifier.  When placed in front of a variable declaration, the ``constant``"
-" qualifier also implies that the value of the variable is known *a priori* "
-"and is constant with respect to time.  The distinction between the two lies "
-"in the fact that a ``parameter`` value can be changed from one simulation to"
-" the next whereas the value of a ``constant`` cannot be changed once the "
-"model is compiled.  The use of ``constant`` by a model developer ensures "
-"that end users are not given the option to make changes to the ``constant``."
-"  A ``constant`` is frequently used to represent physical quantities like "
-":math:`\\pi` or the Earth's gravitational acceleration, which can be assumed"
-" constant for most engineering simulations."
+"qualifier.  When placed in front of a variable declaration, the "
+"``constant`` qualifier also implies that the value of the variable is "
+"known *a priori* and is constant with respect to time.  The distinction "
+"between the two lies in the fact that a ``parameter`` value can be "
+"changed from one simulation to the next whereas the value of a "
+"``constant`` cannot be changed once the model is compiled.  The use of "
+"``constant`` by a model developer ensures that end users are not given "
+"the option to make changes to the ``constant``.  A ``constant`` is "
+"frequently used to represent physical quantities like :math:`\\pi` or the"
+" Earth's gravitational acceleration, which can be assumed constant for "
+"most engineering simulations."
 msgstr ""
+"``parameter`` 한정자와 밀접한 관련이 있는 것은 ``constant`` 한정자입니다. "
+"변수 선언 앞에 배치될 때 ``constant`` 한정자는 변수의 값이 *선험적으로* 알려져 있고 시간에 대해 일정함을 의미합니다. "
+"이 둘의 차이점은 ``parameter`` 값은 한 시뮬레이션에서 다음 시뮬레이션으로 변경할 수 있는 반면 ``constant`` 값은 일단 모델이 컴파일되면 변경할 수 없다는 사실에 있습니다. "
+"모델 개발자가 ``constant`` 를 사용하면 최종 사용자에게 ``constant`` 를 변경할 수 있는 옵션이 제공되지 않습니다. "
+"``constant`` 는  math:`\pi` 또는 대부분의 엔지니어링 시뮬레이션에서 상수로 가정할 수 있는 지구의 중력 가속도와 같은 물리량을 나타내는 데 자주 사용합니다."
+
 
 #: ../../source/behavior/equations/variables.rst:70
 msgid "Discrete Variables"
 msgstr ""
+"이산 변수(Discrete Variables)"
 
 #: ../../source/behavior/equations/variables.rst:74
 msgid ""
-"Another qualifier that can be placed in front of a variable declaration is "
-"the ``discrete`` qualifier.  We have not yet shown any example where the "
-"``discrete`` qualifier would be relevant.  However, it is included now for "
-"completeness since it is the last remaining variability qualifier."
+"Another qualifier that can be placed in front of a variable declaration "
+"is the ``discrete`` qualifier.  We have not yet shown any example where "
+"the ``discrete`` qualifier would be relevant.  However, it is included "
+"now for completeness since it is the last remaining variability "
+"qualifier."
 msgstr ""
+"변수 선언 앞에 놓일 수 있는 또 다른 한정자는 ``discrete`` 한정자입니다."
+"아직 ``discrete`` 한정자가 관련된 어떤 예도 보지 못했었습니다. "
+"그러나 마지막으로 남은 가변성 한정자(variavility qualifier)이므로 이제 완전성을 위해 포함됩니다."
+
 
 #: ../../source/behavior/equations/variables.rst:83
 msgid "Built-In Types"
 msgstr ""
+"내장 자료형(Built-In Types)"
 
 #: ../../source/behavior/equations/variables.rst:87
 msgid ""
 "Many of the examples so far referenced the ``Real`` type when declaring "
-"variables.  As the name suggests, ``Real`` is used to represent real valued "
-"variables (which will generally be translated into floating point "
-"representations by a Modelica compiler).  However, ``Real`` is just one of "
-"the four built-in types in Modelica."
+"variables.  As the name suggests, ``Real`` is used to represent real "
+"valued variables (which will generally be translated into floating point "
+"representations by a Modelica compiler).  However, ``Real`` is just one "
+"of the four built-in types in Modelica."
 msgstr ""
+"지금까지의 많은 예제는 변수를 선언할 때 ``Real`` 자료형을 참조했습니다. "
+"이름에서 알 수 있듯이 ``Real`` 은 실제 값 변수를 나타내는 데 사용됩니다(일반적으로 모델리카 컴파일러에 의해 부동 소수점 표현으로 변환됨). "
+"그러나 ``Real`` 은 모델리카에 내장된 4가지 자료형 중 하나일 뿐입니다."
+
 
 #: ../../source/behavior/equations/variables.rst:97
 msgid ""
-"Another of the built-in types is the ``Integer`` type.  This type is used to"
-" represent integer values.  ``Integer`` variables have many uses including "
-"representing the size of arrays (this use case will be discussed shortly in "
-"an upcoming section on :ref:`vectors-and-arrays`)."
+"Another of the built-in types is the ``Integer`` type.  This type is used"
+" to represent integer values.  ``Integer`` variables have many uses "
+"including representing the size of arrays (this use case will be "
+"discussed shortly in an upcoming section on :ref:`vectors-and-arrays`)."
 msgstr ""
-
+"또 다른 내장 자료형은 ``Integer`` 자료형입니다. "
+"이 자료형은 정수 값을 나타내는 데 사용합니다. ``Integer``  변수는 배열의 크기를 나타내는 것을 포함하여 많은 용도로 사용합니다."
+"(이 사용 사례는 곧 나올 벡터 및 배열 섹션에서 논의될 것임)   "
+ 
 #: ../../source/behavior/equations/variables.rst:103
 msgid ""
-"The remaining built-in types are ``Boolean`` (used to represent values that "
-"can be either ``true`` or ``false``) and ``String`` (used for representing "
-"character strings)."
+"The remaining built-in types are ``Boolean`` (used to represent values "
+"that can be either ``true`` or ``false``) and ``String`` (used for "
+"representing character strings)."
 msgstr ""
+"나머지 기본 제공 자료형은 ``Boolean`` (``true`` 또는 ``false`` 일 수 있는 값을 나타내는 데 사용됨) 및  ``String`` (문자열을 나타내는 데 사용됨) 입니다."
 
 #: ../../source/behavior/equations/variables.rst:107
 msgid ""
-"Each of the built-in types restricts the possible values that a variable can"
-" have.  Obviously, an ``Integer`` variable cannot have the value ``2.5``, a "
-"``Boolean`` or ``String`` cannot be ``7`` and a ``Real`` variable cannot "
-"have the value ``\"Hello\"``."
+"Each of the built-in types restricts the possible values that a variable "
+"can have.  Obviously, an ``Integer`` variable cannot have the value "
+"``2.5``, a ``Boolean`` or ``String`` cannot be ``7`` and a ``Real`` "
+"variable cannot have the value ``\"Hello\"``."
 msgstr ""
+"각 내장 자료형은 변수가 가질 수 있는 가능한 값을 제한합니다. "
+'당연하게도 ``Integer`` 변수는  ``2.5`` 값을 가질 수 없으며  ``Boolean`` 또는  ``String`` 은  ``7`` 일 수 없으며 ``Real`` 변수는 ``Hello``  값을 가질 수 없습니다."
+
 
 #: ../../source/behavior/equations/variables.rst:115
 msgid "Derived Types"
 msgstr ""
+"파생 자료형(Derived Types)"
 
 #: ../../source/behavior/equations/variables.rst:119
 msgid ""
-"As we saw in the previous examples that introduced :ref:`physical-types`, it"
-" is possible to \"specialize\" the built-in types.  This feature is used "
-"mainly to modify the values associated with :ref:`attributes` like ``unit``."
-"  The general syntax for creating derived types is:"
+"As we saw in the previous examples that introduced :ref:`physical-types`,"
+" it is possible to \"specialize\" the built-in types.  This feature is "
+"used mainly to modify the values associated with :ref:`attributes` like "
+"``unit``.  The general syntax for creating derived types is:"
 msgstr ""
+":ref:`physical-types` 의 이전 예제에서 보았듯이 내장 자료형을 "특화"할 수 있습니다. "
+"이 기능은 주로 ``unit`` 과 같은 속성과 관련된 값을 수정하는 데 사용합니다. "
+"파생 자료형을 만들기 위한 일반 구문은 다음과 같습니다."
+
 
 #: ../../source/behavior/equations/variables.rst:131
 msgid ""
-"Frequently, the ``BaseTypeName`` will be one of the built-in types (*e.g.*, "
-"``Real``).  But it can also be another derived type.  This means that "
-"multiple levels of specialization can be supported, *e.g.*,"
+"Frequently, the ``BaseTypeName`` will be one of the built-in types "
+"(*e.g.*, ``Real``).  But it can also be another derived type.  This means"
+" that multiple levels of specialization can be supported, *e.g.*,"
 msgstr ""
+"``BaseTypeName-기본이 되는 자료형`` 은 내장 자료형(*예:*,  ``Real`` ) 중 하나를 주로 사용합니다."
+"그러나, 다른 파생 자료형을 적용할 수 있습니다. 이러한 것이 가능하다는 의미는 여러 수준으로 전문화될 수 있음을 뜻합니다."
+"아래에 예를 들어 보겠습니다."
+
 
 #: ../../source/behavior/equations/variables.rst:143
 msgid "Enumerations"
 msgstr ""
+"열거형(Enumerations)"
 
 #: ../../source/behavior/equations/variables.rst:147
 msgid ""
 "An ``enumeration`` type is very similar to the ``Integer`` type.  An "
-"``enumeration`` is typically used to define a type that can take on only a "
-"limited set of specific values.  In fact, enumerations are not strictly "
-"necessary in the language.  Their values can always be represented by "
-"integers.  However, the ``enumeration`` type is safer and more readable than"
-" an ``Integer``."
+"``enumeration`` is typically used to define a type that can take on only "
+"a limited set of specific values.  In fact, enumerations are not strictly"
+" necessary in the language.  Their values can always be represented by "
+"integers.  However, the ``enumeration`` type is safer and more readable "
+"than an ``Integer``."
 msgstr ""
+"``enumeration`` 자료형은 ``Integer`` 자료형과 매우 유사합니다. "
+"``enumeration`` 은 일반적으로 제한된 특정 값 집합만 가질 수 있는 자료형을 정의하는 데 사용합니다. "
+"실제로 열거형은 언어에서 꼭 필요한 것은 아닙니다. 해당 값은 항상 정수로 나타낼 수 있습니다. "
+"그러나 ``enumeration`` 자료형은 ``Integer`` 보다 안전하고 읽기 쉽습니다."
+
 
 #: ../../source/behavior/equations/variables.rst:154
 msgid ""
 "There are two built-in enumeration types.  The first of these is "
 "``AssertionLevel`` and it is defined as follows:"
 msgstr ""
+"두 가지 기본 제공 열거형이 있습니다. 첫 번째는 ``AssertionLevel`` 이며 다음과 같이 정의합니다."
 
 #: ../../source/behavior/equations/variables.rst:164
 msgid ""
-"The significance of these values will be discussed in a forthcoming section "
-"on :ref:`assertions`."
+"The significance of these values will be discussed in a forthcoming "
+"section on :ref:`assertions`."
 msgstr ""
+"이러한 값의 중요성은 다음 섹션인 :ref:`assertions` 에서 논의될 것입니다."
+
 
 #: ../../source/behavior/equations/variables.rst:167
 msgid ""
 "The other built-in enumeration is ``StateSelect`` and it is defined as "
 "follows:"
 msgstr ""
+"다른 기본 제공 열거형은 ``StateSelect`` 이며 다음과 같이 정의합니다."
+
 
 #: ../../source/behavior/equations/variables.rst:177
 msgid "Attributes"
 msgstr ""
+"속성(Attributes)"
 
 #: ../../source/behavior/equations/variables.rst:181
 msgid ""
-"So far in this chapter we have mentioned attributes (*e.g.*, ``unit``), but "
-"we haven't discussed them in detail. For example, *which* attributes are "
-"present on a given variable?  This depends on the type of the variable (and "
-"which built-in and derived types it is based on).  The following table "
-"introduces all the possible attributes indicating their types (*i.e.*, what "
-"type of value can be given for that attribute), which types they can be "
-"associated with and finally a brief description of the attribute:"
+"So far in this chapter we have mentioned attributes (*e.g.*, ``unit``), "
+"but we haven't discussed them in detail. For example, *which* attributes "
+"are present on a given variable?  This depends on the type of the "
+"variable (and which built-in and derived types it is based on).  The "
+"following table introduces all the possible attributes indicating their "
+"types (*i.e.*, what type of value can be given for that attribute), which"
+" types they can be associated with and finally a brief description of the"
+" attribute:"
 msgstr ""
-
+"지금까지 이 장에서 속성(*예를 들어* , ``unit`` )에 대해 언급했지만 자세히 다루지는 않았습니다."
+"예를 들어 *어떤* 속성이 주어진 변수에 존재할까요? "
+"이는 변수의 자료형(기본 제공 및 파생 자료형)에 따라 다릅니다. "
+"다음 내용은 해당 자료형(즉, 해당 속성에 부여할 수 있는 값의 자료형)을 나타내는 모든 가능한 속성을 보이고,그와 연관될 수 있는 자료형 및 간략한 설명을 보여줍니다.     "
+ 
 #: ../../source/behavior/equations/variables.rst:203
 msgid "Attributes of ``Real``"
 msgstr ""
+"``Real`` 속성 (Attributes of ``Real``)"
+
 
 #: ../../source/behavior/equations/variables.rst:210
-#: ../../source/behavior/equations/variables.rst:340
-#: ../../source/behavior/equations/variables.rst:393
-#: ../../source/behavior/equations/variables.rst:425
+#: ../../source/behavior/equations/variables.rst:342
+#: ../../source/behavior/equations/variables.rst:395
+#: ../../source/behavior/equations/variables.rst:427
 msgid "``quantity``"
 msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:206
-#: ../../source/behavior/equations/variables.rst:336
-#: ../../source/behavior/equations/variables.rst:389
-#: ../../source/behavior/equations/variables.rst:421
-msgid "A textual description of what the variable represents"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:208
-#: ../../source/behavior/equations/variables.rst:306
 #: ../../source/behavior/equations/variables.rst:338
 #: ../../source/behavior/equations/variables.rst:391
 #: ../../source/behavior/equations/variables.rst:423
-#: ../../source/behavior/equations/variables.rst:435
-msgid "**Default**: ``\"\"``"
+msgid "A textual description of what the variable represents"
 msgstr ""
+"변수가 나타내는 내용에 대한 텍스트 설명 "
 
-#: ../../source/behavior/equations/variables.rst:210
-#: ../../source/behavior/equations/variables.rst:290
+#: ../../source/behavior/equations/variables.rst:208
 #: ../../source/behavior/equations/variables.rst:308
 #: ../../source/behavior/equations/variables.rst:340
 #: ../../source/behavior/equations/variables.rst:393
 #: ../../source/behavior/equations/variables.rst:425
 #: ../../source/behavior/equations/variables.rst:437
+msgid "**Default**: ``\"\"``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:210
+#: ../../source/behavior/equations/variables.rst:292
+#: ../../source/behavior/equations/variables.rst:310
+#: ../../source/behavior/equations/variables.rst:342
+#: ../../source/behavior/equations/variables.rst:395
+#: ../../source/behavior/equations/variables.rst:427
+#: ../../source/behavior/equations/variables.rst:439
 msgid "**Type**: ``String``"
 msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:227
-#: ../../source/behavior/equations/variables.rst:354
-#: ../../source/behavior/equations/variables.rst:407
-#: ../../source/behavior/equations/variables.rst:437
+#: ../../source/behavior/equations/variables.rst:356
+#: ../../source/behavior/equations/variables.rst:409
+#: ../../source/behavior/equations/variables.rst:439
 msgid "``start``"
 msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:213
 msgid ""
-"The ``start`` attribute has many uses.  The main purpose of the ``start`` "
-"attribute (as discussed extensively in the section on :ref:`initialization`)"
-" is to provide \"fallback\" initial conditions for state variables (see "
-"``fixed`` attribute for more details)."
+"The ``start`` attribute has many uses.  The main purpose of the ``start``"
+" attribute (as discussed extensively in the section on "
+":ref:`initialization`) is to provide \"fallback\" initial conditions for "
+"state variables (see ``fixed`` attribute for more details)."
 msgstr ""
+"``start`` 속성은 많은 용도로 사용합니다. "
+"주요 목적은 (:ref:`initialization` 섹션에서 광범위하게 논의된 바와 같이) 상태 변수에 대해 "대체 가능한(fallback)" 초기 조건을 제공하는 것입니다"
+"(자세한 내용은 ``fixed`` 속성 참조)"
 
 #: ../../source/behavior/equations/variables.rst:218
 msgid ""
-"The ``start`` attribute may also be used as an initial guess if the variable"
-" has been chosen as an iteration variable."
+"The ``start`` attribute may also be used as an initial guess if the "
+"variable has been chosen as an iteration variable."
 msgstr ""
+"``start`` 속성은 변수가 상호 작용하는 형태의 변수로 선택된 경우 초기 추측값으로 사용될 수도 있습니다."
+
+
 
 #: ../../source/behavior/equations/variables.rst:221
 msgid ""
-"Finally, if a ``parameter`` doesn't have an explicit value specified, the "
-"value of the ``start`` attribute will be used as the default value for the "
-"``parameter``."
+"Finally, if a ``parameter`` doesn't have an explicit value specified, the"
+" value of the ``start`` attribute will be used as the default value for "
+"the ``parameter``."
 msgstr ""
+"마지막으로 ``parameter`` 에 명시적인 값이 지정되어 있지 않으면 ``start`` 속성 값이 ``parameter`` 의 기본값으로 사용합니다."
 
 #: ../../source/behavior/equations/variables.rst:225
-#: ../../source/behavior/equations/variables.rst:316
-#: ../../source/behavior/equations/variables.rst:352
-#: ../../source/behavior/equations/variables.rst:405
+#: ../../source/behavior/equations/variables.rst:354
+#: ../../source/behavior/equations/variables.rst:407
 msgid "**Default**: ``0.0``"
 msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:227
-#: ../../source/behavior/equations/variables.rst:252
-#: ../../source/behavior/equations/variables.rst:262
-#: ../../source/behavior/equations/variables.rst:272
-#: ../../source/behavior/equations/variables.rst:318
+#: ../../source/behavior/equations/variables.rst:263
+#: ../../source/behavior/equations/variables.rst:274
+#: ../../source/behavior/equations/variables.rst:320
 msgid "**Type**: ``Real``"
 msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:252
-#: ../../source/behavior/equations/variables.rst:362
-#: ../../source/behavior/equations/variables.rst:415
+#: ../../source/behavior/equations/variables.rst:364
+#: ../../source/behavior/equations/variables.rst:417
 msgid "``fixed``"
 msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:230
 msgid ""
-"The ``fixed`` attribute changes the way the ``start`` attribute is used when"
-" the ``start`` attribute is used as an initial condition.  Normally, the "
-"``start`` attribute is considered a \"fallback\" initial condition and only "
-"used if there are insufficient initial conditions explicitly specified in "
-"the ``initial equation`` sections.  However, if the ``fixed`` attribute is "
-"set to ``true``, then the ``start`` attribute is treated as if it was used "
-"as an explicit ``initial equation`` (*i.e.,* it is no longer used as a "
-"fallback, but instead treated as a strict initial condition)."
+"The ``fixed`` attribute changes the way the ``start`` attribute is used "
+"when the ``start`` attribute is used as an initial condition.  Normally, "
+"the ``start`` attribute is considered a \"fallback\" initial condition "
+"and only used if there are insufficient initial conditions explicitly "
+"specified in the ``initial equation`` sections.  However, if the "
+"``fixed`` attribute is set to ``true``, then the ``start`` attribute is "
+"treated as if it was used as an explicit ``initial equation`` (*i.e.,* it"
+" is no longer used as a fallback, but instead treated as a strict initial"
+" condition)."
 msgstr ""
+"``fixed`` 속성은 ``start`` 속성이 초기 조건으로 사용될 때 ``start`` 속성이 사용하는 방식을 변경합니다. "
+"일반적으로 ``start`` 속성은 "fallback - 대체 가느한" 초기 조건으로 간주되며 ``initial equation`` 섹션에 명시적으로 지정된 초기 조건이 충분하지 않은 경우에만 사용합니다."
+"그러나, ``fixed`` 속성이 ``true`` 로 설정되면 ``start`` 속성은 명시적인 ``initial equation`` 으로 사용된 것처럼 처리됩니다."
+"(*즉,*  더 이상 fallback - 대체가능한 변수로 사용되지 않으며, 대신에 엄격히 지켜야할 초기 조건으로 처리됨)."
+
 
 #: ../../source/behavior/equations/variables.rst:241
 msgid ""
 "Another, more obscure, use of the ``fixed`` attribute is for \"computed "
 "parameters\".  In rare cases where a ``parameter`` cannot be initialized "
-"explicitly, it is possible to provide a general equation for the parameter "
-"in an ``initial equation`` section. But in cases where the ``parameter`` is "
-"initialized in this way, the ``fixed`` attribute for the parameter variable "
-"must be set to ``false``."
+"explicitly, it is possible to provide a general equation for the "
+"parameter in an ``initial equation`` section. But in cases where the "
+"``parameter`` is initialized in this way, the ``fixed`` attribute for the"
+" parameter variable must be set to ``false``."
 msgstr ""
+"또 다른 모호한 ``fixed`` 속성의 사용은 "computed parameters - 계산된 파라미터"에 대한 것입니다. "
+"``parameter`` 를 명시적으로 초기화할 수 없는 드문 경우에 ``초기 방정식`` 섹션에서 파라미터에 대한 일반 방정식을 제공할 수 있습니다. "
+"단, 이렇게 ``parameter`` 를 초기화하는 경우에는 ``fixed``  파라미터 변수의 속성을 ``false``     로 설정해야 합니다."
 
 #: ../../source/behavior/equations/variables.rst:249
-#: ../../source/behavior/equations/variables.rst:359
-#: ../../source/behavior/equations/variables.rst:412
+#: ../../source/behavior/equations/variables.rst:361
+#: ../../source/behavior/equations/variables.rst:414
 msgid ""
 "**Default**: ``false`` (except for ``parameter`` variables, where it is "
 "``true`` by default)"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:262
-#: ../../source/behavior/equations/variables.rst:372
+#: ../../source/behavior/equations/variables.rst:252
+#: ../../source/behavior/equations/variables.rst:364
+#: ../../source/behavior/equations/variables.rst:409
+#: ../../source/behavior/equations/variables.rst:417
+msgid "**Type**: ``Boolean``"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:263
+#: ../../source/behavior/equations/variables.rst:374
 msgid "``min``"
 msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:255
-#: ../../source/behavior/equations/variables.rst:365
+#: ../../source/behavior/equations/variables.rst:367
 msgid ""
 "The ``min`` attribute is used to specify the minimum allowed value for a "
-"variable.  This attribute can be used by editors and compilers in various "
-"ways to inform users or developers about potentially invalid input data or "
-"solutions."
+"variable.  This attribute can be used by editors and compilers in various"
+" ways to inform users or developers about potentially invalid input data "
+"or solutions."
 msgstr ""
+"``min`` 속성은 변수에 허용되는 최소값을 지정하는 데 사용합니다. "
+"이 속성은 잠재적으로 유효하지 않은 입력 데이터 또는 해에 대해 사용자 또는 개발자에게 알리기 위해 다양한 방법으로 편집자와 컴파일러에서 사용할 수 있습니다."
+
 
 #: ../../source/behavior/equations/variables.rst:260
-#: ../../source/behavior/equations/variables.rst:370
-msgid "**Default**: -:math:`\\infty`"
+msgid ""
+"**Default**: ``-DBL_MAX`` where ``DBL_MAX`` is the largest floating point"
+" value that can be represented for the given platform."
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:272
-#: ../../source/behavior/equations/variables.rst:383
+#: ../../source/behavior/equations/variables.rst:274
+#: ../../source/behavior/equations/variables.rst:385
 msgid "``max``"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:265
-#: ../../source/behavior/equations/variables.rst:375
+#: ../../source/behavior/equations/variables.rst:266
+#: ../../source/behavior/equations/variables.rst:377
 msgid ""
 "The ``max`` attribute is used to specify the maximum allowed value for a "
-"variable.  This attribute can be used by editors and compilers in various "
-"ways to inform users or developers about potentially invalid input data or "
-"solutions."
+"variable.  This attribute can be used by editors and compilers in various"
+" ways to inform users or developers about potentially invalid input data "
+"or solutions."
+msgstr ""
+"``max`` 속성은 변수에 허용되는 최대값을 지정하는 데 사용합니다. "
+"이 속성은 잠재적으로 유효하지 않은 입력 데이터 또는 해에 대해 사용자 또는 개발자에게 알리기 위해 다양한 방법으로 편집자와 컴파일러에서 사용할 수 있습니다."
+
+
+#: ../../source/behavior/equations/variables.rst:271
+msgid ""
+"**Default**: ``DBL_MAX`` where ``DBL_MAX`` is the largest floating point "
+"value that can be represented for the given platform."
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:270
-#: ../../source/behavior/equations/variables.rst:380
-msgid "**Default**: :math:`\\infty`"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:290
+#: ../../source/behavior/equations/variables.rst:292
 msgid "``unit``"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:275
+#: ../../source/behavior/equations/variables.rst:277
 msgid ""
-"As discussed extensively in this chapter, variables can have physical units "
-"associated with them.  There are rules about how these units are expressed, "
-"but the net result is that by using the ``unit`` attribute it is possible "
-"check models to make sure that equations are physically consistent.  A value"
-" of ``\"1\"`` indicates the value has no physical units.  On the other hand,"
-" a value of ``\"\"`` (the default value if no value is given) indicates that"
-" the physical units are simply unspecified.  The difference between "
-"``\"1\"`` and ``\"\"`` is that the former is an explicit statement that the "
-"quantity is dimensionless (has not units) while the latter indicates that "
-"the quantity may have physical units but they are left unspecified."
+"As discussed extensively in this chapter, variables can have physical "
+"units associated with them.  There are rules about how these units are "
+"expressed, but the net result is that by using the ``unit`` attribute it "
+"is possible check models to make sure that equations are physically "
+"consistent.  A value of ``\"1\"`` indicates the value has no physical "
+"units.  On the other hand, a value of ``\"\"`` (the default value if no "
+"value is given) indicates that the physical units are simply unspecified."
+"  The difference between ``\"1\"`` and ``\"\"`` is that the former is an "
+"explicit statement that the quantity is dimensionless (has not units) "
+"while the latter indicates that the quantity may have physical units but "
+"they are left unspecified."
 msgstr ""
+"이 장(chapter)에서 광범위하게 논의된 것처럼 변수는 관련된 물리적 단위를 가질 수 있습니다. "
+"이러한 단위를 표현하는 방법에 대한 규칙이 있지만 최종 결과는 ``unit`` 속성을 사용하여 방정식이 물리적으로 일관성이 있는지 확인하기 위해 모델을 검사할 수 있다는 것입니다. "
+"``"1"`` 값은 값에 물리적 단위가 없음을 나타냅니다. "
+"반면에 ``""`` 값(값이 지정되지 않은 경우 기본값)은 물리적 단위가 지정되지 않았음을 나타냅니다. "
+"``"1"`` 과 ``""`` 의 차이점은 전자는 양이 무차원(단위가 없음)이라는 명시적인 진술이고 후자는 양이 특정되지 않았지만, 물리적 단위를 가질 가능성이 있음을 나타냅니다.  "
 
-#: ../../source/behavior/equations/variables.rst:288
+
+#: ../../source/behavior/equations/variables.rst:290
 msgid "**Default**: ``\"\"`` (*i.e.,* no physical units specified)"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:308
+#: ../../source/behavior/equations/variables.rst:310
 msgid "``displayUnit``"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:293
+#: ../../source/behavior/equations/variables.rst:295
 msgid ""
 "While the ``unit`` attribute describes what physical units should be "
 "associated with the value of a variable, the ``displayUnit`` expresses a "
@@ -375,288 +484,328 @@ msgid ""
 "standard atmospheric pressure is 101,325 *Pascals*.  When entering, "
 "displaying or plotting pressures it may be more convenient to use *bars*."
 msgstr ""
+"``unit`` 속성은 변수 값과 연관되어야 하는 물리적 단위를 설명하는 반면 ``displayUnit`` 은 변수 값을 표시할 때 어떤 단위를 사용해야 하는지에 대한 기본 설정을 나타냅니다. "
+"예를 들어, 압력의 SI 단위는 *파스칼(Pascals)* 입니다. 그러나 표준 기압은 101,325  *Pascals*  입니다. "
+"압력을 입력 하거나 표시하는 경우 혹은 선도(plot)로 표현 할 때 *바(bars)* 를 사용하는 것이 더 편리할 수 있습니다.  "
 
-#: ../../source/behavior/equations/variables.rst:301
+
+#: ../../source/behavior/equations/variables.rst:303
 msgid ""
-"The ``displayUnit`` attribute doesn't affect the value of a variable or the "
-"equations used to simulate a model.  It only affects the *rendering* of "
-"those values by potentially transforming them into more convenient units for"
-" display."
+"The ``displayUnit`` attribute doesn't affect the value of a variable or "
+"the equations used to simulate a model.  It only affects the *rendering* "
+"of those values by potentially transforming them into more convenient "
+"units for display."
 msgstr ""
+"``displayUnit`` 속성은 변수의 값이나 모델을 시뮬레이트하는 데 사용하는 방정식에 영향을 미치지 않습니다. "
+"표시에 더 편리한 단위로 변환하여 해당 값의 *표현(rendering)* 에만 영향을 미칩니다."
 
-#: ../../source/behavior/equations/variables.rst:318
+
+#: ../../source/behavior/equations/variables.rst:320
 msgid "``nominal``"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:311
+#: ../../source/behavior/equations/variables.rst:313
 msgid ""
-"The ``nominal`` attribute is used to specify a nominal value for a variable."
-"  This nominal value is generally used in numerical calculations to perform "
-"various types of scaling used to avoid round-off or truncation error."
+"The ``nominal`` attribute is used to specify a nominal value for a "
+"variable.  This nominal value is generally used in numerical calculations"
+" to perform various types of scaling used to avoid round-off or "
+"truncation error."
+msgstr ""
+"``nominal`` 속성은 변수의 명목 값을 지정하는 데 사용합니다."
+"이 공칭 값은 일반적으로 반올림 또는 잘림 오류를 방지하는 데 사용하는 다양한 자료형의 스케일링을 수행하기 위해 수치 계산에 사용합니다."
+
+
+#: ../../source/behavior/equations/variables.rst:318
+msgid "**Default**:"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:330
+#: ../../source/behavior/equations/variables.rst:332
 msgid "``stateSelect``"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:321
+#: ../../source/behavior/equations/variables.rst:323
 msgid ""
-"The ``stateSelect`` attribute is used as a hint to Modelica compilers about "
-"whether a given variable should be chosen as a state (in cases where there "
-"is a choice to be made).  As discussed previously in the section on "
-":ref:`enumerations`, the possible values for this attribute are ``never``, "
-"``avoid``, ``default``, ``prefer`` and ``always``."
+"The ``stateSelect`` attribute is used as a hint to Modelica compilers "
+"about whether a given variable should be chosen as a state (in cases "
+"where there is a choice to be made).  As discussed previously in the "
+"section on :ref:`enumerations`, the possible values for this attribute "
+"are ``never``, ``avoid``, ``default``, ``prefer`` and ``always``."
 msgstr ""
+"``stateSelect`` 속성은 주어진 변수를 상태로 선택해야 하는지 여부에 대한 모델리카 컴파일러에 대한 힌트로 사용됩니다(선택해야 하는 경우). "
+"이전에 :ref:`enumerations` 섹션에서 논의한 것처럼 이 속성에 가능한 값은 ``never`` , ``avoid`` , ``default`` , ``prefer`` 및 ``always`` 입니다. "
 
-#: ../../source/behavior/equations/variables.rst:328
+
+#: ../../source/behavior/equations/variables.rst:330
 msgid "**Default**: ``default``"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:330
+#: ../../source/behavior/equations/variables.rst:332
 msgid "**Type**: ``StateSelect`` (enumeration, see :ref:`enumerations`)"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:333
+#: ../../source/behavior/equations/variables.rst:335
 msgid "Attributes of ``Integer``"
 msgstr ""
+"``Integer`` 의 속성 (Attributes of ``Integer`` )"
 
-#: ../../source/behavior/equations/variables.rst:343
+#: ../../source/behavior/equations/variables.rst:345
 msgid ""
 "It is worth noting that an ``Integer`` variable can be chosen as a state "
 "variable or as an iteration variable.  Under these circumstances, the "
-"``start`` attribute may be used by a compiler in the same was as it is for "
-"``Real`` variables (*see previous discussion of* :ref:`fixed-attribute`)"
+"``start`` attribute may be used by a compiler in the same was as it is "
+"for ``Real`` variables (*see previous discussion of* :ref:`fixed-"
+"attribute`)"
 msgstr ""
+"``Integer`` 변수가 상태 변수 또는 상호 작용하는 변수로 선택될 수 있다는 점에 주목할 필요가 있습니다. "
+"이러한 상황에서 컴파일러는 ``start`` 속성을 ``Real``  변수와 동일하게 사용할 수 있습니다"
+"(*이전 설명 참조*  :ref:`fixed-attribute` )."
 
-#: ../../source/behavior/equations/variables.rst:349
-#: ../../source/behavior/equations/variables.rst:402
+
+
+#: ../../source/behavior/equations/variables.rst:351
+#: ../../source/behavior/equations/variables.rst:404
 msgid ""
-"In the case of a ``parameter``, the ``start`` attribute will (as usual) be "
-"used as the default value for the ``parameter``."
+"In the case of a ``parameter``, the ``start`` attribute will (as usual) "
+"be used as the default value for the ``parameter``."
 msgstr ""
+"``parameter`` 의 경우 ``start`` 속성은 (일반적으로) ``parameter`` 의 기본값으로 사용합니다."
 
-#: ../../source/behavior/equations/variables.rst:354
-#: ../../source/behavior/equations/variables.rst:372
-#: ../../source/behavior/equations/variables.rst:382
+#: ../../source/behavior/equations/variables.rst:356
+#: ../../source/behavior/equations/variables.rst:374
+#: ../../source/behavior/equations/variables.rst:384
 msgid "**Type**: ``Integer``"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:357
-#: ../../source/behavior/equations/variables.rst:410
+#: ../../source/behavior/equations/variables.rst:359
+#: ../../source/behavior/equations/variables.rst:412
 msgid "*see previous discussion of* :ref:`fixed-attribute`"
 msgstr ""
+"*이전 설명 참조*  :ref:`fixed-attribute`"
 
-#: ../../source/behavior/equations/variables.rst:362
-#: ../../source/behavior/equations/variables.rst:407
-#: ../../source/behavior/equations/variables.rst:415
-msgid "**Type**: ``Boolean``"
+#: ../../source/behavior/equations/variables.rst:372
+msgid "**Default**: -:math:`\\infty`"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:386
+#: ../../source/behavior/equations/variables.rst:382
+msgid "**Default**: :math:`\\infty`"
+msgstr ""
+
+#: ../../source/behavior/equations/variables.rst:388
 msgid "Attributes of ``Boolean``"
 msgstr ""
+"``Boolean`` 의 속성 (Attributes of ``Boolean`` )"
 
-#: ../../source/behavior/equations/variables.rst:396
+#: ../../source/behavior/equations/variables.rst:398
 msgid ""
 "It is worth noting that an ``Boolean`` variable can be chosen as a state "
 "variable or as an iteration variable.  Under these circumstances, the "
-"``start`` attribute may be used by a compiler in the same was as it is for "
-"``Real`` variables (*see previous discussion of* :ref:`fixed-attribute`)"
+"``start`` attribute may be used by a compiler in the same was as it is "
+"for ``Real`` variables (*see previous discussion of* :ref:`fixed-"
+"attribute`)"
 msgstr ""
+"``Boolean`` 변수가 상태 변수 또는 상호 작용하는 변수로 선택될 수 있다는 점에 주목할 필요가 있습니다. "
+"이러한 상황에서 컴파일러는 ``start`` 속성을 ``Real``  변수와 동일하게 사용할 수 있습니다"
+"(*이전 설명 참조*  :ref:`fixed-attribute` )."
 
-#: ../../source/behavior/equations/variables.rst:418
+
+
+#: ../../source/behavior/equations/variables.rst:420
 msgid "Attributes of ``String``"
 msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:428
+#: ../../source/behavior/equations/variables.rst:430
 msgid ""
-"Technically, a ``String`` could be chosen as a state variable (or even an "
-"iteration variable), but in practice this never happens. So for a ``String``"
-" variable the only practical use of the ``start`` attribute is to define the"
-" value of a ``parameter`` (that happens to have the type of ``String``) if "
-"no explicit value for the parameter is given."
+"Technically, a ``String`` could be chosen as a state variable (or even an"
+" iteration variable), but in practice this never happens. So for a "
+"``String`` variable the only practical use of the ``start`` attribute is "
+"to define the value of a ``parameter`` (that happens to have the type of "
+"``String``) if no explicit value for the parameter is given."
 msgstr ""
+"기술적으로 ``String`` 은 상태 변수(또는 상호 관계가 있는 변수)로 선택될 수 있지만 실제로는 이런 일이 발생하지 않습니다." 
+"따라서 ``String`` 변수의 경우 ``start`` 속성의 유일한 실용적인 용도는 명시적인 파라미터가 없는 경우 ``parameter``"
+"( ``String`` 자료형을 가짐)의 값을 정의하는 것입니다. paramter에 대한 값을 설정합니다. "
 
-#: ../../source/behavior/equations/variables.rst:439
+
+#: ../../source/behavior/equations/variables.rst:441
 msgid ""
-"It is worth noting that :ref:`derived-types` retain the attributes of the "
-"built-in type that they are ultimately derived from.  Also, although the "
-"type of, for example, the ``min`` attribute on a ``Real`` variable is listed"
-" having the type ``Real`` it should be pointed out explicitly that "
-"attributes cannot themselves have attributes.  In other words, the ``start``"
-" attribute doesn't have a ``start`` attribute."
+"It is worth noting that :ref:`derived-types` retain the attributes of the"
+" built-in type that they are ultimately derived from.  Also, although the"
+" type of, for example, the ``min`` attribute on a ``Real`` variable is "
+"listed having the type ``Real`` it should be pointed out explicitly that "
+"attributes cannot themselves have attributes.  In other words, the "
+"``start`` attribute doesn't have a ``start`` attribute."
 msgstr ""
+":ref:`derived-types` 는 궁극적으로 파생된 내장 자료형의 속성을 유지한다는 점은 주목할 가치가 있습니다. "
+"또한, 예를 들어 ``Real`` 변수에 대한 ``min`` 속성의 자료형이 ``Real`` 자료형으로 나열되더라도 속성 자체가 속성을 가질 수 없음을 알아야 합니다."
+"즉, ``start`` 속성에는 ``start`` 속성이 없습니다."
 
-#: ../../source/behavior/equations/variables.rst:450
-msgid "Modifications"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:454
-msgid ""
-"So far, we've seen two types of modifications.  The first is when we change "
-"the value of an attribute, *e.g.,*"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:464
-msgid ""
-"In this case, we are creating a variable ``x`` of type ``Real``.  But rather"
-" than leaving it \"as is\", we then apply a modification to ``x``.  "
-"Specifically, we \"reach inside\" of ``x`` and change the ``start`` "
-"attribute value.  In this example, we are only going one level into ``x`` to"
-" make our modification.  But as we will see in our next example, it is "
-"possible to make modifications at arbitrary depths."
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:472
-msgid ""
-"The other case where we have seen modifications was in the section on :ref"
-":`avoiding-repetition`.  There we saw modification used in conjunction with "
-"``extends`` clauses, *e.g.,*"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:482
-msgid ""
-"Here, the modification is applied to elements that were inherited from the "
-"``QuiescentModelWithInheritance`` model.  As with modifications to "
-"attributes, the element being modified (a model in this case) is followed by"
-" parentheses and inside those parentheses we specify the modifications we "
-"wish to make."
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:490
-msgid ""
-"It is worth noting that modifications can be nested arbitrarily deep. For "
-"example, imagine we wanted to modify the ``start`` attribute for the "
-"variable ``x`` inherited from the ``QuiescentModelWithInheritance`` model.  "
-"In Modelica, such a modification would be made as follows:"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:500
-msgid ""
-"Here we first \"reach inside\" the ``QuiescentModelWithInheritance`` model "
-"to modify the contents that we \"inherit\" from it (``x`` in this case) and "
-"then we \"reach inside\" ``x`` to modify the value of the ``start`` "
-"attribute."
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:505
-msgid ""
-"One of the central themes of Modelica is support for reuse and avoiding the "
-"need to \"copy and paste\" code.  Modifications are one of the essential "
-"features in Modelica that support reuse.  We'll learn about others in future"
-" sections."
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:35
-msgid "parameter"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:51
-msgid "constant"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:72
-msgid "discrete"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:85
-msgid "Real"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:93
-msgid "Integer"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:94
-msgid "Boolean"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:95
-msgid "String"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:117
-msgid "derived types"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:125
-msgid "type"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:145
-msgid "enumeration"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:157
-msgid "AssertionLevel"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:158
-msgid "assertion levels"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:179
-msgid "attributes"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:190
-msgid "quantity attribute"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:191
-msgid "start attribute"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:192
-msgid "fixed attribute"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:193
-msgid "min attribute"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:194
-msgid "max attribute"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:195
-msgid "unit attribute"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:196
-msgid "displayUnit attribute"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:197
-msgid "nominal attribute"
-msgstr ""
-
-#: ../../source/behavior/equations/variables.rst:198
-msgid "stateSelect attribute"
-msgstr ""
 
 #: ../../source/behavior/equations/variables.rst:452
-msgid "modifications"
+msgid "Modifications"
 msgstr ""
+"변경(Modifications)"
 
-#: ../../source/behavior/equations/variables.rst:457
-#: ../../source/behavior/equations/variables.rst:476
-#: ../../source/behavior/equations/variables.rst:488
-msgid "modification"
+#: ../../source/behavior/equations/variables.rst:456
+msgid ""
+"So far, we've seen two types of modifications.  The first is when we "
+"change the value of an attribute, *e.g.,*"
 msgstr ""
+"지금까지 두 가지 자료형의 변경을 보았습니다. "
+"첫 번째는 속성 값을 변경할 때입니다. "
+"예를 들어"
+ 
+#: ../../source/behavior/equations/variables.rst:466
+msgid ""
+"In this case, we are creating a variable ``x`` of type ``Real``.  But "
+"rather than leaving it \"as is\", we then apply a modification to ``x``."
+"  Specifically, we \"reach inside\" of ``x`` and change the ``start`` "
+"attribute value.  In this example, we are only going one level into ``x``"
+" to make our modification.  But as we will see in our next example, it is"
+" possible to make modifications at arbitrary depths."
+msgstr ""
+"이 경우 ``Real`` 자료형의 ``x`` 변수를 생성합니다. "
+"그러나 "있는 그대로" 두지 않고 ``x`` 의 값을 변경합니다."
+"특히 ``x`` 의 "내부에 접근(reach inside)"하고 ``start``  속성 값을 변경합니다. "
+"이 예제에서는 수정을 위해 ``x`` 로 한 단계만 이동합니다. "
+"그러나 다음 예제에서 볼 수 있듯이 임의의 깊이에 대해서 값을 변경 할 수 있습니다."
 
-#: ../../source/behavior/equations/variables.rst:457
-msgid "attribute"
+#: ../../source/behavior/equations/variables.rst:474
+msgid ""
+"The other case where we have seen modifications was in the section on "
+":ref:`avoiding-repetition`.  There we saw modification used in "
+"conjunction with ``extends`` clauses, *e.g.,*"
 msgstr ""
+":ref:`avoiding-repetition` 섹션을 통해 값을 변경하는 다른 상황을 확인할 수 있었습니다."
+"여기서  ``extends`` 절과 함께 사용하여 값을 변경하는 사례를 보았습니다."
+"예를 들어 보면 아래와 같습니다."
 
-#: ../../source/behavior/equations/variables.rst:458
-msgid "attribute modification"
-msgstr ""
 
-#: ../../source/behavior/equations/variables.rst:476
-msgid "extends"
+#: ../../source/behavior/equations/variables.rst:484
+msgid ""
+"Here, the modification is applied to elements that were inherited from "
+"the ``QuiescentModelWithInheritance`` model.  As with modifications to "
+"attributes, the element being modified (a model in this case) is followed"
+" by parentheses and inside those parentheses we specify the modifications"
+" we wish to make."
 msgstr ""
+"여기서 값의 변경은 ``QuiescentModelWithInheritance`` 모델에서 상속된 요소에 적용합니다. "
+"속성 값의 변경과 마찬가지로 수정되는 요소(이 경우 모델) 뒤에는 괄호가 오고 그 괄호 안에 원하는 변경 사항을 지정합니다."
 
-#: ../../source/behavior/equations/variables.rst:488
-msgid "hierarchical"
+
+#: ../../source/behavior/equations/variables.rst:492
+msgid ""
+"It is worth noting that modifications can be nested arbitrarily deep. For"
+" example, imagine we wanted to modify the ``start`` attribute for the "
+"variable ``x`` inherited from the ``QuiescentModelWithInheritance`` "
+"model.  In Modelica, such a modification would be made as follows:"
 msgstr ""
+"여기서, 변경 사항이 임의로 중첩될 수 있다는 점은 주목할 가치가 있습니다. "
+"예를 들어, ``QuiescentModelWithInheritance`` 모델에서 상속된 ``x`` 변수에 대한 ``start`` 속성을 변경하고 싶다고 가정해 보십시오. "
+"모델리카에서는 다음과 같은 방법으로 값을 변경할 수 있습니다. "
+
+
+#: ../../source/behavior/equations/variables.rst:502
+msgid ""
+"Here we first \"reach inside\" the ``QuiescentModelWithInheritance`` "
+"model to modify the contents that we \"inherit\" from it (``x`` in this "
+"case) and then we \"reach inside\" ``x`` to modify the value of the "
+"``start`` attribute."
+msgstr ""
+"먼저 ``QuiescentModelWithInheritance`` 모델의 "내부에 도달"하여 "상속"된 내용(이 경우 ``x``)을 변경하기 위해 내부에 도달 한 다음에 내부에 있는 ``x`` 의 ``start`` 속성 값을 수정합니다."
+
+#: ../../source/behavior/equations/variables.rst:507
+msgid ""
+"One of the central themes of Modelica is support for reuse and avoiding "
+"the need to \"copy and paste\" code.  Modifications are one of the "
+"essential features in Modelica that support reuse.  We'll learn about "
+"others in future sections."
+msgstr ""
+"모델리카의 주요한 관심사 중 하나는 재사용을 지원하고 코드를 "복사하여 붙여넣기"할 필요가 없도록 한다는 것입니다. "
+"값을 변경하는 기능은 재사용을 지원하는 모델리카의 필수 요소 중 하나입니다. "
+"앞으로 이어지는 섹션에서 다른 관련된 것들에 대해 배울 것입니다"
+
+
+#~ msgid "parameter"
+#~ msgstr ""
+
+#~ msgid "constant"
+#~ msgstr ""
+
+#~ msgid "discrete"
+#~ msgstr ""
+
+#~ msgid "Real"
+#~ msgstr ""
+
+#~ msgid "Integer"
+#~ msgstr ""
+
+#~ msgid "Boolean"
+#~ msgstr ""
+
+#~ msgid "String"
+#~ msgstr ""
+
+#~ msgid "derived types"
+#~ msgstr ""
+
+#~ msgid "type"
+#~ msgstr ""
+
+#~ msgid "enumeration"
+#~ msgstr ""
+
+#~ msgid "AssertionLevel"
+#~ msgstr ""
+
+#~ msgid "assertion levels"
+#~ msgstr ""
+
+#~ msgid "attributes"
+#~ msgstr ""
+
+#~ msgid "quantity attribute"
+#~ msgstr ""
+
+#~ msgid "start attribute"
+#~ msgstr ""
+
+#~ msgid "fixed attribute"
+#~ msgstr ""
+
+#~ msgid "min attribute"
+#~ msgstr ""
+
+#~ msgid "max attribute"
+#~ msgstr ""
+
+#~ msgid "unit attribute"
+#~ msgstr ""
+
+#~ msgid "displayUnit attribute"
+#~ msgstr ""
+
+#~ msgid "nominal attribute"
+#~ msgstr ""
+
+#~ msgid "stateSelect attribute"
+#~ msgstr ""
+
+#~ msgid "modifications"
+#~ msgstr ""
+
+#~ msgid "modification"
+#~ msgstr ""
+
+#~ msgid "attribute"
+#~ msgstr ""
+
+#~ msgid "attribute modification"
+#~ msgstr ""
+
+#~ msgid "extends"
+#~ msgstr ""
+
+#~ msgid "hierarchical"
+#~ msgstr ""
+

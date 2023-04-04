@@ -1,132 +1,194 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/subsystems/power_supply.rst:2
 msgid "DC Power Supply"
 msgstr ""
+"DC 전원 공급장치(DC Power Supply)"
+
 
 #: ../../source/components/subsystems/power_supply.rst:4
 msgid ""
 "In this section, we'll consider how a DC power supply model could be "
-"implemented in Modelica.  We'll show, once again, how a flat system model "
-"can be refactored to make use of a reusable subsystem model."
+"implemented in Modelica.  We'll show, once again, how a flat system model"
+" can be refactored to make use of a reusable subsystem model."
 msgstr ""
+"이 섹션에서는 모델리카에서 DC 전원 공급 장치 모델을 구현하는 방법을 살펴보겠습니다."
+"재사용 가능한 하위 시스템 모델을 사용하기 위해 플랫 시스템 모델을 리팩토링하는 방법을 다시 한 번 보여드리겠습니다."
+
 
 #: ../../source/components/subsystems/power_supply.rst:9
 msgid "Flat Power Supply Model"
 msgstr ""
+"수평적 전원 공급 모델(Flat Power Supply Model)"
 
 #: ../../source/components/subsystems/power_supply.rst:11
 msgid ""
 "In this case, our flat system model will be the DC power supply circuit "
 "shown here:"
 msgstr ""
+"이 경우 플랫 시스템 모델은 여기에 표시된 DC 전원 공급 회로가 됩니다."
 
-#: ../../source/components/subsystems/power_supply.rst:19
+#: ../../source/components/subsystems/power_supply.rst:21
 msgid "Implemented in Modelica, this model looks like this:"
 msgstr ""
+"모델리카에서 구현된 이 모델은 다음과 같습니다."
 
-#: ../../source/components/subsystems/power_supply.rst:24
+#: ../../source/components/subsystems/power_supply.rst:26
 msgid ""
 "This kind of power supply works by taking an AC input voltage (120V at "
-"60Hz), rectifying it and then passing it through a low-pass filter. If we "
-"simulate this model, we see the following voltage across the ``load`` "
+"60Hz), rectifying it and then passing it through a low-pass filter. If we"
+" simulate this model, we see the following voltage across the ``load`` "
 "resistor:"
 msgstr ""
+"이러한 종류의 전원 공급 장치는 AC 입력 전압(60Hz에서 120V)을 취하여 정류한 다음 저역 통과 필터를 통과시키는 방식으로 작동합니다. "
+"이 모델을 시뮬레이션하면 ``부하`` 저항에서 다음과 같은 전압을 볼 수 있습니다."
 
-#: ../../source/components/subsystems/power_supply.rst:32
+
+#: ../../source/components/subsystems/power_supply.rst:34
 msgid ""
-"Note that our target here is an output voltage of 12 volts.  However, the "
-"greater the load on the power supply, the lower the quality of the output "
-"signal will be.  In this particular simulation, the load is initially zero "
-"(because the load connecting the switch to the power supply is open).  But "
-"when the switch is closed and current begins to flow through the load (the "
-"resistor named ``load``), we start to see some artifact."
+"Note that our target here is an output voltage of 12 volts.  However, the"
+" greater the load on the power supply, the lower the quality of the "
+"output signal will be.  In this particular simulation, the load is "
+"initially zero (because the switch to the power supply is open).  But "
+"when the switch is closed and current begins to flow through the load "
+"(the resistor named ``load``), we start to see some artifact."
 msgstr ""
+"여기서 목표는 12볼트의 출력 전압입니다."
+"그러나 전원 공급 장치의 부하가 클수록 출력 신호의 품질이 낮아집니다."
+"이 특정 시뮬레이션에서 부하는 초기에 0입니다(전원 공급 장치에 대한 스위치가 열려 있기 때문). "
+"그러나 스위치가 닫히고 전류가 부하(``load`` 라는 저항)를 통해 흐르기 시작하면 부하가 미친 약간의 결과를 볼 수 있습니다."
 
-#: ../../source/components/subsystems/power_supply.rst:41
-msgid "Hierarchical Power Supply"
-msgstr ""
 
 #: ../../source/components/subsystems/power_supply.rst:43
-msgid ""
-"Once again, we'll improve upon the flat version of our system by taking some"
-" collection of components and organizing them into a subsystem model.  Our "
-"system level circuit then becomes:"
+msgid "Hierarchical Power Supply"
 msgstr ""
+"계층적 전원 공급(Hierarchical Power Supply)"
 
-#: ../../source/components/subsystems/power_supply.rst:52
+#: ../../source/components/subsystems/power_supply.rst:45
 msgid ""
-"This model uses the ``BasicPowerSupply`` model whose diagram is shown here:"
+"Once again, we'll improve upon the flat version of our system by taking "
+"some collection of components and organizing them into a subsystem model."
+"  Our system level circuit then becomes:"
 msgstr ""
+"다시 한 번, 일부 구성 요소 모음을 가져와 하위 시스템 모델로 구성하여 시스템의 수평적 버전을 개선할 것입니다."
+"그러면 시스템 레벨 회로는 다음과 같이 됩니다."
 
-#: ../../source/components/subsystems/power_supply.rst:59
+
+#: ../../source/components/subsystems/power_supply.rst:56
 msgid ""
-"The Modelica source code for this reusable power supply subsystem model is:"
+"This model uses the ``BasicPowerSupply`` model whose diagram is shown "
+"here:"
 msgstr ""
+"이 모델은 다이어그램이 여기에 표시된 ``BasicPowerSupply`` 모델을 사용합니다: "
 
 #: ../../source/components/subsystems/power_supply.rst:65
 msgid ""
-"There are a couple of interesting things to note about this model. First, we"
-" see the same organizational structure as we have before where parameters "
-"and connectors are made ``public`` while the internal components are "
-"``protected``.  We can also see the use of the :ref:`dialog-anno` annotation"
-" to organize parameters into distinct groupings (in this case, "
-"``\"General\"`` and ``\"Transformer\"``).  We can also see the use of the "
-"``enable`` annotation in conjunction with ``considerMagnetization`` "
-"parameter to selectively expose the ``Lm1`` parameter only in the cases "
-"where ``considerMagnetization`` is true."
+"The Modelica source code for this reusable power supply subsystem model "
+"is:"
 msgstr ""
+"이 재사용 가능한 전원 공급 장치 하위 시스템 모델의 모델리카 소스 코드는 다음과 같습니다."
 
-#: ../../source/components/subsystems/power_supply.rst:75
+#: ../../source/components/subsystems/power_supply.rst:71
 msgid ""
-"Using our hierarchical system model we get, as expected, exactly the same "
-"results as we got for the flat version:"
+"There are a couple of interesting things to note about this model. First,"
+" we see the same organizational structure as we have before where "
+"parameters and connectors are made ``public`` while the internal "
+"components are ``protected``.  We can also see the use of the :ref"
+":`dialog-anno` annotation to organize parameters into distinct groupings "
+"(in this case, ``\"General\"`` and ``\"Transformer\"``).  We can also see"
+" the use of the ``enable`` annotation in conjunction with "
+"``considerMagnetization`` parameter to selectively expose the ``Lm1`` "
+"parameter only in the cases where ``considerMagnetization`` is true."
 msgstr ""
+"이 모델에 대해 주목해야 할 몇 가지 흥미로운 사항이 있습니다. "
+"먼저 파라미터와 커넥터는 ``public`` , 내부 구성 요소가 ``protected`` 로 구현되는 이전과 동일한 조직 구조를 가지고,  "
+":ref:`dialog-anno` 주석을 사용하여 파라미터를 개별 그룹(이 경우 ``"General"`` 및 ``"Transformer"``)으로 구성한 것을 알 수 있습니다."
+"또한 ``considerMagnetization`` 파라미터와 함께 ``enable`` 주석을 사용하여 "
+"``considerMagnetization`` 이 true인 경우에만 ``Lm1`` 파라미터를 선택적으로 노출하는 것을 볼 수 있습니다."
+
+
 
 #: ../../source/components/subsystems/power_supply.rst:81
 msgid ""
-"We can augment our system model to include an additional load (that comes "
-"online after some delay):"
+"Using our hierarchical system model we get, as expected, exactly the same"
+" results as we got for the flat version:"
 msgstr ""
+"계층적 시스템 모델을 사용하여 예상한 대로 수평 버전에서 얻은 것과 정확히 동일한 결과를 얻습니다."
 
-#: ../../source/components/subsystems/power_supply.rst:89
+#: ../../source/components/subsystems/power_supply.rst:87
 msgid ""
-"In that case, if we simulate the model we can see the impact that additional"
-" load will have on the quality of power supply output:"
+"We can augment our system model to include an additional load (that comes"
+" online after some delay):"
 msgstr ""
+"추가 로드를 포함하도록 시스템 모델을 확장할 수 있습니다(일부 지연 후 온라인 상태가 됨)."
 
-#: ../../source/components/subsystems/power_supply.rst:95
+#: ../../source/components/subsystems/power_supply.rst:96
+msgid ""
+"In that case, if we simulate the model we can see the impact that "
+"additional load will have on the quality of power supply output:"
+msgstr ""
+"이 경우 모델을 시뮬레이션하면 추가 부하가 전원 공급 장치 출력 품질에 미치는 영향을 확인할 수 있습니다."
+
+#: ../../source/components/subsystems/power_supply.rst:102
 msgid ""
 "By increasing the capacitance in the power supply, we can reduce the "
 "amplitude of the voltage fluctuations, *e.g.,*"
 msgstr ""
+"전원 공급 장치의 커패시턴스를 증가시켜 전압 변동의 진폭을 줄일 수 있습니다. "
 
-#: ../../source/components/subsystems/power_supply.rst:101
+
+#: ../../source/components/subsystems/power_supply.rst:108
 msgid ""
-"However, if we increase the capacitance level too much, we will find that "
-"the power supply output is very slow to respond to load changes, *e.g.,*"
+"However, if we increase the capacitance level too much, we will find that"
+" the power supply output is very slow to respond to load changes, *e.g.,*"
 msgstr ""
+"그러나 커패시턴스 수준을 너무 많이 높이면 전원 공급 장치 출력이 부하 변화에 응답하는 데 매우 느리다는 것을 알 수 있습니다. "
+"예를 들면 아래와 같습니다."
 
-#: ../../source/components/subsystems/power_supply.rst:109
+
+#: ../../source/components/subsystems/power_supply.rst:116
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
-#: ../../source/components/subsystems/power_supply.rst:111
+#: ../../source/components/subsystems/power_supply.rst:118
 msgid ""
-"This example illustrates, once again, how a collection of components can be "
-"organized into a reusable subsystem model.  This example follows the best "
-"practice of placing parameters and connectors in the ``public`` section of "
-"the resulting subsystem model while keeping the internal components in the "
-"``protected`` section."
+"This example illustrates, once again, how a collection of components can "
+"be organized into a reusable subsystem model.  This example follows the "
+"best practice of placing parameters and connectors in the ``public`` "
+"section of the resulting subsystem model while keeping the internal "
+"components in the ``protected`` section."
 msgstr ""
+"이 예제는 구성 요소 모음을 재사용 가능한 하위 시스템 모델로 구성하는 방법을 다시 한 번 보여주고,"
+"``protected`` 섹션에 내부 구성 요소를 유지하면서 결과 서브시스템 모델의 ``public`` 섹션에 파라미터수와 커넥터를 배치하는 모범 사례를 만들고 있습니다."
+
+
+#~ msgid ""
+#~ "Note that our target here is an"
+#~ " output voltage of 12 volts.  "
+#~ "However, the greater the load on "
+#~ "the power supply, the lower the "
+#~ "quality of the output signal will "
+#~ "be.  In this particular simulation, the"
+#~ " load is initially zero (because the"
+#~ " load connecting the switch to the"
+#~ " power supply is open).  But when "
+#~ "the switch is closed and current "
+#~ "begins to flow through the load "
+#~ "(the resistor named ``load``), we start"
+#~ " to see some artifact."
+#~ msgstr ""
+

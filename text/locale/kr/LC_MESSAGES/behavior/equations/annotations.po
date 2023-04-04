@@ -1,269 +1,360 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/equations/annotations.rst:4
 msgid "Annotations"
 msgstr ""
+"주석(Annotations)"
 
 #: ../../source/behavior/equations/annotations.rst:6
 msgid ""
 "Recall in the discussion on :ref:`experimental-conditions` we included "
 "information about the simulation start and stop time using an "
-"``annotation``.  An ``annotation`` is a way to include information that is "
-"not related to the behavior of the model.  In the case of experimental "
-"conditions, we injected information about how a particular model should be "
-"simulated.  But annotations are used extensively in Modelica to provide all "
-"kinds of additional information about models.  For example, as we'll see "
-":ref:`later in the book <graphical-annos>`, annotations are used to describe"
-" the graphical appearance of components and connectors.  For now, the "
-"important thing is to understand that annotations are additional data, above"
-" and beyond behavior, that can be \"attached\" to different elements in "
-"Modelica."
+"``annotation``.  An ``annotation`` is a way to include information that "
+"is not related to the behavior of the model.  In the case of experimental"
+" conditions, we injected information about how a particular model should "
+"be simulated.  But annotations are used extensively in Modelica to "
+"provide all kinds of additional information about models.  For example, "
+"as we'll see :ref:`later in the book <graphical-annos>`, annotations are "
+"used to describe the graphical appearance of components and connectors.  "
+"For now, the important thing is to understand that annotations are "
+"additional data, above and beyond behavior, that can be \"attached\" to "
+"different elements in Modelica."
 msgstr ""
+"``annotation`` 을 사용하여 시뮬레이션 시작 및 중지 시간에 대한 정보를 포함한 실험 조건에 대한 내용을 추가할 수 있습니다. "
+"``annotation`` 은 모델의 동작과 관련되지 않은 정보를 포함하는 방법입니다. "
+"실험 조건의 경우에는 특정 모델을 시뮬레이션하는 방법에 대한 정보를 추가 하는 용도로 사용하긴 했지만, "
+"주석은 모델에 대한 모든 종류의 추가 정보를 제공하기 위해 모델리카에서 광범위하게 사용합니다. "
+"예를 들어 :ref:`책의 뒷부분에서 <graphical-annos>`  볼 수 있듯이 주석은 구성 요소 및 커넥터의 그래픽 모양을 설명하는 데 사용합니다. "
+"지금은 주석이 모델리카의 다른 요소에 "연결"될 수 있는 동작 이외로 추가되는 데이터라고 이해하고 다음으로 넘어가는 것이 좋겠습니다."
 
-#: ../../source/behavior/equations/annotations.rst:20
+
+#: ../../source/behavior/equations/annotations.rst:19
 msgid ""
-"In this section, we will first cover where an ``annotation`` can appear in a"
-" Modelica model.  Next, we'll explain how we can use :ref:`record-def` to "
-"describe the contents of an annotation.  Finally, we'll describe a few of "
-"the many \"standard\" annotations that are included as part of the Modelica "
-"specification."
+"In this section, we will first cover where an ``annotation`` can appear "
+"in a Modelica model.  Next, we'll explain how we can use :ref:`record-"
+"def` to describe the contents of an annotation.  Finally, we'll describe "
+"a few of the many \"standard\" annotations that are included as part of "
+"the Modelica specification."
 msgstr ""
+"이 섹션에서는 먼저 모델리카 모델에서 ``annotation`` 이 나타날 수 있는 위치를 다룰 것입니다. "
+"다음으로 주석의 내용을 설명하기 위해 :ref:`record-def` 를 사용하는 방법을 설명합니다. "
+"마지막으로 모델리카 사양의 일부로 포함된 많은 "표준" 주석 중 몇 가지를 설명합니다."
 
-#: ../../source/behavior/equations/annotations.rst:27
+
+#: ../../source/behavior/equations/annotations.rst:26
 msgid "Annotation Locations"
 msgstr ""
+"주석 위치(Annotation Locations)"
 
-#: ../../source/behavior/equations/annotations.rst:29
+#: ../../source/behavior/equations/annotations.rst:28
 msgid ""
 "Annotations can appear in many different places in Modelica.  We will "
 "discuss each potential location and demonstrate the syntax for each case."
 msgstr ""
-
-#: ../../source/behavior/equations/annotations.rst:33
+"주석은 모델리카의 다양한 위치에 나타날 수 있습니다. "
+"각 잠재적 위치에 대해 논의하고 각 경우에 대한 구문을 살펴 보겠습니다."
+ 
+#: ../../source/behavior/equations/annotations.rst:32
 msgid "Declaration Annotations"
 msgstr ""
+"선언 주석(Declaration Annotations)"
 
-#: ../../source/behavior/equations/annotations.rst:37
+#: ../../source/behavior/equations/annotations.rst:36
 msgid ""
-"A declaration annotation comes at the end of a declaration, right before the"
-" ``;``.  Here is a simple declaration that includes an annotation:"
+"A declaration annotation comes at the end of a declaration, right before "
+"the ``;``.  Here is a simple declaration that includes an annotation:"
 msgstr ""
+"선언 주석은 선언의 끝 부분에서 ``;`` 바로 앞에 옵니다."
+"다음은 주석을 포함하는 간단한 선언입니다."
 
-#: ../../source/behavior/equations/annotations.rst:45
+
+#: ../../source/behavior/equations/annotations.rst:44
 msgid ""
-"Note that the ``annotation`` comes after the descriptive string and before "
-"the ``;``.  Also, the ``...`` is simply a place holder for the :ref"
-":`annotation-data`, which will be discussed shortly."
+"Note that the ``annotation`` comes after the descriptive string and "
+"before the ``;``.  Also, the ``...`` is simply a place holder for the "
+":ref:`annotation-data`, which will be discussed shortly."
 msgstr ""
+"``annotation`` 은 설명 문자열 뒤와 ``;`` 앞에 옵니다. "
+"또한 ``...`` 는 곧 설명할 :ref:`annotation-data` 에 대한 자리 표시자일 뿐입니다."
 
-#: ../../source/behavior/equations/annotations.rst:50
+
+#: ../../source/behavior/equations/annotations.rst:49
 msgid "Statement and Equation Annotations"
 msgstr ""
+"상태와 방정식 주석(Statement and Equation Annotations)"
 
-#: ../../source/behavior/equations/annotations.rst:54
-msgid ""
-"It is also possible to associate annotations with equations, for example:"
+#: ../../source/behavior/equations/annotations.rst:53
+msgid "It is also possible to associate annotations with equations, for example:"
 msgstr ""
-
-#: ../../source/behavior/equations/annotations.rst:61
+"주석을 방정식과 연결할 수도 있습니다."
+"예를 들면 다음과 같습니다."
+ 
+#: ../../source/behavior/equations/annotations.rst:60
 msgid ""
-"In declarations and equations, the ``annotation`` is always at the very end "
-"and comes immediately before the ``;``."
+"In declarations and equations, the ``annotation`` is always at the very "
+"end and comes immediately before the ``;``."
 msgstr ""
+"선언 과 같이 방정식에서 ``주석`` 은 항상 맨 끝에 있고 ``;`` 바로 앞에 옵니다."
 
-#: ../../source/behavior/equations/annotations.rst:65
+#: ../../source/behavior/equations/annotations.rst:64
 msgid "Inheritance Annotations"
 msgstr ""
+"상속의 주석(Inheritance Annotations)"
 
-#: ../../source/behavior/equations/annotations.rst:69
+#: ../../source/behavior/equations/annotations.rst:68
 msgid ""
 "We briefly discussed the ``extends`` keyword when we talked about "
 ":ref:`modifications` and :ref:`avoiding-repetition`.  It is possible to "
 "associate an ``annotation`` with an ``extends`` clause as follows:"
 msgstr ""
+"``extends`` 키워드는 :ref:`modifications` 및 :ref:`avoiding-repetition` 에 대해 이야기할 때 간략하게 논의했습니다. "
+"다음과 같이 ``주석`` 을 ``extends`` 절과 연관시킬 수 있습니다."
 
-#: ../../source/behavior/equations/annotations.rst:77
+
+#: ../../source/behavior/equations/annotations.rst:76
 msgid ""
 "As we've observed in each previous case, the ``annotation`` immediately "
 "precedes the ``;``."
 msgstr ""
+"앞의 각 경우에서 관찰한 것처럼 ``주석`` 은 ``;`` 바로 앞에 옵니다."
 
-#: ../../source/behavior/equations/annotations.rst:82
+#: ../../source/behavior/equations/annotations.rst:81
 msgid "Model Annotations"
 msgstr ""
+"모델 주석(Model Annotations)"
 
-#: ../../source/behavior/equations/annotations.rst:87
+#: ../../source/behavior/equations/annotations.rst:86
 msgid ""
 "A model annotation associates annotation data directly with the model "
 "definition itself.  This is exactly the kind of annotation we saw when "
 "describing :ref:`experimental-conditions`, *e.g.,*"
 msgstr ""
+"모델 주석은 주석 데이터를 모델 정의 자체와 직접 연결합니다. "
+"이것은 정확히 :ref:`experimental-conditions` 를 설명할 때 보았던 종류의 주석과 같습니다."
 
-#: ../../source/behavior/equations/annotations.rst:97
+
+#: ../../source/behavior/equations/annotations.rst:96
 msgid ""
-"Note how, unlike all the previous annotation locations we've described, this"
-" annotation isn't really \"attached\" to anything.  This indicates that it "
-"is annotating the model itself."
+"Note how, unlike all the previous annotation locations we've described, "
+"this annotation isn't really \"attached\" to anything.  This indicates "
+"that it is annotating the model itself."
 msgstr ""
+"앞서 설명한 모든 이전 주석 위치와 달리 이 주석은 실제로 어떤 것에 "연결"되지 않는다는 점에 집중해야 합니다. "
+"이는 모델 자체에 주석을 달고 있음을 나타냅니다."
 
-#: ../../source/behavior/equations/annotations.rst:104
+
+#: ../../source/behavior/equations/annotations.rst:103
 msgid "Annotation Data"
 msgstr ""
+"주석 데이터(Annotation Data)"
 
-#: ../../source/behavior/equations/annotations.rst:107
+#: ../../source/behavior/equations/annotations.rst:106
 msgid "General Syntax"
 msgstr ""
+"일반적 문법(General Syntax)"
 
-#: ../../source/behavior/equations/annotations.rst:109
+#: ../../source/behavior/equations/annotations.rst:108
 msgid ""
 "The syntax of an annotation is the same syntax used for "
 ":ref:`modifications`.  This means the annotation will include either an "
 "assignment to a variable in the annotation, *e.g.,*"
 msgstr ""
+"주석의 구문은 :ref:`modifications` 에 사용하는 것과 동일한 구문입니다. "
+"이것은 주석이 변수에 대한 값의 변경을 포함한다는 것을 의미합니다. "
+"예를 들면 아래와 같습니다. "
 
-#: ../../source/behavior/equations/annotations.rst:117
+
+#: ../../source/behavior/equations/annotations.rst:116
 msgid ""
-"or it will include a modification to something **inside** a variable in the "
-"annotation, *e.g.,*"
+"or it will include a modification to something **inside** a variable in "
+"the annotation, *e.g.,*"
 msgstr ""
+"또는 주석의 변수 **내부 변수** 에 대한 수정을 포함 할 수 있습니다.  "
+"이에 대해 예를 들어 보겠습니다."
 
-#: ../../source/behavior/equations/annotations.rst:125
+
+#: ../../source/behavior/equations/annotations.rst:124
 msgid "User Annotations"
 msgstr ""
+"사용자 주석(User Annotations)"
 
-#: ../../source/behavior/equations/annotations.rst:127
+#: ../../source/behavior/equations/annotations.rst:126
 msgid ""
-"Annotations were designed to allow model developers to attach **arbitrary "
-"data** to their models.  For example, if a user wanted to associate a part "
-"number with a given model definition, they might introduce a model "
+"Annotations were designed to allow model developers to attach **arbitrary"
+" data** to their models.  For example, if a user wanted to associate a "
+"part number with a given model definition, they might introduce a model "
 "annotation like this:"
 msgstr ""
+"주석은 모델 개발자가 대상 모델에 **임의의 데이터** 를 첨부할 수 있도록 설계되었습니다. "
+"예를 들어 사용자가 부품 번호를 지정된 모델 정의와 연결하려는 경우, 다음과 같은 모델 주석을 도입할 수 있습니다."
 
-#: ../../source/behavior/equations/annotations.rst:136
+
+#: ../../source/behavior/equations/annotations.rst:135
 msgid ""
-"A general principle of annotation data is that if a tool reads in a model, "
-"**it must preserve the annotation information** when it writes it back out."
-"  The tool does not (and, in general, will not) have to understand the data."
-"  But the data must be preserved."
+"A general principle of annotation data is that if a tool reads in a "
+"model, **it must preserve the annotation information** when it writes it "
+"back out.  The tool does not (and, in general, will not) have to "
+"understand the data.  But the data must be preserved."
 msgstr ""
+"주석 데이터의 일반적인 원칙은 시뮬레이션 소프트웨어가 모델에서 읽는 경우 다시 쓸 때 **주석 정보를 보존해야** 한다는 것입니다. "
+"시뮬레이션 소프트웨어는 데이터를 이해할 필요가 없으며 일반적으로 그럴 필요도 없습니다. 그러나 데이터는 보존되어야 합니다."
 
-#: ../../source/behavior/equations/annotations.rst:142
+
+#: ../../source/behavior/equations/annotations.rst:141
 msgid "Multiple Annotations"
 msgstr ""
+"다중 주석(Multiple Annotations)"
 
-#: ../../source/behavior/equations/annotations.rst:144
+#: ../../source/behavior/equations/annotations.rst:143
 msgid ""
-"Imagine a user wanted to specify **both** a part number and an experiment "
-"annotation.  Then they might end up with an annotation like this one:"
+"Imagine a user wanted to specify **both** a part number and an experiment"
+" annotation.  Then they might end up with an annotation like this one:"
 msgstr ""
+"사용자가 부품 번호와 실험 주석을 **모두** 지정하려고 한다고 상상해 보십시오."
+"그러면 다음과 같은 주석으로 끝날 수 있습니다."
 
-#: ../../source/behavior/equations/annotations.rst:153
+
+#: ../../source/behavior/equations/annotations.rst:152
 msgid ""
-"Note how these two pieces of information can exist side by side.  One way to"
-" think about annotations is to visualize them as a tree like this:"
+"Note how these two pieces of information can exist side by side.  One way"
+" to think about annotations is to visualize them as a tree like this:"
 msgstr ""
+"이렇게 두 가지 정보가 나란히 존재할 수 있는 방법이 있다는 점을 기억 해야합니다. "
+"주석에 대해서 개념적으로 생각하는 방법 중 하나가 다음과 같이 트리로 시각화하는 방법입니다. "
 
-#: ../../source/behavior/equations/annotations.rst:157
+
+#: ../../source/behavior/equations/annotations.rst:156
 msgid "``PartNumber=\"FF78-E4B879\"``"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:158
-#: ../../source/behavior/equations/annotations.rst:287
+#: ../../source/behavior/equations/annotations.rst:157
+#: ../../source/behavior/equations/annotations.rst:286
 msgid "``experiment``"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:160
+#: ../../source/behavior/equations/annotations.rst:159
 msgid "``StartTime=0``"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:161
+#: ../../source/behavior/equations/annotations.rst:160
 msgid "``StopTime=8``"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:164
+#: ../../source/behavior/equations/annotations.rst:163
 msgid "Namespaces"
 msgstr ""
+"네임스페이스(namespaces)"
 
-#: ../../source/behavior/equations/annotations.rst:166
+#: ../../source/behavior/equations/annotations.rst:165
 msgid ""
-"This introduces another principle of annotations which is that it should be "
-"possible to have more than one **as long as the names are different**.  For "
-"this reason, choosing names is very important and they should be chosen to "
-"avoid potential conflicts with other names. For example, a better approach "
-"for including the part number would be to enclose it in a variable that is "
-"more likely to be unique to your company or application, *e.g.,*:"
+"This introduces another principle of annotations which is that it should "
+"be possible to have more than one **as long as the names are different**."
+"  For this reason, choosing names is very important and they should be "
+"chosen to avoid potential conflicts with other names. For example, a "
+"better approach for including the part number would be to enclose it in a"
+" variable that is more likely to be unique to your company or "
+"application, *e.g.,*:"
 msgstr ""
+"주석의 또 다른 내용 중에서 **이름이 다른 경우에는** 둘 이상이 될 수 있다는 원칙을 소개 하려고 합니다. "
+"이러한 이유로 이름을 선택하는 것은 매우 중요하며, 다른 이름과 잠재적인 충돌을 피하기 위해 신중히 선택해야 합니다."
+"예를 들어, 부품 번호를 포함하는 더 나은 접근 방법은 아래 *예:* 와 같이 회사 또는 응용 프로그램에 고유할 가능성이 더 높은 변수에 부품 번호를 포함하여 선언한느 것 입니다."
 
-#: ../../source/behavior/equations/annotations.rst:179
+
+#: ../../source/behavior/equations/annotations.rst:178
 msgid ""
-"In this case, the variable ``XogenyIndustries`` can be used to carve out a "
-"\"namespace\" for a specific organization or purpose.  If another "
-"organization came along and wanted to associate a different part number with"
-" the same model, they could do that by establishing their own separate "
-"hierarchy in the annotation, *e.g.,*:"
+"In this case, the variable ``XogenyIndustries`` can be used to carve out "
+"a \"namespace\" for a specific organization or purpose.  If another "
+"organization came along and wanted to associate a different part number "
+"with the same model, they could do that by establishing their own "
+"separate hierarchy in the annotation, *e.g.,*:"
 msgstr ""
+"이 경우 ``xogenyindustries`` 변수를 사용하여 특정 조직이나 목적을 위한 "네임스페이스"를 만들 수 있습니다. "
+"다른 조직이 와서 다른 부품 번호를 동일한 모델과 연관시키려는 경우 주석에 별도의 계층 구조를 설정하여 이를 수행할 수 있습니다. "
+"이에 대해서 예를 들면 아래와 같습니다."
 
-#: ../../source/behavior/equations/annotations.rst:191
+
+#: ../../source/behavior/equations/annotations.rst:190
 msgid ""
-"Occasionally, Modelica tool vendors include their own special annotations "
-"(*e.g.,* in the Modelica Standard Library).  By convention, tool vendors use"
-" names that are prefixed by two underscores, *e.g.,*"
+"Occasionally, Modelica tool vendors include their own special annotations"
+" (*e.g.,* in the Modelica Standard Library).  By convention, tool vendors"
+" use names that are prefixed by two underscores, *e.g.,*"
 msgstr ""
+"경우에 따라 모델리카 시뮬레이션 소프트웨어 공급업체는 고유한 특수 주석을 포함합니다."
+"(*예:* 모델리카 표준 라이브러리의 경우)"
+"규칙에 따라 시뮬레이션 프로그램 공급업체는 두 개의 밑줄이 접두사로 붙은 이름을 사용합니다. "
+"*예:*"
 
-#: ../../source/behavior/equations/annotations.rst:204
-msgid "Intepretation"
+
+#: ../../source/behavior/equations/annotations.rst:203
+msgid "Interpretation"
 msgstr ""
+"해석(interpretation)"
 
-#: ../../source/behavior/equations/annotations.rst:206
+#: ../../source/behavior/equations/annotations.rst:205
 msgid ""
-"Remember that annotation data is arbitrary.  This allows arbitrary data to "
-"be associated with the model.  The **meaning** of that data is, in general, "
-"not defined in the Modelica specification.  As we will see shortly, there "
-"are a few \"standard\" annotations (they will be described throughout this "
-"book) and they are documented in the specification.  But when users add "
-"annotations beyond the standard annotations it is assumed that they have "
-"some way (using some Modelica tool, compiler or other Modelica aware "
-"technology) of extracting and interpreting their annotation data."
+"Remember that annotation data is arbitrary.  This allows arbitrary data "
+"to be associated with the model.  The **meaning** of that data is, in "
+"general, not defined in the Modelica specification.  As we will see "
+"shortly, there are a few \"standard\" annotations (they will be described"
+" throughout this book) and they are documented in the specification.  But"
+" when users add annotations beyond the standard annotations it is assumed"
+" that they have some way (using some Modelica tool, compiler or other "
+"Modelica aware technology) of extracting and interpreting their "
+"annotation data."
 msgstr ""
+"주석 데이터는 임의적임을 기억 해야 합니다. 이를 통해 임의의 데이터를 모델과 연결할 수 있습니다. "
+"하지만, 해당 데이터의 **의미** 는 일반적으로 모델리카 사양(specification)에 정의되어 있지 않습니다. "
+"곧 알게 되겠지만 몇 가지 "표준" 주석(이 책 전체에 걸쳐 설명됨)이 있으며 사양에 문서화되어 있습니다. "
+"그러나 사용자가 표준 주석 이외의 주석을 추가할 때 주석 데이터를 추출하고 해석할 수 있는 방법(일부 모델리카 시뮬레이션 소프트웨어, 컴파일러 또는 기타 모델리카 인식 기술 사용)이 있다고 가정합니다.     "
 
-#: ../../source/behavior/equations/annotations.rst:216
+
+#: ../../source/behavior/equations/annotations.rst:215
 msgid ""
-"The bottom line is that while you can inject (non-standard) annotation data "
-"into the model, tools are only required to preserve it and not to interpret "
-"it."
+"The bottom line is that while you can inject (non-standard) annotation "
+"data into the model, tools are only required to preserve it and not to "
+"interpret it."
 msgstr ""
+"결론은 (비표준) 주석 데이터를 모델에 주입할 수 있지만 시뮬레이션 소프트웨어는 주석 데이터를 해석하지 않고 보존하는 데만 사용한다는 것 입니다."
 
-#: ../../source/behavior/equations/annotations.rst:221
-#: ../../source/behavior/equations/annotations.rst:248
+#: ../../source/behavior/equations/annotations.rst:220
 msgid "Documentation"
 msgstr ""
+"문서화(documentation)"
 
-#: ../../source/behavior/equations/annotations.rst:223
+#: ../../source/behavior/equations/annotations.rst:222
 msgid ""
-"It is very common to document Modelica annotations **as if** they had :ref"
-":`record-def` associated with them.  We'll see several examples of this "
-"technique in our next topic.  Using this approach to document expected "
-"annotation data are strongly encouraged.  In fact, this technique is so "
-"popular and useful that there are proposals to actually make it part of the "
-"language itself in the future."
+"It is very common to document Modelica annotations **as if** they had "
+":ref:`record-def` associated with them.  We'll see several examples of "
+"this technique in our next topic.  Using this approach to document "
+"expected annotation data are strongly encouraged.  In fact, this "
+"technique is so popular and useful that there are proposals to actually "
+"make it part of the language itself in the future."
 msgstr ""
+"모델리카 주석은 **마치** :ref:`record-def` 에 표현되어 있는 것처럼 문서화하는 것은 매우 일반적입니다." 
+"다음 항목에서 이 와 같은 기술의 몇 가지 예를 볼 수 있습니다."
+"이 접근 방식을 사용하여 주석 데이터를 문서화하는 것이 좋습니다. "
+"사실, 이 기술은 매우 대중적이고 유용해서, 미래에는 그것을 실제로 언어 자체의 일부로 만들려는 제안이 있습니다."
 
-#: ../../source/behavior/equations/annotations.rst:231
+
+#: ../../source/behavior/equations/annotations.rst:230
 msgid "Introductory Annotations"
 msgstr ""
+"주석 소개(introductory annotations)"
 
-#: ../../source/behavior/equations/annotations.rst:233
+#: ../../source/behavior/equations/annotations.rst:232
 msgid ""
 "This section introduces just a few of the \"standard annotations\" in "
 "Modelica.  As discussed previously, annotations are generally allowed to "
@@ -272,151 +363,186 @@ msgid ""
 "annotations are described in the Modelica specification so they can be "
 "interpreted consistently and universally by Modelica tools."
 msgstr ""
+"이 섹션에서는 모델리카의 "표준 주석" 중 일부만 소개합니다."
+"이전에 논의한 바와 같이 주석은 일반적으로 시뮬레이션 소프트웨어에서 어느 시점에서 해석되면서도 보존되는 임의의 데이터를 포함하도록 허용됩니다."
+"표준 주석의 구문과 의미는 모델리카 사양에 설명되어 있으므로 모델리카 시뮬레이션 소프트웨어에서 일관되고 보편적으로 해석할 수 있습니다."
 
-#: ../../source/behavior/equations/annotations.rst:240
+
+#: ../../source/behavior/equations/annotations.rst:239
 msgid ""
 "We will follow a convention (whenever possible) of describing standard "
 "annotations in terms of ``record`` definitions.  These ``record`` "
 "definitions don't formally exist, they are simply a concise way of "
 "expressing the data contained in the annotation."
 msgstr ""
+"``record`` 정의에서 표준 주석을 설명하는 (가능한) 규칙을 따를 것입니다. "
+"이러한 ``record`` 정의는 공식적으로 존재하지 않으며, 단순히 주석에 포함된 데이터를 표현하는 간결한 방법입니다."
 
-#: ../../source/behavior/equations/annotations.rst:246
+
+#: ../../source/behavior/equations/annotations.rst:245
 msgid "``Documentation``"
 msgstr ""
+"문서화(``documentation``)"
 
-#: ../../source/behavior/equations/annotations.rst:250
-#: ../../source/behavior/equations/annotations.rst:291
+#: ../../source/behavior/equations/annotations.rst:249
+#: ../../source/behavior/equations/annotations.rst:290
 msgid "**Type: Model Annotation**"
 msgstr ""
+"**유형: 모델 주석**"
 
-#: ../../source/behavior/equations/annotations.rst:252
+#: ../../source/behavior/equations/annotations.rst:251
 msgid ""
-"The ``Documentation`` annotation in Modelica allows raw text or HTML to be "
-"associated with a model as documentation.  This documentation is composed of"
-" two components.  The first is information about the model and the second is"
-" revision history information.  The structure of the ``Documentation`` "
-"annotation is described by the following record definition:"
+"The ``Documentation`` annotation in Modelica allows raw text or HTML to "
+"be associated with a model as documentation.  This documentation is "
+"composed of two components.  The first is information about the model and"
+" the second is revision history information.  The structure of the "
+"``Documentation`` annotation is described by the following record "
+"definition:"
 msgstr ""
+"모델리카의 ``documentation`` 주석을 사용하면 원시 텍스트 또는 html을 문서로 모델과 연결할 수 있습니다."
+"이 설명 문서는 두 가지 요소로 구성되어 있습니다. "
+"첫 번째는 모델에 대한 정보이고 두 번째는 개정 이력 정보입니다. "
+"``documentation`` 주석의 구조는 다음 레코드 정의로 설명됩니다."
 
-#: ../../source/behavior/equations/annotations.rst:266
+
+#: ../../source/behavior/equations/annotations.rst:265
 msgid ""
-"When embedding HTML inside an annotation, the HTML code must be surrounded "
-"by ``<html>`` tags, *e.g.,*"
+"When embedding HTML inside an annotation, the HTML code must be "
+"surrounded by ``<html>`` tags, *e.g.,*"
 msgstr ""
+"주석 안에 html을 삽입할 때 html 코드는 ``<html>`` 태그로 둘러싸여야 합니다. "
+"예를 들면 아래와 같습니다."
 
-#: ../../source/behavior/equations/annotations.rst:279
+
+#: ../../source/behavior/equations/annotations.rst:278
 msgid ""
-"Here the model ``MyWidget`` contains HTML documentation.  The documentation "
-"is wrapped by ``<html>`` tags **and all quotes used to define attributes are"
-" escaped by \\\\\"** to avoid accidentally terminating the ``info`` string."
+"Here the model ``MyWidget`` contains HTML documentation.  The "
+"documentation is wrapped by ``<html>`` tags **and all quotes used to "
+"define attributes are escaped by \\\\\"** to avoid accidentally "
+"terminating the ``info`` string."
 msgstr ""
+"여기서 ``MyWidget`` 모델에는 HTML 문서가 포함되어 있습니다. 문서는 ``<html>``  "
+"태그 **로 둘러싸여 있으며 속성을 정의하는 데 사용하는 모든 따옴표는** ``info`` **문자열이 실수로 종료되는 것을 방지하기 위해 따옴표(\\")**"
+"로 이스케이프 처리됩니다."
 
-#: ../../source/behavior/equations/annotations.rst:293
+
+#: ../../source/behavior/equations/annotations.rst:290
+msgid "``experiment``"
+msgstr ""
+"실험(``experiment``)"
+
+#: ../../source/behavior/equations/annotations.rst:292
 msgid ""
 "The ``experiment`` annotation is used to specify information about how a "
-"given model should be simulated.  The annotation data can be represented in "
-"``record`` form as:"
+"given model should be simulated.  The annotation data can be represented "
+"in ``record`` form as:"
 msgstr ""
+"``experiment`` 주석은 주어진 모델을 시뮬레이션하는 방법에 대한 정보를 지정하는 데 사용합니다."
+"주석 데이터는 다음과 같이 ``record`` 형식으로 나타낼 수 있습니다."
 
-#: ../../source/behavior/equations/annotations.rst:307
+
+#: ../../source/behavior/equations/annotations.rst:306
 msgid "``Evaluate``"
 msgstr ""
+"해석(``Evaluate``)"
 
-#: ../../source/behavior/equations/annotations.rst:311
+#: ../../source/behavior/equations/annotations.rst:310
 msgid "**Type: Declaration Annotation (applies to parameters)**"
 msgstr ""
+"**유형: 선언 주석(파라미터에 적용됨)**"
 
-#: ../../source/behavior/equations/annotations.rst:313
+#: ../../source/behavior/equations/annotations.rst:312
 msgid ""
-"The ``Evaluate`` annotation indicates to a Modelica compiler that the value "
-"of a given ``parameter`` can be transformed into a ``constant`` at compile "
-"time.  In other words, it indicates that the user does not require the "
-"ability to change the value of the ``parameter`` from one simulation to the "
-"next."
+"The ``Evaluate`` annotation indicates to a Modelica compiler that the "
+"value of a given ``parameter`` can be transformed into a ``constant`` at "
+"compile time.  In other words, it indicates that the user does not "
+"require the ability to change the value of the ``parameter`` from one "
+"simulation to the next."
 msgstr ""
+"``Evaluate`` 주석은 주어진 ``parameter`` 값이 컴파일 시간에 ``constant`` 로 변환될 수 있음을 모델리카 컴파일러에 나타냅니다. "
+"즉, 사용자가 한 시뮬레이션에서 다음 시뮬레이션으로 ``parameter`` 값을 변경할 필요가 없음을 나타냅니다.  "
 
-#: ../../source/behavior/equations/annotations.rst:319
+
+#: ../../source/behavior/equations/annotations.rst:318
 msgid ""
 "The motivation behind having such an annotation is that it allows the "
-"Modelica compiler to assume many things about the ``parameter`` during model"
-" compilation that it otherwise couldn't.  These assumptions might restrict "
-"the system of equations in such a way that the underlying systems of "
-"equations are easier to solve than in the general case where the parameter "
-"could take on a range of values."
+"Modelica compiler to assume many things about the ``parameter`` during "
+"model compilation that it otherwise couldn't.  These assumptions might "
+"restrict the system of equations in such a way that the underlying "
+"systems of equations are easier to solve than in the general case where "
+"the parameter could take on a range of values."
 msgstr ""
+"이러한 주석이 존재하는 이유는 모델리카 컴파일러가 모델 컴파일 중에 다른 방법으로는 할 수 없는 ``parameter`` 에 대한 많은 것을 가정할 수 있도록 허용하기 때문입니다. "
+"이러한 가정은 파라미터가 값의 범위를 가질 수 있는 일반적인 경우보다, 기본 방정식 시스템을 더 쉽게 풀 수 있는 방식으로 방정식 시스템을 제한할 수 있습니다."
 
-#: ../../source/behavior/equations/annotations.rst:326
+
+#: ../../source/behavior/equations/annotations.rst:325
 msgid ""
 "The ``Evaluate`` annotation is simply a ``Boolean`` variable (``true`` "
 "indicating that the ``parameter`` value can be transformed into a "
 "``constant``). It is used in an annotation as follows:"
 msgstr ""
+"``Evaluate`` 주석은 단순히 ``Boolean`` 변수(``parameter`` 값이 ``constant`` 로 변환될 수 있음을 나타내는 ``true`` )입니다. "
+"주석에서 다음과 같이 사용합니다."
 
-#: ../../source/behavior/equations/annotations.rst:335
+
+#: ../../source/behavior/equations/annotations.rst:334
 msgid "``HideResult``"
 msgstr ""
+"결과 은닉(``HideResult``)"
 
-#: ../../source/behavior/equations/annotations.rst:339
+#: ../../source/behavior/equations/annotations.rst:338
 msgid "**Type: Declaration Annotation**"
 msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:341
+#: ../../source/behavior/equations/annotations.rst:340
 msgid ""
-"The ``HideResult`` annotation is used to indicate that the solution for a "
-"given variable is not of interest to the analyst.  By setting the value of "
-"``HideResult`` to ``true``, the model developer is indicating to the "
+"The ``HideResult`` annotation is used to indicate that the solution for a"
+" given variable is not of interest to the analyst.  By setting the value "
+"of ``HideResult`` to ``true``, the model developer is indicating to the "
 "Modelica compiler that it need not store the annotated variable in any "
-"simulation results that are produced.  This can save both simulation time "
-"and disk space because it avoids writing out data that will never be viewed."
+"simulation results that are produced.  This can save both simulation time"
+" and disk space because it avoids writing out data that will never be "
+"viewed."
 msgstr ""
+"``HideResult`` 주석은 주어진 변수에 대한 해석 결과가 분석하는 사람에게 관심이 없는 값임을 나타내는 데 사용합니다. "
+"``HideResult`` 값을 ``true`` 로 설정함으로써 모델 개발자는 생성된 시뮬레이션 결과에 주석이 달린 변수를 저장할 필요가 없음을 모델리카 컴파일러에 설정할 수 있습니다.  "
+"이렇게 하면 다시 볼 필요가 없는 데이터에 대한 쓰기 동작을 하지 않기 때문에 시뮬레이션 시간과 디스크 공간을 모두 절약할 수 있습니다."
 
-#: ../../source/behavior/equations/annotations.rst:349
+
+
+#: ../../source/behavior/equations/annotations.rst:348
 msgid "The ``HideResult`` annotation would be used as follows:"
 msgstr ""
+"``HideResult`` 주석은 다음과 같이 사용됩니다:"
 
-#: ../../source/behavior/equations/annotations.rst:35
-#: ../../source/behavior/equations/annotations.rst:52
-#: ../../source/behavior/equations/annotations.rst:67
-#: ../../source/behavior/equations/annotations.rst:84
-#: ../../source/behavior/equations/annotations.rst:85
-#: ../../source/behavior/equations/annotations.rst:248
-#: ../../source/behavior/equations/annotations.rst:284
-#: ../../source/behavior/equations/annotations.rst:289
-#: ../../source/behavior/equations/annotations.rst:309
-#: ../../source/behavior/equations/annotations.rst:337
-msgid "annotation"
-msgstr ""
+#~ msgid "Intepretation"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:35
-msgid "associated with; declarations"
-msgstr ""
+#~ msgid "annotation"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:52
-msgid "associated with; equation"
-msgstr ""
+#~ msgid "associated with; declarations"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:67
-msgid "associated with; extends"
-msgstr ""
+#~ msgid "associated with; equation"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:84
-msgid "associated with; models"
-msgstr ""
+#~ msgid "associated with; extends"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:85
-msgid "associated with; definitions"
-msgstr ""
+#~ msgid "associated with; models"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:284
-#: ../../source/behavior/equations/annotations.rst:289
-msgid "experiment"
-msgstr ""
+#~ msgid "associated with; definitions"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:309
-msgid "Evaluate"
-msgstr ""
+#~ msgid "experiment"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/annotations.rst:337
-msgid "HideResult"
-msgstr ""
+#~ msgid "Evaluate"
+#~ msgstr ""
+
+#~ msgid "HideResult"
+#~ msgstr ""
+

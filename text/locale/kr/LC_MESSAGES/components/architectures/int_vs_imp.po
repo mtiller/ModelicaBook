@@ -1,23 +1,27 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/architectures/int_vs_imp.rst:2
 msgid "Interfaces and Implementations"
 msgstr ""
+"인터페이스 와 구현(Interfaces and Implementations)"
 
 #: ../../source/components/architectures/int_vs_imp.rst:5
 msgid "Conceptual Definitions"
 msgstr ""
+"컨셉 정의(Conceptual Definitions)"
 
 #: ../../source/components/architectures/int_vs_imp.rst:7
 msgid ""
@@ -29,6 +33,12 @@ msgid ""
 "can think of an interface as a \"shell\" without any internal details.  For "
 "this reason, interface models are almost always marked as ``partial``."
 msgstr ""
+"이 장에서 제시한 두 가지 예제에서 인터페이스 정의를 아키텍처 정의 프로세스의 일부로 사용했습니다."
+""인터페이스"라는 용어는 모델리카 자체에서 나온 것이 아니라 컴퓨터 언어에서 흔히 사용하는 용어입니다."
+"모델리카에서  인터페이스를 **외부에서 볼 수 있는** 모델의 모든 세부 사항을 정의하는 모델로 생각할 수 있습니다."
+"인터페이스를 내부 세부 정보가 없는 "쉘"로 생각할 수 있습니다. "
+"이러한 이유로 인터페이스 모델은 거의 항상 ``partial`` 로 표시됩니다."
+
 
 #: ../../source/components/architectures/int_vs_imp.rst:16
 msgid ""
@@ -44,10 +54,19 @@ msgid ""
 " a ``partial`` model).  But most of the time, these implementations will be "
 "complete (non-``partial``) models for a particular subsystem."
 msgstr ""
+"또 다른 중요한 개념은 "구현"입니다."
+"이것은 컴퓨터 언어의 세계에서 차용한 또 다른 용어입니다. "
+"인터페이스는 단순히 모델의 외부에서 볼 수 있는 측면을 설명하는 데 사용되지만 구현에는 내부 세부 정보도 포함됩니다."
+"해당 인터페이스를 실제로 구현하는 데 필요한 정보가 포함되어 있습니다."
+"경우에 따라 부분 구현만 구성할 수도 있습니다(이 경우 ``partial`` 로도 표시되어야 함). "
+"다른 경우에는 추가 구현 세부 사항이 모델 계층 구조에서 한 단계 아래로 푸시되는 특정 하위 시스템의 아키텍처를 나타낼 수 있습니다(``부분적`` 모델의 또 다른 경우)."
+"그러나 대부분의 경우 이러한 구현은 특정 하위 시스템에 대한 완전한(부분적이지 않은) 모델입니다."
+
 
 #: ../../source/components/architectures/int_vs_imp.rst:32
 msgid "Plug-Compatibility"
 msgstr ""
+"플러그 호환성(Plug-Compatibility)"
 
 #: ../../source/components/architectures/int_vs_imp.rst:34
 msgid ""
@@ -64,6 +83,12 @@ msgid ""
 "compatible with ``Y``, this **does not** imply that ``Y`` is plug-compatible"
 " with ``X`` (as we will see in a moment)."
 msgstr ""
+"인터페이스와 구현에 대해 이야기할 때 고려해야 할 가장 중요한 사항은 **플러그 호환성** 의 개념입니다. "
+":ref:`sensor-comparison` 예제의 상세화에서 이미 논의한 것처럼 ``X`` 의 모든 **공용** 변수에 대해 모델 ``X`` 는 모델 ``Y`` 와 플러그 호환됩니다. "
+"``Y``, 같은 이름을 가진 ``X`` 에 해당하는 공용 변수가 있습니다. "
+"게다가, ``X`` 에 있는 모든 변수는 ``Y`` 에 있는 변수와 플러그 호환이 가능해야 합니다. "
+"이렇게 하면 ``Y`` 자료형의 구성 요소를 ``X`` 자료형의 구성 요소로 변경하더라도 필요한 모든 것(파라미터, 커넥터 등)이 그대로 있고 여전히 호환 가능합니다. "
+"그러나 **주의** 해야할 것은 ``X`` 가 ``Y`` 와 플러그 호환되는 경우 **이것은 ``Y``가 ``X``와 플러그 호환됨을 의미하지 않는다는 것** 입니다(잠시 후에 보게 되겠지만)."
 
 #: ../../source/components/architectures/int_vs_imp.rst:48
 msgid ""
@@ -75,10 +100,14 @@ msgid ""
 "process by which configuration management is performed is centered around "
 "plug-compatibility."
 msgstr ""
+"일반적으로  플러그 호환성에 관심을 갖는 대부분의 경우는 주어진 구현이 주어진 인터페이스와 플러그 호환되는지 여부에 관한 것입니다."
+"이 예제에서 보았듯이(곧 검토할 예정임) 모델리카의 구성 관리 기능은 인터페이스와 구현 간의 관계에 달려 있으며 구성 관리가 수행되는 프로세스는 플러그 호환성을 중심으로 합니다."
+
 
 #: ../../source/components/architectures/int_vs_imp.rst:57
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
 #: ../../source/components/architectures/int_vs_imp.rst:59
 msgid ""
@@ -87,3 +116,6 @@ msgid ""
 "define interfaces and distinguish them from implementations, since these "
 "will be very useful when creating architecture driven models."
 msgstr ""
+"결론은 인터페이스와 구현 모델 측면에서 생각할 뿐만 아니라 인터페이스를 정식으로 정의하고 인터페이스와 구별하기 위한 모델을 만드는 데 매우 유용하다는 것입니다."
+"아키텍처 기반 모델을 만들 때 매우 유용하기 때문입니다."
+

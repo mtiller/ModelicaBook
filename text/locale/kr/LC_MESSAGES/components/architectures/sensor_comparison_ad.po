@@ -1,287 +1,404 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:4
 msgid "Architecture Driven Approach"
 msgstr ""
+"아키텍처 드리븐 접근방법(Architecture Driven Approach)"
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:6
 msgid ""
 "So far in this section, we started with a flat approach and gradually "
-"adapted it to use the architectural features of Modelica.  Let's start to "
-"build out our system from the top down using an architectural approach where"
-" we define the structure of our system first and then add specific subsystem"
-" implementations after that."
+"adapted it to use the architectural features of Modelica.  Let's start to"
+" build out our system from the top down using an architectural approach "
+"where we define the structure of our system first and then add specific "
+"subsystem implementations after that."
 msgstr ""
+"지금까지 이 섹션에서는 플랫 접근 방식으로 시작하여 모델리카의 아키텍처 기능을 사용하도록 점진적으로 조정했습니다."
+"이제는, 먼저 시스템의 구조를 정의한 다음 특정 하위 시스템 구현을 추가하는 구조적 접근 방식을 사용하여 위에서 아래로 시스템을 구축해 보겠습니다."
+
+
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:13
 msgid "Interfaces"
 msgstr ""
+"인터페이스(Interfaces)"
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:15
 msgid ""
 "We'd like to start by building our top level architecture model that "
-"describes the subsystems we have and how they are connected.  However, we "
-"need **something** to put into this architecture to represent our "
+"describes the subsystems we have and how they are connected.  However, we"
+" need **something** to put into this architecture to represent our "
 "subsystems.  We don't (yet) want to get down to the job of creating "
 "implementations for all of our subsystem models.  So where do we start?"
 msgstr ""
+"가지고 있는 하위 시스템과 이들이 어떻게 연결되어 있는지 설명하는 최상위 아키텍처 모델을 구축하는 것으로 시작하고 싶습니다. "
+"하위 시스템을 나타내기 위해 이 아키텍처에 넣을 **무언가** 가 필요합니다."
+"그러나 (아직) 모든 하위 시스템 모델에 대한 구현을 생성하는 작업에 착수하고 싶지 않습니다. "
+"그럼 어디서부터 시작해야 할까요?"
+
+
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:22
 msgid ""
-"The answer is that we start by describing the interfaces of our subsystems."
-"  Remember, from earlier in this section, that redeclarations depend on a "
-"constraining type and that all implementations must conform to that "
-"constraining type?  Well an interface is essentially a formal definition of "
-"the constraining type (*i.e.,* the expected public interface) but without "
-"any implementation details.  Since it has no implementation details (*i.e.,*"
-" no equations or sub-components), it will end up being a ``partial`` model."
-"  But that's fine for our purposes."
+"The answer is that we start by describing the interfaces of our "
+"subsystems.  Remember, from earlier in this section, that redeclarations "
+"depend on a constraining type and that all implementations must conform "
+"to that constraining type?  Well an interface is essentially a formal "
+"definition of the constraining type (*i.e.,* the expected public "
+"interface) but without any implementation details.  Since it has no "
+"implementation details (*i.e.,* no equations or sub-components), it will "
+"end up being a ``partial`` model.  But that's fine for our purposes."
 msgstr ""
+"이에 대한 대답은 하위 시스템의 인터페이스를 설명하는 것으로 시작한다는 것입니다. "
+"이 섹션의 앞부분에서 재선언은 제한 자료형에 의존하고 모든 구현은 해당 제한 자료형을 준수해야 한다고 언급한 것을 기억하십니까? "
+"인터페이스는 기본적으로 제약 자료형(*예:* 예상되는 공용 인터페이스)의 공식적인 정의이지만 구현에 대한 세부 정보는 없습니다."
+"구현 세부 사항이 없기 때문에(*즉,* 방정식이나 하위 구성 요소가 없음) 결국 ``partial`` 모델이 되지만, 그것은 아키텍처를 만들려고 하는 지금의 목적에 적합합니다."
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:32
 msgid ""
-"Let's start by considering the interface for our ``sensor`` subsystem.  We "
-"have already discussed the public interface in detail. Here is a Modelica "
-"definition and icon for that interface:"
+"Let's start by considering the interface for our ``sensor`` subsystem.  "
+"We have already discussed the public interface in detail. Here is a "
+"Modelica definition and icon for that interface:"
 msgstr ""
+"``센서`` 하위 시스템의 인터페이스를 고려하는 것부터 시작하겠습니다."
+"이미 공용 인터페이스에 대해 자세히 논의했습니다. 다음은 해당 인터페이스에 대한 모델리카 정의 및 아이콘입니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:44
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:45
 msgid ""
-"A few things to note about this ``model`` definition.  The first is, as we "
-"mentioned a moment ago, that this model is ``partial``.  This is because it "
-"has connectors but no equations to help solve for the variables on those "
-"connectors.  Another thing worth noting is the fact that it contains "
-"annotations.  The annotations associated with the connector declarations "
-"specify how those connectors should be rendered.  These annotations will be "
-"inherited by any model that ``extends`` from this one.  So it is important "
-"to choose locations that will make sense across all implementations.  It "
-"also includes an ``Icon`` annotation.  This essentially defines a "
-"\"backdrop\" for the final implementations icon.  In other words, any model "
-"that extends from this model will be able to draw **additional** graphics on"
-" top of what is defined by the ``Sensor`` model."
+"A few things to note about this ``model`` definition.  The first is, as "
+"we mentioned a moment ago, that this model is ``partial``.  This is "
+"because it has connectors but no equations to help solve for the "
+"variables on those connectors.  Another thing worth noting is the fact "
+"that it contains annotations.  The annotations associated with the "
+"connector declarations specify how those connectors should be rendered.  "
+"These annotations will be inherited by any model that ``extends`` from "
+"this one.  So it is important to choose locations that will make sense "
+"across all implementations.  It also includes an ``Icon`` annotation.  "
+"This essentially defines a \"backdrop\" for the final implementations "
+"icon.  In other words, any model that extends from this model will be "
+"able to draw **additional** graphics on top of what is defined by the "
+"``Sensor`` model."
 msgstr ""
+"이 ``모델`` 정의에 대해 몇 가지 유의해야 할 사항이 있습니다. "
+"첫 번째는 조금 전에 언급했듯이 이 모델이 ``partial`` 이라는 것입니다. "
+"이는 커넥터가 있지만 해당 커넥터의 변수를 해결하는 데 도움이 되는 방정식이 없기 때문입니다."
+"주목할 가치가 있는 또 다른 사항은 주석이 포함되어 있다는 사실입니다. "
+"커넥터 선언과 관련된 주석은 해당 커넥터가 렌더링되는 방법을 지정합니다. "
+"이러한 주석은 이 모델에서 ``확장`` 되는 모든 모델에 의해 상속되므로, 모든 구현에서 의미가 있는 위치를 선택하는 것이 중요합니다. "
+"또한 ``Icon`` 주석도 포함되어 있으며, 이것은 기본적으로 최종 구현 아이콘에 대한 "배경"을 정의합니다. "
+"즉, 이 모델에서 확장된 모든 모델은 ``Sensor`` 모델에 의해 정의된 것 위에 **추가** 그래픽을 그릴 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:58
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:59
 msgid ""
-"The interface definition for the actuator model is almost identical except "
-"that it includes two rotational connectors, one to apply the commanded "
-"torque to and the other that handles the reaction torque. If, for example, "
-"our actuator model were an electric motor, the former would be the connector"
-" for the rotor and the latter would be the connector for the stator.  "
-"Otherwise, it is very similar to our ``Sensor`` definition:"
+"The interface definition for the actuator model is almost identical "
+"except that it includes two rotational connectors, one to apply the "
+"commanded torque to and the other that handles the reaction torque. If, "
+"for example, our actuator model were an electric motor, the former would "
+"be the connector for the rotor and the latter would be the connector for "
+"the stator.  Otherwise, it is very similar to our ``Sensor`` definition:"
 msgstr ""
+"액추에이터 모델의 인터페이스 정의는 두 개의 회전 커넥터(하나는 명령된 토크를 적용하고 다른 하나는 반응 토크를 처리함)를 포함한다는 점을 제외하면 거의 동일합니다. "
+"예를 들어 액추에이터 모델이 전기 모터인 경우 전자는 회전자용 커넥터이고 후자는 고정자용 커넥터입니다. 그렇지 않으면 ``Sensor`` 정의와 매우 유사합니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:74
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:76
 msgid ""
 "The ``Plant`` interface has three rotational connectors.  One for the "
 "\"input\" side (where the actuator will be connected), one for the "
-"\"output\" side (where the sensor will be connected) and the last one for "
-"the \"support\" side (so it can be \"mounted\" to something):"
+"\"output\" side (where the sensor will be connected) and the last one for"
+" the \"support\" side (so it can be \"mounted\" to something):"
 msgstr ""
+"``Plant`` 인터페이스에는 3개의 회전 커넥터가 있습니다. "
+"하나는 "입력" 쪽(액추에이터가 연결될 위치), 하나는 "출력" 쪽(센서가 연결될 위치), 마지막 하나는 "지지(support)" 쪽 입니다. 그래서 "장착(mounted)"될 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:87
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:90
 msgid "Finally, we have the ``Controller`` interface definition:"
 msgstr ""
+"마지막으로 ``Controller`` 인터페이스 정의가 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:98
+#: ../../source/components/architectures/sensor_comparison_ad.rst:101
 msgid ""
 "Regardless of how it is implemented (*e.g.,* proportional control, PID "
-"control), the ``Controller`` will require an input connector for the desired"
-" setpoint, ``setpoint``, another input connector for the measured speed, "
-"``measured`` and an output connector to send the commanded torque, "
-"``command`` to the actuator."
+"control), the ``Controller`` will require an input connector for the "
+"desired setpoint, ``setpoint``, another input connector for the measured "
+"speed, ``measured`` and an output connector to send the commanded torque,"
+" ``command`` to the actuator."
 msgstr ""
+"구현 방식(*예:* 비례 제어, PID 제어)에 관계없이 ``Controller`` 에는 원하는 설정값에 대한 입력 커넥터, ``setpoint`` 에 대한 또 다른 입력 커넥터,"
+"측정된 속도 ``measured`` 및 명령된 토크를 액추에이터로 보내는 출력 커넥터 ``command`` 이 필요합니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:105
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:108
 msgid "Architecture"
 msgstr ""
+"아키텍처(Architecture)"
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:107
+#: ../../source/components/architectures/sensor_comparison_ad.rst:110
 msgid ""
 "With the interfaces specified, our architecture model can be written as "
 "follows:"
 msgstr ""
+"인터페이스를 지정하면 아키텍처 모델을 다음과 같이 작성할 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:113
+#: ../../source/components/architectures/sensor_comparison_ad.rst:116
 msgid ""
 "We can see from the Modelica code that our architecture consists of four "
 "``replaceable`` subsystems: ``plant``, ``actuator``, ``sensor`` and "
 "``setpoint``.  Each of these declarations includes only one type. As we "
-"learned earlier in this section, that type will be used as both the default "
-"type and the constraining type (which is what we want). This model also "
-"includes all the connections between the subsystems. In this way, it is a "
-"complete description of the subsystems and the connections between them.  "
-"**All that is missing are the implementation choices for each subsystem**."
+"learned earlier in this section, that type will be used as both the "
+"default type and the constraining type (which is what we want). This "
+"model also includes all the connections between the subsystems. In this "
+"way, it is a complete description of the subsystems and the connections "
+"between them.  **All that is missing are the implementation choices for "
+"each subsystem**."
 msgstr ""
+"모델리카 코드에서 아키텍처가 ``plant``, ``actuator``, ``sensor`` 및 ``setpoint`` 의 4가지 ``replaceable`` 하위 시스템으로 구성되어 있음을 알 수 있습니다."
+"이러한 각 선언에는 하나의 자료형만 포함됩니다."
+"이 섹션의 앞부분에서 배운 것처럼 해당 자료형은 기본 자료형과 제한 자료형(원하는 자료형)으로 모두 사용하며, 이 모델에는 하위 시스템 간의 모든 연결도 포함합니다."
+"이러한 방식으로 하위 시스템과 하위 시스템 간의 연결에 대한 완전한 설명이 가능합니다."
+"**누락된 것은 각 하위 시스템에 대한 구현 선택 사항입니다**."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:123
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:126
 msgid ""
-"Note that our ``SystemArchitecture`` model is, itself, ``partial``. This is "
-"precisely because the default types for all the subsystems are ``partial`` "
-"and we have not yet specified implementations.  In other words, this model "
-"has no implementation so it cannot (yet) be simulated.  We indicate this by "
-"marking it as ``partial``."
+"Note that our ``SystemArchitecture`` model is, itself, ``partial``. This "
+"is precisely because the default types for all the subsystems are "
+"``partial`` and we have not yet specified implementations.  In other "
+"words, this model has no implementation so it cannot (yet) be simulated."
+"  We indicate this by marking it as ``partial``."
 msgstr ""
+"``SystemArchitecture`` 모델은 그 자체로 ``partial`` 입니다. "
+"이는 모든 하위 시스템의 기본 자료형이 ``partial`` 이고 아직 구현을 지정하지 않았기 때문입니다. "
+"즉, 이 모델에는 구현이 없으므로 (아직) 시뮬레이션할 수 없는데, 이러한 모델을 ``partial`` 로 표시합니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:129
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:132
 msgid ""
 "Like our interface specifications, this model also contains graphical "
-"annotations.  This is because, in addition to specifying the subsystems, we "
-"are also specifying the locations of the subsystems and the paths of the "
-"connections.  When rendered, our system architecture looks like this:"
+"annotations.  This is because, in addition to specifying the subsystems, "
+"we are also specifying the locations of the subsystems and the paths of "
+"the connections.  When rendered, our system architecture looks like this:"
 msgstr ""
+"인터페이스 사양과 마찬가지로 이 모델에는 그래픽 주석도 포함되어 있습니다."
+"이는 하위 시스템을 지정하는 것 외에도 하위 시스템의 위치와 연결 경로도 지정하기 때문입니다. 시스템 아키텍처를 그리면 아래와 같습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:141
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:145
 msgid "Implementations"
 msgstr ""
+"구현(Implementations)"
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:143
+#: ../../source/components/architectures/sensor_comparison_ad.rst:147
 msgid ""
-"Now that we have the interfaces and the architecture, we need to create some"
-" implementations that we can then \"inject\" into the architecture.  These "
-"implementations can choose to either inherit from the existing interfaces "
-"(thus avoiding redundant code) or simply ensure that the declarations in the"
-" implementation make it plug-compatible with the interface.  Obviously, "
-"inheriting from the interface is, in general, a much better approach.  But "
-"we have included examples of both simply to demonstrate that it isn't "
-"strictly required to inherit from the interface."
+"Now that we have the interfaces and the architecture, we need to create "
+"some implementations that we can then \"inject\" into the architecture.  "
+"These implementations can choose to either inherit from the existing "
+"interfaces (thus avoiding redundant code) or simply ensure that the "
+"declarations in the implementation make it plug-compatible with the "
+"interface.  Obviously, inheriting from the interface is, in general, a "
+"much better approach.  But we have included examples of both simply to "
+"demonstrate that it isn't strictly required to inherit from the "
+"interface."
 msgstr ""
+"이제 인터페이스와 아키텍처가 있으므로 아키텍처에 "주입"할 수 있는 몇 가지 구현을 만들어야 합니다."
+"이러한 구현은 기존 인터페이스에서 상속(따라서 중복 코드 방지)하거나 단순히 구현의 선언이 인터페이스와 플러그 호환되게 만들도록 선택할 수 있습니다."
+"분명히 일반적으로 인터페이스에서 상속하는 것이 훨씬 더 나은 접근 방식입니다."
+"그러나 인터페이스에서 상속하는 것이 엄격하게 요구되지 않는다는 것을 보여주기 위해 두 가지 예를 모두 포함했습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:153
+
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:157
 msgid ""
-"Here are some of the implementations we'll be using over the remainder of "
-"this section.  It is important to keep in mind that although these models "
-"include many lines of Modelica source code, they can be very quickly "
-"implemented in a graphical Modelica environment (*i.e.,* one does not "
-"normally type in such models by hand)."
+"Here are some of the implementations we'll be using over the remainder of"
+" this section.  It is important to keep in mind that although these "
+"models include many lines of Modelica source code, they can be very "
+"quickly implemented in a graphical Modelica environment (*i.e.,* one does"
+" not normally type in such models by hand)."
 msgstr ""
+"다음은 이 섹션의 나머지 부분에서 사용할 구현 중 일부입니다."
+"이러한 모델에는 여러 줄의 모델리카 소스 코드가 포함되어 있지만 그래픽 모델리카 환경에서 매우 빠르게 구현할 수 있다는 점을 염두에 두는 것이 중요합니다"
+"(*즉,* 이러한 모델은 일반적으로 손으로 입력하지 않습니다)."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:160
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:164
 msgid "Plant Models"
 msgstr ""
+"플랜트 모델(Plant Models)"
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:167
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:177
 msgid "Actuator Models"
 msgstr ""
-
-#: ../../source/components/architectures/sensor_comparison_ad.rst:178
-msgid "Controller Models"
-msgstr ""
-
-#: ../../source/components/architectures/sensor_comparison_ad.rst:189
-msgid "Sensor Models"
-msgstr ""
+"엑츄에이터 모델(Actuator Models)"
 
 #: ../../source/components/architectures/sensor_comparison_ad.rst:200
+msgid "Controller Models"
+msgstr ""
+"컨트롤러 모델(Controller Models)"
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:223
+msgid "Sensor Models"
+msgstr ""
+"센서 모델(Sensor Models)"
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:246
 msgid "Variations"
 msgstr ""
+"검증(Variations)"
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:203
+#: ../../source/components/architectures/sensor_comparison_ad.rst:249
 msgid "Baseline Configuration"
 msgstr ""
+"기본 구성(Baseline Configuration)"
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:205
+#: ../../source/components/architectures/sensor_comparison_ad.rst:251
 msgid ""
 "With these implementations at hand, we can create a number of different "
 "implementations of our complete system.  For example, to implement the "
 "behavior of our original ``FlatSystem`` model, we simply extend from the "
-"``SystemArchitecture`` model and redeclare each of the subsystems so that "
-"the implementations match the subsystem implementations in ``FlatSystem``, "
-"*i.e.,*"
+"``SystemArchitecture`` model and redeclare each of the subsystems so that"
+" the implementations match the subsystem implementations in "
+"``FlatSystem``, *i.e.,*"
 msgstr ""
+"이러한 구현을 통해 전체 시스템의 다양한 구현을 만들 수 있습니다."
+"예를 들어 원래 ``FlatSystem`` 모델의 동작을 구현하려면 단순히 ``SystemArchitecture`` 모델에서 확장하고 구현이 ``FlatSystem`` 의 하위 시스템 구현과 일치하도록 각 하위 시스템을 다시 선언합니다."
+"*즉.,*"
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:215
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:261
 msgid ""
-"Here we see the real power of Modelica for specifying configurations. Note "
-"how each redeclaration includes the ``replaceable`` qualifier. By doing so, "
-"we ensure that subsequent redeclarations are possible."
+"Here we see the real power of Modelica for specifying configurations. "
+"Note how each redeclaration includes the ``replaceable`` qualifier. By "
+"doing so, we ensure that subsequent redeclarations are possible."
 msgstr ""
+"여기에서 구성 지정에 대한 모델리카의 진정한 힘을 볼 수 있습니다. "
+"각 재선언에 ``replaceable`` 한정자가 어떻게 포함되어 있는지 확인함으로써 후속 재선언이 가능하도록 합니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:220
+
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:266
 msgid ""
 "If we had wanted our ``SystemArchitecture`` model to specify these "
 "implementations as the default but still use the interfaces as the "
 "constraining types, we could have declared the subsystems in "
 "``SystemArchitecture`` as follows:"
 msgstr ""
+"``SystemArchitecture`` 모델이 이러한 구현을 기본값으로 지정하지만 여전히 인터페이스를 제약 자료형으로 사용하기를 원했다면, 다음과 같이 ``SystemArchitecture`` 에서 하위 시스템을 선언할 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:230
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:276
 msgid "``Variation1``"
 msgstr ""
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:232
+#: ../../source/components/architectures/sensor_comparison_ad.rst:278
 msgid ""
 "If we wish to create a variation of the ``BaseSystem`` model, we can use "
 "inheritance and modifiers to create them, *e.g.,*"
 msgstr ""
+"``BaseSystem`` 모델의 변형을 생성하려면 상속과 수정자를 사용하여 생성할 수 있습니다. "
+"*예* 를 들어 보겠습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:238
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:284
 msgid ""
 "Note how this model extends from ``BaseSystem`` configuration but then "
-"changes **only** the ``sensor`` model.  If we simulate this system, we see "
-"that the performance matches that of our original :ref:`flat-sensor-system`."
+"changes **only** the ``sensor`` model.  If we simulate this system, we "
+"see that the performance matches that of our original :ref:`flat-sensor-"
+"system`."
 msgstr ""
+"이 모델이 어떻게 ``BaseSystem`` 구성에서 확장되지만 ``sensor`` 모델 **만** 변경하는지에 집중해 보겠습니다."
+"이 시스템을 시뮬레이션하면 성능이 원래 :ref:`flat-sensor-system` 의 성능과 일치하는 것을 볼 수 있습니다.     "
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:246
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:292
 msgid ""
-"However, if we instead create a configuration with the longer hold time, we "
-"find that the system becomes unstable (exactly as it did in the :ref:`flat-"
-"sensor-system` as well):"
+"However, if we instead create a configuration with the longer hold time, "
+"we find that the system becomes unstable (exactly as it did in the :ref"
+":`flat-sensor-system` as well):"
 msgstr ""
+"그러나 대기 시간이 더 긴 구성을 대신 생성하면 시스템이 불안정해집니다"
+"(정확히 :ref:`flat-sensor-system` 에서도 마찬가지임)"
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:254
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:300
 msgid "``Variation2``"
 msgstr ""
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:256
+#: ../../source/components/architectures/sensor_comparison_ad.rst:302
 msgid ""
-"Note how, even with an adequate sensor, the controller in our ``Variant1`` "
-"configuration seems to be converging to the wrong steady state speed.  This "
-"is because we are only using a proportional gain controller.  However, if we"
-" extend from the ``Variant1`` model and add a PID controller and a more "
-"realistic actuator with limitations on the amount of torque it can supply, "
-"*i.e.*,"
+"Note how, even with an adequate sensor, the controller in our "
+"``Variant1`` configuration seems to be converging to the wrong steady "
+"state speed.  This is because we are only using a proportional gain "
+"controller.  However, if we extend from the ``Variant1`` model and add a "
+"PID controller and a more realistic actuator with limitations on the "
+"amount of torque it can supply, *i.e.*,"
 msgstr ""
+"적절한 센서가 있어도 ``Variant1`` 구성의 컨트롤러가 잘못된 정상 상태 속도로 수렴하는 것처럼 보입니다."
+"비례 게인 컨트롤러만 사용하고 있기 때문입니다."
+"그러나 ``Variant1`` 모델에서 확장하여 PID 컨트롤러와 공급할 수 있는 토크의 양에 대한 제한이 있는 보다 현실적인 액추에이터를 추가하면 아래과 같습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:266
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:312
 msgid "we will get the following simulation results:"
 msgstr ""
+"다음과 같은 시뮬레이션 결과를 얻게 됩니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:271
+
+#: ../../source/components/architectures/sensor_comparison_ad.rst:317
 msgid ""
-"Furthermore, if take some time to tune the gains in the PID controller, "
-"*i.e.,*"
+"Furthermore, if we take some time to tune the gains in the PID "
+"controller, *i.e.,*"
 msgstr ""
+"또한 PID 컨트롤러에서 게인을 조정하는 데 약간의 시간을 사용하면 아래와 같고, "
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:277
+#: ../../source/components/architectures/sensor_comparison_ad.rst:323
 msgid "Then, we will get even better simulation results:"
 msgstr ""
+"그러면 더 나은 시뮬레이션 결과를 얻을 수 있습니다."
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:283
+#: ../../source/components/architectures/sensor_comparison_ad.rst:329
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
-#: ../../source/components/architectures/sensor_comparison_ad.rst:285
+#: ../../source/components/architectures/sensor_comparison_ad.rst:331
 msgid ""
 "This concludes our discussion of this particular architecture.  The key "
-"point in this example is that by using architectures, we make it very easy "
-"to explore alternative configurations for our system.  But in addition to "
-"being easier (in the sense that we are able to do these things very "
-"quickly), we are also able to ensure a degree of correctness as well because"
-" no additional connecting is required for each configuration.  Instead, the "
-"user simply needs to specify which implementation they would like to use for"
-" each subsystem and, even then, the Modelica compiler can check to make sure"
-" that their choices are plug-compatible with the constraining types used to "
-"specify the architecture."
+"point in this example is that by using architectures, we make it very "
+"easy to explore alternative configurations for our system.  But in "
+"addition to being easier (in the sense that we are able to do these "
+"things very quickly), we are also able to ensure a degree of correctness "
+"as well because no additional connecting is required for each "
+"configuration.  Instead, the user simply needs to specify which "
+"implementation they would like to use for each subsystem and, even then, "
+"the Modelica compiler can check to make sure that their choices are plug-"
+"compatible with the constraining types used to specify the architecture."
 msgstr ""
+"이것으로 이 특정 아키텍처에 대한 논의를 마칩니다."
+"이 예의 핵심은 아키텍처를 사용하여 시스템의 대체 구성을 매우 쉽게 탐색할 수 있다는 것입니다."
+"그러나 더 쉬울 뿐만 아니라(이러한 작업을 매우 빠르게 수행할 수 있다는 점에서) 각 구성에 추가 연결이 필요하지 않기 때문에 어느 정도의 정확성도 보장할 수 있습니다."
+"대신 사용자는 각 하위 시스템에 사용하려는 구현을 지정하기만 하면 되며, 그런 다음에도 모델리카 컴파일러는 선택 사항이 아키텍처를 지정하는 데 사용하는 제약 자료형과 플러그 호환되는지 확인할 수 있습니다."
+
+
+#~ msgid ""
+#~ "Furthermore, if take some time to "
+#~ "tune the gains in the PID "
+#~ "controller, *i.e.,*"
+#~ msgstr ""
+

@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/components/system_models.rst:4
 msgid "System Models"
 msgstr ""
+"시스템 모델(System Models)"
 
 #: ../../source/components/components/system_models.rst:6
 msgid ""
@@ -21,112 +24,159 @@ msgid ""
 ":ref:`subsystems`.  For now, we'll only discuss the handful of topics "
 "related to subsystems that we've seen so far."
 msgstr ""
+"다음 장에서는 :ref:`subsystems` 에 대한 심도 있는 논의를 하겠지만,"
+"지금은 앞서 다룬 하위 시스템과 관련된 몇 가지 주제에 대해서만 먼저 논의 해보겠습니다."
+
 
 #: ../../source/components/components/system_models.rst:13
 msgid "Connections"
 msgstr ""
+"연결(Connections)"
 
 #: ../../source/components/components/system_models.rst:15
 msgid ""
 "One distinction that we've seen in this chapter between component and "
-"subsystem models is that subsystem models include ``connect`` statements.  "
-"To explore how the ``connect`` statement works, let's revisit the "
+"subsystem models is that subsystem models include ``connect`` statements."
+"  To explore how the ``connect`` statement works, let's revisit the "
 "``MultiDomainControl`` example from the discussion on :ref:`thermal-"
-"control`.  If we strip away all the annotations (which we will discuss "
-"shortly), we get a model that looks like this:"
+"control-example`.  If we strip away all the annotations (which we will "
+"discuss shortly), we get a model that looks like this:"
 msgstr ""
+"이 장에서 구성 요소와 하위 시스템 모델 사이에서 본 한 가지 차이점은 하위 시스템 모델에는 ``connect`` 문이 포함된다는 것입니다. "
+"``connect`` 문이 어떻게 작동하는지 알아보기 위해 :ref:`thermal-control-example` 에 대한 논의에서 ``MultiDomainControl`` 예제를 다시 살펴보겠습니다."
+"모든 주석을 제거하면(곧 논의할 예정임) 다음과 같은 모델을 얻게 됩니다."
+
 
 #: ../../source/components/components/system_models.rst:56
 msgid ""
-"During our earlier discussion on :ref:`acausal-modeling`, we talked about "
-"equations that are generated for **acausal** variables in a connector.  But "
-"the impact of a ``connect`` statement depends on the nature of the variables"
-" being connected.  The ``MultiDomainControl`` model is useful because it "
-"isn't restricted to acausal connections."
+"During our earlier discussion on :ref:`acausal-modeling`, we talked about"
+" equations that are generated for **acausal** variables in a connector.  "
+"But the impact of a ``connect`` statement depends on the nature of the "
+"variables being connected.  The ``MultiDomainControl`` model is useful "
+"because it isn't restricted to acausal connections."
 msgstr ""
+":ref:`acausal-modeling` 에 대한 이전 논의에서 커넥터의 **인과적** 변수를 생성하는 방정식에 대해 이야기했습니다."
+"그러나 ``connect`` 문의 영향은 연결되는 변수의 특성에 따라 다릅니다."
+"``MultiDomainControl`` 모델은 비인과적 연결에 제한되지 않기 때문에 유용합니다."
+
 
 #: ../../source/components/components/system_models.rst:64
 msgid ""
-"Before we consider the specific connections in the ``MultiDomainControl`` "
-"model, let's first elaborate on what the ``connect`` statement actually "
+"Before we consider the specific connections in the ``MultiDomainControl``"
+" model, let's first elaborate on what the ``connect`` statement actually "
 "does.  There are some complex cases that arise, but for the sake of "
 "simplicity and pedagogy, we'll only discuss the basic case here."
 msgstr ""
+"``MultiDomainControl`` 모델의 특정 연결을 고려하기 전에 먼저 ``connect`` 문이 실제로 수행하는 작업에 대해 자세히 설명하겠습니다. "
+"발생하는 몇 가지 복잡한 경우가 있지만 단순한것을 다루기 위해서 그리고, 교육적인 목적을 위해 여기서는 기본적인 경우만 논의 하겠습니다."
+
+
 
 #: ../../source/components/components/system_models.rst:70
 msgid ""
-"A ``connect`` statement connects exactly two connectors.  It then \"pairs "
-"up\" variables across each connector **by name**.  In other words, it takes "
-"each variable in one connector and pairs it up with the variable of the same"
-" name in the other connector."
+"A ``connect`` statement connects exactly two connectors.  It then \"pairs"
+" up\" variables across each connector **by name**.  In other words, it "
+"takes each variable in one connector and pairs it up with the variable of"
+" the same name in the other connector."
 msgstr ""
+"``connect`` 문은 정확히 두 개의 커넥터를 연결합니다."
+"그런 다음 **이름별로** 각 커넥터에서 변수를 "쌍으로 만듭니다"."
+"즉, 한 커넥터에서 각 변수를 가져와서 다른 커넥터에 있는 같은 이름의 변수와 쌍을 이룹니다."
 
 #: ../../source/components/components/system_models.rst:79
 msgid ""
 "For each pair, the compiler first checks to make sure that the two "
-"corresponding variables have the same type (*e.g.,* ``Real``, ``Integer``)."
-"  But what equations are generated and what additional restrictions exists "
-"depend on what qualifiers have been applied to the variables.  The following"
-" list covers all the essential cases:"
+"corresponding variables have the same type (*e.g.,* ``Real``, "
+"``Integer``).  But what equations are generated and what additional "
+"restrictions exists depend on what qualifiers have been applied to the "
+"variables.  The following list covers all the essential cases:"
 msgstr ""
+"각 쌍에 대해 컴파일러는 먼저 두 개의 해당 변수가 동일한 자료형(*예:* ``Real``, ``Integer``)인지 확인합니다."
+"그러나 생성되는 방정식과 존재하는 추가 제한 사항은 변수에 적용된 한정자에 따라 다릅니다."
+"다음 목록은 모든 필수 사례를 다룹니다."
+
 
 #: ../../source/components/components/system_models.rst:85
 msgid ""
-"**Through variables** - These are variables with the ``flow`` qualifier.  As"
-" we covered in our previous discussion on :ref:`acausal-modeling`, a "
-"conservation equation is generated for all variables in the connection set."
+"**Through variables** - These are variables with the ``flow`` qualifier."
+"  As we covered in our previous discussion on :ref:`acausal-modeling`, a "
+"conservation equation is generated for all variables in the connection "
+"set."
 msgstr ""
-
+"**Through variables** - ``flow`` 한정자가 있는 변수입니다. "
+"인과적 모델링에 대한 이전 논의에서 다룬 것처럼 연결 집합의 모든 변수에 대해 보존 방정식이 생성됩니다."
+ 
 #: ../../source/components/components/system_models.rst:89
 msgid ""
-"**Parameters** - A variable that includes the ``parameter`` qualifier does "
-"not generate any equations.  Instead, it generates an ``assert`` call that "
-"ensures that the values are identical between the two variables.  This is "
-"useful when a ``connector`` includes ``Integer`` parameters that specify the"
-" size of arrays in the connector, for example, because it asserts the arrays"
-" are the same size."
+"**Parameters** - A variable that includes the ``parameter`` qualifier "
+"does not generate any equations.  Instead, it generates an ``assert`` "
+"call that ensures that the values are identical between the two "
+"variables.  This is useful when a ``connector`` includes ``Integer`` "
+"parameters that specify the size of arrays in the connector, for example,"
+" because it asserts the arrays are the same size."
 msgstr ""
+"**Parameters** - ``parameter`` 한정자를 포함하는 변수는 방정식을 생성하지 않습니다. ""
+"대신 두 변수 사이의 값이 동일한지 확인하는 ``assert`` 호출을 생성합니다. "
+"``커넥터`` 가 커넥터의 배열 크기를 지정하는 ``정수`` 파라미터를 포함할 때 유용합니다."
+"예를들어 배열이 같은 크기인지 확인하고 경고를 보냅니다."
 
 #: ../../source/components/components/system_models.rst:96
 msgid ""
-"**Inputs** - A variable that has the ``input`` qualifier can only be paired "
-"with a variable that has an ``input`` or an ``output`` qualifier.  Assuming "
-"this requirement is met, an equation will be generated simply equating these"
-" two variables."
+"**Inputs** - A variable that has the ``input`` qualifier can only be "
+"paired with a variable that has an ``input`` or an ``output`` qualifier."
+"  Assuming this requirement is met, an equation will be generated simply "
+"equating these two variables."
 msgstr ""
+"**input** - ``입력`` 한정자가 있는 변수는 ``입력`` 또는 ``출력`` 한정자가 있는 변수와만 쌍을 이룰 수 있습니다. "
+"이 요구 사항이 충족된다고 가정하면 이 두 변수를 동일시하는 방정식이 생성됩니다."
 
 #: ../../source/components/components/system_models.rst:100
 msgid ""
 "**Outputs** - A variable that has the ``output`` qualifier can only be "
-"paired with a variable that has the ``input`` qualifier (*i.e.,* two outputs"
-" can never be connected).  As with the case for input variables, an equality"
-" relationship is generated for such a connection."
+"paired with a variable that has the ``input`` qualifier (*i.e.,* two "
+"outputs can never be connected).  As with the case for input variables, "
+"an equality relationship is generated for such a connection."
 msgstr ""
+"**output** - ``output`` 한정자가 있는 변수는 ``input`` 한정자가 있는 변수와만 쌍을 이룰 수 있습니다"
+"(*즉,* 두 개의 출력은 연결할 수 없음). 입력 변수의 경우와 마찬가지로 이러한 연결에 대해 등식"
+"관계가 생성됩니다."
+
 
 #: ../../source/components/components/system_models.rst:105
 msgid ""
-"**Across variables** - These are variables that lack any qualifiers (unlike "
-"the previous cases).  As we covered in our previous discussion on :ref"
-":`acausal-modeling`, a series of equations will be generated equating all "
-"the across variables in the connection set."
+"**Across variables** - These are variables that lack any qualifiers "
+"(unlike the previous cases).  As we covered in our previous discussion on"
+" :ref:`acausal-modeling`, a series of equations will be generated "
+"equating all the across variables in the connection set."
 msgstr ""
+"**Across variables** - 이전 사례와 달리 한정자가 없는 변수입니다. "
+"인과 모델링'에 대한 이전 논의에서 다루었듯이 일련의 방정식이 연결 세트의 모든 교차 변수를 동일시하여 생성됩니다."
+
 
 #: ../../source/components/components/system_models.rst:111
 msgid ""
-"In our discussion of :ref:`block-components`, we describe the ``input`` and "
-"``output`` qualifiers as \"causal\".  In fact, the ``input`` and ``output`` "
-"qualifiers do not actually specify the order in which calculations are "
-"performed.  As discussed above, they just enforce restrictions on how the "
-"variables can be connected.  In addition to the restriction already "
-"mentioned, there is one additional restriction that, within a connection "
-"set, there can only be one ``output`` signal (for obvious reasons)."
+"In our discussion of :ref:`block-components`, we describe the ``input`` "
+"and ``output`` qualifiers as \"causal\".  In fact, the ``input`` and "
+"``output`` qualifiers do not actually specify the order in which "
+"calculations are performed.  As discussed above, they just enforce "
+"restrictions on how the variables can be connected.  In addition to the "
+"restriction already mentioned, there is one additional restriction that, "
+"within a connection set, there can only be one ``output`` signal (for "
+"obvious reasons)."
 msgstr ""
+":ref:`block-components` 에 대한 논의에서 ``input`` 및 ``output`` 한정자를 "causal"로 설명합니다. "
+"실제로 ``input`` 및 ``output`` 한정자는 실제로 계산이 수행되는 순서를 지정하지 않습니다. "
+"위에서 설명한 것처럼 변수를 연결할 수 있는 방법에 대한 제한을 적용할 뿐입니다. "
+"이미 언급한 제한 사항 외에도 연결 세트 내에서 하나의 "출력" 신호만 있을 수 있다는 추가 제한 사항이 있습니다(명백한 이유로)."
+
+
 
 #: ../../source/components/components/system_models.rst:120
 msgid ""
 "In our ``MultiDomainControl`` model, we can see several of these cases "
 "covered.  For example,"
 msgstr ""
+"``MultiDomainControl`` 모델에서 이러한 사례 중 몇 가지를 볼 수 있습니다. 예를 들어,"
 
 #: ../../source/components/components/system_models.rst:127
 msgid ""
@@ -134,158 +184,229 @@ msgid ""
 "signal, ``feedback.u1``.  So this is a connection involving only causal "
 "signals.  On the other hand, we have connections like this:"
 msgstr ""
+"여기에서 ``output`` 신호인 ``setpoint.y`` 는 ``input`` 신호인 ``feedback.u1`` 에 연결됩니다."
+"따라서 이것은 인과적 신호만을 포함하는 연결입니다. 반면에 다음과 같은 연결이 있습니다."
+
 
 #: ../../source/components/components/system_models.rst:136
 msgid ""
 "This will lead to the types of conservations equations :ref:`discussed "
 "earlier <acausal-modeling>`."
 msgstr ""
+"이것은 보존 방정식의 자료형으로 이어질 것입니다."
+
+
 
 #: ../../source/components/components/system_models.rst:139
 msgid ""
 "In summary, a ``connect`` statement is a way to generate equations that "
 "automatically manages complex tasks (like generation of conservation and "
-"continuity equations) while at the same time checking to make sure that the "
-"connection makes sense (*e.g..,* that the variables have the same type)."
+"continuity equations) while at the same time checking to make sure that "
+"the connection makes sense (*e.g..,* that the variables have the same "
+"type)."
 msgstr ""
+"요약하면, ``connect`` 문은 복잡한 작업(예: 보존 및 연속 방정식 생성)을 자동으로 관리하는 방정식을 생성하는 동시에 연결이 의미가 있는지 확인하는 방법입니다(*예: .,* 변수가 동일한 자료형을 가짐)."
 
 #: ../../source/components/components/system_models.rst:148
 msgid "Diagrams"
 msgstr ""
+"다이어그램(Diagrams)"
 
 #: ../../source/components/components/system_models.rst:150
 msgid ""
-"In this chapter, we showed how Modelica subsystem models can be represented "
-"graphically, *e.g.,*"
+"In this chapter, we showed how Modelica subsystem models can be "
+"represented graphically, *e.g.,*"
 msgstr ""
+"이 장에서는 모델리카 하위 시스템 모델을 그래픽으로 표시하는 방법을 보여 주었습니다. *예:*"
 
-#: ../../source/components/components/system_models.rst:158
+#: ../../source/components/components/system_models.rst:160
 msgid ""
-"All the information required to generate such a diagram is contained in the "
-"Modelica model.  While this information has been visible in some of the "
-"Modelica code listings in this chapter, we haven't really discussed what "
-"information is stored and where."
+"All the information required to generate such a diagram is contained in "
+"the Modelica model.  While this information has been visible in some of "
+"the Modelica code listings in this chapter, we haven't really discussed "
+"what information is stored and where."
 msgstr ""
+"이러한 다이어그램을 생성하는 데 필요한 모든 정보는 모델리카 모델에 포함되어 있습니다."
+"이 정보는 이 장의 일부 모델리카 코드 목록에서 볼 수 있지만 실제로 어떤 정보가 어디에 저장되는지 논의하지 않았습니다."
 
-#: ../../source/components/components/system_models.rst:163
-msgid "To render a subsystem diagram, three pieces of information are needed:"
-msgstr ""
+
 
 #: ../../source/components/components/system_models.rst:165
-msgid "The icon to use to represent each component."
+msgid "To render a subsystem diagram, three pieces of information are needed:"
 msgstr ""
-
-#: ../../source/components/components/system_models.rst:166
-msgid "The location of each component."
-msgstr ""
+"하위 시스템 다이어그램을 그려보기 위해서는 세 가지 정보가 필요합니다."
 
 #: ../../source/components/components/system_models.rst:167
+msgid "The icon to use to represent each component."
+msgstr ""
+"각 구성 요소를 나타내는 데 사용할 아이콘 "
+
+
+#: ../../source/components/components/system_models.rst:168
+msgid "The location of each component."
+msgstr ""
+"각 구성 요소의 위치."
+
+
+#: ../../source/components/components/system_models.rst:169
 msgid "The path for each connection"
 msgstr ""
-
-#: ../../source/components/components/system_models.rst:170
-msgid "Component Icon"
-msgstr ""
+"각 연결 경로"
 
 #: ../../source/components/components/system_models.rst:172
-msgid ""
-"The icon used for each component is simply whatever drawing primitives are "
-"included in the ``Icon`` annotation for that component's definition.  The "
-"details of the ``Icon`` annotation were covered in our previous discussion "
-"of :ref:`graphical-annos`."
+msgid "Component Icon"
 msgstr ""
+"구성요소 아이콘(Component Icon)"
 
-#: ../../source/components/components/system_models.rst:182
-msgid "Component Placement"
+#: ../../source/components/components/system_models.rst:174
+msgid ""
+"The icon used for each component is simply whatever drawing primitives "
+"are included in the ``Icon`` annotation for that component's definition."
+"  The details of the ``Icon`` annotation were covered in our previous "
+"discussion of :ref:`graphical-annos`."
 msgstr ""
+"각 구성 요소에 사용하는 아이콘은 단순히 해당 구성 요소의 정의에 대한 ``Icon`` 주석에 포함된 드로잉 프리미티브입니다."
+"``Icon`` 주석에 대한 자세한 내용은 이전에 논의한 :ref:`graphical-annos` 에서 다루었습니다."
+
 
 #: ../../source/components/components/system_models.rst:184
+msgid "Component Placement"
+msgstr ""
+"구성요소 위치(Component Placement)"
+
+#: ../../source/components/components/system_models.rst:186
 msgid ""
-"Now that we know what to draw for each component, we need to know where to "
-"draw it.  This is where the ``Placement`` annotation comes in.  This "
+"Now that we know what to draw for each component, we need to know where "
+"to draw it.  This is where the ``Placement`` annotation comes in.  This "
 "annotation appeared in many of the examples in this chapter, *e.g.,*"
 msgstr ""
+"이제 각 구성 요소에 대해 무엇을 그릴지 알았으므로 어디에 그릴지 알아야 합니다. "
+"여기에서 ``Placement`` 주석이 등장합니다. "
+"이 주석은 이 장의 많은 예제에서 알아봤습니다."
+"*예* 를 들면:"
 
-#: ../../source/components/components/system_models.rst:194
+
+#: ../../source/components/components/system_models.rst:196
 msgid ""
 "The ``Placement`` annotation simply establishes a rectangular region in "
-"which to draw the icon associated with each component.  As with other :ref"
-":`graphical-annos`, we can describe the ``Placement`` annotation in terms of"
-" a ``record`` definition:"
+"which to draw the icon associated with each component.  As with other "
+":ref:`graphical-annos`, we can describe the ``Placement`` annotation in "
+"terms of a ``record`` definition:"
 msgstr ""
+"``Placement`` 주석은 단순히 각 구성 요소와 관련된 아이콘을 그릴 직사각형 영역을 설정합니다. "
+"다른 :ref:`graphical-annos` 와 마찬가지로 ``record`` 정의 측면에서 ``Placement`` 주석을 설명할 수 있습니다."
 
-#: ../../source/components/components/system_models.rst:207
+
+#: ../../source/components/components/system_models.rst:209
 msgid ""
 "The ``visible`` field serves the same purpose as it does in the "
 "``GraphicItem`` annotation we discussed earlier, *i.e.,* it is used to "
 "control whether the component is rendered or not."
 msgstr ""
+"``visible`` 필드는 이전에 논의한 ``GraphicItem`` 주석에서와 동일한 용도로 사용합니다."
+"*즉,* 구성 요소가 렌더링되는지 여부를 제어하는 데 사용합니다."
 
-#: ../../source/components/components/system_models.rst:211
+
+#: ../../source/components/components/system_models.rst:213
 msgid ""
-"The ``transformation`` field defines how the icon is rendered in a schematic"
-" diagram and the ``iconTransformation`` defines how it is rendered if it is "
-"considered part of the **subsystem's** icon. Generally, the "
-"``iconTransformation`` is only defined for connectors since these are "
-"typically the only components that appear in the icon representation."
+"The ``transformation`` field defines how the icon is rendered in a "
+"schematic diagram and the ``iconTransformation`` defines how it is "
+"rendered if it is considered part of the **subsystem's** icon. Generally,"
+" the ``iconTransformation`` is only defined for connectors since these "
+"are typically the only components that appear in the icon representation."
 msgstr ""
+"``transformation`` 필드는 도식 다이어그램에서 아이콘이 렌더링되는 방식을 정의하고 ``iconTransformation`` 은 **하위 시스템** 아이콘의 일부로 간주되는 경우 렌더링되는 방식을 정의합니다. "
+"일반적으로 ``iconTransformation`` 은 아이콘 표현에 나타나는 유일한 구성 요소이기 때문에 커넥터에 대해서만 정의합니다."
 
-#: ../../source/components/components/system_models.rst:218
+
+
+#: ../../source/components/components/system_models.rst:220
 msgid "The ``Transformation`` annotation, which is defined as follows:"
 msgstr ""
+"``Transformation`` 주석은 다음과 같이 정의합니다."
 
-#: ../../source/components/components/system_models.rst:228
+
+#: ../../source/components/components/system_models.rst:230
 msgid ""
 "The ``rotation`` field indicates how many degrees the component's icon "
-"should be rotated and the ``origin`` field indicates the point around which "
-"this rotation should occur.  Finally, the ``extent`` field indicates the "
-"size of the region the icon will be rendered into."
+"should be rotated and the ``origin`` field indicates the point around "
+"which this rotation should occur.  Finally, the ``extent`` field "
+"indicates the size of the region the icon will be rendered into."
 msgstr ""
+"``rotation`` 필드는 구성 요소의 아이콘이 회전해야 하는 각도를 나타내고 ``origin`` 필드는 이 회전이 발생해야 하는 지점을 나타냅니다. "
+"마지막으로 ``extent`` 필드는 아이콘이 렌더링될 영역의 크기를 나타냅니다."
 
-#: ../../source/components/components/system_models.rst:234
-msgid "Connection Rendering"
-msgstr ""
 
 #: ../../source/components/components/system_models.rst:236
+msgid "Connection Rendering"
+msgstr ""
+"연결 랜더링(Connection Rendering)"
+
+#: ../../source/components/components/system_models.rst:238
 msgid ""
 "Finally, we have the third topic, rendering the connections.  Again, the "
-"annotations that govern how connections are rendered have appeared in many "
-"examples.  Now, finally, we'll explain what that information represents.  "
-"Consider the following ``connect`` statement from our :ref:`thermal-control`"
-" example:"
+"annotations that govern how connections are rendered have appeared in "
+"many examples.  Now, finally, we'll explain what that information "
+"represents.  Consider the following ``connect`` statement from our :ref"
+":`thermal-control-example` example:"
 msgstr ""
+"마지막으로 연결을 렌더링하는 세 번째 주제가 있습니다."
+"다시 말하지만, 연결이 렌더링되는 방식을 제어하는 주석은 많은 예제에서 살펴봤습니다."
+"이제 마지막으로 해당 정보가 무엇을 나타내는지 설명하겠습니다."
+":ref:`thermal-control-example` 예제에서 다음 ``connect`` 문을 알아보겠습니다."
 
-#: ../../source/components/components/system_models.rst:246
+
+#: ../../source/components/components/system_models.rst:248
 msgid ""
 "Note that the ``connect`` statement is followed by an annotation.  In "
-"particular, note that this is a ``Line`` annotation.  We already discussed "
-"the :ref:`line-anno`.  The annotation data is the same in this context as it"
-" was then."
+"particular, note that this is a ``Line`` annotation.  We already "
+"discussed the :ref:`line-anno`.  The annotation data is the same in this "
+"context as it was then."
 msgstr ""
+"``connect`` 문 다음에 주석이 오는데, 특히 이것은 ``Line`` 주석입니다. "
+"이미 :ref:`line-anno` 에서 이것에 대해 논의했으며 이 컨텍스트에서 주석 데이터는 당시와 동일합니다."
 
-#: ../../source/components/components/system_models.rst:62
-#: ../../source/components/components/system_models.rst:75
-#: ../../source/components/components/system_models.rst:76
-#: ../../source/components/components/system_models.rst:77
-msgid "connect"
-msgstr ""
 
-#: ../../source/components/components/system_models.rst:75
-msgid "input"
-msgstr ""
+#~ msgid ""
+#~ "One distinction that we've seen in "
+#~ "this chapter between component and "
+#~ "subsystem models is that subsystem "
+#~ "models include ``connect`` statements.  To "
+#~ "explore how the ``connect`` statement "
+#~ "works, let's revisit the "
+#~ "``MultiDomainControl`` example from the "
+#~ "discussion on :ref:`thermal-control`.  If "
+#~ "we strip away all the annotations "
+#~ "(which we will discuss shortly), we "
+#~ "get a model that looks like this:"
+#~ msgstr ""
 
-#: ../../source/components/components/system_models.rst:76
-msgid "output"
-msgstr ""
+#~ msgid ""
+#~ "Finally, we have the third topic, "
+#~ "rendering the connections.  Again, the "
+#~ "annotations that govern how connections "
+#~ "are rendered have appeared in many "
+#~ "examples.  Now, finally, we'll explain "
+#~ "what that information represents.  Consider"
+#~ " the following ``connect`` statement from"
+#~ " our :ref:`thermal-control` example:"
+#~ msgstr ""
 
-#: ../../source/components/components/system_models.rst:77
-msgid "parameter"
-msgstr ""
+#~ msgid "connect"
+#~ msgstr ""
 
-#: ../../source/components/components/system_models.rst:177
-msgid "annotation"
-msgstr ""
+#~ msgid "input"
+#~ msgstr ""
 
-#: ../../source/components/components/system_models.rst:177
-msgid "Placement"
-msgstr ""
+#~ msgid "output"
+#~ msgstr ""
+
+#~ msgid "parameter"
+#~ msgstr ""
+
+#~ msgid "annotation"
+#~ msgstr ""
+
+#~ msgid "Placement"
+#~ msgstr ""
+

@@ -1,44 +1,56 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/components/rot_comps_basic.rst:4
 msgid "Basic Rotational Components"
 msgstr ""
+"기본 회전 구성요소(Basic Rotational Components)"
 
 #: ../../source/components/components/rot_comps_basic.rst:6
 msgid ""
-"In this section, we'll show how to create basic components for modeling one-"
-"dimensional rotational systems.  We'll build on our discussion of rotational"
-" connectors and show how they can be used to define the interfaces for basic"
-" rotational components.  Finally, we'll show how those rotational components"
-" can then be assembled into a system model that replicates the behavior of "
-"the equation-based version of the same system presented in the first "
-"chapter."
+"In this section, we'll show how to create basic components for modeling "
+"one-dimensional rotational systems.  We'll build on our discussion of "
+"rotational connectors and show how they can be used to define the "
+"interfaces for basic rotational components.  Finally, we'll show how "
+"those rotational components can then be assembled into a system model "
+"that replicates the behavior of the equation-based version of the same "
+"system presented in the first chapter."
 msgstr ""
+"이 섹션에서는 1차원 회전 시스템을 모델링하기 위한 기본 구성 요소를 만드는 방법을 다루겠습니다."
+"이전에 다룬 것 처럼, 회전 커넥터를 바탕으로 기본 회전 구성 요소에 대한 인터페이스를 정의하고 "
+"시스템의 방정식 기반으로 동작을 복제하는 시스템 모델로 회전 구성 요소를 조립할 수 있는 방법을 보여주겠습니다."
+
 
 #: ../../source/components/components/rot_comps_basic.rst:15
 msgid "Component Models"
 msgstr ""
+"구성요소 모델(Component Models)"
 
 #: ../../source/components/components/rot_comps_basic.rst:17
 msgid ""
-"In the first chapter, we considered :ref:`mech-example` modeled strictly in "
-"terms of equations (*i.e.,* without component models).  In this section, we "
-"will start by recreating that system model using components.  To do this, we"
-" first have to define models for the fundamental components we require.  "
-"These will consist of models for an inertia, a spring, a damper and a "
-"mechanical ground."
+"In the first chapter, we considered :ref:`mech-example` modeled strictly "
+"in terms of equations (*i.e.,* without component models).  In this "
+"section, we will start by recreating that system model using components."
+"  To do this, we first have to define models for the fundamental "
+"components we require.  These will consist of models for an inertia, a "
+"spring, a damper and a mechanical ground."
 msgstr ""
+"방정식의 관점에서 엄격하게 모델링된 :ref:`mech-example` (*즉,* 구성 요소 모델)을 첫 번째 장에서 살펴보았는데,"
+"이 섹션에서는 구성 요소를 사용하여 해당 시스템 모델을 재생성하는 것으로 시작하겠습니다."
+"이렇게 하려면 먼저 필요한 기본 구성 요소인 관성, 스프링, 댐퍼 및 기계적 접지 대한 모델을 정의해야 합니다."
+
 
 #: ../../source/components/components/rot_comps_basic.rst:24
 msgid ""
@@ -47,10 +59,14 @@ msgid ""
 "revisit these definitions and attempt to factor out common code to avoid "
 "repetition across component models."
 msgstr ""
+":ref:`이전 섹션<electrical-components>` 에서와 같이 먼저 장황한 공식을 사용하여 구성 요소 모델을 정의한 다음 이러한 정의를 다시 검토하고 "
+"구성 요소 모델 간의 반복을 피하기 위해 공통 코드를 제외하는 방식을 다루겠습니다."
+
 
 #: ../../source/components/components/rot_comps_basic.rst:30
 msgid "Coordinate Systems"
 msgstr ""
+"좌표계(Coordinate Systems)"
 
 #: ../../source/components/components/rot_comps_basic.rst:32
 msgid ""
@@ -60,283 +76,384 @@ msgid ""
 "discuss one of the complexities associated with mechanical systems, "
 "coordinate systems."
 msgstr ""
+"이러한 모델을 생성하는 방법은 이전에 열 전달 및 전기 영역에서 구성 요소 모델을 생성한 방법과 매우 유사합니다."
+"그러나 컴포넌트 모델 구축을 시작하기 전에 먼저 기계 시스템과 관련된 복잡성 중 하나인 좌표계에 대해 논의해야 합니다."
+
 
 #: ../../source/components/components/rot_comps_basic.rst:38
 msgid ""
 "In the mechanical domain, the conserved quantity we will be tracking is "
-"momentum.  What makes momentum different from the conserved quantities we've"
-" already covered, heat and charge, is that it is directional.  Since we are "
-"only concerning ourselves with the one dimensional case here, the "
-"consequence of this directionality is that momentum is a signed quantity "
-"(*i.e.,* it can be positive or negative)."
+"momentum.  What makes momentum different from the conserved quantities "
+"we've already covered, heat and charge, is that it is directional.  Since"
+" we are only concerning ourselves with the one dimensional case here, the"
+" consequence of this directionality is that momentum is a signed quantity"
+" (*i.e.,* it can be positive or negative)."
 msgstr ""
+"기계적 영역에서  추적할 보존량은 운동량(momentum)인데, 운동량이 이미 다룬 보존량인 열과 전하와 다른 점은 그것이 방향성이 있다는 것입니다."
+"이번에 다룰 예제는 1차원적인 경우에만 관심을 갖고 있기 때문에 여기서 방향성이 있는 운동량은 부호 있는(*즉,* 양수 또는 음수일 수 있음) 양이라는 것입니다."
+
 
 #: ../../source/components/components/rot_comps_basic.rst:50
 msgid ""
 "Consider a rotating mass with a moment of inertia, :math:`J`.  If the "
-"angular position of the inertia is represented by :math:`\\varphi`, then the"
-" angular velocity of the inertia, :math:`\\omega`, is defined as:"
+"angular position of the inertia is represented by :math:`\\varphi`, then "
+"the angular velocity of the inertia, :math:`\\omega`, is defined as:"
+msgstr ""
+"관성 모멘트(moment)가 있는 회전 질량 :math:`J` 를 생각해 보겠습니다."
+"관성의 각 위치가 :math:`\varphi` 로 표시되면 관성의 각속도 :math:`\omega` 는 다음과 같이 정의합니다."
+
+
+#: ../../source/components/components/rot_comps_basic.rst:55
+msgid "\\omega = \\dot{\\varphi}"
 msgstr ""
 
 #: ../../source/components/components/rot_comps_basic.rst:59
 msgid ""
-"Obviously, a positive value of :math:`\\omega` will result in an increase in"
-" :math:`\\varphi` over time.  Furthermore, the angular acceleration of the "
-"inertia, :math:`\\alpha`, is defined as:"
+"Obviously, a positive value of :math:`\\omega` will result in an increase"
+" in :math:`\\varphi` over time.  Furthermore, the angular acceleration of"
+" the inertia, :math:`\\alpha`, is defined as:"
+msgstr ""
+"분명히, :math:`\omega` 의 양수 값은 시간이 지남에 따라 :math:`\varphi` 의 증가를 초래합니다. "
+"또한, 관성의 각가속도 :math:`\alpha` 는 다음과 같이 정의합니다."
+ 
+#: ../../source/components/components/rot_comps_basic.rst:63
+msgid "\\alpha = \\dot{\\omega}"
 msgstr ""
 
 #: ../../source/components/components/rot_comps_basic.rst:67
 msgid ""
 "As with the angular velocity, we can see that a positive value for "
-":math:`\\alpha` will result in an increase in the angular velocity. Finally,"
-" the angular momentum of this rotating inertia is defined as :math:`J "
-"\\omega` and we know from Euler's laws of motion that (assuming J is a "
-"constant):"
+":math:`\\alpha` will result in an increase in the angular velocity. "
+"Finally, the angular momentum of this rotating inertia is defined as "
+":math:`J \\omega` and we know from Euler's laws of motion that (assuming "
+"J is a constant):"
+msgstr ""
+"각속도와 마찬가지로 :math:`\alpha` 에 대한 양수 값은 각속도의 증가를 초래한다는 것을 알 수 있습니다."
+"마지막으로, 이 회전 관성의 각 운동량은 :math:`J \omega` 로 정의되며 오일러의 운동 법칙에서 다음을 알 수 있습니다(J가 상수라고 가정)."
+
+
+#: ../../source/components/components/rot_comps_basic.rst:73
+msgid "J \\frac{\\mathrm{d}\\omega}{\\mathrm{d}t} = \\tau"
 msgstr ""
 
 #: ../../source/components/components/rot_comps_basic.rst:77
 msgid ""
-"From this relationship, it is clear that a positive value for the torque, "
-":math:`\\tau`, will increase the amount of momentum stored in the mass."
+"From this relationship, it is clear that a positive value for the torque,"
+" :math:`\\tau`, will increase the amount of momentum stored in the mass."
 msgstr ""
+"이 관계에서 토크에 대해 양의 값을 가지는 :math:`\tau` 는 질량에 저장되어 있는 운동량을 증가시킬 것 입니다."
+
+
 
 #: ../../source/components/components/rot_comps_basic.rst:81
 msgid ""
-"The point of presenting all these relationships is to underscore the sign "
-"conventions associated with :math:`\\varphi`, :math:`\\omega`, "
+"The point of presenting all these relationships is to underscore the sign"
+" conventions associated with :math:`\\varphi`, :math:`\\omega`, "
 ":math:`\\alpha` and :math:`\\tau`.  They are all tied to the fundamental "
 "definition of what a positive angular position is.  **Whatever direction "
 "causes** :math:`\\varphi` **to increase is the same direction that "
-"corresponds to a positive velocity, a positive acceleration and a positive "
-"torque**."
+"corresponds to a positive velocity, a positive acceleration and a "
+"positive torque**."
 msgstr ""
+"이러한 모든 관계를 설명하는 이유는 :math:`\varphi`, :math:`\omega`, :math:`\alpha` 및 :math:`\tau` 와 관련된 부호 규칙을 강조하기 위함 입니다. "
+"그것들은 모두 양의 방향으로 각도 위치가 어떻게 되는지에 대한 근본적인 정의와 상관있습니다. "
+"**원인이 어떤 방향이든** :math:`\varphi` 의 **증가는 양의 속도, 양의 가속 및 양의 토크에 해당하는 방향과 동일합니다**."
 
 #: ../../source/components/components/rot_comps_basic.rst:90
-#: ../../source/components/components/rot_comps_basic.rst:247
+#: ../../source/components/components/rot_comps_basic.rst:255
 msgid "Rotational Inertia"
 msgstr ""
+"회전 관성(Rotational Inertia)"
 
 #: ../../source/components/components/rot_comps_basic.rst:92
 msgid ""
-"With this discussion about sign conventions and coordinate systems out of "
-"the way, we can start creating our component models.  We'll start with the "
-"inertia model:"
+"With this discussion about sign conventions and coordinate systems out of"
+" the way, we can start creating our component models.  We'll start with "
+"the inertia model:"
 msgstr ""
+"기호 규칙 및 좌표계에 대한 논의를 통해 구성 요소 모델을 생성할 수 있습니다."
+"관성 모델부터 시작하겠습니다. "
 
-#: ../../source/components/components/rot_comps_basic.rst:100
+
+#: ../../source/components/components/rot_comps_basic.rst:101
 msgid ""
 "The ``Inertia`` model includes two \"flanges\", one on either end.  The "
 "significance of these flanges is made clearer from the icon of the "
 "``Inertia`` model:"
 msgstr ""
+"``Inertia`` 모델에는 양쪽 끝에 하나씩 두 개의 "플랜지(flanges)"가 있습니다. "
+"이러한 플랜지의 중요성은 ``Inertia`` 모델의 아이콘을 보면 더 명확해집니다"
 
-#: ../../source/components/components/rot_comps_basic.rst:108
-msgid ""
-"In other words, the ``Inertia`` model includes a flange on either end. You "
-"can think of this model as a shaft with connectors on either end."
-msgstr ""
 
 #: ../../source/components/components/rot_comps_basic.rst:111
 msgid ""
-"Now, the fundamental equation we wish to capture in the ``Inertia`` model "
-"is:"
+"In other words, the ``Inertia`` model includes a flange on either end. "
+"You can think of this model as a shaft with connectors on either end."
 msgstr ""
+"즉, ``Inertia`` 모델은 양쪽 끝에 플랜지가 포함되어 있으며, 이 모델은 양쪽 끝에 커넥터가 있는 샤프트로 생각할 수 있습니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:118
+
+
+#: ../../source/components/components/rot_comps_basic.rst:114
 msgid ""
-"This is basically expressing the fact that the increase in momentum stored "
-"within the inertia is equal to the sum of the torques applied to the "
-"inertia. Recall, from our previous discussions on :ref:`acausal-"
+"Now, the fundamental equation we wish to capture in the ``Inertia`` model"
+" is:"
+msgstr ""
+"``Inertia`` 모델에서 구현하려는 기본 방정식은 다음과 같습니다."
+
+#: ../../source/components/components/rot_comps_basic.rst:121
+msgid ""
+"This is basically expressing the fact that the increase in momentum "
+"stored within the inertia is equal to the sum of the torques applied to "
+"the inertia. Recall, from our previous discussions on :ref:`acausal-"
 "connections`, that the sign convention for flow variables on connectors "
 "(``flange_a.tau`` and ``flange_b.tau`` in this case) is that a positive "
-"value represents a flow of the conserved quantity into the component model."
-"  The fact that ``flange_a`` and ``flange_b`` have the same sign convention "
-"means that the ``Inertia`` model is symmetric (*i.e.,* it can be flipped "
-"over and it doesn't change the behavior)."
+"value represents a flow of the conserved quantity into the component "
+"model.  The fact that ``flange_a`` and ``flange_b`` have the same sign "
+"convention means that the ``Inertia`` model is symmetric (*i.e.,* it can "
+"be flipped over and it doesn't change the behavior)."
 msgstr ""
+"이것은 기본적으로 관성에 저장된 운동량의 증가가 관성에 적용된 토크의 합과 같다는 사실을 표현한 것입니다. "
+":ref:`acausal-connections` 에 대한 이전 설명에서 커넥터의 흐름 변수(이 경우 ``flange_a.tau`` 및 ``flange_b.tau``)에 대한 부호 규칙에서 다루었듯이 구성요소의 보존된 값으로 들어오는 것이 양수 값이였습니다."
+"``flange_a`` 와 ``flange_b`` 가 동일한 부호 규칙을 갖는다는 사실은 ``Inertia`` 모델이 대칭임을 의미합니다(*즉,* 뒤집을 수 있으며 동작을 변경하지 않음)."
 
-#: ../../source/components/components/rot_comps_basic.rst:129
+
+
+#: ../../source/components/components/rot_comps_basic.rst:132
 msgid ""
 "However, this equation refers to the internal variables ``w`` (which "
-"represents :math:`\\omega`) and ``tau`` so we need to include declarations "
-"and definitions for those variables as well."
+"represents :math:`\\omega`) and ``tau`` so we need to include "
+"declarations and definitions for those variables as well."
 msgstr ""
+"그러나, 이 방정식은 내부 변수 ``w`` (:math:`\omega` 를 나타냄) 및 ``tau`` 를 참조하므로 해당 변수에 대한 선언 및 정의도 포함하여 고려해야 합니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:134
-#: ../../source/components/components/rot_comps_basic.rst:257
+#: ../../source/components/components/rot_comps_basic.rst:137
+#: ../../source/components/components/rot_comps_basic.rst:265
 msgid "Spring Model"
 msgstr ""
+"스프링 모델(Spring Model)"
 
-#: ../../source/components/components/rot_comps_basic.rst:136
+#: ../../source/components/components/rot_comps_basic.rst:139
 msgid "Next, let us consider the definition of a spring model:"
 msgstr ""
+"다음으로 스프링 모델의 정의를 살펴보겠습니다"
 
-#: ../../source/components/components/rot_comps_basic.rst:142
+#: ../../source/components/components/rot_comps_basic.rst:146
 msgid "The icon for our spring model is rendered as:"
 msgstr ""
+"스프링 모델의 아이콘은 다음과 같이 그려집니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:148
+#: ../../source/components/components/rot_comps_basic.rst:154
 msgid ""
-"Like the ``Inertia`` model, the ``Spring`` model has two connectors, one on "
-"each end.  It also defines many of the same internal variables.  Ultimately,"
-" the behavior of the spring comes down to this equation:"
+"Like the ``Inertia`` model, the ``Spring`` model has two connectors, one "
+"on each end.  It also defines many of the same internal variables.  "
+"Ultimately, the behavior of the spring comes down to this equation:"
 msgstr ""
+"``Inertia`` 모델과 마찬가지로 ``Spring`` 모델에는 각 끝에 하나씩 두 개의 커넥터가 있고, 내부 변수 중 많은 값들을 동일하게 정의합니다."
+"궁극적으로 다음 방정식으로 스프링이 동작합니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:157
+
+
+#: ../../source/components/components/rot_comps_basic.rst:163
 msgid ""
 "In fact, apart from this equation and the parameter ``c``, much of the "
 "content in the ``Spring`` model is the same as the content in the "
 "``Inertia`` model."
 msgstr ""
+"사실, 이 방정식과 파라미터 ``c`` 를 제외하면 ``Spring`` 모델의 내용 대부분은 ``Inertia`` 모델의 내용과 동일합니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:162
-#: ../../source/components/components/rot_comps_basic.rst:267
+#: ../../source/components/components/rot_comps_basic.rst:168
+#: ../../source/components/components/rot_comps_basic.rst:275
 msgid "Damper Model"
 msgstr ""
+"댐퍼 모델(Damper Model)"
 
-#: ../../source/components/components/rot_comps_basic.rst:164
+#: ../../source/components/components/rot_comps_basic.rst:170
 msgid ""
-"The ``Damper`` model is also very similar to the ``Spring`` model. Again, "
-"the main differences are the parameter (``d`` in this case) and one "
+"The ``Damper`` model is also very similar to the ``Spring`` model. Again,"
+" the main differences are the parameter (``d`` in this case) and one "
 "equation:"
 msgstr ""
+"``Damper`` 모델도 ``Spring`` 모델과 매우 유사합니다. 주요 차이점은 파라미터(이 경우 ``d``)와 하나의 방정식입니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:173
+#: ../../source/components/components/rot_comps_basic.rst:179
 msgid "The icon for the ``Damper`` model is rendered as:"
 msgstr ""
+"``dampeer`` 모델의 아이콘은 다음과 같이 렌더링됩니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:182
+#: ../../source/components/components/rot_comps_basic.rst:190
 msgid "DRY Component Models"
 msgstr ""
+"DRY 구성요소 모델(DRY Component Models)"
 
-#: ../../source/components/components/rot_comps_basic.rst:184
+#: ../../source/components/components/rot_comps_basic.rst:192
 msgid ""
 "We already have models for an inertia, a spring and a damper.  The only "
-"model we are missing in order to complete our :ref:`dual spring mass damper "
-"system<mech-example>` is a model of mechanical ground. But before we "
-"complete that model, let's take a moment to revisit the models we've already"
-" created with the goal of factoring out the large amount of code shared "
-"between these models.  As in :ref:`the previous section<electrical-"
-"components>`, let's take the time to apply the DRY (Don't Repeat Yourself) "
-"principle."
+"model we are missing in order to complete our :ref:`dual spring mass "
+"damper system<mech-example>` is a model of mechanical ground. But before "
+"we complete that model, let's take a moment to revisit the models we've "
+"already created with the goal of factoring out the large amount of code "
+"shared between these models.  As in :ref:`the previous section"
+"<electrical-components>`, let's take the time to apply the DRY (Don't "
+"Repeat Yourself) principle."
 msgstr ""
+"관성, 스프링 및 댐퍼에 대한 모델은 만들어졌으므로, :ref:`이중 스프링 질량 댐퍼 시스템(dual spring mass damper system) <mech-example>` 을 완성하기 위해 마지막으로 필요한 것은 기계적 접지 모델입니다."
+"그러나 해당 모델을 완성하기 전에, 앞서 만들어진 모델 간에 공유되는 많은 양의 코드를 제거하기 위해 모델을 다시 살펴보겠습니다."
+":ref:`이전 섹션<electrical-components>` 에서와 같이 DRY(Do n't Repeat Yourself) 원칙을 적용해 보겠습니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:194
+
+#: ../../source/components/components/rot_comps_basic.rst:202
 msgid "Common Code"
 msgstr ""
-
-#: ../../source/components/components/rot_comps_basic.rst:196
-msgid ""
-"It is worth noting that because the Modelica Standard Library has an "
-"extensive collection of rotational components, it was forced to deal with "
-"this issue of redundant code almost from the start.  However, we will not be"
-" using the ``partial`` models from the Modelica Standard Library here simply"
-" because they are designed to deal with many other cases that are not "
-"relevant in this context.  As a result, it's complexity (although necessary)"
-" makes it unsuitable pedagogically."
-msgstr ""
+"공통 코드(Common Code)"
 
 #: ../../source/components/components/rot_comps_basic.rst:204
 msgid ""
-"But one thing we will preserve from the Modelica Standard Library is the "
-"need for multiple ``partial`` models.  This need arises from the fact that, "
-"unlike in our previous discussion of :ref:`electrical-components`, our "
-"rotational component models share different amounts of code with each other."
+"It is worth noting that because the Modelica Standard Library has an "
+"extensive collection of rotational components, it was forced to deal with"
+" this issue of redundant code almost from the start.  However, we will "
+"not be using the ``partial`` models from the Modelica Standard Library "
+"here simply because they are designed to deal with many other cases that "
+"are not relevant in this context.  As a result, it's complexity (although"
+" necessary) makes it unsuitable pedagogically."
 msgstr ""
+"모델리카 표준 라이브러리에는 광범위한 회전 구성 요소 모음이 있기 때문에 거의 처음부터 중복 코드 문제를 처리 했습니다. "
+"그러나 여기서는 모델리카 표준 라이브러리의 ``partial`` 모델을 사용하지 않을 것입니다."
+"표준 모델은 이 컨텍스트와 관련이 없는 다른 많은 사례를 처리하도록 설계되었기 때문에, (필요하긴 하지만)  결과적으로 복잡하여 교육적으로 적합하지 않습니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:210
+#: ../../source/components/components/rot_comps_basic.rst:212
+msgid ""
+"But one thing we will preserve from the Modelica Standard Library is the "
+"need for multiple ``partial`` models.  This need arises from the fact "
+"that, unlike in our previous discussion of :ref:`electrical-components`, "
+"our rotational component models share different amounts of code with each"
+" other."
+msgstr ""
+"그러나 모델리카 표준 라이브러리의 컨셉에서 "여러 ``partial`` 모델이 필요하다"는 내용의 경우에는 그대로 가져오겠습니다. "
+"이러한 필요성은 앞에서 논의한 :ref:`electrical-components` 와 달리 회전 부품 모델이 서로 다른 양(amounts)의 코드를 공유한다는 사실에서 발생합니다."
+
+#: ../../source/components/components/rot_comps_basic.rst:218
 msgid ""
 "What is common to all of our models is the existence of two flange "
-"connectors, ``flange_a`` and ``flange_b``.  However, while the ``Inertia`` "
-"model has the capacity to store angular momentum, the ``Spring`` and "
-"``Damper`` models do not.  As a result, the conservation equations are "
-"different among these components."
+"connectors, ``flange_a`` and ``flange_b``.  However, while the "
+"``Inertia`` model has the capacity to store angular momentum, the "
+"``Spring`` and ``Damper`` models do not.  As a result, the conservation "
+"equations are different among these components."
 msgstr ""
+"모든 모델에 공통적인 것은 ``flange_a`` 와 ``flange_b`` 라는 두 개의 플랜지 커넥터가 있다는 것입니다. "
+"그러나 ``Inertia`` 모델은 각운동량을 저장할 수 있는 반면 ``Spring`` 및 ``Damper`` 모델은 그렇지 않습니다."
+"결과적으로 보존 방정식은 이러한 구성 요소 간에 다릅니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:216
+#: ../../source/components/components/rot_comps_basic.rst:224
 msgid ""
-"Let's start with the elements that are common to all three models. These are"
-" represented by the following ``TwoFlange`` model:"
+"Let's start with the elements that are common to all three models. These "
+"are represented by the following ``TwoFlange`` model:"
 msgstr ""
+"우선 처음으로, 세 가지 모델 모두에 공통적인 요소부터 시작하겠습니다. "
+"다음 ``TwoFlange`` 모델로 표현 할 수 있습니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:222
+
+#: ../../source/components/components/rot_comps_basic.rst:230
 msgid ""
-"In addition to defining the two flanges, ``flange_a`` and ``flange_b``, this"
-" model also defines the relative angle between these flanges, *i.e.,* "
-"``phi_rel``.  Of course, this model is also marked as ``partial`` since it "
-"is missing any description of the component's behavior."
+"In addition to defining the two flanges, ``flange_a`` and ``flange_b``, "
+"this model also defines the relative angle between these flanges, *i.e.,*"
+" ``phi_rel``.  Of course, this model is also marked as ``partial`` since "
+"it is missing any description of the component's behavior."
 msgstr ""
+"모든 모델은 ``flange_a`` 및 ``flange_b`` 라는 두 플랜지를 정의하는 것 외에도 플랜지 사이의 상대 각도(*즉,* ``phi_rel``)를 정의합니다."
+"여기서는 구성 요소의 동작을 구현하지 않기 때문에 ``partial`` 로 표시하여 구현 합니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:228
+
+#: ../../source/components/components/rot_comps_basic.rst:236
 msgid ""
-"We could have all three models inherit from this model.  But then we would "
-"still have some redundant equations between our ``Spring`` and ``Damper`` "
-"model.  So we will instead create a slightly more specialized version of the"
-" ``TwoFlange`` model to represent compliant models that do not store "
-"momentum:"
+"We could have all three models inherit from this model.  But then we "
+"would still have some redundant equations between our ``Spring`` and "
+"``Damper`` model.  So we will instead create a slightly more specialized "
+"version of the ``TwoFlange`` model to represent compliant models that do "
+"not store momentum:"
 msgstr ""
+"세 모델 모두 이 모델을 상속하는 방법이 있지만, ``Spring`` 과 ``Damper`` 모델 사이에는 여전히 일부 중복 방정식이 있습니다. "
+"운동량을 저장하지 않는 호환 모델을 나타내기 위해 ``TwoFlange`` 모델의 약간 더 전문화된 버전을 아래와 같이 대신 생성합니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:237
+#: ../../source/components/components/rot_comps_basic.rst:245
 msgid ""
-"The ``Compliant`` model adds on additional internal variable (to represent "
-"the torque that passes through the component from ``flange_a`` to "
-"``flange_b``) and an equation indicating that no angular momentum is stored "
-"by the component."
+"The ``Compliant`` model adds on additional internal variable (to "
+"represent the torque that passes through the component from ``flange_a`` "
+"to ``flange_b``) and an equation indicating that no angular momentum is "
+"stored by the component."
 msgstr ""
+"``Compliant`` 모델은 추가 내부 변수(``flange_a`` 에서 ``flange_b`` 까지 구성 요소를 통과하는 토크를 나타냄)와 각 운동량이 저장되지 않음을 나타내는 방정식을 추가합니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:242
+
+
+#: ../../source/components/components/rot_comps_basic.rst:250
 msgid ""
 "With these base classes defined, let us quickly revisit the various "
-"component model definitions to see how much more succinct they can be made "
-"by using inheritance."
+"component model definitions to see how much more succinct they can be "
+"made by using inheritance."
 msgstr ""
+"기본 클래스에 대한 다양한 구성 요소 모델 정의를 빠르게 다시 살펴보고 상속을 사용하여 얼마나 더 간결하게 만들 수 있는지 알아보겠습니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:249
+#: ../../source/components/components/rot_comps_basic.rst:257
 msgid ""
-"Leveraging the ``TwoFlanges`` model, our ``Inertia`` model can be simplified"
-" to:"
+"Leveraging the ``TwoFlanges`` model, our ``Inertia`` model can be "
+"simplified to:"
 msgstr ""
+"``TwoFlanges`` 모델을 활용하여 ``Inertia`` 모델을 다음과 같이 단순화할 수 있습니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:259
+#: ../../source/components/components/rot_comps_basic.rst:267
 msgid ""
 "In the same way, inheriting from the ``Compliant`` model our ``Spring`` "
 "model can be much more compactly represented as:"
 msgstr ""
+"같은 방식으로 ``Compliant`` 모델에서 상속받은 ``Spring`` 모델은 다음과 같이 훨씬 더 간결하게 표현될 수 있습니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:269
+#: ../../source/components/components/rot_comps_basic.rst:277
 msgid "Likewise, the ``Damper`` model is similarly simplified:"
 msgstr ""
+"마찬가지로 ``Damper`` 모델도 유사하게 단순화됩니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:276
+#: ../../source/components/components/rot_comps_basic.rst:284
 msgid "Mechanical Ground"
 msgstr ""
+"기계적 접지(Mechanical Ground)"
 
-#: ../../source/components/components/rot_comps_basic.rst:278
+#: ../../source/components/components/rot_comps_basic.rst:286
 msgid ""
-"Finally, we can complete the one model remaining in order to complete our "
-":ref:`dual spring mass damper system<mech-example>`.  The mechanical ground "
-"model is defined as follows:"
+"Finally, we can complete the one model remaining in order to complete our"
+" :ref:`dual spring mass damper system<mech-example>`.  The mechanical "
+"ground model is defined as follows:"
 msgstr ""
+"마지막으로, :ref:`이중 스프링 질량 댐퍼 시스템<mech-example>` 을 완성하기 위해 남은 하나의 모델을 완성할 수 있습니다. "
+"기계 접지 모델은 다음과 같이 정의합니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:287
+
+#: ../../source/components/components/rot_comps_basic.rst:295
 msgid "Dual Spring Mass Damper System"
 msgstr ""
-
-#: ../../source/components/components/rot_comps_basic.rst:289
-msgid ""
-"Finally, we have all the parts we need in order to reconstruct the example "
-"we saw in the first chapter.  Using the various components already defined "
-"in this section, the Modelica code for our component based system model "
-"looks like this:"
-msgstr ""
+"이중 스프링 질량 댐퍼 시스템(Dual Spring Mass Damper System)"
 
 #: ../../source/components/components/rot_comps_basic.rst:297
+msgid ""
+"Finally, we have all the parts we need in order to reconstruct the "
+"example we saw in the first chapter.  Using the various components "
+"already defined in this section, the Modelica code for our component "
+"based system model looks like this:"
+msgstr ""
+"마지막으로 첫 번째 장에서 본 예제를 재구성하는 데 필요한 모든 부분을 정리 해보겠습니다. "
+"이 섹션에서 이미 정의된 다양한 구성 요소를 사용하여 완성한 모델리카 코드는 다음과 같습니다."
+
+
+#: ../../source/components/components/rot_comps_basic.rst:305
 msgid "The diagram for this model, when rendered, looks like this:"
 msgstr ""
+"이 모델의 다이어그램을 그리면 다음과 같습니다."
 
-#: ../../source/components/components/rot_comps_basic.rst:307
+#: ../../source/components/components/rot_comps_basic.rst:317
 msgid ""
-"This completes our discussion of basic rotational components.  But there is "
-"quite a bit more to say about rotational components in the next section on "
-":ref:`adv-rotational-components`."
+"This completes our discussion of basic rotational components.  But there "
+"is quite a bit more to say about rotational components in the next "
+"section on :ref:`adv-rotational-components`."
 msgstr ""
+"이것으로 기본 회전 구성 요소에 대한 논의가 완료되었으며, 다음 섹션인 :ref:`adv-rotational-components` 에서 회전 구성 요소에 대해 더 많은 이야기를 할 수 있습니다."
+

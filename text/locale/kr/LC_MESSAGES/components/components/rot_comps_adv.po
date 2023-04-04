@@ -1,474 +1,699 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/components/rot_comps_adv.rst:4
 msgid "Advanced Rotational Components"
 msgstr ""
+"고도화된 회전 구성요소(Advanced Rotational Components)"
+
 
 #: ../../source/components/components/rot_comps_adv.rst:6
 msgid ""
 "In the previous section, we discussed :ref:`rotational-components` and "
-"showed how to build a system model from basic components.  In this section "
-"we will demonstrate how to incorporate event handling, which we will use "
-"when modeling a backlash.  Furthermore, we'll also show how to use parameter"
-" values to effect the interface of a component."
+"showed how to build a system model from basic components.  In this "
+"section we will demonstrate how to incorporate event handling, which we "
+"will use when modeling a backlash.  Furthermore, we'll also show how to "
+"use parameter values to effect the interface of a component."
 msgstr ""
+"이전 :ref:`rotational-components` 섹션에서 회전 구성 요소에 대해 논의하고 기본 구성 요소에서 시스템 모델을 구축하는 방법을 보여주었습니다."
+"이 섹션에서는 백래시를 모델링할 때 사용할 이벤트 처리를 통합하는 방법을 보여줍니다. "
+"또한 파라미터 값을 사용하여 구성 요소의 인터페이스에 영향을 주는 방법도 알아 보겠습니다."
+
 
 #: ../../source/components/components/rot_comps_adv.rst:13
 msgid "Modeling Backlash"
 msgstr ""
+"모델링 백러시(Modeling Backlash)"
 
 #: ../../source/components/components/rot_comps_adv.rst:15
 msgid ""
-"Let's start our exploration of more advanced component models by looking at "
-"a rotational backlash element.  The equation for a backlash model is very "
-"simple:"
+"Let's start our exploration of more advanced component models by looking "
+"at a rotational backlash element.  The equation for a backlash model is "
+"very simple:"
+msgstr ""
+"회전 백래시 요소를 살펴봄으로써 고급 구성 요소 모델에 대한 탐색을 해보겠습니다."
+"백래시 모델의 방정식은 매우 간단합니다."
+
+
+#: ../../source/components/components/rot_comps_adv.rst:19
+msgid ""
+"\\tau = \\left\\{ \\begin{array}{cc} c (\\Delta \\varphi - \\frac{b}{2}) "
+"\\ \\  &\\mathrm{if}\\ \\Delta \\varphi>\\frac{b}{2} \\\\ c (\\Delta "
+"\\varphi + \\frac{b}{2}) \\ \\  &\\mathrm{if}\\ \\Delta "
+"\\varphi<-\\frac{b}{2} \\\\ 0 \\ \\ &\\mathrm{otherwise} \\end{array} "
+"\\right."
 msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:34
-msgid "In Modelica, this component can be described as follows:"
+msgid ""
+"In Modelica (where :math:`\\Delta \\varphi` is ``phi_rel``), this "
+"component can be described as follows:"
 msgstr ""
+"모델리카(여기서 :math:`\Delta \varphi` 는 ``phi_rel`` 임)에서 이 구성 요소는 다음과 같이 설명할 수 있습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:40
+#: ../../source/components/components/rot_comps_adv.rst:43
 msgid ""
 "We can add an instance of this backlash model into our previous model by "
 "placing it in parallel with the spring and the damper, *i.e.,*"
 msgstr ""
+"이 백래시 모델의 인스턴스를 스프링 및 댐퍼와 평행하게 배치하여 이전 모델에 추가할 수 있습니다. *즉,*"
 
-#: ../../source/components/components/rot_comps_adv.rst:48
+#: ../../source/components/components/rot_comps_adv.rst:52
 msgid ""
 "If we use the inheritance mechanism in Modelica, the resulting Modelica "
 "model is quite simple:"
 msgstr ""
+"모델리카에서 상속 메커니즘을 사용하면 결과 적으로 모델리카 모델은 매우 간단해집니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:55
+#: ../../source/components/components/rot_comps_adv.rst:59
 msgid ""
-"In this case, if the relative angle between ``inertia1`` and ``inertia2`` is"
-" more than 0.5 radians (*i.e.,* the value of ``b`` in our backlash "
+"In this case, if the relative angle between ``inertia1`` and ``inertia2``"
+" is more than 0.5 radians (*i.e.,* the value of ``b`` in our backlash "
 "instance), then the torque from the backlash element will be introduced."
 msgstr ""
+"이 경우 ``inertia1`` 과 ``inertia2`` 사이의 상대 각도가 0.5 라디안(*즉,* 백래시 인스턴스의 ``b`` 값)보다 크면 백래시 요소의 토크가 적용 됩니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:60
+
+
+#: ../../source/components/components/rot_comps_adv.rst:64
 msgid ""
 "If we simulate this model, we can see the impact that the backlash's "
 "presence has on the response of the system:"
 msgstr ""
+"이 모델을 시뮬레이션하면 백래시가 시스템 응답에 미치는 영향을 확인할 수 있습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:70
+#: ../../source/components/components/rot_comps_adv.rst:74
 msgid ""
-"Another thing worth looking at (which we will delve into much more in the "
-"next topic) is the force felt by the mechanical ground element. Looking at "
-"our schematic, it is clear that the role of the mechanical ground element is"
-" to fix the angular position on one side of our system.  An equation to "
-"constrains the motion (or lack of motion, in this case) of a point in the "
-"system is called a *kinematic constraint*."
+"Another thing worth looking at (which we will delve into much more in the"
+" next topic) is the force felt by the mechanical ground element. Looking "
+"at our schematic, it is clear that the role of the mechanical ground "
+"element is to fix the angular position on one side of our system.  An "
+"equation to constrain the motion (or lack of motion, in this case) of a "
+"point in the system is called a *kinematic constraint*."
 msgstr ""
+"추가적으로 살펴볼 또 다른 내용은 (다음 주제에서 훨씬 더 자세히 알아볼) 기계적 접지 요소가 느끼는 힘입니다. "
+"시스템의 한쪽에 각도 위치를 고정하는 것이 기계적 접지 요소의 역할인 것을 회로도를 보면 알 수 있습니다. "
+"이렇게 시스템에서 한 지점의 동작(또는 이 경우 동작 부족)을 제한하는 방정식을 *운동학적 제약 조건* 이라고 합니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:77
+
+#: ../../source/components/components/rot_comps_adv.rst:81
 msgid ""
-"When a kinematic constraint is imposed on a system, the component imposing "
-"the constraint must generate some kind of force or torque in order to affect"
-" the motion of the system.  This is called a reaction force or reaction "
-"torque."
+"When a kinematic constraint is imposed on a system, the component "
+"imposing the constraint must generate some kind of force or torque in "
+"order to affect the motion of the system.  This is called a reaction "
+"force or reaction torque."
 msgstr ""
+"시스템에 운동학적 제약이 부과되면 제약을 부과하는 구성 요소는 시스템의 동작에 영향을 미치기 위해 일종의 힘이나 토크를 생성해야 합니다."
+"이를 반작용력 또는 반작용 토크라고 합니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:82
+
+
+#: ../../source/components/components/rot_comps_adv.rst:86
 msgid ""
 "The following plot shows the reaction torque that the mechanical ground "
 "element must impose on the system in order to fix the angular position:"
 msgstr ""
+"다음 선도는 각도 위치를 고정하기 위해 기계적 접지 요소가 시스템에 부과해야 하는 반응 토크를 보여줍니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:90
+#: ../../source/components/components/rot_comps_adv.rst:94
 msgid "Grounding and Reaction Torques"
 msgstr ""
+"접지 그리고 반작용 토크(Grounding and Reaction Torques)"
 
-#: ../../source/components/components/rot_comps_adv.rst:92
+#: ../../source/components/components/rot_comps_adv.rst:96
 msgid ""
 "As we saw in the previous example, the behavior of the mechanical ground "
 "element is such that it must exert a reaction torque on the system to "
-"constrain the motion of the system.  In this section, we will examine this "
-"effect a bit closer."
+"constrain the motion of the system.  In this section, we will examine "
+"this effect a bit closer."
 msgstr ""
+"이전 예제에서 보았듯이 기계적 접지 요소의 동작은 시스템의 움직임을 제한하기 위해 시스템에 반작용 토크를 가해야 합니다. "
+"이 섹션에서는 이 효과를 좀 더 자세히 살펴보겠습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:97
-msgid ""
-"To demonstrate some of the complexities of kinematic constraints, we need to"
-" create a mechanical gear model.  In this model, we will ignore the inertia "
-"of the gear elements, efficiency losses in the gear and any backlash that "
-"might exist between the teeth in the gear.  Recall our discussion about :ref"
-":`digging-deeper` earlier in this chapter where we mentioned that component "
-"models should focus on individual physical effects.  That same principle "
-"applies here.  Inertia, friction and backlash can all be modeled as "
-"individual effects (as we've already seen in this chapter).  There is no "
-"need to lump them into our gear model.  Instead, we will focus only on the "
-"relationship between gear input speed and output speed."
-msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:109
+#: ../../source/components/components/rot_comps_adv.rst:101
 msgid ""
-"In a typical system dynamics class, the equations that describe the behavior"
-" of a gear are derived as follows.  First, we start with the understanding "
-"that a gear introduces a relationship between the input speed and the output"
-" speed, *i.e.*,"
+"To demonstrate some of the complexities of kinematic constraints, we need"
+" to create a mechanical gear model.  In this model, we will ignore the "
+"inertia of the gear elements, efficiency losses in the gear and any "
+"backlash that might exist between the teeth in the gear.  Recall our "
+"discussion about :ref:`digging-deeper` earlier in this chapter where we "
+"mentioned that component models should focus on individual physical "
+"effects.  That same principle applies here.  Inertia, friction and "
+"backlash can all be modeled as individual effects (as we've already seen "
+"in this chapter).  There is no need to lump them into our gear model.  "
+"Instead, we will focus only on the relationship between gear input speed "
+"and output speed."
 msgstr ""
+"운동학적 구속의 복잡성을 보여주기 위해 기계적 기어 모델을 생성해야 하는데, 이 모델에서는 기어 요소의 관성, 기어의 효율성 손실 및 기어의 톱니 사이에 존재할 수 있는 백래시를 무시합니다."
+":ref:`digging-deeper` 에서 다루었던, 구성 요소 모델은 개별 물리적 효과에 초점을 맞춰야 한다고 했던 내용과 동일한 원칙이 여기에도 적용됩니다. "
+"관성, 마찰 및 백래시는 모두 개별 효과로 모델링할 수 있습니다(이 장에서 이미 살펴본 것처럼)."
+"그것들을 기어 모델로 묶을 필요가 없으며, 대신 기어 입력 속도와 출력 속도 사이의 관계에만 초점을 맞추겠습니다."
+
+#: ../../source/components/components/rot_comps_adv.rst:113
+msgid ""
+"In a typical system dynamics class, the equations that describe the "
+"behavior of a gear are derived as follows.  First, we start with the "
+"understanding that a gear introduces a relationship between the input "
+"speed and the output speed, *i.e.*,"
+msgstr ""
+"일반적인 시스템 동역학 수업에서 기어의 동작을 설명하는 방정식은 다음과 같이 도출됩니다."
+"먼저 기어가 입력 속도와 출력 속도 사이의 관계에 상호 영향을 준다라는 이해로 시작합니다. *즉*,"
+
 
 #: ../../source/components/components/rot_comps_adv.rst:118
+msgid "\\omega_a = R \\omega_b"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:122
 msgid ""
 "where :math:`R` is the gear ratio.  Recall that we assume the gear to be "
 "perfectly efficient.  This means that the power going into the gear must "
 "equal the power going out which we can express mathematically as:"
 msgstr ""
+"여기서 :math:`R` 은 기어비입니다. "
+"기어가 완벽하게 효율적이라고 가정한것이며, 이것은 기어로 들어가는 힘이 나가는 힘과 같아야 한다는 것을 의미합니다."
+"이를 수학적으로 다음과 같이 표현할 수 있습니다."
+
 
 #: ../../source/components/components/rot_comps_adv.rst:126
-msgid ""
-"Note we are using the Modelica sign conventions here where a positive value "
-"for the flow of a conserved quantity means a flow into the component.  In "
-"this case, :math:`\\tau_a \\omega_a` is the flow of mechanical power into "
-"the gear from ``flange_a`` and :math:`\\tau_b \\omega_b` is the flow of "
-"mechanical power into the gear from ``flange_b``.  Therefore, their sum must"
-" be zero, since our gear model does not include the inertia of the gear "
-"elements and, therefore, no way to store energy or momentum within the gear "
-"model."
+msgid "\\tau_a \\omega_a + \\tau_b \\omega_b = 0"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:135
+#: ../../source/components/components/rot_comps_adv.rst:130
 msgid ""
-"Given these two facts, we can substitute the relationship between the speeds"
-" into the relationship between the powers and get:"
+"Note we are using the Modelica sign conventions here where a positive "
+"value for the flow of a conserved quantity means a flow into the "
+"component.  In this case, :math:`\\tau_a \\omega_a` is the flow of "
+"mechanical power into the gear from ``flange_a`` and :math:`\\tau_b "
+"\\omega_b` is the flow of mechanical power into the gear from "
+"``flange_b``.  Therefore, their sum must be zero, since our gear model "
+"does not include the inertia of the gear elements and, therefore, no way "
+"to store energy or momentum within the gear model."
 msgstr ""
+"여기에서도 구성 요소로의 흐르는 값이 보존된 흐름에 대한 양수 값을 의미 한다는 모델리카 부호 규칙을 사용하고 있음을 생각해야 합니다. "
+"이 경우 :math:`\tau_a \omega_a` 는 ``flange_a`` 에서 기어로의 기계적 동력의 흐름이고, :math:`\tau_b \omega_b` 는 ``flange_b`` 에서 기어로의 기계적 동력의 흐름입니다. "
+"따라서  기어 모델에는 기어 요소의 관성이 포함되어 있지 않으므로 기어 모델 내에 에너지나 운동량을 저장할 방법이 없기 때문에 이들의 합은 0이어야 합니다."
+
+
+
+#: ../../source/components/components/rot_comps_adv.rst:139
+msgid ""
+"Given these two facts, we can substitute the relationship between the "
+"speeds into the relationship between the powers and get:"
+msgstr ""
+"이 두 가지 사실이 주어지면 속도 사이의 관계를 힘 사이의 관계로 대체할 수 있으며, 다음과 같은 수식을 얻을 수 있습니다."
 
 #: ../../source/components/components/rot_comps_adv.rst:142
+msgid "\\tau_a R \\omega_b + \\tau_b \\omega_b = 0"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:146
 msgid ""
 "This allows us to cancel out :math:`\\omega_b` from the equation and "
 "rearranging terms gives us:"
 msgstr ""
+"이렇게 하면 방정식에서 :math:`\omega_b` 를 제거 할 수 있으며 해당 항을 재정렬하면 다음과 같은 결과를 얻을 수 있습니다."
 
 #: ../../source/components/components/rot_comps_adv.rst:149
-msgid ""
-"Such a derivation will probably look very familiar to most engineers. But it"
-" is important to recognize that there is something missing here.  More "
-"specifically, there is something implicitly assumed that is not necessarily "
-"a reasonable assumption."
+msgid "\\tau_b = -R \\tau_a"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:154
+#: ../../source/components/components/rot_comps_adv.rst:153
+msgid ""
+"Such a derivation will probably look very familiar to most engineers. But"
+" it is important to recognize that there is something missing here.  More"
+" specifically, there is something implicitly assumed that is not "
+"necessarily a reasonable assumption."
+msgstr ""
+"이렇게 수식을 전개 하는 것은 아마도 대부분의 엔지니어에게 매우 친숙할 것 입니다. "
+"그러나 여기에 빠진 것이 있다는 것을 인식하는 것이 중요합니다."
+"보다 구체적으로 이야기 하자면, 반드시 합리적이라고 할 수 있는 가정이 아니라 암묵적으로 가정된 것이 있습니다."
+
+
+
+#: ../../source/components/components/rot_comps_adv.rst:158
 msgid "To understand the issue, let's first consider Euler's second law:"
 msgstr ""
+"이 문제를 이해하기 위해 먼저 오일러의 두 번째 법칙을 살펴보겠습니다."
 
 #: ../../source/components/components/rot_comps_adv.rst:160
+msgid "J \\ddot{\\varphi} = \\sum_i \\tau_i"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:164
 msgid ""
 "In other words, the sum of the torques on a body should be equal to the "
-"amount of angular momentum being accumulated by the body.  Recall that our "
-"gear model doesn't include the inertia of the gear elements. As such, it has"
-" no capacity to store energy or angular momentum.  If that is the case the "
-"previous equation simplifies to:"
+"amount of angular momentum being accumulated by the body.  Recall that "
+"our gear model doesn't include the inertia of the gear elements. As such,"
+" it has no capacity to store energy or angular momentum.  If that is the "
+"case the previous equation simplifies to:"
 msgstr ""
+"즉, 물체(Body)에 가해지는 토크의 합은 물체에 의해 축적되는 각운동량의 양과 같아야 합니다."
+"기어 모델에는 기어 요소의 관성이 포함되어 있지 않기 때문에, 에너지나 각운동량을 저장할 수 있는 능력이 없습니다. "
+"이 경우 이전 방정식은 다음과 같이 단순화됩니다."
+
 
 #: ../../source/components/components/rot_comps_adv.rst:170
-msgid ""
-"Our gear has only two external torques, :math:`\\tau_a` and :math:`\\tau_b`."
-"  Using the relationships we derived earlier, we know that their sum is:"
+msgid "\\sum_i \\tau_i = 0"
 msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:174
+msgid ""
+"Our gear has only two external torques, :math:`\\tau_a` and "
+":math:`\\tau_b`.  Using the relationships we derived earlier, we know "
+"that their sum is:"
+msgstr ""
+"우리 기어에는 :math:`\tau_a` 및 :math:`\tau_b` 의 두 가지 외부 토크만 있습니다. "
+"이전에 도출한 관계를 사용하여 그 합이 다음과 같다는 것을 알수 있습니다."
+
 
 #: ../../source/components/components/rot_comps_adv.rst:178
-msgid ""
-"This equation implies that for any gear ratio, :math:`R`, not equal to 1.0, "
-"the torque at ``flange_a`` (and consequently, the torque at ``flange_b`` as "
-"well) must be zero.  But this cannot be correct if our gear is to function "
-"as a gear."
+msgid "\\tau_a + \\tau_b = \\tau_a - R \\tau_a = \\tau_a (1-R) = 0"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:183
+#: ../../source/components/components/rot_comps_adv.rst:182
+msgid ""
+"This equation implies that for any gear ratio, :math:`R`, not equal to "
+"1.0, the torque at ``flange_a`` (and consequently, the torque at "
+"``flange_b`` as well) must be zero.  But this cannot be correct if our "
+"gear is to function as a gear."
+msgstr ""
+"이 공식은 1.0이 아닌 모든 기어비 :math:`R` 에 대해서 ``flange_a`` 의 토크(결과적으로 ``flange_b`` 의 토크도)는 다음과 같이 0이 되어야 함을 의미합니다."
+"그러나 기어로서 역할을 하고 있다면 이것은 정확히 0이 될 수 없습니다."
+
+
+
+#: ../../source/components/components/rot_comps_adv.rst:187
 msgid ""
 "What this mathematical relationship is showing us about the physical "
 "behavior of the system is more clearly demonstrated in this relationship:"
 msgstr ""
+"이 수학적 관계가 시스템의 물리적 동작에 대해 우리에게 보여주는 것은 다음 수식을 보면 보다 명확하게 설명됩니다."
+
 
 #: ../../source/components/components/rot_comps_adv.rst:191
+msgid "\\tau_a - R \\tau_a = 0"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:195
 msgid ""
 "The first term, :math:`\\tau_a` is the torque entering the gear from "
-"``flange_a``.  The second term, :math:`R \\tau_a` is the torque entering the"
-" gear from ``flange_b``.  This equation tells us that these two torques will"
-" never sum to zero (for :math:`R \\neq 1`).  It appears that we have proven,"
-" mathematically, that :math:`\\tau_a=0`. But in fact, what we are really "
-"demonstrating is that there is **an imbalance** in the equation.  This "
-"imbalance is the result of having forgotten something in our formulation.  "
-"What is missing is the **reaction torque**."
+"``flange_a``.  The second term, :math:`R \\tau_a` is the torque entering "
+"the gear from ``flange_b``.  This equation tells us that these two "
+"torques will never sum to zero (for :math:`R \\neq 1`).  It appears that "
+"we have proven, mathematically, that :math:`\\tau_a=0`. But in fact, what"
+" we are really demonstrating is that there is **an imbalance** in the "
+"equation.  This imbalance is the result of having forgotten something in "
+"our formulation.  What is missing is the **reaction torque**."
 msgstr ""
+"첫 번째 용어인 :math:`\tau_a` 는 ``flange_a`` 에서 기어로 들어가는 토크입니다. "
+"두 번째 항인 :math:`R \tau_a` 는 ``flange_b`` 에서 기어로 들어가는 토크입니다. "
+"이 두 토크의 방정식을 보면, (:math:`R \neq 1` 의 경우) 합이 결코 0이 되지 않는다는 것을 알수 있습니다."
+"수학적으로는 :math:`\tau_a=0` 임을 증명한 것 같습니다."
+"그러나 실제로 여기에서 보여주고자 하는 것은 방정식에 **불균형(imbalance)** 이 있다는 것입니다."
+"이 불균형은 공식에서 무언가를 잊은 결과인데, 여기서 누락된 것은 **반응 토크** 입니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:201
+
+#: ../../source/components/components/rot_comps_adv.rst:205
 msgid ""
-"If you aren't already familiar with this issue, you might be puzzled about "
-"where this reaction torque comes from.  After all, we have only two "
-"mechanical connections to this gear and we have expressions for the torque "
-"at both of these points.  But along the way, there was an implicit "
-"assumption that the **housing of the gear is grounded**.  In reality, a gear"
-" has three mechanical connections.  The third connection is the one between "
-"the housing of the gear and whatever the gear is mounted to.  If the housing"
-" is connected to a mechanical ground, then our equations so far are correct "
-"as we can capture the behavior of such a (grounded) gear as follows:"
+"If you aren't already familiar with this issue, you might be puzzled "
+"about where this reaction torque comes from.  After all, we have only two"
+" mechanical connections to this gear and we have expressions for the "
+"torque at both of these points.  But along the way, there was an implicit"
+" assumption that the **housing of the gear is grounded**.  In reality, a "
+"gear has three mechanical connections.  The third connection is the one "
+"between the housing of the gear and whatever the gear is mounted to.  If "
+"the housing is connected to a mechanical ground, then our equations so "
+"far are correct as we can capture the behavior of such a (grounded) gear "
+"as follows:"
 msgstr ""
+"이 문제에 익숙하지 않은 경우 이 반응 토크가 어디에서 오는지 의아해할 수 있습니다. "
+"결국,  이 기어에 대한 기계적 연결이 두 개뿐이고 이 두 지점에서 토크에 대한 표현을 하고 있습니다. "
+"그러나 그 과정에서 **기어 하우징이 접지** 되었다는 암묵적인 가정이 있었습니다. "
+"실제로 기어에는 세 개의 기계적 연결이 있습니다. "
+"세 번째 연결은 기어 하우징과 기어가 장착되는 모든 것 사이의 연결입니다. "
+"하우징이 기계적 접지에 연결된 경우 다음과 같이 이러한 (접지된) 기어의 동작을 구현할 수 있으므로 지금까지 방정식이 정확합니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:215
+
+#: ../../source/components/components/rot_comps_adv.rst:219
 msgid ""
-"Note that instead of using the relationship :math:`\\omega_a=R\\omega_b` in "
-"the ``GroundedGear`` model, we instead used the relationship "
-":math:`\\varphi_a=R\\varphi_b`.  This is actually more accurate since, once "
-"assembled, the teeth of the gear really do constrain the angular positions "
-"of the two shafts.  Furthermore, there may be some applications (*e.g.* "
-"stepper motors) where preserving this relationship between positions, and "
-"not just velocities, could be very important."
+"Note that instead of using the relationship :math:`\\omega_a=R\\omega_b` "
+"in the ``GroundedGear`` model, we instead used the relationship "
+":math:`\\varphi_a=R\\varphi_b`.  This is actually more accurate since, "
+"once assembled, the teeth of the gear really do constrain the angular "
+"positions of the two shafts.  Furthermore, there may be some applications"
+" (*e.g.* stepper motors) where preserving this relationship between "
+"positions, and not just velocities, could be very important."
 msgstr ""
+"``GroundedGear`` 모델에서 :math:`\omega_a=R\omega_b` 관계를 사용하는 대신 :math:`\varphi_a=R\varphi_b` 관계를 사용했습니다. "
+"일단 조립되면 기어의 톱니가 실제로 두 샤프트의 각도 위치를 제한하기 때문에 이것은 실제로 더 정확합니다."
+"또한 속도뿐만 아니라 위치 간의 관계를 유지하는 것이 매우 중요한 일부 응용 프로그램(*예:* 스테퍼 모터)이 있을 수 있습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:224
+
+
+#: ../../source/components/components/rot_comps_adv.rst:228
 msgid ""
 "Using the ``GroundedGear`` model, we can then build a system model using "
 "this gear as follows:"
 msgstr ""
+"``GroundedGear`` 모델을 사용하여 다음과 같이 이 기어를 사용하여 시스템 모델을 구축할 수 있습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:232
+
+#: ../../source/components/components/rot_comps_adv.rst:238
 msgid ""
-"Note this system has two parallel mechanisms.  The first one uses the gear "
-"model we just developed.  The second one replaces the assembly of the gear "
-"and inertias with a single inertia.  This single inertia was specifically "
-"chosen to have the *\"effective inertia\"* of the assembly.  As a result, "
-"when we simulate this system, we see that ``inertia2`` and ``inertia3`` have"
-" the same response:"
+"Note this system has two parallel mechanisms.  The first one uses the "
+"gear model we just developed.  The second one replaces the assembly of "
+"the gear and inertias with a single inertia.  This single inertia was "
+"specifically chosen to have the *\"effective inertia\"* of the assembly."
+"  As a result, when we simulate this system, we see that ``inertia2`` and"
+" ``inertia3`` have the same response:"
 msgstr ""
+"이 시스템에는 두 개의 병렬 메커니즘이 있습니다. "
+"첫 번째는 방금 개발한 기어 모델을 사용합니다. "
+"두 번째는 기어와 관성의 어셈블리를 단일 관성으로 대체합니다. "
+"이 단일 관성은 어셈블리의 *"유효 관성"* 을 갖도록 특별히 선택되었습니다. "
+"결과적으로 이 시스템을 시뮬레이션할 때 ``inertia2`` 와 ``inertia3`` 이 동일한 응답을 갖는 것을 볼 수 있습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:245
+
+#: ../../source/components/components/rot_comps_adv.rst:249
 msgid "Comparison"
 msgstr ""
+"비교(Comparison)"
 
-#: ../../source/components/components/rot_comps_adv.rst:247
+#: ../../source/components/components/rot_comps_adv.rst:251
 msgid ""
-"As previously mentioned, the issue with the ``GroundedGear`` model is that "
-"it is implicitly assumed to be grounded.  This assumption may not always be "
-"a reasonable one (*e.g.*, in an automotive transmission where gears are "
-"generally connected to compliant mounts).  To understand how much different "
-"the response of a system can be between grounded and ungrounded gears we "
-"will first create a more complete gear model that is not implicitly grounded"
-" and then compare its performance, side by side, with gears that are "
-"grounded."
+"As previously mentioned, the issue with the ``GroundedGear`` model is "
+"that it is implicitly assumed to be grounded.  This assumption may not "
+"always be a reasonable one (*e.g.*, in an automotive transmission where "
+"gears are generally connected to compliant mounts).  To understand how "
+"much different the response of a system can be between grounded and "
+"ungrounded gears we will first create a more complete gear model that is "
+"not implicitly grounded and then compare its performance, side by side, "
+"with gears that are grounded."
 msgstr ""
+"이전에 언급한 바와 같이 ``GroundedGear`` 모델의 문제는 암묵적으로 접지된 것으로 가정한다는 것입니다."
+"이 가정은 항상 타당하지 않을 수 있습니다(*예:*, 기어가 일반적으로 호환 마운트에 연결되는 자동차 변속기에서)."
+"접지된 기어와 접지되지 않은 기어 사이의 시스템 응답이 얼마나 다른지 이해하기 위해 먼저 암시적으로 접지되지 않은, 보다 완전한 기어 모델을 생성한 다음 그 성능을 접지된 기어와 나란히 비교하겠습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:256
+
+
+#: ../../source/components/components/rot_comps_adv.rst:260
 msgid ""
-"Without the implicit assumption that the housing of the gear is grounded, "
-"the kinematic relationship between the two shafts and the housing is more "
-"completely expressed as:"
+"Without the implicit assumption that the housing of the gear is grounded,"
+" the kinematic relationship between the two shafts and the housing is "
+"more completely expressed as:"
 msgstr ""
+"기어 하우징이 접지되어 있다는 암시적인 가정이 없으면 두 샤프트와 하우징 사이의 운동학적 관계는 다음과 같이 더 완전하게 표현됩니다."
 
 #: ../../source/components/components/rot_comps_adv.rst:264
+msgid "(1-R)\\varphi_h = \\varphi_a - R \\varphi_b"
+msgstr ""
+
+#: ../../source/components/components/rot_comps_adv.rst:268
 msgid ""
 "Although it is beyond the scope of this discussion, we can derive the "
 "following two equations using conservation of energy and conservation of "
 "momentum:"
 msgstr ""
+"이 논의의 범위를 벗어나지만 에너지 보존과 운동량 보존을 사용하여 다음 두 방정식을 유도할 수 있습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:273
-msgid ""
-"Combining these relationships and adding an additional mechanical connector "
-"to represent the housing, we get the following Modelica model for an ideal "
-"gear:"
+#: ../../source/components/components/rot_comps_adv.rst:272
+msgid "\\tau_b = -R \\tau_a \\tau_h = -(1-R) \\tau_a"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:281
+#: ../../source/components/components/rot_comps_adv.rst:277
 msgid ""
-"Now, let us build a system model with three different mechanisms.  In each "
-"mechanism the parameters for the gear, inertia, spring and damper are all "
-"identical.  The only difference is whether we use an implicit grounded gear,"
-" an explicitly grounded gear or a gear that is not directly connected to "
-"ground, but is instead connected through a very stiff mounting system.  The "
-"schematic for our system looks like this when rendered:"
+"Combining these relationships and adding an additional mechanical "
+"connector to represent the housing, we get the following Modelica model "
+"for an ideal gear:"
 msgstr ""
+"이러한 관계를 결합하고 추가 기계적 커넥터를 추가하여 하우징을 나타내면 이상적인 기어에 대해 다음과 같은 모델리카 모델을 얻을 수 있습니다"
 
-#: ../../source/components/components/rot_comps_adv.rst:294
+#: ../../source/components/components/rot_comps_adv.rst:285
 msgid ""
-"The first thing we would expect is that the response of the mechanism with "
-"the implicitly grounded gear should be identical to the response of the "
-"mechanism with the explicitly grounded gear.  This is verified by the "
-"following plot:"
+"Now, let us build a system model with three different mechanisms.  In "
+"each mechanism the parameters for the gear, inertia, spring and damper "
+"are all identical.  The only difference is whether we use an implicit "
+"grounded gear, an explicitly grounded gear or a gear that is not directly"
+" connected to ground, but is instead connected through a very stiff "
+"mounting system.  The schematic for our system looks like this when "
+"rendered:"
 msgstr ""
+"이제 세 가지 다른 메커니즘으로 시스템 모델을 구축해 보겠습니다. "
+"각 메커니즘에서 기어, 관성, 스프링 및 댐퍼에 대한 파라미터는 모두 동일합니다. "
+"유일한 차이점은 암시적 접지 기어를 사용하는지, 명시적으로 접지된 기어를 사용하는지 또는 접지에 직접 연결되지 않고 대신 매우 단단한 장착 시스템을 통해"
+"연결되는 기어를 사용하는지 여부입니다. "
+"우리 시스템의 구성도를 그리면 다음과 같습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:302
+
+#: ../../source/components/components/rot_comps_adv.rst:299
+msgid ""
+"The first thing we would expect is that the response of the mechanism "
+"with the implicitly grounded gear should be identical to the response of "
+"the mechanism with the explicitly grounded gear.  This is verified by the"
+" following plot:"
+msgstr ""
+"가장 먼저 예상할 수 있는 것은 암시적으로 접지된 기어가 있는 메커니즘의 응답이 명시적으로 접지된 기어가 있는 메커니즘의 응답과 동일해야 한다는 것입니다. "
+"이는 다음 선도로 확인됩니다."
+
+
+#: ../../source/components/components/rot_comps_adv.rst:307
 msgid ""
 "But the question still remains, how much difference would it make if we "
-"assumed that a gear was implicitly grounded when, in fact, it wasn't?  This "
-"is clearly demonstrated in the following plot:"
+"assumed that a gear was implicitly grounded when, in fact, it wasn't?  "
+"This is clearly demonstrated in the following plot:"
 msgstr ""
+"여전히 남아 있는 질문이 있습니다. "
+"기어가 암묵적으로 접지되었다고 가정한것과 접지와 바로 연결되지 않은 것은 얼마나 많은 차이가 있을까요?"
+"이는 다음 선도를 통해 명확하게 설명할 수 있습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:314
+
+#: ../../source/components/components/rot_comps_adv.rst:319
 msgid "Optional Ground Connector"
 msgstr ""
+"접지 커넥터 옵션(Optional Ground Connector)"
 
-#: ../../source/components/components/rot_comps_adv.rst:316
+#: ../../source/components/components/rot_comps_adv.rst:321
 msgid ""
-"So far in our discussion of rotational systems, we've created two different "
-"gear models, ``GroundedGear``, which is implicitly grounded, and "
-"``UngroundedGear``, which includes a mechanical connector for the housing.  "
-"Ultimately, the equations used by these two components are quite similar and"
-" there is a considerable amount of common code between them.  As we've "
-"talked about before, redundancy like this should be avoided."
+"So far in our discussion of rotational systems, we've created two "
+"different gear models, ``GroundedGear``, which is implicitly grounded, "
+"and ``UngroundedGear``, which includes a mechanical connector for the "
+"housing.  Ultimately, the equations used by these two components are "
+"quite similar and there is a considerable amount of common code between "
+"them.  As we've talked about before, redundancy like this should be "
+"avoided."
 msgstr ""
+"지금까지 회전 시스템에 대해 논의하면서 암시적으로 접지된 ``GroundedGear`` 와 하우징용 기계적 커넥터를 포함하는 ``UngroundedGear`` 라는 두 가지 기어 모델을 만들었습니다. "
+"궁극적으로 이 두 구성 요소에서 사용하는 방정식은 매우 유사하며 두 구성 요소 사이에 상당한 양의 공통 코드가 있습니다. "
+"앞에서 이야기했듯이 이와 같은 중복은 피해야 합니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:326
+
+#: ../../source/components/components/rot_comps_adv.rst:331
 msgid ""
-"One way that we can avoid redundancy in this case is to combine these two "
-"models.  It might seem like this is impractical since they have very "
+"One way that we can avoid redundancy in this case is to combine these two"
+" models.  It might seem like this is impractical since they have very "
 "different underlying assumptions and, more importantly, **different "
-"interfaces** (*i.e.,* different connectors). Nevertheless, it is possible to"
-" combine these models by making use of something called a *conditional "
-"declaration*."
+"interfaces** (*i.e.,* different connectors). Nevertheless, it is possible"
+" to combine these models by making use of something called a *conditional"
+" declaration*."
 msgstr ""
+"이 경우 중복을 피할 수 있는 한 가지 방법은 이 두 모델을 결합하는 것입니다. "
+"그러나 기본 가정이 매우 다르고 더욱 중요한 것은 **인터페이스가 다르기**  (*즉,* 커넥터가 다르기) 때문에 이것이 비현실적으로 보일 수 있습니다. "
+"그럼에도 불구하고 *조건 선언* 이라는 것을 사용하여 이러한 모델을 결합하는 것이 가능합니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:333
+ 
+#: ../../source/components/components/rot_comps_adv.rst:338
 msgid "Consider the following ``ConfigurableGear`` model:"
 msgstr ""
+"다음 ``ConfigurableGear`` 모델을 살펴보십시오. "
 
-#: ../../source/components/components/rot_comps_adv.rst:339
+#: ../../source/components/components/rot_comps_adv.rst:344
 msgid ""
-"In particular, notice that the declaration of ``housing`` ends with ``if not"
-" grounded``.  When ``if`` appears at the end of a declaration, it indicates "
-"that the variables only exists if the condition following the ``if`` is "
-"true.  So when the ``grounded`` parameter is true, there is no ``housing`` "
-"connector in this model.  Furthermore, the equations included, as "
-"modifications, in the declaration of ``housing`` (*i.e.,* "
-"``phi=housing_phi`` and ``tau=-flange_a.tau-flange_b.tau``) also disappear "
-"with the declaration."
+"In particular, notice that the declaration of ``housing`` ends with ``if "
+"not grounded``.  When ``if`` appears at the end of a declaration, it "
+"indicates that the variables only exists if the condition following the "
+"``if`` is true.  So when the ``grounded`` parameter is true, there is no "
+"``housing`` connector in this model.  Furthermore, the equations "
+"included, as modifications, in the declaration of ``housing`` (*i.e.,* "
+"``phi=housing_phi`` and ``tau=-flange_a.tau-flange_b.tau``) also "
+"disappear with the declaration."
 msgstr ""
+"특히 ``housing`` 의 선언은 ``if not grounded`` 로 끝납니다. "
+"선언 끝에 ``if`` 가 나타나면 ``if`` 다음에 오는 조건이 참일 때만 변수가 존재함을 나타냅니다. "
+"따라서 ``grounded`` 파라미터가 참이면 이 모델에는 ``housing`` 커넥터가 없습니다."
+"또한 ``housing`` 선언으로 인해 수정 되는 방정식 (*즉,* ``phi=housing_phi`` 및 ``tau=-flange_a.tau-flange_b.tau``)도 선언 됩니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:348
+
+#: ../../source/components/components/rot_comps_adv.rst:353
 msgid ""
 "Meanwhile, in the ``equation`` section, we see that the ``if`` statement "
-"there provides an additional equation, ``housing_phi=0``, in the case when "
-"the model is grounded.  This is necessary because the variable "
-"``housing_phi`` is always present (*i.e.,* there is no ``if`` at the end of "
-"its declaration) so there must be an equation for it."
+"there provides an additional equation, ``housing_phi=0``, in the case "
+"when the model is grounded.  This is necessary because the variable "
+"``housing_phi`` is always present (*i.e.,* there is no ``if`` at the end "
+"of its declaration) so there must be an equation for it."
 msgstr ""
+"한편, ``equation`` 섹션에서 모델이 접지된 경우 ``housing_phi=0`` 이라는 추가 방정식을 제공하는 ``if`` 문을 볼 수 있습니다. "
+"이는 변수 ``housing_phi`` 가 항상 존재하기 때문에(*즉,* 선언 끝에 ``if`` 가 없음), 이에 대한 방정식이 있어야 하기 때문에 필요합니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:354
-msgid ""
-"To understand more completely what is going on here, recall that the number "
-"of equations required by a component model is equal to the number of flow "
-"variables across all the component's connectors + the number of (non-"
-"parameter) variables declared in the model."
-msgstr ""
 
 #: ../../source/components/components/rot_comps_adv.rst:359
 msgid ""
-"The following table summarizes how these things add up for the case where "
-"``grounded`` is true and the case where it isn't:"
+"To understand more completely what is going on here, recall that the "
+"number of equations required by a component model is equal to the number "
+"of flow variables across all the component's connectors + the number of "
+"(non-parameter) variables declared in the model."
 msgstr ""
+"여기서 무슨 일이 일어나고 있는지 더 완벽하게 이해하려면 구성 요소 모델에 필요한 방정식의 수는 모든 구성 요소의 커넥터에 걸친 "
+"흐름 변수의 수 + 모델에서 선언된 (파라미터가 아닌) 변수의 수와 같다는 점을 상기해야 합니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:363
+#: ../../source/components/components/rot_comps_adv.rst:364
+msgid ""
+"The following table summarizes how these things add up for the case where"
+" ``grounded`` is true and the case where it isn't:"
+msgstr ""
+"다음 표는 ``grounded`` 가 참인 경우와 그렇지 않은 경우에 대해 이러한 것들이 어떻게 합산되는지 요약한 것입니다."
+
+
+#: ../../source/components/components/rot_comps_adv.rst:368
 msgid "Quantity"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:363
+#: ../../source/components/components/rot_comps_adv.rst:368
 msgid "``grounded==true``"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:363
+#: ../../source/components/components/rot_comps_adv.rst:368
 msgid "``grounded==false``"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:365
+#: ../../source/components/components/rot_comps_adv.rst:370
 msgid "Number of ``flow`` variables"
 msgstr ""
+"통과 변수(Number of ``flow`` variables)"
 
-#: ../../source/components/components/rot_comps_adv.rst:365
-#: ../../source/components/components/rot_comps_adv.rst:373
+#: ../../source/components/components/rot_comps_adv.rst:370
+#: ../../source/components/components/rot_comps_adv.rst:378
 msgid "2"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:365
-#: ../../source/components/components/rot_comps_adv.rst:373
+#: ../../source/components/components/rot_comps_adv.rst:370
+#: ../../source/components/components/rot_comps_adv.rst:378
 msgid "3"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:367
+#: ../../source/components/components/rot_comps_adv.rst:372
 msgid "Number of variables"
 msgstr ""
+"변수 갯수(Number of variables)"
 
-#: ../../source/components/components/rot_comps_adv.rst:367
-#: ../../source/components/components/rot_comps_adv.rst:367
+#: ../../source/components/components/rot_comps_adv.rst:372
 msgid "1 (``housing_phi``)"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:369
+#: ../../source/components/components/rot_comps_adv.rst:374
 msgid "**Equations required**"
 msgstr ""
+"요구된 방정식(**Equations required**)"
 
-#: ../../source/components/components/rot_comps_adv.rst:369
-#: ../../source/components/components/rot_comps_adv.rst:375
+#: ../../source/components/components/rot_comps_adv.rst:374
+#: ../../source/components/components/rot_comps_adv.rst:380
 msgid "**3**"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:369
-#: ../../source/components/components/rot_comps_adv.rst:375
+#: ../../source/components/components/rot_comps_adv.rst:374
+#: ../../source/components/components/rot_comps_adv.rst:380
 msgid "**4**"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:371
+#: ../../source/components/components/rot_comps_adv.rst:376
 msgid "Equations in declarations"
 msgstr ""
+"선언 방정식(Equations in declarations)"
 
-#: ../../source/components/components/rot_comps_adv.rst:371
+#: ../../source/components/components/rot_comps_adv.rst:376
 msgid "0"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:371
+#: ../../source/components/components/rot_comps_adv.rst:376
 msgid "2 (from ``housing``)"
 msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:373
+#: ../../source/components/components/rot_comps_adv.rst:378
 msgid "Equations in ``equation`` section"
 msgstr ""
+"섹션에서 방정식(Equations in ``equation`` section)"
 
-#: ../../source/components/components/rot_comps_adv.rst:375
+#: ../../source/components/components/rot_comps_adv.rst:380
 msgid "**Equations provided**"
 msgstr ""
+"제공된 방정식(**Equations provided**)"
 
-#: ../../source/components/components/rot_comps_adv.rst:378
+
+#: ../../source/components/components/rot_comps_adv.rst:383
 msgid ""
-"When using conditional declarations, it is very important to make sure that "
-"the number of equations provided balances with the number of equations "
-"required for all possible conditions.  In this case, we have only two "
-"conditions to concern ourselves with and we can clearly see from this table "
-"that we have met this requirement in both cases."
+"When using conditional declarations, it is very important to make sure "
+"that the number of equations provided balances with the number of "
+"equations required for all possible conditions.  In this case, we have "
+"only two conditions to concern ourselves with and we can clearly see from"
+" this table that we have met this requirement in both cases."
 msgstr ""
+"조건 선언을 사용할 때 제공된 방정식의 수가 가능한 모든 조건에 필요한 방정식의 수와 균형을 이루는지 확인하는 것이 매우 중요합니다."
+"이 경우  고려해야 할 조건은 두 가지뿐이며, 이 표에서 두 경우 모두 이 요구 사항을 충족했음을 분명히 알 수 있습니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:384
+
+#: ../../source/components/components/rot_comps_adv.rst:389
 msgid ""
-"The following model demonstrates how we can now use the ``ConfigurableGear``"
-" models as both an implicitly and explicitly grounded gear:"
+"The following model demonstrates how we can now use the "
+"``ConfigurableGear`` models as both an implicitly and explicitly grounded"
+" gear:"
 msgstr ""
+"다음 모델은 이제 ``ConfigurableGear`` 모델을 암시적 및 명시적으로 접지된 기어로 사용할 수 있는 방법을 보여줍니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:394
+#: ../../source/components/components/rot_comps_adv.rst:399
 msgid ""
-"And, as we would expect, the response for ``inertia1`` and ``inertia4`` are "
-"identical:"
+"And, as we would expect, the response for ``inertia1`` and ``inertia4`` "
+"are identical:"
 msgstr ""
+"그리고 예상한 대로 ``inertia1`` 과 ``inertia4`` 에 대한 응답은 동일합니다."
 
-#: ../../source/components/components/rot_comps_adv.rst:66
-msgid "kinematic constraint"
-msgstr ""
+#~ msgid "In Modelica, this component can be described as follows:"
+#~ msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:68
-msgid "reaction torque"
-msgstr ""
+#~ msgid ""
+#~ "Another thing worth looking at (which"
+#~ " we will delve into much more "
+#~ "in the next topic) is the force"
+#~ " felt by the mechanical ground "
+#~ "element. Looking at our schematic, it"
+#~ " is clear that the role of the"
+#~ " mechanical ground element is to fix"
+#~ " the angular position on one side "
+#~ "of our system.  An equation to "
+#~ "constrains the motion (or lack of "
+#~ "motion, in this case) of a point"
+#~ " in the system is called a "
+#~ "*kinematic constraint*."
+#~ msgstr ""
 
-#: ../../source/components/components/rot_comps_adv.rst:324
-msgid "conditional declaration"
-msgstr ""
+#~ msgid "kinematic constraint"
+#~ msgstr ""
+
+#~ msgid "reaction torque"
+#~ msgstr ""
+
+#~ msgid "conditional declaration"
+#~ msgstr ""
+

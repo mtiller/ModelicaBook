@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/packages/nimport.rst:4
 msgid "Importing Physical Types"
 msgstr ""
+"물리적 자료형 가져오기(Importing Physical Types)"
 
 #: ../../source/components/packages/nimport.rst:6
 msgid ""
@@ -22,6 +25,10 @@ msgid ""
 " in their local model.  Instead, they can place definitions in packages and "
 "then reference those packages."
 msgstr ""
+"이전 섹션에서 다른 패키지에 정의된 자료형을 참조하는 방법을 배웠습니다."
+"이렇게 하면 개발자가 로컬 모델에서 항목을 지속적으로 정의하지 않아도 되며, "
+"패키지에 정의를 배치한 다음 해당 패키지를 참조할 수 있습니다."
+
 
 #: ../../source/components/packages/nimport.rst:11
 msgid ""
@@ -29,12 +36,18 @@ msgid ""
 "over and over again.  For that reason, Modelica includes an ``import`` "
 "statement that allows us to use a definition as if it were defined locally."
 msgstr ""
+"그러나 정규화되어 있는 이름이 긴 참조는 반복해서 입력하기에 지루할 수 있습니다."
+"이러한 이유로 모델리카에는 로컬에서 정의된 것처럼 사용할 수 있는 ``import`` 문이 존재 합니다."
+
+
 
 #: ../../source/components/packages/nimport.rst:16
 msgid ""
 "Recall again, this example from a previous discussion on :ref:`physical-"
 "types`:"
 msgstr ""
+":ref:`physical-types` 에 대한 이전에 다루었던 이 예를 다시 생각해 보겠습니다."
+
 
 #: ../../source/components/packages/nimport.rst:22
 msgid ""
@@ -44,6 +57,10 @@ msgid ""
 "once and then use them without having to specify their fully qualified "
 "names.  The resulting code would look something like:"
 msgstr ""
+"이전 섹션에서는 :ref:`msl` 의 자료형을 사용하여 로컬에서 이러한 자료형을 정의하지 않고 기존의 자료형을 사용하는 방법을 설명했습니다. "
+"그러나 ``import`` 명령을 사용하여 모델리카 표준 라이브러리에서 해당 자료형을 한 번 가져온 다음 정규화된 이름을 지정하지 않고도 사용할 수 있습니다."
+"이에 대한 결과 코드는 다음과 같습니다."
+
 
 #: ../../source/components/packages/nimport.rst:32
 msgid ""
@@ -52,6 +69,10 @@ msgid ""
 "two of these import statements more closely to understand what effect they "
 "have on the model.  Let's start with the following import statement:"
 msgstr ""
+"자료형 정의를 ``import`` 문으로 대체했는데, 강조 표시된 줄이 이전 코드와 어떻게 동일한지 확인 해보겠습니다."
+"이러한 import 문은 두가지 사용 방법이 존재하는데, 이를 자세히 살펴보고 모델에 미치는 영향을 이해해야 합니다."
+"첫번째 방식은 다음과 같습니다."
+
 
 #: ../../source/components/packages/nimport.rst:42
 msgid ""
@@ -62,10 +83,16 @@ msgid ""
 "``Temperature`` and that will automatically refer back to "
 "``Modelica.SIunits.Temperature``."
 msgstr ""
+"이것은 ``Modelica.SIunits.Temperature`` 자료형을 현재 모델로 가져옵니다. "
+"기본적으로 이 가져온 자료형의 이름은 정규화된 마지막 이름이 됩니다.(예: * ``Temperature``). "
+"즉, 이 ``import`` 문이 있으면 단순히 ``Temperature`` 자료형 이름을 사용하는 경우, 자동으로 ``Modelica.SIunits.Temperature`` 를 다시 참조 합니다."
+
+
 
 #: ../../source/components/packages/nimport.rst:49
 msgid "Now let's look at another ``import`` statement:"
 msgstr ""
+"이제 다른 ``import`` 문을 살펴보겠습니다."
 
 #: ../../source/components/packages/nimport.rst:55
 msgid ""
@@ -81,16 +108,31 @@ msgid ""
 " collision.  Imagine we wished to import two types from two different "
 "packages, *e.g.,*"
 msgstr ""
+"여기에서의 구문은 약간 다릅니다. "
+"이 경우 가져오는 자료형은 ``Modelica.SIunits.CoefficientOfHeatTransfer`` 인데, 정규화된 전체 이름중 마지막 이름을 기반으로 로컬 자료형을 만드는 대신 다른 이름으로 선언합니다."
+"*즉,* ``CoefficientOfHeatTransfer`` 로컬 자료형이 ``ConvectionCoefficient`` 으로 연결되어야 한다고 지정하는 것입니다."
+"이 경우 초기 예제에서 사용했던 것과 같이 원하는 이름을 사용할 수 있습니다."
+
+"이러한 방식을 통해, 이전에 지정한 것과 동일한 이름을 사용하는 경우를 피하도록 코드 리팩토링을 할 수 있습니다."
+"대체 이름(모델리카 컴파일러가 일반적으로 할당하는 기본 이름 이외)을 지정하는 또 다른 이유는 이름사이의 충돌을 피하기 위한 것입니다."
+"두 개의 서로 다른 패키지에서 두 가지 자료형을 가져오고 싶다고 상상해 보겠습니다. "
+"*예* 를 들어 아래와 같습니다. "
+
 
 #: ../../source/components/packages/nimport.rst:73
 msgid ""
 "This would leave us two types both named ``Temperature``.  By defining an "
 "alternative name for the local alias, we could do something like this:"
 msgstr ""
+"이렇게 하면 ``Temperature`` 라는 두 가지 자료형이 남게 됩니다. "
+"로컬 별칭(alternative name)에 대한 대체 이름을 정의하면 다음과 같이 할 수 있습니다."
+
 
 #: ../../source/components/packages/nimport.rst:0
 msgid "SI Units"
 msgstr ""
+"SI 단위(SI Units)"
+
 
 #: ../../source/components/packages/nimport.rst:84
 msgid ""
@@ -101,6 +143,11 @@ msgid ""
 " other units, please use the ``displayUnit`` attribute discussed previously "
 "in the section on :ref:`attributes`."
 msgstr ""
+"이 예제에서는 잠재적인 이름 충돌이 어떻게 발생할 수 있는지 보여주기 위해 영국식 단위를 가져 왔습니다. "
+"그러나 실제로 이렇게하는 것은 매우 나쁜 습관입니다. "
+"모델리카를 사용할 때는 항상 SI 단위를 사용해야 하며 다른 단위 체계는 절대 사용하지 마십시오. "
+"데이터를 입력하거나 다른 단위로 결과를 표시하려면 :ref:`attributes` 섹션에서 이전에 설명한 ``displayUnit`` 속성을 사용 해야합니다."
+
 
 #: ../../source/components/packages/nimport.rst:92
 msgid ""
@@ -109,17 +156,25 @@ msgid ""
 "tedious.  The wildcard import allows us to import **all** types from a given"
 " package at once.  Recall the following earlier example:"
 msgstr ""
+"논의할 가치가 있는 ``import`` 문의 마지막 형태가 있는데, 그것은 와일드카드 import 문입니다. "
+"한 번에 한 단위씩 단위를 가져오는 것은 지루한 작업일 수 있지만, 와일드카드 가져오기를 사용하면 주어진 패키지에서 **모든** 자료형을 한 번에 가져올 수 있습니다. "
+"이전의 예제를 다시 기억 해보겠습니다."
+
 
 #: ../../source/components/packages/nimport.rst:101
 msgid ""
 "We could replace these type definitions with import statements, *e.g.*,"
 msgstr ""
+"이러한 자료형 정의를 *예시* 와 같은 import 문으로 대체할 수 있습니다."
 
 #: ../../source/components/packages/nimport.rst:112
 msgid ""
 "However, the more types we bring in, the more import statements we need to "
 "add.  Instead, we could write our model as follows:"
 msgstr ""
+"그러나 더 많은 자료형을 가져올수록 더 많은 import 문을 추가해야 합니다."
+"대신 다음과 같이 모델을 작성할 수 있습니다."
+
 
 #: ../../source/components/packages/nimport.rst:119
 msgid ""
@@ -128,12 +183,17 @@ msgid ""
 " model.  With wildcard imports, there is no option to \"rename\" the types."
 "  They will have exactly the name locally as they have in the named package."
 msgstr ""
+"강조 표시된 ``import`` 문에 유의 해야 합니다."
+"이 단일(와일드카드) 가져오기 구문은 ``Modelica.SIunits`` 의 모든 정의를 현재 모델로 가져오는데,  자료형의 "이름 변경" 옵션이 없습니다."
+"따라서 명명된 패키지에 있는 것과 동일한 이름을 로컬에서 갖게 됩니다."
 
 #: ../../source/components/packages/nimport.rst:125
 msgid ""
 "Before using wildcard imports, be sure to read :ref:`this caveat <wildcards-"
 "harmful>`."
 msgstr ""
+"와일드카드 가져오기를 사용하기 전에 :ref:`이 주의사항 <wildcards-harmful>` 을 읽어보세요."
+
 
 #: ../../source/components/packages/nimport.rst:128
 msgid ""
@@ -146,3 +206,8 @@ msgid ""
 "because it doesn't need to be typed.  This also avoids issues with name "
 "lookup, naming conflicts, etc."
 msgstr ""
+"이 장에서  ``import`` 문을 사용하여 다른 패키지에서 자료형을 가져오는 방법을 살펴보았습니다만, 결과적으로 ``import`` 문이 항상 그렇게 유용한 것은 아닙니다."
+"그래픽 모델링 환경 내에서 모델을 개발할 때 시뮬레이션 소프트웨어는 일반적으로 참조 자료형에 대해 가장 모호하지 않고 가장 명시적인 방법인 정규화된 이름을 사용 하는 것이 좋습니다."
+"결국, 그래픽 기반의 시뮬레이션 소프트웨어를 사용할 때 각각 입력할 필요가 없기 때문에 이름의 길이는 문제가 되지 않습니다."
+"전체 경로를 사용하는 것은 또한 이름 조회, 이름 충돌 등의 문제를 방지할 수 있기 때문에 장점을 가지고 있습니다."
+

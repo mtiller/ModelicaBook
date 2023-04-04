@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/equations.rst:4
 msgid "Basic Equations"
 msgstr ""
+"기본 방정식(Basic Equations)"
 
 #: ../../source/behavior/equations.rst:6
 msgid ""
@@ -21,14 +24,21 @@ msgid ""
 "understanding how to represent basic behavior.  In this chapter, our focus "
 "will be on demonstrating how to write basic equations."
 msgstr ""
+":ref:`preface` 에서 언급한 것 처럼 기반이 되는 동작을 이해하는 것으로 부터  모델리카에 대한 여정이 시작합니다. "
+"이 장에서는 우선 기본적인 방정식 작성법을 보여주는 것에 중점을 둘 것입니다."
+
 
 #: ../../source/behavior/equations.rst:11
 msgid "Examples"
 msgstr ""
+"예제(Examples)"
+
 
 #: ../../source/behavior/equations.rst:24
 msgid "Review"
 msgstr ""
+"리뷰(Review)"
+
 
 #: ../../source/behavior/equations.rst:26
 msgid ""
@@ -36,3 +46,6 @@ msgid ""
 "examples.  This part will review the various features and concepts and "
 "provide a more complete discussion of each topic."
 msgstr ""
+"이 장의 첫 번째 부분에서는 예제를 통해 언어의 기능을 소개 했습니다. "
+"이번 부분에서는 다양한 기능과 개념을 검토하고 각 주제에 대한 논의를 하겠습니다."
+

@@ -1,401 +1,547 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/components/block_comps.rst:4
 msgid "Block Diagram Components"
 msgstr ""
+"블록 다이어그램 구성요소(Block Diagram Components)"
 
 #: ../../source/components/components/block_comps.rst:6
 msgid ""
 "So far, the focus of this chapter has been on acausal modeling.  But "
-"Modelica also supports causal formalisms.  The main reason for the emphasis "
-"on acausal modeling is that it lends itself very well to the modeling of "
-"physical systems.  It enables models of physical systems to be assembled "
-"schematically rather than mathematically while also automatically "
-"formulating conservation equations to ensure proper bookkeeping."
+"Modelica also supports causal formalisms.  The main reason for the "
+"emphasis on acausal modeling is that it lends itself very well to the "
+"modeling of physical systems.  It enables models of physical systems to "
+"be assembled schematically rather than mathematically while also "
+"automatically formulating conservation equations to ensure proper "
+"bookkeeping."
 msgstr ""
+"지금까지 이 장의 초점은 비인과적 모델링이었습니다."
+"그러나 모델리카는 인과 관계의 형식도 지원합니다."
+"비인과적 모델링을 강조하는 주된 이유는 그것이 물리적 시스템의 모델링에 매우 적합하기 때문입니다."
+"물리적 시스템의 모델을 수학적으로가 아니라 도식적으로 조립할 수 있으며 적절한 기록을 보장하기 위해 보존 방정식을 자동으로 공식으로 표현할 수도 있습니다.:"
+
 
 #: ../../source/components/components/block_comps.rst:14
 msgid ""
-"Block diagrams are a different way of approach modeling.  The emphasis in "
-"block diagram is on creating component models that represent a wide range of"
-" mathematical operations.  The operations are then performed on (generally "
-"time-varying) signals and yield, in turn, other signals.  In fact, we will "
-"introduce a special kind of ``model`` in this section, called a ``block``, "
-"that is restricted to having only ``input`` and ``output`` signals."
+"Block diagrams are a different way of approach modeling.  The emphasis in"
+" block diagram is on creating component models that represent a wide "
+"range of mathematical operations.  The operations are then performed on "
+"(generally time-varying) signals and yield, in turn, other signals.  In "
+"fact, we will introduce a special kind of ``model`` in this section, "
+"called a ``block``, that is restricted to having only ``input`` and "
+"``output`` signals."
 msgstr ""
+"블록 다이어그램은 접근 모델링의 다른 방식입니다."
+"블록 다이어그램에서 강조할만한 점은 광범위한 수학적 연산을 나타내는 구성 요소 모델을 만드는 것입니다. "
+"그런 다음 작업은 (일반적으로 시변) 신호로 수행되고 차례로 다른 신호를 생성합니다. "
+"사실,  이 섹션에서 ``input`` 및 ``output`` 신호만 갖는 것으로 제한되는 ``block`` 이라는 특별한 종류의 ``모델`` 을 소개할 것입니다."
+
 
 #: ../../source/components/components/block_comps.rst:22
 msgid ""
 "In this section, we'll first look at how to construct causal blocks "
-"representing some basic mathematical operations.  We'll then see how those "
-"blocks can be used in two different ways.  The first way will be to model a "
-"simple physical system.  We'll include some discussion contrasting the "
-"causal and acausal approaches.  The second way to use such blocks is to "
-"model control systems.  As we'll see, using blocks to construct control "
-"systems is a much more natural fit for the block diagram formalism."
+"representing some basic mathematical operations.  We'll then see how "
+"those blocks can be used in two different ways.  The first way will be to"
+" model a simple physical system.  We'll include some discussion "
+"contrasting the causal and acausal approaches.  The second way to use "
+"such blocks is to model control systems.  As we'll see, using blocks to "
+"construct control systems is a much more natural fit for the block "
+"diagram formalism."
 msgstr ""
+"이 섹션에서는 먼저 몇 가지 기본적인 수학 연산을 나타내는 인과 블록을 구성하는 방법을 살펴보고, 이러한 블록을 두 가지 다른 방식으로 사용할 수 있는 방법을 살펴보겠습니다. "
+"첫 번째 방법은 단순한 물리적 시스템을 모델링하는 것입니다. 인과적 접근법과 비인과적 접근법을 대조하는 몇 가지 논의를 포함할 것입니다. "
+"이러한 블록을 사용하는 두 번째 방법은 제어 시스템을 모델링하는 것입니다."
+"앞으로 살펴보겠지만 블록을 사용하여 제어 시스템을 구성하는 것이 블록 다이어그램 형식에 훨씬 더 적합합니다."
+
 
 #: ../../source/components/components/block_comps.rst:31
 msgid ""
 "Fortunately, Modelica allows both causal and acausal approaches and, as "
 "we'll see shortly, even allows them to be mixed.  The result is that "
-"Modelica allows the model developer to use whichever approach works best in "
-"a given context."
+"Modelica allows the model developer to use whichever approach works best "
+"in a given context."
 msgstr ""
+"다행스럽게도 모델리카는 인과적 접근 방식과 비인과적 접근 방식을 모두 허용하며, 곧 살펴보겠지만 두 방식을 혼합할 수도 있습니다. "
+"그 결과 모델리카를 통해 모델 개발자는 주어진 상황에서 가장 적합한 접근 방식을 사용할 수 있습니다."
+
 
 #: ../../source/components/components/block_comps.rst:37
 msgid "Blocks"
 msgstr ""
+"블록(Blocks)"
 
 #: ../../source/components/components/block_comps.rst:40
 msgid "Modelica Standard Library"
 msgstr ""
+"모델리카 표준 라이브러리(Modelica Standard Library)"
 
 #: ../../source/components/components/block_comps.rst:42
 msgid ""
 "In this section, we will leverage several definitions from the Modelica "
 "Standard Library starting with the connectors:"
 msgstr ""
+"이 섹션에서는 커넥터로 시작하는 모델리카 표준 라이브러리의 여러 정의를 활용합니다."
 
 #: ../../source/components/components/block_comps.rst:50
 msgid ""
-"As the names suggest, ``RealInput`` and ``RealOutput`` are connectors for "
-"representing real valued input and output signals respectively. When drawn "
-"in a diagram, the ``RealInput`` connector takes the form of a blue solid "
-"triangle:"
+"As the names suggest, ``RealInput`` and ``RealOutput`` are connectors for"
+" representing real valued input and output signals respectively. When "
+"drawn in a diagram, the ``RealInput`` connector takes the form of a blue "
+"solid triangle:"
 msgstr ""
+"이름에서 알 수 있듯이 ``RealInput`` 및 ``RealOutput`` 은 각각 실제 값 입력 및 출력 신호를 나타내는 커넥터입니다. "
+"다이어그램에서 그릴 때 ``RealInput`` 커넥터는 파란색 솔리드 삼각형의 형태를 취합니다."
 
-#: ../../source/components/components/block_comps.rst:59
+
+#: ../../source/components/components/block_comps.rst:61
 msgid "The ``RealOutput`` connector is a blue triangle outline:"
 msgstr ""
+"``RealOutput`` 커넥터는 파란색 삼각형 윤곽선입니다."
 
-#: ../../source/components/components/block_comps.rst:65
+#: ../../source/components/components/block_comps.rst:69
 msgid ""
 "We will leverage the Modelica Standard Library for several different "
-"``partial`` block definitions.  The first ``partial`` definition we'll use "
-"is the ``SO``, or \"single output\", definition:"
+"``partial`` block definitions.  The first ``partial`` definition we'll "
+"use is the ``SO``, or \"single output\", definition:"
 msgstr ""
+"몇 가지 다른 ``partial`` 블록 정의에 대해 모델리카 표준 라이브러리를 활용할 것입니다."
+"사용할 첫 번째 ``partial`` 정의는 ``SO`` 또는 "단일 출력" 정의입니다."
 
-#: ../../source/components/components/block_comps.rst:78
+
+        
+#: ../../source/components/components/block_comps.rst:82
 msgid ""
-"Obviously, this definition is used for blocks that have a single output.  By"
-" convention, this output signal is named ``y``.  Another definition we'll "
-"use is the ``SISO`` or \"single input, single output\" block:"
+"Obviously, this definition is used for blocks that have a single output."
+"  By convention, this output signal is named ``y``.  Another definition "
+"we'll use is the ``SISO`` or \"single input, single output\" block:"
 msgstr ""
+"이 정의는 단일 출력이 있는 블록에 사용합니다. "
+"규칙에 따라 이 출력 신호의 이름은 ``y`` 를 사용합니다. "
+"사용할 또 다른 정의는 ``SISO`` 또는 "단일 입력, 단일 출력" 블록입니다."
 
-#: ../../source/components/components/block_comps.rst:94
+
+#: ../../source/components/components/block_comps.rst:98
 msgid ""
-"This model adds an input signal, ``u``, in addition to the output signal, "
-"``y``.  Finally, for blocks with multiple inputs, the ``MISO`` block defines"
-" the input signal, ``u``, as a vector:"
+"This model adds an input signal, ``u``, in addition to the output signal,"
+" ``y``.  Finally, for blocks with multiple inputs, the ``MISO`` block "
+"defines the input signal, ``u``, as a vector:"
 msgstr ""
+"이 모델은 출력 신호 ``y`` 외에 입력 신호 ``u`` 를 추가합니다. "
+"마지막으로 다중 입력이 있는 블록의 경우 ``MISO`` 블록은 입력 신호 ``u`` 를 벡터로 정의합니다."
 
-#: ../../source/components/components/block_comps.rst:109
+
+#: ../../source/components/components/block_comps.rst:113
 msgid ""
-"The parameter ``nin`` is used to specify the number of inputs to the block."
+"The parameter ``nin`` is used to specify the number of inputs to the "
+"block."
 msgstr ""
+"``nin`` 파라미터는 블록에 대한 입력 수를 지정하는 데 사용합니다."
 
-#: ../../source/components/components/block_comps.rst:112
+#: ../../source/components/components/block_comps.rst:116
 msgid ""
-"It is worth pointing out that all of the blocks we are about to define are "
-"also available in the Modelica Standard Library.  But we'll create our own "
-"versions here just to demonstrate how such models can be defined."
+"It is worth pointing out that all of the blocks we are about to define "
+"are also available in the Modelica Standard Library.  But we'll create "
+"our own versions here just to demonstrate how such models can be defined."
 msgstr ""
+"정의하려는 모든 블록은 모델리카 표준 라이브러리에서도 사용할 수 있습니다."
+"그러나 그러한 모델이 어떻게 정의될 수 있는지 보여주기 위해 여기에서 우리 자신의 버전을 만들 것입니다."
 
-#: ../../source/components/components/block_comps.rst:118
+
+#: ../../source/components/components/block_comps.rst:122
 msgid "``Constant``"
 msgstr ""
+"상수(``Constant``)"
 
-#: ../../source/components/components/block_comps.rst:120
+
+#: ../../source/components/components/block_comps.rst:124
 msgid ""
 "Probably the simplest block we can imagine is one that simply outputs a "
-"constant value.  Since this model has a single output, it extends from the "
-"``SO`` block:"
+"constant value.  Since this model has a single output, it extends from "
+"the ``SO`` block:"
 msgstr ""
+"아마도  상상할 수 있는 가장 간단한 블록은 단순히 상수 값을 출력하는 블록일 것입니다."
+"이 모델에는 단일 출력이 있으므로 ``SO`` 블록에서 확장됩니다."
 
-#: ../../source/components/components/block_comps.rst:128
-#: ../../source/components/components/block_comps.rst:148
-#: ../../source/components/components/block_comps.rst:170
-#: ../../source/components/components/block_comps.rst:188
-#: ../../source/components/components/block_comps.rst:211
-#: ../../source/components/components/block_comps.rst:231
+
+#: ../../source/components/components/block_comps.rst:132
+#: ../../source/components/components/block_comps.rst:152
+#: ../../source/components/components/block_comps.rst:174
+#: ../../source/components/components/block_comps.rst:192
+#: ../../source/components/components/block_comps.rst:215
+#: ../../source/components/components/block_comps.rst:235
 msgid "When rendered, the block looks like this:"
 msgstr ""
+"렌더링되면 블록은 다음과 같이 보입니다."
 
-#: ../../source/components/components/block_comps.rst:137
+#: ../../source/components/components/block_comps.rst:141
 msgid "``Gain``"
 msgstr ""
+"게인(``Gain``)"
 
-#: ../../source/components/components/block_comps.rst:139
+#: ../../source/components/components/block_comps.rst:143
 msgid ""
 "Another simple ``block`` is a \"gain block\" which multiplies an input "
-"signal by a constant to compute its output signal.  Such a block will have a"
-" single input signal and a single output signal.  As such, it extends from "
-"the ``SISO`` model as follows:"
+"signal by a constant to compute its output signal.  Such a block will "
+"have a single input signal and a single output signal.  As such, it "
+"extends from the ``SISO`` model as follows:"
 msgstr ""
+"또 다른 단순한 ``블록`` 은 입력 신호에 상수를 곱하여 출력 신호를 계산하는 "게인(이득) 블록"입니다."
+"이러한 블록에는 단일 입력 신호와 단일 출력 신호가 있습니다. 따라서 ``SISO`` 모델에서 다음과 같이 확장됩니다."
 
-#: ../../source/components/components/block_comps.rst:157
+
+#: ../../source/components/components/block_comps.rst:161
 msgid "``Sum``"
 msgstr ""
+"합(``Sum``)"
 
-#: ../../source/components/components/block_comps.rst:159
+#: ../../source/components/components/block_comps.rst:163
 msgid ""
-"The ``Sum`` block can operate on an arbitrary number of input signals.  For "
-"this reason, it extends from the ``MISO`` block:"
+"The ``Sum`` block can operate on an arbitrary number of input signals.  "
+"For this reason, it extends from the ``MISO`` block:"
 msgstr ""
+"``Sum`` 블록은 임의의 수의 입력 신호에서 작동할 수 있습니다."
+"이러한 이유로 ``MISO`` 블록에서 확장됩니다."
 
-#: ../../source/components/components/block_comps.rst:166
+
+#: ../../source/components/components/block_comps.rst:170
 msgid ""
-"The ``Sum`` block uses the :ref:`sum-func` function to compute the sum over "
-"the array of input signals, ``u``, to compute the output signal ``y``."
+"The ``Sum`` block uses the :ref:`sum-func` function to compute the sum "
+"over the array of input signals, ``u``, to compute the output signal "
+"``y``."
 msgstr ""
+"``Sum`` 블록은 :ref:`sum-func` 함수를 사용하여 입력 신호 배열 ``u`` 에 대한 합을 계산하고 출력 신호 ``y`` 를 계산합니다. "
 
-#: ../../source/components/components/block_comps.rst:179
+#: ../../source/components/components/block_comps.rst:183
 msgid "``Product``"
 msgstr ""
+"외적(``Product``)"
 
-#: ../../source/components/components/block_comps.rst:181
+#: ../../source/components/components/block_comps.rst:185
 msgid ""
-"The ``Product`` block is nearly identical to the ``Sum`` block except that "
-"it uses the :ref:`product-func` function:"
+"The ``Product`` block is nearly identical to the ``Sum`` block except "
+"that it uses the :ref:`product-func` function:"
 msgstr ""
+"``Product`` 블록은 ``Sum`` 블록과 거의 동일하지만 :ref:`product-func` 함수를 사용한다는 점만 다릅니다."
 
-#: ../../source/components/components/block_comps.rst:198
+#: ../../source/components/components/block_comps.rst:202
 msgid "``Feedback``"
 msgstr ""
+"피드백(``Feedback``)"
 
-#: ../../source/components/components/block_comps.rst:200
+#: ../../source/components/components/block_comps.rst:204
 msgid ""
-"The ``Feedback`` block differs from the previous blocks because it doesn't "
-"extend from any definitions in the Modelica Standard Library. Instead, it "
-"explicitly declares all of the connectors it uses:"
+"The ``Feedback`` block differs from the previous blocks because it "
+"doesn't extend from any definitions in the Modelica Standard Library. "
+"Instead, it explicitly declares all of the connectors it uses:"
 msgstr ""
+"``Feedback`` 블록은 모델리카 표준 라이브러리의 정의에서 확장되지 않기 때문에 이전 블록과 다릅니다."
+"대신 사용하는 모든 커넥터를 명시적으로 선언합니다."
 
-#: ../../source/components/components/block_comps.rst:208
+
+#: ../../source/components/components/block_comps.rst:212
 msgid ""
 "The output of the ``Feedback`` block is the difference between the two "
 "``input`` signals ``u1`` and ``u2``."
 msgstr ""
+"``feedback`` 블록의 출력은 두 ``input`` 신호 ``u1`` 과 ``u2`` 사이의 차이입니다."
 
-#: ../../source/components/components/block_comps.rst:220
+#: ../../source/components/components/block_comps.rst:224
 msgid "``Integrator``"
 msgstr ""
+"적분(``Integrator``)"
 
-#: ../../source/components/components/block_comps.rst:222
+#: ../../source/components/components/block_comps.rst:226
 msgid ""
-"The ``Integrator`` block is another ``SISO`` block that integrates the input"
-" signal, ``u``, to compute the output signal, ``y``.  Since this ``block`` "
-"performs an integral, it requires an initial condition which is specified "
-"using the parameter ``y0``:"
+"The ``Integrator`` block is another ``SISO`` block that integrates the "
+"input signal, ``u``, to compute the output signal, ``y``.  Since this "
+"``block`` performs an integral, it requires an initial condition which is"
+" specified using the parameter ``y0``:"
 msgstr ""
+"``Integrator`` 블록은 입력 신호 ``u`` 를 적분하여 출력 신호 ``y`` 를 계산하는 또 다른 ``SISO`` 블록입니다."
+"이 ``block`` 은 적분을 수행하므로 ``y0`` 파라미터를 사용하여 지정하는 초기 조건이 필요합니다."
 
-#: ../../source/components/components/block_comps.rst:240
+
+#: ../../source/components/components/block_comps.rst:244
 msgid "Systems"
 msgstr ""
+"시스템(Systems)"
 
-#: ../../source/components/components/block_comps.rst:242
+#: ../../source/components/components/block_comps.rst:246
 msgid ""
-"Now that we've created this assortment of blocks, we'll explore how they can"
-" be used to model a couple of example systems.  As we'll see, the "
+"Now that we've created this assortment of blocks, we'll explore how they "
+"can be used to model a couple of example systems.  As we'll see, the "
 "suitability of causal ``block`` components varies from application to "
 "application."
 msgstr ""
-
-#: ../../source/components/components/block_comps.rst:248
+"이제 이 블록 모음을 만들었으므로 몇 가지 예제 시스템을 모델링하는 데 사용할 수 있는 방법을 살펴보겠습니다. "
+"앞으로 보게 되겠지만 원인이 되는 ``block`` 구성 요소의 적합성은 응용 프로그램마다 다릅니다."
+ 
+#: ../../source/components/components/block_comps.rst:252
 msgid "Cooling Example"
 msgstr ""
+"냉각 예제(Cooling Example)"
 
-#: ../../source/components/components/block_comps.rst:250
+#: ../../source/components/components/block_comps.rst:254
 msgid ""
-"The first system that we will model using our ``block`` definitions is the "
-"heat transfer example we presented :ref:`earlier in this chapter <heat-"
-"transfer-components>`.  However, this time, instead of using acausal "
-"components to build our model, we'll build it up in terms of the "
+"The first system that we will model using our ``block`` definitions is "
+"the heat transfer example we presented :ref:`earlier in this chapter "
+"<heat-transfer-components>`.  However, this time, instead of using "
+"acausal components to build our model, we'll build it up in terms of the "
 "mathematical operations associated with our ``block`` definitions."
 msgstr ""
+"``block`` 정의를 사용하여 모델링할 첫 번째 시스템은 :ref:`이전 부분에서 다룬 <heat-transfer-components>` 열 전달 예입니다."
+"그러나 이번에는 비인과적 구성 요소를 사용하여 모델을 구축하는 대신 ``block`` 정의와 관련된 수학적 연산 측면에서 모델을 구축할 것입니다."
 
-#: ../../source/components/components/block_comps.rst:256
+
+
+#: ../../source/components/components/block_comps.rst:260
 msgid ""
-"Since these blocks represent mathematical operations, let us first revisit "
-"the equation associated with this example:"
+"Since these blocks represent mathematical operations, let us first "
+"revisit the equation associated with this example:"
+msgstr ""
+"이러한 블록은 수학적 연산을 나타내므로 먼저 이 예제와 관련된 방정식을 다시 살펴보겠습니다."
+
+#: ../../source/components/components/block_comps.rst:263
+msgid "m c_p \\dot{T} = h A (T_{\\infty}-T)"
 msgstr ""
 
-#: ../../source/components/components/block_comps.rst:264
+#: ../../source/components/components/block_comps.rst:265
 msgid ""
 "The following block diagram will solve for the temperature profile, "
 ":math:`T`:"
 msgstr ""
+"다음 블록 다이어그램은 온도 프로파일인 :math:`T` 를 풀게 됩니다."
 
-#: ../../source/components/components/block_comps.rst:273
+#: ../../source/components/components/block_comps.rst:274
 msgid "The Modelica source code for this example is:"
 msgstr ""
+"이 예제의 모델리카 소스 코드는 다음과 같습니다."
 
-#: ../../source/components/components/block_comps.rst:278
+#: ../../source/components/components/block_comps.rst:279
 msgid ""
 "The temperature, :math:`T`, is represented in this model by the variable "
 "``T.y``.  Simulating this system, we get the following solution for the "
 "temperature:"
 msgstr ""
+"온도, :math:`T` 는 이 모델에서 변수 ``T.y`` 로 표현됩니다. 이 시스템을 시뮬레이션하면 온도에 대해 다음과 같은 해를 얻을 수 있습니다."
 
-#: ../../source/components/components/block_comps.rst:285
+#: ../../source/components/components/block_comps.rst:286
 msgid ""
 "As we can see, the solution is exactly the same as it has been for all "
 "previous incarnations of this example."
 msgstr ""
+"결과에서 볼 수 있듯이 해는 이 예제의 모든 이전 예제와 정확히 동일합니다."
 
-#: ../../source/components/components/block_comps.rst:288
+#: ../../source/components/components/block_comps.rst:289
 msgid ""
-"So far, we've seen this particular problem formulated three different ways."
-"  The first formulation described the mathematical structure using a single "
-"equation.  The second formulation used acausal component models of "
-"individual physical effects to represent the same dynamics.  Finally, we "
-"have this most recent block diagram formulation.  But the real question is, "
-"**which ones of these approaches is the most appropriate for this particular"
-" problem?**"
+"So far, we've seen this particular problem formulated three different "
+"ways.  The first formulation described the mathematical structure using a"
+" single equation.  The second formulation used acausal component models "
+"of individual physical effects to represent the same dynamics.  Finally, "
+"we have this most recent block diagram formulation.  But the real "
+"question is, **which ones of these approaches is the most appropriate for"
+" this particular problem?**"
 msgstr ""
+"지금까지  이 특정 문제가 세 가지 다른 방식으로 공식으로 변경되는 것을 보았습니다. "
+"첫 번째 공식은 단일 방정식을 사용하여 수학적 구조를 설명했습니다. "
+"두 번째 공식은 동일한 역학을 나타내기 위해 개별 물리적 효과의 비인과적 구성 요소 모델을 사용했습니다."
+"마지막으로 가장 최근의 블록 다이어그램 공식이 있습니다. "
+"그러나 지금 가질 수 있는 실질적인 질문은 **이러한 접근 방식 중 어떤 것이 이 특정 문제에 가장 적합한가?** 입니다."
 
-#: ../../source/components/components/block_comps.rst:296
+
+#: ../../source/components/components/block_comps.rst:297
 msgid ""
-"There are really two extreme cases to consider.  If we wanted to solve only "
-"this one particular configuration of this problem with a single thermal "
-"capacitance convecting heat to some infinite ambient reservoir, the "
-":ref:`equation based version <getting-physical>` would probably be the best "
-"choice since the behavior of the entire problem can be expressed by the "
-"single equation:"
+"There are really two extreme cases to consider.  If we wanted to solve "
+"only this one particular configuration of this problem with a single "
+"thermal capacitance convecting heat to some infinite ambient reservoir, "
+"the :ref:`equation based version <getting-physical>` would probably be "
+"the best choice since the behavior of the entire problem can be expressed"
+" by the single equation:"
 msgstr ""
+"실제로 고려해야 할 두 가지 극단적인 경우가 있습니다."
+"열을 무한한 주변 저장소로 대류하는 단일 열 용량으로 보는경우, 이 문제의 특정 구성만 해결하려면 :ref:`방정식 기반 버젼 <getting-physical>` 이 아마도 최선의 선택이 될 것입니다."
+"이를 통해 전체 문제는 단일 방정식으로 표현할 수 있습니다."
 
-#: ../../source/components/components/block_comps.rst:307
+
+#: ../../source/components/components/block_comps.rst:308
 msgid ""
-"Such an equation can be typed in very quickly.  In contrast, the component "
-"based versions would require the user to drag, drop and connect component "
-"models which would invariably take longer."
+"Such an equation can be typed in very quickly.  In contrast, the "
+"component based versions would require the user to drag, drop and connect"
+" component models which would invariably take longer."
 msgstr ""
+"이러한 방정식은 매우 빠르게 입력할 수 있습니다. "
+"반대로 구성 요소 기반 버전은 사용자가 구성 요소 모델을 드래그, 드롭 및 연결해야 하므로 항상 더 오래 걸립니다."
 
-#: ../../source/components/components/block_comps.rst:311
+
+#: ../../source/components/components/block_comps.rst:312
 msgid ""
 "However, if you intend to create variations of the problem combining "
-"different modes of heat transfer, different boundary conditions, etc., then "
-"the acausal version is better.  This is because while some investment is "
-"required to create the component models, they can be reconfigured almost "
-"trivially."
+"different modes of heat transfer, different boundary conditions, etc., "
+"then the acausal version is better.  This is because while some "
+"investment is required to create the component models, they can be "
+"reconfigured almost trivially."
 msgstr ""
+"그러나 다른 열 전달 모드, 다른 경계 조건 등을 결합하여 문제의 변형을 만들려는 경우 비인과적 버전이 더 좋습니다."
+"이는 구성 요소 모델을 생성하는 데 약간의 투자가 필요하지만 거의 간단하게 재구성할 수 있기 때문입니다."
 
-#: ../../source/components/components/block_comps.rst:317
+#: ../../source/components/components/block_comps.rst:318
 msgid ""
-"One might say the same is true for the block diagram version of the model "
-"(*i.e.,* that it can be trivially reconfigured), **but that is not the "
+"One might say the same is true for the block diagram version of the model"
+" (*i.e.,* that it can be trivially reconfigured), **but that is not the "
 "case**.  The block diagram version of the model is a **mathematical** "
-"representation of the problem, not a schematic based formulation.  If you "
-"create variations of this heat transfer problem that specify alternative "
-"boundary conditions, add more thermal inertias or include additional modes "
-"of heat transfer, the changes to a schematic will be simple.  However, for a"
-" block diagram formulation **you will need to completely reformulate the "
-"block diagram**.  This is because the resulting mathematical equations might"
-" be very different when expressed in state-space form.  One of the big "
-"advantages of the acausal, schematic based approach is that the Modelica "
-"compiler will translate the textbook equations into state-space form "
-"automatically.  This saves a great deal of tedious, time-consuming and error"
-" prone work on the part of the model developer and this is precisely why the"
-" acausal approach is preferred."
+"representation of the problem, not a schematic based formulation.  If you"
+" create variations of this heat transfer problem that specify alternative"
+" boundary conditions, add more thermal inertias or include additional "
+"modes of heat transfer, the changes to a schematic will be simple.  "
+"However, for a block diagram formulation **you will need to completely "
+"reformulate the block diagram**.  This is because the resulting "
+"mathematical equations might be very different when expressed in state-"
+"space form.  One of the big advantages of the acausal, schematic based "
+"approach is that the Modelica compiler will translate the textbook "
+"equations into state-space form automatically.  This saves a great deal "
+"of tedious, time-consuming and error prone work on the part of the model "
+"developer and this is precisely why the acausal approach is preferred."
 msgstr ""
+"모델의 블록 다이어그램 버전에 대해서도 동일하다고 말할 수 있지만(*즉,* 사소하게 재구성할 수 있음) **그것은 사실이 아닙니다**."
+"모델의 블록 다이어그램 버전은 문제의 **수학적** 표현이며 도식 기반 공식이 아닙니다."
+"대체 경계 조건을 지정하는 이 열 전달 문제의 변형을 생성하거나 더 많은 열 관성을 추가하거나 추가 열 전달 모드를 포함하면 회로도를 간단하게 변경할 수 있습니다. "
+"그러나 블록 다이어그램 공식의 경우 **블록 다이어그램을 완전히 재구성해야 합니다**."
+"이는 상태 공간 형식으로 표현될 때 결과 수학 방정식이 매우 다를 수 있기 때문입니다. "
+"비인과적 도식 기반 접근 방식의 큰 장점 중 하나는 모델리카 컴파일러가 교과서 방정식을 상태 공간 형식으로 자동 변환한다는 것입니다."
+"이렇게 하면 모델 개발자의 지루하고 시간 소모적이며 오류가 발생하기 쉬운 작업을 크게 줄일 수 있으며 이것이 바로 비인과적 접근 방식이 선호되는 이유입니다."
 
-#: ../../source/components/components/block_comps.rst:337
+
+#: ../../source/components/components/block_comps.rst:338
 msgid "Thermal Control"
 msgstr ""
+"열 제어(Thermal Control)"
 
-#: ../../source/components/components/block_comps.rst:339
+#: ../../source/components/components/block_comps.rst:340
 msgid ""
 "For the next example, we'll mix both causal components, the blocks we've "
-"developed in this section, with acausal components, the :ref:`heat-transfer-"
-"components` developed earlier in this chapter. This will prove to be a "
-"powerful combination, since it allows us to represent the physical "
-"components schematically, but allows us to express the control strategy "
-"mathematically."
+"developed in this section, with acausal components, the :ref:`heat-"
+"transfer-components` developed earlier in this chapter. This will prove "
+"to be a powerful combination, since it allows us to represent the "
+"physical components schematically, but allows us to express the control "
+"strategy mathematically."
 msgstr ""
+"다음 예제에서는 이 섹션에서 개발한 블록인 두 인과적 구성 요소를 이 장의 앞부분에서 개발한 "
+"비인과적 구성 요소인 :ref:`heat-transfer-components` 와 혼합합니다."
+"이는 물리적 구성 요소를 도식적으로 나타낼 수 있지만 제어 방법을 수학적으로 표현할 수 있기 때문에 강력한 조합이 될 것입니다."
 
-#: ../../source/components/components/block_comps.rst:346
+
+
+#: ../../source/components/components/block_comps.rst:347
+msgid "Here is a schematic diagram showing how both approaches can be combined:"
+msgstr ""
+"다음은 두 접근 방식을 결합할 수 있는 방법을 보여주는 개략도입니다."
+
+
+#: ../../source/components/components/block_comps.rst:355
 msgid ""
-"Here is a schematic diagram showing how both approaches can be combined:"
+"When modeling a physical system together with a control system, the "
+"physical components and effects will use an acausal formulation.  The "
+"components representing the control strategy will typically use a causal "
+"formulation.  What bridges the gap between these two approaches are the "
+"sensors and actuators.  The sensors measure some aspect of the system "
+"(temperature in this example) and the actuators apply some \"influence\" "
+"over the system (in this case, a heat flux)."
 msgstr ""
+"제어 시스템과 함께 물리적 시스템을 모델링할 때 물리적 구성 요소와 효과는 비인과적 공식을 사용합니다."
+"제어 방법을 나타내는 구성 요소는 일반적으로 인과 공식을 사용합니다."
+"이 두 접근 방식 사이의 간격을 메우는 것은 센서와 액추에이터입니다. "
+"센서는 시스템의 일부 측면(이 예제에서는 온도)을 측정하고 액추에이터는 시스템에 약간의 "영향"(이 경우 열유속)을 적용합니다."
 
-#: ../../source/components/components/block_comps.rst:354
+
+#: ../../source/components/components/block_comps.rst:363
 msgid ""
-"When modeling a physical system together with a control system, the physical"
-" components and effects will use an acausal formulation.  The components "
-"representing the control strategy will typically use a causal formulation.  "
-"What bridges the gap between these two approaches are the sensors and "
-"actuators.  The sensors measure some aspect of the system (temperature in "
-"this example) and the actuators apply some \"influence\" over the system (in"
-" this case, a heat flux)."
+"The actuator models will generally have signals as inputs combined with "
+"an acausal connection to the physical system (through which the "
+"\"influence\", like a force or an electric current, will be applied). "
+"This is reversed for the sensor models where the causal connectors will "
+"be outputs and the acausal connectors will be used to \"sense\" some "
+"aspect of the physical system (like a voltage, temperature, *etc.*)."
 msgstr ""
+"액추에이터 모델은 일반적으로 물리적 시스템에 대한 비인과적 연결과 결합된 입력으로 신호를 갖습니다(이를 통해 힘이나 전류와 같은 "영향"이 적용됨)."
+"인과 커넥터가 출력이 되고 비인과 커넥터가 물리적 시스템의 일부 측면(예: 전압, 온도 *등*)을 "감지"하는 데 사용하는 센서 모델의 경우 반대입니다."
 
-#: ../../source/components/components/block_comps.rst:362
-msgid ""
-"The actuator models will generally have signals as inputs combined with an "
-"acausal connection to the physical system (through which the \"influence\", "
-"like a force or an electric current, will be applied). This is reversed for "
-"the sensor models where the causal connectors will be outputs and the "
-"acausal connectors will be used to \"sense\" some aspect of the physical "
-"system (like a voltage, temperature, *etc.*)."
-msgstr ""
 
-#: ../../source/components/components/block_comps.rst:370
+
+#: ../../source/components/components/block_comps.rst:371
 msgid "Our example model can be expressed in Modelica as:"
 msgstr ""
+"예제 모델은 모델리카에서 다음과 같이 표현할 수 있습니다."
 
-#: ../../source/components/components/block_comps.rst:377
+
+#: ../../source/components/components/block_comps.rst:378
 msgid ""
 "Looking at the model, we can see that the initial temperature is "
 ":math:`90\\,^{\\circ}\\mathrm{C}` and the ambient temperature is "
-":math:`25\\,^{\\circ}\\mathrm{C}`.  In addition, the setpoint temperature "
-"(the desired temperature) is :math:`30\\,^{\\circ}\\mathrm{C}`.  So unlike "
-"our previous examples where the system temperature eventually came to rest "
-"at the ambient temperature, this system should approach the setpoint "
-"temperature due to the influence of the control system. Simulating this "
-"system, we get the following temperature response:"
+":math:`25\\,^{\\circ}\\mathrm{C}`.  In addition, the setpoint temperature"
+" (the desired temperature) is :math:`30\\,^{\\circ}\\mathrm{C}`.  So "
+"unlike our previous examples where the system temperature eventually came"
+" to rest at the ambient temperature, this system should approach the "
+"setpoint temperature due to the influence of the control system. "
+"Simulating this system, we get the following temperature response:"
 msgstr ""
+"모델을 보면 초기 온도가 :math:`90\,^{\circ}\mathrm{C}` 이고 주변 온도가 :math:`25\,^{\circ}\mathrm{C}` 임을 알 수 있습니다. "
+"또한 설정 온도(원하는 온도)는 :math:`30\,^{\circ}\mathrm{C}` 입니다. "
+"따라서 시스템 온도가 결국 주변 온도에 머무르게 된 이전 예제와 달리 이 시스템은 제어 시스템의 영향으로 인해 설정 온도에 접근해야 합니다. "
+"이 시스템을 시뮬레이션하면 다음과 같은 온도 응답을 얻습니다."
 
-#: ../../source/components/components/block_comps.rst:389
+
+#: ../../source/components/components/block_comps.rst:390
 msgid ""
 "We can increase the \"gain\" of the controller, ``k``, and we see a "
 "different response:"
 msgstr ""
+"컨트롤러 ``k`` 의 "게인"을 증가시킬 수 있으며 다른 응답을 볼 수 있습니다."
 
-#: ../../source/components/components/block_comps.rst:395
+#: ../../source/components/components/block_comps.rst:396
 msgid ""
-"However, we can see from the following plot that much more heat output was "
-"required from our actuator in order to achieve the faster response in the "
-"second case:"
+"However, we can see from the following plot that much more heat output "
+"was required from our actuator in order to achieve the faster response in"
+" the second case:"
 msgstr ""
+"그러나 다음 선도에서 두 번째 경우에서 더 빠른 응답을 달성하기 위해 액추에이터에서 훨씬 더 많은 열 출력이 필요하다는 것을 알 수 있습니다."
 
-#: ../../source/components/components/block_comps.rst:402
+#: ../../source/components/components/block_comps.rst:403
 msgid ""
-"This is just a very simple example of how combining physical response with "
-"control allows model developers to explore how overall system performance is"
-" impacted by both physical and control strategy design."
+"This is just a very simple example of how combining physical response "
+"with control allows model developers to explore how overall system "
+"performance is impacted by both physical and control strategy design."
 msgstr ""
+"이것은 물리적 응답과 제어를 결합하여 모델 개발자가 전체 시스템 성능이 물리적 및 제어 전략 설계에 의해 어떻게 영향을 받는지 탐색할 수 있는 방법에 대한 매우 간단한 예일 뿐입니다."
 
-#: ../../source/components/components/block_comps.rst:407
+#: ../../source/components/components/block_comps.rst:408
 msgid "Conclusion"
 msgstr ""
+"종합(Conclusion)"
 
-#: ../../source/components/components/block_comps.rst:409
+#: ../../source/components/components/block_comps.rst:410
 msgid ""
-"In this section, we've seen how to define causal ``block`` components and "
-"use them to model both the physical and control related behavior. We've even"
-" seen how these causal components can be combined with acausal components to"
-" yield a \"best of both worlds\" combination where control features are "
-"implemented with causal components while physical components use acausal "
-"components."
+"In this section, we've seen how to define causal ``block`` components and"
+" use them to model both the physical and control related behavior. We've "
+"even seen how these causal components can be combined with acausal "
+"components to yield a \"best of both worlds\" combination where control "
+"features are implemented with causal components while physical components"
+" use acausal components."
 msgstr ""
+"이 섹션에서  원인이 되는 ``block`` 구성 요소를 정의하고 이를 사용하여 물리적 및 제어 관련 동작을 모델링하는 방법을 살펴보았습니다."
+"물리적 구성 요소가 비인과적 구성 요소를 사용하는 동안 제어 기능이 인과적 구성 요소로 구현되는 "양쪽 세계에서의 최적" 조합을 생성하기 위해 "
+"이러한 인과적 구성 요소가 비인과적 구성 요소와 어떻게 결합될 수 있는지 살펴 보았습니다."
+
+

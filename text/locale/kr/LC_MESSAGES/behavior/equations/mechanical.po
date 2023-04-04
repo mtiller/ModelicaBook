@@ -1,61 +1,92 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/equations/mechanical.rst:4
 msgid "A Mechanical Example"
 msgstr ""
+"기계 분야 예제(A Mechanical Example)"
 
 #: ../../source/behavior/equations/mechanical.rst:6
 msgid ""
-"If you are more familiar with mechanical systems, this example might help "
-"reinforce some of the concepts we've covered so far.  The system we wish to "
-"model is the one shown in the following figure:"
+"If you are more familiar with mechanical systems, this example might help"
+" reinforce some of the concepts we've covered so far.  The system we wish"
+" to model is the one shown in the following figure:"
 msgstr ""
+"이 예제는 기계 시스템에 더 친숙한 경우 지금까지 다룬 개념 중 일부를 보강하는 데 도움이 될 수 있습니다. "
+"다음 그림에 표시된 시스템이 모델링을 하려는 대상입니다."
+
 
 #: ../../source/behavior/equations/mechanical.rst:16
 msgid ""
-"It is worth pointing out how much easier it is to convey the intention of a "
-"model by presenting it in schematic form.  Assuming appropriate graphical "
-"representations are used, experts can very quickly understand the "
-"composition of the system and develop an intuition about how it is likely to"
-" behave.  While we are currently focusing on equations and variables, we "
-"will eventually work our way up to an approach (in the upcoming section of "
-"the book on :ref:`components`) where **models will be built in this "
-"schematic form from the beginning**."
+"It is worth pointing out how much easier it is to convey the intention of"
+" a model by presenting it in schematic form.  Assuming appropriate "
+"graphical representations are used, experts can very quickly understand "
+"the composition of the system and develop an intuition about how it is "
+"likely to behave.  While we are currently focusing on equations and "
+"variables, we will eventually work our way up to an approach (in the "
+"upcoming section of the book on :ref:`components`) where **models will be"
+" built in this schematic form from the beginning**."
 msgstr ""
+"도식적인 형태로 표현하면 이 모델이 가지고 있는 의도를 전달하는 것이 쉬워 질 수 있습니다. "
+"적절한 그래픽 표현이 사용된다고 가정하면 전문가는 시스템의 구성을 매우 빠르게 이해하고 작동 가능성에 대한 직관을 개발할 수 있습니다. "
+"현재 방정식과 변수에 초점을 맞추고 있지만, "
+"결국 모델이 처음부터 이 도식적 형태로 구축되는 접근 방식까지를 다음 :ref:`components` 섹션에서 작업할 것입니다. "
+
 
 #: ../../source/behavior/equations/mechanical.rst:26
 msgid ""
-"For now, however, we will focus on how to express the equations associated "
-"with this simple mechanical system.  Each inertia has a rotational position,"
-" :math:`\\varphi`, and a rotational speed, :math:`\\omega` where "
-":math:`\\omega = \\dot{\\varphi}`.  For each inertia, the balance of angular"
-" momentum for the inertia can be expressed as:"
+"For now, however, we will focus on how to express the equations "
+"associated with this simple mechanical system.  Each inertia has a "
+"rotational position, :math:`\\varphi`, and a rotational speed, "
+":math:`\\omega` where :math:`\\omega = \\dot{\\varphi}`.  For each "
+"inertia, the balance of angular momentum for the inertia can be expressed"
+" as:"
+msgstr ""
+"그러나 지금은 이 간단한 기계 시스템과 관련된 방정식을 표현하는 방법에 중점을 둘 것입니다. "
+"각 관성은 회전 위치 :math:`\varphi` 및 회전 속도 :math:`\omega` 를 갖습니다. "
+"여기서 방적식은 :math:`\omega = \dot{\varphi}` 로 표현할 수 있습니다. " 
+"각각의 관성에 대하여 각운동량의 균형은 다음과 같이 나타낼 수 있습니다."
+
+
+#: ../../source/behavior/equations/mechanical.rst:32
+msgid "J \\dot{\\omega} = \\sum_i \\tau_i"
 msgstr ""
 
 #: ../../source/behavior/equations/mechanical.rst:34
 msgid ""
 "In other words, the sum of the torques, :math:`\\tau`, applied to the "
-"inertia should be equal to the product of the moment of inertia, :math:`J`, "
-"and the angular acceleration, :math:`\\dot{\\omega}`."
+"inertia should be equal to the product of the moment of inertia, "
+":math:`J`, and the angular acceleration, :math:`\\dot{\\omega}`."
 msgstr ""
+"즉, 관성에 가해지는 토크의 합, :math:`\tau` 는 관성 모멘트, :math:`J` 와 각가속도, :math:`\dot{\omega}` 의 곱과 같아야 합니다."
 
 #: ../../source/behavior/equations/mechanical.rst:40
 msgid ""
-"At this point, all we are missing are the torque values, :math:`\\tau_i`.  "
-"From the previous figure, we can see that there are two springs and two "
-"dampers.  For the springs, we can use Hooke's law to express the "
+"At this point, all we are missing are the torque values, :math:`\\tau_i`."
+"  From the previous figure, we can see that there are two springs and two"
+" dampers.  For the springs, we can use Hooke's law to express the "
 "relationship between torque and angular displacement as follows:"
+msgstr ""
+"이 시점에서  알고 있지 않는 것은 토크 값인 :math:`\tau_i` 뿐입니다. "
+"이전 그림에서 두 개의 스프링과 두 개의 댐퍼가 있음을 알 수 있습니다."
+"스프링의 경우 Hooke의 법칙을 사용하여 토크와 각변위 간의 관계를 다음과 "
+"같이 표현할 수 있습니다."
+
+
+#: ../../source/behavior/equations/mechanical.rst:46
+msgid "\\tau = c \\Delta \\varphi"
 msgstr ""
 
 #: ../../source/behavior/equations/mechanical.rst:48
@@ -63,109 +94,161 @@ msgid ""
 "For each damper, we express the relationship between torque and relative "
 "angular velocity as:"
 msgstr ""
+"각 댐퍼에 대해 토크와 상대 각속도 간의 관계를 다음과 같이 표현합니다."
+
+#: ../../source/behavior/equations/mechanical.rst:51
+msgid "\\tau = d \\Delta \\dot{\\varphi}"
+msgstr ""
 
 #: ../../source/behavior/equations/mechanical.rst:53
 msgid ""
-"If we pull together all of these relations, we get the following system of "
-"equations:"
+"If we pull together all of these relations, we get the following system "
+"of equations:"
+msgstr ""
+"이러한 모든 관계를 함께 가져오면 다음 방정식 시스템을 얻습니다."
+
+#: ../../source/behavior/equations/mechanical.rst:56
+msgid ""
+"\\omega_1 &= \\dot{\\varphi}_1 \\\\ J_1 \\dot{\\omega}_1 &= c_1 "
+"(\\varphi_2-\\varphi_1) + d_1 \\frac{\\mathrm{d} "
+"(\\varphi_2-\\varphi_1)}{\\mathrm{d}t} \\\\ \\omega_2 &= "
+"\\dot{\\varphi}_2 \\\\ J_2 \\dot{\\omega}_2 &= c_1 "
+"(\\varphi_1-\\varphi_2) + d_1 \\frac{\\mathrm{d} "
+"(\\varphi_1-\\varphi_2)}{\\mathrm{d}t} - c_2 \\varphi_2 - d_2 "
+"\\dot{\\varphi}_2"
 msgstr ""
 
 #: ../../source/behavior/equations/mechanical.rst:63
 msgid "Let's assume our system has the following initial conditions as well:"
 msgstr ""
+"이제, 시스템에 다음과 같은 초기 조건도 있다고 가정해 보겠습니다."
+
+#: ../../source/behavior/equations/mechanical.rst:65
+msgid ""
+"\\varphi_1 &= 0 \\\\ \\omega_1 &= 0 \\\\ \\varphi_2 &= 1 \\\\ \\omega_2 "
+"&= 0"
+msgstr ""
 
 #: ../../source/behavior/equations/mechanical.rst:73
 msgid ""
-"These initial conditions essentially mean that the system starts in a state "
-"where neither inertia is actually moving (*i.e.*, :math:`\\omega=0`), but "
-"there is a non-zero deflection across both springs."
+"These initial conditions essentially mean that the system starts in a "
+"state where neither inertia is actually moving (*i.e.*, "
+":math:`\\omega=0`), but there is a non-zero deflection across both "
+"springs."
 msgstr ""
+"이러한 초기 조건은 기본적으로 두 관성이 실제로 움직이지 않는 상태(*즉*, :math:`\omega=0` )에서 시스템이 시작되지만,"
+"두 스프링 사이의 값에서 0이 아닌 편향이 있음을 의미합니다. "
+
 
 #: ../../source/behavior/equations/mechanical.rst:78
 msgid ""
-"Pulling all of these variables and equations together, we can express this "
-"problem in Modelica as follows:"
+"Pulling all of these variables and equations together, we can express "
+"this problem in Modelica as follows:"
 msgstr ""
+"이 모든 변수와 방정식을 함께 가져오면 모델리카에서 이 문제를 다음과 같이 표현할 수 있습니다."
 
 #: ../../source/behavior/equations/mechanical.rst:85
 msgid ""
 "As we did with the low-pass filter example, ``RLC1``, let's walk through "
 "this line by line."
 msgstr ""
+"저역 통과 필터 예제인 ``RLC1`` 에서 했던 것처럼 한 줄씩 살펴보겠습니다."
 
 #: ../../source/behavior/equations/mechanical.rst:88
 msgid "As usual, we start with the name of the model:"
 msgstr ""
+"평소와 같이 모델 이름으로 시작합니다."
 
 #: ../../source/behavior/equations/mechanical.rst:94
 msgid ""
 "Next, we introduce physical types for a rotational mechanical system, "
 "namely:"
 msgstr ""
+"다음으로 회전 기계 시스템에 대한 물리적 자료형을 정의 합니다. "
+
+"즉, 아래와 같습니다."
+
 
 #: ../../source/behavior/equations/mechanical.rst:100
 msgid ""
 "Then we define the various parameters used to represent the different "
 "physical characteristics of our system:"
 msgstr ""
+"그런 다음 시스템의 다양한 물리적 특성을 나타내는 데 사용하는 다양한 parameter를 정의합니다. "
 
 #: ../../source/behavior/equations/mechanical.rst:107
 msgid ""
 "For this system, there are four non-``parameter`` variables.  These are "
 "defined as follows:"
 msgstr ""
+"``parameter`` 가 아닌 4개의 변수가 있습니다. 이들은 다음과 같이 정의합니다."
 
 #: ../../source/behavior/equations/mechanical.rst:113
 msgid ""
 "The initial conditions (which we will revisit shortly) are then defined "
 "with:"
 msgstr ""
+"초기 조건(곧 다시 살펴보겠습니다)은 다음과 같이 정의합니다."
 
 #: ../../source/behavior/equations/mechanical.rst:119
 msgid "Then come the equations describing the dynamic response of our system:"
 msgstr ""
+"그런 다음 시스템의 동적 응답을 설명하는 방정식이 나옵니다."
 
 #: ../../source/behavior/equations/mechanical.rst:125
 msgid "And finally, we have the closing of our model definition."
 msgstr ""
+"마지막으로 모델 정의가 종료됩니다."
 
 #: ../../source/behavior/equations/mechanical.rst:133
 msgid ""
-"The only drawback of this model is that all of our initial conditions have "
-"been \"hard-coded\" into the model.  This means that we will be unable to "
-"specify any alternative set of initial conditions for this model.  We can "
-"overcome this issue, as we did with our :ref:`Newton cooling examples "
-"<getting-physical>`, by defining ``parameter`` variables to represent the "
-"initial conditions as follows:"
+"The only drawback of this model is that all of our initial conditions "
+"have been \"hard-coded\" into the model.  This means that we will be "
+"unable to specify any alternative set of initial conditions for this "
+"model.  We can overcome this issue, as we did with our :ref:`Newton "
+"cooling examples <getting-physical>`, by defining ``parameter`` variables"
+" to represent the initial conditions as follows:"
 msgstr ""
+"이 모델의 유일한 단점은 모든 초기 조건이 모델에 "하드 코딩"되어 있다는 것입니다."
+"즉, 이 모델에 대한 초기 조건 세트를 대체해서 지정할 수 없습니다. "
+"다음과 같이 초기 조건을 나타내는 ``parameter`` 변수를 정의하여 :ref:`Newton cooling examples <getting-physical>` 에서 했던 것처럼 "
+"이 문제를 극복할 수 있습니다."
+
 
 #: ../../source/behavior/equations/mechanical.rst:146
 msgid ""
-"In this way, the parameter values can be changed either in the simulation "
-"environment (where parameters are typically editable by the user) or, as we "
-"will see shortly, via so-called \"modifications\"."
+"In this way, the parameter values can be changed either in the simulation"
+" environment (where parameters are typically editable by the user) or, as"
+" we will see shortly, via so-called \"modifications\"."
 msgstr ""
+"이러한 방식으로 parameter 값은 시뮬레이션 환경(일반적으로 사용자가 paramter를 편집할 수 있음)에서 또는 소위 "수정(modifications)"을 통해 변경할 수 있습니다.     "
 
 #: ../../source/behavior/equations/mechanical.rst:150
 msgid ""
 "You will see in this latest version of the model that the values for the "
 "newly introduced parameters are the same as the hard-coded values used "
-"earlier.  As a result, the default initial conditions will be exactly the "
-"same as they were before.  But now, we have the freedom to explore other "
-"initial conditions as well.  For example, if we simulate the "
-"``SecondOrderSystemInitParams`` model as is, we get the following solution "
-"for the angular positions and velocities:"
+"earlier.  As a result, the default initial conditions will be exactly the"
+" same as they were before.  But now, we have the freedom to explore other"
+" initial conditions as well.  For example, if we simulate the "
+"``SecondOrderSystemInitParams`` model as is, we get the following "
+"solution for the angular positions and velocities:"
 msgstr ""
+"이 최신 버전의 모델에서 새로 도입된 parameter의 값이 이전에 사용된 하드 코딩된 값과 동일함을 볼 수 있습니다. "
+"결과적으로 기본 초기 조건은 이전과 정확히 동일합니다. "
+"그러나 이제 우리에게 다른 초기 조건도 해석 할 수 있는 자유도가 생겼습니다."
+"예를 들어 ``SecondOrderSystemInitParams`` 모델을 있는 그대로 시뮬레이션하면 각도 위치와 속도에 대해 다음과 같은 해을 얻습니다."
+
 
 #: ../../source/behavior/equations/mechanical.rst:161
 msgid ""
-"However, if we modify the ``phi1_init`` parameter to be *1* at the start of "
-"our simulation, we get this solution instead:"
+"However, if we modify the ``phi1_init`` parameter to be *1* at the start "
+"of our simulation, we get this solution instead:"
 msgstr ""
+"그러나 시뮬레이션 시작 시 ``phi1_init`` 파라미터를  *1* 로 수정하면 다음과 같은 해을 얻을 수 있습니다."
 
-#: ../../source/behavior/equations/mechanical.rst:0
 msgid "Expanding on this mechanical example"
 msgstr ""
+"기계 관련 예제의 확장(Expanding on this mechanical example)"
 
 #: ../../source/behavior/equations/mechanical.rst:168
 msgid ""
@@ -173,17 +256,18 @@ msgid ""
 "jump to the set of examples involving rotational systems found in the "
 "section on :ref:`speed-measurement`."
 msgstr ""
+"이 예제가 더 발전된 것을 보고 싶다면 :ref:`speed-measurement`- 속도 측정 섹션에 있는 회전 시스템과 관련된 예제 세트로 이동할 수 있습니다."
 
 #: ../../source/behavior/equations/mechanical.rst:172
 msgid ""
 "Otherwise, you can continue to the next set of examples which involve "
 "population dynamics."
 msgstr ""
+"그렇지 않으면 인구 역학에 해당하는 다음 예제 세트를 계속 살펴볼 수 있습니다."
 
-#: ../../source/behavior/equations/mechanical.rst:38
-msgid "Hooke's law"
-msgstr ""
+#~ msgid "Hooke's law"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/mechanical.rst:131
-msgid "modifications"
-msgstr ""
+#~ msgid "modifications"
+#~ msgstr ""
+

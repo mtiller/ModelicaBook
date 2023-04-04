@@ -1,40 +1,52 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/arrays/functions.rst:4
 msgid "Array Functions"
 msgstr ""
+"배열 함수(Array Functions)"
 
 #: ../../source/behavior/arrays/functions.rst:6
 msgid ""
-"There are a great many functions in Modelica that are related to arrays.  In"
-" this section, we'll go through different categories of functions and "
-"describe how they are used."
+"There are a great many functions in Modelica that are related to arrays."
+"  In this section, we'll go through different categories of functions and"
+" describe how they are used."
 msgstr ""
+"모델리카에는 배열과 관련된 많은 함수가 있습니다. "
+"이 섹션에서는 함수의 다양한 범주를 살펴보고 사용 방법을 설명합니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:13
 msgid "Array Construction Functions"
 msgstr ""
+"배열 구성 함수(Array Construction Functions)"
+
 
 #: ../../source/behavior/arrays/functions.rst:15
 msgid ""
 "We already talked about :ref:`array-construction`.  We saw the different "
 "syntactic constructs that can be used to build vectors and matrices.  "
-"Furthermore, we saw how matrices can be built from other matrices.  There "
-"are several functions in Modelica that can be used for constructing vectors,"
-" matrices and higher-dimension arrays as both an alternative or complement "
-"to those previous presented."
+"Furthermore, we saw how matrices can be built from other matrices.  There"
+" are several functions in Modelica that can be used for constructing "
+"vectors, matrices and higher-dimension arrays as both an alternative or "
+"complement to those previous presented."
 msgstr ""
+"이미 앞에서 :ref:`array-construction` 에 대해 이야기했습니다. "
+"벡터와 행렬을 구축하는 데 사용할 수 있는 다양한 구문 구조를 살펴보았으며, 다른 행렬을 이용하여 새로운 행렬을 만드는 방법도 살펴보았습니다. "
+"모델리카에는 이전에 제시된 기능에 대한 대안 또는 보완 기능으로 벡터, 행렬 및 고차원 배열을 구성하는 데 사용할 수 있는 여러 기능이 있습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:26
 msgid "``fill``"
@@ -42,21 +54,37 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:31
 msgid ""
-"The ``fill`` function is used to create an array where each element in the "
-"array has the same value.  The arguments for ``fill`` are:"
+"The ``fill`` function is used to create an array where each element in "
+"the array has the same value.  The arguments for ``fill`` are:"
 msgstr ""
+"``fill`` 함수는 배열의 각 요소가 동일한 값을 갖는 배열을 만드는 데 사용합니다. "
+"``fill`` 에 대한 인수는 다음과 같습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:38
 msgid ""
-"where ``v`` is the value to be given to each element in the array and the "
-"remaining arguments are the sizes of each dimension.  The elements in the "
-"resulting array will have the same type as ``v``.  So, to fill a 5x7 array "
-"of reals with the value ``1.7``, we could use the following:"
+"where ``v`` is the value to be given to each element in the array and the"
+" remaining arguments are the sizes of each dimension.  The elements in "
+"the resulting array will have the same type as ``v``.  So, to fill a 5x7 "
+"array of reals with the value ``1.7``, we could use the following:"
 msgstr ""
+"여기서 ``v`` 는 배열의 각 요소에 부여할 값이고 나머지 인수는 각 차원의 크기입니다. "
+"결과 배열의 요소는 ``v`` 와 같은 형태를 갖습니다."
+"따라서 ``1.7`` 이라는 실수 값으로 5x7 배열을 채우려면 다음을 사용할 수 있습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:48
 #: ../../source/behavior/arrays/functions.rst:94
 msgid "This would result in a matrix filled as follows:"
+msgstr ""
+"이렇게 하면 다음과 같이 채워진 행렬이 생성됩니다."
+
+#: ../../source/behavior/arrays/functions.rst:50
+msgid ""
+"\\left[ \\begin{array}{ccccccc} 1.7 & 1.7 & 1.7 & 1.7 & 1.7 & 1.7 & 1.7 "
+"\\\\ 1.7 & 1.7 & 1.7 & 1.7 & 1.7 & 1.7 & 1.7 \\\\ 1.7 & 1.7 & 1.7 & 1.7 &"
+" 1.7 & 1.7 & 1.7 \\\\ 1.7 & 1.7 & 1.7 & 1.7 & 1.7 & 1.7 & 1.7 \\\\ 1.7 & "
+"1.7 & 1.7 & 1.7 & 1.7 & 1.7 & 1.7 \\end{array} \\right]"
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:65
@@ -66,10 +94,15 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:70
 msgid ""
 "When working with arrays, a common use case is to create an array that "
-"contains only zero elements.  This is essentially the same functionality as "
-"the ``fill`` function, but since the value is known it is only necessary to "
-"specify the sizes.  Using ``zeros`` we can initialize an array as follows:"
+"contains only zero elements.  This is essentially the same functionality "
+"as the ``fill`` function, but since the value is known it is only "
+"necessary to specify the sizes.  Using ``zeros`` we can initialize an "
+"array as follows:"
 msgstr ""
+"배열로 작업할 때 0으로 구성된 요소만 포함하는 배열을 만드는 것이 일반적인 경우 입니다."
+'이는 본질적으로 ``fill`` 기능과 동일한 기능이지만 값을 알고 있기 때문에 크기만 지정하면 됩니다. "
+"``zeros`` 를 사용하여 다음과 같이 배열을 초기화할 수 있습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:81
 msgid "``ones``"
@@ -81,6 +114,15 @@ msgid ""
 "every element in the resulting array has the value :math:`1`. So, for "
 "example:"
 msgstr ""
+"``ones`` 함수는 결과 배열의 모든 요소가 :math:`1` 값을 갖는다는 점을 제외하면 ``zeros`` 함수와 동일합니다. "
+"예를 들면 다음과 같습니다."
+
+
+#: ../../source/behavior/arrays/functions.rst:96
+msgid ""
+"\\left[ \\begin{array}{ccccc} 1 & 1 & 1 & 1 & 1 \\\\ 1 & 1 & 1 & 1 & 1 "
+"\\\\ 1 & 1 & 1 & 1 & 1 \\end{array} \\right]"
+msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:107
 msgid "``identity``"
@@ -89,14 +131,29 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:112
 msgid ""
 "Another common need is to easily build an identity matrix, one whose "
-"diagonal elements are all :math:`1` while all other elements are :math:`0`."
-"  This can be done very easily with the ``identity``.  The identity function"
-" takes a single integer argument.  This argument determines the number of "
-"rows and columns in the resulting matrix. So, invoking ``identity`` as:"
+"diagonal elements are all :math:`1` while all other elements are "
+":math:`0`.  This can be done very easily with the ``identity``.  The "
+"identity function takes a single integer argument.  This argument "
+"determines the number of rows and columns in the resulting matrix. So, "
+"invoking ``identity`` as:"
 msgstr ""
+"또 다른 일반적인 필요는 항등 행렬을 쉽게 구축하는 것입니다. "
+"이 행렬의 대각선 요소는 모두 :math:`1` 이고 다른 모든 요소는 :math:`0` 입니다. "
+"이것은 ``identity`` 으로 아주 쉽게 구성 할 수 있습니다. "
+'항등 함수는 단일 정수 인수를 사용하며, 이 인수를 통해서 결과 행렬의 행과 열 수를 결정합니다. "
+"따라서 ``identity`` 를 다음과 같이 호출합니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:123
 msgid "would produce the following matrix:"
+msgstr ""
+"다음 행렬을 생성합니다."
+
+#: ../../source/behavior/arrays/functions.rst:125
+msgid ""
+"\\left[ \\begin{array}{ccccc} 1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 "
+"\\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\"
+" \\end{array} \\right]"
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:139
@@ -105,15 +162,26 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:144
 msgid ""
-"The ``diagonal`` function is used to create a matrix where all non-diagonal "
-"elements are :math:`0`.  The only argument to diagonal is an array "
-"containing the values of the diagonal elements.   So, to create the "
-"following diagonal matrix:"
+"The ``diagonal`` function is used to create a matrix where all non-"
+"diagonal elements are :math:`0`.  The only argument to diagonal is an "
+"array containing the values of the diagonal elements.   So, to create the"
+" following diagonal matrix:"
+msgstr ""
+"``diagonal`` 함수는 대각선이 아닌 모든 요소가 :math:`0` 인 행렬을 만드는 데 사용합니다. "
+"대각선에 대한 유일한 인수는 대각선 요소의 값을 포함하는 배열입니다."
+"따라서 다음 대각 행렬을 만들려면"
+
+
+#: ../../source/behavior/arrays/functions.rst:149
+msgid ""
+"\\left[ \\begin{array}{cccc} 2.0 & 0 & 0 & 0 \\\\ 0 & 3.0 & 0 & 0 \\\\ 0 "
+"& 0 & 4.0 & 0 \\\\ 0 & 0 & 0 & 5.0 \\end{array} \\right]"
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:160
 msgid "one could use the following Modelica code:"
 msgstr ""
+"다음 모델리카 코드를 사용할 수 있습니다."
 
 #: ../../source/behavior/arrays/functions.rst:169
 msgid "``linspace``"
@@ -121,31 +189,40 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:174
 msgid ""
-"The ``linspace`` function builds a vector where the values of the elements "
-"are all linearly distributed over an interval.  The ``linspace`` function is"
-" invoked as follows:"
+"The ``linspace`` function builds a vector where the values of the "
+"elements are all linearly distributed over an interval.  The ``linspace``"
+" function is invoked as follows:"
 msgstr ""
+"``linspace`` 함수는 요소의 값이 동일한 간격으로 모두 선형으로 분포되는 벡터를 만듭니다."
+"``linspace`` 함수는 다음과 같이 호출됩니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:182
 msgid ""
-"where ``v0`` is the value of the first elements in the vector, ``v1`` is the"
-" last element in the vector and ``n`` is the total number of values in the "
-"vector.  So, for example, invoking ``linspace`` as:"
+"where ``v0`` is the value of the first elements in the vector, ``v1`` is "
+"the last element in the vector and ``n`` is the total number of values in"
+" the vector.  So, for example, invoking ``linspace`` as:"
 msgstr ""
+"여기서 ``v0`` 은 벡터의 첫 번째 요소 값이고 ``v1`` 은 벡터의 마지막 요소이며 ``n`` 은 벡터의 총 갯수 입니다."
+"예를 들어 다음과 같이 ``linspace`` 를 호출합니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:190
 msgid "would yield the vector:"
 msgstr ""
+"아래와 같은 벡터를 생성합니다."
 
 #: ../../source/behavior/arrays/functions.rst:197
 msgid "Conversion Functions"
 msgstr ""
+"변환 함수(Conversion Functions)"
 
 #: ../../source/behavior/arrays/functions.rst:199
 msgid ""
 "The following functions provide a means to transform arrays into other "
 "arrays."
 msgstr ""
+"다음 함수는 배열을 다른 배열로 변환하는 수단을 제공합니다."
 
 #: ../../source/behavior/arrays/functions.rst:203
 msgid "``scalar``"
@@ -154,21 +231,28 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:208
 msgid "The ``scalar`` function is invoked as follows:"
 msgstr ""
+"``scalar`` 함수는 다음과 같이 호출됩니다:"
 
 #: ../../source/behavior/arrays/functions.rst:214
 msgid ""
-"where ``A`` is an array with an arbitrary number of dimensions as long as "
-"each dimension is of size :math:`1`.  The ``scalar`` function returns the "
-"(only) scalar value contained in the array.  For example,"
+"where ``A`` is an array with an arbitrary number of dimensions as long as"
+" each dimension is of size :math:`1`.  The ``scalar`` function returns "
+"the (only) scalar value contained in the array.  For example,"
 msgstr ""
+"여기서 ``A`` 는 각 차원의 크기가 1인 한 임의의 차원 수를 가진 배열입니다. "
+"``scalar`` 함수는 배열에 포함된 (유일한) 스칼라 값을 반환합니다. "
+"예를 들어,"
+
 
 #: ../../source/behavior/arrays/functions.rst:222
 msgid "and"
 msgstr ""
+"그리고"
 
 #: ../../source/behavior/arrays/functions.rst:228
 msgid "would both give the scalar value ``5``."
 msgstr ""
+"둘 다 스칼라 값 ``5`` 를 제공합니다."
 
 #: ../../source/behavior/arrays/functions.rst:231
 msgid "``vector``"
@@ -177,23 +261,30 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:236
 msgid "The ``vector`` function is invoked as follows:"
 msgstr ""
+"``vector`` 함수는 다음과 같이 호출됩니다:"
 
 #: ../../source/behavior/arrays/functions.rst:242
 msgid ""
-"where ``A`` is an array with an arbitrary number of dimensions as long as "
-"only one dimension has a size greater than :math:`1`.  The ``vector`` "
+"where ``A`` is an array with an arbitrary number of dimensions as long as"
+" only one dimension has a size greater than :math:`1`.  The ``vector`` "
 "function returns the contents of the array as a vector (*i.e.,* an array "
-"with only a single dimension).  So, for example, if we passed a column or "
-"row matrix, *e.g.*,"
+"with only a single dimension).  So, for example, if we passed a column or"
+" row matrix, *e.g.*,"
 msgstr ""
+"여기서 ``A`` 는 하나의 차원 만이라도 :math:`1` 보다 큰 크기를 갖는 한 임의의 차원 수를 가진 배열입니다. "
+"``vector`` 함수는 배열의 내용을 벡터( *즉* 단일 차원만 있는 배열)로 반환합니다."
+"아래 예제와 같은 열 또는 행 행렬을 전달하면"
+
 
 #: ../../source/behavior/arrays/functions.rst:252
 msgid "or"
 msgstr ""
+"혹은 "
 
 #: ../../source/behavior/arrays/functions.rst:258
 msgid "we would get back:"
 msgstr ""
+"이면, 아래 값이 돌아올 것입니다:"
 
 #: ../../source/behavior/arrays/functions.rst:265
 msgid "``matrix``"
@@ -202,54 +293,77 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:270
 msgid "The ``matrix`` function is invoked as follows:"
 msgstr ""
+"``matrix`` 함수는 다음과 같이 호출됩니다:"
 
 #: ../../source/behavior/arrays/functions.rst:276
 msgid ""
-"where ``A`` is an array with an arbitrary number of dimensions as long as "
-"only two dimension have a size greater than :math:`1`.  The ``matrix`` "
+"where ``A`` is an array with an arbitrary number of dimensions as long as"
+" only two dimension have a size greater than :math:`1`.  The ``matrix`` "
 "function returns the contents of the array as a matrix (*i.e.,* an array "
 "with only two dimensions)."
 msgstr ""
+"여기서 ``A`` 는 2개의 차원이 :math:`1` 보다 큰 크기를 갖는 한 임의의 차원 수를 가진 배열입니다."
+"``matrix`` 함수는 배열의 내용을 행렬(*즉,* 2차원 배열)으로 반환합니다."
+
+
 
 #: ../../source/behavior/arrays/functions.rst:282
 msgid "Mathematical Operations"
 msgstr ""
+"수치적 연산(Mathematical Operations)"
 
 #: ../../source/behavior/arrays/functions.rst:284
 msgid ""
-"In linear algebra, there are many different types of mathematical operations"
-" that are commonly performed on vectors and matrices. Modelica provides "
-"functions to perform most of these operations.  In this way, Modelica "
-"equations can be made to look very much like their mathematical counterparts"
-" in linear algebra."
+"In linear algebra, there are many different types of mathematical "
+"operations that are commonly performed on vectors and matrices. Modelica "
+"provides functions to perform most of these operations.  In this way, "
+"Modelica equations can be made to look very much like their mathematical "
+"counterparts in linear algebra."
 msgstr ""
+"선형 대수학에는 벡터와 행렬에서 일반적으로 수행되는 다양한 유형의 수학 연산이 있습니다."
+"모델리카는 이러한 작업 대부분을 수행하는 기능을 제공합니다."
+"모델리카 방정식은 선형 대수학의 수학적 표현과 대응되는 형태로 매우 유사하게 보이도록 만들 수 있습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:290
 msgid ""
 "Let's start with operations like addition, subtraction, multiplication, "
-"division and exponentiation.  For the most part, these operations work just "
-"as they do in mathematics when applied to the various combinations of "
-"scalars, vectors and matrices.  However, for completeness and reference, the"
-" following tables summarize how these operations are defined."
+"division and exponentiation.  For the most part, these operations work "
+"just as they do in mathematics when applied to the various combinations "
+"of scalars, vectors and matrices.  However, for completeness and "
+"reference, the following tables summarize how these operations are "
+"defined."
 msgstr ""
+"덧셈, 뺄셈, 곱셈, 나눗셈, 지수와 같은 연산부터 시작해 봅시다. "
+"대부분의 경우 이러한 연산은 스칼라, 벡터 및 행렬의 다양한 조합에 적용될 때 수학에서와 마찬가지로 작동합니다. "
+"그러나 완전성과 참조를 위해 다음 표에 이러한 작업이 정의되는 방법이 요약되어 있습니다."
 
-#: ../../source/behavior/arrays/functions.rst:0
+
 msgid "Explanation of Notation"
 msgstr ""
+"표기법 설명"
 
 #: ../../source/behavior/arrays/functions.rst:299
 msgid ""
-"Each of the operations described below involves two arguments, :math:`a` and"
-" :math:`b`, and a result, :math:`c`.  If an argument represents a scalar, it"
-" will have no subscripts.  If it is a vector, it will have one subscript.  "
-"If it is a matrix, it will have two subscripts.  If the operation is defined"
-" for arbitrary arrays, a case will be included with three subscripts.  If a "
-"given combination is not shown, then it is not allowed."
+"Each of the operations described below involves two arguments, :math:`a` "
+"and :math:`b`, and a result, :math:`c`.  If an argument represents a "
+"scalar, it will have no subscripts.  If it is a vector, it will have one "
+"subscript.  If it is a matrix, it will have two subscripts.  If the "
+"operation is defined for arbitrary arrays, a case will be included with "
+"three subscripts.  If a given combination is not shown, then it is not "
+"allowed."
 msgstr ""
+"아래에 설명된 각 작업에는 두 개의 인수 :math:`a` 및 :math:`b` 와 결과인 :math:`c` 가 포함됩니다. "
+"인수가 스칼라를 나타내는 경우 첨자가 없으며,  벡터인 경우 하나의 첨자를 갖습니다."
+"행렬인 경우에는 두 개의 첨자를 갖습니다. "
+"연산이 임의의 배열에 대해 정의된 경우에는 3개의 첨자가 사용된 케이스를 보여주고 있습니다. "
+"주어진 조합에서 표시되지 않은 경우는 허용되지 않습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:308
 msgid "Addition (``+``)"
 msgstr ""
+"덧셈(Addition ``+``)"
 
 #: ../../source/behavior/arrays/functions.rst:315
 #: ../../source/behavior/arrays/functions.rst:331
@@ -306,6 +420,7 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:324
 msgid "Subtraction (``-``)"
 msgstr ""
+"뺄셈(Subtraction ``-``)  "
 
 #: ../../source/behavior/arrays/functions.rst:333
 msgid ":math:`a - b`"
@@ -342,14 +457,19 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:342
 msgid "Multiplication (``*`` and ``.*``)"
 msgstr ""
+"곱셈(Multiplication ``*`` and ``.*``)"
 
 #: ../../source/behavior/arrays/functions.rst:349
 msgid ""
-"There are two types of multiplication operators.  The first is the normal "
-"multiplication operator, ``*``, that follows the usual mathematical "
+"There are two types of multiplication operators.  The first is the normal"
+" multiplication operator, ``*``, that follows the usual mathematical "
 "conventions of linear algebra that matrix-vector products, *etc.*.  The "
 "behavior of the ``*`` operator is summarized in the following table:"
 msgstr ""
+"곱셈 연산자에는 두 가지 유형이 있습니다. "
+"첫 번째는 행렬-벡터 곱 *등* 과 같은 선형 대수의 일반적인 수학적 규칙을 따르는 일반 곱셈 연산자인 ``*`` 입니다. "
+"``*`` 연산자의 동작은 다음 표에 요약되어 있습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:358
 msgid ":math:`a * b`"
@@ -443,9 +563,10 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:371
 msgid ""
 "The second type of multiplication operator is a special element-wise "
-"version, ``.*``, which doesn't perform any summations and simply applies the"
-" operator element-wise to all array elements."
+"version, ``.*``, which doesn't perform any summations and simply applies "
+"the operator element-wise to all array elements."
 msgstr ""
+"곱셈 연산자의 두 번째 유형은 합산을 수행하지 않고 단순히 모든 배열 요소에 연산자를 요소별로 적용하는 특별한 요소별 버전인 ``.*`` 입니다."
 
 #: ../../source/behavior/arrays/functions.rst:378
 msgid ":math:`a` ``.*`` :math:`b`"
@@ -478,13 +599,19 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:387
 msgid "Division (``/`` and ``./``)"
 msgstr ""
+"나눗셈(Division ``/`` and ``./``)"
 
 #: ../../source/behavior/arrays/functions.rst:393
 msgid ""
-"As with :ref:`array-multiplication`, there are two division operators.  The "
-"first is the normal division operator, ``/``, which can be used to divide "
-"arrays by a scalar value.  The following table summarizes its behavior:"
+"As with :ref:`array-multiplication`, there are two division operators.  "
+"The first is the normal division operator, ``/``, which can be used to "
+"divide arrays by a scalar value.  The following table summarizes its "
+"behavior:"
 msgstr ""
+":ref:`array-multiplication` 과 마찬가지로 두 개의 나눗셈 연산자가 있습니다. "
+"첫 번째는 배열을 스칼라 값으로 나누는 데 사용할 수 있는 일반적인 나누기 연산자인 ``/`` 입니다."
+"다음 표에는 이에 대한 동작이 요약되어 있습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:401
 msgid ":math:`a / b`"
@@ -521,9 +648,10 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:407
 msgid ""
-"In addition, there is also an element-wise version of the division operator,"
-" ``./``, whose behavior is summarized in the following table:"
+"In addition, there is also an element-wise version of the division "
+"operator, ``./``, whose behavior is summarized in the following table:"
 msgstr ""
+"또한 요소별 버전의 나눗셈 연산자인 ``./`` 도 있으며, 그 동작은 다음 표에 요약되어 있습니다."
 
 #: ../../source/behavior/arrays/functions.rst:413
 msgid ":math:`a` ``./`` :math:`b`"
@@ -556,22 +684,33 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:420
 msgid "Exponentiation (``^`` and ``.^``)"
 msgstr ""
+"거듭제곱(Exponentiation ``^`` and ``.^``)"
 
 #: ../../source/behavior/arrays/functions.rst:426
 msgid ""
 "As with :ref:`array-multiplication` and :ref:`array-division`, the "
 "exponentiation operator comes in two forms.  The first is the standard "
 "exponentiation operator, ``^``.  The standard version can be used in two "
-"different ways.  The first is to raise one scalar to the power of another "
-"(*i.e.,* :math:`a` ``^`` :math:`b`).  The other is to raise a square matrix "
-"to a scalar power (*i.e.,* :math:`a_{ij}` ``^`` :math:`b`)."
+"different ways.  The first is to raise one scalar to the power of another"
+" (*i.e.,* :math:`a` ``^`` :math:`b`).  The other is to raise a square "
+"matrix to a scalar power (*i.e.,* :math:`a_{ij}` ``^`` :math:`b`)."
 msgstr ""
+":ref:`array-multiplication` 및 :ref:`array-division` 과 마찬가지로 지수 연산자는 두 가지 형태로 제공합니다. "
+"첫 번째는 표준 지수 연산자인 ``^`` 입니다."
+"표준 버전은 두 가지 방법으로 사용할 수 있습니다. "
+
+"첫 번째는 하나의 스칼라를 다른 스칼라의 거듭제곱으로 위에 올려서 쓰는 것이며(*즉,* :math:`a` ``^`` :math:`b`), "
+"다른 하나는 정사각 행렬을 스칼라 거듭제곱으로 위에 올려서 쓰는 것입니다(*즉,* :math:`a_{ij}` ``^`` :math:`b`)."
+
+
 
 #: ../../source/behavior/arrays/functions.rst:434
 msgid ""
-"The other form of exponentiation is the element-wise form indicated with the"
-" ``.^`` operator.  Its behavior is summarized in the following table:"
+"The other form of exponentiation is the element-wise form indicated with "
+"the ``.^`` operator.  Its behavior is summarized in the following table:"
 msgstr ""
+"거듭제곱의 다른 형식은 ``.^`` 연산자로 표시되는 요소별 거듭제곱 형식입니다. "
+"그 동작은 다음 표에 요약되어 있습니다."
 
 #: ../../source/behavior/arrays/functions.rst:441
 msgid ":math:`a` ``.^`` :math:`b`"
@@ -608,101 +747,154 @@ msgstr ""
 #: ../../source/behavior/arrays/functions.rst:450
 msgid "Equality (``=``)"
 msgstr ""
+"등식(Equality ``=``)"
 
 #: ../../source/behavior/arrays/functions.rst:455
 msgid ""
-"The equality operator, ``=`` used to construct equations can be used with "
-"scalars as well as arrays **as long as the left hand side and right hand "
-"side have the same number of dimensions and the sizes of each dimension are "
-"the same**.  Assuming this requirement is met, then the operator is simply "
-"applied element-wise.  This means that the operator is applied between each "
-"element on the left hand side and its counterpart on the right hand side."
+"The equality operator, ``=`` used to construct equations can be used with"
+" scalars as well as arrays **as long as the left hand side and right hand"
+" side have the same number of dimensions and the sizes of each dimension "
+"are the same**.  Assuming this requirement is met, then the operator is "
+"simply applied element-wise.  This means that the operator is applied "
+"between each element on the left hand side and its counterpart on the "
+"right hand side."
 msgstr ""
+"방정식을 구성하는 데 사용하는 등호 연산자는 ``=`` 는 **좌변과 우변의 차원 수가 동일하고 각 차원의 크기가 동일하면** 스칼라 뿐 아니라 벡터에서도 사용할 수 있습니다."
+"이 요구 사항이 충족된다고 가정하면 연산자는 단순히 요소별로 적용됩니다. "
+"이는 왼쪽의 각 요소와 오른쪽의 해당 요소 사이에서 각각 연산자가 적용됨을 의미합니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:465
 msgid "Assignment (``:=``)"
 msgstr ""
+"대입(Assignment ``:=``)"
 
 #: ../../source/behavior/arrays/functions.rst:470
 msgid ""
-"The ``:=`` (assignment) operator is applied in the same element-wise way as "
-"the :ref:`array-equality` operator."
+"The ``:=`` (assignment) operator is applied in the same element-wise way "
+"as the :ref:`array-equality` operator."
 msgstr ""
+"``:=`` (할당) 연산자는 :ref:`array-equality` 연산자와 동일한 요소 방식으로 적용됩니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:474
 msgid "Relational Operators"
 msgstr ""
+"관계 연산자(Relational Operators)"
 
 #: ../../source/behavior/arrays/functions.rst:479
 msgid ""
-"All relational operators (``and``, ``or``, ``not``, ``>``, ``>=``, ``<=``, "
-"``<``) are applied in the same element-wise way as the :ref:`array-equality`"
-" operator."
+"All relational operators (``and``, ``or``, ``not``, ``>``, ``>=``, "
+"``<=``, ``<``) are applied in the same element-wise way as the :ref"
+":`array-equality` operator."
 msgstr ""
+"모든 관계 연산자(``and``, ``or``, ``not``, ``>``, ``>=``, ``<=``, ``< ``)는 :ref:`array-equality` 연산자와 동일한 요소 방식으로 적용됩니다."
 
 #: ../../source/behavior/arrays/functions.rst:484
 msgid "``transpose``"
 msgstr ""
+"전치(``transpose``)"
 
 #: ../../source/behavior/arrays/functions.rst:490
 msgid ""
 "The ``transpose`` function takes a matrix as an argument and returns a "
 "transposed version of that matrix."
 msgstr ""
+"``transpose`` 함수는 행렬을 인수로 취하고 해당 행렬의 전치된 버전을 반환합니다."
 
 #: ../../source/behavior/arrays/functions.rst:494
 msgid "``outerProduct``"
 msgstr ""
+"외적(``outerProduct``)"
 
 #: ../../source/behavior/arrays/functions.rst:500
 msgid ""
-"The ``outerProduct`` function takes two arguments.  Each argument must be a "
-"vector and they must have the same size.  The function returns a matrix "
-"which represents the outer product of the two vectors. Mathematically "
-"speaking, assume :math:`a` and :math:`b` are vectors of the same size.  "
-"Invoking ``outerProduct(a,b)`` will return a matrix, :math:`c`, whose "
-"elements are defined as:"
+"The ``outerProduct`` function takes two arguments.  Each argument must be"
+" a vector and they must have the same size.  The function returns a "
+"matrix which represents the outer product of the two vectors. "
+"Mathematically speaking, assume :math:`a` and :math:`b` are vectors of "
+"the same size.  Invoking ``outerProduct(a,b)`` will return a matrix, "
+":math:`c`, whose elements are defined as:"
+msgstr ""
+"``outerProduct`` 함수는 두 개의 인수를 취하며, 각 인수는 벡터여야 하며 크기가 같아야 합니다. "
+"이 함수는 두 벡터의 외적을 나타내는 행렬을 반환합니다."
+"수학적으로 말하면 :math:`a` 와 :math:`b` 가 같은 크기의 벡터라고 가정합니다. "
+"``outerProduct(a,b)`` 를 호출하면 다음과 같이 요소가 정의된 행렬 :math:`c` 가 반환됩니다."
+
+
+#: ../../source/behavior/arrays/functions.rst:507
+msgid "c_{ij} = a_i * b_j"
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:512
 msgid "``symmetric``"
 msgstr ""
+"대칭(``symmetric``)"
 
 #: ../../source/behavior/arrays/functions.rst:516
 msgid ""
-"The ``symmetric`` function takes a square matrix as an argument.  It returns"
-" a matrix of the same size where all the elements below the diagonal of the "
-"original matrix have been replaced by elements transposed from above the "
-"diagonal.  In other words,"
+"The ``symmetric`` function takes a square matrix as an argument.  It "
+"returns a matrix of the same size where all the elements below the "
+"diagonal of the original matrix have been replaced by elements transposed"
+" from above the diagonal.  In other words,"
+msgstr ""
+"``symmetric`` 함수는 정사각 행렬을 인수로 취합니다. "
+"원래 행렬의 대각선 아래에 있는 모든 요소가 대각선 위에서 전치된 요소로 대체된 동일한 크기의 행렬을 반환합니다. "
+"다시 말해,"
+
+
+#: ../../source/behavior/arrays/functions.rst:521
+msgid ""
+"b_{ij} = \\mathtt{symmetric(a)} = \\left\\{ \\begin{array}{c} a_{ij}\\ \\"
+"  \\mathrm{if}\\ i<=j \\\\ a_{ji}\\ \\  \\mathrm{otherwise} \\end{array} "
+"\\right."
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:531
 msgid "``skew``"
 msgstr ""
+"비대칭(``skew``)"
 
 #: ../../source/behavior/arrays/functions.rst:536
 msgid ""
-"The ``skew`` function takes a vector with three components and returns the "
-"following skew-symmetric matrix:"
+"The ``skew`` function takes a vector with three components and returns "
+"the following skew-symmetric matrix:"
+msgstr ""
+"``skew`` 함수는 세 가지 구성 요소가 있는 벡터를 사용하고 다음과 같은 비대칭 행렬을 반환합니다."
+
+#: ../../source/behavior/arrays/functions.rst:539
+msgid ""
+"\\mathtt{skew(x)} &= \\left[ \\begin{array}{ccc} 0 & -x_3 & x_2 \\\\ x_3 "
+"& 0 & -x_1 \\\\ -x_2 & x_1 & 0 \\end{array} \\right]"
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:550
 msgid "``cross``"
 msgstr ""
+"교차(``cross``)"
 
 #: ../../source/behavior/arrays/functions.rst:555
 msgid ""
 "The ``cross`` function takes two vectors (each with 3 components) and "
 "returns the following vector (with three components):"
 msgstr ""
+"``cross`` 함수는 두 개의 벡터(각각 3개의 구성 요소 포함)를 사용하고 다음 벡터(3개의 구성 요소 포함)를 반환합니다."
+
+#: ../../source/behavior/arrays/functions.rst:558
+msgid ""
+"\\mathtt{cross(x,y)} = \\left\\{ \\begin{array}{c} x_2 y_3 - x_3 y_2 \\\\"
+" x_3 y_1 - x_1 y_3 \\\\ x_1 y_2 - x_2 y_1 \\end{array} \\right\\}"
+msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:569
 msgid "Reduction Operators"
 msgstr ""
+"축소 연산자(Reduction Operators)"
 
 #: ../../source/behavior/arrays/functions.rst:571
 msgid "Reduction operators are ones that reduce arrays down to scalar values."
 msgstr ""
+"축소 연산자는 배열을 스칼라 값으로 줄이는 연산자입니다."
 
 #: ../../source/behavior/arrays/functions.rst:574
 msgid "``min``"
@@ -710,9 +902,12 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:579
 msgid ""
-"The ``min`` function takes an array and returns the smallest value in the "
-"array.  For example:"
+"The ``min`` function takes an array and returns the smallest value in the"
+" array.  For example:"
 msgstr ""
+"``min`` 함수는 배열을 받아 배열에서 가장 작은 값을 반환합니다. "
+"예를 들어:"
+
 
 #: ../../source/behavior/arrays/functions.rst:588
 msgid "``max``"
@@ -723,6 +918,9 @@ msgid ""
 "The ``max`` function takes an array and returns the largest value in the "
 "array.  For example:"
 msgstr ""
+"``max`` 함수는 배열을 받아 배열에서 가장 큰 값을 반환합니다. "
+"예를 들어:"
+
 
 #: ../../source/behavior/arrays/functions.rst:604
 msgid "``sum``"
@@ -730,9 +928,12 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:609
 msgid ""
-"The ``sum`` function takes an array and returns the sum of all elements in "
-"the array.  For example:"
+"The ``sum`` function takes an array and returns the sum of all elements "
+"in the array.  For example:"
 msgstr ""
+"``sum`` 함수는 배열을 받아 배열에 있는 모든 요소의 합을 반환합니다. "
+"예를 들어:"
+
 
 #: ../../source/behavior/arrays/functions.rst:621
 msgid "``product``"
@@ -743,10 +944,14 @@ msgid ""
 "The ``product`` function takes an array and returns the product of all "
 "elements in the array.  For example:"
 msgstr ""
+"``product`` 함수는 배열을 받아 배열에 있는 모든 요소의 곱을 반환합니다. "
+"예를 들어:"
+
 
 #: ../../source/behavior/arrays/functions.rst:635
 msgid "Miscellaneous Functions"
 msgstr ""
+"잡다한 함수(Miscellaneous Functions)"
 
 #: ../../source/behavior/arrays/functions.rst:638
 msgid "``ndims``"
@@ -754,324 +959,255 @@ msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:643
 msgid ""
-"The ``ndims`` function takes an array as its argument and returns the number"
-" of dimensions in that array.  For example:"
+"The ``ndims`` function takes an array as its argument and returns the "
+"number of dimensions in that array.  For example:"
 msgstr ""
-
+"``ndims`` 함수는 배열을 인수로 취하고 해당 배열의 차원 수를 반환합니다. "
+"예를 들어:"
+ 
 #: ../../source/behavior/arrays/functions.rst:652
 msgid "``size``"
 msgstr ""
 
 #: ../../source/behavior/arrays/functions.rst:657
 msgid ""
-"The ``size`` function can be invoked two different ways.  The first way is "
-"with a single argument that is an array.  In this case, ``size`` returns a "
-"vector where each component in the vector corresponds to the size of the "
-"corresponding dimension in the array.  For example:"
+"The ``size`` function can be invoked two different ways.  The first way "
+"is with a single argument that is an array.  In this case, ``size`` "
+"returns a vector where each component in the vector corresponds to the "
+"size of the corresponding dimension in the array.  For example:"
 msgstr ""
+"``size`` 함수는 두 가지 다른 방식으로 호출될 수 있습니다."
+"첫 번째 방법은 배열인 단일 인수를 사용하는 것입니다."
+"이 경우 ``size`` 는 벡터의 각 구성 요소가 배열의 해당 차원 크기에 해당하는 벡터를 반환합니다."
+"예를 들어:"
+
 
 #: ../../source/behavior/arrays/functions.rst:667
 msgid ""
-"It is also possible to call ``size`` with an optional additional argument "
-"indicating a specific dimension number.  In that case, it will return the "
-"size of that specific dimension as a scalar integer. For example,"
+"It is also possible to call ``size`` with an optional additional argument"
+" indicating a specific dimension number.  In that case, it will return "
+"the size of that specific dimension as a scalar integer. For example,"
 msgstr ""
+"특정 차원 번호를 나타내는 선택적 추가 인수로 ``size`` 를 호출하는 것도 가능합니다. 이 경우 해당 특정 차원의 크기를 스칼라 정수로 반환합니다. 예를 들어,"
 
 #: ../../source/behavior/arrays/functions.rst:681
 msgid "Vectorization"
 msgstr ""
+"벡터화(Vectorization)"
+
+
 
 #: ../../source/behavior/arrays/functions.rst:686
 msgid ""
-"In this section, we've discussed the numerous functions in Modelica that are"
-" designed to work with arguments that are arrays.  But a very common use "
-"case is to apply a function element-wise to every element in a vector.  "
-"Modelica supports this use case through a feature called \"vectorization\"."
-"  If a function is designed to take a scalar, but is passed an array "
-"instead, the Modelica compiler will automatically apply that function to "
-"each element in the vector."
+"In this section, we've discussed the numerous functions in Modelica that "
+"are designed to work with arguments that are arrays.  But a very common "
+"use case is to apply a function element-wise to every element in a "
+"vector.  Modelica supports this use case through a feature called "
+"\"vectorization\".  If a function is designed to take a scalar, but is "
+"passed an array instead, the Modelica compiler will automatically apply "
+"that function to each element in the vector."
 msgstr ""
+"이 섹션에서는 배열인 인수와 함께 작동하도록 설계된 모델리카의 수많은 함수에 대해 논의했습니다. "
+"그러나 매우 일반적인 사용 사례는 벡터의 모든 요소에 요소별로 함수를 적용하는 것입니다."
+"모델리카는 "벡터화"라는 기능을 통해 이 사용 사례를 지원합니다. "
+"함수가 스칼라를 사용하도록 설계되었지만 대신 배열이 전달되는 경우 모델리카 컴파일러는 해당 함수를 벡터의 각 요소에 자동으로 적용합니다."
+
+
+
 
 #: ../../source/behavior/arrays/functions.rst:694
 msgid ""
-"To understand how this works, first consider a normal evaluation using the "
-"``abs`` function:"
+"To understand how this works, first consider a normal evaluation using "
+"the ``abs`` function:"
 msgstr ""
+"이것이 어떻게 작동하는지 이해하려면 먼저 ``abs`` 함수를 사용하는 일반 적인 경우를 살펴보면 됩니다. "
 
 #: ../../source/behavior/arrays/functions.rst:701
 msgid ""
-"Obviously, ``abs`` is normally meant to accept a scalar argument and return "
-"a scalar.  But in Modelica, we can also do this:"
+"Obviously, ``abs`` is normally meant to accept a scalar argument and "
+"return a scalar.  But in Modelica, we can also do this:"
 msgstr ""
+"분명히 ``abs`` 는 일반적으로 스칼라 인수를 받아들이고 스칼라를 반환하는 것을 의미합니다. "
+"그러나 모델리카에서는 다음과 같이 할 수도 있습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:708
 msgid ""
 "Since this function is designed for scalar, the Modelica compiler will "
 "transform:"
 msgstr ""
+"이 함수는 스칼라용으로 설계되었으므로 모델리카 컴파일러는 다음을 변환합니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:715
 #: ../../source/behavior/arrays/functions.rst:746
 msgid "into"
 msgstr ""
+"내부에서는 아래와 같이 동작 합니다."
 
 #: ../../source/behavior/arrays/functions.rst:721
 msgid ""
-"In other words, it transforms the function applies to a vector of scalars "
-"into a vector a functions applied to scalar."
+"In other words, it transforms the function applies to a vector of scalars"
+" into a vector a functions applied to scalar."
 msgstr ""
+"즉, 스칼라로 구성되어 있는 벡터에 적용되는 함수를 각각의 스칼라에 함수가 적용된 벡터로 변환합니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:724
 msgid ""
-"**This feature also works functions that take multiple arguments** as long "
-"as only **one** of the expected scalar arguments is a vector.  To understand"
-" this slightly more complex functionality, consider the modulo function, "
-"``mod``.  If applied to scalar arguments we get the following behavior:"
+"**This feature also works functions that take multiple arguments** as "
+"long as only **one** of the expected scalar arguments is a vector.  To "
+"understand this slightly more complex functionality, consider the modulo "
+"function, ``mod``.  If applied to scalar arguments we get the following "
+"behavior:"
 msgstr ""
+"이 기능은 예상 스칼라 인수 중 **하나** 만 벡터인 경우 여러 인수를 사용하는 함수에서도 작동합니다."
+"이 약간 더 복잡한 기능을 이해하려면 modulo 함수인 ``mod`` 를 생각해 보면 됩니다."
+"이를 스칼라 인수에 적용하면 다음과 같이 동작 합니다. "
+
 
 #: ../../source/behavior/arrays/functions.rst:734
 msgid "If we turn the first argument into a vector, we get:"
 msgstr ""
+"첫 번째 인수를 벡터로 변환하면 다음과 같은 결과를 얻습니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:740
 msgid "In other words, it transforms:"
 msgstr ""
+"즉, 다음과 같이 변환 됩니다."
 
 #: ../../source/behavior/arrays/functions.rst:752
 msgid ""
 "However, this vectorization does **not** apply if more than one scalar "
-"arguments is presented as a vector.  For example, the following expression "
-"will be an error:"
+"arguments is presented as a vector.  For example, the following "
+"expression will be an error:"
 msgstr ""
+"그러나 이 벡터화는 둘 이상의 스칼라 인수가 벡터로 표시되는 경우 적용되지 **않습니다**. "
+"예를 들어 다음 식은 오류가 됩니다."
+
 
 #: ../../source/behavior/arrays/functions.rst:760
 msgid ""
-"because ``mod`` expects two scalar arguments, but it was passed two vector "
-"arguments."
+"because ``mod`` expects two scalar arguments, but it was passed two "
+"vector arguments."
 msgstr ""
+"``mod`` 는 두 개의 스칼라 인수를 예상하지만 두 개의 벡터 인수가 전달되었기 때문입니다. "
 
-#: ../../source/behavior/arrays/functions.rst:28
-#: ../../source/behavior/arrays/functions.rst:29
-msgid "fill"
-msgstr ""
+#~ msgid "fill"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:29
-#: ../../source/behavior/arrays/functions.rst:68
-#: ../../source/behavior/arrays/functions.rst:84
-#: ../../source/behavior/arrays/functions.rst:110
-#: ../../source/behavior/arrays/functions.rst:142
-#: ../../source/behavior/arrays/functions.rst:172
-#: ../../source/behavior/arrays/functions.rst:206
-#: ../../source/behavior/arrays/functions.rst:234
-#: ../../source/behavior/arrays/functions.rst:268
-#: ../../source/behavior/arrays/functions.rst:487
-#: ../../source/behavior/arrays/functions.rst:497
-#: ../../source/behavior/arrays/functions.rst:514
-#: ../../source/behavior/arrays/functions.rst:534
-#: ../../source/behavior/arrays/functions.rst:553
-#: ../../source/behavior/arrays/functions.rst:577
-#: ../../source/behavior/arrays/functions.rst:591
-#: ../../source/behavior/arrays/functions.rst:607
-#: ../../source/behavior/arrays/functions.rst:624
-#: ../../source/behavior/arrays/functions.rst:641
-#: ../../source/behavior/arrays/functions.rst:655
-#: ../../source/behavior/arrays/functions.rst:684
-msgid "functions"
-msgstr ""
+#~ msgid "functions"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:67
-#: ../../source/behavior/arrays/functions.rst:68
-msgid "zeros"
-msgstr ""
+#~ msgid "zeros"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:83
-#: ../../source/behavior/arrays/functions.rst:84
-msgid "ones"
-msgstr ""
+#~ msgid "ones"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:109
-#: ../../source/behavior/arrays/functions.rst:110
-msgid "identity"
-msgstr ""
+#~ msgid "identity"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:141
-#: ../../source/behavior/arrays/functions.rst:142
-msgid "diagonal"
-msgstr ""
+#~ msgid "diagonal"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:171
-#: ../../source/behavior/arrays/functions.rst:172
-msgid "linspace"
-msgstr ""
+#~ msgid "linspace"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:205
-#: ../../source/behavior/arrays/functions.rst:206
-msgid "scalar"
-msgstr ""
+#~ msgid "scalar"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:233
-#: ../../source/behavior/arrays/functions.rst:234
-#: ../../source/behavior/arrays/functions.rst:311
-#: ../../source/behavior/arrays/functions.rst:327
-#: ../../source/behavior/arrays/functions.rst:345
-#: ../../source/behavior/arrays/functions.rst:390
-#: ../../source/behavior/arrays/functions.rst:423
-#: ../../source/behavior/arrays/functions.rst:453
-#: ../../source/behavior/arrays/functions.rst:468
-msgid "vector"
-msgstr ""
+#~ msgid "vector"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:267
-#: ../../source/behavior/arrays/functions.rst:268
-#: ../../source/behavior/arrays/functions.rst:312
-#: ../../source/behavior/arrays/functions.rst:328
-#: ../../source/behavior/arrays/functions.rst:346
-#: ../../source/behavior/arrays/functions.rst:391
-#: ../../source/behavior/arrays/functions.rst:424
-#: ../../source/behavior/arrays/functions.rst:488
-msgid "matrix"
-msgstr ""
+#~ msgid "matrix"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:310
-#: ../../source/behavior/arrays/functions.rst:326
-#: ../../source/behavior/arrays/functions.rst:344
-#: ../../source/behavior/arrays/functions.rst:389
-#: ../../source/behavior/arrays/functions.rst:422
-#: ../../source/behavior/arrays/functions.rst:452
-#: ../../source/behavior/arrays/functions.rst:467
-#: ../../source/behavior/arrays/functions.rst:476
-msgid "arrays"
-msgstr ""
+#~ msgid "arrays"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:310
-msgid "mathematical operations; addition"
-msgstr ""
+#~ msgid "mathematical operations; addition"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:311
-#: ../../source/behavior/arrays/functions.rst:312
-msgid "addition"
-msgstr ""
+#~ msgid "addition"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:326
-msgid "mathematical operations; subtraction"
-msgstr ""
+#~ msgid "mathematical operations; subtraction"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:327
-#: ../../source/behavior/arrays/functions.rst:328
-msgid "subtraction"
-msgstr ""
+#~ msgid "subtraction"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:344
-msgid "mathematical operations; multiplication"
-msgstr ""
+#~ msgid "mathematical operations; multiplication"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:345
-#: ../../source/behavior/arrays/functions.rst:346
-msgid "multiplication"
-msgstr ""
+#~ msgid "multiplication"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:347
-msgid "matrix-vector products"
-msgstr ""
+#~ msgid "matrix-vector products"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:389
-msgid "mathematical operations; division"
-msgstr ""
+#~ msgid "mathematical operations; division"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:390
-#: ../../source/behavior/arrays/functions.rst:391
-msgid "division"
-msgstr ""
+#~ msgid "division"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:422
-msgid "mathematical operations; exponentiation"
-msgstr ""
+#~ msgid "mathematical operations; exponentiation"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:423
-#: ../../source/behavior/arrays/functions.rst:424
-msgid "exponentiation"
-msgstr ""
+#~ msgid "exponentiation"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:452
-#: ../../source/behavior/arrays/functions.rst:453
-msgid "equations"
-msgstr ""
+#~ msgid "equations"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:467
-#: ../../source/behavior/arrays/functions.rst:468
-msgid "assignment"
-msgstr ""
+#~ msgid "assignment"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:476
-#: ../../source/behavior/arrays/functions.rst:477
-msgid "relational operators"
-msgstr ""
+#~ msgid "relational operators"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:477
-#: ../../source/behavior/arrays/functions.rst:498
-msgid "vectors"
-msgstr ""
+#~ msgid "vectors"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:486
-#: ../../source/behavior/arrays/functions.rst:487
-#: ../../source/behavior/arrays/functions.rst:488
-msgid "transpose"
-msgstr ""
+#~ msgid "transpose"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:496
-#: ../../source/behavior/arrays/functions.rst:498
-msgid "outer product"
-msgstr ""
+#~ msgid "outer product"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:497
-msgid "outerProduct"
-msgstr ""
+#~ msgid "outerProduct"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:514
-msgid "symmetric"
-msgstr ""
+#~ msgid "symmetric"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:533
-#: ../../source/behavior/arrays/functions.rst:534
-msgid "skew"
-msgstr ""
+#~ msgid "skew"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:552
-#: ../../source/behavior/arrays/functions.rst:553
-msgid "cross"
-msgstr ""
+#~ msgid "cross"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:576
-#: ../../source/behavior/arrays/functions.rst:577
-msgid "min (vector)"
-msgstr ""
+#~ msgid "min (vector)"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:590
-#: ../../source/behavior/arrays/functions.rst:591
-msgid "max (vector)"
-msgstr ""
+#~ msgid "max (vector)"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:606
-#: ../../source/behavior/arrays/functions.rst:607
-msgid "sum"
-msgstr ""
+#~ msgid "sum"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:623
-#: ../../source/behavior/arrays/functions.rst:624
-msgid "product"
-msgstr ""
+#~ msgid "product"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:640
-#: ../../source/behavior/arrays/functions.rst:641
-msgid "ndims"
-msgstr ""
+#~ msgid "ndims"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:654
-#: ../../source/behavior/arrays/functions.rst:655
-msgid "size"
-msgstr ""
+#~ msgid "size"
+#~ msgstr ""
 
-#: ../../source/behavior/arrays/functions.rst:683
-#: ../../source/behavior/arrays/functions.rst:684
-msgid "vectorization"
-msgstr ""
+#~ msgid "vectorization"
+#~ msgstr ""
+

@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/components.rst:4
 msgid "Components"
 msgstr ""
+"컴포넌트(Components)"
 
 #: ../../source/components/components.rst:6
 msgid ""
@@ -21,6 +24,9 @@ msgid ""
 "approach that it enables.  As such, how to build such component models is "
 "probably the single most important topic to cover in this book."
 msgstr ""
+"대부분의 사람들은 모델리카를 생각할 때, 모델리카로 구현가능한 구성 요소를 중심으로 하는 접근 방식을 생각합니다. "
+"따라서 구성 요소 모델을 구축하는 방법은 아마도 이 책에서 다루는 내용중 가장 중요한 주제일 것 입니다."
+
 
 #: ../../source/components/components.rst:11
 msgid ""
@@ -31,11 +37,18 @@ msgid ""
 "tested, the same code can be used over and over.  This kind of reuse saves "
 "development time, avoids errors and simplifies maintenance."
 msgstr ""
+"지금까지  주로 수학적 동작(연속 및 불연속 모두)을 설명하는 방법에 중점을 두었다면,"
+"이제 부터는 해당 동작을 재사용 가능한 구성 요소 모델로 래핑할 수 있는 방법을 이해할 때입니다."
+"구성 요소 모델이 재사용 가능하다는 사실은 일단 작성되고 테스트되면 동일한 코드를 반복해서 사용할 수 있음을 의미합니다."
+"이와같은 종류의 재사용은 개발 시간을 절약하고 오류를 방지하며 유지 관리를 단순화합니다."
+
 
 #: ../../source/components/components.rst:20
 msgid "Examples"
 msgstr ""
+"예제(Examples)"
 
 #: ../../source/components/components.rst:35
 msgid "Review"
 msgstr ""
+"리뷰(Review)"

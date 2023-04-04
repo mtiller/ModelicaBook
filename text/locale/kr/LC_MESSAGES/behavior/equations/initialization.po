@@ -1,220 +1,361 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/equations/initialization.rst:5
 msgid "Initialization"
 msgstr ""
+"초기화(Initialization)"
 
 #: ../../source/behavior/equations/initialization.rst:8
 msgid "Overview"
 msgstr ""
+"개요(Overview)"
 
 #: ../../source/behavior/equations/initialization.rst:12
 msgid ""
 "As we already touched on during our previous discussion on :ref:`steady-"
-"state`, behavior is represented by both the equations contained in a model "
-"as well as the initial conditions given to the state variables in the model."
-"  In Modelica, the initial conditions are computed by combining the normal "
-"equations (present in `equation` sections) with any initial equations "
-"(present in `initial equation` sections)."
+"state`, behavior is represented by both the equations contained in a "
+"model as well as the initial conditions given to the state variables in "
+"the model.  In Modelica, the initial conditions are computed by combining"
+" the normal equations (present in `equation` sections) with any initial "
+"equations (present in `initial equation` sections)."
 msgstr ""
+"이전의 :ref:`steady-state` 논의에서 이미 다루었듯이, 거동은 모델에 포함된 방정식과 모델의 상태 변수에 주어진 초기 조건으로 표현됩니다. "
+"모델리카에서 초기 조건은 일반 방정식(`방정식` 섹션에 있음)과 초기 방정식(`초기 방정식` 섹션에 있음)을 결합하여 계산합니다."
+
 
 #: ../../source/behavior/equations/initialization.rst:23
 msgid ""
 "One of the first sources of confusion for new users is understanding how "
 "many initial conditions are required.  The answer to this question is "
-"simple.  In order to have a well-posed initialization problem (one where we "
-"don't have too many or too few initial equations), we need to have the same "
-"number of equations in the `initial equation` sections as we have states in "
-"our system.  **Note**, we can get away with having too few, because tools "
-"can augment the initial equations we provide with additional ones until the "
-"problem is well-posed, but we cannot solve a problem where we have too many "
-"initial equations."
+"simple.  In order to have a well-posed initialization problem (one where "
+"we don't have too many or too few initial equations), we need to have the"
+" same number of equations in the `initial equation` sections as we have "
+"states in our system.  **Note**, we can get away with having too few, "
+"because tools can augment the initial equations we provide with "
+"additional ones until the problem is well-posed, but we may not be able "
+"to solve a problem where we have too many initial equations (since this "
+"depends on the tools ability to recognize and eliminate redundant "
+"equations and different tools provide different levels of support for "
+"this)."
 msgstr ""
+"처음 사용하는 사람들이 많이 혼란스러워 하는 첫번 째 요소는 필요한 초기 조건의 수를 이해하는 것입니다. "
+"사실, 이 질문에 대한 답은 간단합니다. "
+'제대로 초기화가 된 문제(초기 방정식이 너무 많거나 너무 적지 않은 문제)를 갖기 위해서는 시스템에 상태가 있는 것처럼 `초기 방정식` 섹션에 동일한 수의 방정식이 있어야 합니다. "
+"**참고로**, 문제에 대해서 제대로 초기화 될 때 까지 시뮬레이션 소프트웨어가 추가 방정식으로 제공하는 초기 방정식을 보강할 수 있기 때문에 너무 적게 사용하는 경우에는 문제가 해결될 수 도 있지만,"
+"너무 많은 초기 방정식을 선언한 경우에는 문제를 해결하지 못할 수도 있습니다(이는 중복 방정식을 인식하고 제거하는 도구 기능에 따라 다르며 다른 도구는 이를 위한 다양한 수준의 지원을 제공하기 때문입니다). "
 
-#: ../../source/behavior/equations/initialization.rst:33
+
+
+
+#: ../../source/behavior/equations/initialization.rst:35
 msgid ""
 "Of course, saying the number of initial equations has to be equal to the "
-"number of states answers one question, but quickly creates another, *i.e.,* "
-"*how do we determine how many states there are*?  For the models we've seen "
-"in this chapter, the answer is quite simple.  The states in each of our "
-"examples so far are the variables that appear inside the ``der(...)`` "
-"operator.  In other words, every variable that we differentiated in those "
-"examples is a state."
+"number of states answers one question, but quickly creates another, "
+"*i.e.,* *how do we determine how many states there are*?  For the models "
+"we've seen in this chapter, the answer is quite simple.  The states in "
+"each of our examples so far are the variables that appear inside the "
+"``der(...)`` operator.  In other words, every variable that we "
+"differentiated in those examples is a state."
 msgstr ""
+"물론, 초기 방정식의 수가 상태의 수와 같아야 한다고 질문 대해 답했지만, 다시 의문이 생깁니다. *즉,* *얼마나 많은 상태가 있는지 어떻게 결정 하는가? 입니다.*"
+"이 장에서 살펴 본 모델의 경우는 대답이 매우 간단합니다. "
+"지금까지 각 예제에서 상태는 ``der(...)`` 연산자 내부에 나타나는 변수 였습니다. "
+"즉, 앞서 예제에서는 구별한 모든 변수가 상태였습니다."
 
-#: ../../source/behavior/equations/initialization.rst:44
-msgid "Ordinary Differential Equations"
-msgstr ""
 
 #: ../../source/behavior/equations/initialization.rst:46
+msgid "Ordinary Differential Equations"
+msgstr ""
+"상미분 방정식(Ordinary Differential Equations)"
+
+#: ../../source/behavior/equations/initialization.rst:48
 msgid ""
-"It is important to note that **it will not always be the case** that every "
-"variable that we differentiate will be a state.  In this chapter, all the "
-"models we have seen so far are ordinary differential equations (ODEs).  When"
-" dealing with ODEs, every differentiated variable is a state, which, in "
-"turn, means that you need an initial equation for each of these "
-"differentiated variables.  But in subsequent chapters we will eventually run"
-" across examples that are so-called differential-algebraic equations (DAEs)."
-"  In those cases, only *some* of the differentiated variables can be "
-"considered states."
+"It is important to note that **it will not always be the case** that "
+"every variable that we differentiate will be a state.  In this chapter, "
+"all the models we have seen so far are ordinary differential equations "
+"(ODEs).  When dealing with ODEs, every differentiated variable is a "
+"state, which, in turn, means that you need an initial equation for each "
+"of these differentiated variables.  But in subsequent chapters we will "
+"eventually run across examples that are so-called differential-algebraic "
+"equations (DAEs).  In those cases, only *some* of the differentiated "
+"variables can be considered states."
+msgstr ""
+"미분하는 모든 변수가 상태가 된다는 것이  **항상 그런 것은 아니다 라는** 는 점에 유의하는 것이 중요합니다. "
+"이 장에서 지금까지 본 모든 모델은 상미분 방정식(ODE)입니다. "
+"ODE를 다룰 때 모든 미분 변수는 상태이며, 이는 차례로 이러한 각 미분 변수에 대한 초기 방정식이 필요함을 의미합니다. "
+"그러나 뒤에서 다룰 장에서  결국 소위 미분 대수 방정식(DAE)이라는 예를 접하게 될 것입니다. "
+"이러한 경우 미분 변수 중 *일부* 만 상태로 간주될 수 있습니다."
+
+
+#: ../../source/behavior/equations/initialization.rst:58
+msgid ""
+"As it turns out, understanding initialization doesn't really require us "
+"to get into a detailed discussion about DAEs.  In practice, all Modelica "
+"tools perform something called \"index reduction\".  While the index "
+"reduction algorithms themselves are fairly complicated (so we won't get "
+"into those now), the effect is quite simple.  Index reduction transforms "
+"the DAEs into ODEs.  In other words, Modelica compilers will transform "
+"whatever DAE problem contained in our Modelica code into this relatively "
+"easy to explain ODE form."
+msgstr ""
+"사실 알고 보면, 초기화를 이해하기 위해 DAE에 대해 자세히 논의할 필요는 없습니다. "
+"실제로 모든 모델리카 시뮬레이션 소프트웨어는 "인덱스 축소(index reduction)"라는 작업을 수행합니다. "
+"인덱스 축소 알고리즘 자체는 상당히 복잡하지만(그래서 지금은 다루지 않겠습니다) 그 효과는 매우 간단합니다. "
+"인덱스 감소는 DAE를 ODE로 변환합니다. "
+
+#: ../../source/behavior/equations/initialization.rst:67
+msgid ""
+"So let's side-step the discussion about DAEs and index reduction and just"
+" pick up our discussion of initialization assuming our problem has "
+"already been reduced to an ODE.  In this case, the only thing we really "
+"need to understand is that initialization is required for all states in "
+"the model and that our model will have the following general ODE form:"
+msgstr ""
+"즉, 모델리카 컴파일러는 모델리카 코드에 포함된 모든 DAE 문제를 상대적으로 설명하기 쉬운 ODE 형식으로 변환 합니다."
+", DAE 및 인덱스 축소에 대한 논의는 건너뛰고 문제가 이미 ODE로 축소되었다고 가정하고 초기화에 대한 논의를 시작하겠습니다. "
+"이 경우, 정말로 이해해야 할 유일한 것은 모델의 모든 상태에 대해 초기화가 필요하고 모델이 다음과 같은 일반적인 ODE 형식을 갖게 된다는 것입니다."
+
+
+#: ../../source/behavior/equations/initialization.rst:74
+msgid ""
+"\\dot{\\vec{x}}(t) &= \\vec{f}(\\vec{x}(t), \\vec{u}(t), t) \\\\ "
+"\\vec{y}(t) &= \\vec{g}(\\vec{x}(t), \\vec{u}(t), t)"
 msgstr ""
 
-#: ../../source/behavior/equations/initialization.rst:56
+#: ../../source/behavior/equations/initialization.rst:80
 msgid ""
-"As it turns out, understanding initialization doesn't really require us to "
-"get into a detailed discussion about DAEs.  In practice, all Modelica tools "
-"perform something called \"index reduction\".  While the index reduction "
-"algorithms themselves are fairly complicated (so we won't get into those "
-"now), the effect is quite simple.  Index reduction transforms the DAEs into "
-"ODEs.  In other words, Modelica compilers will transform whatever DAE "
-"problem contained in our Modelica code into this relatively easy to explain "
-"ODE form."
+"where :math:`t` is the current simulation time, :math:`\\vec{x}(t)` are "
+"the values of the states in our system at time :math:`t`, "
+":math:`\\vec{u}(t)` are the values of any external inputs to our system "
+"at time :math:`t`."
+msgstr ""
+"여기서 :math:`t` 는 현재 시뮬레이션 시간이고, :math:`\vec{x}(t)` 는 시간 :math:`t` 에서 우리 시스템의 상태 값입니다. "
+":math:`\vec{u}(t)` 는 시간 :math:`t` 에서 시스템에 대한 모든 외부 입력 값입니다."
+
+#: ../../source/behavior/equations/initialization.rst:85
+msgid ""
+"Note that the arrow over a variable simply indicates that it is a vector,"
+" not a scalar.  Also note that the only variable that appears "
+"differentiated in this problem is :math:`\\vec{x}`.  This is how we know "
+"that :math:`\\vec{x}` represents the states in the system.  One final "
+"thing to note about this system is that neither function, "
+":math:`\\vec{f}` nor :math:`\\vec{g}`, depends on :math:`\\vec{y}`."
+msgstr ""
+"변수 위의 화살표는 단순히 변수가 스칼라가 아니라 벡터임을 나타냅니다. "
+"또한 이 문제에서 미분항으로 나타나는 유일한 변수는 :math:`\vec{x}` 입니다. "
+"이를 통해 :math:`\vec{x}` 가 시스템의 상태를 나타낸다는 것을 알 수 있습니다. "
+"이 시스템에 대해 주목해야 할 마지막 사항은 :math:`\vec{f}` 또는  :math:`\vec{g}`  함수가 모두  :math:`\vec{y}` 에 의존하지 않는다는 것입니다."
+
+
+#: ../../source/behavior/equations/initialization.rst:92
+msgid ""
+"If you think about it, both :math:`t` and :math:`\\vec{u}(t)` are "
+"external to our system.  We don't compute them or control them.  The "
+"reason that we call :math:`\\vec{x}` the state of our system is that it "
+"the only information (from within our system) needed to compute "
+":math:`\\dot{\\vec{x}}(t)` and :math:`\\vec{y}(t)` (which, in turn, are "
+"the only things we need to compute in order to arrive at a solution)."
+msgstr ""
+"생각해 보면 :math:`t` 및  :math:`\vec{u}(t)` 둘 다 우리 시스템 외부에 있습니다."
+"그것들을 계산하거나 제어하지 않습니다."
+":math:`\vec{x}` 를 우리 시스템의 상태라고 부르는 이유는 그것이 (우리 시스템 내에서) :math:`\dot{\vec{x}}(t)` 및 :math:`\vec{y}(t)` 를 계산하는 데 필요한 유일한 정보이기 때문입니다. "
+"(결과적으로 해에 도달하기 위해 계산해야 하는 유일한 것입니다)."
+
+
+#: ../../source/behavior/equations/initialization.rst:99
+msgid ""
+"Getting back to the topic of initialization, during a normal time step we"
+" will solve for :math:`\\vec{x}(t)` by integrating "
+":math:`\\dot{\\vec{x}}(t)` to compute :math:`\\vec{x}(t)`.  In other "
+"words:"
+msgstr ""
+"초기화 주제로 돌아가서, 정상 상태에서의 시간 동안 :math:`\vec{x}(t)` 를 계산하고  :math:`\dot{\vec{x}}(t)` 를 적분하여 :math:`\vec{x}(t)` 에 대해 문제 풀 수 있습니다. "
+"다시 말해 아래 수식과 같습니다."
+
+
+#: ../../source/behavior/equations/initialization.rst:104
+msgid ""
+"\\vec{x}(T) = \\int_{t_i}^{T} \\dot{\\vec{x}}(t) \\  \\mathrm{d}t +  "
+"\\vec{x}(t_i)"
 msgstr ""
 
-#: ../../source/behavior/equations/initialization.rst:65
+#: ../../source/behavior/equations/initialization.rst:108
 msgid ""
-"So let's side-step the discussion about DAEs and index reduction and just "
-"pick up our discussion of initialization assuming our problem has already "
-"been reduced to an ODE.  In this case, the only thing we really need to "
-"understand is that initialization is required for all states in the model "
-"and that our model will have the following general ODE form:"
+"This all works as long as there **was** a previous time step.  When there"
+" wasn't a previous time step, then the value of :math:`\\vec{x}` that we "
+"plug into our equations has to be the very first value of "
+":math:`\\vec{x}` in our simulation.  In other words, our initial "
+"conditions."
+msgstr ""
+"이 모든 계산은 이전 시간 단계가 **있는** 동안은 작동 합니다."
+"반면에, 이전 시간 단계가 없을 때 시뮬레이션에서 방정식에 연결하는 :math:`\vec{x}` 의 값은 방정식의 첫 번째 값인 :math:`\vec{x}` 여야 합니다. "
+"즉, 초기 조건입니다.     "
+
+
+
+#: ../../source/behavior/equations/initialization.rst:114
+msgid ""
+"One might imagine that we would specify our initial conditions by adding "
+"an equation like this:"
+msgstr ""
+"다음과 같은 방정식을 추가하여 초기 조건을 지정한다고 상상할 수 있습니다."
+
+#: ../../source/behavior/equations/initialization.rst:117
+msgid "\\vec{x}(t_0) = \\vec{x}_0"
 msgstr ""
 
-#: ../../source/behavior/equations/initialization.rst:78
+#: ../../source/behavior/equations/initialization.rst:121
 msgid ""
-"where :math:`t` is the current simulation time, :math:`\\vec{x}(t)` are the "
-"values of the states in our system at time :math:`t`, :math:`\\vec{u}(t)` "
-"are the values of any external inputs to our system at time :math:`t`."
+"where :math:`t_0` is the start time of our simulation and "
+":math:`\\vec{x}_0` is an explicit specification of the initial values. "
+"Providing explicit values for states is a very common case when "
+"specifying initial conditions.  So we definitely need to be able to "
+"handle this case.  But this approach won't work for the cases we showed "
+"in :ref:`steady-state`.  There we didn't provide explicit initial values "
+"for states.  Instead, we provided initial values for "
+":math:`\\dot{\\vec{x}}(t_0)`.  So how can we capture both of these cases?"
 msgstr ""
+"여기서 :math:`t_0` 은 시뮬레이션의 시작 시간이고 :math:`\vec{x}_0` 은 초기 값의 명시적 사양입니다. "
+"상태에 대한 명시적 값을 제공하는 것은 초기 조건을 지정할 때 매우 일반적인 경우이기 때문에 확실히 이러한 형태의 초기화를 처리할 수 있어야 합니다. "
+"그러나 이 접근 방식은 :ref:`steady-state` 보여준 예시에서는 적용할 수 없습니다. "
+"이때는 상태에 대한 명시적인 초기 값을 제공하지 않았기 때문입니다."
+"대신 :math:`\dot{\vec{x}}(t_0)` 에 대한 초기 값을 제공했습니다. "
+"그렇다면 이 두 가지 경우를 모두 만족 하려면 어떻게 해야 할까요?"
 
-#: ../../source/behavior/equations/initialization.rst:83
-msgid ""
-"Note that the arrow over a variable simply indicates that it is a vector, "
-"not a scalar.  Also note that the only variable that appears differentiated "
-"in this problem is :math:`\\vec{x}`.  This is how we know that "
-":math:`\\vec{x}` represents the states in the system.  One final thing to "
-"note about this system is that neither function, :math:`\\vec{f}` nor "
-":math:`\\vec{g}`, depends on :math:`\\vec{y}`."
-msgstr ""
-
-#: ../../source/behavior/equations/initialization.rst:90
-msgid ""
-"If you think about it, both :math:`t` and :math:`\\vec{u}(t)` are external "
-"to our system.  We don't compute them or control them.  The reason that we "
-"call :math:`\\vec{x}` the state of our system is that it the only "
-"information (from within our system) needed to compute "
-":math:`\\dot{\\vec{x}}(t)` and :math:`\\vec{y}(t)` (which, in turn, are the "
-"only things we need to compute in order to arrive at a solution)."
-msgstr ""
-
-#: ../../source/behavior/equations/initialization.rst:97
-msgid ""
-"Getting back to the topic of initialization, during a normal time step we "
-"will solve for :math:`\\vec{x}(t)` by integrating :math:`\\dot{\\vec{x}}(t)`"
-" to compute :math:`\\vec{x}(t)`.  In other words:"
-msgstr ""
-
-#: ../../source/behavior/equations/initialization.rst:106
-msgid ""
-"This all works as long as there **was** a previous time step.  When there "
-"wasn't a previous time step, then the value of :math:`\\vec{x}` that we plug"
-" into our equations has to be the very first value of :math:`\\vec{x}` in "
-"our simulation.  In other words, our initial conditions."
-msgstr ""
-
-#: ../../source/behavior/equations/initialization.rst:112
-msgid ""
-"One might imagine that we would specify our initial conditions by adding an "
-"equation like this:"
-msgstr ""
-
-#: ../../source/behavior/equations/initialization.rst:119
-msgid ""
-"where :math:`t_0` is the start time of our simulation and :math:`\\vec{x}_0`"
-" is an explicit specification of the initial values. Providing explicit "
-"values for states is a very common case when specifying initial conditions."
-"  So we definitely need to be able to handle this case.  But this approach "
-"won't work for the cases we showed in :ref:`steady-state`.  There we didn't "
-"provide explicit initial values for states.  Instead, we provided initial "
-"values for :math:`\\dot{\\vec{x}}(t_0)`.  So how can we capture both of "
-"these cases?"
-msgstr ""
-
-#: ../../source/behavior/equations/initialization.rst:130
-msgid "Initial Equations"
-msgstr ""
 
 #: ../../source/behavior/equations/initialization.rst:132
+msgid "Initial Equations"
+msgstr ""
+"초기 방정식(Initial Equations)"
+
+#: ../../source/behavior/equations/initialization.rst:134
 msgid ""
-"The answer is to assume that at the start of our simulation we need to solve"
-" a problem that looks like this:"
+"The answer is to assume that at the start of our simulation we need to "
+"solve a problem that looks like this:"
+msgstr ""
+"질문에 대한,  답은 시뮬레이션 시작 시 다음과 같은 문제를 해결해야 한다고 가정하는 것입니다."
+
+#: ../../source/behavior/equations/initialization.rst:137
+msgid ""
+"\\dot{\\vec{x}}(t_0) &= \\vec{f}(\\vec{x}(t_0), \\vec{u}(t_0), t_0) \\\\ "
+"\\vec{y}(t_0) &= \\vec{g}(\\vec{x}(t_0), \\vec{u}(t_0), t_0) \\\\ "
+"\\vec{0} &= \\vec{h}(\\vec{x}(t_0), \\dot{\\vec{x}}(t_0), \\vec{u}(t_0), "
+"t_0)"
 msgstr ""
 
-#: ../../source/behavior/equations/initialization.rst:141
+#: ../../source/behavior/equations/initialization.rst:143
 msgid ""
 "Note the introduction of a new function, :math:`\\vec{h}`.  This new "
 "function represents any equations we have placed in `initial equation` "
 "sections.  The fact that :math:`\\vec{h}` takes both :math:`\\vec{x}` "
 "**and** :math:`\\dot{\\vec{x}}` as arguments allows us to express a wide "
-"range of initial conditions.  To define explicit initial values for states, "
-"we could define :math:`\\vec{h}` as:"
+"range of initial conditions.  To define explicit initial values for "
+"states, we could define :math:`\\vec{h}` as:"
 msgstr ""
-
-#: ../../source/behavior/equations/initialization.rst:152
+"새로운 함수인 :math:`\vec{h}` 의 도입에 하겠습니다. "
+"이 새로 도입된 함수는 `initial equation` 섹션에 배치한 모든 방정식을 나타냅니다. "
+":math:`\vec{h}` 가 :math:`\vec{x}` **와** :math:`\dot{\vec{x}}` 를 인수로 취한다는 사실은 다음과 같이 넓은 영역에서의 초기화로 표현할 수 있습니다. "
+"다양한 초기 조건의 상태에 대한 명시적인 초기 값을 정의하려면 :math:`\vec{h}` 를 다음과 같이 정의할 수 있습니다."
+ 
+#: ../../source/behavior/equations/initialization.rst:150
 msgid ""
-"But we could also express our desire to start with a steady state solution "
-"by defining :math:`\\vec{h}` as:"
+"\\vec{h}(\\vec{x}(t_0), \\dot{\\vec{x}}(t_0), \\vec{u}(t_0), t_0) = "
+"\\vec{x}(t_0)-\\vec{x}_0"
 msgstr ""
 
-#: ../../source/behavior/equations/initialization.rst:159
+#: ../../source/behavior/equations/initialization.rst:154
 msgid ""
-"And, of course, we could mix these different forms or use a wide range of "
-"other forms on a per state basis to describe our initial conditions.  So "
-"when writing initial equations, all you need to keep in mind is that they "
-"need to be of the general form shown above and that you cannot have more of "
-"them than you have states in your system."
+"But we could also express our desire to start with a steady state "
+"solution by defining :math:`\\vec{h}` as:"
+msgstr ""
+"하지만 :math:`\vec{h}` 를 다음과 같이 정의하여 정상 상태 해로 시작하려는 의도에 맞춰 표현할 수도 있습니다."
+
+#: ../../source/behavior/equations/initialization.rst:157
+msgid ""
+"\\vec{h}(\\vec{x}(t_0), \\dot{\\vec{x}}(t_0), \\vec{u}(t_0), t_0) = "
+"\\dot{\\vec{x}}(t_0)"
 msgstr ""
 
-#: ../../source/behavior/equations/initialization.rst:166
-msgid "Conclusion"
+#: ../../source/behavior/equations/initialization.rst:161
+msgid ""
+"And, of course, we could mix these different forms or use a wide range of"
+" other forms on a per state basis to describe our initial conditions.  So"
+" when writing initial equations, all you need to keep in mind is that "
+"they need to be of the general form shown above and that you cannot have "
+"more of them than you have states in your system."
 msgstr ""
+"물론 초기 조건을 설명하기 위해 이러한 다양한 형식을 혼합하거나 상태별로 다양한 다른 형식을 사용할 수 있습니다. "
+"따라서 초기 방정식을 작성할 때 명심해야 할 것은, 위에 표시된 일반적인 형식이어야 하며 시스템에 있는 상태보다 더 많이 가질 수 없다는 것입니다."
+
 
 #: ../../source/behavior/equations/initialization.rst:168
+msgid "Conclusion"
+msgstr ""
+"결론(Conclusion)"
+
+#: ../../source/behavior/equations/initialization.rst:170
 msgid ""
-"As we've demonstrated in this chapter, the `initial equation` construct in "
-"Modelica allows us to express many ways to initialize our system.  In the "
-"end, all of them will compute the initial values for the states in our "
-"system.  But we are given tremendous latitude in describing exactly how "
-"those values will be computed."
+"As we've demonstrated in this chapter, the `initial equation` construct "
+"in Modelica allows us to express many ways to initialize our system.  In "
+"the end, all of them will compute the initial values for the states in "
+"our system.  But we are given tremendous latitude in describing exactly "
+"how those values will be computed."
 msgstr ""
+"이 장에서 설명했듯이 모델리카의 `initial equation` 구조를 사용하면 시스템을 초기화하는 다양한 방법을 표현할 수 있고,"
+"여기 구현된 표현으로 우리 시스템의 상태에 대한 초기 값을 계산할 것입니다."
+"그러나 이러한 값이 계산되는 방법을 정확히 묘사하는데 다양한 운신의 폭이 주어집니다."
 
-#: ../../source/behavior/equations/initialization.rst:174
+
+#: ../../source/behavior/equations/initialization.rst:176
 msgid ""
-"This is an area where Modelica excels.  Initialization is given first class "
-"treatment in Modelica and this flexibility pays off in many real world "
-"applications."
+"This is an area where Modelica excels.  Initialization is given first "
+"class treatment in Modelica and this flexibility pays off in many real "
+"world applications."
 msgstr ""
+"이것은 모델리카가 가지는 뛰어난 장점입니다."
+"초기화는 모델리카에서 최고 수준으로 처리되며, 이러한 유연성은 많은 실제 응용 프로그램에서 효과가 있습니다."
 
-#: ../../source/behavior/equations/initialization.rst:10
-msgid "initial equation"
-msgstr ""
 
-#: ../../source/behavior/equations/initialization.rst:20
-#: ../../source/behavior/equations/initialization.rst:21
-msgid "states"
-msgstr ""
+#~ msgid ""
+#~ "One of the first sources of "
+#~ "confusion for new users is understanding"
+#~ " how many initial conditions are "
+#~ "required.  The answer to this question"
+#~ " is simple.  In order to have a"
+#~ " well-posed initialization problem (one "
+#~ "where we don't have too many or"
+#~ " too few initial equations), we need"
+#~ " to have the same number of "
+#~ "equations in the `initial equation` "
+#~ "sections as we have states in our"
+#~ " system.  **Note**, we can get away"
+#~ " with having too few, because tools"
+#~ " can augment the initial equations we"
+#~ " provide with additional ones until "
+#~ "the problem is well-posed, but we"
+#~ " cannot solve a problem where we "
+#~ "have too many initial equations."
+#~ msgstr ""
 
-#: ../../source/behavior/equations/initialization.rst:21
-msgid "initialization"
-msgstr ""
+#~ msgid "initial equation"
+#~ msgstr ""
+
+#~ msgid "states"
+#~ msgstr ""
+
+#~ msgid "initialization"
+#~ msgstr ""
+

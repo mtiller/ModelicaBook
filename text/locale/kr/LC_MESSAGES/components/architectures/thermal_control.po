@@ -1,515 +1,861 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/architectures/thermal_control.rst:4
 msgid "Thermal Control"
 msgstr ""
+"온도 제어(Thermal Control)"
 
 #: ../../source/components/architectures/thermal_control.rst:6
 msgid ""
 "In this chapter, we'll consider another system that includes a plant, "
-"controller, sensor and actuator.  The application will be thermal control of"
-" a three zone house.  The plant will be the house itself, sensor will be a "
-"temperature sense and the actuator will be the furnace in the house.  Using "
-"these models, we will explore a few different control strategies."
+"controller, sensor and actuator.  The application will be thermal control"
+" of a three zone house.  The plant will be the house itself, the sensor "
+"will be a temperature sensor and the actuator will be the furnace in the "
+"house.  Using these models, we will explore a few different control "
+"strategies."
 msgstr ""
+"이 장에서는 플랜트, 컨트롤러, 센서 및 액추에이터를 포함하는 또 다른 시스템을 살펴 보겠습니다."
+"적용 분야는 3개의 구역을 가진 집의 열 제어입니다."
+"플랜트는 집 자체가 될 것이고 센서는 온도 센서가 될 것이며 액추에이터는 집 안의 보일러가 될 것입니다."
+"이러한 모델을 사용하여 몇 가지 제어 방법을 살펴보겠습니다."
+
+
 
 #: ../../source/components/architectures/thermal_control.rst:13
 msgid ""
-"We'll also follow the architecture driven approach to building the system "
-"that we followed in the previous section.  However, we'll start using one "
-"set of interfaces and then, after discussing their limitations, restart "
-"taking a different approach that will provide us with greater flexibility."
+"We'll also follow the architecture driven approach to building the system"
+" that we followed in the previous section.  However, we'll start using "
+"one set of interfaces and then, after discussing their limitations, "
+"restart taking a different approach that will provide us with greater "
+"flexibility."
 msgstr ""
+"또한 이전 섹션에서 다루었던 시스템 구축에 대한 아키텍처 기반 접근 방식을 따를 것입니다. "
+"그러나 한 세트의 인터페이스를 사용하여 시작한 다음, 제한 사항을 논의한 후 더 큰 유연성을 제공하는 다른 접근 방식을 다시 시작합니다."
 
 #: ../../source/components/architectures/thermal_control.rst:22
 msgid "Initial Approach"
 msgstr ""
+"초기 접근(Initial Approach)"
 
 #: ../../source/components/architectures/thermal_control.rst:25
 msgid "Architecture"
 msgstr ""
+"아키텍쳐(Architecture)"
 
 #: ../../source/components/architectures/thermal_control.rst:27
 msgid "Let's start with the following architecture:"
 msgstr ""
+"다음 아키텍처부터 시작하겠습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:34
+#: ../../source/components/architectures/thermal_control.rst:35
 msgid ""
-"Here we see the same basic pieces was saw in the previous section, a plant "
-"model, a sensor, a controller and an actuator.  In fact, this is a pretty "
-"typical architecture.  On some cases, people may break down the plant model "
-"into a few subsystems and/or include multiple controllers and control loops."
-"  But many closed loop system control problems have a similar structure."
+"Here we see the same basic pieces we saw in the previous section, *i.e.,*"
+" a plant model, a sensor, a controller and an actuator.  In fact, this is"
+" a pretty typical architecture.  In some cases, people may break down the"
+" plant model into a few subsystems and/or include multiple controllers "
+"and control loops.  But many closed loop system control problems follow "
+"this same basic structure."
 msgstr ""
+"여기서  이전 섹션에서 보았던 것과 동일한 기본 부품, 즉 *즉* , 플랜트 모델, 센서, 컨트롤러 및 액추에이터를 볼 수 있습니다. "
+"사실 이것은 꽤 전형적인 아키텍처입니다. "
+"경우에 따라 사람들은 플랜트 모델을 몇 개의 하위 시스템으로 분해하거나 여러 컨트롤러 및 제어 루프를 포함할 수 있습니다. "
+"그러나 많은 폐쇄 루프의 시스템 제어 문제는 이와 동일한 기본 구조를 따릅니다."
 
-#: ../../source/components/architectures/thermal_control.rst:41
+
+
+#: ../../source/components/architectures/thermal_control.rst:42
 msgid ""
-"What tends to change from application are the specific signals exchanged "
-"between these parts.  In this case, we can see from the architecture "
-"schematic that our interface definitions are such:"
+"What tends to change from application to application are the specific "
+"signals exchanged between these parts.  In this case, we can see from the"
+" architecture schematic that our interface definitions are defined such "
+"that:"
 msgstr ""
+"애플리케이션에서 애플리케이션으로 변경되는 경향이 있는 것은 이러한 부분 간에 교환되는 특정 신호입니다. "
+"이 경우 아키텍처 도식에서 인터페이스 정의가 다음과 같이 되어 있음을 알 수 있습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:45
+#: ../../source/components/architectures/thermal_control.rst:46
 msgid ""
-"The actuator receives a commanded temperature and then injects heat through "
-"a thermal connection to the plant"
+"The actuator receives a commanded temperature and then injects heat "
+"through a thermal connection to the plant"
 msgstr ""
+"액추에이터는 명령된 온도를 수신한 다음 플랜트에 열 연결을 통해 열을 주입합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:48
+#: ../../source/components/architectures/thermal_control.rst:49
 msgid ""
-"The sensor model also has a thermal connector (to the plant) and an output "
-"signal containing the measured temperature."
+"The sensor model also has a thermal connector (to the plant) and an "
+"output signal containing the measured temperature."
 msgstr ""
+"센서 모델에는 (플랜트에 대한) 열 커넥터와 측정된 온도를 포함하는 출력 신호도 있습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:51
+#: ../../source/components/architectures/thermal_control.rst:52
 msgid ""
 "The plant has two thermal connections.  One represents where the furnace "
 "heat is added to the system and the other is where the sensor is located."
 msgstr ""
+"플랜트에는 두 개의 열 연결부가 있습니다. 하나는 퍼니스 열이 시스템에 추가되는 위치를 나타내고 다른 하나는 센서가 있는 위치를 나타냅니다."
 
-#: ../../source/components/architectures/thermal_control.rst:55
+#: ../../source/components/architectures/thermal_control.rst:56
 msgid ""
-"The controller takes the measured temperature (from the sensor) as an input "
-"and outputs a commanded heat output (to the actuator)"
+"The controller takes the measured temperature (from the sensor) as an "
+"input and outputs a commanded heat output (to the actuator)"
 msgstr ""
+"컨트롤러는 (센서에서) 측정된 온도를 입력으로 받아 명령된 열 출력을 (액추에이터로) 출력합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:59
+#: ../../source/components/architectures/thermal_control.rst:60
 msgid "The Modelica code for this base system looks like this:"
 msgstr ""
+"앞서 설명한 기본 시스템의 모델리카 코드는 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:65
+#: ../../source/components/architectures/thermal_control.rst:66
 msgid "Initial Implementations"
 msgstr ""
+"앞서 설명한 기본 시스템의 모델리카 코드는 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:68
+#: ../../source/components/architectures/thermal_control.rst:69
 msgid "Plant"
 msgstr ""
+"플랜트(Plant)"
 
-#: ../../source/components/architectures/thermal_control.rst:70
+#: ../../source/components/architectures/thermal_control.rst:71
 msgid "Our plant model looks like this:"
 msgstr ""
+"우리 플랜트 모델은 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:77
+#: ../../source/components/architectures/thermal_control.rst:79
 msgid ""
-"Here we can see that the zone where furnace heat is added is separated from "
-"the zone where the temperature is measured by a third zone.  Our furnace "
-"model is a simple heat source:"
+"Here we can see that the furnace heat is added in one zone while the "
+"temperature is measured in a different zone.  Furthermore, there is an "
+"additional zone between the actuator and sensor zones.  The furnace model"
+" itself is a simple heat source:"
 msgstr ""
+"여기서  온도가 다른 구역에서 측정되는 동안 한 구역에 보일러의 열이 추가되는 것을 볼 수 있습니다."
+"또한 액추에이터와 센서 영역 사이에 추가 영역이 있습니다. 보일러 모델 자체는 간단한 열원입니다."
 
-#: ../../source/components/architectures/thermal_control.rst:86
+
+
+#: ../../source/components/architectures/thermal_control.rst:90
 msgid ""
-"This actuator takes a commanded heat level as an input and then injects that"
-" amount of heat into the system."
+"This actuator takes a commanded heat level as an input and then injects "
+"that amount of heat into the zone it is connected to."
 msgstr ""
+"이 액추에이터는 명령된 열 수준을 입력으로 받은 다음 연결된 영역에 해당 양의 열을 주입합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:89
+
+
+#: ../../source/components/architectures/thermal_control.rst:93
 msgid "The sensor is similarly simple:"
 msgstr ""
+"센서도 마찬가지로 간단합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:96
+
+#: ../../source/components/architectures/thermal_control.rst:101
 msgid ""
-"This sensor doesn't introduce any artifact.  Instead, it provides the exact "
-"temperature as a continuous signal."
+"This sensor doesn't introduce any artifact.  Instead, it provides the "
+"exact temperature in the zone as a continuous output signal."
 msgstr ""
+"이 센서는 아티팩트를 발생시키지 않습니다."
+"대신 연속 출력 신호로 구역의 정확한 온도를 제공합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:99
+
+
+#: ../../source/components/architectures/thermal_control.rst:104
 msgid "We will use the following PI controller to control the temperature:"
 msgstr ""
+"다음은 PI 컨트롤러를 사용하여 온도를 제어합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:107
+
+#: ../../source/components/architectures/thermal_control.rst:114
 msgid "Initial Results"
 msgstr ""
+"초기 결과(Initial Results)"
 
-#: ../../source/components/architectures/thermal_control.rst:109
+#: ../../source/components/architectures/thermal_control.rst:116
 msgid ""
-"Populating our architecture with these implementations, our model now looks "
-"like this:"
+"Populating our architecture with these implementations, our model now "
+"looks like this:"
 msgstr ""
+"이러한 구현으로 아키텍처를 채우면 이제 모델이 다음과 같이 보입니다."
 
-#: ../../source/components/architectures/thermal_control.rst:117
+#: ../../source/components/architectures/thermal_control.rst:126
 msgid ""
-"Note how the icons for the various subsystems have changed.  This is because"
-" when we perform a ``redeclare``, the icon for the new type associated with "
-"that subsystem is used.  The Modelica code for this system is:"
+"Note how the icons for the various subsystems have changed.  This is "
+"because when we perform a ``redeclare``, the icon for the new type "
+"associated with that subsystem is used.  The Modelica code for this "
+"system is:"
 msgstr ""
+"다양한 하위 시스템의 아이콘이 어떻게 변경되었는지 확인하십시오. "
+"이는 ``redeclare`` 를 수행할 때 해당 하위 시스템과 관련된 새 자료형의 아이콘이 사용되기 때문입니다. "
+"이 시스템의 모델리카 코드는 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:125
+
+
+#: ../../source/components/architectures/thermal_control.rst:134
 msgid "If we simulate this system, we get the following results:"
 msgstr ""
-
-#: ../../source/components/architectures/thermal_control.rst:130
-msgid ""
-"As we can see, this approach works very well.  The furnace heat required to "
-"achieve this degree of control looks like this:"
-msgstr ""
-
-#: ../../source/components/architectures/thermal_control.rst:137
-msgid "Bang Bang Control"
-msgstr ""
+"이 시스템을 시뮬레이션하면 다음과 같은 결과를 얻습니다."
 
 #: ../../source/components/architectures/thermal_control.rst:139
 msgid ""
-"So far, this approach seems like it has been quite successful.  We have a "
-"nice architecture that we can use to consider different actuators, sensors, "
-"controllers or even plant models.  The control system we've developed seems "
-"to do a fairly good job of controlling our plant."
+"As we can see, this approach works very well.  The furnace heat required "
+"to achieve this degree of control is:"
 msgstr ""
+"보시다시피 이 접근 방식은 매우 잘 작동합니다. "
+"이 정도의 제어를 달성하는 데 필요한 보일러의 열은 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:145
+
+#: ../../source/components/architectures/thermal_control.rst:146
+msgid "Bang Bang Control"
+msgstr ""
+"뱅 뱅 제어(Bang Bang Control)"
+
+#: ../../source/components/architectures/thermal_control.rst:148
 msgid ""
-"But one thing worth noting is that the furnace heat required in this case is"
-" continuous.  However, home heating systems do not typically use this type "
-"of control strategy.  Instead, they tend to use something called \"bang-"
-"bang\" control where the furnace is either \"off\" or \"on\"."
+"So far, this approach seems like it has been quite successful.  We have a"
+" nice architecture that we can use to consider different actuators, "
+"sensors, controllers or even plant models.  The control system we've "
+"developed seems to do a fairly good job of controlling our plant."
 msgstr ""
+"지금까지 이 접근 방식은 꽤 성공적이었던 것 같습니다. "
+"다양한 액추에이터, 센서, 컨트롤러 또는 플랜트 모델을 고려하는 데 사용할 수 있는 멋진 아키텍처가 되었고,"
+"개발한 제어 시스템은 우리 플랜트를 상당히 잘 제어하는 것 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:151
+
+#: ../../source/components/architectures/thermal_control.rst:154
 msgid ""
-"We have this flexible architecture, so perhaps to address this situation, we"
-" should create an implementation of our controller and actuator models where"
-" the controller command is a boolean indicating whether the furnace should "
-"be on or off.  However, if we start this process, we quickly run into the "
-"following problem:"
+"But one thing worth noting is that the furnace heat required in this case"
+" is continuous.  However, home heating systems do not typically use this "
+"type of control strategy.  Instead, they tend to use something called "
+"\"bang-bang\" control where the furnace is either \"off\" or \"on\"."
 msgstr ""
+"그러나 주목할 가치가 있는 한 가지는 이 경우에 필요한 보일러 열이 연속적이라는 것입니다."
+"그러나 가정 난방 시스템은 일반적으로 이러한 형태의 제어 방법을 사용하지 않습니다."
+"대신에 그들은 보일러가 "꺼짐" 또는 "켜짐"인 "뱅뱅" 컨트롤을 사용하는 경향이 있습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:162
+
+#: ../../source/components/architectures/thermal_control.rst:160
+msgid ""
+"We have this flexible architecture, so perhaps to address this situation,"
+" we should create an implementation of our controller and actuator models"
+" where the controller command is a boolean indicating whether the furnace"
+" should be on or off.  However, if we start this process, we quickly run "
+"into the following problem:"
+msgstr ""
+"이 유연한 아키텍처를 가지고 있으므로 아마도 이 상황을 해결하기 위해 컨트롤러 명령이 용광로의 켜짐 또는 꺼짐 여부를 나타내는 부울 값을 가지는 컨트롤러 및 액추에이터 모델의 구현을 생성해야 합니다."
+"그러나 이 프로세스를 시작하면 다음과 같은 문제가 바로 발생합니다."
+
+
+#: ../../source/components/architectures/thermal_control.rst:172
 msgid ""
 "Note that the output from our controller is ``Boolean`` value but the "
-"commanded ``heat`` signal from our ``ControlSystem`` interface requires a "
-"``Real`` value.  We have the same problem on the actuator side:"
+"commanded ``heat`` signal from our ``ControlSystem`` interface requires a"
+" ``Real`` value.  We have the same problem on the actuator side:"
 msgstr ""
+"컨트롤러의 출력은 ``Boolean`` 값이지만 ``ControlSystem`` 인터페이스에서 명령된 ``heat`` 신호에는 ``Real`` 값이 필요합니다."
+"액추에이터 쪽에도 동일한 문제가 있습니다"
 
-#: ../../source/components/architectures/thermal_control.rst:171
-msgid ""
-"The interface supplies an actuator that is a ``Real`` value but again we see"
-" that if our furnace expects an \"on\" or \"off\" command, we have a "
-"mismatch."
-msgstr ""
-
-#: ../../source/components/architectures/thermal_control.rst:175
-msgid ""
-"So the question then becomes, **how can we handle situations where choosing "
-"different subsystems requires us to have different interfaces**?"
-msgstr ""
 
 #: ../../source/components/architectures/thermal_control.rst:182
+msgid ""
+"The interface supplies an actuator that is a ``Real`` value but again we "
+"see that if our furnace expects an \"on\" or \"off\" command, we have a "
+"mismatch."
+msgstr ""
+"인터페이스는 ``실제`` 값인 액추에이터를 제공하지만 보일러가 "켜짐" 또는 "꺼짐" 명령을 예상하는 경우 불일치가 있음을 다시 확인 할 수 있습니다."
+
+
+
+#: ../../source/components/architectures/thermal_control.rst:186
+msgid ""
+"So the question then becomes, **how can we handle situations where "
+"choosing different subsystems requires us to have different interfaces**?"
+msgstr ""
+"따라서 질문은 **서로 다른 하위 시스템을 선택하기 위해 서로 다른 인터페이스가 필요한 상황** 을 어떻게 처리할 수 있는가 하는 것입니다."
+
+#: ../../source/components/architectures/thermal_control.rst:193
 msgid "Expandable Approach"
 msgstr ""
-
-#: ../../source/components/architectures/thermal_control.rst:187
-msgid ""
-"The solution to this problem is ``expandable`` connector definitions. With "
-"this approach, our subsystem interface would be the same regardless of "
-"whether the control strategy generates a ``Boolean`` or ``Real``.  What "
-"changes is the contents of the connector instances."
-msgstr ""
-
-#: ../../source/components/architectures/thermal_control.rst:192
-msgid ""
-"To understand how these ``expandable`` connectors work, we'll reformulate "
-"our architecture to include ``expandable`` connectors and then see how these"
-" can be used for both continuous and \"bang-bang\" approaches."
-msgstr ""
+"확장된 접근(Expandable Approach)"
 
 #: ../../source/components/architectures/thermal_control.rst:198
+msgid ""
+"The solution to this problem is ``expandable`` connector definitions. "
+"With this approach, our subsystem interface would be the same regardless "
+"of whether the control strategy generates a ``Boolean`` or ``Real``.  "
+"What changes is the contents of the ``connector`` instances."
+msgstr ""
+"이 문제에 대한 해결책은 ``확장 가능한`` 커넥터 정의입니다. "
+"이 접근 방식을 사용하면 제어 전략이 ``Boolean`` 또는 ``Real`` 을 생성하는지 여부에 관계없이 하위 시스템 인터페이스가 동일합니다. "
+"변경되는 것은 ``connector`` 인스턴스의 내용입니다."
+
+
+
+#: ../../source/components/architectures/thermal_control.rst:203
+msgid ""
+"To understand how these ``expandable`` connectors work, we'll reformulate"
+" our architecture to include ``expandable`` connectors and then see how "
+"these can be used for both continuous and \"bang-bang\" approaches."
+msgstr ""
+"이러한 ``확장형`` 커넥터가 작동하는 방식을 이해하기 위해 ``확장형`` 커넥터를 포함하도록 아키텍처를 재구성한 다음 이러한 커넥터가 연속 및 "뱅뱅" 접근 방식 모두에 어떻게 사용될 수 있는지 살펴보겠습니다."
+
+
+#: ../../source/components/architectures/thermal_control.rst:209
 msgid "Expandable Connectors"
 msgstr ""
+"확장가능한 커넥터(Expandable Connectors)"
 
-#: ../../source/components/architectures/thermal_control.rst:200
+#: ../../source/components/architectures/thermal_control.rst:211
 msgid ""
-"The key feature that allows us to make more flexible architectures is the "
-"``expandable connector``.  For example, previously we defined the "
+"The key feature that allows us to make more flexible architectures is the"
+" ``expandable connector``.  For example, previously we defined the "
 "``Actuator`` interface as:"
 msgstr ""
+"보다 유연한 아키텍처를 만들 수 있게 해주는 핵심 기능은 ``확장 가능한 커넥터`` 입니다. "
+"예를 들어 이전에 ``Actuator`` 인터페이스를 다음과 같이 정의했습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:207
+
+#: ../../source/components/architectures/thermal_control.rst:218
 msgid ""
 "This interface contains two connectors, the ``heat`` connector and the "
 "``furnace`` connector.  The ``furnace`` connector is a thermal connector "
-"that allows the furnace to interact thermally with the plant.  The ``heat`` "
-"connector is a ``Real`` valued input signal that comes from the controller "
-"and specifies the desired heat output level. The fact that this is a "
-"``Real`` valued signal was the problem when we wanted to switch to a type of"
-" control that required a ``Boolean`` signal.  To address this, we'll use the"
-" following interface definition for our actuators:"
+"that allows the furnace to interact thermally with the plant.  The "
+"``heat`` connector is a ``Real`` valued input signal that comes from the "
+"controller and specifies the desired heat output level. The fact that "
+"this is a ``Real`` valued signal was the problem when we wanted to switch"
+" to a type of control that required a ``Boolean`` signal.  To address "
+"this, we'll use the following interface definition for our actuators:"
 msgstr ""
+"이 인터페이스에는 ``heat`` 커넥터와 ``furnace`` 커넥터의 두 커넥터가 있습니다. "
+"``furnace`` 커넥터는 로가 플랜트와 열적으로 상호 작용할 수 있도록 하는 열 커넥터입니다. "
+"``heat`` 커넥터는 컨트롤러에서 나오는 ``Real`` 값 입력 신호이며 원하는 열 출력 수준을 지정합니다. "
+"이것이 ``Real`` 값 신호라는 사실은 ``Boolean`` 신호가 필요한 제어 자료형으로 전환하려고 할 때 문제였습니다. "
+"이 문제를 해결하기 위해 액추에이터에 대해 다음 인터페이스 정의를 사용합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:220
+
+#: ../../source/components/architectures/thermal_control.rst:231
 msgid ""
-"Here we see the ``furnace`` connector is still present.  But the ``heat`` "
-"connector is gone.  Instead, it has been replaced by a new connector "
-"instance, ``bus``, of type ``ExpandableBus``.  The connector definition for "
-"``ExpandableBus`` is:"
+"Here we see the ``furnace`` connector is still present.  But the ``heat``"
+" connector is gone.  Instead, it has been replaced by a new connector "
+"instance, ``bus``, of type ``ExpandableBus``.  The connector definition "
+"for ``ExpandableBus`` is:"
 msgstr ""
+"여기에서 ``furnace`` 커넥터가 여전히 존재하는 것을 볼 수 있습니다. "
+"하지만 ``열`` 커넥터가 사라졌습니다."
+"대신 ``ExpandableBus`` 자료형의 새로운 커넥터 인스턴스인 ``bus`` 로 대체되었습니다. "
+"``ExpandableBus`` 에 대한 커넥터 정의는 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:229
+
+#: ../../source/components/architectures/thermal_control.rst:240
 msgid ""
-"In other words, **it is empty**.  But what is significant is the presence of"
-" the ``expandable`` qualifier.  If a given bus is required to always have "
-"certain signals, they should be listed within the connector definition.  But"
-" the fact that there are no variables or sub-connectors listed in the "
-"``ExpandableBus`` class means there is no minimum requirement for "
-"information to be carried on the bus.  But the bus can be **expanded** to "
-"include additional information."
+"In other words, **it is empty**.  But what is significant is the presence"
+" of the ``expandable`` qualifier.  If a given bus is required to always "
+"have certain signals, they should be listed within the connector "
+"definition.  But the fact that there are no variables or sub-connectors "
+"listed in the ``ExpandableBus`` class means there is no minimum "
+"requirement for information to be carried on the bus.  But the bus can be"
+" **expanded** to include additional information."
 msgstr ""
+"즉 다른말로 하면, **비어 있습니다**. "
+"그러나 중요한 것은 ``expandable`` 한정어의 존재이다."
+"지정된 버스가 항상 특정 신호를 가져야 하는 경우 커넥터 정의 내에 나열되어야 합니다."
+"그러나 ``ExpandableBus`` 클래스에 나열된 변수나 하위 커넥터가 없다는 사실은 정보가 버스에 전달되기 위한 최소 요구 사항이 없음을 의미합니다."
+"그러나 추가 정보를 포함하도록 버스를 **확장** 할 수 있습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:237
+
+#: ../../source/components/architectures/thermal_control.rst:250
 msgid ""
-"Of course, we could use inheritance to add new signals.  But that introduces"
-" a new type.  The types of connectors are fixed by the type used in the "
-"interface definition.  So creating richer connectors via inheritance doesn't"
-" really help."
+"Note that there is no formal definition of a \"bus\" in Modelica.  The "
+"term is often used in such contexts to connote a connector that is "
+"carrying multiple pieces of information."
 msgstr ""
+"모델리카에는 "버스"에 대한 공식적인 정의가 없습니다. "
+"이 용어는 이러한 맥락에서 여러 정보를 전달하는 커넥터를 의미하는 데 자주 사용합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:244
+
+
+#: ../../source/components/architectures/thermal_control.rst:254
 msgid ""
-"Note that there is no formal definition of a \"bus\" in Modelica.  The term "
-"is often used in such contexts to connote a connector that is carrying "
-"multiple pieces of information."
+"Expandable connectors work in a special way.  The signals on an "
+"expandable bus **are determined by the connections themselves**.  By "
+"connecting something to the expandable bus, a signal is implicitly added "
+"to that connector.  Then the Modelica compiler looks at all the "
+"connectors in a connection set and expands each one so that they match.  "
+"We'll go into more details about this process once we get to the point "
+"where we have some implementation models to discuss."
 msgstr ""
+"확장 가능한 커넥터는 특별한 방식으로 작동합니다. "
+"확장 가능한 버스의 신호는 **연결 자체에 의해 결정됩니다**. "
+"확장 가능한 버스에 무언가를 연결하면 신호가 암시적으로 해당 커넥터에 추가됩니다. "
+"그런 다음 모델리카 컴파일러는 연결 세트의 모든 커넥터를 보고 일치하도록 각 커넥터를 확장합니다."
+"논의할 구현 모델이 있는 시점에 이르면 이 프로세스에 대해 자세히 설명하겠습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:248
+#: ../../source/components/architectures/thermal_control.rst:262
 msgid ""
-"Expandable connectors work in a special way.  The signals on an expandable "
-"bus **are determined by the connections themselves**.  By connecting "
-"something to the expandable bus, a signal is implicitly added to that "
-"connector.  Then the Modelica compiler looks at all the connectors in a "
-"connection set and expands each one so that they match.  We'll go into more "
-"details about this process once we get to the point where we have some "
-"implementation models to discuss."
+"The interface for the plant model is unaffected by the use of "
+"``expandable`` connectors (since none of these expandable connectors are "
+"associated with the plant model), but the interfaces for the sensor and "
+"controller are changed as follows:"
 msgstr ""
+"플랜트 모델의 인터페이스는 ``확장 가능한`` 커넥터의 사용에 영향을 받지 않지만(이러한 확장 가능한 커넥터는 플랜트 모델과 연결되어 있지 않기 때문에) 센서 및 컨트롤러의 인터페이스는 다음과 같이 변경됩니다."
 
-#: ../../source/components/architectures/thermal_control.rst:256
+#: ../../source/components/architectures/thermal_control.rst:273
 msgid ""
-"The interface for the plant model is unaffected by the use of ``expandable``"
-" connectors, but the interfaces for the sensor and controller are as "
-"follows:"
+"Note how simple the controller interface has become.  This is because "
+"with an ``expandable`` connector, we can put the temperature measurement "
+"received from the sensor and the heat command sent to the actuator **on "
+"the same bus**.  As such, we only need one connector.  A developer may "
+"still choose to use multiple buses simply to organize signals, to make "
+"them more representative of the physical partitioning or to avoid "
+"confusion.  Here we will use a single connector simply to demonstrate "
+"that this is now possible."
 msgstr ""
+"컨트롤러 인터페이스가 얼마나 단순해졌는지 확인해 보십시오."
+"``확장형`` 커넥터를 사용하면 센서에서 수신한 온도 측정값과 액추에이터로 보낸 열 명령을 **동일한 버스** 에 둘 수 있기 때문입니다."
+"따라서 하나의 커넥터만 필요합니다. "
+"개발자는 단순히 신호를 구성하거나 물리적 분할을 더 잘 나타내도록 하거나 혼동을 피하기 위해 여러 버스를 사용하도록 선택할 수 있습니다."
+"여기서는 단일 커넥터를 사용하여 이것이 이제 가능함을 보여줍니다."
 
-#: ../../source/components/architectures/thermal_control.rst:266
-msgid ""
-"Note how simple the controller interface has become.  This is because with "
-"an ``expandable`` connector, we can put the temperature measurement received"
-" from the sensor and the heat command sent to the actuator **on the same "
-"bus**.  As such, we only need one connector.  A developer may still choose "
-"to use multiple buses simply to organize signals, to make them more "
-"representative of the physical partitioning or to avoid confusion.  Here we "
-"will use a single connector simply to demonstrate that this is now possible."
-msgstr ""
 
-#: ../../source/components/architectures/thermal_control.rst:275
+
+#: ../../source/components/architectures/thermal_control.rst:282
 msgid ""
 "Using expandable connectors, we can create the following revised "
 "architecture:"
 msgstr ""
+"확장 가능한 커넥터를 사용하여 다음과 같은 수정된 아키텍처를 만들 수 있습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:284
+#: ../../source/components/architectures/thermal_control.rst:292
 msgid "Expandable Implementations"
 msgstr ""
+"확장된 구현(Expandable Implementations)"
 
-#: ../../source/components/architectures/thermal_control.rst:286
+#: ../../source/components/architectures/thermal_control.rst:294
 msgid ""
 "With this more flexible architecture, let's first recreate our original "
 "configuration with the continuous control system:"
 msgstr ""
+"이 보다 유연한 아키텍처를 사용하여 먼저 연속 제어 시스템으로 원래 구성을 다시 생성해 보겠습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:294
-msgid ""
-"If we plot the results from this system, we get the following response:"
+#: ../../source/components/architectures/thermal_control.rst:303
+msgid "If we plot the results from this system, we get the following response:"
 msgstr ""
+"이 시스템의 결과를 선도로 표현하면 다음 응답을 얻습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:300
+#: ../../source/components/architectures/thermal_control.rst:309
 msgid ""
 "Note that the measured temperature corresponds to the signal "
 "``controller.bus.temp`` where ``bus`` is an instance of the expandable "
-"connector.  Further recall that the ``ExpandableBus`` definition **didn't "
-"contain a signal called** ``temperature``.  So the question is, how did it "
-"get on the connector.  The answer lies in the implementation of the sensor "
-"model.  The diagram for the sensor model looks like this:"
+"connector.  Further recall that the ``ExpandableBus`` definition **didn't"
+" contain a signal called** ``temperature``.  So the question is, how did "
+"it get on the connector?  The answer lies in the implementation of the "
+"sensor model.  The diagram for the sensor model looks like this:"
 msgstr ""
+"측정된 온도는 신호 ``controller.bus.temp`` 에 해당하며 여기서 ``bus`` 는 확장 가능한 커넥터의 인스턴스가 되었습니다."
+"더 나아가 ``ExpandableBus`` 정의에 ``온도`` 라는 신호가 포함되지 않았다는 점을 기억해야 합니다."
+"그래서 문제는 그것이 어떻게 커넥터에 닿았느냐 하는 것입니다."
+"답은 센서 모델의 구현에 있습니다."
+"센서 모델의 다이어그램은 다음과 같습니다"
 
-#: ../../source/components/architectures/thermal_control.rst:313
+
+#: ../../source/components/architectures/thermal_control.rst:323
 msgid "The corresponding Modelica code is:"
 msgstr ""
+"해당 모델리카 코드는 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:320
+#: ../../source/components/architectures/thermal_control.rst:330
 msgid "Of particular importance is the highlighted line."
 msgstr ""
+"특히 중요한 것은 강조 표시된 줄입니다."
 
-#: ../../source/components/architectures/thermal_control.rst:322
+
+#: ../../source/components/architectures/thermal_control.rst:332
 msgid ""
 "In the diagram, we can see that the output signal from the temperature "
 "sensor component is connected to the bus.  But when we look at the "
 "``connect`` statement, it is more than just connected to the bus.  It is "
 "connected to something named ``temperature`` inside the bus.  This "
 "``temperature`` connector doesn't exist in the definition of "
-"``ExpandableBus``. Instead, **it is created by the** ``connect`` **statement"
-" itself**!  This is precisely what the ``expandable`` qualifier allows."
+"``ExpandableBus``. Instead, **it is created by the** ``connect`` "
+"**statement itself**!  This is precisely what the ``expandable`` "
+"qualifier allows."
 msgstr ""
+"다이어그램에서 온도 센서 구성 요소의 출력 신호가 버스에 연결되어 있음을 알 수 있습니다."
+"그러나 ``connect`` 문을 보면 단순히 버스에 연결하는 것 이상입니다. "
+"그것은 버스 내부의 ``온도`` 라는 무언가와 연결되어 있다는 것을 나타냅니다."
+"이 ``온도`` 커넥터는 ``ExpandableBus`` 정의에 존재하지 않습니다. "
+"대신 ``connect`` **명령문 자체** 에 의해 생성됩니다! "
+"이것이 바로 ``expandable`` 한정자가 허용하는 것입니다."
 
-#: ../../source/components/architectures/thermal_control.rst:333
-msgid ""
-"In general, we don't want all connectors to be ``expandable``.  In cases "
-"where we know *a priori* the names and types of all signals, it is better to"
-" list them explicitly.  This allows the Modelica compiler to make several "
-"important checks to ensure the correctness of the model.  It is worth noting"
-" that by adding the ``expandable`` qualifier on a connector, the risk of "
-"accidentally creating an unintended signal (*e.g.,* as a result of a typing "
-"error) becomes a possibility that would otherwise be caught by the compiler."
-msgstr ""
 
 #: ../../source/components/architectures/thermal_control.rst:343
+msgid ""
+"In general, we don't want all connectors to be ``expandable``.  In cases "
+"where we know *a priori* the names and types of all signals, it is better"
+" to list them explicitly.  This allows the Modelica compiler to make "
+"several important checks to ensure the correctness of the model.  It is "
+"worth noting that by adding the ``expandable`` qualifier on a connector, "
+"the risk of accidentally creating an unintended signal (*e.g.,* as a "
+"result of a typing error) becomes a possibility that would otherwise be "
+"caught by the compiler."
+msgstr ""
+"일반적으로  모든 커넥터가 ``확장`` 이 되는 것을 원하지 않습니다."
+"*선험적으로* 모든 신호의 이름과 자료형을 알고 있는 경우 명시적으로 나열하는 것이 좋습니다. "
+"이를 통해 모델리카 컴파일러는 모델의 정확성을 보장하기 위해 몇 가지 중요한 검사를 수행할 수 있습니다."
+"커넥터에 ``expandable`` 한정자를 추가하면 실수로 의도하지 않은 신호 (*예:* 타이핑 오류의 결과)를 생성할 위험이 컴파일러에 의해 포착될 가능성이 있다는 점은 주목할 가치가 있습니다."
+
+
+#: ../../source/components/architectures/thermal_control.rst:353
 msgid "Reconfiguration"
 msgstr ""
+"재설정(Reconfiguration)"
 
-#: ../../source/components/architectures/thermal_control.rst:345
+#: ../../source/components/architectures/thermal_control.rst:355
 msgid ""
-"Now that we've shown that we can use the expandable approach to model the "
-"continuous control version of our system, let's return our attention to the "
-"\"bang-bang\" version."
+"Now that we've shown how we can use the expandable approach to model the "
+"continuous control version of our system, let's turn our attention to the"
+" \"bang-bang\" version."
 msgstr ""
+"이제 시스템의 연속 제어 버전을 모델링하기 위해 확장 가능한 접근 방식을 사용하는 방법을 보여주었으므로 "bang-bang" 버전으로 관심을 돌려 보겠습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:349
+
+#: ../../source/components/architectures/thermal_control.rst:359
 msgid ""
-"We've already seen the temperature sensor subsystem configured to work with "
-"the expandable connector.  What remains is the controller and actuator "
-"models.  The actuator model diagram looks like this:"
+"We've already seen the temperature sensor subsystem configured to work "
+"with the ``expandable`` connector.  What remains is the controller and "
+"actuator models.  The actuator model diagram looks like this:"
 msgstr ""
+"이미 ``확장형`` 커넥터와 함께 작동하도록 구성된 온도 센서 하위 시스템을 보았습니다. "
+"남은 것은 컨트롤러와 액추에이터 모델입니다. 액추에이터 모델 다이어그램은 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:358
+
+#: ../../source/components/architectures/thermal_control.rst:369
 msgid ""
-"Again, looking at the Modelica code is important to see how the signals on "
-"the ``bus`` connector are referenced:"
+"Again, looking at the Modelica code is important to see how the signals "
+"on the ``bus`` connector are referenced:"
 msgstr ""
+"모델리카 코드를 살펴보는 것은 ``bus`` 커넥터의 신호가 어떻게 참조되는지 확인하는 데 중요합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:366
+#: ../../source/components/architectures/thermal_control.rst:377
 msgid ""
 "Again, note the emphasized line.  It references something called "
-"``heat_command`` on the ``bus`` connector.  Again, that signal doesn't exist"
-" in the definition of ``ExpandableBus``, but it is implicitly created simply"
-" because it is referenced in the highlighted ``connect`` statement."
+"``heat_command`` on the ``bus`` connector.  Again, that signal doesn't "
+"exist in the definition of ``ExpandableBus``, but it is implicitly "
+"created simply because it is referenced in the highlighted ``connect`` "
+"statement."
 msgstr ""
+"다시 한 번 강조된 줄에 유의하십시오. "
+"``버스`` 커넥터에서 ``heat_command`` 라는 것을 참조합니다."
+"다시 말하지만, 해당 신호는 ``ExpandableBus`` 정의에 존재하지 않지만 강조 표시된 ``connect`` 문에서 참조되기 때문에 암시적으로 생성됩니다."
 
-#: ../../source/components/architectures/thermal_control.rst:372
+
+#: ../../source/components/architectures/thermal_control.rst:383
 msgid ""
-"From the sensor model, we see that the measured temperature is added to the "
-"``bus`` connector as a ``Real`` signal named ``temperature``. From the "
-"actuator model, we see that the command expected by the actuator from the "
-"controller is a ``Boolean`` signal named ``heat_command``.  As such, we "
-"should expect to see both of these signals used by the controller model.  "
-"The diagram for the controller looks like this:"
+"From the sensor model, we see that the measured temperature is added to "
+"the ``bus`` connector as a ``Real`` signal named ``temperature``. From "
+"the actuator model, we see that the command expected by the actuator from"
+" the controller is a ``Boolean`` signal named ``heat_command``.  As such,"
+" we should expect to see both of these signals used by the controller "
+"model.  The diagram for the controller looks like this:"
 msgstr ""
+"센서 모델에서 측정된 값이 ``온도`` 라는 ``실제`` 신호로 ``버스`` 커넥터에 추가되는 것을 볼 수 있습니다. "
+"액추에이터 모델에서  컨트롤러에서 액추에이터가 기대하는 명령이 ``heat_command`` 라는 ``부울`` 신호임을 알 수 있습니다. "
+"따라서 컨트롤러 모델에서 사용하는 이 두 신호를 모두 볼 수 있어야 합니다. "
+"컨트롤러 다이어그램은 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:385
+
+#: ../../source/components/architectures/thermal_control.rst:397
 msgid ""
-"But the diagram doesn't include sufficient detail to know the precise names "
-"of the signals being referenced on the ``bus`` connector.  For that, we need"
-" to look at the actual source code:"
+"But the diagram doesn't include sufficient detail to know the precise "
+"names of the signals being referenced on the ``bus`` connector.  For "
+"that, we need to look at the actual source code:"
 msgstr ""
+"그러나 다이어그램에는 ``버스`` 커넥터에서 참조되는 신호의 정확한 이름을 알기에 충분한 세부 정보가 포함되어 있지 않습니다."
+"이를 위해서는 실제 소스 코드를 살펴봐야 합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:394
+
+#: ../../source/components/architectures/thermal_control.rst:406
 msgid ""
-"Again, note the highlighted lines.  Not only do these ``connect`` statements"
-" implicitly add the ``heat_command`` and ``temperature`` signals to the "
-"``bus`` connector, **those names match** the names that the sensor and "
+"Again, note the highlighted lines.  Not only do these ``connect`` "
+"statements implicitly add the ``heat`` and ``temperature`` signals to the"
+" ``bus`` connector, **those names match** the names that the sensor and "
 "actuator models expect."
 msgstr ""
+"강조 표시된 줄을 다시 확인해보겠습니다."
+"이러한 ``connect`` 문은 암시적으로 ``heat`` 및 ``temperature`` 신호를 ``bus`` 커넥터에 추가할 뿐만 아니라 **이 이름이 센서 및 액추에이터 모델에서 예상하는 이름과 일치** 합니다. "
 
-#: ../../source/components/architectures/thermal_control.rst:399
+
+
+#: ../../source/components/architectures/thermal_control.rst:411
 msgid ""
-"Pulling all of these subsystems together, we get the following diagram for "
-"our system:"
+"Pulling all of these subsystems together, we get the following diagram "
+"for our system:"
 msgstr ""
+"이러한 모든 하위 시스템을 함께 가져오면 시스템에 대한 다음 다이어그램을 얻을 수 있습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:407
+#: ../../source/components/architectures/thermal_control.rst:420
 msgid "The source code for our system model is quite simple:"
 msgstr ""
+"시스템 모델의 소스 코드는 매우 간단합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:415
+
+#: ../../source/components/architectures/thermal_control.rst:428
 msgid ""
-"However, there is still one remaining issue with these models and it can be "
-"seen more clearly if we look at the duty cycle of the furnace:"
+"However, there is still one remaining issue with these models and it can "
+"be seen more clearly if we look at the duty cycle of the furnace:"
 msgstr ""
+"그러나 이러한 모델에는 여전히 한 가지 문제가 남아 있으며, 용광로의 듀티 사이클을 보면 더 명확하게 볼 수 있습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:421
+#: ../../source/components/architectures/thermal_control.rst:434
 msgid ""
-"This is exactly the same issue we demonstrated in the previous section on "
-":ref:`hysteresis`.  It is precisely the fact that our control strategy lacks"
-" any hysteresis that we see the furnace constantly turning on and off.  If "
-"we add hysteresis, our controller model becomes:"
+"This is exactly the same issue we demonstrated in the previous section on"
+" :ref:`hysteresis`.  It is precisely the fact that our control strategy "
+"lacks any hysteresis that we see the furnace constantly turning on and "
+"off.  If we add hysteresis, our controller model becomes:"
 msgstr ""
+"이것은 이전 섹션에서 설명했던 히스테리시스와 정확히 동일한 문제입니다. "
+"용광로가 지속적으로 켜지고 꺼지는 것을 보는 것은  제어 전략에 히스테리시스가 없다는 사실입니다."
+"히스테리시스를 추가하면 컨트롤러 모델은 다음과 같습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:432
+
+#: ../../source/components/architectures/thermal_control.rst:446
 msgid ""
-"Nothing else has changed.  We will use the same sensor and actuator models "
-"and we still use the same bus signals since this is still a bang-bang "
-"controller.  So the only change to our system level model (compared to the "
-"``OnOffVariant`` model) is the use of a different controller model.  As we "
-"can see, these configuration management features in Modelica do a nice job "
-"of conveying that in our system level model:"
+"Nothing else has changed.  We will use the same sensor and actuator "
+"models and we still use the same bus signals since this is still a bang-"
+"bang controller. So the only change to our system level model (compared "
+"to the ``OnOffVariant`` model) is the use of a different controller "
+"model.  As we can see, these configuration management features in "
+"Modelica do a nice job of conveying our configuration choices in our "
+"system level model:"
 msgstr ""
+"다른 것은 변경되지 않았습니다."
+"동일한 센서 및 액추에이터 모델을 사용할 것이며, 이것이 여전히 뱅뱅 컨트롤러이기 때문에 동일한 버스 신호를 사용합니다."
+"따라서 시스템 수준 모델(``OnOffVariant`` 모델과 비교하여)의 유일한 변경 사항은 다른 컨트롤러 모델을 사용하는 것입니다."
+"보시다시피 모델리카의 이러한 구성 관리 기능은 시스템 수준 모델에서 구성 선택을 전달하는 훌륭한 작업을 수행합니다."
 
-#: ../../source/components/architectures/thermal_control.rst:443
-msgid "Using hysteresis control, our simulation results look like this:"
-msgstr ""
-
-#: ../../source/components/architectures/thermal_control.rst:448
-msgid ""
-"But the most important difference is the fact that the hysteresis doesn't "
-"lead to the kind of chattering we saw in our previous bang-bang controller:"
-msgstr ""
 
 #: ../../source/components/architectures/thermal_control.rst:456
+msgid "Using hysteresis control, our simulation results look like this:"
+msgstr ""
+"히스테리시스 제어를 사용하여 시뮬레이션한 결과는 다음과 같습니다."
+
+#: ../../source/components/architectures/thermal_control.rst:461
+msgid ""
+"But the most important difference is the fact that the hysteresis doesn't"
+" lead to the kind of chattering we saw in our previous bang-bang "
+"controller:"
+msgstr ""
+"그러나 가장 중요한 차이점은 히스테리시스가 이전 뱅뱅 컨트롤러에서 본 것과 같은 종류의 채터링으로 이어지지 않는다는 사실입니다."
+
+
+#: ../../source/components/architectures/thermal_control.rst:469
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
-#: ../../source/components/architectures/thermal_control.rst:458
+#: ../../source/components/architectures/thermal_control.rst:471
 msgid ""
-"This is the second example of how we can use the configuration management "
-"features in Modelica to take an architecturally based approach to building "
-"system models.  This architectural approach is very useful when there are "
-"many variations of the same architecture that require analysis.  Using the "
-"``redeclare`` feature, it is possible to easily substitute alternative "
-"designs for each subsystem or to consider more or less detail in any given "
-"subsystem as necessary for any given engineering analysis."
+"This is the second example of how we can use the configuration management"
+" features in Modelica to take an architecturally based approach to "
+"building system models.  This architectural approach is very useful when "
+"there are many variations of the same architecture that require analysis."
+"  Using the ``redeclare`` feature, it is possible to easily substitute "
+"alternative designs for each subsystem or to consider more or less detail"
+" in any given subsystem as necessary for any given engineering analysis."
 msgstr ""
+"이것은 모델리카의 구성 관리 기능을 사용하여 시스템 모델 구축에 아키텍처 기반 접근 방식을 취하는 방법에 대한 두 번째 예입니다."
+"이 아키텍처 접근 방식은 분석이 필요한 동일한 아키텍처의 변형이 많을 때 매우 유용합니다."
+"``redeclare`` 기능을 사용하면 각 하위 시스템에 대한 대체 설계를 쉽게 대체하거나 주어진 엔지니어링 분석에 필요한 대로 주어진 하위 시스템에서 더 많거나 적은 세부 사항을 고려할 수 있습니다."
 
-#: ../../source/components/architectures/thermal_control.rst:467
+
+#: ../../source/components/architectures/thermal_control.rst:480
 msgid ""
 "In this particular example, we saw how an ``expandable`` connector can "
 "provide greater flexibility than a standard connector.  However, it also "
-"comes with some risk because the type checking normally done by the Modelica"
-" compiler is less rigorous."
+"comes with some risk because the type checking normally done by the "
+"Modelica compiler is less rigorous."
 msgstr ""
+"이 특정 예제에서  ``확장형`` 커넥터가 표준 커넥터보다 더 큰 유연성을 제공할 수 있는 방법을 보았습니다."
+"그러나 모델리카컴파일러가 일반적으로 수행하는 자료형 검사가 덜 엄격하기 때문에 약간의 위험도 따릅니다."
 
-#: ../../source/components/architectures/thermal_control.rst:184
-msgid "expandable connectors"
-msgstr ""
 
-#: ../../source/components/architectures/thermal_control.rst:185
-msgid "connectors"
-msgstr ""
+#~ msgid ""
+#~ "In this chapter, we'll consider another"
+#~ " system that includes a plant, "
+#~ "controller, sensor and actuator.  The "
+#~ "application will be thermal control of"
+#~ " a three zone house.  The plant "
+#~ "will be the house itself, sensor "
+#~ "will be a temperature sense and "
+#~ "the actuator will be the furnace "
+#~ "in the house.  Using these models, "
+#~ "we will explore a few different "
+#~ "control strategies."
+#~ msgstr ""
 
-#: ../../source/components/architectures/thermal_control.rst:185
-#: ../../source/components/architectures/thermal_control.rst:331
-msgid "expandable"
-msgstr ""
+#~ msgid ""
+#~ "Here we see the same basic pieces"
+#~ " was saw in the previous section, "
+#~ "a plant model, a sensor, a "
+#~ "controller and an actuator.  In fact,"
+#~ " this is a pretty typical "
+#~ "architecture.  On some cases, people may"
+#~ " break down the plant model into "
+#~ "a few subsystems and/or include multiple"
+#~ " controllers and control loops.  But "
+#~ "many closed loop system control problems"
+#~ " have a similar structure."
+#~ msgstr ""
 
-#: ../../source/components/architectures/thermal_control.rst:242
-msgid "bus"
-msgstr ""
+#~ msgid ""
+#~ "What tends to change from application"
+#~ " are the specific signals exchanged "
+#~ "between these parts.  In this case, "
+#~ "we can see from the architecture "
+#~ "schematic that our interface definitions "
+#~ "are such:"
+#~ msgstr ""
 
-#: ../../source/components/architectures/thermal_control.rst:331
-msgid "caveats"
-msgstr ""
+#~ msgid ""
+#~ "Here we can see that the zone "
+#~ "where furnace heat is added is "
+#~ "separated from the zone where the "
+#~ "temperature is measured by a third "
+#~ "zone.  Our furnace model is a "
+#~ "simple heat source:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This actuator takes a commanded heat "
+#~ "level as an input and then injects"
+#~ " that amount of heat into the "
+#~ "system."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This sensor doesn't introduce any "
+#~ "artifact.  Instead, it provides the "
+#~ "exact temperature as a continuous "
+#~ "signal."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "As we can see, this approach works"
+#~ " very well.  The furnace heat "
+#~ "required to achieve this degree of "
+#~ "control looks like this:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The solution to this problem is "
+#~ "``expandable`` connector definitions. With "
+#~ "this approach, our subsystem interface "
+#~ "would be the same regardless of "
+#~ "whether the control strategy generates a"
+#~ " ``Boolean`` or ``Real``.  What changes "
+#~ "is the contents of the connector "
+#~ "instances."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Of course, we could use inheritance "
+#~ "to add new signals.  But that "
+#~ "introduces a new type.  The types "
+#~ "of connectors are fixed by the "
+#~ "type used in the interface definition."
+#~ "  So creating richer connectors via "
+#~ "inheritance doesn't really help."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The interface for the plant model "
+#~ "is unaffected by the use of "
+#~ "``expandable`` connectors, but the interfaces"
+#~ " for the sensor and controller are"
+#~ " as follows:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that the measured temperature "
+#~ "corresponds to the signal "
+#~ "``controller.bus.temp`` where ``bus`` is an"
+#~ " instance of the expandable connector.  "
+#~ "Further recall that the ``ExpandableBus`` "
+#~ "definition **didn't contain a signal "
+#~ "called** ``temperature``.  So the question "
+#~ "is, how did it get on the "
+#~ "connector.  The answer lies in the "
+#~ "implementation of the sensor model.  The"
+#~ " diagram for the sensor model looks"
+#~ " like this:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now that we've shown that we can"
+#~ " use the expandable approach to model"
+#~ " the continuous control version of "
+#~ "our system, let's return our attention"
+#~ " to the \"bang-bang\" version."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We've already seen the temperature "
+#~ "sensor subsystem configured to work with"
+#~ " the expandable connector.  What remains"
+#~ " is the controller and actuator "
+#~ "models.  The actuator model diagram "
+#~ "looks like this:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Again, note the highlighted lines.  Not"
+#~ " only do these ``connect`` statements "
+#~ "implicitly add the ``heat_command`` and "
+#~ "``temperature`` signals to the ``bus`` "
+#~ "connector, **those names match** the "
+#~ "names that the sensor and actuator "
+#~ "models expect."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Nothing else has changed.  We will "
+#~ "use the same sensor and actuator "
+#~ "models and we still use the same"
+#~ " bus signals since this is still "
+#~ "a bang-bang controller.  So the "
+#~ "only change to our system level "
+#~ "model (compared to the ``OnOffVariant`` "
+#~ "model) is the use of a different"
+#~ " controller model.  As we can see,"
+#~ " these configuration management features in"
+#~ " Modelica do a nice job of "
+#~ "conveying that in our system level "
+#~ "model:"
+#~ msgstr ""
+
+#~ msgid "expandable connectors"
+#~ msgstr ""
+
+#~ msgid "connectors"
+#~ msgstr ""
+
+#~ msgid "expandable"
+#~ msgstr ""
+
+#~ msgid "bus"
+#~ msgstr ""
+
+#~ msgid "caveats"
+#~ msgstr ""
+

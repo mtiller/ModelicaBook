@@ -1,15 +1,17 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/discrete/switching.rst:4
 msgid "Switched RLC Circuit"
@@ -26,10 +28,17 @@ msgid ""
 "example is simply to present time events in the context of an electrical "
 "model."
 msgstr ""
+"시간 이벤트를 포함하는 :ref:`이 장의 앞부분 <cooling-revisited>` 에서 제시한 열 전달 모델과 같은 형태의 다른 모델을 제시합니다."
+":ref:`첫번째 장에서 보인 하나의 예시 <elec-example>` 에 제시된 것과 같은 RLC 회로의 컨텍스트에서 스위치의 동작을 시뮬레이션할 수 있는 방법을 보여 주겠습니다."
+"지금까지 제시된 예제와 비교해 보면 이 모델의 어떤 것도 특별히 놀랄만한 것이 없습니다."
+"하지만, 단순히 전기 모델의 맥락에서 시간 이벤트를 보여주는 것이 예제를 제시하는 주요 이유 입니다."
+
+
 
 #: ../../source/behavior/discrete/switching.rst:15
 msgid "Our switched RLC circuit model is as follows:"
 msgstr ""
+"스위치 RLC 회로 모델은 다음과 같습니다."
 
 #: ../../source/behavior/discrete/switching.rst:21
 msgid ""
@@ -39,21 +48,30 @@ msgid ""
 "numerical solver will be able to determine *a priori* when the event will "
 "occur while integrating the underlying equations."
 msgstr ""
+"이 모델의 시간 이벤트는 ``if`` 표현식을 통해 도입됩니다. "
+"조건식에서 유일한 시변 변수가 ``time`` 이라는 사실은, 이것이 시간 이벤트를 트리거하고 기본 수치 솔버가 기본 조건식을 적분하는 동안 "
+"이벤트가 발생할 때를 *선험적* 으로 알고 결정할 수 있음을 의미합니다. "
 
 #: ../../source/behavior/discrete/switching.rst:28
 msgid ""
 "We can see the voltage response of this model to the switched supply voltage"
 " in the following plot:"
 msgstr ""
+"다음 선도(plot) 에서 공급 전압의 변화에 대한 이 모델의 전압 응답을 볼 수 있습니다."
 
 #: ../../source/behavior/discrete/switching.rst:34
 msgid ""
 "Furthermore, we can see the current response for inductor, resistor and "
 "capacitor components in this plot:"
 msgstr ""
+"또한 위의 선도를 보면서 인덕터, 저항 및 커패시터 구성 요소에 대한 전류 응답을 볼 수 있습니다."
 
 #: ../../source/behavior/discrete/switching.rst:40
 msgid ""
 "Hopefully by this point, the basic mechanisms for generating events and "
 "disturbances seem intuitive and familiar."
 msgstr ""
+"바라건대 이 시점에서 이벤트 및 외란을 생성하는 기본 메커니즘은 직관적이고 친숙해 졌으리라 생각합니다. "
+
+
+

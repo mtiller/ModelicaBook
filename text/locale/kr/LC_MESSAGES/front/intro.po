@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/front/intro.rst:2
 msgid "Introduction"
 msgstr ""
+"소개(Introduction)"
 
 #: ../../source/front/intro.rst:4
 msgid ""
@@ -22,10 +25,14 @@ msgid ""
 "Let me attempt to address these questions in the hope that they will "
 "intrigue you and cause you to dig deeper."
 msgstr ""
+"몇몇 이유로 만약에 모델리카에 대한 사전 지식 없이 이 책을 접하게 되었다면, 몇 가지 질문을 가질 수 있습니다.  "
+"이 질문들로 인해 당신이 흥미를 가지게 되고, 모델리카를 더 깊이 파고들기를 바라는 마음으로 답하려고 합니다. "
+
 
 #: ../../source/front/intro.rst:10
 msgid "What is Modelica?"
 msgstr ""
+"모델리카란 무엇인가?(What is Modelica?)"
 
 #: ../../source/front/intro.rst:12
 msgid ""
@@ -35,10 +42,16 @@ msgid ""
 "(*e.g.,* springs, resistors, clutches, *etc.*).  These components can then "
 "be combined into subsystems, systems or even architectures."
 msgstr ""
+"모델리카는 수학적 행위(mathematical behavior)를 설명하기 위한 고급 선언적 언어입니다. "
+"일반적으로 엔지니어링 시스템에 적용되며 다양한 유형의 엔지니어링 "
+"구성요소(예:스프링,저항기,클러치 등)의 동작을 쉽게 설명하는 데 사용할 수 있습니다."
+"그런 다음 이러한 구성 요소를 하위 시스템(subsystems), 시스템 또는 아키텍처로 결합할 수 있습니다. "
+
 
 #: ../../source/front/intro.rst:20
 msgid "Why Modelica?"
 msgstr ""
+"왜 모델리카 인가?(Why Modelica?)"
 
 #: ../../source/front/intro.rst:22
 msgid ""
@@ -50,6 +63,14 @@ msgid ""
 " topics like differential-algebraic equations, symbolic manipulation, "
 "numeric solvers, code generation, post-processing, *etc.*."
 msgstr ""
+"모델리카는 여러 가지 이유로 매력적입니다."
+"무엇보다도 기술적으로 매우 띄어납니다. "
+"모델리카 컴파일러는 엔지니어가 구성 요소 동작에 대한 높은 수준의"
+"수학적 설명에 집중할 수 있도록 복잡한 알고리즘을 통하여 보이지 않게 동작하고, "
+"미분 대수 방정식, 기호 처리(symbolic manipulation), 숫자 솔버, 코드 생성, 후처리 등과 같은 복잡한 "
+"주제에 대한 깊은 지식 없이도 고성능 시뮬레이션의 기능을 사용할 수 있습니다."
+
+
 
 #: ../../source/front/intro.rst:31
 msgid ""
@@ -60,7 +81,10 @@ msgid ""
 " design) and acausal (often used in creating schematic oriented physical "
 "designs) approaches *within the same model*."
 msgstr ""
-
+"하이브리드 미분 대수 방정식(hybrid differential-algebraic equation)의 문법으로 조작하여 "
+"연속 및 이산 동작을 모두 설명할 수 있는 광범위한 모델링 형식을 지원하는 것이 모델리카의 기술적 성공의 핵심입니다. "
+"이 언어는 동일한 모델 내에서 인과적 (종종 제어 시스템 설계에 사용됨) 및 비인과적 (종종 도식 지향 물리적 설계 생성에 사용 됨) 접근 방식을 모두 지원합니다. "
+ 
 #: ../../source/front/intro.rst:39
 msgid ""
 "Finally, another compelling aspect of Modelica is the fact that it was "
@@ -68,10 +92,14 @@ msgid ""
 "available and tool vendors are encouraged to support the import and export "
 "of Modelica (without being compelled to pay any royalty of any kind)."
 msgstr ""
-
+"마지막으로, 모델리카의 또 다른 매력적인 측면은 처음부터 개방형 언어로 설계되었다는 사실입니다. "
+"사양(specification)은 자유롭게 사용할 수 있으며 모델리카의 가져오기 및 내보내기를 (어떤 형태의 사용료도 지불하지 않고) 지원하도록 시뮬레이션 소프트웨어 공급업체에게 권장합니다."
+ 
 #: ../../source/front/intro.rst:46
 msgid "What Modelica allows me to do"
 msgstr ""
+"모델리카에서 수행할 수 있는 것(What Modelica allows me to do) "
+
 
 #: ../../source/front/intro.rst:48
 msgid ""
@@ -83,3 +111,8 @@ msgid ""
 "that it provides a complete set of capabilities for building lumped system "
 "models of nearly any engineering system."
 msgstr ""
+"모델리카는 거의 모든 엔지니어링 영역에서 엔지니어링 시스템의 동작을 모델링하는 데 이상적인 언어입니다. "
+"단일 언어로 물리적 설계와 제어 설계를 모두 원활하게 지원합니다. "
+"또한 다중 도메인이기 때문에 엔지니어링 도메인이나 시스템을 선택하는 데 사용을 제한하는 인위적인 한계를 강요하지 않습니다."
+"그 결과 거의 모든 엔지니어링 시스템의 일괄 시스템 모델을 구축하기 위한 완전한 기능 구성을 제공합니다. "
+

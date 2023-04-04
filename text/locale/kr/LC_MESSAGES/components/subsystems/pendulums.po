@@ -1,125 +1,217 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/subsystems/pendulums.rst:4
 msgid "Harmonic Motion of Pendulums"
 msgstr ""
+"진자의 하모닉 운동(Harmonic Motion of Pendulums)"
 
 #: ../../source/components/subsystems/pendulums.rst:6
 msgid ""
 "In this section, we will recreate an interesting experiment [Berg]_ "
 "involving pendulums.  If we create a series of pendulums with different "
-"natural frequencies and then start them all at the same position, what we "
-"will see is that they will oscillate at different frequencies.  But if we "
-"remove any energy dissipation from the system, they will eventually all "
-"\"reunite\" at their initial position."
+"natural frequencies and then start them all at the same position, what we"
+" will see is that they will oscillate at different frequencies.  But if "
+"we remove any energy dissipation from the system, they will eventually "
+"all \"reunite\" at their initial position."
 msgstr ""
+"이 섹션에서는 이전에 다루었던 진자와 관련하여 추가된 흥미로운 실험 [Berg]_ 을 다시 해보겠습니다."
+"서로 다른 고유 진동수를 가진 일련의 진자를 만든 다음, 모두 같은 위치에서 시작하면 진자가 서로 다른 진동수로 진동한다는 것을 알 수 있습니다."
+"그러나 시스템에서 에너지가 사라지게 되면 결국 초기 위치에서 모두 "재결합"합니다."
+
 
 #: ../../source/components/subsystems/pendulums.rst:13
 msgid ""
-"In general, the period between these \"reunion\" events is the least common "
-"multiple of the periods of all the pendulums in the system.  We can choose "
-"the lengths of the pendulums to achieve a specific period between these "
-"\"reunions\"."
+"In general, the period between these \"reunion\" events is the least "
+"common multiple of the periods of all the pendulums in the system.  We "
+"can choose the lengths of the pendulums to achieve a specific period "
+"between these \"reunions\"."
 msgstr ""
+"일반적으로 "재결합" 이벤트가 이루어지는 시간은 시스템의 모든 진자 기간의 최소 공배수입니다."
+"이러한 "재결합" 사이의 특정 기간을 원하는 값으로 설정하기 위해 추의 길이를 선택할 수 있습니다."
+
 
 #: ../../source/components/subsystems/pendulums.rst:19
 msgid "Pendulum Model"
 msgstr ""
+"진자 모델(Pendulum Model)"
 
 #: ../../source/components/subsystems/pendulums.rst:21
 msgid ""
 "In this section, we will use arrays of components to build our subsystem "
-"model just like we did in our :ref:`distributed-heat-transfer` example.  But"
-" before we can create an array of pendulums, we need to first have a model "
-"of a single pendulum."
+"model just like we did in our :ref:`distributed-heat-transfer` example.  "
+"But before we can create an array of pendulums, we need to first have a "
+"model of a single pendulum."
 msgstr ""
+"이 섹션에서는 :ref:`distributed-heat-transfer` 예제에서와 마찬가지로 구성 요소 배열을 사용하여 하위 시스템 모델을 구축할 것입니다."
+"그러나 진자의 배열을 만들기 전에 먼저 단일 진자의 모델이 있어야 합니다."
 
-#: ../../source/components/subsystems/pendulums.rst:32
+
+
+#: ../../source/components/subsystems/pendulums.rst:30
+msgid ""
+"This particular model is using the ``Modelica.Mechanics.MultiBody`` "
+"library. This library not only includes many useful models of parts and "
+"joints commonly found in mechanisms, but it also includes information "
+"about how to render those parts.  This allows Modelica tools to transform"
+" the simulated results of such a model directly into a 3D animation of "
+"the system."
+msgstr ""
+"이 특정 모델은 ``Modelica.Mechanics.MultiBody`` 라이브러리를 사용하고 있습니다."
+"이 라이브러리에는 메커니즘에서 일반적으로 발견되는 많은 유용한 부품 및 관절 모델이 포함되어 있을 뿐만 아니라, 해당 부품을 그림으로 표현하는 방법에 대한 정보도 포함되어 있습니다."
+"이를 통해 모델리카 시뮬레이션 소프트웨어는 이러한 모델의 시뮬레이션 결과를 시스템의 3D 애니메이션으로 직접 변환할 수 있습니다."
+
+
+
+#: ../../source/components/subsystems/pendulums.rst:36
 msgid "The components of the pendulum can be rendered as follows:"
 msgstr ""
+"진자의 구성 요소는 다음과 같이 표현할 수 있습니다."
 
-#: ../../source/components/subsystems/pendulums.rst:40
+#: ../../source/components/subsystems/pendulums.rst:46
 msgid "System Model"
 msgstr ""
+"시스템 모델(System Model)"
 
-#: ../../source/components/subsystems/pendulums.rst:44
+#: ../../source/components/subsystems/pendulums.rst:48
 msgid ""
 "Now that we have an individual pendulum model, we can build a system of "
-"pendulums.  If we want a system of :math:`n` pendulums where the period for "
-"a complete cycle of the system is :math:`T` seconds, we compute the length "
-"of the :math:`i^{th}` pendulum as:"
+"pendulums.  If we want a system of :math:`n` pendulums where the period "
+"for a complete cycle of the system is :math:`T` seconds, we compute the "
+"length of the :math:`i^{th}` pendulum as:"
 msgstr ""
+"이제 개별 진자 모델이 있으므로 진자 시스템을 구축할 수 있습니다. "
+"시스템의 전체 주기 주기가 `T` 초인 :math:`n` 진자의 시스템을 원하면 진자의 길이를 다음과 같이 계산합니다. :"
+
 
 #: ../../source/components/subsystems/pendulums.rst:53
-msgid ""
-"where :math:`g_n` is Earth's gravitational constant, :math:`n` is the number"
-" of pendulums, :math:`T` is the period of one complete cycle of the system "
-"and :math:`X` is the number of oscillations of the longest pendulum over "
-":math:`T` seconds."
+msgid "l_i = g_n\\frac{T}{2 \\pi (X+(n-i))}"
 msgstr ""
 
-#: ../../source/components/subsystems/pendulums.rst:58
+#: ../../source/components/subsystems/pendulums.rst:57
+msgid ""
+"where :math:`g_n` is Earth's gravitational constant, :math:`n` is the "
+"number of pendulums, :math:`T` is the period of one complete cycle of the"
+" system and :math:`X` is the number of oscillations of the longest "
+"pendulum over :math:`T` seconds."
+msgstr ""
+"여기서 :math:`g_n` 은 지구의 중력 상수이고, :math:`n` 은 진자의 수이며, :math:`T` 는 시스템의 완전한 한 주기의 주기이며 :math:`X` 는 `T` 초 동안 가장 긴 진자의 진동 횟수입니다."
+
+
+
+#: ../../source/components/subsystems/pendulums.rst:62
 msgid "In Modelica, we could build such a system as follows:"
 msgstr ""
+"모델리카에서는 다음과 같은 시스템을 구축할 수 있습니다."
 
-#: ../../source/components/subsystems/pendulums.rst:64
-msgid "The following declaration is particularly interesting:"
-msgstr ""
-
-#: ../../source/components/subsystems/pendulums.rst:70
+#: ../../source/components/subsystems/pendulums.rst:68
 msgid ""
-"Because ``pendulum`` is an array of ``n`` components, there will be ``n`` "
-"values for the ``x``, ``m``, ``phi`` and ``L`` parameters associated with "
-"these pendulums.  For example, if ``n=3``, then the model will have 3 values"
-" for ``x``: ``pendulum[1].x``, ``pendulum[2].x`` and ``pendulum[3].x``.  In "
-"the declaration of ``pendulum``, we handle this in different ways for "
-"different parameters.  In the case of ``m``, we give each pendulum the same "
-"value with the modification ``each m=1``.  However, in the case of ``L`` "
-"(and ``x``), we supply an array of values, ``L=lengths`` used to initialize "
-"the parameters where the values in the ``lengths`` array are computed using "
-"the equation for pendulum lengths we introduced earlier.  We will give a "
-"more complete discussion on how to apply modifications to arrays of "
-"components :ref:`later in this chapter <sub-modifications>`."
+"There are two declarations of interest here.  The first is the "
+"declaration of the ``world`` component.  This is needed to provide a "
+"frame of reference for the system as well as some key environmental "
+"parameters like the gravitational constant to use in the system.  In any "
+"given model there should only be one `world` component in the system.  "
+"Another very interesting declaration is the ``pendulum`` component:"
 msgstr ""
+"여기에는 두 가지 관심을 가져야 하는 선언이 있습니다. "
+"첫 번째는 ``world`` 컴포넌트의 선언인데, 이는 시스템에 대한 참조 프레임과 시스템에서 사용할 중력 상수와 같은 일부 주요 환경 파라미터를 제공하는 데 필요합니다."
+"만드는 모델의 시스템에는 하나의 `world` 구성 요소만 있어야 합니다. 또 다른 매우 흥미로운 선언은 ``pendulum`` 컴포넌트입니다:"
 
-#: ../../source/components/subsystems/pendulums.rst:85
+
+#: ../../source/components/subsystems/pendulums.rst:79
 msgid ""
-"If we simulate this system, we get the following solution for the trajectory"
-" of each of the pendulums:"
+"Because ``pendulum`` is an array of ``n`` components, there will be ``n``"
+" values for the ``x``, ``m``, ``phi`` and ``L`` parameters associated "
+"with these pendulums.  For example, if ``n=3``, then the model will have "
+"3 values for ``x``: ``pendulum[1].x``, ``pendulum[2].x`` and "
+"``pendulum[3].x``.  In the declaration of ``pendulum``, we handle this in"
+" different ways for different parameters.  In the case of ``m``, we give "
+"each pendulum the same value with the modification ``each m=1``.  "
+"However, in the case of ``L`` (and ``x``), we supply an array of values, "
+"``L=lengths`` used to initialize the parameters where the values in the "
+"``lengths`` array are computed using the equation for pendulum lengths we"
+" introduced earlier.  We will give a more complete discussion on how to "
+"apply modifications to arrays of components :ref:`later in this chapter "
+"<sub-modifications>`."
 msgstr ""
+"``pendulum`` 은 ``n`` 구성 요소의 배열이기 때문에 ``x`` , ``m``, ``phi`` 및 이러한 진자와 관련된 ``L`` 파라미터에 대한 ``n`` 값이 있습니다. "
+"예를 들어 ``n=3`` 이면 모델은 ``x`` 에 대해 ``pendulum[1].x`` , ``pendulum[2].x`` 및 ``pendulum[3].x`` 의 값을 사용합니다. "
+"그러나, ``pendulum`` 선언에서  다른 파라미터에 대해 다른 방식으로 이를 처리합니다."
+"``m`` 의 경우 ``each m=1`` 으로 수정하였기 때문에 각 진자에 동일한 값을 부여합니다. "
+"그러나 ``L`` (및 ``x``)의 경우 ``lengths`` 배열의 값이 파라미터를 초기화하는 데 사용하는 ``L=lengths`` 값의 배열을 제공합니다. "
+"이값을 사용하여 앞서 소개한 진자 길이 방정식으로 계산합니다."
+"구성 요소 배열에 수정 사항을 적용하는 방법에 대한 자세한 내용은 :ref:`이 장의 뒷부분 <sub-modifications>` 에서 설명합니다."
 
-#: ../../source/components/subsystems/pendulums.rst:93
+
+
+#: ../../source/components/subsystems/pendulums.rst:94
 msgid ""
-"As we can see from this plot, every 54 seconds all the pendulums return to "
-"their initial position."
+"If we simulate this system, we get the following solution for the "
+"trajectory of each of the pendulums:"
 msgstr ""
+"이 시스템을 시뮬레이션하면 각 진자의 궤적에 대해 다음과 같은 해를 얻을 수 있습니다."
 
-#: ../../source/components/subsystems/pendulums.rst:110
+#: ../../source/components/subsystems/pendulums.rst:99
+msgid ""
+"As we can see from this plot, although the pendulums oscillate at "
+"difference frequencies, their positions coincide at regular intervals.  "
+"In fact, every 54 seconds they all simultaneously return to their initial"
+" positions."
+msgstr ""
+"이 선도에서 볼 수 있듯이 진자는 서로 다른 주파수에서 진동하지만 위치는 일정한 간격으로 일치합니다"
+". 실제로 54초마다 모두 동시에 초기 위치로 돌아갑니다."
+
+
+
+#: ../../source/components/subsystems/pendulums.rst:104
+msgid ""
+"This phenomenon can be more clearly `visualized in three dimensions "
+"<https://youtu.be/cc7ajqhfLVM>`_."
+msgstr ""
+"이 현상은 `3차원으로 가시화됩니다 <https://youtu.be/cc7ajqhfLVM>`_."
+
+
+#: ../../source/components/subsystems/pendulums.rst:117
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
-#: ../../source/components/subsystems/pendulums.rst:112
+#: ../../source/components/subsystems/pendulums.rst:119
 msgid ""
-"In this section, we have seen how arrays of components can be used, declared"
-" and modified.  In this particular case, this allows us to specify the "
-"number of pendulums in our system and then simulate them to observe the "
-"peculiar behavior observed when we choose their lengths according to the "
-"equation specified earlier."
+"In this section, we have seen how arrays of components can be used, "
+"declared and modified.  In this particular case, this allows us to "
+"specify the number of pendulums in our system and then simulate them to "
+"observe the peculiar behavior observed when we choose their lengths "
+"according to the equation specified earlier."
 msgstr ""
+"이 섹션에서는 구성 요소 배열을 사용, 선언 및 수정하는 방법을 살펴보았습니다."
+"이 특별한 경우에 시스템의 진자 수를 지정한 다음, 길이를 선택할 때 관찰되는 독특한 동작을 관찰하기 위해 앞에서 지정한 방정식에 따라 진자의 수를 시뮬레이션할 수 있습니다."
 
-#: ../../source/components/subsystems/pendulums.rst:118
+
+#: ../../source/components/subsystems/pendulums.rst:125
 msgid ""
 "Richard E. Berg, \"Pendulum waves: A demonstration of wave motion using "
 "pendula\" http://dx.doi.org/10.1119/1.16608"
 msgstr ""
+
+#~ msgid "The following declaration is particularly interesting:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "As we can see from this plot, "
+#~ "every 54 seconds all the pendulums "
+#~ "return to their initial position."
+#~ msgstr ""
+

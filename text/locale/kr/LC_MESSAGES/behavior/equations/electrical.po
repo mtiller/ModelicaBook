@@ -1,25 +1,31 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/equations/electrical.rst:4
 msgid "An Electrical Example"
 msgstr ""
+"전기분야 예제(An Electrical Example)"
 
 #: ../../source/behavior/equations/electrical.rst:6
 msgid ""
 "Let us return now to an engineering context.  For readers who are more "
 "familiar with electrical systems, consider the following circuit:"
 msgstr ""
+"이제 엔지니어링 컨텍스트로 돌아가 보겠습니다. "
+"전기 시스템에 더 익숙한 독자를 위해 다음 회로를 살펴 보겠습니다. "
+
 
 #: ../../source/behavior/equations/electrical.rst:17
 msgid "Low-Pass RLC Filter"
@@ -28,145 +34,221 @@ msgstr ""
 #: ../../source/behavior/equations/electrical.rst:19
 msgid ""
 "Suppose we want to solve for: :math:`V`, :math:`i_L`, :math:`i_R` and "
-":math:`i_C`.  To solve for each of the currents :math:`i_L`, :math:`i_R` and"
-" :math:`i_C`, we can use the equations associated with inductors, resistors "
-"and capacitors, respectively:"
+":math:`i_C`.  To solve for each of the currents :math:`i_L`, :math:`i_R` "
+"and :math:`i_C`, we can use the equations associated with inductors, "
+"resistors and capacitors, respectively:"
+msgstr ""
+":math:`V`, :math:`i_L`, :math:`i_R` 및 :math:`i_C` 에 대해 풀고 싶다고 가정합니다."
+"각 전류 i_L`, i_R` 및 i_C`의 각 전류를 풀기 위해 각각 인덕터, 저항 및 커패시터와"
+"관련된 방정식을 사용할 수 있습니다."
+
+
+#: ../../source/behavior/equations/electrical.rst:25
+msgid "V = i_R R"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:26
+msgid "C \\frac{\\mathrm{d}V}{\\mathrm{d}t} = i_C"
+msgstr ""
+
+#: ../../source/behavior/equations/electrical.rst:27
+msgid "L \\frac{\\mathrm{d}i_L}{\\mathrm{d}t} = (V_b-V)"
 msgstr ""
 
 #: ../../source/behavior/equations/electrical.rst:29
 msgid "where :math:`V_b` is the battery voltage."
 msgstr ""
+"여기서 :math:`V_b` 는 배터리 전압입니다."
 
 #: ../../source/behavior/equations/electrical.rst:31
 msgid ""
 "Since we have only 3 equations, but 4 variables, we need one additional "
-"equation.  That additional equation is going to be Kirchoff's current law:"
+"equation.  That additional equation is going to be Kirchoff's current "
+"law:"
+msgstr ""
+"방정식은 3개뿐이지만 변수는 4개이므로 하나의 추가 방정식이 필요합니다. "
+"그 추가 방정식은 Kirchoff의 전류 법칙(current law)이 될 것입니다."
+
+
+#: ../../source/behavior/equations/electrical.rst:35
+msgid "i_L = i_R+i_C"
 msgstr ""
 
 #: ../../source/behavior/equations/electrical.rst:37
 msgid ""
-"Now that we have determined the equations and variables for this problem, we"
-" will create a basic model (including physical types) by translating the "
-"equations directly into Modelica.  But in a later section on :ref"
-":`electrical-components` we will return to this same circuit and demonstrate"
-" how to create models by dragging, dropping and connecting models that "
-"really look like the circuit components in our :ref:`low-pass-rlc`."
+"Now that we have determined the equations and variables for this problem,"
+" we will create a basic model (including physical types) by translating "
+"the equations directly into Modelica.  But in a later section on :ref"
+":`electrical-components` we will return to this same circuit and "
+"demonstrate how to create models by dragging, dropping and connecting "
+"models that really look like the circuit components in our :ref:`low-"
+"pass-rlc`."
 msgstr ""
+"이 문제에 대한 방정식과 변수를 결정했으므로, 지금은 방정식을 모델리카로 직접 변환하여 기본 모델(물리적 자료형 포함)을 생성 하겠습니다. "
+"이후 섹션인 :ref:`electrical-components` 에서 :ref:`low-pass-rlc` 와 동일한 회로 모델을 드래그, 드롭 및 연결하여 생성하는 방법을 보여줄 예정입니다. "
+
 
 #: ../../source/behavior/equations/electrical.rst:45
 msgid ""
 "But for now, we will build a model composed simply of variables and "
 "equations.  Such a model could be written as follows:"
 msgstr ""
+"그러나, 지금은 단순히 변수와 방정식으로 구성된 모델을 구현을 먼저 해보겠습니다."
+"직접 작성하는 모델은 다음과 같이 구성 할 수 있습니다."
+
 
 #: ../../source/behavior/equations/electrical.rst:52
 msgid ""
-"Let's go through this example bit by bit and reinforce the meaning of the "
-"various statements.  Let's start at the top:"
+"Let's go through this example bit by bit and reinforce the meaning of the"
+" various statements.  Let's start at the top:"
 msgstr ""
+"이 예를 조금씩 살펴보고 다양한 구문의 의미를 보강하겠습니다."
+"우선 구문의 상단부터 시작하겠습니다."
+
 
 #: ../../source/behavior/equations/electrical.rst:59
 msgid ""
 "Here we see that the name of the model is ``RLC1``.  Furthermore, a "
-"description of this model has been included, namely ``\"A resistor-inductor-"
-"capacitor circuit model\"``.  Next, we introduce a few physical types that "
-"we will need:"
+"description of this model has been included, namely ``\"A resistor-"
+"inductor-capacitor circuit model\"``.  Next, we introduce a few physical "
+"types that we will need:"
 msgstr ""
+"여기에서 모델 이름이 ``RLC1`` 임을 알 수 있습니다. "
+"또한 이 모델에 대한 설명은 "저항-인덕터-커패시터 회로 모델" 이라는 설명이 포함되어 있습니다. "
+
+"다음으로 필요한 몇 가지 물리적 자료형을 소개 하겠습니다."
+
 
 #: ../../source/behavior/equations/electrical.rst:68
 msgid ""
-"Each of these lines introduces a physical type that specializes the built-in"
-" ``Real`` type by associating it with a particular physical unit.  Then, we "
-"declare all of the ``parameter`` variables in our problem:"
+"Each of these lines introduces a physical type that specializes the "
+"built-in ``Real`` type by associating it with a particular physical unit."
+"  Then, we declare all of the ``parameter`` variables in our problem:"
 msgstr ""
+"예시에서 보이는 각각의 코드 한줄 한줄은 특정 물리적 단위와 연결하여 내장된 ``real`` 형태의 특별히 정의된 물리적 자료형으로 선언되어 있습니다.  "
+"그런 다음 문제에서 모든 ``parameter`` 변수를 선언합니다. "
+
 
 #: ../../source/behavior/equations/electrical.rst:77
 msgid ""
-"These ``parameter`` variables represent various physical characteristics (in"
-" this case, voltage, inductance, resistance and capacitance, respectively)."
-"  The last variables we need to define are the ones we wish to solve for, "
-"*i.e.*,"
+"These ``parameter`` variables represent various physical characteristics "
+"(in this case, voltage, inductance, resistance and capacitance, "
+"respectively).  The last variables we need to define are the ones we wish"
+" to solve for, *i.e.*,"
 msgstr ""
-
+"앞서 보인, ``parameter`` 변수는 다양한 물리적 특성(이 경우 각각 전압, 인덕턴스, 저항 및 정전 용량)을 나타냅니다. "
+"마지막에  정의한 변수는 해결하고자 하는 변수입니다. "
+"*즉* 아래와 같습니다."
+ 
 #: ../../source/behavior/equations/electrical.rst:86
 msgid ""
 "Now that all the variables have been declared, we add an ``equation`` "
 "section to the model that specifies the equations to use when generating "
 "solutions for this model:"
 msgstr ""
+"이제 모든 변수가 선언되었으므로, 이 모델에 대한 해을 생성할 때 사용할 방정식을 지정하는 ``equation`` 섹션을 추가합니다."
 
 #: ../../source/behavior/equations/electrical.rst:94
 msgid ""
-"Finally, we close the model by creating an ``end`` statement that includes "
-"the ``model`` name (*i.e.*, ``RLC1`` in this case):"
+"Finally, we close the model by creating an ``end`` statement that "
+"includes the ``model`` name (*i.e.*, ``RLC1`` in this case):"
 msgstr ""
+"마지막으로 ``model`` 이름(*i.e.*, 이 경우 ``RLC1`` )을 포함하는 ``end`` 문을 생성하여 모델을 닫습니다."
 
 #: ../../source/behavior/equations/electrical.rst:103
 msgid ""
-"One thing that distinguishes this example from the previous examples is the "
-"fact that it contains more equations.  As with the ``NewtonCooling`` "
-"example, we have some equations with expressions on both the left and right "
-"hand sides.  We also have a mix of differential equation (ones that include "
-"the derivative of a variable) and others that are simply algebraic "
-"equations."
+"One thing that distinguishes this example from the previous examples is "
+"the fact that it contains more equations.  As with the ``NewtonCooling`` "
+"example, we have some equations with expressions on both the left and "
+"right hand sides.  We also have a mix of differential equation (ones that"
+" include the derivative of a variable) and others that are simply "
+"algebraic equations."
 msgstr ""
+"이 예제가 이전 예제와 구별되는 한 가지는 더 많은 방정식이 포함되어 있다는 사실입니다. "
+"``NewtonCooling`` 예제와 마찬가지로 왼쪽과 오른쪽 모두에 표현식이 있는 방정식이 있습니다. "
+"또한 미분 방정식(변수의 도함수를 포함하는 방정식)과 단순한 대수 방정식인 "
+"다른 방정식이 혼합되어 있습니다."
+
 
 #: ../../source/behavior/equations/electrical.rst:110
 msgid ""
-"This further emphasizes the point that in Modelica it is not necessary to "
-"put the system of equations into the so-called \"explicit state-space form\""
-" required in some modeling environments.  We could, of course, rearrange the"
-" equations into a more explicit form like this:"
+"This further emphasizes the point that in Modelica it is not necessary to"
+" put the system of equations into the so-called \"explicit state-space "
+"form\" required in some modeling environments.  We could, of course, "
+"rearrange the equations into a more explicit form like this:"
 msgstr ""
+"이러한 특성은 모델리카에서 방정식 시스템을 일부 모델링 환경에서 요구되는 소위 "explicit state-space form - 명시적 상태-공간 형식""
+"에 넣을 필요가 없다는 점을 더욱 강조해서 보여줍니다. "
+"물론 방정식을 다음과 같이 보다 명확한 형식으로 재정렬할 수 있습니다."
+
 
 #: ../../source/behavior/equations/electrical.rst:120
 msgid ""
 "But the important point is that with Modelica, we do not need to perform "
-"such manipulations.  Instead, we are free to write the equations in whatever"
-" form we chose."
+"such manipulations.  Instead, we are free to write the equations in "
+"whatever form we chose."
 msgstr ""
+"그러나 중요한 점은 모델리카를 사용하면 이러한 조작을 수행할 필요가 없다는 것입니다."
+"이렇게 조작해서 표현하느 대신,   선택한 어떤 형식으로든 방정식을 자유롭게 작성할 수 있습니다."
+
 
 #: ../../source/behavior/equations/electrical.rst:124
 msgid ""
-"Ultimately, these equations will probably need to be manipulated into a form"
-" like explicit state-space form.  But if such manipulations are necessary, "
-"it will be the responsibility of the Modelica compiler, not the model "
-"developer, to perform these manipulations.  This eliminates the need for the"
-" model developer to deal with this tedious, time consuming and error prone "
-"task."
+"Ultimately, these equations will probably need to be manipulated into a "
+"form like explicit state-space form.  But if such manipulations are "
+"necessary, it will be the responsibility of the Modelica compiler, not "
+"the model developer, to perform these manipulations.  This eliminates the"
+" need for the model developer to deal with this tedious, time consuming "
+"and error prone task."
 msgstr ""
+"사실 궁극적으로는 이러한 방정식이 명시적 상태 공간 형식과 같은 형태로 조작되어야 할 것입니다. "
+"그러나 이러한 조작이 필요한 경우 이러한 조작을 수행하는 것은 모델 개발자가 아닌 모델리카 컴파일러의 역할입니다. "
+"이렇게 하면 모델 개발자가 이 지루하고 시간 소모적이며 오류가 발생하기 쉬운 작업을 처리할 필요가 없습니다."
+
 
 #: ../../source/behavior/equations/electrical.rst:131
 msgid ""
 "The ability to keep equations in their \"textbook form\" is important "
-"because, as we will show in later sections, we eventually want to get to the"
-" point where these equations are \"captured\" in individual components "
-"models.  In those cases, we won't know (when we create the component model) "
-"exactly what variable each equation will be used to solve for.  Making such "
-"manipulations the responsibility of the Modelica compiler not only makes the"
-" model development faster and easier, but it dramatically improves the "
-"**reusability** of the models."
+"because, as we will show in later sections, we eventually want to get to "
+"the point where these equations are \"captured\" in individual components"
+" models.  In those cases, we won't know (when we create the component "
+"model) exactly what variable each equation will be used to solve for.  "
+"Making such manipulations the responsibility of the Modelica compiler not"
+" only makes the model development faster and easier, but it dramatically "
+"improves the **reusability** of the models."
 msgstr ""
+"방정식을 "textbook form - 교과서와 같은 형식"으로 유지할 수 있도록 하는 기능은 중요합니다. "
+"이후 섹션에서 볼 수 있듯이 이러한 방정식이 구성 요소 모델에서 개별적으로 "captured - 수집된" 형태가 되기를 원하기 때문입니다. "
+"이러한 경우 각 방정식을 해결하는 데 사용할 변수가 정확히 무엇인지 (구성 요소 모델을 생성할 때) 알 필요가 없습니다. "
+"이러한 조작을 모델리카 컴파일러의 책임으로 만들면 모델 개발이 더 빠르고 쉬워질 뿐만 아니라 모델의 **재사용 가능성** 이 크게 향상됩니다."
+
+
 
 #: ../../source/behavior/equations/electrical.rst:141
 msgid "The following figure shows the dynamic response of the ``RLC1`` model:"
 msgstr ""
+"다음 그림은 ``RLC1`` 모델의 동적 응답을 보여줍니다."
 
-#: ../../source/behavior/equations/electrical.rst:0
 msgid "Expanding on these electrical examples"
 msgstr ""
+"전기 예제에 대한 확장(Expanding on these electrical examples)"
 
 #: ../../source/behavior/equations/electrical.rst:148
 msgid ""
-"As mentioned in the :ref:`preface`, the structure of this book allows us to "
-"explore a more hypermedia based approach in which readers are encouraged to "
-"process the material that is most aligned with their goals and interests.  "
-"The next chapter will present a model whose equations are derived from a "
-"mechanical system.  If you would prefer instead to see this electrical "
-"example extended to include more complex behavior, you may want to skip "
-"ahead to the :ref:`switched-rlc` example."
+"As mentioned in the :ref:`preface`, the structure of this book allows us "
+"to explore a more hypermedia based approach in which readers are "
+"encouraged to process the material that is most aligned with their goals "
+"and interests.  The next chapter will present a model whose equations are"
+" derived from a mechanical system.  If you would prefer instead to see "
+"this electrical example extended to include more complex behavior, you "
+"may want to skip ahead to the :ref:`switched-rlc` example."
 msgstr ""
+":ref:`preface` 에서 언급한 바와 같이 이 책의 구조는 독자가 자신의 목표와 관심사에 가장 잘 맞는"
+"자료에 접근 할 수 있도록 하이퍼 링크 기반의 접근 방식으로 정보를 탐색할 수 있도록 합니다."
+"다음 장에서는 방정식이 기계 시스템에서 파생된 모델을 제시합니다."
+"이렇나 정보 보다는 복잡한 동작이 포함하도록 확장된 이 전기적 예제를 보고 싶다면 :ref:`Switched-rlc` 예제로 건너뛸 수 있습니다."
 
-#: ../../source/behavior/equations/electrical.rst:101
-msgid "state-space form"
-msgstr ""
+
+#~ msgid "state-space form"
+#~ msgstr ""
+

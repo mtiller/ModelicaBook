@@ -1,31 +1,41 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/functions/nonlinear.rst:4
 msgid "Non-Linearities"
 msgstr ""
+"비선형성(Non-Linearities)"
 
 #: ../../source/behavior/functions/nonlinear.rst:6
 msgid ""
-"Our next example involving functions demonstrates how to address issues that"
-" come up when solving non-linear systems of equations that involve "
+"Our next example involving functions demonstrates how to address issues "
+"that come up when solving non-linear systems of equations that involve "
 "functions."
 msgstr ""
+"다음 예제는 함수와 관련된 비선형 방정식 시스템을 풀 때 발생하는 문제를 해결하는 방법을 보여줍니다. "
+
 
 #: ../../source/behavior/functions/nonlinear.rst:10
 msgid ""
 "We'll start with a simple model that includes this simple mathematical "
 "relationship:"
+msgstr ""
+"다음과 같은 간단한 수학적 관계를 포함하는 가벼운 모델부터 시작하겠습니다."
+
+#: ../../source/behavior/functions/nonlinear.rst:13
+msgid "y = 2 t^2 + 3 t + 1"
 msgstr ""
 
 #: ../../source/behavior/functions/nonlinear.rst:17
@@ -33,45 +43,63 @@ msgid ""
 "where :math:`t` is time.  This model can be implemented in Modelica as "
 "follows:"
 msgstr ""
+"여기서 :math:`t` 는 시간입니다. 이 모델은 모델리카에서 다음과 같이 구현할 수 있습니다."
 
 #: ../../source/behavior/functions/nonlinear.rst:23
 msgid ""
-"where the ``Quadratic`` function, which we will discuss shortly, evaluates a"
-" quadratic polynomial."
+"where the ``Quadratic`` function, which we will discuss shortly, "
+"evaluates a quadratic polynomial."
 msgstr ""
+"곧 논의할 ``Quadratic`` 함수는 2차 다항식을 해석 하며,"
 
 #: ../../source/behavior/functions/nonlinear.rst:26
 msgid "Simulating this model gives the following solution for ``y``:"
 msgstr ""
+"이 모델을 시뮬레이트하면 ``y`` 에 대한 다음과 같은 해가 제공합니다."
 
 #: ../../source/behavior/functions/nonlinear.rst:31
 msgid ""
 "So far, all of this appears quite reasonable and, based on our previous "
 "discussion on :ref:`polynomial-evaluation`, the implementation of "
-"``Quadratic`` isn't likely to hold too many surprises.  However, let's make "
-"things a little more complicated. Consider the following model:"
+"``Quadratic`` isn't likely to hold too many surprises.  However, let's "
+"make things a little more complicated. Consider the following model:"
 msgstr ""
+"지금까지는 이 모든 것이 꽤 합리적으로 보였고, 이전 :ref:`polynomial-evaluation` 에 대해 논의한 바에 따르면 ``Quadratic`` 의 구현은 그리 놀라운 일이 아닐 것입니다."
+"그러나 문제를 조금 더 복잡하게 만들어서 다음 모델을 살펴 보겠습니다."
 
 #: ../../source/behavior/functions/nonlinear.rst:41
 msgid "This model amounts to solving the following equation:"
+msgstr ""
+"이 모델은 다음 방정식을 푸는 것과 같습니다."
+
+#: ../../source/behavior/functions/nonlinear.rst:43
+msgid "t+5 = 2 y^2 + 3 y + 1"
 msgstr ""
 
 #: ../../source/behavior/functions/nonlinear.rst:47
 msgid ""
 "The important difference here is that the left hand side is known and we "
-"must compute the value of :math:`y` that satisfies this equation. In other "
-"words, instead of evaluating a quadratic polynomial, like we were doing in "
-"the previous example, now we have to solve a quadratic equation."
+"must compute the value of :math:`y` that satisfies this equation. In "
+"other words, instead of evaluating a quadratic polynomial, like we were "
+"doing in the previous example, now we have to solve a quadratic equation."
 msgstr ""
+"여기에서 중요한 차이점은, 왼쪽항에 표현된 방정식을 만족하는 :math:`y` 값을 계산해야 한다는 것입니다. "
+"즉, 이전 예제에서 했던 것처럼 2차 다항식을 해석하는 대신 이제 2차 방정식을 풀어야 합니다."
+
+
 
 #: ../../source/behavior/functions/nonlinear.rst:53
 msgid ""
 "A model that requires solving a non-linear system of equations is not "
-"remarkable by itself.  Modelica compilers are certainly more than capable of"
-" recognizing and solving non-linear systems of equations (although these "
-"methods usually depend on having a reasonable initial guess in order to "
-"converge)."
+"remarkable by itself.  Modelica compilers are certainly more than capable"
+" of recognizing and solving non-linear systems of equations (although "
+"these methods usually depend on having a reasonable initial guess in "
+"order to converge)."
 msgstr ""
+"비선형 방정식 시스템을 해결해야 하는 모델은 그 자체로는 놀라운 것이 아닙니다. "
+"모델리카 컴파일러는 (이러한 방법은 일반적으로 수렴하기 위해 합리적인 초기 추측에 의존하지만) 확실히 비선형 방정식 시스템을 인식하고 해결할 수 있는 능력 이상을 가지고 있습니다."
+
+
 
 #: ../../source/behavior/functions/nonlinear.rst:59
 msgid ""
@@ -79,56 +107,85 @@ msgid ""
 "actually need to solve a non-linear system**.  Although we couldn't know "
 "this until we saw how the ``Quadratic`` function is implemented:"
 msgstr ""
+"그러나 이 경우 **모델리카 컴파일러는 실제로 비선형 시스템을 풀 필요가 없습니다**. ``Quadratic`` 함수가 어떻게 구현되는지 아래를 통해 살펴보면서 이해할 수 있습니다."
 
 #: ../../source/behavior/functions/nonlinear.rst:69
 msgid ""
 "In particular, note the line specifying the ``inverse`` annotation. With "
 "this function definition, we not only tell the Modelica compiler how to "
 "evaluate the ``Quadratic`` function, but, through the ``inverse`` "
-"annotation, we are also indicating that the ``InverseQuadratic`` function "
-"should be used to compute ``x`` in terms of ``y``."
+"annotation, we are also indicating that the ``InverseQuadratic`` function"
+" should be used to compute ``x`` in terms of ``y``."
 msgstr ""
+"특히 ``inverse`` 주석을 지정하는 행에 유의해서 보겠습니다. "
+"이 함수 정의를 통해  모델리카 컴파일러에게 ``Quadratic`` 함수를 해석하는 방법을 알려줄 뿐만 아니라,"
+"``inverse`` 주석을 통해 ``InverseQuadratic`` 함수를 이용하여 ``y`` 로 ``x`` 를 계산하여 사용할 수 있음을 나타냅니다. "
+
 
 #: ../../source/behavior/functions/nonlinear.rst:76
 msgid "The ``InverseQuadratic`` function is defined as follows:"
 msgstr ""
+"``InverseQuadratic`` 함수는 다음과 같이 정의합니다."
+
 
 #: ../../source/behavior/functions/nonlinear.rst:84
 msgid ""
-"Note that the ``InverseQuadratic`` function computes only the positive root "
-"in the quadratic equation.  This can be both a good thing and a bad thing.  "
-"By computing only a single root, we avoid the issue of having multiple "
-"solutions when we invert the quadratic relationship.  However, if the "
-"negative root happens to be the one you want, this can be a problem."
+"Note that the ``InverseQuadratic`` function computes only the positive "
+"root in the quadratic equation.  This can be both a good thing and a bad "
+"thing.  By computing only a single root, we avoid the issue of having "
+"multiple solutions when we invert the quadratic relationship.  However, "
+"if the negative root happens to be the one you want, this can be a "
+"problem."
 msgstr ""
+"``InverseQuadratic`` 함수는 2차 방정식에서 양의 근만 계산합니다. "
+"이것은 좋은 방법일 수도 있고 나쁜 방법일 수도 있습니다. "
+"하나의 경로만 계산하면 2차 관계를 역전시킬 때 여러 해를 갖는 문제를 피할 수 있지만, 음의 경로가 원하는 경로인 경우 문제가 될 수 있습니다."
+
 
 #: ../../source/behavior/functions/nonlinear.rst:91
 msgid ""
-"In the case of our ``ImplicitEvaluation`` model, the Modelica compiler can "
-"then substitute this inverse function into the equations.  So, where we "
-"initially had, ignoring the coefficient arguments for the moment, the "
+"In the case of our ``ImplicitEvaluation`` model, the Modelica compiler "
+"can then substitute this inverse function into the equations.  So, where "
+"we initially had, ignoring the coefficient arguments for the moment, the "
 "following equation to solve:"
+msgstr ""
+"``ImplicitEvaluation`` 모델의 경우 모델리카 컴파일러는 이 역함수를 위에서 언급한 방정식으로 대체할 수 있습니다. "
+"처음으로 돌아가서 설명하면, 계수 인수를 무시하고 다음 방정식으로 풀 수 있습니다."
+
+
+#: ../../source/behavior/functions/nonlinear.rst:96
+msgid "t+5 = f(y)"
 msgstr ""
 
 #: ../../source/behavior/functions/nonlinear.rst:100
 msgid ""
-"which must be solved as an implicit equation for :math:`y`, we can now solve"
-" the following **explicit** equation:"
+"which must be solved as an implicit equation for :math:`y`, we can now "
+"solve the following **explicit** equation:"
+msgstr ""
+":math:`y` 에 대해서 암시적 방정식으로 풀어야 했는데, 이제 다음과 같이 **명시적** 방정식을 풀 수 있습니다."
+
+
+
+#: ../../source/behavior/functions/nonlinear.rst:103
+msgid "y = f^{-1}(t+5)"
 msgstr ""
 
 #: ../../source/behavior/functions/nonlinear.rst:107
 msgid "by using the ``InverseQuadratic`` function as the inverse function."
 msgstr ""
+"``InverseQuadratic`` 함수를 역함수로 사용하여 푸는것 입니다."
 
 #: ../../source/behavior/functions/nonlinear.rst:109
 msgid ""
-"Simulating the ``ImplicitEvaluation`` model we get the following solution "
-"for ``y``:"
+"Simulating the ``ImplicitEvaluation`` model we get the following solution"
+" for ``y``:"
 msgstr ""
+"``ImplicitEvaluation`` 모델을 시뮬레이트하면 ``y`` 에 대해 다음과 같은 해를 얻습니다."
 
 #: ../../source/behavior/functions/nonlinear.rst:115
 msgid ""
-"Looking at this figure, we can see that, in fact, we got the correct result,"
-" but, in general, without the need to solve the non-linear system that would"
-" otherwise result from our ``ImplicitEvaluation`` model."
+"Looking at this figure, we can see that, in fact, we got the correct "
+"result, but, in general, without the need to solve the non-linear system "
+"that would otherwise result from our ``ImplicitEvaluation`` model."
 msgstr ""
+"이 그림을 보면, 일반적인 ``ImplicitEvaluation`` 모델 에서 발생하는 비선형 시스템을 풀 필요가 없이 올바른 결과를 얻었음을 알 수 있습니다."

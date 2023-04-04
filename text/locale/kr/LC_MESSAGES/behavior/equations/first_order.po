@@ -1,22 +1,32 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/equations/first_order.rst:4
 msgid "Simple First Order System"
 msgstr ""
+"간단한 1차 시스템(Simple First Order System)"
+
 
 #: ../../source/behavior/equations/first_order.rst:6
 msgid "Let us consider an extremely simple differential equation:"
+msgstr ""
+"매우 간단한 미분 방정식을 생각해 보겠습니다."
+
+#: ../../source/behavior/equations/first_order.rst:8
+#: ../../source/behavior/equations/first_order.rst:43
+msgid "\\dot{x} = (1-x)"
 msgstr ""
 
 #: ../../source/behavior/equations/first_order.rst:10
@@ -24,266 +34,364 @@ msgid ""
 "Looking at this equation, we see there is only one variable, :math:`x`.  "
 "This equation can be represented in Modelica as follows:"
 msgstr ""
+"방정식을 살펴보면 변수가 :math:`x` 하나만 있는 것을 알 수 있습니다. "
+"모델리카로 이 방정식을 표현하면 다음과 같습니다. "
 
-#: ../../source/behavior/equations/first_order.rst:23
+
+#: ../../source/behavior/equations/first_order.rst:21
 msgid ""
-"This code starts with the keyword ``model`` which is used to indicate the "
-"start of the model definition.  The ``model`` keyword is followed by the "
-"model name, ``FirstOrder``.  This, in turn, is followed by a declaration of "
-"all the variables we are interested in."
+"This code starts with the keyword ``model`` which is used to indicate the"
+" start of the model definition.  The ``model`` keyword is followed by the"
+" model name, ``FirstOrder``.  This, in turn, is followed by a declaration"
+" of all the variables we are interested in."
 msgstr ""
+"위 코드는 모델 정의의 시작을 나타내는 키워드인 ``model`` 로 시작합니다. "
+"``model`` 키워드 뒤에는 모델 이름인 ``FirstOrder`` 가 오고, "
+"그 다음으로 관심 있는 모든 변수에 대한 선언이 뒤따릅니다"
 
-#: ../../source/behavior/equations/first_order.rst:28
+
+#: ../../source/behavior/equations/first_order.rst:26
 msgid ""
 "Since the variable :math:`x` in our equation is clearly meant to be a "
-"continuous real valued variable, its declaration in Modelica takes the form "
-"``Real x;``.  The ``Real`` type is just one of the types we can use (a more "
-"complete description of the various possibilities will be discussed in the "
-"upcoming section on :ref:`variables`)."
+"continuous real valued variable, its declaration in Modelica takes the "
+"form ``Real x;``.  The ``Real`` type is just one of the types we can use "
+"(a more complete description of the various possibilities will be "
+"discussed in the upcoming section on :ref:`variables`)."
 msgstr ""
+"방정식의 변수 :math:`x` 는 연속적인 실수 값으로 구성된 변수를 의미하므로 모델리카에서는 ``Real x;`` 라는 자료형으로 변수를 선언 합니다. "
+"여기에 선언된 ``Real`` 자료형은  사용할 수 있는 자료형(변수 형식) 중 하나일 뿐입니다."
 
-#: ../../source/behavior/equations/first_order.rst:34
+"(변수 선언의 다양한 가능성에 대해서는 :ref:`다음 섹션 <variables>` 에서 논의 하겠습니다.)"
+
+
+#: ../../source/behavior/equations/first_order.rst:32
 msgid ""
 "Once all the variables have been declared, we can begin including the "
-"equations that describe the behavior of our model.  In this case, we can use"
-" the ``der`` operator to represent the time derivative of ``x``.  Thus,"
+"equations that describe the behavior of our model.  In this case, we can "
+"use the ``der`` operator to represent the time derivative of ``x``.  "
+"Thus,"
 msgstr ""
+"사용할 변수를 전부 선언하고 나서, 모델의 동작을 설명하는 방정식을 구현 할 수 있습니다. "
+"앞서 논의한 방정식의 경우는 ``der`` 연산자를 사용하여 ``x`` 의 시간에 대한 도함수(derivative)를 표현하고 있습니다."
 
-#: ../../source/behavior/equations/first_order.rst:43
+"따라서,"
+
+
+
+#: ../../source/behavior/equations/first_order.rst:41
 msgid "is equivalent to:"
 msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:47
+#: ../../source/behavior/equations/first_order.rst:45
 msgid ""
 "Unlike most programming languages, we don't approach code like this as a "
-"\"program\" that can be interpreted as a set of instructions to be executed "
-"one after the other.  Instead, we use a Modelica compiler to transform this "
-"model into something that we can simulate.  This simulation step essentially"
-" amounts to solving (usually numerically) the equation and providing a "
-"solution trajectory like this:"
+"\"program\" that can be interpreted as a set of instructions to be "
+"executed one after the other.  Instead, we use a Modelica compiler to "
+"transform this model into something that we can simulate.  This "
+"simulation step essentially amounts to solving (usually numerically) the "
+"equation and providing a solution trajectory like this:"
 msgstr ""
+"대부분의 프로그래밍 언어와 달리, 모델리카는 이와 같은 코드를 차례로 실행되는 일련의 명령으로 해석할 수 있는 "프로그램"으로 접근하지 않습니다."
+"대신, 모델리카 컴파일러가 이 모델을 시뮬레이션할 수 있도록 변환합니다."
+"시뮬레이션에서는 기본적으로 방정식을 풀고 다음과 같이 (대부분 수치적으로) 문제를 해결하여 해의 궤적을 보여줍니다."
 
-#: ../../source/behavior/equations/first_order.rst:57
+
+#: ../../source/behavior/equations/first_order.rst:55
 msgid ""
-"This gives you the first initial hint at one of the compelling aspects about"
-" using a modeling language to describe mathematical behavior.  We didn't "
-"need to describe how to solve this differential equation.  The focus is "
-"entirely on behavior.  As we work our way through more complex examples, we "
-"will see that **much of the tedious work involving the solution process is "
-"handled automatically by the Modelica compiler**."
+"This gives you the first initial hint at one of the compelling aspects "
+"about using a modeling language to describe mathematical behavior.  We "
+"didn't need to describe how to solve this differential equation.  The "
+"focus is entirely on behavior.  As we work our way through more complex "
+"examples, we will see that **much of the tedious work involving the "
+"solution process is handled automatically by the Modelica compiler**."
 msgstr ""
+"모델링 언어를 사용하여 수학적 동작을 표현하는 것에는 매력적인 면들이 여럿 있는데, 그중의 첫 번째 힌트를 여기에서 살펴 볼 수 있습니다."
+"이 모델에서는 미분 방정식을 푸는 방법을 설명할 필요가 없으며, 전적으로 수학적 동작에만 초점을 맞췄습니다."
 
-#: ../../source/behavior/equations/first_order.rst:68
+"앞으로, 더 복잡한 예제를 통해 작업하면서,"
+"**문제 해결에 절차와 관련된 많은 지루한 작업을 모델리카 컴파일러가 의해 자동으로 처리하는 것**"
+"을 확인 할 수 있습니다."
+
+
+#: ../../source/behavior/equations/first_order.rst:66
 msgid "Adding Some Documentation"
 msgstr ""
+"문서 추가하기(Adding Some Documentation)"
 
-#: ../../source/behavior/equations/first_order.rst:70
+#: ../../source/behavior/equations/first_order.rst:68
 msgid ""
 "Now that we've solved this simple mathematical equation, let's turn our "
 "attention briefly to how we can make the model a bit more readable.  "
 "Consider the following model:"
 msgstr ""
+"앞서서 단순한 수학 방정식을 하나 풀어보았고, 이제 더 읽기 쉬운 모델을 만드는 방법에 대해 다음에서 간단히 확인해 보겠습니다. "
 
-#: ../../source/behavior/equations/first_order.rst:82
+#: ../../source/behavior/equations/first_order.rst:78
 msgid "Note the quoted text in this model."
 msgstr ""
+"예제의 모델에서 제시된 텍스트에 주목해야 합니다. "
 
-#: ../../source/behavior/equations/first_order.rst:84
+#: ../../source/behavior/equations/first_order.rst:80
 msgid ""
 "It is important to understand that the quoted text blocks, called "
 "\"strings\" in computer science, are **not** comments.  They are "
 "\"descriptive strings\" and, unlike comments, they cannot be added in "
-"arbitrary places.  Instead, they can only be inserted in specific places to "
-"provide additional documentation about the elements of the model they are "
-"associated with."
+"arbitrary places.  Instead, they can only be inserted in specific places "
+"to provide additional documentation about the elements of the model they "
+"are associated with."
 msgstr ""
+"컴퓨터 과학(computer science) 관점에서 "문자열"이라고 하는 인용된 텍스트 블록은 주석(comments)이 **아님** 을 이해해야 합니다. "
+"이것은 "설명 문자열"이며 주석과는 다르게  임의의 위치에 추가할 없지만, "
+"대신 특정 위치에 삽입하여 모델 요소에 연관된 추가 문서를 제공할 수 있습니다."
 
-#: ../../source/behavior/equations/first_order.rst:90
+
+#: ../../source/behavior/equations/first_order.rst:86
 msgid ""
-"For example, the first string \"A simple first order differential equation\""
-" is used to describe what this is a model of.  Note how it follows the name "
-"of the model.  If you wish to include such documentation about the model, it"
-" must appear immediately after the model name as shown."
+"For example, the first string \"A simple first order differential "
+"equation\" is used to describe what this is a model of.  Note how it "
+"follows the name of the model.  If you wish to include such documentation"
+" about the model, it must appear immediately after the model name as "
+"shown."
 msgstr ""
+"예를 들어, 첫 번째 문자열 "A simple first order differential equation"은 모델이 무엇인지 설명하는 데 사용합니다."
+"모델에 대하여 문서화 하여 내용을 포함 하려면, 예시에서 표현한 것 처럼 모델 이름 바로 뒤에 작성해야 하는 것 입니다."
 
-#: ../../source/behavior/equations/first_order.rst:96
+
+#: ../../source/behavior/equations/first_order.rst:92
 msgid ""
 "As we will see later, this kind of documentation can be used by tools in "
 "many ways.  For example, when searching for models, a tool may use these "
 "descriptive strings when identifying matches.  This text may also be "
-"associated with a graphical representation of the models.  And, of course, "
-"this kind of documentation is very useful for anybody reading the model."
+"associated with a graphical representation of the models.  And, of "
+"course, this kind of documentation is very useful for anybody reading the"
+" model."
 msgstr ""
+"나중에 살펴보겠지만 이 설명 문자열은, 여러 가지 방법으로 시뮬레이션 소프트웨어에서 사용될 수 있습니다. "
+"예를 들어 시뮬레이션 소프트웨어에서 모델을 검색할 경우 이것을 이용하여 일치 하는 항목을 찾을 수 있으며,"
+"모델의 그래픽 표현과도 연관될 수 있습니다. "
 
-#: ../../source/behavior/equations/first_order.rst:103
+"물론, 이러한 종류의 문서화는 모델을 읽는 모든 사람에게 유용 합니다."
+
+
+#: ../../source/behavior/equations/first_order.rst:99
 msgid ""
-"As this example demonstrates, there are other places that the descriptive "
-"text can appear.  For example, it may be included after the declaration of a"
-" variable or equation to document them."
+"As this example demonstrates, there are other places that the descriptive"
+" text can appear.  For example, it may be included after the declaration "
+"of a variable or equation to document them."
 msgstr ""
+"예제를 살펴보면, 모델 뒤가 아닌 다른 위치에서 표현된 텍스트도 있습니다. "
+"이는 변수 또는 방정식의 내용을 뒷받침하기 위해 선언한 후에 작성할 수 있습니다. "
 
-#: ../../source/behavior/equations/first_order.rst:110
+
+
+#: ../../source/behavior/equations/first_order.rst:106
 msgid "Initialization"
 msgstr ""
+"초기화(Initialization)"
+
+
+#: ../../source/behavior/equations/first_order.rst:108
+msgid ""
+"As we have seen already, Modelica allows us to describe model behavior in"
+" terms of differential equations.  But the initial conditions we choose "
+"are just as important as the equations."
+msgstr ""
+"이미 살펴본 바와 같이, 모델리카는 미분 방정식으로 모델의 동작을 설명할 수 있지만,   "
+"방정식만큼이나  선택하는 초기화 구문 또한 중요합니다."
+
 
 #: ../../source/behavior/equations/first_order.rst:112
 msgid ""
-"As we have seen already, Modelica allows us to describe model behavior in "
-"terms of differential equations.  But the initial conditions we choose are "
-"just as important as the equations."
-msgstr ""
-
-#: ../../source/behavior/equations/first_order.rst:116
-msgid ""
 "For this reason, Modelica also provides constructs for describing the "
-"initialization of our system of equations.  For example, if we wanted the "
-"initial value of ``x`` in our model to be *2*, we could add an ``initial "
-"equation`` section to our model as follows:"
+"initialization of our system of equations.  For example, if we wanted the"
+" initial value of ``x`` in our model to be *2*, we could add an ``initial"
+" equation`` section to our model as follows:"
 msgstr ""
+"이러한 이유로 모델리카는 방정식 시스템의 초기화를 정의하기 위한 구문도 제공합니다."
+"예를 들어 모델에서 ``x`` 의 초기 값이 *2* 가 되도록 하려면 다음과 같이 모델에 ``initial equation`` 섹션을 추가할 수 있습니다."
 
-#: ../../source/behavior/equations/first_order.rst:129
+
+#: ../../source/behavior/equations/first_order.rst:123
 msgid ""
 "Note that the only difference between this model and the previous one, "
-"presented in the section on :ref:`first-order-doc`, is the addition of the "
-"``initial equation`` section which contains the equation ``x = 2``.  In the "
-"previous example, the initial value of ``x`` at the start of the simulation "
-"was unspecified.  Generally speaking, this means that the initial value for "
-"``x`` will be the value of its ``start`` attribute (which is zero by "
-"default).  However, because each tool uses their own specific algorithms to "
-"formulate the final system of equations, it is always best to state initial "
-"conditions explicitly, as we have done here.  By adding this equation to the"
-" ``initial equation`` section, we are explicitly specifying the initial "
-"condition for ``x``."
+"presented in the section on :ref:`first-order-doc`, is the addition of "
+"the ``initial equation`` section which contains the equation ``x = 2``.  "
+"In the previous example, the initial value of ``x`` at the start of the "
+"simulation was unspecified.  Generally speaking, this means that the "
+"initial value for ``x`` will be the value of its ``start`` attribute "
+"(which is zero by default).  However, because each tool uses their own "
+"specific algorithms to formulate the final system of equations, it is "
+"always best to state initial conditions explicitly, as we have done here."
+"  By adding this equation to the ``initial equation`` section, we are "
+"explicitly specifying the initial condition for ``x``."
 msgstr ""
+"이 모델과 이전 모델의 유일한 차이점은 :ref:`first-order-doc` 섹션에 제시된 방정식에"
+"``x = 2`` 이라는 ``initial equation`` 섹션이 추가되었다는 것 뿐 입니다. "
+"이전 예제에서는 시뮬레이션 시작 할 때 ``x`` 의 초기값을 지정하지 않았습니다. "
+"일반적으로 이것은 ``x`` 의 초기 값이 ``start`` 속성(기본적으로 0)의 값이 된다는 것을 의미합니다. "
+"그러나 각 시뮬레이션 소프트웨어는 고유한 특정 알고리즘을 사용하여 방정식의 최종 시스템을 공식으로 만들기 때문에 "
+"항상 명확하게 초기 조건을 지정하는 것이 최선이므로, ``initial equation`` 섹션을 추가하여 ``x`` 에 대한 초기 조건을 지정합니다."
 
-#: ../../source/behavior/equations/first_order.rst:142
+
+#: ../../source/behavior/equations/first_order.rst:136
 msgid ""
-"As a result, the solution trajectory is quite different as we can see in the"
-" following figure:"
+"As a result, the solution trajectory is quite different as we can see in "
+"the following figure:"
 msgstr ""
+"결과적으로 해석 결과에 따른 해의 궤적은 다음 그림에서 볼 수 있듯이 상당히 다릅니다."
 
-#: ../../source/behavior/equations/first_order.rst:147
+#: ../../source/behavior/equations/first_order.rst:141
 msgid ""
-"The model ``FirstOrderInitial`` shows a typical way of initializing a system"
-" by providing explicit initial values for the states of the system.  In "
-"fact, a system of differential equations is incomplete without a "
+"The model ``FirstOrderInitial`` shows a typical way of initializing a "
+"system by providing explicit initial values for the states of the system."
+"  In fact, a system of differential equations is incomplete without a "
 "specification for how the initial conditions are determined. Our "
 "``FirstOrderInitial`` model would be represented mathematically as:"
 msgstr ""
+"``FirstOrderInitial`` 모델은 시스템 상태에 대한 명확한 초기 값을 제공하여 시스템을 초기화하는 일반적인 방법을 보여줍니다. "
+"사실 미분 방정식 시스템은 초기 조건이 어떻게 결정되지에 대한 설명이 없는 경우에는 불완전합니다. "
+"``FirstOrderInitial`` 모델은 수학적으로 다음과 같이 표현됩니다:"
 
-#: ../../source/behavior/equations/first_order.rst:156
-msgid ""
-"However, there are many cases where you want a more sophisticated type of "
-"initialization.  An ``initial equation`` section can contain more than just "
-"explicit equations for the initial values of the state variables."
+
+#: ../../source/behavior/equations/first_order.rst:148
+msgid "\\dot{x} = (1-x);\\; x(0) = 2"
 msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:161
+#: ../../source/behavior/equations/first_order.rst:150
+msgid ""
+"However, there are many cases where you want a more sophisticated type of"
+" initialization.  An ``initial equation`` section can contain more than "
+"just explicit equations for the initial values of the state variables."
+msgstr ""
+"또한, 보다 정교한 유형의 초기화를 원하는 경우가 많기 때문에 "
+"``initial equation`` 섹션에서는 상태 변수의 초기 값에 대한 명확한 방정식 이상의 것이 포함될 수 있습니다."
+
+
+#: ../../source/behavior/equations/first_order.rst:155
 msgid ""
 "For example, we might want our initial conditions to be such that the "
-"derivative of :math:`x` was zero at the start of the simulation.  In this "
-"case, only a bit of trivial algebra is required to realize that this could "
-"be accomplished by specifying an initial condition of :math:`x(0)=1`.  "
-"However, for more complex systems, it is far from trivial to determine the "
-"initial state values that would satisfy such a requirement.  In those cases,"
-" it is possible to express the constraint that :math:`\\dot{x}(0)=0` "
-"directly in Modelica as follows:"
+"derivative of :math:`x` was zero at the start of the simulation.  In this"
+" case, only a bit of trivial algebra is required to realize that this "
+"could be accomplished by specifying an initial condition of "
+":math:`x(0)=1`.  However, for more complex systems, it is far from "
+"trivial to determine the initial state values that would satisfy such a "
+"requirement.  In those cases, it is possible to express the constraint "
+"that :math:`\\dot{x}(0)=0` directly in Modelica as follows:"
 msgstr ""
+"예를 들어, 초기 조건으로 시뮬레이션 시작 시 :math:`x` 의 도함수가 0이 되도록 초기 조건을 설정할 수 있습니다. "
+"이 경우 약간의 대수학만 이용하면 :math:`x(0)=1` 이라는 초기 조건을 지정하여 앞서 말한 조건에 만족 하는 것을 알 수 있습니다.  "
+"하지만, 보다 복잡한 시스템의 경우에는 이러한 요구 사항을 충족하는 초기 상태 값을 결정하는 것은 사소한 일이 아니므로, "
+"이러한 경우에는 다음과 같이 모델리카는 직접 :math:`\dot{x}(0)=0` 이라는 제약 조건을 표현할 수 있습니다."
 
-#: ../../source/behavior/equations/first_order.rst:176
+
+#: ../../source/behavior/equations/first_order.rst:168
 msgid "Simulating this system gives the following solution:"
 msgstr ""
+"이 시스템을 시뮬레이션하면 다음 과 같은 결과를 도출 합니다."
 
-#: ../../source/behavior/equations/first_order.rst:180
+#: ../../source/behavior/equations/first_order.rst:172
 msgid ""
-"As we see from these results, the initial derivative of :math:`x` is zero at"
-" the start of the simulation and remains zero because there are no external "
-"influences acting on this system that would disrupt this equilibrium."
+"As we see from these results, the initial derivative of :math:`x` is zero"
+" at the start of the simulation and remains zero because there are no "
+"external influences acting on this system that would disrupt this "
+"equilibrium."
 msgstr ""
+"이 결과에서 알 수 있듯이 :math:`x` 의 초기 도함수는 시뮬레이션 시작 시 0 이며, 이 시스템에는 초기 값의 균형을 방해하는 시스템에 작용 하는 외부 영향이 없기 때문에 0으로 유지됩니다. "
 
-#: ../../source/behavior/equations/first_order.rst:185
+#: ../../source/behavior/equations/first_order.rst:177
 msgid ""
-"This provides a glimpse of the initialization capablities in Modelica. More "
-"complete coverage of the initialization topic can be found in the "
+"This provides a glimpse of the initialization capablities in Modelica. "
+"More complete coverage of the initialization topic can be found in the "
 ":ref:`initialization` section later in this chapter."
 msgstr ""
+"이러한 예제를 통해 모델리카의 초기화 기능을 짧게 살펴 보았습니다."
+"초기화 주제에 대한 보다 완전한 내용은 이 장의 뒷부분에 있는 초기화 섹션에서 확인 할 수 있습니다."
 
-#: ../../source/behavior/equations/first_order.rst:192
+
+#: ../../source/behavior/equations/first_order.rst:184
 msgid "Experimental Conditions"
 msgstr ""
+"실험 조건(Experimental Conditions)"
 
-#: ../../source/behavior/equations/first_order.rst:197
+#: ../../source/behavior/equations/first_order.rst:189
 msgid ""
-"When building a model, the model developer might wish to associate specific "
-"experimental conditions with the model.  This can be done using something "
-"called an ``annotation``.  An annotation includes information that is not "
-"directly related to the behavior of the model."
+"When building a model, the model developer might wish to associate "
+"specific experimental conditions with the model.  This can be done using "
+"something called an ``annotation``.  An annotation includes information "
+"that is not directly related to the behavior of the model."
 msgstr ""
-
-#: ../../source/behavior/equations/first_order.rst:202
+"모델을 구축할 때 모델 개발자는 특정 실험 조건과 모델을 연결하고자 할 수 있습니다. "
+"이것은 ``annotation`` 이라는 것을 사용하여 수행할 수 있습니다. "
+"annotation에는 모델의 동작과 직접 관련되지 않은 정보가 포함됩니다."
+ 
+#: ../../source/behavior/equations/first_order.rst:194
 msgid ""
 "For example, experimental conditions describe information like the start "
-"time of the simulation, the stop time, solution tolerance and so on.  This "
-"is not information about the behavior of the model itself, but rather "
-"information about how to approach simulating that behavior. Experimental "
-"conditions are stored in a model using a specific annotation called the "
-"``experiment`` annotation."
+"time of the simulation, the stop time, solution tolerance and so on.  "
+"This is not information about the behavior of the model itself, but "
+"rather information about how to approach simulating that behavior. "
+"Experimental conditions are stored in a model using a specific annotation"
+" called the ``experiment`` annotation."
 msgstr ""
+"예를 들어 실험 조건은 시뮬레이션 시작 시간, 중지 시간, 해 허용 오차 등과 같은 정보를 설명합니다. "
+"이는 모델 자체의 동작에 대한 정보가 아니라 해당 동작을 시뮬레이션하는 방법에 대한 정보입니다."
+"실험 조건은 ``experiment`` 주석이라는 특정 주석을 사용하여 모델에 저장 됩니다."
 
-#: ../../source/behavior/equations/first_order.rst:209
+
+#: ../../source/behavior/equations/first_order.rst:201
 msgid ""
-"There are four pieces of information that can be specified in an experiment "
-"annotation.  All of them are optional.  The following is a model of our "
-"first order system that includes an experiment annotation:"
+"There are four pieces of information that can be specified in an "
+"experiment annotation.  All of them are optional.  The following is a "
+"model of our first order system that includes an experiment annotation:"
 msgstr ""
+"실험과 관련된 annotation에 지정할 수 있는 요소에는 네 가지가 정보가 있으며, 모두 선택 사항입니다. "
+"이러한 모든 것들이 선택 사항입니다. 다음은 실험 주석을 포함하는 1차 주문 시스템의 모델입니다."
 
-#: ../../source/behavior/equations/first_order.rst:219
+
+#: ../../source/behavior/equations/first_order.rst:211
 msgid ""
-"The following trajectory was simulated using these experimental conditions:"
+"The following trajectory was simulated using these experimental "
+"conditions:"
 msgstr ""
+"이러한 실험 조건을 사용하여 다음과 같은 궤적을 시뮬레이션하였습니다."
 
-#: ../../source/behavior/equations/first_order.rst:224
+#: ../../source/behavior/equations/first_order.rst:217
 msgid ""
 "The trajectory terminates at 8 seconds because the simulator used the "
 "``experiment`` annotation to determine how long to run the simulation."
 msgstr ""
+"시뮬레이터가 ``experiment`` 주석을 사용하여 시뮬레이션 실행 시간을 결정했기 때문에 궤적은 8초에서 종료됩니다."
 
-#: ../../source/behavior/equations/first_order.rst:0
 msgid "Annotation Support"
 msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:229
+#: ../../source/behavior/equations/first_order.rst:222
 msgid ""
-"The ``experiment`` annotation is widely supported.  But it is important to "
-"keep in mind that, in general, a tool is free to ignore any or all "
+"The ``experiment`` annotation is widely supported.  But it is important "
+"to keep in mind that, in general, a tool is free to ignore any or all "
 "annotations."
 msgstr ""
+"``experiment`` annoation은 대부분에서 지원됩니다. "
+"그러나 시뮬레이션 소프트웨어에서 일부 또는 모든 annotation을 자유롭게 무시할 수 있다는 점을 명심해야 합니다."
+ 
+#~ msgid "model"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:19
-msgid "model"
-msgstr ""
+#~ msgid "der"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:20
-msgid "der"
-msgstr ""
+#~ msgid "Real"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:21
-msgid "Real"
-msgstr ""
+#~ msgid "descriptive strings"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:80
-msgid "descriptive strings"
-msgstr ""
+#~ msgid "initial equation"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:121
-msgid "initial equation"
-msgstr ""
+#~ msgid "annotation"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:194
-#: ../../source/behavior/equations/first_order.rst:195
-msgid "annotation"
-msgstr ""
+#~ msgid "experiment"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/first_order.rst:195
-msgid "experiment"
-msgstr ""

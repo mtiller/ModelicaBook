@@ -1,146 +1,208 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/components/component_models.rst:4
 msgid "Component Models"
 msgstr ""
+"구성요소 모델(Component Models)"
 
 #: ../../source/components/components/component_models.rst:6
 msgid ""
-"In this section, we'll summarize how component models are different from the"
-" previous models we've created.  This discussion will be broken into two "
-"parts.  The first part will focus on acausal modeling and how it provides a "
-"framework for schematic-based, component-oriented modeling where "
-"conservation equations are automatically generated and enforced.  The second"
-" part will provide an overview of how the topics in this chapter impact, "
-"mostly syntactically, the definition of component models."
+"In this section, we'll summarize how component models are different from "
+"the previous models we've created.  This discussion will be broken into "
+"two parts.  The first part will focus on acausal modeling and how it "
+"provides a framework for schematic-based, component-oriented modeling "
+"where conservation equations are automatically generated and enforced.  "
+"The second part will provide an overview of how the topics in this "
+"chapter impact, mostly syntactically, the definition of component models."
 msgstr ""
+"이 섹션에서는 구성 요소 모델이 이전에 만든 모델과 어떻게 다른지 요약합니다. "
+"이 토론은 두 부분으로 나뉩니다."
+"첫 번째 부분은 비인과적 모델링과 그것이 보존 방정식을 자동으로 생성하고 실행하는 도식 기반, 구성 요소 지향 모델링을 위한 프레임워크를 제공하는 방법에 초점을 맞출 것입니다."
+"이 장의 주제인 두 번째 부분에서는 구성 요소 모델의 정의가 구문적으로 어떻게 영향을 미치는지에 대한 개요를 설명합니다."
+
 
 #: ../../source/components/components/component_models.rst:15
 msgid ""
-"However, before we dive into that discussion, it is worth taking some time "
-"to talk about terminology.  In this chapter, we've created two different "
-"types of models.  The first type represent individual effects (*e.g.,* "
-"resistors, capacitors, springs, dampers).  The other type represent more "
-"complex assemblies (*e.g.,* circuits, mechanisms)."
+"However, before we dive into that discussion, it is worth taking some "
+"time to talk about terminology.  In this chapter, we've created two "
+"different types of models.  The first type represent individual effects "
+"(*e.g.,* resistors, capacitors, springs, dampers).  The other type "
+"represent more complex assemblies (*e.g.,* circuits, mechanisms)."
 msgstr ""
+"그러나 논의를 시작하기 전에 용어에 대해 정리할 필요가 있습니다. "
+"이 장에서는 두 가지 자료형의 모델을 만들었습니다. 첫 번째 자료형은 개별 효과(*예:* 저항기, 커패시터, 스프링, 댐퍼)를 나타내고,"
+"다른 자료형은 더 복잡한 어셈블리(*예:* 회로, 메커니즘)를 나타냅니다."
+
 
 #: ../../source/components/components/component_models.rst:21
 msgid ""
-"Before we discuss some of the differences between these different types of "
-"models, let's introduce some terminology so we can refer to them precisely."
-"  A *component model* is a model that is used to encapsulate equations into "
-"a reusable form.  By creating such a model, an instance of the component can"
-" be used in place of the equations it contains.  A *subsystem model* is a "
-"model that is composed of components or other subsystems.  In other words, "
-"it doesn't (generally) include equations.  Instead, it represents an "
-"assembly of other components.  Typically, these subsystem models are created"
-" by dragging, dropping and connecting component and other subsystem models "
-"schematically.  While component models are \"flat\" (they don't contain "
-"other components that are subsystems, only equations), subsystem models are "
-"hierarchical."
+"Before we discuss some of the differences between these different types "
+"of models, let's introduce some terminology so we can refer to them "
+"precisely.  A *component model* is a model that is used to encapsulate "
+"equations into a reusable form.  By creating such a model, an instance of"
+" the component can be used in place of the equations it contains.  A "
+"*subsystem model* is a model that is composed of components or other "
+"subsystems.  In other words, it doesn't (generally) include equations.  "
+"Instead, it represents an assembly of other components.  Typically, these"
+" subsystem models are created by dragging, dropping and connecting "
+"component and other subsystem models schematically.  While component "
+"models are \"flat\" (they don't contain other components or subsystems, "
+"only equations), subsystem models are hierarchical."
 msgstr ""
+"이러한 서로 다른 자료형의 모델 간의 차이점에 대해 논의하기 전에 정확하게 참조할 수 있도록 몇 가지 용어를 소개하겠습니다."
+"*구성 요소 모델* 은 방정식을 재사용 가능한 형태로 캡슐화하는 데 사용하는 모델입니다. "
+"이러한 모델을 생성하면 포함된 방정식 대신 구성 요소 인스턴스를 사용할 수 있습니다. "
+"*하위 시스템 모델* 은 구성 요소 또는 기타 하위 시스템으로 구성된 모델입니다. "
+"즉, (일반적으로) 방정식을 포함하지 않습니다."
+"대신 다른 구성 요소의 어셈블리를 나타냅니다. "
+"일반적으로 이러한 하위 시스템 모델은 구성 요소 및 기타 하위 시스템 모델을 도식적으로 드래그, 드롭 및 연결하여 생성합니다. "
+"구성 요소 모델은 "평면"(다른 구성 요소나 하위 시스템은 포함하지 않고 방정식만 포함)인 반면 하위 시스템 모델은 계층적입니다."
+
 
 #: ../../source/components/components/component_models.rst:35
 msgid ""
-"We'll often refer to a subsystem model as a *system model*.  A system model "
-"is a model that we expect to simulate.  In simulating it, the Modelica "
-"compiler will traverse the hierarchy of the model and note all the variables"
-" and equations present throughout the hierarchy. These are the variables and"
-" equations that will be used in the simulation.  Of course, in order for "
-"there to be a unique solution, the system model (like any non-``partial`` "
-"model), must be :ref:`balanced <balanced-components>`."
+"We'll often refer to a subsystem model as a *system model*.  A system "
+"model is a model that we expect to simulate.  In simulating it, the "
+"Modelica compiler will traverse the hierarchy of the model and note all "
+"the variables and equations present throughout the hierarchy. These are "
+"the variables and equations that will be used in the simulation.  Of "
+"course, in order for there to be a unique solution, the system model "
+"(like any non-``partial`` model), must be :ref:`balanced <balanced-"
+"components>`."
 msgstr ""
+"종종 하위 시스템 모델을 *시스템 모델*이라고 합니다."
+"시스템 모델은 시뮬레이션할 것으로 예상되는 모델입니다. "
+"이를 시뮬레이션할 때 모델리카 컴파일러는 모델의 계층을 탐색하고 계층 전체에 존재하는 모든 변수와 방정식을 기록합니다."
+"시뮬레이션에 사용될 변수와 방정식입니다. "
+"물론 고유한 해가 있으려면 시스템 모델(``비부분적(non-partial)`` 모델과 마찬가지로)이 균형을 이루어야 합니다."
+
+
 
 #: ../../source/components/components/component_models.rst:44
 msgid ""
 "Note that a subsystem model *can* include equations.  There is no rule "
 "against it in Modelica.  But most of the time models tend to be composed "
-"either of equations or other components/subsystems.  It is actually a good "
-"idea to avoid putting equations in models containing subcomponents or "
-"subsystems because doing so means that some information about the model will"
-" be \"invisible\" when looking at a diagram of the subsystem.  One possible "
-"exception to this could be the use of ``initial equation`` sections in "
-"subsystems."
+"either of equations or other components/subsystems.  It is actually a "
+"good idea to avoid putting equations in models containing subcomponents "
+"or subsystems because doing so means that some information about the "
+"model will be \"invisible\" when looking at a diagram of the subsystem.  "
+"One possible exception to this could be the use of ``initial equation`` "
+"sections in subsystems."
 msgstr ""
+"하위 시스템 모델은 방정식을 *포함할 수 있음* 에 주의 해야 합니다."
+"모델리카에는 이에 대한 규칙이 없습니다. "
+"그러나 대부분의 경우 모델은 방정식 또는 기타 구성 요소/하위 시스템으로 구성되는 경향이 있습니다. "
+"하위 구성 요소 또는 하위 시스템을 포함하는 모델에 방정식을 두는 것은 하위 시스템의 다이어그램을 볼 때 모델에 대한 일부 정보가 "보이지 않음"을 의미하기 때문에 "
+"실제로는 피하는 것이 좋습니다. "
+"이것에 대한 한 가지 가능한 예외는 하위 시스템에서 ``initial equation`` 섹션을 사용하는 것일 수 있습니다."
 
 #: ../../source/components/components/component_models.rst:53
 msgid ""
 "With that discussion of terminology out of the way, let's dive into "
 "discussions about component models."
 msgstr ""
+"용어에 대한 논의는 생략하고, 구성 요소 모델에 대한 논의를 시작하겠습니다."
 
 #: ../../source/components/components/component_models.rst:59
 msgid "Acausal Modeling"
 msgstr ""
+"비인과적 모델링(Acausal Modeling)"
 
 #: ../../source/components/components/component_models.rst:61
 msgid ""
-"We'll start with a discussion about acausal modeling.  We touched on this "
-"topic very briefly in the chapter on :ref:`connectors`.  Here we will "
+"We'll start with a discussion about acausal modeling.  We touched on this"
+" topic very briefly in the chapter on :ref:`connectors`.  Here we will "
 "provide a more comprehensive discussion about acausal modeling."
 msgstr ""
+"비인과적 모델링에 대한 논의부터 시작하겠습니다. "
+":ref:`connectors` 에 대한 장에서 이 주제에 대해 매우 간략하게 다루었습니다."
+"여기서  비인과적 모델링에 대한 보다 포괄적으로 논의 하겠습니다."
+
 
 #: ../../source/components/components/component_models.rst:66
 msgid "Composability"
 msgstr ""
+"구성 가능성(Composability)"
 
 #: ../../source/components/components/component_models.rst:68
 msgid ""
 "There are two very big advantages to acausal modeling.  The first is "
-"composability.  In this context, composability means the ability to drag, "
-"drop and connect component instances in nearly any configuration we wish "
-"without having to concern ourselves with \"compatibility\". This is because "
-"acausal connectors are designed around the idea of physical compatibility, "
-"not causal compatibility.  This is possible because acausal connector "
-"definitions focus on physical information exchanged, not the direction that "
-"information flows. The result is that we can create component models around "
-"the idea of physical interactions without requiring any *a priori* knowledge"
-" about the nature (*i.e.,* directionality) of the information exchange."
+"composability.  In this context, composability means the ability to drag,"
+" drop and connect component instances in nearly any configuration we wish"
+" without having to concern ourselves with \"compatibility\". This is "
+"because acausal connectors are designed around the idea of physical "
+"compatibility, not causal compatibility.  This is possible because "
+"acausal connector definitions focus on physical information exchanged, "
+"not the direction that information flows. The result is that we can "
+"create component models around the idea of physical interactions without "
+"requiring any *a priori* knowledge about the nature (*i.e.,* "
+"directionality) of the information exchange."
 msgstr ""
+"비인과적 모델링에는 두 가지 매우 큰 장점이 있습니다. "
+"첫 번째는 구성 가능성인데, 이 맥락에서는 "호환성"에 대해 걱정할 필요 없이 원하는 거의 모든 구성에서 구성 요소 인스턴스를 끌어다 놓고 연결할 수 있는 기능을 의미합니다."
+"이는 비인과적 커넥터가 인과적 호환성이 아닌 물리적 호환성이라는 개념을 중심으로 설계되어서, "
+"비인과적 연결 정의가 정보가 흐르는 방향이 아닌 교환되는 물리적 정보에 초점을 맞추기 때문에 가능합니다. "
+"그 결과 정보 교환의 특성(*즉,* 방향성)에 대한 *선험적* 지식 없이도 물리적 상호 작용이라는 개념을 중심으로 구성 요소 모델을 만들 수 있습니다."
+
 
 #: ../../source/components/components/component_models.rst:80
 msgid ""
 "But there are other implications to this composability.  Not only can we "
-"easily create systems by dragging, dropping and connecting components, but "
-"we can also easily reconfigure them.  Replacing a voltage source in an "
-"electrical circuit with a current source can have a profound impact on the "
-"mathematical representation of that system (*e.g.,* if the system is "
-"represented as a block diagram).  But such a change has no significant "
-"impact when using an acausal approach. Although the underlying mathematical "
-"representation still changes, sometimes profoundly, there is no impact on "
-"the user, because that representation is generated automatically as part of "
-"the compilation process."
+"easily create systems by dragging, dropping and connecting components, "
+"but we can also easily reconfigure them.  Replacing a voltage source in "
+"an electrical circuit with a current source can have a profound impact on"
+" the mathematical representation of that system (*e.g.,* if the system is"
+" represented as a block diagram).  But such a change has no significant "
+"impact when using an acausal approach. Although the underlying "
+"mathematical representation still changes, sometimes profoundly, there is"
+" no impact on the user, because that representation is generated "
+"automatically as part of the compilation process."
 msgstr ""
+"그러나 이 구성 가능성에는 다른 의미가 있습니다. "
+"구성 요소를 끌어다 놓고 연결하여 시스템을 쉽게 만들 수 있을 뿐만 아니라 쉽게 재구성할 수도 있습니다."
+"전기 회로의 전압원을 전류원으로 교체하면 해당 시스템의 수학적 표현에 중대한 영향을 미칠 수 있습니다(*예:* 시스템이 블록 다이어그램으로 표시되는 경우)."
+"그러나 이러한 변화는 비인과적 접근 방식을 사용할 때 큰 영향을 미치지 않습니다. "
+"기본 수학적 표현이 여전히 변경되고 경우에 따라서는 크게 변경되지만 해당 표현은 컴파일 프로세스의 일부로 자동 생성되기 때문에 사용자에게 영향을 미치지 않습니다."
+
 
 #: ../../source/components/components/component_models.rst:94
 msgid ""
-"Finally, another aspect of composability is in the support for multi-domain "
-"systems.  In fact, Modelica not only supports different engineering domains "
-"(electrical, thermal, hydraulic), it supports multiple modeling formalisms."
-"  Model developers have created libraries for block diagrams, state charts, "
-"petri nets, *etc.* Instead of requiring special tools or editors in each "
-"case, all of these different domains and formalisms can be freely combined "
-"in Modelica as appropriate."
+"Finally, another aspect of composability is in the support for multi-"
+"domain systems.  In fact, Modelica not only supports different "
+"engineering domains (electrical, thermal, hydraulic), it supports "
+"multiple modeling formalisms.  Model developers have created libraries "
+"for block diagrams, state charts, petri nets, *etc.* Instead of requiring"
+" special tools or editors in each case, all of these different domains "
+"and formalisms can be freely combined in Modelica as appropriate."
 msgstr ""
+"마지막으로 구성 가능성의 또 다른 측면은 다중 도메인 시스템 지원에 있습니다."
+"실제로 모델리카는 다양한 엔지니어링 도메인(전기, 열, 유압)을 지원할 뿐만 아니라 여러 모델링 형식을 지원합니다. "
+"모델 개발자는 블록 다이어그램, 상태 차트, 페트리넷 *등* 을 위한 라이브러리를 만들었습니다. "
+"각 경우에 특별한 도구나 편집기를 요구하는 대신 이러한 모든 다양한 도메인과 형식을 모델리카에서 적절하게 자유롭게 결합할 수 있습니다."
+
 
 #: ../../source/components/components/component_models.rst:106
 msgid "Accounting"
 msgstr ""
+"계산(Accounting)"
 
 #: ../../source/components/components/component_models.rst:111
 msgid "Connectors"
 msgstr ""
+"커넥터(Connectors)"
 
 #: ../../source/components/components/component_models.rst:113
 msgid ""
@@ -149,35 +211,49 @@ msgid ""
 "accounting is performed, let's consider the following rotational "
 "``connector`` definitions from the Modelica Standard Library:"
 msgstr ""
+"비인과적 모델링의 또 다른 이점은 이 접근 방식으로 수행되는 자동 "계산"의 양입니다. "
+"어떤 계정이 수행되는지 정확히 이해하기 위해 모델리카 표준 라이브러리에서 다음과 같은 회전식 ``connector`` 정의를 살펴보겠습니다."
+
 
 #: ../../source/components/components/component_models.rst:132
 msgid ""
-"As we've discussed previously, an acausal connector includes two different "
-"types of variables, across variables and through variables. The through "
-"variable is indicated by the presence of the ``flow`` qualifier.  In the "
-"case of the ``Rotational`` connector, the across variable is ``phi``, the "
-"angular position, and the through variable is ``tau``, the torque."
+"As we've discussed previously, an acausal connector includes two "
+"different types of variables, across variables and through variables. The"
+" through variable is indicated by the presence of the ``flow`` qualifier."
+"  In the case of the ``Rotational`` connector, the across variable is "
+"``phi``, the angular position, and the through variable is ``tau``, the "
+"torque."
 msgstr ""
+"이전에 논의한 바와 같이 비인과적 커넥터에는 변수 사이 혹은 변수를 통과하는 두 가지 다른 자료형의 변수가 존재합니다."
+"통과 변수는 ``flow`` 한정자로 표시합니다."
+"``Rotational`` 커넥터의 경우 교차 변수는 각도 위치인 ``phi`` 이고 통과 변수는 토크인 ``tau`` 입니다."
+
 
 #: ../../source/components/components/component_models.rst:140
-msgid "Sign Convections"
+msgid "Sign Conventions"
 msgstr ""
+"부호 체계(Sign Conventions)"
 
 #: ../../source/components/components/component_models.rst:142
 msgid ""
-"Also recall from our previous discussion that Modelica models should observe"
-" the following convention: a positive value for the ``flow`` variable on a "
-"connector represents the flow of that quantity **into** the component that "
-"the connector is connected to.  This is an important sign convention not "
-"only because it make sure all the accounting is correct, but it also helps "
-"with composability as well by allowing (inherently symmetric) components "
-"like springs, dampers, *etc.* to be flipped over and still function "
-"identically."
+"Also recall from our previous discussion that Modelica models should "
+"observe the following convention: a positive value for the ``flow`` "
+"variable on a connector represents the flow of that quantity **into** the"
+" component that the connector is connected to.  This is an important sign"
+" convention not only because it make sure all the accounting is correct, "
+"but it also helps with composability as well by allowing (inherently "
+"symmetric) components like springs, dampers, *etc.* to be flipped over "
+"and still function identically."
 msgstr ""
+"또한 모델리카 모델은 다음 규칙을 준수해야 한다고 했던 이전 논의를 기억하겠습니다. "
+"이것은 모든 계산이 정확한지 확인할 뿐만 아니라 스프링, 댐퍼 *등* 과 같은 (본질적으로 대칭인) 구성 요소가 뒤집어져도 여전히 동일하게 작동하도록 함으로써 "
+"구성 가능성에도 도움이 되기 때문에 중요한 규칙입니다. "
+
 
 #: ../../source/components/components/component_models.rst:156
 msgid "Connection Sets"
 msgstr ""
+"연결 세트(Connection Sets)"
 
 #: ../../source/components/components/component_models.rst:158
 msgid ""
@@ -185,488 +261,687 @@ msgid ""
 "compiler, we need to introduce the concept of a *connection set*.  To "
 "demonstrate what a connection set is, consider the following schematic:"
 msgstr ""
+"컴파일러가 수행하는 계산에 대해 자세히 알아보기 전에 *연결 세트* 의 개념을 소개해야 합니다. "
+"연결 세트가 무엇인지 설명하려면 다음 도식을 참고 할 수 있습니다."
 
-#: ../../source/components/components/component_models.rst:168
+
+#: ../../source/components/components/component_models.rst:169
 msgid "Note that there are 8 connections in this model:"
 msgstr ""
+"이 모델에는 8개의 연결이 있습니다."
 
-#: ../../source/components/components/component_models.rst:182
+#: ../../source/components/components/component_models.rst:183
 msgid ""
-"If two connect statements have one connector in common, **they belong to the"
-" same connection set**.  If a connector is not connected to any other "
-"connectors, then it belongs to a connection set that includes only itself.  "
-"Using this rule, we can organize the connectors into connection sets as "
-"follows:"
+"If two connect statements have one connector in common, **they belong to "
+"the same connection set**.  If a connector is not connected to any other "
+"connectors, then it belongs to a connection set that includes only "
+"itself.  Using this rule, we can organize the connectors into connection "
+"sets as follows:"
 msgstr ""
+"두 개의 연결 문에 하나의 커넥터가 공통으로 있는 경우 **동일한 연결 집합에 속합니다**. "
+"커넥터가 다른 커넥터에 연결되어 있지 않으면 자신만 포함하는 연결 세트에 속합니다. 이 규칙을 사용하여 커넥터를 다음과 같이 연결 세트로 구성할 수 있습니다."
 
-#: ../../source/components/components/component_models.rst:188
+
+
+#: ../../source/components/components/component_models.rst:189
 msgid "Connection Set #1"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:190
+#: ../../source/components/components/component_models.rst:191
 msgid "``ground.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:191
+#: ../../source/components/components/component_models.rst:192
 msgid "``damper2.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:192
+#: ../../source/components/components/component_models.rst:193
 msgid "``spring2.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:194
+#: ../../source/components/components/component_models.rst:195
 msgid "Connection Set #2"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:196
+#: ../../source/components/components/component_models.rst:197
 msgid "``damper2.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:197
+#: ../../source/components/components/component_models.rst:198
 msgid "``spring2.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:198
+#: ../../source/components/components/component_models.rst:199
 msgid "``inertia2.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:200
+#: ../../source/components/components/component_models.rst:201
 msgid "Connection Set #3"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:202
+#: ../../source/components/components/component_models.rst:203
 msgid "``inertia2.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:203
+#: ../../source/components/components/component_models.rst:204
 msgid "``damper1.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:204
+#: ../../source/components/components/component_models.rst:205
 msgid "``spring1.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:206
+#: ../../source/components/components/component_models.rst:207
 msgid "Connection Set #4"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:208
+#: ../../source/components/components/component_models.rst:209
 msgid "``inertia1.flange_b``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:209
+#: ../../source/components/components/component_models.rst:210
 msgid "``damper1.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:210
+#: ../../source/components/components/component_models.rst:211
 msgid "``spring1.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:212
+#: ../../source/components/components/component_models.rst:213
 msgid "Connection Set #5"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:214
+#: ../../source/components/components/component_models.rst:215
 msgid "``inertia1.flange_a``"
 msgstr ""
 
-#: ../../source/components/components/component_models.rst:216
+#: ../../source/components/components/component_models.rst:217
 msgid ""
-"Note that these connection sets appear from right to left in the diagram.  "
-"It may be useful to take the time to match the connectors in the diagram "
-"with those listed in the connection sets to understand what a connection set"
-" intuitively is.  Note that the ``flange_a`` connectors are filled circles "
-"whereas the ``flange_b`` ones are only outlined."
+"Note that these connection sets appear from right to left in the diagram."
+"  It may be useful to take the time to match the connectors in the "
+"diagram with those listed in the connection sets to understand what a "
+"connection set intuitively is.  Note that the ``flange_a`` connectors are"
+" filled circles whereas the ``flange_b`` ones are only outlined."
 msgstr ""
+"이러한 연결 세트는 다이어그램에서 오른쪽에서 왼쪽으로 나타납니다."
+"시간을 들여 다이어그램의 커넥터를 연결 세트에 나열된 커넥터와 일치시켜 연결 세트가 무엇인지 직관적으로 이해하는 것이 유용할 수 있습니다. "
+"``flange_a`` 커넥터는 채워진 원이고 ``flange_b`` 커넥터는 외곽선만 표시됩니다."
 
-#: ../../source/components/components/component_models.rst:224
+
+#: ../../source/components/components/component_models.rst:225
 msgid "Generated Equations"
 msgstr ""
+"만들어진 방정식(Generated Equations)"
 
-#: ../../source/components/components/component_models.rst:226
+#: ../../source/components/components/component_models.rst:227
 msgid ""
 "This is where the \"accounting\" starts.  For each connection **set**, "
-"special equations are automatically generated.  The first set of automatic "
-"equations are related to the across variables.  We need to impose the "
-"constraint, mathematically speaking, that all across variables must have the"
-" same value.  Furthermore, we also introduce an equation that states that "
-"the sum of all through variables in the connection set must sum to zero."
+"special equations are automatically generated.  The first set of "
+"automatic equations are related to the across variables.  We need to "
+"impose the constraint, mathematically speaking, that all across variables"
+" must have the same value.  Furthermore, we also introduce an equation "
+"that states that the sum of all through variables in the connection set "
+"must sum to zero."
 msgstr ""
+"여기에서 "계산"이 시작됩니다. 각 연결 **설정** 에 대해 특수 방정식이 자동으로 생성됩니다. "
+"첫 번째 자동 방정식 세트는 교차 변수와 관련된 것인데, 수학적으로 말해서 모든 변수가 동일한 값을 가져야 한다는 제약을 부과합니다. "
+"다음으로, 연결 세트의 모든 통과 변수의 합이 0이 되어야 한다는 공식이 필요 합니다. "
 
-#: ../../source/components/components/component_models.rst:234
+
+
+
+#: ../../source/components/components/component_models.rst:235
 msgid ""
-"In the case of the connection sets above, the following equations will be "
-"automatically generated:"
+"In the case of the connection sets above, the following equations will be"
+" automatically generated:"
 msgstr ""
+"위 연결 세트의 경우 다음 방정식이 자동으로 생성됩니다."
 
-#: ../../source/components/components/component_models.rst:272
+
+#: ../../source/components/components/component_models.rst:273
 msgid ""
-"Note that for an empty connection set (*i.e.,* Connection Set #5), there is "
-"only one across variable in the set, so no equality equations are generated."
-"  The conservation equation is still generated but it contains only one "
-"term.  So it amounts to a statement that nothing can flow out of an "
-"unconnected connector.  This makes intuitive physical sense as well."
+"Note that for an empty connection set (*i.e.,* Connection Set #5), there "
+"is only one across variable in the set, so no equality equations are "
+"generated.  The conservation equation is still generated but it contains "
+"only one term.  So it amounts to a statement that nothing can flow out of"
+" an unconnected connector.  This makes intuitive physical sense as well."
 msgstr ""
+"빈 연결 집합(*즉,* 연결 집합 #5)의 경우 집합에 변수가 하나만 있으므로 등식이 생성되지 않습니다. 보존 방정식은 여전히 생성 되지만 하나의 항만 포함합니다."
+"따라서 연결되지 않은 커넥터에서 아무 것도 흘러나올 수 없습니다. 이것은 직관으로 볼 수 있는 물리적 의미 또한 갖습니다."
 
-#: ../../source/components/components/component_models.rst:279
+
+
+#: ../../source/components/components/component_models.rst:280
 msgid ""
 "What does all this mean physically?  In the case of an electrical "
-"connection, this implies that each connection can be treated as a \"perfect "
-"short\" between the connectors.  In the case of a mechanical system, "
-"connections are treated as perfectly rigid shafts with zero inertia.  The "
-"bottom line is that a connection means that the across variables on each "
-"connector will be equal and that any conserved quantity that leaves one "
-"component must enter another one.  Nothing can get lost or stored between "
-"components."
+"connection, this implies that each connection can be treated as a "
+"\"perfect short\" between the connectors.  In the case of a mechanical "
+"system, connections are treated as perfectly rigid shafts with zero "
+"inertia.  The bottom line is that a connection means that the across "
+"variables on each connector will be equal and that any conserved quantity"
+" that leaves one component must enter another one.  Nothing can get lost "
+"or stored between components."
 msgstr ""
-
-#: ../../source/components/components/component_models.rst:289
+"이 모든 것이 물리적으로 무엇을 의미 할까요? "
+"전기 연결의 경우 이는 각 연결이 커넥터 사이의 "완벽한 단락"으로 취급될 수 있음을 의미합니다."
+"기계 시스템의 경우 연결은 관성이 없는 완전 강성 샤프트로 취급합니다."
+"결론은 연결이란 각 커넥터의 전체 변수가 동일하고, 한 구성 요소를 떠나는 모든 보존된 양이 다른 구성 요소에 들어가야 함을 의미한다는 것입니다."
+"구성 요소 사이에 아무 것도 손실되거나 저장되지 않습니다."
+#: ../../source/components/components/component_models.rst:290
 msgid "Conservation"
 msgstr ""
+"보존(Conservation)"
 
-#: ../../source/components/components/component_models.rst:291
+#: ../../source/components/components/component_models.rst:292
 msgid ""
-"There are two important consequences to these equations.  The first is that "
-"the ``flow`` variable is automatically conserved.  Typical ``flow`` "
-"variables are current, torque, mass flow rate, etc.  Since these are all the"
-" time derivative of a conserved quantity (*i.e.,* charge, angular momentum "
-"and mass, respectively), such equations are automatically conserving these "
-"quantities."
+"There are two important consequences to these equations.  The first is "
+"that the ``flow`` variable is automatically conserved.  Typical ``flow`` "
+"variables are current, torque, mass flow rate, etc.  Since these are all "
+"the time derivative of a conserved quantity (*i.e.,* charge, angular "
+"momentum and mass, respectively), such equations are automatically "
+"conserving these quantities."
 msgstr ""
+"이 방정식에는 두 가지 중요한 결과가 있습니다. 첫 번째는 ``flow`` 변수가 자동으로 보존된다는 것입니다. "
+"일반적인 ``유량`` 변수는 전류, 토크, 질량 유량 등입니다."
+"이들은 항상 보존된 양(각각 *즉, * 전하, 각 운동량 및 질량)의 시간 미분이므로 이러한 방정식은 자동으로 이러한 변수를 보존합니다. "
 
-#: ../../source/components/components/component_models.rst:298
+
+#: ../../source/components/components/component_models.rst:299
 msgid ""
-"But something else is being implicitly conserved as well. Specifically, **we"
-" can ensure that energy is conserved** as well.  For all of these domains, "
-"the power flow through a connector can be represented by the product of the "
-"through variable and either the across variable or a derivative of the "
-"across variable.  As a result, for each domain we can easily derive a power "
-"conservation equation from the equations automatically generated for the "
-"connection set. From our example above, we know that in the first connection"
-" set we have the following equations:"
+"But something else is being implicitly conserved as well. Specifically, "
+"**we can ensure that energy is conserved** as well.  For all of these "
+"domains, the power flow through a connector can be represented by the "
+"product of the through variable and either the across variable or a "
+"derivative of the across variable.  As a result, for each domain we can "
+"easily derive a power conservation equation from the equations "
+"automatically generated for the connection set. From our example above, "
+"we know that in the first connection set we have the following equations:"
 msgstr ""
+"그러나 다른 것도 암묵적으로 보존되고 있습니다. "
+"구체적으로, **에너지 보존도 보장** 할 수 있습니다. "
+"이러한 모든 도메인에 대해 커넥터를 통한 전력 흐름은 통과 변수와 교차 변수 또는 교차 변수의 파생물의 곱으로 나타낼 수 있습니다. "
+"결과적으로 각 도메인 연결 세트에 대해 자동으로 생성된 방정식에서 전력 보존 방정식을 쉽게 도출할 수 있습니다. 위의 예제에서 첫 번째 연결 세트에 다음 방정식이 있음을 알고 있습니다."
 
-#: ../../source/components/components/component_models.rst:314
+
+#: ../../source/components/components/component_models.rst:315
 msgid ""
 "If we multiply the last equation by ``der(ground.flange_a.phi)``, the "
 "angular velocity of the ``ground.flange_a`` connector, we get:"
 msgstr ""
+"마지막 방정식에 ``ground.flange_a`` 커넥터의 각속도인 ``der(ground.flange_a.phi)`` 를 곱하면 다음과 같은 결과를 얻습니다."
 
-#: ../../source/components/components/component_models.rst:323
+#: ../../source/components/components/component_models.rst:324
 msgid ""
-"However, we also know that all the across variables in the connection set "
-"are equal.  As a result, their derivatives must also be equal. This means "
-"that we can substitute any one of them for another.  Making two such "
-"substitutions yields:"
+"However, we also know that all the across variables in the connection set"
+" are equal.  As a result, their derivatives must also be equal. This "
+"means that we can substitute any one of them for another.  Making two "
+"such substitutions yields:"
 msgstr ""
+"그러나 연결 집합의 모든 교차 변수가 동일하다는 것도 알고 있습니다. "
+"결과적으로 이들의 미분도 동일해야 합니다. "
+"이것은  그들 중 하나를 다른 것으로 대체할 수 있음을 의미합니다. 이러한 두 가지 대체를 수행하면 다음이 생성됩니다."
 
-#: ../../source/components/components/component_models.rst:334
+
+#: ../../source/components/components/component_models.rst:335
 msgid ""
 "The first term in the equation above is the power flowing into the "
 "``ground`` component through ``flange_a``.  The second term is the power "
-"flowing into the ``damper2`` component through ``flange_b``. The last term "
-"is the power flowing into the ``spring2`` component through ``flange_b``.  "
-"Since these represent the power flowing through all connectors in the "
-"connection set, this implies that power is conserved by that connection set "
-"(*i.e.,* all power that flows out of one component must flow into another, "
-"nothing is lost or stored)."
+"flowing into the ``damper2`` component through ``flange_b``. The last "
+"term is the power flowing into the ``spring2`` component through "
+"``flange_b``.  Since these represent the power flowing through all "
+"connectors in the connection set, this implies that power is conserved by"
+" that connection set (*i.e.,* all power that flows out of one component "
+"must flow into another, nothing is lost or stored)."
 msgstr ""
+"위 방정식의 첫 번째 항은 ``flange_a`` 를 통해 ``접지`` 구성 요소로 흐르는 전력입니다. "
+"두 번째 항은 ``flange_b`` 를 통해 ``damper2`` 구성 요소로 흐르는 힘입니다. "
+"마지막 항은 ``flange_b`` 를 통해 ``spring2`` 구성 요소로 흐르는 힘입니다. "
+"이들은 연결 세트의 모든 커넥터를 통해 흐르는 전력을 나타내므로 이는 해당 연결 세트에 의해 전력이 보존됨을 의미합니다"
+"(*즉* 한 구성 요소에서 흐르는 모든 전력은 다른 구성 요소로 흘러야 하며 손실되거나 저장되는 것은 없습니다)."
 
-#: ../../source/components/components/component_models.rst:346
+
+#: ../../source/components/components/component_models.rst:347
 msgid "Balanced Components"
 msgstr ""
+"균형잡힌 구성요소(Balanced Components)"
 
-#: ../../source/components/components/component_models.rst:352
+#: ../../source/components/components/component_models.rst:353
 msgid ""
 "If we look carefully at the previous discussion on equations generated "
 "involving acausal variables in connection sets, we'll see something very "
 "interesting.  But to see it, we first need to review a few things we've "
 "learned about connectors and connector sets:"
 msgstr ""
+"연결 집합의 비인과적 변수를 포함하여 생성된 방정식에 대한 이전 논의를 주의 깊게 살펴보면"
+"매우 흥미로운 것을 볼 수 있습니다. "
+"그러나 이를 보려면 먼저 커넥터 및 커넥터 세트에 대해 배운 몇 가지 사항을 검토해야 합니다."
 
-#: ../../source/components/components/component_models.rst:357
-msgid "A connection can only belong to one connection set."
-msgstr ""
 
 #: ../../source/components/components/component_models.rst:358
-msgid ""
-"As we learned in our previous discussion on :ref:`acausal-vars`, for every "
-"through variable in a connector (*i.e.,* a variable declared with the "
-"``flow`` qualifier), there must be a matching across variable (*i.e.,* a "
-"variable without any qualifier)."
+msgid "A connection can only belong to one connection set."
 msgstr ""
+"연결은 하나의 연결 세트에만 속할 수 있습니다."
 
-#: ../../source/components/components/component_models.rst:362
+#: ../../source/components/components/component_models.rst:359
 msgid ""
-"The number of equations generated in a connection set is equal to the number"
-" of connectors in the connection set multiplied by the number of through-"
-"across pairs in the connector."
+"As we learned in our previous discussion on :ref:`acausal-vars`, for "
+"every through variable in a connector (*i.e.,* a variable declared with "
+"the ``flow`` qualifier), there must be a matching across variable "
+"(*i.e.,* a variable without any qualifier)."
 msgstr ""
+":ref:`acausal-vars` 에 대한 이전 논의에서 배웠듯이 커넥터의 모든 통과 변수(*즉,* ``flow`` 한정자로 선언된 변수)에 대해 변수(*즉,* 한정자가 없는 변수)와 일치하는 항목이 있어야 합니다. "
 
-#: ../../source/components/components/component_models.rst:366
+
+#: ../../source/components/components/component_models.rst:363
 msgid ""
-"Remember that acausal variables come in pairs.  Equations for half of those "
-"variables (one per pair) will be generated automatically via connections.  "
-"That means the remaining half of the equations must come from the component "
-"models themselves."
+"The number of equations generated in a connection set is equal to the "
+"number of connectors in the connection set multiplied by the number of "
+"through-across pairs in the connector."
 msgstr ""
+"연결 세트에서 생성된 방정식의 수는 연결 세트의 커넥터 수에 커넥터의 통과(through)-(교차)across 쌍 수를 곱한 것과 같습니다."
 
-#: ../../source/components/components/component_models.rst:371
+
+#: ../../source/components/components/component_models.rst:367
 msgid ""
-"Keep in mind that this discussion is focused only on acausal variables in "
-"connectors.  We also need to take into account two other cases:"
+"Remember that acausal variables come in pairs.  Equations for half of "
+"those variables (one per pair) will be generated automatically via "
+"connections.  That means the remaining half of the equations must come "
+"from the component models themselves."
 msgstr ""
+"비인과적 변수는 쌍으로 나온다는 것을 기억하십시오. "
+"이러한 변수의 절반(쌍당 하나)에 대한 방정식은 연결을 통해 자동으로 생성됩니다. "
+"즉, 방정식의 나머지 절반은 구성 요소 모델 자체에서 가져와야 합니다."
 
-#: ../../source/components/components/component_models.rst:374
+#: ../../source/components/components/component_models.rst:372
 msgid ""
-"Variables declared within a component model (as opposed to on a connector)."
+"Keep in mind that this discussion is focused only on acausal variables in"
+" connectors.  We also need to take into account two other cases:"
 msgstr ""
+"이 논의는 커넥터의 비인과적 변수에만 초점을 맞추고 있습니다."
+"또한 다른 두 가지 경우도 고려해야 합니다."
 
-#: ../../source/components/components/component_models.rst:376
+
+#: ../../source/components/components/component_models.rst:375
 msgid ""
-"Causal variables on connectors (*i.e.,* those qualified by either ``input`` "
-"or ``output``)."
+"Variables declared within a component model (as opposed to on a "
+"connector)."
 msgstr ""
+"구성 요소 모델 내에서 선언된 변수(커넥터가 아닌). "
 
-#: ../../source/components/components/component_models.rst:379
+#: ../../source/components/components/component_models.rst:377
 msgid ""
-"Modelica requires that any non-``partial`` model be balanced.  But what does"
-" that mean?  It means that the component should provide the proper number of"
-" equations (no more and no less than necessary).  The question is how to "
-"compute the number of equations required?"
+"Causal variables on connectors (*i.e.,* those qualified by either "
+"``input`` or ``output``)."
 msgstr ""
+"커넥터의 원인 변수(*i.e.* ``input`` 또는 ``output`` 에 의해 한정된 변수)."
 
-#: ../../source/components/components/component_models.rst:384
+
+#: ../../source/components/components/component_models.rst:380
 msgid ""
-"We already have a start based on our discussion about acausal variables.  "
-"Since half of the equations needed for acausal variables come from generated"
-" equations, the other half must come from within component models containing"
-" these connectors.  Specifically, the component must provide one equation "
-"for every through-across pair in each of its connectors.  In addition, it "
-"should also provide one equation for every variable on its connectors that "
-"has the ``output`` qualifier (note, the component does not have to provide "
-"equations for any variables on its connectors with the ``input`` qualifier)."
-"  The rationale here is that a component can assume that all ``input`` "
-"signals are known (specified externally) and that it is responsible for "
-"computing any ``output`` signals it advertises.  Finally, any "
-"(non-``parameter``) variable declared within the component must also have an"
-" equation."
+"Modelica requires that any non-``partial`` model be balanced.  But what "
+"does that mean?  It means that the component should provide the proper "
+"number of equations (no more and no less than necessary).  The question "
+"is how to compute the number of equations required?"
 msgstr ""
+"모델리카는 모든 비``partial`` 모델이 균형을 이루도록 요구합니다."
+"그러나 그것은 무엇을 의미하는 걸까요? "
+"이는 구성 요소가 적절한 수의 방정식을 제공해야 함을 의미합니다(필요 이상도 이하도 아님)."
+"문제는 필요한 방정식의 수를 계산하는 방법입니다."
 
-#: ../../source/components/components/component_models.rst:399
+
+#: ../../source/components/components/component_models.rst:385
 msgid ""
-"In summary, the number of equations that a component must provide is the sum"
-" of:"
+"We already have a start based on our discussion about acausal variables."
+"  Since half of the equations needed for acausal variables come from "
+"generated equations, the other half must come from within component "
+"models containing these connectors.  Specifically, the component must "
+"provide one equation for every through-across pair in each of its "
+"connectors.  In addition, it should also provide one equation for every "
+"variable on its connectors that has the ``output`` qualifier (note, the "
+"component does not have to provide equations for any variables on its "
+"connectors with the ``input`` qualifier).  The rationale here is that a "
+"component can assume that all ``input`` signals are known (specified "
+"externally) and that it is responsible for computing any ``output`` "
+"signals it advertises.  Finally, any (non-``parameter``) variable "
+"declared within the component must also have an equation."
 msgstr ""
+"비인과적 변수에 대한 논의를 기반으로 이미 시작했습니다. "
+"비인과적 변수에 필요한 방정식의 절반은 생성된 방정식에서 가져오므로 나머지 절반은 이러한 커넥터를 포함하는 구성 요소 모델 내에서 가져와야 합니다. "
+"특히 구성 요소는 각 커넥터의 모든 관통 쌍에 대해 하나의 방정식을 제공해야 합니다. "
+"또한 ``output`` 한정자가 있는 커넥터의 모든 변수에 대해 하나의 방정식을 제공해야 합니다"
+"(참고: 구성 요소는 ``input`` 한정자가 있는 커넥터의 변수에 대해 방정식을 제공할 필요가 없습니다)."
+"여기서 이론적 근거는 구성 요소가 모든 ``input`` 신호가 알려져 있고(외부적으로 지정됨) 자신이 연결하는 모든 ``output`` 신호를 계산할 책임이 있다고 가정할 수 있다는 것입니다. "
+"마지막으로 구성 요소 내에서 선언된 모든 (``paramter`` 가 아닌) 변수에도 방정식이 있어야 합니다."
 
-#: ../../source/components/components/component_models.rst:402
-msgid "The number of through-across pairs across all its connectors"
+
+#: ../../source/components/components/component_models.rst:400
+msgid ""
+"In summary, the number of equations that a component must provide is the "
+"sum of:"
 msgstr ""
+"요약하면 구성 요소가 제공해야 하는 방정식의 수는 다음의 합계입니다."
 
 #: ../../source/components/components/component_models.rst:403
-msgid ""
-"The number of non-``parameter`` variables declared in the component model."
+msgid "The number of through-across pairs across all its connectors"
 msgstr ""
+"모든 커넥터에 걸친 관통 쌍의 수"
 
-#: ../../source/components/components/component_models.rst:405
+#: ../../source/components/components/component_models.rst:404
+msgid "The number of non-``parameter`` variables declared in the component model."
+msgstr ""
+"구성 요소 모델에서 선언된 비``파라미터`` 변수의 수."
+
+#: ../../source/components/components/component_models.rst:406
 msgid "The number of ``output`` variables across all its connectors."
 msgstr ""
+"모든 커넥터에 걸쳐 있는 ``output`` 변수의 수."
 
-#: ../../source/components/components/component_models.rst:407
+#: ../../source/components/components/component_models.rst:408
 msgid ""
-"Note that these equations can (and frequently do) originate in a ``partial``"
-" model that is inherited."
+"Note that these equations can (and frequently do) originate in a "
+"``partial`` model that is inherited."
 msgstr ""
+"이러한 방정식은 상속된 ``partial`` 모델에서 발생할 수 있습니다(그리고 자주 발생함)."
 
-#: ../../source/components/components/component_models.rst:410
+
+#: ../../source/components/components/component_models.rst:411
 msgid ""
 "If the number of equations provided by a component equals the number of "
 "equations required, then the component model is said to be **balanced**."
 msgstr ""
+"구성 요소에서 제공하는 방정식의 수가 필요한 방정식의 수와 같으면 구성 요소 모델의 **균형** 이 맞다고 합니다."
 
-#: ../../source/components/components/component_models.rst:415
+
+#: ../../source/components/components/component_models.rst:416
 msgid "Component Definitions"
 msgstr ""
+"구성요소 정의(Component Definitions)"
 
-#: ../../source/components/components/component_models.rst:417
+#: ../../source/components/components/component_models.rst:418
 msgid ""
 "In this chapter we've discussed how to create component models. "
 "Fundamentally, nothing has changed since we first discussed what a :ref"
 ":`model-definition` should include.  But it is worth emphasizing a few "
 "things about component models."
 msgstr ""
+"이 장에서는 구성 요소 모델을 만드는 방법에 대해 설명했습니다."
+"근본적으로 모델 정의에 무엇을 포함해야 하는지 처음 논의한 이후로 변경된 사항은 없습니다. 그러나 구성 요소 모델에 대한 몇 가지 사항을 강조할 가치가 있습니다."
 
-#: ../../source/components/components/component_models.rst:423
+
+#: ../../source/components/components/component_models.rst:424
 msgid "Blocks"
 msgstr ""
+"블럭(Blocks)"
 
-#: ../../source/components/components/component_models.rst:427
+#: ../../source/components/components/component_models.rst:428
 msgid ""
-"First, in the discussion on :ref:`block-components` we introduced the idea "
-"of a ``block``.  A ``block`` is a special kind of ``model`` where the "
-"connectors contain only ``input`` and ``output`` signals."
+"First, in the discussion on :ref:`block-components` we introduced the "
+"idea of a ``block``.  A ``block`` is a special kind of ``model`` where "
+"the connectors contain only ``input`` and ``output`` signals."
 msgstr ""
+"먼저 블록 구성 요소에 대한 논의에서 ``block`` 이라는 개념을 소개했습니다."
+"``block`` 은 커넥터가 ``input`` 및 ``output`` 신호만 포함하는 특별한 종류의 ``model`` 입니다."
 
-#: ../../source/components/components/component_models.rst:432
+
+#: ../../source/components/components/component_models.rst:433
 msgid "Conditional Variables/Connectors"
 msgstr ""
+"상태 변수/ 커넥터(Conditional Variables/Connectors)"
 
-#: ../../source/components/components/component_models.rst:434
+#: ../../source/components/components/component_models.rst:435
 msgid ""
 "Another thing we saw in our discussion of the :ref:`optional-ground-"
 "connector` was the ability to make a declaration conditional.  The "
-"expression on which the conditional declaration depends cannot change as a "
-"function of time (*i.e.,* the variable cannot appear and disappear during "
-"the simulation).  Instead, it must be a function of parameters and constants"
-" so that the compiler or simulation runtime can determine whether the "
-"variable should be present prior to simulation.  As we saw, the syntax for "
-"such a declaration is:"
+"expression on which the conditional declaration depends cannot change as "
+"a function of time (*i.e.,* the variable cannot appear and disappear "
+"during the simulation).  Instead, it must be a function of parameters and"
+" constants so that the compiler or simulation runtime can determine "
+"whether the variable should be present prior to simulation.  As we saw, "
+"the syntax for such a declaration is:"
 msgstr ""
+":ref:`optional-ground-connector` 에 대한 논의에서  본 또 다른 사항은 선언을 조건부로 만드는 기능이었습니다. "
+"조건 선언이 의존하는 표현식은 시간의 함수로 변경할 수 없습니다(*즉,* 시뮬레이션 중에 변수가 나타나고 사라질 수 없음). "
+"대신 컴파일러 또는 시뮬레이션 런타임이 시뮬레이션 전에 변수가 있어야 하는지 여부를 결정할 수 있도록 파라미터 및 상수의 함수로 만들어야 합니다."
+"살펴 본 바와 같이 이러한 선언의 구문은 다음과 같습니다."
 
-#: ../../source/components/components/component_models.rst:448
+
+#: ../../source/components/components/component_models.rst:449
 msgid ""
-"In other words, by including the ``if`` keyword and a conditional expression"
-" immediately after the name of the variable (and any modifications that are "
-"applied to the variable), we can make the declaration of that variable "
-"conditional.  When the conditional expression is ``true``, the conditional "
-"variable will be present. When it is ``false``, it will not be present."
+"In other words, by including the ``if`` keyword and a conditional "
+"expression immediately after the name of the variable (and any "
+"modifications that are applied to the variable), we can make the "
+"declaration of that variable conditional.  When the conditional "
+"expression is ``true``, the conditional variable will be present. When it"
+" is ``false``, it will not be present."
 msgstr ""
+"즉, ``if`` 키워드와 변수 이름 바로 뒤에 조건식을 포함하면(및 변수에 적용되는 모든 수정 사항) 해당 변수를 조건부로 선언할 수 있습니다."
+"조건식이 ``true`` 이면 조건 변수가 존재합니다. ``false`` 이면 존재하지 않습니다."
 
-#: ../../source/components/components/component_models.rst:456
+
+#: ../../source/components/components/component_models.rst:457
 msgid "Model Limitations"
 msgstr ""
+"모델 제한(Model Limitations)"
 
-#: ../../source/components/components/component_models.rst:461
+#: ../../source/components/components/component_models.rst:462
 msgid "``assert``"
 msgstr ""
+"경고(``assert``)"
 
-#: ../../source/components/components/component_models.rst:465
+#: ../../source/components/components/component_models.rst:466
 msgid ""
-"To understand how to enforce model limitations, we must first explain the "
-"``assert`` function.  The syntax of a call to the ``assert`` function is:"
+"To understand how to enforce model limitations, we must first explain the"
+" ``assert`` function.  The syntax of a call to the ``assert`` function "
+"is:"
 msgstr ""
+"모델 제한을 적용하는 방법을 이해하려면 먼저 ``assert`` 기능을 알아야합니다."
+"``assert`` 함수에 대한 호출 구문은 다음과 같습니다."
 
-#: ../../source/components/components/component_models.rst:473
+
+#: ../../source/components/components/component_models.rst:474
 msgid ""
 "where ``conditional_expression`` is an expression that yields either "
 "``true`` or ``false``.  A value of ``false`` indicates a failure of the "
-"assertion.  We'll discuss the consequences of that momentarily. The second "
-"argument must be a ``String`` that describes the reason that the assertion "
-"failed.  The last argument, ``assertLevel``, is of type ``AssertionLevel`` "
-"(which was defined in our previous discussion on ``enumerations``).  This "
-"last argument is **optional** and has the default value of "
-"``AssertionalLevel.error``."
+"assertion.  We'll discuss the consequences of that momentarily. The "
+"second argument must be a ``String`` that describes the reason that the "
+"assertion failed.  The last argument, ``assertLevel``, is of type "
+"``AssertionLevel`` (which was defined in our previous discussion on "
+"``enumerations``).  This last argument is **optional** and has the "
+"default value of ``AssertionalLevel.error``."
 msgstr ""
+"여기서 ``conditional_expression`` 은 ``true`` 또는 ``false`` 를 산출하는 표현식입니다. "
+"``false`` 값은 어설션의 실패를 나타냅니다.  그 결과에 대해서는 나중에 잠시 논의할 것입니다. "
+"두 번째 인수는 어설션이 실패한 이유를 설명하는 ``String`` 이어야 합니다. "
+"마지막 인수인 ``assertLevel`` 은 ``AssertionLevel`` 자료형입니다"
+"(이전 ``enumerations`` 논의에서 정의됨). 이 마지막 인수는 **선택 사항** 이며 기본값은 ``AssertionalLevel.error`` 입니다."
 
-#: ../../source/components/components/component_models.rst:482
+
+
+#: ../../source/components/components/component_models.rst:483
 msgid ""
 "Now that we know how to use the ``assert`` function, let's examine the "
 "consequences of assertions during simulation to understand why they are "
 "important."
 msgstr ""
+"이제  ``assert`` 함수를 사용하는 방법을 알았으니, 왜 그들이 중요한지 이해하기 위해 시뮬레이션 동안 어서션의 결과를 조사해 보겠습니다."
 
-#: ../../source/components/components/component_models.rst:487
+#: ../../source/components/components/component_models.rst:488
 msgid "Defining Model Limitations"
 msgstr ""
+"모델 제한 정의(Defining Model Limitations)"
 
-#: ../../source/components/components/component_models.rst:493
+#: ../../source/components/components/component_models.rst:494
 msgid ""
-"When creating a component ``model`` (or any ``model``, for that matter), it "
-"is useful to incorporate any limitations on the equations in a model by "
-"including them directly in the model.  This is done by adding ``assert`` "
-"calls in either the ``equation`` or ``algorithm`` section.  As their name "
-"implies, these assertions assert that certain conditions must always be "
-"true."
+"When creating a component ``model`` (or any ``model``, for that matter), "
+"it is useful to incorporate any limitations on the equations in a model "
+"by including them directly in the model.  This is done by adding "
+"``assert`` calls in either the ``equation`` or ``algorithm`` section.  As"
+" their name implies, these assertions assert that certain conditions must"
+" always be true."
 msgstr ""
+"컴포넌트 ``모델`` (또는 ``모델``)을 생성할 때 방정식을 모델에 직접 포함하여 방정식에 대한 제한을 통합하는 것이 유용합니다. "
+"이것은 ``equation`` 또는 ``algorithm`` 섹션에 ``assert`` 호출을 추가하여 수행됩니다. "
+"이름에서 알 수 있듯이 이러한 주장은 특정 조건이 항상 참이어야 한다고 주장합니다."
 
-#: ../../source/components/components/component_models.rst:500
+
+
+#: ../../source/components/components/component_models.rst:501
 msgid ""
 "If the equations within a model are only accurate or applicable under "
-"certain conditions, it is essential that these conditions be included in the"
-" model via assertions.  Otherwise, the model may silently yield an incorrect"
-" solution.  If not uncovered, this could lead to bad decisions based on "
-"model solutions.  If it is uncovered, it will undermine the trust people "
-"have in the models.  So always try to capture such model limitations."
+"certain conditions, it is essential that these conditions be included in "
+"the model via assertions.  Otherwise, the model may silently yield an "
+"incorrect solution.  If not uncovered, this could lead to bad decisions "
+"based on model solutions.  If it is uncovered, it will undermine the "
+"trust people have in the models.  So always try to capture such model "
+"limitations."
 msgstr ""
+"모델 내의 방정식이 특정 조건에서만 정확하거나 적용 가능한 경우 이러한 조건이 어설션을 통해 모델에 포함되어야 합니다."
+"그렇지 않으면 모델이 자동으로 잘못된 해을 산출할 수 있습니다."
+"발견되지 않으면 모델 해을 기반으로 잘못된 결정을 내릴 수 있습니다. "
+"이러한 모델이 후에 적발되면 모델에 대한 사람들의 신뢰가 약화될 것입니다. "
+"따라서 항상 이러한 모델 제한 사항을 사전에 포착할 수 있도록 노력해야 합니다."
 
-#: ../../source/components/components/component_models.rst:510
+
+#: ../../source/components/components/component_models.rst:511
 msgid ""
-"It is worth taking a moment to understand what impact such an assertion has "
-"during simulation.  Part of the simulation process is the generation of so-"
-"called *candidate solutions*.  These solutions may, or may not, end up being"
-" actual solutions.  They are usually generated as the underlying solvers "
-"propose solutions and then check to make sure that the solutions are "
-"accurate to within some numerical tolerance.  Those candidate solutions that"
-" are found to be inaccurate are typically refined in some way until a "
-"sufficiently accurate solution is found."
+"It is worth taking a moment to understand what impact such an assertion "
+"has during simulation.  Part of the simulation process is the generation "
+"of so-called *candidate solutions*.  These solutions may, or may not, end"
+" up being actual solutions.  They are usually generated as the underlying"
+" solvers propose solutions and then check to make sure that the solutions"
+" are accurate to within some numerical tolerance.  Those candidate "
+"solutions that are found to be inaccurate are typically refined in some "
+"way until a sufficiently accurate solution is found."
 msgstr ""
+"시뮬레이션 중에 이러한 주장이 어떤 영향을 미치는지 이해하는 데 잠시 시간을 할애할 가치가 있습니다. "
+"시뮬레이션 프로세스의 일부는 소위 *후보 해* 을 생성하는 것입니다. "
+"이러한 해은 실제 해가 될 수도 있고 그렇지 않을 수도 있습니다."
+"그들은 일반적으로 기본 솔버가 해을 제안하고 해당하는"해"가 일부 수치 허용오차 내에서 정확한지 확인하기 위해 생성합니다."
+"부정확한 것으로 확인된 후보 해은 일반적으로 충분히 정확한 해을 찾을 때까지 어떤 방식으로든 정제합니다."
 
-#: ../../source/components/components/component_models.rst:520
+
+#: ../../source/components/components/component_models.rst:521
 msgid ""
 "If a candidate solution violates an assertion, then it is automatically "
 "considered to be inaccurate.  The violated assertion will automatically "
-"trigger the refinement process in an attempt to find a solution that is more"
-" accurate and, hopefully, doesn't violate the solution.  However, if these "
-"refinement processes lead to a solution that is sufficiently accurate "
-"(*i.e.,* satisfies the accuracy requirements to within the acceptable "
-"tolerance), but that solution still violates any assertions in the system, "
-"then the simulation environment will do one of two things.  If the ``level``"
-" argument in the ``assert`` call is ``AssertionLevel.error`` then the "
-"simulation is terminated.  If, on the other hand, the ``level`` argument is "
-"``AssertionLevel.warning``, then the assertion description will be used to "
-"generate a warning message to the user.  How this message is delivered is "
-"specific to each simulation environment.  Recall that the default value for "
-"the ``level`` argument (if none is provided in the call to ``assert``) is "
+"trigger the refinement process in an attempt to find a solution that is "
+"more accurate and, hopefully, doesn't violate the assertion.  However, if"
+" these refinement processes lead to a solution that is sufficiently "
+"accurate (*i.e.,* satisfies the accuracy requirements to within the "
+"acceptable tolerance), but that solution still violates any assertions in"
+" the system, then the simulation environment will do one of two things.  "
+"If the ``level`` argument in the ``assert`` call is "
+"``AssertionLevel.error`` then the simulation is terminated.  If, on the "
+"other hand, the ``level`` argument is ``AssertionLevel.warning``, then "
+"the assertion description will be used to generate a warning message to "
+"the user.  How this message is delivered is specific to each simulation "
+"environment.  Recall that the default value for the ``level`` argument "
+"(if none is provided in the call to ``assert``) is "
 "``AssertionLevel.error``."
 msgstr ""
+"후보 해가 어설션을 위반하면 자동으로 부정확한 것으로 간주합니다. "
+"위반된 어설션은 바라건대 자동으로 더 정확하고 어설션을 위반하지 않는 해을 찾기 위해 노력합니다. 그러나 이러한 개선 프로세스가 충분히 정확한 해(*즉,* 허용 가능한 허용 오차 내에서 정확도 요구 사항을 충족)를 찾지 못하고, 여전히 시스템의 어설션을 위반하는 경우 시뮬레이션 환경은 두 가지 중 하나를 수행합니다. "
+"``assert`` 호출의 ``level`` 인수가 ``AssertionLevel.error`` 이면 시뮬레이션이 종료되고, 반면에 ``level`` 인수가 ``AssertionLevel.warning`` 이면 어설션 설명이"
+"사용자에게 경고 메시지를 생성하는 데 사용합니다."
+"이 메시지가 전달되는 방식은 각 시뮬레이션 환경에 따라 다릅니다. "
+"``level`` 인수의 기본값(``assert`` 호출에서 제공되지 않은 경우)은 ``AssertionLevel.error`` 임을 기억해야 합니다."
 
-#: ../../source/components/components/component_models.rst:108
-msgid "connect"
-msgstr ""
 
-#: ../../source/components/components/component_models.rst:108
-msgid "flow"
-msgstr ""
+#~ msgid ""
+#~ "Before we discuss some of the "
+#~ "differences between these different types "
+#~ "of models, let's introduce some "
+#~ "terminology so we can refer to "
+#~ "them precisely.  A *component model* is"
+#~ " a model that is used to "
+#~ "encapsulate equations into a reusable "
+#~ "form.  By creating such a model, "
+#~ "an instance of the component can "
+#~ "be used in place of the equations"
+#~ " it contains.  A *subsystem model* is"
+#~ " a model that is composed of "
+#~ "components or other subsystems.  In "
+#~ "other words, it doesn't (generally) "
+#~ "include equations.  Instead, it represents "
+#~ "an assembly of other components.  "
+#~ "Typically, these subsystem models are "
+#~ "created by dragging, dropping and "
+#~ "connecting component and other subsystem "
+#~ "models schematically.  While component models"
+#~ " are \"flat\" (they don't contain "
+#~ "other components that are subsystems, "
+#~ "only equations), subsystem models are "
+#~ "hierarchical."
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:151
-msgid "connection set"
-msgstr ""
+#~ msgid "Sign Convections"
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:348
-msgid "balanced models"
-msgstr ""
+#~ msgid ""
+#~ "If a candidate solution violates an "
+#~ "assertion, then it is automatically "
+#~ "considered to be inaccurate.  The "
+#~ "violated assertion will automatically trigger"
+#~ " the refinement process in an attempt"
+#~ " to find a solution that is "
+#~ "more accurate and, hopefully, doesn't "
+#~ "violate the solution.  However, if these"
+#~ " refinement processes lead to a "
+#~ "solution that is sufficiently accurate "
+#~ "(*i.e.,* satisfies the accuracy requirements"
+#~ " to within the acceptable tolerance), "
+#~ "but that solution still violates any "
+#~ "assertions in the system, then the "
+#~ "simulation environment will do one of"
+#~ " two things.  If the ``level`` "
+#~ "argument in the ``assert`` call is "
+#~ "``AssertionLevel.error`` then the simulation "
+#~ "is terminated.  If, on the other "
+#~ "hand, the ``level`` argument is "
+#~ "``AssertionLevel.warning``, then the assertion "
+#~ "description will be used to generate "
+#~ "a warning message to the user.  "
+#~ "How this message is delivered is "
+#~ "specific to each simulation environment.  "
+#~ "Recall that the default value for "
+#~ "the ``level`` argument (if none is "
+#~ "provided in the call to ``assert``) "
+#~ "is ``AssertionLevel.error``."
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:349
-#: ../../source/components/components/component_models.rst:350
-msgid "models"
-msgstr ""
+#~ msgid "connect"
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:349
-msgid "balanced"
-msgstr ""
+#~ msgid "flow"
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:350
-msgid "equations; number"
-msgstr ""
+#~ msgid "connection set"
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:425
-msgid "block"
-msgstr ""
+#~ msgid "balanced models"
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:463
-#: ../../source/components/components/component_models.rst:490
-msgid "assert"
-msgstr ""
+#~ msgid "models"
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:489
-msgid "model limitations"
-msgstr ""
+#~ msgid "balanced"
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:491
-msgid "assertions"
-msgstr ""
+#~ msgid "equations; number"
+#~ msgstr ""
 
-#: ../../source/components/components/component_models.rst:508
-msgid "candidate solutions"
-msgstr ""
+#~ msgid "block"
+#~ msgstr ""
+
+#~ msgid "assert"
+#~ msgstr ""
+
+#~ msgid "model limitations"
+#~ msgstr ""
+
+#~ msgid "assertions"
+#~ msgstr ""
+
+#~ msgid "candidate solutions"
+#~ msgstr ""
+
