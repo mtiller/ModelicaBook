@@ -108,7 +108,7 @@ def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymin=None, ym
 
     try:
         t = res.abscissa(var0name, valuesOnly=True)
-        print "len(t) = "+str(len(t))
+        print("len(t) = "+str(len(t)))
     except KeyError as e:
         raise NameError("Unknown key: "+var0name+" among "+str(res.names()))
 
@@ -123,7 +123,7 @@ def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymin=None, ym
             raise NameError("Unknown key: "+varname+" among "+str(res.names()))
         if len(x)==2:
             xv = x[0]
-            print "xv = "+str(xv)
+            print("xv = "+str(xv))
             x = [xv]*len(t)
 
         x = list(map(lambda y: y*scale, x))
