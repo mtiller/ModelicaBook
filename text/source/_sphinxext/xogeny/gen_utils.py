@@ -6,13 +6,13 @@ from jinja2 import PackageLoader, Environment
 
 path = os.path.abspath(os.path.join(__file__,"..","..","..","..",".."));
 
-print "Path: "+str(path)
+print("Path: "+str(path))
 
 results = {}
 plots = {}
 
 def findModel(*frags):
-    rfrags = map(lambda x: re.compile(x), frags)
+    rfrags = list(map(lambda x: re.compile(x), frags))
     res = []
     root = os.path.join(path, "ModelicaByExample")
     for ent in os.walk(root):
@@ -25,23 +25,31 @@ def findModel(*frags):
             if rel[-3:]!=".mo":
                 continue
             modname = rel[:-3].replace("/",".")
+            #print("Module name: "+modname)
+            #print("frags = "+str(frags))
             for rfrag in rfrags:
-                if len(rfrag.findall(modname))==0:
+                #print("  rfrag = "+str(rfrag))
+                fall = rfrag.findall(modname)
+                #print("  Findall = "+str(fall))
+                if len(fall)==0:
                     match = False
             if match:
                 entry = (full, rel, modname)
+                print("  adding entry: "+str(entry))
                 res.append(entry)
+    #print("results = "+str(res))
     if len(res)==1:
         return res[0]
     else:
-        print "Unable to find a unique match for "+str(frags)+" matches include:"
+        print("Unable to find a unique match for "+str(frags)+" matches include:")
         for r in res:
-            print str(r)
+            print(str(r))
         sys.exit(1)
 
 def add_case(frags, res, stopTime=None, tol=1e-3, ncp=500, mods={},
              msl=False, ms=False, compfails=False, simfails=False):
-    print "Adding case "+res
+    print("Adding case "+res)
+    print("Frags: "+str(frags))
     mod = findModel(*frags)
     if res in results:
         raise NameError("Result %s already exists!" % (res,))
@@ -142,7 +150,7 @@ def _generate_casedata():
                                "json", plot+"-case.json"), "w+") as ofp:
                 res = results[pdata["res"]]
                 obj = dict(pdata)
-                obj["vars"] = map(lambda x: x.dict(), pdata["vars"])
+                obj["vars"] = list(map(lambda x: x.dict(), pdata["vars"]))
                 obj["stopTime"] = res["stopTime"]
                 obj["ncp"] = res["ncp"]
                 obj["tol"] = res["tol"]
@@ -153,7 +161,7 @@ def _generate_casedata():
 def _generate_modellist():
     models = set()
     for res in results:
-        print "Working on result "+res
+        print("Working on result "+res)
         # print res
         # print results[res]
         models.add(results[res]["name"])
@@ -266,11 +274,11 @@ def _generate_makefile():
 
 
 def generate():
-    print "Generating Plots"
+    print("Generating Plots")
     _generate_plots()
-    print "Generating Makefile"
+    print("Generating Makefile")
     _generate_makefile()
-    print "Generating Case Data"
+    print("Generating Case Data")
     _generate_casedata()
-    print "Generating model list"
+    print("Generating model list")
     _generate_modellist()

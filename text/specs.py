@@ -256,7 +256,7 @@ add_simple_plot(plot="LV_ABCD", vars=[Var("x[1]", _("x[2]"))],
                 legloc="upper right")
 
 # One Dimensional Heat Transfer
-rfl_vars = map(lambda x: Var("T["+str(x)+_("]")), range(1,11))
+rfl_vars = list(map(lambda x: Var("T["+str(x)+_("]")), range(1,11)))
 add_case(["Rod_ForLoop"], stopTime=1.0, res="RFL", tol=1e-3)
 add_simple_plot(plot="RFL", vars=rfl_vars,
                 title=_("One Dimensional Heat Transfer Response"),
@@ -367,7 +367,7 @@ add_simple_plot(plot="SMD_GG", vars=[Var("inertia3.phi", legend=_("Position of i
                                      Var("inertia3.w", legend=_("Velocity of inertia 3 [rad/s]"), style="-."),
                                      Var("inertia2.w", legend=_("Velocity of inertia 2 [rad/s]"), style=".")],
                 title=_("Dual mass spring-mass-damper model"));
-add_case(["Rotational.\Examples", "SMD_GearComparison"], stopTime=2, res="SMD_GC");
+add_case(["Rotational\.Examples", "SMD_GearComparison"], stopTime=2, res="SMD_GC");
 add_simple_plot(plot="SMD_GC_g", res="SMD_GC",
                 vars=[Var("inertia3.phi", legend=_("Position of inertia 3 [rad]"), style="-."),
                       Var("inertia1.phi", legend=_("Position of inertia 1 [rad]"), style="."),
@@ -381,7 +381,7 @@ add_simple_plot(plot="SMD_GC_u", res="SMD_GC",
                       Var("inertia1.w", legend=_("Velocity of inertia 1 [rad/s]"), style="-."),
                       Var("inertia5.w", legend=_("Velocity of inertia 5 [rad/s]"), style=".")],
                 title=_("Comparing grounded and ungrounded gears"));
-add_case(["Rotational.\Examples", "SMD_ConfigurableGear"], stopTime=5, res="SMD_CG");
+add_case(["Rotational\.Examples", "SMD_ConfigurableGear"], stopTime=5, res="SMD_CG");
 add_simple_plot(plot="SMD_CG", vars=[Var("inertia4.phi", legend=_("Position of inertia 4 [rad]"), style="-."),
                                      Var("inertia1.phi", legend=_("Position of inertia 1 [rad]"), style="."),
                                      Var("inertia4.w", legend=_("Velocity of inertia 4 [rad/s]"), style="-."),

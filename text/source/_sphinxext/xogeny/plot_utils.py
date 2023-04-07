@@ -126,8 +126,8 @@ def render_simple_plot(name, vars, title, legloc, ylabel, ncols=1, ymin=None, ym
             print "xv = "+str(xv)
             x = [xv]*len(t)
 
-        x = map(lambda y: y*scale, x)
-        print "len("+varname+") = "+str(len(x))
+        x = list(map(lambda y: y*scale, x))
+        print("len("+varname+") = "+str(len(x)))
         ax.plot(t, x, style, label=legend)
 
     #legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)

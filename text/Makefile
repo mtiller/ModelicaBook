@@ -30,6 +30,7 @@ S3BUCKET_FILES ?= files.xogeny.com
 S3CP = aws s3 cp
 S3ACCESS= --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
 
+PYTHON = python3
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
@@ -68,7 +69,7 @@ ifneq ($(SPEC_HASH), $(PREV_SPEC_HASH))
 	-mkdir -p results/js
 	-mkdir -p plots
 	-rm -f plots/*
-	python specs.py
+	$(PYTHON) specs.py
 	# Record the content hash of specs.py used to
 	# generate all the files
 	echo $(SPEC_HASH) > spec-hash
@@ -81,7 +82,7 @@ specs_cn: specs.py
 	-mkdir -p results/js
 	-mkdir -p plots
 	-rm -f plots/*
-	$(SET_BOOK_LANG_CN) python specs.py
+	$(SET_BOOK_LANG_CN) $(PYTHON) specs.py
 
 # This target builds all the simulation results
 results:
@@ -182,28 +183,28 @@ build_links_es:
 
 # This builds the HTML and then runs a simple web server
 server: dirhtml build_links
-	(cd build/dirhtml; python -m SimpleHTTPServer)
+	(cd build/dirhtml; $(PYTHON) -m SimpleHTTPServer)
 
 server_ar: dirhtml_ar build_links_ar
-	(cd build/dirhtml_ar; python -m SimpleHTTPServer)
+	(cd build/dirhtml_ar; $(PYTHON) -m SimpleHTTPServer)
 
 server_cn: dirhtml_cn build_links_cn
-	(cd build/dirhtml_cn; python -m SimpleHTTPServer)
+	(cd build/dirhtml_cn; $(PYTHON) -m SimpleHTTPServer)
 
 server_kr: dirhtml_kr build_links_kr
-	(cd build/dirhtml_kr; python -m SimpleHTTPServer)
+	(cd build/dirhtml_kr; $(PYTHON) -m SimpleHTTPServer)
 
 #server_de: dirhtml_de build_links
-#	(cd build/dirhtml_de; python -m SimpleHTTPServer)
+#	(cd build/dirhtml_de; $(PYTHON) -m SimpleHTTPServer)
 
 server_es: dirhtml_es build_links_es
-	(cd build/dirhtml_es; python -m SimpleHTTPServer)
+	(cd build/dirhtml_es; $(PYTHON) -m SimpleHTTPServer)
 
 #server_fr: dirhtml_fr build_links
-#	(cd build/dirhtml_fr; python -m SimpleHTTPServer)
+#	(cd build/dirhtml_fr; $(PYTHON) -m SimpleHTTPServer)
 
 #server_it: dirhtml_it build_links
-#	(cd build/dirhtml_it; python -m SimpleHTTPServer)
+#	(cd build/dirhtml_it; $(PYTHON) -m SimpleHTTPServer)
 
 web: dirhtml build_links
 	(cd build/dirhtml; $(SYNC) * s3://$(S3BUCKET)/)
