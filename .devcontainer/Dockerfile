@@ -1,6 +1,20 @@
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.161.0/containers/javascript-node/.devcontainer/base.Dockerfile
+FROM openmodelica/openmodelica:v1.20.0-minimal
 
-FROM mtiller/flat-book-builder
+# This is currently preventing apt-get updates from working
+RUN rm /etc/apt/sources.list.d/openmodelica.list
+
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
+    apt-get install -y sudo python3 git python3-pip texlive-latex-extra && \
+ 	rm -rf /var/lib/apt/lists/*
+
+# Add a normal user
+RUN useradd -m  -s /bin/bash ubuntu
+# RUn mkdir /etc/sudoers.d
+RUN usermod -aG sudo ubuntu && echo "ubuntu ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/ubuntu
+RUN chmod 0440 /etc/sudoers.d/ubuntu
+USER ubuntu:ubuntu
+
+RUN pip install jinja2 matplotlib scipy sphinx
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
