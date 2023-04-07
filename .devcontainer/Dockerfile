@@ -4,7 +4,7 @@ FROM openmodelica/openmodelica:v1.20.0-minimal
 RUN rm /etc/apt/sources.list.d/openmodelica.list
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
-    apt-get install -y sudo python3 git python3-pip texlive-latex-extra && \
+    apt-get install -y sudo python3 git python3-pip texlive-latex-extra nodejs && \
  	rm -rf /var/lib/apt/lists/*
 
 # Add a normal user
@@ -15,6 +15,7 @@ RUN chmod 0440 /etc/sudoers.d/ubuntu
 USER ubuntu:ubuntu
 
 RUN pip install jinja2 matplotlib scipy sphinx
+RUN npm install -g wrangler
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
