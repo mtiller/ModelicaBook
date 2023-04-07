@@ -275,7 +275,7 @@ def _generate_makefile():
             sfp.write(genjs.render(**context))
 
     with open(os.path.join(path, "text", "results", "allres.mos"), "w+") as sfp:
-        sfp.write(genallres.render(contexts=contexts, path=path))
+        sfp.write(genallres.render(contexts=contexts, path=path, cflags=cflags))
 
 
 def generate():
