@@ -9,7 +9,12 @@ getErrorString();
 if not compfails and cf==false then
   exit(1);
 end if;
-    
+
+fmu := buildModelFMU({{name}},"2.0","cs","<default>",{"static"},true);
+copy(fmu, "{{pre}}.fmu");
+remove(fmu);
+getErrorString();
+
 rec := {{simcmd}};
 getErrorString();
 rfile := rec.resultFile;

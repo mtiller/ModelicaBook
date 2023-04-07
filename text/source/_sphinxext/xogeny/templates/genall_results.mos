@@ -10,6 +10,11 @@ if cf==false then
 end if;
 
 {% for context in contexts %}
+fmu := buildModelFMU({{context.name}},"2.0","cs","<default>",{"static"},true);
+copy(fmu, "{{context.pre}}.fmu");
+remove(fmu);
+getErrorString();
+
 rec := {{context.simcmd}};
 getErrorString();
 rfile := rec.resultFile;
