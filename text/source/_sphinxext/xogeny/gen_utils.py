@@ -256,9 +256,14 @@ def _generate_makefile():
                          simflags=simflags, stopTime=data["stopTime"],
                          tolerance=data["tol"],
                          numberOfIntervals=data["ncp"])
+        # For Intel platforms
+        cflags = "-fPIC -march=x86-64"
+        if os.uname().machine=="aarch64":
+            # MacOS wth M1 Processor
+            cflags = "-fPIC"
         context = {"path": path, "compfails": compfails,
                    "simcmd": simcmd, "simfails": simfails,
-                   "name": data["name"], "pre": res}
+                   "name": data["name"], "pre": res, "cflags": cflags}
         contexts.append(context)
 
         # Write out script to generate simulation results

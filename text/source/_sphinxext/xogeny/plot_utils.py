@@ -1,4 +1,3 @@
-from pylab import *
 from dymat import DyMatFile
 import os
 
