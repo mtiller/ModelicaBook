@@ -1,4 +1,4 @@
-FROM openmodelica/openmodelica:v1.20.0-minimal
+FROM --platform=linux/amd64 openmodelica/openmodelica:v1.20.0-minimal
 
 # This is currently preventing apt-get updates from working
 RUN rm /etc/apt/sources.list.d/openmodelica.list
