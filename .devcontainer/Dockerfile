@@ -15,7 +15,7 @@ RUN chmod 0440 /etc/sudoers.d/ubuntu
 USER ubuntu:ubuntu
 
 RUN pip install jinja2 matplotlib scipy sphinx
-RUN npm install -g wrangler
+# RUN npm install -g wrangler
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
