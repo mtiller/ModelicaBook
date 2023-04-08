@@ -15,6 +15,9 @@ RUN chmod 0440 /etc/sudoers.d/ubuntu
 USER ubuntu:ubuntu
 
 RUN pip install jinja2 matplotlib scipy sphinx
+
+# Install 
+RUN ln -s /workspaces/ModelicaBook/ModelicaByExample "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
 # RUN npm install -g wrangler
 
 # [Optional] Uncomment this section to install additional OS packages.
