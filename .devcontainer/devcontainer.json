@@ -6,7 +6,9 @@
     "dockerfile": "Dockerfile",
   },
 
-  "runArgs": ["--platform=linux/amd64" ],
+  // Uncomment if you want this devcontainer to run in an amd64 container
+  // Also change the --platform value in the Dockerfile
+  // "runArgs": ["--platform=linux/amd64" ],
 
   // Set *default* container specific settings.json values on container create.
   "settings": {
@@ -14,7 +16,12 @@
   },
 
   // Add the IDs of extensions you want installed when the container is created.
-  "extensions": ["dbaeumer.vscode-eslint", "ms-python.python"]
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "ms-python.python",
+    "golang.go",
+    "esbenp.prettier-vscode"
+  ]
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
