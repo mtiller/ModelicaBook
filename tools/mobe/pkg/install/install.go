@@ -20,7 +20,7 @@ func InstallLibrary(modelName string, version string, exact bool, verbose bool) 
 		LibraryName: modelName,
 		Version:     version,
 		Exact:       exact,
-	}, nil)
+	}, verbose, nil)
 
 	return err
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/mtiller/mobe/pkg/compile"
 	"github.com/mtiller/mobe/pkg/hash"
 	"github.com/mtiller/mobe/pkg/install"
 	"github.com/spf13/cobra"
@@ -12,6 +13,7 @@ import (
 func init() {
 	rootCmd.AddCommand(hash.HashCmd)
 	rootCmd.AddCommand(install.InstallCmd)
+	rootCmd.AddCommand(compile.CompileCmd)
 }
 
 var rootCmd = &cobra.Command{

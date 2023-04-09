@@ -22,7 +22,7 @@ func ComputeHash(modelName string, verbose bool) (string, error) {
 	ret := ""
 	err := omc.RunTemplate(saveTotalTemplate, hashInputs{
 		ModelName: modelName,
-	}, func(dir string) error {
+	}, verbose, func(dir string) error {
 		totalFile := path.Join(dir, "total.mo")
 		// Read in contents of the save total file
 		bytes, err := os.ReadFile(totalFile)
@@ -30,9 +30,7 @@ func ComputeHash(modelName string, verbose bool) (string, error) {
 			return err
 		}
 
-		if verbose {
-			fmt.Fprintf(os.Stderr, "Save Total: %s\n", bytes)
-		}
+		omc.VerboseOutput("Save Total", string(bytes), verbose)
 
 		// Hash them
 		hmd5 := md5.Sum([]byte(bytes))

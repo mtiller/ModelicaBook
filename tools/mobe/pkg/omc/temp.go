@@ -8,7 +8,7 @@ import (
 	"text/template"
 )
 
-func RunTemplate(templateString string, input interface{}, callback func(dir string) error) error {
+func RunTemplate(templateString string, input interface{}, verbose bool, callback func(dir string) error) error {
 	// Create temporary direcotry
 	dir, err := ioutil.TempDir("", "mobe")
 	if err != nil {
@@ -28,8 +28,12 @@ func RunTemplate(templateString string, input interface{}, callback func(dir str
 	// Create a buffer to write our script into
 	var scriptFileContents bytes.Buffer
 
+	VerboseOutput("Script", scriptFileContents.String(), verbose);
 	// Run the template and write the contents
 	err = t.Execute(&scriptFileContents, input)
+	if err!=nil {
+		return err
+	}
 
 	// Write the script file
 	err = os.WriteFile(scriptFile, scriptFileContents.Bytes(), 0666)
@@ -38,10 +42,12 @@ func RunTemplate(templateString string, input interface{}, callback func(dir str
 	}
 
 	// Run the script
-	_, err = RunScript(scriptFile, dir)
+	scriptOutput, err := RunScript(scriptFile, dir, verbose)
 	if err != nil {
 		return err
 	}
+
+	VerboseOutput("Output", scriptOutput, verbose)
 
 	if callback != nil {
 		err = callback(dir)
@@ -52,3 +58,4 @@ func RunTemplate(templateString string, input interface{}, callback func(dir str
 
 	return nil
 }
+

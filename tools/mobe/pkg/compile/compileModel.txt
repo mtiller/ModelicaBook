@@ -1,0 +1,23 @@
+//installPackage(ModelicaByExample, "0.6.0", exactMatch=true);
+{{ if .Path }}
+setModelicaPath("{{.Path}}:"+getModelicaPath());
+{{ end }}
+//setCFlags("-fPIC -march=x86-64");
+//setCFlags("-fPIC -march=x86-64");
+cf := loadModel({{.ModelName}});
+compfails := false;
+getErrorString();
+
+if not compfails and cf==false then
+  exit(1);
+end if;
+
+rec := buildModel({{.ModelName}}, stopTime=10, tolerance=0.001, numberOfIntervals=500, simflags="-cpu -ignoreHideResult -emit_protected", method="dassl",fileNamePrefix="model", outputFormat="mat");
+getErrorString();
+simfails := false;
+
+//if not simfails then
+//  exit(1);
+//else
+//  exit(0);
+//end if;

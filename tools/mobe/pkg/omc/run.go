@@ -6,7 +6,7 @@ import (
 	"os/exec"
 )
 
-func RunScript(scriptFile string, cwd string) (string, error) {
+func RunScript(scriptFile string, cwd string, verbose bool) (string, error) {
 	cmd := exec.Command("omc", scriptFile)
 	cmd.Dir = cwd
 
