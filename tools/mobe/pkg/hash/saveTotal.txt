@@ -1,2 +1,5 @@
 st := saveTotalModel("total.mo",{{.ModelName}},true,true,false);
 getErrorString();
+if st==false then
+    exit(1);
+end if;

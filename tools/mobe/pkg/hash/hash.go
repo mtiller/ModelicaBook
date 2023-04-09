@@ -62,12 +62,18 @@ func ComputeHash(modelName string, verbose bool) (string, error) {
 
 	// Run the script
 	out, err := omc.RunScript(scriptFile)
+	if err != nil {
+		return "", err
+	}
 	if verbose {
 		fmt.Fprintf(os.Stderr, "Script Output: %s\n", out)
 	}
 
 	// Read in contents of the save total file
 	bytes, err := os.ReadFile(totalFile)
+	if err != nil {
+		return "", err
+	}
 	if verbose {
 		fmt.Fprintf(os.Stderr, "Save Total: %s\n", bytes)
 	}

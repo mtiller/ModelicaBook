@@ -5,11 +5,13 @@ import (
 	"os"
 
 	"github.com/mtiller/mobe/pkg/hash"
+	"github.com/mtiller/mobe/pkg/install"
 	"github.com/spf13/cobra"
 )
 
 func init() {
 	rootCmd.AddCommand(hash.HashCmd)
+	rootCmd.AddCommand(install.InstallCmd)
 }
 
 var rootCmd = &cobra.Command{

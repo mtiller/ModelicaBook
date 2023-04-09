@@ -1,0 +1,10 @@
+{{ if .Version }}
+ip := installPackage({{.LibraryName}}, "{{.Version}}", {{.Exact}});
+{{ else }}
+ip := installPackage({{.LibraryName}});
+{{ end }}
+
+getErrorString();
+if ip==false then
+    exit(1);
+end if;
