@@ -38,7 +38,7 @@ func RunTemplate(templateString string, input interface{}, callback func(dir str
 	}
 
 	// Run the script
-	_, err = RunScript(scriptFile)
+	_, err = RunScript(scriptFile, dir)
 	if err != nil {
 		return err
 	}
