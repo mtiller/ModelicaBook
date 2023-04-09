@@ -3,7 +3,7 @@
 {
   "name": "Book Build Environment",
   "build": {
-    "dockerfile": "Dockerfile",
+    "dockerfile": "Dockerfile"
   },
 
   // Uncomment if you want this devcontainer to run in an amd64 container
@@ -20,7 +20,8 @@
     "dbaeumer.vscode-eslint",
     "ms-python.python",
     "golang.go",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "github.copilot"
   ]
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
