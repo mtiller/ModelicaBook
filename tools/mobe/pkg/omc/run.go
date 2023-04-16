@@ -15,8 +15,8 @@ func RunScript(scriptFile string, cwd string, verbose bool) (string, error) {
 
 	err := cmd.Run()
 	if err != nil {
-		return "", fmt.Errorf("OMC error: %s", out.String())
+		return "", fmt.Errorf("omc error: %s", out.String())
 	}
 
-	return string(out.Bytes()), nil
+	return out.String(), nil
 }
