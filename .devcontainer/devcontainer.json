@@ -8,7 +8,7 @@
 
   // Uncomment if you want this devcontainer to run in an amd64 container
   // Also change the --platform value in the Dockerfile
-  // "runArgs": ["--platform=linux/amd64" ],
+  // "runArgs": ["--platform=linux/amd64"],
 
   // Set *default* container specific settings.json values on container create.
   "settings": {

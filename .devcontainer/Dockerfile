@@ -39,9 +39,4 @@ RUN ln -s /workspaces/ModelicaBook/ModelicaByExample "/home/ubuntu/.openmodelica
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
 
-RUN sudo wget https://dvc.org/deb/dvc.list -O /etc/apt/sources.list.d/dvc.list
-RUN wget -qO - https://dvc.org/deb/iterative.asc | gpg --dearmor > packages.iterative.gpg
-RUN sudo install -o root -g root -m 644 packages.iterative.gpg /etc/apt/trusted.gpg.d/
-RUN rm -f packages.iterative.gpg
-RUN sudo apt update
-RUN sudo apt install dvc
+RUN pip install dvc[all]
