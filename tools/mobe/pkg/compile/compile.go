@@ -2,6 +2,9 @@ package compile
 
 import (
 	_ "embed"
+	"fmt"
+	"path"
+	"runtime"
 
 	"github.com/mtiller/mobe/pkg/omc"
 )
@@ -14,6 +17,7 @@ type CompileOptions struct {
 	Start string
 	Stop string
 	Path string
+	OutputFile string
 }
 
 type compileInputs struct {
@@ -35,7 +39,17 @@ func CompileModel(modelName string, prefix string, verbose bool, opts CompileOpt
 		Start: opts.Start,
 		Stop: opts.Stop,
 		Path: opts.Path,
-	}, verbose, omc.PreviewDirectory)
+	}, verbose, func(dir string) error {
+		arch := runtime.GOARCH
+		outputFile := fmt.Sprintf("%s-%s", prefix, arch)
+		if opts.OutputFile!="" {
+			outputFile = opts.OutputFile
+		}
+		omc.CopyFile(path.Join(dir, "model"), outputFile)
+		omc.CopyFile(path.Join(dir, "model_info.json"), fmt.Sprintf("%s_info.json", prefix))
+		omc.CopyFile(path.Join(dir, "model_init.xml"), fmt.Sprintf("%s_init.xml", prefix))
+		return nil
+	})
 
 	return err
 }
