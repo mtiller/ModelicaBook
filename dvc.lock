@@ -3,14 +3,13 @@ stages:
   build-specs:
     cmd:
     - mkdir -p results/json
-    - mkdir -p results/js
     - mkdir -p plots
     - python3 specs.py
     deps:
-    - path: ../ModelicaBook
-      md5: d751713988987e9331980363e24189ce.dir
-      size: 0
-      nfiles: 0
+    - path: ../ModelicaByExample
+      md5: 979c4a082c8bcca8d36acc9e1eb71a74.dir
+      size: 7500979
+      nfiles: 548
     - path: specs.py
       md5: 9f78f1352d3f4054457fddb076e248f6
       size: 32764
