@@ -1,0 +1,24 @@
+stages:
+  build-specs:
+    wdir: text
+    cmd:
+      - mkdir -p results/json
+      - mkdir -p results/js
+      - mkdir -p plots
+      - python3 specs.py
+    deps:
+      - ../ModelicaBook
+      - specs.py
+    outs:
+      - plots
+      - results/allres.mos
+      # TODO: get rid of results/js directory
+      # TODO: get rid of non-allres .mos files
+  # build-results:
+  #   wdir: text/results
+  #   cmd: omc allres.mos
+  #   deps:
+  #     - allres.mos
+  #     - ../../ModelicaBook
+  #   outs:
+  #     - foobar

@@ -1,0 +1,24 @@
+schema: '2.0'
+stages:
+  build-specs:
+    cmd:
+    - mkdir -p results/json
+    - mkdir -p results/js
+    - mkdir -p plots
+    - python3 specs.py
+    deps:
+    - path: ../ModelicaBook
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0
+    - path: specs.py
+      md5: 9f78f1352d3f4054457fddb076e248f6
+      size: 32764
+    outs:
+    - path: plots
+      md5: ec32866429b14d2b80666d09b2204eeb.dir
+      size: 66534
+      nfiles: 113
+    - path: results/allres.mos
+      md5: 0b3ca85a6781b0abeff6ec622a25c3cb
+      size: 53942
