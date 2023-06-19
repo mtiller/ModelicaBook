@@ -8,7 +8,7 @@ stages:
     deps:
       - ../ModelicaByExample
       - specs.py
-      - source/_sphinxext/xogeny/gen_utils.py
+      - source/_sphinxext/xogeny
     outs:
       - plots
       - results/allres.mos
