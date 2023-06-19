@@ -41,7 +41,7 @@ exes.tar.gz: {%- for res in results %} {{res}} {{res}}_init.xml json/{{res}}.jso
 	tar zcf exes.tar.gz {%- for res in results %} {{res}} {{res}}_init.xml json/{{res}}.json {% endfor %} json/*-case.json 
 
 tidy:
-	-rm -f *.o *.c *.h *.libs *.log *.makefile *.fmutmp _FMU.*
+	-rm -f *.o *.c *.h *.libs *.log *.makefile *.fmutmp _FMU.* *_prof.*
 	-rm -f *.fmu
 	{% for res in results -%}
 	-rm -f {{res}}

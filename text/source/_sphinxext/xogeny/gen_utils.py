@@ -268,11 +268,11 @@ def _generate_makefile():
 
         # Write out script to generate simulation results
 
-        with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
-            sfp.write(genres.render(**context))
-        # Write out script to generate JavaScript
-        with open(os.path.join(path, "text", "results", res+"-js.mos"), "w+") as sfp:
-            sfp.write(genjs.render(**context))
+        # with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
+        #     sfp.write(genres.render(**context))
+        # # Write out script to generate JavaScript
+        # with open(os.path.join(path, "text", "results", res+"-js.mos"), "w+") as sfp:
+        #     sfp.write(genjs.render(**context))
 
     with open(os.path.join(path, "text", "results", "allres.mos"), "w+") as sfp:
         sfp.write(genallres.render(contexts=contexts, path=path, cflags=cflags))
