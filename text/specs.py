@@ -393,12 +393,12 @@ add_case(["ClassicLotkaVolterra"], stopTime=140, res="CLV");
 add_simple_plot(plot="CLV", vars=[Var("rabbits.population", legend=_("Rabbit Population")),
                                   Var("foxes.population", legend=_("Fox Population"))],
                 title=_("Component-Oriented Lotka-Volterra"));
-add_case(["ThirdSpecies"], stopTime=140, res="ThirdS", tol=1e-3);
+add_case(["ThirdSpecies"], stopTime=140, res="ThirdS", tol=1e-4);
 add_simple_plot(plot="ThirdS", vars=[Var("rabbits.population", legend=_("Rabbit Population")),
                                      Var("foxes.population", legend=_("Fox Population")),
                                      Var("wolves.population", legend=_("Wolf Population"))],
                 title=_("Interactions between rabbits, foxes and wolves"));
-add_case(["ThreeSpecies"], stopTime=140, res="ThreeS", tol=1e-3);
+add_case(["ThreeSpecies"], stopTime=6, res="ThreeS", tol=1e-4);
 add_simple_plot(plot="ThreeS", vars=[Var("rabbits.population", legend=_("Rabbit Population")),
                                      Var("foxes.population", legend=_("Fox Population")),
                                      Var("wolves.population", legend=_("Wolf Population"))],

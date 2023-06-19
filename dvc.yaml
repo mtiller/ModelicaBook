@@ -16,6 +16,8 @@ stages:
       # TODO: get rid of non-allres .mos files
   build-results:
     wdir: text/results
+    # Note: Decay1 should fail, ThreeS just needs tighter tolerance
+    # TODO: What is going on with ThirdS?  Seems to go unstable.
     cmd: make results_files exes.tar.gz tidy
     deps:
       - allres.mos
