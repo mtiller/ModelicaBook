@@ -10,17 +10,32 @@ stages:
       md5: 979c4a082c8bcca8d36acc9e1eb71a74.dir
       size: 7500979
       nfiles: 548
-    - path: source/_sphinxext/xogeny/gen_utils.py
-      md5: 9644ebbd7c1b6a6256190b04c9222090
-      size: 9973
+    - path: source/_sphinxext/xogeny
+      md5: 4224db1f7a7a8577d20fc7f4ee6b1339.dir
+      size: 64227
+      nfiles: 21
     - path: specs.py
-      md5: 9f78f1352d3f4054457fddb076e248f6
-      size: 32764
+      md5: e0963b44b51bd8202a666d3ef7b1d5bc
+      size: 32762
     outs:
     - path: plots
       md5: ec32866429b14d2b80666d09b2204eeb.dir
       size: 66534
       nfiles: 113
     - path: results/allres.mos
-      md5: 79bd8833b8b331253c89a6f62eb0d2d7
-      size: 53648
+      md5: 821ecd3434fa325fd990ad3b6c5ac314
+      size: 36535
+  build-results:
+    cmd: make results_files exes.tar.gz tidy
+    deps:
+    - path: ../../ModelicaByExample
+      md5: 979c4a082c8bcca8d36acc9e1eb71a74.dir
+      size: 7500979
+      nfiles: 548
+    - path: allres.mos
+      md5: 821ecd3434fa325fd990ad3b6c5ac314
+      size: 36535
+    outs:
+    - path: exes.tar.gz
+      md5: 3c64d656fddef804a809a9b02fa12654
+      size: 3864491
