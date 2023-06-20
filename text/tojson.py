@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 import xml.etree.ElementTree as ET
 import json
 
 if len(sys.argv) != 3:
-    print "Usage: "+sys.argv[0]+" xmlfile jsonfile"
+    print("Usage: "+sys.argv[0]+" xmlfile jsonfile")
 
 tree = ET.parse(sys.argv[1])
 root = tree.getroot()
@@ -14,19 +14,22 @@ j = {"desc": {},
      "categories": {},
      "tree": {}}
 
-desc = root.iter("fmiModelDescription").next()
+modelDescription = list(root.iter("fmiModelDescription"))
+desc = modelDescription[0]
 
 for k in desc.attrib:
     j["desc"][k] = desc.attrib[k]
 fqn = desc.attrib["modelName"]
 j["desc"]["shortName"] = fqn.split(".")[-1]
 
-exp = root.iter("DefaultExperiment").next()
+defaultExperiment = list(root.iter("DefaultExperiment"))
+exp = defaultExperiment[0]
 
 for k in ["startTime", "stopTime", "tolerance"]:
     j["experiment"][k] = exp.attrib[k]
 
-vars = root.iter("ModelVariables").next().iter("ScalarVariable")
+modelVariables = list(root.iter("ModelVariables"))
+vars = modelVariables[0].iter("ScalarVariable")
 
 
 def add2tree(name, parts, cur):
