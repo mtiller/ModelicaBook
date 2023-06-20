@@ -1,6 +1,5 @@
 stages:
   build-specs:
-    wdir: text
     cmd:
       - mkdir -p results/json
       - mkdir -p plots
@@ -15,7 +14,7 @@ stages:
       # TODO: get rid of json files?
       # TODO: get rid of non-allres .mos files
   build-results:
-    wdir: text/results
+    wdir: results
     # Note: Decay1 should fail, ThreeS just needs tighter tolerance
     # TODO: What is going on with ThirdS?  Seems to go unstable.
     cmd: make results_files exes.tar.gz tidy
