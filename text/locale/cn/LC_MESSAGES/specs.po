@@ -321,7 +321,7 @@ msgstr "使用数组的化学系统仿真结果"
 
 #: specs.py:275
 msgid ""
-"C[ModelicaByExample.ArrayEquations.ChemicalReactions.Reactions_Enum.Species."
+"C[Species."
 msgstr ""
 
 #: specs.py:279 specs.py:289

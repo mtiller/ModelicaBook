@@ -272,7 +272,7 @@ add_simple_plot(plot="RA", vars=[Var("C[1]"), Var("C[2]"), Var("C[3]")],
                 title=_("Simulation of Chemical System with Arrays"),
                 legloc="upper right")
 
-species_name = lambda x: _("C[ModelicaByExample.ArrayEquations.ChemicalReactions.Reactions_Enum.Species.")+str(x)+_("]")
+species_name = lambda x: _("C[Species.")+str(x)+_("]")
 add_case(["Reactions_Enum$"], stopTime=10.0, res="RE")
 add_simple_plot(plot="RE",
                 vars=[
