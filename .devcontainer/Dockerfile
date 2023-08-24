@@ -40,3 +40,9 @@ RUN ln -s /workspaces/ModelicaBook/ModelicaByExample "/home/ubuntu/.openmodelica
 # RUN su node -c "npm install -g <your-package-list-here>"
 
 RUN pip install dvc[all]
+
+# Install locales
+RUN sudo apt-get install -y language-pack-en
+
+# Install necessary LaTeX packages
+RUN sudo apt-get install -y latexmk texlive-xetex texlive-fonts-extra-links xindy

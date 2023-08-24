@@ -23,12 +23,21 @@ I'm currently using [`colima`](https://github.com/abiosoft/colima/) to support
 Docker devcontainers on Mac. I installed it with `homebrew install colima`.
 
 To start, run `colima start`. After that, normal `docker` commands should work
-and VS Code should be able to use those tools to spawn devcontainers.
+and VS Code should be able to use those tools to spawn devcontainers. On my
+system, generating the results requires more memory so you can either start
+`colima` with `colima start --memory 8` or you can run `colima template` and
+change the template to allocate 8Gb of memory.
 
 I also needed to define `LC_ALL` as follows within Docker containers:
 
 ```
 $ export LC_ALL=C
+```
+
+But in addition, I found the containers were missing the necessary locales. So to get then `en` locale, I have to also run:
+
+```
+$ sudo apt-get install language-pack-en
 ```
 
 ### Old Way
@@ -116,6 +125,8 @@ JSON. These files are required for the next step which is to translate the JSON
 data into the book site.
 
 ## Step 4: Generating Site
+
+???
 
 ## Step 5: Generate PDFs
 
