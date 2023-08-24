@@ -34,9 +34,9 @@ generate_specs:
   script:
     - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
     - ls -al /builds/michael.tiller/ModelicaBook
-    - (cd text; make specs)
+    - make specs
     - head text/results/allres.mos
-    - (cd text; make results)
+    - make results
   artifacts:
     paths:
       - text/results/exes.tar.gz

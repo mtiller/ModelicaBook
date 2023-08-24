@@ -11,12 +11,14 @@
 
 all: specs results json ebooks pdfs
 
+links:
+	-rm -rf "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
+	ln -s $(PWD)/ModelicaByExample "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
+
 specs:
 	(cd text; make specs)
 
-results:
-	-rm -rf "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
-	ln -s $(PWD)/ModelicaByExample "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
+results: links
 	(cd text; make results)
 
 dirhtml:
