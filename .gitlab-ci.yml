@@ -1,6 +1,6 @@
 # By default, all commands are done in the context of the mtiller/book-builder
 # Docker image (unless the individual jobs override this)
-image: registry.gitlab.com/michael.tiller/modelicabook:v0.1.0
+image: registry.gitlab.com/michael.tiller/modelicabook:v0.1.1
 
 variables:
   # Be sure to extract submodules

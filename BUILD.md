@@ -40,6 +40,16 @@ But in addition, I found the containers were missing the necessary locales. So t
 $ sudo apt-get install language-pack-en
 ```
 
+### Building Base Image
+
+To create the base image, go to the `.devcontainer` directory and run:
+
+```
+$ docker login registry.gitlab.com
+$ docker build . -t registry.gitlab.com/michael.tiller/modelicabook:vX.Y.Z
+$ docker push registry.gitlab.com/michael.tiller/modelicabook:vX.Y.Z
+```
+
 ### Old Way
 
 These steps are designed to be performed by the `mtiller/book-builder` image.

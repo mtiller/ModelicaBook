@@ -14,6 +14,8 @@ RUN go install -v github.com/ramya-rao-a/go-outline@v0.0.0-20210608161538-9736a4
 RUN go install -v golang.org/x/tools/gopls@latest
 RUN go install -v github.com/go-delve/delve/cmd/dlv@latest
 
+RUN pip install jinja2 matplotlib scipy sphinx
+
 # Add a normal user
 RUN useradd -m  -s /bin/bash ubuntu
 # RUn mkdir /etc/sudoers.d
@@ -21,11 +23,9 @@ RUN usermod -aG sudo ubuntu && echo "ubuntu ALL=(ALL) NOPASSWD: ALL" > /etc/sudo
 RUN chmod 0440 /etc/sudoers.d/ubuntu
 USER ubuntu:ubuntu
 
-RUN pip install jinja2 matplotlib scipy sphinx
-
 # Install 
 RUN mkdir -p /home/ubuntu/.openmodelica/libraries
-RUN ln -s /workspaces/ModelicaBook/ModelicaByExample "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
+# RUN ln -s /workspaces/ModelicaBook/ModelicaByExample "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
 # RUN npm install -g wrangler
 
 # [Optional] Uncomment this section to install additional OS packages.
