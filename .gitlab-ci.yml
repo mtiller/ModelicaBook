@@ -36,6 +36,7 @@ generate_specs:
     - ls -ald /builds/michael.tiller/ModelicaBook
     - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
     - (cd text; make specs)
+    - cat text/results/allres.mos
     - (cd text; make results)
   artifacts:
     paths:
