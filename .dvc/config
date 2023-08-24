@@ -1,4 +1,6 @@
 [core]
     remote = storage
 ['remote "storage"']
-    url = https://8ec4839fa49ca29c1fe650baab3d4d07.r2.cloudflarestorage.com/mbe-artifacts
+    url = s3://dvc-remote
+    endpointurl = https://nyc3.digitaloceanspaces.com
+    listobjects = true

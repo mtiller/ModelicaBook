@@ -17,11 +17,11 @@ env:
 	ln -s $(PWD)/ModelicaByExample "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
 
 specs:
-	dvc repro text/dvc.yaml:build-specs
+	dvc repro text/dvc.yaml:build-specs --no-commit
 	# (cd text; make specs)
 
 results: env specs
-	dvc repro --glob './text/dvc.yaml:build-case-*'
+	dvc repro --glob './text/dvc.yaml:build-case-*' --no-commit
 	dvc repro text/dvc.yaml:build-results
 	# (cd text; make results)
 
