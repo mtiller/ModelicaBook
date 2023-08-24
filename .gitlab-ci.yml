@@ -55,6 +55,7 @@ publish_image:
   image: docker:stable
   stage: publishing_image
   script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
     - mkdir api/models
     # TODO: Create a version that downloads these files at startup?  Decouples
     # the API server entirely from the Book source!
@@ -70,6 +71,7 @@ publish_image:
 generate_json:
   stage: generating_json
   script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
     - (cd text; make json)
   artifacts:
     paths:
@@ -78,6 +80,7 @@ generate_json:
 generate_epub_and_mobi:
   stage: generating_ebooks
   script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
     - (cd text; make ebooks)
     - mv text/build/epub/ModelicaByExample.epub text/build/epub/ModelicaByExample-`git hash-object text/build/epub/ModelicaByExample.epub`.epub
     - mv text/build/mobi/ModelicaByExample.mobi text/build/mobi/ModelicaByExample-`git hash-object text/build/mobi/ModelicaByExample.mobi`.mobi
@@ -90,6 +93,7 @@ generate_epub_and_mobi:
 generate_pdf:
   stage: generating_ebooks
   script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
     - (cd text; make pdf)
     - mv text/build/latex/ModelicaByExample.pdf text/build/latex/ModelicaByExample-Letter-`git hash-object text/build/latex/ModelicaByExample.pdf`.pdf
   when: manual
@@ -100,6 +104,7 @@ generate_pdf:
 generate_pdfa4:
   stage: generating_ebooks
   script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
     - (cd text; make pdf-a4)
     - mv text/build/latex-a4/ModelicaByExample.pdf text/build/latex-a4/ModelicaByExample-A4-`git hash-object text/build/latex-a4/ModelicaByExample.pdf`.pdf
   when: manual
