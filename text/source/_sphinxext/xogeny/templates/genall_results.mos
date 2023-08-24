@@ -1,5 +1,6 @@
 //installPackage(ModelicaByExample, "0.6.0", exactMatch=true);
 setModelicaPath(getModelicaPath()+":"+"{{path}}");
+getModelicaPath();
 // setCFlags("-fPIC -march=x86-64");
 installPackage(Modelica, "3.2.3+maint.om", exactMatch=true);
 setCFlags("{{cflags}}");
