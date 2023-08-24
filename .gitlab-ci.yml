@@ -32,6 +32,7 @@ stages:
 generate_specs:
   stage: generating_results
   script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
     - (cd text; make specs)
     - (cd text; make results)
   artifacts:
