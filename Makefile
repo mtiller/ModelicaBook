@@ -11,15 +11,19 @@
 
 all: specs results json ebooks pdfs
 
-links:
+env:
+	uname -m > build-arch
 	-rm -rf "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
 	ln -s $(PWD)/ModelicaByExample "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
 
 specs:
-	(cd text; make specs)
+	dvc repro text/dvc.yaml:build-specs
+	# (cd text; make specs)
 
-results: links
-	(cd text; make results)
+results: env specs
+	dvc repro --glob './text/dvc.yaml:build-case-*'
+	dvc repro text/dvc.yaml:build-results
+	# (cd text; make results)
 
 dirhtml:
 	(cd text; make dirhtml)

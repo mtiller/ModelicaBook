@@ -1,3 +1,4 @@
+# You must run "make env" (at the root level) before these stages will run
 stages:
   build-specs:
     cmd:
@@ -13,12 +14,25 @@ stages:
       - results/allres.mos
       # TODO: get rid of json files?
       # TODO: get rid of non-allres .mos files
+  build-case-FO:
+    wdir: results
+    cmd: omc FO.mos
+    deps:
+      - ../build-arch
+      - FO.mos
+      - ../../ModelicaByExample
+    outs:
+      - FO_info.json
+      - FO_init.xml
+      - FO_res.mat
+      - FO
   build-results:
     wdir: results
     # Note: Decay1 should fail, ThreeS just needs tighter tolerance
     # TODO: What is going on with ThirdS?  Seems to go unstable.
     cmd: make results_files exes.tar.gz tidy
     deps:
+      - ../build-arch
       - allres.mos
       - ../../ModelicaByExample
     outs:

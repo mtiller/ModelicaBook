@@ -26,3 +26,5 @@ source/Examples/*.c
 source/Examples/*.exp
 **/_static/Icons/*.pdf
 **/_static/img/*.pdf
+text/build-arch
+build-arch
