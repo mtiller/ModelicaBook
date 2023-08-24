@@ -32,9 +32,8 @@ stages:
 generate_specs:
   stage: generating_results
   script:
-    - ls -ald /builds/michael.tiller
-    - ls -ald /builds/michael.tiller/ModelicaBook
     - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
+    - ls -al /builds/michael.tiller/ModelicaBook
     - (cd text; make specs)
     - head text/results/allres.mos
     - (cd text; make results)
