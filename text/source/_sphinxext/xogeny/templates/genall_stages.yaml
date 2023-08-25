@@ -6,6 +6,7 @@ stages:
     cmd: 
       - omc {{res}}.mos
       - rm {{res}}_*.c {{res}}.c {{res}}.o {{res}}_*.h {{res}}_*.o {{res}}.libs {{res}}.log {{res}}.makefile {{res}}_prof*
+      - ls ../../.dvc/cache
     deps:
       - ../build-arch
       - {{res}}.mos
