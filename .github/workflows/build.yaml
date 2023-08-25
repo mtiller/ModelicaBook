@@ -10,6 +10,8 @@ jobs:
     container:
       image: ghcr.io/mtiller/book-builder-image
     steps:
+      - name: Make checkout directory as safe
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - uses: actions/checkout@v3
       - name: Restore DVC Cache
         id: dvc-cache-restore
@@ -18,13 +20,13 @@ jobs:
           path: |
             .dvc/cache
           key: dvc-cache
-      - name: make env
+      - name: Setup Build Environment
         run: make env
-      - name: make specs
+      - name: Make Simulation Specifications
         run: make specs
-      - name: make results
+      - name: Generate Results
         run: make results
-      - name: Save Primes
+      - name: Save DVC Cache
         id: dvc-cache-save
         uses: actions/cache/save@v3
         with:
