@@ -23,7 +23,8 @@ specs:
 	(cd text; make specs)
 
 results: env specs
-	dvc exp run ./text/dvc.yaml
+	# dvc exp run ./text/dvc.yaml
+	dvc repro text/dvc.yaml --no-commit
 	# dvc push
 	# dvc repro text/dvc.yaml:build-results
 	# (cd text; make results)
