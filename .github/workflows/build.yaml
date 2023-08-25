@@ -1,0 +1,31 @@
+name: build
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  generate_results:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/mtiller/book-builder-image
+    steps:
+      - uses: actions/checkout@v3
+      - name: Restore DVC Cache
+        id: dvc-cache-restore
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            .dvc/cache
+          key: dvc-cache
+      - name: make specs
+        run: make specs
+      - name: make results
+        run: make results
+      - name: Save Primes
+        id: dvc-cache-save
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            .dvc/cache
+          key: ${{ steps.dvc-cache-restore.outputs.cache-primary-key }}
