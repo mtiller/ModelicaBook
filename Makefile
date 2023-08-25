@@ -23,7 +23,7 @@ specs:
 	(cd text; make specs)
 
 results: env specs
-	dvc repro --glob './text/dvc.yaml:build-case-*'
+	dvc exp run ./text/dvc.yaml
 	# dvc push
 	# dvc repro text/dvc.yaml:build-results
 	# (cd text; make results)
