@@ -14,6 +14,7 @@ stages:
       - results/allres.mos
       # TODO: get rid of json files?
       # TODO: get rid of non-allres .mos files
+
   build-case-FO:
     wdir: results
     cmd: omc FO.mos
@@ -26,14 +27,1264 @@ stages:
       - FO_init.xml
       - FO_res.mat
       - FO
-  # build-results:
-  #   wdir: results
-  #   # Note: Decay1 should fail, ThreeS just needs tighter tolerance
-  #   # TODO: What is going on with ThirdS?  Seems to go unstable.
-  #   cmd: make results_files exes.tar.gz tidy
-  #   deps:
-  #     - ../build-arch
-  #     - allres.mos
-  #     - ../../ModelicaByExample
-  #   outs:
-  #     - exes.tar.gz
+
+  build-case-FOI:
+    wdir: results
+    cmd: omc FOI.mos
+    deps:
+      - ../build-arch
+      - FOI.mos
+      - ../../ModelicaByExample
+    outs:
+      - FOI_info.json
+      - FOI_init.xml
+      - FOI_res.mat
+      - FOI
+
+  build-case-FOE:
+    wdir: results
+    cmd: omc FOE.mos
+    deps:
+      - ../build-arch
+      - FOE.mos
+      - ../../ModelicaByExample
+    outs:
+      - FOE_info.json
+      - FOE_init.xml
+      - FOE_res.mat
+      - FOE
+
+  build-case-FOS:
+    wdir: results
+    cmd: omc FOS.mos
+    deps:
+      - ../build-arch
+      - FOS.mos
+      - ../../ModelicaByExample
+    outs:
+      - FOS_info.json
+      - FOS_init.xml
+      - FOS_res.mat
+      - FOS
+
+  build-case-NCWD:
+    wdir: results
+    cmd: omc NCWD.mos
+    deps:
+      - ../build-arch
+      - NCWD.mos
+      - ../../ModelicaByExample
+    outs:
+      - NCWD_info.json
+      - NCWD_init.xml
+      - NCWD_res.mat
+      - NCWD
+
+  build-case-RLC1:
+    wdir: results
+    cmd: omc RLC1.mos
+    deps:
+      - ../build-arch
+      - RLC1.mos
+      - ../../ModelicaByExample
+    outs:
+      - RLC1_info.json
+      - RLC1_init.xml
+      - RLC1_res.mat
+      - RLC1
+
+  build-case-SOSIP:
+    wdir: results
+    cmd: omc SOSIP.mos
+    deps:
+      - ../build-arch
+      - SOSIP.mos
+      - ../../ModelicaByExample
+    outs:
+      - SOSIP_info.json
+      - SOSIP_init.xml
+      - SOSIP_res.mat
+      - SOSIP
+
+  build-case-SOSIP1:
+    wdir: results
+    cmd: omc SOSIP1.mos
+    deps:
+      - ../build-arch
+      - SOSIP1.mos
+      - ../../ModelicaByExample
+    outs:
+      - SOSIP1_info.json
+      - SOSIP1_init.xml
+      - SOSIP1_res.mat
+      - SOSIP1
+
+  build-case-LVCM:
+    wdir: results
+    cmd: omc LVCM.mos
+    deps:
+      - ../build-arch
+      - LVCM.mos
+      - ../../ModelicaByExample
+    outs:
+      - LVCM_info.json
+      - LVCM_init.xml
+      - LVCM_res.mat
+      - LVCM
+
+  build-case-LVQM:
+    wdir: results
+    cmd: omc LVQM.mos
+    deps:
+      - ../build-arch
+      - LVQM.mos
+      - ../../ModelicaByExample
+    outs:
+      - LVQM_info.json
+      - LVQM_init.xml
+      - LVQM_res.mat
+      - LVQM
+
+  build-case-LVQMUS:
+    wdir: results
+    cmd: omc LVQMUS.mos
+    deps:
+      - ../build-arch
+      - LVQMUS.mos
+      - ../../ModelicaByExample
+    outs:
+      - LVQMUS_info.json
+      - LVQMUS_init.xml
+      - LVQMUS_res.mat
+      - LVQMUS
+
+  build-case-NCD:
+    wdir: results
+    cmd: omc NCD.mos
+    deps:
+      - ../build-arch
+      - NCD.mos
+      - ../../ModelicaByExample
+    outs:
+      - NCD_info.json
+      - NCD_init.xml
+      - NCD_res.mat
+      - NCD
+
+  build-case-NCSTD:
+    wdir: results
+    cmd: omc NCSTD.mos
+    deps:
+      - ../build-arch
+      - NCSTD.mos
+      - ../../ModelicaByExample
+    outs:
+      - NCSTD_info.json
+      - NCSTD_init.xml
+      - NCSTD_res.mat
+      - NCSTD
+
+  build-case-BB1:
+    wdir: results
+    cmd: omc BB1.mos
+    deps:
+      - ../build-arch
+      - BB1.mos
+      - ../../ModelicaByExample
+    outs:
+      - BB1_info.json
+      - BB1_init.xml
+      - BB1_res.mat
+      - BB1
+
+  build-case-BB2:
+    wdir: results
+    cmd: omc BB2.mos
+    deps:
+      - ../build-arch
+      - BB2.mos
+      - ../../ModelicaByExample
+    outs:
+      - BB2_info.json
+      - BB2_init.xml
+      - BB2_res.mat
+      - BB2
+
+  build-case-Decay1:
+    wdir: results
+    cmd: omc Decay1.mos
+    deps:
+      - ../build-arch
+      - Decay1.mos
+      - ../../ModelicaByExample
+    outs:
+      - Decay1_info.json
+      - Decay1_init.xml
+      - Decay1_res.mat
+      - Decay1
+
+  build-case-Decay2:
+    wdir: results
+    cmd: omc Decay2.mos
+    deps:
+      - ../build-arch
+      - Decay2.mos
+      - ../../ModelicaByExample
+    outs:
+      - Decay2_info.json
+      - Decay2_init.xml
+      - Decay2_res.mat
+      - Decay2
+
+  build-case-Decay3:
+    wdir: results
+    cmd: omc Decay3.mos
+    deps:
+      - ../build-arch
+      - Decay3.mos
+      - ../../ModelicaByExample
+    outs:
+      - Decay3_info.json
+      - Decay3_init.xml
+      - Decay3_res.mat
+      - Decay3
+
+  build-case-WC:
+    wdir: results
+    cmd: omc WC.mos
+    deps:
+      - ../build-arch
+      - WC.mos
+      - ../../ModelicaByExample
+    outs:
+      - WC_info.json
+      - WC_init.xml
+      - WC_res.mat
+      - WC
+
+  build-case-WOC:
+    wdir: results
+    cmd: omc WOC.mos
+    deps:
+      - ../build-arch
+      - WOC.mos
+      - ../../ModelicaByExample
+    outs:
+      - WOC_info.json
+      - WOC_init.xml
+      - WOC_res.mat
+      - WOC
+
+  build-case-WE:
+    wdir: results
+    cmd: omc WE.mos
+    deps:
+      - ../build-arch
+      - WE.mos
+      - ../../ModelicaByExample
+    outs:
+      - WE_info.json
+      - WE_init.xml
+      - WE_res.mat
+      - WE
+
+  build-case-WEf:
+    wdir: results
+    cmd: omc WEf.mos
+    deps:
+      - ../build-arch
+      - WEf.mos
+      - ../../ModelicaByExample
+    outs:
+      - WEf_info.json
+      - WEf_init.xml
+      - WEf_res.mat
+      - WEf
+
+  build-case-WNE:
+    wdir: results
+    cmd: omc WNE.mos
+    deps:
+      - ../build-arch
+      - WNE.mos
+      - ../../ModelicaByExample
+    outs:
+      - WNE_info.json
+      - WNE_init.xml
+      - WNE_res.mat
+      - WNE
+
+  build-case-WNEf:
+    wdir: results
+    cmd: omc WNEf.mos
+    deps:
+      - ../build-arch
+      - WNEf.mos
+      - ../../ModelicaByExample
+    outs:
+      - WNEf_info.json
+      - WNEf_init.xml
+      - WNEf_res.mat
+      - WNEf
+
+  build-case-SRLC:
+    wdir: results
+    cmd: omc SRLC.mos
+    deps:
+      - ../build-arch
+      - SRLC.mos
+      - ../../ModelicaByExample
+    outs:
+      - SRLC_info.json
+      - SRLC_init.xml
+      - SRLC_res.mat
+      - SRLC
+
+  build-case-SampleAndHold:
+    wdir: results
+    cmd: omc SampleAndHold.mos
+    deps:
+      - ../build-arch
+      - SampleAndHold.mos
+      - ../../ModelicaByExample
+    outs:
+      - SampleAndHold_info.json
+      - SampleAndHold_init.xml
+      - SampleAndHold_res.mat
+      - SampleAndHold
+
+  build-case-IntervalMeasure:
+    wdir: results
+    cmd: omc IntervalMeasure.mos
+    deps:
+      - ../build-arch
+      - IntervalMeasure.mos
+      - ../../ModelicaByExample
+    outs:
+      - IntervalMeasure_info.json
+      - IntervalMeasure_init.xml
+      - IntervalMeasure_res.mat
+      - IntervalMeasure
+
+  build-case-IntervalMeasure_Coarse:
+    wdir: results
+    cmd: omc IntervalMeasure_Coarse.mos
+    deps:
+      - ../build-arch
+      - IntervalMeasure_Coarse.mos
+      - ../../ModelicaByExample
+    outs:
+      - IntervalMeasure_Coarse_info.json
+      - IntervalMeasure_Coarse_init.xml
+      - IntervalMeasure_Coarse_res.mat
+      - IntervalMeasure_Coarse
+
+  build-case-SpeedCounter:
+    wdir: results
+    cmd: omc SpeedCounter.mos
+    deps:
+      - ../build-arch
+      - SpeedCounter.mos
+      - ../../ModelicaByExample
+    outs:
+      - SpeedCounter_info.json
+      - SpeedCounter_init.xml
+      - SpeedCounter_res.mat
+      - SpeedCounter
+
+  build-case-CC1:
+    wdir: results
+    cmd: omc CC1.mos
+    deps:
+      - ../build-arch
+      - CC1.mos
+      - ../../ModelicaByExample
+    outs:
+      - CC1_info.json
+      - CC1_init.xml
+      - CC1_res.mat
+      - CC1
+
+  build-case-Hyst:
+    wdir: results
+    cmd: omc Hyst.mos
+    deps:
+      - ../build-arch
+      - Hyst.mos
+      - ../../ModelicaByExample
+    outs:
+      - Hyst_info.json
+      - Hyst_init.xml
+      - Hyst_res.mat
+      - Hyst
+
+  build-case-HystA:
+    wdir: results
+    cmd: omc HystA.mos
+    deps:
+      - ../build-arch
+      - HystA.mos
+      - ../../ModelicaByExample
+    outs:
+      - HystA_info.json
+      - HystA_init.xml
+      - HystA_res.mat
+      - HystA
+
+  build-case-SIS:
+    wdir: results
+    cmd: omc SIS.mos
+    deps:
+      - ../build-arch
+      - SIS.mos
+      - ../../ModelicaByExample
+    outs:
+      - SIS_info.json
+      - SIS_init.xml
+      - SIS_res.mat
+      - SIS
+
+  build-case-SSS:
+    wdir: results
+    cmd: omc SSS.mos
+    deps:
+      - ../build-arch
+      - SSS.mos
+      - ../../ModelicaByExample
+    outs:
+      - SSS_info.json
+      - SSS_init.xml
+      - SSS_res.mat
+      - SSS
+
+  build-case-SSI:
+    wdir: results
+    cmd: omc SSI.mos
+    deps:
+      - ../build-arch
+      - SSI.mos
+      - ../../ModelicaByExample
+    outs:
+      - SSI_info.json
+      - SSI_init.xml
+      - SSI_res.mat
+      - SSI
+
+  build-case-FO_LTI:
+    wdir: results
+    cmd: omc FO_LTI.mos
+    deps:
+      - ../build-arch
+      - FO_LTI.mos
+      - ../../ModelicaByExample
+    outs:
+      - FO_LTI_info.json
+      - FO_LTI_init.xml
+      - FO_LTI_res.mat
+      - FO_LTI
+
+  build-case-NC_LTI:
+    wdir: results
+    cmd: omc NC_LTI.mos
+    deps:
+      - ../build-arch
+      - NC_LTI.mos
+      - ../../ModelicaByExample
+    outs:
+      - NC_LTI_info.json
+      - NC_LTI_init.xml
+      - NC_LTI_res.mat
+      - NC_LTI
+
+  build-case-RLC_LTI:
+    wdir: results
+    cmd: omc RLC_LTI.mos
+    deps:
+      - ../build-arch
+      - RLC_LTI.mos
+      - ../../ModelicaByExample
+    outs:
+      - RLC_LTI_info.json
+      - RLC_LTI_init.xml
+      - RLC_LTI_res.mat
+      - RLC_LTI
+
+  build-case-Ro_LTI:
+    wdir: results
+    cmd: omc Ro_LTI.mos
+    deps:
+      - ../build-arch
+      - Ro_LTI.mos
+      - ../../ModelicaByExample
+    outs:
+      - Ro_LTI_info.json
+      - Ro_LTI_init.xml
+      - Ro_LTI_res.mat
+      - Ro_LTI
+
+  build-case-RoC_LTI:
+    wdir: results
+    cmd: omc RoC_LTI.mos
+    deps:
+      - ../build-arch
+      - RoC_LTI.mos
+      - ../../ModelicaByExample
+    outs:
+      - RoC_LTI_info.json
+      - RoC_LTI_init.xml
+      - RoC_LTI_res.mat
+      - RoC_LTI
+
+  build-case-LV_ABCD:
+    wdir: results
+    cmd: omc LV_ABCD.mos
+    deps:
+      - ../build-arch
+      - LV_ABCD.mos
+      - ../../ModelicaByExample
+    outs:
+      - LV_ABCD_info.json
+      - LV_ABCD_init.xml
+      - LV_ABCD_res.mat
+      - LV_ABCD
+
+  build-case-RFL:
+    wdir: results
+    cmd: omc RFL.mos
+    deps:
+      - ../build-arch
+      - RFL.mos
+      - ../../ModelicaByExample
+    outs:
+      - RFL_info.json
+      - RFL_init.xml
+      - RFL_res.mat
+      - RFL
+
+  build-case-RNA:
+    wdir: results
+    cmd: omc RNA.mos
+    deps:
+      - ../build-arch
+      - RNA.mos
+      - ../../ModelicaByExample
+    outs:
+      - RNA_info.json
+      - RNA_init.xml
+      - RNA_res.mat
+      - RNA
+
+  build-case-RA:
+    wdir: results
+    cmd: omc RA.mos
+    deps:
+      - ../build-arch
+      - RA.mos
+      - ../../ModelicaByExample
+    outs:
+      - RA_info.json
+      - RA_init.xml
+      - RA_res.mat
+      - RA
+
+  build-case-RE:
+    wdir: results
+    cmd: omc RE.mos
+    deps:
+      - ../build-arch
+      - RE.mos
+      - ../../ModelicaByExample
+    outs:
+      - RE_info.json
+      - RE_init.xml
+      - RE_res.mat
+      - RE
+
+  build-case-REM:
+    wdir: results
+    cmd: omc REM.mos
+    deps:
+      - ../build-arch
+      - REM.mos
+      - ../../ModelicaByExample
+    outs:
+      - REM_info.json
+      - REM_init.xml
+      - REM_res.mat
+      - REM
+
+  build-case-Eval1:
+    wdir: results
+    cmd: omc Eval1.mos
+    deps:
+      - ../build-arch
+      - Eval1.mos
+      - ../../ModelicaByExample
+    outs:
+      - Eval1_info.json
+      - Eval1_init.xml
+      - Eval1_res.mat
+      - Eval1
+
+  build-case-Diff2:
+    wdir: results
+    cmd: omc Diff2.mos
+    deps:
+      - ../build-arch
+      - Diff2.mos
+      - ../../ModelicaByExample
+    outs:
+      - Diff2_info.json
+      - Diff2_init.xml
+      - Diff2_res.mat
+      - Diff2
+
+  build-case-IIV:
+    wdir: results
+    cmd: omc IIV.mos
+    deps:
+      - ../build-arch
+      - IIV.mos
+      - ../../ModelicaByExample
+    outs:
+      - IIV_info.json
+      - IIV_init.xml
+      - IIV_res.mat
+      - IIV
+
+  build-case-IIEV:
+    wdir: results
+    cmd: omc IIEV.mos
+    deps:
+      - ../build-arch
+      - IIEV.mos
+      - ../../ModelicaByExample
+    outs:
+      - IIEV_info.json
+      - IIEV_init.xml
+      - IIEV_res.mat
+      - IIEV
+
+  build-case-SIL:
+    wdir: results
+    cmd: omc SIL.mos
+    deps:
+      - ../build-arch
+      - SIL.mos
+      - ../../ModelicaByExample
+    outs:
+      - SIL_info.json
+      - SIL_init.xml
+      - SIL_res.mat
+      - SIL
+
+  build-case-NLEE:
+    wdir: results
+    cmd: omc NLEE.mos
+    deps:
+      - ../build-arch
+      - NLEE.mos
+      - ../../ModelicaByExample
+    outs:
+      - NLEE_info.json
+      - NLEE_init.xml
+      - NLEE_res.mat
+      - NLEE
+
+  build-case-NLIE:
+    wdir: results
+    cmd: omc NLIE.mos
+    deps:
+      - ../build-arch
+      - NLIE.mos
+      - ../../ModelicaByExample
+    outs:
+      - NLIE_info.json
+      - NLIE_init.xml
+      - NLIE_res.mat
+      - NLIE
+
+  build-case-HTA:
+    wdir: results
+    cmd: omc HTA.mos
+    deps:
+      - ../build-arch
+      - HTA.mos
+      - ../../ModelicaByExample
+    outs:
+      - HTA_info.json
+      - HTA_init.xml
+      - HTA_res.mat
+      - HTA
+
+  build-case-HT_CTA:
+    wdir: results
+    cmd: omc HT_CTA.mos
+    deps:
+      - ../build-arch
+      - HT_CTA.mos
+      - ../../ModelicaByExample
+    outs:
+      - HT_CTA_info.json
+      - HT_CTA_init.xml
+      - HT_CTA_res.mat
+      - HT_CTA
+
+  build-case-HT_C:
+    wdir: results
+    cmd: omc HT_C.mos
+    deps:
+      - ../build-arch
+      - HT_C.mos
+      - ../../ModelicaByExample
+    outs:
+      - HT_C_info.json
+      - HT_C_init.xml
+      - HT_C_res.mat
+      - HT_C
+
+  build-case-HT_CN:
+    wdir: results
+    cmd: omc HT_CN.mos
+    deps:
+      - ../build-arch
+      - HT_CN.mos
+      - ../../ModelicaByExample
+    outs:
+      - HT_CN_info.json
+      - HT_CN_init.xml
+      - HT_CN_res.mat
+      - HT_CN
+
+  build-case-SMD:
+    wdir: results
+    cmd: omc SMD.mos
+    deps:
+      - ../build-arch
+      - SMD.mos
+      - ../../ModelicaByExample
+    outs:
+      - SMD_info.json
+      - SMD_init.xml
+      - SMD_res.mat
+      - SMD
+
+  build-case-SMD_WB:
+    wdir: results
+    cmd: omc SMD_WB.mos
+    deps:
+      - ../build-arch
+      - SMD_WB.mos
+      - ../../ModelicaByExample
+    outs:
+      - SMD_WB_info.json
+      - SMD_WB_init.xml
+      - SMD_WB_res.mat
+      - SMD_WB
+
+  build-case-SMD_GG:
+    wdir: results
+    cmd: omc SMD_GG.mos
+    deps:
+      - ../build-arch
+      - SMD_GG.mos
+      - ../../ModelicaByExample
+    outs:
+      - SMD_GG_info.json
+      - SMD_GG_init.xml
+      - SMD_GG_res.mat
+      - SMD_GG
+
+  build-case-SMD_GC:
+    wdir: results
+    cmd: omc SMD_GC.mos
+    deps:
+      - ../build-arch
+      - SMD_GC.mos
+      - ../../ModelicaByExample
+    outs:
+      - SMD_GC_info.json
+      - SMD_GC_init.xml
+      - SMD_GC_res.mat
+      - SMD_GC
+
+  build-case-SMD_CG:
+    wdir: results
+    cmd: omc SMD_CG.mos
+    deps:
+      - ../build-arch
+      - SMD_CG.mos
+      - ../../ModelicaByExample
+    outs:
+      - SMD_CG_info.json
+      - SMD_CG_init.xml
+      - SMD_CG_res.mat
+      - SMD_CG
+
+  build-case-CLV:
+    wdir: results
+    cmd: omc CLV.mos
+    deps:
+      - ../build-arch
+      - CLV.mos
+      - ../../ModelicaByExample
+    outs:
+      - CLV_info.json
+      - CLV_init.xml
+      - CLV_res.mat
+      - CLV
+
+  build-case-ThirdS:
+    wdir: results
+    cmd: omc ThirdS.mos
+    deps:
+      - ../build-arch
+      - ThirdS.mos
+      - ../../ModelicaByExample
+    outs:
+      - ThirdS_info.json
+      - ThirdS_init.xml
+      - ThirdS_res.mat
+      - ThirdS
+
+  build-case-ThreeS:
+    wdir: results
+    cmd: omc ThreeS.mos
+    deps:
+      - ../build-arch
+      - ThreeS.mos
+      - ../../ModelicaByExample
+    outs:
+      - ThreeS_info.json
+      - ThreeS_init.xml
+      - ThreeS_res.mat
+      - ThreeS
+
+  build-case-PBase:
+    wdir: results
+    cmd: omc PBase.mos
+    deps:
+      - ../build-arch
+      - PBase.mos
+      - ../../ModelicaByExample
+    outs:
+      - PBase_info.json
+      - PBase_init.xml
+      - PBase_res.mat
+      - PBase
+
+  build-case-PwSH:
+    wdir: results
+    cmd: omc PwSH.mos
+    deps:
+      - ../build-arch
+      - PwSH.mos
+      - ../../ModelicaByExample
+    outs:
+      - PwSH_info.json
+      - PwSH_init.xml
+      - PwSH_res.mat
+      - PwSH
+
+  build-case-PwIM:
+    wdir: results
+    cmd: omc PwIM.mos
+    deps:
+      - ../build-arch
+      - PwIM.mos
+      - ../../ModelicaByExample
+    outs:
+      - PwIM_info.json
+      - PwIM_init.xml
+      - PwIM_res.mat
+      - PwIM
+
+  build-case-PwIMf:
+    wdir: results
+    cmd: omc PwIMf.mos
+    deps:
+      - ../build-arch
+      - PwIMf.mos
+      - ../../ModelicaByExample
+    outs:
+      - PwIMf_info.json
+      - PwIMf_init.xml
+      - PwIMf_res.mat
+      - PwIMf
+
+  build-case-PwPC:
+    wdir: results
+    cmd: omc PwPC.mos
+    deps:
+      - ../build-arch
+      - PwPC.mos
+      - ../../ModelicaByExample
+    outs:
+      - PwPC_info.json
+      - PwPC_init.xml
+      - PwPC_res.mat
+      - PwPC
+
+  build-case-BNC:
+    wdir: results
+    cmd: omc BNC.mos
+    deps:
+      - ../build-arch
+      - BNC.mos
+      - ../../ModelicaByExample
+    outs:
+      - BNC_info.json
+      - BNC_init.xml
+      - BNC_res.mat
+      - BNC
+
+  build-case-MDC:
+    wdir: results
+    cmd: omc MDC.mos
+    deps:
+      - ../build-arch
+      - MDC.mos
+      - ../../ModelicaByExample
+    outs:
+      - MDC_info.json
+      - MDC_init.xml
+      - MDC_res.mat
+      - MDC
+
+  build-case-MDC_hg:
+    wdir: results
+    cmd: omc MDC_hg.mos
+    deps:
+      - ../build-arch
+      - MDC_hg.mos
+      - ../../ModelicaByExample
+    outs:
+      - MDC_hg_info.json
+      - MDC_hg_init.xml
+      - MDC_hg_res.mat
+      - MDC_hg
+
+  build-case-ABX:
+    wdir: results
+    cmd: omc ABX.mos
+    deps:
+      - ../build-arch
+      - ABX.mos
+      - ../../ModelicaByExample
+    outs:
+      - ABX_info.json
+      - ABX_init.xml
+      - ABX_res.mat
+      - ABX
+
+  build-case-FSWB:
+    wdir: results
+    cmd: omc FSWB.mos
+    deps:
+      - ../build-arch
+      - FSWB.mos
+      - ../../ModelicaByExample
+    outs:
+      - FSWB_info.json
+      - FSWB_init.xml
+      - FSWB_res.mat
+      - FSWB
+
+  build-case-FSWB_nolash:
+    wdir: results
+    cmd: omc FSWB_nolash.mos
+    deps:
+      - ../build-arch
+      - FSWB_nolash.mos
+      - ../../ModelicaByExample
+    outs:
+      - FSWB_nolash_info.json
+      - FSWB_nolash_init.xml
+      - FSWB_nolash_res.mat
+      - FSWB_nolash
+
+  build-case-SWB:
+    wdir: results
+    cmd: omc SWB.mos
+    deps:
+      - ../build-arch
+      - SWB.mos
+      - ../../ModelicaByExample
+    outs:
+      - SWB_info.json
+      - SWB_init.xml
+      - SWB_res.mat
+      - SWB
+
+  build-case-Uncon:
+    wdir: results
+    cmd: omc Uncon.mos
+    deps:
+      - ../build-arch
+      - Uncon.mos
+      - ../../ModelicaByExample
+    outs:
+      - Uncon_info.json
+      - Uncon_init.xml
+      - Uncon_res.mat
+      - Uncon
+
+  build-case-ID:
+    wdir: results
+    cmd: omc ID.mos
+    deps:
+      - ../build-arch
+      - ID.mos
+      - ../../ModelicaByExample
+    outs:
+      - ID_info.json
+      - ID_init.xml
+      - ID_res.mat
+      - ID
+
+  build-case-WM:
+    wdir: results
+    cmd: omc WM.mos
+    deps:
+      - ../build-arch
+      - WM.mos
+      - ../../ModelicaByExample
+    outs:
+      - WM_info.json
+      - WM_init.xml
+      - WM_res.mat
+      - WM
+
+  build-case-FC:
+    wdir: results
+    cmd: omc FC.mos
+    deps:
+      - ../build-arch
+      - FC.mos
+      - ../../ModelicaByExample
+    outs:
+      - FC_info.json
+      - FC_init.xml
+      - FC_res.mat
+      - FC
+
+  build-case-SSC:
+    wdir: results
+    cmd: omc SSC.mos
+    deps:
+      - ../build-arch
+      - SSC.mos
+      - ../../ModelicaByExample
+    outs:
+      - SSC_info.json
+      - SSC_init.xml
+      - SSC_res.mat
+      - SSC
+
+  build-case-SSC_AL:
+    wdir: results
+    cmd: omc SSC_AL.mos
+    deps:
+      - ../build-arch
+      - SSC_AL.mos
+      - ../../ModelicaByExample
+    outs:
+      - SSC_AL_info.json
+      - SSC_AL_init.xml
+      - SSC_AL_res.mat
+      - SSC_AL
+
+  build-case-SSC_ALC:
+    wdir: results
+    cmd: omc SSC_ALC.mos
+    deps:
+      - ../build-arch
+      - SSC_ALC.mos
+      - ../../ModelicaByExample
+    outs:
+      - SSC_ALC_info.json
+      - SSC_ALC_init.xml
+      - SSC_ALC_res.mat
+      - SSC_ALC
+
+  build-case-SSC_ALC2:
+    wdir: results
+    cmd: omc SSC_ALC2.mos
+    deps:
+      - ../build-arch
+      - SSC_ALC2.mos
+      - ../../ModelicaByExample
+    outs:
+      - SSC_ALC2_info.json
+      - SSC_ALC2_init.xml
+      - SSC_ALC2_res.mat
+      - SSC_ALC2
+
+  build-case-FR:
+    wdir: results
+    cmd: omc FR.mos
+    deps:
+      - ../build-arch
+      - FR.mos
+      - ../../ModelicaByExample
+    outs:
+      - FR_info.json
+      - FR_init.xml
+      - FR_res.mat
+      - FR
+
+  build-case-SegC:
+    wdir: results
+    cmd: omc SegC.mos
+    deps:
+      - ../build-arch
+      - SegC.mos
+      - ../../ModelicaByExample
+    outs:
+      - SegC_info.json
+      - SegC_init.xml
+      - SegC_res.mat
+      - SegC
+
+  build-case-Harm:
+    wdir: results
+    cmd: omc Harm.mos
+    deps:
+      - ../build-arch
+      - Harm.mos
+      - ../../ModelicaByExample
+    outs:
+      - Harm_info.json
+      - Harm_init.xml
+      - Harm_res.mat
+      - Harm
+
+  build-case-AFS:
+    wdir: results
+    cmd: omc AFS.mos
+    deps:
+      - ../build-arch
+      - AFS.mos
+      - ../../ModelicaByExample
+    outs:
+      - AFS_info.json
+      - AFS_init.xml
+      - AFS_res.mat
+      - AFS
+
+  build-case-AFS_SH:
+    wdir: results
+    cmd: omc AFS_SH.mos
+    deps:
+      - ../build-arch
+      - AFS_SH.mos
+      - ../../ModelicaByExample
+    outs:
+      - AFS_SH_info.json
+      - AFS_SH_init.xml
+      - AFS_SH_res.mat
+      - AFS_SH
+
+  build-case-SV1:
+    wdir: results
+    cmd: omc SV1.mos
+    deps:
+      - ../build-arch
+      - SV1.mos
+      - ../../ModelicaByExample
+    outs:
+      - SV1_info.json
+      - SV1_init.xml
+      - SV1_res.mat
+      - SV1
+
+  build-case-SV1U:
+    wdir: results
+    cmd: omc SV1U.mos
+    deps:
+      - ../build-arch
+      - SV1U.mos
+      - ../../ModelicaByExample
+    outs:
+      - SV1U_info.json
+      - SV1U_init.xml
+      - SV1U_res.mat
+      - SV1U
+
+  build-case-SV2:
+    wdir: results
+    cmd: omc SV2.mos
+    deps:
+      - ../build-arch
+      - SV2.mos
+      - ../../ModelicaByExample
+    outs:
+      - SV2_info.json
+      - SV2_init.xml
+      - SV2_res.mat
+      - SV2
+
+  build-case-SV2T:
+    wdir: results
+    cmd: omc SV2T.mos
+    deps:
+      - ../build-arch
+      - SV2T.mos
+      - ../../ModelicaByExample
+    outs:
+      - SV2T_info.json
+      - SV2T_init.xml
+      - SV2T_res.mat
+      - SV2T
+
+  build-case-TCB:
+    wdir: results
+    cmd: omc TCB.mos
+    deps:
+      - ../build-arch
+      - TCB.mos
+      - ../../ModelicaByExample
+    outs:
+      - TCB_info.json
+      - TCB_init.xml
+      - TCB_res.mat
+      - TCB
+
+  build-case-TCE:
+    wdir: results
+    cmd: omc TCE.mos
+    deps:
+      - ../build-arch
+      - TCE.mos
+      - ../../ModelicaByExample
+    outs:
+      - TCE_info.json
+      - TCE_init.xml
+      - TCE_res.mat
+      - TCE
+
+  build-case-TCE_BB:
+    wdir: results
+    cmd: omc TCE_BB.mos
+    deps:
+      - ../build-arch
+      - TCE_BB.mos
+      - ../../ModelicaByExample
+    outs:
+      - TCE_BB_info.json
+      - TCE_BB_init.xml
+      - TCE_BB_res.mat
+      - TCE_BB
+
+  build-case-TCE_Hy:
+    wdir: results
+    cmd: omc TCE_Hy.mos
+    deps:
+      - ../build-arch
+      - TCE_Hy.mos
+      - ../../ModelicaByExample
+    outs:
+      - TCE_Hy_info.json
+      - TCE_Hy_init.xml
+      - TCE_Hy_res.mat
+      - TCE_Hy

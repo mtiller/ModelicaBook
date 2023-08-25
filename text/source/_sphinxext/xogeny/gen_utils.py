@@ -232,19 +232,21 @@ def _generate_makefile():
     env = Environment(loader=loader)
     genres = env.get_template("gen_result.mos")
     genallres = env.get_template("genall_results.mos")
-    genjs = env.get_template("gen_js.mos")
+    genallstages = env.get_template("genall_stages.yaml")
     genmk = env.get_template("gen.makefile")
 
     # Generate Makefile
     with open(os.path.join(path, "text", "results", "Makefile"), "w+") as ofp:
         ofp.write(genmk.render({"results": results}))
 
+    # Generate ./text/results/dvc.yaml
+    with open(os.path.join(path, "text", "dvc.yaml"), "w+") as ofp:
+        ofp.write(genallstages.render({"results": results}))
+
     contexts = []
     for res in results:
         data = results[res]
         mods = data["mods"]
-        directory = data["directory"]
-        srcpath = data["path"]
         if len(mods)==0:
             simflags = "-cpu -ignoreHideResult -emit_protected"
         else:
@@ -268,8 +270,8 @@ def _generate_makefile():
 
         # Write out script to generate simulation results
 
-        # with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
-        #     sfp.write(genres.render(**context))
+        with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
+            sfp.write(genres.render(**context))
         # # Write out script to generate JavaScript
         # with open(os.path.join(path, "text", "results", res+"-js.mos"), "w+") as sfp:
         #     sfp.write(genjs.render(**context))
