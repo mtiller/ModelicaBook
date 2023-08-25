@@ -12,6 +12,7 @@
 all: specs results json ebooks pdfs
 
 env:
+	dvc cache dir .dvc/cache
 	uname -m > text/build-arch
 	-rm -rf "$(HOME)/.openmodelica/libraries/ModelicaByExample 0.6.0" 
 	mkdir -p $(HOME)/.openmodelica/libraries
