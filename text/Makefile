@@ -62,7 +62,6 @@ endif
 book: specs results dirhtml server
 
 specs: specs.py
-ifneq ($(SPEC_HASH), $(PREV_SPEC_HASH))
 	$(info Specification hashes do not match, regenerating specifications)
 	-rm spec-hash
 	-mkdir -p results/json
@@ -73,9 +72,6 @@ ifneq ($(SPEC_HASH), $(PREV_SPEC_HASH))
 	# Record the content hash of specs.py used to
 	# generate all the files
 	echo $(SPEC_HASH) > spec-hash
-else
-	$(info Specification hashes match, skipping)
-endif
 
 specs_cn: specs.py
 	-mkdir -p results/json

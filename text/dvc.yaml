@@ -1,23 +1,11 @@
 # You must run "make env" (at the root level) before these stages will run
 stages:
-  build-specs:
-    cmd:
-      - mkdir -p results/json
-      - mkdir -p plots
-      - python3 specs.py
-    deps:
-      - ../ModelicaByExample
-      - specs.py
-      - source/_sphinxext/xogeny
-    outs:
-      - plots
-      - results/allres.mos
-      # TODO: get rid of json files?
-      # TODO: get rid of non-allres .mos files
 
   build-case-FO:
     wdir: results
-    cmd: omc FO.mos
+    cmd: 
+      - omc FO.mos
+      - rm FO_*.c FO.c FO.o FO_*.h FO_*.o FO.libs FO.log FO.makefile FO_prof*
     deps:
       - ../build-arch
       - FO.mos
@@ -30,7 +18,9 @@ stages:
 
   build-case-FOI:
     wdir: results
-    cmd: omc FOI.mos
+    cmd: 
+      - omc FOI.mos
+      - rm FOI_*.c FOI.c FOI.o FOI_*.h FOI_*.o FOI.libs FOI.log FOI.makefile FOI_prof*
     deps:
       - ../build-arch
       - FOI.mos
@@ -43,7 +33,9 @@ stages:
 
   build-case-FOE:
     wdir: results
-    cmd: omc FOE.mos
+    cmd: 
+      - omc FOE.mos
+      - rm FOE_*.c FOE.c FOE.o FOE_*.h FOE_*.o FOE.libs FOE.log FOE.makefile FOE_prof*
     deps:
       - ../build-arch
       - FOE.mos
@@ -56,7 +48,9 @@ stages:
 
   build-case-FOS:
     wdir: results
-    cmd: omc FOS.mos
+    cmd: 
+      - omc FOS.mos
+      - rm FOS_*.c FOS.c FOS.o FOS_*.h FOS_*.o FOS.libs FOS.log FOS.makefile FOS_prof*
     deps:
       - ../build-arch
       - FOS.mos
@@ -69,7 +63,9 @@ stages:
 
   build-case-NCWD:
     wdir: results
-    cmd: omc NCWD.mos
+    cmd: 
+      - omc NCWD.mos
+      - rm NCWD_*.c NCWD.c NCWD.o NCWD_*.h NCWD_*.o NCWD.libs NCWD.log NCWD.makefile NCWD_prof*
     deps:
       - ../build-arch
       - NCWD.mos
@@ -82,7 +78,9 @@ stages:
 
   build-case-RLC1:
     wdir: results
-    cmd: omc RLC1.mos
+    cmd: 
+      - omc RLC1.mos
+      - rm RLC1_*.c RLC1.c RLC1.o RLC1_*.h RLC1_*.o RLC1.libs RLC1.log RLC1.makefile RLC1_prof*
     deps:
       - ../build-arch
       - RLC1.mos
@@ -95,7 +93,9 @@ stages:
 
   build-case-SOSIP:
     wdir: results
-    cmd: omc SOSIP.mos
+    cmd: 
+      - omc SOSIP.mos
+      - rm SOSIP_*.c SOSIP.c SOSIP.o SOSIP_*.h SOSIP_*.o SOSIP.libs SOSIP.log SOSIP.makefile SOSIP_prof*
     deps:
       - ../build-arch
       - SOSIP.mos
@@ -108,7 +108,9 @@ stages:
 
   build-case-SOSIP1:
     wdir: results
-    cmd: omc SOSIP1.mos
+    cmd: 
+      - omc SOSIP1.mos
+      - rm SOSIP1_*.c SOSIP1.c SOSIP1.o SOSIP1_*.h SOSIP1_*.o SOSIP1.libs SOSIP1.log SOSIP1.makefile SOSIP1_prof*
     deps:
       - ../build-arch
       - SOSIP1.mos
@@ -121,7 +123,9 @@ stages:
 
   build-case-LVCM:
     wdir: results
-    cmd: omc LVCM.mos
+    cmd: 
+      - omc LVCM.mos
+      - rm LVCM_*.c LVCM.c LVCM.o LVCM_*.h LVCM_*.o LVCM.libs LVCM.log LVCM.makefile LVCM_prof*
     deps:
       - ../build-arch
       - LVCM.mos
@@ -134,7 +138,9 @@ stages:
 
   build-case-LVQM:
     wdir: results
-    cmd: omc LVQM.mos
+    cmd: 
+      - omc LVQM.mos
+      - rm LVQM_*.c LVQM.c LVQM.o LVQM_*.h LVQM_*.o LVQM.libs LVQM.log LVQM.makefile LVQM_prof*
     deps:
       - ../build-arch
       - LVQM.mos
@@ -147,7 +153,9 @@ stages:
 
   build-case-LVQMUS:
     wdir: results
-    cmd: omc LVQMUS.mos
+    cmd: 
+      - omc LVQMUS.mos
+      - rm LVQMUS_*.c LVQMUS.c LVQMUS.o LVQMUS_*.h LVQMUS_*.o LVQMUS.libs LVQMUS.log LVQMUS.makefile LVQMUS_prof*
     deps:
       - ../build-arch
       - LVQMUS.mos
@@ -160,7 +168,9 @@ stages:
 
   build-case-NCD:
     wdir: results
-    cmd: omc NCD.mos
+    cmd: 
+      - omc NCD.mos
+      - rm NCD_*.c NCD.c NCD.o NCD_*.h NCD_*.o NCD.libs NCD.log NCD.makefile NCD_prof*
     deps:
       - ../build-arch
       - NCD.mos
@@ -173,7 +183,9 @@ stages:
 
   build-case-NCSTD:
     wdir: results
-    cmd: omc NCSTD.mos
+    cmd: 
+      - omc NCSTD.mos
+      - rm NCSTD_*.c NCSTD.c NCSTD.o NCSTD_*.h NCSTD_*.o NCSTD.libs NCSTD.log NCSTD.makefile NCSTD_prof*
     deps:
       - ../build-arch
       - NCSTD.mos
@@ -186,7 +198,9 @@ stages:
 
   build-case-BB1:
     wdir: results
-    cmd: omc BB1.mos
+    cmd: 
+      - omc BB1.mos
+      - rm BB1_*.c BB1.c BB1.o BB1_*.h BB1_*.o BB1.libs BB1.log BB1.makefile BB1_prof*
     deps:
       - ../build-arch
       - BB1.mos
@@ -199,7 +213,9 @@ stages:
 
   build-case-BB2:
     wdir: results
-    cmd: omc BB2.mos
+    cmd: 
+      - omc BB2.mos
+      - rm BB2_*.c BB2.c BB2.o BB2_*.h BB2_*.o BB2.libs BB2.log BB2.makefile BB2_prof*
     deps:
       - ../build-arch
       - BB2.mos
@@ -212,7 +228,9 @@ stages:
 
   build-case-Decay1:
     wdir: results
-    cmd: omc Decay1.mos
+    cmd: 
+      - omc Decay1.mos
+      - rm Decay1_*.c Decay1.c Decay1.o Decay1_*.h Decay1_*.o Decay1.libs Decay1.log Decay1.makefile Decay1_prof*
     deps:
       - ../build-arch
       - Decay1.mos
@@ -225,7 +243,9 @@ stages:
 
   build-case-Decay2:
     wdir: results
-    cmd: omc Decay2.mos
+    cmd: 
+      - omc Decay2.mos
+      - rm Decay2_*.c Decay2.c Decay2.o Decay2_*.h Decay2_*.o Decay2.libs Decay2.log Decay2.makefile Decay2_prof*
     deps:
       - ../build-arch
       - Decay2.mos
@@ -238,7 +258,9 @@ stages:
 
   build-case-Decay3:
     wdir: results
-    cmd: omc Decay3.mos
+    cmd: 
+      - omc Decay3.mos
+      - rm Decay3_*.c Decay3.c Decay3.o Decay3_*.h Decay3_*.o Decay3.libs Decay3.log Decay3.makefile Decay3_prof*
     deps:
       - ../build-arch
       - Decay3.mos
@@ -251,7 +273,9 @@ stages:
 
   build-case-WC:
     wdir: results
-    cmd: omc WC.mos
+    cmd: 
+      - omc WC.mos
+      - rm WC_*.c WC.c WC.o WC_*.h WC_*.o WC.libs WC.log WC.makefile WC_prof*
     deps:
       - ../build-arch
       - WC.mos
@@ -264,7 +288,9 @@ stages:
 
   build-case-WOC:
     wdir: results
-    cmd: omc WOC.mos
+    cmd: 
+      - omc WOC.mos
+      - rm WOC_*.c WOC.c WOC.o WOC_*.h WOC_*.o WOC.libs WOC.log WOC.makefile WOC_prof*
     deps:
       - ../build-arch
       - WOC.mos
@@ -277,7 +303,9 @@ stages:
 
   build-case-WE:
     wdir: results
-    cmd: omc WE.mos
+    cmd: 
+      - omc WE.mos
+      - rm WE_*.c WE.c WE.o WE_*.h WE_*.o WE.libs WE.log WE.makefile WE_prof*
     deps:
       - ../build-arch
       - WE.mos
@@ -290,7 +318,9 @@ stages:
 
   build-case-WEf:
     wdir: results
-    cmd: omc WEf.mos
+    cmd: 
+      - omc WEf.mos
+      - rm WEf_*.c WEf.c WEf.o WEf_*.h WEf_*.o WEf.libs WEf.log WEf.makefile WEf_prof*
     deps:
       - ../build-arch
       - WEf.mos
@@ -303,7 +333,9 @@ stages:
 
   build-case-WNE:
     wdir: results
-    cmd: omc WNE.mos
+    cmd: 
+      - omc WNE.mos
+      - rm WNE_*.c WNE.c WNE.o WNE_*.h WNE_*.o WNE.libs WNE.log WNE.makefile WNE_prof*
     deps:
       - ../build-arch
       - WNE.mos
@@ -316,7 +348,9 @@ stages:
 
   build-case-WNEf:
     wdir: results
-    cmd: omc WNEf.mos
+    cmd: 
+      - omc WNEf.mos
+      - rm WNEf_*.c WNEf.c WNEf.o WNEf_*.h WNEf_*.o WNEf.libs WNEf.log WNEf.makefile WNEf_prof*
     deps:
       - ../build-arch
       - WNEf.mos
@@ -329,7 +363,9 @@ stages:
 
   build-case-SRLC:
     wdir: results
-    cmd: omc SRLC.mos
+    cmd: 
+      - omc SRLC.mos
+      - rm SRLC_*.c SRLC.c SRLC.o SRLC_*.h SRLC_*.o SRLC.libs SRLC.log SRLC.makefile SRLC_prof*
     deps:
       - ../build-arch
       - SRLC.mos
@@ -342,7 +378,9 @@ stages:
 
   build-case-SampleAndHold:
     wdir: results
-    cmd: omc SampleAndHold.mos
+    cmd: 
+      - omc SampleAndHold.mos
+      - rm SampleAndHold_*.c SampleAndHold.c SampleAndHold.o SampleAndHold_*.h SampleAndHold_*.o SampleAndHold.libs SampleAndHold.log SampleAndHold.makefile SampleAndHold_prof*
     deps:
       - ../build-arch
       - SampleAndHold.mos
@@ -355,7 +393,9 @@ stages:
 
   build-case-IntervalMeasure:
     wdir: results
-    cmd: omc IntervalMeasure.mos
+    cmd: 
+      - omc IntervalMeasure.mos
+      - rm IntervalMeasure_*.c IntervalMeasure.c IntervalMeasure.o IntervalMeasure_*.h IntervalMeasure_*.o IntervalMeasure.libs IntervalMeasure.log IntervalMeasure.makefile IntervalMeasure_prof*
     deps:
       - ../build-arch
       - IntervalMeasure.mos
@@ -368,7 +408,9 @@ stages:
 
   build-case-IntervalMeasure_Coarse:
     wdir: results
-    cmd: omc IntervalMeasure_Coarse.mos
+    cmd: 
+      - omc IntervalMeasure_Coarse.mos
+      - rm IntervalMeasure_Coarse_*.c IntervalMeasure_Coarse.c IntervalMeasure_Coarse.o IntervalMeasure_Coarse_*.h IntervalMeasure_Coarse_*.o IntervalMeasure_Coarse.libs IntervalMeasure_Coarse.log IntervalMeasure_Coarse.makefile IntervalMeasure_Coarse_prof*
     deps:
       - ../build-arch
       - IntervalMeasure_Coarse.mos
@@ -381,7 +423,9 @@ stages:
 
   build-case-SpeedCounter:
     wdir: results
-    cmd: omc SpeedCounter.mos
+    cmd: 
+      - omc SpeedCounter.mos
+      - rm SpeedCounter_*.c SpeedCounter.c SpeedCounter.o SpeedCounter_*.h SpeedCounter_*.o SpeedCounter.libs SpeedCounter.log SpeedCounter.makefile SpeedCounter_prof*
     deps:
       - ../build-arch
       - SpeedCounter.mos
@@ -394,7 +438,9 @@ stages:
 
   build-case-CC1:
     wdir: results
-    cmd: omc CC1.mos
+    cmd: 
+      - omc CC1.mos
+      - rm CC1_*.c CC1.c CC1.o CC1_*.h CC1_*.o CC1.libs CC1.log CC1.makefile CC1_prof*
     deps:
       - ../build-arch
       - CC1.mos
@@ -407,7 +453,9 @@ stages:
 
   build-case-Hyst:
     wdir: results
-    cmd: omc Hyst.mos
+    cmd: 
+      - omc Hyst.mos
+      - rm Hyst_*.c Hyst.c Hyst.o Hyst_*.h Hyst_*.o Hyst.libs Hyst.log Hyst.makefile Hyst_prof*
     deps:
       - ../build-arch
       - Hyst.mos
@@ -420,7 +468,9 @@ stages:
 
   build-case-HystA:
     wdir: results
-    cmd: omc HystA.mos
+    cmd: 
+      - omc HystA.mos
+      - rm HystA_*.c HystA.c HystA.o HystA_*.h HystA_*.o HystA.libs HystA.log HystA.makefile HystA_prof*
     deps:
       - ../build-arch
       - HystA.mos
@@ -433,7 +483,9 @@ stages:
 
   build-case-SIS:
     wdir: results
-    cmd: omc SIS.mos
+    cmd: 
+      - omc SIS.mos
+      - rm SIS_*.c SIS.c SIS.o SIS_*.h SIS_*.o SIS.libs SIS.log SIS.makefile SIS_prof*
     deps:
       - ../build-arch
       - SIS.mos
@@ -446,7 +498,9 @@ stages:
 
   build-case-SSS:
     wdir: results
-    cmd: omc SSS.mos
+    cmd: 
+      - omc SSS.mos
+      - rm SSS_*.c SSS.c SSS.o SSS_*.h SSS_*.o SSS.libs SSS.log SSS.makefile SSS_prof*
     deps:
       - ../build-arch
       - SSS.mos
@@ -459,7 +513,9 @@ stages:
 
   build-case-SSI:
     wdir: results
-    cmd: omc SSI.mos
+    cmd: 
+      - omc SSI.mos
+      - rm SSI_*.c SSI.c SSI.o SSI_*.h SSI_*.o SSI.libs SSI.log SSI.makefile SSI_prof*
     deps:
       - ../build-arch
       - SSI.mos
@@ -472,7 +528,9 @@ stages:
 
   build-case-FO_LTI:
     wdir: results
-    cmd: omc FO_LTI.mos
+    cmd: 
+      - omc FO_LTI.mos
+      - rm FO_LTI_*.c FO_LTI.c FO_LTI.o FO_LTI_*.h FO_LTI_*.o FO_LTI.libs FO_LTI.log FO_LTI.makefile FO_LTI_prof*
     deps:
       - ../build-arch
       - FO_LTI.mos
@@ -485,7 +543,9 @@ stages:
 
   build-case-NC_LTI:
     wdir: results
-    cmd: omc NC_LTI.mos
+    cmd: 
+      - omc NC_LTI.mos
+      - rm NC_LTI_*.c NC_LTI.c NC_LTI.o NC_LTI_*.h NC_LTI_*.o NC_LTI.libs NC_LTI.log NC_LTI.makefile NC_LTI_prof*
     deps:
       - ../build-arch
       - NC_LTI.mos
@@ -498,7 +558,9 @@ stages:
 
   build-case-RLC_LTI:
     wdir: results
-    cmd: omc RLC_LTI.mos
+    cmd: 
+      - omc RLC_LTI.mos
+      - rm RLC_LTI_*.c RLC_LTI.c RLC_LTI.o RLC_LTI_*.h RLC_LTI_*.o RLC_LTI.libs RLC_LTI.log RLC_LTI.makefile RLC_LTI_prof*
     deps:
       - ../build-arch
       - RLC_LTI.mos
@@ -511,7 +573,9 @@ stages:
 
   build-case-Ro_LTI:
     wdir: results
-    cmd: omc Ro_LTI.mos
+    cmd: 
+      - omc Ro_LTI.mos
+      - rm Ro_LTI_*.c Ro_LTI.c Ro_LTI.o Ro_LTI_*.h Ro_LTI_*.o Ro_LTI.libs Ro_LTI.log Ro_LTI.makefile Ro_LTI_prof*
     deps:
       - ../build-arch
       - Ro_LTI.mos
@@ -524,7 +588,9 @@ stages:
 
   build-case-RoC_LTI:
     wdir: results
-    cmd: omc RoC_LTI.mos
+    cmd: 
+      - omc RoC_LTI.mos
+      - rm RoC_LTI_*.c RoC_LTI.c RoC_LTI.o RoC_LTI_*.h RoC_LTI_*.o RoC_LTI.libs RoC_LTI.log RoC_LTI.makefile RoC_LTI_prof*
     deps:
       - ../build-arch
       - RoC_LTI.mos
@@ -537,7 +603,9 @@ stages:
 
   build-case-LV_ABCD:
     wdir: results
-    cmd: omc LV_ABCD.mos
+    cmd: 
+      - omc LV_ABCD.mos
+      - rm LV_ABCD_*.c LV_ABCD.c LV_ABCD.o LV_ABCD_*.h LV_ABCD_*.o LV_ABCD.libs LV_ABCD.log LV_ABCD.makefile LV_ABCD_prof*
     deps:
       - ../build-arch
       - LV_ABCD.mos
@@ -550,7 +618,9 @@ stages:
 
   build-case-RFL:
     wdir: results
-    cmd: omc RFL.mos
+    cmd: 
+      - omc RFL.mos
+      - rm RFL_*.c RFL.c RFL.o RFL_*.h RFL_*.o RFL.libs RFL.log RFL.makefile RFL_prof*
     deps:
       - ../build-arch
       - RFL.mos
@@ -563,7 +633,9 @@ stages:
 
   build-case-RNA:
     wdir: results
-    cmd: omc RNA.mos
+    cmd: 
+      - omc RNA.mos
+      - rm RNA_*.c RNA.c RNA.o RNA_*.h RNA_*.o RNA.libs RNA.log RNA.makefile RNA_prof*
     deps:
       - ../build-arch
       - RNA.mos
@@ -576,7 +648,9 @@ stages:
 
   build-case-RA:
     wdir: results
-    cmd: omc RA.mos
+    cmd: 
+      - omc RA.mos
+      - rm RA_*.c RA.c RA.o RA_*.h RA_*.o RA.libs RA.log RA.makefile RA_prof*
     deps:
       - ../build-arch
       - RA.mos
@@ -589,7 +663,9 @@ stages:
 
   build-case-RE:
     wdir: results
-    cmd: omc RE.mos
+    cmd: 
+      - omc RE.mos
+      - rm RE_*.c RE.c RE.o RE_*.h RE_*.o RE.libs RE.log RE.makefile RE_prof*
     deps:
       - ../build-arch
       - RE.mos
@@ -602,7 +678,9 @@ stages:
 
   build-case-REM:
     wdir: results
-    cmd: omc REM.mos
+    cmd: 
+      - omc REM.mos
+      - rm REM_*.c REM.c REM.o REM_*.h REM_*.o REM.libs REM.log REM.makefile REM_prof*
     deps:
       - ../build-arch
       - REM.mos
@@ -615,7 +693,9 @@ stages:
 
   build-case-Eval1:
     wdir: results
-    cmd: omc Eval1.mos
+    cmd: 
+      - omc Eval1.mos
+      - rm Eval1_*.c Eval1.c Eval1.o Eval1_*.h Eval1_*.o Eval1.libs Eval1.log Eval1.makefile Eval1_prof*
     deps:
       - ../build-arch
       - Eval1.mos
@@ -628,7 +708,9 @@ stages:
 
   build-case-Diff2:
     wdir: results
-    cmd: omc Diff2.mos
+    cmd: 
+      - omc Diff2.mos
+      - rm Diff2_*.c Diff2.c Diff2.o Diff2_*.h Diff2_*.o Diff2.libs Diff2.log Diff2.makefile Diff2_prof*
     deps:
       - ../build-arch
       - Diff2.mos
@@ -641,7 +723,9 @@ stages:
 
   build-case-IIV:
     wdir: results
-    cmd: omc IIV.mos
+    cmd: 
+      - omc IIV.mos
+      - rm IIV_*.c IIV.c IIV.o IIV_*.h IIV_*.o IIV.libs IIV.log IIV.makefile IIV_prof*
     deps:
       - ../build-arch
       - IIV.mos
@@ -654,7 +738,9 @@ stages:
 
   build-case-IIEV:
     wdir: results
-    cmd: omc IIEV.mos
+    cmd: 
+      - omc IIEV.mos
+      - rm IIEV_*.c IIEV.c IIEV.o IIEV_*.h IIEV_*.o IIEV.libs IIEV.log IIEV.makefile IIEV_prof*
     deps:
       - ../build-arch
       - IIEV.mos
@@ -667,7 +753,9 @@ stages:
 
   build-case-SIL:
     wdir: results
-    cmd: omc SIL.mos
+    cmd: 
+      - omc SIL.mos
+      - rm SIL_*.c SIL.c SIL.o SIL_*.h SIL_*.o SIL.libs SIL.log SIL.makefile SIL_prof*
     deps:
       - ../build-arch
       - SIL.mos
@@ -680,7 +768,9 @@ stages:
 
   build-case-NLEE:
     wdir: results
-    cmd: omc NLEE.mos
+    cmd: 
+      - omc NLEE.mos
+      - rm NLEE_*.c NLEE.c NLEE.o NLEE_*.h NLEE_*.o NLEE.libs NLEE.log NLEE.makefile NLEE_prof*
     deps:
       - ../build-arch
       - NLEE.mos
@@ -693,7 +783,9 @@ stages:
 
   build-case-NLIE:
     wdir: results
-    cmd: omc NLIE.mos
+    cmd: 
+      - omc NLIE.mos
+      - rm NLIE_*.c NLIE.c NLIE.o NLIE_*.h NLIE_*.o NLIE.libs NLIE.log NLIE.makefile NLIE_prof*
     deps:
       - ../build-arch
       - NLIE.mos
@@ -706,7 +798,9 @@ stages:
 
   build-case-HTA:
     wdir: results
-    cmd: omc HTA.mos
+    cmd: 
+      - omc HTA.mos
+      - rm HTA_*.c HTA.c HTA.o HTA_*.h HTA_*.o HTA.libs HTA.log HTA.makefile HTA_prof*
     deps:
       - ../build-arch
       - HTA.mos
@@ -719,7 +813,9 @@ stages:
 
   build-case-HT_CTA:
     wdir: results
-    cmd: omc HT_CTA.mos
+    cmd: 
+      - omc HT_CTA.mos
+      - rm HT_CTA_*.c HT_CTA.c HT_CTA.o HT_CTA_*.h HT_CTA_*.o HT_CTA.libs HT_CTA.log HT_CTA.makefile HT_CTA_prof*
     deps:
       - ../build-arch
       - HT_CTA.mos
@@ -732,7 +828,9 @@ stages:
 
   build-case-HT_C:
     wdir: results
-    cmd: omc HT_C.mos
+    cmd: 
+      - omc HT_C.mos
+      - rm HT_C_*.c HT_C.c HT_C.o HT_C_*.h HT_C_*.o HT_C.libs HT_C.log HT_C.makefile HT_C_prof*
     deps:
       - ../build-arch
       - HT_C.mos
@@ -745,7 +843,9 @@ stages:
 
   build-case-HT_CN:
     wdir: results
-    cmd: omc HT_CN.mos
+    cmd: 
+      - omc HT_CN.mos
+      - rm HT_CN_*.c HT_CN.c HT_CN.o HT_CN_*.h HT_CN_*.o HT_CN.libs HT_CN.log HT_CN.makefile HT_CN_prof*
     deps:
       - ../build-arch
       - HT_CN.mos
@@ -758,7 +858,9 @@ stages:
 
   build-case-SMD:
     wdir: results
-    cmd: omc SMD.mos
+    cmd: 
+      - omc SMD.mos
+      - rm SMD_*.c SMD.c SMD.o SMD_*.h SMD_*.o SMD.libs SMD.log SMD.makefile SMD_prof*
     deps:
       - ../build-arch
       - SMD.mos
@@ -771,7 +873,9 @@ stages:
 
   build-case-SMD_WB:
     wdir: results
-    cmd: omc SMD_WB.mos
+    cmd: 
+      - omc SMD_WB.mos
+      - rm SMD_WB_*.c SMD_WB.c SMD_WB.o SMD_WB_*.h SMD_WB_*.o SMD_WB.libs SMD_WB.log SMD_WB.makefile SMD_WB_prof*
     deps:
       - ../build-arch
       - SMD_WB.mos
@@ -784,7 +888,9 @@ stages:
 
   build-case-SMD_GG:
     wdir: results
-    cmd: omc SMD_GG.mos
+    cmd: 
+      - omc SMD_GG.mos
+      - rm SMD_GG_*.c SMD_GG.c SMD_GG.o SMD_GG_*.h SMD_GG_*.o SMD_GG.libs SMD_GG.log SMD_GG.makefile SMD_GG_prof*
     deps:
       - ../build-arch
       - SMD_GG.mos
@@ -797,7 +903,9 @@ stages:
 
   build-case-SMD_GC:
     wdir: results
-    cmd: omc SMD_GC.mos
+    cmd: 
+      - omc SMD_GC.mos
+      - rm SMD_GC_*.c SMD_GC.c SMD_GC.o SMD_GC_*.h SMD_GC_*.o SMD_GC.libs SMD_GC.log SMD_GC.makefile SMD_GC_prof*
     deps:
       - ../build-arch
       - SMD_GC.mos
@@ -810,7 +918,9 @@ stages:
 
   build-case-SMD_CG:
     wdir: results
-    cmd: omc SMD_CG.mos
+    cmd: 
+      - omc SMD_CG.mos
+      - rm SMD_CG_*.c SMD_CG.c SMD_CG.o SMD_CG_*.h SMD_CG_*.o SMD_CG.libs SMD_CG.log SMD_CG.makefile SMD_CG_prof*
     deps:
       - ../build-arch
       - SMD_CG.mos
@@ -823,7 +933,9 @@ stages:
 
   build-case-CLV:
     wdir: results
-    cmd: omc CLV.mos
+    cmd: 
+      - omc CLV.mos
+      - rm CLV_*.c CLV.c CLV.o CLV_*.h CLV_*.o CLV.libs CLV.log CLV.makefile CLV_prof*
     deps:
       - ../build-arch
       - CLV.mos
@@ -836,7 +948,9 @@ stages:
 
   build-case-ThirdS:
     wdir: results
-    cmd: omc ThirdS.mos
+    cmd: 
+      - omc ThirdS.mos
+      - rm ThirdS_*.c ThirdS.c ThirdS.o ThirdS_*.h ThirdS_*.o ThirdS.libs ThirdS.log ThirdS.makefile ThirdS_prof*
     deps:
       - ../build-arch
       - ThirdS.mos
@@ -849,7 +963,9 @@ stages:
 
   build-case-ThreeS:
     wdir: results
-    cmd: omc ThreeS.mos
+    cmd: 
+      - omc ThreeS.mos
+      - rm ThreeS_*.c ThreeS.c ThreeS.o ThreeS_*.h ThreeS_*.o ThreeS.libs ThreeS.log ThreeS.makefile ThreeS_prof*
     deps:
       - ../build-arch
       - ThreeS.mos
@@ -862,7 +978,9 @@ stages:
 
   build-case-PBase:
     wdir: results
-    cmd: omc PBase.mos
+    cmd: 
+      - omc PBase.mos
+      - rm PBase_*.c PBase.c PBase.o PBase_*.h PBase_*.o PBase.libs PBase.log PBase.makefile PBase_prof*
     deps:
       - ../build-arch
       - PBase.mos
@@ -875,7 +993,9 @@ stages:
 
   build-case-PwSH:
     wdir: results
-    cmd: omc PwSH.mos
+    cmd: 
+      - omc PwSH.mos
+      - rm PwSH_*.c PwSH.c PwSH.o PwSH_*.h PwSH_*.o PwSH.libs PwSH.log PwSH.makefile PwSH_prof*
     deps:
       - ../build-arch
       - PwSH.mos
@@ -888,7 +1008,9 @@ stages:
 
   build-case-PwIM:
     wdir: results
-    cmd: omc PwIM.mos
+    cmd: 
+      - omc PwIM.mos
+      - rm PwIM_*.c PwIM.c PwIM.o PwIM_*.h PwIM_*.o PwIM.libs PwIM.log PwIM.makefile PwIM_prof*
     deps:
       - ../build-arch
       - PwIM.mos
@@ -901,7 +1023,9 @@ stages:
 
   build-case-PwIMf:
     wdir: results
-    cmd: omc PwIMf.mos
+    cmd: 
+      - omc PwIMf.mos
+      - rm PwIMf_*.c PwIMf.c PwIMf.o PwIMf_*.h PwIMf_*.o PwIMf.libs PwIMf.log PwIMf.makefile PwIMf_prof*
     deps:
       - ../build-arch
       - PwIMf.mos
@@ -914,7 +1038,9 @@ stages:
 
   build-case-PwPC:
     wdir: results
-    cmd: omc PwPC.mos
+    cmd: 
+      - omc PwPC.mos
+      - rm PwPC_*.c PwPC.c PwPC.o PwPC_*.h PwPC_*.o PwPC.libs PwPC.log PwPC.makefile PwPC_prof*
     deps:
       - ../build-arch
       - PwPC.mos
@@ -927,7 +1053,9 @@ stages:
 
   build-case-BNC:
     wdir: results
-    cmd: omc BNC.mos
+    cmd: 
+      - omc BNC.mos
+      - rm BNC_*.c BNC.c BNC.o BNC_*.h BNC_*.o BNC.libs BNC.log BNC.makefile BNC_prof*
     deps:
       - ../build-arch
       - BNC.mos
@@ -940,7 +1068,9 @@ stages:
 
   build-case-MDC:
     wdir: results
-    cmd: omc MDC.mos
+    cmd: 
+      - omc MDC.mos
+      - rm MDC_*.c MDC.c MDC.o MDC_*.h MDC_*.o MDC.libs MDC.log MDC.makefile MDC_prof*
     deps:
       - ../build-arch
       - MDC.mos
@@ -953,7 +1083,9 @@ stages:
 
   build-case-MDC_hg:
     wdir: results
-    cmd: omc MDC_hg.mos
+    cmd: 
+      - omc MDC_hg.mos
+      - rm MDC_hg_*.c MDC_hg.c MDC_hg.o MDC_hg_*.h MDC_hg_*.o MDC_hg.libs MDC_hg.log MDC_hg.makefile MDC_hg_prof*
     deps:
       - ../build-arch
       - MDC_hg.mos
@@ -966,7 +1098,9 @@ stages:
 
   build-case-ABX:
     wdir: results
-    cmd: omc ABX.mos
+    cmd: 
+      - omc ABX.mos
+      - rm ABX_*.c ABX.c ABX.o ABX_*.h ABX_*.o ABX.libs ABX.log ABX.makefile ABX_prof*
     deps:
       - ../build-arch
       - ABX.mos
@@ -979,7 +1113,9 @@ stages:
 
   build-case-FSWB:
     wdir: results
-    cmd: omc FSWB.mos
+    cmd: 
+      - omc FSWB.mos
+      - rm FSWB_*.c FSWB.c FSWB.o FSWB_*.h FSWB_*.o FSWB.libs FSWB.log FSWB.makefile FSWB_prof*
     deps:
       - ../build-arch
       - FSWB.mos
@@ -992,7 +1128,9 @@ stages:
 
   build-case-FSWB_nolash:
     wdir: results
-    cmd: omc FSWB_nolash.mos
+    cmd: 
+      - omc FSWB_nolash.mos
+      - rm FSWB_nolash_*.c FSWB_nolash.c FSWB_nolash.o FSWB_nolash_*.h FSWB_nolash_*.o FSWB_nolash.libs FSWB_nolash.log FSWB_nolash.makefile FSWB_nolash_prof*
     deps:
       - ../build-arch
       - FSWB_nolash.mos
@@ -1005,7 +1143,9 @@ stages:
 
   build-case-SWB:
     wdir: results
-    cmd: omc SWB.mos
+    cmd: 
+      - omc SWB.mos
+      - rm SWB_*.c SWB.c SWB.o SWB_*.h SWB_*.o SWB.libs SWB.log SWB.makefile SWB_prof*
     deps:
       - ../build-arch
       - SWB.mos
@@ -1018,7 +1158,9 @@ stages:
 
   build-case-Uncon:
     wdir: results
-    cmd: omc Uncon.mos
+    cmd: 
+      - omc Uncon.mos
+      - rm Uncon_*.c Uncon.c Uncon.o Uncon_*.h Uncon_*.o Uncon.libs Uncon.log Uncon.makefile Uncon_prof*
     deps:
       - ../build-arch
       - Uncon.mos
@@ -1031,7 +1173,9 @@ stages:
 
   build-case-ID:
     wdir: results
-    cmd: omc ID.mos
+    cmd: 
+      - omc ID.mos
+      - rm ID_*.c ID.c ID.o ID_*.h ID_*.o ID.libs ID.log ID.makefile ID_prof*
     deps:
       - ../build-arch
       - ID.mos
@@ -1044,7 +1188,9 @@ stages:
 
   build-case-WM:
     wdir: results
-    cmd: omc WM.mos
+    cmd: 
+      - omc WM.mos
+      - rm WM_*.c WM.c WM.o WM_*.h WM_*.o WM.libs WM.log WM.makefile WM_prof*
     deps:
       - ../build-arch
       - WM.mos
@@ -1057,7 +1203,9 @@ stages:
 
   build-case-FC:
     wdir: results
-    cmd: omc FC.mos
+    cmd: 
+      - omc FC.mos
+      - rm FC_*.c FC.c FC.o FC_*.h FC_*.o FC.libs FC.log FC.makefile FC_prof*
     deps:
       - ../build-arch
       - FC.mos
@@ -1070,7 +1218,9 @@ stages:
 
   build-case-SSC:
     wdir: results
-    cmd: omc SSC.mos
+    cmd: 
+      - omc SSC.mos
+      - rm SSC_*.c SSC.c SSC.o SSC_*.h SSC_*.o SSC.libs SSC.log SSC.makefile SSC_prof*
     deps:
       - ../build-arch
       - SSC.mos
@@ -1083,7 +1233,9 @@ stages:
 
   build-case-SSC_AL:
     wdir: results
-    cmd: omc SSC_AL.mos
+    cmd: 
+      - omc SSC_AL.mos
+      - rm SSC_AL_*.c SSC_AL.c SSC_AL.o SSC_AL_*.h SSC_AL_*.o SSC_AL.libs SSC_AL.log SSC_AL.makefile SSC_AL_prof*
     deps:
       - ../build-arch
       - SSC_AL.mos
@@ -1096,7 +1248,9 @@ stages:
 
   build-case-SSC_ALC:
     wdir: results
-    cmd: omc SSC_ALC.mos
+    cmd: 
+      - omc SSC_ALC.mos
+      - rm SSC_ALC_*.c SSC_ALC.c SSC_ALC.o SSC_ALC_*.h SSC_ALC_*.o SSC_ALC.libs SSC_ALC.log SSC_ALC.makefile SSC_ALC_prof*
     deps:
       - ../build-arch
       - SSC_ALC.mos
@@ -1109,7 +1263,9 @@ stages:
 
   build-case-SSC_ALC2:
     wdir: results
-    cmd: omc SSC_ALC2.mos
+    cmd: 
+      - omc SSC_ALC2.mos
+      - rm SSC_ALC2_*.c SSC_ALC2.c SSC_ALC2.o SSC_ALC2_*.h SSC_ALC2_*.o SSC_ALC2.libs SSC_ALC2.log SSC_ALC2.makefile SSC_ALC2_prof*
     deps:
       - ../build-arch
       - SSC_ALC2.mos
@@ -1122,7 +1278,9 @@ stages:
 
   build-case-FR:
     wdir: results
-    cmd: omc FR.mos
+    cmd: 
+      - omc FR.mos
+      - rm FR_*.c FR.c FR.o FR_*.h FR_*.o FR.libs FR.log FR.makefile FR_prof*
     deps:
       - ../build-arch
       - FR.mos
@@ -1135,7 +1293,9 @@ stages:
 
   build-case-SegC:
     wdir: results
-    cmd: omc SegC.mos
+    cmd: 
+      - omc SegC.mos
+      - rm SegC_*.c SegC.c SegC.o SegC_*.h SegC_*.o SegC.libs SegC.log SegC.makefile SegC_prof*
     deps:
       - ../build-arch
       - SegC.mos
@@ -1148,7 +1308,9 @@ stages:
 
   build-case-Harm:
     wdir: results
-    cmd: omc Harm.mos
+    cmd: 
+      - omc Harm.mos
+      - rm Harm_*.c Harm.c Harm.o Harm_*.h Harm_*.o Harm.libs Harm.log Harm.makefile Harm_prof*
     deps:
       - ../build-arch
       - Harm.mos
@@ -1161,7 +1323,9 @@ stages:
 
   build-case-AFS:
     wdir: results
-    cmd: omc AFS.mos
+    cmd: 
+      - omc AFS.mos
+      - rm AFS_*.c AFS.c AFS.o AFS_*.h AFS_*.o AFS.libs AFS.log AFS.makefile AFS_prof*
     deps:
       - ../build-arch
       - AFS.mos
@@ -1174,7 +1338,9 @@ stages:
 
   build-case-AFS_SH:
     wdir: results
-    cmd: omc AFS_SH.mos
+    cmd: 
+      - omc AFS_SH.mos
+      - rm AFS_SH_*.c AFS_SH.c AFS_SH.o AFS_SH_*.h AFS_SH_*.o AFS_SH.libs AFS_SH.log AFS_SH.makefile AFS_SH_prof*
     deps:
       - ../build-arch
       - AFS_SH.mos
@@ -1187,7 +1353,9 @@ stages:
 
   build-case-SV1:
     wdir: results
-    cmd: omc SV1.mos
+    cmd: 
+      - omc SV1.mos
+      - rm SV1_*.c SV1.c SV1.o SV1_*.h SV1_*.o SV1.libs SV1.log SV1.makefile SV1_prof*
     deps:
       - ../build-arch
       - SV1.mos
@@ -1200,7 +1368,9 @@ stages:
 
   build-case-SV1U:
     wdir: results
-    cmd: omc SV1U.mos
+    cmd: 
+      - omc SV1U.mos
+      - rm SV1U_*.c SV1U.c SV1U.o SV1U_*.h SV1U_*.o SV1U.libs SV1U.log SV1U.makefile SV1U_prof*
     deps:
       - ../build-arch
       - SV1U.mos
@@ -1213,7 +1383,9 @@ stages:
 
   build-case-SV2:
     wdir: results
-    cmd: omc SV2.mos
+    cmd: 
+      - omc SV2.mos
+      - rm SV2_*.c SV2.c SV2.o SV2_*.h SV2_*.o SV2.libs SV2.log SV2.makefile SV2_prof*
     deps:
       - ../build-arch
       - SV2.mos
@@ -1226,7 +1398,9 @@ stages:
 
   build-case-SV2T:
     wdir: results
-    cmd: omc SV2T.mos
+    cmd: 
+      - omc SV2T.mos
+      - rm SV2T_*.c SV2T.c SV2T.o SV2T_*.h SV2T_*.o SV2T.libs SV2T.log SV2T.makefile SV2T_prof*
     deps:
       - ../build-arch
       - SV2T.mos
@@ -1239,7 +1413,9 @@ stages:
 
   build-case-TCB:
     wdir: results
-    cmd: omc TCB.mos
+    cmd: 
+      - omc TCB.mos
+      - rm TCB_*.c TCB.c TCB.o TCB_*.h TCB_*.o TCB.libs TCB.log TCB.makefile TCB_prof*
     deps:
       - ../build-arch
       - TCB.mos
@@ -1252,7 +1428,9 @@ stages:
 
   build-case-TCE:
     wdir: results
-    cmd: omc TCE.mos
+    cmd: 
+      - omc TCE.mos
+      - rm TCE_*.c TCE.c TCE.o TCE_*.h TCE_*.o TCE.libs TCE.log TCE.makefile TCE_prof*
     deps:
       - ../build-arch
       - TCE.mos
@@ -1265,7 +1443,9 @@ stages:
 
   build-case-TCE_BB:
     wdir: results
-    cmd: omc TCE_BB.mos
+    cmd: 
+      - omc TCE_BB.mos
+      - rm TCE_BB_*.c TCE_BB.c TCE_BB.o TCE_BB_*.h TCE_BB_*.o TCE_BB.libs TCE_BB.log TCE_BB.makefile TCE_BB_prof*
     deps:
       - ../build-arch
       - TCE_BB.mos
@@ -1278,7 +1458,9 @@ stages:
 
   build-case-TCE_Hy:
     wdir: results
-    cmd: omc TCE_Hy.mos
+    cmd: 
+      - omc TCE_Hy.mos
+      - rm TCE_Hy_*.c TCE_Hy.c TCE_Hy.o TCE_Hy_*.h TCE_Hy_*.o TCE_Hy.libs TCE_Hy.log TCE_Hy.makefile TCE_Hy_prof*
     deps:
       - ../build-arch
       - TCE_Hy.mos

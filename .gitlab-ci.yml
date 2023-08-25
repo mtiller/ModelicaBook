@@ -32,10 +32,10 @@ stages:
 generate_specs:
   stage: generating_results
   script:
+    - uname -m
     - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
     - ls -al /builds/michael.tiller/ModelicaBook
     - make specs
-    - head text/results/allres.mos
     - make results
   artifacts:
     paths:

@@ -1,23 +1,11 @@
 # You must run "make env" (at the root level) before these stages will run
 stages:
-  build-specs:
-    cmd:
-      - mkdir -p results/json
-      - mkdir -p plots
-      - python3 specs.py
-    deps:
-      - ../ModelicaByExample
-      - specs.py
-      - source/_sphinxext/xogeny
-    outs:
-      - plots
-      - results/allres.mos
-      # TODO: get rid of json files?
-      # TODO: get rid of non-allres .mos files
 {% for res in results %}
   build-case-{{res}}:
     wdir: results
-    cmd: omc {{res}}.mos
+    cmd: 
+      - omc {{res}}.mos
+      - rm {{res}}_*.c {{res}}.c {{res}}.o {{res}}_*.h {{res}}_*.o {{res}}.libs {{res}}.log {{res}}.makefile {{res}}_prof*
     deps:
       - ../build-arch
       - {{res}}.mos
@@ -27,4 +15,4 @@ stages:
       - {{res}}_init.xml
       - {{res}}_res.mat
       - {{res}}
-{% endfor %}
+{% endfor -%}

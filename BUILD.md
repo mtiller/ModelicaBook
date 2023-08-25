@@ -28,6 +28,24 @@ system, generating the results requires more memory so you can either start
 `colima` with `colima start --memory 8` or you can run `colima template` and
 change the template to allocate 8Gb of memory.
 
+### Multi-Platform Builds
+
+To do a multi-platform build, I first needed to install `buildx` (see
+[here](https://github.com/abiosoft/colima/discussions/273)). From there, I just
+looked at [some
+examples](https://www.docker.com/blog/multi-arch-build-what-about-gitlab-ci/)
+and came up with:
+
+```
+$ docker buildx create --use
+$ docker buildx build . --platform linux/arm64/v8,linux/amd64 -t registry.gitlab.com/michael.tiller/modelicabook:v0.1.2
+```
+
+This could also be done via the CI/CD system if the `Dockerfile` were kept in a
+different repository.
+
+### Locale
+
 I also needed to define `LC_ALL` as follows within Docker containers:
 
 ```

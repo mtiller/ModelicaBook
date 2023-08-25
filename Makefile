@@ -17,9 +17,9 @@ env:
 	ln -s $(PWD)/ModelicaByExample "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
 
 specs:
-	dvc repro text/dvc.yaml:build-specs --pull
-	dvc push
-	# (cd text; make specs)
+	# dvc repro text/dvc.yaml:build-specs --pull
+	# dvc push
+	(cd text; make specs)
 
 results: env specs
 	dvc repro --glob './text/dvc.yaml:build-case-*' --pull
