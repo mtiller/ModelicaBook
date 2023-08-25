@@ -10,9 +10,10 @@ jobs:
     container:
       image: ghcr.io/mtiller/book-builder-image:v0.1.0
     steps:
-      - name: Make checkout directory as safe
+      - name: Mark checkout directory as safe
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
       - name: Restore DVC Cache
         id: dvc-cache-restore
         uses: actions/cache/restore@v3
