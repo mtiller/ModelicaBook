@@ -12,7 +12,7 @@
 all: specs results json ebooks pdfs
 
 env:
-	uname -m > build-arch
+	uname -m > text/build-arch
 	-rm -rf "$(HOME)/.openmodelica/libraries/ModelicaByExample 0.6.0" 
 	mkdir -p $(HOME)/.openmodelica/libraries
 	ln -s $(PWD)/ModelicaByExample "$(HOME)/.openmodelica/libraries/ModelicaByExample 0.6.0" 
