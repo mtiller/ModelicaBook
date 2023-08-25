@@ -27,7 +27,7 @@ specs:
 
 results: env specs
 	# dvc exp run ./text/dvc.yaml
-	dvc repro text/dvc.yaml --no-commit
+	dvc repro text/dvc.yaml
 	# dvc push
 	# dvc repro text/dvc.yaml:build-results
 	# (cd text; make results)
