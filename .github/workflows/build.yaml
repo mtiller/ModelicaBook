@@ -18,6 +18,8 @@ jobs:
           path: |
             .dvc/cache
           key: dvc-cache
+      - name: make env
+        run: make env
       - name: make specs
         run: make specs
       - name: make results

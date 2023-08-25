@@ -13,8 +13,9 @@ all: specs results json ebooks pdfs
 
 env:
 	uname -m > build-arch
-	-rm -rf "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
-	ln -s $(PWD)/ModelicaByExample "/home/ubuntu/.openmodelica/libraries/ModelicaByExample 0.6.0" 
+	-rm -rf "$(HOME)/.openmodelica/libraries/ModelicaByExample 0.6.0" 
+	mkdir -p $(HOME)/.openmodelica/libraries
+	ln -s $(PWD)/ModelicaByExample "$(HOME)/.openmodelica/libraries/ModelicaByExample 0.6.0" 
 
 specs:
 	# dvc repro text/dvc.yaml:build-specs
