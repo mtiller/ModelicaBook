@@ -1,0 +1,3492 @@
+schema: '2.0'
+stages:
+  build-case-FO:
+    cmd:
+    - omc FO.mos
+    - rm FO_*.c FO.c FO.o FO_*.h FO_*.o FO.libs FO.log FO.makefile FO_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: FO.mos
+      hash: md5
+      md5: 4574adc7b91414f7c6af6884fcdef280
+      size: 687
+    outs:
+    - path: FO
+      hash: md5
+      md5: de83a78194bb1f82f6990710588a0498
+      size: 52968
+    - path: FO_info.json
+      hash: md5
+      md5: 96ac6de5230656fcc891e7b6cc1994b9
+      size: 1246
+    - path: FO_init.xml
+      hash: md5
+      md5: 784002148cf1ce312af02afbebe16fd0
+      size: 5197
+    - path: FO_res.mat
+      hash: md5
+      md5: b171864b423ff43c0785a657379c5169
+      size: 16471
+  build-case-FOI:
+    cmd:
+    - omc FOI.mos
+    - rm FOI_*.c FOI.c FOI.o FOI_*.h FOI_*.o FOI.libs FOI.log FOI.makefile FOI_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: FOI.mos
+      hash: md5
+      md5: a3c02774f4dfe41b47c2c8bfad6b3de0
+      size: 695
+    outs:
+    - path: FOI
+      hash: md5
+      md5: f70b3c13723929cf3c63c35ec59c2b60
+      size: 53048
+    - path: FOI_info.json
+      hash: md5
+      md5: b6afb072e8919fe3e7ab04c9e68e0929
+      size: 1426
+    - path: FOI_init.xml
+      hash: md5
+      md5: 101daadafc8de7acc4164cfb6acf31f2
+      size: 5342
+    - path: FOI_res.mat
+      hash: md5
+      md5: d9e60884ef5c0c6da4ceb22efbf91806
+      size: 16483
+  build-case-FOE:
+    cmd:
+    - omc FOE.mos
+    - rm FOE_*.c FOE.c FOE.o FOE_*.h FOE_*.o FOE.libs FOE.log FOE.makefile FOE_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: FOE.mos
+      hash: md5
+      md5: a13e5d30158b3c40ca995f0cd4b64ab3
+      size: 685
+    outs:
+    - path: FOE
+      hash: md5
+      md5: 1928fa01c8f54a44a7b2d75bddea88f0
+      size: 53048
+    - path: FOE_info.json
+      hash: md5
+      md5: 8b07b549936e41b585fca56b6b405d0e
+      size: 1434
+    - path: FOE_init.xml
+      hash: md5
+      md5: 042c887a59bd552aa45ee621581899da
+      size: 5347
+    - path: FOE_res.mat
+      hash: md5
+      md5: e676911e28c8c91d63f2e7d7d86e6762
+      size: 16483
+  build-case-FOS:
+    cmd:
+    - omc FOS.mos
+    - rm FOS_*.c FOS.c FOS.o FOS_*.h FOS_*.o FOS.libs FOS.log FOS.makefile FOS_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: FOS.mos
+      hash: md5
+      md5: 1d0780e2ee0e66eb0129e5dd690cf70e
+      size: 694
+    outs:
+    - path: FOS
+      hash: md5
+      md5: 49c6b560aecb4b73688bca067cab064f
+      size: 53088
+    - path: FOS_info.json
+      hash: md5
+      md5: fa59e65ac1dfdb9560bb1aa249048082
+      size: 1663
+    - path: FOS_init.xml
+      hash: md5
+      md5: cf5cf4875fc9754e5d942f158a5b2b12
+      size: 5355
+    - path: FOS_res.mat
+      hash: md5
+      md5: f7024799b58a799b51707a5e7e800a01
+      size: 16483
+  build-case-NCWD:
+    cmd:
+    - omc NCWD.mos
+    - rm NCWD_*.c NCWD.c NCWD.o NCWD_*.h NCWD_*.o NCWD.libs NCWD.log NCWD.makefile
+      NCWD_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: NCWD.mos
+      hash: md5
+      md5: c134eaf97d855a5129067be26902571b
+      size: 704
+    outs:
+    - path: NCWD
+      hash: md5
+      md5: e989bb772ca42b49b3c65339478af1e4
+      size: 53368
+    - path: NCWD_info.json
+      hash: md5
+      md5: 86db7fd7a84a93014a331eb90a80114b
+      size: 3227
+    - path: NCWD_init.xml
+      hash: md5
+      md5: fd53b8d5ff54a18c03114c8ea45f5271
+      size: 8957
+    - path: NCWD_res.mat
+      hash: md5
+      md5: a626f5270ba4f53797e1a2f045232d50
+      size: 16977
+  build-case-RLC1:
+    cmd:
+    - omc RLC1.mos
+    - rm RLC1_*.c RLC1.c RLC1.o RLC1_*.h RLC1_*.o RLC1.libs RLC1.log RLC1.makefile
+      RLC1_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: RLC1.mos
+      hash: md5
+      md5: 1568440b27070c7fe3c7061a6da1b5e5
+      size: 672
+    outs:
+    - path: RLC1
+      hash: md5
+      md5: b158655015872834e221fe47edadb58e
+      size: 53544
+    - path: RLC1_info.json
+      hash: md5
+      md5: dd9a5c462d8ab45bfc84ecf2f14f42a6
+      size: 4332
+    - path: RLC1_init.xml
+      hash: md5
+      md5: bd5f655cb77f5837eae10736c85eb317
+      size: 9483
+    - path: RLC1_res.mat
+      hash: md5
+      md5: 155906aa96b7b13773b566f4e4628101
+      size: 32959
+  build-case-SOSIP:
+    cmd:
+    - omc SOSIP.mos
+    - rm SOSIP_*.c SOSIP.c SOSIP.o SOSIP_*.h SOSIP_*.o SOSIP.libs SOSIP.log SOSIP.makefile
+      SOSIP_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SOSIP.mos
+      hash: md5
+      md5: d611f950ea1935fe14b89474fc6883c0
+      size: 706
+    outs:
+    - path: SOSIP
+      hash: md5
+      md5: a99b76c8f638ccddd44f5dd85bae7163
+      size: 53712
+    - path: SOSIP_info.json
+      hash: md5
+      md5: f5abb3becb0e28df99dbf7faa282ee6d
+      size: 8456
+    - path: SOSIP_init.xml
+      hash: md5
+      md5: e9b8f62dc08072adc6bfe3bb41e94856
+      size: 15120
+    - path: SOSIP_res.mat
+      hash: md5
+      md5: 879a5d41ff420bb32b8b156688641d4e
+      size: 41907
+  build-case-SOSIP1:
+    cmd:
+    - omc SOSIP1.mos
+    - rm SOSIP1_*.c SOSIP1.c SOSIP1.o SOSIP1_*.h SOSIP1_*.o SOSIP1.libs SOSIP1.log
+      SOSIP1.makefile SOSIP1_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SOSIP1.mos
+      hash: md5
+      md5: 74b8718fe25066e5e2e353ad051801f9
+      size: 731
+    outs:
+    - path: SOSIP1
+      hash: md5
+      md5: 85ab8532e8b66efef3e387ced6bb67d3
+      size: 53800
+    - path: SOSIP1_info.json
+      hash: md5
+      md5: f5abb3becb0e28df99dbf7faa282ee6d
+      size: 8456
+    - path: SOSIP1_init.xml
+      hash: md5
+      md5: 88329fb12e2b1ba1f16bbb3b0c012159
+      size: 15120
+    - path: SOSIP1_res.mat
+      hash: md5
+      md5: 1be90dee9298dd446815be642720c60c
+      size: 41907
+  build-case-LVCM:
+    cmd:
+    - omc LVCM.mos
+    - rm LVCM_*.c LVCM.c LVCM.o LVCM_*.h LVCM_*.o LVCM.libs LVCM.log LVCM.makefile
+      LVCM_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: LVCM.mos
+      hash: md5
+      md5: fab0a988a4e7f84b5da9a86b423fa3bd
+      size: 692
+    outs:
+    - path: LVCM
+      hash: md5
+      md5: 6d0a6389e6afcfbf58b5871ad30c9ec6
+      size: 53344
+    - path: LVCM_info.json
+      hash: md5
+      md5: cdf3b0a70d92e2696a851cb53a32f2f1
+      size: 4719
+    - path: LVCM_init.xml
+      hash: md5
+      md5: 385589cf58f972d374d68007c4ee96e0
+      size: 10053
+    - path: LVCM_res.mat
+      hash: md5
+      md5: c6aed40bbfca4a05cd70a6a178de992c
+      size: 25223
+  build-case-LVQM:
+    cmd:
+    - omc LVQM.mos
+    - rm LVQM_*.c LVQM.c LVQM.o LVQM_*.h LVQM_*.o LVQM.libs LVQM.log LVQM.makefile
+      LVQM_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: LVQM.mos
+      hash: md5
+      md5: 6d5e23294f5e7fcef5c1b71583377faf
+      size: 694
+    outs:
+    - path: LVQM
+      hash: md5
+      md5: 5302089f4a5cd152a94e6b1365b28ad5
+      size: 58136
+    - path: LVQM_info.json
+      hash: md5
+      md5: 72469f75040ed7dcaff3d10ba2183dda
+      size: 5751
+    - path: LVQM_init.xml
+      hash: md5
+      md5: f6f80b1f555dc38a4b815f45507f56be
+      size: 8890
+    - path: LVQM_res.mat
+      hash: md5
+      md5: 6707b8ce77e81d0ceb9f6eaf3898431e
+      size: 25057
+  build-case-LVQMUS:
+    cmd:
+    - omc LVQMUS.mos
+    - rm LVQMUS_*.c LVQMUS.c LVQMUS.o LVQMUS_*.h LVQMUS_*.o LVQMUS.libs LVQMUS.log
+      LVQMUS.makefile LVQMUS_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: LVQMUS.mos
+      hash: md5
+      md5: 1616c9b35bccc50e05623a0562bd128a
+      size: 706
+    outs:
+    - path: LVQMUS
+      hash: md5
+      md5: fa6a8bda460712edf0e121d87632549b
+      size: 58320
+    - path: LVQMUS_info.json
+      hash: md5
+      md5: b84ca21c13442cfd768cb9525c9a6081
+      size: 5921
+    - path: LVQMUS_init.xml
+      hash: md5
+      md5: f3f5f9b62d9c8358276d5c602b00d6c8
+      size: 9016
+    - path: LVQMUS_res.mat
+      hash: md5
+      md5: f887a1d2d321f59c1fb2c689058e8261
+      size: 25057
+  build-case-NCD:
+    cmd:
+    - omc NCD.mos
+    - rm NCD_*.c NCD.c NCD.o NCD_*.h NCD_*.o NCD.libs NCD.log NCD.makefile NCD_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: NCD.mos
+      hash: md5
+      md5: bf436011f4fe00590423c28e1fbed3d3
+      size: 702
+    outs:
+    - path: NCD
+      hash: md5
+      md5: d422d6cdc6af8b92110a2aa1d6f7b29a
+      size: 63144
+    - path: NCD_info.json
+      hash: md5
+      md5: d0732c9072bde47dd2f6a21353b56b7f
+      size: 6065
+    - path: NCD_init.xml
+      hash: md5
+      md5: 63196c24ea298353ddeb87dfa98b9b43
+      size: 9135
+    - path: NCD_res.mat
+      hash: md5
+      md5: ff5abd8ad045d2cf40fb2627d33556f7
+      size: 21137
+  build-case-NCSTD:
+    cmd:
+    - omc NCSTD.mos
+    - rm NCSTD_*.c NCSTD.c NCSTD.o NCSTD_*.h NCSTD_*.o NCSTD.libs NCSTD.log NCSTD.makefile
+      NCSTD_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: NCSTD.mos
+      hash: md5
+      md5: 802dc51116af2e29f0e5a4f214b569ae
+      size: 714
+    outs:
+    - path: NCSTD
+      hash: md5
+      md5: 2f9f69b4643d11486469e09b5394ed54
+      size: 59184
+    - path: NCSTD_info.json
+      hash: md5
+      md5: 647b4479400b24c4fd1c18ada3927bda
+      size: 5887
+    - path: NCSTD_init.xml
+      hash: md5
+      md5: 4176ea368fa373f652ecd7ef21d6db18
+      size: 8608
+    - path: NCSTD_res.mat
+      hash: md5
+      md5: 29b759980ea358692b0ec2de17188057
+      size: 21054
+  build-case-BB1:
+    cmd:
+    - omc BB1.mos
+    - rm BB1_*.c BB1.c BB1.o BB1_*.h BB1_*.o BB1.libs BB1.log BB1.makefile BB1_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: BB1.mos
+      hash: md5
+      md5: ad17598cc2371e84b8d8846cfa9de03d
+      size: 690
+    outs:
+    - path: BB1
+      hash: md5
+      md5: f2006679aea83ee0807d97e31b2e9c32
+      size: 53416
+    - path: BB1_info.json
+      hash: md5
+      md5: 4cb62497dc0a1e02df856d38b29786ba
+      size: 4097
+    - path: BB1_init.xml
+      hash: md5
+      md5: 264b69db3472a34687e2f7521a4f16ae
+      size: 8227
+    - path: BB1_res.mat
+      hash: md5
+      md5: 52fc0c644edbc4a2d8b112f636f18857
+      size: 30273
+  build-case-BB2:
+    cmd:
+    - omc BB2.mos
+    - rm BB2_*.c BB2.c BB2.o BB2_*.h BB2_*.o BB2.libs BB2.log BB2.makefile BB2_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: BB2.mos
+      hash: md5
+      md5: 869a634173337aed4e1aef8b6bd604c2
+      size: 690
+    outs:
+    - path: BB2
+      hash: md5
+      md5: 6eaf2dc4fd82fd63458dc4eb2f8e7bd0
+      size: 53416
+    - path: BB2_info.json
+      hash: md5
+      md5: 4cb62497dc0a1e02df856d38b29786ba
+      size: 4097
+    - path: BB2_init.xml
+      hash: md5
+      md5: 4038301b89aaf3d4d06d78d8377b629e
+      size: 8226
+    - path: BB2_res.mat
+      hash: md5
+      md5: 8eaca9e8e9be224270cacdbd9e831cff
+      size: 36657
+  build-case-Decay1:
+    cmd:
+    - omc Decay1.mos
+    - rm Decay1_*.c Decay1.c Decay1.o Decay1_*.h Decay1_*.o Decay1.libs Decay1.log
+      Decay1.makefile Decay1_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: Decay1.mos
+      hash: md5
+      md5: 98e0b45d3d0086cfab6e314f05580ad0
+      size: 679
+    outs:
+    - path: Decay1
+      hash: md5
+      md5: 26d84e46f6a6ea420a0e773d91ed3e4f
+      size: 53472
+    - path: Decay1_info.json
+      hash: md5
+      md5: 2fcd81a806cb98092b18a60f5113815f
+      size: 1267
+    - path: Decay1_init.xml
+      hash: md5
+      md5: 5229583f847a82497c917367f76e6444
+      size: 5157
+    - path: Decay1_res.mat
+      hash: md5
+      md5: e8539c7085f060b5003ba4dcc41d5c08
+      size: 6807
+  build-case-Decay2:
+    cmd:
+    - omc Decay2.mos
+    - rm Decay2_*.c Decay2.c Decay2.o Decay2_*.h Decay2_*.o Decay2.libs Decay2.log
+      Decay2.makefile Decay2_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: Decay2.mos
+      hash: md5
+      md5: b4229ce00d922f99c622fa5865e9519f
+      size: 677
+    outs:
+    - path: Decay2
+      hash: md5
+      md5: f07aef148494a94e7f2cb953ec761fb8
+      size: 53648
+    - path: Decay2_info.json
+      hash: md5
+      md5: bbaac1886a1c9c64eade1cbd1bd8fe9e
+      size: 1293
+    - path: Decay2_init.xml
+      hash: md5
+      md5: ec825652bc9f8e111ee6077433bac9af
+      size: 5155
+    - path: Decay2_res.mat
+      hash: md5
+      md5: 2d5e93fcaadfcc6ee21e95dd5edea5b6
+      size: 16535
+  build-case-Decay3:
+    cmd:
+    - omc Decay3.mos
+    - rm Decay3_*.c Decay3.c Decay3.o Decay3_*.h Decay3_*.o Decay3.libs Decay3.log
+      Decay3.makefile Decay3_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: Decay3.mos
+      hash: md5
+      md5: 7db1d822169ff6000f1a0b6a6c68b439
+      size: 680
+    outs:
+    - path: Decay3
+      hash: md5
+      md5: 349961e57565ff3ee6ed7b62697e7372
+      size: 53512
+    - path: Decay3_info.json
+      hash: md5
+      md5: 7d11bdbddeaba384c803ef3166da5c32
+      size: 1302
+    - path: Decay3_init.xml
+      hash: md5
+      md5: 9759647eac5c6b7a2eada8d02d192c90
+      size: 5157
+    - path: Decay3_res.mat
+      hash: md5
+      md5: 42e5d368f3c30d9ef7fb698f3dd01fa2
+      size: 16471
+  build-case-WC:
+    cmd:
+    - omc WC.mos
+    - rm WC_*.c WC.c WC.o WC_*.h WC_*.o WC.libs WC.log WC.makefile WC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: WC.mos
+      hash: md5
+      md5: 23a5444fdceb3c5fbe24ff33bdfbc421
+      size: 681
+    outs:
+    - path: WC
+      hash: md5
+      md5: 6ace790d0241613f6b7edd4f56f0c4ca
+      size: 53136
+    - path: WC_info.json
+      hash: md5
+      md5: 684b1ebf5d5e2d0dc6ab9ed72e689074
+      size: 1324
+    - path: WC_init.xml
+      hash: md5
+      md5: e2ad51d98bf11173959ed458bab21052
+      size: 5184
+    - path: WC_res.mat
+      hash: md5
+      md5: b2e304cdd87772367696e83dabb442ad
+      size: 40016471
+  build-case-WOC:
+    cmd:
+    - omc WOC.mos
+    - rm WOC_*.c WOC.c WOC.o WOC_*.h WOC_*.o WOC.libs WOC.log WOC.makefile WOC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: WOC.mos
+      hash: md5
+      md5: f9e42afee5da76a756f7dc9a467c9c62
+      size: 685
+    outs:
+    - path: WOC
+      hash: md5
+      md5: 566c425f23c7a37dd2db00e91b078a61
+      size: 53088
+    - path: WOC_info.json
+      hash: md5
+      md5: fc4d479c6241b972e01449085b838efb
+      size: 1348
+    - path: WOC_init.xml
+      hash: md5
+      md5: 5e69e305c5845e87199e54f2082ec5ef
+      size: 5196
+    - path: WOC_res.mat
+      hash: md5
+      md5: dde721c3ca78fa575de0ef1424dd0f32
+      size: 16471
+  build-case-WE:
+    cmd:
+    - omc WE.mos
+    - rm WE_*.c WE.c WE.o WE_*.h WE_*.o WE.libs WE.log WE.makefile WE_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: WE.mos
+      hash: md5
+      md5: 0e0128211f96132d6817eb42ed73f0c6
+      size: 681
+    outs:
+    - path: WE
+      hash: md5
+      md5: 3b4d909c50fab3c78d603c1081f22270
+      size: 53296
+    - path: WE_info.json
+      hash: md5
+      md5: 2ea4ce78bbc2463279fb9571cf6a26b7
+      size: 2763
+    - path: WE_init.xml
+      hash: md5
+      md5: 1a8b6b5c992dc4aa63cceb74eae04d88
+      size: 6738
+    - path: WE_res.mat
+      hash: md5
+      md5: d38e2b779d17f98df106b4bd0139a3dc
+      size: 25998
+  build-case-WEf:
+    cmd:
+    - omc WEf.mos
+    - rm WEf_*.c WEf.c WEf.o WEf_*.h WEf_*.o WEf.libs WEf.log WEf.makefile WEf_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: WEf.mos
+      hash: md5
+      md5: b7a02886cd1e75e7a1585492b1165761
+      size: 701
+    outs:
+    - path: WEf
+      hash: md5
+      md5: 166dccc5046a5d8c5fc6220bc5c81b26
+      size: 53384
+    - path: WEf_info.json
+      hash: md5
+      md5: 2ea4ce78bbc2463279fb9571cf6a26b7
+      size: 2763
+    - path: WEf_init.xml
+      hash: md5
+      md5: 1e7d7449d3d56686523c74805ea931e9
+      size: 6738
+    - path: WEf_res.mat
+      hash: md5
+      md5: 909b0e998e0fdd2a8ddae180528424b1
+      size: 31374
+  build-case-WNE:
+    cmd:
+    - omc WNE.mos
+    - rm WNE_*.c WNE.c WNE.o WNE_*.h WNE_*.o WNE.libs WNE.log WNE.makefile WNE_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: WNE.mos
+      hash: md5
+      md5: ab745c4b85e93ef01f1d0d3b79a7f686
+      size: 684
+    outs:
+    - path: WNE
+      hash: md5
+      md5: 3705b3d7424800228498a84e70346407
+      size: 53256
+    - path: WNE_info.json
+      hash: md5
+      md5: 7f37d26bcf5f4c0fb839618ea24702a5
+      size: 2800
+    - path: WNE_init.xml
+      hash: md5
+      md5: f534912ea10f99907bce0a8b807e49dd
+      size: 6753
+    - path: WNE_res.mat
+      hash: md5
+      md5: 265b70cbcdd03d5ab274699a9653c627
+      size: 24654
+  build-case-WNEf:
+    cmd:
+    - omc WNEf.mos
+    - rm WNEf_*.c WNEf.c WNEf.o WNEf_*.h WNEf_*.o WNEf.libs WNEf.log WNEf.makefile
+      WNEf_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: WNEf.mos
+      hash: md5
+      md5: d6aecc0762182a7fe8a6f20ef9ee4d32
+      size: 704
+    outs:
+    - path: WNEf
+      hash: md5
+      md5: ec82c1e469b1260f66cefd94876d14b7
+      size: 53344
+    - path: WNEf_info.json
+      hash: md5
+      md5: 7f37d26bcf5f4c0fb839618ea24702a5
+      size: 2800
+    - path: WNEf_init.xml
+      hash: md5
+      md5: 2c0dbb9eb929a676f603f9f24c67235d
+      size: 6753
+    - path: WNEf_res.mat
+      hash: md5
+      md5: 049bd5c9868ca4fac6755dbfa8b08648
+      size: 24654
+  build-case-SRLC:
+    cmd:
+    - omc SRLC.mos
+    - rm SRLC_*.c SRLC.c SRLC.o SRLC_*.h SRLC_*.o SRLC.libs SRLC.log SRLC.makefile
+      SRLC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SRLC.mos
+      hash: md5
+      md5: 6ca7d4a0ba56f65c2ab18d1474cb4973
+      size: 689
+    outs:
+    - path: SRLC
+      hash: md5
+      md5: 79ffe96d0ed79f467910030d58d80a22
+      size: 53752
+    - path: SRLC_info.json
+      hash: md5
+      md5: 2a8517f7e602758f6124c6fbb8f0a4bf
+      size: 5193
+    - path: SRLC_init.xml
+      hash: md5
+      md5: 24a49394855f05107f44a2ac20f855cb
+      size: 10223
+    - path: SRLC_res.mat
+      hash: md5
+      md5: 88a4d8c07ccc41b8bb022eee8682a2f2
+      size: 37164
+  build-case-SampleAndHold:
+    cmd:
+    - omc SampleAndHold.mos
+    - rm SampleAndHold_*.c SampleAndHold.c SampleAndHold.o SampleAndHold_*.h SampleAndHold_*.o
+      SampleAndHold.libs SampleAndHold.log SampleAndHold.makefile SampleAndHold_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SampleAndHold.mos
+      hash: md5
+      md5: 21627130cecbecc248dd3b78fe9ebf59
+      size: 705
+    outs:
+    - path: SampleAndHold
+      hash: md5
+      md5: 90f6e8d33bc4049fd1f1af45fc366cbc
+      size: 54672
+    - path: SampleAndHold_info.json
+      hash: md5
+      md5: cb605bf9780a16946e996bf4689f76da
+      size: 8944
+    - path: SampleAndHold_init.xml
+      hash: md5
+      md5: 2b502c08c87de66cd552eead0ffe7b26
+      size: 14309
+    - path: SampleAndHold_res.mat
+      hash: md5
+      md5: 2eac3aeeae266c577478b4834e38a150
+      size: 55851
+  build-case-IntervalMeasure:
+    cmd:
+    - omc IntervalMeasure.mos
+    - rm IntervalMeasure_*.c IntervalMeasure.c IntervalMeasure.o IntervalMeasure_*.h
+      IntervalMeasure_*.o IntervalMeasure.libs IntervalMeasure.log IntervalMeasure.makefile
+      IntervalMeasure_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: IntervalMeasure.mos
+      hash: md5
+      md5: fe377c6ae116f8f5ea0c0d73c0ad9e03
+      size: 709
+    outs:
+    - path: IntervalMeasure
+      hash: md5
+      md5: 6eef1456c18907c93f9fd82508d76caa
+      size: 64216
+    - path: IntervalMeasure_info.json
+      hash: md5
+      md5: ebd854f8182639197e50caefb0a89211
+      size: 13170
+    - path: IntervalMeasure_init.xml
+      hash: md5
+      md5: 6faf9604f6bc34d6739e3690588be766
+      size: 17049
+    - path: IntervalMeasure_res.mat
+      hash: md5
+      md5: 913462b28d67dca38f86b5435ffa3ba4
+      size: 110627
+  build-case-IntervalMeasure_Coarse:
+    cmd:
+    - omc IntervalMeasure_Coarse.mos
+    - rm IntervalMeasure_Coarse_*.c IntervalMeasure_Coarse.c IntervalMeasure_Coarse.o
+      IntervalMeasure_Coarse_*.h IntervalMeasure_Coarse_*.o IntervalMeasure_Coarse.libs
+      IntervalMeasure_Coarse.log IntervalMeasure_Coarse.makefile IntervalMeasure_Coarse_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: IntervalMeasure_Coarse.mos
+      hash: md5
+      md5: 00b1635b34cf0541c6a463d437861846
+      size: 735
+    outs:
+    - path: IntervalMeasure_Coarse
+      hash: md5
+      md5: 55c008f7f75c0a279da7e9f79237a3b5
+      size: 64960
+    - path: IntervalMeasure_Coarse_info.json
+      hash: md5
+      md5: ebd854f8182639197e50caefb0a89211
+      size: 13170
+    - path: IntervalMeasure_Coarse_init.xml
+      hash: md5
+      md5: 32199069018b8e0c44876c494ae76d24
+      size: 17049
+    - path: IntervalMeasure_Coarse_res.mat
+      hash: md5
+      md5: bdc9303bdd42432aea8290120edba28b
+      size: 69411
+  build-case-SpeedCounter:
+    cmd:
+    - omc SpeedCounter.mos
+    - rm SpeedCounter_*.c SpeedCounter.c SpeedCounter.o SpeedCounter_*.h SpeedCounter_*.o
+      SpeedCounter.libs SpeedCounter.log SpeedCounter.makefile SpeedCounter_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SpeedCounter.mos
+      hash: md5
+      md5: 57f5276fc589b6fe6e3a7d5b631a0a52
+      size: 711
+    outs:
+    - path: SpeedCounter
+      hash: md5
+      md5: 6833e385f29020f0773b9d731db1ede3
+      size: 59488
+    - path: SpeedCounter_info.json
+      hash: md5
+      md5: eccf33eea194530282865076c0151185
+      size: 12561
+    - path: SpeedCounter_init.xml
+      hash: md5
+      md5: 1753ae9d937f7bcd3b64c7659867538d
+      size: 18261
+    - path: SpeedCounter_res.mat
+      hash: md5
+      md5: 49c7d47e60415f5992da44e972e08a9a
+      size: 126003
+  build-case-CC1:
+    cmd:
+    - omc CC1.mos
+    - rm CC1_*.c CC1.c CC1.o CC1_*.h CC1_*.o CC1.libs CC1.log CC1.makefile CC1_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: CC1.mos
+      hash: md5
+      md5: 9a94545e59e9bb7696b6b87a922379ca
+      size: 693
+    outs:
+    - path: CC1
+      hash: md5
+      md5: 6b6ffbc45c3e7246508695f55af020ec
+      size: 53536
+    - path: CC1_info.json
+      hash: md5
+      md5: b57ee3c182cd20031dc2e7f882946f64
+      size: 4011
+    - path: CC1_init.xml
+      hash: md5
+      md5: 903689ef457fa8d8b0c85848e7b679ef
+      size: 9201
+    - path: CC1_res.mat
+      hash: md5
+      md5: 6ea3c66168ec864d09bb8b69de51fd9c
+      size: 3901222
+  build-case-Hyst:
+    cmd:
+    - omc Hyst.mos
+    - rm Hyst_*.c Hyst.c Hyst.o Hyst_*.h Hyst_*.o Hyst.libs Hyst.log Hyst.makefile
+      Hyst_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: Hyst.mos
+      hash: md5
+      md5: 07c591592127fa5561dc2d0e39c502fe
+      size: 694
+    outs:
+    - path: Hyst
+      hash: md5
+      md5: 51568fe4753836d25da8b9c77f0ab175
+      size: 53992
+    - path: Hyst_info.json
+      hash: md5
+      md5: 2326ebd583ee9f26e4e4e05ca7f7895d
+      size: 5755
+    - path: Hyst_init.xml
+      hash: md5
+      md5: f35ff909e1250691fe4484ad109d16af
+      size: 10361
+    - path: Hyst_res.mat
+      hash: md5
+      md5: 7c4382269654c80b6b658678a6a910f3
+      size: 38246
+  build-case-HystA:
+    cmd:
+    - omc HystA.mos
+    - rm HystA_*.c HystA.c HystA.o HystA_*.h HystA_*.o HystA.libs HystA.log HystA.makefile
+      HystA_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: HystA.mos
+      hash: md5
+      md5: 605ac7446dda1c5e4ee8cc279b8bb03c
+      size: 709
+    outs:
+    - path: HystA
+      hash: md5
+      md5: 9138210980d75d871a56505e375cc56e
+      size: 54032
+    - path: HystA_info.json
+      hash: md5
+      md5: af7c3fb38eec78768752f85316a0bfc8
+      size: 5660
+    - path: HystA_init.xml
+      hash: md5
+      md5: b82b43bd386767fdd8045353c7aef3e4
+      size: 10498
+    - path: HystA_res.mat
+      hash: md5
+      md5: 320e0c63a8206fc421b7b2a47af05cc3
+      size: 38246
+  build-case-SIS:
+    cmd:
+    - omc SIS.mos
+    - rm SIS_*.c SIS.c SIS.o SIS_*.h SIS_*.o SIS.libs SIS.log SIS.makefile SIS_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SIS.mos
+      hash: md5
+      md5: babfcae6f1e5401aa69f6f8b6037a65a
+      size: 701
+    outs:
+    - path: SIS
+      hash: md5
+      md5: 5d0dbc7c7e2e74eaba1a6655f1183fad
+      size: 53536
+    - path: SIS_info.json
+      hash: md5
+      md5: d636900d598b4247baf44e5fe48adf1f
+      size: 4915
+    - path: SIS_init.xml
+      hash: md5
+      md5: eb4ec8d1b659924793c174928a19e000
+      size: 7737
+    - path: SIS_res.mat
+      hash: md5
+      md5: 9cbc84083c36315ba15dd18272b627bc
+      size: 34963
+  build-case-SSS:
+    cmd:
+    - omc SSS.mos
+    - rm SSS_*.c SSS.c SSS.o SSS_*.h SSS_*.o SSS.libs SSS.log SSS.makefile SSS_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SSS.mos
+      hash: md5
+      md5: 22576c735270afd11fe26a26a7ba2aa7
+      size: 702
+    outs:
+    - path: SSS
+      hash: md5
+      md5: 663a1c3ca2acf48a7084bee4c353369d
+      size: 53384
+    - path: SSS_info.json
+      hash: md5
+      md5: 18813b170b6b24eadbb48820c6bb5b8b
+      size: 5141
+    - path: SSS_init.xml
+      hash: md5
+      md5: b3bb703df6c1ba94f6ec48a63bb2fdeb
+      size: 7616
+    - path: SSS_res.mat
+      hash: md5
+      md5: 44d78b7d9a1600a425c33986873170ca
+      size: 33643
+  build-case-SSI:
+    cmd:
+    - omc SSI.mos
+    - rm SSI_*.c SSI.c SSI.o SSI_*.h SSI_*.o SSI.libs SSI.log SSI.makefile SSI_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SSI.mos
+      hash: md5
+      md5: bb2da64da184b9258c0114f17210d5db
+      size: 707
+    outs:
+    - path: SSI
+      hash: md5
+      md5: 023710f5f6cc2c3b998c6a2a09749fee
+      size: 53688
+    - path: SSI_info.json
+      hash: md5
+      md5: a1f96d3670f092a8c5c354b6418c182f
+      size: 6176
+    - path: SSI_init.xml
+      hash: md5
+      md5: 8227603a2e9648657c7648d92e2fa7f1
+      size: 8182
+    - path: SSI_res.mat
+      hash: md5
+      md5: 47a9f54743ce138fba9e14b57a54f85f
+      size: 37793
+  build-case-FO_LTI:
+    cmd:
+    - omc FO_LTI.mos
+    - rm FO_LTI_*.c FO_LTI.c FO_LTI.o FO_LTI_*.h FO_LTI_*.o FO_LTI.libs FO_LTI.log
+      FO_LTI.makefile FO_LTI_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: FO_LTI.mos
+      hash: md5
+      md5: 2e3fcc2b02a9486b18d2e42f4ce9c00b
+      size: 696
+    outs:
+    - path: FO_LTI
+      hash: md5
+      md5: b699a48b728cec179878e60f5ccf14ee
+      size: 53392
+    - path: FO_LTI_info.json
+      hash: md5
+      md5: b55fc771b1808375ef2f310c710e65f2
+      size: 4242
+    - path: FO_LTI_init.xml
+      hash: md5
+      md5: 0975f03ae61ccc10acc154f9b13704fe
+      size: 9166
+    - path: FO_LTI_res.mat
+      hash: md5
+      md5: 9b21c634d785be98f0b4fd27013c7b41
+      size: 20931
+  build-case-NC_LTI:
+    cmd:
+    - omc NC_LTI.mos
+    - rm NC_LTI_*.c NC_LTI.c NC_LTI.o NC_LTI_*.h NC_LTI_*.o NC_LTI.libs NC_LTI.log
+      NC_LTI.makefile NC_LTI_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: NC_LTI.mos
+      hash: md5
+      md5: 5a7344eb11c13b89d4c4c9893b50f48d
+      size: 699
+    outs:
+    - path: NC_LTI
+      hash: md5
+      md5: df9a839b1034cab85e3a06380fc473db
+      size: 53784
+    - path: NC_LTI_info.json
+      hash: md5
+      md5: c3e207216af57b88b73edd27ab5790fa
+      size: 6191
+    - path: NC_LTI_init.xml
+      hash: md5
+      md5: b570eed427eb7b04601e8a0a59cb3a85
+      size: 12164
+    - path: NC_LTI_res.mat
+      hash: md5
+      md5: 819de9e9707739ddb6ae129848e035b6
+      size: 17555
+  build-case-RLC_LTI:
+    cmd:
+    - omc RLC_LTI.mos
+    - rm RLC_LTI_*.c RLC_LTI.c RLC_LTI.o RLC_LTI_*.h RLC_LTI_*.o RLC_LTI.libs RLC_LTI.log
+      RLC_LTI.makefile RLC_LTI_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: RLC_LTI.mos
+      hash: md5
+      md5: 4a825780a02a2d98f449834473a25d3f
+      size: 690
+    outs:
+    - path: RLC_LTI
+      hash: md5
+      md5: 1feb1f23d8c3f74273b15ffbc6ddda2c
+      size: 58352
+    - path: RLC_LTI_info.json
+      hash: md5
+      md5: b8dbbfec13509b67b8bc09d8a1f707c6
+      size: 12768
+    - path: RLC_LTI_init.xml
+      hash: md5
+      md5: b38854b3277363e6e40a3de6948023f4
+      size: 19686
+    - path: RLC_LTI_res.mat
+      hash: md5
+      md5: 4f1a70a7dd4aea962012861bfa86af35
+      size: 34417
+  build-case-Ro_LTI:
+    cmd:
+    - omc Ro_LTI.mos
+    - rm Ro_LTI_*.c Ro_LTI.c Ro_LTI.o Ro_LTI_*.h Ro_LTI_*.o Ro_LTI.libs Ro_LTI.log
+      Ro_LTI.makefile Ro_LTI_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: Ro_LTI.mos
+      hash: md5
+      md5: 4d3bb48e08e356b38360a6bdd0fa6005
+      size: 699
+    outs:
+    - path: Ro_LTI
+      hash: md5
+      md5: ea85623d6028555c3810e7abd03669f5
+      size: 58376
+    - path: Ro_LTI_info.json
+      hash: md5
+      md5: a8e6a901b2f0ed788cb1047f9508609e
+      size: 15371
+    - path: Ro_LTI_init.xml
+      hash: md5
+      md5: 51f6449070bbe20fa323aacbac4cd964
+      size: 24487
+    - path: Ro_LTI_res.mat
+      hash: md5
+      md5: ab2f3ff8686fa21708ccd74ca6882fe6
+      size: 42723
+  build-case-RoC_LTI:
+    cmd:
+    - omc RoC_LTI.mos
+    - rm RoC_LTI_*.c RoC_LTI.c RoC_LTI.o RoC_LTI_*.h RoC_LTI_*.o RoC_LTI.libs RoC_LTI.log
+      RoC_LTI.makefile RoC_LTI_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: RoC_LTI.mos
+      hash: md5
+      md5: 7eb19f9d2546afa91bc01cd520b5d859
+      size: 707
+    outs:
+    - path: RoC_LTI
+      hash: md5
+      md5: bde2d4f521de6bb30aadca8560f9c38a
+      size: 58656
+    - path: RoC_LTI_info.json
+      hash: md5
+      md5: 5265f3d0817fb5498776db303480f724
+      size: 17775
+    - path: RoC_LTI_init.xml
+      hash: md5
+      md5: 4d15a02694677e312fd9c33129b71dfe
+      size: 26808
+    - path: RoC_LTI_res.mat
+      hash: md5
+      md5: 3aed69f93c491c56460029562ae87470
+      size: 42979
+  build-case-LV_ABCD:
+    cmd:
+    - omc LV_ABCD.mos
+    - rm LV_ABCD_*.c LV_ABCD.c LV_ABCD.o LV_ABCD_*.h LV_ABCD_*.o LV_ABCD.libs LV_ABCD.log
+      LV_ABCD.makefile LV_ABCD_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: LV_ABCD.mos
+      hash: md5
+      md5: 5d6c4cdaed64dc0bd0dd8dbc74593059
+      size: 700
+    outs:
+    - path: LV_ABCD
+      hash: md5
+      md5: 4a1e8819c9a14b5b92514031cc92880b
+      size: 53840
+    - path: LV_ABCD_info.json
+      hash: md5
+      md5: 5745df3c614f62ae5c007907e19b99c6
+      size: 9092
+    - path: LV_ABCD_init.xml
+      hash: md5
+      md5: 89461c7b97484220abbbfc7ace55fbd3
+      size: 14628
+    - path: LV_ABCD_res.mat
+      hash: md5
+      md5: 286f2429e8b03c9c607e3f091b111d4a
+      size: 41991
+  build-case-RFL:
+    cmd:
+    - omc RFL.mos
+    - rm RFL_*.c RFL.c RFL.o RFL_*.h RFL_*.o RFL.libs RFL.log RFL.makefile RFL_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: RFL.mos
+      hash: md5
+      md5: a8f149a17251ca80d6de0f00bf01c67b
+      size: 687
+    outs:
+    - path: RFL
+      hash: md5
+      md5: 57ce54088d52ed760053bf23927f41be
+      size: 77424
+    - path: RFL_info.json
+      hash: md5
+      md5: 2689d121ebea0f80cd46bd967456f6dd
+      size: 20738
+    - path: RFL_init.xml
+      hash: md5
+      md5: a72b41541cab3b9ce97579ec212eeb06
+      size: 21346
+    - path: RFL_res.mat
+      hash: md5
+      md5: 7d5ac671a57a583e8e893b8bf4ea6470
+      size: 90438
+  build-case-RNA:
+    cmd:
+    - omc RNA.mos
+    - rm RNA_*.c RNA.c RNA.o RNA_*.h RNA_*.o RNA.libs RNA.log RNA.makefile RNA_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: RNA.mos
+      hash: md5
+      md5: ef4ca3bd51f3ca6ac9e710b8bf91fbb6
+      size: 700
+    outs:
+    - path: RNA
+      hash: md5
+      md5: 09ff9a17b1b2834e97f4da24e6313248
+      size: 53208
+    - path: RNA_info.json
+      hash: md5
+      md5: 529cd73771d8f34a48436b88f0fb39e4
+      size: 4654
+    - path: RNA_init.xml
+      hash: md5
+      md5: dfad7e785c9c8093b41d8eba322b4dc5
+      size: 9111
+    - path: RNA_res.mat
+      hash: md5
+      md5: 953ac112455bb80c56942e587473434f
+      size: 32898
+  build-case-RA:
+    cmd:
+    - omc RA.mos
+    - rm RA_*.c RA.c RA.o RA_*.h RA_*.o RA.libs RA.log RA.makefile RA_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: RA.mos
+      hash: md5
+      md5: 5f895856df8cf24ebaf4b87888433a40
+      size: 696
+    outs:
+    - path: RA
+      hash: md5
+      md5: 67e5e2da3e911fc09e0393595cb106bc
+      size: 53128
+    - path: RA_info.json
+      hash: md5
+      md5: a04c22de75e4b2ef7f7633c476bb082a
+      size: 4703
+    - path: RA_init.xml
+      hash: md5
+      md5: 5c048c052d929c7d2cebb42148b390fc
+      size: 9093
+    - path: RA_res.mat
+      hash: md5
+      md5: 0f48c7353f533f376f69eb17212aad27
+      size: 32909
+  build-case-RE:
+    cmd:
+    - omc RE.mos
+    - rm RE_*.c RE.c RE.o RE_*.h RE_*.o RE.libs RE.log RE.makefile RE_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: RE.mos
+      hash: md5
+      md5: 0a7a80c6323c39ba33c017c7d05f9f60
+      size: 695
+    outs:
+    - path: RE
+      hash: md5
+      md5: 24cc4ae04f3f62fa106966f3c24ac3fb
+      size: 53128
+    - path: RE_info.json
+      hash: md5
+      md5: 4c103eb97ebd5a6f4ffbc626079f26e2
+      size: 5898
+    - path: RE_init.xml
+      hash: md5
+      md5: 1569d9bd538e7f9f51650017e3a39f30
+      size: 9402
+    - path: RE_res.mat
+      hash: md5
+      md5: 3d1bce1c860b30cbaf3bbfc5e7ba2b66
+      size: 33118
+  build-case-REM:
+    cmd:
+    - omc REM.mos
+    - rm REM_*.c REM.c REM.o REM_*.h REM_*.o REM.libs REM.log REM.makefile REM_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: REM.mos
+      hash: md5
+      md5: baa904300dd6c93d9205fb2403702551
+      size: 702
+    outs:
+    - path: REM
+      hash: md5
+      md5: 25d8ceb5f029ccb2f60f01f0bb5da8de
+      size: 53208
+    - path: REM_info.json
+      hash: md5
+      md5: f7c393a9f5ab1268c650941dfe8a4c75
+      size: 5994
+    - path: REM_init.xml
+      hash: md5
+      md5: c85743e784180dadeb1c756b328a3523
+      size: 9479
+    - path: REM_res.mat
+      hash: md5
+      md5: 27e5e265d42294495cc181ce3079c7f0
+      size: 33118
+  build-case-Eval1:
+    cmd:
+    - omc Eval1.mos
+    - rm Eval1_*.c Eval1.c Eval1.o Eval1_*.h Eval1_*.o Eval1.libs Eval1.log Eval1.makefile
+      Eval1_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: Eval1.mos
+      hash: md5
+      md5: 4d64700e3b740bf67609c1b30c75a9ad
+      size: 688
+    outs:
+    - path: Eval1
+      hash: md5
+      md5: efdb06d41d05f3b726e90f8d6edc3167
+      size: 53512
+    - path: Eval1_info.json
+      hash: md5
+      md5: 7f12ca1bda18cac4c30a2a1cc1eec365
+      size: 1475
+    - path: Eval1_init.xml
+      hash: md5
+      md5: 509e02b31ebe3b092480022ff1c7dc8a
+      size: 5235
+    - path: Eval1_res.mat
+      hash: md5
+      md5: 9ab6047cd5e35b416c3dad81940ebbe9
+      size: 16471
+  build-case-Diff2:
+    cmd:
+    - omc Diff2.mos
+    - rm Diff2_*.c Diff2.c Diff2.o Diff2_*.h Diff2_*.o Diff2.libs Diff2.log Diff2.makefile
+      Diff2_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: Diff2.mos
+      hash: md5
+      md5: a55d7140f7e5bbec97b9ed85857eec62
+      size: 689
+    outs:
+    - path: Diff2
+      hash: md5
+      md5: f369617050a80a34ab836f7bbe9293bd
+      size: 54240
+    - path: Diff2_info.json
+      hash: md5
+      md5: b521b0c6092948a147760e8c6a7918d8
+      size: 3836
+    - path: Diff2_init.xml
+      hash: md5
+      md5: a7c8afc043b6b510ed289e82a83c3ce2
+      size: 7414
+    - path: Diff2_res.mat
+      hash: md5
+      md5: 1f988755fd7a2bd864b83f1d511ab888
+      size: 32715
+  build-case-IIV:
+    cmd:
+    - omc IIV.mos
+    - rm IIV_*.c IIV.c IIV.o IIV_*.h IIV_*.o IIV.libs IIV.log IIV.makefile IIV_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: IIV.mos
+      hash: md5
+      md5: 3c5cdf71edd387e22bc5792376731e7e
+      size: 699
+    outs:
+    - path: IIV
+      hash: md5
+      md5: facea0fd9e3c15f41c5dddfe4ac88f67
+      size: 53880
+    - path: IIV_info.json
+      hash: md5
+      md5: 83ce869ff42c3bbbe41dd4a637545116
+      size: 2600
+    - path: IIV_init.xml
+      hash: md5
+      md5: a8072171c1f303bafdeee688985517dc
+      size: 6362
+    - path: IIV_res.mat
+      hash: md5
+      md5: f9cfd6012b5cbca581e7fd4d26e5ff10
+      size: 24593
+  build-case-IIEV:
+    cmd:
+    - omc IIEV.mos
+    - rm IIEV_*.c IIEV.c IIEV.o IIEV_*.h IIEV_*.o IIEV.libs IIEV.log IIEV.makefile
+      IIEV_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: IIEV.mos
+      hash: md5
+      md5: 42da1def6805c19bb76e18fe6b9cd6bd
+      size: 708
+    outs:
+    - path: IIEV
+      hash: md5
+      md5: b0d55b8f3363659e0ee9dd02899eb103
+      size: 54544
+    - path: IIEV_info.json
+      hash: md5
+      md5: 97c2ce0cbbaa2777767de00a0609fecd
+      size: 3457
+    - path: IIEV_init.xml
+      hash: md5
+      md5: 011188f29acbba4213d34b415292f3be
+      size: 6424
+    - path: IIEV_res.mat
+      hash: md5
+      md5: f2b327d5e97c95c26c4882aa5c91c45f
+      size: 24593
+  build-case-SIL:
+    cmd:
+    - omc SIL.mos
+    - rm SIL_*.c SIL.c SIL.o SIL_*.h SIL_*.o SIL.libs SIL.log SIL.makefile SIL_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SIL.mos
+      hash: md5
+      md5: 3d0925faa9f3197137a14edd5038ea4a
+      size: 700
+    outs:
+    - path: SIL
+      hash: md5
+      md5: d78456d4bc3e250529526e1c4b495a33
+      size: 53880
+    - path: SIL_info.json
+      hash: md5
+      md5: 4c2ac20b98c8778651b7f75b38cefec9
+      size: 4522
+    - path: SIL_init.xml
+      hash: md5
+      md5: 13e62d8ca55c6f614195bb867a980d6d
+      size: 9277
+    - path: SIL_res.mat
+      hash: md5
+      md5: cffc0d951d9840aac6d524db7611bb9d
+      size: 116042
+  build-case-NLEE:
+    cmd:
+    - omc NLEE.mos
+    - rm NLEE_*.c NLEE.c NLEE.o NLEE_*.h NLEE_*.o NLEE.libs NLEE.log NLEE.makefile
+      NLEE_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: NLEE.mos
+      hash: md5
+      md5: f2d04ba8dfec37d834068224e51cd5b2
+      size: 693
+    outs:
+    - path: NLEE
+      hash: md5
+      md5: bc631638e8e0d846f8747aceaccb560f
+      size: 53160
+    - path: NLEE_info.json
+      hash: md5
+      md5: 3af055012e37c1984e8fe94af9c244c3
+      size: 903
+    - path: NLEE_init.xml
+      hash: md5
+      md5: 87184d525da5f8e8cf8e8f15d1908601
+      size: 4735
+    - path: NLEE_res.mat
+      hash: md5
+      md5: f5be761048a8a9e4cd8f61bdd4e84e74
+      size: 12410
+  build-case-NLIE:
+    cmd:
+    - omc NLIE.mos
+    - rm NLIE_*.c NLIE.c NLIE.o NLIE_*.h NLIE_*.o NLIE.libs NLIE.log NLIE.makefile
+      NLIE_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: NLIE.mos
+      hash: md5
+      md5: 15e4d5e638c212c1e69796749320f8d1
+      size: 694
+    outs:
+    - path: NLIE
+      hash: md5
+      md5: aa4e0a826470b5516aab4b03c3981934
+      size: 58072
+    - path: NLIE_info.json
+      hash: md5
+      md5: 6bc229dd18fa554c21f363144e5520dc
+      size: 2430
+    - path: NLIE_init.xml
+      hash: md5
+      md5: b72ffdd471c040fbc60b13d0352cdc22
+      size: 5748
+    - path: NLIE_res.mat
+      hash: md5
+      md5: db7b7cc4b560074f79d4b41788ef32ea
+      size: 16532
+  build-case-HTA:
+    cmd:
+    - omc HTA.mos
+    - rm HTA_*.c HTA.c HTA.o HTA_*.h HTA_*.o HTA.libs HTA.log HTA.makefile HTA_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: HTA.mos
+      hash: md5
+      md5: 3a1f7b1e75ac8098f9d26d63571515d0
+      size: 690
+    outs:
+    - path: HTA
+      hash: md5
+      md5: 04ab6bf417ebfebd3cbe5d1defb4ddf4
+      size: 53840
+    - path: HTA_info.json
+      hash: md5
+      md5: 4ecc10d425114aa2df6c7c62b22e4bac
+      size: 3410
+    - path: HTA_init.xml
+      hash: md5
+      md5: 20a300e7a12304199a6e62364e0ee030
+      size: 7305
+    - path: HTA_res.mat
+      hash: md5
+      md5: a81a9f5e01e9a455b1986f4d6414b3d5
+      size: 21074
+  build-case-HT_CTA:
+    cmd:
+    - omc HT_CTA.mos
+    - rm HT_CTA_*.c HT_CTA.c HT_CTA.o HT_CTA_*.h HT_CTA_*.o HT_CTA.libs HT_CTA.log
+      HT_CTA.makefile HT_CTA_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: HT_CTA.mos
+      hash: md5
+      md5: e172b80d7fdca6eb9850c7304619535f
+      size: 700
+    outs:
+    - path: HT_CTA
+      hash: md5
+      md5: c689d1d7180a68491da4a9b1b6639fe1
+      size: 58616
+    - path: HT_CTA_info.json
+      hash: md5
+      md5: abbca90b0451392aa26a3c8e9926d776
+      size: 4741
+    - path: HT_CTA_init.xml
+      hash: md5
+      md5: f80efe29523135f4137668fa751b1ee7
+      size: 10514
+    - path: HT_CTA_res.mat
+      hash: md5
+      md5: 806e4f9bfcb348ce2c978b7366a6aeff
+      size: 21683
+  build-case-HT_C:
+    cmd:
+    - omc HT_C.mos
+    - rm HT_C_*.c HT_C.c HT_C.o HT_C_*.h HT_C_*.o HT_C.libs HT_C.log HT_C.makefile
+      HT_C_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: HT_C.mos
+      hash: md5
+      md5: 43c6cd73ec954edd9f4f4602dde1b745
+      size: 689
+    outs:
+    - path: HT_C
+      hash: md5
+      md5: 81c0ed6088912752700e87d28e54621d
+      size: 58800
+    - path: HT_C_info.json
+      hash: md5
+      md5: b2eb3984f48c93657b2eea9e88503d09
+      size: 6690
+    - path: HT_C_init.xml
+      hash: md5
+      md5: 9607f72100a33942a1a7261726d996c3
+      size: 13220
+    - path: HT_C_res.mat
+      hash: md5
+      md5: 173e284f34708aef1a70bb4f117d529e
+      size: 22243
+  build-case-HT_CN:
+    cmd:
+    - omc HT_CN.mos
+    - rm HT_CN_*.c HT_CN.c HT_CN.o HT_CN_*.h HT_CN_*.o HT_CN.libs HT_CN.log HT_CN.makefile
+      HT_CN_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: HT_CN.mos
+      hash: md5
+      md5: 8ad2c6d6833317d715581f4df551efe8
+      size: 697
+    outs:
+    - path: HT_CN
+      hash: md5
+      md5: bbe14277a76823f3e316e4af95027f3d
+      size: 73840
+    - path: HT_CN_info.json
+      hash: md5
+      md5: 5594f40340837b337f628c88af0b5b10
+      size: 23733
+    - path: HT_CN_init.xml
+      hash: md5
+      md5: cb2f172b9a7470ce82d3353226c27091
+      size: 33658
+    - path: HT_CN_res.mat
+      hash: md5
+      md5: da0ad950d23c72b338f49e075d8bb0a5
+      size: 58003
+  build-case-SMD:
+    cmd:
+    - omc SMD.mos
+    - rm SMD_*.c SMD.c SMD.o SMD_*.h SMD_*.o SMD.libs SMD.log SMD.makefile SMD_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SMD.mos
+      hash: md5
+      md5: d8f5370cc5733191ca6ceceb2a96387c
+      size: 682
+    outs:
+    - path: SMD
+      hash: md5
+      md5: 689bf3347a2e45ba328ea3d5d90152f4
+      size: 58800
+    - path: SMD_info.json
+      hash: md5
+      md5: 3e5c66d35875556d36281003817b6da6
+      size: 19685
+    - path: SMD_init.xml
+      hash: md5
+      md5: 75ee43ad36b7bf54d62245fafcc3c570
+      size: 36561
+    - path: SMD_res.mat
+      hash: md5
+      md5: 88063d9b08eca4e3abb0fe9f53a14306
+      size: 109437
+  build-case-SMD_WB:
+    cmd:
+    - omc SMD_WB.mos
+    - rm SMD_WB_*.c SMD_WB.c SMD_WB.o SMD_WB_*.h SMD_WB_*.o SMD_WB.libs SMD_WB.log
+      SMD_WB.makefile SMD_WB_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SMD_WB.mos
+      hash: md5
+      md5: ec80a39e1e5a69838810f1b06eb56c50
+      size: 698
+    outs:
+    - path: SMD_WB
+      hash: md5
+      md5: 8519d99fa59709520429ca3e29b3b4b4
+      size: 64296
+    - path: SMD_WB_info.json
+      hash: md5
+      md5: 899fe6bebad60b0085b791ee4f1bec12
+      size: 22667
+    - path: SMD_WB_init.xml
+      hash: md5
+      md5: c0897aa93fcfbc52688a796fa4e1a0fb
+      size: 41722
+    - path: SMD_WB_res.mat
+      hash: md5
+      md5: 9f6198f197f582bafb22e1a4929fe469
+      size: 123573
+  build-case-SMD_GG:
+    cmd:
+    - omc SMD_GG.mos
+    - rm SMD_GG_*.c SMD_GG.c SMD_GG.o SMD_GG_*.h SMD_GG_*.o SMD_GG.libs SMD_GG.log
+      SMD_GG.makefile SMD_GG_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SMD_GG.mos
+      hash: md5
+      md5: 7c7491787725c766b7af6a1a6deab953
+      size: 702
+    outs:
+    - path: SMD_GG
+      hash: md5
+      md5: bd5c1b44c2ecabd9f80876f95f44400b
+      size: 68728
+    - path: SMD_GG_info.json
+      hash: md5
+      md5: 956b7f4eef38639430daddb4a77fd930
+      size: 30534
+    - path: SMD_GG_init.xml
+      hash: md5
+      md5: 7e059aac0895d4f430f0052e959fd3f7
+      size: 46944
+    - path: SMD_GG_res.mat
+      hash: md5
+      md5: c5acfe2675b58ff86884dc5c48facb28
+      size: 134957
+  build-case-SMD_GC:
+    cmd:
+    - omc SMD_GC.mos
+    - rm SMD_GC_*.c SMD_GC.c SMD_GC.o SMD_GC_*.h SMD_GC_*.o SMD_GC.libs SMD_GC.log
+      SMD_GC.makefile SMD_GC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SMD_GC.mos
+      hash: md5
+      md5: 25968d0af8f146ce01a2bec0027038b2
+      size: 700
+    outs:
+    - path: SMD_GC
+      hash: md5
+      md5: 679026cba510f77722b64b53bb945352
+      size: 88064
+    - path: SMD_GC_info.json
+      hash: md5
+      md5: e6efa1699fee1b551db8b313ea7d8d9e
+      size: 66604
+    - path: SMD_GC_init.xml
+      hash: md5
+      md5: 4f3dfe44699fbaa788fb24e1403381dd
+      size: 98091
+    - path: SMD_GC_res.mat
+      hash: md5
+      md5: c02b9537cb27cd0698dc6c3b1d844ff4
+      size: 286724
+  build-case-SMD_CG:
+    cmd:
+    - omc SMD_CG.mos
+    - rm SMD_CG_*.c SMD_CG.c SMD_CG.o SMD_CG_*.h SMD_CG_*.o SMD_CG.libs SMD_CG.log
+      SMD_CG.makefile SMD_CG_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SMD_CG.mos
+      hash: md5
+      md5: 4f749ddaf772786b56450b498fd07f56
+      size: 702
+    outs:
+    - path: SMD_CG
+      hash: md5
+      md5: bea6b5ab468a043c5fce4f5f140ad881
+      size: 78488
+    - path: SMD_CG_info.json
+      hash: md5
+      md5: f83710cbbbe2aaee92d481bc80ae95c0
+      size: 47907
+    - path: SMD_CG_init.xml
+      hash: md5
+      md5: 90b4cdd14b501b61c4c3fdd1b5264fd9
+      size: 62104
+    - path: SMD_CG_res.mat
+      hash: md5
+      md5: f6ab2dba48dfeccbdbb331c6202eed67
+      size: 181285
+  build-case-CLV:
+    cmd:
+    - omc CLV.mos
+    - rm CLV_*.c CLV.c CLV.o CLV_*.h CLV_*.o CLV.libs CLV.log CLV.makefile CLV_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: CLV.mos
+      hash: md5
+      md5: 6477ad31484003318c12fbeab4fbcff8
+      size: 704
+    outs:
+    - path: CLV
+      hash: md5
+      md5: 211c298253d4099e3220f98646f631ac
+      size: 58408
+    - path: CLV_info.json
+      hash: md5
+      md5: 90c58d37083a00e8fd23314aab5c24f7
+      size: 12440
+    - path: CLV_init.xml
+      hash: md5
+      md5: 350c2897974eee6c588309465f71db43
+      size: 24389
+    - path: CLV_res.mat
+      hash: md5
+      md5: c3d68b0384ea7bf4fe45d5c71a95d857
+      size: 52015
+  build-case-ThirdS:
+    cmd:
+    - omc ThirdS.mos
+    - rm ThirdS_*.c ThirdS.c ThirdS.o ThirdS_*.h ThirdS_*.o ThirdS.libs ThirdS.log
+      ThirdS.makefile ThirdS_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: ThirdS.mos
+      hash: md5
+      md5: 4d016f78c669a27d3d214eca01e48b00
+      size: 700
+    outs:
+    - path: ThirdS
+      hash: md5
+      md5: 5180ff2210aa52cc3b517c44f6248502
+      size: 63384
+    - path: ThirdS_info.json
+      hash: md5
+      md5: 1c4df90e2ffce91bd03b88edf1180fae
+      size: 21977
+    - path: ThirdS_init.xml
+      hash: md5
+      md5: 75760925f9f3f4a8f7ebcbfe90e9429a
+      size: 44304
+    - path: ThirdS_res.mat
+      hash: md5
+      md5: 2f81a032e451292c4c936ec28c29a893
+      size: 87482
+  build-case-ThreeS:
+    cmd:
+    - omc ThreeS.mos
+    - rm ThreeS_*.c ThreeS.c ThreeS.o ThreeS_*.h ThreeS_*.o ThreeS.libs ThreeS.log
+      ThreeS.makefile ThreeS_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: ThreeS.mos
+      hash: md5
+      md5: 3fa400dbfc620b8cec2a1b3cc59638a6
+      size: 708
+    outs:
+    - path: ThreeS
+      hash: md5
+      md5: e31bfdab2fb64d3e87121e9458ace74c
+      size: 73360
+    - path: ThreeS_info.json
+      hash: md5
+      md5: 90d0c6b29b93667cc795e25d6ef5cc2f
+      size: 37884
+    - path: ThreeS_init.xml
+      hash: md5
+      md5: 9f3ceb6c60cbf0915138eb9bb927f4db
+      size: 44317
+    - path: ThreeS_res.mat
+      hash: md5
+      md5: fbb2c0590387b5e00130af3fb21122c8
+      size: 87482
+  build-case-PBase:
+    cmd:
+    - omc PBase.mos
+    - rm PBase_*.c PBase.c PBase.o PBase_*.h PBase_*.o PBase.libs PBase.log PBase.makefile
+      PBase_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: PBase.mos
+      hash: md5
+      md5: 02be88e651957a4fd20cba1624ce0326
+      size: 692
+    outs:
+    - path: PBase
+      hash: md5
+      md5: 393461f14a0b6c701042523b38a42948
+      size: 59096
+    - path: PBase_info.json
+      hash: md5
+      md5: bada2896cae0c0c5e42e6eb5d668844a
+      size: 20590
+    - path: PBase_init.xml
+      hash: md5
+      md5: c921c56e8abbd92492812bf0d9a4f1e1
+      size: 38526
+    - path: PBase_res.mat
+      hash: md5
+      md5: e14ca26291ae3d3d2e504f412aa8f729
+      size: 109714
+  build-case-PwSH:
+    cmd:
+    - omc PwSH.mos
+    - rm PwSH_*.c PwSH.c PwSH.o PwSH_*.h PwSH_*.o PwSH.libs PwSH.log PwSH.makefile
+      PwSH_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: PwSH.mos
+      hash: md5
+      md5: be4b8783de02b09024c3aada14fca8fa
+      size: 705
+    outs:
+    - path: PwSH
+      hash: md5
+      md5: 3a4b9e50c835475ef92aaa30b803c5a1
+      size: 63336
+    - path: PwSH_info.json
+      hash: md5
+      md5: a29d05ff733030b8b2fe043de814cf56
+      size: 23418
+    - path: PwSH_init.xml
+      hash: md5
+      md5: 127fb084f78bbc5843535273c9c28cd7
+      size: 41641
+    - path: PwSH_res.mat
+      hash: md5
+      md5: 1525971f11d4e6f151e9fcc01b1e5c51
+      size: 136597
+  build-case-PwIM:
+    cmd:
+    - omc PwIM.mos
+    - rm PwIM_*.c PwIM.c PwIM.o PwIM_*.h PwIM_*.o PwIM.libs PwIM.log PwIM.makefile
+      PwIM_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: PwIM.mos
+      hash: md5
+      md5: e1bea1ee0f193ec5a814215978492478
+      size: 710
+    outs:
+    - path: PwIM
+      hash: md5
+      md5: 687ea3fcde4a7734690a80bfcaae40c0
+      size: 68448
+    - path: PwIM_info.json
+      hash: md5
+      md5: 9dd890b7bd7234e3e49319c35cccafc2
+      size: 29846
+    - path: PwIM_init.xml
+      hash: md5
+      md5: 6bf35c6e36b480f68472a245793fc3b8
+      size: 45147
+    - path: PwIM_res.mat
+      hash: md5
+      md5: 9c6379100cc32bb90d15d3ea4f81af05
+      size: 245155
+  build-case-PwIMf:
+    cmd:
+    - omc PwIMf.mos
+    - rm PwIMf_*.c PwIMf.c PwIMf.o PwIMf_*.h PwIMf_*.o PwIMf.libs PwIMf.log PwIMf.makefile
+      PwIMf_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: PwIMf.mos
+      hash: md5
+      md5: f25d77f9ef9805a8e20e85338459f514
+      size: 746
+    outs:
+    - path: PwIMf
+      hash: md5
+      md5: 34ca8b4d0e7908abc4baf5aa0b855419
+      size: 68584
+    - path: PwIMf_info.json
+      hash: md5
+      md5: 9dd890b7bd7234e3e49319c35cccafc2
+      size: 29846
+    - path: PwIMf_init.xml
+      hash: md5
+      md5: e0abcb576bd2fa63580d9373a2fd62e0
+      size: 45147
+    - path: PwIMf_res.mat
+      hash: md5
+      md5: a576c612c7a4e70f4ac036b1b91cc67e
+      size: 154995
+  build-case-PwPC:
+    cmd:
+    - omc PwPC.mos
+    - rm PwPC_*.c PwPC.c PwPC.o PwPC_*.h PwPC_*.o PwPC.libs PwPC.log PwPC.makefile
+      PwPC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: PwPC.mos
+      hash: md5
+      md5: 7db074084bd219d6cf69235a4831aa38
+      size: 707
+    outs:
+    - path: PwPC
+      hash: md5
+      md5: 54b753e1ccff9c8a7d60b9607e0fb4ca
+      size: 64088
+    - path: PwPC_info.json
+      hash: md5
+      md5: c68b4da1f91e68902421bde348d5c438
+      size: 28839
+    - path: PwPC_init.xml
+      hash: md5
+      md5: 4c736cd9b5f4e27fa0ea20535ed2dc6a
+      size: 46293
+    - path: PwPC_res.mat
+      hash: md5
+      md5: 40489ff8ad0e516a2a578fa4c3dbf73b
+      size: 269397
+  build-case-BNC:
+    cmd:
+    - omc BNC.mos
+    - rm BNC_*.c BNC.c BNC.o BNC_*.h BNC_*.o BNC.libs BNC.log BNC.makefile BNC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: BNC.mos
+      hash: md5
+      md5: 29703ccdd4703530fe4a2aa2f6e34b9a
+      size: 695
+    outs:
+    - path: BNC
+      hash: md5
+      md5: b8797dc0ede3ef4d942f837521428af1
+      size: 53696
+    - path: BNC_info.json
+      hash: md5
+      md5: b356d99a7ccd2b76363f63d270d3085d
+      size: 8017
+    - path: BNC_init.xml
+      hash: md5
+      md5: b1192a91aa531d00d2093f8457427c50
+      size: 16449
+    - path: BNC_res.mat
+      hash: md5
+      md5: fe061169a98c61897184f6bb324b0a3d
+      size: 30118
+  build-case-MDC:
+    cmd:
+    - omc MDC.mos
+    - rm MDC_*.c MDC.c MDC.o MDC_*.h MDC_*.o MDC.libs MDC.log MDC.makefile MDC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: MDC.mos
+      hash: md5
+      md5: fcd835824eb56a413e1265386946aa8c
+      size: 703
+    outs:
+    - path: MDC
+      hash: md5
+      md5: 8600e264a325e43f3315372f1c1a8d5a
+      size: 63304
+    - path: MDC_info.json
+      hash: md5
+      md5: ca192e5df62eb7321dc0989028e85441
+      size: 14768
+    - path: MDC_init.xml
+      hash: md5
+      md5: 4efae33210735948d3e89cb27a478794
+      size: 25987
+    - path: MDC_res.mat
+      hash: md5
+      md5: 60b1dab6028efa6af2f8a2a0bd8d8b0d
+      size: 40914
+  build-case-MDC_hg:
+    cmd:
+    - omc MDC_hg.mos
+    - rm MDC_hg_*.c MDC_hg.c MDC_hg.o MDC_hg_*.h MDC_hg_*.o MDC_hg.libs MDC_hg.log
+      MDC_hg.makefile MDC_hg_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: MDC_hg.mos
+      hash: md5
+      md5: 18d21b37d14ce820acc985c407438bd4
+      size: 723
+    outs:
+    - path: MDC_hg
+      hash: md5
+      md5: 06d9faa515998a8c67e6243b95c42c72
+      size: 63640
+    - path: MDC_hg_info.json
+      hash: md5
+      md5: ca192e5df62eb7321dc0989028e85441
+      size: 14768
+    - path: MDC_hg_init.xml
+      hash: md5
+      md5: ac02f23f19aad9df5bd61a2f9bccf8c0
+      size: 25987
+    - path: MDC_hg_res.mat
+      hash: md5
+      md5: 7d08825c9bdabeec8673e273b84baa21
+      size: 40914
+  build-case-ABX:
+    cmd:
+    - omc ABX.mos
+    - rm ABX_*.c ABX.c ABX.o ABX_*.h ABX_*.o ABX.libs ABX.log ABX.makefile ABX_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: ABX.mos
+      hash: md5
+      md5: c5d272125bb8920b12dc72f25197ce9a
+      size: 697
+    outs:
+    - path: ABX
+      hash: md5
+      md5: 809908fb25ad468fc6165d822edf9b98
+      size: 53624
+    - path: ABX_info.json
+      hash: md5
+      md5: c2352a283887bd4e504442c30e070d86
+      size: 14886
+    - path: ABX_init.xml
+      hash: md5
+      md5: d6b2a9fa8a2a7a31af1f6d31092558e4
+      size: 50102
+    - path: ABX_res.mat
+      hash: md5
+      md5: fbb3e712cfa2b1420fa00f679ff4ae5b
+      size: 68721
+  build-case-FSWB:
+    cmd:
+    - omc FSWB.mos
+    - rm FSWB_*.c FSWB.c FSWB.o FSWB_*.h FSWB_*.o FSWB.libs FSWB.log FSWB.makefile
+      FSWB_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: FSWB.mos
+      hash: md5
+      md5: 9e2f67f770f19cfb931bd97612ca2aff
+      size: 710
+    outs:
+    - path: FSWB
+      hash: md5
+      md5: c705fbff793f1b3ad91ed9ce98146d6f
+      size: 102552
+    - path: FSWB_info.json
+      hash: md5
+      md5: 672b8e2181619d9867abbee1e857b9e1
+      size: 68242
+    - path: FSWB_init.xml
+      hash: md5
+      md5: 05da695f31bc949a439572cdae5a923a
+      size: 75009
+    - path: FSWB_res.mat
+      hash: md5
+      md5: 1f90b989d947b83ba81451f6e936b476
+      size: 217276
+  build-case-FSWB_nolash:
+    cmd:
+    - omc FSWB_nolash.mos
+    - rm FSWB_nolash_*.c FSWB_nolash.c FSWB_nolash.o FSWB_nolash_*.h FSWB_nolash_*.o
+      FSWB_nolash.libs FSWB_nolash.log FSWB_nolash.makefile FSWB_nolash_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: FSWB_nolash.mos
+      hash: md5
+      md5: 882d0484554f060f4a896427ab26cb73
+      size: 715
+    outs:
+    - path: FSWB_nolash
+      hash: md5
+      md5: 2bc5c1fddbea5fd054ce9f18d8f41a1b
+      size: 104152
+    - path: FSWB_nolash_info.json
+      hash: md5
+      md5: 67c88269d3bac6515fcecc08bb34aabf
+      size: 68159
+    - path: FSWB_nolash_init.xml
+      hash: md5
+      md5: ffdf51ffae0917cfa24bafc50ff0bc9e
+      size: 74924
+    - path: FSWB_nolash_res.mat
+      hash: md5
+      md5: 7ad50ff674dd5062c691ffad61026d22
+      size: 212860
+  build-case-SWB:
+    cmd:
+    - omc SWB.mos
+    - rm SWB_*.c SWB.c SWB.o SWB_*.h SWB_*.o SWB.libs SWB.log SWB.makefile SWB_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SWB.mos
+      hash: md5
+      md5: 4e4fd8db262c024bf401a6612827394f
+      size: 702
+    outs:
+    - path: SWB
+      hash: md5
+      md5: 4942d2c6ccd8683fdf141a5bcc97a7ef
+      size: 102592
+    - path: SWB_info.json
+      hash: md5
+      md5: cf1db0a95cb4a8c980a4761dfc481c36
+      size: 77624
+    - path: SWB_init.xml
+      hash: md5
+      md5: c4e387889e9c4c178fd88e7364602702
+      size: 84819
+    - path: SWB_res.mat
+      hash: md5
+      md5: ccc976009f51889b5780a213fc0b4d67
+      size: 222083
+  build-case-Uncon:
+    cmd:
+    - omc Uncon.mos
+    - rm Uncon_*.c Uncon.c Uncon.o Uncon_*.h Uncon_*.o Uncon.libs Uncon.log Uncon.makefile
+      Uncon_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: Uncon.mos
+      hash: md5
+      md5: bbf4d81a6e18a05c26e817e598b6f55c
+      size: 708
+    outs:
+    - path: Uncon
+      hash: md5
+      md5: fd520c0719182cd0c94f583799da2832
+      size: 83256
+    - path: Uncon_info.json
+      hash: md5
+      md5: 27647f48f7ea5d51b2a86d224410c1b6
+      size: 71700
+    - path: Uncon_init.xml
+      hash: md5
+      md5: 90133d1aa4ca24cbee9a51f020e36dcc
+      size: 110307
+    - path: Uncon_res.mat
+      hash: md5
+      md5: 5f3c5cfda8a363a392cbe5ce3caa17d5
+      size: 220113
+  build-case-ID:
+    cmd:
+    - omc ID.mos
+    - rm ID_*.c ID.c ID.o ID_*.h ID_*.o ID.libs ID.log ID.makefile ID_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: ID.mos
+      hash: md5
+      md5: 4d5d475e899d3385438b526bb6443e78
+      size: 701
+    outs:
+    - path: ID
+      hash: md5
+      md5: 50905ff473551b5ecebd4a1ad81cdf81
+      size: 82680
+    - path: ID_info.json
+      hash: md5
+      md5: 4b7023a9e49a622806a3454cff0677d7
+      size: 71707
+    - path: ID_init.xml
+      hash: md5
+      md5: 405035940038d03b69d9d0374af3b6c5
+      size: 110306
+    - path: ID_res.mat
+      hash: md5
+      md5: 1a96ec83c0ba4f5c9d02f2a94c79f799
+      size: 220113
+  build-case-WM:
+    cmd:
+    - omc WM.mos
+    - rm WM_*.c WM.c WM.o WM_*.h WM_*.o WM.libs WM.log WM.makefile WM_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: WM.mos
+      hash: md5
+      md5: 2dd44a03d719032cf94d2a99aaafc3d5
+      size: 696
+    outs:
+    - path: WM
+      hash: md5
+      md5: 9b17121355e3f02ab6c230b296ec6a15
+      size: 82776
+    - path: WM_info.json
+      hash: md5
+      md5: c51ade6ff47307f9b4c58220a73107e0
+      size: 76647
+    - path: WM_init.xml
+      hash: md5
+      md5: f3bd9c84f0688d0679deb2d1cf781d9a
+      size: 129949
+    - path: WM_res.mat
+      hash: md5
+      md5: 64d9bca4704a316fe32d055466ae5c5f
+      size: 231451
+  build-case-FC:
+    cmd:
+    - omc FC.mos
+    - rm FC_*.c FC.c FC.o FC_*.h FC_*.o FC.libs FC.log FC.makefile FC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: FC.mos
+      hash: md5
+      md5: 5a7c949d3ca01b9b470d82acfa0528e8
+      size: 690
+    outs:
+    - path: FC
+      hash: md5
+      md5: c2b8b279f2152944d7c5576070bbe036
+      size: 112576
+    - path: FC_info.json
+      hash: md5
+      md5: 8ee34f3bc10509184b8b36287404896f
+      size: 102920
+    - path: FC_init.xml
+      hash: md5
+      md5: 2365eaf9ab4f6ded593dde593e9c79b6
+      size: 90695
+    - path: FC_res.mat
+      hash: md5
+      md5: 1efe1e8b14ca47aace3b6457b0e31dac
+      size: 265753
+  build-case-SSC:
+    cmd:
+    - omc SSC.mos
+    - rm SSC_*.c SSC.c SSC.o SSC_*.h SSC_*.o SSC.libs SSC.log SSC.makefile SSC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SSC.mos
+      hash: md5
+      md5: 4976859fdb334eff38e7661d21b82932
+      size: 696
+    outs:
+    - path: SSC
+      hash: md5
+      md5: fdea79246d73847851d55f09e1669853
+      size: 117616
+    - path: SSC_info.json
+      hash: md5
+      md5: 7bb63da23c0a304f4f5b18eba53285ec
+      size: 118594
+    - path: SSC_init.xml
+      hash: md5
+      md5: 9b1fd286aa696b5b77d1fa36cbf2d33a
+      size: 100904
+    - path: SSC_res.mat
+      hash: md5
+      md5: bf60976bf49f36b12a0e9275603813ff
+      size: 268611
+  build-case-SSC_AL:
+    cmd:
+    - omc SSC_AL.mos
+    - rm SSC_AL_*.c SSC_AL.c SSC_AL.o SSC_AL_*.h SSC_AL_*.o SSC_AL.libs SSC_AL.log
+      SSC_AL.makefile SSC_AL_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SSC_AL.mos
+      hash: md5
+      md5: 9c3c3fb51985124a9f357d710d95e9b8
+      size: 697
+    outs:
+    - path: SSC_AL
+      hash: md5
+      md5: 336192b7caaeb57efc637be4fd300a6a
+      size: 133072
+    - path: SSC_AL_info.json
+      hash: md5
+      md5: c1a679814f0c3c1bd6988a454d194021
+      size: 146586
+    - path: SSC_AL_init.xml
+      hash: md5
+      md5: 856fed815e12171c5e4ddf1a76872cc7
+      size: 121142
+    - path: SSC_AL_res.mat
+      hash: md5
+      md5: c53deee7a8908c96341c5120261929a0
+      size: 379971
+  build-case-SSC_ALC:
+    cmd:
+    - omc SSC_ALC.mos
+    - rm SSC_ALC_*.c SSC_ALC.c SSC_ALC.o SSC_ALC_*.h SSC_ALC_*.o SSC_ALC.libs SSC_ALC.log
+      SSC_ALC.makefile SSC_ALC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SSC_ALC.mos
+      hash: md5
+      md5: 8b8874f99d2789e5a22263dce4eb9f75
+      size: 727
+    outs:
+    - path: SSC_ALC
+      hash: md5
+      md5: 2035954d35e5d895f9483a32f318d6fd
+      size: 133424
+    - path: SSC_ALC_info.json
+      hash: md5
+      md5: c1a679814f0c3c1bd6988a454d194021
+      size: 146586
+    - path: SSC_ALC_init.xml
+      hash: md5
+      md5: 345fa587cdd282611912613bbbf13d17
+      size: 121142
+    - path: SSC_ALC_res.mat
+      hash: md5
+      md5: e0cc365daf1b956644f5f403ceac1804
+      size: 348883
+  build-case-SSC_ALC2:
+    cmd:
+    - omc SSC_ALC2.mos
+    - rm SSC_ALC2_*.c SSC_ALC2.c SSC_ALC2.o SSC_ALC2_*.h SSC_ALC2_*.o SSC_ALC2.libs
+      SSC_ALC2.log SSC_ALC2.makefile SSC_ALC2_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SSC_ALC2.mos
+      hash: md5
+      md5: 1d411dde2a19dc62684ec4ff6c392892
+      size: 728
+    outs:
+    - path: SSC_ALC2
+      hash: md5
+      md5: eeeecedd210d8cc37b24d59efb7cec92
+      size: 133768
+    - path: SSC_ALC2_info.json
+      hash: md5
+      md5: c1a679814f0c3c1bd6988a454d194021
+      size: 146586
+    - path: SSC_ALC2_init.xml
+      hash: md5
+      md5: b747b7870fcac0a1842b8e52c3628ccb
+      size: 121142
+    - path: SSC_ALC2_res.mat
+      hash: md5
+      md5: 7e9594d4af56dbe24b4b2acaf25a0850
+      size: 298771
+  build-case-FR:
+    cmd:
+    - omc FR.mos
+    - rm FR_*.c FR.c FR.o FR_*.h FR_*.o FR.libs FR.log FR.makefile FR_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: FR.mos
+      hash: md5
+      md5: 61ba0160bc578021fb09f8b8d69d101b
+      size: 689
+    outs:
+    - path: FR
+      hash: md5
+      md5: 64ef7647650acecb149dd0a19449da17
+      size: 68544
+    - path: FR_info.json
+      hash: md5
+      md5: cb76eeb855610ac372fef35b915fd8fe
+      size: 27135
+    - path: FR_init.xml
+      hash: md5
+      md5: 9d48bbebaf4c178fc296081829f57c13
+      size: 48071
+    - path: FR_res.mat
+      hash: md5
+      md5: 722c816b938d46c1af2b53fb7eae5f97
+      size: 121041
+  build-case-SegC:
+    cmd:
+    - omc SegC.mos
+    - rm SegC_*.c SegC.c SegC.o SegC_*.h SegC_*.o SegC.libs SegC.log SegC.makefile
+      SegC_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SegC.mos
+      hash: md5
+      md5: aecda974854236301b74f5fcbbb96671
+      size: 701
+    outs:
+    - path: SegC
+      hash: md5
+      md5: 34a99d20e4ce627aa6e515ded0ee84ac
+      size: 1730592
+    - path: SegC_info.json
+      hash: md5
+      md5: 912daa1b14038aef002f6e646d975b0b
+      size: 3222504
+    - path: SegC_init.xml
+      hash: md5
+      md5: f85dcfacdda7761d2c0317b92dad847d
+      size: 4388252
+    - path: SegC_res.mat
+      hash: md5
+      md5: 283c0ae1c50aee0e2c144a0900239e67
+      size: 11227649
+  build-case-Harm:
+    cmd:
+    - omc Harm.mos
+    - rm Harm_*.c Harm.c Harm.o Harm_*.h Harm_*.o Harm.libs Harm.log Harm.makefile
+      Harm_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: Harm.mos
+      hash: md5
+      md5: ba64622209e8d7e52a09cc1c2363a5d4
+      size: 675
+    outs:
+    - path: Harm
+      hash: md5
+      md5: 2b0b9d1ac7dcd7f7712541063318c907
+      size: 2075352
+    - path: Harm_info.json
+      hash: md5
+      md5: 1ef2202a00443f142db04f91b7a0f82a
+      size: 5797610
+    - path: Harm_init.xml
+      hash: md5
+      md5: 0c2f7d75c7df68bc5753e15bbdbce593
+      size: 6314055
+    - path: Harm_res.mat
+      hash: md5
+      md5: f7b94dd310c3306f4f11e217cafb5e5c
+      size: 11980847
+  build-case-AFS:
+    cmd:
+    - omc AFS.mos
+    - rm AFS_*.c AFS.c AFS.o AFS_*.h AFS_*.o AFS.libs AFS.log AFS.makefile AFS_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: AFS.mos
+      hash: md5
+      md5: 2bab747064582a039aba17d15e92e438
+      size: 698
+    outs:
+    - path: AFS
+      hash: md5
+      md5: 2cc91f07cd05a91e983952ba54b0c7ef
+      size: 87576
+    - path: AFS_info.json
+      hash: md5
+      md5: 259b470e863a64c7040776f7bf93787b
+      size: 47245
+    - path: AFS_init.xml
+      hash: md5
+      md5: 6357ebd00a16dde7ded576782b11972d
+      size: 61301
+    - path: AFS_res.mat
+      hash: md5
+      md5: 9ebf7f10998485428f2206e53297cf3e
+      size: 163991
+  build-case-AFS_SH:
+    cmd:
+    - omc AFS_SH.mos
+    - rm AFS_SH_*.c AFS_SH.c AFS_SH.o AFS_SH_*.h AFS_SH_*.o AFS_SH.libs AFS_SH.log
+      AFS_SH.makefile AFS_SH_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: AFS_SH.mos
+      hash: md5
+      md5: 70b1cd0dbf245016db905c2a586f2e7b
+      size: 712
+    outs:
+    - path: AFS_SH
+      hash: md5
+      md5: d2c78aec56c2c34d161326ca182f0e5c
+      size: 88416
+    - path: AFS_SH_info.json
+      hash: md5
+      md5: 1febd506fb40a4f74f409843a1fb98e8
+      size: 50196
+    - path: AFS_SH_init.xml
+      hash: md5
+      md5: c8d4ed3df6d78531dc9a324155f57d9d
+      size: 63119
+    - path: AFS_SH_res.mat
+      hash: md5
+      md5: 747c2a0dc699944f6b3051eb7246e921
+      size: 254417
+  build-case-SV1:
+    cmd:
+    - omc SV1.mos
+    - rm SV1_*.c SV1.c SV1.o SV1_*.h SV1_*.o SV1.libs SV1.log SV1.makefile SV1_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SV1.mos
+      hash: md5
+      md5: 46c7e8b8b3dea509a3e3eb83357e4793
+      size: 696
+    outs:
+    - path: SV1
+      hash: md5
+      md5: cbd92f7125777ca687b10e6b96eb0ae0
+      size: 92528
+    - path: SV1_info.json
+      hash: md5
+      md5: 543ee9375095b2fc0de5660a45daf4a0
+      size: 59938
+    - path: SV1_init.xml
+      hash: md5
+      md5: ae70189186f8d9fa53deca84c18dae8d
+      size: 79380
+    - path: SV1_res.mat
+      hash: md5
+      md5: aa4a9d4241fa17926c7977ccbabdf45e
+      size: 426237
+  build-case-SV1U:
+    cmd:
+    - omc SV1U.mos
+    - rm SV1U_*.c SV1U.c SV1U.o SV1U_*.h SV1U_*.o SV1U.libs SV1U.log SV1U.makefile
+      SV1U_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SV1U.mos
+      hash: md5
+      md5: 4e13e782b0e65da0133e99b789b07659
+      size: 706
+    outs:
+    - path: SV1U
+      hash: md5
+      md5: 0e1fd3df29c5b4a588cf8a53a1ead43f
+      size: 92736
+    - path: SV1U_info.json
+      hash: md5
+      md5: 615d314fa3c041bddf83fac5d6bdf166
+      size: 59946
+    - path: SV1U_init.xml
+      hash: md5
+      md5: ce95c80d1cbe71a237ccb535af141bcd
+      size: 79398
+    - path: SV1U_res.mat
+      hash: md5
+      md5: cbb44d9109bcfe5d69c1b47ea8128569
+      size: 259317
+  build-case-SV2:
+    cmd:
+    - omc SV2.mos
+    - rm SV2_*.c SV2.c SV2.o SV2_*.h SV2_*.o SV2.libs SV2.log SV2.makefile SV2_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SV2.mos
+      hash: md5
+      md5: f9bbb09a69fefa72c98391ace190872a
+      size: 696
+    outs:
+    - path: SV2
+      hash: md5
+      md5: 46fa406e25b94ad963b14f1fc517a51c
+      size: 126216
+    - path: SV2_info.json
+      hash: md5
+      md5: bfbe4903f97445b95477c8f4b9fa6ece
+      size: 130373
+    - path: SV2_init.xml
+      hash: md5
+      md5: 773bf08736da5be84b0250c97af49776
+      size: 146966
+    - path: SV2_res.mat
+      hash: md5
+      md5: 6c4f00cf1b3698398b0610bca8d2ec77
+      size: 1017773
+  build-case-SV2T:
+    cmd:
+    - omc SV2T.mos
+    - rm SV2T_*.c SV2T.c SV2T.o SV2T_*.h SV2T_*.o SV2T.libs SV2T.log SV2T.makefile
+      SV2T_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: SV2T.mos
+      hash: md5
+      md5: e92a08bb2bc095d19992326f3f925091
+      size: 703
+    outs:
+    - path: SV2T
+      hash: md5
+      md5: bdc37ac5abc6c9af367033e13d588509
+      size: 126520
+    - path: SV2T_info.json
+      hash: md5
+      md5: 82f7aace6a5d035af68e356c2cc474b9
+      size: 130360
+    - path: SV2T_init.xml
+      hash: md5
+      md5: 5cb063ddbfdf8af610caf05b1e01334a
+      size: 146975
+    - path: SV2T_res.mat
+      hash: md5
+      md5: b864099a111c0322b6f33d694615ce6a
+      size: 940253
+  build-case-TCB:
+    cmd:
+    - omc TCB.mos
+    - rm TCB_*.c TCB.c TCB.o TCB_*.h TCB_*.o TCB.libs TCB.log TCB.makefile TCB_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: TCB.mos
+      hash: md5
+      md5: b801d28cf394d7c7e3ed981f9bcb25eb
+      size: 696
+    outs:
+    - path: TCB
+      hash: md5
+      md5: 42ff5f46f20f0dfdb918b2b2c4c9b5cf
+      size: 97192
+    - path: TCB_info.json
+      hash: md5
+      md5: 767bb09ff2247a877e455ae59a8c5359
+      size: 68210
+    - path: TCB_init.xml
+      hash: md5
+      md5: fc7feb01797c6bc0bf85d9365dee95a4
+      size: 86805
+    - path: TCB_res.mat
+      hash: md5
+      md5: 062938a075279703850583a27e537aed
+      size: 182187
+  build-case-TCE:
+    cmd:
+    - omc TCE.mos
+    - rm TCE_*.c TCE.c TCE.o TCE_*.h TCE_*.o TCE.libs TCE.log TCE.makefile TCE_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: TCE.mos
+      hash: md5
+      md5: b07855eab77b183dfa95c5e6a6ed2c34
+      size: 702
+    outs:
+    - path: TCE
+      hash: md5
+      md5: 25d2fd7f7c4c00aedbf55e20cb1c3941
+      size: 97192
+    - path: TCE_info.json
+      hash: md5
+      md5: dde8c69b4d269093667f245b943dbba6
+      size: 68308
+    - path: TCE_init.xml
+      hash: md5
+      md5: 4baa6e6a55fe1a88d17faf4875cda3dc
+      size: 88364
+    - path: TCE_res.mat
+      hash: md5
+      md5: 7d8fe3b72e7f2fe0f0f12af784eda275
+      size: 182555
+  build-case-TCE_BB:
+    cmd:
+    - omc TCE_BB.mos
+    - rm TCE_BB_*.c TCE_BB.c TCE_BB.o TCE_BB_*.h TCE_BB_*.o TCE_BB.libs TCE_BB.log
+      TCE_BB.makefile TCE_BB_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: TCE_BB.mos
+      hash: md5
+      md5: dc8075e3e734c38b43735765fd342df7
+      size: 702
+    outs:
+    - path: TCE_BB
+      hash: md5
+      md5: a538d71255dd329d2719d598bf7ef2aa
+      size: 88264
+    - path: TCE_BB_info.json
+      hash: md5
+      md5: 44c62ed7108de4c315491aa6d2247fad
+      size: 55414
+    - path: TCE_BB_init.xml
+      hash: md5
+      md5: 8bcde84a4f42a4252f0cac5c63430cfe
+      size: 79706
+    - path: TCE_BB_res.mat
+      hash: md5
+      md5: a0b865a30711def96f42c70e58fb3068
+      size: 1143483
+  build-case-TCE_Hy:
+    cmd:
+    - omc TCE_Hy.mos
+    - rm TCE_Hy_*.c TCE_Hy.c TCE_Hy.o TCE_Hy_*.h TCE_Hy_*.o TCE_Hy.libs TCE_Hy.log
+      TCE_Hy.makefile TCE_Hy_prof*
+    deps:
+    - path: ../../ModelicaByExample
+      hash: md5
+      md5: 06545de35b64eb828e75090394cbe2f0.dir
+      size: 11786865
+      nfiles: 629
+    - path: ../build-arch
+      hash: md5
+      md5: 4f2cc97958831e0481a9a62304b6704a
+      size: 8
+    - path: TCE_Hy.mos
+      hash: md5
+      md5: eb2d3ea4eb77ad5116fad25ef7f2aa67
+      size: 707
+    outs:
+    - path: TCE_Hy
+      hash: md5
+      md5: a5450941bf574d8211d279362fc807f0
+      size: 88408
+    - path: TCE_Hy_info.json
+      hash: md5
+      md5: 2cf169e89cd23b59a87a5ef57c059b94
+      size: 57891
+    - path: TCE_Hy_init.xml
+      hash: md5
+      md5: e62f2b59b5ac59a68bf7ab09bbcdbd7d
+      size: 81723
+    - path: TCE_Hy_res.mat
+      hash: md5
+      md5: 200f0c6e791f92ce89355a477b866df6
+      size: 233523
