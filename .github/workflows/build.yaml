@@ -20,7 +20,7 @@ jobs:
         with:
           path: |
             .dvc/cache
-          key: dvc-cache
+          key: dvc-cache-key
       - name: Setup Build Environment
         run: make env
       - name: Make Simulation Specifications
@@ -33,4 +33,4 @@ jobs:
         with:
           path: |
             .dvc/cache
-          key: ${{ steps.dvc-cache-restore.outputs.cache-primary-key }}
+          key: dvc-cache-key
