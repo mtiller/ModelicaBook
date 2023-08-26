@@ -13,7 +13,6 @@ all: specs results json ebooks pdfs
 
 env:
 	dvc cache dir .dvc/cache
-	-rm -rf .dvc/cache
 	-mkdir .dvc/cache
 	rm -f text/dvc.lock
 	uname -m > text/build-arch
