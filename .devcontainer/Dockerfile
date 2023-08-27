@@ -1,5 +1,5 @@
 # FROM ghcr.io/mtiller/book-builder-image:latest
-FROM ghcr.io/mtiller/book-builder-image:v0.1.0
+FROM ghcr.io/mtiller/book-builder-image:v0.1.1
 
 # Use the non-root user?
 # USER ubuntu:ubuntu
