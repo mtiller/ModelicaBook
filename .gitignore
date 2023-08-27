@@ -28,3 +28,4 @@ source/Examples/*.exp
 **/_static/img/*.pdf
 text/build-arch
 build-arch
+.DS_Store
