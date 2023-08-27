@@ -1,6 +1,2 @@
-[core]
-    remote = storage
-['remote "storage"']
-    url = s3://dvc-remote
-    endpointurl = https://nyc3.digitaloceanspaces.com
-    listobjects = true
+[cache]
+    dir = cache

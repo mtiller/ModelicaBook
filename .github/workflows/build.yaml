@@ -34,3 +34,7 @@ jobs:
           path: |
             .dvc/cache
           key: dvc-cache-key
+      - name: Generate JSON Representation
+        run: make json
+      - name: Generate PDFs
+        run: make pdfs
