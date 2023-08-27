@@ -39,11 +39,6 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 LATEXMKOPTS     = "-xelatex"
 
-PREV_SPEC_HASH = $(shell cat spec-hash || echo "")
-SPEC_HASH = $(shell git hash-object specs.py)
-PREV_RES_HASH = $(shell cat results-hash || echo "")
-RES_HASH = $(shell git rev-parse HEAD:ModelicaByExample HEAD:text/specs.py | git hash-object --stdin)
-
 # Language definition
 SET_BOOK_LANG_CN = BOOK_LANG=zh_CN
 
@@ -62,16 +57,11 @@ endif
 book: specs results dirhtml server
 
 specs: specs.py
-	$(info Specification hashes do not match, regenerating specifications)
-	-rm spec-hash
 	-mkdir -p results/json
 	-mkdir -p results/js
 	-mkdir -p plots
 	-rm -f plots/*
 	$(PYTHON) specs.py
-	# Record the content hash of specs.py used to
-	# generate all the files
-	echo $(SPEC_HASH) > spec-hash
 
 specs_cn: specs.py
 	-mkdir -p results/json
@@ -82,14 +72,7 @@ specs_cn: specs.py
 
 # This target builds all the simulation results
 results:
-ifneq ($(RES_HASH), $(PREV_RES_HASH))
-	@echo "Generate results"
-	$(info Results hashes do not match, regenerating results)
 	(cd results; make results_files exes.tar.gz tidy)
-	echo $(RES_HASH) > results-hash
-else
-	$(info Results hashes match, skipping)
-endif
 
 # This builds all the JS and JSON files.  Use this if your development
 # environment is setup to compile the JS files
@@ -269,7 +252,6 @@ help:
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
 distclean: clean
-	-rm spec-hash
 	-rm -rf results tmp plots
 	$(foreach file, $(PDFs), $(shell rm -f "$(file)"))
 
