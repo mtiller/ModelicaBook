@@ -72,7 +72,8 @@ specs_cn: specs.py
 
 # This target builds all the simulation results
 results:
-	(cd results; make results_files exes.tar.gz tidy)
+	dvc repro dvc.yaml
+#	(cd results; make results_files exes.tar.gz tidy)
 
 # This builds all the JS and JSON files.  Use this if your development
 # environment is setup to compile the JS files

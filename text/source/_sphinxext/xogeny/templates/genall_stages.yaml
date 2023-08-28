@@ -1,6 +1,6 @@
 # You must run "make env" (at the root level) before these stages will run
 stages:
-{% for res in results %}
+{%- for res in results %}
   build-case-{{res}}:
     wdir: results
     cmd: 
@@ -15,4 +15,14 @@ stages:
       - {{res}}_init.xml
       - {{res}}_res.mat
       - {{res}}
-{% endfor -%}
+{%- endfor %}
+  build-exes:
+    wdir: results
+    cmd:
+      - tar cf exes.tar.gz {% for res in results %} {{ res }} {% endfor %}
+    deps:
+{%- for res in results %}
+      - {{res}}
+{%- endfor %}
+    outs:
+      - exes.tar.gz
