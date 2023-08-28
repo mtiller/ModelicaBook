@@ -37,3 +37,8 @@ ebooks:
 
 pdfs:
 	(cd text; make pdf pdf-a4)
+
+clean:
+	git clean -fdx text
+	git clean -fdx api
+	git clean -fdx ModelicaByExample
