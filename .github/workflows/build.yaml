@@ -21,16 +21,13 @@ jobs:
           path: |
             .dvc/cache
           key: dvc-cache-key
-      - name: Setup Build Environment
-        run: make env
-      - name: Make Simulation Specifications
-        run: make specs
-      - name: Generate Results
-        run: make results
-      - name: Generate JSON Representation
-        run: make json
-      - name: Generate PDFs
-        run: make pdfs
+      - name: Make PDFs
+        run: make env pdfs
+      - name: Upload Executables
+        uses: actions/upload-artifact@v3
+        with:
+          name: exes.tar.gz
+          path: text/results/exes.tar.gz
       - name: Save DVC Cache
         id: dvc-cache-save
         uses: actions/cache/save@v3
