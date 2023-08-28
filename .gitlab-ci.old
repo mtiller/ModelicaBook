@@ -1,0 +1,135 @@
+# By default, all commands are done in the context of the mtiller/book-builder
+# Docker image (unless the individual jobs override this)
+image: registry.gitlab.com/michael.tiller/modelicabook:v0.1.1
+
+variables:
+  # Be sure to extract submodules
+  GIT_SUBMODULE_STRATEGY: normal
+  # Use this for performance reasons
+  DOCKER_DRIVER: overlay2
+
+# Cache the text/results and text/plots directories across jobs
+cache:
+  paths:
+    - text/results
+    - text/plots
+
+# Needed for cases where we are running docker.  We use the 'docker' image
+# but it depends on this service being present (not sure how/why).
+services:
+  - docker:dind
+
+# The various stages
+stages:
+  - generating_results
+  - installing_image_dependencies
+  - building_image
+  - publishing_image
+  - generating_json
+  - generating_ebooks
+  - generating_site
+
+generate_specs:
+  stage: generating_results
+  script:
+    - uname -m
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
+    - ls -al /builds/michael.tiller/ModelicaBook
+    - make specs
+    - make results
+  artifacts:
+    paths:
+      - text/results/exes.tar.gz
+      - text/plots
+
+# We do this for all branches just to make sure there
+# are no errors.
+install_image_dependencies:
+  image: node:10-jessie
+  stage: installing_image_dependencies
+  script:
+    - (cd api; make deps)
+
+# We do this for all branches just to make sure there are no errors
+publish_image:
+  image: docker:stable
+  stage: publishing_image
+  script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
+    - mkdir api/models
+    # TODO: Create a version that downloads these files at startup?  Decouples
+    # the API server entirely from the Book source!
+    - (cd api/models; tar xf ../../text/results/exes.tar.gz)
+    - (cd api; docker build -t mtiller/book-server .)
+    - docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - docker push mtiller/book-server
+  when: manual
+  artifacts:
+    paths:
+      - api
+
+generate_json:
+  stage: generating_json
+  script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
+    - (cd text; make json)
+  artifacts:
+    paths:
+      - text/build/
+
+generate_epub_and_mobi:
+  stage: generating_ebooks
+  script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
+    - (cd text; make ebooks)
+    - mv text/build/epub/ModelicaByExample.epub text/build/epub/ModelicaByExample-`git hash-object text/build/epub/ModelicaByExample.epub`.epub
+    - mv text/build/mobi/ModelicaByExample.mobi text/build/mobi/ModelicaByExample-`git hash-object text/build/mobi/ModelicaByExample.mobi`.mobi
+  when: manual
+  artifacts:
+    paths:
+      - text/build/epub/ModelicaByExample*.epub
+      - text/build/mobi/ModelicaByExample*.mobi
+
+generate_pdf:
+  stage: generating_ebooks
+  script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
+    - (cd text; make pdf)
+    - mv text/build/latex/ModelicaByExample.pdf text/build/latex/ModelicaByExample-Letter-`git hash-object text/build/latex/ModelicaByExample.pdf`.pdf
+  when: manual
+  artifacts:
+    paths:
+      - text/build/latex/ModelicaByExample-Letter-*.pdf
+
+generate_pdfa4:
+  stage: generating_ebooks
+  script:
+    - git config --global --add safe.directory /builds/michael.tiller/ModelicaBook
+    - (cd text; make pdf-a4)
+    - mv text/build/latex-a4/ModelicaByExample.pdf text/build/latex-a4/ModelicaByExample-A4-`git hash-object text/build/latex-a4/ModelicaByExample.pdf`.pdf
+  when: manual
+  artifacts:
+    paths:
+      - text/build/latex-a4/ModelicaByExample-A4-*.pdf
+
+generate_preview_site:
+  image: node:10-jessie
+  stage: generating_site
+  except:
+    - master
+  script:
+    - (cd nextgen; make publish_site alias_preview)
+  artifacts:
+    paths:
+      - nextgen/out
+
+generate_production_site:
+  image: node:10-jessie
+  stage: generating_site
+  only:
+    - master
+  script:
+    - (cd nextgen; make publish_site alias_release)
+  artifacts:
+    paths:
+      - nextgen/out
