@@ -27,6 +27,10 @@ jobs:
         run: make specs
       - name: Generate Results
         run: make results
+      - name: Generate JSON Representation
+        run: make json
+      - name: Generate PDFs
+        run: make pdfs
       - name: Save DVC Cache
         id: dvc-cache-save
         uses: actions/cache/save@v3
@@ -34,7 +38,3 @@ jobs:
           path: |
             .dvc/cache
           key: dvc-cache-key
-      - name: Generate JSON Representation
-        run: make json
-      - name: Generate PDFs
-        run: make pdfs
