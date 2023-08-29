@@ -1,407 +1,601 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/functions/polynomial.rst:4
 msgid "Polynomial Evaluation"
 msgstr ""
+"다항식 해석(Polynomial Evaluation)"
 
 #: ../../source/behavior/functions/polynomial.rst:6
 msgid ""
 "Our first example will center around using functions to evaluate "
-"polynomials.  This will help use understand the basics of defining and using"
-" functions."
+"polynomials.  This will help use understand the basics of defining and "
+"using functions."
 msgstr ""
+"첫 번째 예제는 함수를 사용하여 다항식을 해석하는 데 중점을 둘 것입니다."
+"이 예제를 통해 함수 정의 및 사용의 기본 사항을 이해하겠습니다."
+
 
 #: ../../source/behavior/functions/polynomial.rst:11
 msgid "Computing a Line"
 msgstr ""
+"선분 계산하기(Computing a Line)"
+
 
 #: ../../source/behavior/functions/polynomial.rst:14
 msgid "Mathematical Background"
 msgstr ""
+"수치적 배경(Mathematical Background)"
 
 #: ../../source/behavior/functions/polynomial.rst:16
 msgid ""
-"Before diving until polynomials of arbitrary order, let's first consider how"
-" we could use a function to evaluate points on a line. Mathematically, what "
-"we'd like to define is a function that is applied as follows:"
+"Before diving until polynomials of arbitrary order, let's first consider "
+"how we could use a function to evaluate points on a line. Mathematically,"
+" what we'd like to define is a function that is applied as follows:"
+msgstr ""
+"임의 순서의 다항식까지 들어가기 전에 먼저 함수를 사용하여 선(line)에서의 점(point)들을 연산하는 방법을 고민해 보겠습니다. "
+"수학적으로  정의하고 싶은 것은 다음과 같이 적용되는 함수입니다."
+
+
+#: ../../source/behavior/functions/polynomial.rst:21
+msgid "y(x, x_0, y_0, x_1, y_1)"
 msgstr ""
 
 #: ../../source/behavior/functions/polynomial.rst:25
 msgid ""
-"where :math:`x` is the independent variable, :math:`(x_0,y_0)` is one point "
-"that defines the line and :math:`(x_1,y_1)` is the other point that defines "
-"the line.  Mathematically, such a function could be defined as follows:"
+"where :math:`x` is the independent variable, :math:`(x_0,y_0)` is one "
+"point that defines the line and :math:`(x_1,y_1)` is the other point that"
+" defines the line.  Mathematically, such a function could be defined as "
+"follows:"
+msgstr ""
+"여기서 :math:`x` 는 독립 변수이고, :math:`(x_0,y_0)` 는 선을 정의하는 하나의 점이고 :math:`(x_1,y_1)` 는 다른 하나의 점이며, 이 두 점을 통해 선을 정의 합니다. "
+"수학적으로 이러한 함수는 다음과 같이 정의할 수 있습니다."
+
+
+#: ../../source/behavior/functions/polynomial.rst:30
+msgid "y(x, x_0, y_0, x_1, y_1) = \\frac{y_1-y_0}{x_1-x_0}(x-x_0)+y_0"
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:35
+#: ../../source/behavior/functions/polynomial.rst:34
 msgid ""
-"To reduce the number of arguments, let's assume that combine :math:`x_0` and"
-" :math:`y_0` into a single point represented by the vector "
-":math:`\\vec{p_0}` and we combine :math:`x_1` and :math:`y_1` into a single "
-"point represented by the vector :math:`\\vec{p_1}` so that the function is "
-"now invoked as:"
+"To reduce the number of arguments, let's assume that combine :math:`x_0` "
+"and :math:`y_0` into a single point represented by the vector "
+":math:`\\vec{p_0}` and we combine :math:`x_1` and :math:`y_1` into a "
+"single point represented by the vector :math:`\\vec{p_1}` so that the "
+"function is now invoked as:"
+msgstr ""
+"인수의 수를 줄이기 위해 :math:`x_0` 및 :math:`y_0` 을 벡터 :math:`\vec{p_0}` 로 표현하는 하나의 점으로 통합하고, "
+":math:`x_1` 및 :math:`y_1` 을 벡터 :math:`\vec{p_1}` 로 표현하는 하나의 점으로 통합하여 아래와 같이 정의 합니다."
+
+
+#: ../../source/behavior/functions/polynomial.rst:40
+msgid "\\mathtt{Line}(x, \\vec{p_0}, \\vec{p_1})"
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:46
+#: ../../source/behavior/functions/polynomial.rst:45
 msgid "Modelica Representation"
 msgstr ""
+"모델리카 표현(Modelica Representation)"
 
-#: ../../source/behavior/functions/polynomial.rst:48
+#: ../../source/behavior/functions/polynomial.rst:47
 msgid ""
-"The question now is how can we transform this mathematical relationship into"
-" a function that we can invoke from within a Modelica model.  To do this, we"
-" must define a new Modelica function."
+"The question now is how can we transform this mathematical relationship "
+"into a function that we can invoke from within a Modelica model.  To do "
+"this, we must define a new Modelica function."
 msgstr ""
+"앞서 살펴본 수학적 관계를 모델리카 모델 내에서 호출할 수 있는 함수로 변환하는 것 이 필요하고, 이를 위해서는 새로운 모델리카 함수를 정의해야 합니다."
 
-#: ../../source/behavior/functions/polynomial.rst:52
+
+
+#: ../../source/behavior/functions/polynomial.rst:51
 msgid ""
-"It turns out that a function definition is very similar (syntactically, at "
-"least) to a :ref:`model-definition`.  Here is the definition of our ``Line``"
-" function in Modelica:"
+"It turns out that a function definition is very similar (syntactically, "
+"at least) to a :ref:`model-definition`.  Here is the definition of our "
+"``Line`` function in Modelica:"
 msgstr ""
+"아래에 보이는 모델리카의 ``Line`` 함수 정의를 보면, 함수 정의는 (최소한 구문적으로) 모델 정의와 매우 유사하다는 것을 알 수 있습니다.""
 
-#: ../../source/behavior/functions/polynomial.rst:64
+#: ../../source/behavior/functions/polynomial.rst:63
 msgid ""
-"All the arguments to the function are prefixed with the ``input`` qualifier."
-"  The result of the function has the ``output`` qualifier. The body of the "
-"function is an ``algorithm`` section.  The value for the return value (``y``"
-" in this case) is computed by the ``algorithm`` section."
+"All the arguments to the function are prefixed with the ``input`` "
+"qualifier.  The result of the function has the ``output`` qualifier. The "
+"body of the function is an ``algorithm`` section.  The value for the "
+"return value (``y`` in this case) is computed by the ``algorithm`` "
+"section."
 msgstr ""
+"함수에 대한 모든 인수에는 ``input`` , 함수의 결과에는 ``output`` 한정자가 붇습니다. "
+"함수의 본문은 ``algorithm`` 섹션에 구현되는데, 여기에서 반환 값(이 경우 ``y``)이 계산합니다."
 
-#: ../../source/behavior/functions/polynomial.rst:70
+
+#: ../../source/behavior/functions/polynomial.rst:69
 msgid ""
-"So in this case, the ``output`` value, ``y``, is computed in terms of the "
-"``input`` values ``x``, ``p0`` and ``p1``.  Note that there is no ``return``"
-" statement in this function.  Whatever the value of the ``output`` variable "
-"is at the conclusion of the ``algorithm`` section is automatically the value"
-" returned."
+"So in this case, the ``output`` value, ``y``, is computed in terms of the"
+" ``input`` values ``x``, ``p0`` and ``p1``.  Note that there is no "
+"``return`` statement in this function.  Whatever the value of the "
+"``output`` variable is at the conclusion of the ``algorithm`` section is "
+"automatically the value returned."
 msgstr ""
+"따라서 이 경우는 ``input`` 값인 ``x``, ``p0`` 및 ``p1`` 를 통해 ``output`` 값인 ``y`` 를 계산합니다. "
+"그리고, 이 함수에는 ``return`` 문이 없는데, ``algorithm`` 섹션의 결론에 있는 ``output`` 변수의 값은 그것이 무엇이든 자동으로 반환되는 값이 되기 때문입니다. "
 
-#: ../../source/behavior/functions/polynomial.rst:76
+
+#: ../../source/behavior/functions/polynomial.rst:75
 msgid ""
-"A couple of things to note that were discussed in previous chapters. First, "
-"note the descriptive strings on both the function itself and the arguments."
-"  These are very useful in documenting the purpose of the function and its "
-"arguments.  Also note how the points use arrays to represent a two-"
-"dimensional vector and how those arrays are indexed in this example."
+"A couple of things to note that were discussed in previous chapters. "
+"First, note the descriptive strings on both the function itself and the "
+"arguments.  These are very useful in documenting the purpose of the "
+"function and its arguments.  Also note how the points use arrays to "
+"represent a two-dimensional vector and how those arrays are indexed in "
+"this example."
 msgstr ""
+"이전 장에서 다루었기 때문에 알고 있는 내용이겠지만 추가해서 두 가지를 설명하면,  "
+"첫번째로 함수 자체와 인수 모두에 대한 설명 문자열을 통해서 함수와 인수의 목적을 문서화하고 있습니다. "
+"두번째로는 이 예제에서 다루는 점(point)을 배열을 사용하여 2차원 벡터를 나타내는 방법을 사용하고 해당 배열을 인덱싱하는 방법을 사용하고 있습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:83
+
+#: ../../source/behavior/functions/polynomial.rst:82
 msgid ""
-"One troubling aspect of the ``Line`` model is the length of the expression "
-"used to compute ``y``.  It would be nice if we could break that expression "
-"down."
+"One troubling aspect of the ``Line`` model is the length and complexity "
+"of the expression used to compute ``y``.  It would be nice if we could "
+"break that expression down."
 msgstr ""
+"``Line`` 모델은 ``y`` 를 계산하는 데 사용하는 표현의 길이가 길고 복잡한데, 이러한 표현 방식을 깨뜨릴 수 있다면 좋을 것입니다. "
 
-#: ../../source/behavior/functions/polynomial.rst:88
+#: ../../source/behavior/functions/polynomial.rst:87
 msgid "Intermediate Variables"
 msgstr ""
+"매개 변수(Intermediate Variables)"
 
-#: ../../source/behavior/functions/polynomial.rst:90
+#: ../../source/behavior/functions/polynomial.rst:89
 msgid ""
 "In order to simplify the expression for ``y``, we need to introduce some "
-"intermediate variables.  We can already see that ``x``, ``p0`` and ``p1`` "
-"are variables that we can use from within the function. We'd like to "
-"introduce additional variables, but they shouldn't be arguments.  Instead, "
-"their values should be computed \"internally\" to the function.  To achieve "
-"this, we create a collection of variables that are ``protected``.  Such "
-"variables are assumed to be computed internally by the function.  Here is an"
-" example that uses ``protected`` to declare and compute two internal "
-"variables:"
+"intermediate variables.  We can already see that ``x``, ``p0`` and ``p1``"
+" are variables that we can use from within the function. We'd like to "
+"introduce additional variables, but they shouldn't be arguments.  "
+"Instead, their values should be computed \"internally\" to the function."
+"  To achieve this, we create a collection of variables that are "
+"``protected``.  Such variables are assumed to be computed internally by "
+"the function.  Here is an example that uses ``protected`` to declare and "
+"compute two internal variables:"
 msgstr ""
+"``y`` 에 대한 표현을 단순화하기 위해 일부 매개 변수를 도입하겠습니다. "
+"이미 ``x``, ``p0`` 및 ``p1`` 이 함수 내에서 사용할 수 있는 변수라는 것은 알고 있고, 여기에 추가 변수를 도입하고 싶지만 인수가 되어서는 안 됩니다. "
+"대신, 해당 값은 함수에 대해 "내부적으로(internally)" 계산되어야 합니다. "
+"이 조건을 만족하기 위해 ``보호(protected)`` 되는 변수의 모임을 만드는데, 이러한 변수는 함수에 의해 내부적으로 계산되는 것으로 간주됩니다. "
+"다음은 ``protected`` 를 사용하여 두 개의 내부 변수를 선언하고 계산하는 예입니다."
 
-#: ../../source/behavior/functions/polynomial.rst:105
+
+#: ../../source/behavior/functions/polynomial.rst:104
 msgid ""
-"This model introduces two new variables.  One variable, ``m``, represents "
-"the slope of the line and the other, ``b``, represents the return value for "
-"the condition when ``x=0``.  Having computed these two intermediate "
+"This model introduces two new variables.  One variable, ``m``, represents"
+" the slope of the line and the other, ``b``, represents the return value "
+"for the condition when ``x=0``.  Having computed these two intermediate "
 "variables, the expression to evaluate ``y`` becomes the more easily "
 "recognized form ``y := m*x+b``."
 msgstr ""
+"이 모델은 두 가지 새로운 변수를 도입합니다. "
+"하나의 변수 ``m`` 은 선의 기울기를 나타내고 ``b`` 는 ``x=0`` 일 때 조건에 대한 반환 값을 나타냅니다. "
+"이 두 매개 변수를 계산하면 ``y`` 를 연산하는 표현식이 ``y := m*x+b`` 형식으로 더 쉽게 인식됩니다."
 
-#: ../../source/behavior/functions/polynomial.rst:112
+
+#: ../../source/behavior/functions/polynomial.rst:111
 msgid "Computing a Polynomial"
 msgstr ""
+"다항식 계산(Computing a Polynomial)"
 
-#: ../../source/behavior/functions/polynomial.rst:115
+#: ../../source/behavior/functions/polynomial.rst:114
 msgid "Mathematical Definition"
 msgstr ""
+"수치적 정의 (Mathematical Definition)"
 
-#: ../../source/behavior/functions/polynomial.rst:117
+
+#: ../../source/behavior/functions/polynomial.rst:116
 msgid ""
 "Of course, our goal for this section is to create a function that can "
 "compute arbitrary polynomials.  So now that we've seen a few basic "
 "functions, let us proceed with our ultimate goal.  We will formulate a "
 "function that is invoked as follows:"
 msgstr ""
+"이 섹션의 목표는 임의의 다항식을 계산할 수 있는 함수를 만드는 것입니다. "
+"이제 몇 가지 기본 기능을 살펴보았으므로 궁극적인 목표를 진행해 보겠습니다. "
+"다음과 같이 호출되는 함수를 공식으로 표현 해보겠습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:126
-msgid ""
-"where :math:`x` is again the independent variable and :math:`\\vec{c}` is a "
-"vector of coefficients such that our polynomial is evaluated as:"
+
+#: ../../source/behavior/functions/polynomial.rst:121
+msgid "p(x, \\vec{c})"
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:133
+#: ../../source/behavior/functions/polynomial.rst:125
 msgid ""
-"where ``N`` is the number of coefficients passed to the function. There are "
-"two important things to note at this point.  First, **the first element in**"
-" :math:`\\vec{c}` **corresponds to the highest order term in the "
-"polynomial**.  Second, we are using a notation that assumes that the "
-"elements in :math:`\\vec{c}` are numbered **starting from 1** to make the "
-"transition to Modelica code (where arrays are indexed starting from 1) "
+"where :math:`x` is again the independent variable and :math:`\\vec{c}` is"
+" a vector of coefficients such that our polynomial is evaluated as:"
+msgstr ""
+"여기서 :math:`x` 는 독립 변수이고 :math:`\vec{c}` 는 다항식이 다음과 같이 해석되는 계수의 벡터입니다."
+
+#: ../../source/behavior/functions/polynomial.rst:128
+#: ../../source/behavior/functions/polynomial.rst:264
+msgid "p(x, \\vec{c}) = \\sum_{i=1}^{N} c_i x^{N-i}"
+msgstr ""
+
+#: ../../source/behavior/functions/polynomial.rst:132
+msgid ""
+"where ``N`` is the number of coefficients passed to the function. There "
+"are two important things to note at this point.  First, **the first "
+"element in** :math:`\\vec{c}` **corresponds to the highest order term in "
+"the polynomial**.  Second, we are using a notation that assumes that the "
+"elements in :math:`\\vec{c}` are numbered **starting from 1** to make the"
+" transition to Modelica code (where arrays are indexed starting from 1) "
 "easier."
 msgstr ""
+"여기서 ``N`` 은 함수에 전달된 계수의 수인데, 이 시점에서 주목해야 할 두 가지 중요한 사항이 있습니다. "
+"첫째, **첫 번째 요소** :math:`\vec{c}` **는 다항식의 최상위 항에 해당합니다**. "
+"둘째,  모델리카 코드로의 전환을 더 쉽게 하기 위해 :math:`\vec{c}` 의 요소가 **1부터 시작하여** 번호가 매겨진다(배열이 1부터 시작하여 인덱싱됨)고 가정하는 표기법을 사용하고 있습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:141
+
+#: ../../source/behavior/functions/polynomial.rst:140
 msgid ""
-"Note that the definition for :math:`p` above is easy to read and understand."
-"  But when working with floating point numbers with finite precision, it is "
-"more efficient and more accurate to use a recursive approach for evaluating "
-"the polynomial.  For a :math:`4^{th}` order polynomial, the evaluation would"
-" be:"
+"Note that the definition for :math:`p` above is easy to read and "
+"understand.  But when working with floating point numbers with finite "
+"precision, it is more efficient and more accurate to use a recursive "
+"approach for evaluating the polynomial.  For a :math:`4^{th}` order "
+"polynomial, the evaluation would be:"
+msgstr ""
+"위의 :math:`p` 에 대한 정의는 읽고 이해하기 쉽습니다. "
+"하지만, 다항식을 연산하기 위해 유한한 정밀도의 부동 소수점 숫자로 계산하는 것 보다, 재귀 접근 방식을 사용하는 것이 더 효율적이고 정확합니다."
+":math:`4^{th}` 차수 다항식의 경우 연산 방법은 다음과 같습니다."
+
+
+#: ../../source/behavior/functions/polynomial.rst:146
+msgid "p(x, \\vec{c}) = ((c_1 x + c_2) x + c_3) x +c_4"
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:151
+#: ../../source/behavior/functions/polynomial.rst:150
 msgid ""
 "This is more efficient because it relies on simple multiplication and "
-"addition operations and avoids performing exponentiation operations, which "
-"are more expensive,  It is more accurate because exponentiation can easily "
-"trigger round-off or truncation errors in finite precision floating point "
-"representations."
+"addition operations and avoids performing exponentiation operations, "
+"which are more expensive,  It is more accurate because exponentiation can"
+" easily trigger round-off or truncation errors in finite precision "
+"floating point representations."
 msgstr ""
+"이것은 단순한 곱셈 및 덧셈 연산에 의존하고 더 비용이 많이 소모되는(연산에 시간이 소모되는) 지수 연산을 수행하지 않기 때문에 더 효율적입니다. "
+"지수 연산은 유한 정밀도 부동 소수점 표현에서 빈번하게 반올림 또는 잘림 오차를 유발할 수 있기 때문에 오히려 이러한 방식이 더 정확합니다. "
 
-#: ../../source/behavior/functions/polynomial.rst:158
+
+#: ../../source/behavior/functions/polynomial.rst:157
 msgid "Modelica Definition"
 msgstr ""
+"모델리카 정의(Modelica Definition)"
 
-#: ../../source/behavior/functions/polynomial.rst:160
+
+#: ../../source/behavior/functions/polynomial.rst:159
 msgid ""
-"Now that we've defined precisely what computations we want the function to "
-"perform, we are just left with the task of defining the function in "
+"Now that we've defined precisely what computations we want the function "
+"to perform, we are just left with the task of defining the function in "
 "Modelica.  In this case, our polynomial evaluation function can be "
 "represented in Modelica as:"
 msgstr ""
+"이제 함수가 수행할 계산을 정확하게 정의했으므로 모델리카에서 함수를 정의하는 작업만 남았습니다."
+"앞서 설명한 다항식을 해석하는 함수를 모델리카로 다음과 같이 구현합니다. "
 
-#: ../../source/behavior/functions/polynomial.rst:169
+
+#: ../../source/behavior/functions/polynomial.rst:168
 msgid ""
-"Again, all the arguments to the function have the ``input`` qualifier and "
-"the return value has the ``output`` qualifier.  As with the previous "
-"example, we've defined an intermediate variable, ``n``, as a convenient way "
-"to refer to the length of the coefficient vector.  We also see how a ``for``"
-" loop can be used to represent the recursive evaluation of our polynomial "
-"for any arbitrary order."
+"Again, all the arguments to the function have the ``input`` qualifier and"
+" the return value has the ``output`` qualifier.  As with the previous "
+"example, we've defined an intermediate variable, ``n``, as a convenient "
+"way to refer to the length of the coefficient vector.  We also see how a "
+"``for`` loop can be used to represent the recursive evaluation of our "
+"polynomial for any arbitrary order."
 msgstr ""
+"다시 말하지만 함수에 대한 모든 인수에는 ``input`` 한정자가 있고 반환 값에는 ``output`` 한정자가 있습니다. "
+"이전 예제와 마찬가지로 계수 벡터의 길이를 편리하게 참조하기 위해 매개 변수인 ``n`` 을 정의했으며, ``for`` 루프를 사용하여 임의의 순서에 대한 다항식의 재귀적 해석 방법을 사용했습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:176
+
+
+#: ../../source/behavior/functions/polynomial.rst:175
 msgid ""
-"To verify that this function is working properly, let's use it in a model.  "
-"Consider the following Modelica model:"
+"To verify that this function is working properly, let's use it in a "
+"model.  Consider the following Modelica model:"
 msgstr ""
+"이 기능이 제대로 작동하는지 확인하기 위해 아래와 같은 모델리카 모델에서 사용해 보겠습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:183
+#: ../../source/behavior/functions/polynomial.rst:182
 msgid ""
-"Remember that the first element in ``c`` corresponds to the highest order "
-"term.  If we compare a direct evaluation of the polynomial, ``yp``, with one"
-" computed by our function, ``yf``, we see they are identical:"
+"Remember that the first element in ``c`` corresponds to the highest order"
+" term.  If we compare a direct evaluation of the polynomial, ``yp``, with"
+" one computed by our function, ``yf``, we see they are identical:"
 msgstr ""
+"``c`` 의 첫 번째 요소는 최상위 항에 해당함을 기억해야합니다. "
+"직접 연산한 다항식 ``yp`` 와 함수 ``yf`` 로 계산한 값을 비교하면 둘이 동일함을 알 수 있습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:191
+
+#: ../../source/behavior/functions/polynomial.rst:190
 msgid "Differentiation"
 msgstr ""
+"미분(Differentiation)"
 
-#: ../../source/behavior/functions/polynomial.rst:193
+#: ../../source/behavior/functions/polynomial.rst:192
 msgid ""
-"It is completely plausible that this polynomial evaluation might be used to "
-"represent a quantity that was ultimately differentiated by the Modelica "
-"compiler.  The following examples is admittedly contrived, but it "
-"demonstrates how such a polynomial might come to be differentiated in a "
-"model:"
+"It is completely plausible that this polynomial evaluation might be used "
+"to represent a quantity that was ultimately differentiated by the "
+"Modelica compiler.  The following examples is admittedly contrived, but "
+"it demonstrates how such a polynomial might come to be differentiated in "
+"a model:"
 msgstr ""
+"모델리카 컴파일러에 의해 수치를 미분하는데 다항식의 해석을 사용할 수 있습니다."
+"다음은 어떻게 다항식 모델이 미분 될 수 있는지 보여주기 위해 인위적으로 만들어진 예제 입니다."
 
-#: ../../source/behavior/functions/polynomial.rst:203
+
+#: ../../source/behavior/functions/polynomial.rst:202
 msgid ""
-"Here we have the same equations for ``yf``, evaluated using ``Polynomial``, "
-"and ``yp``, evaluated directly as a polynomial.  But we've added two "
-"additional variables, ``d_yf`` and ``d_yp`` representing the derivative of "
-"``yf`` and ``yp``, respectively.  If we attempt to compile this model the "
-"compiler is very likely to throw an error related to the equation for "
-"``d_yf``.  The reason is that it has no way to compute the derivative of "
-"``yf``.  This is because, unlike ``yp`` which is computed with a simple "
-"expression, we've hidden the details of how ``yf`` is computed behind the "
-"function ``Polynomial``. In general, Modelica tools do not look at the "
-"implementations of functions to compute derivatives and, even if they did, "
-"determining the derivative of an arbitrary algorithm is not an easy thing to"
-" do."
+"Here we have the same equations for ``yf``, evaluated using "
+"``Polynomial``, and ``yp``, evaluated directly as a polynomial.  But "
+"we've added two additional variables, ``d_yf`` and ``d_yp`` representing "
+"the derivative of ``yf`` and ``yp``, respectively.  If we attempt to "
+"compile this model the compiler is very likely to throw an error related "
+"to the equation for ``d_yf``.  The reason is that it has no way to "
+"compute the derivative of ``yf``.  This is because, unlike ``yp`` which "
+"is computed with a simple expression, we've hidden the details of how "
+"``yf`` is computed behind the function ``Polynomial``. In general, "
+"Modelica tools do not look at the implementations of functions to compute"
+" derivatives and, even if they did, determining the derivative of an "
+"arbitrary algorithm is not an easy thing to do."
 msgstr ""
+"여기에서 ``Polynomial`` 함수를 사용하여 연산하는 ``yf`` 와 다항식으로 직접 연산하는 ``yp`` 가 있으며, 각각 ``yf`` 와 ``yp`` 의 미분을 나타내는 ``d_yf`` 와 ``d_yp`` 라는 두 개의 변수를 추가했습니다. "
+"이때, 이 모델을 컴파일하려고 하면 컴파일러에서 ``d_yf`` 방정식과 관련된 오류를 던질 가능성이 매우 높습니다."
+"그 이유는 ``yf`` 의 도함수를 계산할 방법이 없기 때문입니다. "
+"간단한 식으로 계산되는 ``yp`` 와 달리 ``yf`` 가 어떻게 계산되는지에 대한 세부 정보는 ``Polynomial`` 함수에 따라서 달라지기 때문인데,"
+"일반적으로 모델리카 시뮬레이션 소프트웨어는 도함수를 계산하기 위해 함수의 구현을 살펴보지 않으며"
+"만약 내부를 본다고 해도 임의 알고리즘의 도함수를 결정하는 것은 쉬운 일이 아닙니다."
 
-#: ../../source/behavior/functions/polynomial.rst:220
+
+#: ../../source/behavior/functions/polynomial.rst:219
 msgid ""
 "So the next question is how can we deal with this situation?  Won't this "
-"make it difficult to use our functions within models? Fortunately, Modelica "
-"gives us a way to specify how to evaluate the derivative of a function.  "
-"This is done by adding something called an ``annotation`` to the function "
-"definition."
+"make it difficult to use our functions within models? Fortunately, "
+"Modelica gives us a way to specify how to evaluate the derivative of a "
+"function.  This is done by adding something called an ``annotation`` to "
+"the function definition."
 msgstr ""
+"그럼 함수를 미분 해야할 때 어떻게 처리할 수 있는가에 대한 질문을 할 수 있습니다. "
+"미분이 안된다면 모델 내에서 함수를 사용하는 것이 어려워지지 않을까요? "
+"다행스럽게도 모델리카는 함수의 도함수를 해석하는 방법을 지정하는 문법을 제공하고, 이것은 함수 정의에 ``annotation`` 이라는 것을 추가함으로써 구현할 수 있습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:0
+
 msgid "Annotations"
 msgstr ""
+"주석(Annotations)"
 
-#: ../../source/behavior/functions/polynomial.rst:228
+#: ../../source/behavior/functions/polynomial.rst:227
 msgid ""
-"An annotation is a piece of metadata that doesn't describe the behavior of "
-"the function directly (*i.e.,* it doesn't affect the value the function "
-"returns).  Instead, annotations are used by Modelica compilers to give them "
-"\"hints\" about how to deal with certain situations.  Annotations are always"
-" \"optional\" information which means tools are not required to use the "
-"information when provided.  The Modelica specification defines a number of "
-"standard annotations so that they are interpreted consistently across "
-"Modelica tools."
+"An annotation is a piece of metadata that doesn't describe the behavior "
+"of the function directly (*i.e.,* it doesn't affect the value the "
+"function returns).  Instead, annotations are used by Modelica compilers "
+"to give them \"hints\" about how to deal with certain situations.  "
+"Annotations are always \"optional\" information which means tools are not"
+" required to use the information when provided.  The Modelica "
+"specification defines a number of standard annotations so that they are "
+"interpreted consistently across Modelica tools."
 msgstr ""
+"주석은 함수의 동작을 직접 구현하지 않는 메타데이터 중 일부 입니다. (*즉,* 함수가 반환하는 값에 영향을 주지 않음). "
+"대신 주석은 모델리카 컴파일러에서 특정 상황을 처리하는 방법에 대한 "힌트"를 제공하는 데 사용합니다. "
+"주석은 항상 "선택적" 정보이며, 이는 시뮬레이션 소프트웨어가 제공된 정보를 필수적으로 사용하지 않아도 됩을 의미합니다. "
+"모델리카 사양(spec)에서는 여러 표준 주석을 정의하여 모델리카 시뮬레이션 소프트웨어에서 일관되게 해석되도록 합니다."
 
-#: ../../source/behavior/functions/polynomial.rst:238
+
+
+#: ../../source/behavior/functions/polynomial.rst:237
 msgid ""
-"In this case, what we need is the ``derivative`` annotation because it will "
-"allow us to communicate information to the Modelica compiler on how to "
-"evaluate the derivative of our function.  To do this, we define a new "
+"In this case, what we need is the ``derivative`` annotation because it "
+"will allow us to communicate information to the Modelica compiler on how "
+"to evaluate the derivative of our function.  To do this, we define a new "
 "evaluation function, ``PolynomialWithDerivative``, as follows:"
 msgstr ""
+"이 경우에 우리에게 필요한 것은 ``derivative`` 주석이며, 함수의 도함수를 해석하는 방법에 대한 정보를 모델리카 컴파일러에 전달할 수 있게 해 줍니다. "
+"이를 위해 다음과 같이 새롭게 해석할 수 있는  함수인 ``PolynomialWithDerivative`` 를 정의합니다."
 
-#: ../../source/behavior/functions/polynomial.rst:248
+
+#: ../../source/behavior/functions/polynomial.rst:247
 msgid ""
 "Note that this function is identical except for the highlighted line. In "
 "other words, all we needed to do was add the line:"
 msgstr ""
+"이 기능은 강조 표시된 줄을 제외하고는 동일합니다."
+"즉, 다음 줄을 추가하기만 하면 됩니다."
 
-#: ../../source/behavior/functions/polynomial.rst:255
+
+#: ../../source/behavior/functions/polynomial.rst:254
 msgid ""
-"to our function in order to explain to the Modelica compiler how to evaluate"
-" the derivative of this function.  What it indicates is that the function "
-"``PolynomialFirstDerivative`` should be used to evaluate the derivative of "
-"``PolynomialWithDerivative``."
+"to our function in order to explain to the Modelica compiler how to "
+"evaluate the derivative of this function.  What it indicates is that the "
+"function ``PolynomialFirstDerivative`` should be used to evaluate the "
+"derivative of ``PolynomialWithDerivative``."
 msgstr ""
+"모델리카 컴파일러에게 이 함수의 도함수를 해석하는 방법을 설명하기 위해 함수 자체에 표현 해줍니다."
+"이것은 ``PolynomialFirstDerivative`` 함수를 사용하여 ``PolynomialWithDerivative`` 의 도함수를 해석해야 한다는 정보를 나타냅니다."
 
-#: ../../source/behavior/functions/polynomial.rst:260
+#: ../../source/behavior/functions/polynomial.rst:259
 msgid ""
-"Before discussing the implementation of the ``PolynomialFirstDerivative`` "
-"function, let's first understand, mathematically, what is required.  Recall "
-"our original definition of our polynomial interpolation function:"
+"Before discussing the implementation of the ``PolynomialFirstDerivative``"
+" function, let's first understand, mathematically, what is required.  "
+"Recall our original definition of our polynomial interpolation function:"
 msgstr ""
+"``PolynomialFirstDerivative`` 함수의 구현을 논의하기 전에 먼저 수학적으로 무엇이 필요한지 이해 해야 합니다."
+"다항식 보간 함수의 원래 정의를 상기 해보면 아래를 알 수 있습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:269
+
+#: ../../source/behavior/functions/polynomial.rst:268
 msgid ""
 "Note that :math:`p` takes two arguments.  If we wish to differentiate "
-":math:`p` by some arbitrary variable :math:`z`, we can use the chain rule to"
-" express the total derivative of :math:`p` with respect to :math:`z` as:"
+":math:`p` by some arbitrary variable :math:`z`, we can use the chain rule"
+" to express the total derivative of :math:`p` with respect to :math:`z` "
+"as:"
+msgstr ""
+":math:`p` 는 두 개의 인수를 사용합니다. "
+"어떤 임의의 변수 :math:`z` 로 :math:`p` 를 미분하려는 경우, 연쇄 법칙(chain rule)을 사용하여 :math:`z` 에 대한 :math:`p` 의 전체 도함수를 다음과 같이 표현할 수 있습니다. "
+
+
+#: ../../source/behavior/functions/polynomial.rst:273
+msgid ""
+"\\frac{\\mathrm{d}p(x, \\vec{c})}{\\mathrm{d}z} = \\frac{\\partial "
+"p}{\\partial x} \\frac{\\mathrm{d}x}{\\mathrm{d}z} + \\frac{\\partial "
+"p}{\\partial \\vec{c}} \\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z}"
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:281
+#: ../../source/behavior/functions/polynomial.rst:280
 msgid ""
 "We can derive the following relations from our original definition of "
-":math:`p`.  First, for the partial derivative of :math:`p` with respect to "
-":math:`x` we get:"
+":math:`p`.  First, for the partial derivative of :math:`p` with respect "
+"to :math:`x` we get:"
+msgstr ""
+":math:`p` 의 원래 정의에서 다음 관계를 도출할 수 있습니다. 먼저 x에 대한 :math:`p` 의 편도함수에 대해 다음을 얻습니다."
+
+#: ../../source/behavior/functions/polynomial.rst:284
+msgid "\\frac{\\partial p}{\\partial x} = p(x, c')"
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:289
+#: ../../source/behavior/functions/polynomial.rst:288
 msgid "where :math:`c'` is defined as:"
 msgstr ""
+"여기서 :math:`c'` 는 다음과 같이 정의합니다."
 
-#: ../../source/behavior/functions/polynomial.rst:295
+#: ../../source/behavior/functions/polynomial.rst:290
+msgid "c'_i = (N-i)c_i"
+msgstr ""
+
+#: ../../source/behavior/functions/polynomial.rst:294
 msgid ""
 "Second, for the partial derivative of :math:`p` with respect to "
 ":math:`\\vec{c}` we get:"
 msgstr ""
+"둘째, :math:`\vec{c}` 에 대한 :math:`p` 의 편미분에 대해 다음을 얻습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:302
-msgid ""
-"where the **vector** :math:`\\vec{d_i}` is the :math:`i^{th}` column of an "
-":math:`NxN` identity matrix."
+
+#: ../../source/behavior/functions/polynomial.rst:297
+msgid "\\frac{\\partial p}{\\partial c_i} = p(x, \\vec{d_i})"
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:305
+#: ../../source/behavior/functions/polynomial.rst:301
+msgid ""
+"where the **vector** :math:`\\vec{d_i}` is the :math:`i^{th}` column of "
+"an :math:`NxN` identity matrix."
+msgstr ""
+"여기서 **벡터** :math:`\vec{d_i}` 는 :math:`NxN` 항등 행렬의 :math:`i^{th}` 열입니다."
+
+#: ../../source/behavior/functions/polynomial.rst:304
 msgid ""
 "It turns out that for efficiency reasons, it is better for the Modelica "
 "compiler to give us :math:`\\frac{\\mathrm{d}x}{\\mathrm{d}z}` and "
-":math:`\\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z}` than to provide functions "
-"to evaluate :math:`\\frac{\\partial p}{\\partial x}` and "
-":math:`\\frac{\\partial p}{\\partial c_i}`.  So, mathematically speaking, "
-"what the Modelica compiler needs is a new function that is invoked with the "
-"following arguments:"
+":math:`\\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z}` than to provide "
+"functions to evaluate :math:`\\frac{\\partial p}{\\partial x}` and "
+":math:`\\frac{\\partial p}{\\partial c_i}`.  So, mathematically speaking,"
+" what the Modelica compiler needs is a new function that is invoked with "
+"the following arguments:"
+msgstr ""
+"효율성을 높이기 위해서 모델리카 컴파일러가 :math:`\frac{\partial p}{\partial x}` 그리고 :math:`\frac{\partial p}{\partial c_i}` 를 해석하는 것 보다"
+":math:`\frac{\mathrm{d}x}{\mathrm{d}z}` 및 :math:`\frac{\mathrm{d}\vec{c}}{\mathrm{d}z}` 를 제공하는 것이 더 좋습니다. "
+"따라서 수학적으로 말하면 모델리카 컴파일러에 필요한 것은 다음 인수로 호출되는 새로운 함수입니다."
+
+
+#: ../../source/behavior/functions/polynomial.rst:312
+msgid ""
+"df(x, \\vec{c}, \\frac{\\mathrm{d}x}{\\mathrm{d}z}, "
+"\\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z})"
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:317
+#: ../../source/behavior/functions/polynomial.rst:316
 msgid "such that:"
 msgstr ""
+"다음과 같이:"
 
-#: ../../source/behavior/functions/polynomial.rst:325
+#: ../../source/behavior/functions/polynomial.rst:318
 msgid ""
-"For this reason, the ``derivative`` annotation should point to a function "
-"that takes the same arguments as :math:`df`.  In our case, that function, "
-"``PolynomialFirstDerivative`` would be defined as follows:"
+"df(x, \\vec{c}, \\frac{\\mathrm{d}x}{\\mathrm{d}z}, "
+"\\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z}) = "
+"\\frac{\\mathrm{d}f}{\\mathrm{d}z}"
 msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:334
+#: ../../source/behavior/functions/polynomial.rst:324
 msgid ""
-"Note how the arguments of our original function are repeated to create twice"
-" as many arguments (as we would expect).  The second set of arguments "
-"represent the :math:`\\frac{\\mathrm{d}x}{\\mathrm{d}z}` and "
-":math:`\\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z}` quantities, respectively."
-"  Note that the assumption is that :math:`z` is a scalar so the types of the"
-" input arguments are the same.  Exploiting our knowledge about the partial "
-"derivatives of a polynomial, the calculation of the derivatives is done by "
-"leveraging our polynomial evaluation function."
+"For this reason, the ``derivative`` annotation should point to a function"
+" that takes the same arguments as :math:`df`.  In our case, that "
+"function, ``PolynomialFirstDerivative`` would be defined as follows:"
 msgstr ""
+"이러한 이유로 ``derivative`` 주석은 :math:`df` 와 동일한 인수를 취하는 함수를 가리켜야 합니다. "
+"이번 예제의 경우 ``PolynomialFirstDerivative`` 함수는 다음과 같이 정의합니다."
 
-#: ../../source/behavior/functions/polynomial.rst:344
+
+#: ../../source/behavior/functions/polynomial.rst:333
+msgid ""
+"Note how the arguments of our original function are repeated to create "
+"twice as many arguments (as we would expect).  The second set of "
+"arguments represent the :math:`\\frac{\\mathrm{d}x}{\\mathrm{d}z}` and "
+":math:`\\frac{\\mathrm{d}\\vec{c}}{\\mathrm{d}z}` quantities, "
+"respectively.  Note that the assumption is that :math:`z` is a scalar so "
+"the types of the input arguments are the same.  Exploiting our knowledge "
+"about the partial derivatives of a polynomial, the calculation of the "
+"derivatives is done by leveraging our polynomial evaluation function."
+msgstr ""
+"(예상한 대로)원래 함수의 인수가 반복되어 두 배의 인수를 생성하는 방식으로 구현되었음을 볼 수 있습니다."
+"여기서 인수의 두 번째 집합은  :math:`\frac{\mathrm{d}x}{\mathrm{d}z}` 및 :math:`\frac{\mathrm{d}\vec{c}}{\mathrm{d}z}` 의 수량을 나타내고, "
+":math:`z` 가 스칼라이므로 입력 인수의 자료형이 동일하다는 가정을 했습니다. "
+"다항식의 편도함수에 대한 지식을 활용하여 다항식의 해석 기능의 결과인 파생값을 계산합니다."
+
+
+#: ../../source/behavior/functions/polynomial.rst:343
 msgid "We can exercise all of these functions using the following model:"
 msgstr ""
+"다음 모델을 사용하여 이러한 모든 기능을 실행할 수 있습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:350
+#: ../../source/behavior/functions/polynomial.rst:349
 msgid ""
-"Simulating this model and comparing results, we see agreement between ``yf``"
-" and ``yp`` as well as ``d_yf`` and ``d_yp``:"
+"Simulating this model and comparing results, we see agreement between "
+"``yf`` and ``yp`` as well as ``d_yf`` and ``d_yp``:"
 msgstr ""
+"이 모델을 시뮬레이션하고 결과를 비교하면 ``yf`` 와 ``yp``, ``d_yf`` 와 ``d_yp`` 사이의 결과가 일치함을 볼 수 있습니다."
 
-#: ../../source/behavior/functions/polynomial.rst:60
-msgid "input"
-msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:61
-msgid "function arguments"
-msgstr ""
+#~ msgid ""
+#~ "One troubling aspect of the ``Line`` "
+#~ "model is the length of the "
+#~ "expression used to compute ``y``.  It"
+#~ " would be nice if we could "
+#~ "break that expression down."
+#~ msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:62
-msgid "algorithm"
-msgstr ""
+#~ msgid "input"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:62
-msgid "in a function"
-msgstr ""
+#~ msgid "function arguments"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:216
-#: ../../source/behavior/functions/polynomial.rst:217
-msgid "annotation"
-msgstr ""
+#~ msgid "algorithm"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:217
-msgid "derivative"
-msgstr ""
+#~ msgid "in a function"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:218
-msgid "functions"
-msgstr ""
+#~ msgid "annotation"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/polynomial.rst:218
-msgid "differentiating"
-msgstr ""
+#~ msgid "derivative"
+#~ msgstr ""
+
+#~ msgid "functions"
+#~ msgstr ""
+
+#~ msgid "differentiating"
+#~ msgstr ""
+

@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/functions/control_flow.rst:4
 msgid "Control Flow"
 msgstr ""
+"제어 흐름(Control Flow)"
 
 #: ../../source/behavior/functions/control_flow.rst:6
 msgid ""
@@ -22,40 +25,56 @@ msgid ""
 "required.  In this section, we'll cover the different control structures "
 "that are allowed within a function definition."
 msgstr ""
+"경우에 따라 함수는 단순히 고정된 단계별 계산의 집합으로 볼 수 있습니다."
+"그러나 다른 경우에는 어떤 종류의 반복문 또는 반복이 필요한데, 이 섹션에서는 함수 정의 내에서 허용하는 다양한 제어 구조를 다루 겠습니다."
+
 
 #: ../../source/behavior/functions/control_flow.rst:12
 msgid "Branching"
 msgstr ""
+"분기(Branching)"
 
 #: ../../source/behavior/functions/control_flow.rst:14
 msgid ""
-"We've already seen use cases involving ``if`` statements and expressions.  "
-"These are, of course, allowed inside functions as well. In fact, in an "
-"``equation`` section there is a restriction on ``if`` statements that each "
-"branch of the ``if`` statement (*i.e.,* under all conditions) generate the "
-"same number of equations.  But that restriction does not apply in an "
-"``algorithm`` section (*e.g.,* in a function definition)."
+"We've already seen use cases involving ``if`` statements and expressions."
+"  These are, of course, allowed inside functions as well. In fact, in an "
+"``equation`` section there is a restriction on ``if`` statements that "
+"each branch of the ``if`` statement (*i.e.,* under all conditions) "
+"generate the same number of equations.  But that restriction does not "
+"apply in an ``algorithm`` section (*e.g.,* in a function definition)."
 msgstr ""
+"이미 ``if`` 문 그리고 ``if`` 표현식과 관련된 사용 사례를 보았던것 처럼 내부 함수에서도 분기가 허용됩니다."
+"실제로 ``equation`` 섹션에는 ``if`` 문의 각 분기(*즉, 모든 조건에서*)가 동일한 수의 방정식을 생성해야만 한다는 ``if`` 문에 대한 제한이 있었습니다. "
+"그러나 이러한 제한은 ``algorithm`` 섹션(*예:* 함수 정의에서)에는 적용되지 않았습니다"
+
 
 #: ../../source/behavior/functions/control_flow.rst:23
 msgid "Looping"
 msgstr ""
+"반복문(Looping)"
 
 #: ../../source/behavior/functions/control_flow.rst:28
 msgid ""
-"In an ``equation`` section, looping is (just like with branching) restricted"
-" to ensure that the number of equations generated is the same regardless of "
-"the state of the system.  For this reason, the only looping construct "
-"allowed in an ``equation`` section (and, therefore, the only one we have "
-"discussed up until now) is the ``for`` loop."
+"In an ``equation`` section, looping is (just like with branching) "
+"restricted to ensure that the number of equations generated is the same "
+"regardless of the state of the system.  For this reason, the only looping"
+" construct allowed in an ``equation`` section (and, therefore, the only "
+"one we have discussed up until now) is the ``for`` loop."
 msgstr ""
+"``equation`` 섹션에서 반복문을 사용할 때 (분기와 마찬가지로) 시스템 상태에 관계없이 생성된 방정식의 수가 동일해야만 했습니다."
+"그래서 ``equation`` 섹션에서 허용하는 유일한 반복문 구조는 ``for`` 루프였습니다."
+
 
 #: ../../source/behavior/functions/control_flow.rst:34
 msgid ""
-"The syntax of a ``for`` loop is the same in a function as it is in any other"
-" context.  It identifies an iteration variable and then assigns that "
-"iteration variable a set of values contained in a vector, *e.g.,*"
+"The syntax of a ``for`` loop is the same in a function as it is in any "
+"other context.  It identifies an iteration variable and then assigns that"
+" iteration variable a set of values contained in a vector, *e.g.,*"
 msgstr ""
+"다른 문법에서 사용한것과 마찬가지로 함수에서도 ``for`` 루프의 구문은 동일한데, "
+"반복 변수를 식별한 다음 해당 반복 변수에 벡터 값들을 할당하는 형태로 동작합니다."
+"*예를 들면* 아래와 같습니다. "
+
 
 #: ../../source/behavior/functions/control_flow.rst:45
 msgid ""
@@ -65,78 +84,95 @@ msgid ""
 "equations, there are no concerns about generating a specified number of "
 "equations when using ``if`` or ``for``."
 msgstr ""
+"``equation`` 섹션과 ``algorithm`` 섹션 사이에는 두 가지 주요 차이점이 있는데, 첫번째로 ``algorithm`` 섹션은 방정식 대신 명시적 대입문을 사용한다는 것입니다. "
+"그래서 ``if`` 또는 ``for`` 를 사용할 때 지정된 수의 방정식을 생성하는 것에 대해 걱정할 필요가 없습니다."
+
 
 #: ../../source/behavior/functions/control_flow.rst:54
 msgid ""
-"In addition, an ``algorithm`` section allows us the opportunity to be more "
-"flexible by permitting the use of ``while`` loops as well.  A ``while`` loop"
-" is not permitted in an ``equation`` section because, by its very nature, "
-"the number of iterations (and, therefore, the number of equations created in"
-" an ``equation`` section) is unpredictable. But this unpredictability is not"
-" an issue in an ``algorithm`` section."
+"In addition, an ``algorithm`` section allows us the opportunity to be "
+"more flexible by permitting the use of ``while`` loops as well.  A "
+"``while`` loop is not permitted in an ``equation`` section because, by "
+"its very nature, the number of iterations (and, therefore, the number of "
+"equations created in an ``equation`` section) is unpredictable. But this "
+"unpredictability is not an issue in an ``algorithm`` section."
 msgstr ""
+"``while`` 루프는 본질적으로 반복 횟수(따라서 ``equation`` 섹션에서 생성되는 방정식의 수)를 예측할 수 없기 때문에 ``equation`` 섹션에서 허용되지 않았지만,"
+"``algorithm`` 섹션은 ``while`` 루프의 사용을 허용함으로써 더 유연해질 수 있는 기회를 제공합니다."
+"하지만, 이러한 예측불가능성은 ``algorithm`` 섹션의 문제가 되기도 합니다."
+
+
 
 #: ../../source/behavior/functions/control_flow.rst:61
 msgid ""
-"As we already saw in the ``InterpolateVector`` function from our previous "
-"discussion of :ref:`Interpolation`, the syntax for a ``while`` loop is:"
+"As we already saw in the ``InterpolateVector`` function from our previous"
+" discussion of :ref:`Interpolation`, the syntax for a ``while`` loop is:"
 msgstr ""
+"Interpolation에 대해서 논의 하였던  ``InterpolateVector`` 함수에서 이미 보았듯이 ``while`` 루프의 구문은 다음과 같습니다."
 
 #: ../../source/behavior/functions/control_flow.rst:69
 msgid ""
-"The main elements of the ``while`` loop are the condition expression that "
-"determines whether to continue looping and the statements within the "
+"The main elements of the ``while`` loop are the condition expression that"
+" determines whether to continue looping and the statements within the "
 "``while`` loop."
 msgstr ""
+"``while`` 루프의 주요 요소는 ``while`` 루프 내의 문장과 루프를 계속할지 여부를 결정하는 조건식입니다."
 
 #: ../../source/behavior/functions/control_flow.rst:74
 msgid "``break`` and ``return``"
 msgstr ""
+"``break``  그리고 ``return`` ( ``break`` and ``return``)"
 
 #: ../../source/behavior/functions/control_flow.rst:78
 msgid ""
 "When iterating, it is sometimes necessary to terminate the iterations "
-"prematurely.  For example, in a ``for`` loop, the number of iterations is "
-"normally determined by the vector of values being iterated over.  But there "
-"are cases where subsequent iterations are unnecessary.  Similarly, in a "
-"``while`` loop, it may be convenient to have a check within the ``while`` "
-"loop that indicates when to terminate.  In these cases, a ``break`` "
-"statement can be used to terminate the innermost loop."
+"prematurely.  For example, in a ``for`` loop, the number of iterations is"
+" normally determined by the vector of values being iterated over.  But "
+"there are cases where subsequent iterations are unnecessary.  Similarly, "
+"in a ``while`` loop, it may be convenient to have a check within the "
+"``while`` loop that indicates when to terminate.  In these cases, a "
+"``break`` statement can be used to terminate the innermost loop."
 msgstr ""
+"반복문에서 때때로 반복을 조기에 종료해야 하는 경우가 있습니다."
+"예를 들어, ``for`` 루프에서 반복 횟수는 일반적으로 반복되는 값의 벡터에 의해 결정되지만, 이어서 반복하는 것이 불필요한 경우가 있습니다."
+"유사하게, ``while`` 루프에서 ``while`` 루프 내에서 종료 시점을 나타내는 검사를 하는 것이 편리할 수 있습니다. "
+"이 경우 ``break`` 문을 사용하여 가장 안쪽 루프를 종료할 수 있습니다."
+
 
 #: ../../source/behavior/functions/control_flow.rst:89
 msgid ""
-"Another issue of control flow involves when to terminate and exit from the "
-"``algorithm`` section itself.  There are many circumstances in which all the"
-" ``output`` variables have been assigned their final values.  While it is "
-"always true that ``if`` and ``else`` statements can be used to prevent any "
-"further calculations and assignments, it is often more readable to simply "
-"indicate clearly that no further calculations are needed.  In such cases, "
-"the ``return`` statement can be used to terminate any further processing "
-"within a function's ``algorithm`` section.  When a ``return`` statement is "
-"encountered, whatever values are currently associated with the ``output`` "
-"variables are the ones that will be returned."
+"Another issue of control flow involves when to terminate and exit from "
+"the ``algorithm`` section itself.  There are many circumstances in which "
+"all the ``output`` variables have been assigned their final values.  "
+"While it is always true that ``if`` and ``else`` statements can be used "
+"to prevent any further calculations and assignments, it is often more "
+"readable to simply indicate clearly that no further calculations are "
+"needed.  In such cases, the ``return`` statement can be used to terminate"
+" any further processing within a function's ``algorithm`` section.  When "
+"a ``return`` statement is encountered, whatever values are currently "
+"associated with the ``output`` variables are the ones that will be "
+"returned."
 msgstr ""
+"제어 흐름의 또 다른 문제는 ``algorithm`` 섹션 자체를 종료하는 것과  종료하는 시기와 관련이 있습니다. "
+"예를들어 모든 ``output`` 변수에 최종 값이 할당된 상황이 있을 수 있습니다. "
+"이때, ``if`` 및 ``else`` 문을 사용하여 추가 계산 및 할당을 방지할 수 있는 것은 늘 가능하지만,"
+"추가 계산이 필요하지 않음을 단순 명확하게 표시하는 것이 더 읽기 쉬운 경우가 많습니다. "
+"이러한 경우, ``return`` 문을 사용하여 함수의 ``algorithm`` 섹션 내에서 추가 처리를 종료할 수 있습니다. "
+"``return`` 문을 만나면 현재 ``output`` 변수와 관련된 모든 값이 반환될 값이 됩니다."
 
-#: ../../source/behavior/functions/control_flow.rst:25
-#: ../../source/behavior/functions/control_flow.rst:26
-msgid "for"
-msgstr ""
 
-#: ../../source/behavior/functions/control_flow.rst:26
-#: ../../source/behavior/functions/control_flow.rst:52
-msgid "functions"
-msgstr ""
+#~ msgid "for"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/control_flow.rst:51
-#: ../../source/behavior/functions/control_flow.rst:52
-msgid "while"
-msgstr ""
+#~ msgid "functions"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/control_flow.rst:76
-msgid "break"
-msgstr ""
+#~ msgid "while"
+#~ msgstr ""
 
-#: ../../source/behavior/functions/control_flow.rst:87
-msgid "return"
-msgstr ""
+#~ msgid "break"
+#~ msgstr ""
+
+#~ msgid "return"
+#~ msgstr ""
+

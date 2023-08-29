@@ -1,23 +1,27 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/architectures/expandable.rst:2
 msgid "Expandable Connectors"
 msgstr ""
+"확장된 커넥터(Expandable Connectors)"
 
 #: ../../source/components/architectures/expandable.rst:5
 msgid "Definition"
 msgstr ""
+"정의(Definition)"
 
 #: ../../source/components/architectures/expandable.rst:7
 msgid ""
@@ -26,6 +30,10 @@ msgid ""
 "covers all important configurations.  One option, in this case, is to use "
 "``expandable`` connectors."
 msgstr ""
+"이 장의 :ref:`thermal-control` 예제에서 본 것처럼 아키텍처를 구축할 때 모든 중요한 구성을 다루는 인터페이스를 정의하기 어려울 수 있습니다."
+"이 경우 한 가지 옵션은 ``확장 가능한`` 커넥터를 사용하는 것입니다."
+
+
 
 #: ../../source/components/architectures/expandable.rst:12
 msgid ""
@@ -34,6 +42,8 @@ msgid ""
 "exception that the ``expandable`` qualifier is added before the definition, "
 "*e.g.,*"
 msgstr ""
+"확장 가능한 커넥터는 ``expandable`` 한정자가 정의 앞에 추가된다는 점을 제외하고는 :ref:`connector-def` 에서 다룬 일반 커넥터 정의와 정확히 동일한 구문을 사용합니다. "
+
 
 #: ../../source/components/architectures/expandable.rst:23
 msgid ""
@@ -42,6 +52,9 @@ msgid ""
 "use such a connector as a normal connector will provide the correct number "
 "of equations such that any component models are :ref:`balanced-components`."
 msgstr ""
+"``expandable`` 한정자를 무시하고 원하는 경우 이 커넥터를 일반 커넥터처럼 취급할 수 있습니다. "
+"이러한 커넥터를 일반 커넥터로 사용하는 구성 요소는 모든 구성 요소 모델이 '균형 구성 요소'가 되도록 올바른 수의 방정식을 제공한다고 가정합니다."
+
 
 #: ../../source/components/architectures/expandable.rst:29
 msgid ""
@@ -52,6 +65,10 @@ msgid ""
 " be added to any other connector instances in the :ref:`connection set "
 "<connection-sets>` as well."
 msgstr ""
+"그러나 사용자가 커넥터 정의의 일부가 **아닌** 명명된 요소에 연결하면 커넥터의 특정 인스턴스에 새 요소가 추가됩니다."
+"이 새 요소의 자료형은 연결된 커넥터와 동일합니다."
+"궁극적으로 해당 요소는 :ref:`connection set <connection-sets>` 의 다른 커넥터 인스턴스에도 추가됩니다."
+
 
 #: ../../source/components/architectures/expandable.rst:36
 msgid ""
@@ -63,6 +80,10 @@ msgid ""
 "very useful when the interface can vary significantly depending on the "
 "choice of subsystems."
 msgstr ""
+"이러한 방식으로 ``확장 가능한`` 커넥터 정의를 "확장"하여 원래 정의에 없는 추가 신호를 추가할 수 있습니다."
+"이러한 방식으로 확장 가능한 커넥터가 있는 모든 인터페이스 정의는 초기 커넥터 정의에 있었던 것보다 더 많은 정보를 교환할 수 있는 유연성을 가집니다."
+":ref:`thermal-control` 에서 보았듯이 이는 하위 시스템 선택에 따라 인터페이스가 크게 달라질 수 있는 경우에 매우 유용할 수 있습니다."
+
 
 #: ../../source/components/architectures/expandable.rst:44
 msgid ""
@@ -74,6 +95,10 @@ msgid ""
 "phasing will require a commanded cam angle from the controller.  But an "
 "engine without this feature will not."
 msgstr ""
+"지금까지 확장 가능한 커넥터의 가장 일반적인 사용 사례는 추가 ``입력`` 및 ``출력`` 신호를 커넥터에 추가하는 것입니다. "
+"이는 컨트롤러를 센서 및 액추에이터와 페어링할 때 필요한 정보가 해당 하위 시스템의 구현 세부 사항에 따라 변경될 수 있기 때문에 자주 발생합니다. "
+"예를 들어, 캠 페이징이 있는 내연기관은 컨트롤러에서 명령된 캠 각도가 필요합니다. 그러나 이 기능이 없는 엔진은 그렇지 않습니다."
+
 
 #: ../../source/components/architectures/expandable.rst:53
 msgid ""
@@ -83,10 +108,15 @@ msgid ""
 "while another one does.  The one that does could include a thermal acausal "
 "connector to allow other subsystems to interact thermally with it."
 msgstr ""
+"그러나 ``확장형`` 커넥터는 비인과적 하위 커넥터와 함께 사용되어 하위 시스템 간의 물리적 상호 작용 지점을 추가할 수도 있습니다."
+"예를 들어 한 하위 시스템은 열 효과를 포함하지 않는 반면 다른 하위 시스템은 포함할 수 있습니다. "
+"다른 하위 시스템이 열적으로 상호 작용할 수 있도록 하는 열 비인과 커넥터를 포함할 수 있습니다."
+
 
 #: ../../source/components/architectures/expandable.rst:61
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
 #: ../../source/components/architectures/expandable.rst:63
 msgid ""
@@ -99,3 +129,8 @@ msgid ""
 "interface definitions to define a minimum interface within an architecture "
 "that can be expanded by the choice of implementations."
 msgstr ""
+"확장 가능한 커넥터 정의는 커넥터에 표시되어야 하는 *최소* 변수 집합을 정의합니다."
+"모든 구성 요소 모델은 커넥터 정의의 해당 변수와 관련하여 균형을 이룬다고 가정합니다. "
+"또한 전체 시스템 모델이 균형을 이루는 한 ``확장형`` 커넥터에 추가 변수를 추가할 수 있습니다. "
+"확장 가능한 커넥터는 일반적으로 구현 선택에 의해 확장될 수 있는 아키텍처 내에서 최소 인터페이스를 정의하기 위해 인터페이스 정의와 함께 사용합니다."
+

@@ -1,323 +1,594 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/arrays/oned.rst:4
 msgid "One-Dimensional Heat Transfer"
 msgstr ""
+"1차원 열전달(One-Dimensional Heat Transfer)"
 
 #: ../../source/behavior/arrays/oned.rst:6
 msgid ""
 "Our previous discussion on :ref:`state-space` introduced matrices and "
-"vectors.  The focus was primarily on mathematical aspects of arrays. In this"
-" section, we will consider how arrays can be used to represent something a "
-"bit more physical, the one-dimensional spatial distribution of variables.  "
-"We'll look at several features in Modelica that are related to arrays and "
-"how they allow us to compactly express behavior involving arrays."
+"vectors.  The focus was primarily on mathematical aspects of arrays. In "
+"this section, we will consider how arrays can be used to represent "
+"something a bit more physical, the one-dimensional spatial distribution "
+"of variables.  We'll look at several features in Modelica that are "
+"related to arrays and how they allow us to compactly express behavior "
+"involving arrays."
 msgstr ""
+":ref:`state-space` 에 대한 이전의 논의에서 행렬과 벡터를 소개할때의 초점은 주로 배열의 수학적 측면에 있었습니다. "
+"이 섹션에서는 배열을 사용하여 물리적인 변수의 1차원 공간 분포를 나타내는 방법을 좀 더 살펴보겠습니다."
+"더불어, 배열과 관련된 모델리카의 여러 기능을 다루면서, 동작을 간결하게 표현할 수 있는 방법을 살펴보겠습니다."
+
+
 
 #: ../../source/behavior/arrays/oned.rst:14
 msgid ""
-"Our problems will center around the a simple heat transfer problem. Consider"
-" a one-dimensional rod like the one shown below:"
+"Our problems will center around the a simple heat transfer problem. "
+"Consider a one-dimensional rod like the one shown below:"
 msgstr ""
+"아래와 같은 1차원 막대를 통해, 단순한 열 전달 문제를 중심으로 주제를 다루겠습니다."
 
-#: ../../source/behavior/arrays/oned.rst:23
+
+#: ../../source/behavior/arrays/oned.rst:24
 msgid "Deriving Equations"
 msgstr ""
+"방정식의 유도(Deriving Equations)"
 
-#: ../../source/behavior/arrays/oned.rst:25
+#: ../../source/behavior/arrays/oned.rst:30
 msgid ""
-"Let us consider the heat balance for each discrete section of this rod.  "
-"First, we have the thermal capacitance of the :math:`i^{th}` section.  This "
-"can expressed as:"
+"Before getting into the math, there is an important point worth making. "
+"Modelica is a language for representing **lumped** systems.  What this "
+"means is that the behavior must be expressed in terms of ordinary "
+"differential equations (ODEs) or in some cases differential-algebraic "
+"equations (DAEs).  But Modelica does not include any means for describing"
+" partial differential equations (*i.e.,* equations that involve the "
+"gradient of variables in spatial directions).  As such, in this section "
+"we will derive the ordinary differential equations that result when we "
+"discretize a rod into discrete pieces and then model the behavior of each"
+" of these discrete (lumped) pieces."
+msgstr ""
+"수학적인 부분을 다루기 전에 짚고 넘어가야 할 중요한 사항이 있습니다."
+"모델리카는 **집중(lumped)** 시스템을 표현하기 위한 언어이기 때문에, 동작이 상미분 방정식(ODE) 또는 경우에 따라 미분 대수 방정식(DAE)으로 표현되어야 합니다."
+"즉, 모델리카에는 편미분 방정식(*즉,* 공간 방향에서 변수의 기울기를 포함하는 방정식)을 표현하는 수단이 포함되어 있지 않습니다."
+"따라서 이 섹션에서는 로드를 개별 조각으로 이산화한 다음 각 개별(집합) 조각의 동작을 모델링할 때 발생하는 상미분 방정식을 유도합니다."
+
+
+#: ../../source/behavior/arrays/oned.rst:40
+msgid ""
+"With that out of the way, let us consider the heat balance for each "
+"discrete section of this rod.  First, we have the thermal capacitance of "
+"the :math:`i^{th}` section.  This can expressed as:"
+msgstr ""
+"위에서 보여준 로드(1차원 막대)의 개별 섹션에서의 열 균형을 앞서 언급한 방식으로 살펴 보겠습니다."
+"먼저 :math:`i^{th}` 번째 섹션에서의 열용량을 고려해야 합니다. 이것은 다음과 같이 표현할 수 있습니다."
+
+
+#: ../../source/behavior/arrays/oned.rst:44
+msgid "m_i C T_i"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:33
+#: ../../source/behavior/arrays/oned.rst:48
 msgid ""
-"where :math:`m` is the mass of the :math:`i^{th}` section, :math:`C` is the "
-"capacitance (a material property) and :math:`T_i` is the temperature of the "
-":math:`i^{th}` section.  We can further describe the mass as:"
+"where :math:`m` is the mass of the :math:`i^{th}` section, :math:`C` is "
+"the capacitance (a material property) and :math:`T_i` is the temperature "
+"of the :math:`i^{th}` section.  We can further describe the mass as:"
+msgstr ""
+"여기서 :math:`m` 은 :math:`i^{th}` 섹션의 질량이고, :math:`C` 는 정전용량(재료 속성)이고 :math:`T_i` 은 :math:`i^{th}` 섹션의 온도입니다."
+"질량을 다음과 같이 추가적으로 표현할 수 있습니다."
+
+
+#: ../../source/behavior/arrays/oned.rst:53
+msgid "m_i = \\rho V_i"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:42
+#: ../../source/behavior/arrays/oned.rst:57
 msgid ""
-"where :math:`\\rho` is the material density and :math:`V_i` is the volume of"
-" the :math:`i^{th}` section.  Finally, we can express the volume of the "
-":math:`i^{th}` section as:"
+"where :math:`\\rho` is the material density and :math:`V_i` is the volume"
+" of the :math:`i^{th}` section.  Finally, we can express the volume of "
+"the :math:`i^{th}` section as:"
+msgstr ""
+"여기서 :math:`\rho` 는 재료 밀도이고 :math:`V_i` 는 :math:`i^{th}` 섹션의 부피입니다. "
+"마지막으로 :math:`i^{th}` 섹션의 볼륨을 다음과 같이 표현할 수 있습니다."
+
+
+#: ../../source/behavior/arrays/oned.rst:61
+msgid "V_i = A_c L_i"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:50
+#: ../../source/behavior/arrays/oned.rst:65
 msgid ""
-"where :math:`A_i` is the cross-sectional area of the :math:`i^{th}` section,"
-" which is assumed to be uniform, and :math:`L_i` is the length of the "
-":math:`i^{th}` section.  For this example, we will assume the rod is "
-"composed of equal size pieces.  In this case, we can define the segment "
+"where :math:`A_c` is the cross-sectional area of the :math:`i^{th}` "
+"section, which is assumed to be uniform, and :math:`L_i` is the length of"
+" the :math:`i^{th}` section.  For this example, we will assume the rod is"
+" composed of equal size pieces.  In this case, we can define the segment "
 "length, :math:`L_i`, to be:"
 msgstr ""
+"여기서 :math:`A_c` 는 균일하다고 가정한 :math:`i^{th}` 단면의 단면적이며, "
+":math:`L_i` 는 :math:`i^{th}` 섹션의 길이입니다. "
+"이 예제에서는 로드가 동일한 크기의 조각으로 구성되어 있다고 가정하므로 세그먼트 길이 L_i를 다음과 같이 정의할 수 있습니다."
+ 
+#: ../../source/behavior/arrays/oned.rst:71
+msgid "L_i = \\frac{L}{n}"
+msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:60
+#: ../../source/behavior/arrays/oned.rst:75
 msgid ""
 "We will also assume that the cross-sectional area is uniform along the "
 "length of the rod.  As such, the mass of each segment can be given as:"
 msgstr ""
+"또한 막대의 길이에 따라 단면적이 균일하다고 가정하기 때문에, 각 세그먼트의 질량은 다음과 같이 주어질 수 있습니다."
 
-#: ../../source/behavior/arrays/oned.rst:67
+#: ../../source/behavior/arrays/oned.rst:78
+msgid "m = \\rho A_c L_i"
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:82
 msgid "In this case, the thermal capacitance of each section would be:"
 msgstr ""
+"이 경우 각 섹션의 열 정전용량은 다음과 같습니다."
 
-#: ../../source/behavior/arrays/oned.rst:73
-msgid ""
-"This, in turn, means that the net heat gained in that section at any time "
-"will be:"
+#: ../../source/behavior/arrays/oned.rst:84
+msgid "\\rho A_c L_i C T_i"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:80
+#: ../../source/behavior/arrays/oned.rst:88
 msgid ""
-"where we assume that :math:`A`, :math:`L_i` and :math:`C` don't change with "
-"respect to time."
+"This, in turn, means that the net heat gained in that section at any time"
+" will be:"
+msgstr ""
+"이것은 차례로 해당 섹션에서 얻은 순 열이 다음과 같음을 의미합니다."
+
+#: ../../source/behavior/arrays/oned.rst:91
+msgid "\\rho A_c L_i C \\frac{\\mathrm{d} T_i}{\\mathrm{d}t}"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:83
+#: ../../source/behavior/arrays/oned.rst:95
+msgid ""
+"where we assume that :math:`A_c`, :math:`L_i` and :math:`C` don't change "
+"with respect to time."
+msgstr ""
+"여기서 :math:`A_c`, :math:`L_i` 및 :math:`C` 는 시간에 따라 변하지 않는다고 가정합니다."
+
+#: ../../source/behavior/arrays/oned.rst:98
 msgid ""
 "That covers the thermal capacitance.  In addition, we will consider two "
-"different forms of heat transfer.  The first form of heat transfer we will "
-"consider is convection from each section to some ambient temperature, "
-":math:`T_{amb}`.  We can express the amount of heat lost from each section "
-"as:"
+"different forms of heat transfer.  The first form of heat transfer we "
+"will consider is convection from each section to some ambient "
+"temperature, :math:`T_{amb}`.  We can express the amount of heat lost "
+"from each section as:"
+msgstr ""
+"열용량을 다루면서 두 가지 다른 형태의 열 전달을 고려합니다."
+"첫 번째 형태의 열 전달은 일부 주변 온도로의 대류이며, 각 섹션에서 손실된 열량은 다음과 같이 표현할 수 있습니다."
+
+
+#: ../../source/behavior/arrays/oned.rst:104
+msgid "q_h = -h A_{s_i} (T_i-T_{amb})"
 msgstr ""
 
-#: ../../source/behavior/arrays/oned.rst:93
+#: ../../source/behavior/arrays/oned.rst:108
 msgid ""
-"where :math:`h` is the convection coefficient.  The other form of heat "
+"where :math:`h` is the convection coefficient and :math:`A_{s_i}` is the "
+"surface area of the :math:`i^{th}` section.  The other form of heat "
 "transfer is conduction to neighboring sections.  Here there will be two "
-"contributions, one lost to the :math:`{i-1}^{th}` section, if it exists, and"
-" the other lost to the :math:`{i+1}^{th}` section, if it exists.  These can "
-"be represented, respectively, as:"
+"contributions, one lost to the :math:`{i-1}^{th}` section, if it exists, "
+"and the other lost to the :math:`{i+1}^{th}` section, if it exists.  "
+"These can be represented, respectively, as:"
 msgstr ""
+"여기서 :math:`h` 는 대류 계수이고 :math:`A_{s_i}` 는 :math:`i^{th}` 섹션의 표면적입니다. "
 
-#: ../../source/behavior/arrays/oned.rst:107
-msgid ""
-"Using these relations, we know that the heat balance for the first element "
-"would be:"
-msgstr ""
+"다른 형태의 열 전달은 이웃 섹션으로의 전도입니다."
+"여기에 두 가지 기여하는 항목이 있는데, 하나는 :math:`{i-1}^{th}` 섹션에서 손실되고 다른 하나는 :math:`{i+1}^{th}` 에서 손실됩니다. "
+"이들은 각각 다음과 같이 나타낼 수 있습니다."
+
 
 #: ../../source/behavior/arrays/oned.rst:115
+msgid "q_{k_{i \\rightarrow {i-1}}} = -k A_c \\frac{T_i-T_{i-1}}{L_i}"
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:119
+msgid "q_{k_{i \\rightarrow {i+1}}} = -k A_c \\frac{T_i-T_{i+1}}{L_i}"
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:123
+msgid ""
+"Using these relations, we know that the heat balance for the first "
+"element would be:"
+msgstr ""
+"이러한 관계를 사용하여 첫 번째 요소에 대한 열 균형을 계산하면 다음과 같습니다."
+
+#: ../../source/behavior/arrays/oned.rst:126
+msgid ""
+"\\rho A_c L_i C \\frac{\\mathrm{d} T_1}{\\mathrm{d}t} =  - h A_{s_i} "
+"(T_1-T_{amb}) -k A_c \\frac{T_1-T_2}{L_i}"
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:131
 msgid "Similarly, the heat balance for the last element would be:"
 msgstr ""
+"마찬가지로 마지막 요소의 열 균형은 다음과 같습니다."
 
-#: ../../source/behavior/arrays/oned.rst:122
+#: ../../source/behavior/arrays/oned.rst:133
+msgid ""
+"\\rho A_c L_i C \\frac{\\mathrm{d} T_n}{\\mathrm{d}t} = -h A_{s_n} "
+"(T_n-T_{amb}) -k A_c \\frac{T_n-T_{n-1}}{L_i}"
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:138
 msgid "Finally, the heat balance for all other elements would be:"
 msgstr ""
+"최종적으로는, 다른 모든 요소의 열 균형은 다음과 같이 표현 됩니다."
 
-#: ../../source/behavior/arrays/oned.rst:130
+#: ../../source/behavior/arrays/oned.rst:140
+msgid ""
+"\\rho A_c L_i C \\frac{\\mathrm{d} T_i}{\\mathrm{d}t} = -h A_{s_i} "
+"(T_i-T_{amb}) -k A_c \\frac{T_i-T_{i-1}}{L_i} -k A_c "
+"\\frac{T_i-T_{i+1}}{L_i}"
+msgstr ""
+
+#: ../../source/behavior/arrays/oned.rst:146
 msgid "Implementation"
 msgstr ""
+"구현(Implementation)"
 
-#: ../../source/behavior/arrays/oned.rst:132
+#: ../../source/behavior/arrays/oned.rst:148
 msgid ""
-"We start by defining types for the various physical quantities.  This will "
-"give us the proper units and, depending on the tool, allows us to do unit "
-"checking on our equations.  Our type definitions are as follows:"
+"We start by defining types for the various physical quantities.  This "
+"will give us the proper units and, depending on the tool, allows us to do"
+" unit checking on our equations.  Our type definitions are as follows:"
 msgstr ""
+"다양한 물리량에 대한 자료형을 정의하는 것으로 시작합니다. "
+"이렇게 하면 적절한 단위가 제공되며 시뮬레이션 소프트웨어에 따라 방정식에서 단위 검사를 수행할 수 있습니다."
+"자료형(type) 정의는 다음과 같습니다."
 
-#: ../../source/behavior/arrays/oned.rst:141
+
+#: ../../source/behavior/arrays/oned.rst:157
 msgid ""
 "We will also define several parameters to describe the rod we are "
 "simulating:"
 msgstr ""
-
-#: ../../source/behavior/arrays/oned.rst:148
-msgid ""
-"Given these parameters, we can compute the area and volume for each section "
-"in terms of the parameters we have already defined using the following "
-"declarations:"
-msgstr ""
-
-#: ../../source/behavior/arrays/oned.rst:156
-msgid ""
-"Finally, the only array in this problem is the temperature of each section "
-"(since this is the only quantity that actually varies along the length of "
-"the rod):"
-msgstr ""
+"또한 시뮬레이션 중인 로드를 설명하기 위해 여러 파라미터를 정의합니다."
 
 #: ../../source/behavior/arrays/oned.rst:164
 msgid ""
-"This concludes all the declarations we need to make.  Now let's consider the"
-" various equations required.  First, we need to specify the initial "
+"Given these parameters, we can compute the areas and volume for each "
+"section in terms of the parameters we have already defined using the "
+"following declarations:"
+msgstr ""
+"다음 선언을 사용하여 정의한 파라미터로 각 섹션의 면적과 체적을 계산할 수 있습니다."
+
+
+#: ../../source/behavior/arrays/oned.rst:172
+msgid ""
+"Finally, the only array in this problem is the temperature of each "
+"section (since this is the only quantity that actually varies along the "
+"length of the rod):"
+msgstr ""
+"마지막으로, 이 문제의 유일한 배열은 각 섹션의 온도입니다(막대의 길이에 따라 실제로 달라지는 유일한 양이므로)."
+
+
+#: ../../source/behavior/arrays/oned.rst:180
+msgid ""
+"This concludes all the declarations we need to make.  Now let's consider "
+"the various equations required.  First, we need to specify the initial "
 "conditions for the rod.  We will assume that :math:`T_1(0)=200`, "
-":math:`T_n(0)=300` and the initial temperatures of all other sections can be"
-" linearly interpolated between these two end conditions.  This is captured "
-"by the following equation:"
+":math:`T_n(0)=300` and the initial temperatures of all other sections can"
+" be linearly interpolated between these two end conditions.  This is "
+"captured by the following equation:"
 msgstr ""
+"이것으로 해야 할 모든 선언을 마쳤고, 필요한 방정식을 이제 생각해보겠습니다."
+"먼저 막대의 초기 조건을 지정해야 합니다. "
+":math:`T_1(0)=200` , :math:`T_n(0)=300` 이라고 가정하고 다른 모든 섹션의 초기 온도는 "
+"이 두 끝 조건 사이에서 선형으로 보간될 수 있으며, 이는 다음 방정식으로 표현됩니다."
 
-#: ../../source/behavior/arrays/oned.rst:175
+
+#: ../../source/behavior/arrays/oned.rst:191
 msgid ""
-"where the ``linspace`` operator is used to create an array of ``n`` values "
-"that vary linearly between ``200`` and ``300``.  Recall from our :ref"
-":`state-space` examples that we can include equations where the left hand "
-"side and right hand side expressions are vectors.  This is another example "
-"of such an equation."
+"where the ``linspace`` operator is used to create an array of ``n`` "
+"values that vary linearly between ``200`` and ``300``.  Recall from our "
+":ref:`state-space` examples that we can include equations where the left "
+"hand side and right hand side expressions are vectors.  This is another "
+"example of such an equation."
 msgstr ""
+"여기서 ``linspace`` 연산자는 ``200`` 과 ``300`` 사이에서 선형적으로 변하는 ``n`` 값의 배열을 만드는 데 사용합니다. "
+"좌변과 우변의 표현이 벡터인 방정식을 포함할 수 있는 :ref:`state-space` 예제를 상기해보면, 이것은 그러한 방정식의 또 다른 예 인것을 알수 있습니다."
 
-#: ../../source/behavior/arrays/oned.rst:181
+
+
+#: ../../source/behavior/arrays/oned.rst:197
 msgid ""
-"Finally, we come to the equations that describe how the temperature in each "
-"section changes over time:"
+"Finally, we come to the equations that describe how the temperature in "
+"each section changes over time:"
 msgstr ""
+"마지막으로 각 섹션의 온도가 시간에 따라 어떻게 변하는지 설명하는 다음 방정식이 있습니다. "
 
-#: ../../source/behavior/arrays/oned.rst:188
+#: ../../source/behavior/arrays/oned.rst:204
 msgid ""
-"The first equation corresponds to the heat balance for section :math:`1`, "
-"the last equation corresponds to the heat balance for section :math:`n` and "
-"the middle equation covers all other sections. Note the use of ``end`` as a "
-"subscript.  When an expression is used to evaluate a subscript for a given "
-"dimension, ``end`` represents the size of that dimension.  In our case, we "
-"use ``end`` to represent the last section.  Of course, we could use ``n`` in"
-" this case, but in general, ``end`` can be very useful when the size of a "
-"dimension is not already associated with a variable."
+"The first equation corresponds to the heat balance for section :math:`1`,"
+" the last equation corresponds to the heat balance for section :math:`n` "
+"and the middle equation covers all other sections. Note the use of "
+"``end`` as a subscript.  When an expression is used to evaluate a "
+"subscript for a given dimension, ``end`` represents the size of that "
+"dimension.  In our case, we use ``end`` to represent the last section.  "
+"Of course, we could use ``n`` in this case, but in general, ``end`` can "
+"be very useful when the size of a dimension is not already associated "
+"with a variable."
 msgstr ""
+"첫 번째 방정식은 :math:`1` 섹션의 열 균형에 해당하고 마지막 방정식은 :math:`n` 섹션의 열 균형에 해당하며"
+"중간 방정식은 다른 모든 섹션을 포함합니다. "
+"``end`` 를 아래 첨자로 사용하는 것을 볼 수 있는데, 주어진 차원에 대한 첨자로 연산하기 위해 표현식이 사용될 때 ``end`` 는 해당 차원의 크기를 나타냅니다."
+"이 경우에는 ``end`` 를 사용하여 마지막 섹션을 나타냈는데 ``n`` 을 사용할 수 있지만, 일반적으로 ``end`` 는 차원의 크기가 아직 변수와 연결되지 않은 경우 매우 유용할 수 있습니다."
 
-#: ../../source/behavior/arrays/oned.rst:198
+
+#: ../../source/behavior/arrays/oned.rst:214
 msgid ""
-"Also note the use of a ``for`` loop in this model.  A ``for`` loop allows "
-"the loop index variable to loop over a range of values.  In our case, the "
-"loop index variable is ``i`` and the range of values is :math:`2` through "
-":math:`n-1`.  The general syntax for a ``for`` loop is:"
+"Also note the use of a ``for`` loop in this model.  A ``for`` loop allows"
+" the loop index variable to loop over a range of values.  In our case, "
+"the loop index variable is ``i`` and the range of values is :math:`2` "
+"through :math:`n-1`.  The general syntax for a ``for`` loop is:"
 msgstr ""
+"또한 이 모델에서 ``for`` 루프를 사용하는 것을 볼 수 있는데, 이때 루프 인덱스 변수가 값 범위를 반복할 수 있습니다."
+"루프 인덱스 변수는 ``i`` 이고 값의 범위는 :math:`2` 에서 :math:`n-1` 까지입니다. "
+"``for`` 루프의 일반적인 구문은 다음과 같습니다."
 
-#: ../../source/behavior/arrays/oned.rst:210
+
+#: ../../source/behavior/arrays/oned.rst:226
 msgid ""
 "where ``<range>`` is a vector of values.  A convenient way to generate a "
-"sequence of values is to use the range operator, ``:``.  The value before "
-"the range operator is the initial value in the sequence and the value after "
-"the range operator is the final value in the sequence. So, for example, the "
-"expression ``5:10`` would generate a vector with the values ``5``, ``6``, "
-"``7``, ``8``, ``9`` and ``10``.  Note that this **includes** the values used"
-" to specify the range."
+"sequence of values is to use the range operator, ``:``.  The value before"
+" the range operator is the initial value in the sequence and the value "
+"after the range operator is the final value in the sequence. So, for "
+"example, the expression ``5:10`` would generate a vector with the values "
+"``5``, ``6``, ``7``, ``8``, ``9`` and ``10``.  Note that this "
+"**includes** the values used to specify the range."
 msgstr ""
+"여기서 ``<range>`` 는 값의 벡터이며, 일련의 값을 생성하는 편리한 방법은 범위 연산자 ``:`` 를 사용하는 것입니다. "
+"범위 연산자 앞의 값은 시퀀스의 초기 값이고 범위 연산자 뒤의 값은 시퀀스의 최종 값입니다."
+"예를 들어 표현식 ``5:10`` 은 ``5``, ``6``, ``7``, ``8``, ``9`` 그리고 ``10`` 값을 가진 벡터를 생성하며, 여기서 볼 수 있는 것 처럼 범위를 지정하는 데 사용하는 값이 **포함** 됩니다."
 
-#: ../../source/behavior/arrays/oned.rst:218
+#: ../../source/behavior/arrays/oned.rst:234
 msgid ""
-"When a ``for`` loop is used in an equation section, each iteration of the "
-"for loop generates a new equation for each equation inside the ``for`` loop."
-"  So in our case, we will generate :math:`n-2` equations corresponding to "
-"values of ``i`` between ``2`` and ``n-1``."
+"When a ``for`` loop is used in an equation section, each iteration of the"
+" for loop generates a new equation for each equation inside the ``for`` "
+"loop.  So in our case, we will generate :math:`n-2` equations "
+"corresponding to values of ``i`` between ``2`` and ``n-1``."
 msgstr ""
+"``for`` 루프가 방정식 섹션에서 사용하는 경우, for 루프의 각 반복은 ``for`` 루프 내부의 각 방정식에 대해 새로운 방정식을 생성합니다."
+"따라서  경우에는 ``2`` 와 ``n-1`` 사이의 ``i`` 값에 해당하는 `n-2` 개의 방정식을 생성할 것입니다."
 
-#: ../../source/behavior/arrays/oned.rst:223
+
+#: ../../source/behavior/arrays/oned.rst:239
 msgid "Putting all this together, the complete model would be:"
 msgstr ""
+"이 모든 것을 종합하면 완전한 모델은 다음과 같습니다."
 
-#: ../../source/behavior/arrays/oned.rst:231
+#: ../../source/behavior/arrays/oned.rst:247
 msgid ""
-"Note that we've included ``pi`` as a literal constant in this model.  Later "
-"in the book, we'll discuss how to properly import common :ref:`constants`."
+"Note that we've included ``pi`` as a literal constant in this model.  "
+"Later in the book, we'll discuss how to properly import common "
+":ref:`constants`."
 msgstr ""
-
-#: ../../source/behavior/arrays/oned.rst:235
+"이 모델에서 리터럴 상수로 ``pi`` 를 포함했다는 점에 유의해야 합니다. "
+"이 책의 뒷부분에서 일반 :ref:`상수 <constants>` 를 올바르게 가져오는 방법에 대해 설명 하겠습니다."
+ 
+#: ../../source/behavior/arrays/oned.rst:251
 msgid ""
-"Simulating this model yields the following solution for each of the nodal "
-"temperatures:"
+"Simulating this model yields the following solution for each of the nodal"
+" temperatures:"
 msgstr ""
+"이 모델을 시뮬레이션하면 각 절점 온도에 대해 다음과 같은 해가 생성됩니다."
 
-#: ../../source/behavior/arrays/oned.rst:241
+#: ../../source/behavior/arrays/oned.rst:257
 msgid ""
 "Note how the temperatures are initially distributed linearly (as we "
 "specified in our ``initial equation`` section)."
 msgstr ""
+"(``initial equation`` 섹션에서 지정한 대로) 온도가 초기에 선형적으로 분포되어 있다는 부분에 주목해야겠습니다."
 
-#: ../../source/behavior/arrays/oned.rst:245
+#: ../../source/behavior/arrays/oned.rst:261
 msgid "Alternatives"
 msgstr ""
+"대안(Alternatives)"
 
-#: ../../source/behavior/arrays/oned.rst:247
+#: ../../source/behavior/arrays/oned.rst:263
 msgid ""
-"It turns out that there are several ways we can generate the equations we "
-"need.  Each has its own advantages and disadvantages depending on the "
-"context.  We'll present them here just to demonstrate the possibilities.  "
-"The choice of which one they feel leads to the most understandable equations"
-" is up to the model developer."
+"It turns out that there are several ways we can generate the equations we"
+" need.  Each has its own advantages and disadvantages depending on the "
+"context.  We'll present them here just to demonstrate the possibilities."
+"  The choice of which one they feel leads to the most understandable "
+"equations is up to the model developer."
 msgstr ""
+"필요한 방정식을 생성할 수 있는 여러 가지 방법이 있음을 밝혔고, 각각은 상황에 따라 고유한 장점과 단점이 있습니다."
+"여러 가능성을 보여주기 위해 가능한 예시를 보여주겠습니다. "
+"가장 이해하기 쉬운 방정식으로 표현하는 방법을 선택하는 것은 모델 개발자에게 달려 있습니다."
 
-#: ../../source/behavior/arrays/oned.rst:255
+
+#: ../../source/behavior/arrays/oned.rst:271
 msgid ""
 "One array feature we can use to make these equations slightly simpler is "
 "called an array comprehension.  An array comprehension flips the ``for`` "
-"loop around so that we take a single equation and add some information at "
-"the end indicating that the equation should be evaluated for different "
+"loop around so that we take a single equation and add some information at"
+" the end indicating that the equation should be evaluated for different "
 "values of the loop index variable.  In our case, we can represent our "
 "equation section using array comprehensions as follows:"
 msgstr ""
+"방정식을 약간 더 간단하게 만드는 데 사용할 수 있는 배열 기능 중 하나는 배열 내포(array comprehension) 인데,"
+"``for`` 루프를 뒤집어 하나의 방정식을 취하고 루프 인덱스 변수의 다른 값에 대해 방정식을 연산해야 한다는 정보를 마지막에 추가하는 형태입니다. "
+"이 예제의 경우 다음과 같이 배열 내포를 사용하여 방정식 섹션을 나타낼 수 있습니다."
 
-#: ../../source/behavior/arrays/oned.rst:267
+
+#: ../../source/behavior/arrays/oned.rst:283
 msgid ""
-"We could also combine the array comprehension with some ``if`` expressions "
-"to nullify contributions to the heat balance that don't necessarily apply.  "
-"In that case, we can simplify the ``equation`` section to the point where it"
-" contains one (admittedly multi-line) equation:"
+"We could also combine the array comprehension with some ``if`` "
+"expressions to nullify contributions to the heat balance that don't "
+"necessarily apply.  In that case, we can simplify the ``equation`` "
+"section to the point where it contains one (admittedly multi-line) "
+"equation:"
 msgstr ""
+"배열 내포를 일부 ``if`` 표현식과 결합하여 필요로 하지 않는 경우에 열 균형 수식에서 무효화할 수도 있습니다. "
+"``equation`` 섹션을 하나의 (다중 라인) 방정식을 포함하는 지점까지 단순화할 수 있으며, "
+"이러한 경우 좌변과 우변이 같은 크기의 벡터일 때 단일(벡터) 방정식을 사용하여 많은 스칼라 방정식을 나타낼 수 있습니다."
+"이 기능을 사용하여 방정식을 다음과 같이 단순화할 수 있습니다."
 
-#: ../../source/behavior/arrays/oned.rst:277
+
+#: ../../source/behavior/arrays/oned.rst:293
 msgid ""
 "Recall, from several previous examples, that Modelica supports vector "
 "equations.  In these cases, when the left hand and right hand side are "
-"vectors of the same size, we can use a single (vector) equation to represent"
-" many scalar equations.  We can use this feature to simplify our equations "
-"as follows:"
+"vectors of the same size, we can use a single (vector) equation to "
+"represent many scalar equations.  We can use this feature to simplify our"
+" equations as follows:"
 msgstr ""
+"이전의 몇 가지 예제에서 모델리카가 벡터 방정식을 지원한다는 사실을 언급 했습니다."
+"이러한 경우 좌변과 우변이 같은 크기의 벡터일 때 단일(벡터) 방정식을 사용하여 많은 스칼라 방정식을 나타낼 수 있습니다."
+"이 기능을 사용하여 방정식을 다음과 같이 단순화할 수 있습니다."
 
-#: ../../source/behavior/arrays/oned.rst:287
+
+#: ../../source/behavior/arrays/oned.rst:303
 msgid ""
 "Note that when a vector variable like ``T`` has a range of subscripts "
-"applied to it, the result is a vector containing the components indicated by"
-" the values in the subscript.  For example, the expression ``T[2:4]`` is "
-"equivalent to ``{T[2], T[3], T[4}``.  The subscript expression doesn't need "
-"to be a range.  For example, ``T[{2,5,9}]`` is equivalent to ``{T[2], T[5], "
-"T[9]}``."
+"applied to it, the result is a vector containing the components indicated"
+" by the values in the subscript.  For example, the expression ``T[2:4]`` "
+"is equivalent to ``{T[2], T[3], T[4]}``.  The subscript expression "
+"doesn't need to be a range.  For example, ``T[{2,5,9}]`` is equivalent to"
+" ``{T[2], T[5], T[9]}``."
 msgstr ""
+"``T`` 와 같은 벡터 변수에 적용된 첨자 범위가 있는 경우, 결과는 첨자의 값으로 표시된 구성 요소를 포함하는 벡터입니다. "
+"예를 들어, ``T[2:4]`` 표현은 ``{T[2], T[3], T[4]}`` 와 같습니다. "
+"그리고, 첨자 식이  범위로 지정될 필요가 없습니다. "
+"예를 들어 ``T[{2,5,9}]`` 는 ``{T[2], T[5], T[9]}`` 와 같습니다."
 
-#: ../../source/behavior/arrays/oned.rst:294
+#: ../../source/behavior/arrays/oned.rst:310
 msgid ""
 "Finally, let us consider one last way of refactoring these equations. "
-"Imagine we introduced two additional vector variables:"
+"Imagine we introduced three additional vector variables:"
 msgstr ""
+"마지막으로 이러한 방정식을 리팩터링하는 방법을 생각해 보겠습니다."
+"예를 들어 세 가지 추가 벡터 변수를 도입했다고 가정해 보겠습니다."
 
-#: ../../source/behavior/arrays/oned.rst:301
+
+#: ../../source/behavior/arrays/oned.rst:317
 msgid ""
 "Then we can write these two equations (again using vector equations) to "
-"define the heat lost to the previous and next section in the rod:"
+"define the heat lost to the ambient, previous section and next section in"
+" the rod:"
 msgstr ""
+"그런 다음 로드의 주변, 이전 섹션 및 다음 섹션으로 손실되는 열을 정의하기 위해 이 두 방정식(다시 벡터 방정식 사용)을 작성할 수 있습니다."
 
-#: ../../source/behavior/arrays/oned.rst:308
+#: ../../source/behavior/arrays/oned.rst:324
 msgid ""
-"This allows us to express the heat balance for each section using a vector "
-"equation that doesn't include any subscripts:"
+"This allows us to express the heat balance for each section using a "
+"vector equation that doesn't include any subscripts:"
 msgstr ""
+"이를 통해 아래 첨자를 포함하지 않는 벡터 방정식을 사용하여 각 섹션의 열 균형을 표현할 수 있습니다."
 
-#: ../../source/behavior/arrays/oned.rst:316
+#: ../../source/behavior/arrays/oned.rst:332
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
-#: ../../source/behavior/arrays/oned.rst:318
+#: ../../source/behavior/arrays/oned.rst:334
 msgid ""
-"In this section, we've seen various ways that we can use vector variables "
-"and vector equations to represent one-dimensional heat transfer.  Of course,"
-" this vector related functionality can be used for a wide range of different"
-" problem types.  The goal of this section was to introduce several features "
-"to demonstrate the various options that are available to the developer when "
-"working with vectors."
+"In this section, we've seen various ways that we can use vector variables"
+" and vector equations to represent one-dimensional heat transfer.  Of "
+"course, this vector related functionality can be used for a wide range of"
+" different problem types.  The goal of this section was to introduce "
+"several features to demonstrate the various options that are available to"
+" the developer when working with vectors."
 msgstr ""
+"이 섹션에서는 벡터 변수와 벡터 방정식을 사용하여 1차원 열 전달을 나타낼 수 있는 다양한 방법을 살펴보았습니다. "
+"이와 같은 벡터 관련 기능은 다양한 문제 유형에 사용할 수 있습니다. "
+"이 섹션의 목표는 벡터로 작업할 때 개발자가 사용할 수 있는 다양한 옵션을 보여주기 위해 몇 가지 기능을 소개하는 것이었습니다."
 
-#: ../../source/behavior/arrays/oned.rst:253
-msgid "array comprehensions"
-msgstr ""
+
+#~ msgid ""
+#~ "Let us consider the heat balance "
+#~ "for each discrete section of this "
+#~ "rod.  First, we have the thermal "
+#~ "capacitance of the :math:`i^{th}` section."
+#~ "  This can expressed as:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "where :math:`A_i` is the cross-sectional"
+#~ " area of the :math:`i^{th}` section, "
+#~ "which is assumed to be uniform, "
+#~ "and :math:`L_i` is the length of "
+#~ "the :math:`i^{th}` section.  For this "
+#~ "example, we will assume the rod is"
+#~ " composed of equal size pieces.  In"
+#~ " this case, we can define the "
+#~ "segment length, :math:`L_i`, to be:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "where we assume that :math:`A`, "
+#~ ":math:`L_i` and :math:`C` don't change "
+#~ "with respect to time."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "where :math:`h` is the convection "
+#~ "coefficient.  The other form of heat "
+#~ "transfer is conduction to neighboring "
+#~ "sections.  Here there will be two "
+#~ "contributions, one lost to the "
+#~ ":math:`{i-1}^{th}` section, if it exists, "
+#~ "and the other lost to the "
+#~ ":math:`{i+1}^{th}` section, if it exists.  "
+#~ "These can be represented, respectively, "
+#~ "as:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Given these parameters, we can compute"
+#~ " the area and volume for each "
+#~ "section in terms of the parameters "
+#~ "we have already defined using the "
+#~ "following declarations:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that when a vector variable "
+#~ "like ``T`` has a range of "
+#~ "subscripts applied to it, the result "
+#~ "is a vector containing the components"
+#~ " indicated by the values in the "
+#~ "subscript.  For example, the expression "
+#~ "``T[2:4]`` is equivalent to ``{T[2], "
+#~ "T[3], T[4}``.  The subscript expression "
+#~ "doesn't need to be a range.  For"
+#~ " example, ``T[{2,5,9}]`` is equivalent to"
+#~ " ``{T[2], T[5], T[9]}``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Finally, let us consider one last "
+#~ "way of refactoring these equations. "
+#~ "Imagine we introduced two additional "
+#~ "vector variables:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Then we can write these two "
+#~ "equations (again using vector equations) "
+#~ "to define the heat lost to the "
+#~ "previous and next section in the "
+#~ "rod:"
+#~ msgstr ""
+
+#~ msgid "array comprehensions"
+#~ msgstr ""
+

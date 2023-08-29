@@ -1,115 +1,152 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/components/speed_comps.rst:4
 msgid "Speed Measurement Revisited"
 msgstr ""
+"속도 측정 재검토(Speed Measurement Revisited)"
 
 #: ../../source/components/components/speed_comps.rst:6
 msgid ""
-"Recall our previous discussion on :ref:`speed-measurement`.  That discussion"
-" took place before we had introduced the idea of building reusable "
-"components.  As a result, adding equations associated with the various speed"
-" measurement techniques was awkward."
+"Recall our previous discussion on :ref:`speed-measurement`.  That "
+"discussion took place before we had introduced the idea of building "
+"reusable components.  As a result, adding equations associated with the "
+"various speed measurement techniques was awkward."
 msgstr ""
+":ref:`speed-measurement` 에서 다루었던 내용을 다시 생각해 보겠습니다. 이때는 재사용 가능한 구성 요소를 구축한다는 아이디어를 도입하기 전이 였습니다. "
+"그 결과 다양한 속도 측정 기술과 관련된 방정식을 추가하는 것이 어색했습니다."
+
 
 #: ../../source/components/components/speed_comps.rst:11
 msgid ""
 "In this section, we'll revisit that topic and all of the various speed "
-"estimation techniques discussed there.  As before, we assume that we have an"
-" existing model of the \"plant\" (the system whose speeds we wish to "
+"estimation techniques discussed there.  As before, we assume that we have"
+" an existing model of the \"plant\" (the system whose speeds we wish to "
 "measure).  But this time, we'll create reusable component models for "
 "different speed estimation algorithms and add them to the plant model as "
 "graphical components."
 msgstr ""
+"이 섹션에서는 해당 주제와 여기에서 논의된 모든 다양한 속도 추정 기술을 다시 살펴보겠습니다. "
+"이전과 마찬가지로 "플랜트"(속도를 측정하려는 시스템)의 기존 모델이 있다고 가정합니다."
+"그러나 이번에는 다양한 속도 추정 알고리즘에 대해 재사용 가능한 구성 요소 모델을 생성하고 이를 그래픽 구성 요소로 플랜트 모델에 추가합니다."
+
 
 #: ../../source/components/components/speed_comps.rst:19
 msgid "Plant Model"
 msgstr ""
+"플랜트 모델(Plant Model)"
 
 #: ../../source/components/components/speed_comps.rst:21
 msgid ""
-"We'll start with our \"plant model\".  It is identical in behavior to the "
-"system we used in our previous discussion of :ref:`speed-measurement` and "
-"when rendered as a schematic, looks like this:"
+"We'll start with our \"plant model\".  It is identical in behavior to the"
+" system we used in our previous discussion of :ref:`speed-measurement` "
+"and when rendered as a schematic, looks like this:"
 msgstr ""
+""플랜트 모델"부터 시작하겠습니다."
+"이는 :ref:`speed-measurement` 에 대한 이전 시스템과 동작이 동일하며 도식으로 렌더링하면 다음과 같습니다."
+
 
 #: ../../source/components/components/speed_comps.rst:32
 msgid "The source code for the underlying Modelica model is:"
 msgstr ""
+"기본 모델리카 모델의 소스 코드는 다음과 같습니다."
 
 #: ../../source/components/components/speed_comps.rst:37
 msgid ""
 "In the remaining sections we will create models that use different "
-"approximation techniques to measure the speed of the ``inertia1`` component "
-"in our plant model."
+"approximation techniques to measure the speed of the ``inertia1`` "
+"component in our plant model."
 msgstr ""
+"나머지 섹션에서는 플랜트 모델에서 ``inertia1`` 구성 요소의 속도를 측정하기 위해 다양한 근사 기법을 사용하는 모델을 만들 것입니다."
+
+
 
 #: ../../source/components/components/speed_comps.rst:41
 msgid ""
-"Before we look at the different speed approximation methods, let's have a "
-"look at the actual speed response from our plant model."
+"Before we look at the different speed approximation methods, let's have a"
+" look at the actual speed response from our plant model."
 msgstr ""
+"다양한 속도 근사 방법을 살펴보기 전에 플랜트 모델의 실제 속도 응답을 살펴보겠습니다."
 
 #: ../../source/components/components/speed_comps.rst:47
 msgid ""
-"Note that this is exactly the same response we saw when we initially covered"
-" this topic."
+"Note that this is exactly the same response we saw when we initially "
+"covered this topic."
 msgstr ""
+"이것은  이 주제를 처음 다루었을 때 보았던 것과 정확히 동일한 응답이라는 점을 살펴볼 수 있습니다."
 
 #: ../../source/components/components/speed_comps.rst:53
 msgid "Sample and Hold Sensor"
 msgstr ""
+"샘플 앤 홀드 센서(Sample and Hold Sensor)"
 
 #: ../../source/components/components/speed_comps.rst:55
 msgid ""
 "Previously, we discussed the :ref:`sample-and-hold` approach to speed "
 "measurement.  Here we will revisit this topic, but encapsulate the speed "
-"approximation in a reusable sensor model.  The following model implements "
-"the \"sample and hold\" approximation to speed measurement:"
+"approximation in a reusable sensor model.  The following model implements"
+" the \"sample and hold\" approximation to speed measurement:"
 msgstr ""
+"이전에는 속도 측정에 대한 :ref:`sample-and-hold` 접근 방식에 대해 논의했습니다."
+"여기에서는 이 주제를 다시 살펴보지만 재사용 가능한 센서 모델을 구성하고 속도 근사치 계산을 캡슐화 하겠습니다."
+"다음 모델은 속도 측정에 대한 "샘플 앤 홀드" 근사치를 구현합니다."
+
 
 #: ../../source/components/components/speed_comps.rst:63
 msgid ""
-"Behaviorally, there is not difference between this estimation technique and "
-"our previous implementation of :ref:`sample-and-hold`. But our approach is "
-"different this time because we have wrapped that estimation technique in a "
-"reusable component model."
+"Behaviorally, there is no difference between this estimation technique "
+"and our previous implementation of :ref:`sample-and-hold`. But our "
+"approach is different this time because we have wrapped that estimation "
+"technique in a reusable component model."
 msgstr ""
+"동작에 있어서는 이 추정 기술과 이전 구현인 :ref:`sample-and-hold` 사이에는 차이가 없습니다."
+"그러나 이번에는 재사용 가능한 구성 요소 모델에서 해당 추정 기술을 래핑했기 때문에 접근 방식이 다릅니다."
 
 #: ../../source/components/components/speed_comps.rst:68
 msgid ""
-"We have once again saved ourselves some trouble by utilizing a ``partial`` "
-"model to represent code that will be common across our various sensor "
-"models.  As we can see from the definition of the ``SpeedSensor`` model:"
+"We have once again saved ourselves some trouble by utilizing a "
+"``partial`` model to represent code that will be common across our "
+"various sensor models.  As we can see from the definition of the "
+"``SpeedSensor`` model:"
 msgstr ""
+"다양한 센서 모델에서 공통될 코드를 표현하기 위해 ``partial`` 모델을 활용하여 다시 한 번 문제를 해결할 것 입니다. "
+"이러한 해결 방법을 아래 ``SpeedSensor`` 모델의 정의에서 볼 수 있습니다."
+
 
 #: ../../source/components/components/speed_comps.rst:76
 msgid ""
-"We can see from the ``SpeedSensor`` model that the output signal is named "
-"``w``.  But we also see that ``SpeedSensor`` inherits from another model in "
-"the Modelica Standard Library, ``PartialAbsoluteSensor``.  The "
+"We can see from the ``SpeedSensor`` model that the output signal is named"
+" ``w``.  But we also see that ``SpeedSensor`` inherits from another model"
+" in the Modelica Standard Library, ``PartialAbsoluteSensor``.  The "
 "``PartialAbsoluteSensor`` model is defined as:"
 msgstr ""
+"``SpeedSensor`` 모델에서 출력 신호의 이름이 ``w`` 임을 알 수 있습니다. "
+"그러나 ``SpeedSensor`` 가 모델리카 표준 라이브러리의 다른 모델인 ``PartialAbsoluteSensor`` 에서"
+"상속되는 것도 볼 수 있습니다. ``PartialAbsoluteSensor`` 모델은 다음과 같이 정의합니다."
+
 
 #: ../../source/components/components/speed_comps.rst:94
 msgid ""
-"In addition to providing a nice icon, the ``PartialAbsoluteSensor`` model "
-"features a rotational connector, ``flange``.  Furthermore, the model assumes"
-" that the sensor model is completely passive (*i.e.,* it has no impact on "
-"the system it is sensing) since it applies zero torque at the connection "
-"point."
+"In addition to providing a nice icon, the ``PartialAbsoluteSensor`` model"
+" features a rotational connector, ``flange``.  Furthermore, the model "
+"assumes that the sensor model is completely passive (*i.e.,* it has no "
+"impact on the system it is sensing) since it applies zero torque at the "
+"connection point."
 msgstr ""
+"멋진 아이콘을 제공하는 것 외에도 ``PartialAbsoluteSensor`` 모델에는 회전 커넥터인 ``flange`` 가 있습니다."
+"또한 이 모델은 센서 모델이 연결 지점에서 제로 토크를 적용하기 때문에 완전히 수동적이라고 가정합니다(*즉,* 센서가 감지하는 시스템에 영향을 미치지 않음)."
 
 #: ../../source/components/components/speed_comps.rst:100
 msgid ""
@@ -117,119 +154,163 @@ msgid ""
 "instance of the ``SampleHold`` sensor and connect it to the ``inertia``, "
 "*e.g.*,"
 msgstr ""
+"이 모델을 테스트하려면 단순히 ``Plant`` 모델에서 확장하고 ``SampleHold`` 센서 인스턴스를 추가한 다음 ``inertia`` 에 연결합니다. "
+"*예* 를 들면 아래와 같습니다."
+
 
 #: ../../source/components/components/speed_comps.rst:107
 msgid "When assembled, our final system looks like this:"
 msgstr ""
+"이렇게 조립된 최종 시스템은 다음과 같습니다."
 
 #: ../../source/components/components/speed_comps.rst:115
 msgid ""
-"If we simulate this system for 5 seconds, we can compare the actual speed of"
-" the inertia with the signal returned from our sensor:"
+"If we simulate this system for 5 seconds, we can compare the actual speed"
+" of the inertia with the signal returned from our sensor:"
 msgstr ""
+"이 시스템을 5초 동안 시뮬레이션하면 관성의 실제 속도를 센서에서 반환된 신호와 비교할 수 있습니다."
 
 #: ../../source/components/components/speed_comps.rst:121
 msgid ""
-"These results are identical to the results from our previous discussion of "
-"the :ref:`sample-and-hold` approach."
+"These results are identical to the results from our previous discussion "
+"of the :ref:`sample-and-hold` approach."
 msgstr ""
+"이 결과는 이전에 논의한 샘플 앤 홀드 접근 방식의 결과와 동일합니다."
 
 #: ../../source/components/components/speed_comps.rst:125
 msgid "Interval Measurement"
 msgstr ""
+"간격 측정(Interval Measurement)"
 
 #: ../../source/components/components/speed_comps.rst:127
 msgid ""
-"Now let us turn our attention to the :ref:`interval-measurement` technique."
-"  Again, we will create a reusable component model by extending from our "
-"``Sensor`` model.  This time, the implementation will use the time between "
-"teeth to estimate speed:"
+"Now let us turn our attention to the :ref:`interval-measurement` "
+"technique.  Again, we will create a reusable component model by extending"
+" from our ``Sensor`` model.  This time, the implementation will use the "
+"time between teeth to estimate speed:"
 msgstr ""
+"이제 :ref:`interval-measurement` 기법에 대해 살펴보겠습니다. "
+"다시,  ``Sensor`` 모델에서 확장하여 재사용 가능한 구성 요소 모델을 만들 것입니다."
+"이번에는 구현 시 톱니의 이빨 사이 시간을 사용하여 속도를 추정합니다."
+
 
 #: ../../source/components/components/speed_comps.rst:135
 msgid ""
-"Adding this sensor to our plant model is as simple as creating the following"
-" Modelica model:"
+"Adding this sensor to our plant model is as simple as creating the "
+"following Modelica model:"
 msgstr ""
+"이 센서를 플랜트 모델에 추가하는 것은 다음 모델리카 모델을 생성하는 것만큼 간단합니다."
 
 #: ../../source/components/components/speed_comps.rst:141
 msgid "When assembled, our system model looks like this:"
 msgstr ""
+"조립 시 시스템 모델은 다음과 같습니다."
 
 #: ../../source/components/components/speed_comps.rst:149
-msgid ""
-"Simulating this system, we get the following results for estimated speed:"
+msgid "Simulating this system, we get the following results for estimated speed:"
 msgstr ""
+"이 시스템을 시뮬레이션하면 예상 속도에 대해 다음과 같은 결과를 얻습니다."
 
 #: ../../source/components/components/speed_comps.rst:154
 msgid ""
 "As we saw in our previous discussion of the :ref:`interval-measurement` "
 "technique, the quality of the estimated signal is severely reduced if we "
-"reduce the number of teeth.  The previous plot used a sensor with 200 teeth "
-"per rotation.  If we plot the shaft angle with respect to the bracketing "
-"teeth angles, we see that the shaft cannot move very far without triggering "
-"a measurement:"
+"reduce the number of teeth.  The previous plot used a sensor with 200 "
+"teeth per rotation.  If we plot the shaft angle with respect to the "
+"bracketing teeth angles, we see that the shaft cannot move very far "
+"without triggering a measurement:"
 msgstr ""
+"이전에 논의한 간격 측정 기술에서 보았듯이 추정된 신호의 품질은 톱니 수를 줄이면 크게 줄어듭니다."
+"이전 선도에서는 회전당 200개의 톱니가 있는 센서를 사용했습니다."
+"브래킷 톱니 각도에 대한 샤프트 각도를 플롯하면 샤프트가 측정을 트리거하지 않고는 멀리 이동할 수 없음을 알 수 있습니다."
+
 
 #: ../../source/components/components/speed_comps.rst:164
 msgid ""
-"On the other hand, if we reduce the number of teeth per rotation down to 20,"
-" we get the following results:"
+"On the other hand, if we reduce the number of teeth per rotation down to "
+"20, we get the following results:"
 msgstr ""
+"반면에 회전당 톱니 수를 20개로 줄이면 다음과 같은 결과가 나타납니다."
 
 #: ../../source/components/components/speed_comps.rst:170
 msgid ""
-"Plotting the teeth angles that bracket the current shaft angle, we see that "
-"crossings are far less frequent, and, as a result the accuracy of the "
-"measurement is greatly reduced:"
+"Plotting the teeth angles that bracket the current shaft angle, we see "
+"that crossings are far less frequent, and, as a result the accuracy of "
+"the measurement is greatly reduced:"
 msgstr ""
+"현재 샤프트 각도를 포함하는 톱니 각도를 플로팅하면 교차가 훨씬 덜 자주 발생하고 결과적으로 측정 정확도가 크게 감소함을 알 수 있습니다."
 
 #: ../../source/components/components/speed_comps.rst:177
 msgid ""
 "Again, we can validate our component-oriented sensor implementations by "
-"noting that these results are identical to the results presented during our "
-"previous discussion of the :ref:`interval-measurement` technique."
+"noting that these results are identical to the results presented during "
+"our previous discussion of the :ref:`interval-measurement` technique."
 msgstr ""
+"다시 말하지만, 이러한 결과가 이전에 :ref:`interval-measurement` 기술에 대해 논의했을 때 제시한 결과와 동일하다는 점을 알 수 있습니다. 다만, 구성 요소 지향 방법으로 센서 구현을 검증할 수 있습니다."
 
 #: ../../source/components/components/speed_comps.rst:183
 msgid "Pulse Counter"
 msgstr ""
+"펄스 카운터(Pulse Counter)"
 
 #: ../../source/components/components/speed_comps.rst:185
 msgid ""
-"Finally, we have the :ref:`pulse-counting` approach.  Again, the estimation "
-"technique can be wrapped in a reusable component that extends from the base "
-"``Sensor`` model:"
+"Finally, we have the :ref:`pulse-counting` approach.  Again, the "
+"estimation technique can be wrapped in a reusable component that extends "
+"from the base ``Sensor`` model:"
 msgstr ""
+"마지막으로 :ref:`pulse-counting` 접근 방식이 있습니다."
+"다시 말하지만 추정 기법은 기본 ``Sensor`` 모델에서 확장된 재사용 가능한 구성 요소로 래핑할 수 있습니다."
+
 
 #: ../../source/components/components/speed_comps.rst:192
 msgid "and then added to our overall ``Plant`` model:"
 msgstr ""
+"그리고 전체 ``Plant`` 모델에 다음을 추가했습니다."
 
 #: ../../source/components/components/speed_comps.rst:197
 msgid "The resulting system, when rendered, looks like this:"
 msgstr ""
+"결과 시스템은 다음과 같이 그려집니다. "
 
 #: ../../source/components/components/speed_comps.rst:205
 msgid ""
 "Simulating the system, we see that the results are the same as in our "
 "previous discussion of :ref:`pulse-counting`:"
 msgstr ""
+"시스템을 시뮬레이션하면 이전에 논의한 :ref:`pulse-counting` 과 결과가 동일함을 알 수 있습니다."
 
 #: ../../source/components/components/speed_comps.rst:212
 msgid "Conclusion"
 msgstr ""
+"정리(Conclusion)"
 
 #: ../../source/components/components/speed_comps.rst:214
 msgid ""
 "The discussion of :ref:`speed-measurement` earlier in the book went into "
-"great detail about the various measurement techniques that can be used to "
-"estimate the speed of a rotating shaft.  The purpose of this section was not"
-" to revisit that discussion but rather to show how the estimation techniques"
-" presented earlier can benefit greatly from the component-oriented features "
-"in Modelica.  As we have seen, all of these techniques can be nicely "
-"encapsulated in component models.  The result is that utilizing these "
-"different estimation techniques is now as easy as dragging and dropping one "
-"of these sensor models into a system and attaching it to the rotating "
-"element whose speed you wish to measure."
+"great detail about the various measurement techniques that can be used to"
+" estimate the speed of a rotating shaft.  The purpose of this section was"
+" not to revisit that discussion but rather to show how the estimation "
+"techniques presented earlier can benefit greatly from the component-"
+"oriented features in Modelica.  As we have seen, all of these techniques "
+"can be nicely encapsulated in component models.  The result is that "
+"utilizing these different estimation techniques is now as easy as "
+"dragging and dropping one of these sensor models into a system and "
+"attaching it to the rotating element whose speed you wish to measure."
 msgstr ""
+"이 책 앞부분의 속도 측정에 대한 논의에서 회전축의 속도를 추정하는 데 사용할 수 있는 다양한 측정 기술에 대해 자세히 설명했습니다. "
+"이 섹션의 목적은 해당 논의를 다시 살펴보는 것이 아니라 이전에 제시한 추정 기법이 모델리카의 구성 요소 지향으로 어떻게 기능에서 큰 이점을 얻을 수 있는지 보여주기 위한 것입니다."
+"본 것처럼 이러한 모든 기술은 구성 요소 모델에 멋지게 캡슐화될 수 있습니다."
+"그 결과 이제 이러한 다양한 추정 기술을 활용하는 것이 이러한 센서 모델 중 하나를 시스템으로 끌어다 놓고 속도를 측정하려는 회전 요소에 부착하는 것만큼 쉽습니다."
+
+
+#~ msgid ""
+#~ "Behaviorally, there is not difference "
+#~ "between this estimation technique and "
+#~ "our previous implementation of :ref"
+#~ ":`sample-and-hold`. But our approach "
+#~ "is different this time because we "
+#~ "have wrapped that estimation technique "
+#~ "in a reusable component model."
+#~ msgstr ""
+

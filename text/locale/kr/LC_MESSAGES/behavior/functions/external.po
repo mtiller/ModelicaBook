@@ -1,95 +1,125 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/functions/external.rst:4
 msgid "External Functions"
 msgstr ""
+"외부 함수(External Functions)"
 
 #: ../../source/behavior/functions/external.rst:7
 msgid "``external``"
 msgstr ""
+"외부(``external``)"
+
 
 #: ../../source/behavior/functions/external.rst:11
 msgid ""
 "As we saw with the ``InterpolateExternalVector`` function in our "
-":ref:`interpolation` related examples, it is possible to call functions not "
-"written in Modelica.  Typically, such functions are written in C or Fortran."
-"  A function implemented outside Modelica does not contain an ``algorithm`` "
-"section.  Instead, it should include an ``external`` statement that provides"
-" information about the external function and how to pass information to and "
-"from the function."
+":ref:`interpolation` related examples, it is possible to call functions "
+"not written in Modelica.  Typically, such functions are written in C or "
+"Fortran.  A function implemented outside Modelica does not contain an "
+"``algorithm`` section.  Instead, it should include an ``external`` "
+"statement that provides information about the external function and how "
+"to pass information to and from the function."
 msgstr ""
+":ref:`interpolation` 관련 예제인 ``InterpolateExternalVector`` 함수에서 보았듯이 모델리카로 작성되지 않은 함수를 호출하는 것이 가능합니다."
+"일반적으로 이러한 함수는 C 또는 Fortran으로 작성 됩니다."
+"모델리카는 외부에서 구현된 함수를 ``algorithm`` 섹션에 포함하지 않는 대신, 외부 함수에 대한 정보와 함수에서 정보를 전달하는 방법을 제공하는 ``external`` 문을 사용하여 호출 합니다."
+
+
 
 #: ../../source/behavior/functions/external.rst:19
 msgid ""
-"The minimal requirement for an externally implemented function is to include"
-" just the ``external`` keyword, *e.g.,*"
+"The minimal requirement for an externally implemented function is to "
+"include just the ``external`` keyword, *e.g.,*"
 msgstr ""
+"외부에서 구현된 함수에 대한 최소한의 요구 사항은 ``external`` 키워드만 포함하는 것입니다. *예를 들어,* 아래와 같습니다."
 
 #: ../../source/behavior/functions/external.rst:26
 msgid ""
-"In this case, it is assumed that the function is implemented in C, that the "
-"name of the function matches the name of the Modelica \"wrapper\" function "
-"and that the arguments are passed in the same order as the ``input`` "
-"arguments to the Modelica function."
+"In this case, it is assumed that the function is implemented in C, that "
+"the name of the function matches the name of the Modelica \"wrapper\" "
+"function and that the arguments are passed in the same order as the "
+"``input`` arguments to the Modelica function."
 msgstr ""
+"이 경우 함수가 C로 구현되고 함수 이름이 모델리카 "래퍼(wrapper)" 함수 이름과 일치하며, C에서의 인수가 모델리카 함수에 대한 ``input`` 인수가 됩니다."
+
+
+
 
 #: ../../source/behavior/functions/external.rst:31
 msgid ""
 "Let's consider a slightly more complex case like the one found in our "
 "``VectorTable`` type shown in the :ref:`interpolation` examples:"
 msgstr ""
+":ref:`interpolation` 예제에 표시된 ``VectorTable`` 자료형에서 발견되는 것과 같은 약간 더 복잡한 경우를 살펴 보겠습니다."
 
 #: ../../source/behavior/functions/external.rst:38
 msgid ""
 "Here we see that the implementation language of the function has been "
-"explicitly specified as ``\"C\"``.  There are two other possible values for "
-"the implementation language, ``\"FORTRAN 77\"`` and ``\"builtin\"``. The use"
-" of ``\"builtin\"`` is mainly of interest to Modelica tool vendors."
+"explicitly specified as ``\"C\"``.  There are two other possible values "
+"for the implementation language, ``\"FORTRAN 77\"`` and ``\"builtin\"``. "
+"The use of ``\"builtin\"`` is mainly of interest to Modelica tool "
+"vendors."
 msgstr ""
+"함수의 구현 언어가 여기에서는 ``"C"`` 로 명시적으로 지정되었음을 알 수 있고,  ``"FORTRAN 77"`` 및 ``"builtin"`` 이라는 두 가지 다른 가능한 값이 있습니다. "
+"(여기서, ``"builtin"`` 의 사용은 주로 모델리카 시뮬레이션 소프트웨어 공급업체에서 관심을 가지는 키워드 입니다.)"
 
 #: ../../source/behavior/functions/external.rst:44
 msgid ""
-"We also see that the name of the function has been explicitly specified.  "
-"The portion of the ``external`` statement that reads "
-"``destroyVectorTable(table)`` specifies what data should be passed to the "
-"external function and in what order."
+"We also see that the name of the function has been explicitly specified."
+"  The portion of the ``external`` statement that reads "
+"``destroyVectorTable(table)`` specifies what data should be passed to the"
+" external function and in what order."
 msgstr ""
+"위의 예제에서 보면 함수의 이름이 명시적으로 지정되었음을 알 수 있습니다."
+"그리고, ``destroyVectorTable(table)`` 을 읽는 ``external`` 문 부분은 어떤 데이터를 어떤 순서로 외부 함수에 전달해야 하는지 지정합니다."
+
+
 
 #: ../../source/behavior/functions/external.rst:49
 msgid ""
-"In some cases, it may be necessary to specify some of the values passed to "
-"the external function and to specify how the results of the function call "
-"map to the output variables.  We can see this kind of information in the "
-"following ``function``:"
+"In some cases, it may be necessary to specify some of the values passed "
+"to the external function and to specify how the results of the function "
+"call map to the output variables.  We can see this kind of information in"
+" the following ``function``:"
 msgstr ""
+"경우에 따라 외부 함수에 전달된 일부 값을 지정하고 함수 호출 결과가 출력 변수에 매핑되는 방식을 지정해야 할 수 있는데, 다음 ``function`` 에서 이런 종류의 예제를 확인할 수 있습니다."
 
 #: ../../source/behavior/functions/external.rst:58
 msgid ""
 "Here, the external function needs to know the size of the ``ybar`` array "
 "since that information is not passed directly to the function. It also "
-"indicates that the result from ``createVectorTable`` should be assigned to "
-"the ``output`` variable ``table``.  It might seem obvious that the return "
-"value of the C function should be treated as the return value from the "
-"Modelica function, but there are cases where the ``output`` variables should"
-" be passed as arguments to the function. As we will see shortly, in such "
-"cases pointers are used so that the external function can assign values to "
-"these variables."
+"indicates that the result from ``createVectorTable`` should be assigned "
+"to the ``output`` variable ``table``.  It might seem obvious that the "
+"return value of the C function should be treated as the return value from"
+" the Modelica function, but there are cases where the ``output`` "
+"variables should be passed as arguments to the function. As we will see "
+"shortly, in such cases pointers are used so that the external function "
+"can assign values to these variables."
 msgstr ""
+"여기에서 외부 함수는 ``ybar`` 배열의 크기를 알아야 하는데, 정보가 함수에 직접 전달되지 않기 때문입니다."
+"또한 ``createVectorTable`` 의 결과를 ``output`` 변수 ``table`` 에 할당해야 합니다. "
+"C 함수의 반환 값은 모델리카 함수의 반환 값으로 처리되어야 하는 것이 당연해 보일 수 있지만, 경우에 따라 ``output`` 변수를 함수의 인수로 전달해야 합니다. "
+"곧 보게 되겠지만 이러한 경우 외부 함수가 이러한 변수에 값을 할당할 수 있도록 포인터를 사용합니다."
+
 
 #: ../../source/behavior/functions/external.rst:69
 msgid "Data Mapping"
 msgstr ""
+"데이터 맵핑(Data Mapping)"
 
 #: ../../source/behavior/functions/external.rst:72
 #: ../../source/behavior/functions/external.rst:104
@@ -98,9 +128,10 @@ msgstr ""
 
 #: ../../source/behavior/functions/external.rst:74
 msgid ""
-"The following table shows how Modelica types map into native C types when "
-"passing data **into** external functions."
+"The following table shows how Modelica types map into native C types when"
+" passing data **into** external functions."
 msgstr ""
+"다음 표는 데이터를 외부 함수 **로** 전달할 때 모델리카 자료형이 네이티브 C 자료형으로 매핑하는 방법을 보여줍니다."
 
 #: ../../source/behavior/functions/external.rst:78
 #: ../../source/behavior/functions/external.rst:104
@@ -179,7 +210,6 @@ msgid "``T[d1]``"
 msgstr ""
 
 #: ../../source/behavior/functions/external.rst:84
-#: ../../source/behavior/functions/external.rst:84
 msgid "``T' *``, ``size_t d1``"
 msgstr ""
 
@@ -189,7 +219,6 @@ msgstr ""
 msgid "``T[d1,d2]``"
 msgstr ""
 
-#: ../../source/behavior/functions/external.rst:85
 #: ../../source/behavior/functions/external.rst:85
 #: ../../source/behavior/functions/external.rst:111
 msgid "``T' *``, ``size_t d1``, ``size_t d2``"
@@ -201,7 +230,6 @@ msgstr ""
 msgid "``T[d1,...,dn]``"
 msgstr ""
 
-#: ../../source/behavior/functions/external.rst:86
 #: ../../source/behavior/functions/external.rst:86
 #: ../../source/behavior/functions/external.rst:112
 msgid "``T' *``, ``size_t d1``, ..., ``size_t dn``"
@@ -234,26 +262,32 @@ msgid "``record``"
 msgstr ""
 
 #: ../../source/behavior/functions/external.rst:89
-#: ../../source/behavior/functions/external.rst:89
 #: ../../source/behavior/functions/external.rst:115
 msgid "``struct *``"
 msgstr ""
 
 #: ../../source/behavior/functions/external.rst:92
 msgid ""
-"A few additional comments about this table.  First, it is assumed that all "
-"strings are null (``\\0``) terminated.  Also, in the case of arrays the type"
-" ``T'`` indicate the C type that the Modelica type ``T`` would be mapped to "
-"(using this same table).  Finally, a ``record`` is mapped to a ``struct`` in"
-" C where the members of the C structure correspond in order to the members "
-"of the Modelica ``record``.  Types of members in ``records`` are mapped "
-"using the second column of this table (*i.e.,* as if they were input "
-"arguments)."
+"A few additional comments about this table.  First, it is assumed that "
+"all strings are null (``\\0``) terminated.  Also, in the case of arrays "
+"the type ``T'`` indicates the C type that the Modelica type ``T`` would "
+"be mapped to (using this same table).  Finally, a ``record`` is mapped to"
+" a ``struct`` in C where the members of the C structure correspond in "
+"order to the members of the Modelica ``record``.  Types of members in "
+"``records`` are mapped using the second column of this table (*i.e.,* as "
+"if they were input arguments)."
 msgstr ""
+"이 테이블에 대한 몇 가지 추가 설명을 하겠습니다. "
+"첫째, 모든 문자열이 null(``\0``)로 종료된다고 가정합니다. "
+"또한 배열의 경우 ``T'`` 자료형은 모델리카 자료형 ``T`` 가 매핑될 C 자료형을 나타냅니다(동일한 테이블 사용)."
+"마지막으로 ``records`` 는 C 구조의 멤버가 모델리카 ``record`` 의 멤버에 해당하는 C의 ``구조체(struct)`` 에 매핑됩니다. "
+"``record`` 의 멤버 자료형은 이 테이블의 두 번째 열을 사용하여 매핑됩니다(*즉,* 마치 입력 인수인 것처럼)."
+
 
 #: ../../source/behavior/functions/external.rst:101
 msgid "For data returned by a C function, the following mapping applies:"
 msgstr ""
+"C 함수에서 반환된 데이터의 경우 다음 매핑이 적용됩니다."
 
 #: ../../source/behavior/functions/external.rst:110
 msgid "``T' *``, ``size_t``"
@@ -269,6 +303,8 @@ msgid ""
 "If you need to work with Fortran functions or subroutines, the following "
 "type mappings apply:"
 msgstr ""
+"Fortran 함수 또는 서브루틴으로 작업해야 하는 경우 다음 자료형의 매핑이 적용됩니다."
+
 
 #: ../../source/behavior/functions/external.rst:127
 msgid "``DOUBLE PRECISION``"
@@ -298,16 +334,24 @@ msgstr ""
 
 #: ../../source/behavior/functions/external.rst:137
 msgid ""
-"Two important things to note about this table.  First, there is no mapping "
-"for strings or records.  Second, since Fortran uses pass by reference "
-"semantics, all variables passed into and out of these functions are assumed "
-"to be pointers.  For this reason, there is no distinction made whether the "
-"variable is an input or an output of the Modelica function."
+"Two important things to note about this table.  First, there is no "
+"mapping for strings or records.  Second, since Fortran uses pass by "
+"reference semantics, all variables passed into and out of these functions"
+" are assumed to be pointers.  For this reason, there is no distinction "
+"made whether the variable is an input or an output of the Modelica "
+"function."
 msgstr ""
+"이 테이블에 대해 주목해야 할 두 가지 중요한 사항이 있습니다. "
+"첫째, 문자열이나 레코드에 대한 매핑이 없습니다."
+"둘째, Fortran은 참조에 의한 전달을 사용하기 때문에 함수로 전달하거나 전달받는 모든 변수는 포인터로 간주됩니다."
+"이러한 이유로 변수가 모델리카 함수의 입력인지 출력인지 구별되지 않습니다."
+
 
 #: ../../source/behavior/functions/external.rst:145
 msgid "Special Functions"
 msgstr ""
+"특별 함수(Special Functions)"
+
 
 #: ../../source/behavior/functions/external.rst:147
 msgid ""
@@ -316,7 +360,9 @@ msgid ""
 "name of the function, its prototype and an explanation of the functions "
 "purpose are described."
 msgstr ""
-
+"모델리카 런타임과 상호 작용하기 위해 **외부 함수에서** 호출할 수 있는 많은 함수가 있습니다."
+"각 함수에 대해 함수의 이름, 프로토타입 및 함수 목적에 대한 설명을 하겠습니다. "
+ 
 #: ../../source/behavior/functions/external.rst:153
 msgid "``ModelicaVFormatMessage``"
 msgstr ""
@@ -326,6 +372,7 @@ msgid ""
 "Output the message under the same format control as the C-function "
 "``vprintf``."
 msgstr ""
+"C 함수 ``vprintf`` 와 동일한 형식 제어 하에서 메시지를 출력합니다."
 
 #: ../../source/behavior/functions/external.rst:165
 msgid "``ModelicaError``"
@@ -337,6 +384,9 @@ msgid ""
 "returns to the calling function, but handles the error similarly to an "
 "assert in the Modelica code."
 msgstr ""
+"오류 메시지 문자열을 출력합니다(형식 제어 없음). "
+"이 함수는 호출 함수로 반환되지 않지만 모델리카 코드의 어설션과 유사하게 오류를 처리합니다."
+
 
 #: ../../source/behavior/functions/external.rst:176
 msgid "``ModelicaFormatError``"
@@ -345,9 +395,12 @@ msgstr ""
 #: ../../source/behavior/functions/external.rst:182
 msgid ""
 "Output the error message under the same format control as the C-function "
-"``printf``. This function never returns to the calling function, but handles"
-" the error similarly to an assert in the Modelica code."
+"``printf``. This function never returns to the calling function, but "
+"handles the error similarly to an assert in the Modelica code."
 msgstr ""
+"C 함수 ``printf`` 와 동일한 형식 제어에서 오류 메시지를 출력합니다."
+"이 함수는 호출 함수로 반환되지 않지만 모델리카 코드의 어설션과 유사하게 오류를 처리합니다."
+
 
 #: ../../source/behavior/functions/external.rst:190
 msgid "``ModelicaVFormatError``"
@@ -359,6 +412,10 @@ msgid ""
 "``vprintf``. This function never returns to the calling function, but "
 "handles the error similarly to an assert in the Modelica code."
 msgstr ""
+"C 함수 ``vprintf`` 와 동일한 형식 제어에서 오류 메시지를 출력합니다. "
+"이 함수는 호출 함수로 반환되지 않지만 모델리카 코드의 어설션과 유사하게 오류를 처리합니다."
+
+
 
 #: ../../source/behavior/functions/external.rst:204
 msgid "``ModelicaAllocateString``"
@@ -366,12 +423,16 @@ msgstr ""
 
 #: ../../source/behavior/functions/external.rst:210
 msgid ""
-"Allocate memory for a Modelica string which is used as return argument of an"
-" external Modelica function. Note, that the storage for string arrays (= "
-"pointer to string array) is still provided by the calling program, as for "
-"any other array. If an error occurs, this function does not return, but "
-"calls :ref:`modelica-error`."
+"Allocate memory for a Modelica string which is used as return argument of"
+" an external Modelica function. Note, that the storage for string arrays "
+"(= pointer to string array) is still provided by the calling program, as "
+"for any other array. If an error occurs, this function does not return, "
+"but calls :ref:`modelica-error`."
 msgstr ""
+"외부 모델리카 함수의 반환 인수로 사용하는 모델리카 문자열에 대한 메모리를 할당합니다."
+"문자열 배열(= 문자열 배열에 대한 포인터)에 대한 저장소는 다른 배열과 마찬가지로 호출 프로그램에서 여전히 제공된다는 점에 유의해야 합니다."
+"오류가 발생하면 이 함수는 반환하지 않고 :ref:`modelica-error` 를 호출합니다."
+
 
 #: ../../source/behavior/functions/external.rst:217
 msgid "``ModelicaAllocateStringWithErrorReturn``"
@@ -379,12 +440,36 @@ msgstr ""
 
 #: ../../source/behavior/functions/external.rst:223
 msgid ""
-"Same as :ref:`modelica-allocate-string`, except that in case of error, the "
-"function returns 0. This allows the external function to close files and "
-"free other open resources in case of error. After cleaning up resources, use"
-" :ref:`modelica-error` or :ref:`modelica-format-error` to signal the error."
+"Same as :ref:`modelica-allocate-string`, except that in case of error, "
+"the function returns 0. This allows the external function to close files "
+"and free other open resources in case of error. After cleaning up "
+"resources, use :ref:`modelica-error` or :ref:`modelica-format-error` to "
+"signal the error."
 msgstr ""
+":ref:`modelica-allocate-string` 과 동일하지만 오류 발생 시 함수가 0을 반환합니다. "
+"이를 통해 외부 함수는 오류 발생 시 파일을 닫고 다른 열린 리소스를 해제할 수 있습니다."
+"리소스를 정리한 후 modelica-error 또는 modelica-format-error를 사용하여 오류를 알립니다."
 
-#: ../../source/behavior/functions/external.rst:9
-msgid "external"
-msgstr ""
+
+#~ msgid ""
+#~ "A few additional comments about this "
+#~ "table.  First, it is assumed that "
+#~ "all strings are null (``\\0``) "
+#~ "terminated.  Also, in the case of "
+#~ "arrays the type ``T'`` indicate the "
+#~ "C type that the Modelica type "
+#~ "``T`` would be mapped to (using "
+#~ "this same table).  Finally, a ``record``"
+#~ " is mapped to a ``struct`` in C"
+#~ " where the members of the C "
+#~ "structure correspond in order to the "
+#~ "members of the Modelica ``record``.  "
+#~ "Types of members in ``records`` are "
+#~ "mapped using the second column of "
+#~ "this table (*i.e.,* as if they "
+#~ "were input arguments)."
+#~ msgstr ""
+
+#~ msgid "external"
+#~ msgstr ""
+

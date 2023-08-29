@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:4
 msgid "Hysteresis"
 msgstr ""
+"히스테리시스(Hysteresis)"
 
 #: ../../source/behavior/discrete/hysteresis.rst:6
 msgid ""
@@ -24,16 +27,24 @@ msgid ""
 "address the issue because the chattering was purely a response to numerical "
 "noise and not triggered by abrupt changes in behavior."
 msgstr ""
+"이 섹션에서는 특정 유형의 모델링에 대해 이해해야 할 중요한 개념인 히스테리시스를 주제로 설명 하겠습니다."
+"이전에 논의 하였던 :ref:`state-events` 에 대한 논의에서 채터링이 발생한 경우가 있었습니다."
+"이 경우 채터링은 순전히 수치적인 노이즈에 대한 응답이었고, 갑작스러운 동작의 변화에 의해 트리거된 것이 아니기 때문에 문제를 해결하기 위해 ``noEvent`` 연산자를 사용할 수 있었습니다."
+
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:14
 msgid ""
 "In this section, we will consider a slightly more extreme case. Consider the"
 " following model:"
 msgstr ""
+"그러나, 이 섹션에서는 조금 더 극단적인 경우를 살펴보겠습니다. 다음 모델을 보십시오."
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:21
 msgid "If we simulate this model, we get the following results:"
 msgstr ""
+"이 모델을 시뮬레이션하면 다음과 같은 결과를 얻습니다."
 
 #: ../../source/behavior/discrete/hysteresis.rst:26
 msgid ""
@@ -41,6 +52,9 @@ msgid ""
 "complete.  The reason for such poor simulation performance can be better "
 "understood by looking at the heater output during the simulation:"
 msgstr ""
+"그러나 이러한 결과가 모두 출력될 때 까지 시뮬레이션에 매우 오랜 시간이 걸립니다.  "
+"히터 출력을 보면 시뮬레이션 성능이 떨어지는 이유를 더 잘 이해할 수 있습니다."
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:34
 msgid ""
@@ -50,6 +64,10 @@ msgid ""
 " scaling, there are so many transitions that the results resemble a filled "
 "rectangle."
 msgstr ""
+"약 0.2초 이후 부터 히터가 계속 켜졌다 꺼졌다 하는 것을 볼 수 있습니다. "
+"실제로 너무 자주 이러한 현상이 발생하여서, 상태 전환을 선도(plot)에서 보려면 상당히 확대해야 합니다."
+"일반 크기로 선도가 설정된 경우는 상태의 전환이 너무 많아서 위에서 보인 것 처럼 채워진 사각형으로 결과를 출력합니다."
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:40
 msgid ""
@@ -60,6 +78,11 @@ msgid ""
 "temperature gets some specified amount above or below the desired "
 "temperature before acting."
 msgstr ""
+"이것은 실제 제어 시스템에서 발생하는 문제입니다. "
+"그러나, 가정에서 보일러가 작동하는 방식을 주의 깊게 살펴보면 온도가 설정한 원하는 실내 온도보다 위아래로 내려갈 때마다 "
+"계속 즉각적으로 켜지고 꺼지는 동작을 하지  않는 것을 볼 수 있습니다. "
+"대신 작동하기 전에 온도가 원하는 온도보다 높거나 낮을 때까지 기다립니다."
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:47
 msgid ""
@@ -68,6 +91,10 @@ msgid ""
 "doesn't have any hysteresis.  Instead, it is constantly turning the heater "
 "off and on in response to miniscule changes in temperature."
 msgstr ""
+"원하는 온도 주변에 도입되는 이 "밴드"를 히스테리시스라고 합니다. "
+"``ChatteringControl`` 모델의 문제점은 히스테리시스가 없다는 것입니다. "
+"대신 온도의 미세한 변화에 반응하여 히터를 계속 껐다가 켭니다."
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:53
 msgid ""
@@ -78,6 +105,11 @@ msgid ""
 "nothing else.  To implement hysteresis, we need to use ``when`` statements."
 "  Consider the following model:"
 msgstr ""
+"히스테리시스 모델링에 대한 까다로운 점은, 이것이 "상태 저장(stateful)"이라는 특성을 가지고 있어서 시스템 동작 결정이 과거에 발생한 일에 따라 달라진다는 것 입니다. "
+"이러한 이유로 단순히 ``if`` 문을 사용할 수 없습니다. 왜냐하면, ``if`` 문은 시스템의 현재 상태만을 고려하기 때문입니다."
+"히스테리시스를 구현하려면 ``when`` 문을 사용해야 합니다."
+"다음 모델을 살펴 보겠습니다."
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:64
 msgid ""
@@ -91,6 +123,13 @@ msgid ""
 "and look at the temperature, we see that it stays within the hysteresis band"
 " of our desired temperature."
 msgstr ""
+"``when`` 문을 살펴보면 ``T>Tbar+1`` 이 true가 되거나 ``T<Tbar-1`` 이 true가 될 때만 시스템이 응답한다는 것을 알 수 있습니다. "
+"**이 표현식이 false가 되면 아무 일도 일어나지 않습니다**."
+"이것이 ``if`` 문을 사용하면 이렇게 작동하지 않는 이유 입니다.  "
+"``if`` 문 또는 ``if`` 표현식을 사용하면 조건식이 변경될 때마다 바로 동작이 변경됩니다. "
+"그러나 ``when`` 문을 사용하면 ``when`` 문에 있는 문은 조건이 **참일 때** 만 활성화됩니다. "
+"이 모델을 시뮬레이션해서 온도를 보면 원하는 온도의 히스테리시스 대역 내에 있음을 알 수 있습니다."
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:77
 msgid ""
@@ -98,6 +137,9 @@ msgid ""
 "that, unlike our previous example, some time elapses between the heater "
 "turning on and the heater turning off."
 msgstr ""
+"더 중요한 것은 시스템의 열 출력을 보면 이전 예제와 달리 히터가 켜지고 꺼지는 사이에 약간의 "
+"시간이 경과한다는 것을 알 수 있습니다."
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:84
 msgid ""
@@ -105,6 +147,9 @@ msgid ""
 "using an ``algorithm`` section (as previous discussed during our discussion "
 "on :ref:`speed estimation techniques <pulse-counting>`)."
 msgstr ""
+"히스테리시스의 구현은 ``algorithm`` 섹션을 사용하여 약간 더 명확하게 만들 수 있습니다."
+"(앞서 :ref:`속도 추정 기술 <pulse-counting>` 에서 논의한 바와 같이)"
+
 
 #: ../../source/behavior/discrete/hysteresis.rst:94
 msgid ""
@@ -114,3 +159,7 @@ msgid ""
 "``algorithm`` section because they both assign to the same variable, "
 "``heat``."
 msgstr ""
+"여기서 두 개의 조건식을 별도의  ``when`` 문으로 분리 하는 방법을 확인할 수 있습니다. "
+"이렇게 표현 하면 열원을 켜고 끄는 이유를 명확하게 알 수 있습니다. "
+"이 ``when`` 문은 둘 다 동일한 변수인 ``heat`` 에 할당되기 때문에 ``algorithm`` 섹션에 배치 한것 입니다. "
+

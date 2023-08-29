@@ -1,168 +1,268 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/subsystems/heat_transfer.rst:4
 msgid "Spatially Distributed Heat Transfer"
 msgstr ""
+"공간적으로 분산된 열 전달(Spatially Distributed Heat Transfer)"
 
 #: ../../source/components/subsystems/heat_transfer.rst:6
 msgid ""
 "Our next example of creating reusable subsystems will introduce a slight "
-"twist.  In this section we will not only demonstrate how to create a "
-"reusable subsystem model, as in the previous examples from this chapter, but"
-" that subsystem model will use an array of **component** instances where the"
-" size of that array can be used to control the spatial resolution of the "
-"results."
+"twist. In this section we will not only demonstrate how to create a "
+"reusable subsystem model, as in the previous examples from this chapter, "
+"but that subsystem model will use an array of **component** instances "
+"where the size of that array can be used to control the spatial "
+"resolution of the results.  This is similar to the kind of model "
+"presented earlier in :ref:`one-dimensional-heat-transfer`."
 msgstr ""
+"재사용 가능한 하위 시스템을 만드는 약간 변형된 다음 예제를 소개합니다. "
+"이 섹션에서는 이 장의 이전 예제에서와 같이 재사용 가능한 하위 시스템 모델을 만드는 방법을 보여줄 뿐만 아니라 해당 하위 시스템 모델은 해당 배열의 크기를 사용할 수 있는 **구성 요소**"
+"인스턴스의 배열을 사용하여 결과의 공간 해상도를 제어하는 것을 보여주겠습니다."
+"이는 앞에서 '1차원 열전달'에서 제시한 종류의 모델과 유사합니다."
+
 
 #: ../../source/components/subsystems/heat_transfer.rst:14
 msgid "Flat System"
 msgstr ""
+"수평 시스템(Flat System)"
 
 #: ../../source/components/subsystems/heat_transfer.rst:16
 msgid ""
 "Let's start, as usual, with a flat system level model like the one shown "
 "below:"
 msgstr ""
+"평소와 같이 아래와 같은 평면 시스템 레벨 모델부터 시작하겠습니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:24
+#: ../../source/components/subsystems/heat_transfer.rst:26
 msgid ""
 "This model consists of a collection of thermal capacitances with thermal "
-"conductors in between them.  In this case, there are 3 thermal capacitances "
-"and 5 thermal conductors.  On the left side, heat is applied to the system "
-"and on the right side a temperature sensor measures how the temperature of "
-"the rightmost thermal capacitance changes."
+"conductors in between them.  In practical terms, the thermal capacitances"
+" could reprsent segments of a metal pipe.  The axial conduction could "
+"represent heat conduction axially along the length of the rod.  The "
+"radial conduction could be the heat lost through some insulating material"
+" like plastic. In this example, there are 3 such thermal capacitances and"
+" 5 thermal conductors.  On the left side, heat is applied to the system "
+"and on the right side a temperature sensor measures how the temperature "
+"of the rightmost thermal capacitance changes.  So the example applies "
+"heat at one end and monitors the temperature increase at the other end."
 msgstr ""
+"이 모델은 특정 공간 사이에 열 전도체가 있는 열 커패시턴스 모음으로 구성하며, 실제로 열용량은 금속 파이프의 세그먼트를 나타낼 수 있습니다."
+"축 방향 전도는 막대의 길이를 따라 축 방향으로 열 전도를 나타낼 수 있고, 방사형 전도는 플라스틱과 같은 일부 절연 재료를 통해 손실된 열로 표현할 수 있습니다."
+"이 예에서는 3개의 열 용량 모델과 5개의 열 전도체가 있습니다."
+"왼쪽에는 열이 시스템에 적용되고 오른쪽에는 온도 센서가 맨 오른쪽 열용량의 온도 변화를 측정합니다."
+"따라서 예제에서는 한쪽 끝에 열을 가하고 다른 쪽 끝에서 온도 증가를 모니터링합니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:31
+
+
+#: ../../source/components/subsystems/heat_transfer.rst:37
 msgid "When implemented in Modelica, the model looks like this:"
 msgstr ""
+"모델리카에서 구현될 때 모델은 다음과 같습니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:36
+#: ../../source/components/subsystems/heat_transfer.rst:42
 msgid ""
-"Simulating this system, we can see the temperature response of the rightmost"
-" thermal capacitance in the following plot:"
+"Simulating this system, we can see the temperature response of the "
+"rightmost thermal capacitance in the following plot:"
 msgstr ""
+"이 시스템을 시뮬레이션하면 다음 선도에서 가장 오른쪽 열 용량의 온도 응답을 볼 수 있습니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:43
+#: ../../source/components/subsystems/heat_transfer.rst:49
 msgid "Segmented Rod Subsystem"
 msgstr ""
+"세그먼트 로드 서브시스템(Segmented Rod Subsystem)"
 
-#: ../../source/components/subsystems/heat_transfer.rst:47
+#: ../../source/components/subsystems/heat_transfer.rst:53
 msgid ""
-"In our flat system model, we have 3 thermal capacitances and 5 conductances."
-"  This configuration represents a rod that has been divided into 3 equal "
-"segments and the conductance that occurs between those segments as well as "
-"between each segment and some ambient conditions.  In theory, we can divide "
-"a rod into :math:`N` equal segments with :math:`N-1` conduction paths "
-"between them and :math:`N` conduction paths between each segment and the "
-"ambient conditions."
+"In our flat system model, we have 3 thermal capacitances and 5 "
+"conductances.  This configuration represents a rod that has been divided "
+"into 3 equal segments and the conductance that occurs between those "
+"segments as well as between each segment and some ambient conditions.  In"
+" theory, we can divide a rod into :math:`N` equal segments with "
+":math:`N-1` conduction paths between them and :math:`N` conduction paths "
+"between each segment and the ambient conditions."
 msgstr ""
+"플랫 시스템 모델에는 3개의 열용량과 5개의 컨덕턴스가 있습니다. "
+"이 구성은 3개의 동일한 세그먼트로 분할된 막대와 각 세그먼트와 일부 주변 조건 사이뿐만 아니라 해당 세그먼트 사이에서 발생하는 컨덕턴스를 나타냅니다."
+"이론적으로  로드를 각 세그먼트와 주변 조건 사이의 N-1 전도 경로와 N-1 전도 경로가 있는 동일한 세그먼트로 로드를 나눌 수 있습니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:55
+
+#: ../../source/components/subsystems/heat_transfer.rst:61
 msgid ""
 "Our particular configuration was for :math:`N=3`.  But we can create a "
-"subsystem model where :math:`N` is a parameter of the subsystem.  In other "
-"words, we can create a subsystem model that is divided into :math:`N` equal "
-"segments.  But to do so, we cannot simply drag and drop the capacitances "
-"into the model and connect them with conductances because we don't know the "
-"exact number."
+"subsystem model where :math:`N` is a parameter of the subsystem.  In "
+"other words, we can create a subsystem model that is divided into "
+":math:`N` equal segments.  But to do so, we cannot simply drag and drop "
+"the capacitances into the model and connect them with conductances "
+"because we don't know the exact number."
 msgstr ""
+"특정 구성은 :math:`N=3` 이지만, N이 파라미터인 서브시스템 모델을 만들 수 있습니다. "
+"즉, N개의 동일한 세그먼트로 나누어지는 하위 시스템 모델을 만들 수 있습니다. "
+'그러나 그렇게 하기 위해서는 정확한 수치를 모르기 때문에 커패시턴스를 모델에 드래그 앤 드롭하고 컨덕턴스와 연결할 수 없습니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:62
-msgid ""
-"Instead, we'll use an array **of components** to represent this collection "
-"of capacitances and conductances.  The resulting ``Rod`` model can be "
-"written in Modelica as follows:"
-msgstr ""
 
-#: ../../source/components/subsystems/heat_transfer.rst:70
-msgid ""
-"There are several interesting things to note about this model.  First, the "
-"number of segments the rod will be divided into is represented by the ``n`` "
-"parameter:"
-msgstr ""
 
-#: ../../source/components/subsystems/heat_transfer.rst:78
+#: ../../source/components/subsystems/heat_transfer.rst:68
 msgid ""
-"The parameter ``n`` is then used in the following declarations to specify "
-"the number of capacitance and conductance elements in the rod:"
+"Instead, we'll use an array **of components** to represent this "
+"collection of capacitances and conductances.  The resulting ``Rod`` model"
+" can be written in Modelica as follows:"
 msgstr ""
+"대신, **구성 요소** 배열을 사용하여 이 정전 용량 및 컨덕턴스 모음을 나타냅니다. 결과 ``Rod`` 모델은 모델리카에서 다음과 같이 작성할 수 있습니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:85
+
+#: ../../source/components/subsystems/heat_transfer.rst:76
 msgid ""
-"Note that if we wish to apply a modification, *e.g.,* ``G=G_rod`` to every "
-"component in an array of components, we can use the ``each`` qualifier on "
-"the modification.  We'll discuss the ``each`` qualifier and how to apply "
-"modifications to arrays of components later in this chapter in the section "
-"on :ref:`sub-modifications`."
+"There are several interesting things to note about this model.  First, "
+"the number of segments the rod will be divided into is represented by the"
+" ``n`` parameter:"
 msgstr ""
+"이 모델에 대해 주목해야 할 몇 가지 흥미로운 사항이 있습니다. 먼저 로드가 분할될 세그먼트 수는 ``n`` 파라미터로 표시됩니다."
+
+#: ../../source/components/subsystems/heat_transfer.rst:84
+msgid ""
+"The parameter ``n`` is then used in the following declarations to specify"
+" the number of capacitance and conductance elements in the rod:"
+msgstr ""
+"다음 선언에서 파라미터 ``n`` 을 사용하여 로드의 커패시턴스 및 컨덕턴스 요소 수를 지정합니다."
+
 
 #: ../../source/components/subsystems/heat_transfer.rst:91
 msgid ""
-"Now that we've declared our component arrays, we can then wire together the "
-"capacitances and conductances using ``for`` loops in an ``equation`` "
+"Note that if we wish to apply a modification, *e.g.,* ``G=G_rod/n`` to "
+"every component in an array of components, we can use the ``each`` "
+"qualifier on the modification.  We'll discuss the ``each`` qualifier and "
+"how to apply modifications to arrays of components later in this chapter "
+"in the section on :ref:`sub-modifications`."
+msgstr ""
+"구성 요소 배열의 모든 구성 요소, *예* 를 들어 ``G=G_rod/n`` 에 수정을 적용하려는 경우 ``each`` 한정자를 사용할 수 있습니다."
+"``each`` 한정자에 대해 설명하고 이 장 뒷부분의 하위 수정 섹션에서 구성 요소 배열에 수정 사항을 적용하는 방법에 대해 설명하겠습니다."
+
+
+
+#: ../../source/components/subsystems/heat_transfer.rst:97
+msgid ""
+"Now that we've declared our component arrays, we can then wire together "
+"the capacitances and conductances using ``for`` loops in an ``equation`` "
 "section:"
 msgstr ""
+"이제 구성 요소 배열을 선언했으므로 ``수식`` 섹션에서 ``for`` 루프를 사용하여 커패시턴스와 컨덕턴스를 함께 연결할 수 있습니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:99
+
+#: ../../source/components/subsystems/heat_transfer.rst:105
 msgid ""
-"We also need to connect the ends of the rod to the external connectors so "
-"that the rod can be connected to other models:"
+"We also need to connect the ends of the rod to the external connectors so"
+" that the rod can be connected to other models:"
 msgstr ""
-
-#: ../../source/components/subsystems/heat_transfer.rst:106
-msgid ""
-"In this way, we are able to create a segmented rod model with an arbitrary "
-"number of equally divided segments."
-msgstr ""
-
-#: ../../source/components/subsystems/heat_transfer.rst:110
-msgid "Spatial Resolution"
-msgstr ""
+"로드를 다른 모델에 연결할 수 있도록 로드의 끝을 외부 커넥터에 연결해야 합니다"
 
 #: ../../source/components/subsystems/heat_transfer.rst:112
 msgid ""
-"Now that we have our parameterized ``Rod`` model, we can look at how the "
-"number of segments in the rod impacts the response we see. Ultimately, what "
-"we should see is that as the number of segments gets larger (or, as the size"
-" of the segments gets smaller), we should converge on a solution."
+"In this way, we are able to create a segmented rod model with an "
+"arbitrary number of equally divided segments."
 msgstr ""
+"이러한 방식으로 균등하게 분할된 임의의 수의 세그먼트로 분할된 로드 모델을 생성할 수 있습니다."
+
+#: ../../source/components/subsystems/heat_transfer.rst:116
+msgid "Spatial Resolution"
+msgstr ""
+"공간 해상도(Spatial Resolution)"
 
 #: ../../source/components/subsystems/heat_transfer.rst:118
-msgid "We'll start by considering a model where ``n=3``, *i.e.,*"
+msgid ""
+"Now that we have our parameterized ``Rod`` model, we can look at how the "
+"number of segments in the rod impacts the response we see. Ultimately, "
+"what we should see is that as the number of segments gets larger (or, as "
+"the size of the segments gets smaller), we should converge on a solution."
 msgstr ""
+"이제 파라미터화된 ``Rod`` 모델이 있으므로 막대의 세그먼트 수가  보는 응답에 어떤 영향을 미치는지 확인할 수 있습니다."
+"궁극적으로  봐야 할 것은 세그먼트의 수가 커질수록(또는 세그먼트의 크기가 작아질수록) 하나의 해로 수렴해야 한다는 것입니다."
+
+
 
 #: ../../source/components/subsystems/heat_transfer.rst:124
+msgid "We'll start by considering a model where ``n=3``, *i.e.,*"
+msgstr ""
+"``n=3`` 인 모델을 먼저 다루어 보겠습니다."
+
+#: ../../source/components/subsystems/heat_transfer.rst:130
 msgid ""
 "We can then extend this model to create additional models with more "
 "segments, *e.g.,*"
 msgstr ""
+"그런 다음 이 모델을 확장하여 더 많은 세그먼트가 있는 추가 모델을 생성할 수 있습니다."
+"예를 들면 다음과 같습니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:139
+
+#: ../../source/components/subsystems/heat_transfer.rst:145
 msgid ""
-"If we simulate all of these cases, we see that as ``n`` gets larger, they "
-"appear to converge to a common solution and that ``n=10`` seems to provide a"
-" reasonable solution without the need to introduce a large number of "
-"superfluous components:"
+"If we simulate all of these cases, we see that as ``n`` gets larger, they"
+" appear to converge to a common solution and that ``n=10`` seems to "
+"provide a reasonable solution without the need to introduce a large "
+"number of superfluous components:"
 msgstr ""
+"이 모든 경우를 시뮬레이션하면 ``n`` 이 커질수록 일반적인 해로 수렴하는 것처럼 보이고, 많은 수의 불필요한 구성 요소를 해석하지 않는 합리적인 해가 ``n=10`` 인 것처럼 보입니다."
 
-#: ../../source/components/subsystems/heat_transfer.rst:153
+#: ../../source/components/subsystems/heat_transfer.rst:159
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
-#: ../../source/components/subsystems/heat_transfer.rst:155
+#: ../../source/components/subsystems/heat_transfer.rst:161
 msgid ""
-"In this section, we've seen how we can build assemblies of arbitrary size "
-"using arrays of components and ``for`` loops to connect them together."
+"In this section, we've seen how we can build assemblies of arbitrary size"
+" using arrays of components and ``for`` loops to connect them together."
 msgstr ""
+"이 섹션에서  컴포넌트 배열과 이들을 함께 연결하는 ``for`` 루프를 사용하여 임의 크기의 어셈블리를 빌드하는 방법을 살펴보았습니다."
+
+#~ msgid ""
+#~ "Our next example of creating reusable"
+#~ " subsystems will introduce a slight "
+#~ "twist.  In this section we will "
+#~ "not only demonstrate how to create "
+#~ "a reusable subsystem model, as in "
+#~ "the previous examples from this chapter,"
+#~ " but that subsystem model will use"
+#~ " an array of **component** instances "
+#~ "where the size of that array can"
+#~ " be used to control the spatial "
+#~ "resolution of the results."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This model consists of a collection "
+#~ "of thermal capacitances with thermal "
+#~ "conductors in between them.  In this "
+#~ "case, there are 3 thermal capacitances"
+#~ " and 5 thermal conductors.  On the"
+#~ " left side, heat is applied to "
+#~ "the system and on the right side"
+#~ " a temperature sensor measures how "
+#~ "the temperature of the rightmost thermal"
+#~ " capacitance changes."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that if we wish to apply "
+#~ "a modification, *e.g.,* ``G=G_rod`` to "
+#~ "every component in an array of "
+#~ "components, we can use the ``each`` "
+#~ "qualifier on the modification.  We'll "
+#~ "discuss the ``each`` qualifier and how"
+#~ " to apply modifications to arrays of"
+#~ " components later in this chapter in"
+#~ " the section on :ref:`sub-modifications`."
+#~ msgstr ""
+

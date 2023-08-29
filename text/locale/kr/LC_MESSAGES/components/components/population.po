@@ -1,437 +1,596 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/components/population.rst:4
 msgid "Lotka-Volterra Equations Revisited"
 msgstr ""
+"로드카-볼테라 방정식 재검토(Lotka-Volterra Equations Revisited)"
 
 #: ../../source/components/components/population.rst:6
 msgid ""
-"In this section, we will revisit the :ref:`lotka-volterra-systems` discussed"
-" in the first chapter.  However, this time we will create system models from"
-" individual components.  After recreating the behavior shown in the first "
-"chapter, we'll expand the set of effects we consider and reconfigure these "
-"component models into other system models that demonstrate different "
-"dynamics."
+"In this section, we will revisit the :ref:`lotka-volterra-systems` "
+"discussed in the first chapter.  However, this time we will create system"
+" models from individual components.  After recreating the behavior shown "
+"in the first chapter, we'll expand the set of effects we consider and "
+"reconfigure these component models into other system models that "
+"demonstrate different dynamics."
 msgstr ""
+"이 섹션에서는 첫 번째 장에서 논의한 :ref:`lotka-volterra-systems` 를 다시 다루지만, 이번에는 개별 구성 요소로 시스템 모델을 생성합니다. "
+"첫 번째 장서 보여준 기능을 다시 생성하고, 모델에서 고려하는 부분을 확장하고 이러한 구성 요소 모델을 다른 역학을 보여주는 새로운 시스템 모델로 재구성 하겠습니다."
+
 
 #: ../../source/components/components/population.rst:14
 msgid "Classic Lotka-Volterra"
 msgstr ""
+"고전적인 로드카-볼테라(Classic Lotka-Volterra)"
 
 #: ../../source/components/components/population.rst:16
 msgid ""
-"We'll start by looking at the classic Lotka-Volterra system.  In order to "
-"create such a system using component models, we will require models to "
+"We'll start by looking at the classic Lotka-Volterra system.  In order to"
+" create such a system using component models, we will require models to "
 "represent the population of both rabbits and foxes as well as models for "
 "reproduction, starvation and predation."
 msgstr ""
+"고전적인 Lotka-Volterra 시스템부터 살펴보겠습니다."
+"구성 요소 모델을 사용하여 이러한 시스템을 만들려면 번식, 기아 및 포식에 대한 모델뿐만 아니라 토끼와 여우의 개체군을 나타내는 모델이 필요합니다."
+
+
 
 #: ../../source/components/components/population.rst:22
 msgid "Connectors"
 msgstr ""
+"커넥터(Connectors)"
 
 #: ../../source/components/components/population.rst:24
 msgid ""
-"However, as we learned during our discussion of :ref:`connectors`, before we"
-" can start building component models we first need to formally define the "
-"information that will be exchanged by interacting components by defining "
-"connectors.  The ``connector`` we will use in this section is the "
-"``Species`` connector and it is defined as follows:"
+"However, as we learned during our discussion of :ref:`connectors`, before"
+" we can start building component models we first need to formally define "
+"the information that will be exchanged by interacting components by "
+"defining connectors.  The ``connector`` we will use in this section is "
+"the ``Species`` connector and it is defined as follows:"
 msgstr ""
+"그러나 커넥터에 대해 논의하는 동안 배운 것처럼 구성 요소 모델 구축을 시작하기 전에 커넥터를 정의하여 상호 작용하는 구성 요소에서 교환할 정보를 공식적으로 구성해야 합니다. "
+"이 섹션에서 사용할 ``connector`` 는 ``Species`` 커넥터이며 다음과 같이 정의합니다."
+
 
 #: ../../source/components/components/population.rst:34
 msgid ""
-"This connector definition is interesting because these definitions do not "
-"come from engineering.  Instead, they really arise from ecology.  In this "
-"case, our across variable is ``population`` which represents the actual "
-"number of animals of a particular species.  Our through variable, indicated "
-"by the presence of the ``flow`` qualifier, is ``rate`` which represents the "
-"rate at which new animals \"enter\" the component that this connector is "
-"attached to."
+"This connector definition is interesting because these definitions do not"
+" come from engineering.  Instead, they really arise from ecology.  In "
+"this case, our across variable is ``population`` which represents the "
+"actual number of animals of a particular species.  Our through variable, "
+"indicated by the presence of the ``flow`` qualifier, is ``rate`` which "
+"represents the rate at which new animals \"enter\" the component that "
+"this connector is attached to."
 msgstr ""
+"이 커넥터는 엔지니어링 관점으로 생성된 정의가 아니기 때문에 흥미롭습니다. "
+"대신, 그들은 실제로 생태학에서 발생하는 현상을 기초로 하고 있습니다."
+"이 경우  교차 변수는 특정 종의 실제 동물 수를 나타내는 ``population`` 입니다. ``flow`` 한정자가 있는 것으로 표시되는  통과 변수는 이 커넥터가 연결된 구성 요소에 "
+"새 동물이 "들어가는" 속도를 나타내는 ``rate`` 입니다."
+
 
 #: ../../source/components/components/population.rst:43
 msgid "Regional Population"
 msgstr ""
+"지역 개체수(Regional Population)"
 
 #: ../../source/components/components/population.rst:45
 msgid ""
 "To track the population of a given species in one region, we'll use the "
-"``RegionalPopulation`` model.  The model has several noteworthy aspects so "
-"we'll present the model piece by piece starting with:"
+"``RegionalPopulation`` model.  The model has several noteworthy aspects "
+"so we'll present the model piece by piece starting with:"
 msgstr ""
+"한 지역에서 특정 종의 개체수를 추적하기 위해 ``RegionalPopulation`` 모델을 사용합니다. "
+"이 모델에는 몇 가지 주목할만한 측면이 있으므로 다음부터 시작하여 모델을 하나씩 제시 해보겠습니다."
+
 
 #: ../../source/components/components/population.rst:58
 msgid ""
-"The first two lines are as expected.  But after that we see that this model "
-"defines a type called ``InitializationOptions``.  The type definition is "
-"qualified with the ``encapsulated`` keyword.  This is necessary because the "
-"type is being defined within a model and not a package.  Modelica has a rule"
-" that if we wish to refer to this type from outside the ``model`` "
-"definition, the type definition must be prefixed by ``encapsulated``.  We "
-"can see from the definition of this ``enumeration`` that it defines three "
-"distinct values: ``Free``, ``FixedPopulation`` and ``SteadyState``.  We'll "
-"see how these values will be used shortly."
+"The first two lines are as expected.  But after that we see that this "
+"model defines a type called ``InitializationOptions``.  The type "
+"definition is qualified with the ``encapsulated`` keyword.  This is "
+"necessary because the type is being defined within a model and not a "
+"package.  Modelica has a rule that if we wish to refer to this type from "
+"outside the ``model`` definition, the type definition must be prefixed by"
+" ``encapsulated``.  We can see from the definition of this "
+"``enumeration`` that it defines three distinct values: ``Free``, "
+"``FixedPopulation`` and ``SteadyState``.  We'll see how these values will"
+" be used shortly."
 msgstr ""
+"처음 두 줄은 예상 할 수 있는 구문입니다. "
+"그러나 세번째 줄에 ``InitializationOptions`` 라는 자료형의 정의를 볼 수 있습니다. "
+"자료형이 패키지가 아니라 모델 내에서 정의하기 때문에 ``encapsulated`` 키워드로 한정할 필요가 있습니다. "
+"모델리카에는 ``model`` 정의 외부에서 이 자료형을 참조하려면 자료형 정의에 ``encapsulated`` 라는 접두어를 붙여야 한다는 규칙이 있습니다."
+"이 ``enumeration`` 의 정의에서 ``Free``, ``FixedPopulation`` 및 ``SteadyState`` 의 세 가지 고유한 값을 정의한다는 것을 알 수 있습니다. "
+"곧 이 값이 어떻게 사용하는지 살펴보겠습니다."
+
+
 
 #: ../../source/components/components/population.rst:69
 msgid "The first declarations in our ``RegionalPopulation`` model is:"
 msgstr ""
+"``RegionalPopulation`` 모델의 첫 번째 선언은 다음과 같습니다."
 
 #: ../../source/components/components/population.rst:75
 msgid ""
 "Note that the first ``parameter``, ``init``, utilizes the "
 "``InitializationOptions`` enumeration both to specify its type (the "
-"enumeration itself) and its initial value, ``Free``.  Also note the presence"
-" of the ``choicesAllMatching`` annotation.  We'll talk more about this "
-"``annotation`` later in this chapter, when we are reviewing the concepts "
-"introduced here, and in subsequent chapters."
+"enumeration itself) and its initial value, ``Free``.  Also note the "
+"presence of the ``choicesAllMatching`` annotation.  We'll talk more about"
+" this ``annotation`` later in this chapter, when we are reviewing the "
+"concepts introduced here, and in subsequent chapters."
 msgstr ""
+"첫 번째 ``parameter`` 인 ``init`` 는 ``InitializationOptions`` 열거형을 사용하여 자료형 (열거형 자체)과 초기값인 ``Free`` 를 지정하고,"
+"``choicesAllMatching`` 주석을 사용하고 있는 것을 주목 해야 합니다. "
+"이 ``주석`` 에 대해서는 이 장의 뒷부분에서 소개한 개념을 검토할 때와 다음 장에서 더 자세히 설명하겠습니다."
+
+
 
 #: ../../source/components/components/population.rst:82
 msgid "The next declaration is:"
 msgstr ""
+"이어지는 선언은 다음과 같습니다."
+
 
 #: ../../source/components/components/population.rst:88
 msgid ""
-"The ``initial_population`` parameter is used to represent the initial value "
-"for the population in this region at the start of the simulation.  However, "
-"as we will see shortly in the equation section, this value is only used if "
-"the value of ``init`` is set to ``FixedPopulation``.  For this reason, the "
-"``enable`` annotation on this ``parameter`` is set to "
-"``init==InitializationOptions.FixedPopulation``.  This annotation is used to"
-" inform Modelica tools of this relationship.  This information can then be "
-"taken into account when building graphical user interfaces (*e.g.,* a "
-"parameter dialog) associated with this model."
+"The ``initial_population`` parameter is used to represent the initial "
+"value for the population in this region at the start of the simulation.  "
+"However, as we will see shortly in the equation section, this value is "
+"only used if the value of ``init`` is set to ``FixedPopulation``.  For "
+"this reason, the ``enable`` annotation on this ``parameter`` is set to "
+"``init==InitializationOptions.FixedPopulation``.  This annotation is used"
+" to inform Modelica tools of this relationship.  This information can "
+"then be taken into account when building graphical user interfaces "
+"(*e.g.,* a parameter dialog) associated with this model."
 msgstr ""
+"``initial_population`` 파라미터는 시뮬레이션 시작 시 이 지역의 인구에 대한 초기 값을 나타내는 데 사용합니다."
+"그러나 방정식 섹션에서 곧 보게 되겠지만 이 값은 ``init`` 값이 ``FixedPopulation`` 으로 설정된 경우에만 사용합니다. "
+"이러한 이유로 이 ``parameter`` 에 대한 ``enable`` 주석은 ``init==InitializationOptions.FixedPopulation`` 으로 설정합니다."
+"이 주석은 모델리카 시뮬레이션 프로그램에 이러한 관계를 알리는 데 사용합니다. "
+"그런 다음 해당 모델과 관련된 그래픽 사용자 인터페이스 (*예:* 파라미터 대화 상자)를 구축할 때 이 정보를 고려할 수 있습니다."
 
 #: ../../source/components/components/population.rst:100
 msgid ""
 "It is also worth noting the presence of the ``Dialog`` annotation in the "
 "definition of ``initial_population``.  This annotation allows the model "
 "developer to organize parameters into categories, in this case "
-"\"Initialization\".  Tools generally use such information to help structure "
-"parameter dialogs."
+"\"Initialization\".  Tools generally use such information to help "
+"structure parameter dialogs."
 msgstr ""
+"``initial_population`` 정의에 ``Dialog`` 주석이 있는데, 이 주석을 사용하면 모델 개발자가 파라미터를 범주(이 경우 "초기화")로 구성할 수 있습니다. "
+"시뮬레이션 소프트웨어는 일반적으로 이러한 정보를 사용하여 파라미터 대화 상자를 구성하는 데 도움을 줍니다."
+
+
 
 #: ../../source/components/components/population.rst:106
 msgid ""
-"The last public declaration in the model is for the ``connector`` instance "
-"that allows interactions with other components:"
+"The last public declaration in the model is for the ``connector`` "
+"instance that allows interactions with other components:"
 msgstr ""
+"모델의 마지막 공개 선언은 다른 구성 요소와의 상호 작용을 허용하는 ``connector`` 인스턴스에 대한 것입니다."
 
 #: ../../source/components/components/population.rst:113
 msgid ""
-"Here we again see the :ref:`placement` annotation which we will again defer "
-"talking about for the moment.  This leaves the last declaration, which "
-"happens to be ``protected``:"
+"Here we again see the :ref:`placement` annotation which we will again "
+"defer talking about for the moment.  This leaves the last declaration, "
+"which happens to be ``protected``:"
 msgstr ""
+"여기에서 다시 :ref:`placement` 주석을 볼 수 있으며 잠시 동안 다시 설명하겠습니다. "
+"이렇게 하면 ``protected`` 가 되는 마지막 선언이 남습니다."
+
 
 #: ../../source/components/components/population.rst:121
 msgid ""
-"This variable represents the number of animals in this region.  It is given "
-"a non-zero ``start`` value to avoid the trivial solutions we saw in our "
-"earlier discussion of :ref:`steady-state` of Lotka-Volterra systems.  We can"
-" also see, from this declaration, that this declaration equates the local "
-"variable, ``population``, with the value of the across variable on the "
-"``species`` connector, ``species.population``.  In effect, the "
+"This variable represents the number of animals in this region.  It is "
+"given a non-zero ``start`` value to avoid the trivial solutions we saw in"
+" our earlier discussion of :ref:`steady-state` of Lotka-Volterra systems."
+"  We can also see, from this declaration, that this declaration equates "
+"the local variable, ``population``, with the value of the across variable"
+" on the ``species`` connector, ``species.population``.  In effect, the "
 "``population`` variable is an alias for the expression "
 "``species.population``."
 msgstr ""
+"이 변수는 이 지역의 동물 수를 나타냅니다. "
+"Lotka-Volterra 시스템의 정상 상태에 대한 이전 논의에서 본 자명한 해(trivial solutions)를 피하기 위해 0이 아닌 ``start`` 값을 설정합니다."
+"또한 이 선언에서 지역 변수인 인구(population)를 종(species) 커넥터의 교차 변수 값인 종(species.population)과 동일시한다는 것을 알 수 있습니다. "
+"실제로 ``population`` 변수는 ``species.population`` 표현식의 별칭입니다."
+
+
 
 #: ../../source/components/components/population.rst:130
 msgid ""
 "Now that we have the declarations out of the way, let's look at the "
 "equations associated with the ``RegionalPopulation`` model:"
 msgstr ""
+"이제 선언이 끝났으니 ``RegionalPopulation`` 모델과 관련된 방정식을 살펴보겠습니다."
 
 #: ../../source/components/components/population.rst:137
 msgid ""
-"The ``initial equation`` demonstrates the significance that the value of the"
-" ``init`` parameter has on the behavior of this component.  In the case that"
-" the ``init`` value is equal to the ``FixedPopulation`` value in the "
-"``InitializationOptions`` enumeration, an equation is introduced specifying "
-"that the value of the ``population`` variable at the start of the simulation"
-" is equal to the ``initial_population`` parameter.  If, on the other hand, "
-"the value of ``init`` is equal to the ``SteadyState`` value of the "
-"enumeration, then an equation is introduced specifying that the rate of "
-"population change at the start of the simulation must be zero.  Obviously, "
-"if ``init`` is equal to ``Free`` (the last remaining possibility), no "
-"initial equation is introduced."
+"The ``initial equation`` demonstrates the significance that the value of "
+"the ``init`` parameter has on the behavior of this component.  In the "
+"case that the ``init`` value is equal to the ``FixedPopulation`` value in"
+" the ``InitializationOptions`` enumeration, an equation is introduced "
+"specifying that the value of the ``population`` variable at the start of "
+"the simulation is equal to the ``initial_population`` parameter.  If, on "
+"the other hand, the value of ``init`` is equal to the ``SteadyState`` "
+"value of the enumeration, then an equation is introduced specifying that "
+"the rate of population change at the start of the simulation must be "
+"zero.  Obviously, if ``init`` is equal to ``Free`` (the last remaining "
+"possibility), no initial equation is introduced."
 msgstr ""
+"``initial equation`` 은 ``init`` 파라미터의 값이 이 구성 요소의 동작에 갖는 중요성을 보여줍니다. "
+"``init`` 값이 ``InitializationOptions`` 열거형의 ``FixedPopulation`` 값과 같은 경우 시작 부분에서 ``population`` 변수의 값을 지정하는 방정식이 도입됩니다. "
+"시뮬레이션은 ``initial_population`` 파라미터와 동일합니다. "
+"반면에 ``init`` 값이 열거형의 ``SteadyState`` 값과 같으면 시뮬레이션 시작 시 모집단 변화율이 0이어야 함을 지정하는 방정식이 도입됩니다. "
+"마지막으로 ``init`` 이 ``Free`` (마지막 남은 가능성)와 같으면 초기 방정식이 도입되지 않습니다."
+
 
 #: ../../source/components/components/population.rst:150
 msgid ""
 "Within the ``equation`` section, we see that the rate at which the "
-"``population`` changes is equal to the value of the ``flow`` variable on the"
-" ``species`` connector, ``species.rate``.  Again, recall the sign convention"
-" that a positive value for a ``flow`` variable means a flow into the "
-"component and the fact that this equation is consistent with that sign "
-"convention (*i.e.,* a positive value for ``species.rate`` will have the "
-"effect of increasing the ``population`` within the region)."
+"``population`` changes is equal to the value of the ``flow`` variable on "
+"the ``species`` connector, ``species.rate``.  Again, recall the sign "
+"convention that a positive value for a ``flow`` variable means a flow "
+"into the component and the fact that this equation is consistent with "
+"that sign convention (*i.e.,* a positive value for ``species.rate`` will "
+"have the effect of increasing the ``population`` within the region)."
 msgstr ""
+"``equation`` 섹션 내에서 ``population`` 변화율이 ``species`` 커넥터 ``species.rate`` 의 ``flow`` 변수 값과 동일한 것을 볼 수 있습니다. "
+"다시, 이 시점에서 ``flow`` 변수에 대한 양수 값은 구성 요소로의 흐름을 의미한다는 부호 규칙과 이 방정식이 해당 기호 규칙(즉, ``species.rate`` 이 양수 값인 경우 지역 내 ``인구`` 증가 효과가 있다)과 일치한다는 사실을 기억 해야합니다. "
+
 
 #: ../../source/components/components/population.rst:161
 msgid ""
 "The last thing worth noting about the model is the presence of the "
-"``assert`` call in the ``equation`` section.  This is used to define a model"
-" boundary (*i.e.,* a point beyond which the equations in the model are not "
-"valid).  It is used to enforce the constraint that the population within a "
-"region cannot be less than zero.  If a solution is ever found where the "
-"constraint is violated, the resulting error message will be \"Population "
-"must be greater than zero\"."
+"``assert`` call in the ``equation`` section.  This is used to define a "
+"model boundary (*i.e.,* a point beyond which the equations in the model "
+"are not valid).  It is used to enforce the constraint that the population"
+" within a region cannot be less than zero.  If a solution is ever found "
+"where the constraint is violated, the resulting error message will be "
+"\"Population must be greater than zero\"."
 msgstr ""
+"마지막으로 모델에 대해 주목할 가치가 있는 것은 ``equation`` 섹션에 ``assert`` 호출이 있다는 것입니다. "
+"이는 모델 경계(*즉,* 모델의 방정식이 유효하지 않은 지점)를 정의하는 데 사용합니다. "
+"즉, 지역 내의 인구가 0보다 작을 수 없다는 제약 조건을 적용하는 데 사용합니다."
+"제약 조건을 위반한 해을 찾은 경우 발생하는 결과 오류 메시지는 "인구가 0보다 커야 합니다(Population must be greater than zero)"."입니다."
 
 #: ../../source/components/components/population.rst:169
 msgid ""
 "This model also has an ``Icon`` annotation associated with the model "
-"definition.  As usual, the ``Icon`` annotation is not included in the source"
-" listing.  But when this component model is rendered within a system model, "
-"its icon will look like this:"
+"definition.  As usual, the ``Icon`` annotation is not included in the "
+"source listing.  But when this component model is rendered within a "
+"system model, its icon will look like this:"
 msgstr ""
+"이 모델에는 모델 정의와 관련된 ``Icon`` 주석도 있습니다. "
+"평소와 같이 ``Icon`` 주석은 소스 목록에 포함되지 않지만, 이 구성 요소 모델이 시스템 모델 내에서 그려지게되면 해당 아이콘이 다음과 같이 표시됩니다."
 
-#: ../../source/components/components/population.rst:181
-msgid "Reproduction"
-msgstr ""
 
 #: ../../source/components/components/population.rst:183
-msgid ""
-"The first real effect we will examine is reproduction.  As we know from our "
-"previous discussion, the growth in a given population due to reproduction is"
-" proportional to the number of animals of that species in a given region.  "
-"As a result, we can describe reproduction very succinctly as:"
+msgid "Reproduction"
 msgstr ""
+"재생산(Reproduction)"
 
-#: ../../source/components/components/population.rst:193
+#: ../../source/components/components/population.rst:185
 msgid ""
-"where ``alpha`` is the proportionality constant.  However, the simplicity "
-"and clarity of this model is due mostly to the inheritance of the "
+"The first real effect we will examine is reproduction.  As we know from "
+"our previous discussion, the growth in a given population due to "
+"reproduction is proportional to the number of animals of that species in "
+"a given region.  As a result, we can describe reproduction very "
+"succinctly as:"
+msgstr ""
+"검토할 첫 번째 실제 효과는 재생산입니다. "
+"이전 논의에서 알 수 있듯이 번식으로 인해 주어진 개체군의 증가는 주어진 지역에 있는 해당 종의 동물 수에 비례합니다."
+"결과적으로 번식을 다음과 같이 매우 간결하게 설명할 수 있습니다."
+
+
+#: ../../source/components/components/population.rst:195
+msgid ""
+"where ``alpha`` is the proportionality constant.  However, the simplicity"
+" and clarity of this model is due mostly to the inheritance of the "
 "``SinkOrSource`` model in much the same way that our \"DRY\" :ref"
 ":`electrical-components` benefited from inheriting the ``TwoPin`` model."
 msgstr ""
+"여기서 ``alpha`` 는 비례 상수입니다. "
+"그러나 이 모델의 단순성과 명료성은  "DRY" :ref:`electrical-components` 가 ``TwoPin`` 모델을 상속받은 것과 거의 같은 방식으로 ``SinkOrSource`` 모델의 상속에 주로 기인합니다. "
 
-#: ../../source/components/components/population.rst:199
+#: ../../source/components/components/population.rst:201
 msgid ""
 "The ``SinkOrSource`` model is a starting point for any model that either "
 "creates or destroys animals in a population.  It is defined as follows:"
 msgstr ""
+"``SinkOrSource`` 모델은 개체군에서 동물을 생성하거나 파괴하는 모든 모델의 출발점입니다. "
+"다음과 같이 정의합니다."
 
-#: ../../source/components/components/population.rst:207
+
+#: ../../source/components/components/population.rst:209
 msgid ""
-"To understand these equations it is first necessary to understand that any "
-"model that ``extends`` from ``SinkOrSource`` will generally be connected to "
-"a ``RegionalPopulation`` instance (but will not, itself, **be** a "
-"``RegionalPopulation`` model).  This means that if the ``flow`` variable "
-"``species.rate`` in such an instance is positive, it will have the effect of"
-" pulling animals **out** of the ``RegionalPopulation`` model.  Looking at "
-"the ``SinkOrSource`` model in this way, we can see that the variable "
-"``decline`` is simply an alias for ``species.rate``.  In other words, when "
-"``decline`` has a positive value, ``species.rate`` will have a positive "
-"value and, therefore, any ``RegionalPopulation`` that this ``SinkOrSource`` "
-"instance is connected to will suffer a drain on its population. Conversely, "
-"the ``growth`` variable is positive when ``species.rate`` is negative.  In "
-"that case, the connected ``RegionalPopulation`` model will see an increase "
-"in species population."
+"To understand these equations it is first necessary to understand that "
+"any model that ``extends`` from ``SinkOrSource`` will generally be "
+"connected to a ``RegionalPopulation`` instance (but will not, itself, "
+"**be** a ``RegionalPopulation`` model).  This means that if the ``flow`` "
+"variable ``species.rate`` in such an instance is positive, it will have "
+"the effect of pulling animals **out** of the ``RegionalPopulation`` "
+"model.  Looking at the ``SinkOrSource`` model in this way, we can see "
+"that the variable ``decline`` is simply an alias for ``species.rate``.  "
+"In other words, when ``decline`` has a positive value, ``species.rate`` "
+"will have a positive value and, therefore, any ``RegionalPopulation`` "
+"that this ``SinkOrSource`` instance is connected to will suffer a drain "
+"on its population. Conversely, the ``growth`` variable is positive when "
+"``species.rate`` is negative.  In that case, the connected "
+"``RegionalPopulation`` model will see an increase in species population."
 msgstr ""
+"이 방정식을 이해하려면 먼저 ``SinkOrSource`` 에서 ``extends`` 되는 모든 모델이 일반적으로 ``RegionalPopulation`` 인스턴스에 연결된다는 점을 이해해야 합니다."
+"(그러나 그 자체로는 ``RegionalPopulation`` 모델 **이 됩니다**). 즉, 이러한 인스턴스에서 ``flow`` 변수 ``species.rate`` 가 양수이면 ``RegionalPopulation`` 모델에서 동물을 **밖으로** 끌어내는 효과가 있습니다. "
+"``SinkOrSource`` 모델을 보면 변수 ``decline`` 이 단순히 ``species.rate`` 의 별칭임을 알 수 있습니다. "
+"즉, ``decline`` 이 양수 값을 가질 때 ``species.rate`` 는 양수 값을 가지므로 이 ``SinkOrSource`` 인스턴스가 연결된 모든 ``RegionalPopulation`` 은 인구 고갈의 어려움을 겪게 됩니다. "
+"반대로 ``growth`` 변수는 ``species.rate`` 가 음수일 때 양수입니다. "
+"이 경우 연결된 ``RegionalPopulation`` 모델은 종 개체군의 증가를 보게 됩니다."
 
-#: ../../source/components/components/population.rst:223
+#: ../../source/components/components/population.rst:225
 msgid ""
-"By defining the ``SinkOrSource`` model and inheriting from it, much of this "
-"complexity is hidden.  As a result, models like ``Reproduction`` can have "
-"equations written in a way that make their behavior more intuitive, *e.g.,* "
-"``growth = alpha*species.population``."
+"By defining the ``SinkOrSource`` model and inheriting from it, much of "
+"this complexity is hidden.  As a result, models like ``Reproduction`` can"
+" have equations written in a way that make their behavior more intuitive,"
+" *e.g.,* ``growth = alpha*species.population``."
 msgstr ""
+"``SinkOrSource`` 모델을 정의하고 이를 상속함으로써 이러한 복잡성의 대부분이 숨겨집니다."
+"결과적으로 ``Reproduction`` 과 같은 모델은 행동을 보다 직관적으로 만드는 방식으로 작성된 방정식을 가질 수 있습니다(예:* ``growth = alpha*species.population``).
 
-#: ../../source/components/components/population.rst:228
+
+
+#: ../../source/components/components/population.rst:230
 msgid ""
-"Although not shown, the ``Icon`` for the ``Reproduction`` model is rendered "
-"as:"
+"Although not shown, the ``Icon`` for the ``Reproduction`` model is "
+"rendered as:"
 msgstr ""
+"표시되지는 않았지만 ``Reproduction`` 모델의 ``Icon`` 은 다음과 같이 렌더링됩니다.
 
-#: ../../source/components/components/population.rst:236
+#: ../../source/components/components/population.rst:240
 msgid "Starvation"
 msgstr ""
+"기아 상태(Starvation)"
 
-#: ../../source/components/components/population.rst:238
+
+#: ../../source/components/components/population.rst:242
 msgid ""
 "Just like the ``Reproduction`` model just described, the ``Starvation`` "
-"model also inherits from the ``SinkOrSource`` model. However, its behavior "
-"with respect to the ``decline`` variable, is described as follows:"
+"model also inherits from the ``SinkOrSource`` model. However, its "
+"behavior with respect to the ``decline`` variable, is described as "
+"follows:"
 msgstr ""
+"방금 설명한 ``Reproduction`` 모델과 마찬가지로 ``Starvation`` 모델도 ``SinkOrSource`` 모델을 상속합니다. "
+"그러나 ``decline`` 변수에 대한 동작은 다음과 같이 볼 수 있습니다."
 
-#: ../../source/components/components/population.rst:255
+
+#: ../../source/components/components/population.rst:259
 msgid "Predation"
 msgstr ""
+"포식(Predation)"
 
-#: ../../source/components/components/population.rst:257
+#: ../../source/components/components/population.rst:261
 msgid ""
 "The last effect we need to consider before building a system model to "
 "represent the classic Lotka-Volterra behavior is a model for predation."
 msgstr ""
+"고전적인 Lotka-Volterra 행동을 나타내기 위해 시스템 모델을 구축하기 전에 고려해야 할 마지막 효과는 포식 모델입니다."
 
-#: ../../source/components/components/population.rst:261
+
+#: ../../source/components/components/population.rst:265
 msgid ""
 "Recall our previous discussion of the ``SinkOrSource`` model and the "
-"potential confusion associated with sign conventions.  The ``SinkOrSource`` "
-"model was designed to work with effects that only interacted with a single "
-"``RegionalPopulation`` (since it had only one ``Species`` connector).  In "
-"order to address the same potential sign convention confusion for effects "
-"that involve interactions between two different regional populations, the "
-"following ``partial`` model, ``Interaction`` was defined:"
+"potential confusion associated with sign conventions.  The "
+"``SinkOrSource`` model was designed to work with effects that only "
+"interacted with a single ``RegionalPopulation`` (since it had only one "
+"``Species`` connector).  In order to address the same potential sign "
+"convention confusion for effects that involve interactions between two "
+"different regional populations, the following ``partial`` model, "
+"``Interaction`` was defined:"
 msgstr ""
+"``SinkOrSource`` 모델과 기호 규칙과 관련된 잠재적 혼란에 대해서 앞서 논의한 것을 다시 생각 해야합니다."
+"``SinkOrSource`` 모델은 단일 ``RegionalPopulation`` ( ``Species`` 커넥터가 하나만 있기 때문에)와 만 상호 작용해서 작동하도록 설계되었습니다. "
+"서로 다른 두 지역 인구 사이의 상호 작용을 포함하는 효과에 대해서는 동일한 형태의 기호가 되면 혼동이 일어 날 수 있기 때문에, 다음과 같은 ``partial`` 모델인 ``Interaction`` 이 정의되었습니다."
 
-#: ../../source/components/components/population.rst:274
-msgid ""
-"Again, we have the concepts of growth and decline variables.  However this "
-"time we have two version of each.  One is associated with the ``a`` "
-"connector and the other is associated with the ``b`` connector."
-msgstr ""
 
 #: ../../source/components/components/population.rst:278
+msgid ""
+"Again, we have the concepts of growth and decline variables.  However "
+"this time we have two version of each.  One is associated with the ``a`` "
+"connector and the other is associated with the ``b`` connector."
+msgstr ""
+"다시 말하지만, 성장 및 감소 변수의 개념이 있습니다. 그러나 이번에는 각각 두 가지 버전이 있습니다. "
+"하나는 ``a`` 커넥터와 연결되고 다른 하나는 ``b`` 커넥터와 연결됩니다."
+
+
+
+#: ../../source/components/components/population.rst:282
 msgid "Using these definitions, we can define ``Predation`` very simply as:"
 msgstr ""
+"이러한 정의를 사용하여 ``Predation`` 을 다음과 같이 매우 간단하게 정의할 수 있습니다."
 
-#: ../../source/components/components/population.rst:284
+
+#: ../../source/components/components/population.rst:288
 msgid ""
 "This model captures the effect that the growth in the \"B\" (predator) "
 "population is proportional to the product of the predator and prey "
-"populations.  Similarly, the decline in the \"A\" (prey) population is also "
-"proportional the product of the predator and prey populations (although with"
-" a different proportionality constant)."
+"populations.  Similarly, the decline in the \"A\" (prey) population is "
+"also proportional the product of the predator and prey populations "
+"(although with a different proportionality constant)."
 msgstr ""
+"이 모델은 "B"(포식자) 개체군의 증가가 포식자와 피식자 개체군의 곱에 비례한다는 효과를 구현 합니다."
+"마찬가지로, "A"(먹이) 개체군의 감소는 포식자와 먹이 개체군의 곱에 비례합니다(비례 상수는 다르지만)."
 
-#: ../../source/components/components/population.rst:290
-msgid ""
-"Although not shown, the ``Icon`` for the ``Predation`` model is rendered as:"
-msgstr ""
 
-#: ../../source/components/components/population.rst:297
+
+#: ../../source/components/components/population.rst:294
 msgid ""
-"Note that the ``Predation`` model is asymmetric.  The ``b`` connector should"
-" be connected to the predator population and the ``a`` connector should be "
-"connected to the prey population.  This is reinforced by the image and "
-"asymmetry of the icon itself."
+"Although not shown, the ``Icon`` for the ``Predation`` model is rendered "
+"as:"
 msgstr ""
+"표시되지는 않았지만 ``Predation`` 모델의 ``Icon`` 은 다음과 같이 렌더링됩니다."
 
 #: ../../source/components/components/population.rst:303
+msgid ""
+"Note that the ``Predation`` model is asymmetric.  The ``b`` connector "
+"should be connected to the predator population and the ``a`` connector "
+"should be connected to the prey population.  This is reinforced by the "
+"image and asymmetry of the icon itself."
+msgstr ""
+"``Predation`` 모델은 비대칭입니다."
+'``b`` 커넥터는 포식자 집단에 연결되어야 하고 ``a`` 커넥터는 먹이 집단에 연결되어야 합니다."
+"이것은 아이콘 자체의 이미지와 비대칭성에 의해 강하게 전달됩니다."
+
+
+#: ../../source/components/components/population.rst:309
 msgid "Classic System Model"
 msgstr ""
+"고전적인 시스템 모델(Classic System Model)"
 
-#: ../../source/components/components/population.rst:305
+#: ../../source/components/components/population.rst:311
 msgid ""
 "With all of these components in hand, we can very easily construct a "
 "component-oriented version of the classic Lotka-Volterra behavior by "
 "dragging and dropping the components into the following system "
 "configuration:"
 msgstr ""
-
-#: ../../source/components/components/population.rst:316
-msgid ""
-"Here we see that the ``Starvation`` model is attached to the ``foxes`` "
-"population while the ``Reproduction`` model is attached to the ``rabbits`` "
-"population.  The ``Predation`` model is connected to both populations with "
-"the ``a`` (prey) connector attached to the ``rabbits`` and the ``b`` "
-"(predator) connector attached to the ``foxes``."
-msgstr ""
+"이러한 모든 구성 요소를 끌어다 놓는 것 만으로 고전적인 Lotka-Volterra 동작의 "구성 요소 지향 버전"을 매우 쉽게 만들 수 있습니다."
 
 #: ../../source/components/components/population.rst:322
+msgid ""
+"Here we see that the ``Starvation`` model is attached to the ``foxes`` "
+"population while the ``Reproduction`` model is attached to the "
+"``rabbits`` population.  The ``Predation`` model is connected to both "
+"populations with the ``a`` (prey) connector attached to the ``rabbits`` "
+"and the ``b`` (predator) connector attached to the ``foxes``."
+msgstr ""
+"여기에서 ``기아`` 모델은 ``여우`` 개체군에 연결되고 ``번식`` 모델은 ``토끼`` 개체군에 연결됩니다."
+"``포식`` 모델은 ``토끼`` 에 연결된 ``a`` (먹이) 커넥터와 ``여우`` 에 연결된 ``b`` (포식자) 커넥터로 두 개체군에 연결됩니다."
+
+
+
+#: ../../source/components/components/population.rst:328
 msgid ""
 "As we can see from the following plot, the behavior of this system is "
 "identical to the one presented in our earlier discussion of :ref:`lotka-"
 "volterra-systems`:"
 msgstr ""
+"다음 선도에서 볼 수 있듯이 이 시스템의 동작은 앞에서 논의한 :ref:`lotka-volterra-systems` 와 동일합니다."
 
-#: ../../source/components/components/population.rst:329
+#: ../../source/components/components/population.rst:335
 msgid "Introducing a Third Species"
 msgstr ""
+"세번째 종에 대한 소개(Introducing a Third Species)"
 
-#: ../../source/components/components/population.rst:331
+#: ../../source/components/components/population.rst:337
 msgid ""
 "As we will see over and over again, there is an initial investment in "
 "building component models over simply typing the equations that they "
 "encapsulate.  But there is also a significant \"payoff\" to this process "
-"because of the schematic based system composition that is then possible as a"
-" result.  In the context of the Lotka-Volterra example, this is exemplified "
-"by the addition of a third species, wolves, to the classic Lotka-Volterra "
-"system."
+"because of the schematic based system composition that is then possible "
+"as a result.  In the context of the Lotka-Volterra example, this is "
+"exemplified by the addition of a third species, wolves, to the classic "
+"Lotka-Volterra system."
 msgstr ""
+"계속해서 보게 되겠지만 단순히 캡슐화하는 방정식을 입력하는 것보다는 구성 요소 모델을 구축하는 데 초기 투자가 필요합니다."
+"그러나 결과적으로 가능한 도식 기반 시스템 구성으로 인해 이 프로세스에 상당한 "이점(payoff)"이 있습니다."
+"Lotka-Volterra 사례의 맥락에서는 고전적인 Lotka-Volterra 시스템에 세 번째 종인 늑대를 추가하는 것으로 예시와 같이 보여줄 수 있습니다."
 
-#: ../../source/components/components/population.rst:340
+
+#: ../../source/components/components/population.rst:346
 msgid "Adding Wolves"
 msgstr ""
+"늑대 추가(Adding Wolves)"
 
-#: ../../source/components/components/population.rst:342
+#: ../../source/components/components/population.rst:348
 msgid ""
-"The creation of a model with a third species does not require any additional"
-" component models to be defined.  Instead, we can reuse not only our "
-"existing models for ``Predation``, ``Starvation`` and "
-"``RegionalPopulation``, but we can also reuse the ``ClassicLotkaVolterra`` "
-"model itself:"
+"The creation of a model with a third species does not require any "
+"additional component models to be defined.  Instead, we can reuse not "
+"only our existing models for ``Predation``, ``Starvation`` and "
+"``RegionalPopulation``, but we can also reuse the "
+"``ClassicLotkaVolterra`` model itself:"
 msgstr ""
+"세 번째 종으로 모델을 생성할 때 정의할 추가 구성 요소 모델이 필요하지 않습니다. "
+"대신, ``Predation``, ``Starvation`` 및 ``RegionalPopulation`` 에 대한 기존 모델을 재사용할 수 있을 뿐만 아니라 ``ClassicLotkaVolterra`` 모델 자체도 재사용할 수 있습니다."
 
-#: ../../source/components/components/population.rst:351
+
+#: ../../source/components/components/population.rst:357
 msgid ""
-"Such a model would not typically be created by typing in the source code you"
-" see above.  Instead, within a graphical development environment it would "
-"take less than a minute to assemble such a system by augmenting the existing"
-" ``ClassicLotkaVolterra`` model.  When visualized, the schematic for the "
-"resulting system is rendered as:"
+"Such a model would not typically be created by typing in the source code "
+"you see above.  Instead, within a graphical development environment it "
+"would take less than a minute to assemble such a system by augmenting the"
+" existing ``ClassicLotkaVolterra`` model.  When visualized, the schematic"
+" for the resulting system is rendered as:"
 msgstr ""
+"이러한 모델은 일반적으로 위에서 본 소스 코드를 입력하여 생성하지 않습니다. "
+"대신, 그래픽 개발 환경 내에서 기존 ``ClassicLotkaVolterra`` 모델을 보강하여 이러한 시스템을 조립하는 데 1분도 걸리지 않습니다."
+"시각화할 때 결과 시스템의 도식은 다음과 같이 그려집니다."
 
-#: ../../source/components/components/population.rst:366
+
+#: ../../source/components/components/population.rst:372
 msgid "Resulting Dynamics"
 msgstr ""
+"동작 결과(Resulting Dynamics)"
 
-#: ../../source/components/components/population.rst:368
+#: ../../source/components/components/population.rst:374
 msgid ""
-"By creating such a model, we can quickly explore the differences in system "
-"dynamics between the classic model and this three species model.  The "
-"following plot shows how these three species interact:"
+"By creating such a model, we can quickly explore the differences in "
+"system dynamics between the classic model and this three species model.  "
+"The following plot shows how these three species interact:"
 msgstr ""
+"이러한 모델을 생성함으로써 클래식 모델과 이 3종 모델 간의 시스템 역학 차이를 빠르게 탐색할 수 있습니다."
+"다음 선도는 이 세 종의 상호작용을 보여줍니다."
 
-#: ../../source/components/components/population.rst:375
+
+#: ../../source/components/components/population.rst:381
 msgid ""
 "By using the ``init`` parameter in the various ``RegionalPopulation`` "
-"instances, we can also quickly create a model to solve for the equilibrium "
-"population levels for all three species:"
+"instances, we can also quickly create a model to solve for the "
+"equilibrium population levels for all three species:"
 msgstr ""
+"다양한 ``RegionalPopulation`` 인스턴스에서 ``init`` 파라미터를 사용하여 세 종 모두에 대한 평형 인구 수준을 해결하기 위한 모델을 빠르게 만들 수도 있습니다"
 
-#: ../../source/components/components/population.rst:382
+#: ../../source/components/components/population.rst:388
 msgid ""
-"All that is required in this model is to extend from the ``ThirdSpecies`` "
-"model and modify the ``init`` parameter for each of the underlying species "
-"populations.  Simulating this model gives us the equilibrium population "
-"level for each species:"
+"All that is required in this model is to extend from the ``ThirdSpecies``"
+" model and modify the ``init`` parameter for each of the underlying "
+"species populations.  Simulating this model gives us the equilibrium "
+"population level for each species:"
 msgstr ""
+"이 모델에서 필요한 모든 것은 ``ThirdSpecies`` 모델에서 확장하고 각 기본 종 개체군에 대한 ``init`` 파라미터를 수정하는 것입니다. "
+"이 모델을 시뮬레이션하면 각 종에 대한 평형 인구 수준을 알 수 있습니다."
 
-#: ../../source/components/components/population.rst:390
+
+#: ../../source/components/components/population.rst:396
 msgid ""
 "From an ecological standpoint, we can already make an interesting "
 "observation about this system.  If we start it from a non-equilibrium "
 "condition the system quickly goes unstable.  In other words, the "
-"introduction of wolves into the otherwise stable eco-system involving only "
-"rabbits and foxes has a significant impact on the population dynamics."
+"introduction of wolves into the otherwise stable eco-system involving "
+"only rabbits and foxes has a significant impact on the population "
+"dynamics."
 msgstr ""
+"생태학적 관점에서  이미 이 시스템에 대해 흥미로운 관찰을 할 수 있습니다. "
+"비평형 상태에서 시작하면 시스템이 빠르게 불안정해집니다. 즉, 토끼와 여우만 포함된 안정적인 생태계에 늑대를 도입하면 인구 역학에 상당한 영향을 미칩니다."
 
-#: ../../source/components/components/population.rst:55
-msgid "encapsulated"
-msgstr ""
 
-#: ../../source/components/components/population.rst:56
-msgid "enumeration"
-msgstr ""
+#~ msgid "encapsulated"
+#~ msgstr ""
 
-#: ../../source/components/components/population.rst:159
-msgid "assert"
-msgstr ""
+#~ msgid "enumeration"
+#~ msgstr ""
+
+#~ msgid "assert"
+#~ msgstr ""
+

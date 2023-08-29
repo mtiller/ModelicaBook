@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/functions/func_def.rst:4
 msgid "Function Definitions"
 msgstr ""
+"함수 정의(Function Definitions)"
 
 #: ../../source/behavior/functions/func_def.rst:6
 msgid ""
@@ -22,10 +25,15 @@ msgid ""
 "create new functions for specific purposes.  Defining such functions is "
 "similar, syntactically, to a :ref:`model-definition`."
 msgstr ""
+"이미 살펴본 것처럼 수학적 동작을 설명하는 데 유용한 많은 함수가 모델리카에는 포함되어 있지만, "
+"필연적으로 특정 목적을 위해 새로운 기능을 생성했습니다."
+"이러한 함수를 정의하는 것은 문법적으로 :ref:`model-definition` 와 유사합니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:12
 msgid "Basic Syntax"
 msgstr ""
+"기본 문법(Basic Syntax)"
 
 #: ../../source/behavior/functions/func_def.rst:14
 msgid ""
@@ -36,6 +44,9 @@ msgid ""
 " example, consider the following simple function that squares its input "
 "argument:"
 msgstr ""
+"기본 모델리카 함수에는 하나 이상의 인수, 반환 값 그리고 인수 측면에서 반환 값을 계산하는 ``algorithm`` 섹션이 포함되어 있습니다."
+"함수에 대한 인수 앞에는 ``input`` 한정자가 있고 반환 값 앞에는 ``output`` 한정자가 있습니다. 예를 들어 입력 인수를 제곱하는 다음과 같은 간단한 함수를 생각해 보겠습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:30
 msgid ""
@@ -44,10 +55,14 @@ msgid ""
 "scalars or arrays (or even records, although we won't introduce records "
 "until :ref:`later <components>`)."
 msgstr ""
+"여기서 입력 인수 ``x`` 는 ``Real`` 자료형을 가지며, 출력 변수 ``y`` 도 ``Real`` 자료형을 가집니다. "
+"인수 및 반환 값은 스칼라 또는 배열(또는 심지어 레코드 까지도 가능, :ref:`아직 <components>` 소개 하지 않음)일 수 있습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:36
 msgid "Intermediate Variables"
 msgstr ""
+"매개 변수(Intermediate Variables)"
 
 #: ../../source/behavior/functions/func_def.rst:38
 msgid ""
@@ -60,16 +75,23 @@ msgid ""
 "example, if we wished to write a function to compute the circumference of a "
 "circle, we might utilize an intermediate variable to store the diameter:"
 msgstr ""
+"복잡한 계산의 경우 중간 결과를 보유할 변수를 정의하는 것이 때때로 유용합니다."
+"이러한 변수는 인수 및 반환 값과 명확하게 구분되어야 하므로, 해당 선언을 ``protected`` 로 합니다."
+"변수를 ``protected`` 로 만드는 것은 이러한 변수가 인수 또는 반환 값이 아니라 함수에 의해 내부적으로 사용됨을 모델리카 컴파일러에 나타내는 것 입니다. "
+"예를 들어 원의 둘레를 계산하는 함수를 작성하려는 경우 매개 변수를 사용하여 지름을 저장할 수 있습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:59
 msgid ""
 "Here we see how some intermediate result or common sub-expression can be "
 "associated with an internal variable."
 msgstr ""
+"여기에서 일부 중간 결과 또는 공통 하위 표현식이 내부 변수와 연결될 수 있는 방법을 볼 수 있습니다."
 
 #: ../../source/behavior/functions/func_def.rst:63
 msgid "Default Input Arguments"
 msgstr ""
+"기본 입력 전달인자(Default Input Arguments) "
 
 #: ../../source/behavior/functions/func_def.rst:65
 msgid ""
@@ -78,6 +100,10 @@ msgid ""
 " declaration of the input variable.  Consider the following function to "
 "compute the potential energy of a mass in a gravitational field:"
 msgstr ""
+"경우에 따라 일부 입력 인자에 대한 기본값을 포함하는 것이 좋은데,"
+"이러한 경우 입력 변수 선언에 기본값을 포함할 수 있습니다."
+"중력장에서 질량의 위치 에너지를 계산하는 다음 함수를 통해 살펴 보겠습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:82
 msgid ""
@@ -87,16 +113,22 @@ msgid ""
 "given argument and it should never be used if you want to force users to "
 "provide a value."
 msgstr ""
+"``g`` 에 대한 기본값을 제공함으로써  이 함수의 사용자가 매번 ``g`` 에 대한 값을 입력하도록 강요하지 않을 수 있습니다. "
+"물론 이러한 접근 방식은, 주어진 인수에 대한 합리적인 기본값이 있는 경우에만 사용해야 하며 사용자에게 값을 제공하도록 강제하려는 경우에는 절대 사용해서는 안 됩니다."
+
+
 
 #: ../../source/behavior/functions/func_def.rst:88
 msgid ""
 "These default values have some important effects when :ref:`calling-"
 "functions` that we shall discuss shortly."
 msgstr ""
+"이러한 기본값은 함수를 호출할 때 몇 가지 중요한 영향을 미칩니다."
 
 #: ../../source/behavior/functions/func_def.rst:92
 msgid "Multiple Return Values"
 msgstr ""
+"다중 반환 값(Multiple Return Values)"
 
 #: ../../source/behavior/functions/func_def.rst:94
 msgid ""
@@ -104,16 +136,21 @@ msgid ""
 "declarations with the ``output`` qualifier).  For example, to consider a "
 "function that computes both the circumference and area of a circle:"
 msgstr ""
+"함수는 여러 반환 값(*즉,* ``output`` 한정자를 사용한 여러 선언)을 가질 수 있습니다."
+"예를 들어, 원의 둘레와 면적을 모두 계산하는 함수를 아래와 같이 표현 합니다. "
+
 
 #: ../../source/behavior/functions/func_def.rst:111
 msgid ""
 "Our upcoming discussion on :ref:`calling-functions` will cover how to "
 "address multiple return values."
 msgstr ""
+"뒤에서 다루는 :ref:`calling-functions` 에 대한 논의에서 여러 반환 값을 처리하는 방법을 다루겠습니다."
 
 #: ../../source/behavior/functions/func_def.rst:117
 msgid "Calling Functions"
 msgstr ""
+"함수 호출(Calling Functions)"
 
 #: ../../source/behavior/functions/func_def.rst:119
 msgid ""
@@ -122,6 +159,9 @@ msgid ""
 "general, functions are invoked in a way that would be expected by both "
 "mathematicians and programmers, *e.g.,*"
 msgstr ""
+"지금까지 새로운 함수를 정의하는 방법을 다루었으며, 추가로 함수를 호출하는 다양한 방법에 대해 논의하는 데 시간을 할애할 필요가 있습니다. "
+"일반적으로 함수는 수학자 및 프로그래머 모두가 예상하는 방식으로 호출합니다. "
+
 
 #: ../../source/behavior/functions/func_def.rst:128
 msgid ""
@@ -129,6 +169,8 @@ msgid ""
 " separated list of arguments surrounded by parentheses.  But there are "
 "several interesting cases to discuss."
 msgstr ""
+"함수 이름의 일반적인 구문 이름 뒤에 괄호로 둘러싸인 쉼표로 구분된 인수 목록이 표시되는 것을 볼 수 있는데, 이것에 대해서 논의해 보겠습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:132
 msgid ""
@@ -138,6 +180,10 @@ msgid ""
 "named arguments.  Consider the following function for computing the volume "
 "of a cube:"
 msgstr ""
+"위의 구문에서 보인것 처럼 "위치"가 함수 호출의 문법중 하나인데, 값이 순서에 따라 인수에 할당됨을 의미합니다."
+"그러나 모델리카 함수 인수에는 이름이 있으므로 명명된 인수를 사용하여 함수를 호출하는 것도 가능합니다."
+"정육면체의 부피를 계산하는 예시를 아래에서 살펴 보겠습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:148
 msgid ""
@@ -146,6 +192,10 @@ msgid ""
 "possible to call the function used named arguments.  In that case, the "
 "function call would look something like:"
 msgstr ""
+"이 함수를 호출할 때 반지름과 부피를 혼동하지 않는 것이 중요합니다. "
+"순서로 할당하는 경우에 발생할한 혼란을 피하기 위해 명명된 인수를 사용하여 함수를 호출하는 것이 가능합니다. "
+"이 경우 함수 호출은 다음과 같습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:157
 msgid ""
@@ -153,6 +203,9 @@ msgid ""
 " values.  Recall the ``PotentialEnergy`` function introduced earlier.  It "
 "can be invoked in several ways:"
 msgstr ""
+"명명된 인수는 기본 인수 값과 함께 특히 유용합니다. "
+"앞에서 소개한 ``PotentialEnergy`` 기능을 상기해보면, 아래와 같이 여러 가지 방법으로 호출할 수 있습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:169
 msgid ""
@@ -161,6 +214,9 @@ msgid ""
 "selectively override values for those arguments by referring to them by "
 "name."
 msgstr ""
+"함수에 기본 인수가 있는 많은 경우 해당 인수에 대한 값을 이름으로 참조하여 선택적으로 재정의할 수 있기 때문에 명명된 인수의 기본값이 중요합니다."
+
+
 
 #: ../../source/behavior/functions/func_def.rst:174
 msgid ""
@@ -171,6 +227,11 @@ msgid ""
 "section.  The following statement shows how we can reference both return "
 "values:"
 msgstr ""
+"마지막으로, 함수는 여러 반환 값을 가질 수 있다고 앞서 설명하였습니다."
+"이때, 여러 반환 값이 반환되는 경우 어떻게 처리해야 하는가에 대한 의문이 있습니다. "
+"이것이 실제로 어떻게 수행되는지 보기 위해 이 섹션의 앞부분에서 정의한 ``CircleProperties`` 함수를 다시 살펴보겠습니다."
+"다음은 두 반환 값을 모두 참조할 수 있는 방법을 보여줍니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:185
 msgid ""
@@ -178,40 +239,54 @@ msgid ""
 "variables to be assigned to (or equated to, in the case of an ``equation`` "
 "section) wrapped by a pair of parentheses."
 msgstr ""
+"즉, 왼쪽은 한 쌍의 괄호로 묶인 변수의 쉼표로 구분된 목록입니다."
+
+
 
 #: ../../source/behavior/functions/func_def.rst:189
 msgid ""
 "As this discussion demonstrates, there are many different ways to call a "
 "function in Modelica."
 msgstr ""
+"여기서 다룬 내용으로 알 수 있듯이 모델리카에서 함수를 호출하는 방법에는 여러 가지가 있습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:193
 msgid "Important Restrictions"
 msgstr ""
+"중요한 제한 사항(Important Restrictions)"
 
 #: ../../source/behavior/functions/func_def.rst:195
 msgid ""
 "In general, we can perform the same kinds of calculations in functions as we"
 " can in models.  But there are some important restrictions."
 msgstr ""
+"일반적으로 모델에서 수행할 수 있는 것과 동일한 종류의 계산을 함수에서 수행할 수 있습니다."
+"그러나 몇 가지 중요한 제한 사항이 있습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:198
 msgid ""
 "Input arguments are read only - You are not allowed to assign a value to a "
 "variable which is an input argument to the function."
 msgstr ""
+"입력 인수는 읽기 전용입니다. - 함수의 입력 인수인 변수에 값을 할당할 수 없습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:201
 msgid ""
 "You are not allowed to reference the global variable `time` from within a "
 "function."
 msgstr ""
+"함수 내에서 전역 변수 'time'을 참조할 수 없습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:204
 msgid ""
 "No equations or when statements - A function can have no more than one "
 "``algorithm`` section and it cannot contain ``when`` statements."
 msgstr ""
+"방정식 또는 when 문 이 없어야 합니다. -  함수는 하나 이상의 ``algorithm`` 섹션을 포함할 수 없으며 ``when`` 문을 포함할 수 없습니다."
 
 #: ../../source/behavior/functions/func_def.rst:207
 msgid ""
@@ -219,12 +294,15 @@ msgid ""
 "``initial``, ``terminal``, ``sample``, ``pre``, ``edge``, ``change``, "
 "``reinit``, ``delay``, ``cardinality``, ``inStream``, ``actualStream``"
 msgstr ""
+"다음 함수는 함수에서 호출할 수 없습니다. -  ``der``, ``initial``, ``terminal``, ``sample``, ``pre``, ``edge``, ``change`` ,  ``reinit``, ``delay``, ``cardinality``, ``inStream``, ``actualStream``"
 
 #: ../../source/behavior/functions/func_def.rst:212
 msgid ""
 "Arguments, results and intermediate (``protected``) variables cannot be "
 "models or blocks."
 msgstr ""
+"인수, 결과 및 매개(``protected``) 변수는 모델 또는 블록이 될 수 없습니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:215
 msgid ""
@@ -234,16 +312,22 @@ msgid ""
 "sizes specified in terms of constants or in relation to the sizes of input "
 "arguments."
 msgstr ""
+"배열 크기가 제한됩니다. - 배열인 인수는 :ref:`unspecd-dim` 에서논의된 값을 가질 수 있으며 크기는 함수가 호출되는 컨텍스트에 의해 암시적으로 결정됩니다. 배열인 결과는 상수 또는 입력 인수의 크기와 관련하여 크기가 지정되어야 합니다."
+
 
 #: ../../source/behavior/functions/func_def.rst:221
 msgid ""
 "One important thing to note is that functions are **not** restricted in "
 "terms of recursion (*i.e.,* a function **is** allowed to call itself)."
 msgstr ""
+"한 가지 기억해야할 점은 함수가 재귀 측면에서 제한되지 **않는다** 는 것입니다( *즉,*  함수는 **자신을 호출할 수 있습니다** )."
 
 #: ../../source/behavior/functions/func_def.rst:247
 msgid "Side Effects"
 msgstr ""
+"의도하지 않은 영향(Side effect)"
+
+
 
 #: ../../source/behavior/functions/func_def.rst:249
 msgid ""
@@ -254,19 +338,29 @@ msgid ""
 " ``impure`` keyword.  This tells the Modelica compiler that these functions "
 "cannot be treated as purely mathematical functions."
 msgstr ""
+":ref:`sil-controller` 예제에서 의도치 않은 영향(side effect)이 있는 외부 함수를 살펴 보았습니다. "
+"이는 함수가 반환한 값이 해당 인수의 함수가 아님을 의미하며, 이러한 함수에는 "사이드 이팩트"가 있다고 합니다. "
+"사이드 이팩트가 있는 함수는 ``impure`` 키워드로 한정되어야 하는데, 이 함수를 순수한 수학 함수로 취급할 수 없음을 모델리카 컴파일러에게 알려주는 것 입니다."
+
+
 
 #: ../../source/behavior/functions/func_def.rst:257
 msgid ""
 "The use of ``impure`` functions is restricted.  They can only be invoked "
 "from within a ``when`` statement or another ``impure`` function."
 msgstr ""
+"``impure`` 기능의 경우도 사용에 제한이 있습니다.  그것들은 ``when`` 문이나 다른 ``impure`` 함수 내에서만 호출될 수 있다는 것 입니다."
 
 #: ../../source/behavior/functions/func_def.rst:262
 msgid "Function Template"
 msgstr ""
+"함수 템플릿(Function Template)"
 
 #: ../../source/behavior/functions/func_def.rst:264
 msgid ""
 "Taking all of this into account, the following can be considered a "
 "generalized function definition:"
 msgstr ""
+"논의 하였던 모든 것을 고려하면, 다음과 같은 일반화된 함수 정의로 간주할 수 있습니다."
+
+

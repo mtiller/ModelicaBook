@@ -1,66 +1,86 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/packages/package_def.rst:4
 msgid "Package Definitions"
 msgstr ""
+"패키지 정의(Package Definitions)"
 
 #: ../../source/components/packages/package_def.rst:7
 msgid "Basic Syntax"
 msgstr ""
+"기본 문법(Basic Syntax)"
 
 #: ../../source/components/packages/package_def.rst:9
 msgid ""
 "As we learned in this chapter, a ``package`` is a Modelica entity that "
-"allows us to organize definitions (including definitions of other packages)."
-"  The syntax definition of a ``package`` has a lot in common with other "
-"Modelica definitions.  The general syntax for a package is:"
+"allows us to organize definitions (including definitions of other "
+"packages).  The syntax definition of a ``package`` has a lot in common "
+"with other Modelica definitions.  The general syntax for a package is:"
 msgstr ""
+"이 장에서 배운 것처럼 ``package`` 는 정의(다른 패키지의 정의 포함)를 구성할 수 있게 해주는 모델리카 엔터티입니다. "
+"``package`` 의 구문 정의는 다음과 같으며, 다른 모델리카 정의와 공통점이 많습니다."
+
 
 #: ../../source/components/packages/package_def.rst:21
 msgid ""
 "A package definition can be prefixed by the ``encapsulated`` qualifier.  "
 "We'll discuss that more when we examine Modelica's :ref:`lookup-rules`."
 msgstr ""
+"패키지 정의에는 ``encapsulated`` 한정자가 붙을 수 있습니다. (이부분은 모델리카의 :ref:`lookup-rules` 를 검토할 때 더 자세히 논의할 것입니다.)"
+
 
 #: ../../source/components/packages/package_def.rst:25
 msgid "Packages can also be nested, *e.g.,*"
 msgstr ""
+"그리고, 패키지는 중첩될 수도 있는데, *예* 를 들면 아래와 같습니다."
+
 
 #: ../../source/components/packages/package_def.rst:36
 msgid ""
 "In fact, nesting of packages is very common and allows us to represent "
 "complex taxonomies."
 msgstr ""
+"사실 패키지 중첩은 매우 일반적이며 복잡한 분류법을 나타낼 수 있게 하는 방법입니다."
 
 #: ../../source/components/packages/package_def.rst:40
 msgid "Directory Storage"
 msgstr ""
+"디렉토리 저장소(Directory Storage)"
+
 
 #: ../../source/components/packages/package_def.rst:42
 msgid ""
-"Although it is possible to build an entire library of Modelica definitions "
-"in a single file as a series of nested packages, this is undesirable for at "
-"least two reasons.  The first is that the resulting file would be quite hard"
-" to read based on its length and the degree of indenting that would be "
-"required.  The second is that from the standpoint of version control, it is "
-"much better to break things into smaller files to help avoid any merge "
-"conflicts."
+"Although it is possible to build an entire library of Modelica "
+"definitions in a single file as a series of nested packages, this is "
+"undesirable for at least two reasons.  The first is that the resulting "
+"file would be quite hard to read based on its length and the degree of "
+"indenting that would be required.  The second is that from the standpoint"
+" of version control, it is much better to break things into smaller files"
+" to help avoid any merge conflicts."
 msgstr ""
+"모델리카 정의의 전체 라이브러리를 일련의 중첩된 패키지로 단일 파일에 빌드할 수 있지만 이는 적어도 두 가지 이유로 바람직하지 않습니다."
+"첫 번째는 필요한 들여쓰기의 길이가 길어지기 때문에, 결과 파일을 읽기가 매우 어렵다는 것입니다."
+"두 번째는 버전을 관리하는 관점에서 병합시의 충돌을 피하는 데 도움이 되도록 작은 파일로 나누는 것이 훨씬 더 낫다는 것입니다."
+
 
 #: ../../source/components/packages/package_def.rst:51
 msgid "Stored in a Single File"
 msgstr ""
+"하나의 파일에 저장하기(Stored in a Single File)"
+
 
 #: ../../source/components/packages/package_def.rst:53
 msgid ""
@@ -70,98 +90,144 @@ msgid ""
 "definition or it might contain a deeply nested hierarchy of packages or "
 "anything in between."
 msgstr ""
+"모델리카 소스 코드를 파일 시스템에 매핑할 수 있는 여러 가지 방법이 있습니다."
+"가장 간단한 방법은 모든 것을 파일에 저장하는 것이며, 이 파일의 접미사는 .mo 입니다."
+"단일 모델 정의, 깊이가 있는 중첩된 패키지 계층 또는 그 사이의 항목을 이 파일에 포함할 수 있습니다."
+
 
 #: ../../source/components/packages/package_def.rst:60
 msgid "Stored as a Directory"
 msgstr ""
+"디렉토리로 저장하기(Stored as a Directory)"
 
 #: ../../source/components/packages/package_def.rst:62
 msgid ""
 "As we already discussed, storing everything in one file is usually not a "
-"good idea.  The alternative is to map Modelica definitions into a directory "
-"structure.  A package can be stored as a directory by creating a directory "
-"**with the same name as the package**.  Then, inside that directory, there "
-"must be a file called ``package.mo`` that stores the definition of the "
-"package, **but not any nested definitions**.  The nested definitions can be "
-"stored either as single files (as described above) or as directories "
-"representing packages (as described in this paragraph).  The following "
-"diagram attempts to visualize a sample directory layout::"
+"good idea.  The alternative is to map Modelica definitions into a "
+"directory structure.  A package can be stored as a directory by creating "
+"a directory **with the same name as the package**.  Then, inside that "
+"directory, there must be a file called ``package.mo`` that stores the "
+"definition of the package, **but not any nested definitions**.  The "
+"nested definitions can be stored either as single files (as described "
+"above) or as directories representing packages (as described in this "
+"paragraph).  The following diagram attempts to visualize a sample "
+"directory layout::"
 msgstr ""
+"이미 논의한 것처럼 모든 것을 하나의 파일에 저장하는 것은 일반적으로 좋은 생각이 아닙니다. "
+"이에 대한 대안은 모델리카 정의를 디렉터리 구조에 매핑하는 것입니다. "
+"**패키지와 동일한 이름** 으로 디렉터리를 생성하여 패키지를 디렉터리 구조로 저장할 수 있습니다. "
+"그런 다음 해당 디렉토리 안에 패키지 정의를 저장하는 ``package.mo`` 라는 파일을 생성해야 합니다. 하지만 **중첩된 정의는 여기에 저장하지 않습니다**. "
+"중첩된 정의는 단일 파일(위에서 설명한 대로) 또는 패키지를 나타내는 디렉토리 (이 단락에서 설명한 대로)로 저장할 수 있습니다. "
+"다음 다이어그램을 통해 샘플 디렉토리 레이아웃을 시각화 해보겠습니다.::"
+
 
 #: ../../source/components/packages/package_def.rst:79
 msgid ""
-"The ``package.mo`` file associated with the package named ``RootPackage`` "
-"would look something like this:"
+"The ``package.mo`` file associated with the package named ``RootPackage``"
+" would look something like this:"
 msgstr ""
+"``RootPackage`` 라는 패키지와 관련된 ``package.mo`` 파일은 다음과 같습니다."
 
 #: ../../source/components/packages/package_def.rst:89
 msgid ""
-"There are two important things to note here.  First, the ``within`` clause "
-"should be present, but empty.  This indicates that this package is not "
-"contained in any other packages.  In addition, the definitions of "
-"``NestedPackageAsFile`` and ``NestedPackageAsDir`` are not (and cannot be) "
-"present.  Those must be stored outside the ``package.mo`` file."
+"There are two important things to note here.  First, the ``within`` "
+"clause should be present, but empty.  This indicates that this package is"
+" not contained in any other packages.  In addition, the definitions of "
+"``NestedPackageAsFile`` and ``NestedPackageAsDir`` are not (and cannot "
+"be) present.  Those must be stored outside the ``package.mo`` file."
 msgstr ""
+"여기에서 주목해야 할 두 가지 중요한 사항이 있습니다. "
+"첫째, ``within`` 절이 있어야 하지만 비어 있어야 합니다. 이를 통해서 이 패키지가 다른 패키지에 포함되어 있지 않음을 나타냅니다."
+"또한 ``NestedPackageAsFile`` 및 ``NestedPackageAsDir`` 정의가 존재하지 않습니다(존재할 수도 없습니다)."
+"이들은 ``package.mo`` 파일 외부에 저장되어야 합니다."
+
+
 
 #: ../../source/components/packages/package_def.rst:96
 msgid ""
 "Similarly, the ``package.mo`` file associated with the "
 "``NestedPackageAsDir`` package would look like this:"
 msgstr ""
+"유사하게, ``NestedPackageAsDir`` 패키지와 관련된 ``package.mo`` 파일은 다음과 같습니다:"
+
 
 #: ../../source/components/packages/package_def.rst:106
 msgid ""
 "Again, there should be no definitions contained in this package, only "
-"annotations.  The ``within`` clause is slightly different, reflecting the "
-"fact that ``NestedPackageAsDir`` belongs to the ``RootPackage`` package."
+"annotations.  The ``within`` clause is slightly different, reflecting the"
+" fact that ``NestedPackageAsDir`` belongs to the ``RootPackage`` package."
 msgstr ""
+"다시 말하지만, 이 패키지에는 정의가 포함되지 않고 주석만 포함되어야 합니다. "
+"``within`` 절은 ``NestedPackageAsDir`` 이 ``RootPackage`` 패키지에 속한다는 사실을 반영하게 되는데, 그래서 이전의 파일과 약간 다릅니다."
+
+
 
 #: ../../source/components/packages/package_def.rst:111
 msgid ""
-"Finally, the ``NestedPackageAsFile.mo`` file would look something like this:"
+"Finally, the ``NestedPackageAsFile.mo`` file would look something like "
+"this:"
 msgstr ""
+"마지막으로 ``NestedPackageAsFile.mo`` 파일은 다음과 같습니다."
+
 
 #: ../../source/components/packages/package_def.rst:124
 msgid ""
-"The ``within`` clause is the same as for the ``NestedPackageAsDir`` package "
-"definition, but since we are storing this package as a single file, nested "
-"definitions for constants, models, packages, functions, *etc.* are allowed "
-"here as well."
+"The ``within`` clause is the same as for the ``NestedPackageAsDir`` "
+"package definition, but since we are storing this package as a single "
+"file, nested definitions for constants, models, packages, functions, "
+"*etc.* are allowed here as well."
 msgstr ""
+"``within`` 절은 ``NestedPackageAsDir`` 패키지 정의와 동일하지만 이 패키지를 단일 파일로 저장하므로 상수, 모델, 패키지, 함수, *등* 도 여기에서 허용됩니다."
 
 #: ../../source/components/packages/package_def.rst:130
 msgid "Ordering for Directories"
 msgstr ""
+"디렉토러 정렬(Ordering for Directories)"
 
 #: ../../source/components/packages/package_def.rst:134
 msgid ""
-"When all definitions are stored within a single file, the order they appear "
-"in the file indicates the order they should appear when visualized (*e.g.,* "
-"in a package browser).  But when they are stored on the file system, there "
-"is no implied ordering.  For this reason, an optional ``package.order`` file"
-" can be included alongside the package.mo file to specify an ordering.  The "
-"file is simply a list of the names for nested entities, one per line.  So, "
-"for example, if we wanted to impose an ordering on this sample package "
-"structure, the file system would be populated as follows::"
+"When all definitions are stored within a single file, the order they "
+"appear in the file indicates the order they should appear when visualized"
+" (*e.g.,* in a package browser).  But when they are stored on the file "
+"system, there is no implied ordering.  For this reason, an optional "
+"``package.order`` file can be included alongside the package.mo file to "
+"specify an ordering.  The file is simply a list of the names for nested "
+"entities, one per line.  So, for example, if we wanted to impose an "
+"ordering on this sample package structure, the file system would be "
+"populated as follows::"
 msgstr ""
+"모든 정의가 단일 파일 내에 저장될 때 파일에 나타나는 순서는 (*예:* 패키지 브라우저에서)시각화될 때 나타나야 하는 순서를 나타냅니다. "
+"그러나 파일 시스템에 저장될 때 묵시적인 순서는 없습니다."
+"이러한 이유로 package.mo 파일과 함께 선택적으로  ``package.order`` 파일을 포함하여 순서를 지정할 수 있습니다."
+"이 파일은 단순히 한 줄에 하나씩 작성된 엔터티의 이름 목록입니다."
+"예를 들어, 이 샘플 패키지 구조에 순서를 지정하려는 경우 파일 시스템은 다음과 같이 채워집니다.::"
+
+
 
 #: ../../source/components/packages/package_def.rst:152
 msgid ""
-"In the absence of a ``package.order`` file, a Modelica tool would probably "
-"simply sort packages alphabetically.  But if we wanted to order the contents"
-" of the ``RootPackage`` in reverse alphabetical order, the ``package.order``"
-" file in the ``RootPackage`` directory would look like this::"
+"In the absence of a ``package.order`` file, a Modelica tool would "
+"probably simply sort packages alphabetically.  But if we wanted to order "
+"the contents of the ``RootPackage`` in reverse alphabetical order, the "
+"``package.order`` file in the ``RootPackage`` directory would look like "
+"this::"
 msgstr ""
+"``package.order`` 파일이 없는 경우 모델리카 시뮬레이션 소프트웨어는 단순히 패키지를 알파벳순으로 정렬할 것입니다. "
+"그러나 ``RootPackage`` 내용을 알파벳 역순으로 정렬하려면 ``RootPackage`` 디렉토리의 ``package.order`` 파일은 다음과 같이 설정해야합니다.::"
+
 
 #: ../../source/components/packages/package_def.rst:161
 msgid ""
-"This would specify to the Modelica tool that ``NestedPackageAsFile`` should "
-"come before ``NestedPackageAsDir``."
+"This would specify to the Modelica tool that ``NestedPackageAsFile`` "
+"should come before ``NestedPackageAsDir``."
 msgstr ""
+"이것은 ``NestedPackageAsFile`` 이 ``NestedPackageAsDir`` 앞에 와야 한다고 모델리카 시뮬레이션 소프트웨어에 지정하는 것입니다."
+
 
 #: ../../source/components/packages/package_def.rst:165
 msgid "Versioning"
 msgstr ""
+"버전 명명(Versioning)"
 
 #: ../../source/components/packages/package_def.rst:174
 msgid "``MODELICAPATH``"
@@ -169,35 +235,49 @@ msgstr ""
 
 #: ../../source/components/packages/package_def.rst:178
 msgid ""
-"Most Modelica tools allow the user to open a file either by specifying the "
-"full path name of the file or by using a file selection dialog to open it.  "
-"But it can be tedious to find and load lots of different files each time you"
-" use a tool.  For this reason, the Modelica specification defines a special "
-"environment variable called ``MODELICAPATH`` that the user can use to "
-"specify the location of the source code they want the tool to be able to "
-"automatically locate."
+"Most Modelica tools allow the user to open a file either by specifying "
+"the full path name of the file or by using a file selection dialog to "
+"open it.  But it can be tedious to find and load lots of different files "
+"each time you use a tool.  For this reason, the Modelica specification "
+"defines a special environment variable called ``MODELICAPATH`` that the "
+"user can use to specify the location of the source code they want the "
+"tool to be able to automatically locate."
 msgstr ""
+"대부분의 모델리카 시뮬레이션 소프트웨어를 사용하면 파일의 전체 경로 이름을 지정하거나 파일 선택 대화 상자를 사용하여 파일을 열 수 있습니다. "
+"그러나 시뮬레이션 소프트웨어를 사용할 때마다 서로 다른 많은 파일을 찾아 로드하는 것은 지루한 작업입니다. "
+"이러한 이유로 모델리카 사양(spec)에서는 시뮬레이션 소프트웨어가 자동으로 찾을 수 있는 소스 코드의 위치를 사용자가 원하는 것으로 지정하는 ``MODELICAPATH`` 라는 특수 환경 변수를 정의합니다."
+
+
 
 #: ../../source/components/packages/package_def.rst:186
 msgid ""
 "The ``MODELICAPATH`` environment variable should contain a list of "
-"directories to search.  On Windows, that list should be separated by a ``;``"
-" and under Unix it should be separated by a ``:``.  When the Modelica "
-"compiler comes across a package it has not already loaded, it will search "
-"the directories listed by the ``MODELICAPATH`` environment variable looking "
-"for either a matching file or directory.  For example, if the "
-"``MODELICAPATH`` was defined as (assuming Unix conventions)::"
+"directories to search.  On Windows, that list should be separated by a "
+"``;`` and under Unix it should be separated by a ``:``.  When the "
+"Modelica compiler comes across a package it has not already loaded, it "
+"will search the directories listed by the ``MODELICAPATH`` environment "
+"variable looking for either a matching file or directory.  For example, "
+"if the ``MODELICAPATH`` was defined as (assuming Unix conventions)::"
 msgstr ""
+"``MODELICAPATH`` 환경 변수는 검색할 디렉토리 목록을 포함해야 하는데, Windows에서 해당 목록은 ``;`` 로 구분되어야 하며 Unix에서는 ``:`` 로 구분 합니다. "
+"모델리카  컴파일러가 아직 로드되지 않은 패키지를 발견하면 ``MODELICAPATH`` 환경 변수에 나열된 디렉토리를 검색하여 일치하는 파일 또는 디렉토리를 찾습니다. "
+"예를 들어, ``MODELICAPATH`` 가 다음과 같이 정의된 경우(Unix 규칙을 가정):"
+
 
 #: ../../source/components/packages/package_def.rst:196
 msgid ""
-"and the compiler was looking for a package called ``MyLib``, it would first "
-"look in ``/home/mtiller/Dir1`` for either a package named ``MyLib.mo`` "
-"(stored as a single file) or a directory named ``MyLib`` that contained a "
-"``package.mo`` file that defined a package named ``MyLib``.  If neither of "
-"those could be found, it would then search the ``/home/mtiller/Dir2`` "
-"directory (for the same things)."
+"and the compiler was looking for a package called ``MyLib``, it would "
+"first look in ``/home/mtiller/Dir1`` for either a package named "
+"``MyLib.mo`` (stored as a single file) or a directory named ``MyLib`` "
+"that contained a ``package.mo`` file that defined a package named "
+"``MyLib``.  If neither of those could be found, it would then search the "
+"``/home/mtiller/Dir2`` directory (for the same things)."
 msgstr ""
+"컴파일러가 ``MyLib`` 라는 패키지를 찾고 있었다고 하면,  "
+"먼저 ``/home/mtiller/Dir1`` 에서 ``MyLib.mo`` (단일 파일로 저장됨)라는 패키지를 찾거나 ``MyLib`` 이라는 패키지를 정의한 ``package.mo`` 파일을 포함하는 ``MyLib`` 이라는 이름의 디렉토리를 찾습니다. "
+"그리고, 둘 다 찾을 수 없으면 ``/home/mtiller/Dir2`` 디렉토리를 (동일한 방법으로) 검색합니다."
+
+
 
 #: ../../source/components/packages/package_def.rst:206
 msgid "``modelica://`` URLs"
@@ -207,48 +287,71 @@ msgstr ""
 msgid ""
 "In many cases, it is useful to include non-Modelica files along with a "
 "Modelica package.  These non-Modelica files might contain data, scripts, "
-"images, etc.  We call these non-Modelica files \"resources\". Now that we've"
-" covered how Modelica definitions are mapped to a file system, we can "
-"introduce an extremely useful feature in Modelica which is the use of URLs "
-"to refer to the location of these resources."
+"images, etc.  We call these non-Modelica files \"resources\". Now that "
+"we've covered how Modelica definitions are mapped to a file system, we "
+"can introduce an extremely useful feature in Modelica which is the use of"
+" URLs to refer to the location of these resources."
 msgstr ""
+"모델리카 패키지와 함께 비 모델리카 파일을 포함하는 것이 유용한 많은 경우가 있습니다. "
+"이러한 비 모델리카 파일을 "리소스"라고 하며 데이터, 스크립트, 이미지 등이 포함됩니다."
+"앞서서 모델리카 정의가 파일 시스템에 매핑되는 방법을 살펴보았으므로 "
+"리소스의 위치를 참조하기 위해 URL을 사용하는 매우 유용한 모델리카에 기능을 이제 소개하겠습니다."
+
 
 #: ../../source/components/packages/package_def.rst:215
 msgid ""
-"For example, when we discussed :ref:`ext-functions`, we introduced several "
-"annotations that specified the location of such resources. Specifically, the"
-" ``IncludeDirectory`` and ``LibraryDirectory`` annotations specified where "
-"the Modelica compiler should look for include and library files, "
-"respectively.  As was briefly mentioned then, the default values for these "
-"annotations started with ``modelica:://LibraryName/Resources``.  Such a URL "
-"allows us to define the location of resources **relative to a given Modelica"
-" definition on the file system**.  Let us revisit the directory structure we"
-" discussed earlier, but with some resource files added::"
+"For example, when we discussed :ref:`ext-functions`, we introduced "
+"several annotations that specified the location of such resources. "
+"Specifically, the ``IncludeDirectory`` and ``LibraryDirectory`` "
+"annotations specified where the Modelica compiler should look for include"
+" and library files, respectively.  As was briefly mentioned then, the "
+"default values for these annotations started with "
+"``modelica://LibraryName/Resources``.  Such a URL allows us to define the"
+" location of resources **relative to a given Modelica definition on the "
+"file system**.  Let us revisit the directory structure we discussed "
+"earlier, but with some resource files added::"
 msgstr ""
+"예를 들어 :ref:`ext-functions` 에 대해 논의할 때 리소스의 위치를 지정하는 몇 가지 주석을 살펴 보았습니다."
+"특히 ``IncludeDirectory`` 및 ``LibraryDirectory`` 주석은 모델리카 컴파일러가 각각 파일을 포함 하거나 라이브러리 파일을 찾아야 하는 위치를 지정했습니다. "
+"그때 간단히 언급했듯이 이러한 주석의 기본값은 ``modelica://LibraryName/Resources`` 로 시작했습니다. "
+"이러한 URL을 사용하면 **파일 시스템에서 주어진 모델리카 정의와 관련된** 리소스 위치를 지정할 수 있습니다. "
+"앞에서 논의한 디렉토리에 일부 리소스 파일이 추가된 아래 구조를 보겠습니다.::"
+
 
 #: ../../source/components/packages/package_def.rst:237
 msgid ""
-"If we have a model that needs the data contained in ``NestedPackageAsDir``, "
-"we can use the following URL to reference it::"
+"If we have a model that needs the data contained in "
+"``NestedPackageAsDir``, we can use the following URL to reference it::"
 msgstr ""
+"``NestedPackageAsDir`` 에 포함된 데이터가 필요한 모델이 있는 경우 다음 URL을 사용하여 참조할 수 있습니다::"
+
 
 #: ../../source/components/packages/package_def.rst:242
 msgid ""
-"Such a URL starts with ``modelica://``.  This is our way of indicating that "
-"the resource being referenced is with respect to a Modelica model and not, "
-"for example, something to be fetched over the network.  The ``//`` is then "
-"followed by the fully qualified name of a Modelica definition except that "
-"each component is separated by a ``/`` instead of a ``.``.  The Modelica "
-"compiler will interpret this as the name of the directory that contains that"
-" definition.  Finally, the last element in the URL names the file to be "
-"used."
+"Such a URL starts with ``modelica://``.  This is our way of indicating "
+"that the resource being referenced is with respect to a Modelica model "
+"and not, for example, something to be fetched over the network.  The "
+"``//`` is then followed by the fully qualified name of a Modelica "
+"definition except that each component is separated by a ``/`` instead of "
+"a ``.``.  The Modelica compiler will interpret this as the name of the "
+"directory that contains that definition.  Finally, the last element in "
+"the URL names the file to be used."
 msgstr ""
+"이러한 URL은 ``modelica://`` 로 시작합니다. "
+"이는 참조되는 리소스가 다른 항목(예를 들어 네트워크를 통해 가져올 항목)이 아니고 모델리카 모델과 관련된 것 임을 나타내는 방법입니다. "
+"``//`` 다음에는 모델리카 정의의 정규화된 이름(``.`` 대신 ``/`` 로 구분)이 오는데, 모델리카 컴파일러는 이것을 해당 정의가 포함된 디렉토리의 이름으로 해석합니다. "
+"URL의 마지막 요소는 사용할 파일의 이름을 지정합니다."
+
 
 #: ../../source/components/packages/package_def.rst:251
 msgid ""
-"As another example, if we wished to reference the ``logo.jpg`` file in the "
-"``Resources`` package, we would use the following URL::"
+"As another example, if we wished to reference the ``logo.jpg`` file in "
+"the ``Resources`` package, we would use the following URL::"
 msgstr ""
+"다른 예로, ``Resources`` 패키지의 ``logo.jpg`` 파일을 참조하려면 다음 URL을 사용합니다:"
+
+
+
 
 #: ../../source/components/packages/package_def.rst:256
 msgid ""
@@ -256,15 +359,36 @@ msgid ""
 "nested package named ``Resources`` (hence the default values for "
 "``IncludeDirectory`` and ``LibraryDirectory``)."
 msgstr ""
+"위의 예시와 같이 ``Resources`` 라는 중첩된 패키지에 라이브러리와 관련된 리소스를 저장하는 것이 일반인 사용법 입니다"
+"(따라서 ``IncludeDirectory`` 및 ``LibraryDirectory`` 의 기본값)."
 
-#: ../../source/components/packages/package_def.rst:132
-msgid "packages"
-msgstr ""
 
-#: ../../source/components/packages/package_def.rst:132
-msgid "ordering within"
-msgstr ""
+#~ msgid ""
+#~ "For example, when we discussed :ref"
+#~ ":`ext-functions`, we introduced several "
+#~ "annotations that specified the location "
+#~ "of such resources. Specifically, the "
+#~ "``IncludeDirectory`` and ``LibraryDirectory`` "
+#~ "annotations specified where the Modelica "
+#~ "compiler should look for include and "
+#~ "library files, respectively.  As was "
+#~ "briefly mentioned then, the default "
+#~ "values for these annotations started "
+#~ "with ``modelica:://LibraryName/Resources``.  Such a"
+#~ " URL allows us to define the "
+#~ "location of resources **relative to a"
+#~ " given Modelica definition on the "
+#~ "file system**.  Let us revisit the "
+#~ "directory structure we discussed earlier, "
+#~ "but with some resource files added::"
+#~ msgstr ""
 
-#: ../../source/components/packages/package_def.rst:176
-msgid "MODELICAPATH"
-msgstr ""
+#~ msgid "packages"
+#~ msgstr ""
+
+#~ msgid "ordering within"
+#~ msgstr ""
+
+#~ msgid "MODELICAPATH"
+#~ msgstr ""
+

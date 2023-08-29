@@ -1,64 +1,84 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/connectors/graphics.rst:4
 msgid "Graphical Connectors"
 msgstr ""
+"그래픽 커넥터(Graphical Connectors)"
 
 #: ../../source/components/connectors/graphics.rst:7
 msgid "Text vs. Graphics"
 msgstr ""
+"문자 vs. 그래픽(Text vs. Graphics)"
 
 #: ../../source/components/connectors/graphics.rst:9
 msgid ""
-"Until now, we've discussed Modelica as a purely textual language.  But the "
-"reality is that Modelica models are primarily built **graphically**.  From "
-"this point on, graphics will play a greater and greater role in the way we "
-"visualize complex Modelica models."
+"Until now, we've discussed Modelica as a purely textual language.  But "
+"the reality is that Modelica models are primarily built **graphically**."
+"  From this point on, graphics will play a greater and greater role in "
+"the way we visualize complex Modelica models."
 msgstr ""
+"지금까지 모델리카를 순전히 텍스트 언어로 논의했습니다만, 현실적으로 봤을때 모델리카 모델이 주로 **그래픽 방식으로** 구성 됩니다."
+"지금부터 다루는 것들을 보면 복잡한 모델리카 모델을 시각화하는 방식에서 그래픽 적인 요소는 점점 더 큰 역할을 한다는 것을 알 수 있습니다."
+
+
 
 #: ../../source/components/connectors/graphics.rst:14
 msgid ""
-"This visualization starts with the connectors.  The textual component of the"
-" Modelica models will always be present.  Variables and equations will "
-"always be declared as we've shown already, in textual form.  But as we will "
-"repeatedly see as we move forward, the ``annotation`` feature in Modelica "
-"can be used to associate a graphical appearance with many different entities"
-" in Modelica."
+"This visualization starts with the connectors.  The textual component of "
+"the Modelica models will always be present.  Variables and equations will"
+" always be declared as we've shown already, in textual form.  But as we "
+"will repeatedly see as we move forward, the ``annotation`` feature in "
+"Modelica can be used to associate a graphical appearance with many "
+"different entities in Modelica."
 msgstr ""
+"시각화는 커넥터에서 시작합니다. "
+"사실, 모델리카 모델의 텍스트 구성 요소는 항상 존재하는데, 변수와 방정식은 항상  이미 보여준 것처럼 텍스트 형식으로 선언됩니다. "
+"그러나 계속 진행하면서 반복적으로 보게 되겠지만 모델리카의 ``annotation`` 기능을 사용하여 그래픽 모양을 모델리카의 다양한 엔터티와 연결할 수 있습니다."
+
 
 #: ../../source/components/connectors/graphics.rst:21
 msgid ""
 "The first kind of graphical association we will introduce will be the "
 "graphics associated with a ``connector``.  More specifically, we'll "
-"introduce how to associate graphics with the definition of a ``connector``."
-"  These graphics will then be used whenever the connector is instantiated in"
-" a diagram (something we'll discuss in greater detail when we discuss "
-":ref:`components`)."
+"introduce how to associate graphics with the definition of a "
+"``connector``.  These graphics will then be used whenever the connector "
+"is instantiated in a diagram (something we'll discuss in greater detail "
+"when we discuss :ref:`components`)."
 msgstr ""
+"소개할 첫 번째 그래픽 연결은 ``connector`` 와 관련된 그래픽입니다."
+"좀더 구체적으로 정의와 그래픽을 연결하는 방법을 소개한 다음, 이 그래픽을 커넥터가 다이어그램에서 인스턴스화될 때마다 사용 하겠습니다(:ref:`components` 에 대해 논의할 때 더 자세히 설명할 것입니다)."
+
 
 #: ../../source/components/connectors/graphics.rst:29
 msgid "Icon Annotations"
 msgstr ""
+"아이콘 주석(Icon Annotations)"
 
 #: ../../source/components/connectors/graphics.rst:34
 msgid ""
 "When we associate an annotation with a definition, we place it in the "
-"definition, but do not associate it with any declarations or other entities "
-"in the definition.  Instead, it is just another element of the definition.  "
-"To demonstrate this, consider the following electrical pin connector "
-"definitions:"
+"definition, but do not associate it with any declarations or other "
+"entities in the definition.  Instead, it is just another element of the "
+"definition.  To demonstrate this, consider the following electrical pin "
+"connector definitions:"
 msgstr ""
+"각 모델에 대한 정의와 함께 주석이 연결 될 때 아이콘 주석을 정의에 배치(코딩)하지만 선언 또는 정의의 다른 엔터티와 연결하지는 않습니다."
+"대신 정의된 또 다른 요소일 뿐입니다."
+"이에 대한 전기 핀 커넥터 정의의 예시를 보겠습니다."
+
 
 #: ../../source/components/connectors/graphics.rst:43
 msgid ""
@@ -68,66 +88,87 @@ msgid ""
 "identical to the ``Electrical`` connector definition presented in the "
 "discussion on :ref:`simple-domains`."
 msgstr ""
+"각 정의의 길이를 유의 깊게 보면 길이가 긴데, 긴 이유는 거의 전적으로 이러한 정의에 있는 주석 때문입니다."
+"주석을 제외한 ``PositivePin`` 및 ``NegativePin`` 정의는 :ref:`simple-domains` 에서 논의된 ``Electrical`` 커넥터 정의와 동일합니다."
+
 
 #: ../../source/components/connectors/graphics.rst:49
 msgid ""
-"The reason we've chosen to define two electrical pin connectors is so that "
-"they can be made graphically distinct.  An instance of the ``PositivePin`` "
-"connector looks like:"
+"The reason we've chosen to define two electrical pin connectors is so "
+"that they can be made graphically distinct.  An instance of the "
+"``PositivePin`` connector looks like:"
 msgstr ""
+"두 개의 전기 핀 커넥터를 정의하기로 선택한 이유는 두 커넥터를 그래픽으로 구분할 수 있도록 하기 위함입니다."
+"``PositivePin`` 커넥터의 인스턴스는 다음과 같습니다."
 
-#: ../../source/components/connectors/graphics.rst:55
-msgid "while an instance of ``NegativePin`` looks like:"
-msgstr ""
 
 #: ../../source/components/connectors/graphics.rst:59
+msgid "while an instance of ``NegativePin`` looks like:"
+msgstr ""
+"``NagativePin`` 커넥터의 인스턴스는 다음과 같습니다."
+
+#: ../../source/components/connectors/graphics.rst:67
 msgid ""
 "Let's look in greater detail at the ``Icon`` annotation in the "
 "``PositivePin`` definition:"
 msgstr ""
+"``PositivePin`` 이 정의된 ``Icon`` 주석을 자세히 살펴보겠습니다."
 
-#: ../../source/components/connectors/graphics.rst:66
+#: ../../source/components/connectors/graphics.rst:74
 msgid ""
 "We will be discussing :ref:`graphical-annos` shortly.  But let's take a "
-"quick look at what is going on in these definitions.  We can see that the "
-"``Icon`` annotation contains another variable ``graphics``.  The "
-"``graphics`` variable is assigned a vector of graphical elements.  We see "
-"that this vector graphical elements includes an ``Ellipse`` (used to render "
-"the circle in the icon), two ``Rectangle`` elements (used to render the "
-"\"+\" sign) and a ``Text`` element.  Note the ``textString`` field in the "
-"``Text`` element contains ``\"%name\"``.  There are a number of substitution"
-" patterns that can appear in a graphical annotation.  This particular one "
-"will be filled in with the instance name whenever a variable is declared "
-"with the type ``PositivePin``. So, for example, the following declarations:"
+"quick look at what is going on in these definitions.  We can see that the"
+" ``Icon`` annotation contains another variable ``graphics``.  The "
+"``graphics`` variable is assigned a vector of graphical elements.  We see"
+" that this vector graphical elements includes an ``Ellipse`` (used to "
+"render the circle in the icon), two ``Rectangle`` elements (used to "
+"render the \"+\" sign) and a ``Text`` element.  Note the ``textString`` "
+"field in the ``Text`` element contains ``\"%name\"``.  There are a number"
+" of substitution patterns that can appear in a graphical annotation.  "
+"This particular one will be filled in with the instance name whenever a "
+"variable is declared with the type ``PositivePin``. So, for example, the "
+"following declarations:"
 msgstr ""
+"곧 :ref:`graphical-annos` 에 대해 논의할 예정 이지만, 이러한 정의에 의해서 어떤일이 발생하고 있는지 간단히 살펴보겠습니다. "
+"``Icon`` 주석에 또 다른 변수 ``graphics`` 가 포함되어 있음을 알 수 있습니다. "
+"``graphics`` 변수에는 그래픽 요소의 벡터가 할당됩니다."
+"이 벡터 그래픽 요소에는 ``Ellipse`` (아이콘에서 원을 렌더링하는 데 사용됨), 2개의 ``Rectangle`` 요소 ("+" 기호를 렌더링하는 데 사용됨) 및 ``Text`` 요소가 포함되어 있습니다. "
+"``Text`` 요소의 ``textString`` 필드에는 ``"%name"`` 이 포함되어 있습니다. "
+"그래픽 주석에 나타날 수 있는 여러 대체 패턴이 있습니다."
+"이 특정 변수는 ``PositivePin`` 자료형으로 변수가 선언될 때마다 인스턴스 이름으로 채워집니다. "
+"예를 들어 선언은 다음과 같습니다."
 
-#: ../../source/components/connectors/graphics.rst:83
+
+#: ../../source/components/connectors/graphics.rst:91
 msgid ""
-"would be rendered graphically with ``%name`` replaced with ``p``.  In this "
-"way, the textual names assigned to connectors in a diagram always match the "
-"name of the underlying connector declarations in a model."
+"would be rendered graphically with ``%name`` replaced with ``p``.  In "
+"this way, the textual names assigned to connectors in a diagram always "
+"match the name of the underlying connector declarations in a model."
 msgstr ""
+"``%name`` 이 ``p`` 로 대체되어 그래픽으로 렌더링됩니다. "
+"이러한 방식으로 다이어그램의 커넥터에 할당된 텍스트 이름은 항상 모델의 기본 커넥터 선언 이름과 일치하게 됩니다."
 
-#: ../../source/components/connectors/graphics.rst:87
+
+#: ../../source/components/connectors/graphics.rst:95
 msgid ""
-":ref:`graphical-annos` will be reviewed in detail later in this chapter and "
-"we will see many more uses of them as we transition from strictly textual "
-"representations of models to implementations that incorporate graphical "
-"rendering as well."
+":ref:`graphical-annos` will be reviewed in detail later in this chapter "
+"and we will see many more uses of them as we transition from strictly "
+"textual representations of models to implementations that incorporate "
+"graphical rendering as well."
 msgstr ""
+":ref:`graphical-annos` 에 관한 내용은 이 장의 뒷부분에서 자세히 검토할 것이며 모델의 텍스트 표현에서"
+"그래픽 렌더링도 통합할 수 있게 전환함에 따라 더 많은 용도에 사용하는 예시를 보게 될 것입니다."
 
-#: ../../source/components/connectors/graphics.rst:31
-msgid "annotations"
-msgstr ""
 
-#: ../../source/components/connectors/graphics.rst:31
-msgid "Icon"
-msgstr ""
+#~ msgid "annotations"
+#~ msgstr ""
 
-#: ../../source/components/connectors/graphics.rst:32
-msgid "icons"
-msgstr ""
+#~ msgid "Icon"
+#~ msgstr ""
 
-#: ../../source/components/connectors/graphics.rst:32
-msgid "associating with definitions"
-msgstr ""
+#~ msgid "icons"
+#~ msgstr ""
+
+#~ msgid "associating with definitions"
+#~ msgstr ""
+

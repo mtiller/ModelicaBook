@@ -1,167 +1,238 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/discrete/sampling.rst:4
 msgid "Synchronous Systems"
 msgstr ""
+"동기 시스템(Synchronous Systems)"
 
 #: ../../source/behavior/discrete/sampling.rst:6
 msgid ""
-"In Modelica version 3.3, new features were introduced to address concerns "
-"about non-deterministic discrete behavior [Elmqvist]_.  In this section, "
-"we'll present some examples of how these issues presented themselves before "
-"version 3.3 and show how these new features help address them."
+"In Modelica version 3.3, new features were introduced to address concerns"
+" about non-deterministic discrete behavior [Elmqvist]_.  In this section,"
+" we'll present some examples of how these issues presented themselves "
+"before version 3.3 and show how these new features help address them."
 msgstr ""
+"모델리카 버전 3.3에서는 비결정적 이산 동작에 대한 문제를 해결하기 위해 새로운 기능이 도입되었습니다 [Elmqvist]_."
+"이 섹션에서는 이러한 문제가 버전 3.3 이전에 어떻게 나타났는지에 대한 몇 가지 예를 제시하고 새로운 기능이 "
+"이전의 문제를 해결하는 데 어떻게 도움이 되는지 보여줍니다."
+
 
 #: ../../source/behavior/discrete/sampling.rst:12
 msgid "To start, consider the following model:"
 msgstr ""
+"다음 모델을 살펴 보겠습니다."
+
 
 #: ../../source/behavior/discrete/sampling.rst:18
 msgid ""
-"If you look carefully, you will see that ``x`` and ``y`` are both computed "
-"at discrete times.  Furthermore, they are both sampled initially at the "
-"start of the simulation and then again every 0.1 seconds.  But the question "
-"is, are they really identical?  To help address this question, we include "
-"the variable ``e`` which measures the difference between them."
+"If you look carefully, you will see that ``x`` and ``y`` are both "
+"computed at discrete times.  Furthermore, they are both sampled initially"
+" at the start of the simulation and then again every 0.1 seconds.  But "
+"the question is, are they really identical?  To help address this "
+"question, we include the variable ``e`` which measures the difference "
+"between them."
 msgstr ""
+"자세히 보면 ``x`` 와 ``y`` 가 둘 다 불연속 시간으로 계산된다는 것을 알 수 있고, 시뮬레이션 시작 시 처음에 샘플링된 다음 0.1초마다 다시 샘플링 하는 것을 이해 할 수 있습니다. "
+"그러나 "여기서 이 두가지가 정말로 동일한가" 라는 의문을 가지게 됩니다. "
+"이 질문을 해결하는 데 도움이 되도록 이들 간의 차이를 측정하는 변수 ``e`` 를 추가하여 시뮬레이션 했습니다."
+
 
 #: ../../source/behavior/discrete/sampling.rst:28
 msgid ""
 "Simulating this model, we get the following trajectories for ``x`` and "
-"``y``.  Of course, they look identical.  But in order to really determine if"
-" there are any differences between them, let's plot the error value, ``e``:"
+"``y``.  Of course, they look identical.  But in order to really determine"
+" if there are any differences between them, let's plot the error value, "
+"``e``:"
 msgstr ""
+"이 모델을 시뮬레이트하면 ``x`` 및 ``y`` 에 대한 궤적의 모양은 같습니다. "
+"그러나, 실제로 차이점을 확인하기 위한 오류 값 ``e`` 를 살펴보면 아래와 같습니다."
+
 
 #: ../../source/behavior/discrete/sampling.rst:36
 msgid "Now, let's consider the following model:"
 msgstr ""
+"이제 다음 모델을 살펴 보겠습니다."
 
 #: ../../source/behavior/discrete/sampling.rst:42
 msgid ""
 "Here, we set up a common signal that triggers the assignment to both "
 "variables.  In this way, we can be sure that when the ``tick`` signal "
-"becomes true, both ``x`` and ``y`` will be assigned a value.  Sure enough, "
-"if we run this model, we see that the error is always zero:"
+"becomes true, both ``x`` and ``y`` will be assigned a value.  Sure "
+"enough, if we run this model, we see that the error is always zero:"
 msgstr ""
+"여기에서 두 변수에 대한 할당을 트리거하는 공통의 신호를 설정합니다."
+"이런 식으로 설정하면 ``tick`` 신호가 참이 될 때 ``x`` 와 ``y`` 에 값이 할당된다는 것을 확실히 알 수 있습니다."
+"당연한 것이겠지만, 이 모델을 실행하면 오류가 항상 0임을 아래 선도와 같이 알 수 있습니다."
+
 
 #: ../../source/behavior/discrete/sampling.rst:50
 msgid ""
 "This kind of approach, where each signal is sampled based on a common "
-"\"tick\" (or clock), is a good way to avoid determinism issues.  However, "
-"what about cases where you have one signal that samples at a higher rate "
-"than another, but you know that at certain times they should be sampled "
+"\"tick\" (or clock), is a good way to avoid determinism issues.  However,"
+" what about cases where you have one signal that samples at a higher rate"
+" than another, but you know that at certain times they should be sampled "
 "together?  Consider the following example:"
 msgstr ""
+"각 신호가 공통 "틱"(또는 클록)을 기준으로 샘플링되는 이러한 접근 방식은 결정성 문제를 방지하는 좋은 방법입니다. "
+"그러나 다른 신호보다 더 높은 속도로 샘플링하는 하나의 신호가 있지만 특정 시간에 함께 샘플링해야 하는 경우는 어떻게 해야할 까요? "
+"다음 예를 살펴 보겠습니다."
+
 
 #: ../../source/behavior/discrete/sampling.rst:60
 msgid ""
-"In this case, the variable ``tick`` is a counter.  Every time it changes, we"
-" update the values of ``x`` and ``y``.  So this much is identical to the "
-"previous models.  However, we added a third signal, ``z``, that is sampled "
-"only when the value of ``tick`` is odd.  So ``x`` and ``y`` are sampled "
-"twice as often.  But every time ``z`` is updated, we can be sure that ``x`` "
-"and ``y`` are updated at exactly the same time.  Simulating this model gives"
-" us:"
+"In this case, the variable ``tick`` is a counter.  Every time it changes,"
+" we update the values of ``x`` and ``y``.  So this much is identical to "
+"the previous models.  However, we added a third signal, ``z``, that is "
+"sampled only when the value of ``tick`` is odd.  So ``x`` and ``y`` are "
+"sampled twice as often.  But every time ``z`` is updated, we can be sure "
+"that ``x`` and ``y`` are updated at exactly the same time.  Simulating "
+"this model gives us:"
 msgstr ""
+"이 경우 ``tick`` 변수는 변경될 때마다 ``x`` 및 ``y`` 값을 업데이트하는 카운터입니다."
+"이 부분은 이전 모델과 동일합니다. "
+"그러나 ``tick`` 값이 홀수일 때만 샘플링되는 세 번째 신호 ``z`` 를 추가했고, ``x`` 와 ``y`` 가 이것 보다 두 배로 자주 샘플링됩니다(``x`` 와 ``y`` 가 2번 일때 한번 호출 됩니다). "
+"호출 주기는 다르지만, ``z`` 가 업데이트될 때마다 ``x`` 와 ``y`` 가 정확히 동시에 업데이트된다는 것을 확인할 수 있습니다. "
+"이 모델을 시뮬레이션하면 다음 결과를 얻을 수 있습니다."
 
+ 
 #: ../../source/behavior/discrete/sampling.rst:71
 msgid ""
-"This is the approach taken in Modelica prior to version 3.3.  But version "
-"3.3 introduced some new features that allow us to more easily express these "
-"situations."
+"This is the approach taken in Modelica prior to version 3.3.  But version"
+" 3.3 introduced some new features that allow us to more easily express "
+"these situations."
 msgstr ""
+"이것은 버전 3.3 이전의 모델리카에서 취한 접근 방식입니다. "
+"그러나 버전 3.3에서는 이러한 상황을 보다 쉽게 표현할 수 있는 몇 가지 새로운 기능을 도입했습니다."
+
+
 
 #: ../../source/behavior/discrete/sampling.rst:75
 msgid "Consider the following model:"
 msgstr ""
+"다음 모델을 통해 확인해 보겠습니다. "
+
 
 #: ../../source/behavior/discrete/sampling.rst:81
 msgid ""
-"Now, instead of relying on a ``when`` statement, we use an enhanced version "
-"of the ``sample`` function where the first argument is an expression to "
-"evaluate to determine the sampled value and the second argument is used to "
-"tell us when to evaluate it.  Let's work through these lines one by one and "
-"discuss them.  First we have:"
+"Now, instead of relying on a ``when`` statement, we use an enhanced "
+"version of the ``sample`` function where the first argument is an "
+"expression to evaluate to determine the sampled value and the second "
+"argument is used to tell us when to evaluate it.  Let's work through "
+"these lines one by one and discuss them.  First we have:"
 msgstr ""
+"이제 ``when`` 문에 의존하는 대신 ``sample`` 함수라는 향상된 버전의 구문을 사용합니다."
+"여기서 첫 번째 인수는 샘플링된 값을 결정하기 위해 연산되어야 하는 표현식이고, 두 번째 인수는 언제 연산을 할지 설정 합니다. "
+"이 코드를 하나씩 살펴 보겠습니다. "
+
 
 #: ../../source/behavior/discrete/sampling.rst:91
 msgid ""
-"Note that we have done away with the ``0.1``.  We no longer see any mention "
-"of the clock interval as a real number.  Instead, we use the ``Clock`` "
-"operator to the define clock interval for ``x`` as a rational number.  This "
-"is important because it allows us to do exact comparisons between clocks.  "
-"This brings us to the next line:"
+"Note that we have done away with the ``0.1``.  We no longer see any "
+"mention of the clock interval as a real number.  Instead, we use the "
+"``Clock`` operator to the define clock interval for ``x`` as a rational "
+"number.  This is important because it allows us to do exact comparisons "
+"between clocks.  This brings us to the next line:"
 msgstr ""
+"``0.1`` 이라는 표현이 없다는 점을 확인할 수 있습니다."
+"클록 간격에 대한 언급이 더 이상 실수로 표시되지 않는 대신, ``Clock`` 연산자를 사용하여 ``x`` 에 대한 클럭 간격을 유리수로 정의합니다. "
+"이를 통해 클럭 간의 정확한 비교를 수행할 수 있기 때문에 중요한 부분 입니다."
+"다음 줄을 보겠습니다."
+
 
 #: ../../source/behavior/discrete/sampling.rst:101
 msgid ""
-"Again, we see the rational representation of the clock.  What this means, in"
-" practice, is that the Modelica compiler can know for certain that these two"
-" clocks, ``x`` and ``y``, are identical because they are defined in terms of"
-" integer quantities which allow exact comparison. This means that when "
-"executing a simulation, we can know for certain that these two clocks will "
-"trigger simultaneously."
+"Again, we see the rational representation of the clock.  What this means,"
+" in practice, is that the Modelica compiler can know for certain that "
+"these two clocks, ``x`` and ``y``, are identical because they are defined"
+" in terms of integer quantities which allow exact comparison. This means "
+"that when executing a simulation, we can know for certain that these two "
+"clocks will trigger simultaneously."
 msgstr ""
+"다시,  clock으로 표현하는 것이 합리적인 이유를 살펴 보겠습니다. "
+"이것이 의미하는 바는 사실 두 clock인 ``x`` 와 ``y`` 가 정확한 비교를 허용하는 정수 수량으로 정의되기 때문에, 동일하다는 것을 확실히 모델리카 컴파일러가 알 수 있다는 것입니다."
+"즉, 시뮬레이션을 실행할 때 이 두 클럭이 동시에 트리거된다는 것을 확실히 보장할 수 있습니다."
+
+
 
 #: ../../source/behavior/discrete/sampling.rst:108
 msgid ""
-"If we wanted to create a clock that was exactly two times slower than ``x``,"
-" we can use the ``subSample`` operator to accomplish this.  We see this in "
+"If we wanted to create a clock that was exactly half as slow as ``x``, we"
+" can use the ``subSample`` operator to accomplish this.  We see this in "
 "the definition of ``z``:"
 msgstr ""
+"``x`` 의 절반만큼 느린 시계를 만들고 싶다면 ``subSample`` 연산자를 사용하여 이를 달성할 수 있습니다. "
+"``z`` 의 정의에서 이것을 볼 수 있습니다:"
+
 
 #: ../../source/behavior/discrete/sampling.rst:116
 msgid ""
-"Behind the scenes, the Modelica compiler can reason about these clocks.  It "
-"knows that the ``x`` clock triggers every :math:`\\frac{1}{10}` of a second."
-"  Using the information provided by the ``subSample`` operator the Modelica "
-"compiler can therefore deduce that ``z`` triggers every "
-":math:`\\frac{2}{10}` of a second. Conceptually, this means that ``z`` could"
-" also have been defined as:"
+"Behind the scenes, the Modelica compiler can reason about these clocks.  "
+"It knows that the ``x`` clock triggers every :math:`\\frac{1}{10}` of a "
+"second.  Using the information provided by the ``subSample`` operator the"
+" Modelica compiler can therefore deduce that ``z`` triggers every "
+":math:`\\frac{2}{10}` of a second. Conceptually, this means that ``z`` "
+"could also have been defined as:"
 msgstr ""
+"연산할 때, 모델리카 컴파일러는 이러한 클럭에 대해 추론할 수 있습니다. "
+"``x`` 클럭이 1초마다  :math:`\frac{1}{10}` 를 트리거한다는 것을 알고 있고,  "
+"``subSample`` 연산자가 제공하는 정보를 사용하여 ``z`` 가 1초마다 :math:`\frac{2}{10}` 를 트리거한다고 모델리카 컴파일러는 추론할 수 있습니다. "
+"개념적으로 이는 ``z`` 가 다음과 같이 정의될 수도 있음을 의미합니다."
+
 
 #: ../../source/behavior/discrete/sampling.rst:127
 msgid ""
-"But by defining ``z`` using the ``subSample`` operator and defining it with "
-"respect to ``x`` we ensure that ``z`` is always triggering at half the "
-"frequency of ``x`` regardless of how ``x`` is defined."
+"But by defining ``z`` using the ``subSample`` operator and defining it "
+"with respect to ``x`` we ensure that ``z`` is always triggering at half "
+"the frequency of ``x`` regardless of how ``x`` is defined."
 msgstr ""
+"그러나 ``subSample`` 연산자를 사용하여 ``x`` 를 사용하여 ``z`` 를 정의 함으로써, ``x`` 가 어떻게 정의 되는지에 관계 없이, 항상 ``x`` 를 기준으로 ``z`` 를 사용할 수 있습니다. "
+
 
 #: ../../source/behavior/discrete/sampling.rst:131
 msgid ""
-"In a similar way, we can define another clock, ``w`` that triggers 3 times "
-"more frequently than ``x`` by using the ``superSample`` operator:"
+"In a similar way, we can define another clock, ``w`` that triggers 3 "
+"times as frequently as ``x`` by using the ``superSample`` operator:"
 msgstr ""
+"유사한 방식으로 ``superSample`` 연산자를 사용하여 ``x`` 보다 3배 더 자주 트리거하는 ``w`` 라는 또 다른 clock을 정의할 수 있습니다."
 
 #: ../../source/behavior/discrete/sampling.rst:138
 msgid "Again, we could have defined ``w`` directly using ``sample`` with:"
 msgstr ""
+"다시 말하지만, 다음과 같이 ``sample`` 을 사용하여 ``w`` 를 직접 정의할 수 있습니다."
 
 #: ../../source/behavior/discrete/sampling.rst:144
 msgid ""
-"But by using ``superSample``, we can ensure that ``w`` is always sampling "
-"three times faster than ``x`` and six times faster than ``z`` (since ``z`` "
-"is also defined with respect to ``x``)."
+"But by using ``superSample``, we can ensure that ``w`` is always sampling"
+" three times as fast as ``x`` and six times as fast as ``z`` (since ``z``"
+" is also defined with respect to ``x``)."
 msgstr ""
+"또한, ``superSample`` 을 사용하면 ``w`` 가 항상 ``x`` 보다 3배, ``z`` 보다 6배 빠르게 샘플링하도록 할 수 있습니다."
+"(``z`` 는 ``x`` 에 대해서도 정의됩니다)"
 
 #: ../../source/behavior/discrete/sampling.rst:148
 msgid ""
 "The synchronous clock features in Modelica are relatively new.  As such, "
-"they are not yet supported by all Modelica compilers.  To learn more about "
-"these synchronous features and their applications see [Elmqvist]_ and/or the"
-" Modelica Specification, version 3.3 or later."
+"they are not yet supported by all Modelica compilers.  To learn more "
+"about these synchronous features and their applications see [Elmqvist]_ "
+"and/or the Modelica Specification, version 3.3 or later."
 msgstr ""
+"모델리카의 동기식 클락(synchronous clock) 기능은 비교적 새로운 기능입니다. "
+"따라서 아직 모든 모델리카 컴파일러에서 지원되지 않습니다. "
+"이러한 동기 기능 및 해당 응용 프로그램에 대한 자세한 내용은 [Elmqvist]_ 또는 모델리카 사양(specification)의 버전 3.3 이상을 참조하십시오."
+
 
 #: ../../source/behavior/discrete/sampling.rst:153
 msgid ""
@@ -169,3 +240,29 @@ msgid ""
 "Martin Otter and Sven-Erik Mattsson "
 "http://www.ep.liu.se/ecp/076/001/ecp12076001.pdf"
 msgstr ""
+
+#~ msgid ""
+#~ "If we wanted to create a clock "
+#~ "that was exactly two times slower "
+#~ "than ``x``, we can use the "
+#~ "``subSample`` operator to accomplish this."
+#~ "  We see this in the definition "
+#~ "of ``z``:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In a similar way, we can define"
+#~ " another clock, ``w`` that triggers 3"
+#~ " times more frequently than ``x`` by"
+#~ " using the ``superSample`` operator:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "But by using ``superSample``, we can "
+#~ "ensure that ``w`` is always sampling "
+#~ "three times faster than ``x`` and "
+#~ "six times faster than ``z`` (since "
+#~ "``z`` is also defined with respect "
+#~ "to ``x``)."
+#~ msgstr ""
+

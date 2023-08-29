@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/architectures.rst:4
 msgid "Architectures"
 msgstr ""
+"아키텍처(Architectures)"
 
 #: ../../source/components/architectures.rst:6
 msgid ""
@@ -24,6 +27,9 @@ msgid ""
 " differential equations.  However, writing complex systems in terms of "
 "individual equations does not scale well."
 msgstr ""
+"이 책의 시작 부분에서 방정식을 작성하고 이를 시뮬레이션으로 변환하는 방법을 살펴보았습니다. "
+"그 것만으로도 선형 및 비선형 방정식 시스템을 어떻게 풀지 또는 결과 미분 방정식을 통합하는 방법에 대해 걱정할 필요가 없기 때문에 매우 흥미로웠습니다."
+"그러나 복잡한 시스템을 개별 방정식으로 작성한 것이 잘 확장되지 않았습니다."
 
 #: ../../source/components/architectures.rst:14
 msgid ""
@@ -35,6 +41,9 @@ msgid ""
 "Modelica's standard graphical annotations, to compose and represent systems "
 "graphically."
 msgstr ""
+"그래서 구성 요소 모델을 생성할 수 있는 모델리카의 기능을 살펴보면서, 이러한 방정식이 사용될 모든 컨텍스트에서 작성하는 데 시간을 들이지 않고 이러한 방정식을 재사용할 수 있도록 했습니다."
+"이를 통해 미리 정의된(그리고 아마도 테스트된) 구성 요소 모델에서 시스템을 구성할 수 있었을 뿐만 아니라 모델리카의 표준 그래픽 주석을 사용하여 시스템을 구성하고 그래픽으로 나타낼 수 있었습니다."
+
 
 #: ../../source/components/architectures.rst:22
 msgid ""
@@ -49,6 +58,13 @@ msgid ""
 "reusable assemblies.  This minimized the amount of dragging, dropping and "
 "connecting that was required to build complex system models."
 msgstr ""
+"구성 요소만으로 복잡한 모델을 구축하려면 많은 구성 요소를 끌어서 놓기하고 연결하는 것이 필요하기 때문에 이것 역시 확장성 문제가 있습니다."
+"또한 시스템 모델은 어떤 종류의 계층도 없이 크고 복잡해질 수 있습니다."
+"이것은 확장성에 대한 또 다른 제한 사항입니다. "
+"이 문제를 해결하기 위해 재사용할 방정식을 포함하는 대신 구성 요소 및 기타 하위 시스템의 재사용 가능한 어셈블리를 포함하는 "재사용 가능한 하위 시스템 모델"을 정의하는 방법을 살펴 보았습니다."
+"이러한 방식으로 구성 요소의 공통 어셈블리를 재사용 가능한 어셈블리로 끌어다 놓고 연결할 수 있습니다."
+"이는 복잡한 시스템 모델을 구축하는 데 필요한 끌어서 놓기 및 연결의 양을 최소화했습니다."
+
 
 #: ../../source/components/architectures.rst:34
 msgid ""
@@ -63,11 +79,18 @@ msgid ""
 "and connect components or subsystems.  Instead, we only need to choose the "
 "specific model to use for each particular subsystem."
 msgstr ""
+"이 진행의 각 단계는 시스템 모델을 구축하기 위해 수행해야 하는 지루하고 시간 소모적이며 잠재적으로 오류가 발생하기 쉬운 작업의 양을 줄이는 방법을 보여주었습니다. "
+"이 장은 이 진행의 마지막 단계를 나타냅니다. "
+"여기에서는 아키텍처에 대해 알아봅니다. 아키텍처는 하위 시스템 모음이 **사전 연결** 된 모델이며 시스템의 각 하위 시스템에 대한 특정 구현(모델)을 선택하기만 하면 시스템 구성이 완료되는 것 입니다."
+"이러한 방식은 방정식을 제공할 필요가 없을 뿐만 아니라, 구성 요소나 하위 시스템을 끌어다 놓고 연결할 필요도 없습니다. 대신 각 특정 하위 시스템에 사용할 특정 모델만 선택하면 됩니다."
+
 
 #: ../../source/components/architectures.rst:47
 msgid "Examples"
 msgstr ""
+"예제(Examples)"
 
 #: ../../source/components/architectures.rst:57
 msgid "Review"
 msgstr ""
+"리뷰(Review)"

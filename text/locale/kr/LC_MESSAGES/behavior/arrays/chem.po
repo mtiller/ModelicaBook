@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/arrays/chem.rst:4
 msgid "Chemical System"
 msgstr ""
+"화학 시스템(Chemical System)"
 
 #: ../../source/behavior/arrays/chem.rst:6
 msgid ""
@@ -23,149 +26,248 @@ msgid ""
 "using vectors.  Finally, we'll implement the same model again using "
 "enumerations."
 msgstr ""
+"이 섹션에서는 화학 시스템의 동작을 설명하는 몇 가지 다른 방법을 다루어 보겠습니다. "
+"배열 기능을 사용하지 않고 모델을 만들고, 벡터를 사용하여 동일한 동작을 구현하겠습니다."
+"그리고, 마지막으로 열거형을 사용하여 동일한 모델을 다시 구현하겠습니다."
 
 #: ../../source/behavior/arrays/chem.rst:12
 msgid ""
-"In all of our examples, we'll be building a model for `the following system "
-"of reactions <http://library.wolfram.com/examples/chemicalkinetics/>`_:"
+"In all of our examples, we'll be building a model for `the following "
+"system of reactions "
+"<http://library.wolfram.com/infocenter/TechNotes/390/>`_:"
+msgstr ""
+"모든 예제에서 `다음과 같은 반응 시스템 <http://library.wolfram.com/infocenter/TechNotes/390/>`_"
+"에 대한 모델을 구축할 것입니다."
+
+
+#: ../../source/behavior/arrays/chem.rst:15
+msgid ""
+"A + B &\\underset{1}{\\rightarrow} X \\\\ A + B "
+"&\\underset{2}{\\leftarrow} X \\\\ X + B &\\underset{3}{\\rightarrow} T +"
+" S"
 msgstr ""
 
 #: ../../source/behavior/arrays/chem.rst:21
 msgid ""
-"It should be noted that :math:`X` is simply an intermediate result of this "
-"reaction.  The overall reaction can be expressed as:"
+"It should be noted that :math:`X` is simply an intermediate result of "
+"this reaction.  The overall reaction can be expressed as:"
+msgstr ""
+"여기에서 :math:`X` 는 단순히 이 반응의 중간 결과이며, 전체적인 반응은 다음과 같이 표현 할 수 있습니다."
+
+#: ../../source/behavior/arrays/chem.rst:24
+msgid "A + 2B \\rightarrow T + S"
 msgstr ""
 
 #: ../../source/behavior/arrays/chem.rst:28
 msgid ""
-"Using the law of mass action we can transform these chemical equations into "
-"the following mathematical ones:"
+"Using the law of mass action we can transform these chemical equations "
+"into the following mathematical ones:"
+msgstr ""
+"질량 작용의 법칙을 사용하여 이러한 화학 방정식을 다음 수학 방정식으로 변환할 수 있습니다."
+
+
+#: ../../source/behavior/arrays/chem.rst:31
+#: ../../source/behavior/arrays/chem.rst:88
+msgid ""
+"\\frac{\\mathrm{d}[A]}{\\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] \\\\ "
+"\\frac{\\mathrm{d}[B]}{\\mathrm{d}t} &= -k_1 [A] [B] + k_2 [X] -k_3 [B] "
+"[X] \\\\ \\frac{\\mathrm{d}[X]}{\\mathrm{d}t} &= k_1 [A] [B] - k_2 [X] "
+"-k_3 [B] [X]"
 msgstr ""
 
 #: ../../source/behavior/arrays/chem.rst:37
 msgid ""
-"where :math:`k_1`, :math:`k_2` and :math:`k_3` are the reaction coefficients"
-" for the first, second and third reactions, respectively. These equations "
-"are derived by considering the change in each species due to each reaction "
-"involving that species.  So, for example, since the first reaction :math:`A "
-"+ B \\rightarrow X` transforms molecules of :math:`A` and :math:`B` into "
-"molecules of :math:`X`, we see the term :math:`-k_1 [A] [B]` in the balance "
-"equation for :math:`A`, which represents the reduction in the amount of "
-":math:`A` as a result of that reaction.  Each term in these balance "
-"equations is derived in a similar fashion."
+"where :math:`k_1`, :math:`k_2` and :math:`k_3` are the reaction "
+"coefficients for the first, second and third reactions, respectively. "
+"These equations are derived by considering the change in each species due"
+" to each reaction involving that species.  So, for example, since the "
+"first reaction :math:`A + B \\rightarrow X` transforms molecules of "
+":math:`A` and :math:`B` into molecules of :math:`X`, we see the term "
+":math:`-k_1 [A] [B]` in the balance equation for :math:`A`, which "
+"represents the reduction in the amount of :math:`A` as a result of that "
+"reaction.  Each term in these balance equations is derived in a similar "
+"fashion."
 msgstr ""
+"여기서 :math:`k_1`, :math:`k_2` 및 :math:`k_3` 은 각각 첫 번째, 두 번째 및 세 번째 반응에 대한 반응 계수입니다. "
+"이 것은 종류별 물질의 반응으로 인한 각각의 물질의 변화를 고려해서 도출된 방정식 입니다."
+"예를 들어, 첫 번째 반응 :math:`A + B \rightarrow X` 는 :math:`A` 및 :math:`B` 분자를 :math:`X` 분자로 변환하므로, :math:`A` 에 대한 균형 방정식 :math:`-k_1 [A] [B]` 에서 해당 반응의 결과로 :math:`A` 양의 감소를 나타냅니다."
+"이러한 균형 방정식의 각 항은 유사한 방식으로 파생합니다."
+
 
 #: ../../source/behavior/arrays/chem.rst:50
 msgid "Without Arrays"
 msgstr ""
+"배열 없는 경우(Without Arrays)"
+
 
 #: ../../source/behavior/arrays/chem.rst:52
 msgid ""
-"Let us start with an approach that doesn't utilize arrays at all.  In this "
-"case, we simply represent the concentrations :math:`[A]`, :math:`[B]` and "
-":math:`[X]` by the variables ``cA``, ``cB`` and ``cX`` as follows:"
+"Let us start with an approach that doesn't utilize arrays at all.  In "
+"this case, we simply represent the concentrations :math:`[A]`, "
+":math:`[B]` and :math:`[X]` by the variables ``cA``, ``cB`` and ``cX`` as"
+" follows:"
 msgstr ""
+"배열을 전혀 사용하지 않는 접근 방식부터 시작하겠습니다. "
+"이 경우,  단순히 변수 ``cA``, ``cB`` 및 다음과 같이 ``cX`` 로 표현할 수 있습니다."
+
 
 #: ../../source/behavior/arrays/chem.rst:61
 msgid ""
-"With this approach, we create an equation for the balance of each species.  "
-"If we simulate this model, we get the following results:"
+"With this approach, we create an equation for the balance of each "
+"species.  If we simulate this model, we get the following results:"
 msgstr ""
+"이 접근 방식으로 각 종류의 균형에 대한 방정식을 만듭니다. "
+"이 모델을 시뮬레이션하면 다음과 같은 결과를 얻습니다."
+
 
 #: ../../source/behavior/arrays/chem.rst:68
 msgid "Using Arrays"
 msgstr ""
+"배열을 사용하는 경우(Using Arrays)"
 
 #: ../../source/behavior/arrays/chem.rst:70
 msgid ""
-"Another way to approach modeling of the chemical system is to use vectors.  "
-"With this approach, we associated the species :math:`A`, :math:`B` and "
-":math:`X` with the indices :math:`1`, :math:`2` and :math:`3`, respectively."
-"  The concentrations are mapped to the vector variable ``C``.  We can also "
-"cast the reaction coefficients into a vector of reaction coefficients, "
-"``k``."
+"Another way to approach modeling of the chemical system is to use "
+"vectors.  With this approach, we associated the species :math:`A`, "
+":math:`B` and :math:`X` with the indices :math:`1`, :math:`2` and "
+":math:`3`, respectively.  The concentrations are mapped to the vector "
+"variable ``C``.  We can also cast the reaction coefficients into a vector"
+" of reaction coefficients, ``k``."
 msgstr ""
+"화학 시스템의 모델링에 접근하는 또 다른 방법은 벡터를 사용하는 것입니다."
+"이 접근법을 사용하여 :math:`A` , :math:`B` 및 :math:`X` 종류를 인덱스 :math:`1` , :math:`2` 및 :math:`3` 과 연관시켰으며, 각각의 농도는 벡터 변수 ``C`` 에 매핑됩니다. "
+"또한 반응 계수를 벡터인 ``k`` 로 변환할 수 있습니다."
+
+
 
 #: ../../source/behavior/arrays/chem.rst:77
 msgid ""
-"With this transformation, all the equations are then transformed into vector"
-" equations:"
+"With this transformation, all the equations are then transformed into "
+"vector equations:"
 msgstr ""
+"이 변환을 사용하면 모든 방정식이 벡터 방정식으로 변환합니다."
 
 #: ../../source/behavior/arrays/chem.rst:84
 msgid ""
-"The reaction equations are non-linear, so they cannot be transformed into a "
-"completely linear form.  But we could simplify them further by using a "
-"matrix-vector product.  In other words, the equations:"
+"The reaction equations are non-linear, so they cannot be transformed into"
+" a completely linear form.  But we could simplify them further by using a"
+" matrix-vector product.  In other words, the equations:"
 msgstr ""
+"반응 방정식은 비선형이므로 완전한 선형 형태로 변환할 수 없지만, 행렬-벡터 곱을 사용하여 더 단순화할 수 있습니다. "
+"즉, 방정식은 다음과 같습니다."
+
 
 #: ../../source/behavior/arrays/chem.rst:94
 msgid "can be transformed into the following form:"
+msgstr ""
+"이는 다음 형식으로 변환할 수 있습니다."
+
+#: ../../source/behavior/arrays/chem.rst:96
+msgid ""
+"\\frac{\\mathrm{d}}{\\mathrm{d}t} \\left\\{ \\begin{array}{c} [A] "
+"\\\\[0pt] [B] \\\\[0pt] [X] \\end{array} \\right\\} = \\left[ "
+"\\begin{array}{rrr} -k_1 [B] & 0 & k_2 \\\\ -k_1 [B] & -k_3 [X] & k_2 "
+"\\\\ k_1 [B] & -k_3 [X] & -k_2 \\end{array} \\right] \\left\\{ "
+"\\begin{array}{c} [A] \\\\[0pt] [B] \\\\[0pt] [X] \\end{array} \\right\\}"
 msgstr ""
 
 #: ../../source/behavior/arrays/chem.rst:117
 msgid "which can then be represented in Modelica as:"
 msgstr ""
+"그러면 모델리카에서 다음과 같이 나타낼 수 있습니다."
 
 #: ../../source/behavior/arrays/chem.rst:125
 msgid ""
-"The drawback of this approach is that we have to constantly keep track of "
-"which index (*e.g.,* ``1``, ``2``, or ``3``) corresponds to which species "
-"(*e.g.,* :math:`A`, :math:`B`, or :math:`X`)."
+"The drawback of this approach is that we have to constantly keep track of"
+" which index (*e.g.,* ``1``, ``2``, or ``3``) corresponds to which "
+"species (*e.g.,* :math:`A`, :math:`B`, or :math:`X`)."
 msgstr ""
+"이 접근 방식의 단점은 어떤 인덱스(*예:* ``1``, ``2`` 또는 ``3`` )가 어떤 종( *예:*  :math:`A` , :math:`B` 또는 :math:`X`) 에 연결되었는지 알기 어렵다는 것입니다. "
 
 #: ../../source/behavior/arrays/chem.rst:130
 msgid "Using Enumerations"
 msgstr ""
+"열거형 사용(Using Enumerations)"
 
 #: ../../source/behavior/arrays/chem.rst:132
 msgid ""
-"To address this issue of having to map back and forth from numbers to names,"
-" our third approach will utilize the ``enumeration`` type in Modelica.  An "
-"enumeration allows us to define a set of names which we can then use to "
-"define the subscripts associated with an array.  We'll define our "
-"enumeration as follows:"
+"To address this issue of having to map back and forth from numbers to "
+"names, our third approach will utilize the ``enumeration`` type in "
+"Modelica.  An enumeration allows us to define a set of names which we can"
+" then use to define the subscripts associated with an array.  We'll "
+"define our enumeration as follows:"
 msgstr ""
+"숫자에서 이름으로 앞뒤로 매핑해야 하는 이 문제를 해결하기 위해 세 번째 접근 방식은"
+"모델리카의 ``enumeration`` 자료형을 활용 하는 것입니다."
+"열거형을 사용하면 배열과 관련된 첨자를 정의하는 데 사용할 수 있는 일련의 이름을 정의할 수 있습니다."
+"열거형을 다음과 같이 정의합니다."
+
 
 #: ../../source/behavior/arrays/chem.rst:142
 msgid ""
 "This defines a special type named ``Species`` that has exactly three "
-"possible values, ``A``, ``B`` and ``X``.  We can then use this enumeration "
-"**as a dimension in an array** as follows:"
+"possible values, ``A``, ``B`` and ``X``.  We can then use this "
+"enumeration **as a dimension in an array** as follows:"
 msgstr ""
+"이것은 ``A``, ``B`` 및 ``X`` 의 세 가지 가능한 값을 갖는 ``Species`` 라는 특수한 자료형을 정의합니다. "
+"그런 다음 이 열거형을 다음과 같이 **배열의 차원으로** 사용할 수 있습니다."
+
 
 #: ../../source/behavior/arrays/chem.rst:150
 msgid ""
-"Since the ``Species`` type has only three possible values, this means that "
-"the vector ``C`` has exactly three components.  We can then refer to the "
-"individual components of ``C`` as ``C[Species.A]``, ``C[Species.B]`` and "
-"``C[Species.X]``."
+"Since the ``Species`` type has only three possible values, this means "
+"that the vector ``C`` has exactly three components.  We can then refer to"
+" the individual components of ``C`` as ``C[Species.A]``, ``C[Species.B]``"
+" and ``C[Species.X]``."
 msgstr ""
+"``Species`` 자료형에는 세 가지 가능한 값만 있으므로 벡터 ``C`` 에는 정확히 세 가지 구성 요소가 있음을 의미합니다. "
+"그런 다음 ``C`` 의 개별 구성 요소를 ``C[Species.A]``, ``C[Species.B]`` 및 ``C[Species.X]`` 로 참조할 수 있습니다."
+
 
 #: ../../source/behavior/arrays/chem.rst:155
 msgid ""
 "Because it is awkward to constantly prefix each species name with "
 "``Species``, we can define a few convenient constants as follows:"
 msgstr ""
+"각 종류의 이름 앞에 ``Species`` 라는 접두어를 계속 붙이는 것은 어색하기 때문에 다음과 같이 몇 가지 편리한 상수를 정의할 수 있습니다."
 
 #: ../../source/behavior/arrays/chem.rst:164
 msgid ""
-"In this way, we can now refer to the concentration of species :math:`A` as "
-"``C[A]``.  Pulling all of this together we can represent our chemical system"
-" using enumerations as:"
+"In this way, we can now refer to the concentration of species :math:`A` "
+"as ``C[A]``.  Pulling all of this together we can represent our chemical "
+"system using enumerations as:"
 msgstr ""
+"이런 식으로,  이제 ``C[A]`` 로 :math:`A` 종의 집중을 참조할 수 있습니다. "
+"이 모든 것을 종합하면 다음과 같이 열거를 사용하여 화학 시스템을 나타낼 수 있습니다."
+
 
 #: ../../source/behavior/arrays/chem.rst:176
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
 #: ../../source/behavior/arrays/chem.rst:178
 msgid ""
 "In this chapter, we showed how a set of chemical equations could be "
 "represented with and without arrays. We also demonstrated how the "
 "``enumeration`` type can be used in conjunction with arrays to make the "
-"resulting equations more readable by replacing numeric indices with names. "
-"Furthermore, this section also demonstrated how the ``enumeration`` type can"
-" be used not only to index the array, but also to define one or more "
-"dimensions in the declaration."
+"resulting equations more readable by replacing numeric indices with "
+"names. Furthermore, this section also demonstrated how the "
+"``enumeration`` type can be used not only to index the array, but also to"
+" define one or more dimensions in the declaration."
 msgstr ""
+"이 장에서는 배열을 사용하거나 사용하지 않고 일련의 화학 방정식을 표시하는 방법을 보여 주었습니다."
+"또한 배열과 함께 ``enumeration`` 자료형을 사용하여 숫자 인덱스를 이름으로 대체하여"
+"결과 방정식을 더 읽기 쉽게 만드는 방법을 보여주었습니다."
+"또한 이 섹션에서는 ``enumeration`` 자료형을 사용하여 배열을 인덱싱할 뿐만 아니라 "
+"선언에서 하나 이상의 차원을 정의하는 방법도 설명했습니다."
+
+
+
+#~ msgid ""
+#~ "In all of our examples, we'll be"
+#~ " building a model for `the following"
+#~ " system of reactions "
+#~ "<http://library.wolfram.com/examples/chemicalkinetics/>`_:"
+#~ msgstr ""
+

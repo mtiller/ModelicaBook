@@ -1,88 +1,115 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/equations/record_def.rst:6
 msgid "Record Definitions"
 msgstr ""
+"레코드 정의(Record Definitions)"
 
 #: ../../source/behavior/equations/record_def.rst:8
 msgid ""
 "Earlier, we introduced the idea of a ``model`` definition.  Although we "
 "haven't seen any yet, Modelica also includes a ``record`` type.  A "
-"``record`` can have variables, just like a ``model``, but it is not allowed "
-"to include equations.  Records are primarily used to group data together.  "
-"But as we will see shortly, they are also very useful in describing the data"
-" associated with :ref:`annotations`."
+"``record`` can have variables, just like a ``model``, but it is not "
+"allowed to include equations.  Records are primarily used to group data "
+"together.  But as we will see shortly, they are also very useful in "
+"describing the data associated with :ref:`annotations`."
 msgstr ""
+"앞에서 ``model`` 정의라는 내용을 소개했습니다. "
+"아직 까지는 본 것이 없겠지만, 모델리카에는 ``record`` 자료형도 포함되어 있습니다. "
+"``record`` 는  ``model`` 과 마찬가지로 변수를 가질 수 있지만 방정식을 포함할 수는 없습니다. "
+"레코드는 주로 데이터를 함께 그룹화하는 데 사용합니다. "
+"그러나 곧 보게 되겠지만 :ref:`annotations` 에서 다루는 것 처럼 관련된 데이터를 설명하는 데에도 매우 유용합니다."
+
 
 #: ../../source/behavior/equations/record_def.rst:16
 msgid "Syntax"
 msgstr ""
+"문법(Syntax)"
 
 #: ../../source/behavior/equations/record_def.rst:18
 msgid ""
-"The ``record`` definition looks essentially like a ``model`` definition, but"
-" without any equations:"
+"The ``record`` definition looks essentially like a ``model`` definition, "
+"but without any equations:"
 msgstr ""
+"``record`` 정의는 본질적으로 ``model`` 정의와 비슷하지만 방정식이 없습니다."
 
 #: ../../source/behavior/equations/record_def.rst:27
 msgid ""
 "As with a ``model``, the definition starts and ends with the name of the "
-"record being defined.  An explanation of the ``record`` can be included as a"
-" string after the name.  All the variables associated with the record are "
-"declared within the ``record`` definition."
+"record being defined.  An explanation of the ``record`` can be included "
+"as a string after the name.  All the variables associated with the record"
+" are declared within the ``record`` definition."
 msgstr ""
+"``model`` 과 마찬가지로 정의는 정의되는 레코드의 이름으로 시작하고 끝나며, ``record`` 에 대한 설명은 이름 뒤에 문자열로 포함될 수 있습니다. "
+"레코드와 관련된 모든 변수는 ``record`` 정의 내에서 선언됩니다."
+
 
 #: ../../source/behavior/equations/record_def.rst:32
 msgid "The following are all examples of ``record`` definitions:"
 msgstr ""
+"다음은 ``record`` 정의의 모든 예입니다."
 
 #: ../../source/behavior/equations/record_def.rst:48
 msgid "Record Constructors"
 msgstr ""
+"레코드 생성(Record Constructors)"
 
 #: ../../source/behavior/equations/record_def.rst:52
 msgid ""
-"Now that we know how to define a ``record``, we need to know how to create "
-"one.  If we are declaring a variable that happens to be a ``record``, the "
-"declaration itself will create an instance of the ``record`` and we can "
-"specify the values of variables inside the record using modifications, "
-"*e.g.*,"
+"Now that we know how to define a ``record``, we need to know how to "
+"create one.  If we are declaring a variable that happens to be a "
+"``record``, the declaration itself will create an instance of the "
+"``record`` and we can specify the values of variables inside the record "
+"using modifications, *e.g.*,"
 msgstr ""
-
+"이제 ``record`` 를 정의하는 방법을 알았으니 레코드를 생성하는 방법을 알아야 합니다. "
+"``record`` 가 되는 변수를 선언하는 경우 선언 자체가 ``record`` 의 인스턴스를 생성하고 수정을 사용하여 레코드 내부의 변수 값을 지정할 수 있습니다."
+ 
 #: ../../source/behavior/equations/record_def.rst:62
 msgid ""
 "But there are some cases where we might want to create an instance of a "
-"``record`` that isn't a variable (*e.g.*, to use in an expression, pass as "
-"an argument to a function or use in a modification).  For each ``record`` "
-"definition, a function is automatically generated with the **same name** as "
-"the ``record``.  This function is called the \"record constructor\".  The "
-"record constructor has input arguments that match the variables inside the "
-"``record`` definition and returns an instance of that ``record``.  So in the"
-" case of the ``Vector`` definition above, we could also initialize a "
-"``parameter`` using the record constructor as follows:"
+"``record`` that isn't a variable (*e.g.*, to use in an expression, pass "
+"as an argument to a function or use in a modification).  For each "
+"``record`` definition, a function is automatically generated with the "
+"**same name** as the ``record``.  This function is called the \"record "
+"constructor\".  The record constructor has input arguments that match the"
+" variables inside the ``record`` definition and returns an instance of "
+"that ``record``.  So in the case of the ``Vector`` definition above, we "
+"could also initialize a ``parameter`` using the record constructor as "
+"follows:"
 msgstr ""
+"그러나 변수가 아닌 ``record`` 의 인스턴스를 생성하려는 경우가 있습니다."
+"(*예:*, 수식에서 사용하기 위해 함수에 인수로 전달하거나 수정에 사용)."
+"각 ``record`` 정의에 대해 ``record`` 와 **동일한 이름** 으로 함수가 자동으로 생성됩니다. "
+"이 기능을 "레코드 생성자"라고 합니다. "
+"레코드 생성자는 ``record`` 정의 내부의 변수와 일치하는 입력 인수를 가지며 해당 ``record`` 의 인스턴스를 반환합니다. "
+"따라서 위의 ``Vector`` 정의의 경우 다음과 같이 레코드 생성자를 사용하여 ``parameter`` 를 초기화할 수도 있습니다."
+
 
 #: ../../source/behavior/equations/record_def.rst:77
 msgid ""
 "In this case, the value for ``v`` comes from the **expression** "
-"``Vector(x=1.0, y=2.0, z=0.0)`` which is a call to the record constructor."
+"``Vector(x=1.0, y=2.0, z=0.0)`` which is a call to the record "
+"constructor."
 msgstr ""
+"이 경우 ``v``  값은 레코드 생성자에 대한 호출인 **표현(expression)** ``Vector(x=1.0, y=2.0, z=0.0)`` 에서 나옵니다.  "
 
-#: ../../source/behavior/equations/record_def.rst:1
-msgid "record"
-msgstr ""
+#~ msgid "record"
+#~ msgstr ""
 
-#: ../../source/behavior/equations/record_def.rst:50
-msgid "record constructor"
-msgstr ""
+#~ msgid "record constructor"
+#~ msgstr ""
+

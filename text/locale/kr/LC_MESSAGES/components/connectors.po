@@ -1,27 +1,32 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/connectors.rst:4
 msgid "Connectors"
 msgstr ""
+"커넥터(Connectors)"
 
 #: ../../source/components/connectors.rst:9
 msgid "Introduction"
 msgstr ""
+"소개(Introduction)"
 
 #: ../../source/components/connectors.rst:12
 msgid "Component-Oriented Modeling"
 msgstr ""
+"컴포넌트 지향 모델링(Component-Oriented Modeling)"
 
 #: ../../source/components/connectors.rst:14
 msgid ""
@@ -30,6 +35,9 @@ msgid ""
 "the mathematical basis for their formulations. We'll cover these points "
 "first before proceeding."
 msgstr ""
+"몇 가지 예를 살펴보기 전에 모델리카의 ``connector`` 가 무엇인지, 왜 사용하는지 알아보고 공식으로 표현 하는 것에 대한 수학적 기반을 이해하기 위한 약간의 배경 지식을 살펴 보겠습니다."
+"우선, 먼저 아래와 같은 전반적인 사항을 이해 해야 합니다."
+
 
 #: ../../source/components/connectors.rst:19
 msgid ""
@@ -40,6 +48,10 @@ msgid ""
 "we'll instead add an instance of a **resistor** component model to our "
 "system."
 msgstr ""
+"앞에서는 동작을 모델링하는 방법에 대해 주로 이야기했으며 지금까지 본 것은 주로 텍스트 방정식으로 구성된 모델 이였습니다."
+"그러나 이제 부터는 재사용 가능한 구성 요소 모델을 만드는 방법에 대해서 살펴 보겠습니다. "
+"이를 통해서, 저항을 모델링할 때마다 옴의 법칙을 작성하는 대신 **저항** 구성 요소 모델의 인스턴스를 시스템에 추가하는 형태로 구성할 수 있습니다."
+
 
 #: ../../source/components/connectors.rst:26
 msgid ""
@@ -48,6 +60,9 @@ msgid ""
 "represented by textual equations.  But this approach does not scale well.  "
 "What we really want is the ability to create reusable component models."
 msgstr ""
+"지금까지 보여드린 모델은 모두 하나로 구성된 모델이었으며, 전체 시스템의 모든 동작은 단일 모델에 구현되었으며 텍스트 방정식으로 표시되었습니다. "
+"그러나 이 접근 방식은 확장성이 좋지 않습니다. 우리가 정말로 원하는 것은, 재사용 가능한 구성 요소 모델을 만들 수 있는 기능입니다."
+
 
 #: ../../source/components/connectors.rst:32
 msgid ""
@@ -57,6 +72,8 @@ msgid ""
 "by a ``model`` definition.  What sets them apart from the models we have "
 "seen so far is that they will feature **connectors**."
 msgstr ""
+"그러나 이러한 구성 요소를 만드는 방법에 대해 자세히 알아보기 전에 먼저 구성 요소를 연결하는 방법에 대해 논의해야 합니다."
+"이 책의 나머지 부분에서 구축할 구성 요소 모델 또한 여전히 ``model`` 정의로 표현되지만, 지금까지 본 모델과 다른 점은 **connector** 가 있다는 것입니다."
 
 #: ../../source/components/connectors.rst:39
 msgid ""
@@ -65,10 +82,15 @@ msgid ""
 "this information and this chapter will focus on explaining the various "
 "semantics that can be used to describe connectors in Modelica."
 msgstr ""
+"``connector`` 는 한 모델이 다른 모델과 정보를 교환하는 방법입니다. 
+"앞으로 살펴보겠지만 이렇게 정보를 교환할 수 있는 다양한 방법이 있으며, 이 장에서는 모델리카에서 커넥터를 표현하는 데 사용할 수 있는 다양한 의미를 논의 하는데 중점을 두겠습니다."
+
+
 
 #: ../../source/components/connectors.rst:48
 msgid "Acausal Connections"
 msgstr ""
+"비인과적 커넥터(Acausal Connections)"
 
 #: ../../source/components/connectors.rst:50
 msgid ""
@@ -77,6 +99,8 @@ msgid ""
 "physical systems.  An acausal approach to physical modeling identifies two "
 "distinct classes of variables."
 msgstr ""
+"커넥터 의미론의 특정 영역을 이해하려면, 물리적 시스템의 비인과적 공식에 대해 조금 더 이해해야 합니다."
+"물리적 모델링에 대한 비인과적 접근 방식은 두 가지 별개의 변수 영역을 가지고 있습니다."
 
 #: ../../source/components/connectors.rst:55
 msgid ""
@@ -87,6 +111,10 @@ msgid ""
 "are temperature, voltage and pressure. Differences in these quantities "
 "typically lead to dynamic behavior in the system."
 msgstr ""
+"논의할 변수의 첫 번째 영역은 "교차(across)" 변수(*potential* 또는 *effort* 변수라고도 함)입니다."
+"구성 요소를 가로지르(across)고 있는 두 교차 변수의 차이는, 구성 요소가 반응하는 원인이 됩니다."
+"곧 논의할 교차 변수의 일반적인 예제는 온도, 전압 및 압력이고, 이러한 요소 상호간에 발생한 차이는 일반적으로 시스템의 동적 동작을 초래합니다."
+
 
 #: ../../source/components/connectors.rst:63
 msgid ""
@@ -100,10 +128,17 @@ msgid ""
 "different types of relationships between the through and across variables "
 "(Ohm's law being just one of many)."
 msgstr ""
+"논의할 변수의 두 번째 영역은 "통과(through)" 변수(*flow _흐름* 변수라고도 함)입니다. "
+"흐름 변수는 일반적으로 질량, 운동량, 에너지, *등* 과 같은 보존된 "양"의 흐름을 나타냅니다. "
+"이러한 흐름은 일반적으로 구성 요소 모델 전체의 변수 간 일부 차이에서 발생하는 결과입니다."
+"예를 들어, 저항을 통해 흐르는 전류는 저항의 두 측면에 걸친 전압 차이에 대한 응답입니다."
+"앞으로 나올 많은 예제에서 볼 수 있듯이 통과 변수 와 교차 변수 사이에는 다양한 유형의 관계가 있습니다(옴의 법칙은 많은 것 중 하나일 뿐입니다)."
+
 
 #: ../../source/components/connectors.rst:0
 msgid "Sign Conventions"
 msgstr ""
+"기호 규약(Sign Conventions)"
 
 #: ../../source/components/connectors.rst:76
 msgid ""
@@ -113,17 +148,23 @@ msgid ""
 "later in the book (especially once we begin our discussion of how to build "
 "models of :ref:`components`)."
 msgstr ""
-
+"모델리카가 통과 변수에 대한 양수 값이 구성 요소 **쪽으로** 전달되는 양의 흐름을 나타내는 관례를 따른다는 것을 아는 것이 매우 중요합니다. "
+"이 관례를 이 책의 뒷부분에서 여러 번 반복할 것입니다. * 특히 :ref:`components` 모델을 구축하는 방법에 대한 논의를 시작할 때."
+ 
 #: ../../source/components/connectors.rst:83
 msgid ""
 "The next section will define through and across variables for a number of "
 "basic engineering domains."
 msgstr ""
+"다음 섹션에서는 여러 기본 엔지니어링 도메인에 대한 통과 및 교차 변수를 정의합니다."
 
 #: ../../source/components/connectors.rst:87
 msgid "Examples"
 msgstr ""
+"예제(Examples)"
 
 #: ../../source/components/connectors.rst:100
 msgid "Review"
 msgstr ""
+"리뷰(Review)"
+

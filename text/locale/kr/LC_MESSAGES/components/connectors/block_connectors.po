@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/connectors/block_connectors.rst:4
 msgid "Block Connectors"
 msgstr ""
+"블록 커넥터(Block Connectors)"
 
 #: ../../source/components/connectors/block_connectors.rst:6
 msgid ""
@@ -24,6 +27,10 @@ msgid ""
 " types of interactions and other modeling formalisms that can be represented"
 " in Modelica."
 msgstr ""
+"지금까지 제시된 커넥터는 모두 비인과적이었습니다. 즉, 통과 및 교차 변수의 쌍으로 구성됩니다."
+"이러한 커넥터는 물리적 상호 작용(구성 요소 간에 보존된 양이 교환되는 상호 작용)을 모델링하기 위한 기본적인 구조입니다."
+"그러나 모델리카에서 표현할 수 있는 다른 자료형의 상호 작용 및 모델링 형식이 있습니다."
+
 
 #: ../../source/components/connectors/block_connectors.rst:13
 msgid ""
@@ -35,11 +42,18 @@ msgid ""
 "information).  In this kind of situation, we frequently refer to such "
 "signals as \"input signals\" and \"output signals\"."
 msgstr ""
+"블록 커넥터는 시스템을 통한 정보 흐름을 모델링하는 데 사용합니다. "
+"그래서 순간적으로 한 방향으로 흐르다가 반대 방향으로 흐를 수 있는 전류와 같은 물리량에는 관심이 없습니다. "
+"여기에서는 일부 구성 요소가 정보를 생성하고 다른 구성 요소가 정보를 소비하는(그런 다음 다른 정보를 생성하는) 신호를 모델링하는 방법에 대해서 다루겠습니다."
+"이러한 상황에서는 "입력 신호" 및 "출력 신호"와 같은 신호(signal)를 참조합니다."
+
+
 
 #: ../../source/components/connectors/block_connectors.rst:22
 msgid ""
 "To model such interactions, we can use connector definitions like these:"
 msgstr ""
+"이러한 상호 작용을 모델링하기 위해 다음과 같은 커넥터 정의를 사용할 수 있습니다."
 
 #: ../../source/components/connectors/block_connectors.rst:28
 msgid ""
@@ -47,9 +61,14 @@ msgid ""
 "``BooleanInput`` connector is used to identify a ``Boolean`` input signal "
 "and ``RealOutput`` identifies a ``Real`` output signal."
 msgstr ""
+"예를 들어 ``BooleanInput`` 커넥터는 ``Boolean`` 입력 신호를 식별하는 데 사용되고, ``RealOutput`` 은 ``Real`` 출력 신호를 식별하는 데 사용합니다. "
+
+
 
 #: ../../source/components/connectors/block_connectors.rst:32
 msgid ""
 "We'll see how to utilize these connector definitions later when we discuss "
 ":ref:`block-components`."
 msgstr ""
+"나중에 :ref:`block-components` 에 대해 논의할 때 이러한 커넥터 정의를 활용하는 방법을 살펴보겠습니다. "
+

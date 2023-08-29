@@ -1,19 +1,22 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/behavior/arrays/looping.rst:4
 msgid "Looping"
 msgstr ""
+"반복문(Looping)"
 
 #: ../../source/behavior/arrays/looping.rst:7
 msgid "``for``"
@@ -21,71 +24,114 @@ msgstr ""
 
 #: ../../source/behavior/arrays/looping.rst:9
 msgid ""
-"One of the main uses of arrays is to allow code to be simplified through the"
-" use of loops.  So we will conclude this chapter on arrays by introducing "
-"some basic looping constructs and showing how they are used in conjunction "
-"with array features."
+"One of the main uses of arrays is to allow code to be simplified through "
+"the use of loops.  So we will conclude this chapter on arrays by "
+"introducing some basic looping constructs and showing how they are used "
+"in conjunction with array features."
 msgstr ""
+"배열의 주요 용도 중 하나는 루프를 사용하여 코드를 단순화하는 것입니다. "
+"몇 가지 기본 루프 구성을 소개하고 배열 기능과 함께 사용하는 방법을 보여줌으로써 배열에 대한 이 장에서의 소개를 마무리하겠습니다."
+
 
 #: ../../source/behavior/arrays/looping.rst:14
 msgid ""
-"In general, the ``for`` keyword is used to represent looping.  But there are"
-" many different contexts in which ``for`` can be used. Several of the "
-"examples in this chapter used ``for`` to generate a collection of equations."
-"  When ``for`` is used within an equation section, any equations contained "
-"within the ``for`` loop are generated **for each value of the loop index "
-"variables**.  In this way, we can easily generate many equations that have "
-"the same overall structure and only vary by the value of the loop index "
-"variable.  The general syntax for a ``for`` loop in an equation section is:"
+"In general, the ``for`` keyword is used to represent looping.  But there "
+"are many different contexts in which ``for`` can be used. Several of the "
+"examples in this chapter used ``for`` to generate a collection of "
+"equations.  When ``for`` is used within an equation section, any "
+"equations contained within the ``for`` loop are generated **for each "
+"value of the loop index variables**.  In this way, we can easily generate"
+" many equations that have the same overall structure and only vary by the"
+" value of the loop index variable.  The general syntax for a ``for`` loop"
+" in an equation section is:"
 msgstr ""
+"일반적으로 ``for`` 키워드는 반복문을 나타내는 데 사용되지만, ``for`` 가 사용될 수 있는 많은 다른 맥락이 있습니다. "
+"이 장의 여러 예제를 통해서 ``for`` 를 사용한 방정식의 모음을 살펴 보겠습니다. "
+"방정식 섹션 내에서 ``for`` 가 사용되면 ``for`` 루프 내에 포함된 모든 방정식이 **루프 인덱스 변수의 각 값** 에 대해 생성됩니다."
+"이러한 방식으로 전체 구조가 동일하고 루프 인덱스 변수의 값에 의해서만 달라지는 많은 방정식을 쉽게 생성할 수 있습니다. "
+'방정식 섹션의 ``for`` 루프에 대한 일반 구문은 다음과 같습니다."
+
 
 #: ../../source/behavior/arrays/looping.rst:31
 msgid ""
-"Note that the loop index variable (*e.g.,* ``i`` in this case) **does not "
-"have to be declared**.  It is also worth noting that these variables only "
-"exists within the scope of the ``for`` loop (not before or after the loop)."
+"Note that the loop index variable (*e.g.,* ``i`` in this case) **does not"
+" have to be declared**.  It is also worth noting that these variables "
+"only exists within the scope of the ``for`` loop (not before or after the"
+" loop)."
 msgstr ""
+"루프 인덱스 변수(*예:* 이 경우 ``i``)는 **선언할 필요가 없습니다**. "
+"이러한 인덱스 변수는 ``for`` 루프 범위 내에서만 존재한다는 점도 을 주목 해야 합니다. (루프 앞이나 뒤 에서 존재하지 않음)"
+
 
 #: ../../source/behavior/arrays/looping.rst:36
 msgid "For loops can, of course, be nested.  For example:"
 msgstr ""
+"For 루프는 물론 중첩될 수 있습니다. 예를 들어 아래와 같이 사용할 수 있습니다.:"
 
 #: ../../source/behavior/arrays/looping.rst:47
 msgid ""
 "They can also appear in other contexts.  For example, they can appear in "
 "``initial equation`` sections or in :ref:`algorithm-sections`."
 msgstr ""
+"다른 문맥에서도 나타날 수 있습니다. "
+"예를 들어 ``initial equation`` 섹션이나 :ref:`algorithm-sections` 에서 다룬 것 처럼 나타날 수 있습니다."
+
+
 
 #: ../../source/behavior/arrays/looping.rst:50
 msgid ""
-"Another case where the ``for`` keyword can be seen is in our discussion of "
-":ref:`array-comprehensions`.  In that case, the ``for`` construct is not "
-"used to generate equations or statements, but to populate the various "
-"elements in an array."
+"Another case where the ``for`` keyword can be seen is in our discussion "
+"of :ref:`array-comprehensions`.  In that case, the ``for`` construct is "
+"not used to generate equations or statements, but to populate the various"
+" elements in an array.  Array comprehensions have the advantage that they"
+" may be more easily for tools to optimize."
 msgstr ""
+"``for`` 키워드를 볼 수 있는 또 다른 경우는 :ref:`array-comprehensions` 에서 논의하였습니다. "
+"이 경우 ``for`` 구문은 방정식이나 명령문을 생성하는 데 사용되지 않고 배열의 다양한 요소를 채우는 데 사용합니다. "
+"배열 표현식(Array Comprehension) 은 시뮬레이션 소프트웨어가 최적화하기가 더 쉽다는 장점이 있습니다."
 
-#: ../../source/behavior/arrays/looping.rst:57
+
+#: ../../source/behavior/arrays/looping.rst:58
 msgid "``while``"
 msgstr ""
 
-#: ../../source/behavior/arrays/looping.rst:59
+#: ../../source/behavior/arrays/looping.rst:60
 msgid ""
-"There is another type of loop in Modelica and that is the ``while`` loop.  "
-"The ``while`` loop is not used very often in Modelica.  The reason is that "
-"Modelica, unlike a general purpose language, is an equation oriented "
-"language.  Furthermore, it imposes a requirement that a model should include"
-" an equal number of equations and unknowns.  Such a model is considered a "
-"\"balanced model\"."
+"There is another type of loop in Modelica and that is the ``while`` loop."
+"  The ``while`` loop is not used very often in Modelica.  The reason is "
+"that Modelica, unlike a general purpose language, is an equation oriented"
+" language.  Furthermore, it imposes a requirement that a model should "
+"include an equal number of equations and unknowns.  Such a model is "
+"considered a \"balanced model\"."
 msgstr ""
+"모델리카에서의 또 다른 유형의 루프는 ``while`` 루프입니다. "
+"``while`` 루프는 자주 사용되지 않습니다. 그 이유는 모델리카는 범용 언어와 달리 방정식 지향 언어이기 때문입니다. "
+"또한 모델에 동일한 수의 방정식과 미지수가 포함되어야 한다는 요구 사항을 부과하는데, 이러한 모델을 "균형 모델" 이라고 합니다."
 
-#: ../../source/behavior/arrays/looping.rst:66
+#: ../../source/behavior/arrays/looping.rst:67
 msgid ""
 "The reason that the ``while`` construct is not widely used is because a "
-"balanced model requires that the number of equations is predictable (by the "
-"compiler).  Because a ``for`` loop is bounded and the number of values of "
-"the index variable is always known (because it is always derived from a "
-"vector of possible values), the number of equations it will generate is "
-"always known.  The same cannot be said of a ``while`` loop.  As such, "
-"``while`` loops are only practical in the context of :ref:`algorithm-"
-"sections` (typically in the definition of :ref:`functions`)."
+"balanced model requires that the number of equations is predictable (by "
+"the compiler).  Because a ``for`` loop is bounded and the number of "
+"values of the index variable is always known (because it is always "
+"derived from a vector of possible values), the number of equations it "
+"will generate is always known.  The same cannot be said of a ``while`` "
+"loop.  As such, ``while`` loops are only practical in the context of :ref"
+":`algorithm-sections` (typically in the definition of :ref:`functions`)."
 msgstr ""
+"``while`` 구조가 널리 사용되지 않는 이유는, 균형 잡힌 모델이 (컴파일러에 의해) 방정식의 수를 예측할 수 있어야 하기 때문입니다. "
+"``for`` 루프는 제한되어 있고 인덱스 변수의 값의 수는 항상 알수 있기 때문에 (항상 가능한 값의 벡터에서 파생되기 때문에) 그것이 생성할 방정식의 수는 항상 예상할 수가 있습니다."
+"``while`` 루프에 대해서도 마찬가지입니다. "
+"이와 같이 ``while`` 루프는 :ref:`algorithm-sections` 의 맥락(일반적으로 :ref:`functions` 의 정의에서)에서만 실용적입니다 "
+
+
+#~ msgid ""
+#~ "Another case where the ``for`` keyword"
+#~ " can be seen is in our "
+#~ "discussion of :ref:`array-comprehensions`.  In"
+#~ " that case, the ``for`` construct is"
+#~ " not used to generate equations or"
+#~ " statements, but to populate the "
+#~ "various elements in an array."
+#~ msgstr ""
+

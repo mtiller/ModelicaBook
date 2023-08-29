@@ -2,27 +2,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/advanced.rst:2
 msgid "Advanced Topics"
-msgstr ""
+msgstr "고도화된 주제"
 
 #: ../../source/advanced.rst:4
 msgid "differential-algebraic equations"
-msgstr ""
+msgstr "미분 대수 방정식(DAE)"
 
 #: ../../source/advanced.rst:6
 msgid "symbolic manipulation"
-msgstr ""
+msgstr "기호 연산"
 
 #: ../../source/advanced.rst:8
 msgid "state selection (add forward reference in :ref:`enumerations`)"
-msgstr ""
+msgstr "상태 선택"

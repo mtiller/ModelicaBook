@@ -1,158 +1,230 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Modelica by Example v0.3.6\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-11 09:58-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: mail@modelica.co.kr\n"
+"POT-Creation-Date: 2023-01-28 22:37+0000\n"
+"PO-Revision-Date: 2023-03-12 22:37+0000\n"
+"Last-Translator: Baek Youngjin, mail@modelica.co.kr / Ha HyeonSu, <iloveyou934671@gmail.com>\n"
+"Language-Team: modelica.co.kr <mail@modelica.co.k>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
 
 #: ../../source/components/subsystems/gear.rst:2
 msgid "Gear Assembly"
 msgstr ""
+"기어 어셈블리(Gear Assembly)"
 
 #: ../../source/components/subsystems/gear.rst:4
 msgid ""
 "In this section, we'll take a close look at how to model a simple gear.  "
-"We'll consider things like the inertia of each gear element, the backlash "
-"that exists between the teeth and, of course, the kinematic relationship "
-"between the two rotating shafts.  We'll first show an example how a \"flat\""
-" model of such an assembly would be created and then we'll look at how this "
-"flat model can be refactored into a reusable subsystem model that can be "
-"used across a wide ranging of applications."
+"We'll consider things like the inertia of each gear element, the backlash"
+" that exists between the teeth and, of course, the kinematic relationship"
+" between the two rotating shafts.  We'll first show an example how a "
+"\"flat\" model of such an assembly would be created and then we'll look "
+"at how this flat model can be refactored into a reusable subsystem model "
+"that can be used across a wide ranging of applications."
 msgstr ""
+"이 섹션에서는 간단한 기어를 모델링하는 방법을 자세히 살펴보겠습니다. "
+"각 기어 요소의 관성, 톱니 사이에 존재하는 백래시, 물론 두 회전 샤프트 사이의 운동학적 관계와 같은 것들을 고려할 것입니다."
+"먼저 이러한 어셈블리의 "플랫" 모델이 어떻게 생성되는지 예를 보여준 다음 이 플랫 모델을 광범위한 응용 프로그램에서 사용할 수 있는 재사용 가능한 하위 시스템 모델로 리팩터링하는 방법을 살펴보겠습니다."
+
 
 #: ../../source/components/subsystems/gear.rst:13
 msgid ""
-"We've mentioned several times up until now that it is usually a good idea to"
-" create component models that model just one physical effect, *e.g.,* "
-"inertia, compliance, resistance, convection, *etc.* This is true when we are"
-" modeling at the component level.  But many real world subsystems are a "
-"mixture of all of these effects.  The way we address this in Modelica is to "
-"build reusable subsystem models.  Of course, we don't \"reinvent the wheel\""
-" by adding the equations for all these effects into our subsystem model.  "
-"Instead, we reuse the component models we've already developed.  In the end,"
-" the subsystem model ends up being nothing more than an assembly of pre-"
-"existing component models arranged in a specific configuration.  "
-"Furthermore, we will show how parameters used to describe the components can"
-" be \"wired up\" to parameters of the subsystem."
+"We've mentioned several times up until now that it is usually a good idea"
+" to create component models that model just one physical effect, *e.g.,* "
+"inertia, compliance, resistance, convection, *etc.* This is true when we "
+"are modeling at the component level.  But many real world subsystems are "
+"a mixture of all of these effects.  The way we address this in Modelica "
+"is to build reusable subsystem models.  Of course, we don't \"reinvent "
+"the wheel\" by adding the equations for all these effects into our "
+"subsystem model.  Instead, we reuse the component models we've already "
+"developed.  In the end, the subsystem model ends up being nothing more "
+"than an assembly of pre-existing component models arranged in a specific "
+"configuration.  Furthermore, we will show how parameters used to describe"
+" the components can be \"wired up\" to parameters of the subsystem."
 msgstr ""
+"지금까지 여러 번 *예:* 관성, 컴플라이언스, 저항, 대류 등*과 같은 하나의 물리적 효과만 모델링하는 구성 요소 모델을 만드는 것이 일반적으로 좋은 아이디어라고 언급했습니다."
+"이것은 구성 요소 수준에서 모델링할 때 사실입니다. "
+"그러나 많은 실제 하위 시스템은 이러한 모든 효과가 혼합되어 있습니다."
+"모델리카에서 이 문제를 해결하는 방법은 재사용 가능한 하위 시스템 모델을 구축하는 것입니다. "
+"물론 이러한 모든 효과에 대한 방정식을 하위 시스템 모델에 추가하여 "바퀴를 재발명"하지 않습니다."
+"대신 이미 개발한 구성 요소 모델을 재사용합니다. 결국 하위 시스템 모델은 특정 구성으로 배열된 기존 구성 요소 모델의 어셈블리에 불과합니다. "
+"또한 구성요소를 설명하는 데 사용하는 파라미터를 하위 시스템의 파라미터에 "연결"하는 방법을 보여줍니다."
+
 
 #: ../../source/components/subsystems/gear.rst:28
 msgid "Flat Version"
 msgstr ""
+"수평적 버전(Flat Version)"
 
 #: ../../source/components/subsystems/gear.rst:30
 msgid ""
-"If we were unfamiliar with the ability to create reusable subsystem models "
-"in Modelica, we might start by building a Modelica model that looked like "
-"this one:"
+"If we were unfamiliar with the ability to create reusable subsystem "
+"models in Modelica, we might start by building a Modelica model that "
+"looked like this one:"
 msgstr ""
+"모델리카에서 재사용 가능한 하위 시스템 모델을 생성하는 기능에 익숙하지 않은 경우 다음과 같은 모델리카 모델을 빌드하는 것으로 시작할 수 있습니다."
 
-#: ../../source/components/subsystems/gear.rst:39
+#: ../../source/components/subsystems/gear.rst:40
 msgid ""
-"This model includes two essential components.  Part of the model, inside the"
-" dashed line, represents how the gear itself is being modeled.  It includes "
-"the inertia for each gear element, the backlash between the gear teeth and "
-"the kinematic relationship between the two shafts.  Each of these is "
-"represented by an individual component model.  The other part of the model, "
-"outside the dashed line, represents the specific scenario/experiment we are "
-"performing.  This includes a torque profile to be applied to the gear and "
-"the downstream load that is being driven by the gear."
+"This model includes two essential components.  Part of the model, inside "
+"the dashed line, represents how the gear itself is being modeled.  It "
+"includes the inertia for each gear element, the backlash between the gear"
+" teeth and the kinematic relationship between the two shafts.  Each of "
+"these is represented by an individual component model.  The other part of"
+" the model, outside the dashed line, represents the specific "
+"scenario/experiment we are performing.  This includes a torque profile to"
+" be applied to the gear and the downstream load that is being driven by "
+"the gear."
 msgstr ""
+"이 모델에는 두 가지 필수 구성 요소가 포함되어 있습니다."
+"파선 안에 있는 모델의 일부는 기어 자체가 모델링되는 방식을 나타냅니다."
+"여기에는 각 기어 요소의 관성, 기어 톱니 사이의 백래시 및 두 샤프트 사이의 운동학적 관계가 포함됩니다."
+"이들 각각은 개별 구성 요소 모델로 표현됩니다."
+"파선 바깥에 있는 모델의 다른 부분은  수행하고 있는 특정 시나리오/실험을 나타냅니다."
+"여기에는 기어에 적용할 토크 프로파일과 기어에 의해 구동되는 다운스트림 부하가 포함됩니다."
 
-#: ../../source/components/subsystems/gear.rst:49
+
+
+#: ../../source/components/subsystems/gear.rst:50
 msgid "If we simulate this system, we get the following response:"
 msgstr ""
+"이 시스템을 시뮬레이션하면 다음과 같은 응답을 얻습니다."
 
-#: ../../source/components/subsystems/gear.rst:54
+#: ../../source/components/subsystems/gear.rst:55
 msgid ""
-"The important thing to understand about this system is that the particular "
-"assembly of components inside the dashed line are likely to repeated in any "
-"gear related application.  In fact, they may be repeated multiple times in a"
-" model of something like an automotive transmission model."
+"The important thing to understand about this system is that the "
+"particular assembly of components inside the dashed line are likely to "
+"repeated in any gear related application.  In fact, they may be repeated "
+"multiple times in a model of something like an automotive transmission."
 msgstr ""
+"이 시스템에 대해 이해해야 할 중요한 점은 파선 내부의 구성 요소의 특정 어셈블리가 기어 관련 응용 프로그램에서 반복될 가능성이 있다는 것입니다."
+"실제로 자동차 변속기와 같은 모델에서 여러 번 반복될 수 있습니다."
 
-#: ../../source/components/subsystems/gear.rst:62
-msgid "Hierarchical Version"
-msgstr ""
 
 #: ../../source/components/subsystems/gear.rst:63
-msgid ""
-"So, in order to avoid redundancy (the reasons for which have already been "
-"discussed), we should create a reusable subsystem model of the components "
-"within the dashed line.  In such a case, our schematic diagram would then "
-"look something like this:"
+msgid "Hierarchical Version"
 msgstr ""
+"계층적 버젼(Hierarchical Version)"
 
-#: ../../source/components/subsystems/gear.rst:73
+#: ../../source/components/subsystems/gear.rst:64
 msgid ""
-"In this case, the collection of components used to represent the gear are "
-"replaced by a single instance in the diagram layer.  This is possible "
+"So, in order to avoid redundancy (the reasons for which have already been"
+" discussed), we should create a reusable subsystem model of the "
+"components within the dashed line.  In such a case, our schematic diagram"
+" would then look something like this:"
+msgstr ""
+"따라서 중복을 방지하기 위해(이유는 이미 논의된 바 있음) 파선 내 구성 요소의 재사용 가능한 하위 시스템 모델을 생성해야 합니다. "
+"이러한 경우 회로도는 다음과 같이 표시됩니다."
+
+
+#: ../../source/components/subsystems/gear.rst:75
+msgid ""
+"In this case, the collection of components used to represent the gear are"
+" replaced by a single instance in the diagram layer.  This is possible "
 "because all the component models that make up the gear model have been "
 "assembled into the following subsystem model:"
 msgstr ""
+"이 경우 기어를 나타내는 데 사용하는 구성 요소 모음이 다이어그램 레이어의 단일 인스턴스로 대체합니다."
+"이는 기어 모델을 구성하는 모든 구성 요소 모델이 다음 하위 시스템 모델로 어셈블리되었기 때문에 가능합니다."
 
-#: ../../source/components/subsystems/gear.rst:82
+
+#: ../../source/components/subsystems/gear.rst:84
 msgid ""
-"When rendered, we see the diagram for the ``GearWithBacklash`` model looks "
-"like this:"
+"When rendered, we see the diagram for the ``GearWithBacklash`` model "
+"looks like this:"
 msgstr ""
+"렌더링될 때 ``GearWithBacklash`` 모델에 대한 다이어그램은 다음과 같습니다"
 
-#: ../../source/components/subsystems/gear.rst:90
+#: ../../source/components/subsystems/gear.rst:94
 msgid ""
-"There is quite a bit going on in this model.  First, note the presence of "
-"the ``useSupport`` parameter.  This is used to determine whether to include "
-"the :ref:`optional-ground-connector` we discussed in the previous chapter."
+"There is quite a bit going on in this model.  First, note the presence of"
+" the ``useSupport`` parameter.  This is used to determine whether to "
+"include the :ref:`optional-ground-connector` we discussed in the previous"
+" chapter."
 msgstr ""
+"이 모델에는 꽤 많은 부분이 있습니다. "
+"먼저 ``useSupport`` 파라미터가 있는지 확인해야 합니다. 이전 장에서 논의한 :ref:`optional-ground-connector` 를 포함할지 여부를 결정하는 데 사용합니다."
 
-#: ../../source/components/subsystems/gear.rst:95
+
+#: ../../source/components/subsystems/gear.rst:99
 msgid ""
 "Also note that all the subcomponents (``inertia_a``, ``inertia_b``, "
 "``backlash`` and ``idealGear``) are ``protected``.  Only the connectors "
-"(``flange_a``, ``flange_b`` and ``support``) and the parameters (``J_a``, "
-"``J_b``, ``c``, ``d``, ``b``, ``ratio``) are ``public``.  The idea here is "
-"that the only thing that the user needs to be aware of (or should even be "
-"able to access) are the connectors and the parameters.  Everything else is "
-"an implementation detail.  The ``protected`` elements of a model cannot be "
-"referenced from outside. This prevents models from breaking if the internal "
-"details (which the user should not require any knowledge of anyway) were to "
-"change."
+"(``flange_a``, ``flange_b`` and ``support``) and the parameters (``J_a``,"
+" ``J_b``, ``c``, ``d``, ``b``, ``ratio``) are ``public``.  The idea here "
+"is that the only thing that the user needs to be aware of (or should even"
+" be able to access) are the connectors and the parameters.  Everything "
+"else is an implementation detail.  The ``protected`` elements of a model "
+"cannot be referenced from outside. This prevents models from breaking if "
+"the internal details (which the user should not require any knowledge of "
+"anyway) were to change."
 msgstr ""
+"또한 모든 하위 구성요소(``inertia_a``, ``inertia_b``, ``backlash`` 및 ``idealGear``)는 ``protected`` 됩니다."
+"커넥터(``flange_a``, ``flange_b`` 및 ``support``) 및 파라미터(``J_a``, ``J_b``, ``c``, ``d``, ``b``, ``ratio``)는 ``public`` 입니다. "
+"여기서 아이디어는 사용자가 알아야 하는(또는 액세스할 수 있어야 하는) 유일한 것은 커넥터와 파라미터라는 것입니다."
+"다른 모든 것은 구현에 대한 세부 사항입니다. "
+"모델의 ``protected`` 요소는 외부에서 참조할 수 없습니다."
+"이렇게 하면 내부 세부 정보(사용자가 알 필요가 없음)가 변경되는 경우 모델이 손상되는 것을 방지할 수 있습니다."
 
-#: ../../source/components/subsystems/gear.rst:106
+#: ../../source/components/subsystems/gear.rst:110
 msgid ""
-"Also note how many of the parameters, *e.g.,* ``c``, are specified at the "
-"subsystem level and then assigned to parameters lower down in the hierarchy "
-"(often in conjunction with the ``final`` qualifier).  In this way, "
-"parameters of the components can be collected at the subsystem level so "
-"users of this model will see all relevant parameters in one place (at the "
-"subsystem level).  This is called :ref:`propagation` and we will be "
+"Also note how many of the parameters, *e.g.,* ``c``, are specified at the"
+" subsystem level and then assigned to parameters lower down in the "
+"hierarchy (often in conjunction with the ``final`` qualifier).  In this "
+"way, parameters of the components can be collected at the subsystem level"
+" so users of this model will see all relevant parameters in one place (at"
+" the subsystem level).  This is called :ref:`propagation` and we will be "
 "discussing it in greater detail later in the chapter."
 msgstr ""
+"또한 얼마나 많은 파라미터 (예: * ``c``)가 하위 시스템 수준에서 지정된 다음 계층 구조의 하위 파라미터에 할당되는지 확인합니다"
+"(종종 ``final`` 한정자와 함께). 이러한 방식으로 구성 요소의 파라미터를 하위 시스템 수준에서 수집할 수 있으므로 이 모델의 사용자는 모든 관련 파라미터를 한 곳(하위 시스템 수준)에서 볼 수 있습니다. "
+"이것을 :ref:`propagation` 이라고 하며 이 장의 뒷부분에서 더 자세히 논의할 것입니다."
 
-#: ../../source/components/subsystems/gear.rst:115
+
+#: ../../source/components/subsystems/gear.rst:119
 msgid ""
-"As we can see in the following plot, the results are identical when compared"
-" to the \"flat\" version presented previously:"
+"As we can see in the following plot, the results are identical when "
+"compared to the \"flat\" version presented previously:"
 msgstr ""
+"다음 선도에서 볼 수 있듯이 이전에 제시된 "수평" 버전과 비교할 때 결과는 동일합니다."
 
-#: ../../source/components/subsystems/gear.rst:122
+#: ../../source/components/subsystems/gear.rst:126
 msgid "Conclusion"
 msgstr ""
+"결론(Conclusion)"
 
-#: ../../source/components/subsystems/gear.rst:124
+#: ../../source/components/subsystems/gear.rst:128
 msgid ""
-"We've already seen how component models can be used to turn equations into "
-"reusable components.  This avoids the tedious, time-consuming and error "
-"prone process of manually entering equations over and over again.  This same"
-" principle applies when we find ourselves constantly building the same "
-"assembly of component models into similar assemblies.  We can use this "
-"subsystem model approach to create reusable assemblies of components and "
-"parameterize them such that the assembly can be used over and over again "
-"where the only changes required are parametric."
+"We've already seen how component models can be used to turn equations "
+"into reusable components.  This avoids the tedious, time-consuming and "
+"error prone process of manually entering equations over and over again.  "
+"This same principle applies when we find ourselves constantly building "
+"the same assembly of component models into similar assemblies.  We can "
+"use this subsystem model approach to create reusable assemblies of "
+"components and parameterize them such that the assembly can be used over "
+"and over again where the only changes required are parametric."
 msgstr ""
+"구성 요소 모델을 사용하여 방정식을 재사용 가능한 구성 요소로 전환하는 방법을 이미 살펴보았습니다. "
+"이렇게 하면 수식을 수동으로 반복해서 입력하는 지루하고 시간 소모적이며 오류가 발생하기 쉬운 프로세스를 피할 수 있습니다."
+"동일한 구성 요소 모델 어셈블리를 유사한 어셈블리로 지속적으로 구축하는 경우에도 동일한 원칙이 적용됩니다."
+"이 하위 시스템 모델 접근 방식을 사용하여 구성 요소의 재사용 가능한 어셈블리를 생성하고 필요한 변경 사항만 파라메트릭인 경우 어셈블리를 반복해서 사용할 수 있도록 파라미터화할 수 있습니다."
+
+
+
+#~ msgid ""
+#~ "The important thing to understand about"
+#~ " this system is that the particular"
+#~ " assembly of components inside the "
+#~ "dashed line are likely to repeated "
+#~ "in any gear related application.  In "
+#~ "fact, they may be repeated multiple "
+#~ "times in a model of something like"
+#~ " an automotive transmission model."
+#~ msgstr ""
+
