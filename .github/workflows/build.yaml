@@ -28,6 +28,8 @@ jobs:
         with:
           name: exes.tar.gz
           path: text/results/exes.tar.gz
+      - name: Generate JSON
+        run: make env json
       - name: Save DVC Cache
         id: dvc-cache-save
         uses: actions/cache/save@v3
