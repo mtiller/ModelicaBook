@@ -41,6 +41,7 @@ LATEXMKOPTS     = "-xelatex"
 
 # Language definition
 SET_BOOK_LANG_CN = BOOK_LANG=zh_CN
+SET_BOOK_LANG_KR = BOOK_LANG=kr
 
 .PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results uploadCIdeps
 
@@ -264,12 +265,6 @@ html:
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-dirhtml:
-	$(SPHINXBUILD) -b dirhtml  $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
-	find $(BUILDDIR)/dirhtml -name '*.html' -exec ./inline-math.sh {} \;
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
-
 singlehtml:
 	$(SPHINXBUILD) -b singlehtml  $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	find  $(BUILDDIR)/singlehtml -name '*.html' -exec ./inline-math.sh {} \;
@@ -283,6 +278,11 @@ pickle:
 
 json:
 	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
+	@echo
+	@echo "Build finished; now you can process the JSON files."
+
+json_kr:
+	$(SET_BOOK_LANG_KR) $(SPHINXBUILD) -b json $(ALLSPHINXOPTS) -D language=kr $(BUILDDIR)/json_kr
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
@@ -474,12 +474,18 @@ update_pt_BR: gettext
 buildmo:
 	sphinx-intl build -d locale/ -p locale/pot
 
+dirhtml:
+	$(SPHINXBUILD) -b dirhtml  $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
+	find $(BUILDDIR)/dirhtml -name '*.html' -exec ./inline-math.sh {} \;
+	@echo
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
+
 dirhtml_cn: specs_cn update_cn buildmo
 	$(SET_BOOK_LANG_CN) $(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=zh_CN source build/dirhtml_cn
 	cat locale/cn/cn.css >> build/dirhtml_cn/_static/xogeny.css
 
 dirhtml_kr: update_kr buildmo
-	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=kr source build/dirhtml_kr
+	$(SET_BOOK_LANG_KR) $(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=kr source build/dirhtml_kr
 
 dirhtml_de: update_de buildmo
 	$(SPHINXBUILD) -b dirhtml -d build/doctrees -D language=de source build/dirhtml_de
