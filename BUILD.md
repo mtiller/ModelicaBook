@@ -35,9 +35,26 @@ The basic build process involves the following tasks:
 The book site is a web application. It has its own build process. It depends
 on the artifacts created by the `make json` command discussed above. That
 target creates JSON represenations of book content. But the material first
-needs to be copied into the `nextgen` directory. To do this, `cd` into
-`nextgen` and run `make position_files`. This copies the JSON files generated
-by `make json` into the appropriate location within the web application.
+needs to be copied into the `nextgen` directory.
+
+When copying files, you need to copy the files associated with the language you
+are interested in. So to copy the English language files, use:
+
+```
+make copy_en_files
+```
+
+Likewise, to copy the Korean files, use
+
+```
+make_kr_files
+```
+
+Once the files are in place, we can either preview the site or generate the
+static files required. To preview, run `make preview`. To generate static
+files to be published, _e.g._, on Netlify, use `make publish`. Note that
+this only creates the directory where the static files will be stored, it
+does not upload them anywhere.
 
 ## Source Code
 
