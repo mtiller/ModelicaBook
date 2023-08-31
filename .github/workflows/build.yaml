@@ -39,8 +39,7 @@ jobs:
         id: dvc-cache-save
         uses: actions/cache/save@v3
         with:
-          path: |
-            .dvc/cache
+          path: .dvc/cache
           key: dvc-cache-key
   generate_korean_site:
     runs-on: ubuntu-latest
@@ -58,6 +57,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-artifacts
+          path: text/build
       - name: Publish Korean Site
         run: make korean_site
       - name: Archive Korean Site
