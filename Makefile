@@ -30,13 +30,16 @@ dirhtml:
 	(cd text; make dirhtml)
 
 json:
-	(cd text; make json)
+	(cd text; make json json_kr)
 
 ebooks:
 	(cd text; make ebooks)
 
 pdfs:
 	(cd text; make pdf pdf-a4)
+
+korean_site:
+	(cd nextgen; make copy_kr_files publish)
 
 clean:
 	git clean -fdx text

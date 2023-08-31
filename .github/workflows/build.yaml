@@ -30,6 +30,9 @@ jobs:
           path: text/results/exes.tar.gz
       - name: Generate JSON
         run: make env json
+      - name: Publish Korean Site
+        run: make korean_site
+        image: node:12
       - name: Save DVC Cache
         id: dvc-cache-save
         uses: actions/cache/save@v3
