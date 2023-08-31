@@ -52,8 +52,8 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout Repository
         uses: actions/checkout@v3
-        with:
-          submodules: recursive
+      - name: Fetch Submodules
+        run: git submodule update --init --recursive
       - name: Download Build Artifacts
         uses: actions/download-artifact@v3
         with:
@@ -76,8 +76,8 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout Repository
         uses: actions/checkout@v3
-        with:
-          submodules: recursive
+      - name: Fetch Submodules
+        run: git submodule update --init --recursive
       - name: Download Korean Site
         uses: actions/download-artifact@v3
         with:
