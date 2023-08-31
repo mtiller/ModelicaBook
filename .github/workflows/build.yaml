@@ -57,7 +57,6 @@ jobs:
           name: build-artifacts
       - name: Publish Korean Site
         run: make korean_site
-        image: node:12
       - name: Archive Korean Site
         uses: actions/upload-artifact@v3
         with:
