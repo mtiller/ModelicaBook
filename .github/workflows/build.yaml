@@ -46,14 +46,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: generate_results
     container:
-      image: node:12
+      image: node:14
     steps:
       - name: Mark checkout directory as safe
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout Repository
         uses: actions/checkout@v3
-      - name: Fetch Submodules
-        run: git submodule update --init --recursive
+        with:
+          submodules: recursive
       - name: Download Build Artifacts
         uses: actions/download-artifact@v3
         with:
