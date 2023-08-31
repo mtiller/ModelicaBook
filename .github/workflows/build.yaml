@@ -30,9 +30,11 @@ jobs:
           path: text/results/exes.tar.gz
       - name: Generate JSON
         run: make env json
-      - name: Publish Korean Site
-        run: make korean_site
-        image: node:12
+      - name: Archive Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: text/build
       - name: Save DVC Cache
         id: dvc-cache-save
         uses: actions/cache/save@v3
@@ -40,3 +42,42 @@ jobs:
           path: |
             .dvc/cache
           key: dvc-cache-key
+  generate_korean_site:
+    runs-on: ubuntu-latest
+    container:
+      image: node:12
+    steps:
+      - name: Mark checkout directory as safe
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+      - name: Publish Korean Site
+        run: make korean_site
+        image: node:12
+      - name: Archive Korean Site
+        uses: actions/upload-artifact@v3
+        with:
+          name: korean-site
+          path: out
+
+  publish_korean_site:
+    runs-on: ubuntu-latest
+    container:
+      image: node:18
+    steps:
+      - name: Mark checkout directory as safe
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Download Korean Site
+        uses: actions/download-artifact@v3
+        with:
+          name: korean-site
+      - name: Install netlify-cli
+        run: npm install -g netlify-cli
+      - name: Deploy Korean Site
+        run: npx netlify deploy --prod --dir=out
