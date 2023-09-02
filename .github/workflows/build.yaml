@@ -85,4 +85,7 @@ jobs:
       - name: Install netlify-cli
         run: npm install -g netlify-cli
       - name: Deploy Korean Site
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: npx netlify deploy --prod --dir=.next
