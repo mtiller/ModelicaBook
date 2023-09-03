@@ -2,7 +2,7 @@
 FROM ghcr.io/mtiller/book-builder-image:v0.1.4
 
 # Use the non-root user?
-# USER ubuntu:ubuntu
+USER ubuntu:ubuntu
 
 # # Install 
 # RUN mkdir -p /home/ubuntu/.openmodelica/libraries
