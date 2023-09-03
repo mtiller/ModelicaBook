@@ -29,3 +29,4 @@ source/Examples/*.exp
 text/build-arch
 build-arch
 .DS_Store
+.env
