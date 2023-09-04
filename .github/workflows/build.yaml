@@ -91,5 +91,7 @@ jobs:
         with:
           name: korean-site
           path: nextgen/.next
-      - name: Deploy Site
-        run: make deploy_site
+      - name: Install netlify-cli
+        run: npm install -g netlify-cli
+      - name: Deploy Korean Site
+        run: npx netlify deploy --prod --dir=nextgen/dist
