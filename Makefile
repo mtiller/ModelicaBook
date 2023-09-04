@@ -29,7 +29,7 @@ results: env specs
 dirhtml:
 	(cd text; make dirhtml)
 
-json:
+json: results
 	(cd text; make json json_kr)
 
 ebooks:
@@ -38,8 +38,11 @@ ebooks:
 pdfs:
 	(cd text; make pdf pdf-a4)
 
-korean_site:
-	(cd nextgen; make copy_kr_files publish)
+site: json
+	(cd nextgen; make all)
+
+deploy_site:
+	(cd nextgen; yarn deploy)
 
 clean:
 	git clean -fdx text

@@ -41,7 +41,7 @@ jobs:
         with:
           path: .dvc/cache
           key: dvc-cache-key
-  generate_korean_site:
+  generate_site:
     runs-on: ubuntu-latest
     needs: generate_results
     container:
@@ -58,21 +58,30 @@ jobs:
         with:
           name: build-artifacts
           path: text/build
-      - name: Publish Korean Site
-        run: make korean_site
-      - name: Archive Korean Site
+      - name: Publish Web Site
+        run: make site
+      - name: Archive Site
         uses: actions/upload-artifact@v3
         with:
           name: korean-site
           path: nextgen/.next
-  publish_korean_site:
+  deploy_site:
     runs-on: ubuntu-latest
-    needs: generate_korean_site
+    needs: generate_site
     container:
       image: node:18
     steps:
       - name: Mark checkout directory as safe
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Inject Secrets
+        uses: 1password/load-secrets-action/configure@v1
+        with:
+          export-env: true
+          service-account-token: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+        env:
+          NETLIFY_SITE_ID: op://Automation/w75bbkgjyx35y3uryrfhfisz7e/username
+          NETLIFY_AUTH_TOKEN: op://Automation/w75bbkgjyx35y3uryrfhfisz7e/password
+          NODE_OPTIONS: --openssl-legacy-provider
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
@@ -82,10 +91,5 @@ jobs:
         with:
           name: korean-site
           path: nextgen/.next
-      - name: Install netlify-cli
-        run: npm install -g netlify-cli
-      - name: Deploy Korean Site
-        env:
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        run: npx netlify deploy --prod --dir=nextgen/.next
+      - name: Deploy Site
+        run: make deploy_site
