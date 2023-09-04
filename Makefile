@@ -38,7 +38,7 @@ ebooks:
 pdfs:
 	(cd text; make pdf pdf-a4)
 
-site: json
+site:
 	(cd nextgen; make all)
 
 deploy_site:
