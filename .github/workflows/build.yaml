@@ -8,7 +8,7 @@ jobs:
   generate_results:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/mtiller/book-builder-image:v0.1.1
+      image: ghcr.io/mtiller/book-builder-image:v0.1.6
     steps:
       - name: Mark checkout directory as safe
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
