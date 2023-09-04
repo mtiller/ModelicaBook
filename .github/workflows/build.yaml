@@ -18,8 +18,7 @@ jobs:
         id: dvc-cache-restore
         uses: actions/cache/restore@v3
         with:
-          path: |
-            .dvc/cache
+          path: .dvc/cache
           key: dvc-cache-key
       - name: Make PDFs
         run: make env pdfs
@@ -74,11 +73,11 @@ jobs:
       - name: Mark checkout directory as safe
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Inject Secrets
-        uses: 1password/load-secrets-action/configure@v1
+        uses: 1password/load-secrets-action@v1
         with:
           export-env: true
-          service-account-token: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
           NETLIFY_SITE_ID: op://Automation/w75bbkgjyx35y3uryrfhfisz7e/username
           NETLIFY_AUTH_TOKEN: op://Automation/w75bbkgjyx35y3uryrfhfisz7e/password
           NODE_OPTIONS: --openssl-legacy-provider
