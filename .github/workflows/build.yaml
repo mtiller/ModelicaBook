@@ -63,7 +63,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: korean-site
-          path: nextgen/.next
+          path: nextgen/dist
   deploy_site:
     runs-on: ubuntu-latest
     needs: generate_site
@@ -88,7 +88,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: korean-site
-          path: nextgen/.next
+          path: nextgen/dist
       - name: Install netlify-cli
         run: npm install -g netlify-cli
       - name: Deploy Korean Site
