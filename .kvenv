@@ -1,0 +1,3 @@
+NETLIFY_SITE_ID=op://Automation/w75bbkgjyx35y3uryrfhfisz7e/username
+NETLIFY_AUTH_TOKEN=op://Automation/w75bbkgjyx35y3uryrfhfisz7e/password
+NODE_OPTIONS=--openssl-legacy-provider
