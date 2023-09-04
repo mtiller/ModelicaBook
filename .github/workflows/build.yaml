@@ -80,7 +80,6 @@ jobs:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
           NETLIFY_SITE_ID: op://Automation/w75bbkgjyx35y3uryrfhfisz7e/username
           NETLIFY_AUTH_TOKEN: op://Automation/w75bbkgjyx35y3uryrfhfisz7e/password
-          NODE_OPTIONS: --openssl-legacy-provider
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
@@ -94,3 +93,4 @@ jobs:
         run: npm install -g netlify-cli
       - name: Deploy Korean Site
         run: npx netlify deploy --prod --dir=nextgen/dist
+
