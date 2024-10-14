@@ -31,6 +31,6 @@ initial equation
   T = linspace(200,300,n);
 equation
   rho*V*C*der(T[1]) = -h*A_s*(T[1]-Tamb)-k*A_c*(T[1]-T[2])/(L/n);
-  rho*V*C*der(T[2:n-1]) = -h*A_s*(T[i]-Tamb)-k*A_c*(T[2:n-1]-T[1:n-2])/(L/n)-k*A_c*(T[2:n-1]-T[3:n])/(L/n);
+  rho*V*C*der(T[2:n-1]) = -h*A_s*(T[2:n-1]-fill(Tamb, n-2))-k*A_c*(T[2:n-1]-T[1:n-2])/(L/n)-k*A_c*(T[2:n-1]-T[3:n])/(L/n);
   rho*V*C*der(T[end]) = -h*A_s*(T[end]-Tamb)-k*A_c*(T[end]-T[end-1])/(L/n);
 end Rod_VectorNotation;
