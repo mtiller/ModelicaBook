@@ -13,7 +13,7 @@ model RegionalPopulation "Population of animals in a specific region"
     annotation (Placement(transformation(extent={{-10,90},{10,110}}),
         iconTransformation(extent={{-10,90},{10,110}})));
 protected
-  Real population(start=10) = species.population "Population in this region";
+  Real population(start=initial_population) = species.population "Population in this region";
 initial equation
   if init==InitializationOptions.FixedPopulation then
     population = initial_population;
