@@ -40,7 +40,7 @@ function baseUrl(req: express.Request | null): url.Url {
 
         log("Building URL from request where host was '%s' and proto was '%s'", host, proto);
 
-        const uri = `${proto}://${host}`;
+        const uri = `https://${host}`;
         log("  Resulting URL was %s", uri);
         let u = url.parse(uri);
         return u;
