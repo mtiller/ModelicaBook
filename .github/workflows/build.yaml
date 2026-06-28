@@ -13,30 +13,30 @@ jobs:
       - name: Mark checkout directory as safe
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Restore DVC Cache
         id: dvc-cache-restore
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: .dvc/cache
           key: dvc-cache-key
       - name: Make PDFs
         run: make env pdfs
       - name: Upload Executables
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: exes.tar.gz
           path: text/results/exes.tar.gz
       - name: Generate JSON
         run: make env json
       - name: Archive Build Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: text/build
       - name: Save DVC Cache
         id: dvc-cache-save
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         with:
           path: .dvc/cache
           key: dvc-cache-key
@@ -49,18 +49,18 @@ jobs:
       - name: Mark checkout directory as safe
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
       - name: Download Build Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-artifacts
           path: text/build
       - name: Publish Web Site
         run: make site
       - name: Archive Site
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: korean-site
           path: nextgen/dist
@@ -81,11 +81,11 @@ jobs:
           NETLIFY_SITE_ID: op://Automation/w75bbkgjyx35y3uryrfhfisz7e/username
           NETLIFY_AUTH_TOKEN: op://Automation/w75bbkgjyx35y3uryrfhfisz7e/password
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
       - name: Download Korean Site
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: korean-site
           path: nextgen/dist
