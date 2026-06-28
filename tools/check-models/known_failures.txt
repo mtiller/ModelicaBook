@@ -1,0 +1,18 @@
+# Classes in ModelicaByExample that are known to fail `checkModel` under the
+# modern OpenModelica baseline, with the reason. The regression runner treats
+# these as expected: it fails ONLY on a class that breaks but is not listed
+# here (a genuine regression). If a listed class starts passing again, the
+# runner reports it so the entry can be removed.
+#
+# One fully-qualified class name per line; `#` starts a comment.
+
+# MIC-68 — "Attempt to implement on-off control": references `setpoint`, which
+# is not in scope. May be an intentionally-flawed illustrative example (it
+# carries a red "?" in its diagram). Pending author decision.
+ModelicaByExample.Architectures.ThermalControl.Implementations.ConventionalOnOffControl
+
+# MIC-69 — OMC new-frontend internal error (NFScalarize "could not expand
+# C*x + D*u") on this PARTIAL model with unbound dimension parameters. Its
+# concrete extender (StateSpace.Examples.LotkaVolterra) checks fine, so no
+# built example is affected. Upstream OMC bug; see MIC-83.
+ModelicaByExample.ArrayEquations.StateSpace.ABCD
