@@ -47,7 +47,7 @@ SET_BOOK_LANG_KR = BOOK_LANG=kr
 
 # For CI we don't want to rebuild the whole dependencies each time.
 # To enable the CI build do, e.g., `make CI_BUILD=1 pdf`
-CI_BUILD=0
+CI_BUILD ?= 0
 ifeq ($(CI_BUILD),1)
 SPHINXDEPS =
 else
