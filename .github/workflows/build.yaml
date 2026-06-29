@@ -65,6 +65,8 @@ jobs:
           name: build-artifacts
           path: text/build
       - name: Publish Web Site
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
         run: make site
       - name: Archive Site
         uses: actions/upload-artifact@v4
