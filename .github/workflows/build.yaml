@@ -64,8 +64,8 @@ jobs:
         with:
           name: build-artifacts
           path: text/build
-      - name: Enable Corepack (provides yarn on node:22+ images)
-        run: corepack enable
+      - name: Install Yarn (node:25+ dropped corepack and bundled yarn)
+        run: npm install -g yarn
       - name: Publish Web Site
         env:
           NODE_OPTIONS: --openssl-legacy-provider
