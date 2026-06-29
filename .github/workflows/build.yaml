@@ -3,9 +3,12 @@ name: build
 on:
   push:
     branches: [master]
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
 
 jobs:
   generate_results:
+    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'Full Build')
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/mtiller/book-builder-image:v0.1.6
@@ -44,6 +47,7 @@ jobs:
           path: .dvc/cache
           key: ${{ steps.dvc-cache-restore.outputs.cache-primary-key }}
   generate_site:
+    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'Full Build')
     runs-on: ubuntu-latest
     needs: generate_results
     container:
@@ -68,6 +72,7 @@ jobs:
           name: korean-site
           path: nextgen/dist
   deploy_site:
+    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'Full Build')
     runs-on: ubuntu-latest
     needs: generate_site
     container:
