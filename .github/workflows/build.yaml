@@ -33,7 +33,18 @@ jobs:
           key: sphinx-build-${{ hashFiles('.github/workflows/build.yaml', 'text/source/**', 'text/locale/kr/**', 'text/Makefile') }}
           restore-keys: |
             sphinx-build-
+      - name: Restore CI Deps Cache (DVC outputs + plots)
+        id: cideps-cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            text/results
+            text/plots
+            text/docs-dir
+          key: ci-deps-${{ hashFiles('.github/workflows/build.yaml', 'text/dvc.lock', 'text/dvc.yaml', 'text/specs.py', 'ModelicaByExample/**/*.mo') }}
       - name: Make PDFs
+        env:
+          CI_BUILD: ${{ steps.cideps-cache-restore.outputs.cache-hit == 'true' && '1' || '0' }}
         run: make env pdfs
       - name: Upload Executables
         uses: actions/upload-artifact@v4
@@ -41,6 +52,8 @@ jobs:
           name: exes.tar.gz
           path: text/results/exes.tar.gz
       - name: Generate JSON
+        env:
+          CI_BUILD: ${{ steps.cideps-cache-restore.outputs.cache-hit == 'true' && '1' || '0' }}
         run: make env json
       - name: Archive Build Artifacts
         uses: actions/upload-artifact@v4
@@ -61,6 +74,16 @@ jobs:
         with:
           path: text/build
           key: ${{ steps.sphinx-cache-restore.outputs.cache-primary-key }}
+      - name: Save CI Deps Cache
+        id: cideps-cache-save
+        if: always() && steps.cideps-cache-restore.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            text/results
+            text/plots
+            text/docs-dir
+          key: ${{ steps.cideps-cache-restore.outputs.cache-primary-key }}
   generate_site:
     if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'Full Build')
     runs-on: ubuntu-latest
