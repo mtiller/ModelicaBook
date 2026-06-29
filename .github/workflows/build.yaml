@@ -25,6 +25,14 @@ jobs:
           key: dvc-cache-${{ hashFiles('.github/workflows/build.yaml', 'text/dvc.lock', 'text/dvc.yaml', 'text/specs.py', 'ModelicaByExample/**/*.mo') }}
           restore-keys: |
             dvc-cache-
+      - name: Restore Sphinx Build Cache
+        id: sphinx-cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: text/build
+          key: sphinx-build-${{ hashFiles('.github/workflows/build.yaml', 'text/source/**', 'text/locale/kr/**', 'text/Makefile') }}
+          restore-keys: |
+            sphinx-build-
       - name: Make PDFs
         run: make env pdfs
       - name: Upload Executables
@@ -46,6 +54,13 @@ jobs:
         with:
           path: .dvc/cache
           key: ${{ steps.dvc-cache-restore.outputs.cache-primary-key }}
+      - name: Save Sphinx Build Cache
+        id: sphinx-cache-save
+        if: always() && steps.sphinx-cache-restore.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: text/build
+          key: ${{ steps.sphinx-cache-restore.outputs.cache-primary-key }}
   generate_site:
     if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'Full Build')
     runs-on: ubuntu-latest
