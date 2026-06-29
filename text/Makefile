@@ -47,9 +47,12 @@ SET_BOOK_LANG_KR = BOOK_LANG=kr
 
 # For CI we don't want to rebuild the whole dependencies each time.
 # To enable the CI build do, e.g., `make CI_BUILD=1 pdf`
-CI_BUILD=0
+CI_BUILD ?= 0
+# CI_BUILD=1 skips the expensive simulation (specs+results=dvc repro) but
+# still runs 'images' because svg->pdf conversion is fast and the converted
+# PDFs aren't checked in (the latex builder needs them).
 ifeq ($(CI_BUILD),1)
-SPHINXDEPS =
+SPHINXDEPS = images
 else
 SPHINXDEPS = specs results images
 endif
