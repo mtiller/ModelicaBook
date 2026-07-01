@@ -1,0 +1,14 @@
+version: 1
+project:
+  id: mbe-web-slice
+  title: Modelica by Example
+  description: MyST vertical slice (MIC-84) — first-order chapter
+  toc:
+    - file: content/first-order.md
+  plugins:
+    - plugins/mbe-figure.mjs
+site:
+  template: book-theme
+  title: Modelica by Example
+  options:
+    hide_outline: false

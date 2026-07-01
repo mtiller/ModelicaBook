@@ -1,0 +1,68 @@
+/* MIC-84 vertical slice — interactive figure styling (minimal; Jony's design
+   tokens slot in later). Kept intentionally plain so the architecture, not the
+   look, is what this PR is judged on. */
+
+.mbe-figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.mbe-figure img {
+  max-width: 100%;
+  height: auto;
+}
+.mbe-figure figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.mbe-figure.interactive {
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.mbe-panel {
+  margin-top: 0.5rem;
+  text-align: left;
+}
+.mbe-toggle {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid #c7c7c7;
+  background: #f6f6f6;
+  border-radius: 6px;
+  padding: 0.35rem 0.7rem;
+}
+.mbe-toggle:hover {
+  background: #eee;
+}
+.mbe-panel-body {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #fafafa;
+  border-radius: 6px;
+}
+.mbe-panel-body dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0 0 0.5rem 0;
+}
+.mbe-panel-body dt {
+  font-weight: 600;
+  color: #333;
+}
+.mbe-panel-body dd {
+  margin: 0;
+  font-family: ui-monospace, monospace;
+}
+.mbe-rerun[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.mbe-note {
+  font-size: 0.8rem;
+  color: #777;
+  margin: 0.5rem 0 0;
+}
