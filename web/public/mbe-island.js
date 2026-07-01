@@ -93,9 +93,16 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', hydrate);
-  } else {
+  // The built site hydrates as a React app; mount after `load` (post-hydration)
+  // and retry a couple of times so we append to figures React has settled.
+  function schedule() {
     hydrate();
+    setTimeout(hydrate, 300);
+    setTimeout(hydrate, 1200);
+  }
+  if (document.readyState === 'complete') {
+    schedule();
+  } else {
+    window.addEventListener('load', schedule);
   }
 })();
