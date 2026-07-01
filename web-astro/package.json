@@ -1,0 +1,24 @@
+{
+  "name": "web-astro",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MyST/Astro bake-off — Astro + Starlight rendering of Modelica by Example (MIC-84)",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.41.2",
+    "astro": "^7.0.5",
+    "katex": "^0.17.0",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "sharp": "^0.35.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "sharp@0.35.3": true
+  }
+}

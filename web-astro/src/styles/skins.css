@@ -1,0 +1,107 @@
+/* MIC-84 — interactive figure skins + structure.
+ *
+ * Tokens are Jony's verbatim specimen (A/B/C × light/dark), split into two
+ * orthogonal axes: data-skin (typography/shape/density) × data-mode (color).
+ * Set both on any ancestor (page <html> or the figure root). Skin A / light is
+ * the fallthrough. Structural CSS below consumes only these tokens, so a skin
+ * swap never touches structure or JS.
+ * ------------------------------------------------------------------------- */
+
+/* ---- Base defaults (skin A / light) ---- */
+:root {
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-head: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --measure: 66ch; --radius: 6px; --control-radius: 6px;
+  --shadow: 0 1px 2px rgba(30,25,15,.07);
+  --bg: #fff; --surface: #fff; --ink: #111; --muted: #666; --rule: #ddd;
+  --accent: #2A6F97; --accent-ink: #fff;
+  --code-bg: #f4efe6; --code-ink: #2b2a26; --ckw: #2A6F97; --cst: #7a6b4f; --ccm: #9a927f;
+  --prey: #1f77b4; --pred: #ff7f0e;
+  --fig-pad: 16px; --param-row-gap: 8px; --line: 1.6;
+}
+
+/* ============ SKIN A · Textbook ============ */
+[data-skin=a] { --font-body:'Source Serif 4',Georgia,serif; --font-head:'Inter',system-ui,sans-serif; --font-mono:'JetBrains Mono',monospace;
+  --measure:66ch; --radius:6px; --control-radius:6px; --fig-pad:16px; --param-row-gap:8px; --line:1.6; }
+[data-skin=a][data-mode=light] { --bg:#FAF8F3; --surface:#fff; --ink:#1C1B19; --muted:#6B6558; --rule:#E4DDCE;
+  --accent:#2A6F97; --accent-ink:#fff; --code-bg:#F4EFE6; --code-ink:#2B2A26; --ckw:#1F6F97; --cst:#8a6d3b; --ccm:#a99f89;
+  --shadow:0 1px 2px rgba(30,25,15,.07); --prey:#1f77b4; --pred:#ef7d1a; }
+[data-skin=a][data-mode=dark] { --bg:#201E1A; --surface:#29261F; --ink:#EDE7DA; --muted:#A79E8C; --rule:#3A362E;
+  --accent:#8FBEDC; --accent-ink:#12100c; --code-bg:#17150F; --code-ink:#E8E2D3; --ckw:#8FBEDC; --cst:#D8B98A; --ccm:#8a8271;
+  --shadow:0 1px 2px rgba(0,0,0,.4); --prey:#5FA8D3; --pred:#FF9E45; }
+
+/* ============ SKIN B · Docs ============ */
+[data-skin=b] { --font-body:'Inter',system-ui,sans-serif; --font-head:'Inter',system-ui,sans-serif; --font-mono:'JetBrains Mono',monospace;
+  --measure:72ch; --radius:10px; --control-radius:6px; --fig-pad:14px; --param-row-gap:7px; --line:1.55; }
+[data-skin=b][data-mode=light] { --bg:#fff; --surface:#fff; --ink:#0F172A; --muted:#64748B; --rule:#E2E8F0;
+  --accent:#4F46E5; --accent-ink:#fff; --code-bg:#0D1117; --code-ink:#E6EDF3; --ckw:#79C0FF; --cst:#A5D6FF; --ccm:#8B949E;
+  --shadow:0 2px 8px rgba(15,23,42,.08); --prey:#2563eb; --pred:#f59e0b; }
+[data-skin=b][data-mode=dark] { --bg:#0D1117; --surface:#161B22; --ink:#E6EDF3; --muted:#8B949E; --rule:#21262D;
+  --accent:#7C83FF; --accent-ink:#0b0e14; --code-bg:#010409; --code-ink:#E6EDF3; --ckw:#79C0FF; --cst:#A5D6FF; --ccm:#8B949E;
+  --shadow:0 2px 10px rgba(0,0,0,.4); --prey:#6BA6FF; --pred:#F5A742; }
+
+/* ============ SKIN C · Journal ============ */
+[data-skin=c] { --font-body:'Newsreader',Georgia,serif; --font-head:'Newsreader',Georgia,serif; --font-mono:'IBM Plex Mono',monospace;
+  --measure:60ch; --radius:2px; --control-radius:2px; --shadow:none; --fig-pad:14px; --param-row-gap:6px; --line:1.5; }
+[data-skin=c][data-mode=light] { --bg:#fff; --surface:#fff; --ink:#101010; --muted:#565049; --rule:#DADADA;
+  --accent:#7B2D26; --accent-ink:#fff; --code-bg:#F7F5F2; --code-ink:#1a1a1a; --ckw:#7B2D26; --cst:#4d6b5a; --ccm:#9a9a9a;
+  --prey:#1f5c8b; --pred:#c56a1c; }
+[data-skin=c][data-mode=dark] { --bg:#14110F; --surface:#1B1815; --ink:#ECE7E1; --muted:#A79E95; --rule:#322C28;
+  --accent:#C98A80; --accent-ink:#171210; --code-bg:#0E0C0A; --code-ink:#ECE7E1; --ckw:#C98A80; --cst:#9CBFA8; --ccm:#877f76;
+  --prey:#63A3CE; --pred:#E39A55; }
+
+/* ------------------------------------------------------------------------- */
+/* Structure — consumes only tokens above.                                    */
+.mbe-figure {
+  margin: 1.75rem 0;
+  font-family: var(--font-body);
+}
+.mbe-figure__static { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.mbe-figure__caption { font-family: var(--font-head); font-size: .9rem; color: var(--muted); margin-top: .5rem; text-align: center; }
+
+.mbe-figure.interactive {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: var(--fig-pad);
+}
+.mbe-figure__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: .5rem; }
+.mbe-figure__label { font-family: var(--font-head); font-weight: 600; color: var(--ink); }
+.mbe-figure__badge { font-family: var(--font-head); font-size: .7rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--accent-ink); background: var(--accent); border-radius: 999px; padding: .1rem .5rem; }
+
+/* Two-column by default; collapses to stacked at narrow width via container
+ * query on the figure itself — same DOM, no variant. */
+.mbe-figure__body { display: grid; grid-template-columns: 186px 1fr; gap: 1rem; align-items: start; }
+.mbe-figure { container-type: inline-size; }
+@container (max-width: 520px) {
+  .mbe-figure__body { grid-template-columns: 1fr; }
+}
+
+.mbe-figure__params-title { font-family: var(--font-head); font-size: .8rem; font-weight: 600; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .03em; margin-bottom: .5rem; }
+.mbe-figure__param-list { display: flex; flex-direction: column; gap: var(--param-row-gap); }
+.mbe-figure__param { display: flex; flex-direction: column; gap: .15rem; }
+.mbe-param__label { font-size: .8rem; color: var(--muted); font-family: var(--font-mono); }
+.mbe-param__input { font-family: var(--font-mono); font-size: .85rem; padding: .25rem .4rem;
+  border: 1px solid var(--rule); border-radius: var(--control-radius); background: var(--bg); color: var(--ink); }
+.mbe-param__input.is-invalid { border-color: #c0392b; }
+
+.mbe-figure__param-list--readonly { display: grid; grid-template-columns: max-content 1fr; gap: .25rem .75rem; margin: 0; }
+.mbe-figure__param-list--readonly dt { font-size: .8rem; color: var(--muted); font-family: var(--font-head); }
+.mbe-figure__param-list--readonly dd { margin: 0; font-family: var(--font-mono); font-size: .82rem; color: var(--ink); }
+
+.mbe-figure__actions { margin-top: .6rem; display: flex; flex-direction: column; gap: .35rem; }
+.mbe-figure__hint { font-size: .72rem; color: var(--muted); }
+.mbe-figure__run { font-family: var(--font-head); font-size: .85rem; align-self: flex-start;
+  background: var(--accent); color: var(--accent-ink); border: none; border-radius: var(--control-radius);
+  padding: .35rem .8rem; cursor: pointer; }
+.mbe-figure__run[disabled] { opacity: .5; cursor: not-allowed; }
+
+.mbe-figure__plot { position: relative; }
+.mbe-figure__status { font-size: .75rem; color: var(--muted); margin-top: .35rem; min-height: 1em; text-align: center; }
+
+.mbe-figure[data-state=simulating] .mbe-figure__static { opacity: .5; }
+.mbe-figure[data-state=error] { border-color: #c0392b; }
