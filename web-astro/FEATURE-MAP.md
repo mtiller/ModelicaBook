@@ -31,7 +31,7 @@ mapped to its Astro + Starlight equivalent. Status legend:
 | Sphinx role | Uses | Astro/Starlight equivalent | Status | Notes |
 |---|---:|---|---|---|
 | `:math:` | 404 | `remark-math` inline `$...$` | **Plugin** | Same plugin as block math. |
-| `:ref:` | 310 | Cross-references | **Gap→plugin** | **The heaviest gap.** Same-page anchor links are native (`[text](#anchor)`). But Sphinx `:ref:` also resolves the *target's title* and produces auto-numbered cross-document references ("see Section 3.2", "Figure 4.1"). That requires a **custom remark plugin** that builds a label→{title,number} map across all docs and rewrites refs. Figure/equation/section auto-numbering rides on the same plugin. This is the one item worth building/validating before committing to full migration. |
+| `:ref:` | 310 | Cross-references via `plugins/remark-xref.mjs` | **Resolved (plugin built)** | The custom remark plugin now: records `{/* #label */}` heading anchors (RST labels), numbers sections + figures, and resolves empty-text `[](#label)` refs to the target **title** (Sphinx `:ref:` default) or "Figure N". Verified: `[](#first-order-doc)`→"Adding Some Documentation", `[](#FO)`→"Figure 1". Remaining scale-up: persist the label map across pages for cross-**document** refs (trivial extension). |
 
 ## Cross-cutting
 
@@ -42,13 +42,15 @@ mapped to its Astro + Starlight equivalent. Status legend:
 | Syntax highlighting | Expressive Code (Shiki) | **Native** (no Modelica grammar) |
 | Dark/light mode | Starlight built-in + our `data-mode` tokens | **Native** |
 | i18n / translations | po4a bridge to gettext (see `i18n/`) | **Tooling** — see `i18n/README.md` |
-| PDF / ebook export | — | **Gap** — Sphinx's LaTeX/epub path has no Astro equivalent; a separate concern (was MIC-85). If print output is still required, keep a Sphinx/Pandoc export path or add one. |
+| PDF / ebook export | Pandoc (see `print/`) | **Resolved (scaffolded)** — not Astro's job; the same Markdown source → Pandoc → PDF (Typst/xelatex) + EPUB. `print/build-print-md.mjs` lowers MDX components to print form (interactive figure → static plot). Print toolchain is a dependency exactly as xelatex is today (MIC-85). |
 
 ## Summary
 
 - **Native or one-plugin-install:** code, literalinclude, math, figures, admonitions, toctree/nav, search, conditional content, raw HTML — the bulk of the book.
 - **Author once as a component:** interactive figures (done).
-- **Real work, two items:**
-  1. **`:ref:` cross-references + auto-numbering** (310 uses) — a custom remark plugin. The heaviest parity item.
-  2. **i18n** — the po4a bridge (scaffolded in `i18n/`), reusing existing translations.
-- **Decisions, not work:** `index` (→ search), `todo` (→ drop), print export (separate track, MIC-85).
+- **Previously-open items, now closed:**
+  1. **`:ref:` cross-references + auto-numbering** (310 uses) — `plugins/remark-xref.mjs`, built + verified.
+  2. **PDF / eBook** — Pandoc pipeline scaffolded in `print/` (MDX lowered to print Markdown; components → static figures).
+  3. **i18n** — the po4a bridge (`i18n/`), reusing existing translations with zero re-translation.
+- **Decisions, not work:** `index` (→ search), `todo` (→ drop).
+- **Remaining true gap:** none of the *used* features. The only scale-ups are cross-**document** ref numbering (persist the label map across pages) and a Modelica syntax grammar.

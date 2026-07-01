@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import remarkModelicaXref from './plugins/remark-xref.mjs';
 
 // MIC-84 bake-off: Astro + Starlight rendering of the first-order chapter.
 // Contrast with the mystmd slice in ../web: here the interactive figure is a
@@ -12,7 +13,7 @@ export default defineConfig({
   // Math via remark/rehype plugins — an npm install + config, not a theme fork.
   // This is the "extend via plugins" story that replaces mystmd's directive gap.
   markdown: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkModelicaXref, remarkMath],
     rehypePlugins: [rehypeKatex],
   },
   // Allow importing the .mo sources from the repo root via ?raw, so code blocks

@@ -12,10 +12,12 @@
   "dependencies": {
     "@astrojs/starlight": "^0.41.2",
     "astro": "^7.0.5",
+    "github-slugger": "^2.0.0",
     "katex": "^0.17.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "unist-util-visit": "^5.1.0"
   },
   "allowScripts": {
     "esbuild@0.28.1": true,
