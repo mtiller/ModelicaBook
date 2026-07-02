@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkModelicaXref from './plugins/remark-xref.mjs';
+import bookSidebar from './tools/sidebar.gen.json' with { type: 'json' };
 
 // MIC-84 bake-off: Astro + Starlight rendering of the first-order chapter.
 // Contrast with the mystmd slice in ../web: here the interactive figure is a
@@ -24,9 +25,7 @@ export default defineConfig({
       title: 'Modelica by Example',
       description: 'Astro + Starlight vertical slice (MIC-84)',
       customCss: ['katex/dist/katex.min.css', './src/styles/skins.css'],
-      sidebar: [
-        { label: 'Behavior', items: [{ label: 'First Order System', slug: 'first-order' }] },
-      ],
+      sidebar: bookSidebar,
     }),
   ],
 });
