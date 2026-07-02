@@ -67,6 +67,7 @@ export function convertRst(text, { route = '', desc = '', labels = new Map() } =
 
   const imports = new Map();
   const usedVars = new Set();
+  let usesSimFigure = false;
   const uniqueVar = (p) => { let v = varName(p); let n = 2; while (usedVars.has(v)) v = `${varName(p)}_${n++}`; usedVars.add(v); return v; };
   const out = [];
   let title = null;
@@ -148,10 +149,22 @@ export function convertRst(text, { route = '', desc = '', labels = new Map() } =
         const kind = name === 'topic' ? 'note' : name;
         out.push(`:::${kind}[${inline(arg)}]\n${inline(c.body.join('\n').trim())}\n:::`); continue;
       }
-      if (['plot', 'figure', 'image'].includes(name)) {
+      if (name === 'plot') {
         const c = collectIndented(i + 1, base); i = c.next - 1;
-        warnings.push(`${name} (asset pipeline / MIC-87): ${arg}`);
-        out.push(`{/* TODO ${name}: ${arg} — pending asset pipeline (MIC-87) */}`); continue;
+        const opts = {}; for (const b of c.body) { const om = b.match(/^:([\w-]+):\s*(.*)$/); if (om) opts[om[1]] = om[2].trim(); }
+        const pid = arg.split('/').pop().replace(/\.py$/, '');           // ../plots/FO.py → FO
+        const interactive = /\binteractive\b/.test(opts.class || '') ? ' interactive' : '';
+        usesSimFigure = true;
+        warnings.push(`plot → <SimFigure id="${pid}"> (needs /plots/${pid}.svg${interactive ? ' + src/cases/' + pid + '.json' : ''} — MIC-87)`);
+        out.push(`<SimFigure id="${pid}"${interactive} />`); continue;
+      }
+      if (name === 'figure' || name === 'image') {
+        const c = collectIndented(i + 1, base); i = c.next - 1;
+        const capLines = c.body.filter((b) => b.trim() && !b.match(/^:[\w-]+:/));
+        const cap = inline(capLines.join(' ').trim());
+        const asset = '/figures/' + arg.split('/').pop();               // populated by asset pipeline
+        warnings.push(`${name} → image ${asset} (needs asset — MIC-87)`);
+        out.push(`![${cap}](${asset})`); continue;
       }
       if (/^\.\.\s+[a-z]/.test(line)) { const c = collectIndented(i + 1, base); i = c.next - 1; warnings.push(`unhandled directive '${name}': ${arg}`); continue; }
     }
@@ -165,7 +178,9 @@ export function convertRst(text, { route = '', desc = '', labels = new Map() } =
   const fmLines = ['---', `title: ${(title || route).replace(/"/g, "'")}`];
   if (desc) fmLines.push(`description: ${desc}`);
   fmLines.push('---', '');
-  const importLines = [`import { Code } from '@astrojs/starlight/components';`, ...[...imports.entries()].map(([p, v]) => `import ${v} from '${up}${p.replace(/^\//, '')}?raw';`)];
+  const importLines = [`import { Code } from '@astrojs/starlight/components';`];
+  if (usesSimFigure) importLines.push(`import SimFigure from '${up}web-astro/src/components/SimFigure.astro';`);
+  for (const [p, v] of imports) importLines.push(`import ${v} from '${up}${p.replace(/^\//, '')}?raw';`);
   const helper = `\nexport const lines = (s, spec) => {\n  const L = s.split('\\n');\n  const m = spec.match(/^(\\d+)-(\\d*)$/);\n  const a = m ? +m[1] : 1, b = m && m[2] ? +m[2] : L.length;\n  return L.slice(a - 1, b).join('\\n').replace(/\\s+$/, '');\n};\n`;
   const mdx = `${fmLines.join('\n')}\n${importLines.join('\n')}\n${helper}\n${out.join('\n\n')}\n`;
   return { mdx, title, imports: imports.size, blocks: out.length, warnings };

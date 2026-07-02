@@ -21,9 +21,11 @@ interface Props {
 }
 const { id, interactive = false, caption = '' } = Astro.props;
 const c = cases[id];
-if (interactive && !c) {
-  throw new Error(`SimFigure: no case data for id "${id}" (src/cases/${id}.json)`);
-}
+// Degrade gracefully: if interactive is requested but the case contract hasn't
+// been generated yet (asset pipeline — MIC-87), fall back to the static figure
+// instead of failing the build. Interactive lights up automatically once
+// src/cases/<id>.json exists.
+const showInteractive = interactive && !!c;
 const staticSrc = `/plots/${id}.svg`;
 // Editable params come straight from the contract (editable ⇔ variability was
 // "parameter"). FO/FOE are parameter-free, so this is empty and the panel shows
@@ -31,7 +33,7 @@ const staticSrc = `/plots/${id}.svg`;
 const editable = (c?.params ?? []).filter((p) => p.editable);
 ---
 
-{interactive ? (
+{showInteractive ? (
   <figure
     class="mbe-figure interactive"
     data-plot-id={id}
