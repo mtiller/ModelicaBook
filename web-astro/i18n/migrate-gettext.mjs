@@ -31,6 +31,8 @@ function rstToMd(s) {
   out = out.replace(/:ref:`([^`<]+?)`/g, (_m, l) => `[](#${l.trim()})`);
   // :math:`X`            →  $X$
   out = out.replace(/:math:`([^`]+?)`/g, (_m, x) => `$${x}$`);
+  // `text <url>`_        →  [text](url)   (RST external hyperlink)
+  out = out.replace(/`([^`<]+?)\s*<([^>]+?)>`_/g, (_m, t, u) => `[${t.trim()}](${u.trim()})`);
   // ``literal``          →  `code`
   out = out.replace(/``([^`]+?)``/g, (_m, x) => `\`${x}\``);
   // RST null-escape `\ ` (used to butt markup against text) → nothing
