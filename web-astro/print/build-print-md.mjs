@@ -63,14 +63,27 @@ text = text.replace(
 );
 
 // --- <SimFigure id="X" ... caption="Y" /> → static image (print form) ---
+// Number figures and record id→"Figure N" so cross-references resolve (parity
+// with the web remark-xref plugin). Image path is relative to the web-astro root
+// (pandoc is run from there; resource-path in the defaults covers it).
+const labels = {};
+let figNo = 0;
 text = text.replace(/<SimFigure\s+([^>]*)\/>/g, (_m, attrs) => {
   const id = (attrs.match(/id="([^"]+)"/) || [])[1] || '';
   const caption = (attrs.match(/caption="([^"]*)"/) || [])[1] || id;
-  return `![${caption}](../public/plots/${id}.svg)`;
+  figNo += 1;
+  if (id) labels[id] = `Figure ${figNo}`;
+  return `![Figure ${figNo}. ${caption}](public/plots/${id}.svg){#${id}}`;
 });
 
 // --- heading labels {/* #id */} → Pandoc header attribute {#id} ---
 text = text.replace(/^(#{1,6}\s+.*?)\s*\{\/\*\s*#([\w-]+)\s*\*\/\}\s*$/gm, '$1 {#$2}');
+// record heading id→title for :ref:-style resolution
+for (const m of text.matchAll(/^#{1,6}\s+(.*?)\s*\{#([\w-]+)\}\s*$/gm)) {
+  labels[m[2]] = m[1].trim();
+}
+// resolve empty-text refs [](#id) → [title|"Figure N"](#id)
+text = text.replace(/\[\]\(#([\w-]+)\)/g, (_m, id) => `[${labels[id] || id}](#${id})`);
 
 // --- Starlight aside :::note[Title] ... ::: → Pandoc fenced div ---
 text = text.replace(/^:::(\w+)(?:\[([^\]]*)\])?\s*$/gm, (_m, kind, ttl) =>

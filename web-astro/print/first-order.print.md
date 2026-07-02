@@ -41,7 +41,7 @@ Unlike most programming languages, we don't approach code like this as a
 Modelica compiler to transform this model into something we can simulate,
 producing a solution trajectory like this:
 
-![Simulation of FirstOrder](../public/plots/FO.svg)
+![Figure 1. Simulation of FirstOrder](public/plots/FO.svg){#FO}
 
 This gives you the first hint at one of the compelling aspects of using a
 modeling language to describe mathematical behavior: we didn't need to describe
@@ -65,7 +65,7 @@ attached to.
 
 ## Initialization {#first-order-init}
 Modelica lets us describe initialization as well as behavior. As in the section
-on [](#first-order-doc), we start from the same equation — but now, to make the
+on [Adding Some Documentation](#first-order-doc), we start from the same equation — but now, to make the
 initial value of `x` be _2_, we add an `initial equation` section:
 
 ```modelica
@@ -80,7 +80,7 @@ end FirstOrderInitial;
 
 The resulting trajectory is quite different:
 
-![Specifying (non-zero) Initial Conditions](../public/plots/FOI.svg)
+![Figure 2. Specifying (non-zero) Initial Conditions](public/plots/FOI.svg){#FOI}
 
 Mathematically this model is:
 
@@ -101,10 +101,10 @@ end FirstOrderSteady;
 
 Simulating this system gives:
 
-![Steady-State Initialization](../public/plots/FOS.svg)
+![Figure 3. Steady-State Initialization](public/plots/FOS.svg){#FOS}
 
 ## Experimental Conditions {#experimental-conditions}
-Compared with the very first result in [](#FO), which ran to a fixed stop time
+Compared with the very first result in [Figure 1](#FO), which ran to a fixed stop time
 we chose, a model can also carry its own experimental setup. A model developer
 can associate experimental conditions with a model using an
 `annotation`. The `experiment` annotation stores things like start time, stop
@@ -123,7 +123,7 @@ end FirstOrderExperiment;
 
 The following trajectory was simulated using these conditions:
 
-![Simulation Using Experiment Annotation](../public/plots/FOE.svg)
+![Figure 4. Simulation Using Experiment Annotation](public/plots/FOE.svg){#FOE}
 
 The trajectory terminates at 8 seconds because the simulator used the
 `experiment` annotation to determine how long to run the simulation.
