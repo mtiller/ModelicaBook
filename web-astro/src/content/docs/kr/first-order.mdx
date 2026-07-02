@@ -1,0 +1,110 @@
+---
+title: 간단한 1차 시스템(Simple First Order System)
+description: First-order systems in Modelica (MIC-84 Astro+Starlight slice)
+---
+
+import SimFigure from '../../../components/SimFigure.astro';
+import { Code } from '@astrojs/starlight/components';
+import firstOrder from '../../../../../ModelicaByExample/BasicEquations/SimpleExample/FirstOrder.mo?raw';
+import firstOrderDocumented from '../../../../../ModelicaByExample/BasicEquations/SimpleExample/FirstOrderDocumented.mo?raw';
+import firstOrderInitial from '../../../../../ModelicaByExample/BasicEquations/SimpleExample/FirstOrderInitial.mo?raw';
+import firstOrderSteady from '../../../../../ModelicaByExample/BasicEquations/SimpleExample/FirstOrderSteady.mo?raw';
+import firstOrderExperiment from '../../../../../ModelicaByExample/BasicEquations/SimpleExample/FirstOrderExperiment.mo?raw';
+
+export const body = (s) => s.split('\n').slice(1).join('\n').trimEnd(); // ":lines: 2-"
+
+매우 간단한 미분 방정식을 생각해 보겠습니다.
+
+$$\dot{x} = (1-x)$$
+
+방정식을 살펴보면 변수가 $x$ 하나만 있는 것을 알 수 있습니다. 모델리카로 이 방정식을 표현하면 다음과 같습니다. 
+
+<Code code={body(firstOrder)} lang="text" title="FirstOrder.mo" />
+
+위 코드는 모델 정의의 시작을 나타내는 키워드인 `model` 로 시작합니다. `model` 키워드 뒤에는 모델 이름인 `FirstOrder` 가 오고, 그 다음으로 관심 있는 모든 변수에 대한 선언이 뒤따릅니다
+
+방정식의 변수 $x$ 는 연속적인 실수 값으로 구성된 변수를 의미하므로 모델리카에서는 `Real x;` 라는 자료형으로 변수를 선언 합니다. 여기에 선언된 `Real` 자료형은  사용할 수 있는 자료형(변수 형식) 중 하나일 뿐입니다.
+
+사용할 변수를 전부 선언하고 나서, 모델의 동작을 설명하는 방정식을 구현 할 수 있습니다. 앞서 논의한 방정식의 경우는 `der` 연산자를 사용하여 `x` 의 시간에 대한 도함수(derivative)를 표현하고 있습니다.
+
+```text
+der(x) = (1-x)
+```
+
+is equivalent to:
+
+$$\dot{x} = (1-x)$$
+
+대신, 모델리카 컴파일러가 이 모델을 시뮬레이션할 수 있도록 변환합니다.시뮬레이션에서는 기본적으로 방정식을 풀고 다음과 같이 (대부분 수치적으로) 문제를 해결하여 해의 궤적을 보여줍니다.
+
+<SimFigure id="FO" interactive caption="Simulation of FirstOrder" />
+
+모델링 언어를 사용하여 수학적 동작을 표현하는 것에는 매력적인 면들이 여럿 있는데, 그중의 첫 번째 힌트를 여기에서 살펴 볼 수 있습니다.이 모델에서는 미분 방정식을 푸는 방법을 설명할 필요가 없으며, 전적으로 수학적 동작에만 초점을 맞췄습니다.
+
+## 문서 추가하기(Adding Some Documentation) {/* #first-order-doc */}
+
+앞서서 단순한 수학 방정식을 하나 풀어보았고, 이제 더 읽기 쉬운 모델을 만드는 방법에 대해 다음에서 간단히 확인해 보겠습니다. 
+
+<Code code={body(firstOrderDocumented)} lang="text" title="FirstOrderDocumented.mo" />
+
+예제의 모델에서 제시된 텍스트에 주목해야 합니다. 
+
+대신 특정 위치에 삽입하여 모델 요소에 연관된 추가 문서를 제공할 수 있습니다.
+
+모델에 대하여 문서화 하여 내용을 포함 하려면, 예시에서 표현한 것 처럼 모델 이름 바로 뒤에 작성해야 하는 것 입니다.
+
+나중에 살펴보겠지만 이 설명 문자열은, 여러 가지 방법으로 시뮬레이션 소프트웨어에서 사용될 수 있습니다. 예를 들어 시뮬레이션 소프트웨어에서 모델을 검색할 경우 이것을 이용하여 일치 하는 항목을 찾을 수 있으며,모델의 그래픽 표현과도 연관될 수 있습니다. 
+
+예제를 살펴보면, 모델 뒤가 아닌 다른 위치에서 표현된 텍스트도 있습니다. 이는 변수 또는 방정식의 내용을 뒷받침하기 위해 선언한 후에 작성할 수 있습니다. 
+
+## 초기화(Initialization) {/* #first-order-init */}
+
+이미 살펴본 바와 같이, 모델리카는 미분 방정식으로 모델의 동작을 설명할 수 있지만,   방정식만큼이나  선택하는 초기화 구문 또한 중요합니다.
+
+이러한 이유로 모델리카는 방정식 시스템의 초기화를 정의하기 위한 구문도 제공합니다.예를 들어 모델에서 `x` 의 초기 값이 *2* 가 되도록 하려면 다음과 같이 모델에 `initial equation` 섹션을 추가할 수 있습니다.
+
+<Code code={body(firstOrderInitial)} lang="text" title="FirstOrderInitial.mo" />
+
+이 모델과 이전 모델의 유일한 차이점은 [](#first-order-doc) 섹션에 제시된 방정식에`x = 2` 이라는 `initial equation` 섹션이 추가되었다는 것 뿐 입니다. 이전 예제에서는 시뮬레이션 시작 할 때 `x` 의 초기값을 지정하지 않았습니다. 일반적으로 이것은 `x` 의 초기 값이 `start` 속성(기본적으로 0)의 값이 된다는 것을 의미합니다. 그러나 각 시뮬레이션 소프트웨어는 고유한 특정 알고리즘을 사용하여 방정식의 최종 시스템을 공식으로 만들기 때문에 항상 명확하게 초기 조건을 지정하는 것이 최선이므로, `initial equation` 섹션을 추가하여 `x` 에 대한 초기 조건을 지정합니다.
+
+결과적으로 해석 결과에 따른 해의 궤적은 다음 그림에서 볼 수 있듯이 상당히 다릅니다.
+
+<SimFigure id="FOI" caption="Specifying (non-zero) Initial Conditions" />
+
+`FirstOrderInitial` 모델은 시스템 상태에 대한 명확한 초기 값을 제공하여 시스템을 초기화하는 일반적인 방법을 보여줍니다. 사실 미분 방정식 시스템은 초기 조건이 어떻게 결정되지에 대한 설명이 없는 경우에는 불완전합니다. `FirstOrderInitial` 모델은 수학적으로 다음과 같이 표현됩니다:
+
+$$\dot{x} = (1-x);\; x(0) = 2$$
+
+또한, 보다 정교한 유형의 초기화를 원하는 경우가 많기 때문에 `initial equation` 섹션에서는 상태 변수의 초기 값에 대한 명확한 방정식 이상의 것이 포함될 수 있습니다.
+
+예를 들어, 초기 조건으로 시뮬레이션 시작 시 $x$ 의 도함수가 0이 되도록 초기 조건을 설정할 수 있습니다. 이 경우 약간의 대수학만 이용하면 $x(0)=1$ 이라는 초기 조건을 지정하여 앞서 말한 조건에 만족 하는 것을 알 수 있습니다.  하지만, 보다 복잡한 시스템의 경우에는 이러한 요구 사항을 충족하는 초기 상태 값을 결정하는 것은 사소한 일이 아니므로, 이러한 경우에는 다음과 같이 모델리카는 직접 $\dot{x}(0)=0$ 이라는 제약 조건을 표현할 수 있습니다.
+
+<Code code={body(firstOrderSteady)} lang="text" title="FirstOrderSteady.mo" />
+
+이 시스템을 시뮬레이션하면 다음 과 같은 결과를 도출 합니다.
+
+<SimFigure id="FOS" caption="Steady-State Initialization" />
+
+이 결과에서 알 수 있듯이 $x$ 의 초기 도함수는 시뮬레이션 시작 시 0 이며, 이 시스템에는 초기 값의 균형을 방해하는 시스템에 작용 하는 외부 영향이 없기 때문에 0으로 유지됩니다. 
+
+이러한 예제를 통해 모델리카의 초기화 기능을 짧게 살펴 보았습니다.초기화 주제에 대한 보다 완전한 내용은 이 장의 뒷부분에 있는 초기화 섹션에서 확인 할 수 있습니다.
+
+## 실험 조건(Experimental Conditions) {/* #experimental-conditions */}
+
+모델을 구축할 때 모델 개발자는 특정 실험 조건과 모델을 연결하고자 할 수 있습니다. 이것은 `annotation` 이라는 것을 사용하여 수행할 수 있습니다. annotation에는 모델의 동작과 직접 관련되지 않은 정보가 포함됩니다.
+
+예를 들어 실험 조건은 시뮬레이션 시작 시간, 중지 시간, 해 허용 오차 등과 같은 정보를 설명합니다. 이는 모델 자체의 동작에 대한 정보가 아니라 해당 동작을 시뮬레이션하는 방법에 대한 정보입니다.실험 조건은 `experiment` 주석이라는 특정 주석을 사용하여 모델에 저장 됩니다.
+
+실험과 관련된 annotation에 지정할 수 있는 요소에는 네 가지가 정보가 있으며, 모두 선택 사항입니다. 이러한 모든 것들이 선택 사항입니다. 다음은 실험 주석을 포함하는 1차 주문 시스템의 모델입니다.
+
+<Code code={body(firstOrderExperiment)} lang="text" title="FirstOrderExperiment.mo" />
+
+이러한 실험 조건을 사용하여 다음과 같은 궤적을 시뮬레이션하였습니다.
+
+<SimFigure id="FOE" interactive caption="Simulation Using Experiment Annotation" />
+
+시뮬레이터가 `experiment` 주석을 사용하여 시뮬레이션 실행 시간을 결정했기 때문에 궤적은 8초에서 종료됩니다.
+
+:::note[Annotation Support]
+The `experiment` annotation is widely supported.  But it is important to keep in mind that, in general, a tool is free to ignore any or all annotations.
+:::
