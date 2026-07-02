@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "modelica",
+  "displayName": "Modelica",
+  "scopeName": "source.modelica",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#annotation" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#constants" },
+    { "include": "#numbers" },
+    { "include": "#operators" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.modelica", "match": "//.*$" },
+        { "name": "comment.block.modelica", "begin": "/\\*", "end": "\\*/" }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.modelica",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [{ "name": "constant.character.escape.modelica", "match": "\\\\." }]
+    },
+    "annotation": {
+      "comment": "The annotation keyword is scoped distinctly so the fold plugin (MIC-129) can find and collapse annotation blocks.",
+      "match": "\\b(annotation)\\b",
+      "name": "keyword.other.annotation.modelica"
+    },
+    "keywords": {
+      "name": "keyword.control.modelica",
+      "match": "\\b(model|class|connector|record|block|type|package|function|operator|extends|constrainedby|import|within|end|if|then|else|elseif|elsewhen|for|loop|while|when|equation|algorithm|initial|and|or|not|return|break|partial|final|replaceable|redeclare|inner|outer|encapsulated|public|protected|expandable|enumeration|external|der|connect|assert|terminate|reinit|pure|impure|each)\\b"
+    },
+    "types": {
+      "name": "storage.type.modelica",
+      "match": "\\b(Real|Integer|Boolean|String|parameter|constant|discrete|flow|stream|input|output|nondiscrete)\\b"
+    },
+    "constants": {
+      "name": "constant.language.modelica",
+      "match": "\\b(true|false|time)\\b"
+    },
+    "numbers": {
+      "name": "constant.numeric.modelica",
+      "match": "\\b([0-9]+\\.?[0-9]*([eE][-+]?[0-9]+)?)\\b"
+    },
+    "operators": {
+      "name": "keyword.operator.modelica",
+      "match": "(:=|=|\\+|-|\\*|/|\\^|<|>|<=|>=|==|<>|\\.)"
+    }
+  }
+}

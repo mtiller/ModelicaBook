@@ -35,17 +35,55 @@ for (const f of all) {
 
 // 2) convert every page
 let converted = 0, warned = 0; const warnAgg = {};
+const allIndex = [], allAssets = [];
 for (const f of all) {
   if (isIndexRoot(f)) continue;
   const route = routeOf(f);
   const r = convertRst(fs.readFileSync(f, 'utf8'), { route, labels });
   if (r.warnings.length) { warned++; for (const w of r.warnings) { const k = w.split(':')[0].replace(/'.*/, '').trim(); warnAgg[k] = (warnAgg[k] || 0) + 1; } }
+  allIndex.push(...(r.indexEntries || []));
+  allAssets.push(...(r.assets || []));
   if (!dry) {
     const outPath = path.join(DOCS, route + '.mdx');
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
     fs.writeFileSync(outPath, r.mdx);
   }
   converted++;
+}
+
+// 2b) static image assets → public/figures  (MIC-134)
+let copied = 0;
+if (!dry) {
+  fs.mkdirSync('public/figures', { recursive: true });
+  const seen = new Set();
+  for (const a of allAssets) {
+    if (seen.has(a.dest)) continue; seen.add(a.dest);
+    const srcPath = path.join('../text', a.src);
+    if (fs.existsSync(srcPath)) { fs.copyFileSync(srcPath, path.join('public/figures', a.dest)); copied++; }
+  }
+}
+
+// 2c) generated index page (genindex) from collected .. index:: terms  (MIC-136)
+if (!dry) {
+  const byTerm = new Map();
+  for (const e of allIndex) {
+    const key = e.term;
+    if (!byTerm.has(key)) byTerm.set(key, new Set());
+    byTerm.get(key).add(`/${e.route}/${e.anchor ? '#' + e.anchor : ''}`);
+  }
+  const terms = [...byTerm.keys()].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  const groups = new Map();
+  for (const t of terms) { const L = /[a-z]/i.test(t[0]) ? t[0].toUpperCase() : '#'; if (!groups.has(L)) groups.set(L, []); groups.get(L).push(t); }
+  let body = '---\ntitle: Index\ndescription: Keyword index\n---\n\nAlphabetical index of terms marked in the book.\n\n';
+  for (const [letter, ts] of [...groups.entries()].sort()) {
+    body += `## ${letter}\n\n`;
+    for (const t of ts) {
+      const links = [...byTerm.get(t)].map((u, i) => `[${i + 1}](${u})`).join(', ');
+      body += `- ${t.replace(/[|<>{}]/g, '')} — ${links}\n`;
+    }
+    body += '\n';
+  }
+  fs.writeFileSync(path.join(DOCS, 'genindex.mdx'), body);
 }
 
 // 3) toctree → sidebar
@@ -100,6 +138,7 @@ function buildItems(entries) {
 const idx = all.find(isIndexRoot);
 const topGroups = toctrees(idx).filter((g) => g.entries.length);
 const sidebar = topGroups.map((g) => ({ label: g.heading || 'Book', items: buildItems(g.entries) }));
+sidebar.push({ label: 'Reference', items: [{ label: 'Index', slug: 'genindex' }] }); // MIC-136
 
 if (!dry) fs.writeFileSync('tools/sidebar.gen.json', JSON.stringify(sidebar, null, 2) + '\n');
 

@@ -83,8 +83,44 @@ const out = blocks.map((block) => {
     if (trh) { hit++; return `${h[1]} ${trh.v}${h[3] || ''}`; }
     return block;
   }
-  // skip non-prose: imports/exports, JSX, code fences, block math, directives, images, tables
-  if (/^(import|export|<|```|\$\$|:::|!\[|\|)/.test(b)) return block;
+  // image caption: ![cap](url)  (MIC-137)
+  const im = b.match(/^!\[(.*)\]\((.*)\)$/);
+  if (im) {
+    if (im[1].trim()) { prose++; const t = tf(im[1]); if (t) { hit++; return `![${t.v}](${im[2]})`; } }
+    return block;
+  }
+  // admonition: :::kind[title] … :::  — translate title + inner body paragraphs
+  if (b.startsWith(':::')) {
+    const lines = block.split('\n');
+    const hm = lines[0].match(/^(:::[\w-]+)\[(.+)\]\s*$/);
+    let head = lines[0];
+    if (hm) { prose++; const t = tf(hm[2]); if (t) { hit++; head = `${hm[1]}[${t.v}]`; } }
+    let close = lines.length - 1; while (close > 0 && lines[close].trim() !== ':::') close--;
+    const body = lines.slice(1, close).join('\n').split(/\n\s*\n/).map((p) => {
+      const pt = p.trim();
+      if (!pt || /^(<|```|\$\$|!\[|#|\||-|\*|\d+\.)/.test(pt)) return p;
+      prose++; const t = tf(pt); if (t) { hit++; return t.v; } return p;
+    }).join('\n\n');
+    return [head, body, ...lines.slice(close)].join('\n');
+  }
+  // list block: every non-empty line is a bullet/number item — translate each
+  const ll = block.split('\n');
+  if (ll.some((ln) => /^\s*([-*]|\d+\.)\s+/.test(ln)) && ll.every((ln) => ln.trim() === '' || /^\s*([-*]|\d+\.)\s+/.test(ln) || /^\s{2,}\S/.test(ln))) {
+    return ll.map((ln) => {
+      const lm = ln.match(/^(\s*(?:[-*]|\d+\.)\s+)(.*)$/);
+      if (!lm || !lm[2].trim()) return ln;
+      prose++; const t = tf(lm[2]); if (t) { hit++; return lm[1] + t.v; } return ln;
+    }).join('\n');
+  }
+  // table rows: | a | b | — translate each non-separator cell
+  if (b.startsWith('|')) {
+    return block.split('\n').map((ln) => {
+      if (!/^\s*\|/.test(ln) || /^\s*\|[\s:|-]+\|\s*$/.test(ln)) return ln;
+      return ln.split('|').map((c) => { const ct = c.trim(); if (!ct) return c; const t = tf(ct); if (t) { hit++; prose++; return c.replace(ct, t.v); } return c; }).join('|');
+    }).join('\n');
+  }
+  // skip remaining non-prose: imports/exports, JSX, code fences, block math
+  if (/^(import|export|<|```|\$\$)/.test(b)) return block;
   prose++;
   const trb = tf(b);
   if (trb) { hit++; return trb.fuzzy ? `{/* FUZZY: verify */}\n${trb.v}` : trb.v; }

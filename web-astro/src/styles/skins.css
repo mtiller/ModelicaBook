@@ -105,3 +105,18 @@
 
 .mbe-figure[data-state=simulating] .mbe-figure__static { opacity: .5; }
 .mbe-figure[data-state=error] { border-color: #c0392b; }
+
+/* MIC-129 — foldable Modelica annotations */
+.anno-toggle {
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 0 0.3em;
+  opacity: 0.65;
+  line-height: 1;
+}
+.anno-toggle:hover { opacity: 1; }
+.anno-fold { cursor: pointer; }

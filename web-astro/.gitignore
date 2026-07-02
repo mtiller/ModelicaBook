@@ -10,3 +10,5 @@ dist/
 /src/content/docs/advanced.mdx
 /src/content/docs/todo.mdx
 /tools/sidebar.gen.json
+/src/content/docs/genindex.mdx
+/public/figures/

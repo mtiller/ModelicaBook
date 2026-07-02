@@ -25,12 +25,16 @@ const c = cases[id];
 // been generated yet (asset pipeline — MIC-87), fall back to the static figure
 // instead of failing the build. Interactive lights up automatically once
 // src/cases/<id>.json exists.
-const showInteractive = interactive && !!c;
 const staticSrc = `/plots/${id}.svg`;
 // Editable params come straight from the contract (editable ⇔ variability was
 // "parameter"). FO/FOE are parameter-free, so this is empty and the panel shows
 // read-only sim config — the correct degenerate behavior.
 const editable = (c?.params ?? []).filter((p) => p.editable);
+// Only render the interactive panel when there are actual adjustable parameters
+// (MIC-135). Parameter-free figures fall back to the static plot — no confusing
+// empty "no adjustable parameters" panel or dead Run button. When live sim
+// (MIC-86) lands and params are populated (MIC-135 part 1 data), these light up.
+const showInteractive = interactive && !!c && editable.length > 0;
 ---
 
 {showInteractive ? (
