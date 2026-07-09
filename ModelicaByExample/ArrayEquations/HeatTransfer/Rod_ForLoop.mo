@@ -1,7 +1,7 @@
 within ModelicaByExample.ArrayEquations.HeatTransfer;
 model Rod_ForLoop "Modeling heat conduction in a rod using a for loop"
   type Temperature=Real(unit="K", min=0);
-  type ConvectionCoefficient=Real(unit="W/K", min=0);
+  type ConvectionCoefficient=Real(unit="W/(m2.K)", min=0);
   type ConductionCoefficient=Real(unit="W.m-1.K-1", min=0);
   type Mass=Real(unit="kg", min=0);
   type SpecificHeat=Real(unit="J/(K.kg)", min=0);
