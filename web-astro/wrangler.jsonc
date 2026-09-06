@@ -1,0 +1,16 @@
+{
+  // Preview deploy of the Astro + Starlight book (MIC-84 / MIC-126).
+  // Static-assets-only Worker: no `main` script, Cloudflare just serves ./dist.
+  // Deploys to https://astro.mtiller.workers.dev
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "astro",
+  "compatibility_date": "2026-09-06",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist",
+    // Astro builds directory-style routes (foo/index.html), which is exactly
+    // what auto-trailing-slash resolves.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
