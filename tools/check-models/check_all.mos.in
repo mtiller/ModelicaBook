@@ -1,0 +1,16 @@
+// check_all.mos.in — template; the runner substitutes @MSL_VERSION@.
+//
+// Loads the target Modelica Standard Library and the ModelicaByExample
+// package, then runs checkModel on every class (recursively) and prints a
+// machine-parseable record of the result for each one. parse.py turns this
+// into a pass/fail verdict against known_failures.txt.
+loadModel(Modelica, {"@MSL_VERSION@"}); getErrorString();
+loadFile("/work/ModelicaByExample/package.mo"); getErrorString();
+
+names := getClassNames(ModelicaByExample, recursive=true, qualified=true);
+for name in names loop
+  print("@@@MODEL " + typeNameString(name) + "\n");
+  print(checkModel(name));
+  print("\n@@@ERR " + getErrorString() + "\n");
+end for;
+print("@@@DONE\n");
