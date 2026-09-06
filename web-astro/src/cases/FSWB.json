@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "inertia_a.w",
+      "scale": 1,
+      "legend": "inertia_a.w",
+      "style": "-"
+    },
+    {
+      "name": "inertia_b.w",
+      "scale": 1,
+      "legend": "inertia_b.w",
+      "style": "-"
+    }
+  ],
+  "title": "System schematic of gear system with backlash",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "FSWB",
+  "stopTime": 2,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Subsystems.GearSubsystemModel.Examples.FlatSystemWithBacklash",
+  "params": []
+}

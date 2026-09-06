@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "e",
+      "scale": 1,
+      "legend": "e",
+      "style": "-"
+    }
+  ],
+  "title": "Error of Independently Sampled Signals",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SIS",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.1,
+  "mods": {},
+  "name": "ModelicaByExample.DiscreteBehavior.SynchronousSystems.IndependentSampling",
+  "params": []
+}

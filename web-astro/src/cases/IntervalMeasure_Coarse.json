@@ -1,0 +1,38 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "phi1",
+      "scale": 1,
+      "legend": "phi1",
+      "style": "-"
+    },
+    {
+      "name": "next_phi",
+      "scale": 1,
+      "legend": "next_phi",
+      "style": "-"
+    },
+    {
+      "name": "prev_phi",
+      "scale": 1,
+      "legend": "prev_phi",
+      "style": "-"
+    }
+  ],
+  "title": "Angle vs. Teeth Angles",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "IntervalMeasure_Coarse",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {
+    "teeth": 20
+  },
+  "name": "ModelicaByExample.DiscreteBehavior.SpeedMeasurement.IntervalMeasure",
+  "params": []
+}

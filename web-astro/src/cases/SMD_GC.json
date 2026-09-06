@@ -1,0 +1,42 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "inertia1.phi",
+      "scale": 1,
+      "legend": "Position of inertia 1 [rad]",
+      "style": "-."
+    },
+    {
+      "name": "inertia5.phi",
+      "scale": 1,
+      "legend": "Position of inertia 5 [rad]",
+      "style": "."
+    },
+    {
+      "name": "inertia1.w",
+      "scale": 1,
+      "legend": "Velocity of inertia 1 [rad/s]",
+      "style": "-."
+    },
+    {
+      "name": "inertia5.w",
+      "scale": 1,
+      "legend": "Velocity of inertia 5 [rad/s]",
+      "style": "."
+    }
+  ],
+  "title": "Comparing grounded and ungrounded gears",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SMD_GC",
+  "stopTime": 2,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Components.Rotational.Examples.SMD_GearComparison",
+  "params": []
+}

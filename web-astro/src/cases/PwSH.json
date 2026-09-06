@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "inertia1.w",
+      "scale": 1,
+      "legend": "Actual speed (inertia1.w)",
+      "style": "-"
+    },
+    {
+      "name": "sampleHold.w",
+      "scale": 1,
+      "legend": "Measured speed (sampleHold.w)",
+      "style": "-"
+    }
+  ],
+  "title": "Comparison of actual speed with sampled speed",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "PwSH",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.000001,
+  "mods": {},
+  "name": "ModelicaByExample.Components.SpeedMeasurement.Examples.PlantWithSampleHold",
+  "params": []
+}

@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "yf",
+      "scale": 1,
+      "legend": "yf",
+      "style": "-."
+    },
+    {
+      "name": "yp",
+      "scale": 1,
+      "legend": "yp",
+      "style": "."
+    }
+  ],
+  "title": "Polynomial Evaluation",
+  "legloc": "lower right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "Eval1",
+  "stopTime": 10,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Functions.Polynomials.EvaluationTest1",
+  "params": []
+}

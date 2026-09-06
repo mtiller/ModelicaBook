@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "plant.furnace.Q_flow",
+      "scale": 1,
+      "legend": "plant.furnace.Q_flow",
+      "style": "-"
+    }
+  ],
+  "title": "Furnace heat using PI controller",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "TCB",
+  "stopTime": 50,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Architectures.ThermalControl.Examples.BaseModel",
+  "params": []
+}

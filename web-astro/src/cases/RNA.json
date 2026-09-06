@@ -1,0 +1,36 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "cA",
+      "scale": 1,
+      "legend": "cA",
+      "style": "-"
+    },
+    {
+      "name": "cB",
+      "scale": 1,
+      "legend": "cB",
+      "style": "-"
+    },
+    {
+      "name": "cX",
+      "scale": 50,
+      "legend": "cX*50",
+      "style": "-"
+    }
+  ],
+  "title": "Simulation of Chemical System without Arrays",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "RNA",
+  "stopTime": 10,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.ArrayEquations.ChemicalReactions.Reactions_NoArrays",
+  "params": []
+}

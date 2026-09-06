@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "y",
+      "scale": 1,
+      "legend": "y",
+      "style": "-"
+    }
+  ],
+  "title": "Inversion of a Quadratic Polynomial",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "NLIE",
+  "stopTime": 239,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Functions.Nonlinearities.ImplicitEvaluation",
+  "params": []
+}

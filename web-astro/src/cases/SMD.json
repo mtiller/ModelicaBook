@@ -1,0 +1,42 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "inertia1.phi",
+      "scale": 1,
+      "legend": "Position of inertia 1 [rad]",
+      "style": "-"
+    },
+    {
+      "name": "inertia2.phi",
+      "scale": 1,
+      "legend": "Position of inertia 2 [rad]",
+      "style": "-"
+    },
+    {
+      "name": "inertia1.w",
+      "scale": 1,
+      "legend": "Velocity of inertia 1 [rad/s]",
+      "style": "-"
+    },
+    {
+      "name": "inertia2.w",
+      "scale": 1,
+      "legend": "Velocity of inertia 2 [rad/s]",
+      "style": "-"
+    }
+  ],
+  "title": "Dual mass spring-mass-damper model",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SMD",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Components.Rotational.Examples.SMD",
+  "params": []
+}

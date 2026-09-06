@@ -1,0 +1,125 @@
+---
+// MIC-84 bake-off — the interactive figure as a native Astro island.
+//
+// The whole point vs. mystmd: this is just a component you import in MDX and
+// use (<SimFigure id="FO" interactive />). The structured case contract flows
+// straight in as a prop, the DOM carries `data-*` attributes untouched, and the
+// <script> below is bundled + executed by Astro. No theme fork, no post-build
+// injection, no sanitizer fight. Additional figure/island types = more
+// components, never touching upstream.
+//
+// Structure follows Jony's shared skeleton (data-state root, no disclosure
+// toggle, params from first paint, static <img> always present as the base
+// case, canvas overlay for future live sim). Styling is entirely via the
+// data-skin × data-mode token system in src/styles/skins.css.
+import { cases } from '../cases';
+
+interface Props {
+  id: string;
+  interactive?: boolean;
+  caption?: string;
+}
+const { id, interactive = false, caption = '' } = Astro.props;
+const c = cases[id];
+// Degrade gracefully: if interactive is requested but the case contract hasn't
+// been generated yet (asset pipeline — MIC-87), fall back to the static figure
+// instead of failing the build. Interactive lights up automatically once
+// src/cases/<id>.json exists.
+const staticSrc = `/plots/${id}.svg`;
+// Editable params come straight from the contract (editable ⇔ variability was
+// "parameter"). FO/FOE are parameter-free, so this is empty and the panel shows
+// read-only sim config — the correct degenerate behavior.
+const editable = (c?.params ?? []).filter((p) => p.editable);
+// Only render the interactive panel when there are actual adjustable parameters
+// (MIC-135). Parameter-free figures fall back to the static plot — no confusing
+// empty "no adjustable parameters" panel or dead Run button. When live sim
+// (MIC-86) lands and params are populated (MIC-135 part 1 data), these light up.
+const showInteractive = interactive && !!c && editable.length > 0;
+---
+
+{showInteractive ? (
+  <figure
+    class="mbe-figure interactive"
+    data-plot-id={id}
+    data-state="static"
+    data-case={JSON.stringify(c)}
+  >
+    <header class="mbe-figure__header">
+      <span class="mbe-figure__label">{caption || c.title}</span>
+      <span class="mbe-figure__badge" hidden>live</span>
+    </header>
+
+    <div class="mbe-figure__body">
+      <div class="mbe-figure__params">
+        <div class="mbe-figure__params-title">Model Parameters</div>
+        {editable.length > 0 ? (
+          <div class="mbe-figure__param-list">
+            {editable.map((p) => (
+              <div class="mbe-figure__param">
+                <label class="mbe-param__label" for={`p-${id}-${p.key}`}>{p.label}</label>
+                <input class="mbe-param__input" id={`p-${id}-${p.key}`} value={String(p.default)} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <dl class="mbe-figure__param-list mbe-figure__param-list--readonly">
+            <dt>Model</dt><dd>{c.name.split('.').pop()}</dd>
+            <dt>Stop time</dt><dd>{c.stopTime ?? '—'}</dd>
+            <dt>Tolerance</dt><dd>{c.tol}</dd>
+          </dl>
+        )}
+        <div class="mbe-figure__actions">
+          <span class="mbe-figure__hint">
+            {editable.length > 0 ? 'Edit a value · press Run' : 'No adjustable parameters'}
+          </span>
+          <button class="mbe-figure__run" type="button" disabled title="Live simulation deferred (MIC-86)">
+            Run
+          </button>
+        </div>
+      </div>
+
+      <div class="mbe-figure__plot">
+        <img class="mbe-figure__static" src={staticSrc} alt={caption || id} loading="lazy" />
+        <canvas class="mbe-figure__canvas" hidden></canvas>
+        <div class="mbe-figure__status" aria-live="polite"></div>
+      </div>
+    </div>
+
+    {caption && <figcaption class="mbe-figure__caption">{caption}</figcaption>}
+  </figure>
+) : (
+  <figure class="mbe-figure">
+    <img class="mbe-figure__static" src={staticSrc} alt={caption || id} loading="lazy" />
+    {caption && <figcaption class="mbe-figure__caption">{caption}</figcaption>}
+  </figure>
+)}
+
+<script>
+  // Bundled + run by Astro (no sanitization, no injection step). Reads the
+  // contract from data-case — the attribute survives because Astro doesn't
+  // sanitize component output. This is the exact thing mystmd's theme stripped.
+  interface CaseShape { name: string; stopTime: number | null; tol: number }
+  function hydrate() {
+    document.querySelectorAll<HTMLElement>('.mbe-figure.interactive').forEach((fig) => {
+      if (fig.dataset.hydrated) return;
+      fig.dataset.hydrated = '1';
+      let data: CaseShape | null = null;
+      try {
+        data = JSON.parse(fig.dataset.case || 'null');
+      } catch {
+        return;
+      }
+      const status = fig.querySelector<HTMLElement>('.mbe-figure__status');
+      const run = fig.querySelector<HTMLButtonElement>('.mbe-figure__run');
+      // Contract is in hand client-side. Live re-sim (MIC-86) is deferred, so
+      // Run stays disabled; the static plot is the resilient base case.
+      run?.addEventListener('click', () => {
+        if (!data) return;
+        fig.dataset.state = 'simulating';
+        if (status) status.textContent = `Would simulate ${data.name}…`;
+      });
+    });
+  }
+  hydrate();
+  document.addEventListener('astro:page-load', hydrate);
+</script>

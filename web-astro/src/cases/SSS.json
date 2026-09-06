@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "e",
+      "scale": 1,
+      "legend": "e",
+      "style": "-"
+    }
+  ],
+  "title": "Synchronously Sampled Signals",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SSS",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.1,
+  "mods": {},
+  "name": "ModelicaByExample.DiscreteBehavior.SynchronousSystems.SynchronizedSampling",
+  "params": []
+}

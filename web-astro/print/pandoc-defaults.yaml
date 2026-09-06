@@ -1,0 +1,28 @@
+# Pandoc defaults for the print pipeline (MIC-85).
+# Usage: pandoc --defaults print/pandoc-defaults.yaml -o out.pdf print/*.print.md
+#
+# Math, fenced code, figures (numbered via implicit_figures), header ids, and
+# fenced divs are all native Pandoc. Cross-reference numbering ("Figure 3",
+# "Section 2.1") is added with the pandoc-crossref filter (see README).
+
+from: markdown+tex_math_dollars+fenced_divs+implicit_figures+header_attributes+link_attributes
+metadata:
+  title: Modelica by Example
+  lang: en
+number-sections: true
+toc: true
+toc-depth: 2
+
+# Resolve image/resource paths relative to the web-astro root (run pandoc from
+# there). The print Markdown references public/plots/*.svg.
+resource-path:
+  - .
+
+# PDF engine — Typst is fast and needs no TeX install; swap to xelatex if you
+# prefer the classic path. (Either is a print-side dependency, exactly as the
+# current Sphinx build depends on xelatex.)
+pdf-engine: typst
+
+# Note: figure numbering + :ref: resolution are done in build-print-md.mjs
+# (parity with the web remark-xref plugin), so pandoc-crossref is not used here.
+# Re-add it if you switch to @fig:/@sec: reference syntax.

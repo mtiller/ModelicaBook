@@ -1,0 +1,36 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "plant.inertia1.w",
+      "scale": 1,
+      "legend": "Shaft speed",
+      "style": "-."
+    },
+    {
+      "name": "sensor.w",
+      "scale": 1,
+      "legend": "Measured speed",
+      "style": "."
+    },
+    {
+      "name": "controller.setpoint",
+      "scale": 1,
+      "legend": "Desired speed",
+      "style": "-"
+    }
+  ],
+  "title": "Response using a tuned PID controller",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SV2T",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.000001,
+  "mods": {},
+  "name": "ModelicaByExample.Architectures.SensorComparison.Examples.Variant2_tuned",
+  "params": []
+}

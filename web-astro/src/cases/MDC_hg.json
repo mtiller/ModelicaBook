@@ -1,0 +1,26 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "sensor.y",
+      "scale": 1,
+      "legend": "Temperature (sensor.y)",
+      "style": "-"
+    }
+  ],
+  "title": "Closed loop temperature response with high gain",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "MDC_hg",
+  "stopTime": 0.35,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {
+    "k": 10
+  },
+  "name": "ModelicaByExample.Components.BlockDiagrams.Examples.MultiDomainControl",
+  "params": []
+}

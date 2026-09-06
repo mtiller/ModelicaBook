@@ -1,0 +1,32 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "x",
+      "scale": 1,
+      "legend": "Integrated value",
+      "style": "-"
+    },
+    {
+      "name": "y",
+      "scale": 1,
+      "legend": "Reference value",
+      "style": "-"
+    }
+  ],
+  "title": "Integration without Events (Higher Frequency)",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "WNEf",
+  "stopTime": 7,
+  "ncp": 500,
+  "tol": 0.1,
+  "mods": {
+    "freq": 5
+  },
+  "name": "ModelicaByExample.DiscreteBehavior.Accuracy.WithNoEvents",
+  "params": []
+}

@@ -1,0 +1,36 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "C[Species.A]",
+      "scale": 1,
+      "legend": "C[A]",
+      "style": "-"
+    },
+    {
+      "name": "C[Species.B]",
+      "scale": 1,
+      "legend": "C[B]",
+      "style": "-"
+    },
+    {
+      "name": "C[Species.X]",
+      "scale": 50,
+      "legend": "C[X]*50",
+      "style": "-"
+    }
+  ],
+  "title": "Simulation of Chemical System using Enumerations",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "RE",
+  "stopTime": 10,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.ArrayEquations.ChemicalReactions.Reactions_Enum",
+  "params": []
+}

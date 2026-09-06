@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "inertia1.w",
+      "scale": 1,
+      "legend": "Actual speed (inertia.w)",
+      "style": "-"
+    },
+    {
+      "name": "pulseCounter.w",
+      "scale": 1,
+      "legend": "Measured speed (pulseCounter.w)",
+      "style": "-"
+    }
+  ],
+  "title": "Comparison of actual speed with approximation by pulse counting",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "PwPC",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Components.SpeedMeasurement.Examples.PlantWithPulseCounter",
+  "params": []
+}

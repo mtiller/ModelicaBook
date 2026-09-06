@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "x[1]",
+      "scale": "x[2]",
+      "legend": "x[1]",
+      "style": "-"
+    }
+  ],
+  "title": "Rotational Example in LTI Form",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "Ro_LTI",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.ArrayEquations.StateSpace.Examples.RotationalSMD",
+  "params": []
+}

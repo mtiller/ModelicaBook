@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "h",
+      "scale": 1,
+      "legend": "Height",
+      "style": "-"
+    }
+  ],
+  "title": "Consequences of Numerical Event Detection",
+  "legloc": "upper right",
+  "ylabel": "Height [m]",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "BB2",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.DiscreteBehavior.BouncingBall.BouncingBall",
+  "params": []
+}

@@ -1,0 +1,36 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "inertia1.phi",
+      "scale": 1,
+      "legend": "Inertia position (inertia1.phi)",
+      "style": "-"
+    },
+    {
+      "name": "intervalMeasure.next_phi",
+      "scale": 1,
+      "legend": "Next forward angle",
+      "style": "-"
+    },
+    {
+      "name": "intervalMeasure.prev_phi",
+      "scale": 1,
+      "legend": "Next backward angle",
+      "style": "-"
+    }
+  ],
+  "title": "Comparison of actual speed with approximation by interval measurement",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "PwIM",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.000001,
+  "mods": {},
+  "name": "ModelicaByExample.Components.SpeedMeasurement.Examples.PlantWithIntervalMeasure",
+  "params": []
+}

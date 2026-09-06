@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "inertia1.w",
+      "scale": 1,
+      "legend": "Actual speed",
+      "style": "-"
+    }
+  ],
+  "title": "Baseline plant response",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "PBase",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.000001,
+  "mods": {},
+  "name": "ModelicaByExample.Components.SpeedMeasurement.Examples.Plant",
+  "params": []
+}

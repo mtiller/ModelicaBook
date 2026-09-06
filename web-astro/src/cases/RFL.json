@@ -1,0 +1,78 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "T[1]",
+      "scale": 1,
+      "legend": "T[1]",
+      "style": "-"
+    },
+    {
+      "name": "T[2]",
+      "scale": 1,
+      "legend": "T[2]",
+      "style": "-"
+    },
+    {
+      "name": "T[3]",
+      "scale": 1,
+      "legend": "T[3]",
+      "style": "-"
+    },
+    {
+      "name": "T[4]",
+      "scale": 1,
+      "legend": "T[4]",
+      "style": "-"
+    },
+    {
+      "name": "T[5]",
+      "scale": 1,
+      "legend": "T[5]",
+      "style": "-"
+    },
+    {
+      "name": "T[6]",
+      "scale": 1,
+      "legend": "T[6]",
+      "style": "-"
+    },
+    {
+      "name": "T[7]",
+      "scale": 1,
+      "legend": "T[7]",
+      "style": "-"
+    },
+    {
+      "name": "T[8]",
+      "scale": 1,
+      "legend": "T[8]",
+      "style": "-"
+    },
+    {
+      "name": "T[9]",
+      "scale": 1,
+      "legend": "T[9]",
+      "style": "-"
+    },
+    {
+      "name": "T[10]",
+      "scale": 1,
+      "legend": "T[10]",
+      "style": "-"
+    }
+  ],
+  "title": "One Dimensional Heat Transfer Response",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "RFL",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.ArrayEquations.HeatTransfer.Rod_ForLoop",
+  "params": []
+}
