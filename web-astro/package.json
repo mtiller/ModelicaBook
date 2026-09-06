@@ -5,7 +5,8 @@
   "description": "MyST/Astro bake-off — Astro + Starlight rendering of Modelica by Example (MIC-84)",
   "type": "module",
   "scripts": {
-    "convert": "node tools/convert-book.mjs && node tools/build-cases.mjs && node tools/build-locales.mjs",
+    "convert": "node tools/convert-book.mjs && node tools/build-locales.mjs",
+    "refresh:cases": "node tools/build-cases.mjs",
     "predev": "npm run convert",
     "dev": "astro dev",
     "prebuild": "npm run convert",
