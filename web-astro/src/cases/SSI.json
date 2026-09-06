@@ -1,0 +1,36 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "x",
+      "scale": 1,
+      "legend": "x",
+      "style": "-."
+    },
+    {
+      "name": "y",
+      "scale": 1,
+      "legend": "y",
+      "style": "."
+    },
+    {
+      "name": "z",
+      "scale": 1,
+      "legend": "z",
+      "style": "-"
+    }
+  ],
+  "title": "Synchronized Sampling and Subsampling",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SSI",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.DiscreteBehavior.SynchronousSystems.SubsamplingWithIntegers",
+  "params": []
+}

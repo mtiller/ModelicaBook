@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "h",
+      "scale": 1,
+      "legend": "Height",
+      "style": "-"
+    }
+  ],
+  "title": "Simple Bouncing Ball Model",
+  "legloc": "upper right",
+  "ylabel": "Height [m]",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "BB1",
+  "stopTime": 3,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.DiscreteBehavior.BouncingBall.BouncingBall",
+  "params": []
+}

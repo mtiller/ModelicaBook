@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "gearWithBacklash.inertia_a.w",
+      "scale": 1,
+      "legend": "gearWithBacklash.inertia_a.w",
+      "style": "-"
+    },
+    {
+      "name": "gearWithBacklash.inertia_b.w",
+      "scale": 1,
+      "legend": "gearWithBacklash.inertia_b.w",
+      "style": "-"
+    }
+  ],
+  "title": "Response of hierarchical gear system with backlash",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SWB",
+  "stopTime": 2,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Subsystems.GearSubsystemModel.Examples.BacklashExample",
+  "params": []
+}

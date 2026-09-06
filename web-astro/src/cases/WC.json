@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "x",
+      "scale": 1,
+      "legend": "x",
+      "style": "-"
+    },
+    {
+      "name": "$cpuTime",
+      "scale": 1,
+      "legend": "CPU Time",
+      "style": "-"
+    }
+  ],
+  "title": "Chattering",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": -1,
+  "res": "WC",
+  "stopTime": 2,
+  "ncp": 500,
+  "tol": 0.1,
+  "mods": {},
+  "name": "ModelicaByExample.DiscreteBehavior.Chatter.WithChatter",
+  "params": []
+}

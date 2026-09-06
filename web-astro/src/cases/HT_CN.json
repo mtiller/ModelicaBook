@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "cap1.node.T",
+      "scale": 1,
+      "legend": "cap1.node.T",
+      "style": "-"
+    },
+    {
+      "name": "cap2.node.T",
+      "scale": 1,
+      "legend": "cap2.node.T",
+      "style": "-"
+    }
+  ],
+  "title": "Thermal warmup of cap1 and cap2",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "HT_CN",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Components.HeatTransfer.Examples.ComplexNetwork",
+  "params": []
+}

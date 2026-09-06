@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "T",
+      "scale": 1,
+      "legend": "Temperature",
+      "style": "-"
+    },
+    {
+      "name": "T_inf",
+      "scale": 1,
+      "legend": "Ambient Temperature",
+      "style": "-"
+    }
+  ],
+  "title": "Equilibrium Initialization",
+  "legloc": "lower left",
+  "ylabel": "Temperature [K]",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "NCSTD",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.DiscreteBehavior.CoolingRevisited.NewtonCoolingSteadyThenDynamic",
+  "params": []
+}

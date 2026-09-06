@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "Vs",
+      "scale": 1,
+      "legend": "Source Voltage, Vs [V]",
+      "style": "-"
+    },
+    {
+      "name": "V",
+      "scale": 1,
+      "legend": "Response Voltage, V [V]",
+      "style": "-"
+    }
+  ],
+  "title": "Switched RLC Voltage Response",
+  "legloc": "lower right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SRLC",
+  "stopTime": 2,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.DiscreteBehavior.SwitchedRLC.SwitchedRLC",
+  "params": []
+}

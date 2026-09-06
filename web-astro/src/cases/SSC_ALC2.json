@@ -1,0 +1,26 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "load.v",
+      "scale": 1,
+      "legend": "load.v",
+      "style": "-"
+    }
+  ],
+  "title": "Effect of very large capacitance",
+  "legloc": "lower right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SSC_ALC2",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.000001,
+  "mods": {
+    "power_supply.C": 100
+  },
+  "name": "ModelicaByExample.Subsystems.PowerSupply.Examples.AdditionalLoad",
+  "params": []
+}

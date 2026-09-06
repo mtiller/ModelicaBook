@@ -1,0 +1,36 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "inertia1.w",
+      "scale": 1,
+      "legend": "Shaft speed",
+      "style": "-."
+    },
+    {
+      "name": "speedSensor.w",
+      "scale": 1,
+      "legend": "Measured speed",
+      "style": "."
+    },
+    {
+      "name": "feedback.u1",
+      "scale": 1,
+      "legend": "Desired speed",
+      "style": "-"
+    }
+  ],
+  "title": "Response using ideal sensor",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "AFS",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Architectures.SensorComparison.Examples.FlatSystem",
+  "params": []
+}

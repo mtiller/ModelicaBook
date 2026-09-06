@@ -1,0 +1,36 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "C[1]",
+      "scale": 1,
+      "legend": "C[1]",
+      "style": "-"
+    },
+    {
+      "name": "C[2]",
+      "scale": 1,
+      "legend": "C[2]",
+      "style": "-"
+    },
+    {
+      "name": "C[3]",
+      "scale": 1,
+      "legend": "C[3]",
+      "style": "-"
+    }
+  ],
+  "title": "Simulation of Chemical System with Arrays",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "RA",
+  "stopTime": 10,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.ArrayEquations.ChemicalReactions.Reactions_Array",
+  "params": []
+}

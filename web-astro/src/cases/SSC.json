@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "load.v",
+      "scale": 1,
+      "legend": "load.v",
+      "style": "-"
+    }
+  ],
+  "title": "System with power supply component",
+  "legloc": "lower right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "SSC",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.000001,
+  "mods": {},
+  "name": "ModelicaByExample.Subsystems.PowerSupply.Examples.SubsystemCircuit",
+  "params": []
+}

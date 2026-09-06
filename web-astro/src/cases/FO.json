@@ -1,19 +1,24 @@
 {
   "type": "simple",
-  "res": "FO",
-  "name": "ModelicaByExample.BasicEquations.SimpleExample.FirstOrder",
-  "title": "Simulation of FirstOrder",
-  "stopTime": 10,
-  "tol": 0.001,
-  "ncp": 500,
-  "mods": {},
-  "params": [],
-  "ylabel": "",
-  "legloc": "upper right",
-  "ncols": 1,
-  "ymin": null,
-  "ymax": null,
   "vars": [
-    { "name": "x", "scale": 1.0, "legend": "x", "style": "-" }
-  ]
+    {
+      "name": "x",
+      "scale": 1,
+      "legend": "x",
+      "style": "-"
+    }
+  ],
+  "title": "Simulation of FirstOrder",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "FO",
+  "stopTime": 10,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.BasicEquations.SimpleExample.FirstOrder",
+  "params": []
 }

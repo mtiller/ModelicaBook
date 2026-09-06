@@ -1,0 +1,66 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "A.rabbits.population",
+      "scale": 1,
+      "legend": "Rabbits in A",
+      "style": "-"
+    },
+    {
+      "name": "B.rabbits.population",
+      "scale": 1,
+      "legend": "Rabbits in B",
+      "style": "-"
+    },
+    {
+      "name": "C.rabbits.population",
+      "scale": 1,
+      "legend": "Rabbits in C",
+      "style": "-"
+    },
+    {
+      "name": "D.rabbits.population",
+      "scale": 1,
+      "legend": "Rabbits in D",
+      "style": "-"
+    },
+    {
+      "name": "A.foxes.population",
+      "scale": 1,
+      "legend": "Foxes in A",
+      "style": "-"
+    },
+    {
+      "name": "B.foxes.population",
+      "scale": 1,
+      "legend": "Foxes in B",
+      "style": "-"
+    },
+    {
+      "name": "C.foxes.population",
+      "scale": 1,
+      "legend": "Foxes in C",
+      "style": "-"
+    },
+    {
+      "name": "D.foxes.population",
+      "scale": 1,
+      "legend": "Foxes in D",
+      "style": "-"
+    }
+  ],
+  "title": "Comparison of regional populations",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 2,
+  "ymax": 60,
+  "ymin": null,
+  "res": "Uncon",
+  "stopTime": 160,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Subsystems.LotkaVolterra.Examples.UnconnectedPopulations",
+  "params": []
+}

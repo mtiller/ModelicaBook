@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "cap.node.T",
+      "scale": 1,
+      "legend": "cap.node.T",
+      "style": "-"
+    }
+  ],
+  "title": "Thermal capacitance with no heat transfer",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "HTA",
+  "stopTime": 1,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Components.HeatTransfer.Examples.Adiabatic",
+  "params": []
+}

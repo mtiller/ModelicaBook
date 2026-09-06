@@ -1,0 +1,36 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "sensor.room.T",
+      "scale": 1,
+      "legend": "Room Temperature (sensor.room.T)",
+      "style": "-."
+    },
+    {
+      "name": "controller.bus.temperature",
+      "scale": 1,
+      "legend": "Measured Temperature (controller.bus.temp)",
+      "style": "."
+    },
+    {
+      "name": "controller.feedback.u2",
+      "scale": 1,
+      "legend": "Desired Temperature",
+      "style": "-"
+    }
+  ],
+  "title": "Response using PI controller in expandable architecture",
+  "legloc": "lower right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "TCE",
+  "stopTime": 50,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Architectures.ThermalControl.Examples.ExpandableModel",
+  "params": []
+}

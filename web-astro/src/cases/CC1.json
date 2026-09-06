@@ -1,0 +1,24 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "Q",
+      "scale": 1,
+      "legend": "Q",
+      "style": "-"
+    }
+  ],
+  "title": "Heater Output",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "CC1",
+  "stopTime": 0.5,
+  "ncp": 500,
+  "tol": 0.1,
+  "mods": {},
+  "name": "ModelicaByExample.DiscreteBehavior.Hysteresis.ChatteringControl",
+  "params": []
+}

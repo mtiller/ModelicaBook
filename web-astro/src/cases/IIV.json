@@ -1,0 +1,30 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "y",
+      "scale": 1,
+      "legend": "y - interpolated data",
+      "style": "-"
+    },
+    {
+      "name": "z",
+      "scale": 1,
+      "legend": "z - integral of y",
+      "style": "-"
+    }
+  ],
+  "title": "Integration of Interpolated Function",
+  "legloc": "upper left",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "IIV",
+  "stopTime": 7,
+  "ncp": 500,
+  "tol": 0.001,
+  "mods": {},
+  "name": "ModelicaByExample.Functions.Interpolation.IntegrateInterpolatedVector",
+  "params": []
+}
