@@ -1,6 +1,8 @@
 # Worktrees
 
-Each change should be performed in a separate worktree.
+Each change should be performed in a separate worktree.  Use
+the `.worktrees` directory here to hold worktrees.  Name
+the worktree based on what it does.
 
 # Main branch
 
