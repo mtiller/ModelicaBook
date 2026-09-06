@@ -17,7 +17,12 @@ typedef struct {
 
 void *
 createVectorTable(double *data, size_t np) {
-  VectorTable *table = (VectorTable*) malloc(sizeof(VectorTable));
+  VectorTable *table;
+  if (np > SIZE_MAX / sizeof(double)) {
+    ModelicaError("Requested table size is too large\n");
+    return NULL;
+  }
+  table = (VectorTable*) malloc(sizeof(VectorTable));
   if (table) {
     /* Allocate memory for data */
     table->x = (double*) malloc(sizeof(double)*np);
