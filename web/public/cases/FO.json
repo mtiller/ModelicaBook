@@ -1,0 +1,19 @@
+{
+  "type": "simple",
+  "res": "FO",
+  "name": "ModelicaByExample.BasicEquations.SimpleExample.FirstOrder",
+  "title": "Simulation of FirstOrder",
+  "stopTime": 10,
+  "tol": 0.001,
+  "ncp": 500,
+  "mods": {},
+  "params": [],
+  "ylabel": "",
+  "legloc": "upper right",
+  "ncols": 1,
+  "ymin": null,
+  "ymax": null,
+  "vars": [
+    { "name": "x", "scale": 1.0, "legend": "x", "style": "-" }
+  ]
+}

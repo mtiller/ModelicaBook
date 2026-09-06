@@ -1,0 +1,19 @@
+{
+  "type": "simple",
+  "res": "FOE",
+  "name": "ModelicaByExample.BasicEquations.SimpleExample.FirstOrderExperiment",
+  "title": "Simulation Using Experiment Annotation",
+  "stopTime": null,
+  "tol": 0.001,
+  "ncp": 500,
+  "mods": {},
+  "params": [],
+  "ylabel": "",
+  "legloc": "upper right",
+  "ncols": 1,
+  "ymin": null,
+  "ymax": null,
+  "vars": [
+    { "name": "x", "scale": 1.0, "legend": "x", "style": "-" }
+  ]
+}
