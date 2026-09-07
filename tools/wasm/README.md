@@ -9,10 +9,21 @@ these yet.** They are built, and kept building, ahead of the client work.
 make wasm          # from the repo root; implies `make specs`
 ```
 
-This reproduces only the `build-wasm-*` stages in `text/dvc.yaml`. The native
-simulation sweep (`make results`) is untouched, and so is everything downstream
-of it — plots, Sphinx, the ebooks, `exes.tar.gz`, `api/`. Each artifact is its
-own DVC output, so unchanged cases come from the cache.
+The wasm stages are a **separate DVC pipeline**, at `text/dvc-wasm/dvc.yaml`,
+not stages inside `text/dvc.yaml`. That separation is load-bearing: `make
+results` runs `dvc repro dvc.yaml`, which reproduces *every* stage in that file,
+so wasm stages living there made the ordinary book build try to export wasm FMUs
+with whatever `omc` it had. In the book-builder image that fails with
+`Invalid type of flag simCodeTarget ... but got the string "wasm-jit"`. Kept
+apart, neither pipeline can reach the other.
+
+So the native simulation sweep is untouched, and so is everything downstream of
+it — plots, Sphinx, the ebooks, `exes.tar.gz`, `api/`. Each artifact is its own
+DVC output, so unchanged cases come from the cache.
+
+(Note that a bare `dvc repro`, with no target, still reproduces *all* pipeline
+files in the repo, wasm included. Both Makefile targets name their pipeline
+explicitly for that reason.)
 
 ## What gets built
 

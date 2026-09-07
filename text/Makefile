@@ -80,15 +80,12 @@ results:
 
 # Build the browser-distributable WASM-backed FMUs for every generated case:
 # both export forms plus the ahead-of-time jco transpile of the component one.
-# Reproduces only the build-wasm-* stages, so the native simulation sweep is
-# untouched. The guard matters: `dvc repro` with no stage names would reproduce
-# the whole pipeline, which is emphatically not what this target is for.
+# These are a separate pipeline from dvc.yaml, in their own directory, so the
+# two cannot reach each other: `make results` will not try to export wasm with
+# an omc that has no wasm-jit backend, and this will not re-run the native
+# simulation sweep.
 wasm_files: specs
-	@stages=`sed -n 's/^  \(build-wasm-[^:]*\):/\1/p' dvc.yaml`; \
-	 if [ -z "$$stages" ]; then \
-	   echo "no build-wasm-* stages in dvc.yaml -- did 'make specs' run?" >&2; exit 1; \
-	 fi; \
-	 dvc repro $$stages
+	dvc repro dvc-wasm/dvc.yaml
 	$(PYTHON) ../tools/wasm/pack.py
 	$(PYTHON) ../tools/wasm/make-index.py
 #	(cd results; make results_files exes.tar.gz tidy)

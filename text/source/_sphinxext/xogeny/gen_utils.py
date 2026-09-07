@@ -257,6 +257,7 @@ def _generate_makefile():
     genres = env.get_template("gen_result.mos")
     genallres = env.get_template("genall_results.mos")
     genallstages = env.get_template("genall_stages.yaml")
+    genwasmstages = env.get_template("genwasm_stages.yaml")
     genmk = env.get_template("gen.makefile")
     genwasm = env.get_template("gen_wasm.mos")
 
@@ -267,6 +268,15 @@ def _generate_makefile():
     # Generate ./text/results/dvc.yaml
     with open(os.path.join(path, "text", "dvc.yaml"), "w+") as ofp:
         ofp.write(genallstages.render({"results": results}))
+
+    # The wasm stages are a separate pipeline, in their own directory, so that
+    # `make results` (dvc repro dvc.yaml) cannot reach them: they need an omc
+    # with the wasm-jit backend and the ordinary book toolchain has none.
+    wasmdir = os.path.join(path, "text", "dvc-wasm")
+    if not os.path.isdir(wasmdir):
+        os.makedirs(wasmdir)
+    with open(os.path.join(wasmdir, "dvc.yaml"), "w+") as ofp:
+        ofp.write(genwasmstages.render({"results": results}))
 
     contexts = []
     for res in results:
