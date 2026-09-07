@@ -1,5 +1,8 @@
 EXES := {%- for res in results %} {{res}} {% endfor %}
-all: results_files js_files json_files wasm_files
+# wasm_files is deliberately not in `all`: it needs an omc with the wasm-jit
+# backend and a node with the jco bundle, which the ordinary book toolchain
+# does not have. Build it explicitly, or through `make wasm` at the root.
+all: results_files js_files json_files
 
 results_files: allres {%- for res in results %} {{res}}_res.mat {% endfor %}
 
