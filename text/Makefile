@@ -43,7 +43,7 @@ LATEXMKOPTS     = "-xelatex"
 SET_BOOK_LANG_CN = BOOK_LANG=zh_CN
 SET_BOOK_LANG_KR = BOOK_LANG=kr
 
-.PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results uploadCIdeps
+.PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results wasm_files uploadCIdeps
 
 # For CI we don't want to rebuild the whole dependencies each time.
 # To enable the CI build do, e.g., `make CI_BUILD=1 pdf`
@@ -77,6 +77,19 @@ specs_cn: specs.py
 # This target builds all the simulation results
 results:
 	dvc repro dvc.yaml
+
+# Build the browser-distributable WASM-backed FMUs for every generated case:
+# both export forms plus the ahead-of-time jco transpile of the component one.
+# Reproduces only the build-wasm-* stages, so the native simulation sweep is
+# untouched. The guard matters: `dvc repro` with no stage names would reproduce
+# the whole pipeline, which is emphatically not what this target is for.
+wasm_files: specs
+	@stages=`sed -n 's/^  \(build-wasm-[^:]*\):/\1/p' dvc.yaml`; \
+	 if [ -z "$$stages" ]; then \
+	   echo "no build-wasm-* stages in dvc.yaml -- did 'make specs' run?" >&2; exit 1; \
+	 fi; \
+	 dvc repro $$stages
+	$(PYTHON) ../tools/wasm/make-index.py
 #	(cd results; make results_files exes.tar.gz tidy)
 
 # This builds all the JS and JSON files.  Use this if your development

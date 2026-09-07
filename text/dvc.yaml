@@ -1372,6 +1372,1868 @@ stages:
       - TCE_Hy_init.xml
       - TCE_Hy_res.mat
       - TCE_Hy
+  build-wasm-case-FO:
+    wdir: results
+    cmd:
+      - omc FO-wasm.mos
+    deps:
+      - FO-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/FO.fmu
+      - wasm/component/FO.fmu
+  build-wasm-case-FOI:
+    wdir: results
+    cmd:
+      - omc FOI-wasm.mos
+    deps:
+      - FOI-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/FOI.fmu
+      - wasm/component/FOI.fmu
+  build-wasm-case-FOE:
+    wdir: results
+    cmd:
+      - omc FOE-wasm.mos
+    deps:
+      - FOE-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/FOE.fmu
+      - wasm/component/FOE.fmu
+  build-wasm-case-FOS:
+    wdir: results
+    cmd:
+      - omc FOS-wasm.mos
+    deps:
+      - FOS-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/FOS.fmu
+      - wasm/component/FOS.fmu
+  build-wasm-case-NCWD:
+    wdir: results
+    cmd:
+      - omc NCWD-wasm.mos
+    deps:
+      - NCWD-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/NCWD.fmu
+      - wasm/component/NCWD.fmu
+  build-wasm-case-RLC1:
+    wdir: results
+    cmd:
+      - omc RLC1-wasm.mos
+    deps:
+      - RLC1-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/RLC1.fmu
+      - wasm/component/RLC1.fmu
+  build-wasm-case-SOSIP:
+    wdir: results
+    cmd:
+      - omc SOSIP-wasm.mos
+    deps:
+      - SOSIP-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SOSIP.fmu
+      - wasm/component/SOSIP.fmu
+  build-wasm-case-SOSIP1:
+    wdir: results
+    cmd:
+      - omc SOSIP1-wasm.mos
+    deps:
+      - SOSIP1-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SOSIP1.fmu
+      - wasm/component/SOSIP1.fmu
+  build-wasm-case-LVCM:
+    wdir: results
+    cmd:
+      - omc LVCM-wasm.mos
+    deps:
+      - LVCM-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/LVCM.fmu
+      - wasm/component/LVCM.fmu
+  build-wasm-case-LVQM:
+    wdir: results
+    cmd:
+      - omc LVQM-wasm.mos
+    deps:
+      - LVQM-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/LVQM.fmu
+      - wasm/component/LVQM.fmu
+  build-wasm-case-LVQMUS:
+    wdir: results
+    cmd:
+      - omc LVQMUS-wasm.mos
+    deps:
+      - LVQMUS-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/LVQMUS.fmu
+      - wasm/component/LVQMUS.fmu
+  build-wasm-case-NCD:
+    wdir: results
+    cmd:
+      - omc NCD-wasm.mos
+    deps:
+      - NCD-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/NCD.fmu
+      - wasm/component/NCD.fmu
+  build-wasm-case-NCSTD:
+    wdir: results
+    cmd:
+      - omc NCSTD-wasm.mos
+    deps:
+      - NCSTD-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/NCSTD.fmu
+      - wasm/component/NCSTD.fmu
+  build-wasm-case-BB1:
+    wdir: results
+    cmd:
+      - omc BB1-wasm.mos
+    deps:
+      - BB1-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/BB1.fmu
+      - wasm/component/BB1.fmu
+  build-wasm-case-BB2:
+    wdir: results
+    cmd:
+      - omc BB2-wasm.mos
+    deps:
+      - BB2-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/BB2.fmu
+      - wasm/component/BB2.fmu
+  build-wasm-case-Decay1:
+    wdir: results
+    cmd:
+      - omc Decay1-wasm.mos
+    deps:
+      - Decay1-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/Decay1.fmu
+      - wasm/component/Decay1.fmu
+  build-wasm-case-Decay2:
+    wdir: results
+    cmd:
+      - omc Decay2-wasm.mos
+    deps:
+      - Decay2-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/Decay2.fmu
+      - wasm/component/Decay2.fmu
+  build-wasm-case-Decay3:
+    wdir: results
+    cmd:
+      - omc Decay3-wasm.mos
+    deps:
+      - Decay3-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/Decay3.fmu
+      - wasm/component/Decay3.fmu
+  build-wasm-case-WC:
+    wdir: results
+    cmd:
+      - omc WC-wasm.mos
+    deps:
+      - WC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/WC.fmu
+      - wasm/component/WC.fmu
+  build-wasm-case-WOC:
+    wdir: results
+    cmd:
+      - omc WOC-wasm.mos
+    deps:
+      - WOC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/WOC.fmu
+      - wasm/component/WOC.fmu
+  build-wasm-case-WE:
+    wdir: results
+    cmd:
+      - omc WE-wasm.mos
+    deps:
+      - WE-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/WE.fmu
+      - wasm/component/WE.fmu
+  build-wasm-case-WEf:
+    wdir: results
+    cmd:
+      - omc WEf-wasm.mos
+    deps:
+      - WEf-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/WEf.fmu
+      - wasm/component/WEf.fmu
+  build-wasm-case-WNE:
+    wdir: results
+    cmd:
+      - omc WNE-wasm.mos
+    deps:
+      - WNE-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/WNE.fmu
+      - wasm/component/WNE.fmu
+  build-wasm-case-WNEf:
+    wdir: results
+    cmd:
+      - omc WNEf-wasm.mos
+    deps:
+      - WNEf-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/WNEf.fmu
+      - wasm/component/WNEf.fmu
+  build-wasm-case-SRLC:
+    wdir: results
+    cmd:
+      - omc SRLC-wasm.mos
+    deps:
+      - SRLC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SRLC.fmu
+      - wasm/component/SRLC.fmu
+  build-wasm-case-SampleAndHold:
+    wdir: results
+    cmd:
+      - omc SampleAndHold-wasm.mos
+    deps:
+      - SampleAndHold-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SampleAndHold.fmu
+      - wasm/component/SampleAndHold.fmu
+  build-wasm-case-IntervalMeasure:
+    wdir: results
+    cmd:
+      - omc IntervalMeasure-wasm.mos
+    deps:
+      - IntervalMeasure-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/IntervalMeasure.fmu
+      - wasm/component/IntervalMeasure.fmu
+  build-wasm-case-IntervalMeasure_Coarse:
+    wdir: results
+    cmd:
+      - omc IntervalMeasure_Coarse-wasm.mos
+    deps:
+      - IntervalMeasure_Coarse-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/IntervalMeasure_Coarse.fmu
+      - wasm/component/IntervalMeasure_Coarse.fmu
+  build-wasm-case-SpeedCounter:
+    wdir: results
+    cmd:
+      - omc SpeedCounter-wasm.mos
+    deps:
+      - SpeedCounter-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SpeedCounter.fmu
+      - wasm/component/SpeedCounter.fmu
+  build-wasm-case-CC1:
+    wdir: results
+    cmd:
+      - omc CC1-wasm.mos
+    deps:
+      - CC1-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/CC1.fmu
+      - wasm/component/CC1.fmu
+  build-wasm-case-Hyst:
+    wdir: results
+    cmd:
+      - omc Hyst-wasm.mos
+    deps:
+      - Hyst-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/Hyst.fmu
+      - wasm/component/Hyst.fmu
+  build-wasm-case-HystA:
+    wdir: results
+    cmd:
+      - omc HystA-wasm.mos
+    deps:
+      - HystA-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/HystA.fmu
+      - wasm/component/HystA.fmu
+  build-wasm-case-SIS:
+    wdir: results
+    cmd:
+      - omc SIS-wasm.mos
+    deps:
+      - SIS-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SIS.fmu
+      - wasm/component/SIS.fmu
+  build-wasm-case-SSS:
+    wdir: results
+    cmd:
+      - omc SSS-wasm.mos
+    deps:
+      - SSS-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SSS.fmu
+      - wasm/component/SSS.fmu
+  build-wasm-case-SSI:
+    wdir: results
+    cmd:
+      - omc SSI-wasm.mos
+    deps:
+      - SSI-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SSI.fmu
+      - wasm/component/SSI.fmu
+  build-wasm-case-FO_LTI:
+    wdir: results
+    cmd:
+      - omc FO_LTI-wasm.mos
+    deps:
+      - FO_LTI-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/FO_LTI.fmu
+      - wasm/component/FO_LTI.fmu
+  build-wasm-case-NC_LTI:
+    wdir: results
+    cmd:
+      - omc NC_LTI-wasm.mos
+    deps:
+      - NC_LTI-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/NC_LTI.fmu
+      - wasm/component/NC_LTI.fmu
+  build-wasm-case-RLC_LTI:
+    wdir: results
+    cmd:
+      - omc RLC_LTI-wasm.mos
+    deps:
+      - RLC_LTI-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/RLC_LTI.fmu
+      - wasm/component/RLC_LTI.fmu
+  build-wasm-case-Ro_LTI:
+    wdir: results
+    cmd:
+      - omc Ro_LTI-wasm.mos
+    deps:
+      - Ro_LTI-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/Ro_LTI.fmu
+      - wasm/component/Ro_LTI.fmu
+  build-wasm-case-RoC_LTI:
+    wdir: results
+    cmd:
+      - omc RoC_LTI-wasm.mos
+    deps:
+      - RoC_LTI-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/RoC_LTI.fmu
+      - wasm/component/RoC_LTI.fmu
+  build-wasm-case-LV_ABCD:
+    wdir: results
+    cmd:
+      - omc LV_ABCD-wasm.mos
+    deps:
+      - LV_ABCD-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/LV_ABCD.fmu
+      - wasm/component/LV_ABCD.fmu
+  build-wasm-case-RFL:
+    wdir: results
+    cmd:
+      - omc RFL-wasm.mos
+    deps:
+      - RFL-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/RFL.fmu
+      - wasm/component/RFL.fmu
+  build-wasm-case-RNA:
+    wdir: results
+    cmd:
+      - omc RNA-wasm.mos
+    deps:
+      - RNA-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/RNA.fmu
+      - wasm/component/RNA.fmu
+  build-wasm-case-RA:
+    wdir: results
+    cmd:
+      - omc RA-wasm.mos
+    deps:
+      - RA-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/RA.fmu
+      - wasm/component/RA.fmu
+  build-wasm-case-RE:
+    wdir: results
+    cmd:
+      - omc RE-wasm.mos
+    deps:
+      - RE-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/RE.fmu
+      - wasm/component/RE.fmu
+  build-wasm-case-REM:
+    wdir: results
+    cmd:
+      - omc REM-wasm.mos
+    deps:
+      - REM-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/REM.fmu
+      - wasm/component/REM.fmu
+  build-wasm-case-Eval1:
+    wdir: results
+    cmd:
+      - omc Eval1-wasm.mos
+    deps:
+      - Eval1-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/Eval1.fmu
+      - wasm/component/Eval1.fmu
+  build-wasm-case-Diff2:
+    wdir: results
+    cmd:
+      - omc Diff2-wasm.mos
+    deps:
+      - Diff2-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/Diff2.fmu
+      - wasm/component/Diff2.fmu
+  build-wasm-case-IIV:
+    wdir: results
+    cmd:
+      - omc IIV-wasm.mos
+    deps:
+      - IIV-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/IIV.fmu
+      - wasm/component/IIV.fmu
+  build-wasm-case-IIEV:
+    wdir: results
+    cmd:
+      - omc IIEV-wasm.mos
+    deps:
+      - IIEV-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/IIEV.fmu
+      - wasm/component/IIEV.fmu
+  build-wasm-case-SIL:
+    wdir: results
+    cmd:
+      - omc SIL-wasm.mos
+    deps:
+      - SIL-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SIL.fmu
+      - wasm/component/SIL.fmu
+  build-wasm-case-NLEE:
+    wdir: results
+    cmd:
+      - omc NLEE-wasm.mos
+    deps:
+      - NLEE-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/NLEE.fmu
+      - wasm/component/NLEE.fmu
+  build-wasm-case-NLIE:
+    wdir: results
+    cmd:
+      - omc NLIE-wasm.mos
+    deps:
+      - NLIE-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/NLIE.fmu
+      - wasm/component/NLIE.fmu
+  build-wasm-case-HTA:
+    wdir: results
+    cmd:
+      - omc HTA-wasm.mos
+    deps:
+      - HTA-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/HTA.fmu
+      - wasm/component/HTA.fmu
+  build-wasm-case-HT_CTA:
+    wdir: results
+    cmd:
+      - omc HT_CTA-wasm.mos
+    deps:
+      - HT_CTA-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/HT_CTA.fmu
+      - wasm/component/HT_CTA.fmu
+  build-wasm-case-HT_C:
+    wdir: results
+    cmd:
+      - omc HT_C-wasm.mos
+    deps:
+      - HT_C-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/HT_C.fmu
+      - wasm/component/HT_C.fmu
+  build-wasm-case-HT_CN:
+    wdir: results
+    cmd:
+      - omc HT_CN-wasm.mos
+    deps:
+      - HT_CN-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/HT_CN.fmu
+      - wasm/component/HT_CN.fmu
+  build-wasm-case-SMD:
+    wdir: results
+    cmd:
+      - omc SMD-wasm.mos
+    deps:
+      - SMD-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SMD.fmu
+      - wasm/component/SMD.fmu
+  build-wasm-case-SMD_WB:
+    wdir: results
+    cmd:
+      - omc SMD_WB-wasm.mos
+    deps:
+      - SMD_WB-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SMD_WB.fmu
+      - wasm/component/SMD_WB.fmu
+  build-wasm-case-SMD_GG:
+    wdir: results
+    cmd:
+      - omc SMD_GG-wasm.mos
+    deps:
+      - SMD_GG-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SMD_GG.fmu
+      - wasm/component/SMD_GG.fmu
+  build-wasm-case-SMD_GC:
+    wdir: results
+    cmd:
+      - omc SMD_GC-wasm.mos
+    deps:
+      - SMD_GC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SMD_GC.fmu
+      - wasm/component/SMD_GC.fmu
+  build-wasm-case-SMD_CG:
+    wdir: results
+    cmd:
+      - omc SMD_CG-wasm.mos
+    deps:
+      - SMD_CG-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SMD_CG.fmu
+      - wasm/component/SMD_CG.fmu
+  build-wasm-case-CLV:
+    wdir: results
+    cmd:
+      - omc CLV-wasm.mos
+    deps:
+      - CLV-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/CLV.fmu
+      - wasm/component/CLV.fmu
+  build-wasm-case-ThirdS:
+    wdir: results
+    cmd:
+      - omc ThirdS-wasm.mos
+    deps:
+      - ThirdS-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/ThirdS.fmu
+      - wasm/component/ThirdS.fmu
+  build-wasm-case-ThreeS:
+    wdir: results
+    cmd:
+      - omc ThreeS-wasm.mos
+    deps:
+      - ThreeS-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/ThreeS.fmu
+      - wasm/component/ThreeS.fmu
+  build-wasm-case-PBase:
+    wdir: results
+    cmd:
+      - omc PBase-wasm.mos
+    deps:
+      - PBase-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/PBase.fmu
+      - wasm/component/PBase.fmu
+  build-wasm-case-PwSH:
+    wdir: results
+    cmd:
+      - omc PwSH-wasm.mos
+    deps:
+      - PwSH-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/PwSH.fmu
+      - wasm/component/PwSH.fmu
+  build-wasm-case-PwIM:
+    wdir: results
+    cmd:
+      - omc PwIM-wasm.mos
+    deps:
+      - PwIM-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/PwIM.fmu
+      - wasm/component/PwIM.fmu
+  build-wasm-case-PwIMf:
+    wdir: results
+    cmd:
+      - omc PwIMf-wasm.mos
+    deps:
+      - PwIMf-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/PwIMf.fmu
+      - wasm/component/PwIMf.fmu
+  build-wasm-case-PwPC:
+    wdir: results
+    cmd:
+      - omc PwPC-wasm.mos
+    deps:
+      - PwPC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/PwPC.fmu
+      - wasm/component/PwPC.fmu
+  build-wasm-case-BNC:
+    wdir: results
+    cmd:
+      - omc BNC-wasm.mos
+    deps:
+      - BNC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/BNC.fmu
+      - wasm/component/BNC.fmu
+  build-wasm-case-MDC:
+    wdir: results
+    cmd:
+      - omc MDC-wasm.mos
+    deps:
+      - MDC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/MDC.fmu
+      - wasm/component/MDC.fmu
+  build-wasm-case-MDC_hg:
+    wdir: results
+    cmd:
+      - omc MDC_hg-wasm.mos
+    deps:
+      - MDC_hg-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/MDC_hg.fmu
+      - wasm/component/MDC_hg.fmu
+  build-wasm-case-ABX:
+    wdir: results
+    cmd:
+      - omc ABX-wasm.mos
+    deps:
+      - ABX-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/ABX.fmu
+      - wasm/component/ABX.fmu
+  build-wasm-case-FSWB:
+    wdir: results
+    cmd:
+      - omc FSWB-wasm.mos
+    deps:
+      - FSWB-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/FSWB.fmu
+      - wasm/component/FSWB.fmu
+  build-wasm-case-FSWB_nolash:
+    wdir: results
+    cmd:
+      - omc FSWB_nolash-wasm.mos
+    deps:
+      - FSWB_nolash-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/FSWB_nolash.fmu
+      - wasm/component/FSWB_nolash.fmu
+  build-wasm-case-SWB:
+    wdir: results
+    cmd:
+      - omc SWB-wasm.mos
+    deps:
+      - SWB-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SWB.fmu
+      - wasm/component/SWB.fmu
+  build-wasm-case-Uncon:
+    wdir: results
+    cmd:
+      - omc Uncon-wasm.mos
+    deps:
+      - Uncon-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/Uncon.fmu
+      - wasm/component/Uncon.fmu
+  build-wasm-case-ID:
+    wdir: results
+    cmd:
+      - omc ID-wasm.mos
+    deps:
+      - ID-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/ID.fmu
+      - wasm/component/ID.fmu
+  build-wasm-case-WM:
+    wdir: results
+    cmd:
+      - omc WM-wasm.mos
+    deps:
+      - WM-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/WM.fmu
+      - wasm/component/WM.fmu
+  build-wasm-case-FC:
+    wdir: results
+    cmd:
+      - omc FC-wasm.mos
+    deps:
+      - FC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/FC.fmu
+      - wasm/component/FC.fmu
+  build-wasm-case-SSC:
+    wdir: results
+    cmd:
+      - omc SSC-wasm.mos
+    deps:
+      - SSC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SSC.fmu
+      - wasm/component/SSC.fmu
+  build-wasm-case-SSC_AL:
+    wdir: results
+    cmd:
+      - omc SSC_AL-wasm.mos
+    deps:
+      - SSC_AL-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SSC_AL.fmu
+      - wasm/component/SSC_AL.fmu
+  build-wasm-case-SSC_ALC:
+    wdir: results
+    cmd:
+      - omc SSC_ALC-wasm.mos
+    deps:
+      - SSC_ALC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SSC_ALC.fmu
+      - wasm/component/SSC_ALC.fmu
+  build-wasm-case-SSC_ALC2:
+    wdir: results
+    cmd:
+      - omc SSC_ALC2-wasm.mos
+    deps:
+      - SSC_ALC2-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SSC_ALC2.fmu
+      - wasm/component/SSC_ALC2.fmu
+  build-wasm-case-FR:
+    wdir: results
+    cmd:
+      - omc FR-wasm.mos
+    deps:
+      - FR-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/FR.fmu
+      - wasm/component/FR.fmu
+  build-wasm-case-SegC:
+    wdir: results
+    cmd:
+      - omc SegC-wasm.mos
+    deps:
+      - SegC-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SegC.fmu
+      - wasm/component/SegC.fmu
+  build-wasm-case-Harm:
+    wdir: results
+    cmd:
+      - omc Harm-wasm.mos
+    deps:
+      - Harm-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/Harm.fmu
+      - wasm/component/Harm.fmu
+  build-wasm-case-AFS:
+    wdir: results
+    cmd:
+      - omc AFS-wasm.mos
+    deps:
+      - AFS-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/AFS.fmu
+      - wasm/component/AFS.fmu
+  build-wasm-case-AFS_SH:
+    wdir: results
+    cmd:
+      - omc AFS_SH-wasm.mos
+    deps:
+      - AFS_SH-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/AFS_SH.fmu
+      - wasm/component/AFS_SH.fmu
+  build-wasm-case-SV1:
+    wdir: results
+    cmd:
+      - omc SV1-wasm.mos
+    deps:
+      - SV1-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SV1.fmu
+      - wasm/component/SV1.fmu
+  build-wasm-case-SV1U:
+    wdir: results
+    cmd:
+      - omc SV1U-wasm.mos
+    deps:
+      - SV1U-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SV1U.fmu
+      - wasm/component/SV1U.fmu
+  build-wasm-case-SV2:
+    wdir: results
+    cmd:
+      - omc SV2-wasm.mos
+    deps:
+      - SV2-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SV2.fmu
+      - wasm/component/SV2.fmu
+  build-wasm-case-SV2T:
+    wdir: results
+    cmd:
+      - omc SV2T-wasm.mos
+    deps:
+      - SV2T-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/SV2T.fmu
+      - wasm/component/SV2T.fmu
+  build-wasm-case-TCB:
+    wdir: results
+    cmd:
+      - omc TCB-wasm.mos
+    deps:
+      - TCB-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/TCB.fmu
+      - wasm/component/TCB.fmu
+  build-wasm-case-TCE:
+    wdir: results
+    cmd:
+      - omc TCE-wasm.mos
+    deps:
+      - TCE-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/TCE.fmu
+      - wasm/component/TCE.fmu
+  build-wasm-case-TCE_BB:
+    wdir: results
+    cmd:
+      - omc TCE_BB-wasm.mos
+    deps:
+      - TCE_BB-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/TCE_BB.fmu
+      - wasm/component/TCE_BB.fmu
+  build-wasm-case-TCE_Hy:
+    wdir: results
+    cmd:
+      - omc TCE_Hy-wasm.mos
+    deps:
+      - TCE_Hy-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/TCE_Hy.fmu
+      - wasm/component/TCE_Hy.fmu
+  build-wasm-aot-FO:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/FO.fmu --out wasm/aot/FO
+    deps:
+      - wasm/component/FO.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/FO
+  build-wasm-aot-FOI:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/FOI.fmu --out wasm/aot/FOI
+    deps:
+      - wasm/component/FOI.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/FOI
+  build-wasm-aot-FOE:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/FOE.fmu --out wasm/aot/FOE
+    deps:
+      - wasm/component/FOE.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/FOE
+  build-wasm-aot-FOS:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/FOS.fmu --out wasm/aot/FOS
+    deps:
+      - wasm/component/FOS.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/FOS
+  build-wasm-aot-NCWD:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/NCWD.fmu --out wasm/aot/NCWD
+    deps:
+      - wasm/component/NCWD.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/NCWD
+  build-wasm-aot-RLC1:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/RLC1.fmu --out wasm/aot/RLC1
+    deps:
+      - wasm/component/RLC1.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/RLC1
+  build-wasm-aot-SOSIP:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SOSIP.fmu --out wasm/aot/SOSIP
+    deps:
+      - wasm/component/SOSIP.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SOSIP
+  build-wasm-aot-SOSIP1:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SOSIP1.fmu --out wasm/aot/SOSIP1
+    deps:
+      - wasm/component/SOSIP1.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SOSIP1
+  build-wasm-aot-LVCM:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/LVCM.fmu --out wasm/aot/LVCM
+    deps:
+      - wasm/component/LVCM.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/LVCM
+  build-wasm-aot-LVQM:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/LVQM.fmu --out wasm/aot/LVQM
+    deps:
+      - wasm/component/LVQM.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/LVQM
+  build-wasm-aot-LVQMUS:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/LVQMUS.fmu --out wasm/aot/LVQMUS
+    deps:
+      - wasm/component/LVQMUS.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/LVQMUS
+  build-wasm-aot-NCD:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/NCD.fmu --out wasm/aot/NCD
+    deps:
+      - wasm/component/NCD.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/NCD
+  build-wasm-aot-NCSTD:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/NCSTD.fmu --out wasm/aot/NCSTD
+    deps:
+      - wasm/component/NCSTD.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/NCSTD
+  build-wasm-aot-BB1:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/BB1.fmu --out wasm/aot/BB1
+    deps:
+      - wasm/component/BB1.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/BB1
+  build-wasm-aot-BB2:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/BB2.fmu --out wasm/aot/BB2
+    deps:
+      - wasm/component/BB2.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/BB2
+  build-wasm-aot-Decay1:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/Decay1.fmu --out wasm/aot/Decay1
+    deps:
+      - wasm/component/Decay1.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/Decay1
+  build-wasm-aot-Decay2:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/Decay2.fmu --out wasm/aot/Decay2
+    deps:
+      - wasm/component/Decay2.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/Decay2
+  build-wasm-aot-Decay3:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/Decay3.fmu --out wasm/aot/Decay3
+    deps:
+      - wasm/component/Decay3.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/Decay3
+  build-wasm-aot-WC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/WC.fmu --out wasm/aot/WC
+    deps:
+      - wasm/component/WC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/WC
+  build-wasm-aot-WOC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/WOC.fmu --out wasm/aot/WOC
+    deps:
+      - wasm/component/WOC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/WOC
+  build-wasm-aot-WE:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/WE.fmu --out wasm/aot/WE
+    deps:
+      - wasm/component/WE.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/WE
+  build-wasm-aot-WEf:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/WEf.fmu --out wasm/aot/WEf
+    deps:
+      - wasm/component/WEf.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/WEf
+  build-wasm-aot-WNE:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/WNE.fmu --out wasm/aot/WNE
+    deps:
+      - wasm/component/WNE.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/WNE
+  build-wasm-aot-WNEf:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/WNEf.fmu --out wasm/aot/WNEf
+    deps:
+      - wasm/component/WNEf.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/WNEf
+  build-wasm-aot-SRLC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SRLC.fmu --out wasm/aot/SRLC
+    deps:
+      - wasm/component/SRLC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SRLC
+  build-wasm-aot-SampleAndHold:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SampleAndHold.fmu --out wasm/aot/SampleAndHold
+    deps:
+      - wasm/component/SampleAndHold.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SampleAndHold
+  build-wasm-aot-IntervalMeasure:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/IntervalMeasure.fmu --out wasm/aot/IntervalMeasure
+    deps:
+      - wasm/component/IntervalMeasure.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/IntervalMeasure
+  build-wasm-aot-IntervalMeasure_Coarse:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/IntervalMeasure_Coarse.fmu --out wasm/aot/IntervalMeasure_Coarse
+    deps:
+      - wasm/component/IntervalMeasure_Coarse.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/IntervalMeasure_Coarse
+  build-wasm-aot-SpeedCounter:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SpeedCounter.fmu --out wasm/aot/SpeedCounter
+    deps:
+      - wasm/component/SpeedCounter.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SpeedCounter
+  build-wasm-aot-CC1:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/CC1.fmu --out wasm/aot/CC1
+    deps:
+      - wasm/component/CC1.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/CC1
+  build-wasm-aot-Hyst:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/Hyst.fmu --out wasm/aot/Hyst
+    deps:
+      - wasm/component/Hyst.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/Hyst
+  build-wasm-aot-HystA:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/HystA.fmu --out wasm/aot/HystA
+    deps:
+      - wasm/component/HystA.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/HystA
+  build-wasm-aot-SIS:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SIS.fmu --out wasm/aot/SIS
+    deps:
+      - wasm/component/SIS.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SIS
+  build-wasm-aot-SSS:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SSS.fmu --out wasm/aot/SSS
+    deps:
+      - wasm/component/SSS.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SSS
+  build-wasm-aot-SSI:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SSI.fmu --out wasm/aot/SSI
+    deps:
+      - wasm/component/SSI.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SSI
+  build-wasm-aot-FO_LTI:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/FO_LTI.fmu --out wasm/aot/FO_LTI
+    deps:
+      - wasm/component/FO_LTI.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/FO_LTI
+  build-wasm-aot-NC_LTI:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/NC_LTI.fmu --out wasm/aot/NC_LTI
+    deps:
+      - wasm/component/NC_LTI.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/NC_LTI
+  build-wasm-aot-RLC_LTI:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/RLC_LTI.fmu --out wasm/aot/RLC_LTI
+    deps:
+      - wasm/component/RLC_LTI.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/RLC_LTI
+  build-wasm-aot-Ro_LTI:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/Ro_LTI.fmu --out wasm/aot/Ro_LTI
+    deps:
+      - wasm/component/Ro_LTI.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/Ro_LTI
+  build-wasm-aot-RoC_LTI:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/RoC_LTI.fmu --out wasm/aot/RoC_LTI
+    deps:
+      - wasm/component/RoC_LTI.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/RoC_LTI
+  build-wasm-aot-LV_ABCD:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/LV_ABCD.fmu --out wasm/aot/LV_ABCD
+    deps:
+      - wasm/component/LV_ABCD.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/LV_ABCD
+  build-wasm-aot-RFL:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/RFL.fmu --out wasm/aot/RFL
+    deps:
+      - wasm/component/RFL.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/RFL
+  build-wasm-aot-RNA:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/RNA.fmu --out wasm/aot/RNA
+    deps:
+      - wasm/component/RNA.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/RNA
+  build-wasm-aot-RA:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/RA.fmu --out wasm/aot/RA
+    deps:
+      - wasm/component/RA.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/RA
+  build-wasm-aot-RE:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/RE.fmu --out wasm/aot/RE
+    deps:
+      - wasm/component/RE.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/RE
+  build-wasm-aot-REM:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/REM.fmu --out wasm/aot/REM
+    deps:
+      - wasm/component/REM.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/REM
+  build-wasm-aot-Eval1:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/Eval1.fmu --out wasm/aot/Eval1
+    deps:
+      - wasm/component/Eval1.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/Eval1
+  build-wasm-aot-Diff2:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/Diff2.fmu --out wasm/aot/Diff2
+    deps:
+      - wasm/component/Diff2.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/Diff2
+  build-wasm-aot-IIV:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/IIV.fmu --out wasm/aot/IIV
+    deps:
+      - wasm/component/IIV.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/IIV
+  build-wasm-aot-IIEV:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/IIEV.fmu --out wasm/aot/IIEV
+    deps:
+      - wasm/component/IIEV.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/IIEV
+  build-wasm-aot-SIL:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SIL.fmu --out wasm/aot/SIL
+    deps:
+      - wasm/component/SIL.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SIL
+  build-wasm-aot-NLEE:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/NLEE.fmu --out wasm/aot/NLEE
+    deps:
+      - wasm/component/NLEE.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/NLEE
+  build-wasm-aot-NLIE:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/NLIE.fmu --out wasm/aot/NLIE
+    deps:
+      - wasm/component/NLIE.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/NLIE
+  build-wasm-aot-HTA:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/HTA.fmu --out wasm/aot/HTA
+    deps:
+      - wasm/component/HTA.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/HTA
+  build-wasm-aot-HT_CTA:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/HT_CTA.fmu --out wasm/aot/HT_CTA
+    deps:
+      - wasm/component/HT_CTA.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/HT_CTA
+  build-wasm-aot-HT_C:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/HT_C.fmu --out wasm/aot/HT_C
+    deps:
+      - wasm/component/HT_C.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/HT_C
+  build-wasm-aot-HT_CN:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/HT_CN.fmu --out wasm/aot/HT_CN
+    deps:
+      - wasm/component/HT_CN.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/HT_CN
+  build-wasm-aot-SMD:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SMD.fmu --out wasm/aot/SMD
+    deps:
+      - wasm/component/SMD.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SMD
+  build-wasm-aot-SMD_WB:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SMD_WB.fmu --out wasm/aot/SMD_WB
+    deps:
+      - wasm/component/SMD_WB.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SMD_WB
+  build-wasm-aot-SMD_GG:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SMD_GG.fmu --out wasm/aot/SMD_GG
+    deps:
+      - wasm/component/SMD_GG.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SMD_GG
+  build-wasm-aot-SMD_GC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SMD_GC.fmu --out wasm/aot/SMD_GC
+    deps:
+      - wasm/component/SMD_GC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SMD_GC
+  build-wasm-aot-SMD_CG:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SMD_CG.fmu --out wasm/aot/SMD_CG
+    deps:
+      - wasm/component/SMD_CG.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SMD_CG
+  build-wasm-aot-CLV:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/CLV.fmu --out wasm/aot/CLV
+    deps:
+      - wasm/component/CLV.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/CLV
+  build-wasm-aot-ThirdS:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/ThirdS.fmu --out wasm/aot/ThirdS
+    deps:
+      - wasm/component/ThirdS.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/ThirdS
+  build-wasm-aot-ThreeS:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/ThreeS.fmu --out wasm/aot/ThreeS
+    deps:
+      - wasm/component/ThreeS.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/ThreeS
+  build-wasm-aot-PBase:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/PBase.fmu --out wasm/aot/PBase
+    deps:
+      - wasm/component/PBase.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/PBase
+  build-wasm-aot-PwSH:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/PwSH.fmu --out wasm/aot/PwSH
+    deps:
+      - wasm/component/PwSH.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/PwSH
+  build-wasm-aot-PwIM:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/PwIM.fmu --out wasm/aot/PwIM
+    deps:
+      - wasm/component/PwIM.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/PwIM
+  build-wasm-aot-PwIMf:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/PwIMf.fmu --out wasm/aot/PwIMf
+    deps:
+      - wasm/component/PwIMf.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/PwIMf
+  build-wasm-aot-PwPC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/PwPC.fmu --out wasm/aot/PwPC
+    deps:
+      - wasm/component/PwPC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/PwPC
+  build-wasm-aot-BNC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/BNC.fmu --out wasm/aot/BNC
+    deps:
+      - wasm/component/BNC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/BNC
+  build-wasm-aot-MDC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/MDC.fmu --out wasm/aot/MDC
+    deps:
+      - wasm/component/MDC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/MDC
+  build-wasm-aot-MDC_hg:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/MDC_hg.fmu --out wasm/aot/MDC_hg
+    deps:
+      - wasm/component/MDC_hg.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/MDC_hg
+  build-wasm-aot-ABX:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/ABX.fmu --out wasm/aot/ABX
+    deps:
+      - wasm/component/ABX.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/ABX
+  build-wasm-aot-FSWB:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/FSWB.fmu --out wasm/aot/FSWB
+    deps:
+      - wasm/component/FSWB.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/FSWB
+  build-wasm-aot-FSWB_nolash:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/FSWB_nolash.fmu --out wasm/aot/FSWB_nolash
+    deps:
+      - wasm/component/FSWB_nolash.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/FSWB_nolash
+  build-wasm-aot-SWB:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SWB.fmu --out wasm/aot/SWB
+    deps:
+      - wasm/component/SWB.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SWB
+  build-wasm-aot-Uncon:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/Uncon.fmu --out wasm/aot/Uncon
+    deps:
+      - wasm/component/Uncon.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/Uncon
+  build-wasm-aot-ID:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/ID.fmu --out wasm/aot/ID
+    deps:
+      - wasm/component/ID.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/ID
+  build-wasm-aot-WM:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/WM.fmu --out wasm/aot/WM
+    deps:
+      - wasm/component/WM.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/WM
+  build-wasm-aot-FC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/FC.fmu --out wasm/aot/FC
+    deps:
+      - wasm/component/FC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/FC
+  build-wasm-aot-SSC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SSC.fmu --out wasm/aot/SSC
+    deps:
+      - wasm/component/SSC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SSC
+  build-wasm-aot-SSC_AL:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SSC_AL.fmu --out wasm/aot/SSC_AL
+    deps:
+      - wasm/component/SSC_AL.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SSC_AL
+  build-wasm-aot-SSC_ALC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SSC_ALC.fmu --out wasm/aot/SSC_ALC
+    deps:
+      - wasm/component/SSC_ALC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SSC_ALC
+  build-wasm-aot-SSC_ALC2:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SSC_ALC2.fmu --out wasm/aot/SSC_ALC2
+    deps:
+      - wasm/component/SSC_ALC2.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SSC_ALC2
+  build-wasm-aot-FR:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/FR.fmu --out wasm/aot/FR
+    deps:
+      - wasm/component/FR.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/FR
+  build-wasm-aot-SegC:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SegC.fmu --out wasm/aot/SegC
+    deps:
+      - wasm/component/SegC.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SegC
+  build-wasm-aot-Harm:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/Harm.fmu --out wasm/aot/Harm
+    deps:
+      - wasm/component/Harm.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/Harm
+  build-wasm-aot-AFS:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/AFS.fmu --out wasm/aot/AFS
+    deps:
+      - wasm/component/AFS.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/AFS
+  build-wasm-aot-AFS_SH:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/AFS_SH.fmu --out wasm/aot/AFS_SH
+    deps:
+      - wasm/component/AFS_SH.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/AFS_SH
+  build-wasm-aot-SV1:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SV1.fmu --out wasm/aot/SV1
+    deps:
+      - wasm/component/SV1.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SV1
+  build-wasm-aot-SV1U:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SV1U.fmu --out wasm/aot/SV1U
+    deps:
+      - wasm/component/SV1U.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SV1U
+  build-wasm-aot-SV2:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SV2.fmu --out wasm/aot/SV2
+    deps:
+      - wasm/component/SV2.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SV2
+  build-wasm-aot-SV2T:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/SV2T.fmu --out wasm/aot/SV2T
+    deps:
+      - wasm/component/SV2T.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/SV2T
+  build-wasm-aot-TCB:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/TCB.fmu --out wasm/aot/TCB
+    deps:
+      - wasm/component/TCB.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/TCB
+  build-wasm-aot-TCE:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/TCE.fmu --out wasm/aot/TCE
+    deps:
+      - wasm/component/TCE.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/TCE
+  build-wasm-aot-TCE_BB:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/TCE_BB.fmu --out wasm/aot/TCE_BB
+    deps:
+      - wasm/component/TCE_BB.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/TCE_BB
+  build-wasm-aot-TCE_Hy:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/TCE_Hy.fmu --out wasm/aot/TCE_Hy
+    deps:
+      - wasm/component/TCE_Hy.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/TCE_Hy
   build-exes:
     wdir: results
     cmd:

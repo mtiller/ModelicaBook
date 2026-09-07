@@ -7,7 +7,7 @@
 # N.B. - Any requires credentials are assumed to be provided by environment
 # variables and should *not* be provided here.
 
-.PHONY: specs results dirhtml ebooks api publish_server publish_web serve
+.PHONY: specs results wasm dirhtml ebooks api publish_server publish_web serve
 
 # When CI_BUILD=1, the json/dirhtml/pdfs targets skip the specs+results
 # (DVC repro) dependency chain and assume text/results, text/plots, and
@@ -37,6 +37,9 @@ specs:
 
 results: env specs
 	(cd text; make results)
+
+wasm: specs
+	(cd text; make wasm_files)
 
 dirhtml: $(SPHINX_DEPS)
 	(cd text; make dirhtml)

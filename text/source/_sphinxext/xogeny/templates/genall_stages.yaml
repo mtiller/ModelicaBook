@@ -16,6 +16,29 @@ stages:
       - {{res}}_res.mat
       - {{res}}
 {%- endfor %}
+{%- for res in results %}
+  build-wasm-case-{{res}}:
+    wdir: results
+    cmd:
+      - omc {{res}}-wasm.mos
+    deps:
+      - {{res}}-wasm.mos
+      - ../../ModelicaByExample
+    outs:
+      - wasm/dylink/{{res}}.fmu
+      - wasm/component/{{res}}.fmu
+{%- endfor %}
+{%- for res in results %}
+  build-wasm-aot-{{res}}:
+    wdir: results
+    cmd:
+      - node ../../tools/wasm/transpile.mjs --fmu wasm/component/{{res}}.fmu --out wasm/aot/{{res}}
+    deps:
+      - wasm/component/{{res}}.fmu
+      - ../../tools/wasm/transpile.mjs
+    outs:
+      - wasm/aot/{{res}}
+{%- endfor %}
   build-exes:
     wdir: results
     cmd:

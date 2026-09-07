@@ -158,6 +158,30 @@ def _generate_casedata():
                 obj["name"] = res["name"]
                 json.dump(obj, ofp, indent=2)
 
+def _generate_caselist():
+    """Write results/cases.json: the per-case simulation settings, keyed by
+    result id.
+
+    json/<plot>-case.json is keyed by *plot*, and a case can have several plots
+    or none, so it is not a list of cases. The wasm artifacts need one entry per
+    case: buildModelFMU bakes in neither the case's stopTime/tolerance/interval
+    count nor its parameter modifications, so an importer has to apply them, the
+    way `-override` and the simulate() arguments do on the native path.
+    """
+    cases = {}
+    for res in results:
+        data = results[res]
+        cases[res] = {
+            "name": data["name"],
+            "stopTime": data["stopTime"],
+            "tol": data["tol"],
+            "ncp": data["ncp"],
+            "mods": data["mods"],
+        }
+    with open(os.path.join(path, "text", "results", "cases.json"), "w+") as ofp:
+        json.dump(cases, ofp, indent=2, sort_keys=True)
+
+
 def _generate_modellist():
     models = set()
     for res in results:
@@ -234,6 +258,7 @@ def _generate_makefile():
     genallres = env.get_template("genall_results.mos")
     genallstages = env.get_template("genall_stages.yaml")
     genmk = env.get_template("gen.makefile")
+    genwasm = env.get_template("gen_wasm.mos")
 
     # Generate Makefile
     with open(os.path.join(path, "text", "results", "Makefile"), "w+") as ofp:
@@ -272,9 +297,12 @@ def _generate_makefile():
 
         with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
             sfp.write(genres.render(**context))
-        # # Write out script to generate JavaScript
-        # with open(os.path.join(path, "text", "results", res+"-js.mos"), "w+") as sfp:
-        #     sfp.write(genjs.render(**context))
+        # Write out the script used to export this case as a WASM-backed FMI 3.0
+        # FMU. The artifact is separate from native simulation results; the
+        # case's simulation settings and parameter overrides stay in
+        # results/json/<res>-case.json for the importer to apply.
+        with open(os.path.join(path, "text", "results", res+"-wasm.mos"), "w+") as sfp:
+            sfp.write(genwasm.render(**context))
 
     with open(os.path.join(path, "text", "results", "allres.mos"), "w+") as sfp:
         sfp.write(genallres.render(contexts=contexts, path=path, cflags=cflags))
@@ -289,3 +317,5 @@ def generate():
     _generate_casedata()
     print("Generating model list")
     _generate_modellist()
+    print("Generating case list")
+    _generate_caselist()

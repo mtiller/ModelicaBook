@@ -26,10 +26,10 @@ source/Examples/*.c
 source/Examples/*.exp
 **/_static/Icons/*.pdf
 **/_static/img/*.pdf
+text/results/wasm/
 text/build-arch
 build-arch
 .DS_Store
 .env
 .claude
 .worktrees
-

@@ -1,0 +1,6 @@
+// Installs the Modelica Standard Library into the image, which the base
+// deliberately ships without. Version matches tools/check-models.
+updatePackageIndex();
+getErrorString();
+installPackage(Modelica, "3.2.3+maint.om", exactMatch=true);
+getErrorString();
