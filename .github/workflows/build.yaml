@@ -67,6 +67,10 @@ jobs:
         with:
           name: wasm-artifacts
           path: text/results/wasm
+          # Nothing consumes these yet, so they are here to be looked at, not
+          # kept. The default 90 days would hold ~340 MB per run for no reason;
+          # the DVC cache is what actually makes a rebuild cheap.
+          retention-days: 7
       - name: Save WASM DVC Cache
         if: always() && steps.wasm-cache-restore.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
