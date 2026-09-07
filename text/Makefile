@@ -43,7 +43,7 @@ LATEXMKOPTS     = "-xelatex"
 SET_BOOK_LANG_CN = BOOK_LANG=zh_CN
 SET_BOOK_LANG_KR = BOOK_LANG=kr
 
-.PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results uploadCIdeps
+.PHONY: help clean distclean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext results wasm_files uploadCIdeps
 
 # For CI we don't want to rebuild the whole dependencies each time.
 # To enable the CI build do, e.g., `make CI_BUILD=1 pdf`
@@ -77,6 +77,17 @@ specs_cn: specs.py
 # This target builds all the simulation results
 results:
 	dvc repro dvc.yaml
+
+# Build the browser-distributable WASM-backed FMUs for every generated case:
+# both export forms plus the ahead-of-time jco transpile of the component one.
+# These are a separate pipeline from dvc.yaml, in their own directory, so the
+# two cannot reach each other: `make results` will not try to export wasm with
+# an omc that has no wasm-jit backend, and this will not re-run the native
+# simulation sweep.
+wasm_files: specs
+	dvc repro dvc-wasm/dvc.yaml
+	$(PYTHON) ../tools/wasm/pack.py
+	$(PYTHON) ../tools/wasm/make-index.py
 #	(cd results; make results_files exes.tar.gz tidy)
 
 # This builds all the JS and JSON files.  Use this if your development

@@ -4,11 +4,90 @@ on:
   push:
     branches: [master]
   pull_request:
-    types: [opened, synchronize, reopened, labeled]
+    types: [opened, synchronize, reopened]
 
 jobs:
+  # The wasm artifacts are a new, independent output of the same pipeline: one
+  # FMI 3.0 FMU per case in both export forms, plus the ahead-of-time jco
+  # transpile of the component one. Nothing consumes them yet -- this job exists
+  # so that they are known to build, and keep building, before anything depends
+  # on them. It touches none of the native simulation stages, so it runs in
+  # parallel with (and independently of) generate_results.
+  generate_wasm:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    container:
+      # OpenModelica built from master with OM_OMC_ENABLE_RUST=ON, which is what
+      # provides --simCodeTarget=wasm-jit. No published OpenModelica image has
+      # it; see tools/wasm/Dockerfile and tools/wasm/README.md.
+      image: ghcr.io/mtiller/omc-wasm:3998b1f8
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Mark checkout directory as safe
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Restore WASM DVC Cache
+        id: wasm-cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: .dvc/cache
+          key: dvc-wasm-${{ hashFiles('.github/workflows/build.yaml', 'text/specs.py', 'text/source/_sphinxext/xogeny/templates/gen_wasm.mos', 'tools/wasm/transpile.mjs', 'ModelicaByExample/**/*.mo') }}
+          restore-keys: |
+            dvc-wasm-
+      - name: Point OpenModelica at the image's MSL
+        # The image installs the Modelica Standard Library under root's home,
+        # but a container job runs with HOME=/github/home, where omc would find
+        # no libraries at all and every case would re-download the MSL. Link the
+        # two before `make env`, which then adds its ModelicaByExample symlink
+        # alongside.
+        run: |
+          mkdir -p "$HOME/.openmodelica"
+          ln -sfn /root/.openmodelica/libraries "$HOME/.openmodelica/libraries"
+      - name: Build WASM Artifacts
+        run: make env wasm
+      - name: Summarize
+        run: |
+          python3 - <<'PY'
+          import json
+          idx = json.load(open('text/results/wasm/index.json'))
+          cases, pack = idx['cases'], idx['pack']
+          def tot(form):
+              return sum(c['artifacts'][form]['bytes'] for c in cases.values() if form in c['artifacts'])
+          print(f"{len(cases)} cases")
+          for form in ('dylink', 'component', 'aot'):
+              n = sum(1 for c in cases.values() if form in c['artifacts'])
+              print(f"  {form:<10} {n:>3} artifacts  {tot(form)/1048576:8.1f} MB laid out per case")
+          print(f"  packed     {pack['blobs']:>3} blobs      {pack['bytes']/1048576:8.1f} MB distinct "
+                f"({tot('aot')/pack['bytes']:.1f}x), of which "
+                f"{pack['sharedByEveryCase']/1048576:.2f} MB is in every case")
+          PY
+      - name: Upload WASM Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wasm-artifacts
+          # pack/ carries the same content as aot/ with the duplicates removed
+          # (257 MB -> 16 MB), so uploading both would be uploading the AOT
+          # output twice, once badly. The DVC cache still holds aot/.
+          path: |
+            text/results/wasm
+            !text/results/wasm/aot
+          # Nothing consumes these yet, so they are here to be looked at, not
+          # kept. The DVC cache is what actually makes a rebuild cheap.
+          retention-days: 7
+      - name: Save WASM DVC Cache
+        if: always() && steps.wasm-cache-restore.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .dvc/cache
+          key: ${{ steps.wasm-cache-restore.outputs.cache-primary-key }}
+
+  # Every pull request gets the complete build. Only the deploy is held back.
   generate_results:
-    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'Full Build')
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/mtiller/book-builder-image:v0.1.6
@@ -85,7 +164,6 @@ jobs:
             text/docs-dir
           key: ${{ steps.cideps-cache-restore.outputs.cache-primary-key }}
   generate_site:
-    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'Full Build')
     runs-on: ubuntu-latest
     needs: generate_results
     container:
@@ -114,7 +192,10 @@ jobs:
           name: korean-site
           path: nextgen/dist
   deploy_site:
-    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'Full Build')
+    # The one job a pull request must not run: it publishes to production.
+    # `push` here can only mean master -- that is the only branch in the
+    # workflow's push trigger.
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     needs: generate_site
     container:

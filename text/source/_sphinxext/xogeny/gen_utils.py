@@ -158,6 +158,30 @@ def _generate_casedata():
                 obj["name"] = res["name"]
                 json.dump(obj, ofp, indent=2)
 
+def _generate_caselist():
+    """Write results/cases.json: the per-case simulation settings, keyed by
+    result id.
+
+    json/<plot>-case.json is keyed by *plot*, and a case can have several plots
+    or none, so it is not a list of cases. The wasm artifacts need one entry per
+    case: buildModelFMU bakes in neither the case's stopTime/tolerance/interval
+    count nor its parameter modifications, so an importer has to apply them, the
+    way `-override` and the simulate() arguments do on the native path.
+    """
+    cases = {}
+    for res in results:
+        data = results[res]
+        cases[res] = {
+            "name": data["name"],
+            "stopTime": data["stopTime"],
+            "tol": data["tol"],
+            "ncp": data["ncp"],
+            "mods": data["mods"],
+        }
+    with open(os.path.join(path, "text", "results", "cases.json"), "w+") as ofp:
+        json.dump(cases, ofp, indent=2, sort_keys=True)
+
+
 def _generate_modellist():
     models = set()
     for res in results:
@@ -233,7 +257,9 @@ def _generate_makefile():
     genres = env.get_template("gen_result.mos")
     genallres = env.get_template("genall_results.mos")
     genallstages = env.get_template("genall_stages.yaml")
+    genwasmstages = env.get_template("genwasm_stages.yaml")
     genmk = env.get_template("gen.makefile")
+    genwasm = env.get_template("gen_wasm.mos")
 
     # Generate Makefile
     with open(os.path.join(path, "text", "results", "Makefile"), "w+") as ofp:
@@ -242,6 +268,15 @@ def _generate_makefile():
     # Generate ./text/results/dvc.yaml
     with open(os.path.join(path, "text", "dvc.yaml"), "w+") as ofp:
         ofp.write(genallstages.render({"results": results}))
+
+    # The wasm stages are a separate pipeline, in their own directory, so that
+    # `make results` (dvc repro dvc.yaml) cannot reach them: they need an omc
+    # with the wasm-jit backend and the ordinary book toolchain has none.
+    wasmdir = os.path.join(path, "text", "dvc-wasm")
+    if not os.path.isdir(wasmdir):
+        os.makedirs(wasmdir)
+    with open(os.path.join(wasmdir, "dvc.yaml"), "w+") as ofp:
+        ofp.write(genwasmstages.render({"results": results}))
 
     contexts = []
     for res in results:
@@ -272,9 +307,12 @@ def _generate_makefile():
 
         with open(os.path.join(path, "text", "results", res+".mos"), "w+") as sfp:
             sfp.write(genres.render(**context))
-        # # Write out script to generate JavaScript
-        # with open(os.path.join(path, "text", "results", res+"-js.mos"), "w+") as sfp:
-        #     sfp.write(genjs.render(**context))
+        # Write out the script used to export this case as a WASM-backed FMI 3.0
+        # FMU. The artifact is separate from native simulation results; the
+        # case's simulation settings and parameter overrides stay in
+        # results/json/<res>-case.json for the importer to apply.
+        with open(os.path.join(path, "text", "results", res+"-wasm.mos"), "w+") as sfp:
+            sfp.write(genwasm.render(**context))
 
     with open(os.path.join(path, "text", "results", "allres.mos"), "w+") as sfp:
         sfp.write(genallres.render(contexts=contexts, path=path, cflags=cflags))
@@ -289,3 +327,5 @@ def generate():
     _generate_casedata()
     print("Generating model list")
     _generate_modellist()
+    print("Generating case list")
+    _generate_caselist()
