@@ -54,22 +54,30 @@ jobs:
         run: |
           python3 - <<'PY'
           import json
-          idx = json.load(open('text/results/wasm/index.json'))['cases']
+          idx = json.load(open('text/results/wasm/index.json'))
+          cases, pack = idx['cases'], idx['pack']
           def tot(form):
-              return sum(c['artifacts'][form]['bytes'] for c in idx.values() if form in c['artifacts'])
-          print(f"{len(idx)} cases")
+              return sum(c['artifacts'][form]['bytes'] for c in cases.values() if form in c['artifacts'])
+          print(f"{len(cases)} cases")
           for form in ('dylink', 'component', 'aot'):
-              n = sum(1 for c in idx.values() if form in c['artifacts'])
-              print(f"  {form:<10} {n:>3} artifacts  {tot(form)/1048576:8.1f} MB")
+              n = sum(1 for c in cases.values() if form in c['artifacts'])
+              print(f"  {form:<10} {n:>3} artifacts  {tot(form)/1048576:8.1f} MB laid out per case")
+          print(f"  packed     {pack['blobs']:>3} blobs      {pack['bytes']/1048576:8.1f} MB distinct "
+                f"({tot('aot')/pack['bytes']:.1f}x), of which "
+                f"{pack['sharedByEveryCase']/1048576:.2f} MB is in every case")
           PY
       - name: Upload WASM Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: wasm-artifacts
-          path: text/results/wasm
+          # pack/ carries the same content as aot/ with the duplicates removed
+          # (257 MB -> 16 MB), so uploading both would be uploading the AOT
+          # output twice, once badly. The DVC cache still holds aot/.
+          path: |
+            text/results/wasm
+            !text/results/wasm/aot
           # Nothing consumes these yet, so they are here to be looked at, not
-          # kept. The default 90 days would hold ~340 MB per run for no reason;
-          # the DVC cache is what actually makes a rebuild cheap.
+          # kept. The DVC cache is what actually makes a rebuild cheap.
           retention-days: 7
       - name: Save WASM DVC Cache
         if: always() && steps.wasm-cache-restore.outputs.cache-hit != 'true'

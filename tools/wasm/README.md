@@ -23,6 +23,7 @@ For each case, under `text/results/wasm/`:
 | `dylink/<case>.fmu` | An unzipped FMU holding the model kernel and nothing else, at `binaries/wasm32-om-dylink/`. Median **16 KB**. Its host has to link it against a prebuilt adapter, which today means an OpenModelica importer — there is no browser host for this form. |
 | `component/<case>.fmu` | A portable fmi-ls-wasm component at `binaries/wasm32-wasip2/`. About **2 MB** (710 KB zipped) because it carries the runtime with it. This is the form a browser can run today. |
 | `aot/<case>/` | The component transpiled ahead of time into core modules + glue + `manifest.json`. See below. |
+| `pack/` | The same AOT content, content-addressed so identical blobs are stored and served once. **This is the deployable layout.** |
 | `index.json` | One entry per case: the model, its artifacts and their sizes, and the simulation settings an importer must apply. |
 
 Both forms come out of a single `omc` run (`<case>-wasm.mos`); the only
@@ -45,6 +46,40 @@ at build time.
 
 `manifest.json` is not optional: the loader reads `exports` to enumerate the
 FMU's interfaces and `imports` to filter native imports.
+
+## Content-addressed packing
+
+jco names its core modules positionally (`fmu.core.wasm`, `fmu.core2.wasm`, …)
+and the numbering shifts from model to model, which hides how much the cases have
+in common. By content they barely differ: across the 98 cases, **186 MB of core
+modules is 12.8 MB of distinct bytes**, and 1.85 MB of that — the OpenModelica
+runtime — is byte-identical in every single case. The glue is nearly shared too:
+`fmu.js` is 747 KB but has only four distinct variants.
+
+Laid out per case none of that can be shared, because each
+`aot/<case>/fmu.core9.wasm` is its own URL. `pack.py` rewrites the tree so every
+distinct blob has one content-addressed path:
+
+```
+pack/blobs/<sha256[:16]>.wasm    each distinct core module, once
+pack/blobs/<sha256[:16]>.js      each distinct glue file, once
+pack/cases/<case>.json           logical name -> blob path, + imports/exports
+```
+
+98 cases become **127 blobs, 16.3 MB** — 15.7x smaller — in under a second.
+Blobs are hardlinked from the DVC outputs, so the packed tree costs no extra
+space.
+
+The logical names have to survive the rename, because that is what the glue asks
+for: `fmu-core.js` builds `cores` as a `Map` keyed by jco's name and the
+generated module calls `compile(name)` against it. The client may fetch those
+bytes from any URL — it just needs the mapping, which is what
+`pack/cases/<case>.json` is.
+
+What this buys a reader, assuming the blobs are served at those shared paths:
+about **0.75 MB gzipped for the first figure on a page** (runtime + glue + the
+model's own core), then **~16 KB for each figure after it**. Laid out per case it
+would be 0.75 MB every time.
 
 ## Simulation settings live beside the artifact, not inside it
 

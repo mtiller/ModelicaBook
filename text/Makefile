@@ -89,6 +89,7 @@ wasm_files: specs
 	   echo "no build-wasm-* stages in dvc.yaml -- did 'make specs' run?" >&2; exit 1; \
 	 fi; \
 	 dvc repro $$stages
+	$(PYTHON) ../tools/wasm/pack.py
 	$(PYTHON) ../tools/wasm/make-index.py
 #	(cd results; make results_files exes.tar.gz tidy)
 
