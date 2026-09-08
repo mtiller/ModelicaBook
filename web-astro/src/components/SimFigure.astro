@@ -79,6 +79,7 @@ const showInteractive = interactive && !!c && editable.length > 0;
                     id={`p-${id}-${p.key}`}
                     type="number"
                     step="any"
+                    min={p.min !== undefined ? String(p.min) : undefined}
                     value={String(p.default)}
                     title={p.description || p.label}
                   />

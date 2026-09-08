@@ -81,6 +81,12 @@ function parameters(fig, spec) {
     const input = fig.querySelector(`#p-${CSS.escape(fig.dataset.plotId)}-${CSS.escape(p.key)}`);
     const value = Number(input ? input.value : p.default);
     if (!Number.isFinite(value)) throw new Error(`${p.key}: “${input.value}” is not a number`);
+    // The model description's `min` is a statement about the model, not a UI
+    // hint: a negative resistance or mass is not a simulation the reader wants
+    // the answer to. The slider cannot go below it; typing can, so check here.
+    if (p.min !== undefined && value < Number(p.min)) {
+      throw new Error(`${p.key} cannot be below ${p.min}${p.unit ? ' ' + p.unit : ''}`);
+    }
     out.push({ vr: Number(p.valueReference), value });
   }
   return out;
