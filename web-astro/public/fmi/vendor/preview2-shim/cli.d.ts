@@ -1,0 +1,16 @@
+import type { exit as ExitNamespace, stderr as StderrNamespace, stdin as StdinNamespace, stdout as StdoutNamespace, terminalInput as TerminalInputNamespace, terminalOutput as TerminalOutputNamespace, terminalStderr as TerminalStderrNamespace, terminalStdin as TerminalStdinNamespace, terminalStdout as TerminalStdoutNamespace } from "../../types/cli.js";
+import { type InputStreamHandler, type OutputStreamHandler } from "./io.js";
+export { _setEnv, _setArgs, environment } from "./environment.js";
+export { _setCwd } from "./config.js";
+export declare const exit: typeof ExitNamespace;
+export declare function _setStdin(handler: InputStreamHandler): void;
+export declare function _setStderr(handler: OutputStreamHandler): void;
+export declare function _setStdout(handler: OutputStreamHandler): void;
+export declare const stdin: typeof StdinNamespace;
+export declare const stdout: typeof StdoutNamespace;
+export declare const stderr: typeof StderrNamespace;
+export declare const terminalInput: typeof TerminalInputNamespace;
+export declare const terminalOutput: typeof TerminalOutputNamespace;
+export declare const terminalStderr: typeof TerminalStderrNamespace;
+export declare const terminalStdin: typeof TerminalStdinNamespace;
+export declare const terminalStdout: typeof TerminalStdoutNamespace;

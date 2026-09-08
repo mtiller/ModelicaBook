@@ -72,7 +72,7 @@ const showInteractive = interactive && !!c && editable.length > 0;
           <span class="mbe-figure__hint">
             {editable.length > 0 ? 'Edit a value · press Run' : 'No adjustable parameters'}
           </span>
-          <button class="mbe-figure__run" type="button" disabled title="Live simulation deferred (MIC-86)">
+          <button class="mbe-figure__run" type="button" title="Simulate this model in your browser">
             Run
           </button>
         </div>
@@ -95,28 +95,37 @@ const showInteractive = interactive && !!c && editable.length > 0;
 )}
 
 <script>
-  // Bundled + run by Astro (no sanitization, no injection step). Reads the
-  // contract from data-case — the attribute survives because Astro doesn't
-  // sanitize component output. This is the exact thing mystmd's theme stripped.
-  interface CaseShape { name: string; stopTime: number | null; tol: number }
+  // Bundled + run by Astro. Reads the contract from data-case — the attribute
+  // survives because Astro doesn't sanitize component output.
+  //
+  // The simulation itself lives in /fmi/figure.js, imported on the first Run and
+  // not before: it pulls a 2.2 MB driver, which a reader who never presses Run
+  // should never pay for. Once fetched it is cached for every figure on the site.
   function hydrate() {
     document.querySelectorAll<HTMLElement>('.mbe-figure.interactive').forEach((fig) => {
       if (fig.dataset.hydrated) return;
       fig.dataset.hydrated = '1';
-      let data: CaseShape | null = null;
-      try {
-        data = JSON.parse(fig.dataset.case || 'null');
-      } catch {
-        return;
-      }
       const status = fig.querySelector<HTMLElement>('.mbe-figure__status');
       const run = fig.querySelector<HTMLButtonElement>('.mbe-figure__run');
-      // Contract is in hand client-side. Live re-sim (MIC-86) is deferred, so
-      // Run stays disabled; the static plot is the resilient base case.
-      run?.addEventListener('click', () => {
-        if (!data) return;
+      const say = (text: string) => { if (status) status.textContent = text; };
+      run?.addEventListener('click', async () => {
+        if (run.disabled) return;
+        run.disabled = true;
+        const label = run.textContent;
+        run.textContent = 'Running…';
         fig.dataset.state = 'simulating';
-        if (status) status.textContent = `Would simulate ${data.name}…`;
+        try {
+          const { simulate } = await import(/* @vite-ignore */ '/fmi/figure.js');
+          await simulate(fig, say);
+        } catch (e) {
+          // The static plot stays on screen: a failed run must not cost the
+          // reader the figure.
+          fig.dataset.state = 'static';
+          say(e instanceof Error ? e.message : String(e));
+        } finally {
+          run.disabled = false;
+          run.textContent = label;
+        }
       });
     });
   }
