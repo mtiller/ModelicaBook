@@ -22,5 +22,254 @@
     "power_supply.C": 0.1
   },
   "name": "ModelicaByExample.Subsystems.PowerSupply.Examples.AdditionalLoad",
-  "params": []
+  "params": [
+    {
+      "key": "add_load.R",
+      "label": "add_load.R",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "48",
+      "description": "Resistance at temperature T_ref",
+      "unit": "Ohm"
+    },
+    {
+      "key": "add_load.T_ref",
+      "label": "add_load.T_ref",
+      "default": "300.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "51",
+      "description": "Reference temperature",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "add_load.alpha",
+      "label": "add_load.alpha",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "52",
+      "description": "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))",
+      "unit": "1/K"
+    },
+    {
+      "key": "load.R",
+      "label": "load.R",
+      "default": "100.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "53",
+      "description": "Resistance at temperature T_ref",
+      "unit": "Ohm"
+    },
+    {
+      "key": "load.T_ref",
+      "label": "load.T_ref",
+      "default": "300.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "56",
+      "description": "Reference temperature",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "load.alpha",
+      "label": "load.alpha",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "57",
+      "description": "Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))",
+      "unit": "1/K"
+    },
+    {
+      "key": "load_step.startTime",
+      "label": "load_step.startTime",
+      "default": "0.7",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "58",
+      "description": "Time instant of step start",
+      "unit": "s"
+    },
+    {
+      "key": "power_supply.C",
+      "label": "power_supply.C",
+      "default": 0.1,
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "59",
+      "description": "Filter capacitance",
+      "unit": "F",
+      "min": "0.0",
+      "overridden": true
+    },
+    {
+      "key": "power_supply.Goff",
+      "label": "power_supply.Goff",
+      "default": "1e-5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "80",
+      "description": "Backward state-off conductance (opened diode conductance)",
+      "unit": "S"
+    },
+    {
+      "key": "power_supply.Lm1",
+      "label": "power_supply.Lm1",
+      "default": "0.01",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "81",
+      "description": "Magnetization inductance w.r.t. primary side",
+      "unit": "H"
+    },
+    {
+      "key": "power_supply.Ron",
+      "label": "power_supply.Ron",
+      "default": "1e-5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "82",
+      "description": "Forward state-on differential resistance (closed diode resistance)",
+      "unit": "Ohm"
+    },
+    {
+      "key": "power_supply.n",
+      "label": "power_supply.n",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "84",
+      "description": "Turns ratio primary:secondary voltage"
+    },
+    {
+      "key": "step.startTime",
+      "label": "step.startTime",
+      "default": "0.25",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "87",
+      "description": "Time instant of step start",
+      "unit": "s"
+    },
+    {
+      "key": "switch.Goff",
+      "label": "switch.Goff",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "88",
+      "description": "Opened switch conductance",
+      "unit": "S",
+      "min": "0.0"
+    },
+    {
+      "key": "switch.Ron",
+      "label": "switch.Ron",
+      "default": "1e-5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "89",
+      "description": "Closed switch resistance",
+      "unit": "Ohm",
+      "min": "0.0"
+    },
+    {
+      "key": "switch1.Goff",
+      "label": "switch1.Goff",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "91",
+      "description": "Opened switch conductance",
+      "unit": "S",
+      "min": "0.0"
+    },
+    {
+      "key": "switch1.Ron",
+      "label": "switch1.Ron",
+      "default": "1e-5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "92",
+      "description": "Closed switch resistance",
+      "unit": "Ohm",
+      "min": "0.0"
+    },
+    {
+      "key": "wall_voltage.V",
+      "label": "wall_voltage.V",
+      "default": "120.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "94",
+      "description": "Amplitude of sine wave",
+      "unit": "V"
+    },
+    {
+      "key": "wall_voltage.freqHz",
+      "label": "wall_voltage.freqHz",
+      "default": "60.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "95",
+      "description": "Frequency of sine wave",
+      "unit": "Hz"
+    },
+    {
+      "key": "wall_voltage.offset",
+      "label": "wall_voltage.offset",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "96",
+      "description": "Voltage offset",
+      "unit": "V"
+    },
+    {
+      "key": "wall_voltage.phase",
+      "label": "wall_voltage.phase",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "97",
+      "description": "Phase of sine wave",
+      "unit": "rad",
+      "displayUnit": "deg"
+    },
+    {
+      "key": "wall_voltage.startTime",
+      "label": "wall_voltage.startTime",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "103",
+      "description": "Time offset",
+      "unit": "s"
+    },
+    {
+      "key": "load_step.startValue",
+      "label": "load_step.startValue",
+      "default": "false",
+      "editable": true,
+      "type": "Boolean",
+      "valueReference": "168",
+      "description": "Output before startTime"
+    },
+    {
+      "key": "step.startValue",
+      "label": "step.startValue",
+      "default": "false",
+      "editable": true,
+      "type": "Boolean",
+      "valueReference": "175",
+      "description": "Output before startTime"
+    }
+  ]
 }

@@ -32,5 +32,111 @@
   "tol": 0.0001,
   "mods": {},
   "name": "ModelicaByExample.Components.LotkaVolterra.Examples.ThreeSpecies_Quiescent",
-  "params": []
+  "params": [
+    {
+      "key": "fox_predation.beta",
+      "label": "fox_predation.beta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "18",
+      "description": "Prey (Species A) consumed"
+    },
+    {
+      "key": "fox_predation.delta",
+      "label": "fox_predation.delta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "19",
+      "description": "Predators (Species B) fed"
+    },
+    {
+      "key": "fox_starvation.gamma",
+      "label": "fox_starvation.gamma",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "20",
+      "description": "Starvation coefficient"
+    },
+    {
+      "key": "foxes.initial_population",
+      "label": "foxes.initial_population",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "21"
+    },
+    {
+      "key": "rabbits.initial_population",
+      "label": "rabbits.initial_population",
+      "default": "30.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "22"
+    },
+    {
+      "key": "reproduction.alpha",
+      "label": "reproduction.alpha",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "23",
+      "description": "Birth rate proportionality constant"
+    },
+    {
+      "key": "wolf_predation.beta",
+      "label": "wolf_predation.beta",
+      "default": "0.04",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "24",
+      "description": "Prey (Species A) consumed"
+    },
+    {
+      "key": "wolf_predation.delta",
+      "label": "wolf_predation.delta",
+      "default": "0.08",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "25",
+      "description": "Predators (Species B) fed"
+    },
+    {
+      "key": "wolf_rabbit_predation.beta",
+      "label": "wolf_rabbit_predation.beta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "26",
+      "description": "Prey (Species A) consumed"
+    },
+    {
+      "key": "wolf_rabbit_predation.delta",
+      "label": "wolf_rabbit_predation.delta",
+      "default": "0.01",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "27",
+      "description": "Predators (Species B) fed"
+    },
+    {
+      "key": "wolf_starvation.gamma",
+      "label": "wolf_starvation.gamma",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "28",
+      "description": "Starvation coefficient"
+    },
+    {
+      "key": "wolves.initial_population",
+      "label": "wolves.initial_population",
+      "default": "4.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "29"
+    }
+  ]
 }

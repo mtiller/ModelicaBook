@@ -20,5 +20,148 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Subsystems.HeatTransfer.Examples.FlatRod",
-  "params": []
+  "params": [
+    {
+      "key": "C1.C",
+      "label": "C1.C",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "26",
+      "description": "Heat capacity of element (= cp*m)",
+      "unit": "J/K"
+    },
+    {
+      "key": "C2.C",
+      "label": "C2.C",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "27",
+      "description": "Heat capacity of element (= cp*m)",
+      "unit": "J/K"
+    },
+    {
+      "key": "C3.C",
+      "label": "C3.C",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "28",
+      "description": "Heat capacity of element (= cp*m)",
+      "unit": "J/K"
+    },
+    {
+      "key": "G1.G",
+      "label": "G1.G",
+      "default": "1.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "29",
+      "description": "Constant thermal conductance of material",
+      "unit": "W/K"
+    },
+    {
+      "key": "G2.G",
+      "label": "G2.G",
+      "default": "1.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "30",
+      "description": "Constant thermal conductance of material",
+      "unit": "W/K"
+    },
+    {
+      "key": "ambient.T",
+      "label": "ambient.T",
+      "default": "293.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "31",
+      "description": "Fixed temperature at port",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "bc.height",
+      "label": "bc.height",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "33",
+      "description": "Height of step"
+    },
+    {
+      "key": "bc.offset",
+      "label": "bc.offset",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "34",
+      "description": "Offset of output signal y"
+    },
+    {
+      "key": "bc.startTime",
+      "label": "bc.startTime",
+      "default": "0.5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "35",
+      "description": "Output y = offset for time < startTime",
+      "unit": "s"
+    },
+    {
+      "key": "heating.T_ref",
+      "label": "heating.T_ref",
+      "default": "293.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "36",
+      "description": "Reference temperature",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "heating.alpha",
+      "label": "heating.alpha",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "37",
+      "description": "Temperature coefficient of heat flow rate",
+      "unit": "1/K"
+    },
+    {
+      "key": "wall1.G",
+      "label": "wall1.G",
+      "default": "0.9",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "38",
+      "description": "Constant thermal conductance of material",
+      "unit": "W/K"
+    },
+    {
+      "key": "wall2.G",
+      "label": "wall2.G",
+      "default": "0.9",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "40",
+      "description": "Constant thermal conductance of material",
+      "unit": "W/K"
+    },
+    {
+      "key": "wall3.G",
+      "label": "wall3.G",
+      "default": "0.9",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "42",
+      "description": "Constant thermal conductance of material",
+      "unit": "W/K"
+    }
+  ]
 }

@@ -34,5 +34,75 @@
     "teeth": 20
   },
   "name": "ModelicaByExample.DiscreteBehavior.SpeedMeasurement.IntervalMeasure",
-  "params": []
+  "params": [
+    {
+      "key": "J1",
+      "label": "J1",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "12",
+      "description": "Moment of inertia for inertia 1",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "J2",
+      "label": "J2",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "13",
+      "description": "Moment of inertia for inertia 2",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "c1",
+      "label": "c1",
+      "default": "11.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "14",
+      "description": "Spring constant for spring 1",
+      "unit": "N.m/rad"
+    },
+    {
+      "key": "c2",
+      "label": "c2",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "15",
+      "description": "Spring constant for spring 2",
+      "unit": "N.m/rad"
+    },
+    {
+      "key": "d1",
+      "label": "d1",
+      "default": "0.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "16",
+      "description": "Damping for damper 1",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "d2",
+      "label": "d2",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "17",
+      "description": "Damping for damper 2",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "teeth",
+      "label": "teeth",
+      "default": 20,
+      "editable": true,
+      "type": "Int32",
+      "valueReference": "19",
+      "overridden": true
+    }
+  ]
 }

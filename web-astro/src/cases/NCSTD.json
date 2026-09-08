@@ -26,5 +26,50 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.DiscreteBehavior.CoolingRevisited.NewtonCoolingSteadyThenDynamic",
-  "params": []
+  "params": [
+    {
+      "key": "A",
+      "label": "A",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "3",
+      "description": "Surface area",
+      "unit": "m2",
+      "min": "0.0"
+    },
+    {
+      "key": "c_p",
+      "label": "c_p",
+      "default": "1.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "4",
+      "description": "Specific heat",
+      "unit": "J/(K.kg)",
+      "min": "0.0"
+    },
+    {
+      "key": "h",
+      "label": "h",
+      "default": "0.7",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "5",
+      "description": "Convective cooling coefficient",
+      "unit": "W/(m2.K)",
+      "min": "0.0"
+    },
+    {
+      "key": "m",
+      "label": "m",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "6",
+      "description": "Mass of thermal capacitance",
+      "unit": "kg",
+      "min": "0.0"
+    }
+  ]
 }

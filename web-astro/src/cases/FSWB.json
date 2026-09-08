@@ -26,5 +26,131 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Subsystems.GearSubsystemModel.Examples.FlatSystemWithBacklash",
-  "params": []
+  "params": [
+    {
+      "key": "fixed.phi0",
+      "label": "fixed.phi0",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "50",
+      "description": "Fixed offset angle of housing",
+      "unit": "rad",
+      "displayUnit": "deg"
+    },
+    {
+      "key": "inertia.J",
+      "label": "inertia.J",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "54",
+      "description": "Moment of inertia",
+      "unit": "kg.m2",
+      "min": "0.0"
+    },
+    {
+      "key": "load.d",
+      "label": "load.d",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "57",
+      "description": "Damping constant",
+      "unit": "N.m.s/rad",
+      "min": "0.0"
+    },
+    {
+      "key": "load.phi_nominal",
+      "label": "load.phi_nominal",
+      "default": "1e-4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "59",
+      "description": "Nominal value of phi_rel (used for scaling)",
+      "unit": "rad",
+      "min": "0.0"
+    },
+    {
+      "key": "trapezoid.amplitude",
+      "label": "trapezoid.amplitude",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "65",
+      "description": "Amplitude of trapezoid"
+    },
+    {
+      "key": "trapezoid.falling",
+      "label": "trapezoid.falling",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "66",
+      "description": "Falling duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "trapezoid.offset",
+      "label": "trapezoid.offset",
+      "default": "-1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "67",
+      "description": "Offset of output signal y"
+    },
+    {
+      "key": "trapezoid.period",
+      "label": "trapezoid.period",
+      "default": "0.8",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "68",
+      "description": "Time for one period",
+      "unit": "s",
+      "min": "1e-60"
+    },
+    {
+      "key": "trapezoid.rising",
+      "label": "trapezoid.rising",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "69",
+      "description": "Rising duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "trapezoid.startTime",
+      "label": "trapezoid.startTime",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "70",
+      "description": "Output y = offset for time < startTime",
+      "unit": "s"
+    },
+    {
+      "key": "trapezoid.width",
+      "label": "trapezoid.width",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "71",
+      "description": "Width duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "trapezoid.nperiod",
+      "label": "trapezoid.nperiod",
+      "default": "-1",
+      "editable": true,
+      "type": "Int32",
+      "valueReference": "105",
+      "description": "Number of periods (< 0 means infinite number of periods)"
+    }
+  ]
 }

@@ -20,5 +20,65 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Architectures.ThermalControl.Examples.OnOffVariant",
-  "params": []
+  "params": [
+    {
+      "key": "actuator.heating_capacity",
+      "label": "actuator.heating_capacity",
+      "default": "500.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "35",
+      "description": "Heating capacity of actuator"
+    },
+    {
+      "key": "controller.setpoint",
+      "label": "controller.setpoint",
+      "default": "300.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "36",
+      "description": "Desired temperature"
+    },
+    {
+      "key": "plant.C",
+      "label": "plant.C",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "47",
+      "description": "Zone capacitance",
+      "unit": "J/K"
+    },
+    {
+      "key": "plant.G",
+      "label": "plant.G",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "48",
+      "description": "Conductance between rooms",
+      "unit": "W/K"
+    },
+    {
+      "key": "plant.T_ambient",
+      "label": "plant.T_ambient",
+      "default": "278.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "49",
+      "description": "Fixed temperature at port",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "plant.h",
+      "label": "plant.h",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "63",
+      "description": "Convenction coefficient"
+    }
+  ]
 }

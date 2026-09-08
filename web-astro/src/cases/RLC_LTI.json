@@ -20,5 +20,87 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.ArrayEquations.StateSpace.Examples.RLC",
-  "params": []
+  "params": [
+    {
+      "key": "C",
+      "label": "C",
+      "default": "0.001",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "6"
+    },
+    {
+      "key": "L",
+      "label": "L",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "7"
+    },
+    {
+      "key": "R",
+      "label": "R",
+      "default": "100.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "8"
+    },
+    {
+      "key": "Vb",
+      "label": "Vb",
+      "default": "24.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "9"
+    },
+    {
+      "key": "rlc_comp.A[2,2]",
+      "label": "rlc_comp.A[2,2]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "13"
+    },
+    {
+      "key": "rlc_comp.B[1,1]",
+      "label": "rlc_comp.B[1,1]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "14"
+    },
+    {
+      "key": "rlc_comp.C[1,2]",
+      "label": "rlc_comp.C[1,2]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "17"
+    },
+    {
+      "key": "rlc_comp.C[2,2]",
+      "label": "rlc_comp.C[2,2]",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "19"
+    },
+    {
+      "key": "rlc_comp.D",
+      "label": "rlc_comp.D",
+      "default": "0.0 0.0",
+      "editable": false,
+      "type": "Float64",
+      "valueReference": "20"
+    },
+    {
+      "key": "rlc_comp.x0",
+      "label": "rlc_comp.x0",
+      "default": "0.0 0.0",
+      "editable": false,
+      "type": "Float64",
+      "valueReference": "23",
+      "description": "Initial conditions"
+    }
+  ]
 }

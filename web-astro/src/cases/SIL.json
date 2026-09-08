@@ -26,5 +26,51 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Functions.ImpureFunctions.HysteresisEmbeddedControl",
-  "params": []
+  "params": [
+    {
+      "key": "C",
+      "label": "C",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "3",
+      "unit": "J/K"
+    },
+    {
+      "key": "Qcapacity",
+      "label": "Qcapacity",
+      "default": "25.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "4",
+      "unit": "W"
+    },
+    {
+      "key": "Tamb",
+      "label": "Tamb",
+      "default": "285.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "5",
+      "unit": "K"
+    },
+    {
+      "key": "Tbar",
+      "label": "Tbar",
+      "default": "295.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "6",
+      "unit": "K"
+    },
+    {
+      "key": "h",
+      "label": "h",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "7",
+      "unit": "W/K"
+    }
+  ]
 }

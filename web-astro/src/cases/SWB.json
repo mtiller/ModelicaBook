@@ -26,5 +26,191 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Subsystems.GearSubsystemModel.Examples.BacklashExample",
-  "params": []
+  "params": [
+    {
+      "key": "fixed.phi0",
+      "label": "fixed.phi0",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "43",
+      "description": "Fixed offset angle of housing",
+      "unit": "rad",
+      "displayUnit": "deg"
+    },
+    {
+      "key": "gearWithBacklash.J_a",
+      "label": "gearWithBacklash.J_a",
+      "default": "0.01",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "44",
+      "description": "Moment of inertia for element connected to flange 'a'",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "gearWithBacklash.J_b",
+      "label": "gearWithBacklash.J_b",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "45",
+      "description": "Moment of inertia for element connected to flange 'b'",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "gearWithBacklash.b",
+      "label": "gearWithBacklash.b",
+      "default": "0.17453292519943",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "46",
+      "description": "Total backlash as measured from flange_a side",
+      "unit": "rad",
+      "displayUnit": "deg"
+    },
+    {
+      "key": "gearWithBacklash.c",
+      "label": "gearWithBacklash.c",
+      "default": "1000.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "54",
+      "description": "Backlash spring constant (c > 0 required)",
+      "unit": "N.m/rad"
+    },
+    {
+      "key": "gearWithBacklash.d",
+      "label": "gearWithBacklash.d",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "55",
+      "description": "Backlash damping constant",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "gearWithBacklash.ratio",
+      "label": "gearWithBacklash.ratio",
+      "default": "4.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "61",
+      "description": "Transmission ratio (flange_a.phi/flange_b.phi, once backlash is cleared)"
+    },
+    {
+      "key": "inertia.J",
+      "label": "inertia.J",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "63",
+      "description": "Moment of inertia",
+      "unit": "kg.m2",
+      "min": "0.0"
+    },
+    {
+      "key": "load.d",
+      "label": "load.d",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "64",
+      "description": "Damping constant",
+      "unit": "N.m.s/rad",
+      "min": "0.0"
+    },
+    {
+      "key": "load.phi_nominal",
+      "label": "load.phi_nominal",
+      "default": "1e-4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "66",
+      "description": "Nominal value of phi_rel (used for scaling)",
+      "unit": "rad",
+      "min": "0.0"
+    },
+    {
+      "key": "torque_profile.amplitude",
+      "label": "torque_profile.amplitude",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "72",
+      "description": "Amplitude of trapezoid"
+    },
+    {
+      "key": "torque_profile.falling",
+      "label": "torque_profile.falling",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "73",
+      "description": "Falling duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "torque_profile.offset",
+      "label": "torque_profile.offset",
+      "default": "-1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "74",
+      "description": "Offset of output signal y"
+    },
+    {
+      "key": "torque_profile.period",
+      "label": "torque_profile.period",
+      "default": "0.8",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "75",
+      "description": "Time for one period",
+      "unit": "s",
+      "min": "1e-60"
+    },
+    {
+      "key": "torque_profile.rising",
+      "label": "torque_profile.rising",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "76",
+      "description": "Rising duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "torque_profile.startTime",
+      "label": "torque_profile.startTime",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "77",
+      "description": "Output y = offset for time < startTime",
+      "unit": "s"
+    },
+    {
+      "key": "torque_profile.width",
+      "label": "torque_profile.width",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "78",
+      "description": "Width duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "torque_profile.nperiod",
+      "label": "torque_profile.nperiod",
+      "default": "-1",
+      "editable": true,
+      "type": "Int32",
+      "valueReference": "117",
+      "description": "Number of periods (< 0 means infinite number of periods)"
+    }
+  ]
 }

@@ -21,6 +21,12 @@ import path from 'node:path';
 
 const SRC = '../text/results/json';
 const OUT = 'src/cases';
+// Parameters come from the wasm build, which reads them out of each FMU's
+// modelDescription.xml -- the only place they exist. It is a separate DVC
+// pipeline (`make wasm`), so treat it as optional: without it the contracts
+// keep params:[] and every figure falls back to its static plot, which is
+// exactly what SimFigure already does.
+const WASM_INDEX = '../text/results/wasm/index.json';
 
 if (!fs.existsSync(SRC)) {
   console.error(
@@ -33,12 +39,43 @@ if (!fs.existsSync(SRC)) {
 
 fs.mkdirSync(OUT, { recursive: true });
 
+let wasmCases = {};
+if (fs.existsSync(WASM_INDEX)) {
+  wasmCases = JSON.parse(fs.readFileSync(WASM_INDEX, 'utf8')).cases ?? {};
+} else {
+  console.warn(
+    `build-cases: ${WASM_INDEX} not found — figures will keep params:[] and stay static.\n` +
+    `  Run \`make wasm\` at the repo root to populate them.`,
+  );
+}
+
+// The FMU calls a parameter by its Modelica name, which is the name the book's
+// prose uses too, so that is the label. `description` rides along for a tooltip.
+function toParam(p) {
+  const out = {
+    key: p.name,
+    label: p.name,
+    default: p.default,
+    editable: p.editable,
+    type: p.type,
+    // What fmi3Set* needs to address it, so a client never has to re-parse the
+    // model description at runtime.
+    valueReference: p.valueReference,
+  };
+  for (const k of ['description', 'unit', 'displayUnit', 'min', 'max', 'overridden']) {
+    if (p[k] !== undefined) out[k] = p[k];
+  }
+  return out;
+}
+
 const files = fs.readdirSync(SRC).filter((f) => f.endsWith('-case.json'));
 const ids = [];
+let withParams = 0;
 for (const f of files) {
   const j = JSON.parse(fs.readFileSync(path.join(SRC, f), 'utf8'));
   const id = j.res || f.replace(/-case\.json$/, '');
-  if (!j.params) j.params = [];              // Astro schema adds editable params (none by default)
+  j.params = (wasmCases[id]?.parameters ?? []).map(toParam);
+  if (j.params.some((p) => p.editable)) withParams++;
   fs.writeFileSync(path.join(OUT, `${id}.json`), JSON.stringify(j, null, 2) + '\n');
   ids.push(id);
 }
@@ -54,4 +91,7 @@ if (ids.length === 0) {
 }
 
 const unique = new Set(ids);
-console.log(`wrote ${unique.size} case JSONs to ${OUT}/ (index.ts is hand-written, untouched)`);
+console.log(
+  `wrote ${unique.size} case JSONs to ${OUT}/ ` +
+  `(${withParams} with editable parameters; index.ts is hand-written, untouched)`,
+);

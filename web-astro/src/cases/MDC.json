@@ -20,5 +20,81 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.BlockDiagrams.Examples.MultiDomainControl",
-  "params": []
+  "params": [
+    {
+      "key": "A",
+      "label": "A",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "7",
+      "description": "Area"
+    },
+    {
+      "key": "T_bar",
+      "label": "T_bar",
+      "default": "303.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "8",
+      "description": "Desired temperature"
+    },
+    {
+      "key": "T_inf",
+      "label": "T_inf",
+      "default": "298.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "9",
+      "description": "Ambient temperature"
+    },
+    {
+      "key": "c_p",
+      "label": "c_p",
+      "default": "1.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "12",
+      "description": "Specific heat"
+    },
+    {
+      "key": "cap.T0",
+      "label": "cap.T0",
+      "default": "363.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "14",
+      "description": "Initial temperature",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "h",
+      "label": "h",
+      "default": "0.7",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "20",
+      "description": "Convection coefficient"
+    },
+    {
+      "key": "k",
+      "label": "k",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "21",
+      "description": "Controller gain"
+    },
+    {
+      "key": "m",
+      "label": "m",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "22",
+      "description": "Thermal maass"
+    }
+  ]
 }

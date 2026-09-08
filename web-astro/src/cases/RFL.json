@@ -74,5 +74,77 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.ArrayEquations.HeatTransfer.Rod_ForLoop",
-  "params": []
+  "params": [
+    {
+      "key": "C",
+      "label": "C",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "22",
+      "unit": "J/(K.kg)",
+      "min": "0.0"
+    },
+    {
+      "key": "L",
+      "label": "L",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "23",
+      "unit": "m",
+      "min": "0.0"
+    },
+    {
+      "key": "R",
+      "label": "R",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "24",
+      "unit": "m",
+      "min": "0.0"
+    },
+    {
+      "key": "Tamb",
+      "label": "Tamb",
+      "default": "300.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "25",
+      "description": "Ambient temperature",
+      "unit": "K",
+      "min": "0.0"
+    },
+    {
+      "key": "h",
+      "label": "h",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "27",
+      "unit": "W/K",
+      "min": "0.0"
+    },
+    {
+      "key": "k",
+      "label": "k",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "28",
+      "unit": "W.m-1.K-1",
+      "min": "0.0"
+    },
+    {
+      "key": "rho",
+      "label": "rho",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "29",
+      "unit": "kg/m3",
+      "min": "0.0"
+    }
+  ]
 }

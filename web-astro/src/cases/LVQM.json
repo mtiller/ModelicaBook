@@ -26,5 +26,42 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.BasicEquations.LotkaVolterra.QuiescentModel",
-  "params": []
+  "params": [
+    {
+      "key": "alpha",
+      "label": "alpha",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "4",
+      "description": "Reproduction rate of prey"
+    },
+    {
+      "key": "beta",
+      "label": "beta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "5",
+      "description": "Mortality rate of predator per prey"
+    },
+    {
+      "key": "delta",
+      "label": "delta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "6",
+      "description": "Reproduction rate of predator per prey"
+    },
+    {
+      "key": "gamma",
+      "label": "gamma",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "7",
+      "description": "Mortality rate of predator"
+    }
+  ]
 }

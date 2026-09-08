@@ -20,5 +20,83 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Architectures.ThermalControl.Examples.HysteresisVariant",
-  "params": []
+  "params": [
+    {
+      "key": "actuator.heating_capacity",
+      "label": "actuator.heating_capacity",
+      "default": "500.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "35",
+      "description": "Heating capacity of actuator"
+    },
+    {
+      "key": "controller.bandwidth",
+      "label": "controller.bandwidth",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "36",
+      "description": "Bandwidth around reference signal"
+    },
+    {
+      "key": "controller.setpoint",
+      "label": "controller.setpoint",
+      "default": "300.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "38",
+      "description": "Desired temperature"
+    },
+    {
+      "key": "plant.C",
+      "label": "plant.C",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "49",
+      "description": "Zone capacitance",
+      "unit": "J/K"
+    },
+    {
+      "key": "plant.G",
+      "label": "plant.G",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "50",
+      "description": "Conductance between rooms",
+      "unit": "W/K"
+    },
+    {
+      "key": "plant.T_ambient",
+      "label": "plant.T_ambient",
+      "default": "278.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "51",
+      "description": "Fixed temperature at port",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "plant.h",
+      "label": "plant.h",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "65",
+      "description": "Convenction coefficient"
+    },
+    {
+      "key": "controller.controller.pre_y_start",
+      "label": "controller.controller.pre_y_start",
+      "default": "false",
+      "editable": false,
+      "type": "Boolean",
+      "valueReference": "113",
+      "description": "Value of pre(y) at initial time"
+    }
+  ]
 }

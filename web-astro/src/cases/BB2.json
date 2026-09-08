@@ -20,5 +20,25 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.DiscreteBehavior.BouncingBall.BouncingBall",
-  "params": []
+  "params": [
+    {
+      "key": "e",
+      "label": "e",
+      "default": "0.8",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "4",
+      "description": "Coefficient of restitution"
+    },
+    {
+      "key": "h0",
+      "label": "h0",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "5",
+      "description": "Initial height",
+      "unit": "m"
+    }
+  ]
 }

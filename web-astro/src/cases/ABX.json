@@ -20,5 +20,33 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.ChemicalReactions.Examples.ABX_System",
-  "params": []
+  "params": [
+    {
+      "key": "'A+B->X'.k",
+      "label": "'A+B->X'.k",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "14",
+      "description": "Reaction coefficient"
+    },
+    {
+      "key": "'A+B<-X'.k",
+      "label": "'A+B<-X'.k",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "15",
+      "description": "Reaction coefficient"
+    },
+    {
+      "key": "'X+B->T+S'.k",
+      "label": "'X+B->T+S'.k",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "16",
+      "description": "Reaction coefficient"
+    }
+  ]
 }

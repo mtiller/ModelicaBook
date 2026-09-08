@@ -38,5 +38,78 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.Rotational.Examples.SMD_WithGroundedGear",
-  "params": []
+  "params": [
+    {
+      "key": "damper2.d",
+      "label": "damper2.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "30",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "damper3.d",
+      "label": "damper3.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "31",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "gear.ratio",
+      "label": "gear.ratio",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "32",
+      "description": "Ratio of phi_a/phi_b"
+    },
+    {
+      "key": "inertia1.J",
+      "label": "inertia1.J",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "33",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "inertia2.J",
+      "label": "inertia2.J",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "34",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "inertia3.J",
+      "label": "inertia3.J",
+      "default": "2.6",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "35",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "spring2.c",
+      "label": "spring2.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "36",
+      "unit": "N.m/rad"
+    },
+    {
+      "key": "spring3.c",
+      "label": "spring3.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "37",
+      "unit": "N.m/rad"
+    }
+  ]
 }

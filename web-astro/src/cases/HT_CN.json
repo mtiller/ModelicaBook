@@ -26,5 +26,163 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.HeatTransfer.Examples.ComplexNetwork",
-  "params": []
+  "params": [
+    {
+      "key": "amb1.T_amb",
+      "label": "amb1.T_amb",
+      "default": "300.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "11",
+      "description": "Ambient temperature",
+      "unit": "K",
+      "min": "0.0"
+    },
+    {
+      "key": "amb2.T_amb",
+      "label": "amb2.T_amb",
+      "default": "298.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "13",
+      "description": "Ambient temperature",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "cap1.C",
+      "label": "cap1.C",
+      "default": "0.12",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "15",
+      "description": "Thermal capacitance",
+      "unit": "J/K"
+    },
+    {
+      "key": "cap1.T0",
+      "label": "cap1.T0",
+      "default": "363.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "16",
+      "description": "Initial temperature",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "cap2.C",
+      "label": "cap2.C",
+      "default": "0.32",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "17",
+      "description": "Thermal capacitance",
+      "unit": "J/K"
+    },
+    {
+      "key": "cap2.T0",
+      "label": "cap2.T0",
+      "default": "363.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "18",
+      "description": "Initial temperature",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "conv1.A",
+      "label": "conv1.A",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "19",
+      "unit": "m2"
+    },
+    {
+      "key": "conv1.h",
+      "label": "conv1.h",
+      "default": "0.8",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "20",
+      "unit": "W/(m2.K)"
+    },
+    {
+      "key": "conv2.A",
+      "label": "conv2.A",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "22",
+      "unit": "m2"
+    },
+    {
+      "key": "conv2.h",
+      "label": "conv2.h",
+      "default": "0.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "23",
+      "unit": "W/(m2.K)"
+    },
+    {
+      "key": "conv3.A",
+      "label": "conv3.A",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "24",
+      "unit": "m2"
+    },
+    {
+      "key": "conv3.h",
+      "label": "conv3.h",
+      "default": "0.7",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "25",
+      "unit": "W/(m2.K)"
+    },
+    {
+      "key": "conv4.A",
+      "label": "conv4.A",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "27",
+      "unit": "m2"
+    },
+    {
+      "key": "conv4.h",
+      "label": "conv4.h",
+      "default": "1.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "28",
+      "unit": "W/(m2.K)"
+    },
+    {
+      "key": "conv5.A",
+      "label": "conv5.A",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "30",
+      "unit": "m2"
+    },
+    {
+      "key": "conv5.h",
+      "label": "conv5.h",
+      "default": "1.3",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "31",
+      "unit": "W/(m2.K)"
+    }
+  ]
 }

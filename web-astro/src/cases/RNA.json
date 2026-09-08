@@ -32,5 +32,30 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.ArrayEquations.ChemicalReactions.Reactions_NoArrays",
-  "params": []
+  "params": [
+    {
+      "key": "k1",
+      "label": "k1",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "6"
+    },
+    {
+      "key": "k2",
+      "label": "k2",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "7"
+    },
+    {
+      "key": "k3",
+      "label": "k3",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "8"
+    }
+  ]
 }

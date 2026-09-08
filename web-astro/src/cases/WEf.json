@@ -28,5 +28,15 @@
     "freq": 5
   },
   "name": "ModelicaByExample.DiscreteBehavior.Accuracy.WithEvents",
-  "params": []
+  "params": [
+    {
+      "key": "freq",
+      "label": "freq",
+      "default": 5,
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "4",
+      "overridden": true
+    }
+  ]
 }

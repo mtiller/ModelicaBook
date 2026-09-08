@@ -20,5 +20,27 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.HeatTransfer.Examples.Adiabatic",
-  "params": []
+  "params": [
+    {
+      "key": "cap.C",
+      "label": "cap.C",
+      "default": "0.12",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "3",
+      "description": "Thermal capacitance",
+      "unit": "J/K"
+    },
+    {
+      "key": "cap.T0",
+      "label": "cap.T0",
+      "default": "363.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "4",
+      "description": "Initial temperature",
+      "unit": "K",
+      "min": "0.0"
+    }
+  ]
 }

@@ -20,5 +20,69 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.BlockDiagrams.Examples.NewtonCooling",
-  "params": []
+  "params": [
+    {
+      "key": "A",
+      "label": "A",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "5",
+      "description": "Area"
+    },
+    {
+      "key": "T.y0",
+      "label": "T.y0",
+      "default": "363.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "6",
+      "description": "Initial condition"
+    },
+    {
+      "key": "T_inf",
+      "label": "T_inf",
+      "default": "298.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "7",
+      "description": "Ambient temperature"
+    },
+    {
+      "key": "c_p",
+      "label": "c_p",
+      "default": "1.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "10",
+      "description": "Specific heat"
+    },
+    {
+      "key": "gain.k",
+      "label": "gain.k",
+      "default": "-1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "11",
+      "description": "Gain coefficient"
+    },
+    {
+      "key": "h",
+      "label": "h",
+      "default": "0.7",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "13",
+      "description": "Convection coefficient"
+    },
+    {
+      "key": "m",
+      "label": "m",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "14",
+      "description": "Thermal mass"
+    }
+  ]
 }

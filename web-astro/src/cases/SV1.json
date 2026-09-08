@@ -32,5 +32,156 @@
   "tol": 0.000001,
   "mods": {},
   "name": "ModelicaByExample.Architectures.SensorComparison.Examples.Variant1",
-  "params": []
+  "params": [
+    {
+      "key": "controller.k",
+      "label": "controller.k",
+      "default": "20.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "39",
+      "description": "Controller gain"
+    },
+    {
+      "key": "plant.J_a",
+      "label": "plant.J_a",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "40",
+      "description": "Moment of inertia",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "plant.J_b",
+      "label": "plant.J_b",
+      "default": "0.3",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "41",
+      "description": "Moment of inertia",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "plant.c",
+      "label": "plant.c",
+      "default": "100.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "42",
+      "description": "Spring constant",
+      "unit": "N.m/rad"
+    },
+    {
+      "key": "plant.d_load",
+      "label": "plant.d_load",
+      "default": "4.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "43",
+      "description": "Load damping constant",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "plant.d_shaft",
+      "label": "plant.d_shaft",
+      "default": "3.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "44",
+      "description": "Shaft damping constant",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "sensor.sample_time",
+      "label": "sensor.sample_time",
+      "default": "0.01",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "58",
+      "unit": "s",
+      "min": "1e-15"
+    },
+    {
+      "key": "setpoint.amplitude",
+      "label": "setpoint.amplitude",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "62",
+      "description": "Amplitude of trapezoid"
+    },
+    {
+      "key": "setpoint.falling",
+      "label": "setpoint.falling",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "63",
+      "description": "Falling duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "setpoint.offset",
+      "label": "setpoint.offset",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "64",
+      "description": "Offset of output signal y"
+    },
+    {
+      "key": "setpoint.period",
+      "label": "setpoint.period",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "65",
+      "description": "Time for one period",
+      "unit": "s",
+      "min": "1e-60"
+    },
+    {
+      "key": "setpoint.rising",
+      "label": "setpoint.rising",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "66",
+      "description": "Rising duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "setpoint.startTime",
+      "label": "setpoint.startTime",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "67",
+      "description": "Output y = offset for time < startTime",
+      "unit": "s"
+    },
+    {
+      "key": "setpoint.width",
+      "label": "setpoint.width",
+      "default": "0.5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "68",
+      "description": "Width duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "setpoint.nperiod",
+      "label": "setpoint.nperiod",
+      "default": "-1",
+      "editable": true,
+      "type": "Int32",
+      "valueReference": "111",
+      "description": "Number of periods (< 0 means infinite number of periods)"
+    }
+  ]
 }

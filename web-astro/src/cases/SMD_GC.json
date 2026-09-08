@@ -38,5 +38,159 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.Rotational.Examples.SMD_GearComparison",
-  "params": []
+  "params": [
+    {
+      "key": "damper2.d",
+      "label": "damper2.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "66",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "damper4.d",
+      "label": "damper4.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "67",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "damper6.d",
+      "label": "damper6.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "68",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "grounded.ratio",
+      "label": "grounded.ratio",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "69",
+      "description": "Ratio of phi_a/phi_b"
+    },
+    {
+      "key": "inertia1.J",
+      "label": "inertia1.J",
+      "default": "1.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "70",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "inertia2.J",
+      "label": "inertia2.J",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "71",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "inertia3.J",
+      "label": "inertia3.J",
+      "default": "1.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "72",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "inertia4.J",
+      "label": "inertia4.J",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "73",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "inertia5.J",
+      "label": "inertia5.J",
+      "default": "1.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "74",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "inertia6.J",
+      "label": "inertia6.J",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "75",
+      "unit": "kg.m2"
+    },
+    {
+      "key": "mount_c.c",
+      "label": "mount_c.c",
+      "default": "80.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "76",
+      "unit": "N.m/rad"
+    },
+    {
+      "key": "mount_d.d",
+      "label": "mount_d.d",
+      "default": "0.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "77",
+      "unit": "N.m.s/rad"
+    },
+    {
+      "key": "spring2.c",
+      "label": "spring2.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "78",
+      "unit": "N.m/rad"
+    },
+    {
+      "key": "spring4.c",
+      "label": "spring4.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "79",
+      "unit": "N.m/rad"
+    },
+    {
+      "key": "spring6.c",
+      "label": "spring6.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "80",
+      "unit": "N.m/rad"
+    },
+    {
+      "key": "ungrounded.ratio",
+      "label": "ungrounded.ratio",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "81",
+      "description": "Ratio of phi_a/phi_b"
+    },
+    {
+      "key": "ungrounded1.ratio",
+      "label": "ungrounded1.ratio",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "82",
+      "description": "Ratio of phi_a/phi_b"
+    }
+  ]
 }

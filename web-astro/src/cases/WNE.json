@@ -26,5 +26,14 @@
   "tol": 0.1,
   "mods": {},
   "name": "ModelicaByExample.DiscreteBehavior.Accuracy.WithNoEvents",
-  "params": []
+  "params": [
+    {
+      "key": "freq",
+      "label": "freq",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "4"
+    }
+  ]
 }

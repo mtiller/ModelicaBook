@@ -20,5 +20,31 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.ArrayEquations.StateSpace.Examples.FirstOrder",
-  "params": []
+  "params": [
+    {
+      "key": "A[1,1]",
+      "label": "A[1,1]",
+      "default": "-1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "3"
+    },
+    {
+      "key": "B[1,1]",
+      "label": "B[1,1]",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "4"
+    },
+    {
+      "key": "x0[1]",
+      "label": "x0[1]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "5",
+      "description": "Initial conditions"
+    }
+  ]
 }
