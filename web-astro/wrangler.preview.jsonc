@@ -1,0 +1,16 @@
+{
+  // Prototype: the whole book plus the wasm model artifacts, served as static
+  // assets from one Worker. Separate from wrangler.jsonc (the `astro` worker,
+  // the MIC-84 bake-off preview) so this does not overwrite it.
+  //
+  // Deploys to https://mbe-preview.mtiller.workers.dev
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mbe-preview",
+  "compatibility_date": "2026-09-07",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

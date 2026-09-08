@@ -2,7 +2,7 @@
   "name": "web-astro",
   "version": "0.1.0",
   "private": true,
-  "description": "MyST/Astro bake-off — Astro + Starlight rendering of Modelica by Example (MIC-84)",
+  "description": "MyST/Astro bake-off \u2014 Astro + Starlight rendering of Modelica by Example (MIC-84)",
   "type": "module",
   "scripts": {
     "convert": "node tools/convert-book.mjs && node tools/build-locales.mjs",
@@ -11,7 +11,9 @@
     "dev": "astro dev",
     "prebuild": "npm run convert",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "stage:wasm": "node tools/stage-wasm.mjs",
+    "deploy:preview": "npm run build && npm run stage:wasm && npx wrangler deploy --config wrangler.preview.jsonc"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.41.2",
@@ -26,5 +28,8 @@
   "allowScripts": {
     "esbuild@0.28.1": true,
     "sharp@0.35.3": true
+  },
+  "devDependencies": {
+    "wrangler": "^4.126.0"
   }
 }

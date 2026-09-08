@@ -1,0 +1,20 @@
+# Cloudflare Workers Static Assets reads this file (HEADERS_FILENAME in
+# wrangler's asset handling -- it is not a Pages-only feature).
+
+# The wasm blobs are content-addressed: the bytes at a given path can never
+# change, because the path *is* the sha256 of the bytes. That is what makes the
+# shared 1.85 MB OpenModelica runtime a one-time download across every figure
+# in the book rather than a per-figure one.
+/wasm/pack/blobs/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The per-case manifests point at those blobs and do change when a model does.
+/wasm/pack/cases/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/wasm/index.json
+  Cache-Control: public, max-age=300, must-revalidate
+
+# Astro already content-hashes these.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
