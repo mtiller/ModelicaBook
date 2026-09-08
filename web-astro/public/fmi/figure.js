@@ -93,11 +93,28 @@ function parameters(fig, spec) {
 }
 
 // The book's own plot: the variables its figure shows, over the case's horizon.
-function draw(canvas, spec, result) {
+// A variable can be recorded under a different name than the book plots it by:
+// `controller.bus.heat_command` and `controller.controller.y` are one value with
+// two names, and the recorder keeps the canonical one. The model description
+// says which, and FMI 3.0's <Alias> is the *same* value -- same valueReference,
+// no sign to lose -- so following the chain is exact, not a guess.
+function canonical(name, aliases) {
+  let n = name;
+  for (let hops = 0; aliases && aliases[n] && hops < 8; hops++) n = aliases[n];
+  return n;
+}
+
+function draw(canvas, spec, result, info) {
   const stride = result.stride;
-  const wanted = (spec.vars || []).map((v) => ({
-    ...v, index: result.columns.findIndex((c) => c.name === v.name),
-  })).filter((v) => v.index >= 0);
+  const aliases = (info && info.aliases) || {};
+  const wanted = (spec.vars || []).map((v) => {
+    let index = result.columns.findIndex((c) => c.name === v.name);
+    if (index < 0) {
+      const c = canonical(v.name, aliases);
+      if (c !== v.name) index = result.columns.findIndex((col) => col.name === c);
+    }
+    return { ...v, index };
+  }).filter((v) => v.index >= 0);
   if (!wanted.length) throw new Error('the result has none of the variables this figure plots');
 
   const time = new Float64Array(result.rows);
@@ -190,7 +207,7 @@ export async function simulate(fig, onStatus) {
 
   const canvas = fig.querySelector('.mbe-figure__canvas');
   await staticReady(fig);
-  draw(canvas, spec, result);
+  draw(canvas, spec, result, info);
   canvas.hidden = false;
   const img = fig.querySelector('.mbe-figure__static');
   // Keep the image in the layout rather than removing it: `visibility` holds the

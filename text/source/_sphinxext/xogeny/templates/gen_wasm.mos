@@ -21,6 +21,15 @@
 installPackage(Modelica, "3.2.3+maint.om", exactMatch=true);
 setModelicaPath(getModelicaPath()+":"+"{{path}}");
 setCommandLineOptions("+simCodeTarget=wasm-jit");
+// Expose the protected and internal variables too, not just the public
+// interface. The book plots what is *inside* its components -- sensor.room.T,
+// controller.feedback.u2, controller.bus.heat_command -- and the default filter
+// keeps those out of the model description, so six figures on the thermal
+// control page had none of the variables they draw. The native pipeline makes
+// the same choice with `-emit_protected -ignoreHideResult`. `internal` still
+// drops the variables the symbolic transformation invents, which `none` would
+// not. For Basic that is 95 variables instead of 26, and 84 KB instead of 64.
+setCommandLineOptions("--fmiFilter=internal");
 cf := loadModel(ModelicaByExample);
 getErrorString();
 if not cf then
