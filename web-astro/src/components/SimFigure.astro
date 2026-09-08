@@ -63,8 +63,16 @@ const showInteractive = interactive && !!c && editable.length > 0;
               // it stays authoritative for values outside the bracket.
               const v = Number(p.default);
               const span = Number.isFinite(v) && v !== 0 ? Math.abs(v) * 3 : 1;
-              const lo = p.min !== undefined ? Number(p.min)
-                       : (Number.isFinite(v) ? v - span : 0);
+              // A declared `min` is the model speaking and wins. Failing that,
+              // `minHint` is what the parameter's unit implies -- an inertia or
+              // a resistance has no negative half -- which is the only bound
+              // most of the book's models offer, since they declare their own
+              // `Real(unit=...)` types rather than SIunits. Failing both, the
+              // range brackets the model's own value.
+              const floor = p.min !== undefined ? Number(p.min)
+                          : p.minHint !== undefined ? Number(p.minHint)
+                          : null;
+              const lo = floor !== null ? floor : (Number.isFinite(v) ? v - span : 0);
               const hi = Number.isFinite(v) ? v + span : 1;
               const step = (hi - lo) / 200;
               const slider = Number.isFinite(v) && p.type !== 'Boolean' && hi > lo;

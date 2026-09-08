@@ -2,54 +2,43 @@
   "type": "simple",
   "vars": [
     {
-      "name": "sensor.room.T",
+      "name": "plant.furnace.Q_flow",
       "scale": 1,
-      "legend": "Room Temperature (sensor.room.T)",
-      "style": "-"
-    },
-    {
-      "name": "controller.bus.temperature",
-      "scale": 1,
-      "legend": "Measured Temperature (controller.bus.temp)",
-      "style": "-"
-    },
-    {
-      "name": "controller.setpoint_signal.y",
-      "scale": 1,
-      "legend": "Desired Temperature",
+      "legend": "plant.furnace.Q_flow",
       "style": "-"
     }
   ],
-  "title": "Response using PI bang-bang control with hysteresis",
-  "legloc": "lower right",
+  "title": "Furnace heat using PI controller",
+  "legloc": "upper right",
   "ylabel": "",
   "ncols": 1,
   "ymax": null,
   "ymin": null,
-  "res": "TCE_Hy",
+  "res": "TCB",
   "stopTime": 50,
   "ncp": 500,
   "tol": 0.001,
   "mods": {},
-  "name": "ModelicaByExample.Architectures.ThermalControl.Examples.HysteresisVariant",
+  "name": "ModelicaByExample.Architectures.ThermalControl.Examples.BaseModel",
   "params": [
     {
-      "key": "actuator.heating_capacity",
-      "label": "actuator.heating_capacity",
-      "default": "500.0",
-      "editable": true,
-      "type": "Float64",
-      "valueReference": "35",
-      "description": "Heating capacity of actuator"
-    },
-    {
-      "key": "controller.bandwidth",
-      "label": "controller.bandwidth",
+      "key": "controller.T",
+      "label": "controller.T",
       "default": "1.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "36",
-      "description": "Bandwidth around reference signal"
+      "valueReference": "43",
+      "description": "Time Constant (T>0 required)",
+      "unit": "s"
+    },
+    {
+      "key": "controller.k",
+      "label": "controller.k",
+      "default": "20.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "44",
+      "description": "Gain"
     },
     {
       "key": "controller.setpoint",
@@ -57,7 +46,7 @@
       "default": "300.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "38",
+      "valueReference": "45",
       "description": "Desired temperature"
     },
     {
@@ -66,7 +55,7 @@
       "default": "2.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "49",
+      "valueReference": "56",
       "description": "Zone capacitance",
       "unit": "J/K",
       "minHint": 0
@@ -77,7 +66,7 @@
       "default": "1.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "50",
+      "valueReference": "57",
       "description": "Conductance between rooms",
       "unit": "W/K",
       "minHint": 0
@@ -88,7 +77,7 @@
       "default": "278.15",
       "editable": true,
       "type": "Float64",
-      "valueReference": "51",
+      "valueReference": "58",
       "description": "Fixed temperature at port",
       "unit": "K",
       "displayUnit": "degC",
@@ -100,17 +89,8 @@
       "default": "2.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "65",
+      "valueReference": "72",
       "description": "Convenction coefficient"
-    },
-    {
-      "key": "controller.controller.pre_y_start",
-      "label": "controller.controller.pre_y_start",
-      "default": "false",
-      "editable": false,
-      "type": "Boolean",
-      "valueReference": "113",
-      "description": "Value of pre(y) at initial time"
     }
   ]
 }

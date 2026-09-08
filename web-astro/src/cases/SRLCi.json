@@ -2,19 +2,25 @@
   "type": "simple",
   "vars": [
     {
-      "name": "Vs",
+      "name": "i_R",
       "scale": 1,
-      "legend": "Source Voltage, Vs [V]",
+      "legend": "Resistor Current [A]",
       "style": "-"
     },
     {
-      "name": "V",
+      "name": "i_C",
       "scale": 1,
-      "legend": "Response Voltage, V [V]",
+      "legend": "Capacitor Current [A]",
+      "style": "-"
+    },
+    {
+      "name": "i_L",
+      "scale": 1,
+      "legend": "Inductor Current [A]",
       "style": "-"
     }
   ],
-  "title": "Switched RLC Voltage Response",
+  "title": "Switched RLC Current Response",
   "legloc": "lower right",
   "ylabel": "",
   "ncols": 1,
@@ -34,7 +40,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "7",
-      "unit": "F"
+      "unit": "F",
+      "minHint": 0
     },
     {
       "key": "L",
@@ -43,7 +50,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "8",
-      "unit": "H"
+      "unit": "H",
+      "minHint": 0
     },
     {
       "key": "R",
@@ -52,7 +60,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "9",
-      "unit": "Ohm"
+      "unit": "Ohm",
+      "minHint": 0
     },
     {
       "key": "Vb",

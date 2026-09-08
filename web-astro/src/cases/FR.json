@@ -29,7 +29,8 @@
       "type": "Float64",
       "valueReference": "26",
       "description": "Heat capacity of element (= cp*m)",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "C2.C",
@@ -39,7 +40,8 @@
       "type": "Float64",
       "valueReference": "27",
       "description": "Heat capacity of element (= cp*m)",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "C3.C",
@@ -49,7 +51,8 @@
       "type": "Float64",
       "valueReference": "28",
       "description": "Heat capacity of element (= cp*m)",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "G1.G",
@@ -59,7 +62,8 @@
       "type": "Float64",
       "valueReference": "29",
       "description": "Constant thermal conductance of material",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "G2.G",
@@ -69,7 +73,8 @@
       "type": "Float64",
       "valueReference": "30",
       "description": "Constant thermal conductance of material",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "ambient.T",
@@ -141,7 +146,8 @@
       "type": "Float64",
       "valueReference": "38",
       "description": "Constant thermal conductance of material",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "wall2.G",
@@ -151,7 +157,8 @@
       "type": "Float64",
       "valueReference": "40",
       "description": "Constant thermal conductance of material",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "wall3.G",
@@ -161,7 +168,8 @@
       "type": "Float64",
       "valueReference": "42",
       "description": "Constant thermal conductance of material",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     }
   ]
 }

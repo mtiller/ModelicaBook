@@ -69,7 +69,8 @@
       "type": "Float64",
       "valueReference": "56",
       "description": "Zone capacitance",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "plant.G",
@@ -79,7 +80,8 @@
       "type": "Float64",
       "valueReference": "57",
       "description": "Conductance between rooms",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "plant.T_ambient",

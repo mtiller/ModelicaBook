@@ -34,7 +34,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "3",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "Qcapacity",
@@ -52,7 +53,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "5",
-      "unit": "K"
+      "unit": "K",
+      "minHint": 0
     },
     {
       "key": "Tbar",
@@ -61,7 +63,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "6",
-      "unit": "K"
+      "unit": "K",
+      "minHint": 0
     },
     {
       "key": "h",
@@ -70,7 +73,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "7",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     }
   ]
 }

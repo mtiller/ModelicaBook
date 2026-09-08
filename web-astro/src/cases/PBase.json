@@ -28,7 +28,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "25",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "damper2.d",
@@ -37,7 +38,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "26",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "inertia1.J",
@@ -46,7 +48,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "27",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "inertia2.J",
@@ -55,7 +58,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "28",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "spring1.c",
@@ -64,7 +68,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "29",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "spring2.c",
@@ -73,7 +78,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "30",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     }
   ]
 }

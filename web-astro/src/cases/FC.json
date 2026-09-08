@@ -220,7 +220,8 @@
       "type": "Float64",
       "valueReference": "57",
       "description": "Resistance at temperature T_ref",
-      "unit": "Ohm"
+      "unit": "Ohm",
+      "minHint": 0
     },
     {
       "key": "load.T_ref",
@@ -284,7 +285,8 @@
       "type": "Float64",
       "valueReference": "66",
       "description": "Magnetization inductance w.r.t. primary side",
-      "unit": "H"
+      "unit": "H",
+      "minHint": 0
     },
     {
       "key": "transformer.n",
@@ -313,7 +315,8 @@
       "type": "Float64",
       "valueReference": "69",
       "description": "Frequency of sine wave",
-      "unit": "Hz"
+      "unit": "Hz",
+      "minHint": 0
     },
     {
       "key": "wall_voltage.offset",

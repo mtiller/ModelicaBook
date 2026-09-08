@@ -29,7 +29,8 @@
       "type": "Float64",
       "valueReference": "3",
       "description": "Thermal capacitance",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "cap.T0",
@@ -49,7 +50,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "5",
-      "unit": "m2"
+      "unit": "m2",
+      "minHint": 0
     },
     {
       "key": "conv.T_amb",
@@ -70,7 +72,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "7",
-      "unit": "W/(m2.K)"
+      "unit": "W/(m2.K)",
+      "minHint": 0
     }
   ]
 }

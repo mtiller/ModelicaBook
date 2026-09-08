@@ -2,30 +2,38 @@
   "type": "simple",
   "vars": [
     {
-      "name": "omega1",
+      "name": "phi1",
       "scale": 1,
-      "legend": "omega1",
+      "legend": "phi1",
       "style": "-"
     },
     {
-      "name": "omega1_measured",
+      "name": "next_phi",
       "scale": 1,
-      "legend": "omega1_measured",
+      "legend": "next_phi",
+      "style": "-"
+    },
+    {
+      "name": "prev_phi",
+      "scale": 1,
+      "legend": "prev_phi",
       "style": "-"
     }
   ],
-  "title": "Speed Estimation by Counting",
+  "title": "Angle vs. Teeth Angles",
   "legloc": "upper right",
   "ylabel": "",
   "ncols": 1,
   "ymax": null,
   "ymin": null,
-  "res": "SpeedCounter",
+  "res": "IntervalMeasure_Coarse",
   "stopTime": 5,
   "ncp": 500,
   "tol": 0.001,
-  "mods": {},
-  "name": "ModelicaByExample.DiscreteBehavior.SpeedMeasurement.CounterWithAlgorithm",
+  "mods": {
+    "teeth": 20
+  },
+  "name": "ModelicaByExample.DiscreteBehavior.SpeedMeasurement.IntervalMeasure",
   "params": [
     {
       "key": "J1",
@@ -33,7 +41,7 @@
       "default": "0.4",
       "editable": true,
       "type": "Float64",
-      "valueReference": "11",
+      "valueReference": "12",
       "description": "Moment of inertia for inertia 1",
       "unit": "kg.m2",
       "minHint": 0
@@ -44,7 +52,7 @@
       "default": "1.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "12",
+      "valueReference": "13",
       "description": "Moment of inertia for inertia 2",
       "unit": "kg.m2",
       "minHint": 0
@@ -55,7 +63,7 @@
       "default": "11.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "13",
+      "valueReference": "14",
       "description": "Spring constant for spring 1",
       "unit": "N.m/rad",
       "minHint": 0
@@ -66,7 +74,7 @@
       "default": "5.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "14",
+      "valueReference": "15",
       "description": "Spring constant for spring 2",
       "unit": "N.m/rad",
       "minHint": 0
@@ -77,7 +85,7 @@
       "default": "0.2",
       "editable": true,
       "type": "Float64",
-      "valueReference": "15",
+      "valueReference": "16",
       "description": "Damping for damper 1",
       "unit": "N.m.s/rad",
       "minHint": 0
@@ -88,27 +96,19 @@
       "default": "1.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "16",
+      "valueReference": "17",
       "description": "Damping for damper 2",
       "unit": "N.m.s/rad",
       "minHint": 0
     },
     {
-      "key": "sample_time",
-      "label": "sample_time",
-      "default": "0.125",
-      "editable": true,
-      "type": "Float64",
-      "valueReference": "17",
-      "unit": "s"
-    },
-    {
       "key": "teeth",
       "label": "teeth",
-      "default": "200",
+      "default": 20,
       "editable": true,
       "type": "Int32",
-      "valueReference": "20"
+      "valueReference": "19",
+      "overridden": true
     }
   ]
 }

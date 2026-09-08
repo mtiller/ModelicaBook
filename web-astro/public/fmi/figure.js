@@ -165,10 +165,12 @@ function draw(canvas, spec, result) {
 }
 
 export async function simulate(fig, onStatus) {
-  const id = fig.dataset.plotId;
   const spec = JSON.parse(fig.dataset.case);
+  // The artifacts are per simulated case, and several plots can share one:
+  // Hyst and Hyst_Q are two views of the same run. `res` is the case; the
+  // figure's own id names the plot.
   const t0 = performance.now();
-  const { session, info } = await open(fig, id, onStatus);
+  const { session, info } = await open(fig, spec.res, onStatus);
   const tLoaded = performance.now();
   onStatus('Simulating…');
 
@@ -208,11 +210,13 @@ export async function simulate(fig, onStatus) {
 // button press: `warm()` instantiates the interface the run will use, so
 // pressing Run is only the solve.
 export async function prepare(fig, onStatus = () => {}) {
-  const id = fig.dataset.plotId;
-  if (!id || fig.dataset.prepared) return;
+  if (fig.dataset.prepared) return;
+  let res;
+  try { res = JSON.parse(fig.dataset.case).res; } catch { return; }
+  if (!res) return;
   fig.dataset.prepared = 'pending';
   try {
-    const { session, info } = await open(fig, id, () => {});
+    const { session, info } = await open(fig, res, () => {});
     await session.warm(info.modelExchange ? 'me' : 'cs');
     fig.dataset.prepared = 'ready';
     onStatus('Ready — press Run');

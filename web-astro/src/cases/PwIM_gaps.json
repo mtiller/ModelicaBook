@@ -2,15 +2,21 @@
   "type": "simple",
   "vars": [
     {
-      "name": "inertia1.w",
+      "name": "inertia1.phi",
       "scale": 1,
-      "legend": "Actual speed (inertia1.w)",
+      "legend": "Inertia position (inertia1.phi)",
       "style": "-"
     },
     {
-      "name": "intervalMeasure.w",
+      "name": "intervalMeasure.next_phi",
       "scale": 1,
-      "legend": "Measured speed (intervalMeasure.w)",
+      "legend": "Next forward angle",
+      "style": "-"
+    },
+    {
+      "name": "intervalMeasure.prev_phi",
+      "scale": 1,
+      "legend": "Next backward angle",
       "style": "-"
     }
   ],

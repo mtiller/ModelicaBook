@@ -2,15 +2,9 @@
   "type": "simple",
   "vars": [
     {
-      "name": "omega1",
+      "name": "count",
       "scale": 1,
-      "legend": "omega1",
-      "style": "-"
-    },
-    {
-      "name": "omega1_measured",
-      "scale": 1,
-      "legend": "omega1_measured",
+      "legend": "count",
       "style": "-"
     }
   ],

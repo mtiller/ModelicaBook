@@ -50,7 +50,8 @@
       "type": "Float64",
       "valueReference": "40",
       "description": "Moment of inertia",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "plant.J_b",
@@ -60,7 +61,8 @@
       "type": "Float64",
       "valueReference": "41",
       "description": "Moment of inertia",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "plant.c",
@@ -70,7 +72,8 @@
       "type": "Float64",
       "valueReference": "42",
       "description": "Spring constant",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "plant.d_load",
@@ -80,7 +83,8 @@
       "type": "Float64",
       "valueReference": "43",
       "description": "Load damping constant",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "plant.d_shaft",
@@ -90,7 +94,8 @@
       "type": "Float64",
       "valueReference": "44",
       "description": "Shaft damping constant",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "sensor.sample_time",

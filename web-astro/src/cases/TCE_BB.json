@@ -2,13 +2,25 @@
   "type": "simple",
   "vars": [
     {
-      "name": "controller.bus.heat_command",
+      "name": "sensor.room.T",
       "scale": 1,
-      "legend": "controller.bus.heat_command",
+      "legend": "Room Temperature (sensor.room.T)",
+      "style": "-"
+    },
+    {
+      "name": "controller.bus.temperature",
+      "scale": 1,
+      "legend": "Measured Temperature (controller.bus.temp)",
+      "style": "-"
+    },
+    {
+      "name": "controller.setpoint_signal.y",
+      "scale": 1,
+      "legend": "Desired Temperature",
       "style": "-"
     }
   ],
-  "title": "Actuator duty cycle using bang-bang control",
+  "title": "Response using PI bang-bang control",
   "legloc": "lower right",
   "ylabel": "",
   "ncols": 1,
@@ -47,7 +59,8 @@
       "type": "Float64",
       "valueReference": "47",
       "description": "Zone capacitance",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "plant.G",
@@ -57,7 +70,8 @@
       "type": "Float64",
       "valueReference": "48",
       "description": "Conductance between rooms",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "plant.T_ambient",

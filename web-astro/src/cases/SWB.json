@@ -46,7 +46,8 @@
       "type": "Float64",
       "valueReference": "44",
       "description": "Moment of inertia for element connected to flange 'a'",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "gearWithBacklash.J_b",
@@ -56,7 +57,8 @@
       "type": "Float64",
       "valueReference": "45",
       "description": "Moment of inertia for element connected to flange 'b'",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "gearWithBacklash.b",
@@ -77,7 +79,8 @@
       "type": "Float64",
       "valueReference": "54",
       "description": "Backlash spring constant (c > 0 required)",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "gearWithBacklash.d",
@@ -87,7 +90,8 @@
       "type": "Float64",
       "valueReference": "55",
       "description": "Backlash damping constant",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "gearWithBacklash.ratio",

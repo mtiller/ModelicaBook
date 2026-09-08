@@ -34,7 +34,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "31",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "damper2.d",
@@ -43,7 +44,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "32",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "inertia1.J",
@@ -52,7 +54,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "33",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "inertia2.J",
@@ -61,7 +64,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "34",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "pulseCounter.sample_time",
@@ -79,7 +83,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "37",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "spring2.c",
@@ -88,7 +93,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "38",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "pulseCounter.teeth",

@@ -2,21 +2,15 @@
   "type": "simple",
   "vars": [
     {
-      "name": "inertia1.phi",
+      "name": "inertia1.w",
       "scale": 1,
-      "legend": "Inertia position (intertia1.phi)",
+      "legend": "Actual speed (inertia1.w)",
       "style": "-"
     },
     {
-      "name": "intervalMeasure.next_phi",
+      "name": "intervalMeasure.w",
       "scale": 1,
-      "legend": "Next forward angle",
-      "style": "-"
-    },
-    {
-      "name": "intervalMeasure.prev_phi",
-      "scale": 1,
-      "legend": "Next backward angle",
+      "legend": "Measured speed (intervalMeasure.w)",
       "style": "-"
     }
   ],
@@ -42,7 +36,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "32",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "damper2.d",
@@ -51,7 +46,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "33",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "inertia1.J",
@@ -60,7 +56,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "34",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "inertia2.J",
@@ -69,7 +66,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "35",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "spring1.c",
@@ -78,7 +76,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "37",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "spring2.c",
@@ -87,7 +86,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "38",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "intervalMeasure.teeth",

@@ -115,7 +115,8 @@
       "type": "Float64",
       "valueReference": "2574",
       "description": "Total heat capacity of element (= cp*m)",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "rod10.rod.G_rod",
@@ -125,7 +126,8 @@
       "type": "Float64",
       "valueReference": "2575",
       "description": "Thermal conductivity of rod",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod10.rod.G_wall",
@@ -135,7 +137,8 @@
       "type": "Float64",
       "valueReference": "2576",
       "description": "Thermal conductivity of wall",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod10.rod.T0",
@@ -219,7 +222,8 @@
       "type": "Float64",
       "valueReference": "2625",
       "description": "Total heat capacity of element (= cp*m)",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "rod100.rod.G_rod",
@@ -229,7 +233,8 @@
       "type": "Float64",
       "valueReference": "2626",
       "description": "Thermal conductivity of rod",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod100.rod.G_wall",
@@ -239,7 +244,8 @@
       "type": "Float64",
       "valueReference": "2627",
       "description": "Thermal conductivity of wall",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod100.rod.T0",
@@ -323,7 +329,8 @@
       "type": "Float64",
       "valueReference": "3036",
       "description": "Total heat capacity of element (= cp*m)",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "rod200.rod.G_rod",
@@ -333,7 +340,8 @@
       "type": "Float64",
       "valueReference": "3037",
       "description": "Thermal conductivity of rod",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod200.rod.G_wall",
@@ -343,7 +351,8 @@
       "type": "Float64",
       "valueReference": "3038",
       "description": "Thermal conductivity of wall",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod200.rod.T0",
@@ -427,7 +436,8 @@
       "type": "Float64",
       "valueReference": "3847",
       "description": "Total heat capacity of element (= cp*m)",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "rod3.rod.G_rod",
@@ -437,7 +447,8 @@
       "type": "Float64",
       "valueReference": "3848",
       "description": "Thermal conductivity of rod",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod3.rod.G_wall",
@@ -447,7 +458,8 @@
       "type": "Float64",
       "valueReference": "3849",
       "description": "Thermal conductivity of wall",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod3.rod.T0",
@@ -531,7 +543,8 @@
       "type": "Float64",
       "valueReference": "3870",
       "description": "Total heat capacity of element (= cp*m)",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "rod6.rod.G_rod",
@@ -541,7 +554,8 @@
       "type": "Float64",
       "valueReference": "3871",
       "description": "Thermal conductivity of rod",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod6.rod.G_wall",
@@ -551,7 +565,8 @@
       "type": "Float64",
       "valueReference": "3872",
       "description": "Thermal conductivity of wall",
-      "unit": "W/K"
+      "unit": "W/K",
+      "minHint": 0
     },
     {
       "key": "rod6.rod.T0",

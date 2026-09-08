@@ -29,7 +29,8 @@
       "type": "Float64",
       "valueReference": "48",
       "description": "Resistance at temperature T_ref",
-      "unit": "Ohm"
+      "unit": "Ohm",
+      "minHint": 0
     },
     {
       "key": "add_load.T_ref",
@@ -61,7 +62,8 @@
       "type": "Float64",
       "valueReference": "53",
       "description": "Resistance at temperature T_ref",
-      "unit": "Ohm"
+      "unit": "Ohm",
+      "minHint": 0
     },
     {
       "key": "load.T_ref",
@@ -114,7 +116,8 @@
       "type": "Float64",
       "valueReference": "80",
       "description": "Backward state-off conductance (opened diode conductance)",
-      "unit": "S"
+      "unit": "S",
+      "minHint": 0
     },
     {
       "key": "power_supply.Lm1",
@@ -124,7 +127,8 @@
       "type": "Float64",
       "valueReference": "81",
       "description": "Magnetization inductance w.r.t. primary side",
-      "unit": "H"
+      "unit": "H",
+      "minHint": 0
     },
     {
       "key": "power_supply.Ron",
@@ -134,7 +138,8 @@
       "type": "Float64",
       "valueReference": "82",
       "description": "Forward state-on differential resistance (closed diode resistance)",
-      "unit": "Ohm"
+      "unit": "Ohm",
+      "minHint": 0
     },
     {
       "key": "power_supply.n",
@@ -217,7 +222,8 @@
       "type": "Float64",
       "valueReference": "95",
       "description": "Frequency of sine wave",
-      "unit": "Hz"
+      "unit": "Hz",
+      "minHint": 0
     },
     {
       "key": "wall_voltage.offset",

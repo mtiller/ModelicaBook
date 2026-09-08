@@ -49,7 +49,8 @@
       "type": "Float64",
       "valueReference": "8",
       "description": "Moment of inertia for inertia 1",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "J2",
@@ -59,7 +60,8 @@
       "type": "Float64",
       "valueReference": "9",
       "description": "Moment of inertia for inertia 2",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "c1",
@@ -69,7 +71,8 @@
       "type": "Float64",
       "valueReference": "10",
       "description": "Spring constant for spring 1",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "c2",
@@ -79,7 +82,8 @@
       "type": "Float64",
       "valueReference": "11",
       "description": "Spring constant for spring 2",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "d1",
@@ -89,7 +93,8 @@
       "type": "Float64",
       "valueReference": "12",
       "description": "Damping for damper 1",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "d2",
@@ -99,7 +104,8 @@
       "type": "Float64",
       "valueReference": "13",
       "description": "Damping for damper 2",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "omega1_init",

@@ -2,25 +2,13 @@
   "type": "simple",
   "vars": [
     {
-      "name": "sensor.room.T",
+      "name": "controller.bus.heat_command",
       "scale": 1,
-      "legend": "Room Temperature (sensor.room.T)",
-      "style": "-"
-    },
-    {
-      "name": "controller.bus.temperature",
-      "scale": 1,
-      "legend": "Measured Temperature (controller.bus.temp)",
-      "style": "-"
-    },
-    {
-      "name": "controller.setpoint_signal.y",
-      "scale": 1,
-      "legend": "Desired Temperature",
+      "legend": "controller.bus.heat_command",
       "style": "-"
     }
   ],
-  "title": "Response using PI bang-bang control with hysteresis",
+  "title": "Actuator duty cycle using bang-bang control with hysteresis",
   "legloc": "lower right",
   "ylabel": "",
   "ncols": 1,

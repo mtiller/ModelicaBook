@@ -2,31 +2,31 @@
   "type": "simple",
   "vars": [
     {
-      "name": "inertia1.phi",
+      "name": "inertia3.phi",
       "scale": 1,
-      "legend": "Position of inertia 1 [rad]",
+      "legend": "Position of inertia 3 [rad]",
       "style": "-."
     },
     {
-      "name": "inertia5.phi",
+      "name": "inertia1.phi",
       "scale": 1,
-      "legend": "Position of inertia 5 [rad]",
+      "legend": "Position of inertia 1 [rad]",
       "style": "."
+    },
+    {
+      "name": "inertia3.w",
+      "scale": 1,
+      "legend": "Velocity of inertia 3 [rad/s]",
+      "style": "-."
     },
     {
       "name": "inertia1.w",
       "scale": 1,
       "legend": "Velocity of inertia 1 [rad/s]",
-      "style": "-."
-    },
-    {
-      "name": "inertia5.w",
-      "scale": 1,
-      "legend": "Velocity of inertia 5 [rad/s]",
       "style": "."
     }
   ],
-  "title": "Comparing grounded and ungrounded gears",
+  "title": "Comparing explicitly and implicitly grounded gears",
   "legloc": "upper right",
   "ylabel": "",
   "ncols": 1,
@@ -46,7 +46,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "66",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "damper4.d",
@@ -55,7 +56,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "67",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "damper6.d",
@@ -64,7 +66,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "68",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "grounded.ratio",
@@ -82,7 +85,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "70",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "inertia2.J",
@@ -91,7 +95,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "71",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "inertia3.J",
@@ -100,7 +105,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "72",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "inertia4.J",
@@ -109,7 +115,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "73",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "inertia5.J",
@@ -118,7 +125,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "74",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "inertia6.J",
@@ -127,7 +135,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "75",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "mount_c.c",
@@ -136,7 +145,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "76",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "mount_d.d",
@@ -145,7 +155,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "77",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "spring2.c",
@@ -154,7 +165,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "78",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "spring4.c",
@@ -163,7 +175,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "79",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "spring6.c",
@@ -172,7 +185,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "80",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "ungrounded.ratio",

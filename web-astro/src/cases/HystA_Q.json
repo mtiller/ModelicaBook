@@ -2,13 +2,13 @@
   "type": "simple",
   "vars": [
     {
-      "name": "T",
+      "name": "Q",
       "scale": 1,
-      "legend": "T",
+      "legend": "Q",
       "style": "-"
     }
   ],
-  "title": "Temperature Control with Hysteresis",
+  "title": "Heater Output with Hysteresis",
   "legloc": "upper right",
   "ylabel": "",
   "ncols": 1,

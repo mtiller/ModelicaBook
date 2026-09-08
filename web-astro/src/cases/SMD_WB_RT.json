@@ -2,38 +2,54 @@
   "type": "simple",
   "vars": [
     {
-      "name": "inertia1.w",
+      "name": "ground.flange_a.tau",
       "scale": 1,
-      "legend": "Actual speed (inertia1.w)",
-      "style": "-"
-    },
-    {
-      "name": "intervalMeasure.w",
-      "scale": 1,
-      "legend": "Measured speed (intervalMeasure.w)",
+      "legend": "ground.flange_a.tau",
       "style": "-"
     }
   ],
-  "title": "Comparison of actual speed with approximation by interval measurement",
+  "title": "Reaction torque at mechanical ground",
   "legloc": "upper right",
   "ylabel": "",
   "ncols": 1,
   "ymax": null,
   "ymin": null,
-  "res": "PwIM",
+  "res": "SMD_WB",
   "stopTime": 5,
   "ncp": 500,
-  "tol": 0.000001,
+  "tol": 0.001,
   "mods": {},
-  "name": "ModelicaByExample.Components.SpeedMeasurement.Examples.PlantWithIntervalMeasure",
+  "name": "ModelicaByExample.Components.Rotational.Examples.SMD_WithBacklash",
   "params": [
+    {
+      "key": "backlash.b",
+      "label": "backlash.b",
+      "default": "0.5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "26",
+      "description": "Total lash",
+      "unit": "rad",
+      "min": "0.0"
+    },
+    {
+      "key": "backlash.c",
+      "label": "backlash.c",
+      "default": "1000.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "27",
+      "description": "Torsional stiffness",
+      "unit": "N.m/rad",
+      "minHint": 0
+    },
     {
       "key": "damper1.d",
       "label": "damper1.d",
       "default": "0.2",
       "editable": true,
       "type": "Float64",
-      "valueReference": "32",
+      "valueReference": "28",
       "unit": "N.m.s/rad",
       "minHint": 0
     },
@@ -43,7 +59,7 @@
       "default": "1.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "33",
+      "valueReference": "29",
       "unit": "N.m.s/rad",
       "minHint": 0
     },
@@ -53,7 +69,7 @@
       "default": "0.4",
       "editable": true,
       "type": "Float64",
-      "valueReference": "34",
+      "valueReference": "30",
       "unit": "kg.m2",
       "minHint": 0
     },
@@ -63,7 +79,7 @@
       "default": "1.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "35",
+      "valueReference": "31",
       "unit": "kg.m2",
       "minHint": 0
     },
@@ -73,7 +89,7 @@
       "default": "11.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "37",
+      "valueReference": "32",
       "unit": "N.m/rad",
       "minHint": 0
     },
@@ -83,17 +99,9 @@
       "default": "5.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "38",
+      "valueReference": "33",
       "unit": "N.m/rad",
       "minHint": 0
-    },
-    {
-      "key": "intervalMeasure.teeth",
-      "label": "intervalMeasure.teeth",
-      "default": "200",
-      "editable": true,
-      "type": "Int32",
-      "valueReference": "63"
     }
   ]
 }

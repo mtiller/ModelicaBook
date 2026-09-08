@@ -58,7 +58,8 @@
       "type": "Float64",
       "valueReference": "15",
       "description": "Thermal capacitance",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "cap1.T0",
@@ -80,7 +81,8 @@
       "type": "Float64",
       "valueReference": "17",
       "description": "Thermal capacitance",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "cap2.T0",
@@ -101,7 +103,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "19",
-      "unit": "m2"
+      "unit": "m2",
+      "minHint": 0
     },
     {
       "key": "conv1.h",
@@ -110,7 +113,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "20",
-      "unit": "W/(m2.K)"
+      "unit": "W/(m2.K)",
+      "minHint": 0
     },
     {
       "key": "conv2.A",
@@ -119,7 +123,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "22",
-      "unit": "m2"
+      "unit": "m2",
+      "minHint": 0
     },
     {
       "key": "conv2.h",
@@ -128,7 +133,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "23",
-      "unit": "W/(m2.K)"
+      "unit": "W/(m2.K)",
+      "minHint": 0
     },
     {
       "key": "conv3.A",
@@ -137,7 +143,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "24",
-      "unit": "m2"
+      "unit": "m2",
+      "minHint": 0
     },
     {
       "key": "conv3.h",
@@ -146,7 +153,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "25",
-      "unit": "W/(m2.K)"
+      "unit": "W/(m2.K)",
+      "minHint": 0
     },
     {
       "key": "conv4.A",
@@ -155,7 +163,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "27",
-      "unit": "m2"
+      "unit": "m2",
+      "minHint": 0
     },
     {
       "key": "conv4.h",
@@ -164,7 +173,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "28",
-      "unit": "W/(m2.K)"
+      "unit": "W/(m2.K)",
+      "minHint": 0
     },
     {
       "key": "conv5.A",
@@ -173,7 +183,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "30",
-      "unit": "m2"
+      "unit": "m2",
+      "minHint": 0
     },
     {
       "key": "conv5.h",
@@ -182,7 +193,8 @@
       "editable": true,
       "type": "Float64",
       "valueReference": "31",
-      "unit": "W/(m2.K)"
+      "unit": "W/(m2.K)",
+      "minHint": 0
     }
   ]
 }

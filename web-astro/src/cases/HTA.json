@@ -29,7 +29,8 @@
       "type": "Float64",
       "valueReference": "3",
       "description": "Thermal capacitance",
-      "unit": "J/K"
+      "unit": "J/K",
+      "minHint": 0
     },
     {
       "key": "cap.T0",

@@ -2,25 +2,19 @@
   "type": "simple",
   "vars": [
     {
-      "name": "phi1",
+      "name": "omega1",
       "scale": 1,
-      "legend": "phi1",
+      "legend": "omega1",
       "style": "-"
     },
     {
-      "name": "next_phi",
+      "name": "omega1_measured",
       "scale": 1,
-      "legend": "next_phi",
-      "style": "-"
-    },
-    {
-      "name": "prev_phi",
-      "scale": 1,
-      "legend": "prev_phi",
+      "legend": "omega1_measured",
       "style": "-"
     }
   ],
-  "title": "Angle vs. Teeth Angles",
+  "title": "Speed Estimation Using Fewer Teeth",
   "legloc": "upper right",
   "ylabel": "",
   "ncols": 1,
@@ -43,7 +37,8 @@
       "type": "Float64",
       "valueReference": "12",
       "description": "Moment of inertia for inertia 1",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "J2",
@@ -53,7 +48,8 @@
       "type": "Float64",
       "valueReference": "13",
       "description": "Moment of inertia for inertia 2",
-      "unit": "kg.m2"
+      "unit": "kg.m2",
+      "minHint": 0
     },
     {
       "key": "c1",
@@ -63,7 +59,8 @@
       "type": "Float64",
       "valueReference": "14",
       "description": "Spring constant for spring 1",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "c2",
@@ -73,7 +70,8 @@
       "type": "Float64",
       "valueReference": "15",
       "description": "Spring constant for spring 2",
-      "unit": "N.m/rad"
+      "unit": "N.m/rad",
+      "minHint": 0
     },
     {
       "key": "d1",
@@ -83,7 +81,8 @@
       "type": "Float64",
       "valueReference": "16",
       "description": "Damping for damper 1",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "d2",
@@ -93,7 +92,8 @@
       "type": "Float64",
       "valueReference": "17",
       "description": "Damping for damper 2",
-      "unit": "N.m.s/rad"
+      "unit": "N.m.s/rad",
+      "minHint": 0
     },
     {
       "key": "teeth",

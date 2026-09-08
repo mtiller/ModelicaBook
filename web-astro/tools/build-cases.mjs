@@ -62,7 +62,7 @@ function toParam(p) {
     // model description at runtime.
     valueReference: p.valueReference,
   };
-  for (const k of ['description', 'unit', 'displayUnit', 'min', 'max', 'overridden']) {
+  for (const k of ['description', 'unit', 'displayUnit', 'min', 'minHint', 'max', 'overridden']) {
     if (p[k] !== undefined) out[k] = p[k];
   }
   return out;
@@ -73,8 +73,14 @@ const ids = [];
 let withParams = 0;
 for (const f of files) {
   const j = JSON.parse(fs.readFileSync(path.join(SRC, f), 'utf8'));
-  const id = j.res || f.replace(/-case\.json$/, '');
-  j.params = (wasmCases[id]?.parameters ?? []).map(toParam);
+  // Key by the *plot*, not by the case it plots. A case can have several plots
+  // -- Hyst draws T and Hyst_Q draws Q from the same simulation -- and keying by
+  // `res` made the second overwrite the first, so the temperature figure showed
+  // the heater output. 109 plot contracts collapsed onto 95 files that way, over
+  // 14 cases. <SimFigure id="..."> names the plot, which is what this must match;
+  // `res` rides along inside as the case to simulate.
+  const id = f.replace(/-case\.json$/, '');
+  j.params = (wasmCases[j.res]?.parameters ?? []).map(toParam);
   if (j.params.some((p) => p.editable)) withParams++;
   fs.writeFileSync(path.join(OUT, `${id}.json`), JSON.stringify(j, null, 2) + '\n');
   ids.push(id);

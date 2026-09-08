@@ -2,24 +2,24 @@
   "type": "simple",
   "vars": [
     {
-      "name": "T",
+      "name": "Q",
       "scale": 1,
-      "legend": "T",
+      "legend": "Q",
       "style": "-"
     }
   ],
-  "title": "Temperature Control with Hysteresis",
+  "title": "Heater Output",
   "legloc": "upper right",
   "ylabel": "",
   "ncols": 1,
   "ymax": null,
   "ymin": null,
-  "res": "HystA",
-  "stopTime": 5,
+  "res": "CC1",
+  "stopTime": 0.5,
   "ncp": 500,
-  "tol": 0.001,
+  "tol": 0.1,
   "mods": {},
-  "name": "ModelicaByExample.DiscreteBehavior.Hysteresis.HysteresisControlWithAlgorithms",
+  "name": "ModelicaByExample.DiscreteBehavior.Hysteresis.ChatteringControl",
   "params": [
     {
       "key": "C",

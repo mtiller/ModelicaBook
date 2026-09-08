@@ -2,30 +2,30 @@
   "type": "simple",
   "vars": [
     {
-      "name": "V",
+      "name": "Vs",
       "scale": 1,
-      "legend": "Output Voltage (V)",
+      "legend": "Source Voltage, Vs [V]",
       "style": "-"
     },
     {
-      "name": "Vb",
+      "name": "V",
       "scale": 1,
-      "legend": "Battery Voltage (Vb)",
-      "style": "-."
+      "legend": "Response Voltage, V [V]",
+      "style": "-"
     }
   ],
-  "title": "Circuit Response",
-  "legloc": "upper right",
-  "ylabel": "Voltage [V]",
+  "title": "Switched RLC Voltage Response",
+  "legloc": "lower right",
+  "ylabel": "",
   "ncols": 1,
   "ymax": null,
   "ymin": null,
-  "res": "RLC1",
+  "res": "SRLC",
   "stopTime": 2,
   "ncp": 500,
   "tol": 0.001,
   "mods": {},
-  "name": "ModelicaByExample.BasicEquations.RLC.RLC1",
+  "name": "ModelicaByExample.DiscreteBehavior.SwitchedRLC.SwitchedRLC",
   "params": [
     {
       "key": "C",
@@ -33,7 +33,7 @@
       "default": "0.001",
       "editable": true,
       "type": "Float64",
-      "valueReference": "6",
+      "valueReference": "7",
       "unit": "F",
       "minHint": 0
     },
@@ -43,7 +43,7 @@
       "default": "1.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "7",
+      "valueReference": "8",
       "unit": "H",
       "minHint": 0
     },
@@ -53,7 +53,7 @@
       "default": "100.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "8",
+      "valueReference": "9",
       "unit": "Ohm",
       "minHint": 0
     },
@@ -63,7 +63,7 @@
       "default": "24.0",
       "editable": true,
       "type": "Float64",
-      "valueReference": "9",
+      "valueReference": "10",
       "description": "Battery voltage",
       "unit": "V"
     }
