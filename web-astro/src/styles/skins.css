@@ -120,3 +120,27 @@
 }
 .anno-toggle:hover { opacity: 1; }
 .anno-fold { cursor: pointer; }
+
+
+/* --- interactive figure: parameter rows -------------------------------- */
+/* A slider under each value, because no model description in the book carries a
+   maximum -- the range is derived around the model's own value and the number
+   box stays authoritative. */
+.mbe-figure__param { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; align-items: center; }
+.mbe-param__label { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.mbe-param__unit { opacity: 0.6; font-size: 0.85em; }
+.mbe-param__input { width: 7.5em; }
+.mbe-param__slider { grid-column: 1 / -1; width: 100%; margin: 0; accent-color: var(--sl-color-accent, #2563eb); }
+/* The canvas is sized in script to the static plot's own box, so the swap does
+   not move anything; keep CSS from overriding that. */
+.mbe-figure__canvas {
+  display: block;
+  max-width: 100%;
+  /* Starlight gives flow content a top margin. On an absolutely positioned
+     element that margin is added to `top`, which put the canvas 16 px below the
+     image it is meant to cover. */
+  margin: 0 !important;
+}
+/* The canvas is positioned in script onto the static plot's own box, so the two
+   occupy exactly the same place and swapping them reflows nothing. */
+.mbe-figure__plot { position: relative; }

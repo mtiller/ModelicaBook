@@ -11,6 +11,36 @@
 
 import fs from 'node:fs';
 
+// `.. figure:: /path/Name.*` is a Sphinx glob: the file exists under one of
+// several extensions and the builder chooses. Resolve against text/source with
+// the HTML builder's preference (vector first), and pass a literal path through
+// untouched.
+const ASSET_EXTS = ['svg', 'png', 'jpg', 'jpeg', 'gif'];
+const ASSET_ROOT = '../text';
+function resolveAsset(rel) {
+  // Collapse any ../ a page-relative reference brought with it, so the copy
+  // step gets a path under text/ rather than one that escapes it.
+  const norm = (p) => {
+    const out = [];
+    for (const part of p.split('/')) {
+      if (part === '.' || part === '') continue;
+      if (part === '..') out.pop(); else out.push(part);
+    }
+    return out.join('/');
+  };
+  const tryPath = (candidate) => {
+    const n = norm(candidate);
+    return fs.existsSync(`${ASSET_ROOT}/${n}`) ? n : null;
+  };
+  if (!rel.endsWith('.*')) return tryPath(rel);
+  const stem = rel.slice(0, -1);   // drop the '*', keep the '.'
+  for (const ext of ASSET_EXTS) {
+    const hit = tryPath(`${stem}${ext}`);
+    if (hit) return hit;
+  }
+  return null;
+}
+
 const UNDER = /^([-=^~"'`#*+.:])\1{2,}\s*$/;
 const indentOf = (l) => l.match(/^(\s*)/)[1].length;
 const slugRoute = (p) => p.replace(/\.rst$/, '').replace(/_/g, '-'); // RST path → route
@@ -78,6 +108,7 @@ export function convertRst(text, { route = '', desc = '', labels = new Map() } =
   const out = [];
   const indexEntries = [];   // { term, route, anchor }  (MIC-136)
   const assets = [];         // { src (repo path), dest (basename) }  (MIC-134)
+  const inlinePlots = [];    // { id, source } for `.. plot::` with an inline script
   let title = null;
   let currentAnchor = null;  // nearest section anchor, for index links
   const levelChars = [];
@@ -175,6 +206,18 @@ export function convertRst(text, { route = '', desc = '', labels = new Map() } =
         if (name === 'plot') {
           const c = collectIndented(src, i + 1, base); i = c.next - 1;
           const opts = {}; for (const b of c.body) { const om = b.match(/^:([\w-]+):\s*(.*)$/); if (om) opts[om[1]] = om[2].trim(); }
+          // `.. plot::` with no argument carries a matplotlib script in its body
+          // rather than naming one of the book's cases. There is no case to
+          // simulate and no /plots/<id>.svg to show, so it became
+          // <SimFigure id=""> fetching /plots/.svg. Write the script out under a
+          // route-derived id for render-plots.py to draw, and point at that.
+          if (!arg) {
+            const body = c.body.filter((b) => !b.match(/^:[\w-]+:/)).join('\n').replace(/\s+$/, '');
+            if (!body.trim()) continue;
+            const iid = 'inline-' + route.replace(/\//g, '-') + '-' + (inlinePlots.length + 1);
+            inlinePlots.push({ id: iid, source: body });
+            sink.push(`![](/plots/${iid}.svg)`); continue;
+          }
           const pid = arg.split('/').pop().replace(/\.py$/, '');
           const interactive = /\binteractive\b/.test(opts.class || '') ? ' interactive' : '';
           usesSimFigure = true;
@@ -184,8 +227,18 @@ export function convertRst(text, { route = '', desc = '', labels = new Map() } =
           const c = collectIndented(src, i + 1, base); i = c.next - 1;
           const capLines = c.body.filter((b) => b.trim() && !b.match(/^:[\w-]+:/));
           const cap = inline(capLines.join(' ').trim());
-          const bn = arg.split('/').pop();
-          assets.push({ src: 'source' + (arg.startsWith('/') ? arg : '/' + arg), dest: bn });  // repo: text/source/...
+          // Sphinx lets `.. figure:: path/Name.*` stand for whichever extension
+          // exists, and picks per builder. Emitting the `.*` verbatim is what
+          // left 76 distinct images 404ing across the book. Resolve it here,
+          // preferring the vector form the way the HTML builder does.
+          const dir = route.includes('/') ? route.slice(0, route.lastIndexOf('/')) : '';
+          const rel = arg.startsWith('/')
+            ? 'source' + arg
+            : `source/${dir ? dir + '/' : ''}${arg}`;
+          const resolved = resolveAsset(rel);
+          if (!resolved) { warnings.push(`missing image: ${arg}`); continue; }
+          const bn = resolved.split('/').pop();
+          assets.push({ src: resolved, dest: bn });  // repo: text/source/...
           sink.push(`![${cap}](/figures/${bn})`); continue;
         }
         // Unknown directive: a stray single-colon marker with no body is a typo'd
@@ -212,7 +265,7 @@ export function convertRst(text, { route = '', desc = '', labels = new Map() } =
   for (const [p, v] of imports) importLines.push(`import ${v} from '${up}${p.replace(/^\//, '')}?raw';`);
   const helper = `\nexport const lines = (s, spec) => {\n  const L = s.split('\\n');\n  const m = spec.match(/^(\\d+)-(\\d*)$/);\n  const a = m ? +m[1] : 1, b = m && m[2] ? +m[2] : L.length;\n  return L.slice(a - 1, b).join('\\n').replace(/\\s+$/, '');\n};\n`;
   const mdx = `${fmLines.join('\n')}\n${importLines.join('\n')}\n${helper}\n${out.join('\n\n')}\n`;
-  return { mdx, title, imports: imports.size, blocks: out.length, warnings, indexEntries, assets };
+  return { mdx, title, imports: imports.size, blocks: out.length, warnings, indexEntries, assets, inlinePlots };
 }
 
 // ---- CLI ----

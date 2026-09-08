@@ -11,6 +11,44 @@
 const WASM = '/wasm';
 const sessions = new WeakMap();
 
+
+
+// The static plot is lazy-loaded, so a figure that has only just come into view
+// may still have no box when the first run finishes. Wait for it, because its
+// box is what the canvas has to match.
+function staticReady(fig) {
+  const img = fig.querySelector('.mbe-figure__static');
+  if (!img || img.complete) return Promise.resolve();
+  return new Promise((resolve) => {
+    const done = () => resolve();
+    img.addEventListener('load', done, { once: true });
+    img.addEventListener('error', done, { once: true });
+    setTimeout(done, 2000);
+  });
+}
+
+// The static figure's rendered box: what the canvas has to match. Falls back to
+// the SVG's intrinsic aspect ratio, then to the container width, so a hidden or
+// not-yet-decoded image still gives a sane size rather than 300x150.
+function plotBox(canvas) {
+  const fig = canvas.closest('.mbe-figure');
+  const img = fig && fig.querySelector('.mbe-figure__static');
+  const holder = canvas.parentElement || fig;
+  if (img) {
+    const r = img.getBoundingClientRect();
+    if (r.width > 1 && r.height > 1) {
+      // offsetLeft/offsetTop are measured against the same containing block an
+      // absolutely positioned sibling resolves against, which viewport rects
+      // are not: the difference is any padding or margin on the way down, and
+      // it put the canvas 16 px low.
+      return { width: r.width, height: r.height, left: img.offsetLeft, top: img.offsetTop };
+    }
+  }
+  const width = Math.max(320, Math.round(holder.getBoundingClientRect().width || 640));
+  const ratio = img && img.naturalWidth > 0 ? img.naturalHeight / img.naturalWidth : 0.62;
+  return { width, height: Math.round(width * ratio), left: 0, top: 0 };
+}
+
 const PALETTE = ['#2563eb', '#dc2626', '#059669', '#d97706', '#7c3aed', '#0891b2'];
 
 async function json(url) {
@@ -64,10 +102,19 @@ function draw(canvas, spec, result) {
     return { legend: v.legend || v.name, y };
   });
 
+  // Take exactly the box the static plot occupies, so swapping one for the
+  // other moves nothing on the page. The image is measured while it is still
+  // laid out; once it is hidden its rect is zero.
+  // Take exactly the box the static plot occupies and sit on top of it, so the
+  // swap changes what is drawn and nothing else: same size, same position, no
+  // reflow of the page around it.
   const dpr = window.devicePixelRatio || 1;
-  const box = canvas.getBoundingClientRect();
-  const W = Math.max(320, Math.round(box.width || 640)), H = Math.round(box.height || 260);
-  canvas.width = W * dpr; canvas.height = H * dpr;
+  const { width: W, height: H, left, top } = plotBox(canvas);
+  Object.assign(canvas.style, {
+    position: 'absolute', left: `${left}px`, top: `${top}px`,
+    width: `${W}px`, height: `${H}px`,
+  });
+  canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
   const g = canvas.getContext('2d');
   g.setTransform(dpr, 0, 0, dpr, 0, 0);
   g.clearRect(0, 0, W, H);
@@ -134,12 +181,38 @@ export async function simulate(fig, onStatus) {
   });
 
   const canvas = fig.querySelector('.mbe-figure__canvas');
+  await staticReady(fig);
   draw(canvas, spec, result);
   canvas.hidden = false;
   const img = fig.querySelector('.mbe-figure__static');
-  if (img) img.hidden = true;
+  // Keep the image in the layout rather than removing it: `visibility` holds the
+  // box open, so the swap is a redraw and not a reflow of the whole page.
+  if (img) img.style.visibility = 'hidden';   // keeps the box; the canvas covers it
   fig.dataset.state = 'live';
 
   const load = Math.round(tLoaded - t0), run = Math.round(performance.now() - tLoaded);
   onStatus(`${result.rows} points in ${run} ms${load > 20 ? ` (first load ${load} ms)` : ''}`);
+}
+
+// Load and warm a figure's model before the reader asks for it.
+//
+// The first run used to carry the whole cost -- fetching a 2.2 MB driver,
+// compiling it, instantiating the component -- which measured ~2.2 s on the
+// deployed site. Doing it when the figure scrolls into view moves that off the
+// button press: `warm()` instantiates the interface the run will use, so
+// pressing Run is only the solve.
+export async function prepare(fig, onStatus = () => {}) {
+  const id = fig.dataset.plotId;
+  if (!id || fig.dataset.prepared) return;
+  fig.dataset.prepared = 'pending';
+  try {
+    const { session, info } = await open(fig, id, () => {});
+    await session.warm(info.modelExchange ? 'me' : 'cs');
+    fig.dataset.prepared = 'ready';
+    onStatus('Ready — press Run');
+  } catch (e) {
+    // A figure that cannot be prepared is not broken: it still has its plot, and
+    // Run will try again and report properly.
+    delete fig.dataset.prepared;
+  }
 }
