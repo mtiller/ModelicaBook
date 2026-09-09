@@ -20,5 +20,14 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Functions.Nonlinearities.ImplicitEvaluation",
-  "params": []
+  "params": [
+    {
+      "key": "y_guess",
+      "label": "y_guess",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "2"
+    }
+  ]
 }

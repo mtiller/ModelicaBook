@@ -20,5 +20,60 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.ArrayEquations.StateSpace.Examples.LotkaVolterra",
-  "params": []
+  "params": [
+    {
+      "key": "alpha",
+      "label": "alpha",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "8",
+      "description": "Reproduction rate of prey"
+    },
+    {
+      "key": "beta",
+      "label": "beta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "9",
+      "description": "Mortality rate of predator per prey"
+    },
+    {
+      "key": "delta",
+      "label": "delta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "10",
+      "description": "Reproduction rate of predator per prey"
+    },
+    {
+      "key": "gamma",
+      "label": "gamma",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "11",
+      "description": "Mortality rate of predator"
+    },
+    {
+      "key": "x_init",
+      "label": "x_init",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "14",
+      "description": "Initial prey population"
+    },
+    {
+      "key": "y_init",
+      "label": "y_init",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "15",
+      "description": "Initial predator population"
+    }
+  ]
 }

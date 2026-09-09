@@ -54,12 +54,58 @@ const showInteractive = interactive && !!c && editable.length > 0;
         <div class="mbe-figure__params-title">Model Parameters</div>
         {editable.length > 0 ? (
           <div class="mbe-figure__param-list">
-            {editable.map((p) => (
-              <div class="mbe-figure__param">
-                <label class="mbe-param__label" for={`p-${id}-${p.key}`}>{p.label}</label>
-                <input class="mbe-param__input" id={`p-${id}-${p.key}`} value={String(p.default)} />
-              </div>
-            ))}
+            {editable.map((p) => {
+              // No model description in the book declares a `max` -- 178 of 778
+              // editable parameters carry a `min` and none a maximum -- so a
+              // slider's upper bound has to be derived. Bracket the model's own
+              // value, which is the one the book's figure uses, and keep `min`
+              // as a hard floor where the FMU states one. The number box beside
+              // it stays authoritative for values outside the bracket.
+              const v = Number(p.default);
+              const span = Number.isFinite(v) && v !== 0 ? Math.abs(v) * 3 : 1;
+              // A declared `min` is the model speaking and wins. Failing that,
+              // `minHint` is what the parameter's unit implies -- an inertia or
+              // a resistance has no negative half -- which is the only bound
+              // most of the book's models offer, since they declare their own
+              // `Real(unit=...)` types rather than SIunits. Failing both, the
+              // range brackets the model's own value.
+              const floor = p.min !== undefined ? Number(p.min)
+                          : p.minHint !== undefined ? Number(p.minHint)
+                          : null;
+              const lo = floor !== null ? floor : (Number.isFinite(v) ? v - span : 0);
+              const hi = Number.isFinite(v) ? v + span : 1;
+              const step = (hi - lo) / 200;
+              const slider = Number.isFinite(v) && p.type !== 'Boolean' && hi > lo;
+              return (
+                <div class="mbe-figure__param">
+                  <label class="mbe-param__label" for={`p-${id}-${p.key}`} title={p.description || p.label}>
+                    {p.label}
+                    {p.unit && <span class="mbe-param__unit">{p.displayUnit || p.unit}</span>}
+                  </label>
+                  <input
+                    class="mbe-param__input"
+                    id={`p-${id}-${p.key}`}
+                    type="number"
+                    step="any"
+                    min={p.min !== undefined ? String(p.min) : undefined}
+                    value={String(p.default)}
+                    title={p.description || p.label}
+                  />
+                  {slider && (
+                    <input
+                      class="mbe-param__slider"
+                      type="range"
+                      min={String(lo)}
+                      max={String(hi)}
+                      step={String(step)}
+                      value={String(v)}
+                      aria-labelledby={`p-${id}-${p.key}`}
+                      data-for={`p-${id}-${p.key}`}
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
         ) : (
           <dl class="mbe-figure__param-list mbe-figure__param-list--readonly">
@@ -70,9 +116,9 @@ const showInteractive = interactive && !!c && editable.length > 0;
         )}
         <div class="mbe-figure__actions">
           <span class="mbe-figure__hint">
-            {editable.length > 0 ? 'Edit a value · press Run' : 'No adjustable parameters'}
+            {editable.length > 0 ? 'Drag a slider, or edit a value and press Run' : 'No adjustable parameters'}
           </span>
-          <button class="mbe-figure__run" type="button" disabled title="Live simulation deferred (MIC-86)">
+          <button class="mbe-figure__run" type="button" title="Simulate this model in your browser">
             Run
           </button>
         </div>
@@ -95,29 +141,77 @@ const showInteractive = interactive && !!c && editable.length > 0;
 )}
 
 <script>
-  // Bundled + run by Astro (no sanitization, no injection step). Reads the
-  // contract from data-case — the attribute survives because Astro doesn't
-  // sanitize component output. This is the exact thing mystmd's theme stripped.
-  interface CaseShape { name: string; stopTime: number | null; tol: number }
+  // Bundled + run by Astro. Reads the contract from data-case — the attribute
+  // survives because Astro doesn't sanitize component output.
+  //
+  // The simulation lives in /fmi/figure.js, which is imported when a figure
+  // scrolls into view rather than on the Run click: it pulls a 2.2 MB driver and
+  // instantiates the model, which measured ~2.2 s on the first press. Doing it
+  // ahead of time makes Run the solve alone (~10 ms). A reader who never reaches
+  // an interactive figure never fetches any of it.
   function hydrate() {
     document.querySelectorAll<HTMLElement>('.mbe-figure.interactive').forEach((fig) => {
       if (fig.dataset.hydrated) return;
       fig.dataset.hydrated = '1';
-      let data: CaseShape | null = null;
-      try {
-        data = JSON.parse(fig.dataset.case || 'null');
-      } catch {
-        return;
-      }
       const status = fig.querySelector<HTMLElement>('.mbe-figure__status');
-      const run = fig.querySelector<HTMLButtonElement>('.mbe-figure__run');
-      // Contract is in hand client-side. Live re-sim (MIC-86) is deferred, so
-      // Run stays disabled; the static plot is the resilient base case.
-      run?.addEventListener('click', () => {
-        if (!data) return;
-        fig.dataset.state = 'simulating';
-        if (status) status.textContent = `Would simulate ${data.name}…`;
+      const runBtn = fig.querySelector<HTMLButtonElement>('.mbe-figure__run');
+      const say = (text: string) => { if (status) status.textContent = text; };
+      let mod: any = null;
+      const load = async () => (mod ??= await import(/* @vite-ignore */ '/fmi/figure.js'));
+
+      // One run at a time. A slider drag fires far faster than a solve returns,
+      // so coalesce: keep only the most recent request and run it when the
+      // current one finishes.
+      let running = false, queued = false;
+      const simulate = async () => {
+        if (running) { queued = true; return; }
+        running = true;
+        if (runBtn) { runBtn.disabled = true; }
+        try {
+          const m = await load();
+          await m.simulate(fig, say);
+        } catch (e) {
+          fig.dataset.state = 'static';
+          say(e instanceof Error ? e.message : String(e));
+        } finally {
+          running = false;
+          if (runBtn) runBtn.disabled = false;
+          if (queued) { queued = false; simulate(); }
+        }
+      };
+
+      runBtn?.addEventListener('click', simulate);
+
+      // Slider and number box are two views of one value; each writes the other.
+      fig.querySelectorAll<HTMLInputElement>('.mbe-param__slider').forEach((slider) => {
+        const box = document.getElementById(slider.dataset.for || '') as HTMLInputElement | null;
+        slider.addEventListener('input', () => {
+          if (box) box.value = slider.value;
+          simulate();
+        });
+        box?.addEventListener('change', () => {
+          const v = Number(box.value);
+          if (Number.isFinite(v)) slider.value = String(v);
+        });
       });
+
+      // Prepare when it comes into view; fall back to preparing immediately
+      // where there is no observer.
+      const prepare = async () => { const m = await load(); await m.prepare(fig, say); };
+      if (typeof IntersectionObserver === 'function') {
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) {
+            if (!e.isIntersecting) continue;
+            io.disconnect();
+            'requestIdleCallback' in window
+              ? (window as any).requestIdleCallback(prepare, { timeout: 2000 })
+              : setTimeout(prepare, 200);
+          }
+        }, { rootMargin: '400px' });
+        io.observe(fig);
+      } else {
+        setTimeout(prepare, 500);
+      }
     });
   }
   hydrate();

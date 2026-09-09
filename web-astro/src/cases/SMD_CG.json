@@ -38,5 +38,104 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.Rotational.Examples.SMD_ConfigurableGear",
-  "params": []
+  "params": [
+    {
+      "key": "damper2.d",
+      "label": "damper2.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "41",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "damper3.d",
+      "label": "damper3.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "42",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "housing.ratio",
+      "label": "housing.ratio",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "43",
+      "description": "Ratio of phi_a/phi_b"
+    },
+    {
+      "key": "inertia1.J",
+      "label": "inertia1.J",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "44",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "inertia2.J",
+      "label": "inertia2.J",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "45",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "inertia3.J",
+      "label": "inertia3.J",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "46",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "inertia4.J",
+      "label": "inertia4.J",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "47",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "no_housing.ratio",
+      "label": "no_housing.ratio",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "48",
+      "description": "Ratio of phi_a/phi_b"
+    },
+    {
+      "key": "spring2.c",
+      "label": "spring2.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "49",
+      "unit": "N.m/rad",
+      "minHint": 0
+    },
+    {
+      "key": "spring3.c",
+      "label": "spring3.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "50",
+      "unit": "N.m/rad",
+      "minHint": 0
+    }
+  ]
 }

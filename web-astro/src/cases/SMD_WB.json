@@ -2,13 +2,31 @@
   "type": "simple",
   "vars": [
     {
-      "name": "ground.flange_a.tau",
+      "name": "inertia1.phi",
       "scale": 1,
-      "legend": "ground.flange_a.tau",
+      "legend": "Position of inertia 1 [rad]",
+      "style": "-"
+    },
+    {
+      "name": "inertia2.phi",
+      "scale": 1,
+      "legend": "Position of inertia 2 [rad]",
+      "style": "-"
+    },
+    {
+      "name": "inertia1.w",
+      "scale": 1,
+      "legend": "Velocity of inertia 1 [rad/s]",
+      "style": "-"
+    },
+    {
+      "name": "inertia2.w",
+      "scale": 1,
+      "legend": "Velocity of inertia 2 [rad/s]",
       "style": "-"
     }
   ],
-  "title": "Reaction torque at mechanical ground",
+  "title": "Spring-mass-damper model including backlash",
   "legloc": "upper right",
   "ylabel": "",
   "ncols": 1,
@@ -20,5 +38,88 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.Rotational.Examples.SMD_WithBacklash",
-  "params": []
+  "params": [
+    {
+      "key": "backlash.b",
+      "label": "backlash.b",
+      "default": "0.5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "26",
+      "description": "Total lash",
+      "unit": "rad",
+      "min": "0.0"
+    },
+    {
+      "key": "backlash.c",
+      "label": "backlash.c",
+      "default": "1000.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "27",
+      "description": "Torsional stiffness",
+      "unit": "N.m/rad",
+      "minHint": 0
+    },
+    {
+      "key": "damper1.d",
+      "label": "damper1.d",
+      "default": "0.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "28",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "damper2.d",
+      "label": "damper2.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "29",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "inertia1.J",
+      "label": "inertia1.J",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "30",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "inertia2.J",
+      "label": "inertia2.J",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "31",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "spring1.c",
+      "label": "spring1.c",
+      "default": "11.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "32",
+      "unit": "N.m/rad",
+      "minHint": 0
+    },
+    {
+      "key": "spring2.c",
+      "label": "spring2.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "33",
+      "unit": "N.m/rad",
+      "minHint": 0
+    }
+  ]
 }

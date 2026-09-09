@@ -32,5 +32,196 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Architectures.SensorComparison.Examples.FlatSystem",
-  "params": []
+  "params": [
+    {
+      "key": "damper.d",
+      "label": "damper.d",
+      "default": "4.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "32",
+      "description": "Damping constant",
+      "unit": "N.m.s/rad",
+      "min": "0.0"
+    },
+    {
+      "key": "damper.phi_nominal",
+      "label": "damper.phi_nominal",
+      "default": "1e-4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "34",
+      "description": "Nominal value of phi_rel (used for scaling)",
+      "unit": "rad",
+      "min": "0.0"
+    },
+    {
+      "key": "fixed.phi0",
+      "label": "fixed.phi0",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "36",
+      "description": "Fixed offset angle of housing",
+      "unit": "rad",
+      "displayUnit": "deg"
+    },
+    {
+      "key": "gain.k",
+      "label": "gain.k",
+      "default": "20.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "37",
+      "description": "Gain value multiplied with input signal",
+      "unit": "1"
+    },
+    {
+      "key": "inertia.J",
+      "label": "inertia.J",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "38",
+      "description": "Moment of inertia",
+      "unit": "kg.m2",
+      "min": "0.0"
+    },
+    {
+      "key": "inertia1.J",
+      "label": "inertia1.J",
+      "default": "0.3",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "39",
+      "description": "Moment of inertia",
+      "unit": "kg.m2",
+      "min": "0.0"
+    },
+    {
+      "key": "springDamper.c",
+      "label": "springDamper.c",
+      "default": "100.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "40",
+      "description": "Spring constant",
+      "unit": "N.m/rad",
+      "min": "0.0"
+    },
+    {
+      "key": "springDamper.d",
+      "label": "springDamper.d",
+      "default": "3.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "41",
+      "description": "Damping constant",
+      "unit": "N.m.s/rad",
+      "min": "0.0"
+    },
+    {
+      "key": "springDamper.phi_nominal",
+      "label": "springDamper.phi_nominal",
+      "default": "1e-4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "42",
+      "description": "Nominal value of phi_rel (used for scaling)",
+      "unit": "rad",
+      "min": "0.0"
+    },
+    {
+      "key": "springDamper.phi_rel0",
+      "label": "springDamper.phi_rel0",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "43",
+      "description": "Unstretched spring angle",
+      "unit": "rad",
+      "displayUnit": "deg"
+    },
+    {
+      "key": "trapezoid.amplitude",
+      "label": "trapezoid.amplitude",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "49",
+      "description": "Amplitude of trapezoid"
+    },
+    {
+      "key": "trapezoid.falling",
+      "label": "trapezoid.falling",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "50",
+      "description": "Falling duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "trapezoid.offset",
+      "label": "trapezoid.offset",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "51",
+      "description": "Offset of output signal y"
+    },
+    {
+      "key": "trapezoid.period",
+      "label": "trapezoid.period",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "52",
+      "description": "Time for one period",
+      "unit": "s",
+      "min": "1e-60"
+    },
+    {
+      "key": "trapezoid.rising",
+      "label": "trapezoid.rising",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "53",
+      "description": "Rising duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "trapezoid.startTime",
+      "label": "trapezoid.startTime",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "54",
+      "description": "Output y = offset for time < startTime",
+      "unit": "s"
+    },
+    {
+      "key": "trapezoid.width",
+      "label": "trapezoid.width",
+      "default": "0.5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "55",
+      "description": "Width duration of trapezoid",
+      "unit": "s",
+      "min": "0.0"
+    },
+    {
+      "key": "trapezoid.nperiod",
+      "label": "trapezoid.nperiod",
+      "default": "-1",
+      "editable": true,
+      "type": "Int32",
+      "valueReference": "85",
+      "description": "Number of periods (< 0 means infinite number of periods)"
+    }
+  ]
 }

@@ -38,5 +38,66 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.Rotational.Examples.SMD",
-  "params": []
+  "params": [
+    {
+      "key": "damper1.d",
+      "label": "damper1.d",
+      "default": "0.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "24",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "damper2.d",
+      "label": "damper2.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "25",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "inertia1.J",
+      "label": "inertia1.J",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "26",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "inertia2.J",
+      "label": "inertia2.J",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "27",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "spring1.c",
+      "label": "spring1.c",
+      "default": "11.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "28",
+      "unit": "N.m/rad",
+      "minHint": 0
+    },
+    {
+      "key": "spring2.c",
+      "label": "spring2.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "29",
+      "unit": "N.m/rad",
+      "minHint": 0
+    }
+  ]
 }

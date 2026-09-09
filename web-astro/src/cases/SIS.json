@@ -2,13 +2,19 @@
   "type": "simple",
   "vars": [
     {
-      "name": "e",
+      "name": "x",
       "scale": 1,
-      "legend": "e",
-      "style": "-"
+      "legend": "x",
+      "style": "-."
+    },
+    {
+      "name": "y",
+      "scale": 1,
+      "legend": "y",
+      "style": "."
     }
   ],
-  "title": "Error of Independently Sampled Signals",
+  "title": "Independently Sampled Signals",
   "legloc": "upper right",
   "ylabel": "",
   "ncols": 1,

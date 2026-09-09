@@ -20,5 +20,127 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.ArrayEquations.StateSpace.Examples.RotationalSMD_Concat",
-  "params": []
+  "params": [
+    {
+      "key": "A[1,1]",
+      "label": "A[1,1]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "8"
+    },
+    {
+      "key": "A[1,2]",
+      "label": "A[1,2]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "9"
+    },
+    {
+      "key": "A[1,3]",
+      "label": "A[1,3]",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "10"
+    },
+    {
+      "key": "A[1,4]",
+      "label": "A[1,4]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "11"
+    },
+    {
+      "key": "A[2,1]",
+      "label": "A[2,1]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "12"
+    },
+    {
+      "key": "A[2,2]",
+      "label": "A[2,2]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "13"
+    },
+    {
+      "key": "A[2,3]",
+      "label": "A[2,3]",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "14"
+    },
+    {
+      "key": "A[2,4]",
+      "label": "A[2,4]",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "15"
+    },
+    {
+      "key": "J1",
+      "label": "J1",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "24"
+    },
+    {
+      "key": "J2",
+      "label": "J2",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "25"
+    },
+    {
+      "key": "c1",
+      "label": "c1",
+      "default": "11.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "30"
+    },
+    {
+      "key": "c2",
+      "label": "c2",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "31"
+    },
+    {
+      "key": "d1",
+      "label": "d1",
+      "default": "0.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "32"
+    },
+    {
+      "key": "d2",
+      "label": "d2",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "33"
+    },
+    {
+      "key": "x0",
+      "label": "x0",
+      "default": "0.0 1.0 0.0 0.0",
+      "editable": false,
+      "type": "Float64",
+      "valueReference": "34",
+      "description": "Initial conditions"
+    }
+  ]
 }

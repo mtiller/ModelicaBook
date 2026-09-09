@@ -20,5 +20,59 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.HeatTransfer.Examples.Cooling",
-  "params": []
+  "params": [
+    {
+      "key": "amb.T_amb",
+      "label": "amb.T_amb",
+      "default": "298.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "3",
+      "description": "Ambient temperature",
+      "unit": "K",
+      "min": "0.0"
+    },
+    {
+      "key": "cap.C",
+      "label": "cap.C",
+      "default": "0.12",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "5",
+      "description": "Thermal capacitance",
+      "unit": "J/K",
+      "minHint": 0
+    },
+    {
+      "key": "cap.T0",
+      "label": "cap.T0",
+      "default": "363.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "6",
+      "description": "Initial temperature",
+      "unit": "K",
+      "min": "0.0"
+    },
+    {
+      "key": "convection.A",
+      "label": "convection.A",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "7",
+      "unit": "m2",
+      "minHint": 0
+    },
+    {
+      "key": "convection.h",
+      "label": "convection.h",
+      "default": "0.7",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "8",
+      "unit": "W/(m2.K)",
+      "minHint": 0
+    }
+  ]
 }

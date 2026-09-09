@@ -62,5 +62,276 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Subsystems.LotkaVolterra.Examples.WithMigration",
-  "params": []
+  "params": [
+    {
+      "key": "A.alpha",
+      "label": "A.alpha",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "50",
+      "description": "Birth rate"
+    },
+    {
+      "key": "A.beta",
+      "label": "A.beta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "51",
+      "description": "Prey (rabbits) consumed"
+    },
+    {
+      "key": "A.delta",
+      "label": "A.delta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "52",
+      "description": "Predators (foxes) fed"
+    },
+    {
+      "key": "A.gamma",
+      "label": "A.gamma",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "57",
+      "description": "Starvation coefficient"
+    },
+    {
+      "key": "A.initial_fox_population",
+      "label": "A.initial_fox_population",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "58",
+      "description": "Initial fox population"
+    },
+    {
+      "key": "A.initial_rabbit_population",
+      "label": "A.initial_rabbit_population",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "59",
+      "description": "Initial rabbit population"
+    },
+    {
+      "key": "B.alpha",
+      "label": "B.alpha",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "62",
+      "description": "Birth rate"
+    },
+    {
+      "key": "B.beta",
+      "label": "B.beta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "63",
+      "description": "Prey (rabbits) consumed"
+    },
+    {
+      "key": "B.delta",
+      "label": "B.delta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "64",
+      "description": "Predators (foxes) fed"
+    },
+    {
+      "key": "B.gamma",
+      "label": "B.gamma",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "69",
+      "description": "Starvation coefficient"
+    },
+    {
+      "key": "B.initial_fox_population",
+      "label": "B.initial_fox_population",
+      "default": "12.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "70",
+      "description": "Initial fox population"
+    },
+    {
+      "key": "B.initial_rabbit_population",
+      "label": "B.initial_rabbit_population",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "71",
+      "description": "Initial rabbit population"
+    },
+    {
+      "key": "C.alpha",
+      "label": "C.alpha",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "74",
+      "description": "Birth rate"
+    },
+    {
+      "key": "C.beta",
+      "label": "C.beta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "75",
+      "description": "Prey (rabbits) consumed"
+    },
+    {
+      "key": "C.delta",
+      "label": "C.delta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "76",
+      "description": "Predators (foxes) fed"
+    },
+    {
+      "key": "C.gamma",
+      "label": "C.gamma",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "81",
+      "description": "Starvation coefficient"
+    },
+    {
+      "key": "C.initial_fox_population",
+      "label": "C.initial_fox_population",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "82",
+      "description": "Initial fox population"
+    },
+    {
+      "key": "C.initial_rabbit_population",
+      "label": "C.initial_rabbit_population",
+      "default": "12.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "83",
+      "description": "Initial rabbit population"
+    },
+    {
+      "key": "D.alpha",
+      "label": "D.alpha",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "86",
+      "description": "Birth rate"
+    },
+    {
+      "key": "D.beta",
+      "label": "D.beta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "87",
+      "description": "Prey (rabbits) consumed"
+    },
+    {
+      "key": "D.delta",
+      "label": "D.delta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "88",
+      "description": "Predators (foxes) fed"
+    },
+    {
+      "key": "D.gamma",
+      "label": "D.gamma",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "93",
+      "description": "Starvation coefficient"
+    },
+    {
+      "key": "D.initial_fox_population",
+      "label": "D.initial_fox_population",
+      "default": "7.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "94",
+      "description": "Initial fox population"
+    },
+    {
+      "key": "D.initial_rabbit_population",
+      "label": "D.initial_rabbit_population",
+      "default": "7.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "95",
+      "description": "Initial rabbit population"
+    },
+    {
+      "key": "migrate_AB.fox_migration",
+      "label": "migrate_AB.fox_migration",
+      "default": "0.005",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "98",
+      "description": "Fox migration rate"
+    },
+    {
+      "key": "migrate_AB.rabbit_migration",
+      "label": "migrate_AB.rabbit_migration",
+      "default": "0.001",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "99",
+      "description": "Rabbit migration rate"
+    },
+    {
+      "key": "migrate_BC.fox_migration",
+      "label": "migrate_BC.fox_migration",
+      "default": "0.005",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "100",
+      "description": "Fox migration rate"
+    },
+    {
+      "key": "migrate_BC.rabbit_migration",
+      "label": "migrate_BC.rabbit_migration",
+      "default": "0.001",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "101",
+      "description": "Rabbit migration rate"
+    },
+    {
+      "key": "migrate_CD.fox_migration",
+      "label": "migrate_CD.fox_migration",
+      "default": "0.005",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "102",
+      "description": "Fox migration rate"
+    },
+    {
+      "key": "migrate_CD.rabbit_migration",
+      "label": "migrate_CD.rabbit_migration",
+      "default": "0.001",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "103",
+      "description": "Rabbit migration rate"
+    }
+  ]
 }

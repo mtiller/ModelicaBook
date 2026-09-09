@@ -26,5 +26,46 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.BasicEquations.RLC.RLC1",
-  "params": []
+  "params": [
+    {
+      "key": "C",
+      "label": "C",
+      "default": "0.001",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "6",
+      "unit": "F",
+      "minHint": 0
+    },
+    {
+      "key": "L",
+      "label": "L",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "7",
+      "unit": "H",
+      "minHint": 0
+    },
+    {
+      "key": "R",
+      "label": "R",
+      "default": "100.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "8",
+      "unit": "Ohm",
+      "minHint": 0
+    },
+    {
+      "key": "Vb",
+      "label": "Vb",
+      "default": "24.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "9",
+      "description": "Battery voltage",
+      "unit": "V"
+    }
+  ]
 }

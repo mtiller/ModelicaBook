@@ -26,5 +26,58 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Components.LotkaVolterra.Examples.ClassicLotkaVolterra",
-  "params": []
+  "params": [
+    {
+      "key": "fox_predation.beta",
+      "label": "fox_predation.beta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "10",
+      "description": "Prey (Species A) consumed"
+    },
+    {
+      "key": "fox_predation.delta",
+      "label": "fox_predation.delta",
+      "default": "0.02",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "11",
+      "description": "Predators (Species B) fed"
+    },
+    {
+      "key": "fox_starvation.gamma",
+      "label": "fox_starvation.gamma",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "12",
+      "description": "Starvation coefficient"
+    },
+    {
+      "key": "foxes.initial_population",
+      "label": "foxes.initial_population",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "13"
+    },
+    {
+      "key": "rabbits.initial_population",
+      "label": "rabbits.initial_population",
+      "default": "10.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "14"
+    },
+    {
+      "key": "reproduction.alpha",
+      "label": "reproduction.alpha",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "15",
+      "description": "Birth rate proportionality constant"
+    }
+  ]
 }

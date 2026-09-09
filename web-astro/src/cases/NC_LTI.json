@@ -20,5 +20,60 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.ArrayEquations.StateSpace.Examples.NewtonCooling",
-  "params": []
+  "params": [
+    {
+      "key": "T0",
+      "label": "T0",
+      "default": "20.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "4",
+      "description": "Initial temperature"
+    },
+    {
+      "key": "T_inf",
+      "label": "T_inf",
+      "default": "27.5",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "5",
+      "description": "Ambient temperature"
+    },
+    {
+      "key": "c_p",
+      "label": "c_p",
+      "default": "1.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "6",
+      "description": "Specific heat"
+    },
+    {
+      "key": "hA",
+      "label": "hA",
+      "default": "0.7",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "7",
+      "description": "Convective cooling coefficient * area"
+    },
+    {
+      "key": "m",
+      "label": "m",
+      "default": "0.1",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "8",
+      "description": "Mass of thermal capacitance"
+    },
+    {
+      "key": "x0[1]",
+      "label": "x0[1]",
+      "default": "20.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "10",
+      "description": "Initial conditions"
+    }
+  ]
 }

@@ -40,5 +40,109 @@
     "phi1_init": 1
   },
   "name": "ModelicaByExample.BasicEquations.RotationalSMD.SecondOrderSystemInitParams",
-  "params": []
+  "params": [
+    {
+      "key": "J1",
+      "label": "J1",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "8",
+      "description": "Moment of inertia for inertia 1",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "J2",
+      "label": "J2",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "9",
+      "description": "Moment of inertia for inertia 2",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "c1",
+      "label": "c1",
+      "default": "11.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "10",
+      "description": "Spring constant for spring 1",
+      "unit": "N.m/rad",
+      "minHint": 0
+    },
+    {
+      "key": "c2",
+      "label": "c2",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "11",
+      "description": "Spring constant for spring 2",
+      "unit": "N.m/rad",
+      "minHint": 0
+    },
+    {
+      "key": "d1",
+      "label": "d1",
+      "default": "0.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "12",
+      "description": "Damping for damper 1",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "d2",
+      "label": "d2",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "13",
+      "description": "Damping for damper 2",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "omega1_init",
+      "label": "omega1_init",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "14",
+      "unit": "rad/s"
+    },
+    {
+      "key": "omega2_init",
+      "label": "omega2_init",
+      "default": "0.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "15",
+      "unit": "rad/s"
+    },
+    {
+      "key": "phi1_init",
+      "label": "phi1_init",
+      "default": 1,
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "16",
+      "unit": "rad",
+      "overridden": true
+    },
+    {
+      "key": "phi2_init",
+      "label": "phi2_init",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "17",
+      "unit": "rad"
+    }
+  ]
 }

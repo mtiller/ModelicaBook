@@ -35,7 +35,7 @@ for (const f of all) {
 
 // 2) convert every page
 let converted = 0, warned = 0; const warnAgg = {};
-const allIndex = [], allAssets = [];
+const allIndex = [], allAssets = [], allInlinePlots = [];
 for (const f of all) {
   if (isIndexRoot(f)) continue;
   const route = routeOf(f);
@@ -43,12 +43,25 @@ for (const f of all) {
   if (r.warnings.length) { warned++; for (const w of r.warnings) { const k = w.split(':')[0].replace(/'.*/, '').trim(); warnAgg[k] = (warnAgg[k] || 0) + 1; } }
   allIndex.push(...(r.indexEntries || []));
   allAssets.push(...(r.assets || []));
+  allInlinePlots.push(...(r.inlinePlots || []));
   if (!dry) {
     const outPath = path.join(DOCS, route + '.mdx');
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
     fs.writeFileSync(outPath, r.mdx);
   }
   converted++;
+}
+
+// 2a2) inline `.. plot::` scripts -> tools/inline-plots/<id>.py, for
+// render-plots.py to draw into public/plots/<id>.svg.
+if (!dry && allInlinePlots.length) {
+  fs.mkdirSync('tools/inline-plots', { recursive: true });
+  const seen = new Set();
+  for (const p of allInlinePlots) {
+    if (seen.has(p.id)) continue; seen.add(p.id);
+    fs.writeFileSync(path.join('tools/inline-plots', p.id + '.py'), p.source + '\n');
+  }
+  console.log(`wrote ${seen.size} inline plot scripts`);
 }
 
 // 2b) static image assets → public/figures  (MIC-134)

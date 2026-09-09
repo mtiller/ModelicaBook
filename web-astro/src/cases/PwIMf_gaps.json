@@ -1,0 +1,108 @@
+{
+  "type": "simple",
+  "vars": [
+    {
+      "name": "inertia1.phi",
+      "scale": 1,
+      "legend": "Inertia position (intertia1.phi)",
+      "style": "-"
+    },
+    {
+      "name": "intervalMeasure.next_phi",
+      "scale": 1,
+      "legend": "Next forward angle",
+      "style": "-"
+    },
+    {
+      "name": "intervalMeasure.prev_phi",
+      "scale": 1,
+      "legend": "Next backward angle",
+      "style": "-"
+    }
+  ],
+  "title": "Comparison of actual speed with approximation by interval measurement",
+  "legloc": "upper right",
+  "ylabel": "",
+  "ncols": 1,
+  "ymax": null,
+  "ymin": null,
+  "res": "PwIMf",
+  "stopTime": 5,
+  "ncp": 500,
+  "tol": 0.000001,
+  "mods": {
+    "intervalMeasure.teeth": 20
+  },
+  "name": "ModelicaByExample.Components.SpeedMeasurement.Examples.PlantWithIntervalMeasure",
+  "params": [
+    {
+      "key": "damper1.d",
+      "label": "damper1.d",
+      "default": "0.2",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "32",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "damper2.d",
+      "label": "damper2.d",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "33",
+      "unit": "N.m.s/rad",
+      "minHint": 0
+    },
+    {
+      "key": "inertia1.J",
+      "label": "inertia1.J",
+      "default": "0.4",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "34",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "inertia2.J",
+      "label": "inertia2.J",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "35",
+      "unit": "kg.m2",
+      "minHint": 0
+    },
+    {
+      "key": "spring1.c",
+      "label": "spring1.c",
+      "default": "11.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "37",
+      "unit": "N.m/rad",
+      "minHint": 0
+    },
+    {
+      "key": "spring2.c",
+      "label": "spring2.c",
+      "default": "5.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "38",
+      "unit": "N.m/rad",
+      "minHint": 0
+    },
+    {
+      "key": "intervalMeasure.teeth",
+      "label": "intervalMeasure.teeth",
+      "default": 20,
+      "editable": true,
+      "type": "Int32",
+      "valueReference": "63",
+      "overridden": true
+    }
+  ]
+}

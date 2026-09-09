@@ -2,14 +2,26 @@
   "type": "simple",
   "vars": [
     {
-      "name": "plant.furnace.Q_flow",
+      "name": "sensor.room.T",
       "scale": 1,
-      "legend": "plant.furnace.Q_flow",
+      "legend": "Room Temperature",
+      "style": "-."
+    },
+    {
+      "name": "sensor.temperature",
+      "scale": 1,
+      "legend": "Measured Temperature",
+      "style": "."
+    },
+    {
+      "name": "controller.feedback.u2",
+      "scale": 1,
+      "legend": "Desired Temperature",
       "style": "-"
     }
   ],
-  "title": "Furnace heat using PI controller",
-  "legloc": "upper right",
+  "title": "Response using PI controller",
+  "legloc": "lower right",
   "ylabel": "",
   "ncols": 1,
   "ymax": null,
@@ -20,5 +32,77 @@
   "tol": 0.001,
   "mods": {},
   "name": "ModelicaByExample.Architectures.ThermalControl.Examples.BaseModel",
-  "params": []
+  "params": [
+    {
+      "key": "controller.T",
+      "label": "controller.T",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "43",
+      "description": "Time Constant (T>0 required)",
+      "unit": "s"
+    },
+    {
+      "key": "controller.k",
+      "label": "controller.k",
+      "default": "20.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "44",
+      "description": "Gain"
+    },
+    {
+      "key": "controller.setpoint",
+      "label": "controller.setpoint",
+      "default": "300.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "45",
+      "description": "Desired temperature"
+    },
+    {
+      "key": "plant.C",
+      "label": "plant.C",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "56",
+      "description": "Zone capacitance",
+      "unit": "J/K",
+      "minHint": 0
+    },
+    {
+      "key": "plant.G",
+      "label": "plant.G",
+      "default": "1.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "57",
+      "description": "Conductance between rooms",
+      "unit": "W/K",
+      "minHint": 0
+    },
+    {
+      "key": "plant.T_ambient",
+      "label": "plant.T_ambient",
+      "default": "278.15",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "58",
+      "description": "Fixed temperature at port",
+      "unit": "K",
+      "displayUnit": "degC",
+      "min": "0.0"
+    },
+    {
+      "key": "plant.h",
+      "label": "plant.h",
+      "default": "2.0",
+      "editable": true,
+      "type": "Float64",
+      "valueReference": "72",
+      "description": "Convenction coefficient"
+    }
+  ]
 }

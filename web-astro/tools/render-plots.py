@@ -18,7 +18,11 @@ OUT = os.path.abspath(os.path.join(os.getcwd(), "..", "web-astro", "public", "pl
 os.makedirs(OUT, exist_ok=True)
 sys.path.insert(0, os.path.join(os.getcwd(), "source", "_sphinxext"))
 
-scripts = sorted(glob.glob("plots/*.py"))
+# The book's own plot scripts, plus the inline `.. plot::` bodies the RST
+# converter writes out (those have no case behind them -- they are matplotlib
+# sketches in the prose).
+scripts = sorted(glob.glob("plots/*.py")) + sorted(
+    glob.glob("../web-astro/tools/inline-plots/*.py"))
 ok, fail = 0, 0
 for s in scripts:
     pid = os.path.basename(s)[:-3]
