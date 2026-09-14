@@ -1,0 +1,14 @@
+{
+  "name": "modelica-by-example-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MyST-based rendering of Modelica by Example (MIC-84 vertical slice)",
+  "type": "module",
+  "scripts": {
+    "start": "myst start",
+    "build": "myst build --html && node scripts/postbuild.mjs"
+  },
+  "devDependencies": {
+    "mystmd": "^1.3.0"
+  }
+}
